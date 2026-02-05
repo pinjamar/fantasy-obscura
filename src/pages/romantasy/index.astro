@@ -1,0 +1,82 @@
+---
+import Layout from "../../components/Layout.astro";
+---
+
+<Layout
+  title="Fantasy Books & Guides | Fantasy Obscura"
+  description="Fantasy book guides, beginner lists, and reading orders."
+>
+  <h1 class="text-3xl font-semibold tracking-tight">Romantasy</h1>
+
+  <p class="mt-4 max-w-2xl text-zinc-700">
+    Curated fantasy book lists, beginner-friendly guides, and clear reading
+    orders. Built for readers who want answers fast.
+  </p>
+
+  <!-- Featured / start here -->
+  <section class="mt-10">
+    <h2 class="text-xl font-semibold">Start here</h2>
+
+    <ul class="mt-4 list-disc pl-5 space-y-2 text-zinc-700">
+      <li>
+        <a class="underline" href="/fantasy/beginners/">
+          Best Fantasy Books for Beginners
+        </a>
+      </li>
+      <li>
+        <a class="underline" href="/reading-orders/the-witcher/">
+          The Witcher Reading Order
+        </a>
+      </li>
+      <li>
+        <a class="underline" href="/reading-orders/discworld/">
+          Discworld Reading Order
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Subgenres -->
+  <section class="mt-10">
+    <h2 class="text-xl font-semibold">Subgenres</h2>
+
+    <div class="mt-4 grid gap-4 sm:grid-cols-2">
+      <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/fantasy/grimdark/">
+        <div class="font-medium">Grimdark Fantasy</div>
+        <div class="text-sm text-zinc-600">
+          Dark, brutal, morally grey stories
+        </div>
+      </a>
+
+      <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/fantasy/cozy/">
+        <div class="font-medium">Cozy Fantasy</div>
+        <div class="text-sm text-zinc-600">
+          Low-stakes, comfort reads
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Popular lists -->
+  <section class="mt-10">
+    <h2 class="text-xl font-semibold">Popular fantasy lists</h2>
+
+    <ul class="mt-4 list-disc pl-5 space-y-2 text-zinc-700">
+      <li>
+        <a class="underline" href="/fantasy/standalone/">
+          Best Standalone Fantasy Books
+        </a>
+      </li>
+      <li>
+        <a class="underline" href="/fantasy/series/">
+          Best Fantasy Series of All Time
+        </a>
+      </li>
+      <li>
+        <a class="underline" href="/fantasy/dark-fantasy/">
+          Best Dark Fantasy Books
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

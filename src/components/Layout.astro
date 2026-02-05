@@ -1,0 +1,38 @@
+---
+import '../styles.css';
+const { title = "Fantasy Obscura", description = "Fantasy & sci-fi book guides." } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+
+  <body class="min-h-screen bg-white text-zinc-900">
+    <header class="border-b">
+      <div class="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+        <a href="/" class="font-semibold tracking-tight">Fantasy Obscura</a>
+        <nav class="flex gap-4 text-sm text-zinc-700">
+          <a class="hover:underline" href="/books/">📖 Find a book</a>
+          <a class="hover:underline" href="/creatures/">🐉 Creatures & Races</a>
+          <a class="hover:underline" href="/magic-system/">✨ Magic systems</a>
+          <a class="hover:underline" href="/reading-orders/">🧭 Reading orders</a>
+          <a class="hover:underline" href="/craft/">🧪 Craft my next read </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-10">
+      <slot />
+    </main>
+
+    <footer class="border-t">
+      <div class="mx-auto max-w-5xl px-4 py-6 text-sm text-zinc-600">
+        © {new Date().getFullYear()} Fantasy Obscura
+      </div>
+    </footer>
+  </body>
+</html>
