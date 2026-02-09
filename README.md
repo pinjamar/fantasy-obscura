@@ -26,6 +26,36 @@ npm run preview
 
 The site will be available at `http://localhost:3000` during development.
 
+## 🧱 Database (Supabase)
+
+Apply the schema in [supabase/schema.sql](supabase/schema.sql) to your Supabase project.
+
+Required environment variables:
+
+```
+SUPABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+
+PUBLIC_SUPABASE_URL=
+PUBLIC_SUPABASE_ANON_KEY=
+
+GOOGLE_BOOKS_API_KEY=
+HARVARD_GRAPHQL_URL=
+HARVARD_GRAPHQL_API_KEY=
+HARVARD_GRAPHQL_QUERY=
+
+BIGBOOK_API_BASE=
+BIGBOOK_API_KEY=
+BIGBOOK_API_SEARCH_PATH=/search
+```
+
+Notes:
+
+- `SUPABASE_SERVICE_ROLE_KEY` is used by the server API routes to insert records.
+- `PUBLIC_*` keys are used by the client if needed.
+- Harvard GraphQL requires you to supply a valid query in `HARVARD_GRAPHQL_QUERY`.
+- Bigbook endpoints are configurable with `BIGBOOK_API_BASE` and `BIGBOOK_API_SEARCH_PATH`.
+
 ## 📁 Project Structure
 
 ```
@@ -94,6 +124,7 @@ export const { title, description } = frontmatter;
 ## 📦 Tech Stack
 
 - **Astro 5** - Static site generation
+- **Astro Node Adapter** - Server output for API routes
 - **React 19** - Interactive components (optional)
 - **Tailwind CSS 4** - Utility-first CSS
 - **MDX** - Markdown + JSX support
@@ -101,12 +132,9 @@ export const { title, description } = frontmatter;
 
 ## 🌐 Deployment
 
-The project is configured as a static site. Deploy the `dist/` folder to any hosting service:
+The project uses server output (Node adapter). Deploy the server build output:
 
-- GitHub Pages
-- Netlify
-- Vercel
-- Any static hosting
+- Node hosting (Docker, VPS, Render, Fly.io, etc.)
 
 ## 📝 License
 
