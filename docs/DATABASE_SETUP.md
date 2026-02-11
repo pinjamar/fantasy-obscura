@@ -1,8 +1,10 @@
 # Fantasy Obscura - Database Setup Guide
 
+> **Note**: This guide focuses on database initialization. For importing books via the API, see [BULK_IMPORT_GUIDE.md](./BULK_IMPORT_GUIDE.md). For system overview, see [00_START_HERE.md](./00_START_HERE.md).
+
 ## Step 1: Set Up Environment Variables
 
-Make sure your `.env` file has the correct Supabase credentials:
+Make sure your `.env.local` file has the correct Supabase credentials:
 
 ```env
 PUBLIC_SUPABASE_URL=https://yxrcperutfhemlmdszst.supabase.co
@@ -111,23 +113,41 @@ INSERT INTO public.books (title, slug, authors, cover_url, synopsis, page_count,
 
 ## Step 6: Test the API
 
-Create a test page or use the browser console to verify your setup:
+### Option A: Using BookHub Component (Recommended)
+
+The easiest way to test:
+
+```bash
+# 1. Start dev server
+npm run dev
+
+# 2. Add BookHub to a page
+# <BookHub client:load />
+
+# 3. Use the search interface to fetch books from Open Library
+```
+
+### Option B: Using Test Script
+
+```bash
+node test-api.js
+```
+
+### Option C: Programmatic Test
+
+Create a test page or use the browser console:
 
 ```typescript
 import { getBooks } from './src/lib/db/books';
 
 // Test fetching books
-const result = await getBooks(
-  {
+const result = await getBooks({
+  filters: {
     subgenres: ['Epic Fantasy'],
-    min_rating: 4.0,
+    minRating: 4.0,
   },
-  {
-    page: 1,
-    pageSize: 10,
-    sort: 'rating_desc',
-  },
-);
+  limit: 10,
+});
 
 console.log(result);
 ```
@@ -165,14 +185,16 @@ const book = await getBookBySlug('the-name-of-the-wind');
 
 ### Create a new book
 
+**Note**: For bulk imports, use the BookHub component or `/api/books` endpoint instead.
+
 ```typescript
 import { createBook } from '@/lib/db/books';
 
 const newBook = await createBook({
   title: 'A Wizard of Earthsea',
-  slug: 'a-wizard-of-earthsea',
   authors: ['Ursula K. Le Guin'],
   publication_year: 1968,
+  page_count: 183,
   subgenres: ['High Fantasy', 'Coming of Age'],
   tropes: ['Magic Academy', 'Quest'],
   magic_system: 'Soft Magic',
@@ -183,10 +205,17 @@ const newBook = await createBook({
 
 Check `src/lib/filters.ts` for all predefined filter options:
 
-- Subgenres (Epic Fantasy, Urban Fantasy, Cozy Fantasy, etc.)
-- Tropes (Found Family, Enemies to Lovers, Dragon Riders, etc.)
-- Magic Systems (Hard Magic, Soft Magic, No Magic)
-- Tones (Grimdark, Hopeful, Whimsical, etc.)
-- Pacing (Fast-paced, Slow-burn, Mixed)
-- Heat Levels (Clean, Fade to Black, Steamy, Spicy, Explicit)
-- Diversity Rep (LGBTQ+, POC, Disability Rep, etc.)
+- **Subgenres**: Epic Fantasy, Urban Fantasy, Cozy Fantasy, Dark Fantasy, Contemporary Fantasy, Paranormal Romance, Science Fantasy, Portal Fantasy, and more
+- **Tropes**: Found Family, Enemies to Lovers, Dragon Riders, Magic Academy, Chosen One, Time Travel, and 20+ more
+- **Magic Systems**: Hard Magic, Soft Magic, No Magic
+- **Tones**: Grimdark, Hopeful, Whimsical, Humorous, Romantic, Atmospheric, Dark, Adventurous, and more
+- **Pacing**: Fast-paced, Slow-burn, Mixed
+- **Heat Levels**: Clean, Closed Door, Sweet, Spicy, Steamy
+- **Diversity Rep**: LGBTQ+ Protagonist, POC Protagonist, Neurodivergent, Disability Rep, Deaf Character, and more
+
+## Next Steps
+
+1. **Verify setup worked**: Run `node test-api.js`
+2. **Import books**: Use BookHub component via `/api/search` and `/api/books`
+3. **Populate database**: See [BULK_IMPORT_GUIDE.md](./BULK_IMPORT_GUIDE.md)
+4. **Advanced queries**: Check [QUICK_REFERENCE.md](./QUICK_REFERENCE.md)

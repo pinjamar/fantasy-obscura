@@ -2,7 +2,21 @@
 
 Site dedicated to fantasy & sci-fi book lovers with reading orders, guides, and curated lists.
 
-## 🚀 Quick Start
+## � Documentation
+
+All documentation has been organized in the [`docs/`](./docs/) folder. **Start here**:
+
+- **[Quick Navigation](./docs/DOCUMENTATION_INDEX.md)** - Visual guide to all resources
+- **[Interactive Guide](./docs/docs-navigator.js)** - Run `node docs/docs-navigator.js` for personalized paths
+- **[Getting Started](./docs/00_START_HERE.md)** - Main entry point
+- **[Database Setup](./docs/DATABASE_SETUP.md)** - Initialize Supabase
+- **[Import Guide](./docs/BULK_IMPORT_GUIDE.md)** - How to add books
+- **[Quick Reference](./docs/QUICK_REFERENCE.md)** - Code examples & commands
+- **[System Architecture](./docs/SYSTEM_ARCHITECTURE.md)** - Deep dive into the system
+
+> **Tip**: Run `node docs/docs-navigator.js` to see an interactive guide tailored to your role!
+
+## �🚀 Quick Start
 
 ### Prerequisites
 

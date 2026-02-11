@@ -1,6 +1,14 @@
-import React, { useState } from 'react';
-import type { BookInput } from '../lib/types';
-import { createBook } from '../lib/db/books';
+import React, { useMemo, useState } from 'react';
+import type { BookInput, BookSearchResult } from '../lib/types';
+
+type Source = 'openlibrary' | 'googlebooks' | 'harvard' | 'bigbook';
+
+const sourceOptions: Array<{ value: Source; label: string }> = [
+  { value: 'openlibrary', label: 'Open Library' },
+  { value: 'googlebooks', label: 'Google Books' },
+  { value: 'harvard', label: 'Harvard GraphQL' },
+  { value: 'bigbook', label: 'Bigbook API' },
+];
 
 const emptyForm: BookInput = {
   title: '',
@@ -32,19 +40,66 @@ const parseNumber = (value: string) => {
 };
 
 const BookHub: React.FC = () => {
+  const [source, setSource] = useState<Source>('openlibrary');
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState<BookSearchResult[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [saveStatus, setSaveStatus] = useState<string | null>(null);
   const [form, setForm] = useState<BookInput>(emptyForm);
+
+  const hasResults = results.length > 0;
+
+  const handleSearch = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!query.trim()) return;
+
+    setLoading(true);
+    setError(null);
+    setResults([]);
+
+    try {
+      const res = await fetch(
+        `/api/search?source=${source}&q=${encodeURIComponent(query.trim())}`,
+      );
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Search failed');
+      setResults(data.items || []);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Search failed');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSave = async (payload: BookInput) => {
     setSaveStatus(null);
     try {
-      const book = await createBook(payload);
-      if (!book) throw new Error('Failed to create book');
-      setSaveStatus('✓ Book saved to database successfully!');
-      setForm(emptyForm);
+      const res = await fetch('/api/books', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Save failed');
+      setSaveStatus('✓ Saved to database.');
     } catch (err) {
       setSaveStatus(err instanceof Error ? err.message : 'Save failed');
     }
+  };
+
+  const handleResultSave = (book: BookSearchResult) => {
+    const payload: BookInput = {
+      title: book.title,
+      authors: book.authors || [],
+      cover_url: book.cover_url || undefined,
+      isbn: book.isbn || undefined,
+      synopsis: book.synopsis || undefined,
+      page_count: book.page_count ?? undefined,
+      publication_year: book.publication_year ?? undefined,
+      avg_rating: book.avg_rating ?? undefined,
+    };
+    void handleSave(payload);
   };
 
   const handleManualSubmit = (event: React.FormEvent) => {
@@ -65,14 +120,117 @@ const BookHub: React.FC = () => {
     };
 
     void handleSave(payload);
+    setForm(emptyForm);
   };
+
+  const quickStats = useMemo(() => {
+    const sources = results.reduce<Record<string, number>>((acc, item) => {
+      const key = item.source || 'unknown';
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, {});
+    return sources;
+  }, [results]);
 
   return (
     <div className="space-y-10">
       <section className="rounded-2xl border p-6">
-        <h2 className="text-xl font-semibold">Add a new book</h2>
+        <h2 className="text-xl font-semibold">🔍 Fetch from External APIs</h2>
         <p className="mt-2 text-sm text-zinc-600">
-          Manually add a fantasy book to your database with all the metadata.
+          Search Open Library, Google Books, Harvard GraphQL, or Bigbook and
+          bulk import results directly into your database.
+        </p>
+
+        <form
+          onSubmit={handleSearch}
+          className="mt-4 flex flex-col gap-3 sm:flex-row"
+        >
+          <select
+            value={source}
+            onChange={(event) => setSource(event.target.value as Source)}
+            className="rounded-lg border px-3 py-2 text-sm"
+          >
+            {sourceOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search by title, author, ISBN..."
+            className="flex-1 rounded-lg border px-3 py-2 text-sm"
+          />
+          <button
+            type="submit"
+            className="rounded-lg bg-black px-4 py-2 text-sm text-white hover:bg-zinc-800"
+            disabled={loading}
+          >
+            {loading ? 'Searching…' : 'Search'}
+          </button>
+        </form>
+
+        {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
+
+        {hasResults && (
+          <div className="mt-4 text-xs text-zinc-500">
+            {Object.entries(quickStats).map(([key, value]) => (
+              <span key={key} className="mr-3">
+                {key}: {value}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {results.map((book, index) => (
+            <article
+              key={`${book.source_id || index}`}
+              className="rounded-xl border p-4"
+            >
+              <div className="flex items-start gap-4">
+                {book.cover_url ? (
+                  <img
+                    src={book.cover_url}
+                    alt={book.title}
+                    className="h-24 w-16 rounded object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="h-24 w-16 rounded bg-zinc-100" />
+                )}
+                <div className="flex-1">
+                  <h3 className="font-semibold">{book.title}</h3>
+                  <p className="text-sm text-zinc-600">
+                    {book.authors?.join(', ') || 'Unknown author'}
+                  </p>
+                  <p className="text-xs text-zinc-500">
+                    {book.publication_year
+                      ? `Year: ${book.publication_year}`
+                      : 'Year unknown'}
+                    {book.page_count ? ` · ${book.page_count} pages` : ''}
+                  </p>
+                  {book.isbn && (
+                    <p className="text-xs text-zinc-500">ISBN: {book.isbn}</p>
+                  )}
+                </div>
+              </div>
+              <button
+                className="mt-4 rounded-lg border px-3 py-1 text-xs hover:bg-zinc-50"
+                onClick={() => handleResultSave(book)}
+              >
+                💾 Save to database
+              </button>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="rounded-2xl border p-6">
+        <h2 className="text-xl font-semibold">✍️ Manual Book Entry</h2>
+        <p className="mt-2 text-sm text-zinc-600">
+          Add a custom book that isn't in the external APIs.
         </p>
 
         <form
@@ -275,14 +433,16 @@ const BookHub: React.FC = () => {
               type="submit"
               className="rounded-lg bg-black px-4 py-2 text-sm text-white hover:bg-zinc-800"
             >
-              Save book to database
+              💾 Save to database
             </button>
           </div>
         </form>
 
         {saveStatus && (
           <p
-            className={`mt-3 text-sm ${saveStatus.startsWith('✓') ? 'text-green-600' : 'text-red-600'}`}
+            className={`mt-3 text-sm ${
+              saveStatus.startsWith('✓') ? 'text-green-600' : 'text-red-600'
+            }`}
           >
             {saveStatus}
           </p>
