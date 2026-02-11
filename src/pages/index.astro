@@ -1,8 +1,5 @@
 ---
 import Layout from "../components/Layout.astro";
-import { getCollection } from "astro:content";
-
-const books = await getCollection("books");
 ---
 
 <Layout title="Fantasy Obscura" description="Fantasy & sci-fi reading orders, lists, and guides.">
@@ -15,79 +12,90 @@ const books = await getCollection("books");
   </p>
 
   <div class="mt-8 grid gap-4 sm:grid-cols-3">
-    <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/epic/">
-      <div class="font-medium">Epic / High Fantasy</div>
-      <div class="text-sm text-zinc-600">Grand worlds with deep lore & ancient magic</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/epic/">
+      <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Epic / High Fantasy</div>
+        <div class="text-sm text-zinc-600">Grand worlds with deep lore & ancient magic</div>
+      </div>
     </a>
-    <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/romantasy/">
-      <div class="font-medium">Romantasy</div>
-      <div class="text-sm text-zinc-600">Fantasy with love stories and relationships</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/romantasy/">
+      <div class="absolute inset-0 bg-gradient-to-br from-rose-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Romantasy</div>
+        <div class="text-sm text-zinc-600">Fantasy with love stories and relationships</div>
+      </div>
     </a>
-        <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/young/">
-      <div class="font-medium">YA Fantasy</div>
-      <div class="text-sm text-zinc-600">Young adult & coming of age stories</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/young/">
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">YA Fantasy</div>
+        <div class="text-sm text-zinc-600">Young adult & coming of age stories</div>
+      </div>
     </a>   
    
-     <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/dark/">
-      <div class="font-medium">Dark Fantasy</div>
-      <div class="text-sm text-zinc-600">Blends fantasy with horror and brutality</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/dark/">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-100 to-zinc-100 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Dark Fantasy</div>
+        <div class="text-sm text-zinc-600">Blends fantasy with horror and brutality</div>
+      </div>
     </a>
-     <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/urban/">
-      <div class="font-medium">Urban / Contemporary Fantasy</div>
-      <div class="text-sm text-zinc-600">Magic hidden in the modern world</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/urban/">
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-violet-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Urban / Contemporary Fantasy</div>
+        <div class="text-sm text-zinc-600">Magic hidden in the modern world</div>
+      </div>
     </a>
-    </a> <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/grimdark/">
-      <div class="font-medium">Grimdark</div>
-      <div class="text-sm text-zinc-600">Ultra-dark, cynical world with antiheroes</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/grimdark/">
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-slate-100 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Grimdark</div>
+        <div class="text-sm text-zinc-600">Ultra-dark, cynical world with antiheroes</div>
+      </div>
     </a>
-      <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/historical/">
-      <div class="font-medium">Historical Fantasy</div>
-      <div class="text-sm text-zinc-600">Alternative history, often medieval with magic</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/historical/">
+      <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Historical Fantasy</div>
+        <div class="text-sm text-zinc-600">Alternative history, often medieval with magic</div>
+      </div>
     </a>
-     <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/paranormal/">
-      <div class="font-medium">Paranormal Fantasy</div>
-      <div class="text-sm text-zinc-600">Vampires, werewolves, witches & wizards</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/paranormal/">
+      <div class="absolute inset-0 bg-gradient-to-br from-red-50 to-rose-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Paranormal Fantasy</div>
+        <div class="text-sm text-zinc-600">Vampires, werewolves, witches & wizards</div>
+      </div>
     </a>
-     <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/mythology/">
-      <div class="font-medium">Mythic / Folklore & Fairy-Tales</div>
-      <div class="text-sm text-zinc-600">Inspired by myths, legends and folklore</div>
-      <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/cozy/">
-      <div class="font-medium">Cozy Fantasy</div>
-      <div class="text-sm text-zinc-600">Low conflict, heartwarming vibes</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/mythology/">
+      <div class="absolute inset-0 bg-gradient-to-br from-yellow-50 to-amber-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Mythic / Folklore & Fairy-Tales</div>
+        <div class="text-sm text-zinc-600">Inspired by myths, legends and folklore</div>
+      </div>
     </a>
-      <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/litrpg/">
-      <div class="font-medium">LitRPG / GameLit & Progression</div>
-      <div class="text-sm text-zinc-600">Literary role-playing story with progression</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/cozy/">
+      <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Cozy Fantasy</div>
+        <div class="text-sm text-zinc-600">Low conflict, heartwarming vibes</div>
+      </div>
     </a>
-      <a class="rounded-xl border p-4 hover:bg-zinc-50" href="/sci-fi/">
-      <div class="font-medium">Sci-Fi</div>
-      <div class="text-sm text-zinc-600">Space operas, cyberpunk, future worlds</div>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/litrpg/">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">LitRPG / GameLit & Progression</div>
+        <div class="text-sm text-zinc-600">Literary role-playing story with progression</div>
+      </div>
+    </a>
+    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/sci-fi/">
+      <div class="absolute inset-0 bg-gradient-to-br from-sky-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative">
+        <div class="font-medium">Sci-Fi</div>
+        <div class="text-sm text-zinc-600">Space operas, cyberpunk, future worlds</div>
+      </div>
     </a>    
   </div>
-
-  <section id="books" class="mt-12">
-    <h2 class="text-2xl font-semibold">Books to Read</h2>
-    <p class="mt-2 max-w-2xl text-zinc-700">
-      A quick list pulled from your book collection.
-    </p>
-
-    <div class="mt-6 grid gap-4 sm:grid-cols-2">
-      {books.map((book) => (
-        <article class="rounded-xl border p-4">
-          <h3 class="font-semibold">{book.data.title}</h3>
-          <p class="text-sm text-zinc-600">
-            {book.data.author} · {book.data.year}
-          </p>
-          {book.data.series && (
-            <p class="text-sm text-zinc-600">Series: {book.data.series}</p>
-          )}
-          <div class="mt-2 flex flex-wrap gap-2">
-            {book.data.tags.map((tag) => (
-              <span class="text-xs rounded-full bg-zinc-100 px-2 py-1">{tag}</span>
-            ))}
-          </div>
-        </article>
-      ))}
-    </div>
-  </section>
 </Layout>

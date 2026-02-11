@@ -13,10 +13,10 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@astrojs/node": "^9.0.4",
     "@astrojs/mdx": "^4.3.13",
+    "@astrojs/node": "^9.0.4",
     "@astrojs/react": "^4.4.2",
-    "@supabase/supabase-js": "^2.49.1",
+    "@supabase/supabase-js": "^2.95.3",
     "@tailwindcss/vite": "^4.1.18",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
