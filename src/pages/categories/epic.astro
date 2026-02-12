@@ -1,0 +1,45 @@
+---
+import Layout from "../../components/Layout.astro";
+import BookDisplay from "../../components/BookDisplay";
+---
+
+<Layout title="Epic / High Fantasy" description="Grand worlds with deep lore and ancient magic">
+  <div>
+    <h1 class="text-4xl font-bold tracking-tight">Epic / High Fantasy</h1>
+    <p class="mt-4 max-w-2xl text-zinc-600">
+      Grand worlds with intricate magic systems, complex politics, and epic quests. These stories span continents and generations.
+    </p>
+  </div>
+
+  <div class="mt-8">
+    <h2 class="text-2xl font-semibold mb-6">Featured Books</h2>
+    <BookDisplay client:load genre="Epic Fantasy" />
+  </div>
+
+  <div class="mt-12 grid gap-4 sm:grid-cols-3 p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg">
+    <div>
+      <div class="font-semibold text-purple-900">Characteristics</div>
+      <ul class="text-sm text-zinc-700 mt-2 space-y-1">
+        <li>• Vast, detailed world-building</li>
+        <li>• Multiple POV characters</li>
+        <li>• Epic scope & scale</li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-semibold text-purple-900">Themes</div>
+      <ul class="text-sm text-zinc-700 mt-2 space-y-1">
+        <li>• Good vs Evil</li>
+        <li>• Power & Corruption</li>
+        <li>• Destiny & Choice</li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-semibold text-purple-900">Best For</div>
+      <ul class="text-sm text-zinc-700 mt-2 space-y-1">
+        <li>• Long-term series</li>
+        <li>• Complex plots</li>
+        <li>• Immersive worlds</li>
+      </ul>
+    </div>
+  </div>
+</Layout>

@@ -28,4 +28,54 @@ import Layout from '../../components/Layout.astro';
 			<li>Ender’s Game — Orson Scott Card</li>
 		</ul>
 	</section>
+</Layout>---
+import Layout from '../../components/Layout.astro';
+import BookDisplay from '../../components/BookDisplay';
+---
+
+<Layout
+	title="Beginner Lists | Fantasy Obscura"
+	description="Simple starter lists for new fantasy and sci-fi readers."
+>
+	<h1 class="text-4xl font-bold tracking-tight">Beginner Lists</h1>
+	<p class="mt-4 max-w-2xl text-zinc-600">
+		Perfect fantasy books to start your reading journey. These are accessible, engaging, and loved by readers everywhere.
+	</p>
+
+	<div class="mt-8">
+		<h2 class="text-2xl font-semibold mb-6">Popular Fantasy Starters</h2>
+		<BookDisplay client:load />
+	</div>
+
+	<div class="mt-12 grid gap-4 sm:grid-cols-2 p-6 bg-blue-50 rounded-lg">
+		<div>
+			<div class="font-semibold text-blue-900">Why These Books?</div>
+			<ul class="text-sm text-zinc-700 mt-2 space-y-1">
+				<li>✓ Accessible world-building</li>
+				<li>✓ Engaging protagonists</li>
+				<li>✓ Fast-paced plots</li>
+				<li>✓ Not too long</li>
+			</ul>
+		</div>
+		<div>
+			<div class="font-semibold text-blue-900">Recommended Reading Path</div>
+			<ol class="text-sm text-zinc-700 mt-2 space-y-1">
+				<li>1. Start with YA Fantasy</li>
+				<li>2. Try Epic Fantasy classics</li>
+				<li>3. Explore Urban Fantasy</li>
+				<li>4. Dive into series</li>
+			</ol>
+		</div>
+	</div>
+</Layout>
+	</section>
+
+	<section class="mt-8">
+		<h2 class="text-xl font-semibold">Sci‑Fi Starters</h2>
+		<ul class="mt-4 list-disc pl-5 space-y-2 text-zinc-700">
+			<li>The Martian — Andy Weir</li>
+			<li>All Systems Red — Martha Wells</li>
+			<li>Ender’s Game — Orson Scott Card</li>
+		</ul>
+	</section>
 </Layout>

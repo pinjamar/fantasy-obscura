@@ -14,7 +14,11 @@ interface Book {
   created_at?: string;
 }
 
-const BookDisplay: React.FC = () => {
+interface BookDisplayProps {
+  genre?: string;
+}
+
+const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -28,7 +32,16 @@ const BookDisplay: React.FC = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        setBooks(data.items || []);
+        let filteredBooks = data.items || [];
+
+        // Filter by genre if provided
+        if (genre) {
+          filteredBooks = filteredBooks.filter((book: Book) =>
+            book.subgenres?.includes(genre),
+          );
+        }
+
+        setBooks(filteredBooks);
         setError(null);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to fetch books');
@@ -39,7 +52,7 @@ const BookDisplay: React.FC = () => {
     };
 
     fetchBooks();
-  }, []);
+  }, [genre]);
 
   if (loading) {
     return (

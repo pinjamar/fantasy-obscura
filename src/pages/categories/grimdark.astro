@@ -1,0 +1,18 @@
+---
+import Layout from "../../components/Layout.astro";
+import BookDisplay from "../../components/BookDisplay";
+---
+
+<Layout title="Grimdark" description="Ultra-dark, cynical fantasy with antiheroes">
+  <div>
+    <h1 class="text-4xl font-bold tracking-tight">Grimdark</h1>
+    <p class="mt-4 max-w-2xl text-zinc-600">
+      Brutal worlds, moral ambiguity, and characters who survive by any means necessary.
+    </p>
+  </div>
+
+  <div class="mt-8">
+    <h2 class="text-2xl font-semibold mb-6">Featured Books</h2>
+    <BookDisplay client:load genre="Grimdark" />
+  </div>
+</Layout>
