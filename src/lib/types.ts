@@ -10,6 +10,7 @@ export type Book = {
   page_count: number | null;
   publication_year: number | null;
   avg_rating: number | null;
+  audience: string | null;
   subgenres: string[] | null;
   tropes: string[] | null;
   magic_system: string | null;
@@ -32,6 +33,7 @@ export type BookInput = {
   page_count?: number | null;
   publication_year?: number | null;
   avg_rating?: number | null;
+  audience?: string | null;
   subgenres?: string[] | null;
   tropes?: string[] | null;
   magic_system?: string | null;
@@ -56,6 +58,7 @@ export type BookFilters = {
   tone?: string[];
   pacing?: string;
   heat_level?: string;
+  audience?: string;
   diversity_rep?: string[];
   min_rating?: number;
   max_rating?: number;

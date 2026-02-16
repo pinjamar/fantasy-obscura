@@ -15,6 +15,7 @@ const normalizeBook = (payload: BookInput) => {
     page_count: payload.page_count ?? null,
     publication_year: payload.publication_year ?? null,
     avg_rating: payload.avg_rating ?? null,
+    audience: payload.audience?.trim() || null,
     subgenres: payload.subgenres?.filter(Boolean) || null,
     tropes: payload.tropes?.filter(Boolean) || null,
     magic_system: payload.magic_system?.trim() || null,

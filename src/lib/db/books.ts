@@ -58,6 +58,9 @@ export async function getBooks(
     if (filters.heat_level) {
       query = query.eq('heat_level', filters.heat_level);
     }
+    if (filters.audience) {
+      query = query.eq('audience', filters.audience);
+    }
 
     // Range filters
     if (filters.min_rating !== undefined) {
@@ -191,11 +194,12 @@ export async function getFilterOptions(): Promise<{
   magicSystems: string[];
   pacings: string[];
   heatLevels: string[];
+  audiences: string[];
 }> {
   const { data } = await supabaseClient
     .from('books')
     .select(
-      'subgenres, tropes, tone, diversity_rep, magic_system, pacing, heat_level',
+      'subgenres, tropes, tone, diversity_rep, magic_system, pacing, heat_level, audience',
     );
 
   const subgenres = new Set<string>();
@@ -205,6 +209,7 @@ export async function getFilterOptions(): Promise<{
   const magicSystems = new Set<string>();
   const pacings = new Set<string>();
   const heatLevels = new Set<string>();
+  const audiences = new Set<string>();
 
   data?.forEach((book) => {
     book.subgenres?.forEach((s: string) => subgenres.add(s));
@@ -214,6 +219,7 @@ export async function getFilterOptions(): Promise<{
     if (book.magic_system) magicSystems.add(book.magic_system);
     if (book.pacing) pacings.add(book.pacing);
     if (book.heat_level) heatLevels.add(book.heat_level);
+    if (book.audience) audiences.add(book.audience);
   });
 
   return {
@@ -224,6 +230,7 @@ export async function getFilterOptions(): Promise<{
     magicSystems: Array.from(magicSystems).sort(),
     pacings: Array.from(pacings).sort(),
     heatLevels: Array.from(heatLevels).sort(),
+    audiences: Array.from(audiences).sort(),
   };
 }
 

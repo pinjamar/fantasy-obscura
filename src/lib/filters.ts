@@ -75,6 +75,8 @@ export const HEAT_LEVELS = [
   'Explicit',
 ] as const;
 
+export const AUDIENCES = ['Adult', 'Young Adult (YA)', "Children's"] as const;
+
 export const DIVERSITY_REP = [
   'LGBTQ+ Protagonist',
   'LGBTQ+ Side Characters',
@@ -125,6 +127,10 @@ export function isValidPacing(value: string): boolean {
 
 export function isValidHeatLevel(value: string): boolean {
   return HEAT_LEVELS.includes(value as any);
+}
+
+export function isValidAudience(value: string): boolean {
+  return AUDIENCES.includes(value as any);
 }
 
 export function isValidDiversityRep(value: string): boolean {
