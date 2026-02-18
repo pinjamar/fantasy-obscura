@@ -1,155 +1,76 @@
-# fantasy-obscura
+# Fantasy Obscura
 
-Site dedicated to fantasy & sci-fi book lovers with reading orders, guides, and curated lists.
+A guide site for fantasy and sci-fi book lovers — with curated reading lists, reading orders, creature references, and an interactive book recommendation tool.
 
-## � Documentation
-
-All documentation has been organized in the [`docs/`](./docs/) folder. **Start here**:
-
-- **[Quick Navigation](./docs/DOCUMENTATION_INDEX.md)** - Visual guide to all resources
-- **[Interactive Guide](./docs/docs-navigator.js)** - Run `node docs/docs-navigator.js` for personalized paths
-- **[Getting Started](./docs/00_START_HERE.md)** - Main entry point
-- **[Database Setup](./docs/DATABASE_SETUP.md)** - Initialize Supabase
-- **[Import Guide](./docs/BULK_IMPORT_GUIDE.md)** - How to add books
-- **[Quick Reference](./docs/QUICK_REFERENCE.md)** - Code examples & commands
-- **[System Architecture](./docs/SYSTEM_ARCHITECTURE.md)** - Deep dive into the system
-
-> **Tip**: Run `node docs/docs-navigator.js` to see an interactive guide tailored to your role!
-
-## �🚀 Quick Start
-
-### Prerequisites
-
-- Node.js 20+ (verify with `node --version`)
-
-### Installation
+## Quick Start
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-
-# Build for production
+npm run dev       # http://localhost:4321
 npm run build
-
-# Preview production build
 npm run preview
+npm run check     # TypeScript check
 ```
 
-The site will be available at `http://localhost:3000` during development.
+## Tech Stack
 
-## 🧱 Database (Supabase)
+- **Astro 5** with server output
+- **Cloudflare Pages** adapter (deployment target)
+- **React 19** for interactive components
+- **Tailwind CSS 4**
+- **Supabase** (PostgreSQL) for book database
+- **MDX** for content pages
 
-Apply the schema in [supabase/schema.sql](supabase/schema.sql) to your Supabase project.
+## Environment Variables
 
-Required environment variables:
-
-```
-SUPABASE_URL=
-SUPABASE_SERVICE_ROLE_KEY=
-
-PUBLIC_SUPABASE_URL=
-PUBLIC_SUPABASE_ANON_KEY=
-
-GOOGLE_BOOKS_API_KEY=
-HARVARD_GRAPHQL_URL=
-HARVARD_GRAPHQL_API_KEY=
-HARVARD_GRAPHQL_QUERY=
-
-BIGBOOK_API_BASE=
-BIGBOOK_API_KEY=
-BIGBOOK_API_SEARCH_PATH=/search
-```
-
-Notes:
-
-- `SUPABASE_SERVICE_ROLE_KEY` is used by the server API routes to insert records.
-- `PUBLIC_*` keys are used by the client if needed.
-- Harvard GraphQL requires you to supply a valid query in `HARVARD_GRAPHQL_QUERY`.
-- Bigbook endpoints are configurable with `BIGBOOK_API_BASE` and `BIGBOOK_API_SEARCH_PATH`.
-
-## 📁 Project Structure
+Create a `.env` file:
 
 ```
-fantasy-obscura/
-├── src/
-│   ├── components/       # Reusable Astro components
-│   ├── pages/           # Page routes (auto-generates URLs)
-│   ├── styles.css       # Global styles with Tailwind
-│   └── styles/          # Optional: additional stylesheets
-├── dist/                # Build output (generated)
-├── astro.config.mjs     # Astro configuration
-├── tailwind.config.mjs   # Tailwind CSS configuration
-└── package.json         # Project dependencies
+PUBLIC_SUPABASE_URL=your_supabase_project_url
+PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-## 📚 Adding Content
+## Database Setup
 
-### Creating a New Page
+Run the SQL in `supabase/schema.sql` in your Supabase SQL Editor to create the books table.
 
-Create `.astro` files in `src/pages/`:
+To seed the database with 20 curated fantasy books:
 
-```astro
----
-import Layout from "../components/Layout.astro";
----
-
-<Layout title="Your Title" description="Page description">
-  <h1>Your Content</h1>
-</Layout>
+```bash
+node seed-books.js
 ```
 
-### Creating an MDX Page
+## Project Structure
 
-Create `.mdx` files in `src/pages/` with frontmatter:
-
-```mdx
----
-title: Page Title
-description: Page description
----
-
-import Layout from '../../components/Layout.astro';
-
-export const { title, description } = frontmatter;
-
-<Layout title={title} description={description}>
-
-# Your Content Here
-
-</Layout>
+```
+src/
+├── components/
+│   ├── AlchemyTable.tsx   # Interactive book recommendation filters
+│   ├── BookDisplay.tsx    # Book grid with filtering
+│   ├── BookHub.tsx        # Admin book import/entry tool
+│   └── Layout.astro       # Base layout
+├── lib/
+│   ├── db/books.ts        # Supabase CRUD operations
+│   ├── database.types.ts  # Auto-generated Supabase types
+│   ├── filters.ts         # Predefined filter options
+│   ├── supabaseClient.ts  # Supabase client (anon)
+│   └── types.ts           # App type definitions
+└── pages/
+    ├── index.astro              # Home — category cards
+    ├── craft/index.astro        # Alchemy Table — book finder
+    ├── books/index.astro        # Book database hub
+    ├── beginner-lists/          # Starter reading lists
+    ├── reading-orders/          # Series reading orders (MDX)
+    ├── creatures/               # Creatures & races reference
+    ├── magic-system/            # Magic systems overview
+    ├── categories/              # 12 genre category pages
+    └── api/
+        ├── books.ts             # GET/POST books
+        └── craft.ts             # GET books by filter (Alchemy Table)
 ```
 
-## 🎨 Styling
+## Deployment
 
-- **Tailwind CSS 4** for utility-first styling
-- Import global styles in your Layout component
-- Use Tailwind classes directly in HTML
+Deployed to **Cloudflare Pages**. Push to `main` branch triggers automatic redeploy.
 
-## 🔧 Available Scripts
-
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run check` - Run type checking
-
-## 📦 Tech Stack
-
-- **Astro 5** - Static site generation
-- **Astro Node Adapter** - Server output for API routes
-- **React 19** - Interactive components (optional)
-- **Tailwind CSS 4** - Utility-first CSS
-- **MDX** - Markdown + JSX support
-- **TypeScript** - Type safety
-
-## 🌐 Deployment
-
-The project uses server output (Node adapter). Deploy the server build output:
-
-- Node hosting (Docker, VPS, Render, Fly.io, etc.)
-
-## 📝 License
-
-Create a LICENSE file as needed for your project.
+Set environment variables in Cloudflare Pages dashboard under Settings → Environment Variables.

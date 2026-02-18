@@ -21,6 +21,7 @@ export interface Database {
           page_count: number | null;
           publication_year: number | null;
           avg_rating: number | null;
+          audience: string | null;
           subgenres: string[] | null;
           tropes: string[] | null;
           magic_system: string | null;
@@ -42,6 +43,7 @@ export interface Database {
           page_count?: number | null;
           publication_year?: number | null;
           avg_rating?: number | null;
+          audience?: string | null;
           subgenres?: string[] | null;
           tropes?: string[] | null;
           magic_system?: string | null;
@@ -63,6 +65,7 @@ export interface Database {
           page_count?: number | null;
           publication_year?: number | null;
           avg_rating?: number | null;
+          audience?: string | null;
           subgenres?: string[] | null;
           tropes?: string[] | null;
           magic_system?: string | null;
