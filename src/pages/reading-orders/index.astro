@@ -1,19 +1,46 @@
 ---
 import Layout from '../../components/Layout.astro';
+
+const series = [
+  { slug: 'cosmere', name: 'Brandon Sanderson\'s Cosmere', books: '15+ books' },
+  { slug: 'witcher', name: 'The Witcher', books: '8 books' },
+  { slug: 'first-law', name: 'The First Law', books: '10 books' },
+  { slug: 'discworld', name: 'Discworld', books: '41 books' },
+  { slug: 'malazan', name: 'Malazan Book of the Fallen', books: '10 books' },
+  { slug: 'wheel-of-time', name: 'The Wheel of Time', books: '14 books' },
+  { slug: 'stormlight', name: 'The Stormlight Archive', books: '5 books' },
+  { slug: 'kingkiller', name: 'The Kingkiller Chronicle', books: '3 books' },
+];
 ---
 
 <Layout
   title="Reading Orders | Fantasy Obscura"
-  description="Clear, spoiler‑free reading orders."
+  description="Clear, spoiler-free reading orders for fantasy series."
 >
-  <h1 class="text-3xl font-semibold tracking-tight">Reading Orders</h1>
+  <h1 class="text-4xl font-bold tracking-tight">Reading Orders</h1>
   <p class="mt-4 max-w-2xl text-zinc-700">
-    Simple mockup lists you can expand later.
+    Complete reading orders for popular fantasy series. Each guide includes core books, optional reads, and supplementary material.
   </p>
 
-  <ul class="mt-6 list-disc pl-5 space-y-2 text-zinc-700">
-    <li>Dune — main series only</li>
-    <li>The Witcher — novels first</li>
-    <li>Discworld — recommended start points</li>
-  </ul>
+  <div class="mt-8 grid gap-4 sm:grid-cols-2">
+    {series.map((s) => (
+      <a
+        href={`/reading-orders/${s.slug}`}
+        class="group relative overflow-hidden rounded-lg border p-5 transition-all hover:shadow-lg hover:border-blue-300"
+      >
+        <div class="absolute inset-0 bg-linear-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="relative">
+          <div class="font-semibold text-lg">{s.name}</div>
+          <div class="mt-1 text-sm text-zinc-600">{s.books}</div>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <div class="mt-12 rounded-lg bg-blue-50 p-6">
+    <h2 class="font-semibold text-blue-900 mb-2">Reading Order Guide</h2>
+    <p class="text-sm text-zinc-700">
+      Our reading orders mark books as <strong>Core</strong> (essential), <strong>Optional</strong> (enriching but not required), or <strong>Extra</strong> (side stories and novellas). This helps you decide what to read based on your time and interest.
+    </p>
+  </div>
 </Layout>

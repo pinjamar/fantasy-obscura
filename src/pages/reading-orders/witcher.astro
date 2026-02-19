@@ -1,0 +1,77 @@
+---
+import Layout from '../../components/Layout.astro';
+import ReadingOrder from '../../components/ReadingOrder';
+
+const books = [
+  {
+    title: 'The Last Wish',
+    status: 'mandatory' as const,
+    note: 'Short story collection introducing Geralt. Start here.'
+  },
+  {
+    title: 'Sword of Destiny',
+    status: 'mandatory' as const,
+    note: 'More short stories, crucial character development.'
+  },
+  {
+    title: 'Blood of Elves',
+    status: 'mandatory' as const,
+    note: 'First novel in the main saga. Introduces Ciri.'
+  },
+  {
+    title: 'Time of Contempt',
+    status: 'mandatory' as const,
+    note: 'Continues the main saga.'
+  },
+  {
+    title: 'Baptism of Fire',
+    status: 'mandatory' as const,
+    note: 'The story intensifies.'
+  },
+  {
+    title: 'The Tower of Swallows',
+    status: 'mandatory' as const,
+    note: 'Penultimate book of the saga.'
+  },
+  {
+    title: 'Lady of the Lake',
+    status: 'mandatory' as const,
+    note: 'Epic conclusion to the main saga.'
+  },
+  {
+    title: 'Season of Storms',
+    status: 'optional' as const,
+    note: 'Standalone set between short stories. Read after the main saga.'
+  },
+];
+---
+
+<Layout
+  title="The Witcher Reading Order | Fantasy Obscura"
+  description="Complete reading order for The Witcher series by Andrzej Sapkowski."
+>
+  <div class="mb-6">
+    <a href="/reading-orders" class="text-sm text-blue-600 hover:underline">← Back to Reading Orders</a>
+  </div>
+
+  <h1 class="text-4xl font-bold tracking-tight">The Witcher Reading Order</h1>
+  <p class="mt-2 text-zinc-600">by Andrzej Sapkowski</p>
+
+  <div class="mt-8">
+    <ReadingOrder
+      books={books}
+      description="Start with the two short story collections before diving into the main saga. They introduce key characters and set up the world."
+      client:load
+    />
+  </div>
+
+  <div class="mt-12 rounded-lg border bg-zinc-50 p-6">
+    <h2 class="font-semibold mb-3">Why This Order?</h2>
+    <ul class="space-y-2 text-sm text-zinc-700">
+      <li>✓ The short stories were written first and introduce the world</li>
+      <li>✓ Many characters from the novels appear in the short stories first</li>
+      <li>✓ Season of Storms is a prequel but contains spoilers for the main saga</li>
+      <li>✓ This is the intended publication and chronological reading order</li>
+    </ul>
+  </div>
+</Layout>

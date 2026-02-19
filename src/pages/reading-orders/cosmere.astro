@@ -1,0 +1,124 @@
+---
+import Layout from '../../components/Layout.astro';
+import ReadingOrder from '../../components/ReadingOrder';
+
+const books = [
+  {
+    title: 'The Final Empire (Mistborn Era 1)',
+    status: 'mandatory' as const,
+    note: 'Best starting point. Introduces magic system and world-building.'
+  },
+  {
+    title: 'The Well of Ascension (Mistborn Era 1)',
+    status: 'mandatory' as const,
+    note: 'Continues the original Mistborn trilogy.'
+  },
+  {
+    title: 'The Hero of Ages (Mistborn Era 1)',
+    status: 'mandatory' as const,
+    note: 'Concludes the original Mistborn trilogy.'
+  },
+  {
+    title: 'Elantris',
+    status: 'optional' as const,
+    note: 'Standalone. Can be read anytime. Sanderson\'s first published novel.'
+  },
+  {
+    title: 'Warbreaker',
+    status: 'optional' as const,
+    note: 'Standalone. Has connections to Stormlight Archive.'
+  },
+  {
+    title: 'The Way of Kings (Stormlight 1)',
+    status: 'mandatory' as const,
+    note: 'Epic fantasy masterpiece. Read after Mistborn Era 1.'
+  },
+  {
+    title: 'Words of Radiance (Stormlight 2)',
+    status: 'mandatory' as const,
+    note: 'Continues Stormlight Archive.'
+  },
+  {
+    title: 'Edgedancer (Stormlight 2.5)',
+    status: 'supplementary' as const,
+    note: 'Novella. Read before Oathbringer.'
+  },
+  {
+    title: 'Oathbringer (Stormlight 3)',
+    status: 'mandatory' as const,
+    note: 'Third Stormlight book.'
+  },
+  {
+    title: 'The Alloy of Law (Mistborn Era 2)',
+    status: 'mandatory' as const,
+    note: 'Western-style Mistborn set 300 years later.'
+  },
+  {
+    title: 'Shadows of Self (Mistborn Era 2)',
+    status: 'mandatory' as const,
+    note: 'Continues Mistborn Era 2.'
+  },
+  {
+    title: 'The Bands of Mourning (Mistborn Era 2)',
+    status: 'mandatory' as const,
+    note: 'Mistborn Era 2 conclusion (for now).'
+  },
+  {
+    title: 'Dawnshard (Stormlight 3.5)',
+    status: 'supplementary' as const,
+    note: 'Novella. Read before Rhythm of War.'
+  },
+  {
+    title: 'Rhythm of War (Stormlight 4)',
+    status: 'mandatory' as const,
+    note: 'Fourth Stormlight book.'
+  },
+  {
+    title: 'The Lost Metal (Mistborn Era 2)',
+    status: 'mandatory' as const,
+    note: 'Final book of Mistborn Era 2.'
+  },
+];
+---
+
+<Layout
+  title="Cosmere Reading Order | Fantasy Obscura"
+  description="Complete reading order for Brandon Sanderson's Cosmere universe."
+>
+  <div class="mb-6">
+    <a href="/reading-orders" class="text-sm text-blue-600 hover:underline">← Back to Reading Orders</a>
+  </div>
+
+  <h1 class="text-4xl font-bold tracking-tight">Cosmere Reading Order</h1>
+  <p class="mt-2 text-zinc-600">by Brandon Sanderson</p>
+
+  <div class="mt-8">
+    <ReadingOrder
+      books={books}
+      description="The Cosmere is a connected universe spanning multiple worlds and magic systems. This order introduces you gradually while preserving reveals and connections."
+      client:load
+    />
+  </div>
+
+  <div class="mt-12 grid gap-6 sm:grid-cols-2">
+    <div class="rounded-lg border bg-zinc-50 p-6">
+      <h2 class="font-semibold mb-3">New to Sanderson?</h2>
+      <p class="text-sm text-zinc-700 mb-2">Start with:</p>
+      <ul class="space-y-1 text-sm text-zinc-700">
+        <li>• <strong>The Final Empire</strong> (easiest entry)</li>
+        <li>• <strong>Warbreaker</strong> (standalone, free on his site)</li>
+        <li>• <strong>The Way of Kings</strong> (if you want epic scope)</li>
+      </ul>
+    </div>
+
+    <div class="rounded-lg border bg-zinc-50 p-6">
+      <h2 class="font-semibold mb-3">Cosmere Connections</h2>
+      <ul class="space-y-2 text-sm text-zinc-700">
+        <li>✓ Each series can be read independently</li>
+        <li>✓ Connections become clearer as you read more</li>
+        <li>✓ Warbreaker connects heavily to Stormlight</li>
+        <li>✓ Secret History (not listed) has major Mistborn spoilers</li>
+      </ul>
+    </div>
+  </div>
+</Layout>

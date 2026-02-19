@@ -22,6 +22,7 @@ type Filters = {
   audience?: string;
   min_pages?: number;
   max_pages?: number;
+  publication_era?: string;
 };
 
 type VialOption = {
@@ -40,6 +41,15 @@ type Vial = {
   titleColor: string;
   options: VialOption[];
 };
+
+// Common fantasy tropes
+const TROPES = [
+  'Chosen One', 'Found Family', 'Quest', 'Prophecy', 'Political Intrigue',
+  'Dragon Riders', 'Magic Academy', 'Heist', 'Enemies to Lovers', 'Reluctant Hero',
+  'Secret Identity', 'Betrayal', 'Fae Court Drama', 'Time Travel', 'Portal Fantasy',
+  'Revenge', 'Forbidden Romance', 'Mentor Relationship', 'Tournament Arc', 'Dark Lord',
+  'Magical Artifacts', 'Hidden Royalty', 'Underdog', 'War', 'Rebellion',
+];
 
 const VIALS: Vial[] = [
   // Top row
@@ -118,14 +128,14 @@ const VIALS: Vial[] = [
   },
   // Right column (middle row)
   {
-    id: 'length',
-    label: 'Format / Length',
+    id: 'format',
+    label: 'Format',
     icon: '📏',
     border: 'border-orange-200',
     titleColor: 'text-orange-900',
     options: [
       { label: 'Epic Series', icon: '📚', bg: 'bg-orange-50', hover: 'hover:bg-orange-100', filters: { min_pages: 600 } },
-      { label: 'Trilogy', icon: '📖', bg: 'bg-yellow-50', hover: 'hover:bg-yellow-100', filters: { min_pages: 300, max_pages: 599 } },
+      { label: 'Trilogy / Tetralogy', icon: '📖', bg: 'bg-yellow-50', hover: 'hover:bg-yellow-100', filters: { min_pages: 300, max_pages: 599 } },
       { label: 'Standalone', icon: '📕', bg: 'bg-amber-50', hover: 'hover:bg-amber-100', filters: { max_pages: 450 } },
     ],
   },
@@ -190,15 +200,40 @@ const VIALS: Vial[] = [
       { label: 'Villain Lead', icon: '👑', bg: 'bg-zinc-50', hover: 'hover:bg-zinc-100', filters: { tropes: ['Betrayal'] } },
     ],
   },
+  {
+    id: 'length-bucket',
+    label: 'Length Bucket',
+    icon: '📐',
+    border: 'border-teal-200',
+    titleColor: 'text-teal-900',
+    options: [
+      { label: 'Quick Read (< 300 pages)', icon: '⚡', bg: 'bg-teal-50', hover: 'hover:bg-teal-100', filters: { max_pages: 300 } },
+      { label: 'Standard (300-500)', icon: '📖', bg: 'bg-cyan-50', hover: 'hover:bg-cyan-100', filters: { min_pages: 300, max_pages: 500 } },
+      { label: 'Epic (500+)', icon: '📚', bg: 'bg-blue-50', hover: 'hover:bg-blue-100', filters: { min_pages: 500 } },
+    ],
+  },
+  {
+    id: 'publication-era',
+    label: 'Publication Era',
+    icon: '📅',
+    border: 'border-violet-200',
+    titleColor: 'text-violet-900',
+    options: [
+      { label: 'Classic (Before 2000)', icon: '📜', bg: 'bg-violet-50', hover: 'hover:bg-violet-100', filters: { publication_era: 'classic' } },
+      { label: 'Modern (2000-2015)', icon: '📗', bg: 'bg-purple-50', hover: 'hover:bg-purple-100', filters: { publication_era: 'modern' } },
+      { label: 'Contemporary (2015+)', icon: '✨', bg: 'bg-fuchsia-50', hover: 'hover:bg-fuchsia-100', filters: { publication_era: 'contemporary' } },
+    ],
+  },
 ];
 
 const TOP = VIALS.slice(0, 4);
 const LEFT = VIALS.slice(4, 6);
 const RIGHT = VIALS.slice(6, 8);
-const BOTTOM = VIALS.slice(8, 12);
+const BOTTOM = VIALS.slice(8, 14);
 
 export default function AlchemyTable() {
   const [selections, setSelections] = useState<Record<string, number>>({});
+  const [selectedTropes, setSelectedTropes] = useState<string[]>([]);
   const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
   const [books, setBooks] = useState<Book[]>([]);
   const [bookIndex, setBookIndex] = useState(0);
@@ -213,6 +248,12 @@ export default function AlchemyTable() {
       }
       return { ...prev, [vialId]: optIdx };
     });
+  };
+
+  const toggleTrope = (trope: string) => {
+    setSelectedTropes((prev) =>
+      prev.includes(trope) ? prev.filter((t) => t !== trope) : [...prev, trope]
+    );
   };
 
   const transmute = async () => {
@@ -238,6 +279,12 @@ export default function AlchemyTable() {
       if (f.audience) merged.audience = f.audience;
       if (f.min_pages !== undefined) merged.min_pages = f.min_pages;
       if (f.max_pages !== undefined) merged.max_pages = f.max_pages;
+      if (f.publication_era) merged.publication_era = f.publication_era;
+    }
+
+    // Add selected tropes
+    if (selectedTropes.length) {
+      merged.tropes = [...(merged.tropes || []), ...selectedTropes];
     }
 
     const params = new URLSearchParams();
@@ -250,6 +297,7 @@ export default function AlchemyTable() {
     if (merged.audience) params.set('audience', merged.audience);
     if (merged.min_pages !== undefined) params.set('min_pages', String(merged.min_pages));
     if (merged.max_pages !== undefined) params.set('max_pages', String(merged.max_pages));
+    if (merged.publication_era) params.set('publication_era', merged.publication_era);
 
     try {
       const res = await fetch(`/api/craft?${params.toString()}`);
@@ -417,6 +465,34 @@ export default function AlchemyTable() {
 
   return (
     <div className="space-y-6">
+      {/* Trope Picker */}
+      <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-indigo-200 p-5 shadow-sm">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-2xl">🏷️</span>
+          <h3 className="font-semibold text-indigo-900">Pick a Trope</h3>
+          <span className="text-xs text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full ml-auto">Optional</span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {TROPES.map((trope) => {
+            const isSelected = selectedTropes.includes(trope);
+            return (
+              <button
+                key={trope}
+                onClick={() => toggleTrope(trope)}
+                className={`px-3 py-1 rounded-full text-xs transition-all ${
+                  isSelected
+                    ? 'bg-indigo-100 text-indigo-900 ring-2 ring-inset ring-indigo-400 font-medium'
+                    : 'bg-zinc-50 text-zinc-700 hover:bg-zinc-100'
+                }`}
+              >
+                {trope}
+                {isSelected && ' ✓'}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Top Row */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {TOP.map((v) => (
@@ -444,7 +520,7 @@ export default function AlchemyTable() {
       </div>
 
       {/* Bottom Row */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6">
         {BOTTOM.map((v) => (
           <VialCard key={v.id} vial={v} />
         ))}

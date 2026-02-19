@@ -1,5 +1,6 @@
 ---
 import Layout from "../components/Layout.astro";
+import CategoryGrid from "../components/CategoryGrid";
 ---
 
 <Layout title="Fantasy Obscura" description="Fantasy & sci-fi reading orders, lists, and guides.">
@@ -8,94 +9,8 @@ import Layout from "../components/Layout.astro";
   </h1>
 
   <p class="mt-4 max-w-2xl text-zinc-700">
-    Everything abut fantasy books.
+    Pick a category below to discover curated book lists, or explore our general recommendations.
   </p>
 
-  <div class="mt-8 grid gap-4 sm:grid-cols-3">
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/epic">
-      <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Epic / High Fantasy</div>
-        <div class="text-sm text-zinc-600">Grand worlds with deep lore & ancient magic</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/romantasy">
-      <div class="absolute inset-0 bg-gradient-to-br from-rose-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Romantasy</div>
-        <div class="text-sm text-zinc-600">Fantasy with love stories and relationships</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/young">
-      <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">YA Fantasy</div>
-        <div class="text-sm text-zinc-600">Young adult & coming of age stories</div>
-      </div>
-    </a>   
-   
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/dark">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-100 to-zinc-100 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Dark Fantasy</div>
-        <div class="text-sm text-zinc-600">Blends fantasy with horror and brutality</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/urban">
-      <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-violet-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Urban / Contemporary Fantasy</div>
-        <div class="text-sm text-zinc-600">Magic hidden in the modern world</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/grimdark">
-      <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-slate-100 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Grimdark</div>
-        <div class="text-sm text-zinc-600">Ultra-dark, cynical world with antiheroes</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/historical">
-      <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Historical Fantasy</div>
-        <div class="text-sm text-zinc-600">Alternative history, often medieval with magic</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/paranormal">
-      <div class="absolute inset-0 bg-gradient-to-br from-red-50 to-rose-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Paranormal Fantasy</div>
-        <div class="text-sm text-zinc-600">Vampires, werewolves, witches & wizards</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/mythology">
-      <div class="absolute inset-0 bg-gradient-to-br from-yellow-50 to-amber-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Mythic / Folklore & Fairy-Tales</div>
-        <div class="text-sm text-zinc-600">Inspired by myths, legends and folklore</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/cozy">
-      <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Cozy Fantasy</div>
-        <div class="text-sm text-zinc-600">Low conflict, heartwarming vibes</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/litrpg">
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">LitRPG / GameLit & Progression</div>
-        <div class="text-sm text-zinc-600">Literary role-playing story with progression</div>
-      </div>
-    </a>
-    <a class="group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg" href="/categories/sci-fi">
-      <div class="absolute inset-0 bg-gradient-to-br from-sky-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="relative">
-        <div class="font-medium">Sci-Fi</div>
-        <div class="text-sm text-zinc-600">Space operas, cyberpunk, future worlds</div>
-      </div>
-    </a>    
-  </div>
+  <CategoryGrid client:load />
 </Layout>

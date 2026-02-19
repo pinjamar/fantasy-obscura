@@ -1,0 +1,52 @@
+---
+import Layout from '../../components/Layout.astro';
+import ReadingOrder from '../../components/ReadingOrder';
+
+const books = [
+  { title: 'The Eye of the World', status: 'mandatory' as const, note: 'The journey begins. Very Tolkien-inspired at first.' },
+  { title: 'The Great Hunt', status: 'mandatory' as const, note: 'Horn of Valere. More world-building.' },
+  { title: 'The Dragon Reborn', status: 'mandatory' as const, note: 'Rand accepts his fate.' },
+  { title: 'The Shadow Rising', status: 'mandatory' as const, note: 'Many consider this the best.' },
+  { title: 'The Fires of Heaven', status: 'mandatory' as const, note: 'Tensions rise.' },
+  { title: 'Lord of Chaos', status: 'mandatory' as const, note: 'Dumai\'s Wells.' },
+  { title: 'A Crown of Swords', status: 'mandatory' as const, note: 'Political intrigue.' },
+  { title: 'The Path of Daggers', status: 'mandatory' as const, note: 'The "slog" begins for some.' },
+  { title: 'Winter\'s Heart', status: 'mandatory' as const, note: 'Major event at the end.' },
+  { title: 'Crossroads of Twilight', status: 'mandatory' as const, note: 'Slowest book. Stay strong.' },
+  { title: 'Knife of Dreams', status: 'mandatory' as const, note: 'Jordan\'s last solo book. Picks up pace.' },
+  { title: 'The Gathering Storm', status: 'mandatory' as const, note: 'Sanderson takes over. Great.' },
+  { title: 'Towers of Midnight', status: 'mandatory' as const, note: 'Parallel timeline to Gathering Storm.' },
+  { title: 'A Memory of Light', status: 'mandatory' as const, note: 'Epic finale. Tarmon Gai\'don.' },
+];
+---
+
+<Layout
+  title="The Wheel of Time Reading Order | Fantasy Obscura"
+  description="Reading order for The Wheel of Time by Robert Jordan."
+>
+  <div class="mb-6">
+    <a href="/reading-orders" class="text-sm text-blue-600 hover:underline">← Back to Reading Orders</a>
+  </div>
+
+  <h1 class="text-4xl font-bold tracking-tight">The Wheel of Time Reading Order</h1>
+  <p class="mt-2 text-zinc-600">by Robert Jordan & Brandon Sanderson</p>
+
+  <div class="mt-8">
+    <ReadingOrder
+      books={books}
+      description="Read in publication order. All 14 books are essential to the story. Be prepared for the 'slog' in books 8-10."
+      client:load
+    />
+  </div>
+
+  <div class="mt-12 rounded-lg border bg-zinc-50 p-6">
+    <h2 class="font-semibold mb-3">What to Know</h2>
+    <ul class="space-y-2 text-sm text-zinc-700">
+      <li>✓ 14 books, ~11,000 pages total — massive commitment</li>
+      <li>✓ Books 1-6 are excellent, 7-10 slow down (the "slog")</li>
+      <li>✓ Books 11-14 pick up pace dramatically</li>
+      <li>✓ Robert Jordan died; Brandon Sanderson finished the series</li>
+      <li>✓ New Spring prequel can be read anytime after book 10</li>
+    </ul>
+  </div>
+</Layout>
