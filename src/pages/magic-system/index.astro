@@ -1,24 +1,15 @@
 ---
 import Layout from '../../components/Layout.astro';
+import BookHub from '../../components/BookHub';
 ---
 
-<Layout
-  title="Magic Systems | Fantasy Obscura"
-  description="A quick overview of magic system types."
->
-  <h1 class="text-3xl font-semibold tracking-tight">Magic Systems</h1>
-  <p class="mt-4 max-w-2xl text-zinc-700">
-    Mockup content for now. Add real articles later.
+<Layout title="Magic Systems | Fantasy Obscura" description="Search and store books from multiple APIs.">
+  <h1 class="text-3xl font-semibold tracking-tight">Book database</h1>
+  <p class="mt-2 max-w-2xl text-zinc-700">
+    Pull titles from Open Library, Google Books, Harvard GraphQL, or Bigbook — then save or add manual entries.
   </p>
 
-  <div class="mt-6 grid gap-4 sm:grid-cols-2">
-    <div class="rounded-xl border p-4">
-      <div class="font-medium">Hard Magic</div>
-      <p class="text-sm text-zinc-600 mt-2">Clear rules, strict limits.</p>
-    </div>
-    <div class="rounded-xl border p-4">
-      <div class="font-medium">Soft Magic</div>
-      <p class="text-sm text-zinc-600 mt-2">Mysterious and flexible.</p>
-    </div>
+  <div class="mt-8">
+    <BookHub client:load />
   </div>
 </Layout>

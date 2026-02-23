@@ -42,13 +42,36 @@ type Vial = {
   options: VialOption[];
 };
 
-// Common fantasy tropes
+// Tropes derived from the actual book database
 const TROPES = [
-  'Chosen One', 'Found Family', 'Quest', 'Prophecy', 'Political Intrigue',
-  'Dragon Riders', 'Magic Academy', 'Heist', 'Enemies to Lovers', 'Reluctant Hero',
-  'Secret Identity', 'Betrayal', 'Fae Court Drama', 'Time Travel', 'Portal Fantasy',
-  'Revenge', 'Forbidden Romance', 'Mentor Relationship', 'Tournament Arc', 'Dark Lord',
-  'Magical Artifacts', 'Hidden Royalty', 'Underdog', 'War', 'Rebellion',
+  'Anti-Hero',
+  'Betrayal',
+  'Chosen One',
+  'Coming of Age',
+  'Curse Breaking',
+  'Dark Lord',
+  'Dragon Riders',
+  'Dragons',
+  'Enemies to Lovers',
+  'Fae Court Drama',
+  'Forbidden Romance',
+  'Found Family',
+  'Heist',
+  'Magic Academy',
+  'Mentor',
+  'Mentor Dies',
+  'Moral Ambiguity',
+  'Political Intrigue',
+  'Portal Fantasy',
+  'Prophecy',
+  'Quest',
+  'Reluctant Hero',
+  'Revenge Plot',
+  'Secret Identity',
+  'Slow Burn',
+  'Survival',
+  'Tournament Arc',
+  'War',
 ];
 
 const VIALS: Vial[] = [

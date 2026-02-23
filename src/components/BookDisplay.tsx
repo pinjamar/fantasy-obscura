@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 
 interface Book {
   id: string;
@@ -18,10 +18,48 @@ interface BookDisplayProps {
   genre?: string;
 }
 
+type SortKey = 'title-asc' | 'title-desc' | 'rating-desc' | 'newest' | 'oldest' | 'shortest' | 'longest' | 'author-asc';
+
+const SORT_OPTIONS: { key: SortKey; label: string; icon: string }[] = [
+  { key: 'title-asc',    label: 'A → Z',      icon: '🔤' },
+  { key: 'title-desc',   label: 'Z → A',      icon: '🔡' },
+  { key: 'author-asc',   label: 'By Author',  icon: '✍️' },
+  { key: 'rating-desc',  label: 'Top Rated',  icon: '⭐' },
+  { key: 'newest',       label: 'Newest',     icon: '🗓️' },
+  { key: 'oldest',       label: 'Oldest',     icon: '📜' },
+  { key: 'shortest',     label: 'Shortest',   icon: '⚡' },
+  { key: 'longest',      label: 'Longest',    icon: '📚' },
+];
+
+function sortBooks(books: Book[], key: SortKey): Book[] {
+  const sorted = [...books];
+  switch (key) {
+    case 'title-asc':
+      return sorted.sort((a, b) => a.title.localeCompare(b.title));
+    case 'title-desc':
+      return sorted.sort((a, b) => b.title.localeCompare(a.title));
+    case 'rating-desc':
+      return sorted.sort((a, b) => (b.avg_rating ?? 0) - (a.avg_rating ?? 0));
+    case 'newest':
+      return sorted.sort((a, b) => (b.publication_year ?? 0) - (a.publication_year ?? 0));
+    case 'oldest':
+      return sorted.sort((a, b) => (a.publication_year ?? 9999) - (b.publication_year ?? 9999));
+    case 'shortest':
+      return sorted.sort((a, b) => (a.page_count ?? 9999) - (b.page_count ?? 9999));
+    case 'longest':
+      return sorted.sort((a, b) => (b.page_count ?? 0) - (a.page_count ?? 0));
+    case 'author-asc':
+      return sorted.sort((a, b) => (a.authors[0] ?? '').localeCompare(b.authors[0] ?? ''));
+    default:
+      return sorted;
+  }
+}
+
 const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [sort, setSort] = useState<SortKey>('rating-desc');
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -34,7 +72,6 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
         const data = await response.json();
         let filteredBooks = data.items || [];
 
-        // Filter by genre if provided
         if (genre) {
           filteredBooks = filteredBooks.filter((book: Book) =>
             book.subgenres?.includes(genre),
@@ -53,6 +90,8 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
 
     fetchBooks();
   }, [genre]);
+
+  const sortedBooks = useMemo(() => sortBooks(books, sort), [books, sort]);
 
   if (loading) {
     return (
@@ -85,24 +124,34 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
 
   return (
     <div>
-      <div className="mb-6">
-        <h2 className="text-2xl font-semibold">
-          Books in Database ({books.length})
-        </h2>
-        <p className="text-sm text-zinc-600 mt-1">
-          Displaying all books from your collection
-        </p>
+      {/* Sort bar */}
+      <div className="flex flex-wrap items-center gap-2 mb-6">
+        <span className="text-sm text-zinc-500 mr-1">Sort:</span>
+        {SORT_OPTIONS.map((opt) => (
+          <button
+            key={opt.key}
+            onClick={() => setSort(opt.key)}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all ${
+              sort === opt.key
+                ? 'bg-zinc-900 text-white font-medium'
+                : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
+            }`}
+          >
+            <span>{opt.icon}</span>
+            {opt.label}
+          </button>
+        ))}
+        <span className="ml-auto text-xs text-zinc-400">{sortedBooks.length} books</span>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {books.map((book) => (
+        {sortedBooks.map((book) => (
           <div
             key={book.id}
             className="border rounded-lg overflow-hidden bg-white hover:shadow-lg transition-shadow"
           >
-            {/* Cover Image */}
             {book.cover_url ? (
-              <div className="relative h-48 bg-gradient-to-br from-purple-200 to-blue-200 overflow-hidden">
+              <div className="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 overflow-hidden">
                 <img
                   src={book.cover_url}
                   alt={book.title}
@@ -113,12 +162,11 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
                 />
               </div>
             ) : (
-              <div className="h-48 bg-gradient-to-br from-purple-200 to-blue-200 flex items-center justify-center">
+              <div className="h-48 bg-linear-to-br from-purple-200 to-blue-200 flex items-center justify-center">
                 <span className="text-purple-400 text-sm">No cover</span>
               </div>
             )}
 
-            {/* Book Info */}
             <div className="p-4">
               <h3 className="font-semibold text-lg line-clamp-2 mb-1">
                 {book.title}
@@ -130,7 +178,6 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
                   : 'Unknown author'}
               </p>
 
-              {/* Metadata Grid */}
               <div className="grid grid-cols-2 gap-2 text-xs mb-3">
                 {book.publication_year && (
                   <div>
@@ -163,16 +210,15 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
                 )}
               </div>
 
-              {/* Subgenres */}
               {book.subgenres && book.subgenres.length > 0 && (
                 <div className="mb-3">
                   <div className="flex flex-wrap gap-1">
-                    {book.subgenres.slice(0, 3).map((genre) => (
+                    {book.subgenres.slice(0, 3).map((g) => (
                       <span
-                        key={genre}
+                        key={g}
                         className="inline-block bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded"
                       >
-                        {genre}
+                        {g}
                       </span>
                     ))}
                     {book.subgenres.length > 3 && (
@@ -184,7 +230,6 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
                 </div>
               )}
 
-              {/* Synopsis */}
               {book.synopsis && (
                 <p className="text-xs text-zinc-600 line-clamp-3">
                   {book.synopsis}

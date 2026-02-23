@@ -1,15 +1,16 @@
 ---
 import Layout from '../../components/Layout.astro';
-import BookHub from '../../components/BookHub';
+import CategoryGrid from '../../components/CategoryGrid';
 ---
 
-<Layout title="Book Database | Fantasy Obscura" description="Search and store books from multiple APIs.">
-  <h1 class="text-3xl font-semibold tracking-tight">Book database</h1>
-  <p class="mt-2 max-w-2xl text-zinc-700">
-    Pull titles from Open Library, Google Books, Harvard GraphQL, or Bigbook — then save or add manual entries.
+<Layout title="Start Here | Fantasy Obscura" description="Fantasy & sci-fi reading orders, lists, and guides.">
+  <h1 class="text-3xl font-semibold tracking-tight">
+    Fantasy & Sci-Fi guides that get to the point.
+  </h1>
+
+  <p class="mt-4 max-w-2xl text-zinc-700">
+    Pick a category below to discover curated book lists, or explore our general recommendations.
   </p>
 
-  <div class="mt-8">
-    <BookHub client:load />
-  </div>
+  <CategoryGrid client:load />
 </Layout>
