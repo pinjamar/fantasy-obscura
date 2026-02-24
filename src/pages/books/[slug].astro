@@ -1,13 +1,18 @@
 ---
 import Layout from '../../components/Layout.astro';
 import { getBookBySlug, authorToSlug } from '../../lib/db/books';
+import { getApprovedTags } from '../../lib/db/tags';
 import BookmarkButton from '../../components/BookmarkButton';
+import CommunityTags from '../../components/CommunityTags';
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect('/books');
 
 const book = await getBookBySlug(slug);
 if (!book) return new Response(null, { status: 404, statusText: 'Not Found' });
+
+const approvedTags = await getApprovedTags(book.id);
+const userEmail = Astro.locals.user?.email ?? null;
 
 const DARKNESS = [
   null,
@@ -22,16 +27,9 @@ const darkness = book.darkness_level != null && book.darkness_level >= 1
   ? DARKNESS[book.darkness_level] ?? null
   : null;
 
-const amazonUrl    = `https://www.amazon.com/s?k=${encodeURIComponent((book.title ?? '') + ' ' + (book.authors?.[0] ?? ''))}`;
-const goodreadsUrl = `https://www.goodreads.com/search?q=${encodeURIComponent(book.title ?? '')}`;
-const bookshopUrl  = `https://bookshop.org/search?keywords=${encodeURIComponent(book.title ?? '')}`;
+const amazonUrl   = `https://www.amazon.com/s?k=${encodeURIComponent((book.title ?? '') + ' ' + (book.authors?.[0] ?? ''))}`;
+const bookshopUrl = `https://bookshop.org/search?keywords=${encodeURIComponent(book.title ?? '')}`;
 
-// All curated tags pooled for the community tags section seed
-const communityTags = [
-  ...(book.subgenres ?? []),
-  ...(book.tropes ?? []),
-  ...(book.tone ?? []),
-];
 
 const metaDescription = book.synopsis
   ? book.synopsis.slice(0, 160)
@@ -82,10 +80,7 @@ const metaDescription = book.synopsis
           class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 text-sm font-semibold transition-colors">
           🏪 Bookshop.org
         </a>
-        <a href={goodreadsUrl} target="_blank" rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-sm font-semibold transition-colors">
-          📚 Goodreads
-        </a>
+        <BookmarkButton client:load bookId={book.id} size="md" className="w-full justify-center rounded-xl py-2.5" />
       </div>
     </div>
 
@@ -163,20 +158,16 @@ const metaDescription = book.synopsis
         </div>
       )}
 
-      <!-- Bookmark button -->
-      <div class="mt-6">
-        <BookmarkButton client:load bookId={book.id} size="md" />
-      </div>
+      <!-- ── Synopsis ──────────────────────────────────────────── -->
+      {book.synopsis && (
+        <div class="mt-6">
+          <h2 class="text-lg font-semibold text-zinc-900 mb-3">Synopsis</h2>
+          <p class="text-zinc-700 leading-relaxed text-[15px]">{book.synopsis}</p>
+        </div>
+      )}
+
     </div>
   </div>
-
-  <!-- ── Synopsis ──────────────────────────────────────────────── -->
-  {book.synopsis && (
-    <section class="mb-12">
-      <h2 class="text-lg font-semibold text-zinc-900 mb-3">Synopsis</h2>
-      <p class="text-zinc-700 leading-relaxed text-[15px] max-w-3xl">{book.synopsis}</p>
-    </section>
-  )}
 
   <!-- ── Tags grid ─────────────────────────────────────────────── -->
   {(book.subgenres?.length || book.tropes?.length || book.tone?.length || book.diversity_rep?.length) && (
@@ -224,46 +215,14 @@ const metaDescription = book.synopsis
     </section>
   )}
 
-  <!-- ── Community Tags ─────────────────────────────────────────
-       Architecture: When auth lands, add a `book_tags` table:
-         (book_id uuid, tag text, user_id uuid, votes int, created_at timestamptz)
-       Curated tags stay in their existing columns; community tags
-       join from the new table. No books table restructuring needed.
-  ────────────────────────────────────────────────────────────── -->
-  <section class="mb-12 rounded-2xl border bg-zinc-50 p-6">
-    <div class="flex items-start justify-between mb-5">
-      <div>
-        <h2 class="text-lg font-semibold text-zinc-900">Community Tags</h2>
-        <p class="text-sm text-zinc-500 mt-0.5">Tags help readers find this book by vibe, content, and theme</p>
-      </div>
-      <span class="shrink-0 ml-4 text-xs bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full font-medium">Coming soon</span>
-    </div>
-
-    {communityTags.length > 0 && (
-      <div class="flex flex-wrap gap-2 mb-5">
-        {communityTags.map((tag) => (
-          <span class="flex items-center px-3 py-1.5 bg-white border text-zinc-700 rounded-full text-sm shadow-xs hover:bg-zinc-50 transition-colors cursor-default">
-            {tag}
-          </span>
-        ))}
-      </div>
-    )}
-
-    <div class="flex items-center gap-4 p-4 rounded-xl border border-dashed border-zinc-200 bg-white">
-      <span class="text-2xl shrink-0">🏷️</span>
-      <div class="min-w-0">
-        <p class="text-sm font-medium text-zinc-700">Know a better tag for this book?</p>
-        <p class="text-xs text-zinc-500 mt-0.5">Sign in to suggest tags and help the community discover great reads.</p>
-      </div>
-      <button
-        disabled
-        class="shrink-0 ml-auto px-4 py-1.5 rounded-full bg-zinc-200 text-zinc-400 text-sm font-medium cursor-not-allowed whitespace-nowrap"
-        title="Auth coming soon"
-      >
-        Sign in to tag
-      </button>
-    </div>
-  </section>
+  <!-- ── Community Tags ─────────────────────────────────────────── -->
+  <CommunityTags
+    client:load
+    bookId={book.id}
+    bookSlug={slug}
+    initialTags={approvedTags}
+    userEmail={userEmail}
+  />
 
   <!-- ── Footer CTA ────────────────────────────────────────────── -->
   <div class="border-t pt-8 flex flex-wrap items-center gap-4">

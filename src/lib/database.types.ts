@@ -9,6 +9,35 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      book_tags: {
+        Row: {
+          id: string;
+          book_id: string;
+          tag_slug: string;
+          tag_name: string;
+          user_id: string;
+          approved: boolean;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          book_id: string;
+          tag_slug: string;
+          tag_name: string;
+          user_id: string;
+          approved?: boolean;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          book_id?: string;
+          tag_slug?: string;
+          tag_name?: string;
+          user_id?: string;
+          approved?: boolean;
+          created_at?: string;
+        };
+      };
       books: {
         Row: {
           id: string;
