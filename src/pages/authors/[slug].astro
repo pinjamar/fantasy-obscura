@@ -1,0 +1,206 @@
+---
+import Layout from '../../components/Layout.astro';
+import { getAllAuthors, getBooksByAuthor, authorToSlug } from '../../lib/db/books';
+
+const { slug } = Astro.params;
+
+if (!slug) return Astro.redirect('/authors/');
+
+// Find the author whose slug matches
+const allAuthors = await getAllAuthors();
+const author = allAuthors.find((a) => a.slug === slug);
+
+if (!author) return new Response(null, { status: 404, statusText: 'Not Found' });
+
+const books = await getBooksByAuthor(author.name);
+
+// Aggregate stats from books
+const allSubgenres = books.flatMap((b) => b.subgenres ?? []);
+const allTropes   = books.flatMap((b) => b.tropes ?? []);
+const allTones    = books.flatMap((b) => b.tone ?? []);
+
+function topN(arr: string[], n: number): string[] {
+  const counts = new Map<string, number>();
+  for (const item of arr) counts.set(item, (counts.get(item) ?? 0) + 1);
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, n).map(([v]) => v);
+}
+
+const topGenres = topN(allSubgenres, 6);
+const topTropes = topN(allTropes, 6);
+const topTones  = topN(allTones, 4);
+
+const ratingsArr = books.map((b) => b.avg_rating).filter((r): r is number => r != null);
+const overallRating = ratingsArr.length
+  ? (ratingsArr.reduce((a, b) => a + b, 0) / ratingsArr.length).toFixed(2)
+  : null;
+
+const seriesSet = new Set(books.map((b) => b.series).filter(Boolean));
+const hasSeries = seriesSet.size > 0;
+
+// Avatar colour — deterministic from name
+const palette = [
+  'from-purple-500 to-indigo-500', 'from-blue-500 to-cyan-500',
+  'from-emerald-500 to-teal-500',  'from-amber-500 to-orange-500',
+  'from-rose-500 to-pink-500',     'from-fuchsia-500 to-purple-500',
+];
+let h = 0;
+for (const c of author.name) h = (h * 31 + c.charCodeAt(0)) & 0xff;
+const avatarGradient = palette[h % palette.length];
+
+const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
+const DARKNESS_LABELS  = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
+
+const metaDescription = `Explore all ${books.length} fantasy books by ${author.name} on Fantasy Obscura — genres, tropes, and darkness ratings.`;
+---
+
+<Layout title={`${author.name} | Fantasy Obscura`} description={metaDescription}>
+  <!-- Breadcrumb -->
+  <nav class="text-sm text-zinc-500 mb-6">
+    <a href="/authors/" class="hover:underline">Authors</a>
+    <span class="mx-2">›</span>
+    <span class="text-zinc-700">{author.name}</span>
+  </nav>
+
+  <!-- Author hero -->
+  <div class="flex flex-col sm:flex-row gap-6 items-start mb-10">
+    <!-- Avatar -->
+    <div class={`shrink-0 w-24 h-24 rounded-2xl bg-linear-to-br ${avatarGradient} flex items-center justify-center text-white font-bold text-4xl shadow-lg`}>
+      {author.name[0].toUpperCase()}
+    </div>
+
+    <!-- Name + stats -->
+    <div class="flex-1">
+      <h1 class="text-3xl font-bold tracking-tight text-zinc-900">{author.name}</h1>
+
+      <div class="mt-3 flex flex-wrap gap-4 text-sm text-zinc-600">
+        <span>
+          <span class="font-semibold text-zinc-900">{books.length}</span> {books.length === 1 ? 'book' : 'books'}
+        </span>
+        {overallRating && (
+          <span>
+            <span class="font-semibold text-zinc-900">★ {overallRating}</span> avg rating
+          </span>
+        )}
+        {hasSeries && (
+          <span>
+            <span class="font-semibold text-zinc-900">{seriesSet.size}</span> {seriesSet.size === 1 ? 'series' : 'series'}
+          </span>
+        )}
+      </div>
+
+      <!-- Top genres -->
+      {topGenres.length > 0 && (
+        <div class="mt-4 flex flex-wrap gap-2">
+          {topGenres.map((g) => (
+            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">{g}</span>
+          ))}
+        </div>
+      )}
+
+      <!-- Top tropes -->
+      {topTropes.length > 0 && (
+        <div class="mt-2 flex flex-wrap gap-2">
+          {topTropes.map((t) => (
+            <span class="px-3 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-sm">{t}</span>
+          ))}
+        </div>
+      )}
+
+      <!-- Top tones -->
+      {topTones.length > 0 && (
+        <div class="mt-2 flex flex-wrap gap-2">
+          {topTones.map((t) => (
+            <span class="px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full text-sm">{t}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+
+  <!-- Books grid -->
+  <h2 class="text-xl font-semibold mb-4">Books</h2>
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {books.map((book) => {
+      const href = book.slug ? `/books/${book.slug}/` : null;
+      const dl   = (book.darkness_level != null && book.darkness_level >= 1) ? book.darkness_level : null;
+
+      const card = (
+        <div class="border rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow">
+          <!-- Cover -->
+          {book.cover_url ? (
+            <div class="relative h-44 bg-linear-to-br from-purple-100 to-blue-100 overflow-hidden">
+              <img
+                src={book.cover_url}
+                alt={book.title}
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none'"
+              />
+              {dl != null && (
+                <div class="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                  {DARKNESS_CANDLES[dl]}
+                </div>
+              )}
+            </div>
+          ) : (
+            <div class="relative h-44 bg-linear-to-br from-purple-100 to-blue-100 flex items-center justify-center">
+              <span class="text-purple-300 text-sm">No cover</span>
+              {dl != null && (
+                <div class="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
+                  {DARKNESS_CANDLES[dl]}
+                </div>
+              )}
+            </div>
+          )}
+
+          <!-- Info -->
+          <div class="p-4">
+            <h3 class="font-semibold leading-tight mb-1">{book.title}</h3>
+
+            {book.series && (
+              <p class="text-xs text-indigo-600 font-medium mb-1">
+                {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
+              </p>
+            )}
+
+            {dl != null && (
+              <p class="text-xs text-zinc-500 mb-2">{DARKNESS_CANDLES[dl]} {DARKNESS_LABELS[dl]}</p>
+            )}
+
+            <div class="flex gap-3 text-xs text-zinc-500">
+              {book.publication_year && <span>{book.publication_year}</span>}
+              {book.page_count && <span>{book.page_count} pp.</span>}
+              {book.avg_rating && <span>★ {book.avg_rating.toFixed(1)}</span>}
+            </div>
+
+            {book.subgenres && book.subgenres.length > 0 && (
+              <div class="mt-2 flex flex-wrap gap-1">
+                {book.subgenres.slice(0, 2).map((g) => (
+                  <span class="text-xs bg-purple-50 text-purple-700 px-1.5 py-0.5 rounded">{g}</span>
+                ))}
+              </div>
+            )}
+
+            {href && (
+              <p class="text-xs text-purple-600 font-medium mt-3">View details →</p>
+            )}
+          </div>
+        </div>
+      );
+
+      return href ? (
+        <a href={href} class="block">{card}</a>
+      ) : card;
+    })}
+  </div>
+
+  <!-- CTA -->
+  <div class="mt-12 border-t pt-8 text-center">
+    <p class="text-zinc-600 mb-4">Looking for something similar?</p>
+    <a
+      href="/craft/"
+      class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 text-white text-sm font-semibold shadow hover:shadow-md hover:scale-105 transition-all"
+    >
+      🔮 Find books like these
+    </a>
+  </div>
+</Layout>

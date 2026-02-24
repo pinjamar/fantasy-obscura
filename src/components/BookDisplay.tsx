@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
+import BookmarkButton from './BookmarkButton';
 
 interface Book {
   id: string;
@@ -261,11 +262,14 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
                   </p>
                 )}
 
-                {href && (
-                  <p className="text-xs text-purple-600 font-medium mt-2">
-                    View details →
-                  </p>
-                )}
+                <div className="mt-3 flex items-center justify-between gap-2">
+                  {href && (
+                    <p className="text-xs text-purple-600 font-medium">
+                      View details →
+                    </p>
+                  )}
+                  <BookmarkButton bookId={book.id} size="sm" />
+                </div>
               </div>
             </>
           );

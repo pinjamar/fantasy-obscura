@@ -263,9 +263,10 @@ export async function getAllAuthors(): Promise<{
   topGenres: string[];
   avgRating: number | null;
 }[]> {
+  type AuthorRow = { authors: string[] | null; subgenres: string[] | null; avg_rating: number | null };
   const { data } = await supabaseClient
     .from('books')
-    .select('authors, subgenres, avg_rating');
+    .select('authors, subgenres, avg_rating') as { data: AuthorRow[] | null };
 
   const authorMap = new Map<string, { bookCount: number; genres: Map<string, number>; ratings: number[] }>();
 
@@ -309,7 +310,7 @@ export async function getBooksByAuthor(authorName: string): Promise<Book[]> {
     .from('books')
     .select('*')
     .contains('authors', [authorName])
-    .order('publication_year', { ascending: true, nullsLast: true });
+    .order('publication_year', { ascending: true, nullsFirst: false });
 
   return data || [];
 }
