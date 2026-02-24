@@ -62,6 +62,14 @@ export async function getBooks(
       query = query.eq('audience', filters.audience);
     }
 
+    // Exclusion filters (content warnings)
+    if (filters.avoid_explicit) {
+      query = query.or('heat_level.is.null,heat_level.neq.Spicy');
+    }
+    if (filters.avoid_grimdark) {
+      query = query.not('subgenres', 'ov', '{Grimdark}');
+    }
+
     // Range filters
     if (filters.min_rating !== undefined) {
       query = query.gte('avg_rating', filters.min_rating);

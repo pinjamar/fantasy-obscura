@@ -29,6 +29,8 @@ export interface Database {
           pacing: string | null;
           heat_level: string | null;
           diversity_rep: string[] | null;
+          series: string | null;
+          series_number: number | null;
           created_at: string;
           updated_at: string;
         };
@@ -51,6 +53,8 @@ export interface Database {
           pacing?: string | null;
           heat_level?: string | null;
           diversity_rep?: string[] | null;
+          series?: string | null;
+          series_number?: number | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -73,6 +77,8 @@ export interface Database {
           pacing?: string | null;
           heat_level?: string | null;
           diversity_rep?: string[] | null;
+          series?: string | null;
+          series_number?: number | null;
           created_at?: string;
           updated_at?: string;
         };

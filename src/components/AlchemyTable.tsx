@@ -137,18 +137,6 @@ const VIALS: Vial[] = [
       { label: 'Urban / Modern', icon: '🏙️', bg: 'bg-cyan-50', hover: 'hover:bg-cyan-100', filters: { subgenres: ['Urban Fantasy', 'Contemporary Fantasy'] } },
     ],
   },
-  {
-    id: 'conflict',
-    label: 'Conflict Catalyst',
-    icon: '⚔️',
-    border: 'border-red-200',
-    titleColor: 'text-red-900',
-    options: [
-      { label: 'Political Intrigue', icon: '🧩', bg: 'bg-red-50', hover: 'hover:bg-red-100', filters: { tropes: ['Political Intrigue'] } },
-      { label: 'Creature vs Hero', icon: '🐉', bg: 'bg-rose-50', hover: 'hover:bg-rose-100', filters: { tropes: ['Dragon Riders'] } },
-      { label: 'Mystery & Secrets', icon: '🕵️', bg: 'bg-orange-50', hover: 'hover:bg-orange-100', filters: { tropes: ['Secret Identity', 'Betrayal'] } },
-    ],
-  },
   // Right column (middle row)
   {
     id: 'format',
@@ -176,27 +164,15 @@ const VIALS: Vial[] = [
   },
   // Bottom row
   {
-    id: 'theme',
-    label: 'Theme Catalyst',
-    icon: '🧬',
-    border: 'border-lime-200',
-    titleColor: 'text-lime-900',
+    id: 'length-bucket',
+    label: 'Length Bucket',
+    icon: '📐',
+    border: 'border-teal-200',
+    titleColor: 'text-teal-900',
     options: [
-      { label: 'Destiny & Choice', icon: '🧭', bg: 'bg-lime-50', hover: 'hover:bg-lime-100', filters: { tropes: ['Chosen One', 'Prophecy'] } },
-      { label: 'Found Family', icon: '🫂', bg: 'bg-emerald-50', hover: 'hover:bg-emerald-100', filters: { tropes: ['Found Family'] } },
-      { label: 'Power & Politics', icon: '⚖️', bg: 'bg-yellow-50', hover: 'hover:bg-yellow-100', filters: { tropes: ['Political Intrigue'] } },
-    ],
-  },
-  {
-    id: 'pov',
-    label: 'POV Lens',
-    icon: '👁️',
-    border: 'border-sky-200',
-    titleColor: 'text-sky-900',
-    options: [
-      { label: 'Single POV', icon: '🧭', bg: 'bg-sky-50', hover: 'hover:bg-sky-100', filters: {} },
-      { label: 'Multiple POVs', icon: '🧩', bg: 'bg-cyan-50', hover: 'hover:bg-cyan-100', filters: {} },
-      { label: 'Unreliable Narrator', icon: '🌀', bg: 'bg-slate-50', hover: 'hover:bg-slate-100', filters: {} },
+      { label: 'Quick Read (< 300 pages)', icon: '⚡', bg: 'bg-teal-50', hover: 'hover:bg-teal-100', filters: { max_pages: 300 } },
+      { label: 'Standard (300-500)', icon: '📖', bg: 'bg-cyan-50', hover: 'hover:bg-cyan-100', filters: { min_pages: 300, max_pages: 500 } },
+      { label: 'Epic (500+)', icon: '📚', bg: 'bg-blue-50', hover: 'hover:bg-blue-100', filters: { min_pages: 500 } },
     ],
   },
   {
@@ -224,15 +200,15 @@ const VIALS: Vial[] = [
     ],
   },
   {
-    id: 'length-bucket',
-    label: 'Length Bucket',
-    icon: '📐',
-    border: 'border-teal-200',
-    titleColor: 'text-teal-900',
+    id: 'pov',
+    label: 'POV Lens',
+    icon: '👁️',
+    border: 'border-sky-200',
+    titleColor: 'text-sky-900',
     options: [
-      { label: 'Quick Read (< 300 pages)', icon: '⚡', bg: 'bg-teal-50', hover: 'hover:bg-teal-100', filters: { max_pages: 300 } },
-      { label: 'Standard (300-500)', icon: '📖', bg: 'bg-cyan-50', hover: 'hover:bg-cyan-100', filters: { min_pages: 300, max_pages: 500 } },
-      { label: 'Epic (500+)', icon: '📚', bg: 'bg-blue-50', hover: 'hover:bg-blue-100', filters: { min_pages: 500 } },
+      { label: 'Single POV', icon: '🧭', bg: 'bg-sky-50', hover: 'hover:bg-sky-100', filters: {} },
+      { label: 'Multiple POVs', icon: '🧩', bg: 'bg-cyan-50', hover: 'hover:bg-cyan-100', filters: {} },
+      { label: 'Unreliable Narrator', icon: '🌀', bg: 'bg-slate-50', hover: 'hover:bg-slate-100', filters: {} },
     ],
   },
   {
@@ -249,14 +225,45 @@ const VIALS: Vial[] = [
   },
 ];
 
+const CREATURE_OPTIONS: { value: string; label: string; filters: Filters }[] = [
+  { value: '',        label: 'Any creature / race',    filters: {} },
+  { value: 'dragon',  label: '🐉 Dragons & Wyverns',   filters: { tropes: ['Dragons', 'Dragon Riders'] } },
+  { value: 'fae',     label: '🧚 Fae & Fair Folk',      filters: { tropes: ['Fae Court Drama'] } },
+  { value: 'vampire', label: '🧛 Vampires & Demons',    filters: { subgenres: ['Urban Fantasy', 'Dark Fantasy'] } },
+  { value: 'witch',   label: '🧙 Witches & Warlocks',   filters: { subgenres: ['Mythic Fantasy', 'Historical Fantasy'] } },
+  { value: 'undead',  label: '💀 Undead & Ghosts',      filters: { subgenres: ['Dark Fantasy', 'Grimdark'] } },
+  { value: 'spirit',  label: '🌿 Spirits & Nature Folk', filters: { subgenres: ['Mythic Fantasy'] } },
+];
+
+const CONTENT_WARNINGS = [
+  { id: 'explicit',     label: 'Sexual content',     icon: '🔞' },
+  { id: 'grimdark',     label: 'Graphic violence',    icon: '🩸' },
+  { id: 'child-death',  label: 'Child death',         icon: '💔' },
+  { id: 'animal-death', label: 'Animal death',        icon: '🐾' },
+  { id: 'abuse',        label: 'Abuse / manipulation', icon: '⚠️' },
+  { id: 'sa',           label: 'Sexual assault',      icon: '🚫' },
+  { id: 'torture',      label: 'Torture',             icon: '🔪' },
+  { id: 'suicide',      label: 'Suicide / self-harm', icon: '🌊' },
+  { id: 'addiction',    label: 'Addiction',           icon: '💊' },
+  { id: 'war-genocide', label: 'War / genocide',      icon: '⚔️' },
+];
+
 const TOP = VIALS.slice(0, 4);
 const LEFT = VIALS.slice(4, 6);
 const RIGHT = VIALS.slice(6, 8);
-const BOTTOM = VIALS.slice(8, 14);
+const BOTTOM = VIALS.slice(8, 12);
 
 export default function AlchemyTable() {
   const [selections, setSelections] = useState<Record<string, number>>({});
   const [selectedTropes, setSelectedTropes] = useState<string[]>([]);
+  const [selectedCreature, setSelectedCreature] = useState('');
+  const [excludedWarnings, setExcludedWarnings] = useState<string[]>([]);
+
+  const toggleWarning = (id: string) => {
+    setExcludedWarnings((prev) =>
+      prev.includes(id) ? prev.filter((w) => w !== id) : [...prev, id],
+    );
+  };
   const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
   const [books, setBooks] = useState<Book[]>([]);
   const [bookIndex, setBookIndex] = useState(0);
@@ -310,6 +317,13 @@ export default function AlchemyTable() {
       merged.tropes = [...(merged.tropes || []), ...selectedTropes];
     }
 
+    // Add creature filter
+    const creatureFilter = CREATURE_OPTIONS.find((o) => o.value === selectedCreature)?.filters;
+    if (creatureFilter) {
+      if (creatureFilter.tropes?.length) merged.tropes = [...(merged.tropes || []), ...creatureFilter.tropes];
+      if (creatureFilter.subgenres?.length) merged.subgenres = [...(merged.subgenres || []), ...creatureFilter.subgenres];
+    }
+
     const params = new URLSearchParams();
     merged.tone?.forEach((t) => params.append('tone', t));
     if (merged.pacing) params.set('pacing', merged.pacing);
@@ -321,6 +335,9 @@ export default function AlchemyTable() {
     if (merged.min_pages !== undefined) params.set('min_pages', String(merged.min_pages));
     if (merged.max_pages !== undefined) params.set('max_pages', String(merged.max_pages));
     if (merged.publication_era) params.set('publication_era', merged.publication_era);
+
+    if (excludedWarnings.includes('explicit')) params.set('avoid_explicit', '1');
+    if (excludedWarnings.includes('grimdark')) params.set('avoid_grimdark', '1');
 
     try {
       const res = await fetch(`/api/craft?${params.toString()}`);
@@ -380,7 +397,7 @@ export default function AlchemyTable() {
   );
 
   const TransmuteSquare = () => (
-    <div className="w-full max-w-sm min-h-[420px] rounded-2xl border-2 border-dashed border-amber-300 bg-white/70 backdrop-blur p-5 shadow-inner flex flex-col">
+    <div className="w-full max-w-sm min-h-105 rounded-2xl border-2 border-dashed border-amber-300 bg-white/70 backdrop-blur p-5 shadow-inner flex flex-col">
       <div className="flex-1">
         {status === 'idle' && (
           <div className="h-52 w-full rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-400 text-5xl">
@@ -468,7 +485,7 @@ export default function AlchemyTable() {
         <button
           onClick={transmute}
           disabled={status === 'loading'}
-          className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all disabled:opacity-50 disabled:scale-100"
+          className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-linear-to-r from-amber-500 to-orange-500 text-white text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all disabled:opacity-50 disabled:scale-100"
         >
           <span className="text-lg">✨</span>
           {status === 'loading' ? 'Transmuting...' : 'Transmute Book'}
@@ -543,10 +560,59 @@ export default function AlchemyTable() {
       </div>
 
       {/* Bottom Row */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {BOTTOM.map((v) => (
           <VialCard key={v.id} vial={v} />
         ))}
+      </div>
+
+      {/* Creatures & Races Dropdown */}
+      <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-sky-200 p-5 shadow-sm">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-2xl">🐉</span>
+          <h3 className="font-semibold text-sky-900">Creatures & Races</h3>
+          <span className="text-xs text-sky-600 bg-sky-50 px-2 py-0.5 rounded-full ml-auto">Optional</span>
+        </div>
+        <select
+          value={selectedCreature}
+          onChange={(e) => setSelectedCreature(e.target.value)}
+          className="w-full px-3 py-2 rounded-lg border border-sky-200 bg-sky-50 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-sky-300"
+        >
+          {CREATURE_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Content Warnings */}
+      <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-red-200 p-5 shadow-sm">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-2xl">⚠️</span>
+          <h3 className="font-semibold text-red-900">Content Warnings</h3>
+          <span className="text-xs text-red-600 bg-red-50 px-2 py-0.5 rounded-full ml-auto">Exclude from results</span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {CONTENT_WARNINGS.map((w) => {
+            const isOn = excludedWarnings.includes(w.id);
+            return (
+              <button
+                key={w.id}
+                onClick={() => toggleWarning(w.id)}
+                className={`px-3 py-1 rounded-full text-xs transition-all flex items-center gap-1 ${
+                  isOn
+                    ? 'bg-red-100 text-red-900 ring-2 ring-inset ring-red-400 font-medium'
+                    : 'bg-zinc-50 text-zinc-600 hover:bg-red-50 hover:text-red-700'
+                }`}
+              >
+                <span>{w.icon}</span>
+                {w.label}
+                {isOn && ' ✓'}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Mobile Transmutation Square */}

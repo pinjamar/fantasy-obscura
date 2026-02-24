@@ -11,11 +11,15 @@ interface Book {
   avg_rating?: number;
   synopsis?: string;
   subgenres?: string[];
+  audience?: string | null;
+  series?: string | null;
+  series_number?: number | null;
   created_at?: string;
 }
 
 interface BookDisplayProps {
   genre?: string;
+  audience?: string;
 }
 
 type SortKey = 'title-asc' | 'title-desc' | 'rating-desc' | 'newest' | 'oldest' | 'shortest' | 'longest' | 'author-asc';
@@ -55,7 +59,7 @@ function sortBooks(books: Book[], key: SortKey): Book[] {
   }
 }
 
-const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
+const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -76,6 +80,10 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
           filteredBooks = filteredBooks.filter((book: Book) =>
             book.subgenres?.includes(genre),
           );
+        } else if (audience) {
+          filteredBooks = filteredBooks.filter((book: Book) =>
+            book.audience === audience,
+          );
         }
 
         setBooks(filteredBooks);
@@ -89,7 +97,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
     };
 
     fetchBooks();
-  }, [genre]);
+  }, [genre, audience]);
 
   const sortedBooks = useMemo(() => sortBooks(books, sort), [books, sort]);
 
@@ -172,11 +180,16 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre }) => {
                 {book.title}
               </h3>
 
-              <p className="text-sm text-zinc-600 mb-3">
+              <p className="text-sm text-zinc-600 mb-1">
                 {book.authors && book.authors.length > 0
                   ? book.authors.join(', ')
                   : 'Unknown author'}
               </p>
+              {book.series && (
+                <p className="text-xs text-indigo-600 font-medium mb-3">
+                  {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
+                </p>
+              )}
 
               <div className="grid grid-cols-2 gap-2 text-xs mb-3">
                 {book.publication_year && (

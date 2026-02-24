@@ -18,6 +18,8 @@ export type Book = {
   pacing: string | null;
   heat_level: string | null;
   diversity_rep: string[] | null;
+  series: string | null;
+  series_number: number | null;
   created_at: string;
   updated_at: string;
 };
@@ -41,6 +43,8 @@ export type BookInput = {
   pacing?: string | null;
   heat_level?: string | null;
   diversity_rep?: string[] | null;
+  series?: string | null;
+  series_number?: number | null;
 };
 
 export type BookSearchResult = BookInput & {
@@ -66,6 +70,8 @@ export type BookFilters = {
   max_year?: number;
   min_pages?: number;
   max_pages?: number;
+  avoid_explicit?: boolean;
+  avoid_grimdark?: boolean;
 };
 
 export type SortOption =

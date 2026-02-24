@@ -34,6 +34,9 @@ export const GET: APIRoute = async ({ url }) => {
   const max_pages = p.get('max_pages');
   if (max_pages) filters.max_pages = parseInt(max_pages);
 
+  if (p.get('avoid_explicit') === '1') filters.avoid_explicit = true;
+  if (p.get('avoid_grimdark') === '1') filters.avoid_grimdark = true;
+
   try {
     const result = await getBooks(filters, { page: 1, pageSize: 50, sort: 'rating_desc' });
 
