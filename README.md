@@ -97,28 +97,28 @@ src/
 
 Key fields on every book record:
 
-| Field | Type | Notes |
-|---|---|---|
-| `title`, `authors` | string / string[] | required |
-| `slug` | string | URL key for `/books/[slug]` |
-| `subgenres`, `tropes` | string[] | used for filtering |
-| `tone`, `diversity_rep` | string[] | |
-| `magic_system`, `pacing`, `heat_level` | string | |
-| `audience` | string | Adult / YA / Children's |
-| `darkness_level` | 1–5 | 1=Lighthearted → 5=Brutal |
-| `series`, `series_number` | string / number | |
-| `avg_rating`, `page_count`, `publication_year` | number | |
-| `cover_url`, `synopsis` | string | |
+| Field                                          | Type              | Notes                       |
+| ---------------------------------------------- | ----------------- | --------------------------- |
+| `title`, `authors`                             | string / string[] | required                    |
+| `slug`                                         | string            | URL key for `/books/[slug]` |
+| `subgenres`, `tropes`                          | string[]          | used for filtering          |
+| `tone`, `diversity_rep`                        | string[]          |                             |
+| `magic_system`, `pacing`, `heat_level`         | string            |                             |
+| `audience`                                     | string            | Adult / YA / Children's     |
+| `darkness_level`                               | 1–5               | 1=Lighthearted → 5=Brutal   |
+| `series`, `series_number`                      | string / number   |                             |
+| `avg_rating`, `page_count`, `publication_year` | number            |                             |
+| `cover_url`, `synopsis`                        | string            |                             |
 
 ## Darkness Scale
 
-| Level | Label | Meaning |
-|---|---|---|
-| 🕯️ | Lighthearted | Cozy, low stakes, no real darkness |
-| 🕯️🕯️ | Mild | Some tension but ultimately safe |
-| 🕯️🕯️🕯️ | Moderate | Death, moral complexity, some disturbing content |
-| 🕯️🕯️🕯️🕯️ | Dark | Violence, trauma, morally grey characters |
-| 🕯️🕯️🕯️🕯️🕯️ | Brutal | Grimdark, no redemption guaranteed |
+| Level      | Label        | Meaning                                          |
+| ---------- | ------------ | ------------------------------------------------ |
+| 🕯️         | Lighthearted | Cozy, low stakes, no real darkness               |
+| 🕯️🕯️       | Mild         | Some tension but ultimately safe                 |
+| 🕯️🕯️🕯️     | Moderate     | Death, moral complexity, some disturbing content |
+| 🕯️🕯️🕯️🕯️   | Dark         | Violence, trauma, morally grey characters        |
+| 🕯️🕯️🕯️🕯️🕯️ | Brutal       | Grimdark, no redemption guaranteed               |
 
 ## Deployment
 
@@ -134,9 +134,9 @@ Set env vars in Cloudflare Pages dashboard → Settings → Environment Variable
 
 Build a Python Reddit bot using PRAW that monitors fantasy subreddits and recommends books from this site.
 
-**Subreddits to monitor:** r/Fantasy, r/fantasybooks, r/booksuggestions, r/romantasy
+**Subreddits to monitor:** r/Fantasy, r/fantasybooks, r/booksuggestions, r/romantasy, r/ProgressionFantasy, r/books, r/fantasyromance, r/justfinishedreading, r/suggestmeabook, r/fantasywriters
 
-**Trigger phrases:** "recommend", "looking for", "books like", "what should I read", "suggestions", "similar to", "something like", "next read"
+**Trigger phrases:** "recommend", "looking for", "books like", "what should I read", "suggestions", "similar to", "something like", "next read", "suggest"
 
 **Signal parsing:**
 

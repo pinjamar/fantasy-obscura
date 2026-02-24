@@ -243,6 +243,78 @@ export async function getFilterOptions(): Promise<{
 }
 
 /**
+ * Convert an author name to a URL slug
+ */
+export function authorToSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/['']/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+/**
+ * Get all authors aggregated from the books table
+ */
+export async function getAllAuthors(): Promise<{
+  name: string;
+  slug: string;
+  bookCount: number;
+  topGenres: string[];
+  avgRating: number | null;
+}[]> {
+  const { data } = await supabaseClient
+    .from('books')
+    .select('authors, subgenres, avg_rating');
+
+  const authorMap = new Map<string, { bookCount: number; genres: Map<string, number>; ratings: number[] }>();
+
+  data?.forEach((book) => {
+    book.authors?.forEach((author: string) => {
+      if (!author) return;
+      if (!authorMap.has(author)) {
+        authorMap.set(author, { bookCount: 0, genres: new Map(), ratings: [] });
+      }
+      const entry = authorMap.get(author)!;
+      entry.bookCount++;
+      if (book.avg_rating != null) entry.ratings.push(book.avg_rating);
+      book.subgenres?.forEach((g: string) => {
+        entry.genres.set(g, (entry.genres.get(g) || 0) + 1);
+      });
+    });
+  });
+
+  return Array.from(authorMap.entries())
+    .map(([name, entry]) => ({
+      name,
+      slug: authorToSlug(name),
+      bookCount: entry.bookCount,
+      topGenres: Array.from(entry.genres.entries())
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3)
+        .map(([g]) => g),
+      avgRating:
+        entry.ratings.length > 0
+          ? Math.round((entry.ratings.reduce((a, b) => a + b, 0) / entry.ratings.length) * 10) / 10
+          : null,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/**
+ * Get all books by a specific author name
+ */
+export async function getBooksByAuthor(authorName: string): Promise<Book[]> {
+  const { data } = await supabaseClient
+    .from('books')
+    .select('*')
+    .contains('authors', [authorName])
+    .order('publication_year', { ascending: true, nullsLast: true });
+
+  return data || [];
+}
+
+/**
  * Helper to apply sorting
  */
 function applySorting(query: any, sort: SortOption) {

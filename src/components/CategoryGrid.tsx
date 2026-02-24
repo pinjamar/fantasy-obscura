@@ -22,6 +22,38 @@ const categories: Category[] = [
   { slug: 'sci-fi', name: 'Sci-Fi', description: 'Space operas, cyberpunk, future worlds', gradient: 'from-sky-50 to-blue-50' },
 ];
 
+const newReleases: Record<string, string[]> = {
+  general:    ['Fourth Wing', 'Wind and Truth', 'House of Flame and Shadow', 'Starter Villain', 'The Familiar', 'Intermezzo'],
+  epic:       ['Wind and Truth', 'The Sunlit Man', 'Tress of the Emerald Sea', 'Defiant', 'The Lost Metal', 'Yumi and the Nightmare Painter'],
+  romantasy:  ['Fourth Wing', 'Iron Flame', 'House of Flame and Shadow', 'Bride', 'A Soul of Ash and Blood', 'Born of Blood and Ash'],
+  young:      ['Iron Flame', 'The Familiar', 'Heir', 'Divine Rivals', 'The Foxglove King', 'A Good Girl\'s Guide to Murder'],
+  dark:       ['Age of Ash', 'The Blacktongue Thief', 'A Little Hatred', 'The Wisdom of Crowds', 'The Trouble with Peace', 'The Familiar'],
+  urban:      ['The World We Make', 'Witch King', 'Ink Blood Sister Scribe', 'Starter Villain', 'A Psalm for the Wild-Built', 'The Familiar'],
+  grimdark:   ['Age of Ash', 'The Blacktongue Thief', 'A Little Hatred', 'The Wisdom of Crowds', 'The Trouble with Peace', 'Hell Around the Horn'],
+  historical: ['Ink Blood Sister Scribe', 'The Foxglove King', 'The Witch\'s Heart', 'Daughter of the Moon Goddess', 'The Star and the Strange Moon', 'The Familiar'],
+  paranormal: ['Fourth Wing', 'House of Flame and Shadow', 'Bride', 'The Foxglove King', 'A Good Girl\'s Guide to Murder', 'Ink Blood Sister Scribe'],
+  mythology:  ['Witch King', 'A Thousand Ships', 'The Witch\'s Heart', 'Daughter of the Moon Goddess', 'Ariadne', 'Neon Gods'],
+  cozy:       ['Starter Villain', 'Emily Wilde\'s Encyclopaedia of Faeries', 'Nettle and Bone', 'A Psalm for the Wild-Built', 'Legends & Lattes', 'A Wizard\'s Guide to Defensive Baking'],
+  litrpg:     ['Defiant', 'Beware of Chicken', 'Bastion', 'The Path of Ascension', 'Mark of the Fool', 'Iron Prince'],
+  'sci-fi':   ['A Desolation Called Peace', 'The Kaiju Preservation Society', 'Translation State', 'Witch King', 'Starter Villain', 'A Memory Called Empire'],
+};
+
+const trending: Record<string, string[]> = {
+  general:    ['Fourth Wing', 'A Court of Thorns and Roses', 'Mistborn', 'The Way of Kings', 'Six of Crows', 'The Name of the Wind'],
+  epic:       ['The Way of Kings', 'Mistborn', 'The Name of the Wind', 'The Lord of the Rings', 'The Fifth Season', 'The Rage of Dragons'],
+  romantasy:  ['Fourth Wing', 'A Court of Thorns and Roses', 'From Blood and Ash', 'Throne of Glass', 'The Cruel Prince', 'Iron Flame'],
+  young:      ['Fourth Wing', 'Six of Crows', 'Shadow and Bone', 'The Hunger Games', 'Throne of Glass', 'City of Bones'],
+  dark:       ['The First Law', 'The Blade Itself', 'The Poppy War', 'Prince of Thorns', 'Nevernight', 'The Fifth Season'],
+  urban:      ['The Dresden Files', 'American Gods', 'Good Omens', 'Neverwhere', 'Rivers of London', 'The Magicians'],
+  grimdark:   ['The First Law', 'Malazan Book of the Fallen', 'The Poppy War', 'Prince of Thorns', 'The Black Company', 'Best Served Cold'],
+  historical: ['Jonathan Strange & Mr Norrell', 'The Bear and the Nightingale', 'Circe', 'The Invisible Life of Addie LaRue', 'Piranesi', 'Spinning Silver'],
+  paranormal: ['A Discovery of Witches', 'The Mortal Instruments', 'Twilight', 'Kate Daniels', 'Rivers of London', 'Good Omens'],
+  mythology:  ['Circe', 'The Song of Achilles', 'American Gods', 'Norse Mythology', 'A Thousand Ships', 'Ariadne'],
+  cozy:       ['Legends & Lattes', 'The House in the Cerulean Sea', 'A Psalm for the Wild-Built', 'The Goblin Emperor', 'Piranesi', 'Howl\'s Moving Castle'],
+  litrpg:     ['Dungeon Crawler Carl', 'He Who Fights With Monsters', 'Cradle', 'The Wandering Inn', 'Mother of Learning', 'Primal Hunter'],
+  'sci-fi':   ['Project Hail Mary', 'Dune', 'The Martian', 'Foundation', 'Ender\'s Game', 'The Expanse'],
+};
+
 // Mock data for book lists
 const mockBooks: Record<string, { best: string[], starter: string[], hidden: string[] }> = {
   general: {
@@ -141,7 +173,7 @@ export default function CategoryGrid() {
 
         <div className="grid gap-6 sm:grid-cols-3">
           <div className="rounded-lg border bg-linear-to-br from-blue-50 to-indigo-50 p-5">
-            <h3 className="font-semibold text-blue-900 mb-4">Best {categoryName} Books</h3>
+            <h3 className="font-semibold text-blue-900 mb-4">⭐ {categoryName} All-Time Greats</h3>
             <ol className="space-y-2">
               {books.best.map((book, i) => (
                 <li key={i} className="text-sm text-zinc-700 flex items-start">
@@ -153,7 +185,7 @@ export default function CategoryGrid() {
           </div>
 
           <div className="rounded-lg border bg-linear-to-br from-green-50 to-emerald-50 p-5">
-            <h3 className="font-semibold text-green-900 mb-4">Best {categoryName} to Start With</h3>
+            <h3 className="font-semibold text-green-900 mb-4">🚀 Best {categoryName} to Start With</h3>
             <ol className="space-y-2">
               {books.starter.map((book, i) => (
                 <li key={i} className="text-sm text-zinc-700 flex items-start">
@@ -165,7 +197,7 @@ export default function CategoryGrid() {
           </div>
 
           <div className="rounded-lg border bg-linear-to-br from-amber-50 to-orange-50 p-5">
-            <h3 className="font-semibold text-amber-900 mb-4">{categoryName} Hidden Gems</h3>
+            <h3 className="font-semibold text-amber-900 mb-4">💎 {categoryName} Hidden Gems</h3>
             <ol className="space-y-2">
               {books.hidden.map((book, i) => (
                 <li key={i} className="text-sm text-zinc-700 flex items-start">
@@ -175,6 +207,40 @@ export default function CategoryGrid() {
               ))}
             </ol>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-6 sm:grid-cols-2">
+        <div className="rounded-lg border bg-linear-to-br from-violet-50 to-purple-50 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg">✨</span>
+            <h3 className="font-semibold text-violet-900">New Releases</h3>
+            <span className="ml-auto text-xs bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full">2023–2025</span>
+          </div>
+          <ol className="space-y-2">
+            {newReleases[selectedCategory || 'general'].map((book, i) => (
+              <li key={i} className="text-sm text-zinc-700 flex items-start">
+                <span className="text-violet-500 mr-2 font-medium min-w-6">{i + 1}.</span>
+                {book}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="rounded-lg border bg-linear-to-br from-orange-50 to-amber-50 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg">🔥</span>
+            <h3 className="font-semibold text-orange-900">Trending Now</h3>
+            <span className="ml-auto text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">BookTok & Reddit</span>
+          </div>
+          <ol className="space-y-2">
+            {trending[selectedCategory || 'general'].map((book, i) => (
+              <li key={i} className="text-sm text-zinc-700 flex items-start">
+                <span className="text-orange-500 mr-2 font-medium min-w-6">{i + 1}.</span>
+                {book}
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </>
