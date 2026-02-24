@@ -3,6 +3,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 interface Book {
   id: string;
   title: string;
+  slug?: string | null;
   authors: string[];
   isbn?: string;
   cover_url?: string;
@@ -14,6 +15,7 @@ interface Book {
   audience?: string | null;
   series?: string | null;
   series_number?: number | null;
+  darkness_level?: number | null;
   created_at?: string;
 }
 
@@ -34,6 +36,10 @@ const SORT_OPTIONS: { key: SortKey; label: string; icon: string }[] = [
   { key: 'shortest',     label: 'Shortest',   icon: '⚡' },
   { key: 'longest',      label: 'Longest',    icon: '📚' },
 ];
+
+const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
+const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
+const DARKNESS_COLORS = ['', 'text-green-700', 'text-yellow-700', 'text-orange-600', 'text-red-600', 'text-red-900'];
 
 function sortBooks(books: Book[], key: SortKey): Book[] {
   const sorted = [...books];
@@ -153,104 +159,134 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {sortedBooks.map((book) => (
-          <div
-            key={book.id}
-            className="border rounded-lg overflow-hidden bg-white hover:shadow-lg transition-shadow"
-          >
-            {book.cover_url ? (
-              <div className="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 overflow-hidden">
-                <img
-                  src={book.cover_url}
-                  alt={book.title}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              </div>
-            ) : (
-              <div className="h-48 bg-linear-to-br from-purple-200 to-blue-200 flex items-center justify-center">
-                <span className="text-purple-400 text-sm">No cover</span>
-              </div>
-            )}
+        {sortedBooks.map((book) => {
+          const href = book.slug ? `/books/${book.slug}` : null;
+          const dl = (book.darkness_level != null && book.darkness_level >= 1) ? book.darkness_level : null;
 
-            <div className="p-4">
-              <h3 className="font-semibold text-lg line-clamp-2 mb-1">
-                {book.title}
-              </h3>
-
-              <p className="text-sm text-zinc-600 mb-1">
-                {book.authors && book.authors.length > 0
-                  ? book.authors.join(', ')
-                  : 'Unknown author'}
-              </p>
-              {book.series && (
-                <p className="text-xs text-indigo-600 font-medium mb-3">
-                  {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
-                </p>
-              )}
-
-              <div className="grid grid-cols-2 gap-2 text-xs mb-3">
-                {book.publication_year && (
-                  <div>
-                    <span className="text-zinc-500">Year:</span>
-                    <p className="font-medium">{book.publication_year}</p>
-                  </div>
-                )}
-
-                {book.page_count && (
-                  <div>
-                    <span className="text-zinc-500">Pages:</span>
-                    <p className="font-medium">{book.page_count}</p>
-                  </div>
-                )}
-
-                {book.avg_rating && (
-                  <div>
-                    <span className="text-zinc-500">Rating:</span>
-                    <p className="font-medium">
-                      {book.avg_rating.toFixed(1)}/5 ⭐
-                    </p>
-                  </div>
-                )}
-
-                {book.isbn && (
-                  <div>
-                    <span className="text-zinc-500">ISBN:</span>
-                    <p className="font-medium text-xs">{book.isbn}</p>
-                  </div>
-                )}
-              </div>
-
-              {book.subgenres && book.subgenres.length > 0 && (
-                <div className="mb-3">
-                  <div className="flex flex-wrap gap-1">
-                    {book.subgenres.slice(0, 3).map((g) => (
-                      <span
-                        key={g}
-                        className="inline-block bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded"
-                      >
-                        {g}
-                      </span>
-                    ))}
-                    {book.subgenres.length > 3 && (
-                      <span className="text-xs text-zinc-500">
-                        +{book.subgenres.length - 3}
-                      </span>
-                    )}
-                  </div>
+          const CardContent = (
+            <>
+              {book.cover_url ? (
+                <div className="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 overflow-hidden">
+                  <img
+                    src={book.cover_url}
+                    alt={book.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                  {dl != null && (
+                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                      {DARKNESS_CANDLES[dl]}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 flex items-center justify-center">
+                  <span className="text-purple-400 text-sm">No cover</span>
+                  {dl != null && (
+                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
+                      {DARKNESS_CANDLES[dl]}
+                    </div>
+                  )}
                 </div>
               )}
 
-              {book.synopsis && (
-                <p className="text-xs text-zinc-600 line-clamp-3">
-                  {book.synopsis}
+              <div className="p-4">
+                <h3 className="font-semibold text-lg line-clamp-2 mb-1">
+                  {book.title}
+                </h3>
+
+                <p className="text-sm text-zinc-600 mb-1">
+                  {book.authors && book.authors.length > 0
+                    ? book.authors.join(', ')
+                    : 'Unknown author'}
                 </p>
-              )}
+                {book.series && (
+                  <p className="text-xs text-indigo-600 font-medium mb-2">
+                    {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
+                  </p>
+                )}
+
+                {dl != null && (
+                  <p className={`text-xs font-medium mb-2 ${DARKNESS_COLORS[dl]}`}>
+                    {DARKNESS_CANDLES[dl]} {DARKNESS_LABELS[dl]}
+                  </p>
+                )}
+
+                <div className="grid grid-cols-2 gap-2 text-xs mb-3">
+                  {book.publication_year && (
+                    <div>
+                      <span className="text-zinc-500">Year:</span>
+                      <p className="font-medium">{book.publication_year}</p>
+                    </div>
+                  )}
+                  {book.page_count && (
+                    <div>
+                      <span className="text-zinc-500">Pages:</span>
+                      <p className="font-medium">{book.page_count}</p>
+                    </div>
+                  )}
+                  {book.avg_rating && (
+                    <div>
+                      <span className="text-zinc-500">Rating:</span>
+                      <p className="font-medium">{book.avg_rating.toFixed(1)}/5 ⭐</p>
+                    </div>
+                  )}
+                </div>
+
+                {book.subgenres && book.subgenres.length > 0 && (
+                  <div className="mb-3">
+                    <div className="flex flex-wrap gap-1">
+                      {book.subgenres.slice(0, 3).map((g) => (
+                        <span
+                          key={g}
+                          className="inline-block bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded"
+                        >
+                          {g}
+                        </span>
+                      ))}
+                      {book.subgenres.length > 3 && (
+                        <span className="text-xs text-zinc-500">
+                          +{book.subgenres.length - 3}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {book.synopsis && (
+                  <p className="text-xs text-zinc-600 line-clamp-3">
+                    {book.synopsis}
+                  </p>
+                )}
+
+                {href && (
+                  <p className="text-xs text-purple-600 font-medium mt-2">
+                    View details →
+                  </p>
+                )}
+              </div>
+            </>
+          );
+
+          return href ? (
+            <a
+              key={book.id}
+              href={href}
+              className="border rounded-lg overflow-hidden bg-white hover:shadow-lg transition-shadow block"
+            >
+              {CardContent}
+            </a>
+          ) : (
+            <div
+              key={book.id}
+              className="border rounded-lg overflow-hidden bg-white hover:shadow-lg transition-shadow"
+            >
+              {CardContent}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

@@ -100,6 +100,39 @@ export const fetchBigbook = async (
   }
 };
 
+type GutendexResponse = {
+  results?: Array<{
+    id?: number;
+    title?: string;
+    authors?: Array<{ name?: string; birth_year?: number | null; death_year?: number | null }>;
+    formats?: Record<string, string>;
+  }>;
+};
+
+export const fetchGutendex = async (query: string): Promise<BookSearchResult[]> => {
+  const url = `https://gutendex.com/books/?search=${encodeURIComponent(query)}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('Gutendex request failed');
+  const data = (await res.json()) as GutendexResponse;
+
+  return (data.results || []).slice(0, 20).map((book) => ({
+    source: 'gutendex' as const,
+    source_id: book.id != null ? `gutendex_${book.id}` : null,
+    title: book.title ?? 'Untitled',
+    authors:
+      book.authors
+        ?.map((a) => {
+          if (!a.name) return '';
+          // Gutendex returns "Last, First" — reverse to "First Last"
+          const parts = a.name.split(', ');
+          return parts.length === 2 ? `${parts[1]} ${parts[0]}` : a.name;
+        })
+        .filter(Boolean) ?? null,
+    cover_url: book.formats?.['image/jpeg'] ?? null,
+    publication_year: null,
+  }));
+};
+
 export const fetchHarvardGraphql = async (
   query: string,
   endpoint: string,

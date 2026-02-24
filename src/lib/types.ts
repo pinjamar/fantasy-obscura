@@ -20,6 +20,7 @@ export type Book = {
   diversity_rep: string[] | null;
   series: string | null;
   series_number: number | null;
+  darkness_level: number | null;
   created_at: string;
   updated_at: string;
 };
@@ -45,10 +46,11 @@ export type BookInput = {
   diversity_rep?: string[] | null;
   series?: string | null;
   series_number?: number | null;
+  darkness_level?: number | null;
 };
 
 export type BookSearchResult = BookInput & {
-  source?: 'openlibrary' | 'googlebooks' | 'harvard' | 'bigbook' | 'manual';
+  source?: 'openlibrary' | 'googlebooks' | 'harvard' | 'bigbook' | 'gutendex' | 'manual';
   source_id?: string | null;
 };
 

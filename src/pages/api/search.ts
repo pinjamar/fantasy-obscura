@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import {
   fetchBigbook,
   fetchGoogleBooks,
+  fetchGutendex,
   fetchHarvardGraphql,
   fetchOpenLibrary,
 } from '../../lib/books/providers';
@@ -56,10 +57,18 @@ export const GET: APIRoute = async ({ url }) => {
       });
     }
 
+    if (source === 'gutendex') {
+      const items = await fetchGutendex(q);
+      return new Response(JSON.stringify({ items }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
     return new Response(
       JSON.stringify({
         error:
-          'Unknown source. Try: openlibrary, googlebooks, harvard, bigbook',
+          'Unknown source. Try: openlibrary, googlebooks, harvard, bigbook, gutendex',
       }),
       {
         status: 400,

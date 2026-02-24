@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import type { BookInput, BookSearchResult } from '../lib/types';
 
-type Source = 'openlibrary' | 'googlebooks' | 'harvard' | 'bigbook';
+type Source = 'openlibrary' | 'googlebooks' | 'harvard' | 'bigbook' | 'gutendex';
 
 const sourceOptions: Array<{ value: Source; label: string }> = [
   { value: 'openlibrary', label: 'Open Library' },
   { value: 'googlebooks', label: 'Google Books' },
+  { value: 'gutendex', label: 'Project Gutenberg' },
   { value: 'harvard', label: 'Harvard GraphQL' },
   { value: 'bigbook', label: 'Bigbook API' },
 ];
