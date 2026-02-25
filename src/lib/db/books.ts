@@ -311,6 +311,42 @@ export async function getAllAuthors(): Promise<{
 }
 
 /**
+ * Get all books in a series, sorted by series_number
+ */
+export async function getBooksBySeries(seriesName: string): Promise<Book[]> {
+  const { data } = await supabaseClient
+    .from('books')
+    .select('*')
+    .ilike('series', seriesName)
+    .order('series_number', { ascending: true, nullsFirst: false });
+  return data || [];
+}
+
+/**
+ * Get all distinct series names that have 2+ books, with book count
+ */
+export async function getAllSeries(): Promise<{ name: string; slug: string; bookCount: number }[]> {
+  const { data } = await supabaseClient
+    .from('books')
+    .select('series')
+    .not('series', 'is', null) as { data: { series: string | null }[] | null };
+
+  const counts = new Map<string, number>();
+  for (const row of data ?? []) {
+    if (row.series) counts.set(row.series, (counts.get(row.series) ?? 0) + 1);
+  }
+
+  return Array.from(counts.entries())
+    .filter(([, count]) => count >= 2)
+    .map(([name, bookCount]) => ({
+      name,
+      slug: name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
+      bookCount,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/**
  * Get all books by a specific author name
  */
 export async function getBooksByAuthor(authorName: string): Promise<Book[]> {

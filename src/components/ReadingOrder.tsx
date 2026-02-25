@@ -1,5 +1,8 @@
 interface Book {
   title: string;
+  slug?: string | null;
+  publication_year?: number | null;
+  page_count?: number | null;
   status: 'mandatory' | 'optional' | 'supplementary';
   note?: string;
 }
@@ -9,72 +12,79 @@ interface ReadingOrderProps {
   description?: string;
 }
 
-const statusColors = {
-  mandatory: 'bg-blue-100 text-blue-800 border-blue-200',
-  optional: 'bg-green-100 text-green-800 border-green-200',
-  supplementary: 'bg-amber-100 text-amber-800 border-amber-200',
-};
-
-const statusLabels = {
-  mandatory: 'Core',
-  optional: 'Optional',
-  supplementary: 'Extra',
+const statusConfig = {
+  mandatory:     { pill: 'bg-blue-100 text-blue-800 border-blue-200',    dot: 'bg-blue-500',    label: 'Core' },
+  optional:      { pill: 'bg-green-100 text-green-800 border-green-200', dot: 'bg-green-500',  label: 'Optional' },
+  supplementary: { pill: 'bg-amber-100 text-amber-800 border-amber-200', dot: 'bg-amber-500',  label: 'Extra' },
 };
 
 export default function ReadingOrder({ books, description }: ReadingOrderProps) {
   return (
     <div>
       {description && (
-        <p className="mb-6 text-zinc-600">{description}</p>
+        <p className="mb-8 text-zinc-600 leading-relaxed">{description}</p>
       )}
 
-      <div className="space-y-3">
-        {books.map((book, i) => (
-          <div
-            key={i}
-            className="flex items-start gap-4 rounded-lg border bg-white p-4 transition-shadow hover:shadow-md"
-          >
-            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center font-semibold text-zinc-700">
-              {i + 1}
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-start gap-3 flex-wrap">
-                <h3 className="font-medium text-zinc-900">{book.title}</h3>
-                <span
-                  className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${
-                    statusColors[book.status]
-                  }`}
-                >
-                  {statusLabels[book.status]}
-                </span>
+      {/* Timeline */}
+      <div className="relative">
+        {/* Vertical connecting line */}
+        <div className="absolute left-4.75 top-5 bottom-5 w-0.5 bg-zinc-200 z-0" />
+
+        <div className="space-y-1">
+          {books.map((book, i) => {
+            const cfg = statusConfig[book.status];
+            const inner = (
+              <div className="relative flex items-start gap-4 py-2 group">
+                {/* Numbered dot */}
+                <div className={`relative z-10 shrink-0 w-10 h-10 rounded-full ${cfg.dot} flex items-center justify-center text-white font-bold text-sm shadow`}>
+                  {i + 1}
+                </div>
+
+                {/* Card */}
+                <div className={`flex-1 rounded-xl border bg-white px-4 py-3 transition-all ${book.slug ? 'group-hover:shadow-md group-hover:border-zinc-300' : ''}`}>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className={`font-semibold text-zinc-900 leading-snug ${book.slug ? 'group-hover:text-purple-700 transition-colors' : ''}`}>
+                      {book.title}
+                    </h3>
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold border ${cfg.pill}`}>
+                      {cfg.label}
+                    </span>
+                  </div>
+                  <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-zinc-500">
+                    {book.note && <span>{book.note}</span>}
+                    {book.publication_year && <span>{book.publication_year}</span>}
+                    {book.page_count && <span>{book.page_count} pp.</span>}
+                  </div>
+                  {book.slug && (
+                    <p className="mt-1.5 text-xs text-purple-600 font-medium">View details →</p>
+                  )}
+                </div>
               </div>
-              {book.note && (
-                <p className="mt-1 text-sm text-zinc-600">{book.note}</p>
-              )}
-            </div>
-          </div>
-        ))}
+            );
+
+            return book.slug ? (
+              <a key={i} href={`/books/${book.slug}/`} className="block">
+                {inner}
+              </a>
+            ) : (
+              <div key={i}>{inner}</div>
+            );
+          })}
+        </div>
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-3 text-sm">
-        <div className="flex items-center gap-2">
-          <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">
-            Core
-          </span>
-          <span className="text-zinc-600">Essential to the main story</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
-            Optional
-          </span>
-          <span className="text-zinc-600">Adds depth but not required</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 border border-amber-200">
-            Extra
-          </span>
-          <span className="text-zinc-600">Side stories & novellas</span>
-        </div>
+      {/* Legend */}
+      <div className="mt-8 flex flex-wrap gap-5 text-sm border-t pt-6">
+        {(Object.entries(statusConfig) as [string, typeof statusConfig['mandatory']][]).map(([key, cfg]) => (
+          <div key={key} className="flex items-center gap-2">
+            <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold border ${cfg.pill}`}>
+              {cfg.label}
+            </span>
+            <span className="text-zinc-500">
+              {key === 'mandatory' ? 'Essential to the main story' : key === 'optional' ? 'Adds depth, not required' : 'Side stories & novellas'}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );

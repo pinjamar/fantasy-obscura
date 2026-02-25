@@ -1,0 +1,66 @@
+---
+import Layout from '../../components/Layout.astro';
+import ReadingOrder from '../../components/ReadingOrder';
+import { getAllSeries, getBooksBySeries } from '../../lib/db/books';
+
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect('/reading-orders/');
+
+// Find matching series by slug
+const allSeries = await getAllSeries();
+const seriesMeta = allSeries.find((s) => s.slug === slug);
+
+if (!seriesMeta) return new Response(null, { status: 404, statusText: 'Not Found' });
+
+const dbBooks = await getBooksBySeries(seriesMeta.name);
+
+// Map DB books to ReadingOrder format — all "mandatory" (Core) since we don't
+// have optional status in the DB; curated series pages override this statically.
+const books = dbBooks.map((b) => ({
+  title: b.title,
+  slug: b.slug ?? null,
+  publication_year: b.publication_year ?? null,
+  page_count: b.page_count ?? null,
+  status: 'mandatory' as const,
+}));
+
+// Derive author list from books
+const authorNames = [...new Set(dbBooks.flatMap((b) => b.authors ?? []))];
+---
+
+<Layout
+  title={`${seriesMeta.name} Reading Order | Fantasy Obscura`}
+  description={`Complete reading order for ${seriesMeta.name} — ${seriesMeta.bookCount} books in our database.`}
+>
+  <!-- Breadcrumb -->
+  <nav class="text-sm text-zinc-400 mb-8 flex items-center gap-2">
+    <a href="/reading-orders/" class="hover:text-zinc-700 transition-colors">Reading Orders</a>
+    <span>›</span>
+    <span class="text-zinc-700 font-medium">{seriesMeta.name}</span>
+  </nav>
+
+  <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{seriesMeta.name}</h1>
+
+  {authorNames.length > 0 && (
+    <p class="mt-2 text-zinc-500 text-lg">
+      by{' '}
+      {authorNames.map((name, i) => (
+        <span>
+          <a
+            href={`/authors/${name.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}/`}
+            class="text-purple-700 hover:underline font-medium"
+          >{name}</a>{i < authorNames.length - 1 ? ', ' : ''}
+        </span>
+      ))}
+    </p>
+  )}
+
+  <p class="mt-1 text-sm text-zinc-400">{seriesMeta.bookCount} {seriesMeta.bookCount === 1 ? 'book' : 'books'} in our database</p>
+
+  <div class="mt-10">
+    <ReadingOrder
+      books={books}
+      client:load
+    />
+  </div>
+</Layout>

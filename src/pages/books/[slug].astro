@@ -1,6 +1,6 @@
 ---
 import Layout from '../../components/Layout.astro';
-import { getBookBySlug, authorToSlug } from '../../lib/db/books';
+import { getBookBySlug, authorToSlug, getAllSeries } from '../../lib/db/books';
 import { getApprovedTags } from '../../lib/db/tags';
 import BookmarkButton from '../../components/BookmarkButton';
 import CommunityTags from '../../components/CommunityTags';
@@ -11,7 +11,13 @@ if (!slug) return Astro.redirect('/books');
 const book = await getBookBySlug(slug);
 if (!book) return new Response(null, { status: 404, statusText: 'Not Found' });
 
-const approvedTags = await getApprovedTags(book.id);
+const [approvedTags, allSeries] = await Promise.all([
+  getApprovedTags(book.id),
+  book.series ? getAllSeries() : Promise.resolve([]),
+]);
+const seriesSlug = book.series
+  ? (allSeries.find((s) => s.name === book.series)?.slug ?? null)
+  : null;
 const userEmail = Astro.locals.user?.email ?? null;
 
 const DARKNESS = [
@@ -93,9 +99,18 @@ const metaDescription = book.synopsis
 
       {book.series && (
         <div class="mt-2">
-          <span class="inline-block text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium">
-            {book.series}{book.series_number != null ? ` — Book ${book.series_number}` : ''}
-          </span>
+          {seriesSlug ? (
+            <a
+              href={`/reading-orders/${seriesSlug}/`}
+              class="inline-block text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium hover:bg-indigo-100 hover:border-indigo-300 transition-colors"
+            >
+              {book.series}{book.series_number != null ? ` — Book ${book.series_number}` : ''} ›
+            </a>
+          ) : (
+            <span class="inline-block text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium">
+              {book.series}{book.series_number != null ? ` — Book ${book.series_number}` : ''}
+            </span>
+          )}
         </div>
       )}
 

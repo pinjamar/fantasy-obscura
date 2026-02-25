@@ -1,46 +1,112 @@
 ---
 import Layout from '../../components/Layout.astro';
+import { getAllSeries } from '../../lib/db/books';
 
-const series = [
-  { slug: 'cosmere', name: 'Brandon Sanderson\'s Cosmere', books: '15+ books' },
-  { slug: 'witcher', name: 'The Witcher', books: '8 books' },
-  { slug: 'first-law', name: 'The First Law', books: '10 books' },
-  { slug: 'discworld', name: 'Discworld', books: '41 books' },
-  { slug: 'malazan', name: 'Malazan Book of the Fallen', books: '10 books' },
-  { slug: 'wheel-of-time', name: 'The Wheel of Time', books: '14 books' },
-  { slug: 'stormlight', name: 'The Stormlight Archive', books: '5 books' },
-  { slug: 'kingkiller', name: 'The Kingkiller Chronicle', books: '3 books' },
+const dbSeries = await getAllSeries();
+
+// Curated hand-written series (these have static pages with optional/extra markings)
+const curatedSeries = [
+  { slug: 'cosmere',       name: "Brandon Sanderson's Cosmere", bookCount: 15 },
+  { slug: 'stormlight',   name: 'The Stormlight Archive',       bookCount: 5  },
+  { slug: 'first-law',    name: 'The First Law',                bookCount: 9  },
+  { slug: 'discworld',    name: 'Discworld',                    bookCount: 41 },
+  { slug: 'malazan',      name: 'Malazan Book of the Fallen',   bookCount: 10 },
+  { slug: 'wheel-of-time',name: 'The Wheel of Time',            bookCount: 14 },
+  { slug: 'kingkiller',   name: 'The Kingkiller Chronicle',     bookCount: 3  },
+  { slug: 'witcher',      name: 'The Witcher',                  bookCount: 8  },
 ];
+
+// Merge: curated series take priority; add DB-only series after
+const curatedSlugs = new Set(curatedSeries.map((s) => s.slug));
+const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
+
+// All series combined for the search (passed as JSON to the client)
+const allSeries = [
+  ...curatedSeries.map((s) => ({ ...s, curated: true })),
+  ...dbOnly.map((s) => ({ ...s, curated: false })),
+].sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <Layout
   title="Reading Orders | Fantasy Obscura"
-  description="Clear, spoiler-free reading orders for fantasy series."
+  description="Clear, spoiler-free reading orders for fantasy and sci-fi series."
 >
-  <h1 class="text-4xl font-bold tracking-tight">Reading Orders</h1>
-  <p class="mt-4 max-w-2xl text-zinc-700">
-    Complete reading orders for popular fantasy series. Each guide includes core books, optional reads, and supplementary material.
+  <h1 class="text-3xl font-bold tracking-tight">Reading Orders</h1>
+  <p class="mt-2 text-zinc-600 max-w-2xl">
+    Complete reading orders for popular fantasy series — with Core, Optional, and Extra labels so you know exactly what to read.
   </p>
 
-  <div class="mt-8 grid gap-4 sm:grid-cols-2">
-    {series.map((s) => (
+  <!-- Search bar -->
+  <div class="mt-6 relative max-w-lg">
+    <input
+      id="series-search"
+      type="text"
+      placeholder="Search series, author, or book title…"
+      class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 pl-10 text-sm shadow-sm focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 transition"
+      autocomplete="off"
+    />
+    <svg class="absolute left-3 top-3.5 h-4 w-4 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+    </svg>
+  </div>
+
+  <!-- Series grid -->
+  <div id="series-grid" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {allSeries.map((s) => (
       <a
-        href={`/reading-orders/${s.slug}`}
-        class="group relative overflow-hidden rounded-lg border p-5 transition-all hover:shadow-lg hover:border-blue-300"
+        href={`/reading-orders/${s.slug}/`}
+        data-name={s.name.toLowerCase()}
+        class="series-card group relative overflow-hidden rounded-xl border p-5 transition-all hover:shadow-lg hover:border-purple-200 bg-white"
       >
-        <div class="absolute inset-0 bg-linear-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="absolute inset-0 bg-linear-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity" />
         <div class="relative">
-          <div class="font-semibold text-lg">{s.name}</div>
-          <div class="mt-1 text-sm text-zinc-600">{s.books}</div>
+          <p class="font-semibold text-zinc-900 group-hover:text-purple-800 transition-colors leading-snug">{s.name}</p>
+          <p class="mt-1 text-sm text-zinc-500">{s.bookCount} {s.bookCount === 1 ? 'book' : 'books'}</p>
+          {s.curated && (
+            <span class="mt-2 inline-block text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">Curated guide</span>
+          )}
         </div>
       </a>
     ))}
   </div>
 
-  <div class="mt-12 rounded-lg bg-blue-50 p-6">
-    <h2 class="font-semibold text-blue-900 mb-2">Reading Order Guide</h2>
-    <p class="text-sm text-zinc-700">
-      Our reading orders mark books as <strong>Core</strong> (essential), <strong>Optional</strong> (enriching but not required), or <strong>Extra</strong> (side stories and novellas). This helps you decide what to read based on your time and interest.
-    </p>
+  <!-- Empty state -->
+  <p id="no-results" class="hidden mt-10 text-center text-zinc-500">No series found for that search.</p>
+
+  <!-- Legend -->
+  <div class="mt-12 rounded-xl bg-zinc-50 border p-6">
+    <h2 class="font-semibold text-zinc-900 mb-3">How reading labels work</h2>
+    <div class="flex flex-wrap gap-5 text-sm">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 rounded-full text-xs font-semibold border bg-blue-100 text-blue-800 border-blue-200">Core</span>
+        <span class="text-zinc-600">Essential to the main story</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 rounded-full text-xs font-semibold border bg-green-100 text-green-800 border-green-200">Optional</span>
+        <span class="text-zinc-600">Adds depth, not required</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 rounded-full text-xs font-semibold border bg-amber-100 text-amber-800 border-amber-200">Extra</span>
+        <span class="text-zinc-600">Side stories & novellas</span>
+      </div>
+    </div>
   </div>
 </Layout>
+
+<script>
+  const input = document.getElementById('series-search') as HTMLInputElement;
+  const cards = document.querySelectorAll<HTMLElement>('.series-card');
+  const noResults = document.getElementById('no-results')!;
+
+  input.addEventListener('input', () => {
+    const q = input.value.toLowerCase().trim();
+    let visible = 0;
+    cards.forEach((card) => {
+      const name = card.dataset.name ?? '';
+      const show = !q || name.includes(q);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    noResults.classList.toggle('hidden', visible > 0 || !q);
+  });
+</script>
