@@ -304,7 +304,10 @@ export async function getAllAuthors(): Promise<{
           ? Math.round((entry.ratings.reduce((a, b) => a + b, 0) / entry.ratings.length) * 10) / 10
           : null,
     }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => {
+      const lastName = (n: string) => n.trim().split(/\s+/).at(-1) ?? n;
+      return lastName(a.name).localeCompare(lastName(b.name));
+    });
 }
 
 /**

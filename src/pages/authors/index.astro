@@ -4,12 +4,13 @@ import { getAllAuthors } from '../../lib/db/books';
 
 const authors = await getAllAuthors();
 
-// Group by first letter for the A–Z jump nav
-const letters = [...new Set(authors.map((a) => a.name[0].toUpperCase()))].sort();
+// Group by first letter of last name for the A–Z jump nav
+const lastName = (n: string) => n.trim().split(/\s+/).at(-1) ?? n;
+const letters = [...new Set(authors.map((a) => lastName(a.name)[0].toUpperCase()))].sort();
 
 const grouped = letters.map((letter) => ({
   letter,
-  authors: authors.filter((a) => a.name[0].toUpperCase() === letter),
+  authors: authors.filter((a) => lastName(a.name)[0].toUpperCase() === letter),
 }));
 
 // Avatar colour — deterministic from name
