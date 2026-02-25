@@ -1,8 +1,22 @@
 ---
 import Layout from '../../components/Layout.astro';
 import { getAllSeries } from '../../lib/db/books';
+import { supabaseClient } from '../../lib/supabaseClient';
 
-const dbSeries = await getAllSeries();
+const [dbSeries, booksRes] = await Promise.all([
+  getAllSeries(),
+  supabaseClient.from('books').select('title, authors, series').not('series', 'is', null),
+]);
+
+// Build a map: series name → searchable text (all book titles + all author names)
+type BooksRow = { title: string; authors: string[] | null; series: string | null };
+const seriesSearchMap = new Map<string, string>();
+for (const b of (booksRes.data ?? []) as BooksRow[]) {
+  if (!b.series) continue;
+  const existing = seriesSearchMap.get(b.series) ?? '';
+  const authors = (b.authors ?? []).join(' ');
+  seriesSearchMap.set(b.series, `${existing} ${b.title} ${authors}`.toLowerCase());
+}
 
 // Curated hand-written series (these have static pages with optional/extra markings)
 const curatedSeries = [
@@ -20,10 +34,18 @@ const curatedSeries = [
 const curatedSlugs = new Set(curatedSeries.map((s) => s.slug));
 const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
 
-// All series combined for the search (passed as JSON to the client)
+// All series combined for the search
 const allSeries = [
-  ...curatedSeries.map((s) => ({ ...s, curated: true })),
-  ...dbOnly.map((s) => ({ ...s, curated: false })),
+  ...curatedSeries.map((s) => ({
+    ...s,
+    curated: true,
+    searchText: (seriesSearchMap.get(s.name) ?? s.name.toLowerCase()),
+  })),
+  ...dbOnly.map((s) => ({
+    ...s,
+    curated: false,
+    searchText: (seriesSearchMap.get(s.name) ?? s.name.toLowerCase()),
+  })),
 ].sort((a, b) => a.name.localeCompare(b.name));
 ---
 
@@ -55,7 +77,7 @@ const allSeries = [
     {allSeries.map((s) => (
       <a
         href={`/reading-orders/${s.slug}/`}
-        data-name={s.name.toLowerCase()}
+        data-search={`${s.name.toLowerCase()} ${s.searchText}`}
         class="series-card group relative overflow-hidden rounded-xl border p-5 transition-all hover:shadow-lg hover:border-purple-200 bg-white"
       >
         <div class="absolute inset-0 bg-linear-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -102,8 +124,8 @@ const allSeries = [
     const q = input.value.toLowerCase().trim();
     let visible = 0;
     cards.forEach((card) => {
-      const name = card.dataset.name ?? '';
-      const show = !q || name.includes(q);
+      const searchText = card.dataset.search ?? '';
+      const show = !q || searchText.includes(q);
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
