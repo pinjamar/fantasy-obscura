@@ -1,6 +1,7 @@
 ---
 import Layout from '../../components/Layout.astro';
 import CategoryGrid from '../../components/CategoryGrid';
+import BookSearch from '../../components/BookSearch';
 ---
 
 <Layout title="Start Here | Fantasy Obscura" description="Fantasy & sci-fi reading orders, lists, and guides.">
@@ -9,8 +10,10 @@ import CategoryGrid from '../../components/CategoryGrid';
   </h1>
 
   <p class="mt-4 max-w-2xl text-zinc-700">
-    Pick a category below to discover curated book lists, or explore our general recommendations.
+    Select a genre to filter new releases, trending reads, on-sale picks, and upcoming titles — or search any book and browse our full collection.
   </p>
+
+  <BookSearch client:load />
 
   <CategoryGrid client:load />
 </Layout>

@@ -61,6 +61,11 @@ export interface Database {
           series: string | null;
           series_number: number | null;
           darkness_level: number | null;
+          audiobook_available: boolean | null;
+          audiobook_narrator: string | null;
+          audiobook_narrator_rating: string | null;
+          audiobook_hours: number | null;
+          audiobook_audible_url: string | null;
           created_at: string;
           updated_at: string;
         };
@@ -86,6 +91,11 @@ export interface Database {
           series?: string | null;
           series_number?: number | null;
           darkness_level?: number | null;
+          audiobook_available?: boolean | null;
+          audiobook_narrator?: string | null;
+          audiobook_narrator_rating?: string | null;
+          audiobook_hours?: number | null;
+          audiobook_audible_url?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -111,6 +121,11 @@ export interface Database {
           series?: string | null;
           series_number?: number | null;
           darkness_level?: number | null;
+          audiobook_available?: boolean | null;
+          audiobook_narrator?: string | null;
+          audiobook_narrator_rating?: string | null;
+          audiobook_hours?: number | null;
+          audiobook_audible_url?: string | null;
           created_at?: string;
           updated_at?: string;
         };

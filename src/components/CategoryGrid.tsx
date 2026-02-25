@@ -38,6 +38,22 @@ const newReleases: Record<string, string[]> = {
   'sci-fi':   ['A Desolation Called Peace', 'The Kaiju Preservation Society', 'Translation State', 'Witch King', 'Starter Villain', 'A Memory Called Empire'],
 };
 
+const onSale: Record<string, string[]> = {
+  general:    ['The Name of the Wind', 'Mistborn: The Final Empire', 'The Way of Kings', 'A Court of Thorns and Roses', 'The Hobbit', 'Good Omens'],
+  epic:       ['The Way of Kings', 'Mistborn: The Final Empire', 'The Eye of the World', 'The Lord of the Rings', 'Elantris', 'Warbreaker'],
+  romantasy:  ['A Court of Thorns and Roses', 'From Blood and Ash', 'Serpent & Dove', 'The Cruel Prince', 'Daughter of the Moon Goddess', 'Divine Rivals'],
+  young:      ['Harry Potter and the Sorcerer\'s Stone', 'Percy Jackson', 'The Hunger Games', 'Eragon', 'Six of Crows', 'Shadow and Bone'],
+  dark:       ['The Blade Itself', 'The Black Company', 'Half a King', 'Low Town', 'The Gutter Prayer', 'Kings of the Wyld'],
+  urban:      ['Neverwhere', 'Good Omens', 'Rivers of London', 'Storm Front', 'Anansi Boys', 'The City We Became'],
+  grimdark:   ['The Blade Itself', 'Best Served Cold', 'Gardens of the Moon', 'The Heroes', 'Prince of Thorns', 'The Heroes'],
+  historical: ['Jonathan Strange & Mr Norrell', 'The Bear and the Nightingale', 'Circe', 'Sorcerer to the Crown', 'The Invisible Life of Addie LaRue', 'Uprooted'],
+  paranormal: ['A Discovery of Witches', 'City of Bones', 'Dead Until Dark', 'Moon Called', 'Magic Bites', 'The Hollows'],
+  mythology:  ['Circe', 'The Song of Achilles', 'Norse Mythology', 'A Thousand Ships', 'Ariadne', 'The Penelopiad'],
+  cozy:       ['Legends & Lattes', 'The House in the Cerulean Sea', 'A Psalm for the Wild-Built', 'Piranesi', 'Howl\'s Moving Castle', 'Nettle and Bone'],
+  litrpg:     ['Dungeon Crawler Carl', 'Cradle', 'He Who Fights With Monsters', 'Mother of Learning', 'Beware of Chicken', 'Defiance of the Fall'],
+  'sci-fi':   ['Dune', 'Ender\'s Game', 'Project Hail Mary', 'Foundation', 'The Martian', 'All Systems Red'],
+};
+
 const trending: Record<string, string[]> = {
   general:    ['Fourth Wing', 'A Court of Thorns and Roses', 'Mistborn', 'The Way of Kings', 'Six of Crows', 'The Name of the Wind'],
   epic:       ['The Way of Kings', 'Mistborn', 'The Name of the Wind', 'The Lord of the Rings', 'The Fifth Season', 'The Rage of Dragons'],
@@ -52,6 +68,22 @@ const trending: Record<string, string[]> = {
   cozy:       ['Legends & Lattes', 'The House in the Cerulean Sea', 'A Psalm for the Wild-Built', 'The Goblin Emperor', 'Piranesi', 'Howl\'s Moving Castle'],
   litrpg:     ['Dungeon Crawler Carl', 'He Who Fights With Monsters', 'Cradle', 'The Wandering Inn', 'Mother of Learning', 'Primal Hunter'],
   'sci-fi':   ['Project Hail Mary', 'Dune', 'The Martian', 'Foundation', 'Ender\'s Game', 'The Expanse'],
+};
+
+const upcoming: Record<string, string[]> = {
+  general:    ['Winds of Winter', 'The Doors of Stone', 'The Book of All Hours', 'Unnamed Sanderson 2025', 'A Memory of Empire sequel', 'The Sunlit Man 2'],
+  epic:       ['Winds of Winter', 'The Doors of Stone', 'The Liar\'s Oath', 'The Book of All Hours', 'Unnamed Sanderson 2025', 'Malazan: Path to Ascendancy 4'],
+  romantasy:  ['Fifth Wing', 'ACOTAR Book 6', 'From Blood and Ash 6', 'Crescent City 4', 'Kingdom of the Wicked 4', 'The Midnight Sea sequel'],
+  young:      ['Hunger Games Book 4', 'Six of Crows spin-off', 'Throne of Glass new arc', 'Leigh Bardugo new YA', 'Shadow and Bone sequel', 'Children of Blood & Bone 3'],
+  dark:       ['Joe Abercrombie new standalone', 'Age of Assassins 4', 'The Gutter Prayer sequel', 'Nevernight 4', 'The Dark Descent', 'Mark Lawrence new'],
+  urban:      ['The Dresden Files: Twelve Months', 'Rivers of London Book 11', 'October Daye 22', 'Alex Verus new', 'Laundry Files new', 'Neverwhere companion'],
+  grimdark:   ['Joe Abercrombie new', 'Malazan: Path to Ascendancy 4', 'Mark Lawrence new', 'The Court of Broken Knives sequel', 'Age of Assassins 4', 'Grimdark anthology 2025'],
+  historical: ['Naomi Novik new historical', 'Piranesi 2', 'The Invisible Life sequel', 'Susanna Clarke new', 'The Bear and Nightingale spin-off', 'Sorcerer to the Crown 3'],
+  paranormal: ['A Discovery of Witches 4', 'The Hollows new', 'Kate Daniels spin-off sequel', 'Rivers of London 11', 'Mercy Thompson 15', 'October Daye 22'],
+  mythology:  ['Madeline Miller new novel', 'Pat Barker new', 'A Thousand Ships companion', 'Song of Achilles prequel', 'Norse Mythology 3', 'Ariadne sequel'],
+  cozy:       ['Legends & Lattes 3', 'TJ Klune new', 'A Psalm for the Wild-Built 4', 'Emily Wilde\'s Encyclopaedia 3', 'House in the Cerulean Sea 2', 'Nettle & Bone 2'],
+  litrpg:     ['Dungeon Crawler Carl 7', 'Cradle 13', 'The Wandering Inn Vol. 9', 'He Who Fights With Monsters 13', 'Defiance of the Fall 12', 'Primal Hunter 8'],
+  'sci-fi':   ['Project Hail Mary 2', 'Andy Weir new', 'Becky Chambers new', 'The Expanse: Leviathan Wakes companion', 'Dune: Tales of Arrakis', 'Foundation new arc'],
 };
 
 // Mock data for book lists
@@ -136,7 +168,17 @@ export default function CategoryGrid() {
 
   return (
     <>
-      <div className="mt-8 grid gap-4 sm:grid-cols-3">
+      <div className="mt-8">
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-xs font-semibold text-zinc-400 uppercase tracking-widest">Browse our collection by category</p>
+          <a
+            href={selectedCategory ? `/categories/${selectedCategory}/` : `/books/all/`}
+            className="text-sm font-medium text-purple-700 hover:text-purple-900 hover:underline transition-colors whitespace-nowrap"
+          >
+            View full {categoryName} →
+          </a>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
         {categories.map((cat) => (
           <button
             key={cat.slug}
@@ -154,70 +196,17 @@ export default function CategoryGrid() {
             </div>
           </button>
         ))}
-      </div>
-
-      <div className="mt-10 animate-fade-in" key={selectedCategory || 'general'}>
-        <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-2xl font-semibold">
-            {selectedCat ? selectedCat.name : 'Our Top Recommendations'}
-          </h2>
-          {selectedCat && (
-            <a
-              href={`/categories/${selectedCat.slug}`}
-              className="text-sm text-blue-600 hover:underline"
-            >
-              View full category →
-            </a>
-          )}
-        </div>
-
-        <div className="grid gap-6 sm:grid-cols-3">
-          <div className="rounded-lg border bg-linear-to-br from-blue-50 to-indigo-50 p-5">
-            <h3 className="font-semibold text-blue-900 mb-4">⭐ {categoryName} All-Time Greats</h3>
-            <ol className="space-y-2">
-              {books.best.map((book, i) => (
-                <li key={i} className="text-sm text-zinc-700 flex items-start">
-                  <span className="text-blue-600 mr-2 font-medium min-w-6">{i + 1}.</span>
-                  {book}
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          <div className="rounded-lg border bg-linear-to-br from-green-50 to-emerald-50 p-5">
-            <h3 className="font-semibold text-green-900 mb-4">🚀 Best {categoryName} to Start With</h3>
-            <ol className="space-y-2">
-              {books.starter.map((book, i) => (
-                <li key={i} className="text-sm text-zinc-700 flex items-start">
-                  <span className="text-green-600 mr-2 font-medium min-w-6">{i + 1}.</span>
-                  {book}
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          <div className="rounded-lg border bg-linear-to-br from-amber-50 to-orange-50 p-5">
-            <h3 className="font-semibold text-amber-900 mb-4">💎 {categoryName} Hidden Gems</h3>
-            <ol className="space-y-2">
-              {books.hidden.map((book, i) => (
-                <li key={i} className="text-sm text-zinc-700 flex items-start">
-                  <span className="text-amber-600 mr-2 font-medium min-w-6">{i + 1}.</span>
-                  {book}
-                </li>
-              ))}
-            </ol>
-          </div>
         </div>
       </div>
 
-      <div className="mt-6 grid gap-6 sm:grid-cols-2">
+      <div className="mt-6 flex flex-col gap-6">
         <div className="rounded-lg border bg-linear-to-br from-violet-50 to-purple-50 p-5">
           <div className="flex items-center gap-2 mb-4">
             <span className="text-lg">✨</span>
             <h3 className="font-semibold text-violet-900">New Releases</h3>
             <span className="ml-auto text-xs bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full">2023–2025</span>
           </div>
-          <ol className="space-y-2">
+          <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2">
             {newReleases[selectedCategory || 'general'].map((book, i) => (
               <li key={i} className="text-sm text-zinc-700 flex items-start">
                 <span className="text-violet-500 mr-2 font-medium min-w-6">{i + 1}.</span>
@@ -233,10 +222,78 @@ export default function CategoryGrid() {
             <h3 className="font-semibold text-orange-900">Trending Now</h3>
             <span className="ml-auto text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">BookTok & Reddit</span>
           </div>
-          <ol className="space-y-2">
+          <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2">
             {trending[selectedCategory || 'general'].map((book, i) => (
               <li key={i} className="text-sm text-zinc-700 flex items-start">
                 <span className="text-orange-500 mr-2 font-medium min-w-6">{i + 1}.</span>
+                {book}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="rounded-lg border bg-linear-to-br from-emerald-50 to-teal-50 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg">🏷️</span>
+            <h3 className="font-semibold text-emerald-900">On Sale This Week</h3>
+            <span className="ml-auto text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">Kindle & paperback deals</span>
+          </div>
+          <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2">
+            {onSale[selectedCategory || 'general'].map((book, i) => (
+              <li key={i} className="text-sm text-zinc-700 flex items-start">
+                <span className="text-emerald-600 mr-2 font-medium min-w-6">{i + 1}.</span>
+                {book}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="rounded-lg border bg-linear-to-br from-sky-50 to-blue-50 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg">📅</span>
+            <h3 className="font-semibold text-sky-900">Upcoming {selectedCat ? categoryName : 'Fantasy'}</h3>
+            <span className="ml-auto text-xs bg-sky-100 text-sky-700 px-2 py-0.5 rounded-full">Anticipated 2025–2026</span>
+          </div>
+          <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2">
+            {upcoming[selectedCategory || 'general'].map((book, i) => (
+              <li key={i} className="text-sm text-zinc-700 flex items-start">
+                <span className="text-sky-500 mr-2 font-medium min-w-6">{i + 1}.</span>
+                {book}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-3">
+        <div className="rounded-lg border p-4">
+          <h3 className="font-semibold text-sm mb-3">⭐ All-Time Greats <span className="text-zinc-400 font-normal">— {categoryName}</span></h3>
+          <ol className="space-y-1.5">
+            {books.best.slice(0, 5).map((book, i) => (
+              <li key={i} className="text-sm text-zinc-700 flex items-start">
+                <span className="text-zinc-400 mr-2 font-medium min-w-5">{i + 1}.</span>
+                {book}
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="rounded-lg border p-4">
+          <h3 className="font-semibold text-sm mb-3">🚀 Best to Start With <span className="text-zinc-400 font-normal">— {categoryName}</span></h3>
+          <ol className="space-y-1.5">
+            {books.starter.slice(0, 5).map((book, i) => (
+              <li key={i} className="text-sm text-zinc-700 flex items-start">
+                <span className="text-zinc-400 mr-2 font-medium min-w-5">{i + 1}.</span>
+                {book}
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="rounded-lg border p-4">
+          <h3 className="font-semibold text-sm mb-3">💎 Hidden Gems <span className="text-zinc-400 font-normal">— {categoryName}</span></h3>
+          <ol className="space-y-1.5">
+            {books.hidden.slice(0, 5).map((book, i) => (
+              <li key={i} className="text-sm text-zinc-700 flex items-start">
+                <span className="text-zinc-400 mr-2 font-medium min-w-5">{i + 1}.</span>
                 {book}
               </li>
             ))}

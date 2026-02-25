@@ -21,6 +21,11 @@ export type Book = {
   series: string | null;
   series_number: number | null;
   darkness_level: number | null;
+  audiobook_available: boolean | null;
+  audiobook_narrator: string | null;
+  audiobook_narrator_rating: 'excellent' | 'good' | 'mixed' | 'avoid' | null;
+  audiobook_hours: number | null;
+  audiobook_audible_url: string | null;
   created_at: string;
   updated_at: string;
 };
@@ -47,6 +52,11 @@ export type BookInput = {
   series?: string | null;
   series_number?: number | null;
   darkness_level?: number | null;
+  audiobook_available?: boolean | null;
+  audiobook_narrator?: string | null;
+  audiobook_narrator_rating?: 'excellent' | 'good' | 'mixed' | 'avoid' | null;
+  audiobook_hours?: number | null;
+  audiobook_audible_url?: string | null;
 };
 
 export type BookSearchResult = BookInput & {
@@ -74,6 +84,7 @@ export type BookFilters = {
   max_pages?: number;
   avoid_explicit?: boolean;
   avoid_grimdark?: boolean;
+  has_audiobook?: boolean;
 };
 
 export type SortOption =

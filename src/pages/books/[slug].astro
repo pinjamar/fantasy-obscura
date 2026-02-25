@@ -30,6 +30,9 @@ const darkness = book.darkness_level != null && book.darkness_level >= 1
 const amazonUrl   = `https://www.amazon.com/s?k=${encodeURIComponent((book.title ?? '') + ' ' + (book.authors?.[0] ?? ''))}`;
 const bookshopUrl = `https://bookshop.org/search?keywords=${encodeURIComponent(book.title ?? '')}`;
 
+// ~250 words/page ÷ 250 wpm = 1 min/page → pages ÷ 60 = hours
+const readHours = book.page_count ? Math.round(book.page_count / 60) : null;
+
 
 const metaDescription = book.synopsis
   ? book.synopsis.slice(0, 160)
@@ -120,6 +123,7 @@ const metaDescription = book.synopsis
           <span>
             <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block">Pages</span>
             <span class="font-semibold text-zinc-800">{book.page_count}</span>
+            {readHours && <span class="text-zinc-400 text-xs ml-1.5">~{readHours}h</span>}
           </span>
         )}
         {book.avg_rating && (
@@ -155,6 +159,42 @@ const metaDescription = book.synopsis
             </div>
             <div class="text-xs text-zinc-500 mt-0.5">{darkness.desc}</div>
           </div>
+        </div>
+      )}
+
+      <!-- ── Audiobook ─────────────────────────────────────────── -->
+      {book.audiobook_available && (
+        <div class="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 px-5 py-4 flex flex-wrap items-center gap-4">
+          <span class="text-2xl">🎧</span>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-zinc-900 text-sm">Audiobook available</p>
+            <p class="text-xs text-zinc-500 mt-0.5">
+              {book.audiobook_narrator && <span>Narrated by <span class="font-medium text-zinc-700">{book.audiobook_narrator}</span></span>}
+              {book.audiobook_hours && <span class="ml-2">· {book.audiobook_hours}h</span>}
+            </p>
+          </div>
+          {book.audiobook_narrator_rating && (() => {
+            const ratingMap = {
+              excellent: { label: 'Excellent narrator', color: 'bg-green-100 text-green-800 border-green-200' },
+              good:      { label: 'Good narrator',      color: 'bg-blue-100 text-blue-800 border-blue-200' },
+              mixed:     { label: 'Mixed reviews',      color: 'bg-yellow-100 text-yellow-800 border-yellow-200' },
+              avoid:     { label: 'Poor narrator',      color: 'bg-red-100 text-red-800 border-red-200' },
+            };
+            const r = ratingMap[book.audiobook_narrator_rating as keyof typeof ratingMap];
+            return r ? (
+              <span class={`text-xs font-semibold px-2.5 py-1 rounded-full border ${r.color}`}>{r.label}</span>
+            ) : null;
+          })()}
+          {book.audiobook_audible_url && (
+            <a
+              href={book.audiobook_audible_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-white text-xs font-semibold transition-colors"
+            >
+              🎧 Listen on Audible
+            </a>
+          )}
         </div>
       )}
 

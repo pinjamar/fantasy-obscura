@@ -17,6 +17,7 @@ interface Book {
   series?: string | null;
   series_number?: number | null;
   darkness_level?: number | null;
+  audiobook_available?: boolean | null;
   created_at?: string;
 }
 
@@ -66,11 +67,26 @@ function sortBooks(books: Book[], key: SortKey): Book[] {
   }
 }
 
+const BOOKS_PER_PAGE = 24;
+
+function buildPageNums(current: number, total: number): (number | 'ellipsis')[] {
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+  const pages: (number | 'ellipsis')[] = [1];
+  if (current > 3) pages.push('ellipsis');
+  for (let p = Math.max(2, current - 1); p <= Math.min(total - 1, current + 1); p++) {
+    pages.push(p);
+  }
+  if (current < total - 2) pages.push('ellipsis');
+  pages.push(total);
+  return pages;
+}
+
 const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>('rating-desc');
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -107,6 +123,11 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
   }, [genre, audience]);
 
   const sortedBooks = useMemo(() => sortBooks(books, sort), [books, sort]);
+  const totalBooksPages = Math.ceil(sortedBooks.length / BOOKS_PER_PAGE);
+  const pagedBooks = sortedBooks.slice(
+    (currentPage - 1) * BOOKS_PER_PAGE,
+    currentPage * BOOKS_PER_PAGE,
+  );
 
   if (loading) {
     return (
@@ -145,7 +166,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
         {SORT_OPTIONS.map((opt) => (
           <button
             key={opt.key}
-            onClick={() => setSort(opt.key)}
+            onClick={() => { setSort(opt.key); setCurrentPage(1); }}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all ${
               sort === opt.key
                 ? 'bg-zinc-900 text-white font-medium'
@@ -156,11 +177,14 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
             {opt.label}
           </button>
         ))}
-        <span className="ml-auto text-xs text-zinc-400">{sortedBooks.length} books</span>
+        <span className="ml-auto text-xs text-zinc-400">
+          {sortedBooks.length} books
+          {totalBooksPages > 1 && ` · page ${currentPage}/${totalBooksPages}`}
+        </span>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {sortedBooks.map((book) => {
+        {pagedBooks.map((book) => {
           const href = book.slug ? `/books/${book.slug}` : null;
           const dl = (book.darkness_level != null && book.darkness_level >= 1) ? book.darkness_level : null;
 
@@ -181,6 +205,11 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
                       {DARKNESS_CANDLES[dl]}
                     </div>
                   )}
+                  {book.audiobook_available && (
+                    <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                      🎧
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 flex items-center justify-center">
@@ -188,6 +217,11 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
                   {dl != null && (
                     <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
                       {DARKNESS_CANDLES[dl]}
+                    </div>
+                  )}
+                  {book.audiobook_available && (
+                    <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
+                      🎧
                     </div>
                   )}
                 </div>
@@ -292,6 +326,42 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
           );
         })}
       </div>
+
+      {totalBooksPages > 1 && (
+        <div className="flex items-center justify-center gap-1.5 mt-8 flex-wrap">
+          <button
+            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            className="px-3 py-1.5 rounded-lg border border-zinc-300 text-sm font-medium hover:bg-zinc-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          >
+            ← Prev
+          </button>
+          {buildPageNums(currentPage, totalBooksPages).map((p, i) =>
+            p === 'ellipsis' ? (
+              <span key={`e${i}`} className="px-2 text-zinc-400 text-sm">…</span>
+            ) : (
+              <button
+                key={p}
+                onClick={() => setCurrentPage(p as number)}
+                className={`w-9 h-9 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                  p === currentPage
+                    ? 'bg-purple-600 text-white'
+                    : 'border border-zinc-300 hover:bg-zinc-50'
+                }`}
+              >
+                {p}
+              </button>
+            )
+          )}
+          <button
+            onClick={() => setCurrentPage(p => Math.min(totalBooksPages, p + 1))}
+            disabled={currentPage === totalBooksPages}
+            className="px-3 py-1.5 rounded-lg border border-zinc-300 text-sm font-medium hover:bg-zinc-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          >
+            Next →
+          </button>
+        </div>
+      )}
     </div>
   );
 };

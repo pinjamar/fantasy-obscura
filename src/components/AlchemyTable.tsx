@@ -592,6 +592,7 @@ export default function AlchemyTable() {
   const [darknessLevel, setDarknessLevel] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [excludedWarnings, setExcludedWarnings] = useState<string[]>([]);
+  const [audiobookOnly, setAudiobookOnly] = useState(false);
 
   const toggleWarning = (id: string) => {
     setExcludedWarnings((prev) =>
@@ -706,6 +707,8 @@ export default function AlchemyTable() {
       params.set('avoid_explicit', '1');
     if (excludedWarnings.includes('grimdark'))
       params.set('avoid_grimdark', '1');
+    if (audiobookOnly)
+      params.set('has_audiobook', '1');
 
     try {
       const res = await fetch(`/api/craft?${params.toString()}`);
@@ -957,31 +960,67 @@ export default function AlchemyTable() {
         ))}
       </div>
 
-      {/* Creatures & Darkness — 2-column grid */}
+      {/* Creatures / Category / Audiobook  |  Darkness Scale */}
       <div className="grid gap-6 sm:grid-cols-2">
-        {/* Creatures & Races Dropdown */}
-        <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-sky-200 p-5 shadow-sm">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">🐉</span>
-            <h3 className="font-semibold text-sky-900">Creatures & Races</h3>
-            <span className="text-xs text-sky-600 bg-sky-50 px-2 py-0.5 rounded-full ml-auto">
-              Optional
-            </span>
+
+        {/* Left column: 3 compact filters stacked */}
+        <div className="flex flex-col gap-3">
+          {/* Category */}
+          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-violet-200 px-4 py-3 shadow-sm">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg">📂</span>
+              <h3 className="font-semibold text-violet-900 text-sm">Category</h3>
+              <span className="text-xs text-violet-600 bg-violet-50 px-2 py-0.5 rounded-full ml-auto">Optional</span>
+            </div>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-violet-200 bg-violet-50 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-violet-300"
+            >
+              {CATEGORY_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
           </div>
-          <select
-            value={selectedCreature}
-            onChange={(e) => setSelectedCreature(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg border border-sky-200 bg-sky-50 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-sky-300"
-          >
-            {CREATURE_OPTIONS.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
+
+          {/* Creatures & Races */}
+          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-sky-200 px-4 py-3 shadow-sm">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg">🐉</span>
+              <h3 className="font-semibold text-sky-900 text-sm">Creatures & Races</h3>
+              <span className="text-xs text-sky-600 bg-sky-50 px-2 py-0.5 rounded-full ml-auto">Optional</span>
+            </div>
+            <select
+              value={selectedCreature}
+              onChange={(e) => setSelectedCreature(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-sky-200 bg-sky-50 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-sky-300"
+            >
+              {CREATURE_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Audiobook toggle */}
+          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-zinc-200 px-4 py-3 shadow-sm flex items-center gap-3">
+            <span className="text-lg">🎧</span>
+            <span className="text-sm font-semibold text-zinc-700 flex-1">Audiobook available</span>
+            <button
+              role="switch"
+              aria-checked={audiobookOnly}
+              onClick={() => setAudiobookOnly((v) => !v)}
+              className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus:outline-none ${
+                audiobookOnly ? 'bg-orange-400' : 'bg-zinc-200'
+              }`}
+            >
+              <span className={`inline-block h-4 w-4 rounded-full bg-white shadow transition-transform ${
+                audiobookOnly ? 'translate-x-6' : 'translate-x-1'
+              }`} />
+            </button>
+          </div>
         </div>
 
-        {/* Darkness Scale */}
+        {/* Right column: Darkness Scale */}
         <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-zinc-200 p-5 shadow-sm">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-2xl">🕯️</span>
@@ -1005,9 +1044,7 @@ export default function AlchemyTable() {
               >
                 <span className="shrink-0 leading-tight">{dl.candles}</span>
                 <span>
-                  <span className="font-semibold text-zinc-800">
-                    {dl.label}
-                  </span>
+                  <span className="font-semibold text-zinc-800">{dl.label}</span>
                   <span className="text-zinc-500 ml-1">— {dl.desc}</span>
                 </span>
                 {darknessLevel === dl.level && (
@@ -1017,28 +1054,6 @@ export default function AlchemyTable() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Category Filter */}
-      <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-violet-200 p-5 shadow-sm">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-2xl">📂</span>
-          <h3 className="font-semibold text-violet-900">Category</h3>
-          <span className="text-xs text-violet-600 bg-violet-50 px-2 py-0.5 rounded-full ml-auto">
-            Optional
-          </span>
-        </div>
-        <select
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          className="w-full px-3 py-2 rounded-lg border border-violet-200 bg-violet-50 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-violet-300"
-        >
-          {CATEGORY_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
-          ))}
-        </select>
       </div>
 
       {/* Content Warnings */}

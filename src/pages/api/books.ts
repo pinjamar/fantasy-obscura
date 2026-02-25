@@ -25,6 +25,11 @@ const normalizeBook = (payload: BookInput) => {
     diversity_rep: payload.diversity_rep?.filter(Boolean) || null,
     series: payload.series?.trim() || null,
     series_number: payload.series_number ?? null,
+    audiobook_available: payload.audiobook_available ?? null,
+    audiobook_narrator: payload.audiobook_narrator?.trim() || null,
+    audiobook_narrator_rating: payload.audiobook_narrator_rating ?? null,
+    audiobook_hours: payload.audiobook_hours ?? null,
+    audiobook_audible_url: payload.audiobook_audible_url?.trim() || null,
   };
 };
 

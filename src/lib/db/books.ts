@@ -62,6 +62,11 @@ export async function getBooks(
       query = query.eq('audience', filters.audience);
     }
 
+    // Audiobook filter
+    if (filters.has_audiobook) {
+      query = query.eq('audiobook_available', true);
+    }
+
     // Exclusion filters (content warnings)
     if (filters.avoid_explicit) {
       query = query.or('heat_level.is.null,heat_level.neq.Spicy');
