@@ -9,6 +9,41 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      authors: {
+        Row: {
+          id: string;
+          name: string;
+          slug: string;
+          bio: string | null;
+          photo_url: string | null;
+          website: string | null;
+          twitter: string | null;
+          goodreads: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          name: string;
+          slug: string;
+          bio?: string | null;
+          photo_url?: string | null;
+          website?: string | null;
+          twitter?: string | null;
+          goodreads?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          name?: string;
+          slug?: string;
+          bio?: string | null;
+          photo_url?: string | null;
+          website?: string | null;
+          twitter?: string | null;
+          goodreads?: string | null;
+          created_at?: string;
+        };
+      };
       book_tags: {
         Row: {
           id: string;

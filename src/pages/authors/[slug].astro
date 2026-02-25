@@ -1,18 +1,22 @@
 ---
 import Layout from '../../components/Layout.astro';
-import { getAllAuthors, getBooksByAuthor, authorToSlug } from '../../lib/db/books';
+import { getAllAuthors, getBooksByAuthor } from '../../lib/db/books';
+import { getAuthorProfile } from '../../lib/db/authors';
 
 const { slug } = Astro.params;
 
 if (!slug) return Astro.redirect('/authors/');
 
-// Find the author whose slug matches
+// Find the author whose slug matches (aggregated from books)
 const allAuthors = await getAllAuthors();
 const author = allAuthors.find((a) => a.slug === slug);
 
 if (!author) return new Response(null, { status: 404, statusText: 'Not Found' });
 
-const books = await getBooksByAuthor(author.name);
+const [books, profile] = await Promise.all([
+  getBooksByAuthor(author.name),
+  getAuthorProfile(slug),
+]);
 
 // Aggregate stats from books
 const allSubgenres = books.flatMap((b) => b.subgenres ?? []);
@@ -50,7 +54,9 @@ const avatarGradient = palette[h % palette.length];
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
 const DARKNESS_LABELS  = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
 
-const metaDescription = `Explore all ${books.length} fantasy books by ${author.name} on Fantasy Obscura — genres, tropes, and darkness ratings.`;
+const metaDescription = profile?.bio
+  ? profile.bio.slice(0, 160)
+  : `Explore all ${books.length} fantasy books by ${author.name} on Fantasy Obscura — genres, tropes, and darkness ratings.`;
 ---
 
 <Layout title={`${author.name} | Fantasy Obscura`} description={metaDescription}>
@@ -63,10 +69,19 @@ const metaDescription = `Explore all ${books.length} fantasy books by ${author.n
 
   <!-- Author hero -->
   <div class="flex flex-col sm:flex-row gap-6 items-start mb-10">
-    <!-- Avatar -->
-    <div class={`shrink-0 w-24 h-24 rounded-2xl bg-linear-to-br ${avatarGradient} flex items-center justify-center text-white font-bold text-4xl shadow-lg`}>
-      {author.name[0].toUpperCase()}
-    </div>
+    <!-- Avatar / Photo -->
+    {profile?.photo_url ? (
+      <img
+        src={profile.photo_url}
+        alt={author.name}
+        class="shrink-0 w-24 h-24 rounded-2xl object-cover shadow-lg"
+        onerror="this.style.display='none'"
+      />
+    ) : (
+      <div class={`shrink-0 w-24 h-24 rounded-2xl bg-linear-to-br ${avatarGradient} flex items-center justify-center text-white font-bold text-4xl shadow-lg`}>
+        {author.name[0].toUpperCase()}
+      </div>
+    )}
 
     <!-- Name + stats -->
     <div class="flex-1">
@@ -87,6 +102,27 @@ const metaDescription = `Explore all ${books.length} fantasy books by ${author.n
           </span>
         )}
       </div>
+
+      <!-- Social links -->
+      {(profile?.website || profile?.twitter || profile?.goodreads) && (
+        <div class="mt-3 flex flex-wrap gap-3 text-sm">
+          {profile.website && (
+            <a href={profile.website} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
+              🌐 Website
+            </a>
+          )}
+          {profile.twitter && (
+            <a href={`https://twitter.com/${profile.twitter}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
+              𝕏 @{profile.twitter}
+            </a>
+          )}
+          {profile.goodreads && (
+            <a href={profile.goodreads} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
+              📚 Goodreads
+            </a>
+          )}
+        </div>
+      )}
 
       <!-- Top genres -->
       {topGenres.length > 0 && (
@@ -116,6 +152,13 @@ const metaDescription = `Explore all ${books.length} fantasy books by ${author.n
       )}
     </div>
   </div>
+
+  <!-- Bio -->
+  {profile?.bio && (
+    <div class="mb-10 max-w-3xl">
+      <p class="text-zinc-600 leading-relaxed">{profile.bio}</p>
+    </div>
+  )}
 
   <!-- Books grid -->
   <h2 class="text-xl font-semibold mb-4">Books</h2>
