@@ -1,7 +1,7 @@
 ---
 import Layout from '../../components/Layout.astro';
 import ReadingOrder from '../../components/ReadingOrder';
-import { getAllSeries, getBooksBySeries } from '../../lib/db/books';
+import { getAllSeries, getBooksBySeries, authorToSlug } from '../../lib/db/books';
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect('/reading-orders/');
@@ -48,7 +48,7 @@ const authorNames = [...new Set(dbBooks.flatMap((b) => b.authors ?? []))];
       {authorNames.map((name, i) => (
         <span>
           <a
-            href={`/authors/${name.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}/`}
+            href={`/authors/${authorToSlug(name)}/`}
             class="text-purple-700 hover:underline font-medium"
           >{name}</a>{i < authorNames.length - 1 ? ', ' : ''}
         </span>

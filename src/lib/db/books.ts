@@ -132,20 +132,6 @@ export async function getBookBySlug(slug: string): Promise<Book | null> {
 }
 
 /**
- * Get a single book by ID
- */
-export async function getBookById(id: string): Promise<Book | null> {
-  const { data, error } = await supabaseClient
-    .from('books')
-    .select('*')
-    .eq('id', id)
-    .single();
-
-  if (error || !data) return null;
-  return data;
-}
-
-/**
  * Create a new book
  */
 export async function createBook(book: BookInput): Promise<Book | null> {
@@ -160,91 +146,6 @@ export async function createBook(book: BookInput): Promise<Book | null> {
     return null;
   }
   return data;
-}
-
-/**
- * Update an existing book
- */
-export async function updateBook(
-  id: string,
-  updates: Partial<BookInput>,
-): Promise<Book | null> {
-  const { data, error } = await supabaseClient
-    .from('books')
-    .update(updates)
-    .eq('id', id)
-    .select()
-    .single();
-
-  if (error || !data) {
-    console.error('Error updating book:', error);
-    return null;
-  }
-  return data;
-}
-
-/**
- * Delete a book
- */
-export async function deleteBook(id: string): Promise<boolean> {
-  const { error } = await supabaseClient.from('books').delete().eq('id', id);
-
-  if (error) {
-    console.error('Error deleting book:', error);
-    return false;
-  }
-  return true;
-}
-
-/**
- * Get distinct values for filter options
- */
-export async function getFilterOptions(): Promise<{
-  subgenres: string[];
-  tropes: string[];
-  tones: string[];
-  diversityReps: string[];
-  magicSystems: string[];
-  pacings: string[];
-  heatLevels: string[];
-  audiences: string[];
-}> {
-  const { data } = await supabaseClient
-    .from('books')
-    .select(
-      'subgenres, tropes, tone, diversity_rep, magic_system, pacing, heat_level, audience',
-    );
-
-  const subgenres = new Set<string>();
-  const tropes = new Set<string>();
-  const tones = new Set<string>();
-  const diversityReps = new Set<string>();
-  const magicSystems = new Set<string>();
-  const pacings = new Set<string>();
-  const heatLevels = new Set<string>();
-  const audiences = new Set<string>();
-
-  data?.forEach((book) => {
-    book.subgenres?.forEach((s: string) => subgenres.add(s));
-    book.tropes?.forEach((t: string) => tropes.add(t));
-    book.tone?.forEach((t: string) => tones.add(t));
-    book.diversity_rep?.forEach((d: string) => diversityReps.add(d));
-    if (book.magic_system) magicSystems.add(book.magic_system);
-    if (book.pacing) pacings.add(book.pacing);
-    if (book.heat_level) heatLevels.add(book.heat_level);
-    if (book.audience) audiences.add(book.audience);
-  });
-
-  return {
-    subgenres: Array.from(subgenres).sort(),
-    tropes: Array.from(tropes).sort(),
-    tones: Array.from(tones).sort(),
-    diversityReps: Array.from(diversityReps).sort(),
-    magicSystems: Array.from(magicSystems).sort(),
-    pacings: Array.from(pacings).sort(),
-    heatLevels: Array.from(heatLevels).sort(),
-    audiences: Array.from(audiences).sort(),
-  };
 }
 
 /**
