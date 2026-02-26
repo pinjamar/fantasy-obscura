@@ -75,10 +75,8 @@ function pageUrl(p: number) {
         <div class="rounded-2xl border bg-white overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
           {href ? (
             <a href={href} class="block relative h-48 overflow-hidden bg-linear-to-br from-purple-200 to-blue-200">
-              {book.cover_url
-                ? <img src={book.cover_url} alt={book.title} class="w-full h-full object-cover" loading="lazy" />
-                : <span class="absolute inset-0 flex items-center justify-center text-4xl">📖</span>
-              }
+              <img src={book.cover_url || '/placeholder-cover.svg'} alt={book.title} class="w-full h-full object-cover" loading="lazy"
+                onerror="this.onerror=null;this.src='/placeholder-cover.svg';" />
               {dl != null && (
                 <span class="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
                   {DARKNESS_CANDLES[dl]}
@@ -91,8 +89,9 @@ function pageUrl(p: number) {
               )}
             </a>
           ) : (
-            <div class="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 flex items-center justify-center">
-              <span class="text-4xl">📖</span>
+            <div class="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 overflow-hidden">
+              <img src={book.cover_url || '/placeholder-cover.svg'} alt={book.title} class="w-full h-full object-cover" loading="lazy"
+                onerror="this.onerror=null;this.src='/placeholder-cover.svg';" />
               {dl != null && (
                 <span class="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
                   {DARKNESS_CANDLES[dl]}

@@ -33,13 +33,72 @@ PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ## Database Setup
 
-Run the SQL in `supabase/schema.sql` in your Supabase SQL Editor to create the books table.
+Run each step **in order** in the Supabase **SQL Editor → New query → Run**.
 
-Add the darkness level column if not already present:
+### Step 1 — Books table (file: `supabase/schema.sql`)
+Creates the core `books` table with indexes and `updated_at` trigger.
 
+### Step 2 — Books extra columns (run once, safe to re-run)
+Adds columns that were added after the initial schema:
 ```sql
 ALTER TABLE books ADD COLUMN IF NOT EXISTS darkness_level smallint;
+ALTER TABLE books ADD COLUMN IF NOT EXISTS audience text;
+ALTER TABLE books ADD COLUMN IF NOT EXISTS series text;
+ALTER TABLE books ADD COLUMN IF NOT EXISTS series_number integer;
 ```
+
+### Step 3 — Audiobook columns (file: `supabase/add-audiobook-columns.sql`)
+Adds audiobook metadata to the books table:
+```sql
+ALTER TABLE books
+  ADD COLUMN IF NOT EXISTS audiobook_available        boolean DEFAULT false,
+  ADD COLUMN IF NOT EXISTS audiobook_narrator         text,
+  ADD COLUMN IF NOT EXISTS audiobook_narrator_rating  text
+    CHECK (audiobook_narrator_rating IN ('excellent', 'good', 'mixed', 'avoid')),
+  ADD COLUMN IF NOT EXISTS audiobook_hours            integer,
+  ADD COLUMN IF NOT EXISTS audiobook_audible_url      text;
+```
+Set `audiobook_available = true` on any book row to show the headphones card on its page.
+
+### Step 4 — Authors table + RLS (file: `supabase/authors-rls.sql`)
+Creates the `authors` profile table and enables public reads:
+```sql
+CREATE TABLE authors (
+  id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  name       text NOT NULL,
+  slug       text UNIQUE NOT NULL,
+  bio        text,
+  photo_url  text,
+  website    text,
+  twitter    text,
+  goodreads  text,
+  created_at timestamptz DEFAULT now()
+);
+ALTER TABLE authors ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "public read authors" ON authors FOR SELECT USING (true);
+```
+
+### Step 5 — Community book tags table + RLS
+Creates the `book_tags` table for user-submitted tags (requires auth):
+```sql
+CREATE TABLE book_tags (
+  id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  book_id    uuid NOT NULL REFERENCES books(id) ON DELETE CASCADE,
+  tag_slug   text NOT NULL,
+  tag_name   text NOT NULL,
+  user_id    uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  approved   boolean DEFAULT false,
+  created_at timestamptz DEFAULT now(),
+  UNIQUE(book_id, tag_slug, user_id)
+);
+ALTER TABLE book_tags ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "read approved tags"      ON book_tags FOR SELECT USING (approved = true);
+CREATE POLICY "authenticated users can tag" ON book_tags FOR INSERT TO authenticated WITH CHECK (auth.uid() = user_id);
+CREATE POLICY "users can remove own tags"   ON book_tags FOR DELETE TO authenticated USING (auth.uid() = user_id);
+```
+Tags default to `approved = false`. Set to `true` in the Supabase dashboard to make them public.
+
+---
 
 ## Scripts
 
@@ -47,9 +106,10 @@ ALTER TABLE books ADD COLUMN IF NOT EXISTS darkness_level smallint;
 node seed-books.js       # Seed ~100 curated fantasy books
 node seed-darkness.js    # Set darkness_level (1–5) on all books
 node update-series.js    # Add series metadata to existing books
+node seed-authors.js     # Seed 25 major fantasy/sci-fi author profiles
 ```
 
-Run in order if setting up from scratch: `seed-books` → `seed-darkness` → `update-series`.
+Fresh setup order: `seed-books` → `seed-darkness` → `update-series` → `seed-authors`.
 
 ## Project Structure
 

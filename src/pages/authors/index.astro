@@ -1,8 +1,19 @@
 ---
 import Layout from '../../components/Layout.astro';
 import { getAllAuthors } from '../../lib/db/books';
+import { supabaseClient } from '../../lib/supabaseClient';
 
-const authors = await getAllAuthors();
+const [authors, profilesRes] = await Promise.all([
+  getAllAuthors(),
+  supabaseClient.from('authors').select('slug, photo_url'),
+]);
+
+// Build slug → photo_url map
+type ProfileRow = { slug: string; photo_url: string | null };
+const photoMap = new Map<string, string | null>();
+for (const p of (profilesRes.data ?? []) as ProfileRow[]) {
+  photoMap.set(p.slug, p.photo_url);
+}
 
 // Group by first letter of last name for the A–Z jump nav
 const lastName = (n: string) => n.trim().split(/\s+/).at(-1) ?? n;
@@ -55,10 +66,22 @@ function authorColor(name: string): string {
               href={`/authors/${author.slug}/`}
               class="flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group"
             >
-              <!-- Avatar -->
-              <div class={`shrink-0 w-12 h-12 rounded-full ${authorColor(author.name)} flex items-center justify-center text-white font-bold text-lg`}>
-                {author.name[0].toUpperCase()}
-              </div>
+              <!-- Avatar / Photo -->
+              {photoMap.get(author.slug) ? (
+                <img
+                  src={photoMap.get(author.slug)!}
+                  alt={author.name}
+                  class="shrink-0 w-12 h-12 rounded-full object-cover shadow-sm"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                />
+                <div class={`shrink-0 w-12 h-12 rounded-full ${authorColor(author.name)} items-center justify-center text-white font-bold text-lg hidden`}>
+                  {author.name[0].toUpperCase()}
+                </div>
+              ) : (
+                <div class={`shrink-0 w-12 h-12 rounded-full ${authorColor(author.name)} flex items-center justify-center text-white font-bold text-lg`}>
+                  {author.name[0].toUpperCase()}
+                </div>
+              )}
 
               <!-- Info -->
               <div class="min-w-0">

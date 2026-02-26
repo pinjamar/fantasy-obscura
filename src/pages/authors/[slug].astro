@@ -170,30 +170,19 @@ const metaDescription = profile?.bio
       const card = (
         <div class="border rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow">
           <!-- Cover -->
-          {book.cover_url ? (
-            <div class="relative h-44 bg-linear-to-br from-purple-100 to-blue-100 overflow-hidden">
-              <img
-                src={book.cover_url}
-                alt={book.title}
-                class="w-full h-full object-cover"
-                onerror="this.style.display='none'"
-              />
-              {dl != null && (
-                <div class="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                  {DARKNESS_CANDLES[dl]}
-                </div>
-              )}
-            </div>
-          ) : (
-            <div class="relative h-44 bg-linear-to-br from-purple-100 to-blue-100 flex items-center justify-center">
-              <span class="text-purple-300 text-sm">No cover</span>
-              {dl != null && (
-                <div class="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
-                  {DARKNESS_CANDLES[dl]}
-                </div>
-              )}
-            </div>
-          )}
+          <div class="relative h-44 bg-linear-to-br from-purple-100 to-blue-100 overflow-hidden">
+            <img
+              src={book.cover_url || '/placeholder-cover.svg'}
+              alt={book.title}
+              class="w-full h-full object-cover"
+              onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
+            />
+            {dl != null && (
+              <div class="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                {DARKNESS_CANDLES[dl]}
+              </div>
+            )}
+          </div>
 
           <!-- Info -->
           <div class="p-4">
