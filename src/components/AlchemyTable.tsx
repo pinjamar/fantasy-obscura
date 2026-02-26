@@ -25,6 +25,9 @@ type Filters = {
   min_pages?: number;
   max_pages?: number;
   publication_era?: string;
+  accessibility?: string;
+  awards?: string;
+  stakes?: string;
 };
 
 type VialOption = {
@@ -100,11 +103,11 @@ const VIALS: Vial[] = [
         filters: { tone: ['Grimdark', 'Dark & Serious'] },
       },
       {
-        label: 'Action-packed',
+        label: 'Adventurous',
         icon: '⚔️',
         bg: 'bg-amber-50',
         hover: 'hover:bg-amber-100',
-        filters: { tone: ['Action-packed'] },
+        filters: { tone: ['Adventurous'] },
       },
     ],
   },
@@ -200,32 +203,32 @@ const VIALS: Vial[] = [
   },
   // Left column (middle row)
   {
-    id: 'world',
-    label: 'World Scope',
-    icon: '🗺️',
-    border: 'border-emerald-200',
-    titleColor: 'text-emerald-900',
+    id: 'accessibility',
+    label: 'Accessibility',
+    icon: '📗',
+    border: 'border-lime-200',
+    titleColor: 'text-lime-900',
     options: [
       {
-        label: 'Epic Worldbuilding',
-        icon: '🌍',
+        label: 'Beginner-Friendly',
+        icon: '🌱',
+        bg: 'bg-lime-50',
+        hover: 'hover:bg-lime-100',
+        filters: { accessibility: 'beginner' },
+      },
+      {
+        label: 'Intermediate',
+        icon: '📘',
         bg: 'bg-emerald-50',
         hover: 'hover:bg-emerald-100',
-        filters: { subgenres: ['Epic Fantasy', 'High Fantasy'] },
+        filters: { accessibility: 'intermediate' },
       },
       {
-        label: 'Intimate & Small',
-        icon: '🏘️',
+        label: 'Advanced / Dense',
+        icon: '🎓',
         bg: 'bg-teal-50',
         hover: 'hover:bg-teal-100',
-        filters: { subgenres: ['Cozy Fantasy', 'Low Fantasy'] },
-      },
-      {
-        label: 'Urban / Modern',
-        icon: '🏙️',
-        bg: 'bg-cyan-50',
-        hover: 'hover:bg-cyan-100',
-        filters: { subgenres: ['Urban Fantasy', 'Contemporary Fantasy'] },
+        filters: { accessibility: 'advanced' },
       },
     ],
   },
@@ -245,7 +248,7 @@ const VIALS: Vial[] = [
         filters: { min_pages: 600 },
       },
       {
-        label: 'Trilogy / Tetralogy',
+        label: 'Duology / Trilogy / Tetralogy',
         icon: '📖',
         bg: 'bg-yellow-50',
         hover: 'hover:bg-yellow-100',
@@ -282,7 +285,7 @@ const VIALS: Vial[] = [
         filters: { audience: 'Young Adult (YA)' },
       },
       {
-        label: "Children's",
+        label: 'Middle Grade',
         icon: '🧸',
         bg: 'bg-violet-50',
         hover: 'hover:bg-violet-100',
@@ -292,32 +295,32 @@ const VIALS: Vial[] = [
   },
   // Bottom row
   {
-    id: 'length-bucket',
-    label: 'Length Bucket',
-    icon: '📐',
-    border: 'border-teal-200',
-    titleColor: 'text-teal-900',
+    id: 'publication-era',
+    label: 'Publication Era',
+    icon: '📅',
+    border: 'border-violet-200',
+    titleColor: 'text-violet-900',
     options: [
       {
-        label: 'Quick Read (< 300 pages)',
-        icon: '⚡',
-        bg: 'bg-teal-50',
-        hover: 'hover:bg-teal-100',
-        filters: { max_pages: 300 },
+        label: 'Classic (Before 2000)',
+        icon: '📜',
+        bg: 'bg-violet-50',
+        hover: 'hover:bg-violet-100',
+        filters: { publication_era: 'classic' },
       },
       {
-        label: 'Standard (300-500)',
-        icon: '📖',
-        bg: 'bg-cyan-50',
-        hover: 'hover:bg-cyan-100',
-        filters: { min_pages: 300, max_pages: 500 },
+        label: 'Modern (2000-2015)',
+        icon: '📗',
+        bg: 'bg-purple-50',
+        hover: 'hover:bg-purple-100',
+        filters: { publication_era: 'modern' },
       },
       {
-        label: 'Epic (500+)',
-        icon: '📚',
-        bg: 'bg-blue-50',
-        hover: 'hover:bg-blue-100',
-        filters: { min_pages: 500 },
+        label: 'Contemporary (2015+)',
+        icon: '✨',
+        bg: 'bg-fuchsia-50',
+        hover: 'hover:bg-fuchsia-100',
+        filters: { publication_era: 'contemporary' },
       },
     ],
   },
@@ -412,32 +415,153 @@ const VIALS: Vial[] = [
     ],
   },
   {
-    id: 'publication-era',
-    label: 'Publication Era',
-    icon: '📅',
-    border: 'border-violet-200',
-    titleColor: 'text-violet-900',
+    id: 'length-bucket',
+    label: 'Length Bucket',
+    icon: '📐',
+    border: 'border-teal-200',
+    titleColor: 'text-teal-900',
     options: [
       {
-        label: 'Classic (Before 2000)',
-        icon: '📜',
-        bg: 'bg-violet-50',
-        hover: 'hover:bg-violet-100',
-        filters: { publication_era: 'classic' },
+        label: 'Short (< 300 pages)',
+        icon: '⚡',
+        bg: 'bg-teal-50',
+        hover: 'hover:bg-teal-100',
+        filters: { max_pages: 299 },
       },
       {
-        label: 'Modern (2000-2015)',
-        icon: '📗',
-        bg: 'bg-purple-50',
-        hover: 'hover:bg-purple-100',
-        filters: { publication_era: 'modern' },
+        label: 'Standard (300–600)',
+        icon: '📖',
+        bg: 'bg-cyan-50',
+        hover: 'hover:bg-cyan-100',
+        filters: { min_pages: 300, max_pages: 600 },
       },
       {
-        label: 'Contemporary (2015+)',
-        icon: '✨',
-        bg: 'bg-fuchsia-50',
-        hover: 'hover:bg-fuchsia-100',
-        filters: { publication_era: 'contemporary' },
+        label: 'Epic (600+)',
+        icon: '📚',
+        bg: 'bg-blue-50',
+        hover: 'hover:bg-blue-100',
+        filters: { min_pages: 601 },
+      },
+    ],
+  },
+  // Extra row
+  {
+    id: 'world',
+    label: 'World Scope',
+    icon: '🗺️',
+    border: 'border-emerald-200',
+    titleColor: 'text-emerald-900',
+    options: [
+      {
+        label: 'Epic Worldbuilding',
+        icon: '🌍',
+        bg: 'bg-emerald-50',
+        hover: 'hover:bg-emerald-100',
+        filters: { subgenres: ['Epic Fantasy', 'High Fantasy'] },
+      },
+      {
+        label: 'Intimate & Small',
+        icon: '🏘️',
+        bg: 'bg-teal-50',
+        hover: 'hover:bg-teal-100',
+        filters: { subgenres: ['Cozy Fantasy', 'Low Fantasy'] },
+      },
+      {
+        label: 'Urban / Modern',
+        icon: '🏙️',
+        bg: 'bg-cyan-50',
+        hover: 'hover:bg-cyan-100',
+        filters: { subgenres: ['Urban Fantasy', 'Contemporary Fantasy'] },
+      },
+    ],
+  },
+  {
+    id: 'setting-type',
+    label: 'Setting Type',
+    icon: '🌐',
+    border: 'border-cyan-200',
+    titleColor: 'text-cyan-900',
+    options: [
+      {
+        label: 'Secondary World',
+        icon: '🌍',
+        bg: 'bg-cyan-50',
+        hover: 'hover:bg-cyan-100',
+        filters: { subgenres: ['Epic Fantasy', 'High Fantasy'] },
+      },
+      {
+        label: 'Portal Fantasy',
+        icon: '🚪',
+        bg: 'bg-sky-50',
+        hover: 'hover:bg-sky-100',
+        filters: { subgenres: ['Portal Fantasy'] },
+      },
+      {
+        label: 'Earth-based',
+        icon: '🏙️',
+        bg: 'bg-blue-50',
+        hover: 'hover:bg-blue-100',
+        filters: { subgenres: ['Urban Fantasy', 'Contemporary Fantasy'] },
+      },
+    ],
+  },
+  {
+    id: 'awards',
+    label: 'Awards & Recognition',
+    icon: '🏆',
+    border: 'border-yellow-200',
+    titleColor: 'text-yellow-900',
+    options: [
+      {
+        label: 'Hugo Winner',
+        icon: '🚀',
+        bg: 'bg-yellow-50',
+        hover: 'hover:bg-yellow-100',
+        filters: { awards: 'hugo' },
+      },
+      {
+        label: 'Nebula Winner',
+        icon: '⭐',
+        bg: 'bg-amber-50',
+        hover: 'hover:bg-amber-100',
+        filters: { awards: 'nebula' },
+      },
+      {
+        label: 'Bestseller',
+        icon: '📈',
+        bg: 'bg-orange-50',
+        hover: 'hover:bg-orange-100',
+        filters: { awards: 'bestseller' },
+      },
+    ],
+  },
+  {
+    id: 'stakes',
+    label: 'Stakes Level',
+    icon: '⚡',
+    border: 'border-red-200',
+    titleColor: 'text-red-900',
+    options: [
+      {
+        label: 'Personal',
+        icon: '👤',
+        bg: 'bg-red-50',
+        hover: 'hover:bg-red-100',
+        filters: { stakes: 'personal' },
+      },
+      {
+        label: 'Kingdom-level',
+        icon: '🏰',
+        bg: 'bg-rose-50',
+        hover: 'hover:bg-rose-100',
+        filters: { stakes: 'kingdom' },
+      },
+      {
+        label: 'World-ending',
+        icon: '💥',
+        bg: 'bg-orange-50',
+        hover: 'hover:bg-orange-100',
+        filters: { stakes: 'world' },
       },
     ],
   },
@@ -584,6 +708,7 @@ const TOP = VIALS.slice(0, 4);
 const LEFT = VIALS.slice(4, 6);
 const RIGHT = VIALS.slice(6, 8);
 const BOTTOM = VIALS.slice(8, 12);
+const EXTRA = VIALS.slice(12, 16);
 
 export default function AlchemyTable() {
   const [selections, setSelections] = useState<Record<string, number>>({});
@@ -592,7 +717,7 @@ export default function AlchemyTable() {
   const [darknessLevel, setDarknessLevel] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [excludedWarnings, setExcludedWarnings] = useState<string[]>([]);
-  const [audiobookOnly, setAudiobookOnly] = useState(false);
+  const [seriesStatus, setSeriesStatus] = useState<'completed' | 'ongoing' | ''>('');
 
   const toggleWarning = (id: string) => {
     setExcludedWarnings((prev) =>
@@ -649,6 +774,9 @@ export default function AlchemyTable() {
       if (f.min_pages !== undefined) merged.min_pages = f.min_pages;
       if (f.max_pages !== undefined) merged.max_pages = f.max_pages;
       if (f.publication_era) merged.publication_era = f.publication_era;
+      if (f.accessibility) merged.accessibility = f.accessibility;
+      if (f.awards) merged.awards = f.awards;
+      if (f.stakes) merged.stakes = f.stakes;
     }
 
     // Add selected tropes
@@ -703,12 +831,16 @@ export default function AlchemyTable() {
     if (merged.publication_era)
       params.set('publication_era', merged.publication_era);
 
+    if (merged.accessibility) params.set('accessibility', merged.accessibility);
+    if (merged.awards) params.set('awards', merged.awards);
+    if (merged.stakes) params.set('stakes', merged.stakes);
+
     if (excludedWarnings.includes('explicit'))
       params.set('avoid_explicit', '1');
     if (excludedWarnings.includes('grimdark'))
       params.set('avoid_grimdark', '1');
-    if (audiobookOnly)
-      params.set('has_audiobook', '1');
+    if (seriesStatus)
+      params.set('series_status', seriesStatus);
 
     try {
       const res = await fetch(`/api/craft?${params.toString()}`);
@@ -897,33 +1029,99 @@ export default function AlchemyTable() {
 
   return (
     <div className="space-y-6">
-      {/* Trope Picker */}
-      <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-indigo-200 p-5 shadow-sm">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-2xl">🏷️</span>
-          <h3 className="font-semibold text-indigo-900">Pick a Trope</h3>
-          <span className="text-xs text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full ml-auto">
-            Optional
-          </span>
+      {/* Creatures / Category / Series Status  |  Darkness Scale */}
+      <div className="grid gap-6 sm:grid-cols-2">
+
+        {/* Left column: 3 compact filters stacked */}
+        <div className="flex flex-col gap-3">
+          {/* Category */}
+          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-violet-200 px-4 py-3 shadow-sm">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg">📂</span>
+              <h3 className="font-semibold text-violet-900 text-sm">Category</h3>
+            </div>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-violet-200 bg-violet-50 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-violet-300"
+            >
+              {CATEGORY_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Creatures & Races */}
+          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-sky-200 px-4 py-3 shadow-sm">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg">🐉</span>
+              <h3 className="font-semibold text-sky-900 text-sm">Creatures & Races</h3>
+            </div>
+            <select
+              value={selectedCreature}
+              onChange={(e) => setSelectedCreature(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-sky-200 bg-sky-50 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-sky-300"
+            >
+              {CREATURE_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Series status toggle */}
+          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-zinc-200 px-4 py-3 shadow-sm">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg">📚</span>
+              <span className="text-sm font-semibold text-zinc-700">Series Status</span>
+            </div>
+            <div className="flex gap-2">
+              {(['', 'completed', 'ongoing'] as const).map((val) => (
+                <button
+                  key={val}
+                  onClick={() => setSeriesStatus(val)}
+                  className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                    seriesStatus === val
+                      ? 'bg-zinc-800 text-white'
+                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                  }`}
+                >
+                  {val === '' ? 'Any' : val === 'completed' ? '✅ Completed' : '🔄 Ongoing'}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {TROPES.map((trope) => {
-            const isSelected = selectedTropes.includes(trope);
-            return (
+
+        {/* Right column: Darkness Scale */}
+        <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-zinc-200 p-5 shadow-sm">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-2xl">🕯️</span>
+            <h3 className="font-semibold text-zinc-900">Darkness Scale</h3>
+          </div>
+          <div className="space-y-1.5">
+            {DARKNESS_LEVELS.map((dl) => (
               <button
-                key={trope}
-                onClick={() => toggleTrope(trope)}
-                className={`px-3 py-1 rounded-full text-xs transition-all ${
-                  isSelected
-                    ? 'bg-indigo-100 text-indigo-900 ring-2 ring-inset ring-indigo-400 font-medium'
-                    : 'bg-zinc-50 text-zinc-700 hover:bg-zinc-100'
+                key={dl.level}
+                onClick={() =>
+                  setDarknessLevel(darknessLevel === dl.level ? 0 : dl.level)
+                }
+                className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-all flex items-start gap-2 ${
+                  darknessLevel === dl.level
+                    ? 'bg-zinc-100 ring-2 ring-inset ring-zinc-400 font-medium'
+                    : 'bg-zinc-50 hover:bg-zinc-100'
                 }`}
               >
-                {trope}
-                {isSelected && ' ✓'}
+                <span className="shrink-0 leading-tight">{dl.candles}</span>
+                <span>
+                  <span className="font-semibold text-zinc-800">{dl.label}</span>
+                  <span className="text-zinc-500 ml-1">— {dl.desc}</span>
+                </span>
+                {darknessLevel === dl.level && (
+                  <span className="ml-auto shrink-0">✓</span>
+                )}
               </button>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -960,102 +1158,6 @@ export default function AlchemyTable() {
         ))}
       </div>
 
-      {/* Creatures / Category / Audiobook  |  Darkness Scale */}
-      <div className="grid gap-6 sm:grid-cols-2">
-
-        {/* Left column: 3 compact filters stacked */}
-        <div className="flex flex-col gap-3">
-          {/* Category */}
-          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-violet-200 px-4 py-3 shadow-sm">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">📂</span>
-              <h3 className="font-semibold text-violet-900 text-sm">Category</h3>
-              <span className="text-xs text-violet-600 bg-violet-50 px-2 py-0.5 rounded-full ml-auto">Optional</span>
-            </div>
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-violet-200 bg-violet-50 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-violet-300"
-            >
-              {CATEGORY_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>{opt.label}</option>
-              ))}
-            </select>
-          </div>
-
-          {/* Creatures & Races */}
-          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-sky-200 px-4 py-3 shadow-sm">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">🐉</span>
-              <h3 className="font-semibold text-sky-900 text-sm">Creatures & Races</h3>
-              <span className="text-xs text-sky-600 bg-sky-50 px-2 py-0.5 rounded-full ml-auto">Optional</span>
-            </div>
-            <select
-              value={selectedCreature}
-              onChange={(e) => setSelectedCreature(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-sky-200 bg-sky-50 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-sky-300"
-            >
-              {CREATURE_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>{opt.label}</option>
-              ))}
-            </select>
-          </div>
-
-          {/* Audiobook toggle */}
-          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-zinc-200 px-4 py-3 shadow-sm flex items-center gap-3">
-            <span className="text-lg">🎧</span>
-            <span className="text-sm font-semibold text-zinc-700 flex-1">Audiobook available</span>
-            <button
-              role="switch"
-              aria-checked={audiobookOnly}
-              onClick={() => setAudiobookOnly((v) => !v)}
-              className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus:outline-none ${
-                audiobookOnly ? 'bg-orange-400' : 'bg-zinc-200'
-              }`}
-            >
-              <span className={`inline-block h-4 w-4 rounded-full bg-white shadow transition-transform ${
-                audiobookOnly ? 'translate-x-6' : 'translate-x-1'
-              }`} />
-            </button>
-          </div>
-        </div>
-
-        {/* Right column: Darkness Scale */}
-        <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-zinc-200 p-5 shadow-sm">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">🕯️</span>
-            <h3 className="font-semibold text-zinc-900">Darkness Scale</h3>
-            <span className="text-xs text-zinc-600 bg-zinc-50 px-2 py-0.5 rounded-full ml-auto">
-              Optional
-            </span>
-          </div>
-          <div className="space-y-1.5">
-            {DARKNESS_LEVELS.map((dl) => (
-              <button
-                key={dl.level}
-                onClick={() =>
-                  setDarknessLevel(darknessLevel === dl.level ? 0 : dl.level)
-                }
-                className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-all flex items-start gap-2 ${
-                  darknessLevel === dl.level
-                    ? 'bg-zinc-100 ring-2 ring-inset ring-zinc-400 font-medium'
-                    : 'bg-zinc-50 hover:bg-zinc-100'
-                }`}
-              >
-                <span className="shrink-0 leading-tight">{dl.candles}</span>
-                <span>
-                  <span className="font-semibold text-zinc-800">{dl.label}</span>
-                  <span className="text-zinc-500 ml-1">— {dl.desc}</span>
-                </span>
-                {darknessLevel === dl.level && (
-                  <span className="ml-auto shrink-0">✓</span>
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Content Warnings */}
       <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-red-200 p-5 shadow-sm">
         <div className="flex items-center gap-2 mb-3">
@@ -1081,6 +1183,40 @@ export default function AlchemyTable() {
                 <span>{w.icon}</span>
                 {w.label}
                 {isOn && ' ✓'}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Extra Row */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {EXTRA.map((v) => (
+          <VialCard key={v.id} vial={v} />
+        ))}
+      </div>
+
+      {/* Trope Picker */}
+      <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-indigo-200 p-5 shadow-sm">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-2xl">🏷️</span>
+          <h3 className="font-semibold text-indigo-900">Pick a Trope</h3>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {TROPES.map((trope) => {
+            const isSelected = selectedTropes.includes(trope);
+            return (
+              <button
+                key={trope}
+                onClick={() => toggleTrope(trope)}
+                className={`px-3 py-1 rounded-full text-xs transition-all ${
+                  isSelected
+                    ? 'bg-indigo-100 text-indigo-900 ring-2 ring-inset ring-indigo-400 font-medium'
+                    : 'bg-zinc-50 text-zinc-700 hover:bg-zinc-100'
+                }`}
+              >
+                {trope}
+                {isSelected && ' ✓'}
               </button>
             );
           })}
