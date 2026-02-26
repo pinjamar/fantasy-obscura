@@ -1,0 +1,464 @@
+---
+import Layout from '../../../components/Layout.astro';
+import BookDisplay from '../../../components/BookDisplay';
+
+const { slug } = Astro.params;
+
+interface BookRef {
+  title: string;
+  author: string;
+  series?: string;
+  darkness?: number;
+  rating?: number;
+}
+
+interface CategoryMeta {
+  name: string;
+  description: string;
+  longDesc: string;
+  gradient: string;
+  border: string;
+  accent: string;
+  icon: string;
+  genre: string | string[];
+  best: string[];
+  starter: string[];
+  hidden: string[];
+  richBooks?: {
+    best: BookRef[];
+    starter: BookRef[];
+    hidden: BookRef[];
+  };
+}
+
+function stars(r: number): string {
+  const h = Math.round(r * 2) / 2;
+  const full = Math.floor(h);
+  const hasHalf = h % 1 === 0.5;
+  const fullStar = '<span style="color:#f59e0b">★</span>';
+  const halfStar =
+    '<span style="display:inline-block;position:relative">' +
+      '<span style="color:#d4d4d8">★</span>' +
+      '<span style="position:absolute;left:0;top:0;width:50%;overflow:hidden;white-space:nowrap;display:inline-block;color:#f59e0b">★</span>' +
+    '</span>';
+  return fullStar.repeat(full) + (hasHalf ? halfStar : '');
+}
+
+const CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
+
+const CATEGORIES: Record<string, CategoryMeta> = {
+  epic: {
+    name: 'Epic / High Fantasy',
+    description: 'Grand worlds with deep lore & ancient magic',
+    longDesc: 'Sweeping world-building, ancient prophecies, and battles for the fate of entire civilizations. If you want to lose yourself in a world for months, start here.',
+    gradient: 'from-purple-50 to-blue-50',
+    border: 'border-purple-200',
+    accent: 'text-purple-700',
+    icon: '⚔️',
+    genre: ['Epic Fantasy', 'High Fantasy', 'Political Fantasy'],
+    best:    ['The Way of Kings', 'The Name of the Wind', 'The Lord of the Rings', 'The Wheel of Time', 'Malazan Book of the Fallen', 'Mistborn', 'The Lies of Locke Lamora', 'The Priory of the Orange Tree', 'The Fifth Season', 'The Rage of Dragons'],
+    starter: ['The Hobbit', 'Mistborn: The Final Empire', 'The Eye of the World', 'The Blade Itself', 'Elantris', 'Warbreaker', 'The Shadow of What Was Lost', 'Blood Song'],
+    hidden:  ['The Traitor Son Cycle', 'Riyria Revelations', 'The Shadow Campaigns', 'The Tide Child', 'The Books of Babel', 'The Divine Cities', 'The Chronicles of the Unhewn Throne'],
+  },
+  romantasy: {
+    name: 'Romantasy',
+    description: 'Fantasy with love stories and relationships',
+    longDesc: 'Rich fantasy worlds where the romance is just as important as the magic. Expect slow burns, fated mates, spicy tension, and emotional gut-punches.',
+    gradient: 'from-rose-50 to-pink-50',
+    border: 'border-rose-200',
+    accent: 'text-rose-700',
+    icon: '🌹',
+    genre: 'Romantic Fantasy',
+    best:    ['A Court of Thorns and Roses', 'From Blood and Ash', 'Throne of Glass', 'Fourth Wing', 'Kingdom of the Wicked', 'The Cruel Prince', 'Serpent & Dove', 'A Court of Mist and Fury', 'To Kill a Kingdom', 'Crescent City'],
+    starter: ['A Court of Mist and Fury', 'Kingdom of the Wicked', 'Serpent & Dove', 'Shadow and Bone', 'An Ember in the Ashes', 'The Wrath and the Dawn', 'Divine Rivals'],
+    hidden:  ['Radiance', 'The Shadows Between Us', 'The Winter King', 'When the Moon Hatched', 'A River Enchanted', 'To Bleed a Crystal Bloom'],
+  },
+  swords: {
+    name: 'Sword & Sorcery',
+    description: 'Heroic adventure, visceral magic, ancient evil',
+    longDesc: 'Fast-paced, action-driven fantasy built around morally complex heroes, brutal fights, and magic that comes at a cost. Think Robert E. Howard meets Joe Abercrombie.',
+    gradient: 'from-cyan-50 to-teal-50',
+    border: 'border-teal-200',
+    accent: 'text-teal-700',
+    icon: '🗡️',
+    genre: 'Low Fantasy',
+    best:    ['The Blade Itself', 'The Lies of Locke Lamora', 'The Black Company', 'Conan the Barbarian', 'Elric of Melniboné', 'Nevernight', 'Kings of the Wyld', 'The First Law', 'The Age of Assassins', 'Promise of Blood'],
+    starter: ['The Lies of Locke Lamora', 'The Black Company', 'The Blade Itself', 'Nevernight', 'Kings of the Wyld', 'The Blacktongue Thief', 'Half a King', 'Low Town'],
+    hidden:  ['The Crimson Queen', 'The Grim Company', 'The Court of Broken Knives', 'Beyond Redemption', 'The Red Knight', 'We Ride the Storm', 'The Wolf of Oren-Yaro', 'The Vagrant'],
+    richBooks: {
+      best: [
+        { title: 'The Blade Itself',         author: 'Joe Abercrombie',    series: 'First Law #1',              darkness: 4, rating: 4.3 },
+        { title: 'The Lies of Locke Lamora', author: 'Scott Lynch',         series: 'Gentleman Bastard #1',      darkness: 4, rating: 4.4 },
+        { title: 'The Black Company',         author: 'Glen Cook',           series: 'Black Company #1',          darkness: 4, rating: 4.1 },
+        { title: 'Conan the Barbarian',       author: 'Robert E. Howard',    series: 'Conan',                     darkness: 3, rating: 4.0 },
+        { title: 'Elric of Melniboné',        author: 'Michael Moorcock',    series: 'Elric #1',                  darkness: 4, rating: 3.9 },
+        { title: 'Nevernight',               author: 'Jay Kristoff',        series: 'Nevernight Chronicle #1',   darkness: 4, rating: 4.2 },
+        { title: 'Kings of the Wyld',         author: 'Nicholas Eames',      series: 'Band #1',                   darkness: 3, rating: 4.3 },
+        { title: 'The First Law',             author: 'Joe Abercrombie',    series: 'First Law Trilogy',         darkness: 4, rating: 4.4 },
+        { title: 'The Age of Assassins',      author: 'RJ Barker',           series: 'Wounded Kingdom #1',        darkness: 3, rating: 4.0 },
+        { title: 'Promise of Blood',          author: 'Brian McClellan',     series: 'Powder Mage #1',            darkness: 3, rating: 4.2 },
+      ],
+      starter: [
+        { title: 'The Lies of Locke Lamora', author: 'Scott Lynch',          series: 'Gentleman Bastard #1',     darkness: 4, rating: 4.4 },
+        { title: 'The Black Company',         author: 'Glen Cook',            series: 'Black Company #1',         darkness: 4, rating: 4.1 },
+        { title: 'The Blade Itself',          author: 'Joe Abercrombie',     series: 'First Law #1',             darkness: 4, rating: 4.3 },
+        { title: 'Nevernight',               author: 'Jay Kristoff',         series: 'Nevernight Chronicle #1',  darkness: 4, rating: 4.2 },
+        { title: 'Kings of the Wyld',         author: 'Nicholas Eames',       series: 'Band #1',                  darkness: 3, rating: 4.3 },
+        { title: 'The Blacktongue Thief',     author: 'Christopher Buehlman', series: 'Blacktongue #1',           darkness: 3, rating: 4.2 },
+        { title: 'Half a King',              author: 'Joe Abercrombie',     series: 'Shattered Sea #1',         darkness: 3, rating: 4.0 },
+        { title: 'Low Town',                 author: 'Daniel Polansky',      series: 'Low Town #1',              darkness: 4, rating: 3.8 },
+        { title: 'Prince of Fools',          author: 'Mark Lawrence',        series: "Red Queen's War #1",       darkness: 4, rating: 4.1 },
+        { title: 'The Age of Assassins',      author: 'RJ Barker',            series: 'Wounded Kingdom #1',       darkness: 3, rating: 4.0 },
+      ],
+      hidden: [
+        { title: 'The Crimson Queen',          author: 'Alec Hutson',           series: 'Shattered Realm #1',       darkness: 3, rating: 4.0 },
+        { title: 'The Grim Company',           author: 'Luke Scull',            series: 'Grim Company #1',          darkness: 4, rating: 3.8 },
+        { title: 'The Court of Broken Knives', author: 'Anna Smith Spark',      series: 'Empires of Dust #1',       darkness: 5, rating: 3.7 },
+        { title: 'Beyond Redemption',          author: 'Michael R. Fletcher',   series: 'Manifest Delusions #1',    darkness: 5, rating: 3.9 },
+        { title: 'The Red Knight',             author: 'Miles Cameron',         series: 'Traitor Son Cycle #1',     darkness: 4, rating: 4.1 },
+        { title: 'We Ride the Storm',          author: 'Devin Madson',          series: 'Reborn Empire #1',         darkness: 4, rating: 4.1 },
+        { title: 'The Wolf of Oren-Yaro',      author: 'K.S. Villoso',          series: 'Chronicles of the Wolf #1',darkness: 3, rating: 3.9 },
+        { title: 'The Vagrant',               author: 'Peter Newman',          series: 'Vagrant Trilogy #1',       darkness: 4, rating: 3.8 },
+        { title: 'Promise of Blood',           author: 'Brian McClellan',       series: 'Powder Mage #1',           darkness: 3, rating: 4.2 },
+        { title: 'The Gutter Prayer',          author: 'Gareth Hanrahan',       series: 'Black Iron Legacy #1',     darkness: 4, rating: 4.1 },
+      ],
+    },
+  },
+  dark: {
+    name: 'Dark Fantasy',
+    description: 'Blends fantasy with horror and brutality',
+    longDesc: 'Where the monsters win sometimes and heroism comes at a terrible price. Dark fantasy pushes into horror territory without fully leaving the fantasy genre.',
+    gradient: 'from-slate-100 to-zinc-100',
+    border: 'border-zinc-300',
+    accent: 'text-zinc-700',
+    icon: '🌑',
+    genre: ['Dark Fantasy', 'Dystopian Fantasy'],
+    best:    ['The Blade Itself', 'The Poppy War', 'Prince of Thorns', 'The Black Company', 'The First Law', 'A Little Hatred', 'Best Served Cold', 'The Heroes', 'Red Sister', 'Nevernight'],
+    starter: ['The Black Company', 'Low Town', 'Half a King', 'The Court of Broken Knives', 'Kings of the Wyld', 'Prince of Fools', 'The Gutter Prayer'],
+    hidden:  ['The Court of Broken Knives', 'Beyond Redemption', 'The Crimson Queen', 'The Ember Blade', 'The Red Knight', 'The Blacktongue Thief', 'We Ride the Storm'],
+  },
+  urban: {
+    name: 'Urban / Contemporary Fantasy',
+    description: 'Magic hidden in the modern world',
+    longDesc: 'The supernatural exists alongside our world — hidden in plain sight. Secret societies, magic users in cities, and things that go bump in the night.',
+    gradient: 'from-indigo-50 to-violet-50',
+    border: 'border-indigo-200',
+    accent: 'text-indigo-700',
+    icon: '🌆',
+    genre: ['Urban Fantasy', 'Contemporary Fantasy'],
+    best:    ['The Dresden Files', 'American Gods', 'The Night Circus', 'Neverwhere', 'Good Omens', 'Rivers of London', 'The Magicians', 'October Daye', 'Kate Daniels', 'The Invisible Library'],
+    starter: ['Rivers of London', 'Neverwhere', 'Good Omens', 'The City We Became', 'Storm Front', 'Anansi Boys', 'The Ocean at the End of the Lane', 'Moon Called'],
+    hidden:  ['The Iron Druid Chronicles', 'October Daye', 'Alex Verus', 'The Hollows', 'Sandman Slim', 'Mercy Thompson', 'The Rook', 'Libriomancer'],
+  },
+  grimdark: {
+    name: 'Grimdark',
+    description: 'Ultra-dark, cynical world with antiheroes',
+    longDesc: 'No heroes — only survivors. Grimdark strips away the nobility of traditional fantasy and replaces it with moral ambiguity, brutal consequences, and bleak beauty.',
+    gradient: 'from-gray-100 to-slate-100',
+    border: 'border-gray-300',
+    accent: 'text-gray-700',
+    icon: '💀',
+    genre: ['Grimdark', 'Military Fantasy'],
+    best:    ['The First Law', 'Malazan Book of the Fallen', 'The Black Company', 'Prince of Thorns', 'The Broken Empire', 'The Poppy War', 'Best Served Cold', 'The Heroes', 'A Little Hatred', 'Red Sister'],
+    starter: ['Best Served Cold', 'Gardens of the Moon', 'Prince of Thorns', 'The Blade Itself', 'Half a King', 'Low Town', 'The Court of Broken Knives'],
+    hidden:  ['The Court of Broken Knives', 'Chronicles of the Black Company', 'The Crimson Queen', 'The Red Knight', 'The Blacktongue Thief', 'We Ride the Storm'],
+  },
+  historical: {
+    name: 'Historical Fantasy',
+    description: 'Alternative history, often medieval with magic',
+    longDesc: 'Real history reimagined with a magical twist. From Victorian sorcerers to folklore-infused Eastern Europe — history has never been more enchanting.',
+    gradient: 'from-amber-50 to-orange-50',
+    border: 'border-amber-200',
+    accent: 'text-amber-700',
+    icon: '📜',
+    genre: 'Historical Fantasy',
+    best:    ['Jonathan Strange & Mr Norrell', 'The Golem and the Jinni', 'The Bear and the Nightingale', 'The Invisible Life of Addie LaRue', 'Sorcerer to the Crown', 'Circe', 'Uprooted', 'Spinning Silver', 'The Watchmaker of Filigree Street', 'The Mask of Mirrors'],
+    starter: ['Sorcerer to the Crown', 'The Invisible Life of Addie LaRue', 'The Bear and the Nightingale', 'Uprooted', 'Spinning Silver', "A Gentleman's Guide to Vice and Virtue", 'The Ten Thousand Doors of January'],
+    hidden:  ['The Glamourist Histories', 'The Mask of Mirrors', 'The Winter Witch', "The Assassin's Curse", 'The Midnight Bargain', 'A Dead Djinn in Cairo', 'The Bone Shard Daughter'],
+  },
+  academy: {
+    name: 'Academy / School Fantasy',
+    description: 'School / coming of age setups with magic',
+    longDesc: 'Magic schools, secret societies, and coming-of-age stories set in fantastical academies. The tension of student life amplified by prophecy, power, and danger.',
+    gradient: 'from-red-50 to-rose-50',
+    border: 'border-red-200',
+    accent: 'text-red-700',
+    icon: '🎓',
+    genre: 'Coming of Age Fantasy',
+    best:    ['Harry Potter', 'The Name of the Wind', 'Fourth Wing', 'Nevernight', 'The Magicians', 'An Ember in the Ashes', 'Shadow and Bone', 'Six of Crows', 'Eragon', 'Scythe'],
+    starter: ['Harry Potter', 'Eragon', 'The Name of the Wind', 'Shadow and Bone', 'An Ember in the Ashes', 'Percy Jackson', 'The Magicians'],
+    hidden:  ['Nevernight', 'The Magisterium', 'Sabriel', 'Seraphina', 'The Young Elites', 'Caraval', 'Children of Blood and Bone'],
+  },
+  mythology: {
+    name: 'Mythic / Folklore & Fairy-Tales',
+    description: 'Inspired by myths, legends and folklore',
+    longDesc: 'Ancient myths retold, folklore brought to life, and fairy tales subverted. These books mine the rich veins of human storytelling across cultures and centuries.',
+    gradient: 'from-yellow-50 to-amber-50',
+    border: 'border-yellow-200',
+    accent: 'text-yellow-700',
+    icon: '🏺',
+    genre: ['Mythic Fantasy', 'Fae Fantasy'],
+    best:    ['Circe', 'The Song of Achilles', 'American Gods', 'Norse Mythology', 'The Penelopiad', 'Till We Have Faces', 'The Silence of the Girls', 'A Thousand Ships', 'Ariadne', 'The Mists of Avalon'],
+    starter: ['The Penelopiad', 'Norse Mythology', 'Mythos', 'Circe', 'Anansi Boys', 'The Lightning Thief', 'Troy'],
+    hidden:  ['The Silence of the Girls', 'Lavinia', 'The King Must Die', 'The Firebrand', "The Trickster's Choice", 'Song of the Huntress', 'The Children of Jocasta'],
+  },
+  cozy: {
+    name: 'Cozy Fantasy',
+    description: 'Low conflict, heartwarming vibes',
+    longDesc: 'Fantasy that feels like a warm blanket — charming characters, gentle stakes, and the satisfaction of a world that might actually be okay in the end.',
+    gradient: 'from-green-50 to-emerald-50',
+    border: 'border-green-200',
+    accent: 'text-green-700',
+    icon: '☕',
+    genre: ['Cozy Fantasy', 'Humorous Fantasy', 'Portal Fantasy'],
+    best:    ['Legends & Lattes', 'The House in the Cerulean Sea', "Howl's Moving Castle", 'A Psalm for the Wild-Built', 'The Goblin Emperor', "Emily Wilde's Encyclopaedia", 'Sorcery of Thorns', 'Piranesi', 'The Ten Thousand Doors of January', 'The Invisible Library'],
+    starter: ['A Psalm for the Wild-Built', 'The Goblin Emperor', 'Sorcery of Thorns', 'The House in the Cerulean Sea', "Howl's Moving Castle", 'Piranesi', 'Nettle & Bone'],
+    hidden:  ['The Very Secret Society of Irregular Witches', "Emily Wilde's Encyclopaedia", 'The Invisible Library', "A Wizard's Guide to Defensive Baking", 'The Starless Sea'],
+  },
+  litrpg: {
+    name: 'LitRPG / GameLit & Progression',
+    description: 'Literary role-playing story with progression',
+    longDesc: 'Characters level up, acquire skills, and navigate worlds that operate like video games. Satisfying power progression loops with deep character arcs.',
+    gradient: 'from-blue-50 to-cyan-50',
+    border: 'border-blue-200',
+    accent: 'text-blue-700',
+    icon: '🎮',
+    genre: 'LitRPG',
+    best:    ['Dungeon Crawler Carl', 'He Who Fights With Monsters', 'Primal Hunter', 'Cradle', 'Arcane Ascension', 'The Wandering Inn', 'Mother of Learning', 'Defiance of the Fall', 'Azarinth Healer', 'The Legend of Randidly Ghosthound'],
+    starter: ['Arcane Ascension', 'Cradle', 'Defiance of the Fall', 'He Who Fights With Monsters', 'Beware of Chicken', 'Dungeon Crawler Carl'],
+    hidden:  ["Jake's Magical Market", 'Azarinth Healer', 'The Legend of Randidly Ghosthound', 'Delve', 'Iron Prince', 'Mark of the Fool', 'The Path of Ascension'],
+  },
+  'science-fantasy': {
+    name: 'Science Fantasy',
+    description: 'Where technology meets magic and prophecy',
+    longDesc: 'The best of both genres — starships alongside magic swords, chosen ones in galactic empires, and ancient prophecies on distant planets. Genre-bending at its finest.',
+    gradient: 'from-sky-50 to-blue-50',
+    border: 'border-sky-200',
+    accent: 'text-sky-700',
+    icon: '🔭',
+    genre: ['Science Fantasy', 'Steampunk Fantasy'],
+    best:    ['Dune', 'Red Rising', 'Gideon the Ninth', 'The Book of the New Sun', 'The Dark Tower', 'A Wizard of Earthsea', 'Chronicles of Amber', 'Hyperion', 'The Stars My Destination', 'Dying Earth'],
+    starter: ['Dune', 'Red Rising', 'Gideon the Ninth', 'A Wizard of Earthsea', 'The Dark Tower', "Old Man's War", 'All Systems Red', 'Piranesi'],
+    hidden:  ['The Book of the New Sun', 'Dying Earth', 'Viriconium', 'The Stars My Destination', 'Engine Summer', 'Riddlemaster of Hed', 'Light from Uncommon Stars'],
+    richBooks: {
+      best: [
+        { title: 'Dune',                      author: 'Frank Herbert',       series: 'Dune #1',                  darkness: 3, rating: 4.4 },
+        { title: 'Red Rising',                author: 'Pierce Brown',        series: 'Red Rising #1',            darkness: 4, rating: 4.4 },
+        { title: 'Gideon the Ninth',          author: 'Tamsyn Muir',         series: 'Locked Tomb #1',           darkness: 3, rating: 4.2 },
+        { title: 'The Book of the New Sun',   author: 'Gene Wolfe',          series: 'New Sun #1',               darkness: 3, rating: 4.0 },
+        { title: 'The Dark Tower',            author: 'Stephen King',        series: 'Dark Tower #1',            darkness: 3, rating: 4.2 },
+        { title: 'A Wizard of Earthsea',      author: 'Ursula K. Le Guin',   series: 'Earthsea #1',              darkness: 2, rating: 4.1 },
+        { title: 'Chronicles of Amber',       author: 'Roger Zelazny',       series: 'Amber #1',                 darkness: 3, rating: 4.1 },
+        { title: 'Hyperion',                  author: 'Dan Simmons',         series: 'Hyperion Cantos #1',       darkness: 3, rating: 4.3 },
+        { title: 'The Stars My Destination',  author: 'Alfred Bester',                                           darkness: 3, rating: 4.0 },
+        { title: 'Dying Earth',               author: 'Jack Vance',          series: 'Dying Earth #1',           darkness: 2, rating: 3.9 },
+      ],
+      starter: [
+        { title: 'Dune',                               author: 'Frank Herbert',      series: 'Dune #1',               darkness: 3, rating: 4.4 },
+        { title: 'Red Rising',                         author: 'Pierce Brown',       series: 'Red Rising #1',         darkness: 4, rating: 4.4 },
+        { title: 'Gideon the Ninth',                   author: 'Tamsyn Muir',        series: 'Locked Tomb #1',        darkness: 3, rating: 4.2 },
+        { title: 'A Wizard of Earthsea',               author: 'Ursula K. Le Guin',  series: 'Earthsea #1',           darkness: 2, rating: 4.1 },
+        { title: 'The Dark Tower',                     author: 'Stephen King',       series: 'Dark Tower #1',         darkness: 3, rating: 4.2 },
+        { title: "Old Man's War",                      author: 'John Scalzi',        series: "Old Man's War #1",      darkness: 3, rating: 4.1 },
+        { title: 'All Systems Red',                    author: 'Martha Wells',       series: 'Murderbot Diaries #1',  darkness: 2, rating: 4.2 },
+        { title: 'Piranesi',                           author: 'Susanna Clarke',                                      darkness: 1, rating: 4.2 },
+        { title: 'Horus Rising',                       author: 'Dan Abnett',         series: 'Horus Heresy #1',       darkness: 4, rating: 4.1 },
+        { title: 'The Long Way to a Small Angry Planet', author: 'Becky Chambers',   series: 'Wayfarers #1',          darkness: 1, rating: 4.1 },
+      ],
+      hidden: [
+        { title: 'The Book of the New Sun',  author: 'Gene Wolfe',        series: 'New Sun #1',         darkness: 3, rating: 4.0 },
+        { title: 'Dying Earth',              author: 'Jack Vance',        series: 'Dying Earth #1',     darkness: 2, rating: 3.9 },
+        { title: 'Viriconium',              author: 'M. John Harrison',  series: 'Viriconium #1',      darkness: 4, rating: 3.7 },
+        { title: 'The Stars My Destination', author: 'Alfred Bester',                                   darkness: 3, rating: 4.0 },
+        { title: 'Engine Summer',            author: 'John Crowley',                                     darkness: 2, rating: 3.8 },
+        { title: 'Riddlemaster of Hed',      author: 'Patricia McKillip', series: 'Riddlemaster #1',    darkness: 2, rating: 4.0 },
+        { title: 'Light from Uncommon Stars',author: 'Ryka Aoki',                                       darkness: 2, rating: 4.1 },
+        { title: 'A Plague of Demons',       author: 'Keith Laumer',                                    darkness: 3, rating: 3.8 },
+        { title: 'The Dragon Masters',       author: 'Jack Vance',                                      darkness: 3, rating: 3.9 },
+        { title: 'The Demolished Man',       author: 'Alfred Bester',                                   darkness: 3, rating: 3.8 },
+      ],
+    },
+  },
+};
+
+if (!slug || !(slug in CATEGORIES)) {
+  return Astro.redirect('/books/all/');
+}
+
+const cat = CATEGORIES[slug as keyof typeof CATEGORIES];
+---
+
+<Layout
+  title={`${cat.name} Books | Fantasy Obscura`}
+  description={`${cat.description}. The best ${cat.name} books — curated reading lists, hidden gems, and where to start.`}
+>
+  <!-- Breadcrumb -->
+  <nav class="text-sm text-zinc-400 mb-8 flex items-center gap-2">
+    <a href="/books/" class="hover:text-zinc-700 transition-colors">Start Here</a>
+    <span>›</span>
+    <span class="text-zinc-700 font-medium">{cat.name}</span>
+  </nav>
+
+  <!-- Hero -->
+  <div class={`rounded-2xl bg-linear-to-br ${cat.gradient} border ${cat.border} px-6 py-6 mb-10`}>
+    <div class="flex items-center gap-2.5 mb-2">
+      <span class="text-2xl">{cat.icon}</span>
+      <h1 class={`text-2xl font-bold tracking-tight ${cat.accent}`}>{cat.name}</h1>
+      <a
+        href="/books/all/"
+        class="ml-auto text-xs text-zinc-400 hover:text-zinc-600 transition-colors whitespace-nowrap"
+      >
+        ← Browse all books
+      </a>
+    </div>
+    <p class="text-zinc-600 text-sm max-w-2xl">{cat.longDesc}</p>
+  </div>
+
+  <!-- Curated lists -->
+  <div class="grid gap-5 sm:grid-cols-3 mb-12">
+
+    <!-- All-Time Greats -->
+    <div class="rounded-xl border p-5">
+      <h2 class="font-semibold text-sm mb-4">⭐ All-Time Greats</h2>
+      {cat.richBooks ? (
+        <ol class="space-y-3">
+          {cat.richBooks.best.map((book, i) => (
+            <li class="flex gap-2.5">
+              <span class="text-zinc-400 font-medium text-xs w-4 shrink-0 pt-1">{i + 1}</span>
+              <div class="w-10 h-15 shrink-0 rounded overflow-hidden bg-linear-to-br from-purple-100 to-blue-100">
+                <img
+                  src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
+                  alt={book.title}
+                  class="w-full h-full object-cover"
+                  onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
+                />
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-xs text-zinc-900 leading-snug">{book.title}</p>
+                <p class="text-[11px] text-zinc-500 mt-0.5 leading-snug">
+                  {book.author}{book.series ? ` · ${book.series}` : ''}
+                </p>
+                <div class="flex items-center gap-2 mt-1 flex-wrap">
+                  {book.darkness != null && (
+                    <span class="text-[10px] leading-none">{CANDLES[book.darkness]}</span>
+                  )}
+                  {book.rating != null && (
+                    <span class="text-[11px] font-medium leading-none" set:html={stars(book.rating)}></span>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <ol class="space-y-2">
+          {cat.best.slice(0, 8).map((title, i) => (
+            <li class="text-sm text-zinc-700 flex items-start gap-2">
+              <span class="text-zinc-400 font-medium shrink-0 w-5">{i + 1}.</span>
+              {title}
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+
+    <!-- Best to Start With -->
+    <div class="rounded-xl border p-5">
+      <h2 class="font-semibold text-sm mb-4">🚀 Best to Start With</h2>
+      {cat.richBooks ? (
+        <ol class="space-y-3">
+          {cat.richBooks.starter.map((book, i) => (
+            <li class="flex gap-2.5">
+              <span class="text-zinc-400 font-medium text-xs w-4 shrink-0 pt-1">{i + 1}</span>
+              <div class="w-10 h-15 shrink-0 rounded overflow-hidden bg-linear-to-br from-purple-100 to-blue-100">
+                <img
+                  src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
+                  alt={book.title}
+                  class="w-full h-full object-cover"
+                  onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
+                />
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-xs text-zinc-900 leading-snug">{book.title}</p>
+                <p class="text-[11px] text-zinc-500 mt-0.5 leading-snug">
+                  {book.author}{book.series ? ` · ${book.series}` : ''}
+                </p>
+                <div class="flex items-center gap-2 mt-1 flex-wrap">
+                  {book.darkness != null && (
+                    <span class="text-[10px] leading-none">{CANDLES[book.darkness]}</span>
+                  )}
+                  {book.rating != null && (
+                    <span class="text-[11px] font-medium leading-none" set:html={stars(book.rating)}></span>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <ol class="space-y-2">
+          {cat.starter.slice(0, 8).map((title, i) => (
+            <li class="text-sm text-zinc-700 flex items-start gap-2">
+              <span class="text-zinc-400 font-medium shrink-0 w-5">{i + 1}.</span>
+              {title}
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+
+    <!-- Hidden Gems -->
+    <div class="rounded-xl border p-5">
+      <h2 class="font-semibold text-sm mb-4">💎 Hidden Gems</h2>
+      {cat.richBooks ? (
+        <ol class="space-y-3">
+          {cat.richBooks.hidden.map((book, i) => (
+            <li class="flex gap-2.5">
+              <span class="text-zinc-400 font-medium text-xs w-4 shrink-0 pt-1">{i + 1}</span>
+              <div class="w-10 h-15 shrink-0 rounded overflow-hidden bg-linear-to-br from-purple-100 to-blue-100">
+                <img
+                  src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
+                  alt={book.title}
+                  class="w-full h-full object-cover"
+                  onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
+                />
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-xs text-zinc-900 leading-snug">{book.title}</p>
+                <p class="text-[11px] text-zinc-500 mt-0.5 leading-snug">
+                  {book.author}{book.series ? ` · ${book.series}` : ''}
+                </p>
+                <div class="flex items-center gap-2 mt-1 flex-wrap">
+                  {book.darkness != null && (
+                    <span class="text-[10px] leading-none">{CANDLES[book.darkness]}</span>
+                  )}
+                  {book.rating != null && (
+                    <span class="text-[11px] font-medium leading-none" set:html={stars(book.rating)}></span>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <ol class="space-y-2">
+          {cat.hidden.slice(0, 8).map((title, i) => (
+            <li class="text-sm text-zinc-700 flex items-start gap-2">
+              <span class="text-zinc-400 font-medium shrink-0 w-5">{i + 1}.</span>
+              {title}
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+
+  </div>
+
+  <!-- DB books for this genre -->
+  <div>
+    <h2 class="text-xl font-semibold mb-6">
+      {cat.name} in our collection
+    </h2>
+    <BookDisplay genre={cat.genre} client:load />
+  </div>
+</Layout>

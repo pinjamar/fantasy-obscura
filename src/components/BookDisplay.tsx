@@ -22,7 +22,7 @@ interface Book {
 }
 
 interface BookDisplayProps {
-  genre?: string;
+  genre?: string | string[];
   audience?: string;
 }
 
@@ -100,8 +100,9 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
         let filteredBooks = data.items || [];
 
         if (genre) {
+          const genres = Array.isArray(genre) ? genre : [genre];
           filteredBooks = filteredBooks.filter((book: Book) =>
-            book.subgenres?.includes(genre),
+            book.subgenres?.some((s) => genres.includes(s)),
           );
         } else if (audience) {
           filteredBooks = filteredBooks.filter((book: Book) =>
@@ -190,42 +191,33 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
 
           const CardContent = (
             <>
-              {book.cover_url ? (
-                <div className="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 overflow-hidden">
-                  <img
-                    src={book.cover_url}
-                    alt={book.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
-                  {dl != null && (
-                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                      {DARKNESS_CANDLES[dl]}
-                    </div>
-                  )}
-                  {book.audiobook_available && (
-                    <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                      🎧
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div className="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 flex items-center justify-center">
-                  <span className="text-purple-400 text-sm">No cover</span>
-                  {dl != null && (
-                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
-                      {DARKNESS_CANDLES[dl]}
-                    </div>
-                  )}
-                  {book.audiobook_available && (
-                    <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
-                      🎧
-                    </div>
-                  )}
-                </div>
-              )}
+              <div className="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 overflow-hidden">
+                <img
+                  src={book.cover_url || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false` : '/placeholder-cover.svg')}
+                  alt={book.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (!img.dataset.tried && book.isbn && book.cover_url) {
+                      img.dataset.tried = '1';
+                      img.src = `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false`;
+                    } else {
+                      img.onerror = null;
+                      img.src = '/placeholder-cover.svg';
+                    }
+                  }}
+                />
+                {dl != null && (
+                  <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                    {DARKNESS_CANDLES[dl]}
+                  </div>
+                )}
+                {book.audiobook_available && (
+                  <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                    🎧
+                  </div>
+                )}
+              </div>
 
               <div className="p-4">
                 <h3 className="font-semibold text-lg line-clamp-2 mb-1">
