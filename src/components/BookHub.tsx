@@ -26,6 +26,7 @@ const emptyForm: BookInput = {
   tone: [],
   pacing: '',
   heat_level: '',
+  darkness_level: undefined,
   diversity_rep: [],
 };
 
@@ -401,14 +402,38 @@ const BookHub: React.FC = () => {
               </div>
               <div>
                 <label className="text-sm font-medium">Heat level</label>
-                <input
+                <select
                   className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
-                  placeholder="Clean, Spicy"
                   value={form.heat_level || ''}
                   onChange={(event) =>
-                    setForm({ ...form, heat_level: event.target.value })
+                    setForm({ ...form, heat_level: event.target.value || null })
                   }
-                />
+                >
+                  <option value="">— not set —</option>
+                  <option value="none">❄️ No romance</option>
+                  <option value="Sweet Romance">🔥 Sweet Romance</option>
+                  <option value="Closed Door">🔥🔥 Closed Door</option>
+                  <option value="Open Door">🔥🔥🔥 Open Door</option>
+                  <option value="Explicit">🔥🔥🔥🔥 Explicit</option>
+                  <option value="Fiery">🔥🔥🔥🔥🔥 Fiery</option>
+                </select>
+              </div>
+              <div>
+                <label className="text-sm font-medium">Darkness level</label>
+                <select
+                  className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
+                  value={form.darkness_level ?? ''}
+                  onChange={(event) =>
+                    setForm({ ...form, darkness_level: event.target.value === '' ? undefined : Number(event.target.value) })
+                  }
+                >
+                  <option value="">— not set —</option>
+                  <option value="1">🕯️ Lighthearted</option>
+                  <option value="2">🕯️🕯️ Mild</option>
+                  <option value="3">🕯️🕯️🕯️ Serious</option>
+                  <option value="4">🕯️🕯️🕯️🕯️ Dark</option>
+                  <option value="5">🕯️🕯️🕯️🕯️🕯️ Brutal</option>
+                </select>
               </div>
               <div className="sm:col-span-2">
                 <label className="text-sm font-medium">

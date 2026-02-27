@@ -23,6 +23,7 @@ const normalizeBook = (payload: BookInput) => {
     pacing: payload.pacing?.trim() || null,
     heat_level: payload.heat_level?.trim() || null,
     diversity_rep: payload.diversity_rep?.filter(Boolean) || null,
+    darkness_level: payload.darkness_level ?? null,
     series: payload.series?.trim() || null,
     series_number: payload.series_number ?? null,
     audiobook_available: payload.audiobook_available ?? null,

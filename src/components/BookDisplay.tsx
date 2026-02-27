@@ -17,6 +17,8 @@ interface Book {
   series?: string | null;
   series_number?: number | null;
   darkness_level?: number | null;
+  heat_level?: string | null;
+  series_complete?: boolean | null;
   audiobook_available?: boolean | null;
   created_at?: string;
 }
@@ -31,7 +33,6 @@ type SortKey = 'title-asc' | 'title-desc' | 'rating-desc' | 'newest' | 'oldest' 
 const SORT_OPTIONS: { key: SortKey; label: string; icon: string }[] = [
   { key: 'title-asc',    label: 'A → Z',      icon: '🔤' },
   { key: 'title-desc',   label: 'Z → A',      icon: '🔡' },
-  { key: 'author-asc',   label: 'By Author',  icon: '✍️' },
   { key: 'rating-desc',  label: 'Top Rated',  icon: '⭐' },
   { key: 'newest',       label: 'Newest',     icon: '🗓️' },
   { key: 'oldest',       label: 'Oldest',     icon: '📜' },
@@ -42,6 +43,9 @@ const SORT_OPTIONS: { key: SortKey; label: string; icon: string }[] = [
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
 const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
 const DARKNESS_COLORS = ['', 'text-green-700', 'text-yellow-700', 'text-orange-600', 'text-red-600', 'text-red-900'];
+
+const HEAT_FLAMES  = ['', '🔥', '🔥🔥', '🔥🔥🔥', '🔥🔥🔥🔥', '🔥🔥🔥🔥🔥'];
+const HEAT_LEVELS  = ['', 'Sweet Romance', 'Closed Door', 'Open Door', 'Explicit', 'Fiery'];
 
 function sortBooks(books: Book[], key: SortKey): Book[] {
   const sorted = [...books];
@@ -88,6 +92,12 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
   const [sort, setSort] = useState<SortKey>('rating-desc');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
+  const [darknessFilter, setDarknessFilter] = useState<number | null>(null);
+  const [heatFilter, setHeatFilter] = useState<number | 'none' | null>(null);
+  const [darknessHover, setDarknessHover] = useState<number | null>(null);
+  const [heatHover, setHeatHover] = useState<number | null>(null);
+  const [completedFilter, setCompletedFilter] = useState<boolean | null>(null);
+  const [standaloneFilter, setStandaloneFilter] = useState(false);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -127,14 +137,31 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
   const sortedBooks = useMemo(() => sortBooks(books, sort), [books, sort]);
 
   const filteredBooks = useMemo(() => {
+    let result = sortedBooks;
     const q = searchQuery.trim().toLowerCase();
-    if (q.length < 2) return sortedBooks;
-    return sortedBooks.filter((b) =>
-      b.title.toLowerCase().includes(q) ||
-      b.authors?.some((a) => a.toLowerCase().includes(q)) ||
-      b.series?.toLowerCase().includes(q),
-    );
-  }, [sortedBooks, searchQuery]);
+    if (q.length >= 2) {
+      result = result.filter((b) =>
+        b.title.toLowerCase().includes(q) ||
+        b.authors?.some((a) => a.toLowerCase().includes(q)) ||
+        b.series?.toLowerCase().includes(q),
+      );
+    }
+    if (darknessFilter !== null) {
+      result = result.filter((b) => b.darkness_level === darknessFilter);
+    }
+    if (heatFilter === 'none') {
+      result = result.filter((b) => b.heat_level === 'none');
+    } else if (heatFilter !== null) {
+      result = result.filter((b) => b.heat_level === HEAT_LEVELS[heatFilter]);
+    }
+    if (completedFilter === true) {
+      result = result.filter((b) => b.series_complete === true);
+    }
+    if (standaloneFilter) {
+      result = result.filter((b) => !b.series);
+    }
+    return result;
+  }, [sortedBooks, searchQuery, darknessFilter, heatFilter, completedFilter, standaloneFilter]);
 
   const totalBooksPages = Math.ceil(filteredBooks.length / BOOKS_PER_PAGE);
   const pagedBooks = filteredBooks.slice(
@@ -219,10 +246,103 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
         </span>
       </div>
 
+      {/* Darkness + Heat filters in one row */}
+      <div className="flex flex-wrap items-center gap-6 mb-6">
+        <div className="flex items-center gap-1">
+          <span className="text-sm font-medium text-zinc-700 mr-2">Darkness:</span>
+          {[1, 2, 3, 4, 5].map((level) => (
+            <button
+              key={level}
+              onMouseEnter={() => setDarknessHover(level)}
+              onMouseLeave={() => setDarknessHover(null)}
+              onClick={() => { setDarknessFilter(darknessFilter === level ? null : level); setCurrentPage(1); }}
+              title={DARKNESS_LABELS[level]}
+              className={`text-base transition-opacity leading-none ${
+                level <= (darknessHover ?? darknessFilter ?? 0) ? 'opacity-100' : 'opacity-20'
+              }`}
+            >🕯️</button>
+          ))}
+          {darknessFilter !== null && (
+            <button onClick={() => { setDarknessFilter(null); setCurrentPage(1); }} className="text-xs text-zinc-400 hover:text-zinc-600 ml-2">✕</button>
+          )}
+        </div>
+
+        <div className="flex items-center gap-1">
+          <span className="text-sm font-medium text-zinc-700 mr-2">Heat:</span>
+          <button
+            onMouseEnter={() => setHeatHover(0)}
+            onMouseLeave={() => setHeatHover(null)}
+            onClick={() => { setHeatFilter(heatFilter === 'none' ? null : 'none'); setCurrentPage(1); }}
+            title="No romance"
+            className={`text-base transition-opacity leading-none mr-1 ${
+              heatFilter === 'none' || heatHover === 0 ? 'opacity-100' : 'opacity-20'
+            }`}
+          >❄️</button>
+          {[1, 2, 3, 4, 5].map((level) => (
+            <button
+              key={level}
+              onMouseEnter={() => setHeatHover(level)}
+              onMouseLeave={() => setHeatHover(null)}
+              onClick={() => { setHeatFilter(heatFilter === level ? null : level); setCurrentPage(1); }}
+              title={HEAT_LEVELS[level]}
+              className={`text-base transition-opacity leading-none ${
+                typeof heatHover === 'number' && heatHover > 0
+                  ? level <= heatHover ? 'opacity-100' : 'opacity-20'
+                  : typeof heatFilter === 'number'
+                    ? level <= heatFilter ? 'opacity-100' : 'opacity-20'
+                    : 'opacity-20'
+              }`}
+            >🔥</button>
+          ))}
+          {heatFilter !== null && (
+            <button onClick={() => { setHeatFilter(null); setCurrentPage(1); }} className="text-xs text-zinc-400 hover:text-zinc-600 ml-2">✕</button>
+          )}
+        </div>
+
+        <button
+          onClick={() => { setCompletedFilter(completedFilter === true ? null : true); setCurrentPage(1); }}
+          className="flex items-center gap-2 group"
+        >
+          <span className={`w-4 h-4 rounded flex items-center justify-center border transition-all ${
+            completedFilter === true
+              ? 'bg-zinc-900 border-zinc-900'
+              : 'border-zinc-400 group-hover:border-zinc-600'
+          }`}>
+            {completedFilter === true && (
+              <svg className="w-2.5 h-2.5 text-white" viewBox="0 0 10 10" fill="none">
+                <path d="M1.5 5L4 7.5L8.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </span>
+          <span className="text-sm font-medium text-zinc-700">Completed series</span>
+        </button>
+
+        <button
+          onClick={() => { setStandaloneFilter(!standaloneFilter); setCurrentPage(1); }}
+          className="flex items-center gap-2 group"
+        >
+          <span className={`w-4 h-4 rounded flex items-center justify-center border transition-all ${
+            standaloneFilter
+              ? 'bg-zinc-900 border-zinc-900'
+              : 'border-zinc-400 group-hover:border-zinc-600'
+          }`}>
+            {standaloneFilter && (
+              <svg className="w-2.5 h-2.5 text-white" viewBox="0 0 10 10" fill="none">
+                <path d="M1.5 5L4 7.5L8.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </span>
+          <span className="text-sm font-medium text-zinc-700">Standalone</span>
+        </button>
+      </div>
+
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {pagedBooks.map((book) => {
           const href = book.slug ? `/books/${book.slug}` : null;
           const dl = (book.darkness_level != null && book.darkness_level >= 1) ? book.darkness_level : null;
+          const isNoRomance = book.heat_level === 'none';
+          const heatIdx = book.heat_level && !isNoRomance ? HEAT_LEVELS.indexOf(book.heat_level) : -1;
+          const hl = heatIdx >= 1 ? heatIdx : null;
 
           const CardContent = (
             <>
@@ -247,9 +367,9 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
                     {DARKNESS_CANDLES[dl]}
                   </div>
                 )}
-                {book.audiobook_available && (
+                {(hl != null || isNoRomance) && (
                   <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                    🎧
+                    {isNoRomance ? '❄️' : HEAT_FLAMES[hl!]}
                   </div>
                 )}
               </div>
