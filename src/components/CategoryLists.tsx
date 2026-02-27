@@ -15,6 +15,9 @@ interface Props {
   richBest?: BookRef[];
   richStarter?: BookRef[];
   richHidden?: BookRef[];
+  gradient?: string;
+  border?: string;
+  accent?: string;
 }
 
 const CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
@@ -42,7 +45,7 @@ function RichList({ items, page }: { items: BookRef[]; page: number }) {
       {visible.map((book, i) => (
         <li key={i} className="flex gap-2.5">
           <span className="text-zinc-400 font-medium text-xs w-4 shrink-0 pt-1">{offset + i + 1}</span>
-          <div className="w-10 shrink-0 rounded overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100" style={{ height: '60px' }}>
+          <div className="w-10 shrink-0 rounded overflow-hidden bg-linear-to-br from-purple-100 to-blue-100" style={{ height: '60px' }}>
             <img
               src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
               alt={book.title}
@@ -98,7 +101,13 @@ function PlainList({ items, page }: { items: string[]; page: number }) {
   );
 }
 
-export default function CategoryLists({ best, starter, hidden, richBest, richStarter, richHidden }: Props) {
+export default function CategoryLists({
+  best, starter, hidden,
+  richBest, richStarter, richHidden,
+  gradient = 'from-zinc-50 to-slate-50',
+  border = 'border-zinc-200',
+  accent = 'text-zinc-700',
+}: Props) {
   const [page, setPage] = useState(0);
 
   const maxLen = Math.min(MAX_ITEMS, Math.max(
@@ -114,24 +123,24 @@ export default function CategoryLists({ best, starter, hidden, richBest, richSta
     <div>
       <div className="grid gap-5 sm:grid-cols-3">
         {/* All-Time Greats */}
-        <div className="rounded-xl border p-5">
-          <h2 className="font-semibold text-sm mb-4">⭐ All-Time Greats</h2>
+        <div className={`rounded-xl bg-linear-to-br ${gradient} border ${border} p-5`}>
+          <h2 className={`font-semibold text-sm mb-4 ${accent}`}>⭐ All-Time Greats</h2>
           {richBest
             ? <RichList items={richBest} page={page} />
             : <PlainList items={best} page={page} />}
         </div>
 
         {/* Best to Start With */}
-        <div className="rounded-xl border p-5">
-          <h2 className="font-semibold text-sm mb-4">🚀 Best to Start With</h2>
+        <div className={`rounded-xl bg-linear-to-br ${gradient} border ${border} p-5`}>
+          <h2 className={`font-semibold text-sm mb-4 ${accent}`}>🚀 Best to Start With</h2>
           {richStarter
             ? <RichList items={richStarter} page={page} />
             : <PlainList items={starter} page={page} />}
         </div>
 
         {/* Hidden Gems */}
-        <div className="rounded-xl border p-5">
-          <h2 className="font-semibold text-sm mb-4">💎 Hidden Gems</h2>
+        <div className={`rounded-xl bg-linear-to-br ${gradient} border ${border} p-5`}>
+          <h2 className={`font-semibold text-sm mb-4 ${accent}`}>💎 Hidden Gems</h2>
           {richHidden
             ? <RichList items={richHidden} page={page} />
             : <PlainList items={hidden} page={page} />}
