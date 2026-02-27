@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../components/Layout.astro';
 import BookDisplay from '../../../components/BookDisplay';
+import CategoryLists from '../../../components/CategoryLists';
 
 const { slug } = Astro.params;
 
@@ -31,24 +32,10 @@ interface CategoryMeta {
   };
 }
 
-function stars(r: number): string {
-  const h = Math.round(r * 2) / 2;
-  const full = Math.floor(h);
-  const hasHalf = h % 1 === 0.5;
-  const fullStar = '<span style="color:#f59e0b">★</span>';
-  const halfStar =
-    '<span style="display:inline-block;position:relative">' +
-      '<span style="color:#d4d4d8">★</span>' +
-      '<span style="position:absolute;left:0;top:0;width:50%;overflow:hidden;white-space:nowrap;display:inline-block;color:#f59e0b">★</span>' +
-    '</span>';
-  return fullStar.repeat(full) + (hasHalf ? halfStar : '');
-}
-
-const CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
 
 const CATEGORIES: Record<string, CategoryMeta> = {
   epic: {
-    name: 'Epic / High Fantasy',
+    name: 'Epic & High Fantasy',
     description: 'Grand worlds with deep lore & ancient magic',
     longDesc: 'Sweeping world-building, ancient prophecies, and battles for the fate of entire civilizations. If you want to lose yourself in a world for months, start here.',
     gradient: 'from-purple-50 to-blue-50',
@@ -177,8 +164,8 @@ const CATEGORIES: Record<string, CategoryMeta> = {
     hidden:  ['The Glamourist Histories', 'The Mask of Mirrors', 'The Winter Witch', "The Assassin's Curse", 'The Midnight Bargain', 'A Dead Djinn in Cairo', 'The Bone Shard Daughter'],
   },
   academy: {
-    name: 'Academy / School Fantasy',
-    description: 'School / coming of age setups with magic',
+    name: 'Academy Fantasy',
+    description: 'Stories set in magical or specialized schools',
     longDesc: 'Magic schools, secret societies, and coming-of-age stories set in fantastical academies. The tension of student life amplified by prophecy, power, and danger.',
     gradient: 'from-red-50 to-rose-50',
     border: 'border-red-200',
@@ -186,11 +173,49 @@ const CATEGORIES: Record<string, CategoryMeta> = {
     icon: '🎓',
     genre: 'Coming of Age Fantasy',
     best:    ['Harry Potter', 'The Name of the Wind', 'Fourth Wing', 'Nevernight', 'The Magicians', 'An Ember in the Ashes', 'Shadow and Bone', 'Six of Crows', 'Eragon', 'Scythe'],
-    starter: ['Harry Potter', 'Eragon', 'The Name of the Wind', 'Shadow and Bone', 'An Ember in the Ashes', 'Percy Jackson', 'The Magicians'],
-    hidden:  ['Nevernight', 'The Magisterium', 'Sabriel', 'Seraphina', 'The Young Elites', 'Caraval', 'Children of Blood and Bone'],
+    starter: ['Harry Potter', 'Eragon', 'The Name of the Wind', 'Shadow and Bone', 'An Ember in the Ashes', 'Percy Jackson', 'The Magicians', 'Fourth Wing', 'A Deadly Education', 'Six of Crows'],
+    hidden:  ['Nevernight', 'The Magisterium', 'Sabriel', 'Seraphina', 'The Young Elites', 'Caraval', 'Children of Blood and Bone', 'A Deadly Education', 'Sorcery of Thorns', 'The Cruel Prince'],
+    richBooks: {
+      best: [
+        { title: 'Harry Potter and the Sorcerer\'s Stone', author: 'J.K. Rowling',         series: 'Harry Potter #1',          darkness: 2, rating: 4.5 },
+        { title: 'The Name of the Wind',                   author: 'Patrick Rothfuss',      series: 'Kingkiller Chronicle #1',  darkness: 3, rating: 4.5 },
+        { title: 'Fourth Wing',                            author: 'Rebecca Yarros',        series: 'Empyrean #1',              darkness: 3, rating: 4.3 },
+        { title: 'Nevernight',                             author: 'Jay Kristoff',          series: 'Nevernight Chronicle #1',  darkness: 4, rating: 4.3 },
+        { title: 'The Magicians',                          author: 'Lev Grossman',          series: 'The Magicians #1',         darkness: 3, rating: 3.8 },
+        { title: 'An Ember in the Ashes',                  author: 'Sabaa Tahir',           series: 'Ember in the Ashes #1',    darkness: 4, rating: 4.3 },
+        { title: 'Shadow and Bone',                        author: 'Leigh Bardugo',         series: 'Grisha #1',                darkness: 3, rating: 4.0 },
+        { title: 'Six of Crows',                           author: 'Leigh Bardugo',         series: 'Six of Crows #1',          darkness: 4, rating: 4.5 },
+        { title: 'Eragon',                                 author: 'Christopher Paolini',   series: 'Inheritance Cycle #1',     darkness: 2, rating: 3.9 },
+        { title: 'Scythe',                                 author: 'Neal Shusterman',       series: 'Arc of a Scythe #1',       darkness: 3, rating: 4.3 },
+      ],
+      starter: [
+        { title: 'Harry Potter and the Sorcerer\'s Stone', author: 'J.K. Rowling',         series: 'Harry Potter #1',          darkness: 2, rating: 4.5 },
+        { title: 'Eragon',                                 author: 'Christopher Paolini',   series: 'Inheritance Cycle #1',     darkness: 2, rating: 3.9 },
+        { title: 'The Name of the Wind',                   author: 'Patrick Rothfuss',      series: 'Kingkiller Chronicle #1',  darkness: 3, rating: 4.5 },
+        { title: 'Shadow and Bone',                        author: 'Leigh Bardugo',         series: 'Grisha #1',                darkness: 3, rating: 4.0 },
+        { title: 'An Ember in the Ashes',                  author: 'Sabaa Tahir',           series: 'Ember in the Ashes #1',    darkness: 4, rating: 4.3 },
+        { title: 'The Lightning Thief',                    author: 'Rick Riordan',          series: 'Percy Jackson #1',         darkness: 2, rating: 4.3 },
+        { title: 'The Magicians',                          author: 'Lev Grossman',          series: 'The Magicians #1',         darkness: 3, rating: 3.8 },
+        { title: 'Fourth Wing',                            author: 'Rebecca Yarros',        series: 'Empyrean #1',              darkness: 3, rating: 4.3 },
+        { title: 'A Deadly Education',                     author: 'Naomi Novik',           series: 'Scholomance #1',           darkness: 3, rating: 4.1 },
+        { title: 'Six of Crows',                           author: 'Leigh Bardugo',         series: 'Six of Crows #1',          darkness: 4, rating: 4.5 },
+      ],
+      hidden: [
+        { title: 'Nevernight',                   author: 'Jay Kristoff',        series: 'Nevernight Chronicle #1',  darkness: 4, rating: 4.3 },
+        { title: 'The Magisterium',              author: 'Holly Black',         series: 'Magisterium #1',           darkness: 2, rating: 3.9 },
+        { title: 'Sabriel',                      author: 'Garth Nix',           series: 'Abhorsen #1',              darkness: 3, rating: 4.2 },
+        { title: 'Seraphina',                    author: 'Rachel Hartman',      series: 'Seraphina #1',             darkness: 2, rating: 3.9 },
+        { title: 'The Young Elites',             author: 'Marie Lu',            series: 'Young Elites #1',          darkness: 4, rating: 3.9 },
+        { title: 'Caraval',                      author: 'Stephanie Garber',    series: 'Caraval #1',               darkness: 2, rating: 4.0 },
+        { title: 'Children of Blood and Bone',   author: 'Tomi Adeyemi',        series: 'Legacy of Orisha #1',      darkness: 3, rating: 4.0 },
+        { title: 'A Deadly Education',           author: 'Naomi Novik',         series: 'Scholomance #1',           darkness: 3, rating: 4.1 },
+        { title: 'Sorcery of Thorns',            author: 'Margaret Rogerson',                                       darkness: 2, rating: 4.1 },
+        { title: 'The Cruel Prince',             author: 'Holly Black',         series: 'The Folk of the Air #1',   darkness: 3, rating: 4.1 },
+      ],
+    },
   },
   mythology: {
-    name: 'Mythic / Folklore & Fairy-Tales',
+    name: 'Mythic / Folklore & Fairy-Tale',
     description: 'Inspired by myths, legends and folklore',
     longDesc: 'Ancient myths retold, folklore brought to life, and fairy tales subverted. These books mine the rich veins of human storytelling across cultures and centuries.',
     gradient: 'from-yellow-50 to-amber-50',
@@ -315,143 +340,16 @@ const cat = CATEGORIES[slug as keyof typeof CATEGORIES];
   </div>
 
   <!-- Curated lists -->
-  <div class="grid gap-5 sm:grid-cols-3 mb-12">
-
-    <!-- All-Time Greats -->
-    <div class="rounded-xl border p-5">
-      <h2 class="font-semibold text-sm mb-4">⭐ All-Time Greats</h2>
-      {cat.richBooks ? (
-        <ol class="space-y-3">
-          {cat.richBooks.best.map((book, i) => (
-            <li class="flex gap-2.5">
-              <span class="text-zinc-400 font-medium text-xs w-4 shrink-0 pt-1">{i + 1}</span>
-              <div class="w-10 h-15 shrink-0 rounded overflow-hidden bg-linear-to-br from-purple-100 to-blue-100">
-                <img
-                  src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
-                  alt={book.title}
-                  class="w-full h-full object-cover"
-                  onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
-                />
-              </div>
-              <div class="flex-1 min-w-0">
-                <p class="font-medium text-xs text-zinc-900 leading-snug">{book.title}</p>
-                <p class="text-[11px] text-zinc-500 mt-0.5 leading-snug">
-                  {book.author}{book.series ? ` · ${book.series}` : ''}
-                </p>
-                <div class="flex items-center gap-2 mt-1 flex-wrap">
-                  {book.darkness != null && (
-                    <span class="text-[10px] leading-none">{CANDLES[book.darkness]}</span>
-                  )}
-                  {book.rating != null && (
-                    <span class="text-[11px] font-medium leading-none" set:html={stars(book.rating)}></span>
-                  )}
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <ol class="space-y-2">
-          {cat.best.slice(0, 8).map((title, i) => (
-            <li class="text-sm text-zinc-700 flex items-start gap-2">
-              <span class="text-zinc-400 font-medium shrink-0 w-5">{i + 1}.</span>
-              {title}
-            </li>
-          ))}
-        </ol>
-      )}
-    </div>
-
-    <!-- Best to Start With -->
-    <div class="rounded-xl border p-5">
-      <h2 class="font-semibold text-sm mb-4">🚀 Best to Start With</h2>
-      {cat.richBooks ? (
-        <ol class="space-y-3">
-          {cat.richBooks.starter.map((book, i) => (
-            <li class="flex gap-2.5">
-              <span class="text-zinc-400 font-medium text-xs w-4 shrink-0 pt-1">{i + 1}</span>
-              <div class="w-10 h-15 shrink-0 rounded overflow-hidden bg-linear-to-br from-purple-100 to-blue-100">
-                <img
-                  src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
-                  alt={book.title}
-                  class="w-full h-full object-cover"
-                  onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
-                />
-              </div>
-              <div class="flex-1 min-w-0">
-                <p class="font-medium text-xs text-zinc-900 leading-snug">{book.title}</p>
-                <p class="text-[11px] text-zinc-500 mt-0.5 leading-snug">
-                  {book.author}{book.series ? ` · ${book.series}` : ''}
-                </p>
-                <div class="flex items-center gap-2 mt-1 flex-wrap">
-                  {book.darkness != null && (
-                    <span class="text-[10px] leading-none">{CANDLES[book.darkness]}</span>
-                  )}
-                  {book.rating != null && (
-                    <span class="text-[11px] font-medium leading-none" set:html={stars(book.rating)}></span>
-                  )}
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <ol class="space-y-2">
-          {cat.starter.slice(0, 8).map((title, i) => (
-            <li class="text-sm text-zinc-700 flex items-start gap-2">
-              <span class="text-zinc-400 font-medium shrink-0 w-5">{i + 1}.</span>
-              {title}
-            </li>
-          ))}
-        </ol>
-      )}
-    </div>
-
-    <!-- Hidden Gems -->
-    <div class="rounded-xl border p-5">
-      <h2 class="font-semibold text-sm mb-4">💎 Hidden Gems</h2>
-      {cat.richBooks ? (
-        <ol class="space-y-3">
-          {cat.richBooks.hidden.map((book, i) => (
-            <li class="flex gap-2.5">
-              <span class="text-zinc-400 font-medium text-xs w-4 shrink-0 pt-1">{i + 1}</span>
-              <div class="w-10 h-15 shrink-0 rounded overflow-hidden bg-linear-to-br from-purple-100 to-blue-100">
-                <img
-                  src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
-                  alt={book.title}
-                  class="w-full h-full object-cover"
-                  onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
-                />
-              </div>
-              <div class="flex-1 min-w-0">
-                <p class="font-medium text-xs text-zinc-900 leading-snug">{book.title}</p>
-                <p class="text-[11px] text-zinc-500 mt-0.5 leading-snug">
-                  {book.author}{book.series ? ` · ${book.series}` : ''}
-                </p>
-                <div class="flex items-center gap-2 mt-1 flex-wrap">
-                  {book.darkness != null && (
-                    <span class="text-[10px] leading-none">{CANDLES[book.darkness]}</span>
-                  )}
-                  {book.rating != null && (
-                    <span class="text-[11px] font-medium leading-none" set:html={stars(book.rating)}></span>
-                  )}
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <ol class="space-y-2">
-          {cat.hidden.slice(0, 8).map((title, i) => (
-            <li class="text-sm text-zinc-700 flex items-start gap-2">
-              <span class="text-zinc-400 font-medium shrink-0 w-5">{i + 1}.</span>
-              {title}
-            </li>
-          ))}
-        </ol>
-      )}
-    </div>
-
+  <div class="mb-6">
+    <CategoryLists
+      best={cat.best}
+      starter={cat.starter}
+      hidden={cat.hidden}
+      richBest={cat.richBooks?.best}
+      richStarter={cat.richBooks?.starter}
+      richHidden={cat.richBooks?.hidden}
+      client:load
+    />
   </div>
 
   <!-- DB books for this genre -->

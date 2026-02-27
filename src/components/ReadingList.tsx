@@ -15,7 +15,7 @@ function removeSaved(id: string) {
 }
 
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
-const DARKNESS_LABELS  = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
+const DARKNESS_LABELS  = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
 
 interface Book {
   id: string;

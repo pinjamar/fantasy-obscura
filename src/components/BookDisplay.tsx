@@ -40,7 +40,7 @@ const SORT_OPTIONS: { key: SortKey; label: string; icon: string }[] = [
 ];
 
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
-const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
+const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
 const DARKNESS_COLORS = ['', 'text-green-700', 'text-yellow-700', 'text-orange-600', 'text-red-600', 'text-red-900'];
 
 function sortBooks(books: Book[], key: SortKey): Book[] {
@@ -87,6 +87,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
   const [error, setError] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>('rating-desc');
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -124,8 +125,19 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
   }, [genre, audience]);
 
   const sortedBooks = useMemo(() => sortBooks(books, sort), [books, sort]);
-  const totalBooksPages = Math.ceil(sortedBooks.length / BOOKS_PER_PAGE);
-  const pagedBooks = sortedBooks.slice(
+
+  const filteredBooks = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (q.length < 2) return sortedBooks;
+    return sortedBooks.filter((b) =>
+      b.title.toLowerCase().includes(q) ||
+      b.authors?.some((a) => a.toLowerCase().includes(q)) ||
+      b.series?.toLowerCase().includes(q),
+    );
+  }, [sortedBooks, searchQuery]);
+
+  const totalBooksPages = Math.ceil(filteredBooks.length / BOOKS_PER_PAGE);
+  const pagedBooks = filteredBooks.slice(
     (currentPage - 1) * BOOKS_PER_PAGE,
     currentPage * BOOKS_PER_PAGE,
   );
@@ -161,6 +173,29 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
 
   return (
     <div>
+      {/* Search bar */}
+      <div className="relative mb-4">
+        <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0Z" />
+          </svg>
+        </span>
+        <input
+          type="text"
+          value={searchQuery}
+          placeholder="Search by title, author or series…"
+          onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
+          className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm bg-white shadow-sm"
+        />
+        {searchQuery && (
+          <button
+            onClick={() => { setSearchQuery(''); setCurrentPage(1); }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-700"
+            aria-label="Clear"
+          >×</button>
+        )}
+      </div>
+
       {/* Sort bar */}
       <div className="flex flex-wrap items-center gap-2 mb-6">
         <span className="text-sm text-zinc-500 mr-1">Sort:</span>
@@ -179,7 +214,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
           </button>
         ))}
         <span className="ml-auto text-xs text-zinc-400">
-          {sortedBooks.length} books
+          {filteredBooks.length}{searchQuery.trim().length >= 2 && filteredBooks.length !== sortedBooks.length ? ` of ${sortedBooks.length}` : ''} books
           {totalBooksPages > 1 && ` · page ${currentPage}/${totalBooksPages}`}
         </span>
       </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 type Book = {
   id: string;
@@ -241,11 +241,11 @@ const VIALS: Vial[] = [
     titleColor: 'text-orange-900',
     options: [
       {
-        label: 'Epic Series',
-        icon: '📚',
-        bg: 'bg-orange-50',
-        hover: 'hover:bg-orange-100',
-        filters: { min_pages: 600 },
+        label: 'Standalone',
+        icon: '📕',
+        bg: 'bg-amber-50',
+        hover: 'hover:bg-amber-100',
+        filters: { max_pages: 450 },
       },
       {
         label: 'Duology / Trilogy / Tetralogy',
@@ -255,11 +255,11 @@ const VIALS: Vial[] = [
         filters: { min_pages: 300, max_pages: 599 },
       },
       {
-        label: 'Standalone',
-        icon: '📕',
-        bg: 'bg-amber-50',
-        hover: 'hover:bg-amber-100',
-        filters: { max_pages: 450 },
+        label: 'Long Series',
+        icon: '📚',
+        bg: 'bg-orange-50',
+        hover: 'hover:bg-orange-100',
+        filters: { min_pages: 600 },
       },
     ],
   },
@@ -346,7 +346,7 @@ const VIALS: Vial[] = [
         filters: {},
       },
       {
-        label: 'Third Person Omniscient',
+        label: 'Omniscient',
         icon: '🌐',
         bg: 'bg-rose-50',
         hover: 'hover:bg-rose-100',
@@ -507,7 +507,7 @@ const VIALS: Vial[] = [
   },
   {
     id: 'awards',
-    label: 'Awards & Recognition',
+    label: 'Recognitions',
     icon: '🏆',
     border: 'border-yellow-200',
     titleColor: 'text-yellow-900',
@@ -612,6 +612,8 @@ const CONTENT_WARNINGS = [
   { id: 'suicide', label: 'Suicide / self-harm', icon: '🌊' },
   { id: 'addiction', label: 'Addiction', icon: '💊' },
   { id: 'war-genocide', label: 'War / genocide', icon: '⚔️' },
+  { id: 'slavery', label: 'Slavery', icon: '⛓️' },
+  { id: 'psychological-trauma', label: 'Psychological trauma', icon: '🧠' },
 ];
 
 const DARKNESS_LEVELS = [
@@ -619,7 +621,7 @@ const DARKNESS_LEVELS = [
     level: 1,
     candles: '🕯️',
     label: 'Lighthearted',
-    desc: 'Cozy, low stakes, no real darkness',
+    desc: 'Cozy, low stakes and emotionally safe',
     subgenres: ['Cozy Fantasy'],
     tone: ['Whimsical', 'Light-hearted'],
   },
@@ -627,15 +629,15 @@ const DARKNESS_LEVELS = [
     level: 2,
     candles: '🕯️🕯️',
     label: 'Mild',
-    desc: 'Some conflict and tension but ultimately safe',
+    desc: 'Some danger and tension, but generally safe in tone',
     subgenres: [],
     tone: ['Light-hearted'],
   },
   {
     level: 3,
     candles: '🕯️🕯️🕯️',
-    label: 'Moderate',
-    desc: 'Death, moral complexity, some disturbing content',
+    label: 'Serious',
+    desc: 'Death, violence and emotional weight are present',
     subgenres: [],
     tone: [],
   },
@@ -643,7 +645,7 @@ const DARKNESS_LEVELS = [
     level: 4,
     candles: '🕯️🕯️🕯️🕯️',
     label: 'Dark',
-    desc: 'Violence, trauma, morally grey characters',
+    desc: 'Violence, trauma and morally harsh outcomes',
     subgenres: ['Dark Fantasy'],
     tone: ['Dark & Serious'],
   },
@@ -651,10 +653,18 @@ const DARKNESS_LEVELS = [
     level: 5,
     candles: '🕯️🕯️🕯️🕯️🕯️',
     label: 'Brutal',
-    desc: 'Grimdark, no redemption guaranteed',
+    desc: 'Extreme violence and suffering, no mercy',
     subgenres: ['Grimdark'],
     tone: [],
   },
+];
+
+const HEAT_LEVELS = [
+  { value: 'Sweet Romance',     flames: '🔥',           label: 'Sweet Romance',     desc: 'Kisses only, no heat' },
+  { value: 'Closed Door',       flames: '🔥🔥',         label: 'Closed Door',       desc: 'Fade to black, off-page' },
+  { value: 'Open Door',         flames: '🔥🔥🔥',       label: 'Open Door',         desc: 'Some intimate details, not explicit' },
+  { value: 'Explicit',          flames: '🔥🔥🔥🔥',     label: 'Explicit',          desc: 'Detailed scenes and explicit language' },
+  { value: 'Fiery',             flames: '🔥🔥🔥🔥🔥',   label: 'Fiery',             desc: 'Romance is front and center' },
 ];
 
 const CATEGORY_OPTIONS: {
@@ -718,6 +728,19 @@ export default function AlchemyTable() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [excludedWarnings, setExcludedWarnings] = useState<string[]>([]);
   const [seriesStatus, setSeriesStatus] = useState<'completed' | 'ongoing' | ''>('');
+  const [heatLevel, setHeatLevel] = useState('');
+
+  // Auto-select "Spicy & Central" romance vial whenever a heat level is picked
+  useEffect(() => {
+    if (heatLevel) {
+      setSelections((prev) => ({ ...prev, romance: 0 }));
+    } else {
+      setSelections((prev) => {
+        const { romance, ...rest } = prev;
+        return rest;
+      });
+    }
+  }, [heatLevel]);
 
   const toggleWarning = (id: string) => {
     setExcludedWarnings((prev) =>
@@ -797,6 +820,9 @@ export default function AlchemyTable() {
           ...creatureFilter.subgenres,
         ];
     }
+
+    // Add heat level filter
+    if (heatLevel) merged.heat_level = heatLevel;
 
     // Add darkness filter
     if (darknessLevel > 0) {
@@ -956,7 +982,7 @@ export default function AlchemyTable() {
               {currentBook.darkness_level != null && currentBook.darkness_level >= 1 && (
                 <p className="text-xs text-zinc-500 mt-0.5">
                   {'🕯️'.repeat(currentBook.darkness_level)}{' '}
-                  {['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'][currentBook.darkness_level]}
+                  {['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'][currentBook.darkness_level]}
                 </p>
               )}
             </div>
@@ -1029,13 +1055,13 @@ export default function AlchemyTable() {
 
   return (
     <div className="space-y-6">
-      {/* Creatures / Category / Series Status  |  Darkness Scale */}
-      <div className="grid gap-6 sm:grid-cols-2">
+      {/* Creatures / Category / Series Status  |  Darkness Level  |  Heat Level */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
 
         {/* Left column: 3 compact filters stacked */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 h-full">
           {/* Category */}
-          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-violet-200 px-4 py-3 shadow-sm">
+          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-violet-200 px-4 py-3 shadow-sm flex-1">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-lg">📂</span>
               <h3 className="font-semibold text-violet-900 text-sm">Category</h3>
@@ -1052,7 +1078,7 @@ export default function AlchemyTable() {
           </div>
 
           {/* Creatures & Races */}
-          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-sky-200 px-4 py-3 shadow-sm">
+          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-sky-200 px-4 py-3 shadow-sm flex-1">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-lg">🐉</span>
               <h3 className="font-semibold text-sky-900 text-sm">Creatures & Races</h3>
@@ -1069,7 +1095,7 @@ export default function AlchemyTable() {
           </div>
 
           {/* Series status toggle */}
-          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-zinc-200 px-4 py-3 shadow-sm">
+          <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-zinc-200 px-4 py-3 shadow-sm flex-1">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-lg">📚</span>
               <span className="text-sm font-semibold text-zinc-700">Series Status</span>
@@ -1092,11 +1118,11 @@ export default function AlchemyTable() {
           </div>
         </div>
 
-        {/* Right column: Darkness Scale */}
+        {/* Right column: Darkness Level */}
         <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-zinc-200 p-5 shadow-sm">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-2xl">🕯️</span>
-            <h3 className="font-semibold text-zinc-900">Darkness Scale</h3>
+            <h3 className="font-semibold text-zinc-900">Darkness Level</h3>
           </div>
           <div className="space-y-1.5">
             {DARKNESS_LEVELS.map((dl) => (
@@ -1117,6 +1143,36 @@ export default function AlchemyTable() {
                   <span className="text-zinc-500 ml-1">— {dl.desc}</span>
                 </span>
                 {darknessLevel === dl.level && (
+                  <span className="ml-auto shrink-0">✓</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Heat Level */}
+        <div className="bg-white/80 backdrop-blur rounded-xl border-2 border-pink-200 p-5 shadow-sm">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-2xl">🔥</span>
+            <h3 className="font-semibold text-pink-900">Heat Level</h3>
+          </div>
+          <div className="space-y-1.5">
+            {HEAT_LEVELS.map((hl) => (
+              <button
+                key={hl.value}
+                onClick={() => setHeatLevel(heatLevel === hl.value ? '' : hl.value)}
+                className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-all flex items-start gap-2 ${
+                  heatLevel === hl.value
+                    ? 'bg-pink-50 ring-2 ring-inset ring-pink-400 font-medium'
+                    : 'bg-zinc-50 hover:bg-pink-50'
+                }`}
+              >
+                <span className="shrink-0 leading-tight">{hl.flames}</span>
+                <span>
+                  <span className="font-semibold text-zinc-800">{hl.label}</span>
+                  <span className="text-zinc-500 ml-1">— {hl.desc}</span>
+                </span>
+                {heatLevel === hl.value && (
                   <span className="ml-auto shrink-0">✓</span>
                 )}
               </button>

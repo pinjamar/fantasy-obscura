@@ -10,7 +10,7 @@ interface Category {
 const categories: Category[] = [
   {
     slug: 'epic',
-    name: 'Epic / High Fantasy',
+    name: 'Epic & High Fantasy',
     description: 'Grand worlds with deep lore & ancient magic',
     gradient: 'from-purple-50 to-blue-50',
   },
@@ -52,13 +52,13 @@ const categories: Category[] = [
   },
   {
     slug: 'academy',
-    name: 'Academy / School Fantasy',
-    description: 'School / coming of age setups with magic',
+    name: 'Academy Fantasy',
+    description: 'Stories set in magical or specialized schools',
     gradient: 'from-red-50 to-rose-50',
   },
   {
     slug: 'mythology',
-    name: 'Mythic / Folklore & Fairy-Tales',
+    name: 'Mythic / Folklore & Fairy-Tale',
     description: 'Inspired by myths, legends and folklore',
     gradient: 'from-yellow-50 to-amber-50',
   },
