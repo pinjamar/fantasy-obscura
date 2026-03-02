@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 type Book = {
   id: string;
@@ -172,32 +172,32 @@ const VIALS: Vial[] = [
     ],
   },
   {
-    id: 'romance',
-    label: 'Romance Potion',
-    icon: '💕',
-    border: 'border-pink-200',
-    titleColor: 'text-pink-900',
+    id: 'audience',
+    label: 'Audience',
+    icon: '👥',
+    border: 'border-indigo-200',
+    titleColor: 'text-indigo-900',
     options: [
       {
-        label: 'Spicy & Central',
-        icon: '🔥',
-        bg: 'bg-pink-50',
-        hover: 'hover:bg-pink-100',
-        filters: { heat_level: 'Spicy' },
+        label: 'Adult',
+        icon: '🧑',
+        bg: 'bg-indigo-50',
+        hover: 'hover:bg-indigo-100',
+        filters: { audience: 'Adult' },
       },
       {
-        label: 'Sweet Subplot',
-        icon: '💐',
-        bg: 'bg-rose-50',
-        hover: 'hover:bg-rose-100',
-        filters: { heat_level: 'Fade to Black' },
+        label: 'Young Adult (YA)',
+        icon: '🧒',
+        bg: 'bg-slate-50',
+        hover: 'hover:bg-slate-100',
+        filters: { audience: 'Young Adult (YA)' },
       },
       {
-        label: 'None / Minimal',
-        icon: '❄️',
-        bg: 'bg-zinc-50',
-        hover: 'hover:bg-zinc-100',
-        filters: { heat_level: 'Clean' },
+        label: 'Middle Grade',
+        icon: '🧸',
+        bg: 'bg-violet-50',
+        hover: 'hover:bg-violet-100',
+        filters: { audience: "Children's" },
       },
     ],
   },
@@ -264,32 +264,32 @@ const VIALS: Vial[] = [
     ],
   },
   {
-    id: 'audience',
-    label: 'Audience',
-    icon: '👥',
-    border: 'border-indigo-200',
-    titleColor: 'text-indigo-900',
+    id: 'length-bucket',
+    label: 'Length Bucket',
+    icon: '📐',
+    border: 'border-teal-200',
+    titleColor: 'text-teal-900',
     options: [
       {
-        label: 'Adult',
-        icon: '🧑',
-        bg: 'bg-indigo-50',
-        hover: 'hover:bg-indigo-100',
-        filters: { audience: 'Adult' },
+        label: 'Short (< 300 pages)',
+        icon: '⚡',
+        bg: 'bg-teal-50',
+        hover: 'hover:bg-teal-100',
+        filters: { max_pages: 299 },
       },
       {
-        label: 'Young Adult (YA)',
-        icon: '🧒',
-        bg: 'bg-slate-50',
-        hover: 'hover:bg-slate-100',
-        filters: { audience: 'Young Adult (YA)' },
+        label: 'Standard (300–600)',
+        icon: '📖',
+        bg: 'bg-cyan-50',
+        hover: 'hover:bg-cyan-100',
+        filters: { min_pages: 300, max_pages: 600 },
       },
       {
-        label: 'Middle Grade',
-        icon: '🧸',
-        bg: 'bg-violet-50',
-        hover: 'hover:bg-violet-100',
-        filters: { audience: "Children's" },
+        label: 'Epic (600+)',
+        icon: '📚',
+        bg: 'bg-blue-50',
+        hover: 'hover:bg-blue-100',
+        filters: { min_pages: 601 },
       },
     ],
   },
@@ -415,32 +415,32 @@ const VIALS: Vial[] = [
     ],
   },
   {
-    id: 'length-bucket',
-    label: 'Length Bucket',
-    icon: '📐',
-    border: 'border-teal-200',
-    titleColor: 'text-teal-900',
+    id: 'awards',
+    label: 'Recognitions',
+    icon: '🏆',
+    border: 'border-yellow-200',
+    titleColor: 'text-yellow-900',
     options: [
       {
-        label: 'Short (< 300 pages)',
-        icon: '⚡',
-        bg: 'bg-teal-50',
-        hover: 'hover:bg-teal-100',
-        filters: { max_pages: 299 },
+        label: 'Hugo Winner',
+        icon: '🚀',
+        bg: 'bg-yellow-50',
+        hover: 'hover:bg-yellow-100',
+        filters: { awards: 'hugo' },
       },
       {
-        label: 'Standard (300–600)',
-        icon: '📖',
-        bg: 'bg-cyan-50',
-        hover: 'hover:bg-cyan-100',
-        filters: { min_pages: 300, max_pages: 600 },
+        label: 'Nebula Winner',
+        icon: '⭐',
+        bg: 'bg-amber-50',
+        hover: 'hover:bg-amber-100',
+        filters: { awards: 'nebula' },
       },
       {
-        label: 'Epic (600+)',
-        icon: '📚',
-        bg: 'bg-blue-50',
-        hover: 'hover:bg-blue-100',
-        filters: { min_pages: 601 },
+        label: 'Goodreads Choice',
+        icon: '📗',
+        bg: 'bg-green-50',
+        hover: 'hover:bg-green-100',
+        filters: { awards: 'goodreads' },
       },
     ],
   },
@@ -506,32 +506,32 @@ const VIALS: Vial[] = [
     ],
   },
   {
-    id: 'awards',
-    label: 'Recognitions',
-    icon: '🏆',
-    border: 'border-yellow-200',
-    titleColor: 'text-yellow-900',
+    id: 'time-inspiration',
+    label: 'Time Inspiration',
+    icon: '🏛️',
+    border: 'border-amber-200',
+    titleColor: 'text-amber-900',
     options: [
       {
-        label: 'Hugo Winner',
-        icon: '🚀',
-        bg: 'bg-yellow-50',
-        hover: 'hover:bg-yellow-100',
-        filters: { awards: 'hugo' },
-      },
-      {
-        label: 'Nebula Winner',
-        icon: '⭐',
+        label: 'Ancient-Inspired',
+        icon: '🏺',
         bg: 'bg-amber-50',
         hover: 'hover:bg-amber-100',
-        filters: { awards: 'nebula' },
+        filters: { subgenres: ['Mythic Fantasy', 'Historical Fantasy'] },
       },
       {
-        label: 'Bestseller',
-        icon: '📈',
-        bg: 'bg-orange-50',
-        hover: 'hover:bg-orange-100',
-        filters: { awards: 'bestseller' },
+        label: 'Medieval-Inspired',
+        icon: '🏰',
+        bg: 'bg-stone-50',
+        hover: 'hover:bg-stone-100',
+        filters: { subgenres: ['Epic Fantasy', 'High Fantasy'] },
+      },
+      {
+        label: 'Modern-Inspired',
+        icon: '🌆',
+        bg: 'bg-sky-50',
+        hover: 'hover:bg-sky-100',
+        filters: { subgenres: ['Urban Fantasy', 'Contemporary Fantasy'] },
       },
     ],
   },
@@ -729,18 +729,6 @@ export default function AlchemyTable() {
   const [excludedWarnings, setExcludedWarnings] = useState<string[]>([]);
   const [seriesStatus, setSeriesStatus] = useState<'completed' | 'ongoing' | ''>('');
   const [heatLevel, setHeatLevel] = useState('');
-
-  // Auto-select "Spicy & Central" romance vial whenever a heat level is picked
-  useEffect(() => {
-    if (heatLevel) {
-      setSelections((prev) => ({ ...prev, romance: 0 }));
-    } else {
-      setSelections((prev) => {
-        const { romance, ...rest } = prev;
-        return rest;
-      });
-    }
-  }, [heatLevel]);
 
   const toggleWarning = (id: string) => {
     setExcludedWarnings((prev) =>

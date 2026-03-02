@@ -26,6 +26,9 @@ export type Book = {
   audiobook_narrator_rating: 'excellent' | 'good' | 'mixed' | 'avoid' | null;
   audiobook_hours: number | null;
   audiobook_audible_url: string | null;
+  unique_angle: string | null;
+  ideal_reader: string | null;
+  reading_experience: string | null;
   created_at: string;
   updated_at: string;
 };
@@ -57,6 +60,9 @@ export type BookInput = {
   audiobook_narrator_rating?: 'excellent' | 'good' | 'mixed' | 'avoid' | null;
   audiobook_hours?: number | null;
   audiobook_audible_url?: string | null;
+  unique_angle?: string | null;
+  ideal_reader?: string | null;
+  reading_experience?: string | null;
 };
 
 export type BookSearchResult = BookInput & {

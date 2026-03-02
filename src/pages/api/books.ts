@@ -31,6 +31,9 @@ const normalizeBook = (payload: BookInput) => {
     audiobook_narrator_rating: payload.audiobook_narrator_rating ?? null,
     audiobook_hours: payload.audiobook_hours ?? null,
     audiobook_audible_url: payload.audiobook_audible_url?.trim() || null,
+    unique_angle: payload.unique_angle?.trim() || null,
+    ideal_reader: payload.ideal_reader?.trim() || null,
+    reading_experience: payload.reading_experience?.trim() || null,
   };
 };
 

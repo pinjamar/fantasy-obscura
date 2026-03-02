@@ -93,7 +93,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [darknessFilter, setDarknessFilter] = useState<number | null>(null);
-  const [heatFilter, setHeatFilter] = useState<number | 'none' | null>(null);
+  const [heatFilter, setHeatFilter] = useState<number | null>(null);
   const [darknessHover, setDarknessHover] = useState<number | null>(null);
   const [heatHover, setHeatHover] = useState<number | null>(null);
   const [completedFilter, setCompletedFilter] = useState<boolean | null>(null);
@@ -149,9 +149,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
     if (darknessFilter !== null) {
       result = result.filter((b) => b.darkness_level === darknessFilter);
     }
-    if (heatFilter === 'none') {
-      result = result.filter((b) => b.heat_level === 'none');
-    } else if (heatFilter !== null) {
+    if (heatFilter !== null) {
       result = result.filter((b) => b.heat_level === HEAT_LEVELS[heatFilter]);
     }
     if (completedFilter === true) {
@@ -269,15 +267,6 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
 
         <div className="flex items-center gap-1">
           <span className="text-sm font-medium text-zinc-700 mr-2">Heat:</span>
-          <button
-            onMouseEnter={() => setHeatHover(0)}
-            onMouseLeave={() => setHeatHover(null)}
-            onClick={() => { setHeatFilter(heatFilter === 'none' ? null : 'none'); setCurrentPage(1); }}
-            title="No romance"
-            className={`text-base transition-opacity leading-none mr-1 ${
-              heatFilter === 'none' || heatHover === 0 ? 'opacity-100' : 'opacity-20'
-            }`}
-          >❄️</button>
           {[1, 2, 3, 4, 5].map((level) => (
             <button
               key={level}
@@ -286,11 +275,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
               onClick={() => { setHeatFilter(heatFilter === level ? null : level); setCurrentPage(1); }}
               title={HEAT_LEVELS[level]}
               className={`text-base transition-opacity leading-none ${
-                typeof heatHover === 'number' && heatHover > 0
-                  ? level <= heatHover ? 'opacity-100' : 'opacity-20'
-                  : typeof heatFilter === 'number'
-                    ? level <= heatFilter ? 'opacity-100' : 'opacity-20'
-                    : 'opacity-20'
+                level <= (heatHover ?? heatFilter ?? 0) ? 'opacity-100' : 'opacity-20'
               }`}
             >🔥</button>
           ))}
@@ -340,8 +325,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
         {pagedBooks.map((book) => {
           const href = book.slug ? `/books/${book.slug}` : null;
           const dl = (book.darkness_level != null && book.darkness_level >= 1) ? book.darkness_level : null;
-          const isNoRomance = book.heat_level === 'none';
-          const heatIdx = book.heat_level && !isNoRomance ? HEAT_LEVELS.indexOf(book.heat_level) : -1;
+          const heatIdx = book.heat_level ? HEAT_LEVELS.indexOf(book.heat_level) : -1;
           const hl = heatIdx >= 1 ? heatIdx : null;
 
           const CardContent = (
@@ -367,9 +351,9 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
                     {DARKNESS_CANDLES[dl]}
                   </div>
                 )}
-                {(hl != null || isNoRomance) && (
+                {hl != null && (
                   <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                    {isNoRomance ? '❄️' : HEAT_FLAMES[hl!]}
+                    {HEAT_FLAMES[hl]}
                   </div>
                 )}
               </div>

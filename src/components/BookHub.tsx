@@ -20,6 +20,9 @@ const emptyForm: BookInput = {
   page_count: undefined,
   avg_rating: undefined,
   synopsis: '',
+  unique_angle: '',
+  ideal_reader: '',
+  reading_experience: '',
   subgenres: [],
   tropes: [],
   magic_system: '',
@@ -332,6 +335,42 @@ const BookHub: React.FC = () => {
               }
             />
           </div>
+          <div className="sm:col-span-2">
+            <label className="text-sm font-medium">What makes this book different</label>
+            <textarea
+              className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
+              rows={2}
+              placeholder="What sets it apart from other books in the genre…"
+              value={form.unique_angle || ''}
+              onChange={(event) =>
+                setForm({ ...form, unique_angle: event.target.value })
+              }
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <label className="text-sm font-medium">Who is this for</label>
+            <textarea
+              className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
+              rows={2}
+              placeholder="Ideal reader — fans of, reading moods, preferences…"
+              value={form.ideal_reader || ''}
+              onChange={(event) =>
+                setForm({ ...form, ideal_reader: event.target.value })
+              }
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <label className="text-sm font-medium">Tone &amp; reading experience</label>
+            <textarea
+              className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
+              rows={2}
+              placeholder="Describe the feel, prose style, emotional experience…"
+              value={form.reading_experience || ''}
+              onChange={(event) =>
+                setForm({ ...form, reading_experience: event.target.value })
+              }
+            />
+          </div>
 
           <div className="sm:col-span-2 border-t pt-4">
             <h3 className="font-medium text-sm mb-3">Fantasy Metadata</h3>
@@ -409,8 +448,6 @@ const BookHub: React.FC = () => {
                     setForm({ ...form, heat_level: event.target.value || null })
                   }
                 >
-                  <option value="">— not set —</option>
-                  <option value="none">❄️ No romance</option>
                   <option value="Sweet Romance">🔥 Sweet Romance</option>
                   <option value="Closed Door">🔥🔥 Closed Door</option>
                   <option value="Open Door">🔥🔥🔥 Open Door</option>
@@ -427,7 +464,6 @@ const BookHub: React.FC = () => {
                     setForm({ ...form, darkness_level: event.target.value === '' ? undefined : Number(event.target.value) })
                   }
                 >
-                  <option value="">— not set —</option>
                   <option value="1">🕯️ Lighthearted</option>
                   <option value="2">🕯️🕯️ Mild</option>
                   <option value="3">🕯️🕯️🕯️ Serious</option>
