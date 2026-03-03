@@ -29,6 +29,14 @@ export type Book = {
   unique_angle: string | null;
   ideal_reader: string | null;
   reading_experience: string | null;
+  accessibility: string | null;
+  awards: string[] | null;
+  stakes: string | null;
+  series_status: string | null;
+  pov_style: string | null;
+  pov_count: string | null;
+  protagonist_gender: string | null;
+  content_warnings: string[] | null;
   created_at: string;
   updated_at: string;
 };
@@ -63,6 +71,14 @@ export type BookInput = {
   unique_angle?: string | null;
   ideal_reader?: string | null;
   reading_experience?: string | null;
+  accessibility?: string | null;
+  awards?: string[] | null;
+  stakes?: string | null;
+  series_status?: string | null;
+  pov_style?: string | null;
+  pov_count?: string | null;
+  protagonist_gender?: string | null;
+  content_warnings?: string[] | null;
 };
 
 export type BookSearchResult = BookInput & {
@@ -88,9 +104,16 @@ export type BookFilters = {
   max_year?: number;
   min_pages?: number;
   max_pages?: number;
-  avoid_explicit?: boolean;
-  avoid_grimdark?: boolean;
+  exclude_warnings?: string[];
   has_audiobook?: boolean;
+  accessibility?: string;
+  awards?: string[];
+  stakes?: string;
+  series_status?: string;
+  pov_style?: string;
+  pov_count?: string;
+  protagonist_gender?: string;
+  publication_era?: string;
 };
 
 export type SortOption =

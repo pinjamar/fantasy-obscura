@@ -34,9 +34,33 @@ export const GET: APIRoute = async ({ url }) => {
   const max_pages = p.get('max_pages');
   if (max_pages) filters.max_pages = parseInt(max_pages);
 
-  if (p.get('avoid_explicit') === '1') filters.avoid_explicit = true;
-  if (p.get('avoid_grimdark') === '1') filters.avoid_grimdark = true;
+  const excludeWarnings = p.getAll('exclude_warning');
+  if (excludeWarnings.length) filters.exclude_warnings = excludeWarnings;
   if (p.get('has_audiobook') === '1') filters.has_audiobook = true;
+
+  const accessibility = p.get('accessibility');
+  if (accessibility) filters.accessibility = accessibility;
+
+  const awards = p.getAll('awards');
+  if (awards.length) filters.awards = awards;
+
+  const stakes = p.get('stakes');
+  if (stakes) filters.stakes = stakes;
+
+  const series_status = p.get('series_status');
+  if (series_status) filters.series_status = series_status;
+
+  const pov_style = p.get('pov_style');
+  if (pov_style) filters.pov_style = pov_style;
+
+  const pov_count = p.get('pov_count');
+  if (pov_count) filters.pov_count = pov_count;
+
+  const protagonist_gender = p.get('protagonist_gender');
+  if (protagonist_gender) filters.protagonist_gender = protagonist_gender;
+
+  const publication_era = p.get('publication_era');
+  if (publication_era) filters.publication_era = publication_era;
 
   try {
     const result = await getBooks(filters, { page: 1, pageSize: 50, sort: 'rating_desc' });

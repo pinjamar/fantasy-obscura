@@ -2,12 +2,36 @@
 import Layout from '../../components/Layout.astro';
 
 const BOOKS = [
-  { title: 'Mistborn: The Final Empire',  slug: 'mistborn-the-final-empire' },
-  { title: 'The Lies of Locke Lamora',    slug: 'the-lies-of-locke-lamora' },
-  { title: 'Kings of the Wyld',           slug: 'kings-of-the-wyld' },
-  { title: 'The Way of Kings',            slug: 'the-way-of-kings' },
-  { title: 'Six of Crows',               slug: 'six-of-crows' },
-  { title: 'Legends & Lattes',            slug: 'legends-and-lattes' },
+  {
+    title: 'Mistborn: The Final Empire',
+    slug: 'mistborn-the-final-empire',
+    desc: 'A criminal crew united by rebellion gradually forms deep bonds built on trust and sacrifice — one of the most emotionally satisfying ensemble casts in epic fantasy.',
+  },
+  {
+    title: 'The Lies of Locke Lamora',
+    slug: 'the-lies-of-locke-lamora',
+    desc: "A band of thieves whose loyalty feels more powerful than blood ties. The Gentleman Bastards don't just pull cons together — they'd die for each other without hesitation.",
+  },
+  {
+    title: 'Six of Crows',
+    slug: 'six-of-crows',
+    desc: 'Six outcasts hired for an impossible heist discover that trust and loyalty bind them far tighter than any contract. Possibly the genre\'s purest found family in a single duology.',
+  },
+  {
+    title: 'The Way of Kings',
+    slug: 'the-way-of-kings',
+    desc: 'Across three intertwined storylines, warriors, scholars, and slaves find in each other something deeper than survival — a sense of purpose that becomes the spine of an epic series.',
+  },
+  {
+    title: 'Kings of the Wyld',
+    slug: 'kings-of-the-wyld',
+    desc: 'Retired adventurers reassemble for one last mission and rediscover what made them a family in the first place. Funny, heartfelt, and surprisingly moving.',
+  },
+  {
+    title: 'Legends & Lattes',
+    slug: 'legends-and-lattes',
+    desc: 'A retired orc warrior hangs up her sword, opens a coffee shop, and builds the warmest, most unlikely community in fantasy — a quiet masterclass in chosen belonging.',
+  },
 ];
 
 const RELATED = [
@@ -54,6 +78,12 @@ const RELATED = [
         where characters protect each other like siblings despite having no shared past, this trope
         delivers exactly that experience.
       </p>
+      <p>
+        Many readers specifically search for found family fantasy books because the trope offers
+        emotional payoff that goes beyond plot twists or large-scale battles. Whether set in
+        sprawling secondary worlds or tight-knit urban settings, stories built around chosen bonds
+        often feel deeply personal and character-driven.
+      </p>
     </section>
 
     <!-- Why readers love it -->
@@ -94,17 +124,21 @@ const RELATED = [
       </div>
     </section>
 
-    <!-- Books -->
+    <!-- Best books -->
     <section class="mb-10">
-      <h2 class="text-xl font-bold mb-4">Books Featuring Found Family</h2>
-      <div class="flex flex-col gap-2">
+      <h2 class="text-xl font-bold mb-2">Best Found Family Fantasy Books</h2>
+      <p class="text-sm text-zinc-500 mb-5">Hand-picked for the strength of their ensemble bonds — not just the presence of a group.</p>
+      <div class="flex flex-col gap-4">
         {BOOKS.map((b) => (
           <a
             href={`/books/${b.slug}/`}
-            class="flex items-center gap-3 px-4 py-3 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors group"
+            class="block px-4 py-4 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors group"
           >
-            <span class="text-purple-400 group-hover:text-purple-600 transition-colors">📖</span>
-            <span class="font-medium text-zinc-800 group-hover:text-purple-700 transition-colors">{b.title}</span>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-purple-400 group-hover:text-purple-600 transition-colors">📖</span>
+              <span class="font-semibold text-zinc-800 group-hover:text-purple-700 transition-colors">{b.title}</span>
+            </div>
+            <p class="text-sm text-zinc-500 leading-relaxed pl-6">{b.desc}</p>
           </a>
         ))}
       </div>
@@ -128,6 +162,36 @@ const RELATED = [
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold mb-5">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {[
+          {
+            q: 'What is found family in fantasy?',
+            a: 'Found family is a trope where unrelated characters form deep emotional bonds that function like familial relationships — built on loyalty, shared struggle, and chosen commitment rather than blood.',
+          },
+          {
+            q: 'Is found family common in epic fantasy?',
+            a: 'Yes. It appears frequently in epic fantasy, heist stories, and academy settings where characters must rely on each other for survival. The longer the series, the deeper the bonds tend to run.',
+          },
+          {
+            q: 'Are found family books usually dark?',
+            a: 'Not necessarily. The trope appears across all tones — from lighthearted cozy fantasy to brutal grimdark. What defines it is the emotional weight placed on group bonds, not the darkness level.',
+          },
+          {
+            q: 'What makes found family different from just having a group of characters?',
+            a: "The difference is intentionality — found family stories frame the relationships themselves as the emotional core. The group's bond is the point, not just a vehicle for plot.",
+          },
+        ].map(({ q, a }) => (
+          <div class="border border-zinc-200 rounded-xl px-5 py-4">
+            <p class="font-semibold text-zinc-800 mb-1">{q}</p>
+            <p class="text-sm text-zinc-600 leading-relaxed">{a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
     <!-- Related tropes -->
     <section class="mb-6">
       <h2 class="text-xl font-bold mb-4">Related Tropes</h2>
@@ -139,6 +203,27 @@ const RELATED = [
           >
             <span>{r.emoji}</span>
             <span>{r.label}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Explore more -->
+    <section class="mb-6 border-t border-zinc-100 pt-8">
+      <p class="text-sm font-semibold text-zinc-500 uppercase tracking-wide mb-3">You might also enjoy</p>
+      <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+        {[
+          { slug: 'assassin-protagonist', label: 'Assassin Protagonist', emoji: '🗡️' },
+          { slug: 'rebellion',            label: 'Rebellion Fantasy',    emoji: '⚔️' },
+          { slug: 'academy',              label: 'Academy Fantasy',      emoji: '🏫' },
+          { slug: 'heist',               label: 'Heist Fantasy',         emoji: '🃏' },
+        ].map((r) => (
+          <a
+            href={`/tropes/${r.slug}/`}
+            class="flex flex-col items-center gap-1 px-3 py-3 rounded-xl border border-zinc-200 text-center text-sm text-zinc-700 hover:border-purple-300 hover:bg-purple-50 transition-colors"
+          >
+            <span class="text-xl">{r.emoji}</span>
+            <span class="font-medium leading-tight">{r.label}</span>
           </a>
         ))}
       </div>

@@ -67,12 +67,44 @@ export async function getBooks(
       query = query.eq('audiobook_available', true);
     }
 
-    // Exclusion filters (content warnings)
-    if (filters.avoid_explicit) {
-      query = query.or('heat_level.is.null,heat_level.neq.Spicy');
+    // New descriptor filters
+    if (filters.accessibility) {
+      query = query.eq('accessibility', filters.accessibility);
     }
-    if (filters.avoid_grimdark) {
-      query = query.not('subgenres', 'ov', '{Grimdark}');
+    if (filters.awards?.length) {
+      query = query.overlaps('awards', filters.awards);
+    }
+    if (filters.stakes) {
+      query = query.eq('stakes', filters.stakes);
+    }
+    if (filters.series_status) {
+      query = query.eq('series_status', filters.series_status);
+    }
+    if (filters.pov_style) {
+      query = query.eq('pov_style', filters.pov_style);
+    }
+    if (filters.pov_count) {
+      query = query.eq('pov_count', filters.pov_count);
+    }
+    if (filters.protagonist_gender) {
+      query = query.eq('protagonist_gender', filters.protagonist_gender);
+    }
+
+    // Publication era → year range
+    if (filters.publication_era === 'classic') {
+      query = query.lt('publication_year', 2000);
+    } else if (filters.publication_era === 'modern') {
+      query = query.gte('publication_year', 2000).lte('publication_year', 2015);
+    } else if (filters.publication_era === 'contemporary') {
+      query = query.gt('publication_year', 2015);
+    }
+
+    // Content warning exclusions — each excluded warning removes books that explicitly carry it.
+    // Books with NULL content_warnings (not yet classified) are kept.
+    if (filters.exclude_warnings?.length) {
+      for (const warning of filters.exclude_warnings) {
+        query = query.or(`content_warnings.is.null,content_warnings.not.cs.{${warning}}`);
+      }
     }
 
     // Range filters

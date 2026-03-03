@@ -102,14 +102,70 @@ Tags default to `approved = false`. Set to `true` in the Supabase dashboard to m
 
 ## Scripts
 
+All scripts live in `scripts/`. Run from the project root.
+
+### Import (free — no Anthropic API cost)
+
 ```bash
-node seed-books.js       # Seed ~100 curated fantasy books
-node seed-darkness.js    # Set darkness_level (1–5) on all books
-node update-series.js    # Add series metadata to existing books
-node seed-authors.js     # Seed 25 major fantasy/sci-fi author profiles
+# Import 50 priority SEO books from OpenLibrary
+node scripts/import-books.mjs
+node scripts/import-books.mjs --dry-run
+
+# Fill all sequel/continuation books for every series already in DB
+node scripts/fill-series.mjs
+node scripts/fill-series.mjs --dry-run
+node scripts/fill-series.mjs --limit 20
 ```
 
-Fresh setup order: `seed-books` → `seed-darkness` → `update-series` → `seed-authors`.
+### Classify — darkness & heat level (~$0.15 / 357 books)
+
+```bash
+node scripts/classify-books.mjs
+node scripts/classify-books.mjs --dry-run
+node scripts/classify-books.mjs --limit 50
+```
+
+Fills `darkness_level` (1–5) and `heat_level` for books where they're NULL.
+
+### Classify — descriptors (~$0.20 / 357 books)
+
+```bash
+# Fill all NULL descriptor fields
+node scripts/classify-descriptors.mjs
+node scripts/classify-descriptors.mjs --dry-run
+node scripts/classify-descriptors.mjs --limit 50
+
+# Re-evaluate series_status for ALL series books (run periodically as series finish)
+node scripts/classify-descriptors.mjs --refresh-series
+node scripts/classify-descriptors.mjs --refresh-series --dry-run
+```
+
+Fills: `accessibility`, `awards`, `stakes`, `series_status`, `pov_style`, `pov_count`, `protagonist_gender`.
+
+`--refresh-series` re-asks Claude whether each series is `completed` or `ongoing` even for books that already have a value — run this when a previously ongoing series publishes its final book.
+
+### Generate editorial content (optional, costs more)
+
+```bash
+# "What Makes It Different" — unique angle (Sonnet, ~$2.10 / 357 books)
+node scripts/generate-what-makes-it-different.mjs
+node scripts/generate-what-makes-it-different.mjs --dry-run --limit 5
+
+# "Tone & Reading Experience" — feel, darkness, pacing (Haiku, ~$0.45 / 357 books)
+node scripts/generate-reading-experience.mjs
+node scripts/generate-reading-experience.mjs --dry-run --limit 5
+
+# "Who This Is For" — ideal reader + comps (Haiku, ~$0.50 / 357 books)
+node scripts/generate-ideal-reader.mjs
+node scripts/generate-ideal-reader.mjs --dry-run --limit 5
+node scripts/generate-ideal-reader.mjs --slug six-of-crows    # single book
+```
+
+### Full pipeline (one-liner)
+
+```bash
+node scripts/classify-books.mjs && node scripts/classify-descriptors.mjs
+```
 
 ## Project Structure
 

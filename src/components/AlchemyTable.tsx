@@ -28,6 +28,9 @@ type Filters = {
   accessibility?: string;
   awards?: string;
   stakes?: string;
+  pov_style?: string;
+  pov_count?: string;
+  protagonist_gender?: string;
 };
 
 type VialOption = {
@@ -336,21 +339,21 @@ const VIALS: Vial[] = [
         icon: '🗣️',
         bg: 'bg-fuchsia-50',
         hover: 'hover:bg-fuchsia-100',
-        filters: {},
+        filters: { pov_style: 'First Person' },
       },
       {
         label: 'Third Person Limited',
         icon: '👤',
         bg: 'bg-purple-50',
         hover: 'hover:bg-purple-100',
-        filters: {},
+        filters: { pov_style: 'Third Limited' },
       },
       {
         label: 'Omniscient',
         icon: '🌐',
         bg: 'bg-rose-50',
         hover: 'hover:bg-rose-100',
-        filters: {},
+        filters: { pov_style: 'Omniscient' },
       },
     ],
   },
@@ -366,21 +369,21 @@ const VIALS: Vial[] = [
         icon: '⚔️',
         bg: 'bg-amber-50',
         hover: 'hover:bg-amber-100',
-        filters: {},
+        filters: { protagonist_gender: 'Male' },
       },
       {
         label: 'Female Protagonist',
         icon: '👑',
         bg: 'bg-orange-50',
         hover: 'hover:bg-orange-100',
-        filters: {},
+        filters: { protagonist_gender: 'Female' },
       },
       {
         label: 'Ensemble Cast',
         icon: '👥',
         bg: 'bg-zinc-50',
         hover: 'hover:bg-zinc-100',
-        filters: { tropes: ['Found Family'] },
+        filters: { protagonist_gender: 'Ensemble' },
       },
     ],
   },
@@ -396,21 +399,21 @@ const VIALS: Vial[] = [
         icon: '🧭',
         bg: 'bg-sky-50',
         hover: 'hover:bg-sky-100',
-        filters: {},
+        filters: { pov_count: 'Single' },
       },
       {
         label: 'Dual POV',
         icon: '🔀',
         bg: 'bg-cyan-50',
         hover: 'hover:bg-cyan-100',
-        filters: {},
+        filters: { pov_count: 'Dual' },
       },
       {
         label: 'Multiple POV',
         icon: '🧩',
         bg: 'bg-slate-50',
         hover: 'hover:bg-slate-100',
-        filters: {},
+        filters: { pov_count: 'Multiple' },
       },
     ],
   },
@@ -422,25 +425,25 @@ const VIALS: Vial[] = [
     titleColor: 'text-yellow-900',
     options: [
       {
-        label: 'Hugo Winner',
+        label: 'Hugo Award',
         icon: '🚀',
         bg: 'bg-yellow-50',
         hover: 'hover:bg-yellow-100',
-        filters: { awards: 'hugo' },
+        filters: { awards: 'hugo-winner' },
       },
       {
-        label: 'Nebula Winner',
+        label: 'Nebula Award',
         icon: '⭐',
         bg: 'bg-amber-50',
         hover: 'hover:bg-amber-100',
-        filters: { awards: 'nebula' },
+        filters: { awards: 'nebula-winner' },
       },
       {
         label: 'Goodreads Choice',
         icon: '📗',
         bg: 'bg-green-50',
         hover: 'hover:bg-green-100',
-        filters: { awards: 'goodreads' },
+        filters: { awards: 'goodreads-winner' },
       },
     ],
   },
@@ -602,18 +605,18 @@ const CREATURE_OPTIONS: { value: string; label: string; filters: Filters }[] = [
 ];
 
 const CONTENT_WARNINGS = [
-  { id: 'explicit', label: 'Sexual content', icon: '🔞' },
-  { id: 'grimdark', label: 'Graphic violence', icon: '🩸' },
-  { id: 'child-death', label: 'Child death', icon: '💔' },
-  { id: 'animal-death', label: 'Animal death', icon: '🐾' },
-  { id: 'abuse', label: 'Abuse / manipulation', icon: '⚠️' },
-  { id: 'sa', label: 'Sexual assault', icon: '🚫' },
-  { id: 'torture', label: 'Torture', icon: '🔪' },
-  { id: 'suicide', label: 'Suicide / self-harm', icon: '🌊' },
-  { id: 'addiction', label: 'Addiction', icon: '💊' },
-  { id: 'war-genocide', label: 'War / genocide', icon: '⚔️' },
-  { id: 'slavery', label: 'Slavery', icon: '⛓️' },
-  { id: 'psychological-trauma', label: 'Psychological trauma', icon: '🧠' },
+  { id: 'sexual-content',        label: 'Sexual content',        icon: '🔞' },
+  { id: 'graphic-violence',      label: 'Graphic violence',      icon: '🩸' },
+  { id: 'child-death',           label: 'Child death',           icon: '💔' },
+  { id: 'animal-death',          label: 'Animal death',          icon: '🐾' },
+  { id: 'abuse',                 label: 'Abuse / manipulation',  icon: '⚠️' },
+  { id: 'sexual-assault',        label: 'Sexual assault',        icon: '🚫' },
+  { id: 'torture',               label: 'Torture',               icon: '🔪' },
+  { id: 'suicide',               label: 'Suicide / self-harm',   icon: '🌊' },
+  { id: 'addiction',             label: 'Addiction',             icon: '💊' },
+  { id: 'war',                   label: 'War / genocide',        icon: '⚔️' },
+  { id: 'slavery',               label: 'Slavery',               icon: '⛓️' },
+  { id: 'psychological-trauma',  label: 'Psychological trauma',  icon: '🧠' },
 ];
 
 const DARKNESS_LEVELS = [
@@ -673,45 +676,18 @@ const CATEGORY_OPTIONS: {
   subgenres: string[];
 }[] = [
   { value: '', label: 'Any category', subgenres: [] },
-  {
-    value: 'epic',
-    label: '⚔️ Epic / High Fantasy',
-    subgenres: ['Epic Fantasy', 'High Fantasy'],
-  },
-  {
-    value: 'romantasy',
-    label: '💕 Romantasy',
-    subgenres: ['Romantic Fantasy'],
-  },
-  { value: 'dark', label: '🌑 Dark Fantasy', subgenres: ['Dark Fantasy'] },
-  {
-    value: 'urban',
-    label: '🏙️ Urban / Contemporary',
-    subgenres: ['Urban Fantasy', 'Contemporary Fantasy'],
-  },
-  { value: 'grimdark', label: '💀 Grimdark', subgenres: ['Grimdark'] },
-  {
-    value: 'historical',
-    label: '📜 Historical Fantasy',
-    subgenres: ['Historical Fantasy'],
-  },
-  {
-    value: 'paranormal',
-    label: '👻 Paranormal Fantasy',
-    subgenres: ['Urban Fantasy', 'Dark Fantasy'],
-  },
-  {
-    value: 'mythic',
-    label: '🌿 Mythic / Folklore',
-    subgenres: ['Mythic Fantasy'],
-  },
-  { value: 'cozy', label: '☕ Cozy Fantasy', subgenres: ['Cozy Fantasy'] },
-  { value: 'litrpg', label: '🎮 LitRPG / GameLit', subgenres: [] },
-  {
-    value: 'scifi',
-    label: '🚀 Sci-Fi Fantasy',
-    subgenres: ['Science Fantasy'],
-  },
+  { value: 'epic',             label: '⚔️ Epic & High Fantasy',   subgenres: ['Epic Fantasy', 'High Fantasy', 'Political Fantasy'] },
+  { value: 'romantasy',        label: '🌹 Romantasy',              subgenres: ['Romantic Fantasy'] },
+  { value: 'swords',           label: '🗡️ Sword & Sorcery',       subgenres: ['Low Fantasy'] },
+  { value: 'dark',             label: '🌑 Dark Fantasy',           subgenres: ['Dark Fantasy', 'Dystopian Fantasy'] },
+  { value: 'urban',            label: '🌆 Urban / Contemporary',   subgenres: ['Urban Fantasy', 'Contemporary Fantasy'] },
+  { value: 'grimdark',         label: '💀 Grimdark',               subgenres: ['Grimdark', 'Military Fantasy'] },
+  { value: 'historical',       label: '📜 Historical Fantasy',     subgenres: ['Historical Fantasy'] },
+  { value: 'academy',          label: '🎓 Academy Fantasy',        subgenres: ['Coming of Age Fantasy'] },
+  { value: 'mythology',        label: '🏺 Mythic / Folklore',      subgenres: ['Mythic Fantasy', 'Fae Fantasy'] },
+  { value: 'cozy',             label: '☕ Cozy Fantasy',           subgenres: ['Cozy Fantasy', 'Humorous Fantasy', 'Portal Fantasy'] },
+  { value: 'litrpg',           label: '🎮 LitRPG / GameLit',       subgenres: ['LitRPG'] },
+  { value: 'science-fantasy',  label: '🔭 Science Fantasy',        subgenres: ['Science Fantasy', 'Steampunk Fantasy'] },
 ];
 
 const TOP = VIALS.slice(0, 4);
@@ -788,6 +764,9 @@ export default function AlchemyTable() {
       if (f.accessibility) merged.accessibility = f.accessibility;
       if (f.awards) merged.awards = f.awards;
       if (f.stakes) merged.stakes = f.stakes;
+      if (f.pov_style) merged.pov_style = f.pov_style;
+      if (f.pov_count) merged.pov_count = f.pov_count;
+      if (f.protagonist_gender) merged.protagonist_gender = f.protagonist_gender;
     }
 
     // Add selected tropes
@@ -848,11 +827,11 @@ export default function AlchemyTable() {
     if (merged.accessibility) params.set('accessibility', merged.accessibility);
     if (merged.awards) params.set('awards', merged.awards);
     if (merged.stakes) params.set('stakes', merged.stakes);
+    if (merged.pov_style) params.set('pov_style', merged.pov_style);
+    if (merged.pov_count) params.set('pov_count', merged.pov_count);
+    if (merged.protagonist_gender) params.set('protagonist_gender', merged.protagonist_gender);
 
-    if (excludedWarnings.includes('explicit'))
-      params.set('avoid_explicit', '1');
-    if (excludedWarnings.includes('grimdark'))
-      params.set('avoid_grimdark', '1');
+    excludedWarnings.forEach((w) => params.append('exclude_warning', w));
     if (seriesStatus)
       params.set('series_status', seriesStatus);
 
