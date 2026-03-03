@@ -448,11 +448,11 @@ const BookHub: React.FC = () => {
                     setForm({ ...form, heat_level: event.target.value || null })
                   }
                 >
-                  <option value="Sweet Romance">🔥 Sweet Romance</option>
-                  <option value="Closed Door">🔥🔥 Closed Door</option>
+                  <option value="Sweet Romance">🔥 Sweet / Clean</option>
+                  <option value="Closed Door">🔥🔥 Fade to Black</option>
                   <option value="Open Door">🔥🔥🔥 Open Door</option>
-                  <option value="Explicit">🔥🔥🔥🔥 Explicit</option>
-                  <option value="Fiery">🔥🔥🔥🔥🔥 Fiery</option>
+                  <option value="Explicit">🔥🔥🔥🔥 Explicit / Spicy</option>
+                  <option value="Fiery">🔥🔥🔥🔥🔥 Fiery / Primal</option>
                 </select>
               </div>
               <div>

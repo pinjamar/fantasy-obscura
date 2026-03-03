@@ -1,7 +1,7 @@
 /**
  * classify-books.mjs
  *
- * Uses Claude to auto-classify darkness_level (1-5) and heat_level
+ * Uses Claude Haiku to auto-classify darkness_level (1-5) and heat_level
  * for books that have NULL values in the Supabase DB.
  *
  * Usage:
@@ -22,7 +22,7 @@ const LIMIT = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : nul
 const BATCH_SIZE = 10;
 const DELAY_MS = 800;
 
-const VALID_HEAT = ['none', 'Sweet Romance', 'Closed Door', 'Open Door', 'Explicit', 'Fiery'];
+const VALID_HEAT = ['Sweet Romance', 'Closed Door', 'Open Door', 'Explicit', 'Fiery'];
 
 // ── Clients ──────────────────────────────────────────────────────────────────
 
@@ -51,7 +51,7 @@ function clamp(n, min, max) {
   return Math.min(max, Math.max(min, Math.round(n)));
 }
 
-// ── Classify one batch via Claude ─────────────────────────────────────────────
+// ── Classify one batch via Claude Haiku ──────────────────────────────────────
 
 async function classifyBatch(books) {
   const bookList = books
@@ -64,13 +64,7 @@ Needs: ${[b.darkness_level === null && 'darkness_level', b.heat_level === null &
     )
     .join('\n\n');
 
-  const message = await anthropic.messages.create({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 1024,
-    messages: [
-      {
-        role: 'user',
-        content: `You are a fantasy/sci-fi book content classifier. For each book, classify ONLY the field(s) listed under "Needs". Use your knowledge of the book; if truly unknown, make a reasonable inference from genres and synopsis.
+  const prompt = `You are a fantasy/sci-fi book content classifier. For each book, classify ONLY the field(s) listed under "Needs". Use your knowledge of the book; if truly unknown, make a reasonable inference from genres and synopsis.
 
 DARKNESS LEVEL (integer 1–5):
 1 = Lighthearted / cozy — fun, low stakes, minimal harm
@@ -80,12 +74,11 @@ DARKNESS LEVEL (integer 1–5):
 5 = Brutal — grimdark, extreme violence/suffering, bleak tone
 
 HEAT LEVEL (exact string, one of):
-"none"          — no romantic or sexual content whatsoever
-"Sweet Romance" — mild romance, at most a kiss
-"Closed Door"   — romance present, intimate scenes implied but cut away
-"Open Door"     — intimate scenes on page, tasteful/euphemistic language
-"Explicit"      — explicit sexual content, adult language
-"Fiery"         — very explicit, erotica-level content
+"Sweet Romance" — Sweet / Clean: kisses only, focus on emotional connection
+"Closed Door"   — Fade to Black: tension present but we leave before intimate scenes
+"Open Door"     — Open Door: explicit scenes present but don't dominate the book
+"Explicit"      — Explicit / Spicy: graphic detail and high frequency
+"Fiery"         — Fiery / Primal: extreme heat, often including kink or darker themes
 
 Books:
 ${bookList}
@@ -97,9 +90,12 @@ Rules:
 - Include every book in the response.
 - For a field NOT listed under "Needs", set it to null in your response.
 - darkness_level must be an integer 1–5 or null.
-- heat_level must be exactly one of the 6 strings above, or null.`,
-      },
-    ],
+- heat_level must be exactly one of the 5 strings above, or null.`;
+
+  const message = await anthropic.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 1024,
+    messages: [{ role: 'user', content: prompt }],
   });
 
   const raw = message.content[0].type === 'text' ? message.content[0].text.trim() : '';

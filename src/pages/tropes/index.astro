@@ -1,0 +1,64 @@
+---
+import Layout from '../../components/Layout.astro';
+import { TROPES_BY_CATEGORY } from '../../data/tropes';
+
+const CATEGORY_META = {
+  character:    { label: 'Character Tropes',    emoji: '🧙', desc: 'Who the protagonist is and what defines them.' },
+  relationship: { label: 'Relationship Tropes', emoji: '🫂', desc: 'How characters connect, clash, and grow together.' },
+  plot:         { label: 'Plot Tropes',         emoji: '⚔️',  desc: 'The narrative engines that drive the story forward.' },
+  setting:      { label: 'Setting Tropes',      emoji: '🗺️',  desc: 'The worlds, locations, and environments that shape the tone.' },
+  magic:        { label: 'Magic Tropes',        emoji: '✨', desc: 'How magic works and what it costs.' },
+} as const;
+
+// Only found-family has a real page right now
+const LIVE_SLUGS = new Set(['found-family']);
+---
+
+<Layout
+  title="Fantasy Tropes — Fantasy Obscura"
+  description="Browse fantasy tropes by category — character, relationship, plot, setting, and magic. Find books by the story structures you love most."
+>
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold mb-2">Fantasy Tropes</h1>
+    <p class="text-zinc-500 mb-12 text-base">
+      Browse books by the narrative patterns and character dynamics that define your favourite reads.
+    </p>
+
+    {(Object.entries(TROPES_BY_CATEGORY) as [keyof typeof CATEGORY_META, typeof TROPES_BY_CATEGORY[keyof typeof TROPES_BY_CATEGORY]][]).map(([cat, tropes]) => {
+      const meta = CATEGORY_META[cat];
+      return (
+        <section class="mb-12">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-2xl">{meta.emoji}</span>
+            <h2 class="text-xl font-bold text-zinc-900">{meta.label}</h2>
+          </div>
+          <p class="text-sm text-zinc-500 mb-5 ml-10">{meta.desc}</p>
+
+          <div class="grid gap-2 sm:grid-cols-2">
+            {tropes.map((t) => {
+              const live = LIVE_SLUGS.has(t.slug);
+              return live ? (
+                <a
+                  href={`/tropes/${t.slug}/`}
+                  class="group flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors"
+                >
+                  <div class="min-w-0">
+                    <div class="font-medium text-zinc-900 group-hover:text-purple-700 transition-colors text-sm">{t.name}</div>
+                    <div class="text-xs text-zinc-400 mt-0.5 truncate">{t.description}</div>
+                  </div>
+                </a>
+              ) : (
+                <div class="flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-100 bg-zinc-50/50 opacity-60 cursor-default">
+                  <div class="min-w-0">
+                    <div class="font-medium text-zinc-600 text-sm">{t.name}</div>
+                    <div class="text-xs text-zinc-400 mt-0.5 truncate">{t.description}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      );
+    })}
+  </div>
+</Layout>
