@@ -1,14 +1,14 @@
 /**
- * generate-snippets.mjs
+ * generate-what-makes-it-different.mjs
  *
  * Uses Claude Sonnet to write unique_angle snippets for books where it's NULL.
- * Snippets are 2–3 short paragraphs explaining what makes the book stand out —
- * written as unique editorial content for SEO and discovery.
+ * 2–3 short paragraphs explaining what makes the book structurally or thematically
+ * distinct — written as unique editorial content for SEO and discovery.
  *
  * Usage:
- *   node scripts/generate-snippets.mjs
- *   node scripts/generate-snippets.mjs --dry-run
- *   node scripts/generate-snippets.mjs --limit 20
+ *   node scripts/generate-what-makes-it-different.mjs
+ *   node scripts/generate-what-makes-it-different.mjs --dry-run
+ *   node scripts/generate-what-makes-it-different.mjs --limit 20
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -72,7 +72,7 @@ Rules:
 }
 
 async function main() {
-  console.log(`\n✍️  Fantasy Obscura — Snippet Generator${DRY_RUN ? ' [DRY RUN]' : ''}\n`);
+  console.log(`\n✍️  What Makes It Different — Generator${DRY_RUN ? ' [DRY RUN]' : ''}\n`);
 
   let query = supabase
     .from('books')

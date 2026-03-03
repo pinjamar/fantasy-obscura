@@ -660,11 +660,11 @@ const DARKNESS_LEVELS = [
 ];
 
 const HEAT_LEVELS = [
-  { value: 'Sweet Romance',     flames: '🔥',           label: 'Sweet / Clean',     desc: 'Kisses only; focus on emotional connection.' },
-  { value: 'Closed Door',       flames: '🔥🔥',         label: 'Fade to Black',     desc: 'Tension is there, but we leave before the clothes do.' },
-  { value: 'Open Door',         flames: '🔥🔥🔥',       label: 'Open Door',         desc: "Explicit scenes, but they don't dominate the book." },
-  { value: 'Explicit',          flames: '🔥🔥🔥🔥',     label: 'Explicit / Spicy',  desc: 'Graphic detail and high frequency.' },
-  { value: 'Fiery',             flames: '🔥🔥🔥🔥🔥',   label: 'Fiery / Primal',    desc: 'Extreme heat, often including kink or darker themes.' },
+  { value: 'Sweet Romance',     flames: '🔥',           label: 'Sweet / Clean',     desc: 'Kisses only; focus on emotional connection' },
+  { value: 'Closed Door',       flames: '🔥🔥',         label: 'Fade to Black',     desc: 'Tension is there, but we leave before the clothes do' },
+  { value: 'Open Door',         flames: '🔥🔥🔥',       label: 'Open Door',         desc: "Explicit scenes, but they don't dominate" },
+  { value: 'Explicit',          flames: '🔥🔥🔥🔥',     label: 'Explicit / Spicy',  desc: 'Graphic detail and high frequency' },
+  { value: 'Fiery',             flames: '🔥🔥🔥🔥🔥',   label: 'Fiery / Primal',    desc: 'Extreme heat, often including kink' },
 ];
 
 const CATEGORY_OPTIONS: {

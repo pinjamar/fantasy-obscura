@@ -65,11 +65,20 @@ export const POST: APIRoute = async ({ request }) => {
   }
 };
 
-export const GET: APIRoute = async () => {
+export const GET: APIRoute = async ({ request }) => {
   try {
+    const url = new URL(request.url);
+    const genre = url.searchParams.get('genre');
+
+    const filters: Record<string, unknown> = {};
+    if (genre) {
+      // Support comma-separated genres (e.g. "Epic Fantasy,High Fantasy")
+      filters.subgenres = genre.split(',').map((g) => g.trim()).filter(Boolean);
+    }
+
     const result = await getBooks(
-      {},
-      { page: 1, pageSize: 100, sort: 'rating_desc' },
+      filters,
+      { page: 1, pageSize: 500, sort: 'rating_desc' },
     );
 
     if (result.error) {

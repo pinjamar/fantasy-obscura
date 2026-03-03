@@ -34,11 +34,11 @@ const darkness = book.darkness_level != null && book.darkness_level >= 1
   : null;
 
 const HEAT: Record<string, { flames: string; label: string; desc: string }> = {
-  'Sweet Romance':     { flames: '🔥',         label: 'Sweet / Clean',      desc: 'Kisses only; focus on emotional connection.' },
-  'Closed Door':       { flames: '🔥🔥',       label: 'Fade to Black',      desc: 'Tension is there, but we leave before the clothes do.' },
-  'Open Door':         { flames: '🔥🔥🔥',     label: 'Open Door',          desc: 'Explicit scenes, but they don\'t dominate the book.' },
-  'Explicit':          { flames: '🔥🔥🔥🔥',   label: 'Explicit / Spicy',   desc: 'Graphic detail and high frequency.' },
-  'Fiery':             { flames: '🔥🔥🔥🔥🔥', label: 'Fiery / Primal',     desc: 'Extreme heat, often including kink or darker themes.' },
+  'Sweet Romance':     { flames: '🔥',         label: 'Sweet / Clean',      desc: 'Kisses only; focus on emotional connection' },
+  'Closed Door':       { flames: '🔥🔥',       label: 'Fade to Black',      desc: 'Tension is there, but we leave before the clothes do' },
+  'Open Door':         { flames: '🔥🔥🔥',     label: 'Open Door',          desc: 'Explicit scenes, but they don\'t dominate' },
+  'Explicit':          { flames: '🔥🔥🔥🔥',   label: 'Explicit / Spicy',   desc: 'Graphic detail and high frequency' },
+  'Fiery':             { flames: '🔥🔥🔥🔥🔥', label: 'Fiery / Primal',     desc: 'Extreme heat, often including kink' },
 };
 
 const isRomanceBook = book.subgenres?.some((s) =>

@@ -103,19 +103,20 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
     const fetchBooks = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/api/books');
+        const params = new URLSearchParams();
+        if (genre) {
+          const genres = Array.isArray(genre) ? genre : [genre];
+          params.set('genre', genres.join(','));
+        }
+        const url = `/api/books${params.toString() ? `?${params}` : ''}`;
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
         let filteredBooks = data.items || [];
 
-        if (genre) {
-          const genres = Array.isArray(genre) ? genre : [genre];
-          filteredBooks = filteredBooks.filter((book: Book) =>
-            book.subgenres?.some((s) => genres.includes(s)),
-          );
-        } else if (audience) {
+        if (!genre && audience) {
           filteredBooks = filteredBooks.filter((book: Book) =>
             book.audience === audience,
           );
