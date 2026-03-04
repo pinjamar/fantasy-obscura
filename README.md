@@ -29,7 +29,11 @@ Create a `.env` file:
 ```
 PUBLIC_SUPABASE_URL=your_supabase_project_url
 PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+ANTHROPIC_API_KEY=your_anthropic_api_key
 ```
+
+`SUPABASE_SERVICE_ROLE_KEY` and `ANTHROPIC_API_KEY` are only needed for running classification scripts — not required for the site itself.
 
 ## Database Setup
 
@@ -117,32 +121,53 @@ node scripts/fill-series.mjs --dry-run
 node scripts/fill-series.mjs --limit 20
 ```
 
-### Classify — darkness & heat level (~$0.15 / 357 books)
+### Classify new books — all fields in one command
+
+After importing new books, run this single command to fill every NULL classification field:
 
 ```bash
-node scripts/classify-books.mjs
+npm run classify:new
+```
+
+This runs all 5 classifiers in sequence (each skips books already classified):
+1. `classify-books` → `darkness_level`, `heat_level`
+2. `classify-descriptors` → `accessibility`, `awards`, `stakes`, `pov_style`, `pov_count`, `protagonist_gender`, `series_status`
+3. `classify-tropes` → `tropes` (69 canonical tropes)
+4. `classify-creatures` → `creatures` (28 creature/race slugs)
+5. `classify-content-warnings` → `content_warnings`
+
+### Individual classifiers
+
+```bash
+# Darkness level (1–5) and heat level
+npm run classify:books
 node scripts/classify-books.mjs --dry-run
 node scripts/classify-books.mjs --limit 50
-```
 
-Fills `darkness_level` (1–5) and `heat_level` for books where they're NULL.
-
-### Classify — descriptors (~$0.20 / 357 books)
-
-```bash
-# Fill all NULL descriptor fields
-node scripts/classify-descriptors.mjs
+# Descriptors
+npm run classify:descriptors
 node scripts/classify-descriptors.mjs --dry-run
 node scripts/classify-descriptors.mjs --limit 50
+node scripts/classify-descriptors.mjs --refresh-series   # re-check completed/ongoing for all series
 
-# Re-evaluate series_status for ALL series books (run periodically as series finish)
-node scripts/classify-descriptors.mjs --refresh-series
-node scripts/classify-descriptors.mjs --refresh-series --dry-run
+# Tropes (69 canonical tropes across 4 categories)
+npm run classify:tropes
+node scripts/classify-tropes.mjs --dry-run
+node scripts/classify-tropes.mjs --reclassify            # redo all books, not just NULL
+
+# Creatures & races (28 slugs)
+npm run classify:creatures
+node scripts/classify-creatures.mjs --dry-run
+node scripts/classify-creatures.mjs --reclassify
+
+# Content warnings
+npm run classify:warnings
+node scripts/classify-content-warnings.mjs --dry-run
 ```
 
-Fills: `accessibility`, `awards`, `stakes`, `series_status`, `pov_style`, `pov_count`, `protagonist_gender`.
+`--reclassify` re-runs classification on books that already have values — use after updating the canonical trope or creature lists.
 
-`--refresh-series` re-asks Claude whether each series is `completed` or `ongoing` even for books that already have a value — run this when a previously ongoing series publishes its final book.
+`--refresh-series` re-asks Claude whether each series is `completed` or `ongoing` — run periodically as ongoing series finish.
 
 ### Generate editorial content (optional, costs more)
 
@@ -159,12 +184,6 @@ node scripts/generate-reading-experience.mjs --dry-run --limit 5
 node scripts/generate-ideal-reader.mjs
 node scripts/generate-ideal-reader.mjs --dry-run --limit 5
 node scripts/generate-ideal-reader.mjs --slug six-of-crows    # single book
-```
-
-### Full pipeline (one-liner)
-
-```bash
-node scripts/classify-books.mjs && node scripts/classify-descriptors.mjs
 ```
 
 ## Project Structure
@@ -213,18 +232,25 @@ src/
 
 Key fields on every book record:
 
-| Field                                          | Type              | Notes                       |
-| ---------------------------------------------- | ----------------- | --------------------------- |
-| `title`, `authors`                             | string / string[] | required                    |
-| `slug`                                         | string            | URL key for `/books/[slug]` |
-| `subgenres`, `tropes`                          | string[]          | used for filtering          |
-| `tone`, `diversity_rep`                        | string[]          |                             |
-| `magic_system`, `pacing`, `heat_level`         | string            |                             |
-| `audience`                                     | string            | Adult / YA / Children's     |
-| `darkness_level`                               | 1–5               | 1=Lighthearted → 5=Brutal   |
-| `series`, `series_number`                      | string / number   |                             |
-| `avg_rating`, `page_count`, `publication_year` | number            |                             |
-| `cover_url`, `synopsis`                        | string            |                             |
+| Field                                          | Type              | Notes                                        |
+| ---------------------------------------------- | ----------------- | -------------------------------------------- |
+| `title`, `authors`                             | string / string[] | required                                     |
+| `slug`                                         | string            | URL key for `/books/[slug]`                  |
+| `subgenres`, `tropes`                          | string[]          | used for filtering; trope names not slugs    |
+| `creatures`                                    | string[]          | creature/race slugs (e.g. `"dragon"`)        |
+| `tone`, `diversity_rep`, `content_warnings`    | string[]          |                                              |
+| `magic_system`, `pacing`, `heat_level`         | string            |                                              |
+| `audience`                                     | string            | Adult / YA / Children's                      |
+| `darkness_level`                               | 1–5               | 1=Lighthearted → 5=Brutal                    |
+| `accessibility`                                | string            | beginner / intermediate / advanced           |
+| `stakes`                                       | string            | personal / kingdom / world                   |
+| `pov_style`                                    | string            | First Person / Third Limited / Omniscient    |
+| `pov_count`                                    | string            | Single / Dual / Multiple                     |
+| `protagonist_gender`                           | string            | Male / Female / Ensemble                     |
+| `awards`                                       | string[]          | e.g. `["hugo-winner", "nebula-nominee"]`     |
+| `series`, `series_number`, `series_status`     | string / number   | series_status: completed / ongoing           |
+| `avg_rating`, `page_count`, `publication_year` | number            |                                              |
+| `cover_url`, `synopsis`                        | string            |                                              |
 
 ## Darkness Scale
 

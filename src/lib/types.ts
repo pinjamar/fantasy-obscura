@@ -37,6 +37,7 @@ export type Book = {
   pov_count: string | null;
   protagonist_gender: string | null;
   content_warnings: string[] | null;
+  creatures: string[] | null;
   created_at: string;
   updated_at: string;
 };
@@ -79,6 +80,7 @@ export type BookInput = {
   pov_count?: string | null;
   protagonist_gender?: string | null;
   content_warnings?: string[] | null;
+  creatures?: string[] | null;
 };
 
 export type BookSearchResult = BookInput & {
@@ -114,6 +116,7 @@ export type BookFilters = {
   pov_count?: string;
   protagonist_gender?: string;
   publication_era?: string;
+  creatures?: string[];
 };
 
 export type SortOption =

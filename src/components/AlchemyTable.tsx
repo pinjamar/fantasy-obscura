@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { PUBLIC_TROPES } from '../data/tropes';
 
 type Book = {
   id: string;
@@ -21,6 +22,7 @@ type Filters = {
   heat_level?: string;
   subgenres?: string[];
   tropes?: string[];
+  creatures?: string[];
   audience?: string;
   min_pages?: number;
   max_pages?: number;
@@ -50,37 +52,8 @@ type Vial = {
   options: VialOption[];
 };
 
-// Tropes derived from the actual book database
-const TROPES = [
-  'Anti-Hero',
-  'Betrayal',
-  'Chosen One',
-  'Coming of Age',
-  'Curse Breaking',
-  'Dark Lord',
-  'Dragon Riders',
-  'Dragons',
-  'Enemies to Lovers',
-  'Fae Court Drama',
-  'Forbidden Romance',
-  'Found Family',
-  'Heist',
-  'Magic Academy',
-  'Mentor',
-  'Mentor Dies',
-  'Moral Ambiguity',
-  'Political Intrigue',
-  'Portal Fantasy',
-  'Prophecy',
-  'Quest',
-  'Reluctant Hero',
-  'Revenge Plot',
-  'Secret Identity',
-  'Slow Burn',
-  'Survival',
-  'Tournament Arc',
-  'War',
-];
+// Sourced from src/data/tropes.ts — 69 canonical public tropes, sorted A–Z
+const TROPES = PUBLIC_TROPES.map((t) => t.name).sort((a, b) => a.localeCompare(b));
 
 const VIALS: Vial[] = [
   // Top row
@@ -571,37 +544,35 @@ const VIALS: Vial[] = [
 ];
 
 const CREATURE_OPTIONS: { value: string; label: string; filters: Filters }[] = [
-  { value: '', label: 'Any creature / race', filters: {} },
-  {
-    value: 'dragon',
-    label: '🐉 Dragons & Wyverns',
-    filters: { tropes: ['Dragons', 'Dragon Riders'] },
-  },
-  {
-    value: 'fae',
-    label: '🧚 Fae & Fair Folk',
-    filters: { tropes: ['Fae Court Drama'] },
-  },
-  {
-    value: 'vampire',
-    label: '🧛 Vampires & Demons',
-    filters: { subgenres: ['Urban Fantasy', 'Dark Fantasy'] },
-  },
-  {
-    value: 'witch',
-    label: '🧙 Witches & Warlocks',
-    filters: { subgenres: ['Mythic Fantasy', 'Historical Fantasy'] },
-  },
-  {
-    value: 'undead',
-    label: '💀 Undead & Ghosts',
-    filters: { subgenres: ['Dark Fantasy', 'Grimdark'] },
-  },
-  {
-    value: 'spirit',
-    label: '🌿 Spirits & Nature Folk',
-    filters: { subgenres: ['Mythic Fantasy'] },
-  },
+  { value: '',            label: 'Any creature / race',  filters: {} },
+  { value: 'angel',       label: '👼 Angels',            filters: { creatures: ['angel'] } },
+  { value: 'beastfolk',   label: '🦁 Beastfolk',         filters: { creatures: ['beastfolk'] } },
+  { value: 'catfolk',     label: '🐱 Catfolk',           filters: { creatures: ['catfolk'] } },
+  { value: 'centaur',     label: '🐴 Centaurs',          filters: { creatures: ['centaur'] } },
+  { value: 'demon',       label: '😈 Demons',            filters: { creatures: ['demon'] } },
+  { value: 'devil',       label: '👿 Devils',            filters: { creatures: ['devil'] } },
+  { value: 'dragonkin',   label: '🦎 Dragonkin',         filters: { creatures: ['dragonkin'] } },
+  { value: 'dragon',      label: '🐉 Dragons',           filters: { creatures: ['dragon'] } },
+  { value: 'dryad',       label: '🌳 Dryads',            filters: { creatures: ['dryad'] } },
+  { value: 'dwarf',       label: '⛏️ Dwarves',           filters: { creatures: ['dwarf'] } },
+  { value: 'elf',         label: '🧝 Elves',             filters: { creatures: ['elf'] } },
+  { value: 'fae',         label: '🧚 Fae',               filters: { creatures: ['fae'] } },
+  { value: 'giant',       label: '🗿 Giants',             filters: { creatures: ['giant'] } },
+  { value: 'ghost',       label: '👻 Ghosts',            filters: { creatures: ['ghost'] } },
+  { value: 'goblin',      label: '👺 Goblins',           filters: { creatures: ['goblin'] } },
+  { value: 'halfling',    label: '🦶 Halflings',          filters: { creatures: ['halfling'] } },
+  { value: 'lich',        label: '💀 Liches',            filters: { creatures: ['lich'] } },
+  { value: 'mermaid',     label: '🧜 Mermaids',          filters: { creatures: ['mermaid'] } },
+  { value: 'minotaur',    label: '🐂 Minotaurs',         filters: { creatures: ['minotaur'] } },
+  { value: 'nymph',       label: '🌊 Nymphs',            filters: { creatures: ['nymph'] } },
+  { value: 'ogre',        label: '🦴 Ogres',             filters: { creatures: ['ogre'] } },
+  { value: 'orc',         label: '🪓 Orcs',              filters: { creatures: ['orc'] } },
+  { value: 'satyr',       label: '🐐 Satyrs',            filters: { creatures: ['satyr'] } },
+  { value: 'shapeshifter',label: '🦊 Shapeshifters',     filters: { creatures: ['shapeshifter'] } },
+  { value: 'troll',       label: '👹 Trolls',            filters: { creatures: ['troll'] } },
+  { value: 'vampire',     label: '🧛 Vampires',          filters: { creatures: ['vampire'] } },
+  { value: 'werewolf',    label: '🐺 Werewolves',        filters: { creatures: ['werewolf'] } },
+  { value: 'zombie',      label: '🧟 Zombies',           filters: { creatures: ['zombie'] } },
 ];
 
 const CONTENT_WARNINGS = [
@@ -778,14 +749,8 @@ export default function AlchemyTable() {
     const creatureFilter = CREATURE_OPTIONS.find(
       (o) => o.value === selectedCreature,
     )?.filters;
-    if (creatureFilter) {
-      if (creatureFilter.tropes?.length)
-        merged.tropes = [...(merged.tropes || []), ...creatureFilter.tropes];
-      if (creatureFilter.subgenres?.length)
-        merged.subgenres = [
-          ...(merged.subgenres || []),
-          ...creatureFilter.subgenres,
-        ];
+    if (creatureFilter?.creatures?.length) {
+      merged.creatures = [...(merged.creatures || []), ...creatureFilter.creatures];
     }
 
     // Add heat level filter
@@ -816,6 +781,7 @@ export default function AlchemyTable() {
     if (merged.heat_level) params.set('heat_level', merged.heat_level);
     merged.subgenres?.forEach((s) => params.append('subgenres', s));
     merged.tropes?.forEach((t) => params.append('tropes', t));
+    merged.creatures?.forEach((c) => params.append('creatures', c));
     if (merged.audience) params.set('audience', merged.audience);
     if (merged.min_pages !== undefined)
       params.set('min_pages', String(merged.min_pages));

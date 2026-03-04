@@ -4,10 +4,9 @@ import { TROPES_BY_CATEGORY } from '../../data/tropes';
 
 const CATEGORY_META = {
   character:    { label: 'Character Tropes',    emoji: '🧙', desc: 'Who the protagonist is and what defines them.' },
-  relationship: { label: 'Relationship Tropes', emoji: '🫂', desc: 'How characters connect, clash, and grow together.' },
+  relationship: { label: 'Relationship Tropes', emoji: '🤝', desc: 'How characters connect, clash, and grow together.' },
   plot:         { label: 'Plot Tropes',         emoji: '⚔️',  desc: 'The narrative engines that drive the story forward.' },
-  setting:      { label: 'Setting Tropes',      emoji: '🗺️',  desc: 'The worlds, locations, and environments that shape the tone.' },
-  magic:        { label: 'Magic Tropes',        emoji: '✨', desc: 'How magic works and what it costs.' },
+  'world-magic':{ label: 'World & Magic Tropes',emoji: '✨', desc: 'The worlds, locations, and magic systems that define the story\'s rules and atmosphere.' },
 } as const;
 
 // Only found-family has a real page right now
@@ -16,7 +15,7 @@ const LIVE_SLUGS = new Set(['found-family']);
 
 <Layout
   title="Fantasy Tropes — Fantasy Obscura"
-  description="Browse fantasy tropes by category — character, relationship, plot, setting, and magic. Find books by the story structures you love most."
+  description="Browse fantasy tropes by category — character, relationship, plot, and world &amp; magic. Find books by the story structures you love most."
 >
   <div class="max-w-3xl mx-auto">
     <h1 class="text-3xl font-bold mb-2">Fantasy Tropes</h1>

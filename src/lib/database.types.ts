@@ -6,7 +6,7 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[];
 
-export interface Database {
+export type Database = {
   public: {
     Tables: {
       authors: {
@@ -43,6 +43,7 @@ export interface Database {
           goodreads?: string | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       book_tags: {
         Row: {
@@ -72,6 +73,7 @@ export interface Database {
           approved?: boolean;
           created_at?: string;
         };
+        Relationships: [];
       };
       books: {
         Row: {
@@ -112,6 +114,7 @@ export interface Database {
           pov_count: string | null;
           protagonist_gender: string | null;
           content_warnings: string[] | null;
+          creatures: string[] | null;
           created_at: string;
           updated_at: string;
         };
@@ -153,6 +156,7 @@ export interface Database {
           pov_count?: string | null;
           protagonist_gender?: string | null;
           content_warnings?: string[] | null;
+          creatures?: string[] | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -194,9 +198,11 @@ export interface Database {
           pov_count?: string | null;
           protagonist_gender?: string | null;
           content_warnings?: string[] | null;
+          creatures?: string[] | null;
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
     };
     Views: {
@@ -208,5 +214,8 @@ export interface Database {
     Enums: {
       [_ in never]: never;
     };
+    CompositeTypes: {
+      [_ in never]: never;
+    };
   };
-}
+};

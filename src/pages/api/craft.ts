@@ -62,6 +62,9 @@ export const GET: APIRoute = async ({ url }) => {
   const publication_era = p.get('publication_era');
   if (publication_era) filters.publication_era = publication_era;
 
+  const creatures = p.getAll('creatures');
+  if (creatures.length) filters.creatures = creatures;
+
   try {
     const result = await getBooks(filters, { page: 1, pageSize: 50, sort: 'rating_desc' });
 

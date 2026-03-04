@@ -1,9 +1,9 @@
 // ─── Public Tropes ────────────────────────────────────────────────────────────
-// 71 canonical tropes exposed to users (filter UI, book pages, community tags).
+// 69 canonical tropes exposed to users (filter UI, book pages, community tags).
 // The `name` field is the canonical string stored in the books.tropes text[] column.
 // The `slug` is for future URL routing and community tag endpoints.
 
-export type TropeCategory = "character" | "relationship" | "plot" | "setting" | "magic";
+export type TropeCategory = "character" | "relationship" | "plot" | "world-magic";
 
 export type PublicTrope = {
   slug: string;
@@ -14,19 +14,20 @@ export type PublicTrope = {
 
 export const PUBLIC_TROPES: PublicTrope[] = [
 
-  // ── CHARACTER (15) ────────────────────────────────────────────────────────
+  // ── CHARACTER (16) ────────────────────────────────────────────────────────
   { slug: "anti-hero",           name: "Anti-Hero",           category: "character", description: "A morally complex or flawed main character." },
   { slug: "assassin-protagonist",name: "Assassin Protagonist",category: "character", description: "The main character is a trained killer." },
   { slug: "chosen-one",          name: "Chosen One",          category: "character", description: "A protagonist marked by destiny or prophecy." },
   { slug: "cursed-character",    name: "Cursed Character",    category: "character", description: "A character bound by magical curse." },
   { slug: "dark-lord",           name: "Dark Lord",           category: "character", description: "A powerful evil ruler threatening the world." },
   { slug: "dragon-rider",        name: "Dragon Rider",        category: "character", description: "A character bonded to or riding dragons." },
-  { slug: "dragons",             name: "Dragons",             category: "character", description: "Dragons as central creatures or characters, not just mounts." },
   { slug: "immortal-character",  name: "Immortal Character",  category: "character", description: "A character who cannot die naturally." },
+  { slug: "last-of-their-kind",  name: "Last Of Their Kind",  category: "character", description: "A character who is the sole survivor of their race, people, or lineage." },
   { slug: "lost-heir",           name: "Lost Heir",           category: "character", description: "A hidden heir to a throne or power." },
   { slug: "mentor-figure",       name: "Mentor Figure",       category: "character", description: "A wise guide or parental figure who shapes the protagonist — and may not survive." },
   { slug: "morally-grey-hero",   name: "Morally Grey Hero",   category: "character", description: "A hero operating outside clear moral lines." },
   { slug: "outcast-hero",        name: "Outcast Hero",        category: "character", description: "A protagonist rejected by society." },
+  { slug: "prophecy-child",      name: "Prophecy Child",      category: "character", description: "A character born into or shaped by prophecy, destined for a role they didn't choose." },
   { slug: "reluctant-hero",      name: "Reluctant Hero",      category: "character", description: "A hero who does not initially seek their role." },
   { slug: "secret-royalty",      name: "Secret Royalty",      category: "character", description: "A protagonist unaware of their royal lineage." },
   { slug: "villain-protagonist", name: "Villain Protagonist", category: "character", description: "The main character begins as or becomes the antagonist." },
@@ -48,7 +49,7 @@ export const PUBLIC_TROPES: PublicTrope[] = [
   { slug: "second-chance-romance",name: "Second Chance Romance",category: "relationship", description: "Former lovers reunite." },
   { slug: "slow-burn",            name: "Slow Burn",            category: "relationship", description: "Romantic or emotional tension develops gradually." },
 
-  // ── PLOT (21) ─────────────────────────────────────────────────────────────
+  // ── PLOT (20) ─────────────────────────────────────────────────────────────
   { slug: "ancient-evil-awakens",name: "Ancient Evil Awakens",    category: "plot", description: "A long-dormant evil returns." },
   { slug: "coming-of-age",       name: "Coming of Age",           category: "plot", description: "A young protagonist matures through trials, mistakes, and growth." },
   { slug: "end-of-the-world",    name: "End of the World Stakes", category: "plot", description: "Apocalyptic threat looms." },
@@ -57,7 +58,6 @@ export const PUBLIC_TROPES: PublicTrope[] = [
   { slug: "hidden-society",      name: "Hidden Society",          category: "plot", description: "A secret magical world exists alongside ours." },
   { slug: "magical-plague",      name: "Magical Plague",          category: "plot", description: "A supernatural disease spreads." },
   { slug: "political-intrigue",  name: "Political Intrigue",      category: "plot", description: "Schemes, court politics, and power plays." },
-  { slug: "portal-fantasy",      name: "Portal Fantasy",          category: "plot", description: "A character is transported into another world." },
   { slug: "power-at-a-cost",     name: "Power at a Cost",         category: "plot", description: "Magic requires sacrifice." },
   { slug: "prophecy",            name: "Prophecy",                category: "plot", description: "Events driven by foretold destiny." },
   { slug: "pyrrhic-victory",     name: "Pyrrhic Victory",         category: "plot", description: "Victory comes at terrible cost." },
@@ -71,29 +71,25 @@ export const PUBLIC_TROPES: PublicTrope[] = [
   { slug: "trial-by-combat",     name: "Trial by Combat",         category: "plot", description: "Justice determined through combat." },
   { slug: "war-between-kingdoms",name: "War Between Kingdoms",    category: "plot", description: "Large-scale war between nations." },
 
-  // ── SETTING (10) ──────────────────────────────────────────────────────────
-  { slug: "desert-kingdom",  name: "Desert Kingdom",       category: "setting", description: "Fantasy set in arid lands." },
-  { slug: "dying-empire",    name: "Dying Empire",         category: "setting", description: "An empire in decline." },
-  { slug: "fae-court-drama", name: "Fae Court Drama",      category: "setting", description: "Story set in or around Fae courts with intrigue, deals, and glamour." },
-  { slug: "floating-islands",name: "Floating Islands",     category: "setting", description: "Sky-bound landmasses and skyships." },
-  { slug: "frozen-wasteland",name: "Frozen Wasteland",     category: "setting", description: "Story in icy, unforgiving landscapes." },
-  { slug: "gothic-castle",   name: "Gothic Castle",        category: "setting", description: "Dark castle-centered narrative." },
-  { slug: "magic-academy",   name: "Magic Academy",        category: "setting", description: "Story set in a magical school or academy." },
-  { slug: "pirate-fantasy",  name: "Pirate Fantasy",       category: "setting", description: "Seafaring adventures and sea raiders." },
-  { slug: "underground-city",name: "Underground City",     category: "setting", description: "Civilization beneath the surface." },
-  { slug: "viking-inspired", name: "Viking-Inspired World",category: "setting", description: "Norse-inspired fantasy setting." },
-
-  // ── MAGIC (10) ────────────────────────────────────────────────────────────
-  { slug: "blood-magic",       name: "Blood Magic",       category: "magic", description: "Magic powered by blood sacrifice." },
-  { slug: "curse-breaking",    name: "Curse Breaking",    category: "magic", description: "A curse must be understood and broken — often at great cost." },
-  { slug: "divine-magic",      name: "Divine Magic",      category: "magic", description: "Power granted by gods." },
-  { slug: "elemental-magic",   name: "Elemental Magic",   category: "magic", description: "Magic tied to natural elements." },
-  { slug: "forbidden-magic",   name: "Forbidden Magic",   category: "magic", description: "Outlawed or dangerous magic." },
-  { slug: "hard-magic-system", name: "Hard Magic System", category: "magic", description: "Clearly defined magical rules." },
-  { slug: "magical-artifacts", name: "Magical Artifacts", category: "magic", description: "Powerful enchanted objects." },
-  { slug: "necromancy",        name: "Necromancy",        category: "magic", description: "Raising or controlling the dead." },
-  { slug: "sentient-weapon",   name: "Sentient Weapon",   category: "magic", description: "A weapon with its own consciousness." },
-  { slug: "soft-magic-system", name: "Soft Magic System", category: "magic", description: "Mystical and undefined magic." },
+  // ── WORLD & MAGIC (18) ───────────────────────────────────────────────────
+  { slug: "blood-magic",       name: "Blood Magic",          category: "world-magic", description: "Magic powered by blood sacrifice." },
+  { slug: "curse-breaking",    name: "Curse Breaking",       category: "world-magic", description: "A curse must be understood and broken — often at great cost." },
+  { slug: "desert-kingdom",    name: "Desert Kingdom",       category: "world-magic", description: "Fantasy set in arid lands." },
+  { slug: "divine-magic",      name: "Divine Magic",         category: "world-magic", description: "Power granted by gods." },
+  { slug: "dying-empire",      name: "Dying Empire",         category: "world-magic", description: "An empire in decline." },
+  { slug: "elemental-magic",   name: "Elemental Magic",      category: "world-magic", description: "Magic tied to natural elements." },
+  { slug: "fae-court-drama",   name: "Fae Court Drama",      category: "world-magic", description: "Story set in or around Fae courts with intrigue, deals, and glamour." },
+  { slug: "floating-islands",  name: "Floating Islands",     category: "world-magic", description: "Sky-bound landmasses and skyships." },
+  { slug: "forbidden-magic",   name: "Forbidden Magic",      category: "world-magic", description: "Outlawed or dangerous magic." },
+  { slug: "frozen-wasteland",  name: "Frozen Wasteland",     category: "world-magic", description: "Story in icy, unforgiving landscapes." },
+  { slug: "gothic-castle",     name: "Gothic Castle",        category: "world-magic", description: "Dark castle-centered narrative." },
+  { slug: "magic-tournament",  name: "Magic Tournament",     category: "world-magic", description: "A competitive magical event where participants duel with their powers." },
+  { slug: "magical-artifacts", name: "Magical Artifacts",    category: "world-magic", description: "Powerful enchanted objects." },
+  { slug: "necromancy",        name: "Necromancy",           category: "world-magic", description: "Raising or controlling the dead." },
+  { slug: "pirate-fantasy",    name: "Pirate Fantasy",       category: "world-magic", description: "Seafaring adventures and sea raiders." },
+  { slug: "sentient-weapon",   name: "Sentient Weapon",      category: "world-magic", description: "A weapon with its own consciousness." },
+  { slug: "underground-city",  name: "Underground City",     category: "world-magic", description: "Civilization beneath the surface." },
+  { slug: "viking-inspired",   name: "Viking-Inspired World",category: "world-magic", description: "Norse-inspired fantasy setting." },
 
 ];
 
@@ -190,9 +186,13 @@ export const INTERNAL_TAGS: InternalTag[] = [
   { slug: "wise-old-mentor",       name: "Wise Old Mentor",        type: "character-trait",  parentTrope: "mentor-figure" },
   { slug: "mentor-who-dies",       name: "Mentor Who Dies",        type: "plot-micro",       parentTrope: "mentor-figure" },
 
-  // dragons (NEW)
-  { slug: "dragon-as-threat",      name: "Dragon as Threat",       type: "plot-micro",       parentTrope: "dragons" },
-  { slug: "dragon-as-ally",        name: "Dragon as Ally",         type: "microtrope",       parentTrope: "dragons" },
+  // last-of-their-kind
+  { slug: "sole-survivor",         name: "Sole Survivor",          type: "character-trait",  parentTrope: "last-of-their-kind" },
+  { slug: "dying-lineage",         name: "Dying Lineage",          type: "plot-micro",       parentTrope: "last-of-their-kind" },
+
+  // prophecy-child
+  { slug: "born-of-prophecy",      name: "Born of Prophecy",       type: "plot-micro",       parentTrope: "prophecy-child" },
+  { slug: "marked-from-birth",     name: "Marked From Birth",      type: "character-trait",  parentTrope: "prophecy-child" },
 
   // found-family
   { slug: "fellowship-party",      name: "Fellowship Party",       type: "relationship-micro",parentTrope: "found-family" },
@@ -334,13 +334,9 @@ export const INTERNAL_TAGS: InternalTag[] = [
   { slug: "hidden-true-self",      name: "Hidden True Self",       type: "character-trait",  parentTrope: "secret-identity" },
   { slug: "unmasking-moment",      name: "Unmasking Moment",       type: "plot-micro",       parentTrope: "secret-identity" },
 
-  // portal-fantasy
-  { slug: "transported-to-another-world",name: "Transported to Another World",type: "plot-micro",  parentTrope: "portal-fantasy" },
-  { slug: "fish-out-of-water",     name: "Fish Out of Water",      type: "character-trait",  parentTrope: "portal-fantasy" },
-
-  // magic-academy
-  { slug: "academy-training",      name: "Academy Training",       type: "setting-micro",    parentTrope: "magic-academy" },
-  { slug: "school-rivalries",      name: "School Rivalries",       type: "relationship-micro",parentTrope: "magic-academy" },
+  // magic-tournament
+  { slug: "spell-duel",            name: "Spell Duel",             type: "magic-micro",      parentTrope: "magic-tournament" },
+  { slug: "tournament-of-power",   name: "Tournament of Power",    type: "plot-micro",       parentTrope: "magic-tournament" },
 
   // fae-court-drama (NEW)
   { slug: "fae-politics",          name: "Fae Politics",           type: "plot-micro",       parentTrope: "fae-court-drama" },
@@ -377,14 +373,6 @@ export const INTERNAL_TAGS: InternalTag[] = [
   // underground-city
   { slug: "subterranean-civilization",name: "Subterranean Civilization",type: "setting-micro",parentTrope: "underground-city" },
   { slug: "tunnel-networks",       name: "Tunnel Networks",        type: "setting-micro",    parentTrope: "underground-city" },
-
-  // hard-magic-system
-  { slug: "spell-rules",           name: "Spell Rules",            type: "magic-micro",      parentTrope: "hard-magic-system" },
-  { slug: "magic-crafting",        name: "Magic Crafting",         type: "magic-micro",      parentTrope: "hard-magic-system" },
-
-  // soft-magic-system
-  { slug: "mysterious-magic",      name: "Mysterious Magic",       type: "magic-micro",      parentTrope: "soft-magic-system" },
-  { slug: "mythic-wonder",         name: "Mythic Wonder",          type: "magic-micro",      parentTrope: "soft-magic-system" },
 
   // elemental-magic
   { slug: "fire-and-ice-magic",    name: "Fire & Ice Magic",       type: "magic-micro",      parentTrope: "elemental-magic" },

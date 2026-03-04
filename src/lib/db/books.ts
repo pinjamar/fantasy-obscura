@@ -47,6 +47,9 @@ export async function getBooks(
     if (filters.diversity_rep?.length) {
       query = query.overlaps('diversity_rep', filters.diversity_rep);
     }
+    if (filters.creatures?.length) {
+      query = query.overlaps('creatures', filters.creatures);
+    }
 
     // Exact match filters
     if (filters.magic_system) {

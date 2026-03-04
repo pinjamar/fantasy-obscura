@@ -34,13 +34,6 @@ const BOOKS = [
   },
 ];
 
-const RELATED = [
-  { slug: 'ensemble-cast',      label: 'Ensemble Cast',  emoji: '🎭' },
-  { slug: 'heist',              label: 'Heist',          emoji: '🃏' },
-  { slug: 'mentor-and-student', label: 'Mentor & Student', emoji: '📜' },
-  { slug: 'academy',            label: 'Academy',        emoji: '🏫' },
-  { slug: 'rebellion',          label: 'Rebellion',      emoji: '⚔️' },
-];
 ---
 
 <Layout
@@ -192,31 +185,15 @@ const RELATED = [
       </div>
     </section>
 
-    <!-- Related tropes -->
-    <section class="mb-6">
-      <h2 class="text-xl font-bold mb-4">Related Tropes</h2>
-      <div class="flex flex-wrap gap-2">
-        {RELATED.map((r) => (
-          <a
-            href={`/tropes/${r.slug}/`}
-            class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200 text-sm text-zinc-700 hover:border-purple-300 hover:bg-purple-50 transition-colors"
-          >
-            <span>{r.emoji}</span>
-            <span>{r.label}</span>
-          </a>
-        ))}
-      </div>
-    </section>
-
-    <!-- Explore more -->
+    <!-- Related Tropes -->
     <section class="mb-6 border-t border-zinc-100 pt-8">
-      <p class="text-sm font-semibold text-zinc-500 uppercase tracking-wide mb-3">You might also enjoy</p>
+      <p class="text-sm font-semibold text-zinc-500 uppercase tracking-wide mb-3">Related Tropes</p>
       <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
         {[
-          { slug: 'assassin-protagonist', label: 'Assassin Protagonist', emoji: '🗡️' },
-          { slug: 'rebellion',            label: 'Rebellion Fantasy',    emoji: '⚔️' },
-          { slug: 'academy',              label: 'Academy Fantasy',      emoji: '🏫' },
-          { slug: 'heist',               label: 'Heist Fantasy',         emoji: '🃏' },
+          { slug: 'rivals-to-allies',  label: 'Rivals to Allies',  emoji: '🤝' },
+          { slug: 'betrayal',          label: 'Betrayal',          emoji: '🗡️' },
+          { slug: 'redemption-arc',    label: 'Redemption Arc',    emoji: '✨' },
+          { slug: 'heist',             label: 'Heist',             emoji: '🃏' },
         ].map((r) => (
           <a
             href={`/tropes/${r.slug}/`}

@@ -6,7 +6,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "classify:new": "node scripts/classify-books.mjs && node scripts/classify-descriptors.mjs && node scripts/classify-tropes.mjs && node scripts/classify-creatures.mjs && node scripts/classify-content-warnings.mjs",
+    "classify:tropes": "node scripts/classify-tropes.mjs",
+    "classify:creatures": "node scripts/classify-creatures.mjs",
+    "classify:descriptors": "node scripts/classify-descriptors.mjs",
+    "classify:warnings": "node scripts/classify-content-warnings.mjs",
+    "classify:books": "node scripts/classify-books.mjs"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
