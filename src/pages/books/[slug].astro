@@ -117,11 +117,11 @@ const metaDescription = book.synopsis
               href={`/reading-orders/${seriesSlug}/`}
               class="inline-block text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium hover:bg-indigo-100 hover:border-indigo-300 transition-colors"
             >
-              {book.series}{book.series_number != null ? ` — Book ${book.series_number}` : ''} ›
+              {book.series}{book.series_number != null ? ` #${book.series_number}` : ''} ›
             </a>
           ) : (
             <span class="inline-block text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium">
-              {book.series}{book.series_number != null ? ` — Book ${book.series_number}` : ''}
+              {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
             </span>
           )}
         </div>

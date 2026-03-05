@@ -1,0 +1,200 @@
+---
+import Layout from '../../components/Layout.astro'
+import { getBooksLikeEntry, getDarkness, darknessCandles, darknessLabel, getHeat } from '../../data/books-like'
+
+const { slug } = Astro.params
+if (!slug) return Astro.redirect('/books-like/')
+
+const entry = getBooksLikeEntry(slug)
+if (!entry) return new Response(null, { status: 404, statusText: 'Not Found' })
+
+const { source, aspects, recommendations, related } = entry
+
+const amazonSource   = `https://www.amazon.com/s?k=${encodeURIComponent(source.title + ' ' + source.author)}`
+const bookshopSource = `https://bookshop.org/search?keywords=${encodeURIComponent(source.title)}`
+---
+
+<Layout
+  title={`Books Like ${source.title} | Fantasy Obscura`}
+  description={`If you loved ${source.title} by ${source.author}, here are the best reads that capture the same feeling — curated, not algorithmically generated.`}
+>
+
+  <!-- Breadcrumb -->
+  <nav class="text-sm text-zinc-400 mb-8 flex items-center gap-1.5">
+    <a href="/books-like/" class="hover:text-zinc-700 transition-colors">Books Like...</a>
+    <span>›</span>
+    <span class="text-zinc-700 font-medium">{source.title}</span>
+  </nav>
+
+  <!-- ── HEADER ──────────────────────────────────────────────────── -->
+  <div class="grid gap-8 lg:grid-cols-[200px_1fr] mb-14">
+
+    <!-- Cover -->
+    <div class="flex flex-col gap-3">
+      <div class="relative w-full max-w-[200px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-purple-200 to-blue-200">
+        <img
+          src={source.cover_url}
+          alt={`Cover of ${source.title}`}
+          class="absolute inset-0 w-full h-full object-cover"
+          onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
+        />
+      </div>
+      <a href={amazonSource} target="_blank" rel="noopener noreferrer"
+        class="flex items-center justify-center gap-2 w-full max-w-[200px] mx-auto lg:mx-0 px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-500 text-zinc-900 text-sm font-semibold transition-colors">
+        🛒 Buy on Amazon
+      </a>
+      <a href={bookshopSource} target="_blank" rel="noopener noreferrer"
+        class="flex items-center justify-center gap-2 w-full max-w-[200px] mx-auto lg:mx-0 px-4 py-2 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 text-sm font-semibold transition-colors">
+        🏪 Bookshop.org
+      </a>
+    </div>
+
+    <!-- Title + meta -->
+    <div>
+      <p class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-2">Books Like...</p>
+      <h1 class="text-4xl font-bold tracking-tight text-zinc-900 leading-tight">{source.title}</h1>
+      {source.series && source.series_number != null && (
+        <span class="inline-block mt-2 text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium">
+          {source.series} #{source.series_number}
+        </span>
+      )}
+      <p class="mt-2 text-xl text-zinc-500">by {source.author}</p>
+
+      <!-- Darkness + Heat badges -->
+      <div class="mt-5 flex flex-wrap gap-3">
+        {(() => { const d = getDarkness(source.darkness_level); return d ? (
+          <div class="inline-flex items-center gap-3 rounded-2xl border-2 border-orange-200 bg-orange-50 px-4 py-3">
+            <span class="text-xl leading-none">{d.candles}</span>
+            <div>
+              <div class="font-bold text-orange-700 text-sm">Darkness {source.darkness_level}/5 — {d.label}</div>
+              <div class="text-xs text-zinc-500 mt-0.5">{d.desc}</div>
+            </div>
+          </div>
+        ) : null })()}
+        {(() => { const h = getHeat(source.heat_level); return h ? (
+          <div class="inline-flex items-center gap-3 rounded-2xl border-2 border-pink-200 bg-pink-50 px-4 py-3">
+            <span class="text-xl leading-none">{h.flames}</span>
+            <div>
+              <div class="font-bold text-pink-700 text-sm">Heat — {h.label}</div>
+              <div class="text-xs text-zinc-500 mt-0.5">{h.desc}</div>
+            </div>
+          </div>
+        ) : null })()}
+      </div>
+
+      <!-- Trope pills -->
+      <div class="mt-4 flex flex-wrap gap-2">
+        {source.tropes.map((t) => (
+          <span class="px-3 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-sm">{t}</span>
+        ))}
+      </div>
+
+      <!-- Why people love it -->
+      <div class="mt-6 p-5 rounded-2xl bg-zinc-50 border border-zinc-200">
+        <h2 class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Why people love this book</h2>
+        <p class="text-zinc-700 leading-relaxed text-[15px]">{source.why_people_love}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHAT YOU'RE REALLY LOOKING FOR ─────────────────────────── -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold text-zinc-900 mb-8">What you're really looking for?</h2>
+    <div class="space-y-8">
+      {aspects.map((aspect) => (
+        <div>
+          <h3 class="text-base font-bold text-zinc-800 mb-4 pb-2 border-b border-zinc-200">{aspect.heading}</h3>
+          <div class="space-y-4">
+            {aspect.recs.map((r) => {
+              const h = getHeat(r.heat_level)
+              const seriesLabel = r.series_label ?? (r.standalone ? 'Standalone' : 'Series')
+              return (
+                <div class="rounded-xl border border-violet-200 bg-violet-50 p-4 flex gap-5">
+                  <!-- Cover + Amazon -->
+                  <div class="shrink-0 flex flex-col gap-2">
+                    <div class="relative w-24 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100">
+                      <img
+                        src={r.cover_url}
+                        alt={`Cover of ${r.title}`}
+                        class="absolute inset-0 w-full h-full object-cover"
+                        onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
+                      />
+                    </div>
+                    <a href={r.amazon_url} target="_blank" rel="noopener noreferrer"
+                      class="w-full text-center px-2 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-500 text-zinc-900 text-xs font-semibold transition-colors">
+                      Amazon
+                    </a>
+                  </div>
+                  <!-- Info -->
+                  <div class="flex-1 min-w-0">
+                    <!-- Title + ratings row -->
+                    <div class="flex items-start justify-between gap-4 mb-1">
+                      <p class="font-bold text-zinc-900 leading-tight">
+                        {r.title}
+                        {r.series && r.series_number != null && (
+                          <span class="font-normal text-indigo-600 text-sm"> · {r.series} #{r.series_number}</span>
+                        )}
+                      </p>
+                      <div class="shrink-0 flex items-center gap-2 text-sm">
+                        <span title={`Darkness ${r.darkness_level}/5`}>{darknessCandles(r.darkness_level)}</span>
+                        {h && <span title={`Heat — ${h.label}`}>{h.flames}</span>}
+                      </div>
+                    </div>
+                    <p class="text-sm text-zinc-500 mb-0.5">
+                      by {r.author}
+                      {r.author_note && <span class="text-zinc-400"> ({r.author_note})</span>}
+                    </p>
+                    <p class="text-xs text-zinc-400 mb-3">
+                      {r.series_label ?? (r.standalone ? 'Standalone' : 'Series')}
+                      {r.audiobook && ' · Audiobook ✅'}
+                    </p>
+                    <p class="text-sm text-zinc-700 leading-relaxed mb-3">{r.note}</p>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                      {r.tags.map((tag) => (
+                        <span class="px-2.5 py-0.5 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-xs font-medium">{tag}</span>
+                      ))}
+                    </div>
+                    {r.warning && (
+                      <p class="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+                        <span class="font-semibold">⚠️ Content Warnings: </span>{r.warning}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── BOTTOM ──────────────────────────────────────────────────── -->
+  <div class="border-t pt-8 space-y-6">
+
+    <div class="flex flex-wrap items-center gap-4">
+      <span class="text-sm text-zinc-500">Not quite right?</span>
+      <a href="/craft/" class="text-base font-semibold text-purple-700 hover:underline">
+        Try out our extensive custom filters → Find My Next Book
+      </a>
+    </div>
+
+    {related.length > 0 && (
+      <div>
+        <p class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Other readers also searched for</p>
+        <div class="flex flex-wrap gap-2">
+          {related.map((r) => (
+            <a
+              href={`/books-like/${r.slug}/`}
+              class="px-4 py-2 rounded-full border border-zinc-200 bg-white text-sm text-zinc-700 hover:border-zinc-400 hover:bg-zinc-50 transition-colors"
+            >
+              {r.title}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+  </div>
+
+</Layout>
