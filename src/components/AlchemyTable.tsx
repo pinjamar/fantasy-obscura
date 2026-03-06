@@ -649,15 +649,15 @@ const CATEGORY_OPTIONS: {
   { value: '', label: 'Any category', subgenres: [] },
   { value: 'epic',             label: '⚔️ Epic & High Fantasy',   subgenres: ['Epic Fantasy', 'High Fantasy', 'Political Fantasy'] },
   { value: 'romantasy',        label: '🌹 Romantasy',              subgenres: ['Romantic Fantasy'] },
-  { value: 'swords',           label: '🗡️ Sword & Sorcery',       subgenres: ['Low Fantasy'] },
+  { value: 'swords',           label: '🗡️ Sword & Sorcery',       subgenres: ['Sword & Sorcery'] },
   { value: 'dark',             label: '🌑 Dark Fantasy',           subgenres: ['Dark Fantasy', 'Dystopian Fantasy'] },
   { value: 'urban',            label: '🌆 Urban / Contemporary',   subgenres: ['Urban Fantasy', 'Contemporary Fantasy'] },
   { value: 'grimdark',         label: '💀 Grimdark',               subgenres: ['Grimdark', 'Military Fantasy'] },
   { value: 'historical',       label: '📜 Historical Fantasy',     subgenres: ['Historical Fantasy'] },
-  { value: 'academy',          label: '🎓 Academy Fantasy',        subgenres: ['Coming of Age Fantasy'] },
+  { value: 'academy',          label: '🎓 Academy Fantasy',        subgenres: ['Academy Fantasy'] },
   { value: 'mythology',        label: '🏺 Mythic / Folklore',      subgenres: ['Mythic Fantasy', 'Fae Fantasy'] },
   { value: 'cozy',             label: '☕ Cozy Fantasy',           subgenres: ['Cozy Fantasy', 'Humorous Fantasy', 'Portal Fantasy'] },
-  { value: 'litrpg',           label: '🎮 LitRPG / GameLit',       subgenres: ['LitRPG'] },
+  { value: 'litrpg',           label: '🎮 LitRPG / Progression',   subgenres: ['LitRPG', 'Progression Fantasy'] },
   { value: 'science-fantasy',  label: '🔭 Science Fantasy',        subgenres: ['Science Fantasy', 'Steampunk Fantasy'] },
 ];
 

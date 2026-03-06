@@ -22,7 +22,7 @@ const categories: Category[] = [
   },
   {
     slug: 'litrpg',
-    name: 'LitRPG / GameLit & Progression',
+    name: 'LitRPG / Progression Fantasy',
     description: 'Literary role-playing story with progression',
     gradient: 'from-blue-50 to-cyan-50',
   },
