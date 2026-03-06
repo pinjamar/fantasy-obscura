@@ -90,6 +90,44 @@ function slugify(title) {
     .replace(/^-+|-+$/g, '');
 }
 
+function isLikelyNonEnglish(text) {
+  if (!text) return false;
+  const letters = [...text].filter((c) => /\p{L}/u.test(c));
+  if (letters.length < 20) return false;
+  const nonAscii = letters.filter((c) => c.charCodeAt(0) > 127);
+  return nonAscii.length / letters.length > 0.05;
+}
+
+async function fetchGoogleBooks(title, author) {
+  const queries = [
+    `intitle:${title} inauthor:${author}`,
+    `${title} ${author}`,
+    title,
+  ];
+  for (const query of queries) {
+    const q = encodeURIComponent(query);
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${q}&langRestrict=en&maxResults=1&printType=books&key=${GOOGLE_BOOKS_KEY}`;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      const data = await res.json();
+      const item = data.items?.[0]?.volumeInfo;
+      if (!item) continue;
+      const rawYear = item.publishedDate;
+      const year = rawYear ? parseInt(rawYear.slice(0, 4), 10) : null;
+      const validYear = year && year >= 1800 && year <= new Date().getFullYear() ? year : null;
+      const synopsis = item.description?.trim() ?? null;
+      return {
+        synopsis: synopsis ? synopsis.slice(0, 2000) : null,
+        publication_year: validYear,
+      };
+    } catch {
+      continue;
+    }
+  }
+  return null;
+}
+
 async function fetchOpenLibrary(title, author) {
   const q = encodeURIComponent(`${title} ${author}`);
   const url = `https://openlibrary.org/search.json?q=${q}&limit=1&fields=key,title,author_name,first_publish_year,number_of_pages_median,isbn,cover_i,subject`;
@@ -99,23 +137,39 @@ async function fetchOpenLibrary(title, author) {
   const doc = data.docs?.[0];
   if (!doc) return null;
 
-  let synopsis = null;
-  if (doc.key) {
+  // Try Google Books first for synopsis + year (reliable English content)
+  const gb = await fetchGoogleBooks(title, author);
+
+  // OpenLibrary synopsis as fallback only if Google Books has nothing
+  let synopsis = gb?.synopsis ?? null;
+  if (!synopsis && doc.key) {
     try {
       const workRes = await fetch(`https://openlibrary.org${doc.key}.json`);
       if (workRes.ok) {
         const work = await workRes.json();
         const desc = work.description;
-        synopsis = typeof desc === 'string' ? desc : (desc?.value ?? null);
-        if (synopsis) synopsis = synopsis.slice(0, 2000);
+        const raw = typeof desc === 'string' ? desc : (desc?.value ?? null);
+        // Only use if it looks like English
+        if (raw && !isLikelyNonEnglish(raw)) {
+          synopsis = raw.slice(0, 2000);
+        }
       }
     } catch {}
+  }
+
+  // Prefer Google Books year; fall back to OpenLibrary only if it looks reasonable
+  let publication_year = gb?.publication_year ?? null;
+  if (!publication_year) {
+    const olYear = doc.first_publish_year ?? null;
+    if (olYear && olYear >= 1800 && olYear <= new Date().getFullYear()) {
+      publication_year = olYear;
+    }
   }
 
   return {
     cover_url: doc.cover_i ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg` : null,
     isbn: doc.isbn?.[0] ?? null,
-    publication_year: doc.first_publish_year ?? null,
+    publication_year,
     page_count: doc.number_of_pages_median ?? null,
     synopsis,
   };
@@ -127,6 +181,12 @@ if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) 
   console.error('Missing Supabase env vars in .env');
   process.exit(1);
 }
+if (!process.env.GOOGLE_BOOKS_API_KEY) {
+  console.error('Missing GOOGLE_BOOKS_API_KEY in .env');
+  process.exit(1);
+}
+
+const GOOGLE_BOOKS_KEY = process.env.GOOGLE_BOOKS_API_KEY;
 
 const supabase = createClient(
   process.env.PUBLIC_SUPABASE_URL,

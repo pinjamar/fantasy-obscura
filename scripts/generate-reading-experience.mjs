@@ -15,7 +15,7 @@
  *   node scripts/generate-reading-experience.mjs --limit 10
  */
 
-import Anthropic from '@anthropic-ai/sdk';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
 
@@ -26,8 +26,8 @@ const LIMIT_ARG = process.argv.indexOf('--limit');
 const LIMIT    = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
 const DELAY_MS = 1200;
 
-if (!process.env.ANTHROPIC_API_KEY) {
-  console.error('Missing ANTHROPIC_API_KEY in .env');
+if (!process.env.GEMINI_API_KEY) {
+  console.error('Missing GEMINI_API_KEY in .env');
   process.exit(1);
 }
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
@@ -43,7 +43,7 @@ const DARKNESS_LABELS = {
   5: 'Brutal — extreme violence, nihilism, relentless darkness',
 };
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const model = new GoogleGenerativeAI(process.env.GEMINI_API_KEY).getGenerativeModel({ model: 'gemini-2.5-flash' });
 const supabase  = createClient(
   process.env.PUBLIC_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY,
@@ -86,15 +86,8 @@ Rules:
 - Do not start with the book title
 - Do not use the phrase "this book" or "this novel"`;
 
-  const msg = await anthropic.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 400,
-    messages: [{ role: 'user', content: prompt }],
-  });
-
-  if (msg.content[0]?.type !== 'text') return null;
-  // Strip any markdown heading or bold title line the model adds
-  return msg.content[0].text
+  const result = await model.generateContent(prompt);
+  return result.response.text()
     .replace(/^(\*\*.*\*\*|#+\s+.*)\n+/m, '')
     .trim() || null;
 }

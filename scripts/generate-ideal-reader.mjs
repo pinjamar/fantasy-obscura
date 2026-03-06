@@ -16,7 +16,7 @@
  *   node scripts/generate-ideal-reader.mjs --slug six-of-crows
  */
 
-import Anthropic from '@anthropic-ai/sdk';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
 
@@ -29,8 +29,8 @@ const SLUG_ARG  = process.argv.indexOf('--slug');
 const SLUG      = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
 const DELAY_MS  = 1200;
 
-if (!process.env.ANTHROPIC_API_KEY) {
-  console.error('Missing ANTHROPIC_API_KEY in .env');
+if (!process.env.GEMINI_API_KEY) {
+  console.error('Missing GEMINI_API_KEY in .env');
   process.exit(1);
 }
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
@@ -38,7 +38,7 @@ if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) 
   process.exit(1);
 }
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const model = new GoogleGenerativeAI(process.env.GEMINI_API_KEY).getGenerativeModel({ model: 'gemini-2.5-flash' });
 const supabase  = createClient(
   process.env.PUBLIC_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY,
@@ -77,14 +77,8 @@ Rules:
 - Do not use phrases like "this book" or "this novel"
 - Use the actual book title when referring to it`;
 
-  const msg = await anthropic.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 400,
-    messages: [{ role: 'user', content: prompt }],
-  });
-
-  if (msg.content[0]?.type !== 'text') return null;
-  return msg.content[0].text
+  const result = await model.generateContent(prompt);
+  return result.response.text()
     .replace(/^#+\s+.*\n+/m, '')
     .trim() || null;
 }

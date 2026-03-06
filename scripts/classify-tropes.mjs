@@ -39,7 +39,7 @@
  *   node scripts/classify-tropes.mjs --reclassify  (redo all books, including already classified)
  */
 
-import Anthropic from '@anthropic-ai/sdk';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
 
@@ -52,8 +52,8 @@ const LIMIT      = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) 
 const BATCH_SIZE = 6;
 const DELAY_MS   = 900;
 
-if (!process.env.ANTHROPIC_API_KEY) {
-  console.error('Missing ANTHROPIC_API_KEY in .env');
+if (!process.env.GEMINI_API_KEY) {
+  console.error('Missing GEMINI_API_KEY in .env');
   process.exit(1);
 }
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
@@ -61,7 +61,7 @@ if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) 
   process.exit(1);
 }
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const model = new GoogleGenerativeAI(process.env.GEMINI_API_KEY).getGenerativeModel({ model: 'gemini-2.5-flash' });
 const supabase  = createClient(
   process.env.PUBLIC_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY,
@@ -217,13 +217,8 @@ Rules:
 - "Coming of Age" only if growth and maturation are central themes.
 - "Quest" only if a journey toward a specific goal structures the plot.`;
 
-  const message = await anthropic.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 2048,
-    messages: [{ role: 'user', content: prompt }],
-  });
-
-  const raw = message.content[0]?.type === 'text' ? message.content[0].text.trim() : '';
+  const result = await model.generateContent(prompt);
+  const raw = result.response.text().trim();
   const jsonMatch = raw.match(/\[[\s\S]*\]/);
   if (!jsonMatch) throw new Error(`No JSON array in response:\n${raw}`);
   return JSON.parse(jsonMatch[0]);
@@ -256,7 +251,7 @@ async function main() {
     try {
       results = await classifyBatch(batch);
     } catch (err) {
-      console.log(`✗ Claude error: ${err.message}`);
+      console.log(`✗ Gemini error: ${err.message}`);
       failed += batch.length;
       await sleep(DELAY_MS);
       continue;
