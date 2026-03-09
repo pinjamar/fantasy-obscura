@@ -20,12 +20,14 @@ interface Book {
   heat_level?: string | null;
   series_complete?: boolean | null;
   audiobook_available?: boolean | null;
+  tropes?: string[] | null;
   created_at?: string;
 }
 
 interface BookDisplayProps {
   genre?: string | string[];
   audience?: string;
+  featuredTropes?: string[];
 }
 
 type SortKey = 'title-asc' | 'title-desc' | 'rating-desc' | 'newest' | 'oldest' | 'shortest' | 'longest' | 'author-asc';
@@ -85,7 +87,7 @@ function buildPageNums(current: number, total: number): (number | 'ellipsis')[] 
   return pages;
 }
 
-const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
+const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTropes }) => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -98,6 +100,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
   const [heatHover, setHeatHover] = useState<number | null>(null);
   const [completedFilter, setCompletedFilter] = useState<boolean | null>(null);
   const [standaloneFilter, setStandaloneFilter] = useState(false);
+  const [tropeFilter, setTropeFilter] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -159,8 +162,11 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
     if (standaloneFilter) {
       result = result.filter((b) => !b.series);
     }
+    if (tropeFilter) {
+      result = result.filter((b) => b.tropes?.includes(tropeFilter));
+    }
     return result;
-  }, [sortedBooks, searchQuery, darknessFilter, heatFilter, completedFilter, standaloneFilter]);
+  }, [sortedBooks, searchQuery, darknessFilter, heatFilter, completedFilter, standaloneFilter, tropeFilter]);
 
   const totalBooksPages = Math.ceil(filteredBooks.length / BOOKS_PER_PAGE);
   const pagedBooks = filteredBooks.slice(
@@ -221,6 +227,26 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience }) => {
           >×</button>
         )}
       </div>
+
+      {/* Popular trope chips */}
+      {featuredTropes && featuredTropes.length > 0 && (
+        <div className="flex flex-wrap items-center gap-2 mb-4">
+          <span className="text-sm text-zinc-500 mr-1">Tropes:</span>
+          {featuredTropes.map((trope) => (
+            <button
+              key={trope}
+              onClick={() => { setTropeFilter(tropeFilter === trope ? null : trope); setCurrentPage(1); }}
+              className={`px-3 py-1.5 rounded-full text-sm transition-all ${
+                tropeFilter === trope
+                  ? 'bg-purple-700 text-white font-medium'
+                  : 'bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100'
+              }`}
+            >
+              {trope}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Sort bar */}
       <div className="flex flex-wrap items-center gap-2 mb-6">

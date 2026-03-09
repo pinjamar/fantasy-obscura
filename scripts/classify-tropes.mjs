@@ -79,7 +79,7 @@ const VALID_TROPES = [
   'Political Marriage', 'Redemption Arc', 'Rivals to Allies', 'Second Chance Romance', 'Slow Burn',
   // Plot
   'Ancient Evil Awakens', 'Coming of Age', 'End of the World Stakes', 'Heist', 'Hero Becomes Villain',
-  'Hidden Society', 'Magical Plague', 'Political Intrigue', 'Power at a Cost', 'Prophecy',
+  'Hidden Society', 'Magical Plague', 'Political Intrigue', 'Portal Fantasy', 'Power at a Cost', 'Prophecy',
   'Pyrrhic Victory', 'Quest', 'Rebellion', 'Revenge Story', 'Secret Identity', 'Succession Crisis',
   'Survival Journey', 'Tournament Arc', 'Trial by Combat', 'War Between Kingdoms',
   // World & Magic
@@ -168,6 +168,7 @@ PLOT TROPES:
   "Hidden Society"            — A secret magical world exists alongside ours
   "Magical Plague"            — A supernatural disease spreads
   "Political Intrigue"        — Schemes, court politics, and power plays
+  "Portal Fantasy"            — A character is transported to another world through a portal
   "Power at a Cost"           — Magic or power requires sacrifice
   "Prophecy"                  — Events driven by foretold destiny
   "Pyrrhic Victory"           — Victory comes at terrible cost

@@ -58,6 +58,7 @@ export const PUBLIC_TROPES: PublicTrope[] = [
   { slug: "hidden-society",      name: "Hidden Society",          category: "plot", description: "A secret magical world exists alongside ours." },
   { slug: "magical-plague",      name: "Magical Plague",          category: "plot", description: "A supernatural disease spreads." },
   { slug: "political-intrigue",  name: "Political Intrigue",      category: "plot", description: "Schemes, court politics, and power plays." },
+  { slug: "portal-fantasy",      name: "Portal Fantasy",          category: "plot", description: "A character is transported to another world through a magical portal or doorway." },
   { slug: "power-at-a-cost",     name: "Power at a Cost",         category: "plot", description: "Magic requires sacrifice." },
   { slug: "prophecy",            name: "Prophecy",                category: "plot", description: "Events driven by foretold destiny." },
   { slug: "pyrrhic-victory",     name: "Pyrrhic Victory",         category: "plot", description: "Victory comes at terrible cost." },
@@ -301,6 +302,10 @@ export const INTERNAL_TAGS: InternalTag[] = [
   // hidden-society
   { slug: "secret-mages",          name: "Secret Mages",           type: "plot-micro",       parentTrope: "hidden-society" },
   { slug: "hidden-city-within-city",name: "Hidden City Within City",type: "setting-micro",   parentTrope: "hidden-society" },
+
+  // portal-fantasy
+  { slug: "fish-out-of-water",     name: "Fish Out of Water",      type: "plot-micro",       parentTrope: "portal-fantasy" },
+  { slug: "way-back-home",         name: "Way Back Home",          type: "plot-micro",       parentTrope: "portal-fantasy" },
 
   // trial-by-combat
   { slug: "duel-for-justice",      name: "Duel for Justice",       type: "plot-micro",       parentTrope: "trial-by-combat" },

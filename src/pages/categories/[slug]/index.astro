@@ -17,6 +17,7 @@ interface CategoryMeta {
   name: string;
   description: string;
   longDesc: string;
+  featuredTropes: string[];
   gradient: string;
   border: string;
   accent: string;
@@ -37,12 +38,13 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   epic: {
     name: 'Epic & High Fantasy',
     description: 'Grand worlds with deep lore & ancient magic',
-    longDesc: 'Sweeping world-building, ancient prophecies, and battles for the fate of entire civilizations. If you want to lose yourself in a world for months, start here.',
+    longDesc: 'Large-scale stories set in richly imagined worlds where the fate of kingdoms — or entire civilizations — hangs in the balance. These books follow multiple characters across sweeping landscapes, blending political intrigue, ancient magic, and world-changing conflicts. The world-building is intricate and immersive, the cast large, and the stakes impossibly high. Epic fantasy rewards patience — the more you give, the more it returns.',
+    featuredTropes: ['Chosen One', 'Quest', 'Ancient Evil Awakens', 'Political Intrigue', 'War Between Kingdoms', 'Found Family', 'Prophecy'],
     gradient: 'from-purple-50 to-blue-50',
     border: 'border-purple-200',
     accent: 'text-purple-700',
     icon: '⚔️',
-    genre: ['Epic Fantasy', 'High Fantasy', 'Political Fantasy'],
+    genre: ['Epic Fantasy', 'High Fantasy'],
     best:    ['The Way of Kings', 'The Name of the Wind', 'The Lord of the Rings', 'The Wheel of Time', 'Malazan Book of the Fallen', 'Mistborn', 'The Lies of Locke Lamora', 'The Priory of the Orange Tree', 'The Fifth Season', 'The Rage of Dragons'],
     starter: ['The Hobbit', 'Mistborn: The Final Empire', 'The Eye of the World', 'The Blade Itself', 'Elantris', 'Warbreaker', 'The Shadow of What Was Lost', 'Blood Song'],
     hidden:  ['The Traitor Son Cycle', 'Riyria Revelations', 'The Shadow Campaigns', 'The Tide Child', 'The Books of Babel', 'The Divine Cities', 'The Chronicles of the Unhewn Throne'],
@@ -88,7 +90,8 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   romantasy: {
     name: 'Romantasy',
     description: 'Fantasy with love stories and relationships',
-    longDesc: 'Rich fantasy worlds where the romance is just as important as the magic. Expect slow burns, fated mates, spicy tension, and emotional gut-punches.',
+    longDesc: 'Fantasy where the romance is just as important as the magic — and often just as dangerous. Expect fae courts, ancient power, and devastating slow burns. The emotional tension drives everything: enemies-to-lovers stretched across dangerous missions, fated mates complicating every decision. Rich world-building and heart-wrenching relationships, all in one.',
+    featuredTropes: ['Enemies to Lovers', 'Slow Burn', 'Fated Mates', 'Forbidden Romance', 'Fae Court Drama', 'Bodyguard Romance'],
     gradient: 'from-rose-50 to-pink-50',
     border: 'border-rose-200',
     accent: 'text-rose-700',
@@ -139,7 +142,8 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   swords: {
     name: 'Sword & Sorcery',
     description: 'Heroic adventure, visceral magic, ancient evil',
-    longDesc: 'Fast-paced, action-driven fantasy built around morally complex heroes, brutal fights, and magic that comes at a cost. Think Robert E. Howard meets Joe Abercrombie.',
+    longDesc: 'Fantasy at its most immediate — no chosen ones, no civilizational stakes, no ten-book commitments. Just a morally questionable protagonist, a dangerous world, and action on nearly every page. Driven by personal stakes: survival, revenge, gold, freedom. The magic is dark and costly, the settings gritty, and the heroes often operating on the wrong side of the law.',
+    featuredTropes: ['Anti-Hero', 'Assassin Protagonist', 'Revenge Story', 'Heist', 'Morally Grey Hero', 'Quest', 'Betrayal'],
     gradient: 'from-cyan-50 to-teal-50',
     border: 'border-teal-200',
     accent: 'text-teal-700',
@@ -190,12 +194,13 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   dark: {
     name: 'Dark Fantasy',
     description: 'Blends fantasy with horror and brutality',
-    longDesc: 'Where the monsters win sometimes and heroism comes at a terrible price. Dark fantasy pushes into horror territory without fully leaving the fantasy genre.',
+    longDesc: 'Border territory between fantasy and horror — where magic corrupts as often as it saves, and victories come wrapped in loss. The darkness isn\'t decorative; it\'s structural. Characters face genuine trauma and moral compromise in worlds that don\'t reward heroism. These are the fantasy books that stay with you, not because they\'re comfortable, but because they\'re true.',
+    featuredTropes: ['Dark Lord', 'Power at a Cost', 'Hero Becomes Villain', 'Pyrrhic Victory', 'Blood Magic', 'Necromancy', 'Revenge Story'],
     gradient: 'from-slate-100 to-zinc-100',
     border: 'border-zinc-300',
     accent: 'text-zinc-700',
     icon: '🌑',
-    genre: ['Dark Fantasy', 'Dystopian Fantasy'],
+    genre: ['Dark Fantasy', 'Horror Fantasy'],
     best:    ['The Blade Itself', 'The Poppy War', 'Prince of Thorns', 'The Black Company', 'The First Law', 'A Little Hatred', 'Best Served Cold', 'The Heroes', 'Red Sister', 'Nevernight'],
     starter: ['The Black Company', 'Low Town', 'Half a King', 'The Court of Broken Knives', 'Kings of the Wyld', 'Prince of Fools', 'The Gutter Prayer'],
     hidden:  ['The Court of Broken Knives', 'Beyond Redemption', 'The Crimson Queen', 'The Ember Blade', 'The Red Knight', 'The Blacktongue Thief', 'We Ride the Storm'],
@@ -241,7 +246,8 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   urban: {
     name: 'Urban / Contemporary Fantasy',
     description: 'Magic hidden in the modern world',
-    longDesc: 'The supernatural exists alongside our world — hidden in plain sight. Secret societies, magic users in cities, and things that go bump in the night.',
+    longDesc: 'The supernatural hidden in plain sight — behind the mundane rhythms of city life. Secret societies of mages, werewolf packs, vampire courts embedded in corporate structures. The tension between ordinary and extraordinary is the genre\'s engine. The city becomes a character, its history shaping the magical ecosystem living within it. For readers who look at their city and wonder what\'s hiding in the dark.',
+    featuredTropes: ['Hidden Society', 'Anti-Hero', 'Found Family', 'Necromancy', 'Revenge Story', 'Secret Identity', 'Forbidden Magic'],
     gradient: 'from-indigo-50 to-violet-50',
     border: 'border-indigo-200',
     accent: 'text-indigo-700',
@@ -292,12 +298,13 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   grimdark: {
     name: 'Grimdark',
     description: 'Ultra-dark, cynical world with antiheroes',
-    longDesc: 'No heroes — only survivors. Grimdark strips away the nobility of traditional fantasy and replaces it with moral ambiguity, brutal consequences, and bleak beauty.',
+    longDesc: 'No clean heroes, no guaranteed victories, no sense that good triumphs simply because it should. Grimdark strips away the genre\'s comforting illusions — war is atrocity, power corrupts, and the darkness isn\'t atmosphere but argument. Characters die. Causes are compromised. For readers who want fantasy that takes the world seriously and refuses to comfort them.',
+    featuredTropes: ['Morally Grey Hero', 'Pyrrhic Victory', 'War Between Kingdoms', 'Political Intrigue', 'Anti-Hero', 'Betrayal', 'Succession Crisis'],
     gradient: 'from-gray-100 to-slate-100',
     border: 'border-gray-300',
     accent: 'text-gray-700',
     icon: '💀',
-    genre: ['Grimdark', 'Military Fantasy'],
+    genre: ['Grimdark', 'War Fantasy'],
     best:    ['The First Law', 'Malazan Book of the Fallen', 'The Black Company', 'Prince of Thorns', 'The Broken Empire', 'The Poppy War', 'Best Served Cold', 'The Heroes', 'A Little Hatred', 'Red Sister'],
     starter: ['Best Served Cold', 'Gardens of the Moon', 'Prince of Thorns', 'The Blade Itself', 'Half a King', 'Low Town', 'The Court of Broken Knives'],
     hidden:  ['The Court of Broken Knives', 'Chronicles of the Black Company', 'The Crimson Queen', 'The Red Knight', 'The Blacktongue Thief', 'We Ride the Storm'],
@@ -343,7 +350,8 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   historical: {
     name: 'Historical Fantasy',
     description: 'Alternative history, often medieval with magic',
-    longDesc: 'Real history reimagined with a magical twist. From Victorian sorcerers to folklore-infused Eastern Europe — history has never been more enchanting.',
+    longDesc: 'Real history with a door left open — the one where magic works, myths were real, and the supernatural shaped events. Victorian London, feudal Japan, ancient Egypt, pre-colonial Africa. The historical detail grounds the magic and gives it consequence. Questions of empire, gender, and faith run through these stories alongside the sorcery.',
+    featuredTropes: ['Political Intrigue', 'Forbidden Romance', 'Rebellion', 'Political Marriage', 'Divine Magic', 'Secret Identity', 'Succession Crisis'],
     gradient: 'from-amber-50 to-orange-50',
     border: 'border-amber-200',
     accent: 'text-amber-700',
@@ -394,7 +402,8 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   academy: {
     name: 'Academy Fantasy',
     description: 'Stories set in magical or specialized schools',
-    longDesc: 'Magic schools, secret societies, and coming-of-age stories set in fantastical academies. The tension of student life amplified by prophecy, power, and danger.',
+    longDesc: 'The school setting charged with magic, danger, and the intensity of youth. Stories about learning to control power you didn\'t ask for, navigating hierarchies with life-or-death stakes, and discovering who you are under pressure. Mentors may be allies or adversaries. Examinations can get you killed. The friendships forged here are among fantasy\'s most emotionally resonant.',
+    featuredTropes: ['Coming of Age', 'Mentor and Student', 'Magic Tournament', 'Found Family', 'Secret Identity', 'Tournament Arc', 'Rivals to Allies'],
     gradient: 'from-red-50 to-rose-50',
     border: 'border-red-200',
     accent: 'text-red-700',
@@ -443,14 +452,15 @@ const CATEGORIES: Record<string, CategoryMeta> = {
     },
   },
   mythology: {
-    name: 'Mythic / Folklore & Fairy-Tale',
+    name: 'Mythic & Folklore Fantasy',
     description: 'Inspired by myths, legends and folklore',
-    longDesc: 'Ancient myths retold, folklore brought to life, and fairy tales subverted. These books mine the rich veins of human storytelling across cultures and centuries.',
+    longDesc: 'Drawing from the deepest wells of human storytelling — myths, legends, folktales, and religious traditions from across the world. Greek gods in the modern world. West African mythology shaping an empire at war. Celtic tales hiding darker truths. These books don\'t just borrow names; they engage seriously with what the old stories meant and what they still mean.',
+    featuredTropes: ['Divine Magic', 'Ancient Evil Awakens', 'Quest', 'Prophecy', 'Curse Breaking', 'Chosen One', 'Betrayal'],
     gradient: 'from-yellow-50 to-amber-50',
     border: 'border-yellow-200',
     accent: 'text-yellow-700',
     icon: '🏺',
-    genre: ['Mythic Fantasy', 'Fae Fantasy'],
+    genre: ['Mythic Fantasy', 'Folklore Fantasy'],
     best:    ['Circe', 'The Song of Achilles', 'American Gods', 'Norse Mythology', 'The Penelopiad', 'Till We Have Faces', 'The Silence of the Girls', 'A Thousand Ships', 'Ariadne', 'The Mists of Avalon'],
     starter: ['The Penelopiad', 'Norse Mythology', 'Mythos', 'Circe', 'Anansi Boys', 'The Lightning Thief', 'Troy'],
     hidden:  ['The Silence of the Girls', 'Lavinia', 'The King Must Die', 'The Firebrand', "The Trickster's Choice", 'Song of the Huntress', 'The Children of Jocasta'],
@@ -496,12 +506,13 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   cozy: {
     name: 'Cozy Fantasy',
     description: 'Low conflict, heartwarming vibes',
-    longDesc: 'Fantasy that feels like a warm blanket — charming characters, gentle stakes, and the satisfaction of a world that might actually be okay in the end.',
+    longDesc: 'Warmth, safety, and stories that don\'t ask you to endure suffering to earn a good ending. The stakes are human-scale: a struggling café, a community that needs healing, a relationship that needs mending. The magic is gentle, woven into daily life. Slower-paced and deeply attentive to the pleasures of food, friendship, and belonging. The books you reach for when the world is too much.',
+    featuredTropes: ['Found Family', 'Coming of Age', 'Portal Fantasy', 'Slow Burn', 'Second Chance Romance', 'Quest'],
     gradient: 'from-green-50 to-emerald-50',
     border: 'border-green-200',
     accent: 'text-green-700',
     icon: '☕',
-    genre: ['Cozy Fantasy', 'Humorous Fantasy', 'Portal Fantasy'],
+    genre: ['Cozy Fantasy', 'Humorous Fantasy'],
     best:    ['Legends & Lattes', 'The House in the Cerulean Sea', "Howl's Moving Castle", 'A Psalm for the Wild-Built', 'The Goblin Emperor', "Emily Wilde's Encyclopaedia", 'Sorcery of Thorns', 'Piranesi', 'The Ten Thousand Doors of January', 'The Invisible Library'],
     starter: ['A Psalm for the Wild-Built', 'The Goblin Emperor', 'Sorcery of Thorns', 'The House in the Cerulean Sea', "Howl's Moving Castle", 'Piranesi', 'Nettle & Bone'],
     hidden:  ['The Very Secret Society of Irregular Witches', "Emily Wilde's Encyclopaedia", 'The Invisible Library', "A Wizard's Guide to Defensive Baking", 'The Starless Sea'],
@@ -547,7 +558,8 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   litrpg: {
     name: 'LitRPG / Progression Fantasy',
     description: 'Literary role-playing story with progression',
-    longDesc: 'Characters level up, acquire skills, and navigate worlds that operate like video games. Satisfying power progression loops with deep character arcs.',
+    longDesc: 'Built around one of fiction\'s most satisfying dynamics: watching a character grow stronger, smarter, and more capable — systematically, measurably, relentlessly. LitRPG uses game-like rules (XP, skill trees, status windows). Progression Fantasy expresses growth through cultivation systems and ranked hierarchies. Both reward readers who love watching limits get broken and systems get mastered.',
+    featuredTropes: ['Tournament Arc', 'Coming of Age', 'Power at a Cost', 'Quest', 'Mentor and Student', 'Survival Journey', 'Outcast Hero'],
     gradient: 'from-blue-50 to-cyan-50',
     border: 'border-blue-200',
     accent: 'text-blue-700',
@@ -598,7 +610,8 @@ const CATEGORIES: Record<string, CategoryMeta> = {
   'science-fantasy': {
     name: 'Science Fantasy',
     description: 'Where technology meets magic and prophecy',
-    longDesc: 'The best of both genres — starships alongside magic swords, chosen ones in galactic empires, and ancient prophecies on distant planets. Genre-bending at its finest.',
+    longDesc: 'Where the starship lands on a planet ruled by prophecy and ancient magic is indistinguishable from advanced technology. Science fantasy refuses the rigid separation between SF and fantasy — combining the sense of wonder of one with the mythic resonance of the other. For readers who think genre boundaries are less interesting than genre collisions.',
+    featuredTropes: ['Rebellion', 'Prophecy', 'End of the World Stakes', 'Political Intrigue', 'Ancient Evil Awakens', 'Chosen One', 'Dying Empire'],
     gradient: 'from-sky-50 to-blue-50',
     border: 'border-sky-200',
     accent: 'text-sky-700',
@@ -702,6 +715,6 @@ const cat = CATEGORIES[slug as keyof typeof CATEGORIES];
     <h2 class="text-xl font-semibold mb-6">
       {cat.name} in our collection
     </h2>
-    <BookDisplay genre={cat.genre} client:load />
+    <BookDisplay genre={cat.genre} featuredTropes={cat.featuredTropes} client:load />
   </div>
 </Layout>

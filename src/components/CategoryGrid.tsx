@@ -58,7 +58,7 @@ const categories: Category[] = [
   },
   {
     slug: 'mythology',
-    name: 'Mythic / Folklore & Fairy-Tale',
+    name: 'Mythic & Folklore Fantasy',
     description: 'Inspired by myths, legends and folklore',
     gradient: 'from-yellow-50 to-amber-50',
   },

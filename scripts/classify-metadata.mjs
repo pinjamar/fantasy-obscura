@@ -51,10 +51,10 @@ const supabase = createClient(
 );
 
 const VALID_SUBGENRES    = [
-  'Epic Fantasy', 'High Fantasy', 'Dark Fantasy', 'Grimdark',
+  'Epic Fantasy', 'High Fantasy', 'Dark Fantasy', 'Horror Fantasy', 'Grimdark',
   'Urban Fantasy', 'Contemporary Fantasy', 'Historical Fantasy', 'Mythic Fantasy',
-  'Romantic Fantasy', 'Cozy Fantasy', 'Portal Fantasy', 'Military Fantasy',
-  'Political Fantasy', 'Fae Fantasy', 'Dystopian Fantasy', 'LitRPG',
+  'Romantic Fantasy', 'Cozy Fantasy', 'War Fantasy',
+  'Folklore Fantasy', 'LitRPG',
   'Humorous Fantasy', 'Sword & Sorcery', 'Academy Fantasy', 'Science Fantasy', 'Steampunk Fantasy', 'Progression Fantasy',
 ];
 const VALID_HEAT         = ['Sweet Romance', 'Closed Door', 'Open Door', 'Explicit', 'Fiery'];
@@ -142,10 +142,10 @@ For each book, classify ONLY the fields listed under "Needs". Use your real-worl
 FIELD DEFINITIONS — use EXACT values listed:
 
 subgenres (array of 1–3 values that best describe the book's fantasy subgenre):
-  Valid values: "Epic Fantasy", "High Fantasy", "Dark Fantasy", "Grimdark",
+  Valid values: "Epic Fantasy", "High Fantasy", "Dark Fantasy", "Horror Fantasy", "Grimdark",
                 "Urban Fantasy", "Contemporary Fantasy", "Historical Fantasy", "Mythic Fantasy",
-                "Romantic Fantasy", "Cozy Fantasy", "Portal Fantasy", "Military Fantasy",
-                "Political Fantasy", "Fae Fantasy", "Dystopian Fantasy", "LitRPG",
+                "Romantic Fantasy", "Cozy Fantasy", "War Fantasy",
+                "Folklore Fantasy", "LitRPG",
                 "Humorous Fantasy", "Sword & Sorcery", "Academy Fantasy", "Science Fantasy", "Steampunk Fantasy", "Progression Fantasy"
 
 darkness_level (integer 1–5):
