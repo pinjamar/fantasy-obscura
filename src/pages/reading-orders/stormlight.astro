@@ -1,67 +1,184 @@
 ---
 import Layout from '../../components/Layout.astro';
 import ReadingOrder from '../../components/ReadingOrder';
+import { supabaseClient } from '../../lib/supabaseClient';
 
-const books = [
+const bookData = [
   {
     title: 'The Way of Kings',
+    slug: 'the-way-of-kings',
     status: 'mandatory' as const,
-    note: 'First book. Epic introduction to Roshar.'
+    note: 'Start here. Kaladin, Shallan, Dalinar. Worldbuilding unlike anything else in fantasy.',
+    page_count: 1007,
+    publication_year: 2010,
   },
   {
     title: 'Words of Radiance',
+    slug: 'words-of-radiance',
     status: 'mandatory' as const,
-    note: 'Continues the story. Multiple viewpoints.'
+    note: 'Raises the bar on every level. Best fight scenes Sanderson has written.',
+    page_count: 1088,
+    publication_year: 2014,
   },
   {
     title: 'Edgedancer',
+    slug: 'edgedancer',
     status: 'supplementary' as const,
-    note: 'Novella focusing on Lift. Read before Oathbringer.'
+    note: 'Novella about Lift (~40k words). Short but adds important context — read before Oathbringer.',
+    page_count: 226,
+    publication_year: 2016,
   },
   {
     title: 'Oathbringer',
+    slug: 'oathbringer',
     status: 'mandatory' as const,
-    note: 'Third book. Dalinar\'s backstory revealed.'
+    note: "Dalinar's history revealed. Largest worldbuilding expansion in the series.",
+    page_count: 1248,
+    publication_year: 2017,
   },
   {
     title: 'Dawnshard',
+    slug: 'dawnshard',
     status: 'supplementary' as const,
-    note: 'Novella with Rysn. Read before Rhythm of War.'
+    note: 'Novella with Rysn (~26k words). Sets up important elements for Rhythm of War.',
+    page_count: 176,
+    publication_year: 2020,
   },
   {
     title: 'Rhythm of War',
+    slug: 'rhythm-of-war',
     status: 'mandatory' as const,
-    note: 'Fourth book. Fabrials and science.'
+    note: 'Politics, science, and mental health. More divisive than earlier books but crucial for book 5.',
+    page_count: 1232,
+    publication_year: 2020,
+  },
+  {
+    title: 'Wind and Truth',
+    slug: 'wind-and-truth',
+    status: 'mandatory' as const,
+    note: 'Closes the first 5-book arc. Massive Cosmere convergence.',
+    page_count: 1330,
+    publication_year: 2024,
   },
 ];
+
+const bookSlugs = bookData.map(b => b.slug);
+const { data: coverRows } = await supabaseClient.from('books').select('slug, cover_url').in('slug', bookSlugs);
+const coverMap = new Map<string, string | null>((coverRows ?? []).map((r: any) => [r.slug, r.cover_url ?? null]));
+const books = bookData.map(b => ({ ...b, cover_url: coverMap.get(b.slug) ?? null }));
+
+const totalPages = books.reduce((sum, b) => sum + (b.page_count ?? 0), 0);
+const totalHours = Math.round(totalPages / 30);
+const coreBooks = books.filter(b => b.status === 'mandatory').length;
 ---
 
 <Layout
   title="The Stormlight Archive Reading Order | Fantasy Obscura"
-  description="Reading order for The Stormlight Archive by Brandon Sanderson."
+  description="Complete reading order for The Stormlight Archive by Brandon Sanderson."
 >
+
   <div class="mb-6">
-    <a href="/reading-orders" class="text-sm text-blue-600 hover:underline">← Back to Reading Orders</a>
+    <a href="/reading-orders" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">← Reading Orders</a>
   </div>
 
-  <h1 class="text-4xl font-bold tracking-tight">The Stormlight Archive Reading Order</h1>
-  <p class="mt-2 text-zinc-600">by Brandon Sanderson</p>
+  <div class="mb-10">
+    <div class="flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <p class="text-sm font-medium text-purple-600 uppercase tracking-wider mb-1">Reading Order</p>
+        <h1 class="text-4xl font-bold tracking-tight text-zinc-900">The Stormlight Archive</h1>
+        <p class="mt-1 text-lg text-zinc-500">by Brandon Sanderson</p>
+      </div>
+      <span class="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-medium">
+        ✓ First Arc Complete (5 books)
+      </span>
+    </div>
 
-  <div class="mt-8">
-    <ReadingOrder
-      books={books}
-      description="Read in publication order. The novellas (Edgedancer, Dawnshard) provide important context for later books."
-      client:load
-    />
+    <div class="mt-5 flex flex-wrap gap-6 text-sm text-zinc-600 border-y border-zinc-100 py-4">
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {books.length} books ({coreBooks} main novels)</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📄</span> ~{totalPages.toLocaleString()} pages</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">⏱</span> ~{totalHours} hours reading time</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">🕯️🕯️🕯️</span> Moderate darkness</span>
+    </div>
+
+    <p class="mt-5 text-base text-zinc-700 leading-relaxed max-w-2xl">
+      The most ambitious epic fantasy currently being written. A world of perpetual storms, ancient knights, and a cosmology that rewards every re-read. Each book raises the stakes. The payoff across the arc is extraordinary.
+    </p>
   </div>
 
-  <div class="mt-12 rounded-lg border bg-zinc-50 p-6">
-    <h2 class="font-semibold mb-3">Before You Start</h2>
+  <div class="mb-12">
+    <h2 class="text-xl font-semibold mb-1">Reading Order</h2>
+    <p class="text-sm text-zinc-500 mb-6">Read in publication order. Position the novellas as listed — they're short but add meaningful context.</p>
+    <ReadingOrder books={books} client:load />
+  </div>
+
+  <div class="mb-10 grid gap-3 sm:grid-cols-2">
+    <div class="rounded-xl border border-blue-100 bg-blue-50 p-5">
+      <p class="font-semibold text-blue-900 mb-2">⚡ Main novels ({coreBooks} books)</p>
+      <p class="text-sm text-blue-800">Way of Kings → Words of Radiance → Oathbringer → Rhythm of War → Wind and Truth. All essential, all massive.</p>
+    </div>
+    <div class="rounded-xl border border-amber-100 bg-amber-50 p-5">
+      <p class="font-semibold text-amber-900 mb-2">🔀 Novellas (2 books)</p>
+      <p class="text-sm text-amber-800"><strong>Edgedancer</strong> before Oathbringer, <strong>Dawnshard</strong> before Rhythm of War — short reads, best in position.</p>
+    </div>
+  </div>
+
+  <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+    <h2 class="font-semibold text-zinc-900 mb-3">Before you start</h2>
     <ul class="space-y-2 text-sm text-zinc-700">
-      <li>✓ Each book is 1000+ pages — be prepared for a commitment</li>
-      <li>✓ Reading Warbreaker first adds to the experience (optional)</li>
-      <li>✓ Part of the larger Cosmere universe</li>
-      <li>✓ Book 5 (Wind and Truth) releases December 2024</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Each book is 1,000–1,330 pages. Prepare for the long game.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Reading <strong>Warbreaker</strong> (a standalone Cosmere novel) before book 3 adds a significant reward. Not required.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Part of the broader Cosmere universe — connections become clearer as you read more Sanderson.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The Way of Kings has a slow opening (~200 pages of setup). The payoff begins in part 3.</li>
     </ul>
   </div>
+
+  <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+    <h2 class="font-semibold text-zinc-900 mb-3">Spoiler-free notes</h2>
+    <ul class="space-y-2 text-sm text-zinc-700">
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Kaladin's arc is about depression and finding a reason to live. Handled with unusual care for genre fiction.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Each main book focuses on a different primary POV while continuing all storylines.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Rhythm of War is the most divisive book — the setup it creates is essential for Wind and Truth.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Wind and Truth closes the first arc. A second arc of five books is planned but unwritten.</li>
+    </ul>
+  </div>
+
+  <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+    <h2 class="font-semibold text-zinc-900 mb-4">Darkness progression</h2>
+    <div class="space-y-3 text-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+        <span class="font-medium text-zinc-700 sm:w-44 shrink-0">Books 1–2</span>
+        <span class="text-zinc-400">🕯️🕯️🕯️</span>
+        <span class="text-zinc-500">War, loss, slavery — fundamentally hopeful</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+        <span class="font-medium text-zinc-700 sm:w-44 shrink-0">Books 3–4</span>
+        <span class="text-zinc-400">🕯️🕯️🕯️</span>
+        <span class="text-zinc-500">Genocide, addiction, occupation</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+        <span class="font-medium text-zinc-700 sm:w-44 shrink-0">Wind and Truth</span>
+        <span class="text-zinc-400">🕯️🕯️🕯️🕯️</span>
+        <span class="text-zinc-500">The stakes have never been higher</span>
+      </div>
+    </div>
+    <p class="mt-4 text-xs text-zinc-400">Scale: 🕯️ Lighthearted → 🕯️🕯️🕯️🕯️🕯️ Brutal</p>
+  </div>
+
+  <div class="border-t pt-8 flex flex-col sm:flex-row gap-6 justify-between">
+    <div>
+      <p class="text-sm font-medium text-zinc-700 mb-2">Finished the arc?</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/categories/epic" class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">Browse Epic Fantasy →</a>
+        <a href="/craft" class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">Find books like Stormlight →</a>
+      </div>
+    </div>
+    <div>
+      <p class="text-sm font-medium text-zinc-700 mb-2">Related reading orders</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/reading-orders/cosmere" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">Full Cosmere</a>
+        <a href="/reading-orders/wheel-of-time" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">Wheel of Time</a>
+      </div>
+    </div>
+  </div>
+
 </Layout>

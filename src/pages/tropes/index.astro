@@ -9,8 +9,6 @@ const CATEGORY_META = {
   'world-magic':{ label: 'World & Magic Tropes',emoji: '✨', desc: 'The worlds, locations, and magic systems that define the story\'s rules and atmosphere.' },
 } as const;
 
-// Only found-family has a real page right now
-const LIVE_SLUGS = new Set(['found-family']);
 ---
 
 <Layout
@@ -19,9 +17,24 @@ const LIVE_SLUGS = new Set(['found-family']);
 >
   <div class="max-w-3xl mx-auto">
     <h1 class="text-3xl font-bold mb-2">Fantasy Tropes</h1>
-    <p class="text-zinc-500 mb-12 text-base">
+    <p class="text-zinc-500 mb-6 text-base">
       Browse books by the narrative patterns and character dynamics that define your favourite reads.
     </p>
+
+    <div class="prose prose-zinc max-w-none mb-10 text-sm leading-relaxed">
+      <p>
+        Tropes aren't clichés — they're the structural grammar of storytelling. A <strong>Chosen One</strong>
+        narrative isn't tired because of the premise; it's tired when the author doesn't interrogate it.
+        The same pattern that produced forgettable YA also produced <em>The Stormlight Archive</em> and
+        <em>The Name of the Wind</em>. What matters is what the author does with the material.
+      </p>
+      <p>
+        This index covers 70 canonical fantasy tropes across four categories: character archetypes, relationship
+        dynamics, plot structures, and world &amp; magic systems. Each trope page lists every book in our
+        database that uses it, rated and searchable — so you can find the best version of the story you're
+        in the mood for.
+      </p>
+    </div>
 
     {(Object.entries(TROPES_BY_CATEGORY) as [keyof typeof CATEGORY_META, typeof TROPES_BY_CATEGORY[keyof typeof TROPES_BY_CATEGORY]][]).map(([cat, tropes]) => {
       const meta = CATEGORY_META[cat];
@@ -34,27 +47,17 @@ const LIVE_SLUGS = new Set(['found-family']);
           <p class="text-sm text-zinc-500 mb-5 ml-10">{meta.desc}</p>
 
           <div class="grid gap-2 sm:grid-cols-2">
-            {tropes.map((t) => {
-              const live = LIVE_SLUGS.has(t.slug);
-              return live ? (
-                <a
-                  href={`/tropes/${t.slug}/`}
-                  class="group flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors"
-                >
-                  <div class="min-w-0">
-                    <div class="font-medium text-zinc-900 group-hover:text-purple-700 transition-colors text-sm">{t.name}</div>
-                    <div class="text-xs text-zinc-400 mt-0.5 truncate">{t.description}</div>
-                  </div>
-                </a>
-              ) : (
-                <div class="flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-100 bg-zinc-50/50 opacity-60 cursor-default">
-                  <div class="min-w-0">
-                    <div class="font-medium text-zinc-600 text-sm">{t.name}</div>
-                    <div class="text-xs text-zinc-400 mt-0.5 truncate">{t.description}</div>
-                  </div>
+            {tropes.map((t) => (
+              <a
+                href={`/tropes/${t.slug}/`}
+                class="group flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors"
+              >
+                <div class="min-w-0">
+                  <div class="font-medium text-zinc-900 group-hover:text-purple-700 transition-colors text-sm">{t.name}</div>
+                  <div class="text-xs text-zinc-400 mt-0.5 truncate">{t.description}</div>
                 </div>
-              );
-            })}
+              </a>
+            ))}
           </div>
         </section>
       );

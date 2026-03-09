@@ -22,17 +22,28 @@ for (const b of (booksRes.data ?? []) as BooksRow[]) {
 const curatedSeries = [
   { slug: 'cosmere',       name: "Brandon Sanderson's Cosmere", bookCount: 15 },
   { slug: 'stormlight',   name: 'The Stormlight Archive',       bookCount: 5  },
-  { slug: 'first-law',    name: 'The First Law',                bookCount: 9  },
+  { slug: 'first-law',    name: 'The First Law',                bookCount: 10 },
   { slug: 'discworld',    name: 'Discworld',                    bookCount: 41 },
   { slug: 'malazan',      name: 'Malazan Book of the Fallen',   bookCount: 10 },
   { slug: 'wheel-of-time',name: 'The Wheel of Time',            bookCount: 14 },
   { slug: 'kingkiller',   name: 'The Kingkiller Chronicle',     bookCount: 3  },
   { slug: 'witcher',      name: 'The Witcher',                  bookCount: 8  },
   { slug: 'dune',         name: 'Dune',                         bookCount: 6  },
+  { slug: 'acotar',       name: 'A Court of Thorns and Roses',  bookCount: 5  },
+  { slug: 'throne-of-glass', name: 'Throne of Glass',           bookCount: 8  },
 ];
 
 // Merge: curated series take priority; add DB-only series after
-const curatedSlugs = new Set(curatedSeries.map((s) => s.slug));
+// DB slugs are generated from series names, which differ from our curated slugs
+// (e.g. "The First Law" → "the-first-law" vs curated slug "first-law")
+// So we exclude by both the curated slug AND the DB-generated slug from the name.
+function dbSlugify(name: string) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+const curatedSlugs = new Set([
+  ...curatedSeries.map((s) => s.slug),
+  ...curatedSeries.map((s) => dbSlugify(s.name)),
+]);
 const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
 
 // All series combined for the search

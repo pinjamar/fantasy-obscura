@@ -1,77 +1,186 @@
 ---
 import Layout from '../../components/Layout.astro';
 import ReadingOrder from '../../components/ReadingOrder';
+import { supabaseClient } from '../../lib/supabaseClient';
 
-const books = [
+const bookData = [
   {
     title: 'The Last Wish',
+    slug: 'the-last-wish',
     status: 'mandatory' as const,
-    note: 'Short story collection introducing Geralt. Start here.'
+    note: 'Start here. Short stories introducing Geralt and the world. Brilliant fairy tale deconstructions.',
+    page_count: 288,
+    publication_year: 1993,
   },
   {
     title: 'Sword of Destiny',
+    slug: 'sword-of-destiny',
     status: 'mandatory' as const,
-    note: 'More short stories, crucial character development.'
+    note: 'More short stories — Ciri appears. These two collections are the foundation of everything.',
+    page_count: 384,
+    publication_year: 1992,
   },
   {
     title: 'Blood of Elves',
+    slug: 'blood-of-elves',
     status: 'mandatory' as const,
-    note: 'First novel in the main saga. Introduces Ciri.'
+    note: 'First novel. The war begins and Geralt must protect Ciri.',
+    page_count: 288,
+    publication_year: 1994,
   },
   {
     title: 'Time of Contempt',
+    slug: 'time-of-contempt',
     status: 'mandatory' as const,
-    note: 'Continues the main saga.'
+    note: 'Political intrigue, mage politics, and everything accelerates.',
+    page_count: 352,
+    publication_year: 1995,
   },
   {
     title: 'Baptism of Fire',
+    slug: 'baptism-of-fire',
     status: 'mandatory' as const,
-    note: 'The story intensifies.'
+    note: 'War-torn journey. Geralt travels through a world at war.',
+    page_count: 352,
+    publication_year: 1996,
   },
   {
     title: 'The Tower of Swallows',
+    slug: 'the-tower-of-swallows',
     status: 'mandatory' as const,
-    note: 'Penultimate book of the saga.'
+    note: 'The penultimate novel. Ciri on her own. Dark and relentless.',
+    page_count: 400,
+    publication_year: 1997,
   },
   {
     title: 'Lady of the Lake',
+    slug: 'lady-of-the-lake',
     status: 'mandatory' as const,
-    note: 'Epic conclusion to the main saga.'
+    note: 'Epic conclusion to the saga. Everything converges.',
+    page_count: 544,
+    publication_year: 1999,
   },
   {
     title: 'Season of Storms',
+    slug: 'season-of-storms',
     status: 'optional' as const,
-    note: 'Standalone set between short stories. Read after the main saga.'
+    note: 'Standalone prequel/interquel. Set between the short stories. Read after the main saga.',
+    page_count: 368,
+    publication_year: 2013,
   },
 ];
+
+const bookSlugs = bookData.map(b => b.slug);
+const { data: coverRows } = await supabaseClient.from('books').select('slug, cover_url').in('slug', bookSlugs);
+const coverMap = new Map<string, string | null>((coverRows ?? []).map((r: any) => [r.slug, r.cover_url ?? null]));
+const books = bookData.map(b => ({ ...b, cover_url: coverMap.get(b.slug) ?? null }));
+
+const totalPages = books.reduce((sum, b) => sum + (b.page_count ?? 0), 0);
+const totalHours = Math.round(totalPages / 30);
+const coreBooks = books.filter(b => b.status === 'mandatory').length;
 ---
 
 <Layout
   title="The Witcher Reading Order | Fantasy Obscura"
   description="Complete reading order for The Witcher series by Andrzej Sapkowski."
 >
+
   <div class="mb-6">
-    <a href="/reading-orders" class="text-sm text-blue-600 hover:underline">← Back to Reading Orders</a>
+    <a href="/reading-orders" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">← Reading Orders</a>
   </div>
 
-  <h1 class="text-4xl font-bold tracking-tight">The Witcher Reading Order</h1>
-  <p class="mt-2 text-zinc-600">by Andrzej Sapkowski</p>
+  <div class="mb-10">
+    <div class="flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <p class="text-sm font-medium text-purple-600 uppercase tracking-wider mb-1">Reading Order</p>
+        <h1 class="text-4xl font-bold tracking-tight text-zinc-900">The Witcher</h1>
+        <p class="mt-1 text-lg text-zinc-500">by Andrzej Sapkowski</p>
+      </div>
+      <span class="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-medium">
+        ✓ Completed Series
+      </span>
+    </div>
 
-  <div class="mt-8">
-    <ReadingOrder
-      books={books}
-      description="Start with the two short story collections before diving into the main saga. They introduce key characters and set up the world."
-      client:load
-    />
+    <div class="mt-5 flex flex-wrap gap-6 text-sm text-zinc-600 border-y border-zinc-100 py-4">
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {books.length} books ({coreBooks} essential)</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📄</span> ~{totalPages.toLocaleString()} pages</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">⏱</span> ~{totalHours} hours reading time</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">🕯️🕯️🕯️🕯️</span> Dark</span>
+    </div>
+
+    <p class="mt-5 text-base text-zinc-700 leading-relaxed max-w-2xl">
+      A monster hunter in a morally grey world who is far more interesting than the monsters. Sapkowski takes fairy tales apart and rebuilds them as tragedy. The books behind the games, the show, and a generation of dark fantasy.
+    </p>
   </div>
 
-  <div class="mt-12 rounded-lg border bg-zinc-50 p-6">
-    <h2 class="font-semibold mb-3">Why This Order?</h2>
+  <div class="mb-12">
+    <h2 class="text-xl font-semibold mb-1">Reading Order</h2>
+    <p class="text-sm text-zinc-500 mb-6">Start with the short story collections — they are not prologues, they are essential. The saga novels follow.</p>
+    <ReadingOrder books={books} client:load />
+  </div>
+
+  <div class="mb-10 grid gap-3 sm:grid-cols-2">
+    <div class="rounded-xl border border-blue-100 bg-blue-50 p-5">
+      <p class="font-semibold text-blue-900 mb-2">⚡ Essential ({coreBooks} books)</p>
+      <p class="text-sm text-blue-800">Both short story collections + the 5 saga novels. The short stories are not optional — they introduce Ciri and set up the entire saga.</p>
+    </div>
+    <div class="rounded-xl border border-green-100 bg-green-50 p-5">
+      <p class="font-semibold text-green-900 mb-2">📖 Optional (1 book)</p>
+      <p class="text-sm text-green-800"><strong>Season of Storms</strong> — a standalone set between the short stories. Contains spoilers for the saga, so read it last.</p>
+    </div>
+  </div>
+
+  <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+    <h2 class="font-semibold text-zinc-900 mb-3">Why start with the short stories?</h2>
     <ul class="space-y-2 text-sm text-zinc-700">
-      <li>✓ The short stories were written first and introduce the world</li>
-      <li>✓ Many characters from the novels appear in the short stories first</li>
-      <li>✓ Season of Storms is a prequel but contains spoilers for the main saga</li>
-      <li>✓ This is the intended publication and chronological reading order</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The short stories were written first and establish the world, tone, and moral framework.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Key characters — including Ciri, who becomes central to the saga — are introduced in <em>Sword of Destiny</em>.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The saga novels assume knowledge of the short story characters. Starting at Blood of Elves causes confusion.</li>
     </ul>
   </div>
+
+  <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+    <h2 class="font-semibold text-zinc-900 mb-3">If you know the games or show</h2>
+    <ul class="space-y-2 text-sm text-zinc-700">
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The books are darker and more morally complex than either adaptation.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The games are set after the books — they're sequels, not adaptations. They assume the book endings.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The Netflix show takes significant liberties with the story and timeline.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Geralt in the books is more cynical, more tired, and more interesting than either adaptation.</li>
+    </ul>
+  </div>
+
+  <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+    <h2 class="font-semibold text-zinc-900 mb-4">Darkness progression</h2>
+    <div class="space-y-3 text-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+        <span class="font-medium text-zinc-700 sm:w-44 shrink-0">Short Stories</span>
+        <span class="text-zinc-400">🕯️🕯️🕯️</span>
+        <span class="text-zinc-500">Dark fairy tales — violence, moral ambiguity, dark humour</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+        <span class="font-medium text-zinc-700 sm:w-44 shrink-0">The Saga (5 novels)</span>
+        <span class="text-zinc-400">🕯️🕯️🕯️🕯️</span>
+        <span class="text-zinc-500">War, genocide, betrayal, child soldiers</span>
+      </div>
+    </div>
+    <p class="mt-4 text-xs text-zinc-400">Scale: 🕯️ Lighthearted → 🕯️🕯️🕯️🕯️🕯️ Brutal</p>
+  </div>
+
+  <div class="border-t pt-8 flex flex-col sm:flex-row gap-6 justify-between">
+    <div>
+      <p class="text-sm font-medium text-zinc-700 mb-2">Finished the saga?</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/categories/dark" class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">Browse Dark Fantasy →</a>
+        <a href="/craft" class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">Find books like The Witcher →</a>
+      </div>
+    </div>
+    <div>
+      <p class="text-sm font-medium text-zinc-700 mb-2">Related reading orders</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/reading-orders/first-law" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">The First Law</a>
+        <a href="/reading-orders/kingkiller" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">Kingkiller Chronicle</a>
+      </div>
+    </div>
+  </div>
+
 </Layout>
