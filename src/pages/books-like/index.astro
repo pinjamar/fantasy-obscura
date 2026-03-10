@@ -17,14 +17,18 @@ const dbTropesMap = new Map<string, string[]>(
 ---
 
 <Layout
-  title="Books Like... | Fantasy Obscura"
-  description="Curated 'Books Like X' guides for fantasy readers. Not algorithms — opinionated picks with honest caveats."
+  title="Books Like... Fantasy Recommendations | Fantasy Obscura"
+  description="Curated 'Books Like X' guides for fantasy readers. Darkness ratings, honest caveats, and 5–8 picks that actually match — not algorithm results."
 >
   <div class="max-w-3xl">
     <h1 class="text-4xl font-bold tracking-tight">Books Like...</h1>
-    <p class="mt-3 text-lg text-zinc-500">
-      Curated guides, not algorithm dumps. Each page picks 5–8 books that genuinely capture what made the original work — with honest caveats about where they differ.
-    </p>
+    <div class="prose prose-zinc max-w-none mt-3 mb-2 text-sm leading-relaxed">
+      <p>
+        Every guide works the same way: a <strong>darkness rating</strong> on every recommendation, an honest note on what
+        actually matches and what doesn't, and <strong>5–8 books</strong> that genuinely capture what made the original work —
+        not just books in the same genre. If the pacing is different, the tone is darker, or the magic system is nothing alike, <em>we say so</em>.
+      </p>
+    </div>
 
     <!-- Available entries -->
     {BOOKS_LIKE.length > 0 && (

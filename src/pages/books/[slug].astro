@@ -57,6 +57,17 @@ const readHours = book.page_count ? Math.round(book.page_count / 60) : null;
 const metaDescription = book.synopsis
   ? book.synopsis.slice(0, 160)
   : `${book.title} by ${book.authors?.join(', ')} — explore on Fantasy Obscura.`;
+
+function upgradeCoverUrl(url: string | null | undefined): string {
+  if (!url) return '';
+  // Google Books gbs_api thumbnail → high-res publisher content URL
+  if (url.includes('books.google.com/books/content')) {
+    const m = url.match(/[?&]id=([^&]+)/);
+    if (m) return `https://books.google.com/books/publisher/content/images/frontcover/${m[1]}?fife=w400-h600`;
+  }
+  // OpenLibrary: upgrade -M to -L
+  return url.replace(/-M\.jpg/, '-L.jpg');
+}
 ---
 
 <Layout title={`${book.title} | Fantasy Obscura`} description={metaDescription}>
@@ -83,12 +94,11 @@ const metaDescription = book.synopsis
     <div class="flex flex-col gap-4">
       <div class="relative w-full max-w-[260px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-linear-to-br from-purple-200 to-blue-200">
         <img
-          src={book.cover_url || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false` : '/placeholder-cover.svg')}
+          src={upgradeCoverUrl(book.cover_url) || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg?default=false` : '/placeholder-cover.svg')}
           alt={`Cover of ${book.title}`}
           class="absolute inset-0 w-full h-full object-cover"
           data-isbn={book.isbn ?? ''}
-          data-has-cover={book.cover_url ? '1' : ''}
-          onerror="if(!this.dataset.tried&&this.dataset.isbn&&this.dataset.hasCover){this.dataset.tried='1';this.src='https://covers.openlibrary.org/b/isbn/'+this.dataset.isbn+'-M.jpg?default=false';}else{this.onerror=null;this.src='/placeholder-cover.svg';}"
+          onerror="if(!this.dataset.tried&&this.dataset.isbn){this.dataset.tried='1';this.src='https://covers.openlibrary.org/b/isbn/'+this.dataset.isbn+'-L.jpg?default=false';}else{this.onerror=null;this.src='/placeholder-cover.svg';}"
         />
       </div>
 

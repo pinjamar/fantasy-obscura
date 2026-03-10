@@ -19,13 +19,24 @@ const sourceBookSlug = toSlug(source.title)
 const amazonSource   = `https://www.amazon.com/s?k=${encodeURIComponent(source.title + ' ' + source.author)}`
 const bookshopSource = `https://bookshop.org/search?keywords=${encodeURIComponent(source.title)}`
 
-// Fetch tropes from DB for the source book (more up-to-date than hardcoded list)
+// Fetch tropes + cover from DB for the source book
 const { data: dbBook } = await supabaseClient
   .from('books')
-  .select('tropes')
+  .select('tropes, cover_url')
   .eq('slug', sourceBookSlug)
   .maybeSingle()
 const sourcetropes: string[] = dbBook?.tropes?.length ? dbBook.tropes : source.tropes
+
+function upgradeCoverUrl(url: string | null | undefined): string {
+  if (!url) return '';
+  if (url.includes('books.google.com/books/content')) {
+    const m = url.match(/[?&]id=([^&]+)/);
+    if (m) return `https://books.google.com/books/publisher/content/images/frontcover/${m[1]}?fife=w400-h600`;
+  }
+  return url.replace(/-M\.jpg/, '-L.jpg');
+}
+
+const sourceCover: string = upgradeCoverUrl(source.cover_url || dbBook?.cover_url)
 
 // Fetch covers for all rec books from DB (more reliable than hardcoded OpenLibrary ISBNs)
 const recSlugs = aspects.flatMap((a) => a.recs.map((r) => toSlug(r.title)))
@@ -57,7 +68,7 @@ const dbRecCoverMap = new Map<string, string>(
     <div class="flex flex-col gap-3">
       <div class="relative w-full max-w-[200px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-purple-200 to-blue-200">
         <img
-          src={source.cover_url}
+          src={sourceCover || '/placeholder-cover.svg'}
           alt={`Cover of ${source.title}`}
           class="absolute inset-0 w-full h-full object-cover"
           onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
@@ -142,7 +153,7 @@ const dbRecCoverMap = new Map<string, string>(
                   <div class="shrink-0 flex flex-col gap-2">
                     <a href={`/books/${recSlug}/`} class="relative w-24 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 block">
                       <img
-                        src={recCover}
+                        src={upgradeCoverUrl(recCover) || '/placeholder-cover.svg'}
                         alt={`Cover of ${r.title}`}
                         class="absolute inset-0 w-full h-full object-cover"
                         onerror="this.onerror=null;this.src='/placeholder-cover.svg';"

@@ -31,6 +31,10 @@ const curatedSeries = [
   { slug: 'dune',         name: 'Dune',                         bookCount: 6  },
   { slug: 'acotar',       name: 'A Court of Thorns and Roses',  bookCount: 5  },
   { slug: 'throne-of-glass', name: 'Throne of Glass',           bookCount: 8  },
+  { slug: 'asoiaf',      name: 'A Song of Ice and Fire',        bookCount: 5  },
+  { slug: 'robin-hobb',  name: 'Realm of the Elderlings',       bookCount: 16 },
+  { slug: 'empyrean',    name: 'The Empyrean',                  bookCount: 3  },
+  { slug: 'blood-and-ash', name: 'Blood and Ash',              bookCount: 8  },
 ];
 
 // Merge: curated series take priority; add DB-only series after
@@ -62,13 +66,18 @@ const allSeries = [
 ---
 
 <Layout
-  title="Reading Orders | Fantasy Obscura"
-  description="Clear, spoiler-free reading orders for fantasy and sci-fi series."
+  title="Fantasy Series Reading Orders | Fantasy Obscura"
+  description="Reading orders for every major fantasy series — what to read first, what's optional, and where each series stumbles. Covers Stormlight, Wheel of Time, Malazan, First Law, and more."
 >
-  <h1 class="text-3xl font-bold tracking-tight">Reading Orders</h1>
-  <p class="mt-2 text-zinc-600 max-w-2xl">
-    Complete reading orders for popular fantasy series — with Core, Optional, and Extra labels so you know exactly what to read.
-  </p>
+  <h1 class="text-3xl font-bold tracking-tight">Fantasy Series Reading Orders</h1>
+  <div class="prose prose-zinc max-w-2xl mt-3 mb-2 text-sm leading-relaxed">
+    <p>
+      Fantasy series get complicated fast — <strong>novellas, companion books, sequel trilogies, and shared universes</strong> all
+      create genuine confusion about where to start and what to skip. These guides cover every major fantasy series with a clear
+      reading order, honest notes on what's optional, and warnings about where each series stumbles.
+      Every book is labelled <strong>Core</strong>, <strong>Optional</strong>, or <strong>Extra</strong> — so you're never reading filler thinking it's essential.
+    </p>
+  </div>
 
   <!-- Search bar -->
   <div class="mt-6 relative max-w-lg">
@@ -84,21 +93,19 @@ const allSeries = [
     </svg>
   </div>
 
-  <!-- Series grid -->
+  <!-- Series grid — curated guides only -->
   <div id="series-grid" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-    {allSeries.map((s) => (
+    {curatedSeries.map((s) => (
       <a
         href={`/reading-orders/${s.slug}/`}
-        data-search={`${s.name.toLowerCase()} ${s.searchText}`}
+        data-search={`${s.name.toLowerCase()} ${seriesSearchMap.get(s.name) ?? ''}`}
         class="series-card group relative overflow-hidden rounded-xl border p-5 transition-all hover:shadow-lg hover:border-purple-200 bg-white"
       >
         <div class="absolute inset-0 bg-linear-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity" />
         <div class="relative">
           <p class="font-semibold text-zinc-900 group-hover:text-purple-800 transition-colors leading-snug">{s.name}</p>
           <p class="mt-1 text-sm text-zinc-500">{s.bookCount} {s.bookCount === 1 ? 'book' : 'books'}</p>
-          {s.curated && (
-            <span class="mt-2 inline-block text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">Curated guide</span>
-          )}
+          <span class="mt-2 inline-block text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">Curated guide</span>
         </div>
       </a>
     ))}

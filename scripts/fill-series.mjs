@@ -223,8 +223,9 @@ const BOOKS = [
   { title: 'The Atlas Complex',                 author: 'Olivie Blake',           series: 'The Atlas',                      series_number: 3 },
 
   // ── The Bloodsworn Saga (John Gwynne) ────────────────────────────────────
+  { title: 'The Shadow of the Gods',            author: 'John Gwynne',            series: 'The Bloodsworn Saga',            series_number: 1 },
   { title: 'The Hunger of the Gods',            author: 'John Gwynne',            series: 'The Bloodsworn Saga',            series_number: 2 },
-  { title: 'The War of the Gods',               author: 'John Gwynne',            series: 'The Bloodsworn Saga',            series_number: 3 },
+  { title: 'The Fury of the Gods',              author: 'John Gwynne',            series: 'The Bloodsworn Saga',            series_number: 3 },
 
   // ── The Book of the New Sun (Gene Wolfe) ─────────────────────────────────
   { title: 'The Claw of the Conciliator',       author: 'Gene Wolfe',             series: 'The Book of the New Sun',        series_number: 2 },
@@ -413,6 +414,403 @@ const BOOKS = [
   // ── Winternight Trilogy (Katherine Arden) ────────────────────────────────
   { title: 'The Girl in the Tower',             author: 'Katherine Arden',        series: 'Winternight Trilogy',            series_number: 2 },
   { title: 'The Winter of the Witch',           author: 'Katherine Arden',        series: 'Winternight Trilogy',            series_number: 3 },
+
+  // ── Malazan Book of the Fallen (Steven Erikson) — missing starter ─────────
+  { title: 'Gardens of the Moon',               author: 'Steven Erikson',         series: 'Malazan Book of the Fallen',     series_number: 1 },
+
+  // ── The Licanius Trilogy (James Islington) ───────────────────────────────
+  { title: 'The Shadow of What Was Lost',       author: 'James Islington',        series: 'The Licanius Trilogy',           series_number: 1 },
+  { title: 'An Echo of Things to Come',         author: 'James Islington',        series: 'The Licanius Trilogy',           series_number: 2 },
+  { title: 'The Light of All That Falls',       author: 'James Islington',        series: 'The Licanius Trilogy',           series_number: 3 },
+
+  // ── The Hierarchy (James Islington) ──────────────────────────────────────
+  { title: 'The Will of the Many',              author: 'James Islington',        series: 'The Hierarchy',                  series_number: 1 },
+  { title: 'The Strength of the Few',           author: 'James Islington',        series: 'The Hierarchy',                  series_number: 2 },
+  { title: 'The Justice of One',                author: 'James Islington',        series: 'The Hierarchy',                  series_number: 3 },
+
+  // ── Robin Hobb — sub-series within Realm of the Elderlings ──────────────
+  // The Farseer Trilogy (#2 & #3 already in array above)
+  { title: "Assassin's Apprentice",             author: 'Robin Hobb',             series: 'The Farseer Trilogy',            series_number: 1 },
+
+  // Liveship Traders
+  { title: 'Ship of Magic',                     author: 'Robin Hobb',             series: 'Liveship Traders',               series_number: 1 },
+  { title: 'The Mad Ship',                      author: 'Robin Hobb',             series: 'Liveship Traders',               series_number: 2 },
+  { title: 'Ship of Destiny',                   author: 'Robin Hobb',             series: 'Liveship Traders',               series_number: 3 },
+
+  // Tawny Man Trilogy
+  { title: "Fool's Errand",                     author: 'Robin Hobb',             series: 'Tawny Man Trilogy',              series_number: 1 },
+  { title: 'The Golden Fool',                   author: 'Robin Hobb',             series: 'Tawny Man Trilogy',              series_number: 2 },
+  { title: "Fool's Fate",                       author: 'Robin Hobb',             series: 'Tawny Man Trilogy',              series_number: 3 },
+
+  // Rain Wild Chronicles
+  { title: 'Dragon Keeper',                     author: 'Robin Hobb',             series: 'Rain Wild Chronicles',           series_number: 1 },
+  { title: 'Dragon Haven',                      author: 'Robin Hobb',             series: 'Rain Wild Chronicles',           series_number: 2 },
+  { title: 'City of Dragons',                   author: 'Robin Hobb',             series: 'Rain Wild Chronicles',           series_number: 3 },
+  { title: 'Blood of Dragons',                  author: 'Robin Hobb',             series: 'Rain Wild Chronicles',           series_number: 4 },
+
+  // Fitz and the Fool
+  { title: "Fool's Assassin",                   author: 'Robin Hobb',             series: 'Fitz and the Fool',              series_number: 1 },
+  { title: "Fool's Quest",                      author: 'Robin Hobb',             series: 'Fitz and the Fool',              series_number: 2 },
+  { title: "Assassin's Fate",                   author: 'Robin Hobb',             series: 'Fitz and the Fool',              series_number: 3 },
+
+  // ── The Faithful and the Fallen (John Gwynne) — missing starter ───────────
+  { title: 'Malice',                            author: 'John Gwynne',            series: 'The Faithful and the Fallen',    series_number: 1 },
+
+  // ── The First Law (Joe Abercrombie) — missing starter ────────────────────
+  { title: 'The Blade Itself',                  author: 'Joe Abercrombie',        series: 'The First Law',                  series_number: 1 },
+
+  // ── Red Rising (Pierce Brown) — missing starter + final book ─────────────
+  { title: 'Red Rising',                        author: 'Pierce Brown',           series: 'Red Rising',                     series_number: 1 },
+  { title: 'Red God',                           author: 'Pierce Brown',           series: 'Red Rising',                     series_number: 7 },
+
+  // ── The Kingkiller Chronicle (Patrick Rothfuss) — missing starter ─────────
+  { title: 'The Name of the Wind',              author: 'Patrick Rothfuss',       series: 'The Kingkiller Chronicle',       series_number: 1 },
+
+  // ── The Stormlight Archive (Brandon Sanderson) — missing first two ────────
+  { title: 'The Way of Kings',                  author: 'Brandon Sanderson',      series: 'The Stormlight Archive',         series_number: 1 },
+  { title: 'Words of Radiance',                 author: 'Brandon Sanderson',      series: 'The Stormlight Archive',         series_number: 2 },
+
+  // ── A Song of Ice and Fire (George R.R. Martin) — missing starter ─────────
+  { title: 'A Game of Thrones',                 author: 'George R.R. Martin',     series: 'A Song of Ice and Fire',         series_number: 1 },
+
+  // ── The Wheel of Time — missing starter ──────────────────────────────────
+  { title: 'The Eye of the World',              author: 'Robert Jordan',           series: 'The Wheel of Time',              series_number: 1 },
+
+  // ── The Poppy War — missing starter ──────────────────────────────────────
+  { title: 'The Poppy War',                     author: 'R.F. Kuang',              series: 'The Poppy War',                  series_number: 1 },
+
+  // ── The Green Bone Saga — missing starter ────────────────────────────────
+  { title: 'Jade City',                         author: 'Fonda Lee',               series: 'The Green Bone Saga',            series_number: 1 },
+
+  // ── The Locked Tomb (Tamsyn Muir) ────────────────────────────────────────
+  { title: 'Gideon the Ninth',                  author: 'Tamsyn Muir',             series: 'The Locked Tomb',                series_number: 1 },
+  { title: 'Harrow the Ninth',                  author: 'Tamsyn Muir',             series: 'The Locked Tomb',                series_number: 2 },
+  { title: 'Nona the Ninth',                    author: 'Tamsyn Muir',             series: 'The Locked Tomb',                series_number: 3 },
+
+  // ── The Chronicles of Narnia (C.S. Lewis) ────────────────────────────────
+  { title: 'The Lion, the Witch and the Wardrobe', author: 'C.S. Lewis',          series: 'The Chronicles of Narnia',       series_number: 1 },
+  { title: 'Prince Caspian',                    author: 'C.S. Lewis',              series: 'The Chronicles of Narnia',       series_number: 2 },
+  { title: 'The Voyage of the Dawn Treader',    author: 'C.S. Lewis',              series: 'The Chronicles of Narnia',       series_number: 3 },
+  { title: 'The Silver Chair',                  author: 'C.S. Lewis',              series: 'The Chronicles of Narnia',       series_number: 4 },
+  { title: 'The Horse and His Boy',             author: 'C.S. Lewis',              series: 'The Chronicles of Narnia',       series_number: 5 },
+  { title: "The Magician's Nephew",             author: 'C.S. Lewis',              series: 'The Chronicles of Narnia',       series_number: 6 },
+  { title: 'The Last Battle',                   author: 'C.S. Lewis',              series: 'The Chronicles of Narnia',       series_number: 7 },
+
+  // ── Missing starters for series already in script ─────────────────────────
+
+  { title: 'The Fellowship of the Ring',        author: 'J.R.R. Tolkien',         series: 'The Lord of the Rings',          series_number: 1 },
+  { title: "Harry Potter and the Philosopher's Stone", author: 'J.K. Rowling',    series: 'Harry Potter',                   series_number: 1 },
+  { title: 'The Final Empire',                  author: 'Brandon Sanderson',       series: 'Mistborn: The Original Trilogy', series_number: 1 },
+  { title: 'A Wizard of Earthsea',              author: 'Ursula K. Le Guin',       series: 'Earthsea',                       series_number: 1 },
+  { title: 'Guards! Guards!',                   author: 'Terry Pratchett',         series: 'Discworld – City Watch',         series_number: 1 },
+  { title: 'The Lies of Locke Lamora',          author: 'Scott Lynch',             series: 'Gentleman Bastard',              series_number: 1 },
+  { title: 'The Fifth Season',                  author: 'N.K. Jemisin',            series: 'The Broken Earth',               series_number: 1 },
+  { title: 'The Dragonbone Chair',              author: 'Tad Williams',            series: 'Memory, Sorrow and Thorn',       series_number: 1 },
+  { title: 'Six of Crows',                      author: 'Leigh Bardugo',           series: 'Six of Crows',                   series_number: 1 },
+  { title: 'Shadow and Bone',                   author: 'Leigh Bardugo',           series: 'Shadow and Bone',                series_number: 1 },
+  { title: 'Fourth Wing',                       author: 'Rebecca Yarros',          series: 'The Empyrean',                   series_number: 1 },
+  { title: 'Eragon',                            author: 'Christopher Paolini',     series: 'The Inheritance Cycle',          series_number: 1 },
+  { title: 'The Magicians',                     author: 'Lev Grossman',            series: 'The Magicians',                  series_number: 1 },
+  { title: 'The Bear and the Nightingale',      author: 'Katherine Arden',         series: 'Winternight Trilogy',            series_number: 1 },
+  { title: 'A Deadly Education',                author: 'Naomi Novik',             series: 'The Scholomance',                series_number: 1 },
+  { title: 'Storm Front',                       author: 'Jim Butcher',             series: 'The Dresden Files',              series_number: 1 },
+  { title: 'Sabriel',                           author: 'Garth Nix',               series: 'The Old Kingdom',                series_number: 1 },
+  { title: 'The Black Prism',                   author: 'Brent Weeks',             series: 'Lightbringer',                   series_number: 1 },
+  { title: 'The Way of Shadows',                author: 'Brent Weeks',             series: 'Night Angel',                    series_number: 1 },
+  { title: 'The Darkness That Comes Before',    author: 'R. Scott Bakker',         series: 'The Prince of Nothing',          series_number: 1 },
+  { title: 'The Traitor Baru Cormorant',        author: 'Seth Dickinson',          series: 'The Masquerade',                 series_number: 1 },
+  { title: 'Ink and Bone',                      author: 'Rachel Caine',            series: 'The Great Library',              series_number: 1 },
+  { title: 'Senlin Ascends',                    author: 'Josiah Bancroft',         series: 'The Books of Babel',             series_number: 1 },
+  { title: 'The Rage of Dragons',               author: 'Evan Winter',             series: 'The Burning',                    series_number: 1 },
+  { title: 'City of Bones',                     author: 'Cassandra Clare',         series: 'The Mortal Instruments',         series_number: 1 },
+  { title: 'The Cruel Prince',                  author: 'Holly Black',             series: 'The Folk of the Air',            series_number: 1 },
+  { title: 'An Ember in the Ashes',             author: 'Sabaa Tahir',             series: 'An Ember in the Ashes',          series_number: 1 },
+  { title: 'Children of Blood and Bone',        author: 'Tomi Adeyemi',            series: 'Legacy of Orïsha',               series_number: 1 },
+  { title: 'A Darker Shade of Magic',           author: 'V.E. Schwab',             series: 'Shades of Magic',                series_number: 1 },
+  { title: 'The Last Wish',                     author: 'Andrzej Sapkowski',       series: 'The Witcher',                    series_number: 1 },
+  { title: 'The Shadow of the Torturer',        author: 'Gene Wolfe',              series: 'The Book of the New Sun',        series_number: 1 },
+  { title: 'Foundryside',                       author: 'Robert Jackson Bennett',  series: 'Founders',                       series_number: 1 },
+
+  // ── Percy Jackson & The Olympians (Rick Riordan) ─────────────────────────
+  { title: 'The Lightning Thief',               author: 'Rick Riordan',            series: 'Percy Jackson & The Olympians',  series_number: 1 },
+  { title: 'The Sea of Monsters',               author: 'Rick Riordan',            series: 'Percy Jackson & The Olympians',  series_number: 2 },
+  { title: "The Titan's Curse",                 author: 'Rick Riordan',            series: 'Percy Jackson & The Olympians',  series_number: 3 },
+  { title: 'The Battle of the Labyrinth',       author: 'Rick Riordan',            series: 'Percy Jackson & The Olympians',  series_number: 4 },
+  { title: 'The Last Olympian',                 author: 'Rick Riordan',            series: 'Percy Jackson & The Olympians',  series_number: 5 },
+
+  // ── His Dark Materials (Philip Pullman) ──────────────────────────────────
+  { title: 'The Golden Compass',                author: 'Philip Pullman',          series: 'His Dark Materials',             series_number: 1 },
+  { title: 'The Subtle Knife',                  author: 'Philip Pullman',          series: 'His Dark Materials',             series_number: 2 },
+  { title: 'The Amber Spyglass',                author: 'Philip Pullman',          series: 'His Dark Materials',             series_number: 3 },
+
+  // ── The Dark Tower (Stephen King) ────────────────────────────────────────
+  { title: 'The Gunslinger',                    author: 'Stephen King',            series: 'The Dark Tower',                 series_number: 1 },
+  { title: 'The Drawing of the Three',          author: 'Stephen King',            series: 'The Dark Tower',                 series_number: 2 },
+  { title: 'The Waste Lands',                   author: 'Stephen King',            series: 'The Dark Tower',                 series_number: 3 },
+  { title: 'Wizard and Glass',                  author: 'Stephen King',            series: 'The Dark Tower',                 series_number: 4 },
+  { title: 'Wolves of the Calla',               author: 'Stephen King',            series: 'The Dark Tower',                 series_number: 5 },
+  { title: 'Song of Susannah',                  author: 'Stephen King',            series: 'The Dark Tower',                 series_number: 6 },
+  { title: 'The Dark Tower',                    author: 'Stephen King',            series: 'The Dark Tower',                 series_number: 7 },
+  { title: 'The Wind Through the Keyhole',      author: 'Stephen King',            series: 'The Dark Tower',                 series_number: 8 },
+
+  // ── The Bound and the Broken (Ryan Cahill) ────────────────────────────────
+  { title: 'Of Blood and Fire',                 author: 'Ryan Cahill',             series: 'The Bound and the Broken',       series_number: 1 },
+  { title: 'Of Darkness and Light',             author: 'Ryan Cahill',             series: 'The Bound and the Broken',       series_number: 2 },
+  { title: 'Of War and Ruin',                   author: 'Ryan Cahill',             series: 'The Bound and the Broken',       series_number: 3 },
+
+  // ── The Chronicles of Amber (Roger Zelazny) ──────────────────────────────
+  { title: 'Nine Princes in Amber',             author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 1 },
+  { title: 'The Guns of Avalon',                author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 2 },
+  { title: 'Sign of the Unicorn',               author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 3 },
+  { title: 'The Hand of Oberon',                author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 4 },
+  { title: 'The Courts of Chaos',               author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 5 },
+  { title: 'Trumps of Doom',                    author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 6 },
+  { title: 'Blood of Amber',                    author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 7 },
+  { title: 'Sign of Chaos',                     author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 8 },
+  { title: 'Knight of Shadows',                 author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 9 },
+  { title: 'Prince of Chaos',                   author: 'Roger Zelazny',           series: 'The Chronicles of Amber',        series_number: 10 },
+
+  // ── The Belgariad (David Eddings) ─────────────────────────────────────────
+  { title: 'Pawn of Prophecy',                  author: 'David Eddings',           series: 'The Belgariad',                  series_number: 1 },
+  { title: 'Queen of Sorcery',                  author: 'David Eddings',           series: 'The Belgariad',                  series_number: 2 },
+  { title: "Magician's Gambit",                 author: 'David Eddings',           series: 'The Belgariad',                  series_number: 3 },
+  { title: 'Castle of Wizardry',                author: 'David Eddings',           series: 'The Belgariad',                  series_number: 4 },
+  { title: "Enchanters' End Game",              author: 'David Eddings',           series: 'The Belgariad',                  series_number: 5 },
+
+  // ── The Riftwar Saga (Raymond E. Feist) ──────────────────────────────────
+  { title: 'Magician',                          author: 'Raymond E. Feist',        series: 'The Riftwar Saga',               series_number: 1 },
+  { title: 'Silverthorn',                       author: 'Raymond E. Feist',        series: 'The Riftwar Saga',               series_number: 2 },
+  { title: 'A Darkness at Sethanon',            author: 'Raymond E. Feist',        series: 'The Riftwar Saga',               series_number: 3 },
+
+  // ── The Black Company (Glen Cook) ─────────────────────────────────────────
+  { title: 'The Black Company',                 author: 'Glen Cook',               series: 'The Black Company',              series_number: 1 },
+  { title: 'Shadows Linger',                    author: 'Glen Cook',               series: 'The Black Company',              series_number: 2 },
+  { title: 'The White Rose',                    author: 'Glen Cook',               series: 'The Black Company',              series_number: 3 },
+  { title: 'The Silver Spike',                  author: 'Glen Cook',               series: 'The Black Company',              series_number: 4 },
+  { title: 'Shadow Games',                      author: 'Glen Cook',               series: 'The Black Company',              series_number: 5 },
+  { title: 'Dreams of Steel',                   author: 'Glen Cook',               series: 'The Black Company',              series_number: 6 },
+  { title: 'Bleak Seasons',                     author: 'Glen Cook',               series: 'The Black Company',              series_number: 7 },
+  { title: 'She Is the Darkness',               author: 'Glen Cook',               series: 'The Black Company',              series_number: 8 },
+  { title: 'Water Sleeps',                      author: 'Glen Cook',               series: 'The Black Company',              series_number: 9 },
+  { title: 'Soldiers Live',                     author: 'Glen Cook',               series: 'The Black Company',              series_number: 10 },
+
+  // ── Outlander (Diana Gabaldon) ────────────────────────────────────────────
+  { title: 'Outlander',                         author: 'Diana Gabaldon',          series: 'Outlander',                      series_number: 1 },
+  { title: 'Dragonfly in Amber',                author: 'Diana Gabaldon',          series: 'Outlander',                      series_number: 2 },
+  { title: 'Voyager',                           author: 'Diana Gabaldon',          series: 'Outlander',                      series_number: 3 },
+  { title: 'Drums of Autumn',                   author: 'Diana Gabaldon',          series: 'Outlander',                      series_number: 4 },
+  { title: 'The Fiery Cross',                   author: 'Diana Gabaldon',          series: 'Outlander',                      series_number: 5 },
+  { title: 'A Breath of Snow and Ashes',        author: 'Diana Gabaldon',          series: 'Outlander',                      series_number: 6 },
+  { title: 'An Echo in the Bone',               author: 'Diana Gabaldon',          series: 'Outlander',                      series_number: 7 },
+  { title: "Written in My Own Heart's Blood",   author: 'Diana Gabaldon',          series: 'Outlander',                      series_number: 8 },
+  { title: 'Go Tell the Bees That I Am Gone',   author: 'Diana Gabaldon',          series: 'Outlander',                      series_number: 9 },
+
+  // ── Dragonriders of Pern (Anne McCaffrey) ────────────────────────────────
+  { title: 'Dragonflight',                      author: 'Anne McCaffrey',          series: 'Dragonriders of Pern',           series_number: 1 },
+  { title: 'Dragonquest',                       author: 'Anne McCaffrey',          series: 'Dragonriders of Pern',           series_number: 2 },
+  { title: 'The White Dragon',                  author: 'Anne McCaffrey',          series: 'Dragonriders of Pern',           series_number: 3 },
+
+  // ── The Shannara Chronicles (Terry Brooks) ────────────────────────────────
+  { title: 'The Sword of Shannara',             author: 'Terry Brooks',            series: 'The Shannara Chronicles',        series_number: 1 },
+  { title: 'The Elfstones of Shannara',         author: 'Terry Brooks',            series: 'The Shannara Chronicles',        series_number: 2 },
+  { title: 'The Wishsong of Shannara',          author: 'Terry Brooks',            series: 'The Shannara Chronicles',        series_number: 3 },
+
+  // ── The Legend of Drizzt (R.A. Salvatore) ────────────────────────────────
+  { title: 'Homeland',                          author: 'R.A. Salvatore',          series: 'The Legend of Drizzt',           series_number: 1 },
+  { title: 'Exile',                             author: 'R.A. Salvatore',          series: 'The Legend of Drizzt',           series_number: 2 },
+  { title: 'Sojourn',                           author: 'R.A. Salvatore',          series: 'The Legend of Drizzt',           series_number: 3 },
+  { title: 'The Crystal Shard',                 author: 'R.A. Salvatore',          series: 'The Legend of Drizzt',           series_number: 4 },
+  { title: 'Streams of Silver',                 author: 'R.A. Salvatore',          series: 'The Legend of Drizzt',           series_number: 5 },
+  { title: "The Halfling's Gem",                author: 'R.A. Salvatore',          series: 'The Legend of Drizzt',           series_number: 6 },
+
+  // ── Redwall (Brian Jacques) ───────────────────────────────────────────────
+  { title: 'Redwall',                           author: 'Brian Jacques',           series: 'Redwall',                        series_number: 1 },
+  { title: 'Mossflower',                        author: 'Brian Jacques',           series: 'Redwall',                        series_number: 2 },
+  { title: 'Mattimeo',                          author: 'Brian Jacques',           series: 'Redwall',                        series_number: 3 },
+  { title: 'Mariel of Redwall',                 author: 'Brian Jacques',           series: 'Redwall',                        series_number: 4 },
+  { title: 'Salamandastron',                    author: 'Brian Jacques',           series: 'Redwall',                        series_number: 5 },
+
+  // ── The Bartimaeus Sequence (Jonathan Stroud) ─────────────────────────────
+  { title: 'The Amulet of Samarkand',           author: 'Jonathan Stroud',         series: 'The Bartimaeus Sequence',        series_number: 1 },
+  { title: "The Golem's Eye",                   author: 'Jonathan Stroud',         series: 'The Bartimaeus Sequence',        series_number: 2 },
+  { title: "Ptolemy's Gate",                    author: 'Jonathan Stroud',         series: 'The Bartimaeus Sequence',        series_number: 3 },
+
+  // ── The Daevabad Trilogy (S.A. Chakraborty) ──────────────────────────────
+  { title: 'The City of Brass',                 author: 'S.A. Chakraborty',        series: 'The Daevabad Trilogy',           series_number: 1 },
+  { title: 'The Kingdom of Copper',             author: 'S.A. Chakraborty',        series: 'The Daevabad Trilogy',           series_number: 2 },
+  { title: 'The Empire of Gold',                author: 'S.A. Chakraborty',        series: 'The Daevabad Trilogy',           series_number: 3 },
+
+  // ── Temeraire (Naomi Novik) ───────────────────────────────────────────────
+  { title: "His Majesty's Dragon",              author: 'Naomi Novik',             series: 'Temeraire',                      series_number: 1 },
+  { title: 'Throne of Jade',                    author: 'Naomi Novik',             series: 'Temeraire',                      series_number: 2 },
+  { title: 'Black Powder War',                  author: 'Naomi Novik',             series: 'Temeraire',                      series_number: 3 },
+  { title: 'Empire of Ivory',                   author: 'Naomi Novik',             series: 'Temeraire',                      series_number: 4 },
+  { title: 'Victory of Eagles',                 author: 'Naomi Novik',             series: 'Temeraire',                      series_number: 5 },
+  { title: 'Tongues of Serpents',               author: 'Naomi Novik',             series: 'Temeraire',                      series_number: 6 },
+  { title: 'Crucible of Gold',                  author: 'Naomi Novik',             series: 'Temeraire',                      series_number: 7 },
+  { title: 'Blood of Tyrants',                  author: 'Naomi Novik',             series: 'Temeraire',                      series_number: 8 },
+  { title: 'League of Dragons',                 author: 'Naomi Novik',             series: 'Temeraire',                      series_number: 9 },
+
+  // ── The Riyria Revelations (Michael J. Sullivan) ──────────────────────────
+  { title: 'Theft of Swords',                   author: 'Michael J. Sullivan',     series: 'The Riyria Revelations',         series_number: 1 },
+  { title: 'Rise of Empire',                    author: 'Michael J. Sullivan',     series: 'The Riyria Revelations',         series_number: 2 },
+  { title: 'Heir of Novron',                    author: 'Michael J. Sullivan',     series: 'The Riyria Revelations',         series_number: 3 },
+
+  // ── The Powder Mage Trilogy (Brian McClellan) ─────────────────────────────
+  { title: 'Promise of Blood',                  author: 'Brian McClellan',         series: 'The Powder Mage Trilogy',        series_number: 1 },
+  { title: 'The Crimson Campaign',              author: 'Brian McClellan',         series: 'The Powder Mage Trilogy',        series_number: 2 },
+  { title: 'The Autumn Republic',               author: 'Brian McClellan',         series: 'The Powder Mage Trilogy',        series_number: 3 },
+
+  // ── The Demon Cycle (Peter V. Brett) ─────────────────────────────────────
+  { title: 'The Warded Man',                    author: 'Peter V. Brett',          series: 'The Demon Cycle',                series_number: 1 },
+  { title: 'The Desert Spear',                  author: 'Peter V. Brett',          series: 'The Demon Cycle',                series_number: 2 },
+  { title: 'The Daylight War',                  author: 'Peter V. Brett',          series: 'The Demon Cycle',                series_number: 3 },
+  { title: 'The Skull Throne',                  author: 'Peter V. Brett',          series: 'The Demon Cycle',                series_number: 4 },
+  { title: 'The Core',                          author: 'Peter V. Brett',          series: 'The Demon Cycle',                series_number: 5 },
+
+  // ── The Gormenghast Trilogy (Mervyn Peake) ───────────────────────────────
+  { title: 'Titus Groan',                       author: 'Mervyn Peake',            series: 'The Gormenghast Trilogy',        series_number: 1 },
+  { title: 'Gormenghast',                       author: 'Mervyn Peake',            series: 'The Gormenghast Trilogy',        series_number: 2 },
+  { title: 'Titus Alone',                       author: 'Mervyn Peake',            series: 'The Gormenghast Trilogy',        series_number: 3 },
+
+  // ── The Elric Saga (Michael Moorcock) ────────────────────────────────────
+  { title: 'Elric of Melniboné',                author: 'Michael Moorcock',        series: 'The Elric Saga',                 series_number: 1 },
+  { title: 'The Sailor on the Seas of Fate',    author: 'Michael Moorcock',        series: 'The Elric Saga',                 series_number: 2 },
+  { title: 'The Weird of the White Wolf',       author: 'Michael Moorcock',        series: 'The Elric Saga',                 series_number: 3 },
+  { title: 'The Vanishing Tower',               author: 'Michael Moorcock',        series: 'The Elric Saga',                 series_number: 4 },
+  { title: 'The Bane of the Black Sword',       author: 'Michael Moorcock',        series: 'The Elric Saga',                 series_number: 5 },
+  { title: 'Stormbringer',                      author: 'Michael Moorcock',        series: 'The Elric Saga',                 series_number: 6 },
+
+  // ── The Acts of Caine (Matthew Stover) ───────────────────────────────────
+  { title: 'Heroes Die',                        author: 'Matthew Stover',          series: 'The Acts of Caine',              series_number: 1 },
+  { title: 'Blade of Tyshalle',                 author: 'Matthew Stover',          series: 'The Acts of Caine',              series_number: 2 },
+  { title: 'Caine Black Knife',                 author: 'Matthew Stover',          series: 'The Acts of Caine',              series_number: 3 },
+  { title: "Caine's Law",                       author: 'Matthew Stover',          series: 'The Acts of Caine',              series_number: 4 },
+
+  // ── The Dagger and the Coin (Daniel Abraham) ─────────────────────────────
+  { title: "The Dragon's Path",                 author: 'Daniel Abraham',          series: 'The Dagger and the Coin',        series_number: 1 },
+  { title: "The King's Blood",                  author: 'Daniel Abraham',          series: 'The Dagger and the Coin',        series_number: 2 },
+  { title: "The Tyrant's Law",                  author: 'Daniel Abraham',          series: 'The Dagger and the Coin',        series_number: 3 },
+  { title: "The Widow's House",                 author: 'Daniel Abraham',          series: 'The Dagger and the Coin',        series_number: 4 },
+  { title: "The Spider's War",                  author: 'Daniel Abraham',          series: 'The Dagger and the Coin',        series_number: 5 },
+
+  // ── The Long Price Quartet (Daniel Abraham) ───────────────────────────────
+  { title: 'A Shadow in Summer',                author: 'Daniel Abraham',          series: 'The Long Price Quartet',         series_number: 1 },
+  { title: 'A Betrayal in Winter',              author: 'Daniel Abraham',          series: 'The Long Price Quartet',         series_number: 2 },
+  { title: 'An Autumn War',                     author: 'Daniel Abraham',          series: 'The Long Price Quartet',         series_number: 3 },
+  { title: 'The Price of Spring',               author: 'Daniel Abraham',          series: 'The Long Price Quartet',         series_number: 4 },
+
+  // ── Kushiel's Legacy (Jacqueline Carey) ──────────────────────────────────
+  { title: "Kushiel's Dart",                    author: 'Jacqueline Carey',        series: "Kushiel's Legacy",               series_number: 1 },
+  { title: "Kushiel's Chosen",                  author: 'Jacqueline Carey',        series: "Kushiel's Legacy",               series_number: 2 },
+  { title: "Kushiel's Avatar",                  author: 'Jacqueline Carey',        series: "Kushiel's Legacy",               series_number: 3 },
+  { title: "Kushiel's Scion",                   author: 'Jacqueline Carey',        series: "Kushiel's Legacy",               series_number: 4 },
+  { title: "Kushiel's Justice",                 author: 'Jacqueline Carey',        series: "Kushiel's Legacy",               series_number: 5 },
+  { title: "Kushiel's Mercy",                   author: 'Jacqueline Carey',        series: "Kushiel's Legacy",               series_number: 6 },
+
+  // ── The Chronicles of Thomas Covenant (Stephen R. Donaldson) ─────────────
+  { title: "Lord Foul's Bane",                  author: 'Stephen R. Donaldson',    series: 'The Chronicles of Thomas Covenant', series_number: 1 },
+  { title: 'The Illearth War',                  author: 'Stephen R. Donaldson',    series: 'The Chronicles of Thomas Covenant', series_number: 2 },
+  { title: 'The Power That Preserves',          author: 'Stephen R. Donaldson',    series: 'The Chronicles of Thomas Covenant', series_number: 3 },
+
+  // ── The Last Herald-Mage (Mercedes Lackey) ───────────────────────────────
+  { title: "Magic's Pawn",                      author: 'Mercedes Lackey',         series: 'The Last Herald-Mage',           series_number: 1 },
+  { title: "Magic's Promise",                   author: 'Mercedes Lackey',         series: 'The Last Herald-Mage',           series_number: 2 },
+  { title: "Magic's Price",                     author: 'Mercedes Lackey',         series: 'The Last Herald-Mage',           series_number: 3 },
+
+  // ── The Dying Earth (Jack Vance) ─────────────────────────────────────────
+  { title: 'The Dying Earth',                   author: 'Jack Vance',              series: 'The Dying Earth',                series_number: 1 },
+  { title: 'The Eyes of the Overworld',         author: 'Jack Vance',              series: 'The Dying Earth',                series_number: 2 },
+  { title: "Cugel's Saga",                      author: 'Jack Vance',              series: 'The Dying Earth',                series_number: 3 },
+  { title: 'Rhialto the Marvellous',            author: 'Jack Vance',              series: 'The Dying Earth',                series_number: 4 },
+
+  // ── The Fionavar Tapestry (Guy Gavriel Kay) ───────────────────────────────
+  { title: 'The Summer Tree',                   author: 'Guy Gavriel Kay',         series: 'The Fionavar Tapestry',          series_number: 1 },
+  { title: 'The Wandering Fire',                author: 'Guy Gavriel Kay',         series: 'The Fionavar Tapestry',          series_number: 2 },
+  { title: 'The Darkest Road',                  author: 'Guy Gavriel Kay',         series: 'The Fionavar Tapestry',          series_number: 3 },
+
+  // ── The Sarantine Mosaic (Guy Gavriel Kay) ────────────────────────────────
+  { title: 'Sailing to Sarantium',              author: 'Guy Gavriel Kay',         series: 'The Sarantine Mosaic',           series_number: 1 },
+  { title: 'Lord of Emperors',                  author: 'Guy Gavriel Kay',         series: 'The Sarantine Mosaic',           series_number: 2 },
+
+  // ── The Divine Cities (Robert Jackson Bennett) ────────────────────────────
+  { title: 'City of Stairs',                    author: 'Robert Jackson Bennett',  series: 'The Divine Cities',              series_number: 1 },
+  { title: 'City of Blades',                    author: 'Robert Jackson Bennett',  series: 'The Divine Cities',              series_number: 2 },
+  { title: 'City of Miracles',                  author: 'Robert Jackson Bennett',  series: 'The Divine Cities',              series_number: 3 },
+
+  // ── The Shadow Campaigns (Django Wexler) ─────────────────────────────────
+  { title: 'The Thousand Names',                author: 'Django Wexler',           series: 'The Shadow Campaigns',           series_number: 1 },
+  { title: 'The Shadow Throne',                 author: 'Django Wexler',           series: 'The Shadow Campaigns',           series_number: 2 },
+  { title: 'The Price of Valor',                author: 'Django Wexler',           series: 'The Shadow Campaigns',           series_number: 3 },
+  { title: 'The Guns of Empire',                author: 'Django Wexler',           series: 'The Shadow Campaigns',           series_number: 4 },
+  { title: 'The Infernal Battalion',            author: 'Django Wexler',           series: 'The Shadow Campaigns',           series_number: 5 },
+
+  // ── Kings of the Wyld (Nicholas Eames) ───────────────────────────────────
+  { title: 'Kings of the Wyld',                 author: 'Nicholas Eames',          series: 'Kings of the Wyld',              series_number: 1 },
+  { title: 'Bloody Rose',                       author: 'Nicholas Eames',          series: 'Kings of the Wyld',              series_number: 2 },
+
+  // ── The Lunar Chronicles (Marissa Meyer) ─────────────────────────────────
+  { title: 'Cinder',                            author: 'Marissa Meyer',           series: 'The Lunar Chronicles',           series_number: 1 },
+  { title: 'Scarlet',                           author: 'Marissa Meyer',           series: 'The Lunar Chronicles',           series_number: 2 },
+  { title: 'Cress',                             author: 'Marissa Meyer',           series: 'The Lunar Chronicles',           series_number: 3 },
+  { title: 'Winter',                            author: 'Marissa Meyer',           series: 'The Lunar Chronicles',           series_number: 4 },
+
+  // ── Daughter of Smoke and Bone (Laini Taylor) ─────────────────────────────
+  { title: 'Daughter of Smoke and Bone',        author: 'Laini Taylor',            series: 'Daughter of Smoke and Bone',     series_number: 1 },
+  { title: 'Days of Blood and Starlight',       author: 'Laini Taylor',            series: 'Daughter of Smoke and Bone',     series_number: 2 },
+  { title: 'Dreams of Gods and Monsters',       author: 'Laini Taylor',            series: 'Daughter of Smoke and Bone',     series_number: 3 },
+
+  // ── Crescent City (Sarah J. Maas) ────────────────────────────────────────
+  { title: 'House of Earth and Blood',          author: 'Sarah J. Maas',           series: 'Crescent City',                  series_number: 1 },
+  { title: 'House of Sky and Breath',           author: 'Sarah J. Maas',           series: 'Crescent City',                  series_number: 2 },
+  { title: 'House of Flame and Shadow',         author: 'Sarah J. Maas',           series: 'Crescent City',                  series_number: 3 },
+
+  // ── Serpent & Dove (Shelby Mahurin) ──────────────────────────────────────
+  { title: 'Serpent & Dove',                    author: 'Shelby Mahurin',          series: 'Serpent & Dove',                 series_number: 1 },
+  { title: 'Blood & Honey',                     author: 'Shelby Mahurin',          series: 'Serpent & Dove',                 series_number: 2 },
+  { title: 'Gods & Monsters',                   author: 'Shelby Mahurin',          series: 'Serpent & Dove',                 series_number: 3 },
+
+  // ── The Seven Realms (Cinda Williams Chima) ───────────────────────────────
+  { title: 'The Demon King',                    author: 'Cinda Williams Chima',    series: 'The Seven Realms',               series_number: 1 },
+  { title: 'The Exiled Queen',                  author: 'Cinda Williams Chima',    series: 'The Seven Realms',               series_number: 2 },
+  { title: 'The Gray Wolf Throne',              author: 'Cinda Williams Chima',    series: 'The Seven Realms',               series_number: 3 },
+  { title: 'The Crimson Crown',                 author: 'Cinda Williams Chima',    series: 'The Seven Realms',               series_number: 4 },
+
+  // ── The Winner's Trilogy (Marie Rutkoski) ────────────────────────────────
+  { title: "The Winner's Curse",                author: 'Marie Rutkoski',          series: "The Winner's Trilogy",           series_number: 1 },
+  { title: "The Winner's Crime",                author: 'Marie Rutkoski',          series: "The Winner's Trilogy",           series_number: 2 },
+  { title: "The Winner's Kiss",                 author: 'Marie Rutkoski',          series: "The Winner's Trilogy",           series_number: 3 },
+
+  // ── The Raven Cycle (Maggie Stiefvater) ──────────────────────────────────
+  { title: 'The Raven Boys',                    author: 'Maggie Stiefvater',       series: 'The Raven Cycle',                series_number: 1 },
+  { title: 'The Dream Thieves',                 author: 'Maggie Stiefvater',       series: 'The Raven Cycle',                series_number: 2 },
+  { title: 'Blue Lily, Lily Blue',              author: 'Maggie Stiefvater',       series: 'The Raven Cycle',                series_number: 3 },
+  { title: 'The Raven King',                    author: 'Maggie Stiefvater',       series: 'The Raven Cycle',                series_number: 4 },
+
+  // ── Wayward Children (Seanan McGuire) ────────────────────────────────────
+  { title: 'Every Heart a Doorway',             author: 'Seanan McGuire',          series: 'Wayward Children',               series_number: 1 },
+  { title: 'Down Among the Sticks and Bones',   author: 'Seanan McGuire',          series: 'Wayward Children',               series_number: 2 },
+  { title: 'Beneath the Sugar Sky',             author: 'Seanan McGuire',          series: 'Wayward Children',               series_number: 3 },
+  { title: 'In an Absent Dream',                author: 'Seanan McGuire',          series: 'Wayward Children',               series_number: 4 },
+  { title: 'Where the Drowned Girls Go',        author: 'Seanan McGuire',          series: 'Wayward Children',               series_number: 5 },
+
+  // ── The Singing Hills Cycle (Nghi Vo) ────────────────────────────────────
+  { title: 'The Empress of Salt and Fortune',   author: 'Nghi Vo',                 series: 'The Singing Hills Cycle',        series_number: 1 },
+  { title: 'When the Tiger Came Down the Mountain', author: 'Nghi Vo',             series: 'The Singing Hills Cycle',        series_number: 2 },
+  { title: 'Into the Riverlands',               author: 'Nghi Vo',                 series: 'The Singing Hills Cycle',        series_number: 3 },
+  { title: 'Mammoths at the Gates',             author: 'Nghi Vo',                 series: 'The Singing Hills Cycle',        series_number: 4 },
+  { title: 'The Brides of High Hill',           author: 'Nghi Vo',                 series: 'The Singing Hills Cycle',        series_number: 5 },
+
+  // ── The Spellmonger (Terry Mancour) ──────────────────────────────────────
+  { title: 'Spellmonger',                       author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 1 },
+  { title: 'Warmage',                           author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 2 },
+  { title: 'Magelord',                          author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 3 },
+  { title: 'Knights Magi',                      author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 4 },
+  { title: 'High Mage',                         author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 5 },
+  { title: 'Journeymage',                       author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 6 },
+  { title: 'Enchanter',                         author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 7 },
+  { title: 'Court Wizard',                      author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 8 },
+  { title: 'Shadowmage',                        author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 9 },
 
 ];
 
