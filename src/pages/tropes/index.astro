@@ -36,10 +36,26 @@ const CATEGORY_META = {
       </p>
     </div>
 
+    <!-- Search bar -->
+    <div class="relative max-w-lg mb-10">
+      <input
+        id="trope-search"
+        type="text"
+        placeholder="Search tropes…"
+        class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 pl-10 text-sm shadow-sm focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 transition"
+        autocomplete="off"
+      />
+      <svg class="absolute left-3 top-3.5 h-4 w-4 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+      </svg>
+    </div>
+
+    <p id="trope-no-results" class="hidden text-center text-zinc-500 mb-10">No tropes found for that search.</p>
+
     {(Object.entries(TROPES_BY_CATEGORY) as [keyof typeof CATEGORY_META, typeof TROPES_BY_CATEGORY[keyof typeof TROPES_BY_CATEGORY]][]).map(([cat, tropes]) => {
       const meta = CATEGORY_META[cat];
       return (
-        <section class="mb-12">
+        <section class="mb-12 trope-section" data-category={meta.label.toLowerCase()}>
           <div class="flex items-center gap-3 mb-1">
             <span class="text-2xl">{meta.emoji}</span>
             <h2 class="text-xl font-bold text-zinc-900">{meta.label}</h2>
@@ -50,7 +66,8 @@ const CATEGORY_META = {
             {tropes.map((t) => (
               <a
                 href={`/tropes/${t.slug}/`}
-                class="group flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors"
+                data-search={`${t.name.toLowerCase()} ${t.description.toLowerCase()}`}
+                class="trope-card group flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors"
               >
                 <div class="min-w-0">
                   <div class="font-medium text-zinc-900 group-hover:text-purple-700 transition-colors text-sm">{t.name}</div>
@@ -64,3 +81,31 @@ const CATEGORY_META = {
     })}
   </div>
 </Layout>
+
+<script>
+  const input = document.getElementById('trope-search') as HTMLInputElement;
+  const cards = document.querySelectorAll<HTMLElement>('.trope-card');
+  const sections = document.querySelectorAll<HTMLElement>('.trope-section');
+  const noResults = document.getElementById('trope-no-results')!;
+
+  input.addEventListener('input', () => {
+    const q = input.value.toLowerCase().trim();
+    let totalVisible = 0;
+
+    sections.forEach((section) => {
+      const sectionCards = section.querySelectorAll<HTMLElement>('.trope-card');
+      let visibleInSection = 0;
+
+      sectionCards.forEach((card) => {
+        const matches = !q || (card.dataset.search ?? '').includes(q);
+        card.classList.toggle('hidden', !matches);
+        if (matches) visibleInSection++;
+      });
+
+      section.classList.toggle('hidden', visibleInSection === 0);
+      totalVisible += visibleInSection;
+    });
+
+    noResults.classList.toggle('hidden', totalVisible > 0 || !q);
+  });
+</script>

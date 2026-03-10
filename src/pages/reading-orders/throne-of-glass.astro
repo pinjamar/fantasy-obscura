@@ -5,20 +5,20 @@ import { supabaseClient } from '../../lib/supabaseClient';
 
 const bookData = [
   {
-    title: 'The Assassin\'s Blade',
-    slug: 'the-assassins-blade',
-    status: 'optional' as const,
-    note: 'Five prequel novellas collected in one volume. Best read after Throne of Glass — contains spoilers for book 1.',
-    page_count: 432,
-    publication_year: 2014,
-  },
-  {
     title: 'Throne of Glass',
     slug: 'throne-of-glass',
     status: 'mandatory' as const,
     note: 'Start here. Celaena Sardothien, assassin, enters a deadly competition in a corrupt kingdom.',
     page_count: 404,
     publication_year: 2012,
+  },
+  {
+    title: 'The Assassin\'s Blade',
+    slug: 'the-assassins-blade',
+    status: 'optional' as const,
+    note: 'Five prequel novellas in one volume. Best read after Throne of Glass — contains spoilers for book 1.',
+    page_count: 432,
+    publication_year: 2014,
   },
   {
     title: 'Crown of Midnight',
@@ -71,38 +71,24 @@ const bookData = [
 ];
 
 const bookSlugs = bookData.map(b => b.slug);
-const { data: coverRows } = await supabaseClient.from('books').select('slug, cover_url').in('slug', bookSlugs);
-const coverMap = new Map<string, string | null>((coverRows ?? []).map((r: any) => [r.slug, r.cover_url ?? null]));
-const books = bookData.map(b => ({ ...b, cover_url: coverMap.get(b.slug) ?? null }));
+const { data: dbRows } = await supabaseClient.from('books').select('slug, cover_url, darkness_level, avg_rating, series, series_number').in('slug', bookSlugs);
+const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
+const books = bookData.map(b => { const db = dbMap.get(b.slug); return { ...b, cover_url: db?.cover_url ?? null, darkness_level: db?.darkness_level ?? null, avg_rating: db?.avg_rating ?? null, series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null }; });
 
 const groups = [
   {
-    label: 'Prequel Novellas',
-    sublabel: 'read after book 1',
-    books: books.slice(0, 1),
-    noteType: 'optional' as const,
-    note: 'Read after Throne of Glass, not before — contains spoilers. Skip entirely if you want to start the main story directly.',
-  },
-  {
     label: 'The Main Series',
-    sublabel: 'books 1–5',
-    books: books.slice(1, 6),
+    sublabel: 'books 1–6 + optional prequel',
+    books: books.slice(0, 6),
     noteType: 'required' as const,
-    note: 'All five are essential and must be read in order. The series takes off at Crown of Midnight and never slows down.',
-  },
-  {
-    label: 'Tower of Dawn',
-    sublabel: 'companion novel — concurrent with Empire of Storms',
-    books: books.slice(6, 7),
-    noteType: 'warning' as const,
-    note: "Covers the same timeline as Empire of Storms from Chaol's POV. Option A: read EoS then ToD. Option B: alternate chapters using a published reading guide. Do not skip it — events in ToD are essential for the finale.",
+    note: "All main books are essential and must be read in order. The Assassin's Blade (prequel) is optional — read it after Throne of Glass or skip it. The series takes off at Crown of Midnight.",
   },
   {
     label: 'The Finale',
-    sublabel: 'read after both EoS and ToD',
-    books: books.slice(7),
-    noteType: 'required' as const,
-    note: 'Do not start this until you have finished both Empire of Storms and Tower of Dawn.',
+    sublabel: 'Tower of Dawn + Kingdom of Ash — read back-to-back',
+    books: books.slice(6),
+    noteType: 'warning' as const,
+    note: "Tower of Dawn runs parallel to Empire of Storms from Chaol's POV. Option A: read EoS then ToD in full. Option B: alternate chapters using an online reading guide. Do not skip ToD — its events are essential for Kingdom of Ash.",
   },
 ];
 

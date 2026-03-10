@@ -28,7 +28,7 @@ const curatedSeries = [
   { slug: 'wheel-of-time',name: 'The Wheel of Time',            bookCount: 14 },
   { slug: 'kingkiller',   name: 'The Kingkiller Chronicle',     bookCount: 3  },
   { slug: 'witcher',      name: 'The Witcher',                  bookCount: 8  },
-  { slug: 'dune',         name: 'Dune',                         bookCount: 6  },
+  { slug: 'dresden-files', name: 'The Dresden Files',            bookCount: 17 },
   { slug: 'acotar',       name: 'A Court of Thorns and Roses',  bookCount: 5  },
   { slug: 'throne-of-glass', name: 'Throne of Glass',           bookCount: 8  },
   { slug: 'asoiaf',      name: 'A Song of Ice and Fire',        bookCount: 5  },
@@ -50,19 +50,6 @@ const curatedSlugs = new Set([
 ]);
 const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
 
-// All series combined for the search
-const allSeries = [
-  ...curatedSeries.map((s) => ({
-    ...s,
-    curated: true,
-    searchText: (seriesSearchMap.get(s.name) ?? s.name.toLowerCase()),
-  })),
-  ...dbOnly.map((s) => ({
-    ...s,
-    curated: false,
-    searchText: (seriesSearchMap.get(s.name) ?? s.name.toLowerCase()),
-  })),
-].sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <Layout
@@ -93,7 +80,7 @@ const allSeries = [
     </svg>
   </div>
 
-  <!-- Series grid — curated guides only -->
+  <!-- Series grid — curated guides shown by default; DB-only shown only when searched -->
   <div id="series-grid" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
     {curatedSeries.map((s) => (
       <a
@@ -106,6 +93,21 @@ const allSeries = [
           <p class="font-semibold text-zinc-900 group-hover:text-purple-800 transition-colors leading-snug">{s.name}</p>
           <p class="mt-1 text-sm text-zinc-500">{s.bookCount} {s.bookCount === 1 ? 'book' : 'books'}</p>
           <span class="mt-2 inline-block text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">Curated guide</span>
+        </div>
+      </a>
+    ))}
+    {dbOnly.map((s) => (
+      <a
+        href={`/reading-orders/${s.slug}/`}
+        data-search={`${s.name.toLowerCase()} ${seriesSearchMap.get(s.name) ?? ''}`}
+        data-dbonly="true"
+        class="series-card group relative overflow-hidden rounded-xl border p-5 transition-all hover:shadow-lg hover:border-zinc-300 bg-white hidden"
+      >
+        <div class="absolute inset-0 bg-linear-to-br from-zinc-50 to-zinc-100 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div class="relative">
+          <p class="font-semibold text-zinc-900 group-hover:text-zinc-700 transition-colors leading-snug">{s.name}</p>
+          <p class="mt-1 text-sm text-zinc-500">{s.bookCount} {s.bookCount === 1 ? 'book' : 'books'}</p>
+          <span class="mt-2 inline-block text-xs bg-zinc-100 text-zinc-500 px-2 py-0.5 rounded-full font-medium">Series list</span>
         </div>
       </a>
     ))}
@@ -144,8 +146,11 @@ const allSeries = [
     let visible = 0;
     cards.forEach((card) => {
       const searchText = card.dataset.search ?? '';
-      const show = !q || searchText.includes(q);
-      card.style.display = show ? '' : 'none';
+      const isDbOnly = card.dataset.dbonly === 'true';
+      const matches = !q || searchText.includes(q);
+      // DB-only cards: show only when there's an active query and it matches
+      const show = isDbOnly ? (!!q && matches) : matches;
+      card.classList.toggle('hidden', !show);
       if (show) visible++;
     });
     noResults.classList.toggle('hidden', visible > 0 || !q);

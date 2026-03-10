@@ -1,0 +1,191 @@
+---
+import Layout from '../../components/Layout.astro';
+import ReadingOrder from '../../components/ReadingOrder';
+import { supabaseClient } from '../../lib/supabaseClient';
+
+const bookData = [
+  // ── The Early Cases ──
+  { title: 'Storm Front',     slug: 'storm-front',     status: 'mandatory' as const, note: 'Start here. Harry Dresden, Chicago wizard-for-hire. Sets the tone — fast, funny, and darker than it looks.', page_count: 322,  publication_year: 2000 },
+  { title: 'Fool Moon',       slug: 'fool-moon',       status: 'mandatory' as const, note: 'Werewolves. The weakest early book but essential — introduces key characters and the White Council.', page_count: 384,  publication_year: 2001 },
+  { title: 'Grave Peril',     slug: 'grave-peril',     status: 'mandatory' as const, note: 'The series finds its voice. The Red Court appears. An ending that changes everything going forward.', page_count: 378,  publication_year: 2001 },
+  { title: 'Summer Knight',   slug: 'summer-knight',   status: 'mandatory' as const, note: 'Faeries and a political war between Courts. Many consider this where the series truly becomes great.', page_count: 371,  publication_year: 2002 },
+  { title: 'Death Masks',     slug: 'death-masks',     status: 'mandatory' as const, note: 'The Denarians and the Knights of the Cross. One of the best standalone plots in the series.', page_count: 374,  publication_year: 2003 },
+  { title: 'Blood Rites',     slug: 'blood-rites',     status: 'mandatory' as const, note: 'The White Court of vampires. Thomas steps into focus. A turning point for Harry personally.', page_count: 372,  publication_year: 2004 },
+  // ── The Escalation Arc ──
+  { title: 'Dead Beat',       slug: 'dead-beat',       status: 'mandatory' as const, note: 'Necromancers, a zombie T-Rex, and a major power shift for Harry. The fan favourite entry point for many.', page_count: 432,  publication_year: 2005 },
+  { title: 'Proven Guilty',   slug: 'proven-guilty',   status: 'mandatory' as const, note: 'Harry vs. the White Council vs. fear entities. The magic system deepens significantly.', page_count: 496,  publication_year: 2006 },
+  { title: 'White Night',     slug: 'white-night',     status: 'mandatory' as const, note: 'Marcone, the White Court, and a conspiracy targeting minor talents. Sets up the series-wide chess board.', page_count: 450,  publication_year: 2007 },
+  { title: 'Small Favor',     slug: 'small-favor',     status: 'mandatory' as const, note: 'The Denarians return. Gruff. The Archive. One of the best-plotted books in the series.', page_count: 436,  publication_year: 2008 },
+  { title: 'Turn Coat',       slug: 'turn-coat',       status: 'mandatory' as const, note: 'Morgan and the Wardens. The White Council at war with itself. The conspiracy arc reaches a peak.', page_count: 418,  publication_year: 2009 },
+  // ── The Crisis Arc ──
+  { title: 'Changes',         slug: 'changes',         status: 'mandatory' as const, note: 'The series-defining book. Harry burns every bridge. Nothing is the same after this. Do not spoil yourself.', page_count: 448,  publication_year: 2010 },
+  { title: 'Ghost Story',     slug: 'ghost-story',     status: 'mandatory' as const, note: 'The aftermath of Changes, told from a radically different perspective. Divisive but essential for what follows.', page_count: 481,  publication_year: 2011 },
+  { title: 'Cold Days',       slug: 'cold-days',       status: 'mandatory' as const, note: "Harry's new position explained. The scope of the overarching plot reveals itself. Outstanding.", page_count: 516,  publication_year: 2012 },
+  { title: 'Skin Game',       slug: 'skin-game',       status: 'mandatory' as const, note: 'Heist against Hades. The most accessible book post-Changes and arguably the best single volume in the series.', page_count: 464,  publication_year: 2014 },
+  // ── The Aftermath ──
+  { title: 'Peace Talks',     slug: 'peace-talks',     status: 'mandatory' as const, note: 'A supernatural summit in Chicago. Structurally a first half — read back-to-back with Battle Ground.', page_count: 328,  publication_year: 2020 },
+  { title: 'Battle Ground',   slug: 'battle-ground',   status: 'mandatory' as const, note: 'One real-time night of war in Chicago. The most brutal book in the series. Devastating consequences.', page_count: 364,  publication_year: 2020 },
+  // ── Short Stories ──
+  { title: 'Side Jobs',       slug: 'side-jobs',       status: 'optional' as const,  note: 'Short story anthology covering the gaps between books 1–12. Best read as you finish each main book rather than all at once.', page_count: 416,  publication_year: 2011 },
+  { title: 'Brief Cases',     slug: 'brief-cases',     status: 'optional' as const,  note: 'Second anthology covering books 10–17. The novella "Ghoul Goblin" and a long post-Skin Game story are the highlights.', page_count: 512,  publication_year: 2018 },
+];
+
+const bookSlugs = bookData.map(b => b.slug);
+const { data: dbRows } = await supabaseClient.from('books').select('slug, cover_url, darkness_level, avg_rating, series, series_number').in('slug', bookSlugs);
+const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
+const books = bookData.map(b => { const db = dbMap.get(b.slug); return { ...b, cover_url: db?.cover_url ?? null, darkness_level: db?.darkness_level ?? null, avg_rating: db?.avg_rating ?? null, series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null }; });
+
+const totalPages = books.filter(b => b.status === 'mandatory').reduce((sum, b) => sum + (b.page_count ?? 0), 0);
+const totalHours = Math.round(totalPages / 30);
+const coreBooks = books.filter(b => b.status === 'mandatory').length;
+
+const groups = [
+  {
+    label: 'The Early Cases',
+    sublabel: 'books 1–6 — start here',
+    books: books.slice(0, 6),
+    noteType: 'required' as const,
+    note: 'The first two books (Storm Front, Fool Moon) are lighter in tone. Push through — the series hits its stride with Grave Peril and never looks back.',
+  },
+  {
+    label: 'The Escalation Arc',
+    sublabel: 'books 7–11 — the series hits full stride',
+    books: books.slice(6, 11),
+    noteType: 'required' as const,
+    note: 'Dead Beat through Turn Coat is where the series becomes unmissable. Each book raises the stakes and adds pieces to a much larger board.',
+  },
+  {
+    label: 'The Crisis Arc',
+    sublabel: 'books 12–15 — everything changes',
+    books: books.slice(11, 15),
+    noteType: 'warning' as const,
+    note: 'Changes (book 12) is a point of no return. The series gets significantly darker and more consequential. Do not read spoilers.',
+  },
+  {
+    label: 'The Aftermath',
+    sublabel: 'books 16–17 — read back-to-back',
+    books: books.slice(15, 17),
+    noteType: 'warning' as const,
+    note: 'Peace Talks and Battle Ground were written as one book and split at publication. Read them together — Peace Talks ends mid-story.',
+  },
+  {
+    label: 'Short Story Collections',
+    sublabel: 'optional',
+    books: books.slice(17),
+    noteType: 'optional' as const,
+    note: 'Best read scattered alongside the main series rather than all at once. Side Jobs fits books 1–12; Brief Cases fits books 10–17.',
+  },
+];
+---
+
+<Layout
+  title="The Dresden Files Reading Order | Fantasy Obscura"
+  description="Complete reading order for Jim Butcher's Dresden Files — 17 main novels, two short story anthologies, and where each fits."
+>
+
+  <div class="mb-6">
+    <a href="/reading-orders" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">← Reading Orders</a>
+  </div>
+
+  {/* ── Header ── */}
+  <div class="mb-10">
+    <div class="flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <p class="text-sm font-medium text-purple-600 uppercase tracking-wider mb-1">Reading Order</p>
+        <h1 class="text-4xl font-bold tracking-tight text-zinc-900">The Dresden Files</h1>
+        <p class="mt-1 text-lg text-zinc-500">by Jim Butcher</p>
+      </div>
+      <span class="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-sm font-medium">
+        ⏳ Ongoing Series
+      </span>
+    </div>
+
+    <div class="mt-5 flex flex-wrap gap-6 text-sm text-zinc-600 border-y border-zinc-100 py-4">
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {coreBooks} main novels (+ 2 optional anthologies)</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📄</span> ~{totalPages.toLocaleString()} pages (main series)</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">⏱</span> ~{totalHours} hours reading time</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">🕯️🕯️🕯️ → 🕯️🕯️🕯️🕯️🕯️</span> Serious → Brutal</span>
+    </div>
+
+    <p class="mt-5 text-base text-zinc-700 leading-relaxed max-w-2xl">
+      Urban fantasy noir — Harry Dresden is Chicago's only professional wizard, listed in the Yellow Pages. What starts as hardboiled detective fiction with magic escalates across 17 books into a cosmic war with genuine consequences. The first two books are the weakest; by book four the series is exceptional.
+    </p>
+  </div>
+
+  {/* ── Reading Order ── */}
+  <div class="mb-12">
+    <h2 class="text-xl font-semibold mb-1">Reading Order</h2>
+    <p class="text-sm text-zinc-500 mb-6">Strictly publication order — the series is sequential and almost every book builds on the last.</p>
+    <ReadingOrder groups={groups} client:load />
+  </div>
+
+  {/* ── Quick Reference ── */}
+  <div class="mb-10 grid gap-3 sm:grid-cols-3">
+    <div class="rounded-xl border border-blue-100 bg-blue-50 p-5">
+      <p class="font-semibold text-blue-900 mb-2">⚡ The best entry point</p>
+      <p class="text-sm text-blue-800">Start with <strong>Storm Front</strong> — no exceptions. The series is deeply sequential and spoilers compound fast. The slow start (books 1–2) is worth it.</p>
+    </div>
+    <div class="rounded-xl border border-amber-100 bg-amber-50 p-5">
+      <p class="font-semibold text-amber-900 mb-2">⚠️ The Changes problem</p>
+      <p class="text-sm text-amber-800"><strong>Changes</strong> (book 12) is where the series permanently shifts gear. If you're struggling with the early books, know that the series becomes something different — and much darker — after this point.</p>
+    </div>
+    <div class="rounded-xl border border-purple-100 bg-purple-50 p-5">
+      <p class="font-semibold text-purple-900 mb-2">📖 Short stories</p>
+      <p class="text-sm text-purple-800"><strong>Side Jobs</strong> and <strong>Brief Cases</strong> are best read scattered alongside the series, not all at once. Each story notes which main book it follows.</p>
+    </div>
+  </div>
+
+  {/* ── Where to Start ── */}
+  <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+    <h2 class="font-semibold text-zinc-900 mb-3">What to know before you start</h2>
+    <ul class="space-y-2 text-sm text-zinc-700">
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Storm Front and Fool Moon are the weakest books. Butcher has said he'd rewrite them given the chance. Push through.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The series rewards patience — payoffs from book 3 appear in book 15. There is a long game being played.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The audiobooks narrated by James Marsters are widely considered among the best in the genre.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Peace Talks and Battle Ground were written as one book — buy both before starting Peace Talks.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The series is unfinished. Book 18 (<em>Mirror Mirror</em>) and a capstone trilogy are planned but unwritten.</li>
+    </ul>
+  </div>
+
+  {/* ── Darkness ── */}
+  <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+    <h2 class="font-semibold text-zinc-900 mb-4">Darkness progression</h2>
+    <div class="space-y-3 text-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+        <span class="font-medium text-zinc-700 sm:w-52 shrink-0">Books 1–3 (Storm Front–Grave Peril)</span>
+        <span class="text-zinc-400">🕯️🕯️🕯️</span>
+        <span class="text-zinc-500">Serious — noir tone, violence present but filtered</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+        <span class="font-medium text-zinc-700 sm:w-52 shrink-0">Books 4–11 (Summer Knight–Turn Coat)</span>
+        <span class="text-zinc-400">🕯️🕯️🕯️🕯️</span>
+        <span class="text-zinc-500">Dark — war, loss, real consequences</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+        <span class="font-medium text-zinc-700 sm:w-52 shrink-0">Books 12–17 (Changes–Battle Ground)</span>
+        <span class="text-zinc-400">🕯️🕯️🕯️🕯️🕯️</span>
+        <span class="text-zinc-500">Brutal — major deaths, no safety net</span>
+      </div>
+    </div>
+    <p class="mt-4 text-xs text-zinc-400">Scale: 🕯️ Lighthearted → 🕯️🕯️🕯️🕯️🕯️ Brutal</p>
+  </div>
+
+  {/* ── Footer ── */}
+  <div class="border-t pt-8 flex flex-col sm:flex-row gap-6 justify-between">
+    <div>
+      <p class="text-sm font-medium text-zinc-700 mb-2">Finished what's published?</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/categories/urban-fantasy" class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">Browse Urban Fantasy →</a>
+        <a href="/craft" class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">Find similar books →</a>
+      </div>
+    </div>
+    <div>
+      <p class="text-sm font-medium text-zinc-700 mb-2">Related reading orders</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/reading-orders/kingkiller" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">Kingkiller Chronicle</a>
+        <a href="/reading-orders/first-law" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">The First Law</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>

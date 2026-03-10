@@ -22,6 +22,8 @@ const books = dbBooks.map((b) => ({
   cover_url: b.cover_url ?? null,
   publication_year: b.publication_year ?? null,
   page_count: b.page_count ?? null,
+  darkness_level: (b as any).darkness_level ?? null,
+  avg_rating: (b as any).avg_rating ?? null,
   status: 'mandatory' as const,
 }));
 

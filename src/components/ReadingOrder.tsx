@@ -6,6 +6,9 @@ interface Book {
   page_count?: number | null;
   status: 'mandatory' | 'optional' | 'supplementary' | 'incomplete';
   note?: string;
+  darkness_level?: number | null;
+  avg_rating?: number | null;
+  series_label?: string | null;
 }
 
 export interface BookGroup {
@@ -35,41 +38,76 @@ const noteStyle = {
   warning:  { bg: 'bg-amber-50',  border: 'border-amber-200',  text: 'text-amber-900',  emoji: '⚠️' },
 };
 
-function BookEntry({ book, index }: { book: Book; index: number }) {
+function BookCard({ book, index }: { book: Book; index: number }) {
   const cfg = statusConfig[book.status];
+
   const inner = (
-    <div className="relative flex items-start gap-4 py-2 group">
-      <div className={`relative z-10 shrink-0 w-10 h-10 rounded-full ${cfg.dot} flex items-center justify-center text-white font-bold text-sm shadow`}>
-        {index + 1}
+    <div className="flex flex-col items-center text-center group w-28 sm:w-32 shrink-0">
+      {/* Number badge with connecting line (line hidden on mobile) */}
+      <div className="relative w-full flex justify-center mb-2">
+        <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-zinc-200 -translate-y-1/2 hidden sm:block" />
+        <div className={`relative z-10 w-7 h-7 rounded-full ${cfg.dot} flex items-center justify-center text-white font-bold text-xs shadow shrink-0`}>
+          {index + 1}
+        </div>
       </div>
-      <div className={`flex-1 flex gap-3 rounded-xl border bg-white px-4 py-3 transition-all ${book.slug ? 'group-hover:shadow-md group-hover:border-zinc-300' : ''}`}>
-        {book.cover_url && (
+
+      {/* Cover */}
+      <div className="w-24 sm:w-28 h-36 sm:h-40 rounded-lg overflow-hidden border border-zinc-200 shadow-sm bg-zinc-100 mb-3 transition-all group-hover:shadow-md group-hover:scale-[1.02]">
+        {book.cover_url ? (
           <img
             src={book.cover_url}
             alt={book.title}
-            className="shrink-0 w-12 h-16 object-cover rounded shadow-sm self-start"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = '/placeholder-cover.svg';
+            }}
           />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-zinc-400 text-2xl">📖</div>
         )}
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap">
-            <h3 className={`font-semibold text-zinc-900 leading-snug ${book.slug ? 'group-hover:text-purple-700 transition-colors' : ''}`}>
-              {book.title}
-            </h3>
-            <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold border ${cfg.pill}`}>
-              {cfg.label}
-            </span>
-          </div>
-          <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-zinc-500">
-            {book.note && <span>{book.note}</span>}
-            {book.publication_year && <span>{book.publication_year}</span>}
-            {book.page_count && <span>{book.page_count} pp.</span>}
-          </div>
-          {book.slug && (
-            <p className="mt-1.5 text-xs text-purple-600 font-medium">View details →</p>
-          )}
-        </div>
       </div>
+
+      {/* Title */}
+      <p className={`text-xs font-semibold text-zinc-900 leading-snug line-clamp-2 mb-0.5 ${book.slug ? 'group-hover:text-purple-700 transition-colors' : ''}`}>
+        {book.title}
+      </p>
+
+      {/* Series label from DB */}
+      {book.series_label && (
+        <p className="text-[10px] text-zinc-400 leading-snug mb-1 line-clamp-1">{book.series_label}</p>
+      )}
+
+      {/* Status badge */}
+      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold border ${cfg.pill}`}>
+        {cfg.label}
+      </span>
+
+      {/* Darkness dots */}
+      {book.darkness_level != null && book.darkness_level >= 1 && (
+        <div className="flex items-center gap-1 mt-1.5" title={`Darkness: ${book.darkness_level}/5`}>
+          <span className="text-xs leading-none">🕯️</span>
+          <div className="flex items-center gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <span key={i} className={`w-1.5 h-1.5 rounded-full ${i <= book.darkness_level! ? 'bg-zinc-600' : 'bg-zinc-200'}`} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Meta */}
+      {book.avg_rating != null && (
+        <p className="mt-1 text-xs text-amber-500 font-medium">★ {book.avg_rating.toFixed(2)}</p>
+      )}
+      {book.publication_year && (
+        <p className="mt-0.5 text-xs text-zinc-400">{book.publication_year}</p>
+      )}
+
+      {/* Note tooltip on hover */}
+      {book.note && (
+        <p className="mt-1 text-xs text-zinc-500 leading-snug line-clamp-2 hidden sm:block">
+          {book.note}
+        </p>
+      )}
     </div>
   );
 
@@ -85,7 +123,6 @@ function BookEntry({ book, index }: { book: Book; index: number }) {
 export default function ReadingOrder({ books, groups, description }: ReadingOrderProps) {
   const sourceGroups: BookGroup[] = groups ?? (books ? [{ label: '', books }] : []);
 
-  // Pre-compute global start index for each group
   const groupsWithIndex = sourceGroups.map((g, gi) => ({
     ...g,
     startIndex: sourceGroups.slice(0, gi).reduce((sum, prev) => sum + prev.books.length, 0),
@@ -97,12 +134,12 @@ export default function ReadingOrder({ books, groups, description }: ReadingOrde
         <p className="mb-8 text-zinc-600 leading-relaxed">{description}</p>
       )}
 
-      <div className="space-y-8">
+      <div className="space-y-10">
         {groupsWithIndex.map((group, gi) => (
           <div key={gi}>
             {/* Group header */}
             {group.label && (
-              <div className="flex items-center gap-3 mb-5">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="h-px flex-1 bg-zinc-200" />
                 <div className="text-center px-2">
                   <span className="text-xs font-bold tracking-widest uppercase text-zinc-500">
@@ -116,12 +153,11 @@ export default function ReadingOrder({ books, groups, description }: ReadingOrde
               </div>
             )}
 
-            {/* Books timeline */}
+            {/* Books row */}
             <div className="relative">
-              <div className="absolute left-4.75 top-5 bottom-5 w-0.5 bg-zinc-200 z-0" />
-              <div className="space-y-1">
+              <div className="flex flex-wrap gap-4 pb-2">
                 {group.books.map((book, bi) => (
-                  <BookEntry key={bi} book={book} index={group.startIndex + bi} />
+                  <BookCard key={bi} book={book} index={group.startIndex + bi} />
                 ))}
               </div>
             </div>

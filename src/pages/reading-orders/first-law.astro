@@ -18,9 +18,9 @@ const bookData = [
 
 // Fetch covers from DB
 const bookSlugs = bookData.map(b => b.slug);
-const { data: coverRows } = await supabaseClient.from('books').select('slug, cover_url').in('slug', bookSlugs);
-const coverMap = new Map<string, string | null>((coverRows ?? []).map((r: any) => [r.slug, r.cover_url ?? null]));
-const books = bookData.map(b => ({ ...b, cover_url: coverMap.get(b.slug) ?? null }));
+const { data: dbRows } = await supabaseClient.from('books').select('slug, cover_url, darkness_level, avg_rating, series, series_number').in('slug', bookSlugs);
+const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
+const books = bookData.map(b => { const db = dbMap.get(b.slug); return { ...b, cover_url: db?.cover_url ?? null, darkness_level: db?.darkness_level ?? null, avg_rating: db?.avg_rating ?? null, series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null }; });
 
 const totalPages = books.reduce((sum, b) => sum + (b.page_count ?? 0), 0);
 const totalHours = Math.round(totalPages / 30);
@@ -35,18 +35,11 @@ const groups = [
     note: 'All three essential. Read in order — nothing should be skipped.',
   },
   {
-    label: 'Standalones',
+    label: 'Standalones & Extras',
     sublabel: 'set in the same world, any order after the trilogy',
-    books: books.slice(3, 6),
+    books: books.slice(3, 7),
     noteType: 'optional' as const,
-    note: "Each standalone works on its own but hits harder after the trilogy. Best Served Cold is the fan favourite. The Heroes is the weakest entry point. Read all three before starting Age of Madness.",
-  },
-  {
-    label: 'Extra',
-    sublabel: 'optional',
-    books: books.slice(6, 7),
-    noteType: 'optional' as const,
-    note: 'Short story collection — fills gaps between the main books. Read after Red Country or skip entirely without losing anything essential.',
+    note: "Each standalone hits harder after the trilogy. Best Served Cold is the fan favourite. Sharp Ends (short stories) fills gaps between books — read after Red Country or skip without losing anything essential. Read all three standalones before starting Age of Madness.",
   },
   {
     label: 'The Age of Madness',

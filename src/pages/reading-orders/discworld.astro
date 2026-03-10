@@ -4,101 +4,121 @@ import ReadingOrder from '../../components/ReadingOrder';
 import { supabaseClient } from '../../lib/supabaseClient';
 
 const bookData = [
-  {
-    title: 'Guards! Guards!',
-    slug: 'guards-guards',
-    status: 'mandatory' as const,
-    note: 'Best starting point. Night Watch is introduced. Dragons invade Ankh-Morpork.',
-    page_count: 288,
-    publication_year: 1989,
-  },
-  {
-    title: 'Men at Arms',
-    slug: 'men-at-arms',
-    status: 'mandatory' as const,
-    note: 'The Watch grows. Carrot, Angua, diversity politics — Pratchett at his social best.',
-    page_count: 300,
-    publication_year: 1993,
-  },
-  {
-    title: 'Feet of Clay',
-    slug: 'feet-of-clay',
-    status: 'mandatory' as const,
-    note: 'Murder mystery involving golems. One of the sharpest Watch books.',
-    page_count: 288,
-    publication_year: 1996,
-  },
-  {
-    title: 'Mort',
-    slug: 'mort',
-    status: 'optional' as const,
-    note: 'Death takes an apprentice. The Death subseries — darkly funny and surprisingly moving.',
-    page_count: 243,
-    publication_year: 1987,
-  },
-  {
-    title: 'Reaper Man',
-    slug: 'reaper-man',
-    status: 'optional' as const,
-    note: 'Death gets fired and has to find a job. Surprisingly tender.',
-    page_count: 252,
-    publication_year: 1991,
-  },
-  {
-    title: 'Small Gods',
-    slug: 'small-gods',
-    status: 'optional' as const,
-    note: 'Standalone masterpiece about religion, faith, and institutional power. Read this.',
-    page_count: 284,
-    publication_year: 1992,
-  },
-  {
-    title: 'Jingo',
-    slug: 'jingo',
-    status: 'mandatory' as const,
-    note: 'City Watch #4. War satire. Vimes at his most furious and brilliant.',
-    page_count: 288,
-    publication_year: 1997,
-  },
-  {
-    title: 'The Fifth Elephant',
-    slug: 'the-fifth-elephant',
-    status: 'mandatory' as const,
-    note: 'Vimes goes on a diplomatic mission. Dwarves, werewolves, and a murder.',
-    page_count: 321,
-    publication_year: 1999,
-  },
-  {
-    title: 'Night Watch',
-    slug: 'night-watch',
-    status: 'mandatory' as const,
-    note: 'Time travel, revolution, and Vimes at his absolute best. One of the great Discworld books.',
-    page_count: 338,
-    publication_year: 2002,
-  },
-  {
-    title: 'Going Postal',
-    slug: 'going-postal',
-    status: 'optional' as const,
-    note: 'A con artist is forced to run the Ankh-Morpork post office. Perfect standalone entry.',
-    page_count: 471,
-    publication_year: 2004,
-  },
+  // ── City Watch ──
+  { title: 'Guards! Guards!',       slug: 'guards-guards',       status: 'mandatory'     as const, note: 'Best starting point. Night Watch is introduced. Dragons invade Ankh-Morpork.', page_count: 288,  publication_year: 1989 },
+  { title: 'Men at Arms',           slug: 'men-at-arms',         status: 'mandatory'     as const, note: 'The Watch grows. Carrot, Angua, diversity politics — Pratchett at his social best.', page_count: 300, publication_year: 1993 },
+  { title: 'Feet of Clay',          slug: 'feet-of-clay',        status: 'mandatory'     as const, note: 'Murder mystery involving golems. One of the sharpest Watch books.', page_count: 288, publication_year: 1996 },
+  { title: 'Jingo',                 slug: 'jingo',               status: 'mandatory'     as const, note: 'War satire. Vimes at his most furious and politically brilliant.', page_count: 288, publication_year: 1997 },
+  { title: 'The Fifth Elephant',    slug: 'the-fifth-elephant',  status: 'mandatory'     as const, note: 'Vimes on a diplomatic mission. Dwarves, werewolves, and a murder.', page_count: 321, publication_year: 1999 },
+  { title: 'Night Watch',           slug: 'night-watch',         status: 'mandatory'     as const, note: 'Time travel, revolution, and Vimes at his absolute best. One of the great Discworld novels.', page_count: 338, publication_year: 2002 },
+  { title: 'Thud!',                 slug: 'thud',                status: 'optional'      as const, note: 'Trolls vs. dwarves in Ankh-Morpork. Vimes dealing with prejudice and fatherhood.', page_count: 384, publication_year: 2005 },
+  { title: 'Snuff',                 slug: 'snuff',               status: 'optional'      as const, note: "Vimes on a country holiday that turns into a case. The Watch's final novel.", page_count: 398, publication_year: 2011 },
+  // ── Witches ──
+  { title: 'Equal Rites',           slug: 'equal-rites',         status: 'supplementary' as const, note: 'Early Pratchett, still finding the voice. First Granny Weatherwax — readable but the weakest Witches entry.', page_count: 212, publication_year: 1987 },
+  { title: 'Wyrd Sisters',          slug: 'wyrd-sisters',        status: 'mandatory'     as const, note: 'The Witches subseries proper starts here. Shakespeare satire, three-way witch dynamic, magnificent.', page_count: 265, publication_year: 1988 },
+  { title: 'Witches Abroad',        slug: 'witches-abroad',      status: 'mandatory'     as const, note: 'Fairy tale deconstruction. Granny and Nanny travel abroad — one of the funniest Discworld books.', page_count: 284, publication_year: 1991 },
+  { title: 'Lords and Ladies',      slug: 'lords-and-ladies',    status: 'optional'      as const, note: 'The elves return. Darker in tone. Excellent but harder to appreciate without the prior books.', page_count: 281, publication_year: 1992 },
+  { title: 'Maskerade',             slug: 'maskerade',           status: 'optional'      as const, note: 'Phantom of the Opera parody with Agnes Nitt. Sharp opera satire.', page_count: 288, publication_year: 1995 },
+  { title: 'Carpe Jugulum',         slug: 'carpe-jugulum',       status: 'optional'      as const, note: 'Vampires take over Lancre. Granny Weatherwax at her most complex. The Witches finale.', page_count: 368, publication_year: 1998 },
+  // ── Death ──
+  { title: 'Mort',                  slug: 'mort',                status: 'mandatory'     as const, note: 'Death takes an apprentice. The Death subseries — darkly funny and surprisingly moving.', page_count: 243, publication_year: 1987 },
+  { title: 'Reaper Man',            slug: 'reaper-man',          status: 'mandatory'     as const, note: 'Death gets fired and has to find a job. Surprisingly tender and funny.', page_count: 252, publication_year: 1991 },
+  { title: 'Soul Music',            slug: 'soul-music',          status: 'optional'      as const, note: "Rock'n'roll comes to Discworld. Susan Sto Helit's debut. Slightly overlong but charming.", page_count: 388, publication_year: 1994 },
+  { title: 'Hogfather',             slug: 'hogfather',           status: 'mandatory'     as const, note: 'Death plays Father Christmas. Pratchett on belief, gods, and the value of stories. A masterpiece.', page_count: 336, publication_year: 1996 },
+  { title: 'Thief of Time',         slug: 'thief-of-time',       status: 'optional'      as const, note: "Susan and the History Monks. The Death arc's most philosophical entry.", page_count: 324, publication_year: 2001 },
+  // ── Rincewind / Wizards ──
+  { title: 'The Colour of Magic',   slug: 'the-colour-of-magic', status: 'supplementary' as const, note: 'Book 1 — Pratchett finding his feet. Start here only if you want to read in full publication order.', page_count: 206, publication_year: 1983 },
+  { title: 'The Light Fantastic',   slug: 'the-light-fantastic', status: 'supplementary' as const, note: 'Direct sequel to Colour of Magic. Stronger, but still early-era Pratchett.', page_count: 186, publication_year: 1986 },
+  { title: 'Sourcery',              slug: 'sourcery',            status: 'optional'      as const, note: 'A sourcerer threatens to destroy magic. Good standalone Rincewind entry.', page_count: 245, publication_year: 1988 },
+  { title: 'Eric',                  slug: 'eric',                status: 'supplementary' as const, note: 'Short illustrated novel — Rincewind as a demon summoner. More novella than novel.', page_count: 200, publication_year: 1990 },
+  { title: 'Interesting Times',     slug: 'interesting-times',   status: 'optional'      as const, note: 'Rincewind sent to the Agatean Empire. Broad satire of Chinese culture.', page_count: 280, publication_year: 1994 },
+  { title: 'The Last Continent',    slug: 'the-last-continent',  status: 'optional'      as const, note: 'Rincewind stranded in XXXX (Australia). Absurdist comedy.', page_count: 290, publication_year: 1998 },
+  { title: 'The Last Hero',         slug: 'the-last-hero',       status: 'supplementary' as const, note: 'Illustrated novella — Cohen the Barbarian tries to return fire to the gods. Beautiful but brief.', page_count: 176, publication_year: 2001 },
+  { title: 'Unseen Academicals',    slug: 'unseen-academicals',  status: 'optional'      as const, note: 'The Unseen University wizards discover football. Slow start but rewarding.', page_count: 514, publication_year: 2009 },
+  // ── Standalones ──
+  { title: 'Pyramids',              slug: 'pyramids',            status: 'optional'      as const, note: 'A young man trained as an assassin returns to his kingdom. Ancient Egypt satire.', page_count: 267, publication_year: 1989 },
+  { title: 'Moving Pictures',       slug: 'moving-pictures',     status: 'optional'      as const, note: 'Holy Wood (Hollywood) comes to Discworld. The movies satire.', page_count: 354, publication_year: 1990 },
+  { title: 'Small Gods',            slug: 'small-gods',          status: 'mandatory'     as const, note: 'Standalone masterpiece about religion, faith, and institutional power. Read this regardless of where you are in the series.', page_count: 284, publication_year: 1992 },
+  { title: 'The Truth',             slug: 'the-truth',           status: 'optional'      as const, note: 'The first newspaper in Ankh-Morpork. Satire of media and truth. Excellent standalone.', page_count: 304, publication_year: 2000 },
+  { title: 'The Amazing Maurice and His Educated Rodents', slug: 'the-amazing-maurice-and-his-educated-rodents', status: 'supplementary' as const, note: "YA Pied Piper retelling. Carnegie Medal winner. Charming but clearly YA — not a main-series entry.", page_count: 272, publication_year: 2001 },
+  { title: 'Monstrous Regiment',    slug: 'monstrous-regiment',  status: 'optional'      as const, note: 'A girl disguises herself as a soldier. War and gender satire. One of the sharpest late Pratchetts.', page_count: 384, publication_year: 2003 },
+  // ── Tiffany Aching ──
+  { title: 'The Wee Free Men',      slug: 'the-wee-free-men',    status: 'mandatory'     as const, note: 'Best YA entry point to Discworld. Young Tiffany Aching becomes a witch. Brilliant.', page_count: 268, publication_year: 2003 },
+  { title: 'A Hat Full of Sky',     slug: 'a-hat-full-of-sky',   status: 'optional'      as const, note: "Tiffany's first apprenticeship. A possessing spirit called a hiver.", page_count: 275, publication_year: 2004 },
+  { title: 'Wintersmith',           slug: 'wintersmith',         status: 'optional'      as const, note: 'Tiffany accidentally attracts the Wintersmith. The series at its most mythic.', page_count: 336, publication_year: 2006 },
+  { title: 'I Shall Wear Midnight', slug: 'i-shall-wear-midnight', status: 'optional'    as const, note: 'Tiffany fully trained. Tackles witch-hunting and prejudice. The darkest Tiffany book.', page_count: 322, publication_year: 2010 },
+  { title: "The Shepherd's Crown",  slug: 'the-shepherds-crown', status: 'optional'      as const, note: "Pratchett's final novel. Unpolished but deeply moving as a farewell.", page_count: 276, publication_year: 2015 },
+  // ── Industrial Revolution / Moist ──
+  { title: 'Going Postal',          slug: 'going-postal',        status: 'mandatory'     as const, note: 'A con artist is forced to run the Ankh-Morpork post office. Perfect standalone entry — the best place to start if Watch feels too long.', page_count: 471, publication_year: 2004 },
+  { title: 'Making Money',          slug: 'making-money',        status: 'optional'      as const, note: 'Moist von Lipwig takes over the Royal Mint. Slightly weaker than Going Postal but still excellent.', page_count: 400, publication_year: 2007 },
+  { title: 'Raising Steam',         slug: 'raising-steam',       status: 'optional'      as const, note: "Railways arrive on Discworld. Pratchett's Alzheimer's beginning to show — a weaker late entry.", page_count: 385, publication_year: 2013 },
 ];
 
 const bookSlugs = bookData.map(b => b.slug);
-const { data: coverRows } = await supabaseClient.from('books').select('slug, cover_url').in('slug', bookSlugs);
-const coverMap = new Map<string, string | null>((coverRows ?? []).map((r: any) => [r.slug, r.cover_url ?? null]));
-const books = bookData.map(b => ({ ...b, cover_url: coverMap.get(b.slug) ?? null }));
+const { data: dbRows } = await supabaseClient.from('books').select('slug, cover_url, darkness_level, avg_rating, series, series_number').in('slug', bookSlugs);
+const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
+const books = bookData.map(b => { const db = dbMap.get(b.slug); return { ...b, cover_url: db?.cover_url ?? null, darkness_level: db?.darkness_level ?? null, avg_rating: db?.avg_rating ?? null, series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null }; });
 
 const totalPages = books.reduce((sum, b) => sum + (b.page_count ?? 0), 0);
 const totalHours = Math.round(totalPages / 30);
 const coreBooks = books.filter(b => b.status === 'mandatory').length;
+
+const groups = [
+  {
+    label: 'City Watch',
+    sublabel: 'recommended start — books 8, 15, 19, 21, 24, 29, 34, 39',
+    books: books.slice(0, 8),
+    noteType: 'required' as const,
+    note: 'The most popular entry into Discworld. Start with Guards! Guards! — the Watch arc tracks a corrupt city over 20+ years of stories. Night Watch is considered one of the finest books in the series.',
+  },
+  {
+    label: 'Witches',
+    sublabel: 'books 3, 6, 12, 14, 18, 23',
+    books: books.slice(8, 14),
+    noteType: 'optional' as const,
+    note: 'Start with Wyrd Sisters, not Equal Rites. The Witches trilogy (Wyrd Sisters, Witches Abroad, Lords and Ladies) is feminist, sharp, and very funny. Granny Weatherwax is one of the great characters in all of fantasy.',
+  },
+  {
+    label: 'Death',
+    sublabel: 'books 4, 11, 16, 20, 26',
+    books: books.slice(14, 19),
+    noteType: 'optional' as const,
+    note: 'Mort is the best entry after Guards! Guards!. The Death subseries is warmer and more philosophical than the Watch. Hogfather (book 4 of the arc) is a December read.',
+  },
+  {
+    label: 'Rincewind & Wizards',
+    sublabel: 'books 1, 2, 5, 9, 17, 22, 27, 37',
+    books: books.slice(19, 27),
+    noteType: 'optional' as const,
+    note: "The original Discworld arc — and the weakest. Colour of Magic and Light Fantastic are historically interesting but not representative of what the series becomes. Sourcery or Interesting Times are the better Rincewind entry points.",
+  },
+  {
+    label: 'Standalones',
+    sublabel: 'books 7, 10, 13, 25, 28, 31',
+    books: books.slice(27, 33),
+    noteType: 'optional' as const,
+    note: 'Small Gods is the only mandatory read here — widely considered a top-3 Discworld book and a perfect standalone. The rest can be read in any order or skipped entirely.',
+  },
+  {
+    label: 'Tiffany Aching',
+    sublabel: 'YA arc — books 30, 32, 35, 38, 41',
+    books: books.slice(33, 38),
+    noteType: 'optional' as const,
+    note: "Pratchett's YA series is the best introduction to Discworld for younger readers — and excellent for adults. Start with The Wee Free Men. The Shepherd's Crown is Pratchett's final novel, written as he was dying.",
+  },
+  {
+    label: 'Industrial Revolution',
+    sublabel: 'Moist von Lipwig — books 33, 36, 40',
+    books: books.slice(38),
+    noteType: 'optional' as const,
+    note: 'Going Postal is the best standalone entry into Discworld after the Watch books. The Moist arc covers postal service, banking, and railways — progressively weaker as Pratchett\'s health declined.',
+  },
+];
 ---
 
 <Layout
   title="Discworld Reading Order | Fantasy Obscura"
-  description="Recommended reading order for Terry Pratchett's Discworld — starting with the City Watch subseries."
+  description="Complete reading order for all 41 Discworld novels by Terry Pratchett — City Watch, Witches, Death, Rincewind, Tiffany Aching, and more."
 >
 
   <div class="mb-6">
@@ -118,64 +138,60 @@ const coreBooks = books.filter(b => b.status === 'mandatory').length;
     </div>
 
     <div class="mt-5 flex flex-wrap gap-6 text-sm text-zinc-600 border-y border-zinc-100 py-4">
-      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> 41 total books ({coreBooks} in this guide)</span>
-      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📄</span> ~{totalPages.toLocaleString()} pages (this guide)</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> 41 books ({coreBooks} essential picks)</span>
+      <span class="flex items-center gap-1.5"><span class="text-zinc-400">📄</span> ~{totalPages.toLocaleString()} pages total</span>
       <span class="flex items-center gap-1.5"><span class="text-zinc-400">⏱</span> ~{totalHours} hours reading time</span>
       <span class="flex items-center gap-1.5"><span class="text-zinc-400">🕯️🕯️</span> Mild darkness</span>
     </div>
 
     <p class="mt-5 text-base text-zinc-700 leading-relaxed max-w-2xl">
-      Forty-one books of razor-sharp satire dressed as comedy fantasy. Pratchett used a flat world on the back of a turtle to say more about humanity than most literary fiction. You can start almost anywhere — but this guide gives you the best path in.
+      Forty-one novels of razor-sharp satire dressed as comedy fantasy — organized into seven subseries you can read in any order. Pratchett used a flat world on the back of a turtle to say more about humanity than most literary fiction manages. Every book is a standalone. Start anywhere.
     </p>
   </div>
 
   <div class="mb-12">
-    <h2 class="text-xl font-semibold mb-1">Recommended Reading Order (City Watch focus)</h2>
-    <p class="text-sm text-zinc-500 mb-6">The City Watch arc is the most popular entry. All Discworld books work as standalones — this guide mixes Watch essentials with the best standalone picks.</p>
-    <ReadingOrder books={books} client:load />
+    <h2 class="text-xl font-semibold mb-1">All 41 Discworld Novels by Subseries</h2>
+    <p class="text-sm text-zinc-500 mb-6">Organized by subseries — each arc is self-contained. Start with City Watch or Death. Book numbers in the sublabels refer to publication order.</p>
+    <ReadingOrder groups={groups} client:load />
   </div>
 
   <div class="mb-10 grid gap-3 sm:grid-cols-2">
     <div class="rounded-xl border border-blue-100 bg-blue-50 p-5">
-      <p class="font-semibold text-blue-900 mb-2">⚡ City Watch essentials ({coreBooks} books)</p>
-      <p class="text-sm text-blue-800">Guards! Guards! → Men at Arms → Feet of Clay → Jingo → The Fifth Elephant → Night Watch. The main Watch arc.</p>
+      <p class="font-semibold text-blue-900 mb-2">⚡ Where to start</p>
+      <p class="text-sm text-blue-800"><strong>Guards! Guards!</strong> for the full Watch experience. <strong>Mort</strong> or <strong>Hogfather</strong> for Death. <strong>Going Postal</strong> for a quick, funny standalone. <strong>Small Gods</strong> if you want Pratchett at his most serious.</p>
     </div>
-    <div class="rounded-xl border border-green-100 bg-green-50 p-5">
-      <p class="font-semibold text-green-900 mb-2">📖 Best standalone picks</p>
-      <p class="text-sm text-green-800"><strong>Small Gods</strong> (standalone masterpiece), <strong>Mort</strong> (Death), <strong>Going Postal</strong> (great entry point). Can be read anytime.</p>
+    <div class="rounded-xl border border-amber-100 bg-amber-50 p-5">
+      <p class="font-semibold text-amber-900 mb-2">⚠️ Skip books 1 and 2</p>
+      <p class="text-sm text-amber-800"><em>The Colour of Magic</em> and <em>The Light Fantastic</em> are Pratchett finding his voice — they're fine but very different from the rest. Most fans recommend starting from book 3 or later.</p>
     </div>
   </div>
 
   <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
-    <h2 class="font-semibold text-zinc-900 mb-3">Why not start with book 1?</h2>
-    <p class="text-sm text-zinc-700 leading-relaxed">
-      The first two books (<em>The Colour of Magic</em>, <em>The Light Fantastic</em>) are Pratchett finding his voice — they're fine but very different from what the series becomes. Most fans and Pratchett himself recommended starting with <strong>Guards! Guards!</strong>, <strong>Mort</strong>, or <strong>Small Gods</strong> for a first-time reader.
-    </p>
-  </div>
-
-  <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
-    <h2 class="font-semibold text-zinc-900 mb-3">Other subseries</h2>
+    <h2 class="font-semibold text-zinc-900 mb-3">Reading within each subseries</h2>
     <div class="space-y-2 text-sm text-zinc-700">
-      <div class="flex gap-3"><span class="font-medium w-32 shrink-0">Witches</span><span class="text-zinc-500">Wyrd Sisters, Witches Abroad, Maskerade — feminist, sharp, excellent</span></div>
-      <div class="flex gap-3"><span class="font-medium w-32 shrink-0">Death</span><span class="text-zinc-500">Mort, Reaper Man, Soul Music, Hogfather — dark comedy at its best</span></div>
-      <div class="flex gap-3"><span class="font-medium w-32 shrink-0">Tiffany Aching</span><span class="text-zinc-500">YA subseries — The Wee Free Men. Excellent starting point for younger readers</span></div>
-      <div class="flex gap-3"><span class="font-medium w-32 shrink-0">Industrial Revolution</span><span class="text-zinc-500">Going Postal, Making Money, Raising Steam — Moist von Lipwig</span></div>
+      <div class="flex gap-3"><span class="font-medium w-40 shrink-0">City Watch</span><span class="text-zinc-500">Read in order — character arcs build significantly over 8 books</span></div>
+      <div class="flex gap-3"><span class="font-medium w-40 shrink-0">Witches</span><span class="text-zinc-500">Start with Wyrd Sisters; skip Equal Rites as a first entry</span></div>
+      <div class="flex gap-3"><span class="font-medium w-40 shrink-0">Death</span><span class="text-zinc-500">Start with Mort; each book works standalone after that</span></div>
+      <div class="flex gap-3"><span class="font-medium w-40 shrink-0">Rincewind</span><span class="text-zinc-500">Optional arc — start with Sourcery if curious</span></div>
+      <div class="flex gap-3"><span class="font-medium w-40 shrink-0">Tiffany Aching</span><span class="text-zinc-500">Read in order — a complete coming-of-age arc across 5 books</span></div>
+      <div class="flex gap-3"><span class="font-medium w-40 shrink-0">Industrial Revolution</span><span class="text-zinc-500">Going Postal first; the arc weakens toward Raising Steam</span></div>
     </div>
   </div>
 
   <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
     <h2 class="font-semibold text-zinc-900 mb-3">What to know</h2>
     <ul class="space-y-2 text-sm text-zinc-700">
-      <li class="flex gap-2"><span class="text-zinc-400">→</span> Every book is a standalone. You can read them in any order within a subseries.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Every book is a standalone. You can start any subseries without reading the others.</li>
       <li class="flex gap-2"><span class="text-zinc-400">→</span> Pratchett's satire gets sharper as the series progresses — the later Watch books are darker and angrier.</li>
-      <li class="flex gap-2"><span class="text-zinc-400">→</span> Night Watch is widely considered one of the best books in the entire series. Save it for when you love Vimes.</li>
-      <li class="flex gap-2"><span class="text-zinc-400">→</span> Pratchett wrote 41 Discworld novels before his death from Alzheimer's in 2015.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Night Watch is widely considered one of the best books in the series. Save it for when you love Vimes.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> The Shepherd's Crown was written while Pratchett had Alzheimer's and is visibly unfinished — it's still worth reading as a farewell.</li>
+      <li class="flex gap-2"><span class="text-zinc-400">→</span> Pratchett wrote 41 Discworld novels before his death in 2015. The quality stays remarkably high for 30+ years.</li>
     </ul>
   </div>
 
   <div class="border-t pt-8 flex flex-col sm:flex-row gap-6 justify-between">
     <div>
-      <p class="text-sm font-medium text-zinc-700 mb-2">Want more Discworld?</p>
+      <p class="text-sm font-medium text-zinc-700 mb-2">Want more like Discworld?</p>
       <div class="flex flex-wrap gap-3">
         <a href="/categories/cozy" class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">Browse Cozy Fantasy →</a>
         <a href="/craft" class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">Find books like Discworld →</a>

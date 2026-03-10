@@ -10,9 +10,9 @@ const bookData = [
 ];
 
 const bookSlugs = bookData.map(b => b.slug);
-const { data: coverRows } = await supabaseClient.from('books').select('slug, cover_url').in('slug', bookSlugs);
-const coverMap = new Map<string, string | null>((coverRows ?? []).map((r: any) => [r.slug, r.cover_url ?? null]));
-const books = bookData.map(b => ({ ...b, cover_url: coverMap.get(b.slug) ?? null }));
+const { data: dbRows } = await supabaseClient.from('books').select('slug, cover_url, darkness_level, avg_rating, series, series_number').in('slug', bookSlugs);
+const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
+const books = bookData.map(b => { const db = dbMap.get(b.slug); return { ...b, cover_url: db?.cover_url ?? null, darkness_level: db?.darkness_level ?? null, avg_rating: db?.avg_rating ?? null, series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null }; });
 
 const totalPages = books.reduce((sum, b) => sum + (b.page_count ?? 0), 0);
 const totalHours = Math.round(totalPages / 30);

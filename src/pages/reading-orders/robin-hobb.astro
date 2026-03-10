@@ -140,13 +140,21 @@ const bookData = [
 ];
 
 const bookSlugs = bookData.map(b => b.slug);
-const { data: coverRows } = await supabaseClient.from('books').select('slug, cover_url').in('slug', bookSlugs);
-const coverMap = new Map<string, string | null>((coverRows ?? []).map((r: any) => [r.slug, r.cover_url ?? null]));
-const books = bookData.map(b => ({ ...b, cover_url: coverMap.get(b.slug) ?? null }));
+const { data: dbRows } = await supabaseClient.from('books').select('slug, cover_url, darkness_level, avg_rating, series, series_number').in('slug', bookSlugs);
+const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
+const books = bookData.map(b => { const db = dbMap.get(b.slug); return { ...b, cover_url: db?.cover_url ?? null, darkness_level: db?.darkness_level ?? null, avg_rating: db?.avg_rating ?? null, series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null }; });
 
 const totalPages = books.reduce((sum, b) => sum + (b.page_count ?? 0), 0);
 const totalHours = Math.round(totalPages / 30);
 const coreBooks = books.filter(b => b.status === 'mandatory').length;
+
+const groups = [
+  { label: 'The Farseer Trilogy', sublabel: 'start here', books: books.slice(0, 3), noteType: 'required' as const, note: 'All three essential. Each book ends on a devastating note — have the next ready.' },
+  { label: 'Liveship Traders', sublabel: 'new POVs, same world — do not skip', books: books.slice(3, 6), noteType: 'required' as const, note: 'New characters and merchant ships, but the world-building here is load-bearing for everything that follows, especially the Fool trilogy.' },
+  { label: 'The Tawny Man Trilogy', sublabel: 'Fitz returns', books: books.slice(6, 9), noteType: 'required' as const, note: 'Directly continues the Farseer Trilogy 15 years later. The Fitz/Fool relationship becomes the emotional core of the entire sequence.' },
+  { label: 'The Rain Wild Chronicles', sublabel: 'optional — same world, new characters', books: books.slice(9, 13), noteType: 'optional' as const, note: "Returns to the Liveship world. Enriches Fitz and the Fool but not required to follow it. Read if you loved Liveship Traders." },
+  { label: 'Fitz and the Fool', sublabel: 'the finale — read everything above first', books: books.slice(13), noteType: 'required' as const, note: 'All sixteen books converge here. Hobb closes arcs open since 1995.' },
+];
 ---
 
 <Layout
@@ -187,7 +195,7 @@ const coreBooks = books.filter(b => b.status === 'mandatory').length;
   <div class="mb-12">
     <h2 class="text-xl font-semibold mb-1">Recommended Reading Order</h2>
     <p class="text-sm text-zinc-500 mb-6">Publication order. The Rain Wild Chronicles (books 10–13) can be read after completing the Tawny Man or after the full sequence — both work.</p>
-    <ReadingOrder books={books} client:load />
+    <ReadingOrder groups={groups} client:load />
   </div>
 
   {/* ── Series breakdown ── */}

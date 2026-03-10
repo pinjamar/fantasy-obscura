@@ -15,9 +15,9 @@ const bookData = [
 ];
 
 const bookSlugs = bookData.map(b => b.slug);
-const { data: coverRows } = await supabaseClient.from('books').select('slug, cover_url').in('slug', bookSlugs);
-const coverMap = new Map<string, string | null>((coverRows ?? []).map((r: any) => [r.slug, r.cover_url ?? null]));
-const books = bookData.map(b => ({ ...b, cover_url: coverMap.get(b.slug) ?? null }));
+const { data: dbRows } = await supabaseClient.from('books').select('slug, cover_url, darkness_level, avg_rating, series, series_number').in('slug', bookSlugs);
+const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
+const books = bookData.map(b => { const db = dbMap.get(b.slug); return { ...b, cover_url: db?.cover_url ?? null, darkness_level: db?.darkness_level ?? null, avg_rating: db?.avg_rating ?? null, series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null }; });
 
 const coreBooks = books.filter(b => b.status === 'mandatory');
 const totalPages = books.reduce((sum, b) => sum + (b.page_count ?? 0), 0);
@@ -27,16 +27,9 @@ const groups = [
   {
     label: 'Blood and Ash',
     sublabel: 'main series — start here',
-    books: books.slice(0, 4),
+    books: books.slice(0, 5),
     noteType: 'required' as const,
-    note: 'The core story. All four are essential and must be read in order.',
-  },
-  {
-    label: "Hawke's POV",
-    sublabel: 'optional retelling',
-    books: books.slice(4, 5),
-    noteType: 'optional' as const,
-    note: "A Soul of Ash and Blood retells From Blood and Ash from Hawke's perspective. No new plot — skip if you're not interested in dual-POV deep-dives. Best read after book 4.",
+    note: "The core story. All four main books are essential. A Soul of Ash and Blood (book 5) is optional — it retells book 1 from Hawke's POV with no new plot. Read it after book 4 or skip it.",
   },
   {
     label: 'Rites of the Realms',

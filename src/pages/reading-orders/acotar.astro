@@ -47,24 +47,17 @@ const bookData = [
 ];
 
 const bookSlugs = bookData.map(b => b.slug);
-const { data: coverRows } = await supabaseClient.from('books').select('slug, cover_url').in('slug', bookSlugs);
-const coverMap = new Map<string, string | null>((coverRows ?? []).map((r: any) => [r.slug, r.cover_url ?? null]));
-const books = bookData.map(b => ({ ...b, cover_url: coverMap.get(b.slug) ?? null }));
+const { data: dbRows } = await supabaseClient.from('books').select('slug, cover_url, darkness_level, avg_rating, series, series_number').in('slug', bookSlugs);
+const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
+const books = bookData.map(b => { const db = dbMap.get(b.slug); return { ...b, cover_url: db?.cover_url ?? null, darkness_level: db?.darkness_level ?? null, avg_rating: db?.avg_rating ?? null, series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null }; });
 
 const groups = [
   {
-    label: 'The Original Trilogy',
-    sublabel: 'start here',
-    books: books.slice(0, 3),
+    label: 'A Court of Thorns and Roses',
+    sublabel: 'read in order',
+    books: books,
     noteType: 'required' as const,
-    note: 'All three are essential and must be read in order. ACMAF is frequently cited as one of the best romance-fantasy novels of the decade.',
-  },
-  {
-    label: 'Companion Books',
-    sublabel: 'same world, different POVs',
-    books: books.slice(3),
-    noteType: 'optional' as const,
-    note: 'ACFAS is a short bridge (~230 pages) — worthwhile context. ACSF follows Nesta and Cassian and works best read after the bridge novella.',
+    note: 'All five books — read in order. ACFAS is a short bridge novella (~230 pages); read it before A Court of Silver Flames. ACMAF is frequently cited as one of the best romance-fantasy novels of the decade.',
   },
 ];
 
