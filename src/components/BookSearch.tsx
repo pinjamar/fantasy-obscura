@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import Stars from './Stars';
 
 interface Book {
   id: string;
@@ -101,7 +102,7 @@ export default function BookSearch() {
                           )}
                         </div>
                         {book.avg_rating && (
-                          <span className="ml-auto text-xs text-zinc-400 shrink-0">★ {book.avg_rating.toFixed(1)}</span>
+                          <span className="ml-auto text-xs text-zinc-400 shrink-0 inline-flex items-center gap-1"><Stars rating={book.avg_rating} /> {book.avg_rating.toFixed(2)}</span>
                         )}
                       </a>
                     ) : (

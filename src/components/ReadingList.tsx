@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Stars from './Stars';
 import BookmarkButton from './BookmarkButton';
 
 const KEY = 'fantasy_obscura_saved';
@@ -178,7 +179,7 @@ export default function ReadingList() {
                 )}
                 <div className="flex gap-3 text-xs text-zinc-400">
                   {book.publication_year && <span>{book.publication_year}</span>}
-                  {book.avg_rating && <span>★ {book.avg_rating.toFixed(1)}</span>}
+                  {book.avg_rating && <span className="inline-flex items-center gap-1"><Stars rating={book.avg_rating} /> {book.avg_rating.toFixed(2)}</span>}
                 </div>
                 {book.subgenres && book.subgenres.length > 0 && (
                   <div className="mt-2 flex flex-wrap gap-1">

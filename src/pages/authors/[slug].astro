@@ -34,9 +34,10 @@ const topTropes = topN(allTropes, 6);
 const topTones  = topN(allTones, 4);
 
 const ratingsArr = books.map((b) => b.avg_rating).filter((r): r is number => r != null);
-const overallRating = ratingsArr.length
-  ? (ratingsArr.reduce((a, b) => a + b, 0) / ratingsArr.length).toFixed(2)
+const overallRatingNum = ratingsArr.length
+  ? ratingsArr.reduce((a, b) => a + b, 0) / ratingsArr.length
   : null;
+const overallRating = overallRatingNum?.toFixed(2) ?? null;
 
 const seriesSet = new Set(books.map((b) => b.series).filter(Boolean));
 const hasSeries = seriesSet.size > 0;
@@ -91,9 +92,13 @@ const metaDescription = profile?.bio
         <span>
           <span class="font-semibold text-zinc-900">{books.length}</span> {books.length === 1 ? 'book' : 'books'}
         </span>
-        {overallRating && (
-          <span>
-            <span class="font-semibold text-zinc-900">★ {overallRating}</span> avg rating
+        {overallRatingNum && (
+          <span class="inline-flex items-center gap-1.5">
+            <span class="relative inline-block font-semibold text-zinc-900" style={`letter-spacing:0.05em;line-height:1`}>
+              <span style="color:#d4d4d8">★★★★★</span>
+              <span class="absolute inset-0 overflow-hidden whitespace-nowrap" style={`width:${(overallRatingNum/5*100).toFixed(2)}%;color:#f59e0b`}>★★★★★</span>
+            </span>
+            <span class="font-semibold text-zinc-900">{overallRating}</span> avg rating
           </span>
         )}
         {hasSeries && (
@@ -201,7 +206,15 @@ const metaDescription = profile?.bio
             <div class="flex gap-3 text-xs text-zinc-500">
               {book.publication_year && <span>{book.publication_year}</span>}
               {book.page_count && <span>{book.page_count} pp.</span>}
-              {book.avg_rating && <span>★ {book.avg_rating.toFixed(1)}</span>}
+              {book.avg_rating && (
+                <span class="inline-flex items-center gap-1">
+                  <span class="relative inline-block" style={`letter-spacing:0.05em;line-height:1`}>
+                    <span style="color:#d4d4d8">★★★★★</span>
+                    <span class="absolute inset-0 overflow-hidden whitespace-nowrap" style={`width:${(book.avg_rating/5*100).toFixed(2)}%;color:#f59e0b`}>★★★★★</span>
+                  </span>
+                  {book.avg_rating.toFixed(2)}
+                </span>
+              )}
             </div>
 
             {book.subgenres && book.subgenres.length > 0 && (

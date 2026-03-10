@@ -157,7 +157,13 @@ const metaDescription = book.synopsis
         {book.avg_rating && (
           <span>
             <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block">Rating</span>
-            <span class="font-semibold text-zinc-800">★ {book.avg_rating.toFixed(2)}</span>
+            <span class="font-semibold text-zinc-800 inline-flex items-center gap-1.5">
+              <span class="relative inline-block" style={`letter-spacing:0.05em;line-height:1`}>
+                <span style="color:#d4d4d8">★★★★★</span>
+                <span class="absolute inset-0 overflow-hidden whitespace-nowrap" style={`width:${(book.avg_rating/5*100).toFixed(2)}%;color:#f59e0b`}>★★★★★</span>
+              </span>
+              {book.avg_rating.toFixed(2)}
+            </span>
           </span>
         )}
         {book.audience && (

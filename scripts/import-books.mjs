@@ -117,9 +117,12 @@ async function fetchGoogleBooks(title, author) {
       const year = rawYear ? parseInt(rawYear.slice(0, 4), 10) : null;
       const validYear = year && year >= 1800 && year <= new Date().getFullYear() ? year : null;
       const synopsis = item.description?.trim() ?? null;
+      const thumb = item.imageLinks?.extraLarge ?? item.imageLinks?.large ?? item.imageLinks?.medium ?? item.imageLinks?.thumbnail ?? null;
+      const cover_url = thumb ? thumb.replace(/^http:/, 'https:').replace('&edge=curl', '') : null;
       return {
         synopsis: synopsis ? synopsis.slice(0, 2000) : null,
         publication_year: validYear,
+        cover_url,
       };
     } catch {
       continue;
@@ -166,8 +169,9 @@ async function fetchOpenLibrary(title, author) {
     }
   }
 
+  const olCover = doc.cover_i ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg` : null;
   return {
-    cover_url: doc.cover_i ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg` : null,
+    cover_url: gb?.cover_url ?? olCover,
     isbn: doc.isbn?.[0] ?? null,
     publication_year,
     page_count: doc.number_of_pages_median ?? null,

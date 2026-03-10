@@ -108,79 +108,111 @@ Tags default to `approved = false`. Set to `true` in the Supabase dashboard to m
 
 All scripts live in `scripts/`. Run from the project root.
 
-### Import (free — no Anthropic API cost)
+### Daily pipeline — discover + classify in two commands
 
 ```bash
-# Import 50 priority SEO books from OpenLibrary
-node scripts/import-books.mjs
-node scripts/import-books.mjs --dry-run
-
-# Fill all sequel/continuation books for every series already in DB
-node scripts/fill-series.mjs
-node scripts/fill-series.mjs --dry-run
-node scripts/fill-series.mjs --limit 20
+npm run discover -- --limit 300    # discover up to 300 new books
+npm run classify                   # classify all unclassified books (runs all 5 scripts)
 ```
+
+Or run both in one go:
+
+```bash
+npm run pipeline                   # discover 100 books then classify (default limit)
+```
+
+**Free tier limits (Gemini 2.5 Flash):** ~300 books/day classified. For more, enable billing on Google AI Studio.
+
+---
+
+### Book discovery
+
+```bash
+# Auto-discover new fantasy books from Google Books API
+npm run discover                          # default 100 books
+npm run discover -- --limit 300          # custom limit
+npm run discover -- --limit 300 --reset  # restart query cycle from beginning
+npm run discover -- --dry-run            # preview without writing to DB
+
+# Add a specific book by title/author
+npm run add-book -- "The Wise Man's Fear" "Patrick Rothfuss"
+npm run add-book -- "Dune"
+
+# Add multiple books from a file (one "Title | Author" per line)
+npm run add-book -- --file books-to-add.txt
+```
+
+Progress is saved in `scripts/.discover-progress.json` (gitignored). Each run resumes from where the last left off across ~175 search queries. Run `--reset` after exhausting all queries to cycle again.
+
+---
 
 ### Classify new books — all fields in one command
 
-After importing new books, run this single command to fill every NULL classification field:
-
 ```bash
-npm run classify:new
+npm run classify
 ```
 
-This runs all 5 classifiers in sequence (each skips books already classified):
-1. `classify-books` → `darkness_level`, `heat_level`
-2. `classify-descriptors` → `accessibility`, `awards`, `stakes`, `pov_style`, `pov_count`, `protagonist_gender`, `series_status`
-3. `classify-tropes` → `tropes` (69 canonical tropes)
+Runs all 5 classifiers in sequence using Gemini 2.5 Flash (each skips books already classified):
+
+1. `classify-metadata` → `subgenres`, `darkness_level`, `heat_level`, `accessibility`, `awards`, `stakes`, `pov_style`, `pov_count`, `protagonist_gender`, `series_status`
+2. `classify-vibes` → `tone`, `pacing`, `magic_system`, `audience`
+3. `classify-tropes` → `tropes` (70 canonical tropes across 4 categories)
 4. `classify-creatures` → `creatures` (28 creature/race slugs)
 5. `classify-content-warnings` → `content_warnings`
 
 ### Individual classifiers
 
 ```bash
-# Darkness level (1–5) and heat level
-npm run classify:books
-node scripts/classify-books.mjs --dry-run
-node scripts/classify-books.mjs --limit 50
-
-# Descriptors
-npm run classify:descriptors
-node scripts/classify-descriptors.mjs --dry-run
-node scripts/classify-descriptors.mjs --limit 50
-node scripts/classify-descriptors.mjs --refresh-series   # re-check completed/ongoing for all series
-
-# Tropes (69 canonical tropes across 4 categories)
+npm run classify:metadata
+npm run classify:vibes
 npm run classify:tropes
-node scripts/classify-tropes.mjs --dry-run
-node scripts/classify-tropes.mjs --reclassify            # redo all books, not just NULL
-
-# Creatures & races (28 slugs)
 npm run classify:creatures
-node scripts/classify-creatures.mjs --dry-run
-node scripts/classify-creatures.mjs --reclassify
-
-# Content warnings
 npm run classify:warnings
-node scripts/classify-content-warnings.mjs --dry-run
+
+# With options
+node scripts/classify-metadata.mjs --dry-run
+node scripts/classify-metadata.mjs --limit 50
+node scripts/classify-tropes.mjs --reclassify        # redo all, not just NULL
+node scripts/classify-metadata.mjs --refresh-series  # re-check completed/ongoing status
 ```
 
-`--reclassify` re-runs classification on books that already have values — use after updating the canonical trope or creature lists.
+`--reclassify` re-runs on books that already have values — use after updating canonical trope/creature lists.
 
-`--refresh-series` re-asks Claude whether each series is `completed` or `ongoing` — run periodically as ongoing series finish.
+`--refresh-series` re-evaluates `series_status` for all series books — run periodically as ongoing series finish.
+
+---
+
+### Utilities
+
+```bash
+# Update book covers (Google Books first, Open Library fallback)
+npm run covers                    # fill only missing covers
+npm run covers -- --force         # refresh all covers
+npm run covers -- --dry-run
+
+# Update reader ratings from external sources
+npm run ratings
+
+# Fill series sequels for books already in DB
+node scripts/fill-series.mjs
+node scripts/fill-series.mjs --dry-run
+node scripts/fill-series.mjs --limit 20
+```
+
+---
 
 ### Generate editorial content (optional, costs more)
 
 ```bash
-# "What Makes It Different" — unique angle (Sonnet, ~$2.10 / 357 books)
+# "What Makes It Different" — unique angle
 node scripts/generate-what-makes-it-different.mjs
 node scripts/generate-what-makes-it-different.mjs --dry-run --limit 5
 
-# "Tone & Reading Experience" — feel, darkness, pacing (Haiku, ~$0.45 / 357 books)
+# "Tone & Reading Experience" — feel, darkness, pacing
 node scripts/generate-reading-experience.mjs
 node scripts/generate-reading-experience.mjs --dry-run --limit 5
 
-# "Who This Is For" — ideal reader + comps (Haiku, ~$0.50 / 357 books)
+# "Who This Is For" — ideal reader + comps
 node scripts/generate-ideal-reader.mjs
 node scripts/generate-ideal-reader.mjs --dry-run --limit 5
 node scripts/generate-ideal-reader.mjs --slug six-of-crows    # single book

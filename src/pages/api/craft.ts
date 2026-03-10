@@ -50,6 +50,12 @@ export const GET: APIRoute = async ({ url }) => {
   const series_status = p.get('series_status');
   if (series_status) filters.series_status = series_status;
 
+  const series_min_length = p.get('series_min_length');
+  if (series_min_length) filters.series_min_length = parseInt(series_min_length);
+  const series_max_length = p.get('series_max_length');
+  if (series_max_length) filters.series_max_length = parseInt(series_max_length);
+  if (p.get('starters_only') === '1') filters.starters_only = true;
+
   const pov_style = p.get('pov_style');
   if (pov_style) filters.pov_style = pov_style;
 

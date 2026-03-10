@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Stars from './Stars';
 import { PUBLIC_TROPES } from '../data/tropes';
 
 type Book = {
@@ -33,6 +34,9 @@ type Filters = {
   pov_style?: string;
   pov_count?: string;
   protagonist_gender?: string;
+  series_status?: string;
+  series_min_length?: number;
+  series_max_length?: number;
 };
 
 type VialOption = {
@@ -221,21 +225,21 @@ const VIALS: Vial[] = [
         icon: '📕',
         bg: 'bg-amber-50',
         hover: 'hover:bg-amber-100',
-        filters: { max_pages: 450 },
+        filters: { series_status: 'standalone' },
       },
       {
         label: 'Duology / Trilogy / Tetralogy',
         icon: '📖',
         bg: 'bg-yellow-50',
         hover: 'hover:bg-yellow-100',
-        filters: { min_pages: 300, max_pages: 599 },
+        filters: { series_min_length: 2, series_max_length: 4 },
       },
       {
         label: 'Long Series',
         icon: '📚',
         bg: 'bg-orange-50',
         hover: 'hover:bg-orange-100',
-        filters: { min_pages: 600 },
+        filters: { series_min_length: 5 },
       },
     ],
   },
@@ -440,7 +444,7 @@ const VIALS: Vial[] = [
         icon: '🏘️',
         bg: 'bg-teal-50',
         hover: 'hover:bg-teal-100',
-        filters: { subgenres: ['Cozy Fantasy', 'Low Fantasy'] },
+        filters: { subgenres: ['Cozy Fantasy', 'Humorous Fantasy'] },
       },
       {
         label: 'Urban / Modern',
@@ -647,7 +651,7 @@ const CATEGORY_OPTIONS: {
   subgenres: string[];
 }[] = [
   { value: '', label: 'Any category', subgenres: [] },
-  { value: 'epic',             label: '⚔️ Epic & High Fantasy',   subgenres: ['Epic Fantasy', 'High Fantasy', 'Political Fantasy'] },
+  { value: 'epic',             label: '⚔️ Epic & High Fantasy',   subgenres: ['Epic Fantasy', 'High Fantasy'] },
   { value: 'romantasy',        label: '🌹 Romantasy',              subgenres: ['Romantic Fantasy'] },
   { value: 'swords',           label: '🗡️ Sword & Sorcery',       subgenres: ['Sword & Sorcery'] },
   { value: 'dark',             label: '🌑 Dark Fantasy',           subgenres: ['Dark Fantasy', 'Horror Fantasy'] },
@@ -675,6 +679,7 @@ export default function AlchemyTable() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [excludedWarnings, setExcludedWarnings] = useState<string[]>([]);
   const [seriesStatus, setSeriesStatus] = useState<'completed' | 'ongoing' | ''>('');
+  const [startersOnly, setStartersOnly] = useState(false);
   const [heatLevel, setHeatLevel] = useState('');
 
   const toggleWarning = (id: string) => {
@@ -738,6 +743,9 @@ export default function AlchemyTable() {
       if (f.pov_style) merged.pov_style = f.pov_style;
       if (f.pov_count) merged.pov_count = f.pov_count;
       if (f.protagonist_gender) merged.protagonist_gender = f.protagonist_gender;
+      if (f.series_status) merged.series_status = f.series_status;
+      if (f.series_min_length !== undefined) merged.series_min_length = f.series_min_length;
+      if (f.series_max_length !== undefined) merged.series_max_length = f.series_max_length;
     }
 
     // Add selected tropes
@@ -798,8 +806,14 @@ export default function AlchemyTable() {
     if (merged.protagonist_gender) params.set('protagonist_gender', merged.protagonist_gender);
 
     excludedWarnings.forEach((w) => params.append('exclude_warning', w));
-    if (seriesStatus)
-      params.set('series_status', seriesStatus);
+    const effectiveSeriesStatus = merged.series_status || seriesStatus;
+    if (effectiveSeriesStatus)
+      params.set('series_status', effectiveSeriesStatus);
+    if (merged.series_min_length !== undefined)
+      params.set('series_min_length', String(merged.series_min_length));
+    if (merged.series_max_length !== undefined)
+      params.set('series_max_length', String(merged.series_max_length));
+    if (startersOnly) params.set('starters_only', '1');
 
     try {
       const res = await fetch(`/api/craft?${params.toString()}`);
@@ -885,39 +899,44 @@ export default function AlchemyTable() {
         )}
         {status === 'done' && currentBook && (
           <div className="space-y-3">
-            {currentBook.cover_url ? (
-              <img
-                src={currentBook.cover_url}
-                alt={currentBook.title}
-                className="mx-auto h-48 rounded-lg object-cover shadow-md"
-              />
-            ) : (
-              <div className="h-48 w-full rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-4xl">
-                📖
+            <div className="flex gap-3 w-fit mx-auto">
+              {currentBook.cover_url ? (
+                <img
+                  src={currentBook.cover_url}
+                  alt={currentBook.title}
+                  className="w-20 shrink-0 rounded-lg object-cover shadow-md self-start"
+                />
+              ) : (
+                <div className="w-20 h-28 shrink-0 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-3xl">
+                  📖
+                </div>
+              )}
+              <div className="min-w-0">
+                <h3 className="font-semibold text-zinc-900 text-sm leading-tight">
+                  {currentBook.title}
+                </h3>
+                {currentBook.series && (
+                  <p className="text-xs text-zinc-400 mt-0.5">
+                    ({currentBook.series}{currentBook.series_number != null && ` #${currentBook.series_number}`})
+                  </p>
+                )}
+                {currentBook.authors?.length && (
+                  <p className="text-xs text-zinc-500 mt-0.5">
+                    {currentBook.authors.join(', ')}
+                  </p>
+                )}
+                {currentBook.avg_rating && (
+                  <p className="text-xs text-amber-600 mt-0.5">
+                    <Stars rating={currentBook.avg_rating} />  {currentBook.avg_rating.toFixed(2)}
+                  </p>
+                )}
+                {currentBook.darkness_level != null && currentBook.darkness_level >= 1 && (
+                  <p className="text-xs text-zinc-500 mt-0.5">
+                    {'🕯️'.repeat(currentBook.darkness_level)}{' '}
+                    {['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'][currentBook.darkness_level]}
+                  </p>
+                )}
               </div>
-            )}
-            <div>
-              <h3 className="font-semibold text-zinc-900 text-sm leading-tight">
-                {currentBook.title}
-              </h3>
-              {currentBook.authors?.length && (
-                <p className="text-xs text-zinc-500 mt-0.5">
-                  {currentBook.authors.join(', ')}
-                </p>
-              )}
-              {currentBook.avg_rating && (
-                <p className="text-xs text-amber-600 mt-0.5">
-                  ★ {currentBook.avg_rating.toFixed(1)}
-                  {currentBook.publication_year &&
-                    ` · ${currentBook.publication_year}`}
-                </p>
-              )}
-              {currentBook.darkness_level != null && currentBook.darkness_level >= 1 && (
-                <p className="text-xs text-zinc-500 mt-0.5">
-                  {'🕯️'.repeat(currentBook.darkness_level)}{' '}
-                  {['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'][currentBook.darkness_level]}
-                </p>
-              )}
             </div>
             {currentBook.synopsis && (
               <p className="text-xs text-zinc-600 leading-relaxed line-clamp-4">
@@ -1034,20 +1053,26 @@ export default function AlchemyTable() {
               <span className="text-sm font-semibold text-zinc-700">Series Status</span>
             </div>
             <div className="flex gap-2">
-              {(['', 'completed', 'ongoing'] as const).map((val) => (
+              {(['completed', 'ongoing'] as const).map((val) => (
                 <button
                   key={val}
-                  onClick={() => setSeriesStatus(val)}
+                  onClick={() => setSeriesStatus(seriesStatus === val ? '' : val)}
                   className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-all ${
                     seriesStatus === val
                       ? 'bg-zinc-800 text-white'
                       : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                   }`}
                 >
-                  {val === '' ? 'Any' : val === 'completed' ? '✅ Completed' : '🔄 Ongoing'}
+                  {val === 'completed' ? '✅ Completed' : '🔄 Ongoing'}
                 </button>
               ))}
             </div>
+            <button
+              onClick={() => setStartersOnly(!startersOnly)}
+              className={`mt-2 text-xs transition-colors ${startersOnly ? 'text-zinc-800 font-medium' : 'text-zinc-400 hover:text-zinc-600'}`}
+            >
+              {startersOnly ? '✓ ' : ''}series starters only
+            </button>
           </div>
         </div>
 

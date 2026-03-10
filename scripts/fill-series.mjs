@@ -285,6 +285,7 @@ const BOOKS = [
   { title: 'Mistress of the Empire',            author: 'Raymond E. Feist',       series: 'The Empire Trilogy',             series_number: 3 },
 
   // ── The Empyrean (Rebecca Yarros) ────────────────────────────────────────
+  { title: 'Iron Flame',                        author: 'Rebecca Yarros',         series: 'The Empyrean',                   series_number: 2 },
   { title: 'Onyx Storm',                        author: 'Rebecca Yarros',         series: 'The Empyrean',                   series_number: 3 },
 
   // ── The Faithful and the Fallen (John Gwynne) ────────────────────────────
@@ -348,6 +349,7 @@ const BOOKS = [
   { title: 'Goldenhand',                        author: 'Garth Nix',              series: 'The Old Kingdom',                series_number: 5 },
 
   // ── The Poppy War (R.F. Kuang) ────────────────────────────────────────────
+  { title: 'The Dragon Republic',               author: 'R.F. Kuang',             series: 'The Poppy War',                  series_number: 2 },
   { title: 'The Burning God',                   author: 'R.F. Kuang',             series: 'The Poppy War',                  series_number: 3 },
 
   // ── The Prince of Nothing (R. Scott Bakker) ──────────────────────────────
@@ -395,6 +397,7 @@ const BOOKS = [
   { title: 'Season of Storms',                  author: 'Andrzej Sapkowski',      series: 'The Witcher',                    series_number: 8 },
 
   // ── Throne of Glass (Sarah J. Maas) ──────────────────────────────────────
+  { title: 'The Assassin\'s Blade',             author: 'Sarah J. Maas',          series: 'Throne of Glass',                series_number: 0 },
   { title: 'Crown of Midnight',                 author: 'Sarah J. Maas',          series: 'Throne of Glass',                series_number: 2 },
   { title: 'Heir of Fire',                      author: 'Sarah J. Maas',          series: 'Throne of Glass',                series_number: 3 },
   { title: 'Queen of Shadows',                  author: 'Sarah J. Maas',          series: 'Throne of Glass',                series_number: 4 },
@@ -454,9 +457,12 @@ async function fetchGoogleBooks(title, author) {
       const year = rawYear ? parseInt(rawYear.slice(0, 4), 10) : null;
       const validYear = year && year >= 1800 && year <= new Date().getFullYear() ? year : null;
       const synopsis = item.description?.trim() ?? null;
+      const thumb = item.imageLinks?.extraLarge ?? item.imageLinks?.large ?? item.imageLinks?.medium ?? item.imageLinks?.thumbnail ?? null;
+      const cover_url = thumb ? thumb.replace(/^http:/, 'https:').replace('&edge=curl', '') : null;
       return {
         synopsis: synopsis ? synopsis.slice(0, 2000) : null,
         publication_year: validYear,
+        cover_url,
       };
     } catch {
       continue;
@@ -502,8 +508,9 @@ async function fetchOpenLibrary(title, author) {
     }
   }
 
+  const olCover = doc.cover_i ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg` : null;
   return {
-    cover_url: doc.cover_i ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg` : null,
+    cover_url: gb?.cover_url ?? olCover,
     isbn: doc.isbn?.[0] ?? null,
     publication_year,
     page_count: doc.number_of_pages_median ?? null,

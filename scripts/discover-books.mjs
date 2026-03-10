@@ -219,6 +219,83 @@ const QUERIES = [
   'feminist fantasy novel',
   'diverse fantasy novel',
   'LGBTQ fantasy novel',
+  // Additional author sweeps
+  'inauthor:"matthew ward" fantasy',
+  'inauthor:"robert v.s. redick" fantasy',
+  'inauthor:"michael j. fletcher" fantasy',
+  'inauthor:"edward w. robertson" fantasy',
+  'inauthor:"michael g. manning" fantasy',
+  'inauthor:"michael j. martine" fantasy',
+  'inauthor:"m.r. carey" fantasy',
+  'inauthor:"peter f. hamilton" fantasy',
+  'inauthor:"ian mcdonald" fantasy',
+  'inauthor:"paul kearney" fantasy',
+  'inauthor:"peter brett" fantasy',
+  'inauthor:"karen miller" fantasy',
+  'inauthor:"kate forsyth" fantasy',
+  'inauthor:"trudi canavan" fantasy',
+  'inauthor:"glenda larke" fantasy',
+  'inauthor:"jennifer fallon" fantasy',
+  'inauthor:"sara douglass" fantasy',
+  'inauthor:"russell kirkpatrick" fantasy',
+  'inauthor:"fiona mcintosh" fantasy',
+  'inauthor:"jason letts" fantasy',
+  'inauthor:"michael j. sullivan" fantasy',
+  'inauthor:"kel kade" fantasy',
+  'inauthor:"dyrk ashton" fantasy',
+  'inauthor:"seth dickinson" fantasy',
+  'inauthor:"anna smith spark" fantasy',
+  'inauthor:"ed mcdonald" fantasy',
+  'inauthor:"miles cameron" fantasy',
+  'inauthor:"james e. wisher" fantasy',
+  'inauthor:"dj mcdonald" fantasy',
+  'inauthor:"sever bronny" fantasy',
+  'inauthor:"michael j. scott" fantasy',
+  // More subgenre sweeps
+  '"sword and sorcery" adventure fantasy',
+  '"dark lord" fantasy novel',
+  '"quest fantasy" epic novel',
+  '"coming of age" fantasy novel',
+  '"magic system" fantasy novel',
+  '"lost heir" fantasy novel',
+  '"resistance fantasy" novel',
+  '"rebellion fantasy" novel',
+  '"empire fantasy" novel',
+  '"dragon rider" fantasy novel',
+  '"elemental magic" fantasy novel',
+  '"blood magic" fantasy novel',
+  '"rune magic" fantasy novel',
+  '"rogue fantasy" novel',
+  '"ranger fantasy" novel',
+  '"paladin fantasy" novel',
+  '"bard fantasy" novel',
+  '"druid fantasy" novel',
+  '"shapeshifter fantasy" novel',
+  '"time travel fantasy" novel',
+  '"alternate history fantasy" novel',
+  '"weird fantasy" novel',
+  '"noblebright fantasy" novel',
+  '"hopepunk fantasy" novel',
+  '"mythic fantasy" novel',
+  '"folklore fantasy" novel',
+  '"fairy tale retelling" novel',
+  '"mythology retelling" fantasy novel',
+  '"arthurian fantasy" novel',
+  '"robin hood fantasy" novel',
+  // Award and list sweeps (extended)
+  '"david gemmell award" fantasy',
+  '"spfbo" fantasy novel',
+  '"self published fantasy" novel',
+  'indie fantasy novel bestseller',
+  '"fantasy series" complete novel',
+  // Reading experience sweeps
+  '"slow burn" fantasy romance novel',
+  '"action packed" fantasy novel',
+  '"character driven" fantasy novel',
+  '"plot twist" fantasy novel',
+  '"unreliable narrator" fantasy novel',
+  '"multiple POV" fantasy novel',
+  '"non linear" fantasy novel',
 ];
 
 // Require averageRating to exist — primary quality gate
@@ -261,6 +338,24 @@ function isLikelyNonEnglish(text) {
   return nonAscii.length / letters.length > 0.05;
 }
 
+// ── Open Library fallback ─────────────────────────────────────────────────────
+
+async function fetchOpenLibraryYear(title, authors) {
+  try {
+    const q = encodeURIComponent(title);
+    const a = encodeURIComponent((authors ?? [])[0] ?? '');
+    const url = `https://openlibrary.org/search.json?title=${q}&author=${a}&fields=first_publish_year&limit=1`;
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const year = data.docs?.[0]?.first_publish_year;
+    const currentYear = new Date().getFullYear();
+    return (year && year >= 1800 && year <= currentYear) ? year : null;
+  } catch {
+    return null;
+  }
+}
+
 // ── Progress persistence ──────────────────────────────────────────────────────
 
 function loadProgress() {
@@ -284,10 +379,18 @@ async function fetchPage(query, startIndex) {
   const url = `https://www.googleapis.com/books/v1/volumes?q=${q}&langRestrict=en&maxResults=${PAGE_SIZE}&startIndex=${startIndex}&printType=books&orderBy=relevance&key=${GOOGLE_BOOKS_KEY}`;
   try {
     const res = await fetch(url);
-    if (!res.ok) return [];
+    if (!res.ok) {
+      const text = await res.text();
+      console.log(`    ⚠️  API ${res.status}: ${text.slice(0, 200)}`);
+      return [];
+    }
     const data = await res.json();
+    if (!data.items && data.totalItems !== undefined) {
+      console.log(`    ℹ️  API ok, totalItems=${data.totalItems}, 0 items returned`);
+    }
     return data.items ?? [];
-  } catch {
+  } catch (e) {
+    console.log(`    ⚠️  Fetch error: ${e.message}`);
     return [];
   }
 }
@@ -301,17 +404,19 @@ function extractBookData(item) {
   // Must have a title and at least one author
   if (!info.title || !info.authors?.length) return null;
 
+  // Must have at least a description or page count — skip completely bare records
+  if (!info.description && !info.pageCount) return null;
+
   // Skip if description looks non-English
   if (isLikelyNonEnglish(info.description)) return null;
 
-  // Require an averageRating — books without one have no Google Books readership
-  const avgRating = info.averageRating ?? 0;
-  if (avgRating < MIN_AVG_RATING) return null;
+  // Only reject books with explicitly bad ratings — unrated books are fine
+  if (info.averageRating != null && info.averageRating < MIN_AVG_RATING) return null;
 
   // Skip non-novel categories
   const cats = (info.categories ?? []).join(' ').toLowerCase();
   const title = info.title.toLowerCase();
-  const skipKeywords = ['anthology', 'omnibus', 'short stories', 'collected', 'guide to', 'art of', 'making of', 'companion', 'cookbook', 'workbook'];
+  const skipKeywords = ['anthology', 'omnibus', 'short stories', 'collected', 'guide to', 'art of', 'making of', 'companion', 'cookbook', 'workbook', 'boxed set', 'box set', 'complete trilogy', 'complete series', 'complete collection', '3-book', '4-book', '5-book', 'omnibus edition'];
   if (skipKeywords.some((k) => title.includes(k) || cats.includes(k))) return null;
 
   const rawYear = info.publishedDate;
@@ -363,21 +468,26 @@ async function main() {
   // If progress left off past the end, wrap around
   if (queryIdx >= QUERIES.length) queryIdx = 0;
 
-  let cycleStart = queryIdx;
+  // Only count a "full cycle" as a cycle that started from query 0
+  let fullCycleCompleted = false;
   let importedThisCycle = 0;
+  // If starting mid-list, treat it as already past zero so first wrap is just continuation
+  let startedMidCycle = queryIdx > 0;
 
   outer: while (imported < LIMIT) {
     if (queryIdx >= QUERIES.length) {
       // Wrap around to beginning
       queryIdx = 0;
-      if (importedThisCycle === 0) {
-        // Full cycle with nothing new — truly exhausted
+      progress._queryIdx = 0;
+      saveProgress(progress);
+      if (fullCycleCompleted && importedThisCycle === 0) {
+        // Completed a full cycle from 0 with nothing new — truly exhausted
         console.log('\n⚠️  Completed a full cycle with no new books found. Database may be up to date for current queries.');
         break;
       }
+      if (!startedMidCycle) fullCycleCompleted = true;
+      startedMidCycle = false;
       importedThisCycle = 0;
-      progress._queryIdx = 0;
-      saveProgress(progress);
       console.log('\n🔄  Wrapped around to start of query list — skipping already-imported books automatically.');
     }
 
@@ -389,6 +499,8 @@ async function main() {
     let pageStart = startIndex;
     let pageImported = 0;
     let exhausted = false;
+    let consecutiveEmptyPages = 0;
+    const MAX_EMPTY_PAGES = 2; // skip query after 2 pages with no new books
 
     while (imported < LIMIT) {
       const items = await fetchPage(query, pageStart);
@@ -396,18 +508,28 @@ async function main() {
 
       if (!items.length) { exhausted = true; break; }
 
+      const importedBefore = imported;
+      let dbg_total = 0, dbg_filtered = 0, dbg_duped = 0;
+
       for (const item of items) {
         if (imported >= LIMIT) break;
+        dbg_total++;
 
         const book = extractBookData(item);
-        if (!book) continue;
+        if (!book) { dbg_filtered++; continue; }
 
         // Dedup
-        if (existingSlugs.has(book.slug) || existingTitles.has(book.title.toLowerCase().trim())) continue;
+        if (existingSlugs.has(book.slug) || existingTitles.has(book.title.toLowerCase().trim())) { dbg_duped++; continue; }
 
         // Mark as seen immediately to avoid dupes within the same run
         existingSlugs.add(book.slug);
         existingTitles.add(book.title.toLowerCase().trim());
+
+        // Open Library fallback for missing publication year
+        if (!book.publication_year) {
+          book.publication_year = await fetchOpenLibraryYear(book.title, book.authors);
+          await sleep(200);
+        }
 
         process.stdout.write(`  [${imported + 1}/${LIMIT}] "${book.title.slice(0, 50)}" … `);
 
@@ -426,6 +548,20 @@ async function main() {
           pageImported++;
           importedThisCycle++;
         }
+      }
+
+      console.log(`    page@${pageStart}: ${dbg_total} items → ${dbg_total - dbg_filtered} passed filter → ${dbg_duped} duped → ${imported - importedBefore} new`);
+
+      // Track consecutive pages with no new books — skip query early if stuck
+      if (imported === importedBefore) {
+        consecutiveEmptyPages++;
+        if (consecutiveEmptyPages >= MAX_EMPTY_PAGES) {
+          console.log(`  ↳ ${MAX_EMPTY_PAGES} pages with no new books — skipping to next query`);
+          exhausted = true;
+          break;
+        }
+      } else {
+        consecutiveEmptyPages = 0;
       }
 
       pageStart += PAGE_SIZE;

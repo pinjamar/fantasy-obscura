@@ -212,12 +212,17 @@ const booksJson = JSON.stringify(
   const countEl   = document.getElementById('book-count');
   const searchEl  = document.getElementById('trope-search');
 
+  function renderStars(r) {
+    const pct = ((r / 5) * 100).toFixed(2) + '%';
+    return `<span style="position:relative;display:inline-block;letter-spacing:0.05em;line-height:1;vertical-align:middle"><span style="color:#d4d4d8">★★★★★</span><span style="position:absolute;top:0;left:0;overflow:hidden;width:${pct};color:#f59e0b;white-space:nowrap">★★★★★</span></span>`;
+  }
+
   function renderBook(b) {
     const darkness = b.darkness_level >= 1
       ? `<span class="text-xs text-zinc-400"> · ${'🕯️'.repeat(b.darkness_level)} ${DARKNESS_LABEL[b.darkness_level]}</span>`
       : '';
     const rating = b.avg_rating
-      ? `<span class="text-xs text-amber-600">★ ${b.avg_rating.toFixed(1)}</span>`
+      ? `<span class="text-xs text-zinc-600 inline-flex items-center gap-1">${renderStars(b.avg_rating)} ${b.avg_rating.toFixed(2)}</span>`
       : '';
     const synopsis = b.synopsis
       ? `<p class="text-xs text-zinc-500 leading-relaxed line-clamp-2 mt-1">${b.synopsis}</p>`

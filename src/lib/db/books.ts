@@ -81,7 +81,20 @@ export async function getBooks(
       query = query.eq('stakes', filters.stakes);
     }
     if (filters.series_status) {
-      query = query.eq('series_status', filters.series_status);
+      if (filters.series_status === 'standalone') {
+        query = query.eq('series_status', 'standalone');
+      } else {
+        query = query.eq('series_status', filters.series_status);
+      }
+    }
+    if (filters.series_min_length !== undefined) {
+      query = query.gte('series_total', filters.series_min_length);
+    }
+    if (filters.series_max_length !== undefined) {
+      query = query.lte('series_total', filters.series_max_length);
+    }
+    if (filters.starters_only) {
+      query = query.or('series_number.eq.1,series.is.null');
     }
     if (filters.pov_style) {
       query = query.eq('pov_style', filters.pov_style);

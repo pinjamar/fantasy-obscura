@@ -112,6 +112,9 @@ export type BookFilters = {
   awards?: string[];
   stakes?: string;
   series_status?: string;
+  series_min_length?: number;
+  series_max_length?: number;
+  starters_only?: boolean;
   pov_style?: string;
   pov_count?: string;
   protagonist_gender?: string;

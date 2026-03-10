@@ -7,12 +7,17 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "classify:new": "node scripts/classify-books.mjs && node scripts/classify-descriptors.mjs && node scripts/classify-tropes.mjs && node scripts/classify-creatures.mjs && node scripts/classify-content-warnings.mjs",
+    "discover": "node scripts/discover-books.mjs",
+    "classify": "node scripts/classify-metadata.mjs && node scripts/classify-vibes.mjs && node scripts/classify-tropes.mjs && node scripts/classify-creatures.mjs && node scripts/classify-content-warnings.mjs",
+    "pipeline": "npm run discover && npm run classify",
+    "classify:metadata": "node scripts/classify-metadata.mjs",
+    "classify:vibes": "node scripts/classify-vibes.mjs",
     "classify:tropes": "node scripts/classify-tropes.mjs",
     "classify:creatures": "node scripts/classify-creatures.mjs",
-    "classify:descriptors": "node scripts/classify-descriptors.mjs",
     "classify:warnings": "node scripts/classify-content-warnings.mjs",
-    "classify:books": "node scripts/classify-books.mjs"
+    "covers": "node scripts/update-covers.mjs",
+    "ratings": "node scripts/fill-ratings.mjs",
+    "add-book": "node scripts/add-books.mjs"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",

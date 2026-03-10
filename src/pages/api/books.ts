@@ -78,7 +78,7 @@ export const GET: APIRoute = async ({ request }) => {
 
     const result = await getBooks(
       filters,
-      { page: 1, pageSize: 500, sort: 'rating_desc' },
+      { page: 1, pageSize: 2000, sort: 'rating_desc' },
     );
 
     if (result.error) {

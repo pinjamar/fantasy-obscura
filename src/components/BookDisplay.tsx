@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import BookmarkButton from './BookmarkButton';
+import Stars from './Stars';
 
 interface Book {
   id: string;
@@ -18,7 +19,7 @@ interface Book {
   series_number?: number | null;
   darkness_level?: number | null;
   heat_level?: string | null;
-  series_complete?: boolean | null;
+  series_status?: string | null;
   audiobook_available?: boolean | null;
   tropes?: string[] | null;
   created_at?: string;
@@ -101,6 +102,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
   const [completedFilter, setCompletedFilter] = useState<boolean | null>(null);
   const [standaloneFilter, setStandaloneFilter] = useState(false);
   const [tropeFilter, setTropeFilter] = useState<string | null>(null);
+  const [audienceFilter, setAudienceFilter] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -157,7 +159,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
       result = result.filter((b) => b.heat_level === HEAT_LEVELS[heatFilter]);
     }
     if (completedFilter === true) {
-      result = result.filter((b) => b.series_complete === true);
+      result = result.filter((b) => b.series_status === 'completed');
     }
     if (standaloneFilter) {
       result = result.filter((b) => !b.series);
@@ -165,8 +167,11 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
     if (tropeFilter) {
       result = result.filter((b) => b.tropes?.includes(tropeFilter));
     }
+    if (audienceFilter) {
+      result = result.filter((b) => b.audience === audienceFilter);
+    }
     return result;
-  }, [sortedBooks, searchQuery, darknessFilter, heatFilter, completedFilter, standaloneFilter, tropeFilter]);
+  }, [sortedBooks, searchQuery, darknessFilter, heatFilter, completedFilter, standaloneFilter, tropeFilter, audienceFilter]);
 
   const totalBooksPages = Math.ceil(filteredBooks.length / BOOKS_PER_PAGE);
   const pagedBooks = filteredBooks.slice(
@@ -230,21 +235,31 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
 
       {/* Popular trope chips */}
       {featuredTropes && featuredTropes.length > 0 && (
-        <div className="flex flex-wrap items-center gap-2 mb-4">
-          <span className="text-sm text-zinc-500 mr-1">Tropes:</span>
-          {featuredTropes.map((trope) => (
-            <button
-              key={trope}
-              onClick={() => { setTropeFilter(tropeFilter === trope ? null : trope); setCurrentPage(1); }}
-              className={`px-3 py-1.5 rounded-full text-sm transition-all ${
-                tropeFilter === trope
-                  ? 'bg-purple-700 text-white font-medium'
-                  : 'bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100'
-              }`}
+        <div className="mb-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-sm text-zinc-500 mr-1">Tropes:</span>
+            {featuredTropes.map((trope) => (
+              <button
+                key={trope}
+                onClick={() => { setTropeFilter(tropeFilter === trope ? null : trope); setCurrentPage(1); }}
+                className={`px-3 py-1.5 rounded-full text-sm transition-all ${
+                  tropeFilter === trope
+                    ? 'bg-purple-700 text-white font-medium'
+                    : 'bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100'
+                }`}
+              >
+                {trope}
+              </button>
+            ))}
+          </div>
+          {tropeFilter && (
+            <a
+              href={`/tropes/${tropeFilter.toLowerCase().replace(/[^a-z0-9]+/g, '-')}/`}
+              className="inline-block mt-2 text-xs text-purple-600 hover:text-purple-800 hover:underline"
             >
-              {trope}
-            </button>
-          ))}
+              Browse all {tropeFilter} books →
+            </a>
+          )}
         </div>
       )}
 
@@ -326,7 +341,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
               </svg>
             )}
           </span>
-          <span className="text-sm font-medium text-zinc-700">Completed series</span>
+          <span className="text-sm font-medium text-zinc-700">Completed Series</span>
         </button>
 
         <button
@@ -346,6 +361,27 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
           </span>
           <span className="text-sm font-medium text-zinc-700">Standalone</span>
         </button>
+
+        {([['Adult', 'Adult'], ['YA', 'Young Adult (YA)']] as [string, string][]).map(([label, value]) => (
+          <button
+            key={value}
+            onClick={() => { setAudienceFilter(audienceFilter === value ? null : value); setCurrentPage(1); }}
+            className="flex items-center gap-2 group"
+          >
+            <span className={`w-4 h-4 rounded flex items-center justify-center border transition-all ${
+              audienceFilter === value
+                ? 'bg-zinc-900 border-zinc-900'
+                : 'border-zinc-400 group-hover:border-zinc-600'
+            }`}>
+              {audienceFilter === value && (
+                <svg className="w-2.5 h-2.5 text-white" viewBox="0 0 10 10" fill="none">
+                  <path d="M1.5 5L4 7.5L8.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              )}
+            </span>
+            <span className="text-sm font-medium text-zinc-700">{label}</span>
+          </button>
+        ))}
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -423,7 +459,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                   {book.avg_rating && (
                     <div>
                       <span className="text-zinc-500">Rating:</span>
-                      <p className="font-medium">{book.avg_rating.toFixed(1)}/5 ⭐</p>
+                      <p className="font-medium"><Stars rating={book.avg_rating} /> {book.avg_rating.toFixed(2)}/5</p>
                     </div>
                   )}
                 </div>

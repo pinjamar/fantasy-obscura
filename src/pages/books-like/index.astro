@@ -1,7 +1,19 @@
 ---
 import Layout from '../../components/Layout.astro'
 import { BOOKS_LIKE, darknessCandles, getHeat } from '../../data/books-like'
+import { supabaseClient } from '../../lib/supabaseClient'
 
+// Fetch DB tropes for all guide source books in one query
+// Use title-based slugs (how books are stored in DB), not guide short-IDs like 'acotar'
+const toSlug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+const slugs = BOOKS_LIKE.map((e) => toSlug(e.source.title))
+const { data: dbBooks } = await supabaseClient
+  .from('books')
+  .select('slug, tropes')
+  .in('slug', slugs)
+const dbTropesMap = new Map<string, string[]>(
+  (dbBooks ?? []).map((b) => [b.slug, b.tropes ?? []])
+)
 ---
 
 <Layout
@@ -32,10 +44,15 @@ import { BOOKS_LIKE, darknessCandles, getHeat } from '../../data/books-like'
         <p id="books-like-empty" class="hidden text-sm text-zinc-400 mb-4">No guides match your search.</p>
 
         <div id="books-like-list" class="space-y-3">
-          {BOOKS_LIKE.map((entry) => (
+          {BOOKS_LIKE.map((entry) => {
+            const titleSlug = toSlug(entry.source.title)
+            const tropes = dbTropesMap.get(titleSlug)?.length
+              ? dbTropesMap.get(titleSlug)!
+              : entry.source.tropes
+            return (
             <a
               href={`/books-like/${entry.slug}/`}
-              data-search={`${entry.source.title} ${entry.source.author} ${entry.source.series ?? ''} ${entry.source.tropes.join(' ')}`.toLowerCase()}
+              data-search={`${entry.source.title} ${entry.source.author} ${entry.source.series ?? ''} ${tropes.join(' ')}`.toLowerCase()}
               class="flex items-center gap-4 p-4 rounded-2xl border border-zinc-200 bg-white hover:border-zinc-300 hover:bg-zinc-50 transition-colors group"
             >
               <div class="relative w-12 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 shrink-0">
@@ -54,17 +71,18 @@ import { BOOKS_LIKE, darknessCandles, getHeat } from '../../data/books-like'
                   <p class="text-xs text-indigo-600 mt-0.5">{entry.source.series} #{entry.source.series_number}</p>
                 )}
                 <p class="text-sm text-zinc-500 mt-0.5">
-                  {entry.source.author} · {darknessCandles(entry.source.darkness_level)}{(() => { const h = getHeat(entry.source.heat_level); return h ? ` ${h.flames}` : '' })()} · {entry.recommendations.length} picks
+                  {entry.source.author} · {darknessCandles(entry.source.darkness_level)}{(() => { const h = getHeat(entry.source.heat_level); return h ? ` ${h.flames}` : '' })()} · {entry.aspects.reduce((sum, a) => sum + a.recs.length, 0)} picks
                 </p>
                 <div class="mt-1.5 flex flex-wrap gap-1">
-                  {entry.source.tropes.slice(0, 3).map((t) => (
+                  {tropes.slice(0, 3).map((t) => (
                     <span class="text-xs px-2 py-0.5 bg-indigo-50 text-indigo-600 border border-indigo-100 rounded-full">{t}</span>
                   ))}
                 </div>
               </div>
               <span class="text-zinc-400 group-hover:text-zinc-600 transition-colors shrink-0">›</span>
             </a>
-          ))}
+            )
+          })}
         </div>
       </section>
     )}
@@ -73,7 +91,7 @@ import { BOOKS_LIKE, darknessCandles, getHeat } from '../../data/books-like'
     <section class="mt-12">
       <h2 class="text-sm font-semibold text-zinc-400 uppercase tracking-widest mb-4">More coming soon</h2>
       <div class="flex flex-wrap gap-2">
-        {['Fourth Wing', 'The Name of the Wind', 'Six of Crows', 'The Hobbit', 'Dune', 'The Way of Kings', 'Throne of Glass'].map((title) => (
+        {['The Name of the Wind', 'Six of Crows', 'The Hobbit', 'Dune', 'The Way of Kings', 'Throne of Glass'].map((title) => (
           <span class="rounded-full border border-dashed border-zinc-300 px-4 py-1.5 text-sm text-zinc-400">
             Books like {title}
           </span>
