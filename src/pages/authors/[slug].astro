@@ -7,7 +7,6 @@ const { slug } = Astro.params;
 
 if (!slug) return Astro.redirect('/authors/');
 
-// Find the author whose slug matches (aggregated from books)
 const allAuthors = await getAllAuthors();
 const author = allAuthors.find((a) => a.slug === slug);
 
@@ -17,6 +16,14 @@ const [books, profile] = await Promise.all([
   getBooksByAuthor(author.name),
   getAuthorProfile(slug),
 ]);
+
+// Sort books by avg_rating desc (nulls last)
+const sortedBooks = [...books].sort((a, b) => {
+  if (a.avg_rating == null && b.avg_rating == null) return 0;
+  if (a.avg_rating == null) return 1;
+  if (b.avg_rating == null) return -1;
+  return b.avg_rating - a.avg_rating;
+});
 
 // Aggregate stats from books
 const allSubgenres = books.flatMap((b) => b.subgenres ?? []);
@@ -39,8 +46,79 @@ const overallRatingNum = ratingsArr.length
   : null;
 const overallRating = overallRatingNum?.toFixed(2) ?? null;
 
-const seriesSet = new Set(books.map((b) => b.series).filter(Boolean));
-const hasSeries = seriesSet.size > 0;
+// Build series list from this author's books
+type SeriesEntry = {
+  name: string;
+  bookCount: number;
+  readingOrderSlug: string | null;
+};
+
+// Map: series name → curated reading order slug
+// Series name variations that map to our curated guides
+const READING_ORDER_MAP: Record<string, string> = {
+  // Sanderson
+  'The Stormlight Archive':      'stormlight',
+  'Stormlight Archive':          'stormlight',
+  'Mistborn':                    'cosmere',
+  'Mistborn: The Original Trilogy': 'cosmere',
+  'Wax and Wayne':               'cosmere',
+  'The Cosmere':                 'cosmere',
+  // Abercrombie
+  'The First Law':               'first-law',
+  'First Law':                   'first-law',
+  'First Law World':             'first-law',
+  // Discworld
+  'Discworld':                   'discworld',
+  // Malazan
+  'Malazan Book of the Fallen':  'malazan',
+  'Malazan':                     'malazan',
+  // Wheel of Time
+  'The Wheel of Time':           'wheel-of-time',
+  'Wheel of Time':               'wheel-of-time',
+  // Kingkiller
+  'The Kingkiller Chronicle':    'kingkiller',
+  'Kingkiller Chronicle':        'kingkiller',
+  // Witcher
+  'The Witcher':                 'witcher',
+  'Witcher':                     'witcher',
+  'The Witcher Saga':            'witcher',
+  // Dresden Files
+  'The Dresden Files':           'dresden-files',
+  'Dresden Files':               'dresden-files',
+  // SJM
+  'A Court of Thorns and Roses': 'acotar',
+  'ACOTAR':                      'acotar',
+  'Throne of Glass':             'throne-of-glass',
+  // ASOIAF
+  'A Song of Ice and Fire':      'asoiaf',
+  // Robin Hobb
+  'Realm of the Elderlings':     'robin-hobb',
+  'The Farseer Trilogy':         'robin-hobb',
+  'Farseer':                     'robin-hobb',
+  'Liveship Traders':            'robin-hobb',
+  'Tawny Man':                   'robin-hobb',
+  // Empyrean
+  'The Empyrean':                'empyrean',
+  'Empyrean':                    'empyrean',
+  // Blood and Ash
+  'Blood and Ash':               'blood-and-ash',
+  'From Blood and Ash':          'blood-and-ash',
+};
+
+const seriesMap = new Map<string, number>();
+for (const book of books) {
+  if (book.series) {
+    seriesMap.set(book.series, (seriesMap.get(book.series) ?? 0) + 1);
+  }
+}
+
+const seriesList: SeriesEntry[] = [...seriesMap.entries()]
+  .sort((a, b) => b[1] - a[1]) // most books first
+  .map(([name, bookCount]) => ({
+    name,
+    bookCount,
+    readingOrderSlug: READING_ORDER_MAP[name] ?? null,
+  }));
 
 // Avatar colour — deterministic from name
 const palette = [
@@ -53,7 +131,6 @@ for (const c of author.name) h = (h * 31 + c.charCodeAt(0)) & 0xff;
 const avatarGradient = palette[h % palette.length];
 
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
-const DARKNESS_LABELS  = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
 
 const metaDescription = profile?.bio
   ? profile.bio.slice(0, 160)
@@ -70,7 +147,6 @@ const metaDescription = profile?.bio
 
   <!-- Author hero -->
   <div class="flex flex-col sm:flex-row gap-6 items-start mb-10">
-    <!-- Avatar / Photo -->
     {profile?.photo_url ? (
       <img
         src={profile.photo_url}
@@ -84,7 +160,6 @@ const metaDescription = profile?.bio
       </div>
     )}
 
-    <!-- Name + stats -->
     <div class="flex-1">
       <h1 class="text-3xl font-bold tracking-tight text-zinc-900">{author.name}</h1>
 
@@ -101,14 +176,13 @@ const metaDescription = profile?.bio
             <span class="font-semibold text-zinc-900">{overallRating}</span> avg rating
           </span>
         )}
-        {hasSeries && (
+        {seriesList.length > 0 && (
           <span>
-            <span class="font-semibold text-zinc-900">{seriesSet.size}</span> {seriesSet.size === 1 ? 'series' : 'series'}
+            <span class="font-semibold text-zinc-900">{seriesList.length}</span> {seriesList.length === 1 ? 'series' : 'series'}
           </span>
         )}
       </div>
 
-      <!-- Social links -->
       {(profile?.website || profile?.twitter || profile?.goodreads) && (
         <div class="mt-3 flex flex-wrap gap-3 text-sm">
           {profile.website && (
@@ -129,7 +203,6 @@ const metaDescription = profile?.bio
         </div>
       )}
 
-      <!-- Top genres -->
       {topGenres.length > 0 && (
         <div class="mt-4 flex flex-wrap gap-2">
           {topGenres.map((g) => (
@@ -138,7 +211,6 @@ const metaDescription = profile?.bio
         </div>
       )}
 
-      <!-- Top tropes -->
       {topTropes.length > 0 && (
         <div class="mt-2 flex flex-wrap gap-2">
           {topTropes.map((t) => (
@@ -147,7 +219,6 @@ const metaDescription = profile?.bio
         </div>
       )}
 
-      <!-- Top tones -->
       {topTones.length > 0 && (
         <div class="mt-2 flex flex-wrap gap-2">
           {topTones.map((t) => (
@@ -158,85 +229,183 @@ const metaDescription = profile?.bio
     </div>
   </div>
 
-  <!-- Bio -->
   {profile?.bio && (
     <div class="mb-10 max-w-3xl">
       <p class="text-zinc-600 leading-relaxed">{profile.bio}</p>
     </div>
   )}
 
-  <!-- Books grid -->
-  <h2 class="text-xl font-semibold mb-4">Books</h2>
-  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-    {books.map((book) => {
+  <!-- Series section -->
+  {seriesList.length > 0 && (
+    <div class="mb-12">
+      <h2 class="text-xl font-semibold mb-4">Series by {author.name}</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {seriesList.map((s) => {
+          const seriesBooks = sortedBooks
+            .filter((b) => b.series === s.name)
+            .sort((a, b) => (a.series_number ?? 999) - (b.series_number ?? 999));
+
+          const seriesRatings = seriesBooks.map((b) => b.avg_rating).filter((r): r is number => r != null);
+          const seriesAvgRatingNum = seriesRatings.length
+            ? seriesRatings.reduce((a, b) => a + b, 0) / seriesRatings.length
+            : null;
+          const seriesAvgRating = seriesAvgRatingNum?.toFixed(2) ?? null;
+
+          return (
+            <div class="rounded-xl border border-zinc-200 bg-white px-5 py-4">
+              <!-- Series header row -->
+              <div class="flex items-center justify-between gap-4 mb-3">
+                <div class="min-w-0">
+                  <p class="font-semibold text-zinc-900">{s.name}</p>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    {s.bookCount} {s.bookCount === 1 ? 'book' : 'books'}
+                    {seriesAvgRatingNum && (
+                      <span class="ml-2 inline-flex items-center gap-1">
+                        ·
+                        <span class="relative inline-block" style="letter-spacing:0.05em;line-height:1">
+                          <span style="color:#d4d4d8">★★★★★</span>
+                          <span class="absolute inset-0 overflow-hidden whitespace-nowrap" style={`width:${(seriesAvgRatingNum / 5 * 100).toFixed(2)}%;color:#f59e0b`}>★★★★★</span>
+                        </span>
+                        {seriesAvgRating}
+                      </span>
+                    )}
+                  </p>
+                </div>
+                {s.readingOrderSlug ? (
+                  <a
+                    href={`/reading-orders/${s.readingOrderSlug}/`}
+                    class="shrink-0 text-xs font-medium text-purple-600 bg-purple-50 border border-purple-200 px-2.5 py-1 rounded-full whitespace-nowrap hover:bg-purple-100 transition-colors"
+                  >
+                    Reading order →
+                  </a>
+                ) : (
+                  <span class="shrink-0 text-xs text-zinc-400 whitespace-nowrap">No guide yet</span>
+                )}
+              </div>
+
+              <!-- Book covers row -->
+              <div class="flex flex-wrap gap-3">
+                {seriesBooks.map((book) => (
+                  book.slug ? (
+                    <a href={`/books/${book.slug}/`} class="group flex flex-col items-center gap-1 w-14">
+                      <div class="w-14 h-20 rounded-lg overflow-hidden border border-zinc-200 bg-zinc-100 shadow-sm group-hover:shadow-md group-hover:scale-[1.04] transition-all">
+                        {book.cover_url ? (
+                          <img src={book.cover_url} alt={book.title} class="w-full h-full object-cover" onerror="this.onerror=null;this.src='/placeholder-cover.svg';" />
+                        ) : (
+                          <div class="w-full h-full flex items-center justify-center text-zinc-300 text-lg">📖</div>
+                        )}
+                      </div>
+                      <p class="text-[10px] text-zinc-500 text-center leading-tight line-clamp-2 group-hover:text-purple-700 transition-colors w-full">{book.title}</p>
+                    </a>
+                  ) : (
+                    <div class="flex flex-col items-center gap-1 w-14">
+                      <div class="w-14 h-20 rounded-lg overflow-hidden border border-zinc-200 bg-zinc-100">
+                        {book.cover_url ? (
+                          <img src={book.cover_url} alt={book.title} class="w-full h-full object-cover" onerror="this.onerror=null;this.src='/placeholder-cover.svg';" />
+                        ) : (
+                          <div class="w-full h-full flex items-center justify-center text-zinc-300 text-lg">📖</div>
+                        )}
+                      </div>
+                      <p class="text-[10px] text-zinc-500 text-center leading-tight line-clamp-2 w-full">{book.title}</p>
+                    </div>
+                  )
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  )}
+
+  <!-- Books list (sorted by rating, paginated) -->
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-xl font-semibold">Books</h2>
+    <span class="text-sm text-zinc-400">{books.length} total · sorted by rating</span>
+  </div>
+
+  <div id="books-grid" class="space-y-3">
+    {sortedBooks.map((book, i) => {
       const href = book.slug ? `/books/${book.slug}/` : null;
       const dl   = (book.darkness_level != null && book.darkness_level >= 1) ? book.darkness_level : null;
+      const synopsis = (book as any).synopsis as string | null ?? null;
+      const shortSynopsis = synopsis ? synopsis.slice(0, 120).trimEnd() : null;
+      const hasTruncated = synopsis && synopsis.length > 120;
+      const cardId = `author-book-${i}`;
 
-      const card = (
-        <div class="border rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow">
+      const inner = (
+        <div class="flex items-start gap-4 rounded-xl border border-zinc-200 bg-white px-4 py-3 hover:border-purple-300 hover:bg-purple-50/30 transition-colors group">
           <!-- Cover -->
-          <div class="relative h-44 bg-linear-to-br from-purple-100 to-blue-100 overflow-hidden">
-            <img
-              src={book.cover_url || '/placeholder-cover.svg'}
-              alt={book.title}
-              class="w-full h-full object-cover"
-              onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
-            />
-            {dl != null && (
-              <div class="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                {DARKNESS_CANDLES[dl]}
-              </div>
+          <div class="shrink-0 w-10 h-14 rounded overflow-hidden bg-zinc-100 border border-zinc-200">
+            {book.cover_url ? (
+              <img src={book.cover_url} alt={book.title} class="w-full h-full object-cover" onerror="this.onerror=null;this.src='/placeholder-cover.svg';" />
+            ) : (
+              <div class="w-full h-full flex items-center justify-center text-zinc-300">📖</div>
             )}
           </div>
 
           <!-- Info -->
-          <div class="p-4">
-            <h3 class="font-semibold leading-tight mb-1">{book.title}</h3>
-
-            {book.series && (
-              <p class="text-xs text-indigo-600 font-medium mb-1">
-                {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
-              </p>
-            )}
-
-            {dl != null && (
-              <p class="text-xs text-zinc-500 mb-2">{DARKNESS_CANDLES[dl]} {DARKNESS_LABELS[dl]}</p>
-            )}
-
-            <div class="flex gap-3 text-xs text-zinc-500">
-              {book.publication_year && <span>{book.publication_year}</span>}
-              {book.page_count && <span>{book.page_count} pp.</span>}
-              {book.avg_rating && (
-                <span class="inline-flex items-center gap-1">
-                  <span class="relative inline-block" style={`letter-spacing:0.05em;line-height:1`}>
-                    <span style="color:#d4d4d8">★★★★★</span>
-                    <span class="absolute inset-0 overflow-hidden whitespace-nowrap" style={`width:${(book.avg_rating/5*100).toFixed(2)}%;color:#f59e0b`}>★★★★★</span>
-                  </span>
-                  {book.avg_rating.toFixed(2)}
-                </span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-3">
+              <div class="min-w-0">
+                <p class="font-semibold text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug">
+                  {book.title}
+                </p>
+                {book.series && (
+                  <p class="text-xs text-indigo-600 mt-0.5">
+                    {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
+                  </p>
+                )}
+              </div>
+              {book.avg_rating != null && (
+                <span class="shrink-0 text-sm font-semibold text-amber-500 whitespace-nowrap">★ {book.avg_rating.toFixed(2)}</span>
               )}
             </div>
 
-            {book.subgenres && book.subgenres.length > 0 && (
-              <div class="mt-2 flex flex-wrap gap-1">
-                {book.subgenres.slice(0, 2).map((g) => (
-                  <span class="text-xs bg-purple-50 text-purple-700 px-1.5 py-0.5 rounded">{g}</span>
-                ))}
-              </div>
+            {shortSynopsis && (
+              <p class="mt-1.5 text-xs text-zinc-500 leading-relaxed">
+                <span data-short={cardId}>{shortSynopsis}{hasTruncated ? '…' : ''}</span>
+                {hasTruncated && (
+                  <>
+                    <span data-full={cardId} class="hidden">{synopsis}</span>
+                    <button data-toggle={cardId} class="ml-1 text-purple-600 hover:text-purple-800 font-medium text-xs underline-offset-2 hover:underline">read more</button>
+                  </>
+                )}
+              </p>
             )}
 
-            {href && (
-              <p class="text-xs text-purple-600 font-medium mt-3">View details →</p>
-            )}
+            <div class="flex flex-wrap items-center gap-3 mt-1.5 text-xs text-zinc-400">
+              {book.publication_year && <span>{book.publication_year}</span>}
+              {book.page_count && <span>{book.page_count} pp.</span>}
+              {dl && <span>{DARKNESS_CANDLES[dl]}</span>}
+            </div>
           </div>
         </div>
       );
 
       return href ? (
-        <a href={href} class="block">{card}</a>
-      ) : card;
+        <a href={href} class="block book-card-wrap" data-index={i}>{inner}</a>
+      ) : (
+        <div class="book-card-wrap" data-index={i}>{inner}</div>
+      );
     })}
   </div>
+
+  <!-- Pagination -->
+  {books.length > 8 && (
+    <div id="books-pagination" class="mt-8 flex items-center justify-between gap-2">
+      <button
+        id="books-prev"
+        class="px-4 py-2 rounded-lg border border-zinc-200 text-sm text-zinc-600 hover:bg-zinc-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+        disabled
+      >← Previous</button>
+      <span id="books-page-label" class="text-sm text-zinc-400"></span>
+      <button
+        id="books-next"
+        class="px-4 py-2 rounded-lg border border-zinc-200 text-sm text-zinc-600 hover:bg-zinc-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+      >Next →</button>
+    </div>
+  )}
 
   <!-- CTA -->
   <div class="mt-12 border-t pt-8 text-center">
@@ -249,3 +418,42 @@ const metaDescription = profile?.bio
     </a>
   </div>
 </Layout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-toggle]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const id = btn.dataset.toggle!;
+      const shortEl = document.querySelector(`[data-short="${id}"]`)!;
+      const fullEl = document.querySelector(`[data-full="${id}"]`)!;
+      const nowHidden = fullEl.classList.toggle('hidden');
+      shortEl.classList.toggle('hidden');
+      btn.textContent = nowHidden ? 'read more' : 'read less';
+    });
+  });
+
+  const PER_PAGE = 8;
+  const wraps = Array.from(document.querySelectorAll<HTMLElement>('.book-card-wrap'));
+  const prevBtn = document.getElementById('books-prev') as HTMLButtonElement | null;
+  const nextBtn = document.getElementById('books-next') as HTMLButtonElement | null;
+  const pageLabel = document.getElementById('books-page-label');
+  let page = 0;
+  const totalPages = Math.ceil(wraps.length / PER_PAGE);
+
+  function render() {
+    const start = page * PER_PAGE;
+    const end = start + PER_PAGE;
+    wraps.forEach((w, i) => {
+      w.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+    if (pageLabel) pageLabel.textContent = `Page ${page + 1} of ${totalPages}`;
+    if (prevBtn) prevBtn.disabled = page === 0;
+    if (nextBtn) nextBtn.disabled = page >= totalPages - 1;
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { if (page > 0) { page--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+  if (nextBtn) nextBtn.addEventListener('click', () => { if (page < totalPages - 1) { page++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+
+  render();
+</script>

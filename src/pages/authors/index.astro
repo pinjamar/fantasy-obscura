@@ -16,7 +16,14 @@ for (const p of (profilesRes.data ?? []) as ProfileRow[]) {
 }
 
 // Group by first letter of last name for the A–Z jump nav
-const lastName = (n: string) => n.trim().split(/\s+/).at(-1) ?? n;
+// Strips trailing suffixes (Jr., Sr., II, III, IV, etc.) before picking last token
+const SUFFIXES = /^(jr\.?|sr\.?|ii|iii|iv|v|esq\.?)$/i;
+const lastName = (n: string) => {
+  const parts = n.trim().split(/\s+/);
+  while (parts.length > 1 && SUFFIXES.test(parts[parts.length - 1])) parts.pop();
+  return parts.at(-1) ?? n;
+};
+
 const letters = [...new Set(authors.map((a) => lastName(a.name)[0].toUpperCase()))].sort();
 
 const grouped = letters.map((letter) => ({
@@ -38,33 +45,49 @@ function authorColor(name: string): string {
 ---
 
 <Layout title="Authors | Fantasy Obscura" description="Browse all fantasy and sci-fi authors in our database.">
-  <div class="mb-8">
+  <div class="mb-6">
     <h1 class="text-3xl font-bold tracking-tight">Authors</h1>
     <p class="mt-2 text-zinc-600">{authors.length} authors in our database</p>
   </div>
 
-  <!-- A–Z jump nav -->
-  <div class="flex flex-wrap gap-1 mb-10">
-    {letters.map((l) => (
-      <a
-        href={`#letter-${l}`}
-        class="w-8 h-8 flex items-center justify-center rounded-md text-sm font-medium bg-zinc-100 hover:bg-zinc-200 text-zinc-700 transition-colors"
+  <!-- Search bar -->
+  <div class="relative max-w-sm mb-6">
+    <input
+      id="author-search"
+      type="text"
+      placeholder="Search authors…"
+      autocomplete="off"
+      class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-2.5 pl-9 text-sm shadow-sm focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 transition"
+    />
+    <svg class="absolute left-3 top-3 h-4 w-4 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+    </svg>
+  </div>
+  <p id="author-no-results" class="hidden text-sm text-zinc-400 mb-6">No authors match your search.</p>
+
+  <!-- A–Z letter nav -->
+  <div id="az-nav" class="flex flex-wrap gap-1 mb-8">
+    {letters.map((l, i) => (
+      <button
+        data-letter={l}
+        class={`letter-btn w-8 h-8 flex items-center justify-center rounded-md text-sm font-medium transition-colors ${i === 0 ? 'bg-purple-600 text-white' : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-700'}`}
       >
         {l}
-      </a>
+      </button>
     ))}
   </div>
 
   <!-- Author groups -->
-  <div class="space-y-12">
-    {grouped.map(({ letter, authors: group }) => (
-      <section id={`letter-${letter}`}>
+  <div id="author-groups" class="space-y-12">
+    {grouped.map(({ letter, authors: group }, i) => (
+      <section id={`letter-${letter}`} class={`author-section${i !== 0 ? ' hidden' : ''}`}>
         <h2 class="text-lg font-semibold text-zinc-400 border-b pb-2 mb-5">{letter}</h2>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {group.map((author) => (
             <a
               href={`/authors/${author.slug}/`}
-              class="flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group"
+              data-name={author.name.toLowerCase()}
+              class="author-card flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group"
             >
               <!-- Avatar / Photo -->
               {photoMap.get(author.slug) ? (
@@ -111,3 +134,63 @@ function authorColor(name: string): string {
     ))}
   </div>
 </Layout>
+
+<script>
+  const input = document.getElementById('author-search') as HTMLInputElement;
+  const noResults = document.getElementById('author-no-results')!;
+  const azNav = document.getElementById('az-nav')!;
+  const sections = document.querySelectorAll<HTMLElement>('.author-section');
+  const letterBtns = document.querySelectorAll<HTMLButtonElement>('.letter-btn');
+
+  let activeLetter = letterBtns[0]?.dataset.letter ?? '';
+
+  function showLetter(letter: string) {
+    activeLetter = letter;
+    sections.forEach((s) => s.classList.toggle('hidden', s.id !== `letter-${letter}`));
+    letterBtns.forEach((btn) => {
+      const active = btn.dataset.letter === letter;
+      btn.classList.toggle('bg-purple-600', active);
+      btn.classList.toggle('text-white', active);
+      btn.classList.toggle('bg-zinc-100', !active);
+      btn.classList.toggle('text-zinc-700', !active);
+    });
+  }
+
+  letterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      input.value = '';
+      noResults.classList.add('hidden');
+      azNav.classList.remove('hidden');
+      // Reset all cards visibility first
+      sections.forEach((s) => s.querySelectorAll<HTMLElement>('.author-card').forEach((c) => c.classList.remove('hidden')));
+      showLetter(btn.dataset.letter!);
+    });
+  });
+
+  input.addEventListener('input', () => {
+    const q = input.value.toLowerCase().trim();
+    if (!q) {
+      noResults.classList.add('hidden');
+      azNav.classList.remove('hidden');
+      sections.forEach((s) => s.querySelectorAll<HTMLElement>('.author-card').forEach((c) => c.classList.remove('hidden')));
+      showLetter(activeLetter);
+      return;
+    }
+
+    // Search mode: show all sections, filter cards
+    azNav.classList.add('hidden');
+    let total = 0;
+    sections.forEach((section) => {
+      const cards = section.querySelectorAll<HTMLElement>('.author-card');
+      let visible = 0;
+      cards.forEach((card) => {
+        const match = (card.dataset.name ?? '').includes(q);
+        card.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+      section.classList.toggle('hidden', visible === 0);
+      total += visible;
+    });
+    noResults.classList.toggle('hidden', total > 0);
+  });
+</script>

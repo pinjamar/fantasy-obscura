@@ -76,20 +76,28 @@ export const GET: APIRoute = async ({ request }) => {
       filters.subgenres = genre.split(',').map((g) => g.trim()).filter(Boolean);
     }
 
-    const result = await getBooks(
-      filters,
-      { page: 1, pageSize: 2000, sort: 'rating_desc' },
-    );
+    // Supabase has a hard 1000-row limit per query — fetch in batches until done.
+    const BATCH = 1000;
+    let allBooks: unknown[] = [];
+    let page = 1;
+    let totalCount = 0;
 
-    if (result.error) {
-      return new Response(JSON.stringify({ error: result.error }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      });
+    while (true) {
+      const result = await getBooks(filters, { page, pageSize: BATCH, sort: 'rating_desc' });
+      if (result.error) {
+        return new Response(JSON.stringify({ error: result.error }), {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+      if (page === 1) totalCount = result.count;
+      allBooks = allBooks.concat(result.data);
+      if (allBooks.length >= totalCount || result.data.length < BATCH) break;
+      page++;
     }
 
     return new Response(
-      JSON.stringify({ items: result.data, count: result.count }),
+      JSON.stringify({ items: allBooks, count: totalCount }),
       {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
