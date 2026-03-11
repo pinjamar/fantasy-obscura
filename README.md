@@ -190,30 +190,48 @@ npm run covers                    # fill only missing covers
 npm run covers -- --force         # refresh all covers
 npm run covers -- --dry-run
 
-# Update reader ratings from external sources
-npm run ratings
+# Fill Goodreads avg_rating for books where it's NULL (via Gemini recall)
+node scripts/fill-ratings.mjs
+node scripts/fill-ratings.mjs --dry-run
+node scripts/fill-ratings.mjs --limit 50
+node scripts/fill-ratings.mjs --all       # overwrite existing ratings too
+
+# Fill audiobook data (narrator, hours, narrator rating, audible URL)
+node scripts/fill-audiobooks.mjs
+node scripts/fill-audiobooks.mjs --dry-run
+node scripts/fill-audiobooks.mjs --limit 50
+node scripts/fill-audiobooks.mjs --all    # re-process books that already have data
 
 # Fill series sequels for books already in DB
 node scripts/fill-series.mjs
 node scripts/fill-series.mjs --dry-run
 node scripts/fill-series.mjs --limit 20
+
+# Find and delete authors with no books in the DB
+node scripts/cleanup-authors.js           # dry run — just lists orphans
+node scripts/cleanup-authors.js --delete  # actually deletes them
 ```
 
 ---
 
 ### Generate editorial content (optional, costs more)
 
+All three support `--priority` to restrict to the 50 SEO priority books (from `import-books.mjs`).
+
 ```bash
 # "What Makes It Different" — unique angle
 node scripts/generate-what-makes-it-different.mjs
+node scripts/generate-what-makes-it-different.mjs --priority
 node scripts/generate-what-makes-it-different.mjs --dry-run --limit 5
 
 # "Tone & Reading Experience" — feel, darkness, pacing
 node scripts/generate-reading-experience.mjs
+node scripts/generate-reading-experience.mjs --priority
 node scripts/generate-reading-experience.mjs --dry-run --limit 5
 
 # "Who This Is For" — ideal reader + comps
 node scripts/generate-ideal-reader.mjs
+node scripts/generate-ideal-reader.mjs --priority
 node scripts/generate-ideal-reader.mjs --dry-run --limit 5
 node scripts/generate-ideal-reader.mjs --slug six-of-crows    # single book
 ```

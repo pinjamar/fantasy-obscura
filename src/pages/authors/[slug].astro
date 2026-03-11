@@ -239,7 +239,7 @@ const metaDescription = profile?.bio
   {seriesList.length > 0 && (
     <div class="mb-12">
       <h2 class="text-xl font-semibold mb-4">Series by {author.name}</h2>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="flex flex-wrap gap-4">
         {seriesList.map((s) => {
           const seriesBooks = sortedBooks
             .filter((b) => b.series === s.name)

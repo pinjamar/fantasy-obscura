@@ -48,7 +48,7 @@ const dbTropesMap = new Map<string, string[]>(
         <p id="books-like-empty" class="hidden text-sm text-zinc-400 mb-4">No guides match your search.</p>
 
         <div id="books-like-list" class="space-y-3">
-          {BOOKS_LIKE.map((entry) => {
+          {BOOKS_LIKE.map((entry, i) => {
             const titleSlug = toSlug(entry.source.title)
             const tropes = dbTropesMap.get(titleSlug)?.length
               ? dbTropesMap.get(titleSlug)!
@@ -57,6 +57,7 @@ const dbTropesMap = new Map<string, string[]>(
             <a
               href={`/books-like/${entry.slug}/`}
               data-search={`${entry.source.title} ${entry.source.author} ${entry.source.series ?? ''} ${tropes.join(' ')}`.toLowerCase()}
+              data-index={i}
               class="flex items-center gap-4 p-4 rounded-2xl border border-zinc-200 bg-white hover:border-zinc-300 hover:bg-zinc-50 transition-colors group"
             >
               <div class="relative w-12 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 shrink-0">
@@ -88,6 +89,20 @@ const dbTropesMap = new Map<string, string[]>(
             )
           })}
         </div>
+
+        <!-- Pagination -->
+        <div id="books-like-pagination" class="mt-6 flex items-center justify-between gap-2">
+          <button
+            id="bl-prev"
+            class="px-4 py-2 rounded-lg border border-zinc-200 text-sm text-zinc-600 hover:bg-zinc-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            disabled
+          >← Previous</button>
+          <span id="bl-page-label" class="text-sm text-zinc-400"></span>
+          <button
+            id="bl-next"
+            class="px-4 py-2 rounded-lg border border-zinc-200 text-sm text-zinc-600 hover:bg-zinc-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          >Next →</button>
+        </div>
       </section>
     )}
 
@@ -95,7 +110,7 @@ const dbTropesMap = new Map<string, string[]>(
     <section class="mt-12">
       <h2 class="text-sm font-semibold text-zinc-400 uppercase tracking-widest mb-4">More coming soon</h2>
       <div class="flex flex-wrap gap-2">
-        {['The Name of the Wind', 'Six of Crows', 'The Hobbit', 'Dune', 'The Way of Kings', 'Throne of Glass'].map((title) => (
+        {['The Name of the Wind', 'Six of Crows', 'The Hobbit', 'Dune', 'Throne of Glass'].map((title) => (
           <span class="rounded-full border border-dashed border-zinc-300 px-4 py-1.5 text-sm text-zinc-400">
             Books like {title}
           </span>
@@ -115,21 +130,50 @@ const dbTropesMap = new Map<string, string[]>(
 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', function () {
+      var PER_PAGE = 6;
       var input = document.getElementById('books-like-search');
       var empty = document.getElementById('books-like-empty');
-      if (!input) return;
-      input.addEventListener('input', function () {
-        var q = input.value.toLowerCase().trim();
-        var cards = document.querySelectorAll('#books-like-list a[data-search]');
-        var visible = 0;
-        cards.forEach(function (card) {
-          var haystack = card.getAttribute('data-search') || '';
-          var match = !q || haystack.includes(q);
-          card.style.display = match ? '' : 'none';
-          if (match) visible++;
+      var pagination = document.getElementById('books-like-pagination');
+      var prevBtn = document.getElementById('bl-prev');
+      var nextBtn = document.getElementById('bl-next');
+      var pageLabel = document.getElementById('bl-page-label');
+      var allCards = Array.from(document.querySelectorAll('#books-like-list a[data-search]'));
+      var currentPage = 0;
+      var filteredCards = allCards.slice();
+
+      function render() {
+        var totalPages = Math.ceil(filteredCards.length / PER_PAGE) || 1;
+        var start = currentPage * PER_PAGE;
+        var end = start + PER_PAGE;
+
+        allCards.forEach(function (card) { card.style.display = 'none'; });
+        filteredCards.slice(start, end).forEach(function (card) { card.style.display = ''; });
+
+        if (empty) empty.classList.toggle('hidden', filteredCards.length > 0 || !input.value.trim());
+        if (pageLabel) pageLabel.textContent = 'Page ' + (currentPage + 1) + ' of ' + totalPages;
+        if (prevBtn) prevBtn.disabled = currentPage === 0;
+        if (nextBtn) nextBtn.disabled = currentPage >= totalPages - 1;
+        if (pagination) pagination.style.display = filteredCards.length <= PER_PAGE ? 'none' : '';
+      }
+
+      if (input) {
+        input.addEventListener('input', function () {
+          var q = input.value.toLowerCase().trim();
+          filteredCards = q
+            ? allCards.filter(function (c) { return (c.getAttribute('data-search') || '').includes(q); })
+            : allCards.slice();
+          currentPage = 0;
+          render();
         });
-        if (empty) empty.classList.toggle('hidden', visible > 0);
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { if (currentPage > 0) { currentPage--; render(); } });
+      if (nextBtn) nextBtn.addEventListener('click', function () {
+        var totalPages = Math.ceil(filteredCards.length / PER_PAGE);
+        if (currentPage < totalPages - 1) { currentPage++; render(); }
       });
+
+      render();
     });
   </script>
 </Layout>

@@ -23,6 +23,7 @@ interface ReadingOrderProps {
   books?: Book[];
   groups?: BookGroup[];
   description?: string;
+  showLegend?: boolean;
 }
 
 const statusConfig = {
@@ -102,7 +103,7 @@ function BookCard({ book, index }: { book: Book; index: number }) {
         <p className="mt-0.5 text-xs text-zinc-400">{book.publication_year}</p>
       )}
 
-      {/* Note tooltip on hover */}
+      {/* Note (curated guides only) */}
       {book.note && (
         <p className="mt-1 text-xs text-zinc-500 leading-snug line-clamp-2 hidden sm:block">
           {book.note}
@@ -120,7 +121,7 @@ function BookCard({ book, index }: { book: Book; index: number }) {
   );
 }
 
-export default function ReadingOrder({ books, groups, description }: ReadingOrderProps) {
+export default function ReadingOrder({ books, groups, description, showLegend = true }: ReadingOrderProps) {
   const sourceGroups: BookGroup[] = groups ?? (books ? [{ label: '', books }] : []);
 
   const groupsWithIndex = sourceGroups.map((g, gi) => ({
@@ -175,22 +176,24 @@ export default function ReadingOrder({ books, groups, description }: ReadingOrde
         ))}
       </div>
 
-      {/* Legend */}
-      <div className="mt-8 flex flex-wrap gap-5 text-sm border-t pt-6">
-        {(Object.entries(statusConfig) as [string, typeof statusConfig['mandatory']][]).map(([key, cfg]) => (
-          <div key={key} className="flex items-center gap-2">
-            <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold border ${cfg.pill}`}>
-              {cfg.label}
-            </span>
-            <span className="text-zinc-500">
-              {key === 'mandatory'     ? 'Essential to the main story'
-               : key === 'optional'   ? 'Adds depth, not required'
-               : key === 'incomplete' ? 'Not yet released or unfinished'
-               :                       'Side stories & novellas'}
-            </span>
-          </div>
-        ))}
-      </div>
+      {/* Legend — curated guides only */}
+      {showLegend && (
+        <div className="mt-8 flex flex-wrap gap-5 text-sm border-t pt-6">
+          {(Object.entries(statusConfig) as [string, typeof statusConfig['mandatory']][]).map(([key, cfg]) => (
+            <div key={key} className="flex items-center gap-2">
+              <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold border ${cfg.pill}`}>
+                {cfg.label}
+              </span>
+              <span className="text-zinc-500">
+                {key === 'mandatory'     ? 'Essential to the main story'
+                 : key === 'optional'   ? 'Adds depth, not required'
+                 : key === 'incomplete' ? 'Not yet released or unfinished'
+                 :                       'Side stories & novellas'}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

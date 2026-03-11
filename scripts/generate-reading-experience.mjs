@@ -21,10 +21,33 @@ import { config } from 'dotenv';
 
 config();
 
-const DRY_RUN  = process.argv.includes('--dry-run');
+const DRY_RUN   = process.argv.includes('--dry-run');
+const PRIORITY  = process.argv.includes('--priority');
 const LIMIT_ARG = process.argv.indexOf('--limit');
-const LIMIT    = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
-const DELAY_MS = 1200;
+const LIMIT     = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
+const SLUG_ARG  = process.argv.indexOf('--slug');
+const SLUG      = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
+const DELAY_MS  = 1200;
+
+// 50 priority book slugs (from import-books.mjs)
+const PRIORITY_SLUGS = [
+  'mistborn-the-final-empire', 'the-way-of-kings', 'the-name-of-the-wind',
+  'a-game-of-thrones', 'the-fellowship-of-the-ring', 'the-hobbit',
+  'the-blade-itself', 'the-lies-of-locke-lamora', 'assassins-apprentice',
+  'the-eye-of-the-world', 'fourth-wing', 'a-court-of-thorns-and-roses',
+  'the-priory-of-the-orange-tree', 'the-poppy-war', 'the-shadow-of-the-gods',
+  'red-sister', 'malice', 'the-black-prism', 'empire-of-the-vampire',
+  'kings-of-the-wyld', 'jonathan-strange-mr-norrell', 'the-dragonbone-chair',
+  'elantris', 'the-darkness-that-comes-before', 'the-colour-of-magic',
+  'circe', 'uprooted', 'spinning-silver', 'legends-lattes', 'cradle-unsouled',
+  'the-cruel-prince', 'the-will-of-the-many', 'the-justice-of-kings',
+  'prince-of-thorns', 'gardens-of-the-moon', 'the-bone-ships',
+  'the-bear-and-the-nightingale', 'the-ember-blade', 'the-rage-of-dragons',
+  'daughter-of-the-empire', 'the-traitor-baru-cormorant', 'the-sword-of-kaigen',
+  'senlin-ascends', 'the-goblin-emperor', 'the-atlas-six',
+  'emily-wildes-encyclopaedia-of-faeries', 'the-spear-cuts-through-water',
+  'the-tainted-cup', 'the-book-of-the-new-sun', 'tigana',
+];
 
 if (!process.env.GEMINI_API_KEY) {
   console.error('Missing GEMINI_API_KEY in .env');
@@ -97,13 +120,19 @@ async function main() {
 
   let query = supabase
     .from('books')
-    .select('id, title, authors, synopsis, subgenres, darkness_level, avg_rating')
-    .is('reading_experience', null)
-    .not('subgenres', 'is', null)       // prioritise classified books
-    .not('synopsis', 'is', null)
-    .order('avg_rating', { ascending: false, nullsLast: true });
+    .select('id, title, authors, synopsis, subgenres, darkness_level, avg_rating');
 
-  if (LIMIT) query = query.limit(LIMIT);
+  if (SLUG) {
+    query = query.eq('slug', SLUG);
+  } else {
+    query = query
+      .is('reading_experience', null)
+      .not('subgenres', 'is', null)
+      .not('synopsis', 'is', null)
+      .order('avg_rating', { ascending: false, nullsLast: true });
+    if (PRIORITY) query = query.in('slug', PRIORITY_SLUGS);
+    if (LIMIT) query = query.limit(LIMIT);
+  }
 
   const { data: books, error } = await query;
   if (error) { console.error('Supabase error:', error.message); process.exit(1); }

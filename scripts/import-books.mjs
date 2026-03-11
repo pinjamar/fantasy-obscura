@@ -21,59 +21,309 @@ const DELAY_MS = 400;
 
 const BOOKS = [
   // Tier 1
-  { title: 'Mistborn: The Final Empire',       author: 'Brandon Sanderson',    series: 'Mistborn',          series_number: 1 },
-  { title: 'The Way of Kings',                 author: 'Brandon Sanderson',    series: 'The Stormlight Archive', series_number: 1 },
-  { title: 'The Name of the Wind',             author: 'Patrick Rothfuss',     series: 'The Kingkiller Chronicle', series_number: 1 },
-  { title: 'A Game of Thrones',                author: 'George R.R. Martin',   series: 'A Song of Ice and Fire',   series_number: 1 },
-  { title: 'The Fellowship of the Ring',       author: 'J.R.R. Tolkien',       series: 'The Lord of the Rings',    series_number: 1 },
-  { title: 'The Hobbit',                       author: 'J.R.R. Tolkien',       series: null,                series_number: null },
-  { title: 'The Blade Itself',                 author: 'Joe Abercrombie',      series: 'The First Law',     series_number: 1 },
-  { title: 'The Lies of Locke Lamora',         author: 'Scott Lynch',          series: "Gentleman Bastard", series_number: 1 },
-  { title: "Assassin's Apprentice",            author: 'Robin Hobb',           series: 'Farseer Trilogy',   series_number: 1 },
-  { title: 'The Eye of the World',             author: 'Robert Jordan',        series: 'The Wheel of Time', series_number: 1 },
+  {
+    title: 'The Final Empire',
+    author: 'Brandon Sanderson',
+    series: 'Mistborn',
+    series_number: 1,
+  },
+  {
+    title: 'The Way of Kings',
+    author: 'Brandon Sanderson',
+    series: 'The Stormlight Archive',
+    series_number: 1,
+  },
+  {
+    title: 'The Name of the Wind',
+    author: 'Patrick Rothfuss',
+    series: 'The Kingkiller Chronicle',
+    series_number: 1,
+  },
+  {
+    title: 'A Game of Thrones',
+    author: 'George R.R. Martin',
+    series: 'A Song of Ice and Fire',
+    series_number: 1,
+  },
+  {
+    title: 'The Fellowship of the Ring',
+    author: 'J.R.R. Tolkien',
+    series: 'The Lord of the Rings',
+    series_number: 1,
+  },
+  {
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'The Blade Itself',
+    author: 'Joe Abercrombie',
+    series: 'The First Law',
+    series_number: 1,
+  },
+  {
+    title: 'The Lies of Locke Lamora',
+    author: 'Scott Lynch',
+    series: 'Gentleman Bastard',
+    series_number: 1,
+  },
+  {
+    title: "Assassin's Apprentice",
+    author: 'Robin Hobb',
+    series: 'Farseer Trilogy',
+    series_number: 1,
+  },
+  {
+    title: 'The Eye of the World',
+    author: 'Robert Jordan',
+    series: 'The Wheel of Time',
+    series_number: 1,
+  },
   // Tier 2
-  { title: 'Fourth Wing',                      author: 'Rebecca Yarros',       series: 'The Empyrean',      series_number: 1 },
-  { title: 'A Court of Thorns and Roses',      author: 'Sarah J. Maas',        series: 'A Court of Thorns and Roses', series_number: 1 },
-  { title: 'The Priory of the Orange Tree',    author: 'Samantha Shannon',     series: null,                series_number: null },
-  { title: 'The Poppy War',                    author: 'R.F. Kuang',           series: 'The Poppy War',     series_number: 1 },
-  { title: 'The Shadow of the Gods',           author: 'John Gwynne',          series: 'The Bloodsworn Saga', series_number: 1 },
-  { title: 'Red Sister',                       author: 'Mark Lawrence',        series: 'Book of the Ancestor', series_number: 1 },
-  { title: 'Malice',                           author: 'John Gwynne',          series: 'The Faithful and the Fallen', series_number: 1 },
-  { title: 'The Black Prism',                  author: 'Brent Weeks',          series: 'Lightbringer',      series_number: 1 },
-  { title: 'Empire of the Vampire',            author: 'Jay Kristoff',         series: 'Empire of the Vampire', series_number: 1 },
-  { title: 'Kings of the Wyld',               author: 'Nicholas Eames',       series: 'The Band',          series_number: 1 },
+  {
+    title: 'Fourth Wing',
+    author: 'Rebecca Yarros',
+    series: 'The Empyrean',
+    series_number: 1,
+  },
+  {
+    title: 'A Court of Thorns and Roses',
+    author: 'Sarah J. Maas',
+    series: 'A Court of Thorns and Roses',
+    series_number: 1,
+  },
+  {
+    title: 'The Priory of the Orange Tree',
+    author: 'Samantha Shannon',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'The Poppy War',
+    author: 'R.F. Kuang',
+    series: 'The Poppy War',
+    series_number: 1,
+  },
+  {
+    title: 'The Shadow of the Gods',
+    author: 'John Gwynne',
+    series: 'The Bloodsworn Saga',
+    series_number: 1,
+  },
+  {
+    title: 'Red Sister',
+    author: 'Mark Lawrence',
+    series: 'Book of the Ancestor',
+    series_number: 1,
+  },
+  {
+    title: 'Malice',
+    author: 'John Gwynne',
+    series: 'The Faithful and the Fallen',
+    series_number: 1,
+  },
+  {
+    title: 'The Black Prism',
+    author: 'Brent Weeks',
+    series: 'Lightbringer',
+    series_number: 1,
+  },
+  {
+    title: 'Empire of the Vampire',
+    author: 'Jay Kristoff',
+    series: 'Empire of the Vampire',
+    series_number: 1,
+  },
+  {
+    title: 'Kings of the Wyld',
+    author: 'Nicholas Eames',
+    series: 'The Band',
+    series_number: 1,
+  },
   // Tier 3
-  { title: 'Jonathan Strange & Mr Norrell',    author: 'Susanna Clarke',       series: null,                series_number: null },
-  { title: 'The Dragonbone Chair',             author: 'Tad Williams',         series: 'Memory, Sorrow and Thorn', series_number: 1 },
-  { title: 'Elantris',                         author: 'Brandon Sanderson',    series: null,                series_number: null },
-  { title: 'The Darkness That Comes Before',   author: 'R. Scott Bakker',      series: 'The Prince of Nothing', series_number: 1 },
-  { title: 'The Colour of Magic',              author: 'Terry Pratchett',      series: 'Discworld',         series_number: 1 },
-  { title: 'Circe',                            author: 'Madeline Miller',      series: null,                series_number: null },
-  { title: 'Uprooted',                         author: 'Naomi Novik',          series: null,                series_number: null },
-  { title: 'Spinning Silver',                  author: 'Naomi Novik',          series: null,                series_number: null },
-  { title: 'Legends & Lattes',                 author: 'Travis Baldree',       series: 'Legends & Lattes',  series_number: 1 },
-  { title: 'Cradle: Unsouled',                 author: 'Will Wight',           series: 'Cradle',            series_number: 1 },
+  {
+    title: 'Jonathan Strange & Mr Norrell',
+    author: 'Susanna Clarke',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'The Dragonbone Chair',
+    author: 'Tad Williams',
+    series: 'Memory, Sorrow and Thorn',
+    series_number: 1,
+  },
+  {
+    title: 'Elantris',
+    author: 'Brandon Sanderson',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'The Darkness That Comes Before',
+    author: 'R. Scott Bakker',
+    series: 'The Prince of Nothing',
+    series_number: 1,
+  },
+  {
+    title: 'The Colour of Magic',
+    author: 'Terry Pratchett',
+    series: 'Discworld',
+    series_number: 1,
+  },
+  {
+    title: 'Circe',
+    author: 'Madeline Miller',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'Uprooted',
+    author: 'Naomi Novik',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'Spinning Silver',
+    author: 'Naomi Novik',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'Legends & Lattes',
+    author: 'Travis Baldree',
+    series: 'Legends & Lattes',
+    series_number: 1,
+  },
+  {
+    title: 'Cradle: Unsouled',
+    author: 'Will Wight',
+    series: 'Cradle',
+    series_number: 1,
+  },
   // Tier 4
-  { title: 'The Cruel Prince',                 author: 'Holly Black',          series: 'The Folk of the Air', series_number: 1 },
-  { title: 'The Will of the Many',             author: 'James Islington',      series: 'Hierarchy',         series_number: 1 },
-  { title: 'The Justice of Kings',             author: 'Richard Swan',         series: 'The Empire of the Wolf', series_number: 1 },
-  { title: 'Prince of Thorns',                 author: 'Mark Lawrence',        series: 'The Broken Empire', series_number: 1 },
-  { title: 'Gardens of the Moon',              author: 'Steven Erikson',       series: 'Malazan Book of the Fallen', series_number: 1 },
-  { title: 'The Bone Ships',                   author: 'RJ Barker',            series: 'The Tide Child',    series_number: 1 },
-  { title: 'The Bear and the Nightingale',     author: 'Katherine Arden',      series: 'Winternight Trilogy', series_number: 1 },
-  { title: 'The Ember Blade',                  author: 'Chris Wooding',        series: 'The Darkwater Legacy', series_number: 1 },
-  { title: 'The Rage of Dragons',              author: 'Evan Winter',          series: 'The Burning',       series_number: 1 },
-  { title: 'Daughter of the Empire',           author: 'Raymond E. Feist',     series: 'The Empire Trilogy', series_number: 1 },
-  { title: 'The Traitor Baru Cormorant',       author: 'Seth Dickinson',       series: 'The Masquerade',    series_number: 1 },
-  { title: 'The Sword of Kaigen',              author: 'M.L. Wang',            series: null,                series_number: null },
-  { title: 'Senlin Ascends',                   author: 'Josiah Bancroft',      series: 'Books of Babel',    series_number: 1 },
-  { title: 'The Goblin Emperor',               author: 'Katherine Addison',    series: null,                series_number: null },
-  { title: 'The Atlas Six',                    author: 'Olivie Blake',         series: 'The Atlas',         series_number: 1 },
-  { title: "Emily Wilde's Encyclopaedia of Faeries", author: 'Heather Fawcett', series: "Emily Wilde",     series_number: 1 },
-  { title: 'The Spear Cuts Through Water',     author: 'Simon Jimenez',        series: null,                series_number: null },
-  { title: 'The Tainted Cup',                  author: 'Robert Jackson Bennett', series: 'Shadow of the Leviathan', series_number: 1 },
-  { title: 'The Book of the New Sun',          author: 'Gene Wolfe',           series: 'The Book of the New Sun', series_number: 1 },
-  { title: 'Tigana',                           author: 'Guy Gavriel Kay',      series: null,                series_number: null },
+  {
+    title: 'The Cruel Prince',
+    author: 'Holly Black',
+    series: 'The Folk of the Air',
+    series_number: 1,
+  },
+  {
+    title: 'The Will of the Many',
+    author: 'James Islington',
+    series: 'Hierarchy',
+    series_number: 1,
+  },
+  {
+    title: 'The Justice of Kings',
+    author: 'Richard Swan',
+    series: 'The Empire of the Wolf',
+    series_number: 1,
+  },
+  {
+    title: 'Prince of Thorns',
+    author: 'Mark Lawrence',
+    series: 'The Broken Empire',
+    series_number: 1,
+  },
+  {
+    title: 'Gardens of the Moon',
+    author: 'Steven Erikson',
+    series: 'Malazan Book of the Fallen',
+    series_number: 1,
+  },
+  {
+    title: 'The Bone Ships',
+    author: 'RJ Barker',
+    series: 'The Tide Child',
+    series_number: 1,
+  },
+  {
+    title: 'The Bear and the Nightingale',
+    author: 'Katherine Arden',
+    series: 'Winternight Trilogy',
+    series_number: 1,
+  },
+  {
+    title: 'The Ember Blade',
+    author: 'Chris Wooding',
+    series: 'The Darkwater Legacy',
+    series_number: 1,
+  },
+  {
+    title: 'The Rage of Dragons',
+    author: 'Evan Winter',
+    series: 'The Burning',
+    series_number: 1,
+  },
+  {
+    title: 'Daughter of the Empire',
+    author: 'Raymond E. Feist',
+    series: 'The Empire Trilogy',
+    series_number: 1,
+  },
+  {
+    title: 'The Traitor Baru Cormorant',
+    author: 'Seth Dickinson',
+    series: 'The Masquerade',
+    series_number: 1,
+  },
+  {
+    title: 'The Sword of Kaigen',
+    author: 'M.L. Wang',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'Senlin Ascends',
+    author: 'Josiah Bancroft',
+    series: 'Books of Babel',
+    series_number: 1,
+  },
+  {
+    title: 'The Goblin Emperor',
+    author: 'Katherine Addison',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'The Atlas Six',
+    author: 'Olivie Blake',
+    series: 'The Atlas',
+    series_number: 1,
+  },
+  {
+    title: "Emily Wilde's Encyclopaedia of Faeries",
+    author: 'Heather Fawcett',
+    series: 'Emily Wilde',
+    series_number: 1,
+  },
+  {
+    title: 'The Spear Cuts Through Water',
+    author: 'Simon Jimenez',
+    series: null,
+    series_number: null,
+  },
+  {
+    title: 'The Tainted Cup',
+    author: 'Robert Jackson Bennett',
+    series: 'Shadow of the Leviathan',
+    series_number: 1,
+  },
+  {
+    title: 'The Book of the New Sun',
+    author: 'Gene Wolfe',
+    series: 'The Book of the New Sun',
+    series_number: 1,
+  },
+  {
+    title: 'Tigana',
+    author: 'Guy Gavriel Kay',
+    series: null,
+    series_number: null,
+  },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -115,10 +365,18 @@ async function fetchGoogleBooks(title, author) {
       if (!item) continue;
       const rawYear = item.publishedDate;
       const year = rawYear ? parseInt(rawYear.slice(0, 4), 10) : null;
-      const validYear = year && year >= 1800 && year <= new Date().getFullYear() ? year : null;
+      const validYear =
+        year && year >= 1800 && year <= new Date().getFullYear() ? year : null;
       const synopsis = item.description?.trim() ?? null;
-      const thumb = item.imageLinks?.extraLarge ?? item.imageLinks?.large ?? item.imageLinks?.medium ?? item.imageLinks?.thumbnail ?? null;
-      const cover_url = thumb ? thumb.replace(/^http:/, 'https:').replace('&edge=curl', '') : null;
+      const thumb =
+        item.imageLinks?.extraLarge ??
+        item.imageLinks?.large ??
+        item.imageLinks?.medium ??
+        item.imageLinks?.thumbnail ??
+        null;
+      const cover_url = thumb
+        ? thumb.replace(/^http:/, 'https:').replace('&edge=curl', '')
+        : null;
       return {
         synopsis: synopsis ? synopsis.slice(0, 2000) : null,
         publication_year: validYear,
@@ -169,7 +427,9 @@ async function fetchOpenLibrary(title, author) {
     }
   }
 
-  const olCover = doc.cover_i ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg` : null;
+  const olCover = doc.cover_i
+    ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`
+    : null;
   return {
     cover_url: gb?.cover_url ?? olCover,
     isbn: doc.isbn?.[0] ?? null,
@@ -181,7 +441,10 @@ async function fetchOpenLibrary(title, author) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+if (
+  !process.env.PUBLIC_SUPABASE_URL ||
+  !process.env.SUPABASE_SERVICE_ROLE_KEY
+) {
   console.error('Missing Supabase env vars in .env');
   process.exit(1);
 }
@@ -198,7 +461,9 @@ const supabase = createClient(
 );
 
 async function main() {
-  console.log(`\n📚 Fantasy Obscura — Book Importer${DRY_RUN ? ' [DRY RUN]' : ''}\n`);
+  console.log(
+    `\n📚 Fantasy Obscura — Book Importer${DRY_RUN ? ' [DRY RUN]' : ''}\n`,
+  );
 
   // Fetch existing slugs
   const { data: existing, error: existErr } = await supabase
@@ -210,7 +475,9 @@ async function main() {
   }
 
   const existingSlugs = new Set(existing.map((b) => b.slug).filter(Boolean));
-  const existingTitles = new Set(existing.map((b) => b.title.toLowerCase().trim()));
+  const existingTitles = new Set(
+    existing.map((b) => b.title.toLowerCase().trim()),
+  );
 
   const toImport = BOOKS.filter((b) => {
     const slug = slugify(b.title);
@@ -279,7 +546,7 @@ async function main() {
   console.log(`\n──────────────────────────────`);
   console.log(`✅ Imported: ${imported}`);
   if (skipped) console.log(`⏭️  Skipped:  ${skipped} (already in DB)`);
-  if (failed)  console.log(`✗  Failed:   ${failed}`);
+  if (failed) console.log(`✗  Failed:   ${failed}`);
   console.log('');
 }
 

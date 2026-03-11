@@ -1,16 +1,37 @@
 // seed-authors.js
-// Upserts author profiles into the `authors` Supabase table.
-// Run after creating the table and enabling RLS:
-//   node seed-authors.js
+// Populates the `authors` Supabase table for every author who has a book in our DB.
+//
+// Data sources (in order of priority):
+//   1. Open Library          — bio, photo, Goodreads ID, official website, Wikidata ID
+//   2. Wikipedia             — bio + photo fallback
+//   3. Google Knowledge Graph— photo + description fallback (requires GOOGLE_KG_API_KEY in .env)
+//   4. Wikidata              — Twitter/X handle
+//
+// Getting a free Google Knowledge Graph API key (takes ~5 min):
+//   1. Go to https://console.cloud.google.com/
+//   2. Create a project → Enable "Knowledge Graph Search API"
+//   3. APIs & Services → Credentials → Create API Key
+//   4. Add to .env:  GOOGLE_KG_API_KEY=your_key_here
+//
+// Run:
+//   node scripts/seed-authors.js
+//   node scripts/seed-authors.js --dry-run        (no DB writes)
+//   node scripts/seed-authors.js --only-missing   (skip authors with existing photo_url)
 
 import { createClient } from '@supabase/supabase-js';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+const DRY_RUN      = process.argv.includes('--dry-run');
+const ONLY_MISSING = process.argv.includes('--only-missing');
+const DELAY_MS     = 400;
+
 const supabase = createClient(
   process.env.PUBLIC_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY,
 );
+
+// ─── utils ──────────────────────────────────────────────────────────────────
 
 function authorToSlug(name) {
   return name
@@ -20,204 +41,280 @@ function authorToSlug(name) {
     .replace(/^-|-$/g, '');
 }
 
-const authors = [
-  {
-    name: 'Brandon Sanderson',
-    bio: 'Brandon Sanderson is an American epic fantasy author known for the Stormlight Archive and Mistborn series, as well as completing Robert Jordan\'s Wheel of Time. One of the most prolific writers in the genre, he publishes multiple novels and novellas each year and is renowned for his intricate, internally consistent magic systems.',
-    website: 'https://www.brandonsanderson.com',
-    twitter: 'BrandSanderson',
-    goodreads: 'https://www.goodreads.com/author/show/38550.Brandon_Sanderson',
-  },
-  {
-    name: 'Patrick Rothfuss',
-    bio: 'Patrick Rothfuss is an American author celebrated for The Kingkiller Chronicle, beginning with The Name of the Wind. Praised for its lyrical prose, deeply realized world-building, and unreliable narrator, the series is among the most beloved — and anticipated — in modern fantasy.',
-    website: 'https://www.patrickrothfuss.com',
-    twitter: 'patrickrothfuss',
-    goodreads: 'https://www.goodreads.com/author/show/108424.Patrick_Rothfuss',
-  },
-  {
-    name: 'George R.R. Martin',
-    bio: 'George R.R. Martin is an American novelist and screenwriter best known for A Song of Ice and Fire, adapted into HBO\'s Game of Thrones. His sprawling saga of medieval political intrigue in the fictional continent of Westeros is celebrated for its moral complexity, vast cast, and willingness to subvert genre expectations.',
-    website: 'https://www.georgerrmartin.com',
-    twitter: 'GRRMspeaking',
-    goodreads: 'https://www.goodreads.com/author/show/346732.George_R_R_Martin',
-  },
-  {
-    name: 'Robin Hobb',
-    bio: 'Robin Hobb is the pen name of Margaret Astrid Lindholm Ogden, best known for the Realm of the Elderlings series beginning with the Farseer Trilogy. Her work is celebrated for its deeply emotional character studies, slow-burn plotting, and a willingness to inflict real psychological suffering on her protagonists.',
-    website: 'https://www.robinhobb.com',
-    twitter: null,
-    goodreads: 'https://www.goodreads.com/author/show/25307.Robin_Hobb',
-  },
-  {
-    name: 'Joe Abercrombie',
-    bio: 'Joe Abercrombie is a British author who helped define the grimdark subgenre with the First Law trilogy. His work subverts classic fantasy tropes through morally compromised characters, cynical politics, and unflinching violence. He has continued expanding the First Law world with standalones and a second trilogy.',
-    website: 'https://www.joeabercrombie.com',
-    twitter: 'LordGrimdark',
-    goodreads: 'https://www.goodreads.com/author/show/276660.Joe_Abercrombie',
-  },
-  {
-    name: 'Sarah J. Maas',
-    bio: 'Sarah J. Maas is an American fantasy author who first rose to fame with the Throne of Glass series. Her subsequent Crescent City and A Court of Thorns and Roses series have become global bestsellers, making her one of the most commercially successful authors in fantasy with a massive crossover romantasy readership.',
-    website: 'https://sarahjmaas.com',
-    twitter: 'therealsjmaas',
-    goodreads: 'https://www.goodreads.com/author/show/3433047.Sarah_J_Maas',
-  },
-  {
-    name: 'Rebecca Yarros',
-    bio: 'Rebecca Yarros is an American author who became a publishing phenomenon with Fourth Wing, set in a dragon-rider military academy. The book and its sequel Iron Flame broke numerous sales records and introduced millions of romance readers to fantasy, establishing her as a defining voice in romantasy.',
-    website: 'https://rebeccayarros.com',
-    twitter: 'RebeccaYarros',
-    goodreads: 'https://www.goodreads.com/author/show/7144679.Rebecca_Yarros',
-  },
-  {
-    name: 'Leigh Bardugo',
-    bio: 'Leigh Bardugo is an American author known for the Grishaverse, a universe of interconnected fantasy series beginning with Shadow and Bone. Her Six of Crows duology — a high-stakes heist story with a diverse, morally complex cast — is considered one of the best young adult fantasy series of the decade.',
-    website: 'https://www.leighbardugo.com',
-    twitter: 'LBardugo',
-    goodreads: 'https://www.goodreads.com/author/show/4575289.Leigh_Bardugo',
-  },
-  {
-    name: 'Robert Jordan',
-    bio: 'Robert Jordan (pen name of James Oliver Rigney Jr., 1948–2007) was an American author known for The Wheel of Time, one of the longest and most influential epic fantasy series ever written. Jordan built an extraordinarily detailed world over 11 novels before his death; Brandon Sanderson completed the series from his notes.',
-    website: 'https://www.dragonmount.com',
-    twitter: null,
-    goodreads: 'https://www.goodreads.com/author/show/6252.Robert_Jordan',
-  },
-  {
-    name: 'Terry Pratchett',
-    bio: 'Sir Terry Pratchett (1948–2015) was a British author celebrated for the Discworld series — 41 satirical fantasy novels set on a flat world carried through space on the backs of elephants and a turtle. He combined razor-sharp social commentary, deep humanity, and unmatched comic writing to create one of the most beloved fantasy universes ever written.',
-    website: 'https://www.terrypratchettbooks.com',
-    twitter: null,
-    goodreads: 'https://www.goodreads.com/author/show/1654.Terry_Pratchett',
-  },
-  {
-    name: 'Neil Gaiman',
-    bio: 'Neil Gaiman is a British author known for weaving mythology, dark fantasy, and literary fiction into novels, comics, and screenplays. His works include American Gods, Good Omens (with Terry Pratchett), the Sandman graphic novel series, and Neverwhere, establishing him as one of the most versatile and influential voices in speculative fiction.',
-    website: 'https://www.neilgaiman.com',
-    twitter: 'neilhimself',
-    goodreads: 'https://www.goodreads.com/author/show/1221698.Neil_Gaiman',
-  },
-  {
-    name: 'N.K. Jemisin',
-    bio: 'N.K. Jemisin is an American author who made history by winning three consecutive Hugo Awards for Best Novel — an unprecedented achievement — with her Broken Earth trilogy. Her work challenges conventional fantasy by addressing themes of colonialism, systemic oppression, and radical survival through technically innovative narrative structures.',
-    website: 'https://nkjemisin.com',
-    twitter: 'nkjemisin',
-    goodreads: 'https://www.goodreads.com/author/show/2917917.N_K_Jemisin',
-  },
-  {
-    name: 'Andy Weir',
-    bio: 'Andy Weir is an American author who self-published The Martian on his website chapter by chapter before it became a New York Times bestseller and a major film. His fiction prioritizes scientific accuracy and engineering problem-solving, wrapped in fast-paced, humor-laced storytelling that has brought hard science fiction to a wide mainstream audience.',
-    website: 'https://andyweirauthor.com',
-    twitter: 'andyweirauthor',
-    goodreads: 'https://www.goodreads.com/author/show/6540057.Andy_Weir',
-  },
-  {
-    name: 'J.R.R. Tolkien',
-    bio: 'J.R.R. Tolkien (1892–1973) was an English author, poet, and Oxford academic who created the foundational works of modern high fantasy with The Hobbit and The Lord of the Rings. His invention of the world of Middle-earth — including its languages, history, cosmology, and mythology — set the template for nearly all epic fantasy that followed.',
-    website: 'https://www.tolkiensociety.org',
-    twitter: null,
-    goodreads: 'https://www.goodreads.com/author/show/656983.J_R_R_Tolkien',
-  },
-  {
-    name: 'Ursula K. Le Guin',
-    bio: 'Ursula K. Le Guin (1929–2018) was an American author widely considered one of the greatest writers of science fiction and fantasy. Her Earthsea series and Hainish Cycle explored anthropology, gender, anarchism, and Taoist philosophy through carefully crafted speculative worlds, earning her multiple Hugo, Nebula, and National Book Awards.',
-    website: 'https://www.ursulakleguin.com',
-    twitter: null,
-    goodreads: 'https://www.goodreads.com/author/show/874602.Ursula_K_Le_Guin',
-  },
-  {
-    name: 'Scott Lynch',
-    bio: 'Scott Lynch is an American author best known for the Gentleman Bastard sequence, beginning with The Lies of Locke Lamora. The series follows a gang of con artists in a Renaissance Italian-inspired fantasy city and is celebrated for its witty dialogue, intricate heist plotting, and morally layered characters.',
-    website: 'https://scottlynch.us',
-    twitter: 'scottlynch78',
-    goodreads: 'https://www.goodreads.com/author/show/73149.Scott_Lynch',
-  },
-  {
-    name: 'Mark Lawrence',
-    bio: 'Mark Lawrence is a British-American author known for dark, character-driven fantasy beginning with Prince of Thorns. His work often features morally compromised protagonists navigating post-apocalyptic or grimdark settings, and his self-published works have made him a prominent figure in independent fantasy publishing.',
-    website: 'https://marklawrence.buzz',
-    twitter: 'mark__lawrence',
-    goodreads: 'https://www.goodreads.com/author/show/4721725.Mark_Lawrence',
-  },
-  {
-    name: 'Steven Erikson',
-    bio: 'Steven Erikson is a Canadian author best known for the Malazan Book of the Fallen, a 10-volume epic fantasy series regarded as one of the most complex and ambitious in the genre. The series spans continents and millennia, featuring an enormous cast, elaborate military campaigns, and serious engagement with philosophy and the nature of empire.',
-    website: 'https://www.stevenerikson.com',
-    twitter: null,
-    goodreads: 'https://www.goodreads.com/author/show/31232.Steven_Erikson',
-  },
-  {
-    name: 'V.E. Schwab',
-    bio: 'V.E. Schwab (Victoria Schwab) is an American author known for the Shades of Magic trilogy and the Villains series. Writing across multiple age categories, she is known for morally complex antiheroes, vividly inventive parallel-world building, and a prolific output that has made her one of the most prominent authors in contemporary fantasy.',
-    website: 'https://veschwab.com',
-    twitter: 'veschwab',
-    goodreads: 'https://www.goodreads.com/author/show/7168230.V_E_Schwab',
-  },
-  {
-    name: 'Madeline Miller',
-    bio: 'Madeline Miller is an American author and classicist known for her lyrical literary retellings of ancient Greek mythology. Her debut The Song of Achilles won the Orange Prize for Fiction, and Circe — a retelling of the witch from the Odyssey — became a global bestseller, bringing mythological fantasy to mainstream literary audiences.',
-    website: 'https://madelinemiller.com',
-    twitter: 'MillerMadeline',
-    goodreads: 'https://www.goodreads.com/author/show/4617935.Madeline_Miller',
-  },
-  {
-    name: 'Pierce Brown',
-    bio: 'Pierce Brown is an American author known for the Red Rising saga, a dystopian science fiction series set in a solar system where society is divided by a rigid color-coded caste system. The series combines Shakespearean political drama, brutal action, and an expansive cast across novels that blend epic fantasy structure with hard sci-fi setting.',
-    website: 'https://piercebrownbooks.com',
-    twitter: 'Pierce_Brown',
-    goodreads: 'https://www.goodreads.com/author/show/5803198.Pierce_Brown',
-  },
-  {
-    name: 'Brent Weeks',
-    bio: 'Brent Weeks is an American author known for the Night Angel trilogy and the Lightbringer series. His work features intricate magic systems grounded in moral philosophy, complex political structures, and characters who undergo profound transformation. The Lightbringer series is particularly acclaimed for its light-based magic system.',
-    website: 'https://www.brentweeks.com',
-    twitter: 'brentweeks',
-    goodreads: 'https://www.goodreads.com/author/show/1970241.Brent_Weeks',
-  },
-  {
-    name: 'Brian McClellan',
-    bio: 'Brian McClellan is an American author and former student of Brandon Sanderson, best known for the Powder Mage trilogy — a flintlock fantasy set in the same cosmere-adjacent world as Mistborn. His work combines Sanderson-style magic system design with a focus on revolutionary politics and underdog heroes.',
-    website: 'https://www.brianmcclellan.com',
-    twitter: 'BTMcClellan',
-    goodreads: 'https://www.goodreads.com/author/show/5145022.Brian_McClellan',
-  },
-  {
-    name: 'Travis Baldree',
-    bio: 'Travis Baldree is an American author and audiobook narrator who became a beloved figure in cozy fantasy with his debut Legends & Lattes — a heartwarming story of an orc barbarian who retires to open a coffee shop. The book helped crystallize the cozy fantasy subgenre and demonstrated that fantasy readers had enormous appetite for low-stakes, warmth-first storytelling.',
-    website: 'https://www.travisbaldree.com',
-    twitter: 'travisbaldree',
-    goodreads: 'https://www.goodreads.com/author/show/21487016.Travis_Baldree',
-  },
-  {
-    name: 'T.J. Klune',
-    bio: 'T.J. Klune is an American author known for heartfelt, LGBTQ+-inclusive fantasy. The House in the Cerulean Sea — a whimsical story about a caseworker for magical children — became a defining comfort read and helped popularize the cozy fantasy subgenre. His work is characterized by found family themes and generous emotional warmth.',
-    website: 'https://www.tjklunebooks.com',
-    twitter: 'tjklune',
-    goodreads: 'https://www.goodreads.com/author/show/7038516.T_J_Klune',
-  },
-];
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+function truncateBio(text, maxLen = 600) {
+  if (!text || text.length <= maxLen) return text;
+  const cut = text.slice(0, maxLen);
+  const lastDot = cut.lastIndexOf('. ');
+  return lastDot > 200 ? cut.slice(0, lastDot + 1) : cut;
+}
+
+function get(obj, ...keys) {
+  return keys.reduce((o, k) => o?.[k], obj) ?? null;
+}
+
+const HEADERS = { 'User-Agent': 'FantasyObscura/1.0 (contact@fantasyobscura.com)' };
+
+async function apiFetch(url) {
+  try {
+    const res = await fetch(url, { headers: HEADERS });
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
+}
+
+// ─── Open Library ────────────────────────────────────────────────────────────
+
+async function fetchOpenLibrary(name) {
+  // Step 1: search for author
+  const search = await apiFetch(
+    `https://openlibrary.org/search/authors.json?q=${encodeURIComponent(name)}&limit=3`,
+  );
+  if (!search?.docs?.length) return null;
+
+  // Pick best match: exact name match preferred, otherwise first result
+  const nameLower = name.toLowerCase();
+  const doc =
+    search.docs.find((d) => d.name?.toLowerCase() === nameLower) ||
+    search.docs.find((d) => d.name?.toLowerCase().includes(nameLower.split(' ').at(-1))) ||
+    search.docs[0];
+
+  if (!doc?.key) return null;
+  const olid = doc.key.replace('/authors/', '');
+
+  await sleep(DELAY_MS);
+
+  // Step 2: fetch full author record
+  const author = await apiFetch(`https://openlibrary.org/authors/${olid}.json`);
+  if (!author) return null;
+
+  // Bio — can be a string or { value: string }
+  const rawBio = typeof author.bio === 'string' ? author.bio : get(author, 'bio', 'value');
+  // Strip "Source: https://..." lines that OL sometimes appends
+  const bio = rawBio ? truncateBio(rawBio.replace(/\n?\nSource:.*$/s, '').trim()) : null;
+
+  // Photo
+  const photoId = author.photos?.[0];
+  const photo_url = photoId ? `https://covers.openlibrary.org/a/id/${photoId}-L.jpg` : null;
+
+  // IDs
+  const goodreadsId = get(author, 'remote_ids', 'goodreads');
+  const goodreads   = goodreadsId ? `https://www.goodreads.com/author/show/${goodreadsId}` : null;
+  const wikidata_id = get(author, 'remote_ids', 'wikidata');
+
+  // Official website from links[]
+  const website =
+    author.links?.find((l) =>
+      l.title?.toLowerCase().includes('official') || l.title?.toLowerCase().includes('website'),
+    )?.url ?? null;
+
+  return { bio, photo_url, goodreads, website, wikidata_id };
+}
+
+// ─── Wikipedia fallback ──────────────────────────────────────────────────────
+
+async function fetchWikipedia(name) {
+  const d = await apiFetch(
+    `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name.replace(/ /g, '_'))}`,
+  );
+  if (!d || d.type === 'disambiguation' || !d.extract) return null;
+
+  const lower = d.extract.toLowerCase();
+  const isAuthor =
+    lower.includes('author') || lower.includes('writer') || lower.includes('novelist') ||
+    lower.includes('novel') || lower.includes('fantasy') || lower.includes('fiction');
+  if (!isAuthor) return null;
+
+  return {
+    bio:         truncateBio(d.extract),
+    photo_url:   d.thumbnail?.source ?? null,
+    wikidata_id: d.wikibase_item ?? null,
+  };
+}
+
+// ─── Google Knowledge Graph ───────────────────────────────────────────────────
+
+async function fetchGoogleKG(name) {
+  const key = process.env.GOOGLE_KG_API_KEY;
+  if (!key) return null;
+
+  const url = `https://kgsearch.googleapis.com/v1/entities:search?query=${encodeURIComponent(name)}&types=Person&limit=3&key=${key}`;
+  const data = await apiFetch(url);
+  if (!data?.itemListElement?.length) return null;
+
+  // Pick best match: prefer exact name, then partial
+  const nameLower = name.toLowerCase();
+  const item =
+    data.itemListElement.find((e) => e.result?.name?.toLowerCase() === nameLower) ||
+    data.itemListElement.find((e) => e.result?.name?.toLowerCase().includes(nameLower.split(' ').at(-1))) ||
+    data.itemListElement[0];
+
+  const result = item?.result;
+  if (!result) return null;
+
+  // Sanity check — should be an author/writer
+  const desc = (result.description ?? '').toLowerCase();
+  const isAuthor =
+    desc.includes('author') || desc.includes('writer') || desc.includes('novelist') ||
+    desc.includes('fiction') || desc.includes('fantasy');
+  if (!isAuthor) return null;
+
+  const bio       = result.detailedDescription?.articleBody
+    ? truncateBio(result.detailedDescription.articleBody)
+    : (result.description ?? null);
+  const photo_url = result.image?.contentUrl ?? null;
+  const website   = result.url ?? null;
+
+  return { bio, photo_url, website };
+}
+
+// ─── Wikidata (Twitter) ───────────────────────────────────────────────────────
+
+async function fetchTwitterFromWikidata(wikidataId) {
+  if (!wikidataId) return null;
+  const data = await apiFetch(
+    `https://www.wikidata.org/wiki/Special:EntityData/${wikidataId}.json`,
+  );
+  const claims = data?.entities?.[wikidataId]?.claims ?? {};
+  return claims.P2002?.[0]?.mainsnak?.datavalue?.value ?? null;
+}
+
+// ─── Supabase helpers ────────────────────────────────────────────────────────
+
+async function getAllAuthorNames() {
+  const { data, error } = await supabase.from('books').select('authors');
+  if (error) throw new Error(`Supabase: ${error.message}`);
+  const names = new Set();
+  for (const row of data ?? []) {
+    for (const n of row.authors ?? []) {
+      if (n?.trim()) names.add(n.trim());
+    }
+  }
+  return [...names].sort((a, b) => a.localeCompare(b));
+}
+
+async function getExistingProfiles() {
+  const { data } = await supabase.from('authors').select('slug, photo_url');
+  return new Map((data ?? []).map((r) => [r.slug, r.photo_url]));
+}
+
+// ─── main ────────────────────────────────────────────────────────────────────
 
 async function seed() {
-  console.log(`Seeding ${authors.length} authors...`);
+  console.log('📚 Fantasy Obscura — seed-authors');
+  if (DRY_RUN)      console.log('   --dry-run: no DB writes');
+  if (ONLY_MISSING) console.log('   --only-missing: skipping authors with existing photo');
+  console.log();
 
-  for (const author of authors) {
-    const slug = authorToSlug(author.name);
+  const [allNames, existing] = await Promise.all([getAllAuthorNames(), getExistingProfiles()]);
+  console.log(`${allNames.length} unique authors found in books table.\n`);
+
+  let nFound = 0, nWiki = 0, nMissing = 0, nSkipped = 0, nErrors = 0;
+
+  for (const name of allNames) {
+    const slug = authorToSlug(name);
+
+    if (ONLY_MISSING && existing.get(slug)) {
+      nSkipped++;
+      continue;
+    }
+
+    // ── 1. Open Library ──
+    const ol = await fetchOpenLibrary(name);
+    await sleep(DELAY_MS);
+
+    let bio        = ol?.bio        ?? null;
+    let photo_url  = ol?.photo_url  ?? null;
+    let goodreads  = ol?.goodreads  ?? null;
+    let website    = ol?.website    ?? null;
+    let wikidata_id = ol?.wikidata_id ?? null;
+    let source     = ol ? 'OL' : null;
+
+    // ── 2. Wikipedia fallback (if OL didn't have bio or photo) ──
+    if (!bio || !photo_url) {
+      const wiki = await fetchWikipedia(name);
+      await sleep(DELAY_MS);
+      if (wiki) {
+        bio         = bio       || wiki.bio;
+        photo_url   = photo_url || wiki.photo_url;
+        wikidata_id = wikidata_id || wiki.wikidata_id;
+        source      = ol ? 'OL+Wiki' : 'Wiki';
+      }
+    }
+
+    // ── 3. Google Knowledge Graph fallback (if still missing bio or photo) ──
+    if (!bio || !photo_url) {
+      const kg = await fetchGoogleKG(name);
+      await sleep(DELAY_MS);
+      if (kg) {
+        bio       = bio       || kg.bio;
+        photo_url = photo_url || kg.photo_url;
+        website   = website   || kg.website;
+        source    = source ? `${source}+KG` : 'KG';
+      }
+    }
+
+    // ── 5. Wikidata for Twitter ──
+    let twitter = null;
+    if (wikidata_id) {
+      twitter = await fetchTwitterFromWikidata(wikidata_id);
+      await sleep(DELAY_MS);
+    }
+
+    if (!bio && !photo_url) {
+      // Create minimal row so author exists in table
+      if (!DRY_RUN) {
+        await supabase
+          .from('authors')
+          .upsert({ name, slug }, { onConflict: 'slug', ignoreDuplicates: true });
+      }
+      console.log(`✗  ${name}  (not found in OL or Wikipedia)`);
+      nMissing++;
+      continue;
+    }
+
+    const record = { name, slug, bio, photo_url, goodreads, website, twitter };
+
+    const flags = [
+      photo_url ? '📷' : '  ',
+      bio       ? '📝' : '  ',
+      website   ? '🌐' : '  ',
+      twitter   ? '𝕏 ' : '  ',
+      goodreads ? '📚' : '  ',
+    ].join('') + `  [${source}]`;
+
+    if (DRY_RUN) {
+      console.log(`✓  ${flags}  ${name}`);
+      nFound++;
+      continue;
+    }
+
     const { error } = await supabase
       .from('authors')
-      .upsert(
-        { ...author, slug },
-        { onConflict: 'slug' },
-      );
+      .upsert(record, { onConflict: 'slug' });
 
     if (error) {
-      console.error(`✗ ${author.name}:`, error.message);
+      console.error(`✗  ${name}  DB error: ${error.message}`);
+      nErrors++;
     } else {
-      console.log(`✓ ${author.name} (${slug})`);
+      if (source === 'Wiki') nWiki++;
+      else nFound++;
+      console.log(`✓  ${flags}  ${name}`);
     }
   }
 
-  console.log('Done.');
+  console.log('\n─────────────────────────────────────────');
+  console.log(`✓  Open Library (± Wiki fallback) : ${nFound}`);
+  console.log(`~  Wikipedia only                 : ${nWiki}`);
+  console.log(`✗  Not found anywhere             : ${nMissing}`);
+  if (nSkipped) console.log(`   Skipped (already had photo)    : ${nSkipped}`);
+  if (nErrors)  console.log(`   DB errors                      : ${nErrors}`);
+  console.log(`   Total                          : ${allNames.length}`);
 }
 
-seed();
+seed().catch((err) => { console.error('Fatal:', err); process.exit(1); });
