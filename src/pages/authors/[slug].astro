@@ -2,6 +2,7 @@
 import Layout from '../../components/Layout.astro';
 import { getAllAuthors, getBooksByAuthor } from '../../lib/db/books';
 import { getAuthorProfile } from '../../lib/db/authors';
+import { supabaseClient } from '../../lib/supabaseClient';
 
 const { slug } = Astro.params;
 
@@ -16,6 +17,8 @@ const [books, profile] = await Promise.all([
   getBooksByAuthor(author.name),
   getAuthorProfile(slug),
 ]);
+
+// Fetch photos for similar authors (resolved after similarAuthors is computed below)
 
 // Sort books by avg_rating desc (nulls last)
 const sortedBooks = [...books].sort((a, b) => {
@@ -132,8 +135,33 @@ const avatarGradient = palette[h % palette.length];
 
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
 
-const metaDescription = profile?.bio
-  ? profile.bio.slice(0, 160)
+// Clean bio: strip "Note:" lines and bare markdown reference links
+const cleanBio = profile?.bio
+  ?.split('\n')
+  .filter(line => !line.trim().startsWith('Note:') && !line.trim().match(/^\[\d+\]:/))
+  .join('\n')
+  .trim() || null;
+
+// Similar authors: other authors sharing the most subgenres
+const authorGenreSet = new Set(topGenres);
+const similarAuthors = allAuthors
+  .filter((a) => a.slug !== slug)
+  .map((a) => ({ ...a, common: a.topGenres.filter((g) => authorGenreSet.has(g)).length }))
+  .filter((a) => a.common > 0)
+  .sort((a, b) => b.common - a.common || b.bookCount - a.bookCount)
+  .slice(0, 5);
+
+// Fetch photos for similar authors
+type PhotoRow = { slug: string; photo_url: string | null };
+const { data: simPhotosData } = await supabaseClient
+  .from('authors')
+  .select('slug, photo_url')
+  .in('slug', similarAuthors.map((a) => a.slug)) as { data: PhotoRow[] | null };
+const simPhotoMap = new Map<string, string | null>();
+for (const p of simPhotosData ?? []) simPhotoMap.set(p.slug, p.photo_url);
+
+const metaDescription = cleanBio
+  ? cleanBio.slice(0, 160)
   : `Explore all ${books.length} fantasy books by ${author.name} on Fantasy Obscura — genres, tropes, and darkness ratings.`;
 ---
 
@@ -229,9 +257,9 @@ const metaDescription = profile?.bio
     </div>
   </div>
 
-  {profile?.bio && (
+  {cleanBio && (
     <div class="mb-10 max-w-3xl">
-      <p class="text-zinc-600 leading-relaxed">{profile.bio}</p>
+      <p class="text-zinc-600 leading-relaxed">{cleanBio}</p>
     </div>
   )}
 
@@ -318,10 +346,69 @@ const metaDescription = profile?.bio
     </div>
   )}
 
-  <!-- Books list (sorted by rating, paginated) -->
-  <div class="flex items-center justify-between mb-4">
-    <h2 class="text-xl font-semibold">Books</h2>
-    <span class="text-sm text-zinc-400">{books.length} total · sorted by rating</span>
+  <!-- Similar Authors -->
+  {similarAuthors.length > 0 && (
+    <div class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Similar Authors</h2>
+      <div class="grid gap-3 grid-cols-5">
+        {similarAuthors.map((a) => {
+          let ah = 0;
+          for (const c of a.name) ah = (ah * 31 + c.charCodeAt(0)) & 0xff;
+          const aGradient = palette[ah % palette.length];
+          const photo = simPhotoMap.get(a.slug);
+          return (
+            <a
+              href={`/authors/${a.slug}/`}
+              class="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white px-3 py-2.5 hover:shadow-md hover:border-zinc-300 transition-all group"
+            >
+              {photo ? (
+                <>
+                  <img
+                    src={photo}
+                    alt={a.name}
+                    class="shrink-0 w-10 h-10 rounded-full object-cover shadow-sm"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                  />
+                  <div class={`shrink-0 w-10 h-10 rounded-full bg-linear-to-br ${aGradient} items-center justify-center text-white font-bold text-base hidden`}>
+                    {a.name[0].toUpperCase()}
+                  </div>
+                </>
+              ) : (
+                <div class={`shrink-0 w-10 h-10 rounded-full bg-linear-to-br ${aGradient} flex items-center justify-center text-white font-bold text-base`}>
+                  {a.name[0].toUpperCase()}
+                </div>
+              )}
+              <div class="min-w-0">
+                <p class="font-medium text-sm text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug line-clamp-2">{a.name}</p>
+                <p class="text-xs text-zinc-400 mt-0.5">{a.bookCount} {a.bookCount === 1 ? 'book' : 'books'}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  )}
+
+  <!-- Books list -->
+  <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+    <h2 class="text-xl font-semibold">Books by {author.name}</h2>
+    <div class="flex items-center gap-2">
+      <span class="text-sm text-zinc-400">{books.length} total</span>
+      <div class="flex gap-1">
+        {[
+          { key: 'rating', label: '★ Rating' },
+          { key: 'newest', label: 'Newest' },
+          { key: 'oldest', label: 'Oldest' },
+        ].map(({ key, label }) => (
+          <button
+            data-sort={key}
+            class={`sort-btn px-3 py-1 rounded-full text-xs font-medium border transition-colors ${key === 'rating' ? 'bg-purple-600 text-white border-purple-600' : 'border-zinc-300 text-zinc-600 hover:bg-zinc-50'}`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+    </div>
   </div>
 
   <div id="books-grid" class="space-y-3">
@@ -384,9 +471,9 @@ const metaDescription = profile?.bio
       );
 
       return href ? (
-        <a href={href} class="block book-card-wrap" data-index={i}>{inner}</a>
+        <a href={href} class="block book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0}>{inner}</a>
       ) : (
-        <div class="book-card-wrap" data-index={i}>{inner}</div>
+        <div class="book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0}>{inner}</div>
       );
     })}
   </div>
@@ -434,26 +521,49 @@ const metaDescription = profile?.bio
   });
 
   const PER_PAGE = 8;
-  const wraps = Array.from(document.querySelectorAll<HTMLElement>('.book-card-wrap'));
+  const grid = document.getElementById('books-grid')!;
+  let wraps = Array.from(document.querySelectorAll<HTMLElement>('.book-card-wrap'));
   const prevBtn = document.getElementById('books-prev') as HTMLButtonElement | null;
   const nextBtn = document.getElementById('books-next') as HTMLButtonElement | null;
   const pageLabel = document.getElementById('books-page-label');
   let page = 0;
-  const totalPages = Math.ceil(wraps.length / PER_PAGE);
 
   function render() {
+    const totalPages = Math.ceil(wraps.length / PER_PAGE);
     const start = page * PER_PAGE;
     const end = start + PER_PAGE;
-    wraps.forEach((w, i) => {
-      w.style.display = (i >= start && i < end) ? '' : 'none';
-    });
+    wraps.forEach((w, i) => { w.style.display = (i >= start && i < end) ? '' : 'none'; });
     if (pageLabel) pageLabel.textContent = `Page ${page + 1} of ${totalPages}`;
     if (prevBtn) prevBtn.disabled = page === 0;
     if (nextBtn) nextBtn.disabled = page >= totalPages - 1;
   }
 
+  function sortAndRender(key: string) {
+    const sorted = [...wraps].sort((a, b) => {
+      if (key === 'newest') return Number(b.dataset.year) - Number(a.dataset.year);
+      if (key === 'oldest') return Number(a.dataset.year) - Number(b.dataset.year);
+      return Number(b.dataset.rating) - Number(a.dataset.rating); // rating
+    });
+    sorted.forEach((el) => grid.appendChild(el));
+    wraps = sorted;
+    page = 0;
+    render();
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.sort-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll<HTMLButtonElement>('.sort-btn').forEach((b) => {
+        b.classList.remove('bg-purple-600', 'text-white', 'border-purple-600');
+        b.classList.add('border-zinc-300', 'text-zinc-600');
+      });
+      btn.classList.add('bg-purple-600', 'text-white', 'border-purple-600');
+      btn.classList.remove('border-zinc-300', 'text-zinc-600');
+      sortAndRender(btn.dataset.sort!);
+    });
+  });
+
   if (prevBtn) prevBtn.addEventListener('click', () => { if (page > 0) { page--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
-  if (nextBtn) nextBtn.addEventListener('click', () => { if (page < totalPages - 1) { page++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+  if (nextBtn) nextBtn.addEventListener('click', () => { if (page < Math.ceil(wraps.length / PER_PAGE) - 1) { page++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
 
   render();
 </script>

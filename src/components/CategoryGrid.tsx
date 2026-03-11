@@ -8,606 +8,331 @@ interface Category {
 }
 
 const categories: Category[] = [
-  {
-    slug: 'epic',
-    name: 'Epic & High Fantasy',
-    description: 'Grand worlds with deep lore & ancient magic',
-    gradient: 'from-purple-50 to-blue-50',
-  },
-  {
-    slug: 'romantasy',
-    name: 'Romantasy',
-    description: 'Fantasy with love stories and relationships',
-    gradient: 'from-rose-50 to-pink-50',
-  },
-  {
-    slug: 'litrpg',
-    name: 'LitRPG / Progression Fantasy',
-    description: 'Literary role-playing story with progression',
-    gradient: 'from-blue-50 to-cyan-50',
-  },
-  {
-    slug: 'dark',
-    name: 'Dark Fantasy',
-    description: 'Blends fantasy with horror and brutality',
-    gradient: 'from-slate-100 to-zinc-100',
-  },
-  {
-    slug: 'urban',
-    name: 'Urban / Contemporary Fantasy',
-    description: 'Magic hidden in the modern world',
-    gradient: 'from-indigo-50 to-violet-50',
-  },
-  {
-    slug: 'grimdark',
-    name: 'Grimdark',
-    description: 'Ultra-dark, cynical world with antiheroes',
-    gradient: 'from-gray-100 to-slate-100',
-  },
-  {
-    slug: 'historical',
-    name: 'Historical Fantasy',
-    description: 'Alternative history, often medieval with magic',
-    gradient: 'from-amber-50 to-orange-50',
-  },
-  {
-    slug: 'academy',
-    name: 'Academy Fantasy',
-    description: 'Stories set in magical or specialized schools',
-    gradient: 'from-red-50 to-rose-50',
-  },
-  {
-    slug: 'mythology',
-    name: 'Mythic & Folklore Fantasy',
-    description: 'Inspired by myths, legends and folklore',
-    gradient: 'from-yellow-50 to-amber-50',
-  },
-  {
-    slug: 'swords',
-    name: 'Sword & Sorcery',
-    description: 'Heroic adventure, visceral magic, ancient evil',
-    gradient: 'from-cyan-50 to-teal-50',
-  },
-  {
-    slug: 'cozy',
-    name: 'Cozy Fantasy',
-    description: 'Low conflict, heartwarming vibes',
-    gradient: 'from-green-50 to-emerald-50',
-  },
-  {
-    slug: 'science-fantasy',
-    name: 'Science Fantasy',
-    description: 'Where technology meets magic and prophecy',
-    gradient: 'from-sky-50 to-blue-50',
-  },
+  { slug: 'epic',           name: 'Epic & High Fantasy',          description: 'Grand worlds with deep lore & ancient magic',   gradient: 'from-purple-50 to-blue-50'   },
+  { slug: 'romantasy',      name: 'Romantasy',                    description: 'Fantasy with love stories and relationships',    gradient: 'from-rose-50 to-pink-50'     },
+  { slug: 'litrpg',         name: 'LitRPG / Progression Fantasy', description: 'Literary role-playing story with progression',   gradient: 'from-blue-50 to-cyan-50'     },
+  { slug: 'dark',           name: 'Dark Fantasy',                 description: 'Blends fantasy with horror and brutality',       gradient: 'from-slate-100 to-zinc-100'  },
+  { slug: 'urban',          name: 'Urban / Contemporary Fantasy', description: 'Magic hidden in the modern world',               gradient: 'from-indigo-50 to-violet-50' },
+  { slug: 'grimdark',       name: 'Grimdark',                     description: 'Ultra-dark, cynical world with antiheroes',      gradient: 'from-gray-100 to-slate-100'  },
+  { slug: 'historical',     name: 'Historical Fantasy',           description: 'Alternative history, often medieval with magic', gradient: 'from-amber-50 to-orange-50'  },
+  { slug: 'academy',        name: 'Academy Fantasy',              description: 'Stories set in magical or specialized schools',  gradient: 'from-red-50 to-rose-50'      },
+  { slug: 'mythology',      name: 'Mythic & Folklore Fantasy',    description: 'Inspired by myths, legends and folklore',        gradient: 'from-yellow-50 to-amber-50'  },
+  { slug: 'swords',         name: 'Sword & Sorcery',              description: 'Heroic adventure, visceral magic, ancient evil', gradient: 'from-cyan-50 to-teal-50'     },
+  { slug: 'cozy',           name: 'Cozy Fantasy',                 description: 'Low conflict, heartwarming vibes',               gradient: 'from-green-50 to-emerald-50' },
+  { slug: 'science-fantasy',name: 'Science Fantasy',              description: 'Where technology meets magic and prophecy',      gradient: 'from-sky-50 to-blue-50'      },
 ];
 
-const newReleases: Record<string, string[]> = {
+
+const readingOrders = [
+  { slug: 'cosmere',        name: "Sanderson's Cosmere",           bookCount: 15, color: 'from-violet-100 to-purple-100', text: 'text-violet-800'  },
+  { slug: 'stormlight',     name: 'The Stormlight Archive',        bookCount: 5,  color: 'from-blue-100 to-indigo-100',   text: 'text-blue-800'    },
+  { slug: 'first-law',      name: 'The First Law',                 bookCount: 10, color: 'from-zinc-100 to-slate-200',    text: 'text-zinc-800'    },
+  { slug: 'malazan',        name: 'Malazan Book of the Fallen',    bookCount: 10, color: 'from-stone-100 to-zinc-200',    text: 'text-stone-800'   },
+  { slug: 'asoiaf',         name: 'A Song of Ice and Fire',        bookCount: 5,  color: 'from-gray-100 to-slate-200',    text: 'text-gray-800'    },
+  { slug: 'wheel-of-time',  name: 'The Wheel of Time',             bookCount: 14, color: 'from-amber-100 to-yellow-100',  text: 'text-amber-800'   },
+  { slug: 'acotar',         name: 'A Court of Thorns and Roses',   bookCount: 5,  color: 'from-rose-100 to-pink-100',     text: 'text-rose-800'    },
+  { slug: 'empyrean',       name: 'The Empyrean',                  bookCount: 3,  color: 'from-sky-100 to-blue-100',      text: 'text-sky-800'     },
+  { slug: 'blood-and-ash',  name: 'Blood and Ash',                 bookCount: 8,  color: 'from-red-100 to-rose-100',      text: 'text-red-800'     },
+  { slug: 'kingkiller',     name: 'The Kingkiller Chronicle',      bookCount: 3,  color: 'from-teal-100 to-cyan-100',     text: 'text-teal-800'    },
+  { slug: 'discworld',      name: 'Discworld',                     bookCount: 41, color: 'from-lime-100 to-green-100',    text: 'text-lime-800'    },
+  { slug: 'dresden-files',  name: 'The Dresden Files',             bookCount: 17, color: 'from-orange-100 to-amber-100',  text: 'text-orange-800'  },
+  { slug: 'robin-hobb',     name: 'Realm of the Elderlings',       bookCount: 16, color: 'from-emerald-100 to-teal-100',  text: 'text-emerald-800' },
+  { slug: 'throne-of-glass',name: 'Throne of Glass',               bookCount: 8,  color: 'from-fuchsia-100 to-pink-100',  text: 'text-fuchsia-800' },
+  { slug: 'witcher',        name: 'The Witcher',                   bookCount: 8,  color: 'from-yellow-100 to-amber-100',  text: 'text-yellow-800'  },
+];
+
+interface BookOfWeekEntry { title: string; author: string; blurb: string; }
+const bookOfWeekPools: Record<string, BookOfWeekEntry[]> = {
   general: [
-    'Fourth Wing',
-    'Wind and Truth',
-    'House of Flame and Shadow',
-    'Starter Villain',
-    'The Familiar',
-    'Intermezzo',
+    { title: 'The Name of the Wind',          author: 'Patrick Rothfuss',    blurb: 'The gold standard for literary fantasy — Kvothe\'s origin story told with prose that earns every page of hype.' },
+    { title: 'The Way of Kings',              author: 'Brandon Sanderson',   blurb: 'A 1,000-page epic that never feels slow — Sanderson at his most ambitious, with a magic system unlike anything else.' },
+    { title: 'Piranesi',                      author: 'Susanna Clarke',      blurb: 'Genuinely strange and beautiful — a house with infinite halls, statues, and tides. Reads in a single sitting.' },
+    { title: 'The Lies of Locke Lamora',      author: 'Scott Lynch',         blurb: 'Ocean\'s Eleven in a fantasy Venice — witty, brutal, and impossible to put down.' },
+    { title: 'A Memory Called Empire',        author: 'Arkady Martine',      blurb: 'Political intrigue in a galactic empire with a diplomat who carries a dead man\'s memories. Stunning debut.' },
+    { title: 'The Poppy War',                 author: 'R.F. Kuang',          blurb: 'Starts as an academy fantasy, becomes something far darker — one of the most important fantasy novels of the decade.' },
+    { title: 'Legends & Lattes',              author: 'Travis Baldree',      blurb: 'An orc retires from adventuring to open a coffee shop. Low stakes, high charm, genuinely lovely.' },
+    { title: 'Red Rising',                    author: 'Pierce Brown',        blurb: 'Hunger Games meets Roman epic — propulsive, brutal, and one of the best first books in any series.' },
+    { title: 'Six of Crows',                  author: 'Leigh Bardugo',       blurb: 'A heist crew with genuine chemistry and a plot that snaps shut perfectly. Bardugo\'s best work.' },
+    { title: 'Good Omens',                    author: 'Terry Pratchett & Neil Gaiman', blurb: 'An angel and a demon try to stop the apocalypse. Endlessly quotable, still funny after 30 years.' },
   ],
   epic: [
-    'Wind and Truth',
-    'The Sunlit Man',
-    'Tress of the Emerald Sea',
-    'Defiant',
-    'The Lost Metal',
-    'Yumi and the Nightmare Painter',
+    { title: 'The Way of Kings',              author: 'Brandon Sanderson',   blurb: 'The most complete epic fantasy world built in the last 20 years — every book adds another layer.' },
+    { title: 'The Eye of the World',          author: 'Robert Jordan',       blurb: 'The series that defined modern epic fantasy — 14 books of world-building that actually pays off.' },
+    { title: 'The Blade Itself',              author: 'Joe Abercrombie',     blurb: 'A First Law trilogy opener that deconstructs every epic fantasy trope you thought you knew.' },
+    { title: 'The Fifth Season',              author: 'N.K. Jemisin',        blurb: 'Three Hugos in a row for a reason — a broken world, a second person POV, and a twist that hits like a punch.' },
+    { title: 'The Name of the Wind',          author: 'Patrick Rothfuss',    blurb: 'The best prose in modern epic fantasy. Still worth it even unfinished.' },
+    { title: 'The Priory of the Orange Tree', author: 'Samantha Shannon',    blurb: 'A standalone epic with dragons, matriarchal kingdoms, and a map that rewards study.' },
+    { title: 'The Rage of Dragons',           author: 'Evan Winter',         blurb: 'West African-inspired military fantasy with a vengeful protagonist — tightly plotted and fast.' },
+    { title: 'Gardens of the Moon',           author: 'Steven Erikson',      blurb: 'The hardest start in fantasy that becomes one of the most rewarding series ever written.' },
   ],
   romantasy: [
-    'Fourth Wing',
-    'Iron Flame',
-    'House of Flame and Shadow',
-    'Bride',
-    'A Soul of Ash and Blood',
-    'Born of Blood and Ash',
-  ],
-  swords: [
-    'The Blacktongue Thief',
-    'The Sword Defiant',
-    'Age of Ash',
-    'The Tainted Cup',
-    'Kings of the Wyld',
-    'Promise of Blood',
+    { title: 'A Court of Mist and Fury',      author: 'Sarah J. Maas',       blurb: 'Book two is where ACOTAR earns its reputation — the slow burn breaks and everything changes.' },
+    { title: 'The Cruel Prince',              author: 'Holly Black',         blurb: 'Fae court politics with a mortal girl who refuses to stay powerless — genuinely sharp.' },
+    { title: 'From Blood and Ash',            author: 'Jennifer L. Armentrout', blurb: 'Impossible not to read in one sitting — the enemies-to-lovers tension is relentless.' },
+    { title: 'Divine Rivals',                 author: 'Rebecca Ross',        blurb: 'Letters, war, and gods — enemies-to-lovers with real emotional stakes and gorgeous writing.' },
+    { title: 'A Heart So Fierce and Broken',  author: 'Brigid Kemmerer',     blurb: 'Beauty and the Beast retelling that gives the villain a perspective worth reading.' },
+    { title: 'Kingdom of the Wicked',         author: 'Kerri Maniscalco',    blurb: 'Victorian Sicily + demons + a Sicilian chef seeking revenge. Atmospheric and addictive.' },
+    { title: 'Serpent & Dove',                author: 'Shelby Mahurin',      blurb: 'A witch forced to marry a witch hunter — the setup sounds clichéd until the execution isn\'t.' },
+    { title: 'The Bridge Kingdom',            author: 'Danielle L. Jensen',  blurb: 'Spy-romance done right — mutual deception that evolves into something genuinely earned.' },
   ],
   dark: [
-    'Age of Ash',
-    'The Blacktongue Thief',
-    'A Little Hatred',
-    'The Wisdom of Crowds',
-    'The Trouble with Peace',
-    'The Familiar',
-  ],
-  urban: [
-    'The World We Make',
-    'Witch King',
-    'Ink Blood Sister Scribe',
-    'Starter Villain',
-    'A Psalm for the Wild-Built',
-    'The Familiar',
+    { title: 'The Blade Itself',              author: 'Joe Abercrombie',     blurb: 'The book that taught fantasy it was allowed to be uncomfortable. Logen Ninefingers is one of the great antiheroes.' },
+    { title: 'The Poppy War',                 author: 'R.F. Kuang',          blurb: 'Based on the Second Sino-Japanese War — uncompromising, brilliant, and not for the faint-hearted.' },
+    { title: 'Nevernight',                    author: 'Jay Kristoff',        blurb: 'An assassin school with a footnote narrator and a protagonist who commits to her revenge.' },
+    { title: 'The Gutter Prayer',             author: 'Gareth Hanrahan',     blurb: 'Three thieves, a city that eats people, and a war between gods. Dense and rewarding.' },
+    { title: 'A Little Hatred',               author: 'Joe Abercrombie',     blurb: 'The industrial revolution meets The First Law — grimmer and funnier than anything in the original trilogy.' },
+    { title: 'Prince of Thorns',              author: 'Mark Lawrence',       blurb: 'A 13-year-old prince who is genuinely terrifying — controversial for good reason, but hard to forget.' },
+    { title: 'The Black Company',             author: 'Glen Cook',           blurb: 'The original gritty military fantasy — Cook invented the genre Abercrombie perfected.' },
+    { title: 'Low Town',                      author: 'Daniel Polansky',     blurb: 'Fantasy noir in a city that smells of bad decisions — sharp prose, worse people.' },
   ],
   grimdark: [
-    'Age of Ash',
-    'The Blacktongue Thief',
-    'A Little Hatred',
-    'The Wisdom of Crowds',
-    'The Trouble with Peace',
-    'Hell Around the Horn',
+    { title: 'Best Served Cold',              author: 'Joe Abercrombie',     blurb: 'A revenge thriller that earns its title — Abercrombie at his most focused and vicious.' },
+    { title: 'Prince of Thorns',              author: 'Mark Lawrence',       blurb: 'Polarizing, original, and impossible to forget. Lawrence built grimdark\'s most distinctive voice.' },
+    { title: 'The First Law',                 author: 'Joe Abercrombie',     blurb: 'The trilogy that defined modern grimdark — every heroic trope methodically dismantled.' },
+    { title: 'The Black Company',             author: 'Glen Cook',           blurb: 'Cook\'s mercenary company is where grimdark started before it had a name.' },
+    { title: 'The Gutter Prayer',             author: 'Gareth Hanrahan',     blurb: 'Weird grimdark — gods of industry, city as monster, a plot that refuses to slow down.' },
+    { title: 'Gardens of the Moon',           author: 'Steven Erikson',      blurb: 'Malazan is the most committed grimdark world in existence. Nothing resolves cleanly.' },
+    { title: 'King of Thorns',                author: 'Mark Lawrence',       blurb: 'The second Broken Empire book improves on the first in every way.' },
+    { title: 'The Heroes',                    author: 'Joe Abercrombie',     blurb: 'Three days of battle from every side — Abercrombie\'s most honest book about what war costs.' },
+  ],
+  urban: [
+    { title: 'Storm Front',                   author: 'Jim Butcher',         blurb: 'Harry Dresden: Chicago\'s only wizard-for-hire. Hardboiled mystery + magic, and it never stops improving.' },
+    { title: 'Rivers of London',              author: 'Ben Aaronovitch',     blurb: 'A London constable discovers magic is real and joins the police department\'s one-wizard unit. British, funny, perfect.' },
+    { title: 'American Gods',                 author: 'Neil Gaiman',         blurb: 'Old gods fighting new gods on a road trip across America. Gaiman\'s most ambitious novel.' },
+    { title: 'Neverwhere',                    author: 'Neil Gaiman',         blurb: 'London Below, where the forgotten people go. A doorway into one of fantasy\'s best hidden worlds.' },
+    { title: 'The City We Became',            author: 'N.K. Jemisin',        blurb: 'New York City\'s boroughs each manifest as a human avatar and must fight a cosmic threat. Wildly creative.' },
+    { title: 'Good Omens',                    author: 'Terry Pratchett & Neil Gaiman', blurb: 'The funniest book about the apocalypse ever written. Not close.' },
+    { title: 'Witch King',                    author: 'Martha Wells',        blurb: 'Martha Wells writing a demon protagonist navigating politics and revenge — elegant and sharp.' },
+    { title: 'A Psalm for the Wild-Built',    author: 'Becky Chambers',      blurb: 'A monk who wanders off the path and meets a robot asking what humans need. Quiet and profound.' },
   ],
   historical: [
-    'Ink Blood Sister Scribe',
-    'The Foxglove King',
-    "The Witch's Heart",
-    'Daughter of the Moon Goddess',
-    'The Star and the Strange Moon',
-    'The Familiar',
+    { title: 'Jonathan Strange & Mr Norrell', author: 'Susanna Clarke',      blurb: 'Regency England with magic treated as a lost scholarly discipline — like Austen wrote Tolkien.' },
+    { title: 'The Bear and the Nightingale',  author: 'Katherine Arden',     blurb: 'Russian folklore in medieval Rus, with a girl who can see spirits her village prays to. Cold and beautiful.' },
+    { title: 'Circe',                         author: 'Madeline Miller',      blurb: 'The witch of mythology given an interior life and a spine — Miller rewrites Ovid without flinching.' },
+    { title: 'Piranesi',                      author: 'Susanna Clarke',      blurb: 'Not strictly historical but Clarke\'s second novel has the same meticulous, eerie perfection.' },
+    { title: 'Spinning Silver',               author: 'Naomi Novik',         blurb: 'A moneylender\'s daughter in Tsarist Russia who outwits winter itself — Novik\'s best work.' },
+    { title: 'The Invisible Life of Addie LaRue', author: 'V.E. Schwab',    blurb: '300 years forgotten by everyone she meets — Schwab\'s most emotionally complete novel.' },
+    { title: 'The Essex Serpent',             author: 'Sarah Perry',         blurb: 'Victorian naturalist investigates a sea creature rumour in a marsh village. Genuinely literary.' },
+    { title: 'Uprooted',                      author: 'Naomi Novik',         blurb: 'Polish folklore with a heroine who does magic completely wrong and saves everyone doing it.' },
   ],
   academy: [
-    'Fourth Wing',
-    'Iron Flame',
-    'Nevernight',
-    'An Ember in the Ashes',
-    'Shadow and Bone',
-    'The Foxglove King',
+    { title: 'The Name of the Wind',          author: 'Patrick Rothfuss',    blurb: 'The University years are the heart of this book — magic as a discipline with tuition you can\'t afford.' },
+    { title: 'Nevernight',                    author: 'Jay Kristoff',        blurb: 'Assassin school run by people who actually want to kill you. Lush prose and zero safety.' },
+    { title: 'An Ember in the Ashes',         author: 'Sabaa Tahir',         blurb: 'A Roman-inspired empire with a brutal military academy — the dual POV keeps you off-balance.' },
+    { title: 'Ninth House',                   author: 'Leigh Bardugo',       blurb: 'Yale\'s secret societies are real and occult — Bardugo writing adult fiction with real teeth.' },
+    { title: 'The Magicians',                 author: 'Lev Grossman',        blurb: 'Magic school for the depressed adult — Brakebills is what happens if Hogwarts got honest.' },
+    { title: 'Shadow and Bone',               author: 'Leigh Bardugo',       blurb: 'The Grisha trilogy opener — the Darkling is one of fantasy\'s most compelling antagonists.' },
+    { title: 'A Deadly Education',            author: 'Naomi Novik',         blurb: 'A school that actively tries to kill students, and a girl who could destroy it with a thought but won\'t.' },
+    { title: 'Legendborn',                    author: 'Tracy Deonn',         blurb: 'Arthurian legend at UNC Chapel Hill with a Black protagonist who changes the myth\'s meaning.' },
   ],
   mythology: [
-    'Witch King',
-    'A Thousand Ships',
-    "The Witch's Heart",
-    'Daughter of the Moon Goddess',
-    'Ariadne',
-    'Neon Gods',
+    { title: 'Circe',                         author: 'Madeline Miller',      blurb: 'The most compelling reimagining of Greek myth in decades — empathy for a character Homer used as furniture.' },
+    { title: 'The Song of Achilles',          author: 'Madeline Miller',      blurb: 'Patroclus and Achilles\' relationship made devastatingly real. Miller\'s debut is close to perfect.' },
+    { title: 'A Thousand Ships',              author: 'Natalie Haynes',       blurb: 'Every woman\'s story from the Trojan War, each getting her chapter. Devastating in aggregate.' },
+    { title: 'Norse Mythology',               author: 'Neil Gaiman',         blurb: 'Gaiman retells the Norse myths faithfully and makes them feel freshly told. The best introduction.' },
+    { title: 'Ariadne',                       author: 'Jennifer Saint',       blurb: 'Ariadne and Phaedra — two sisters, one monster, and the men who defined them against their will.' },
+    { title: 'The Witch\'s Heart',            author: 'Genevieve Gornichec',  blurb: 'Angrboda — Loki\'s witch wife — living in the woods trying to avoid prophecy. Quiet and aching.' },
+    { title: 'American Gods',                 author: 'Neil Gaiman',         blurb: 'Gods of every mythology living as forgotten Americans — Gaiman\'s road-trip mythology masterpiece.' },
+    { title: 'Daughter of the Moon Goddess',  author: 'Sue Lynn Tan',         blurb: 'Chang\'e\'s daughter journeys through Chinese mythology to free her mother — gorgeous and personal.' },
   ],
   cozy: [
-    'Starter Villain',
-    "Emily Wilde's Encyclopaedia of Faeries",
-    'Nettle and Bone',
-    'A Psalm for the Wild-Built',
-    'Legends & Lattes',
-    "A Wizard's Guide to Defensive Baking",
+    { title: 'Legends & Lattes',              author: 'Travis Baldree',      blurb: 'The book that defined cozy fantasy as a genre — Viv the orc barista is one of fiction\'s great retirees.' },
+    { title: 'The House in the Cerulean Sea', author: 'TJ Klune',            blurb: 'A caseworker for magical children finds a family on a remote island. Warm, inclusive, lovely.' },
+    { title: 'A Psalm for the Wild-Built',    author: 'Becky Chambers',      blurb: 'A monk and a robot discuss what people need. Nothing happens and everything happens.' },
+    { title: 'The Goblin Emperor',            author: 'Katherine Addison',   blurb: 'A half-goblin who never wanted the throne becomes the most decent emperor anyone\'s seen. Genuinely good.' },
+    { title: "Howl's Moving Castle",          author: 'Diana Wynne Jones',   blurb: 'The movie is lovely; the book is funnier, stranger, and far less sensible. Jones at her best.' },
+    { title: 'Nettle and Bone',               author: 'T. Kingfisher',       blurb: 'A princess, a dog made of bones, and a quiet quest for justice. Gentle-dark fantasy done perfectly.' },
+    { title: "Emily Wilde's Encyclopaedia of Faeries", author: 'Heather Fawcett', blurb: 'A prickly academic studying faeries in a Norwegian village. Slow-burn romance, excellent faeries.' },
+    { title: 'Monk and Robot',                author: 'Becky Chambers',      blurb: 'The whole Monk and Robot series is a meditation on rest, purpose, and what enough looks like.' },
   ],
   litrpg: [
-    'Defiant',
-    'Beware of Chicken',
-    'Bastion',
-    'The Path of Ascension',
-    'Mark of the Fool',
-    'Iron Prince',
+    { title: 'Dungeon Crawler Carl',          author: 'Matt Dinniman',       blurb: 'A man and his cat in an apocalyptic game show dungeon — funnier and sadder than it has any right to be.' },
+    { title: 'Cradle',                        author: 'Will Wight',          blurb: 'Pure cultivation progression done with kinetic pacing — each book ends just as you hit the next power level.' },
+    { title: 'He Who Fights With Monsters',   author: 'Jason Cheyne',        blurb: 'A isekai portal fantasy with Australian energy and a protagonist who actually thinks.' },
+    { title: 'Mother of Learning',            author: 'Domagoj Kurmaic',     blurb: 'A time loop + magical academy combination that builds one of the most satisfying progression arcs in the genre.' },
+    { title: 'Beware of Chicken',             author: 'Casualfarmer',        blurb: 'A cultivator who decides farming is better than fighting. Peaceful, oddly moving, and very funny.' },
+    { title: 'Defiance of the Fall',          author: 'TheFirstDefier',      blurb: 'System apocalypse with a protagonist who earns every power spike through actual sacrifice.' },
+    { title: 'The Wandering Inn',             author: 'pirateaba',           blurb: 'An innkeeper in a fantasy world — 12 million words and still the most ambitious web serial ever attempted.' },
+    { title: 'Mark of the Fool',              author: 'UnstoppableSloth',    blurb: 'A marked failure at a mage academy who turns his penalty into an advantage. Clever and well-written.' },
+  ],
+  swords: [
+    { title: 'The Lies of Locke Lamora',      author: 'Scott Lynch',         blurb: 'Fantasy\'s best heist novel and the only one where you cheer for the con artist over the mark.' },
+    { title: 'The Blade Itself',              author: 'Joe Abercrombie',     blurb: 'Three antiheroes walking toward a war they don\'t understand — Abercrombie\'s most patient book.' },
+    { title: 'Kings of the Wyld',             author: 'Nicholas Eames',      blurb: 'A retired adventuring band goes on one last quest to save a daughter. Nostalgic and genuinely moving.' },
+    { title: 'The Black Company',             author: 'Glen Cook',           blurb: 'Cook\'s mercenaries don\'t question who they\'re working for and that\'s the whole point. A founding text.' },
+    { title: 'Conan the Barbarian',           author: 'Robert E. Howard',    blurb: 'The original — lean, muscular prose and a hero who solves every problem by being harder to kill.' },
+    { title: 'The Blacktongue Thief',         author: 'Christopher Buehlman', blurb: 'A thief, a debt to a thieves\' guild, and a world ending slowly. Voice-driven and darkly funny.' },
+    { title: 'Elric of Melniboné',            author: 'Michael Moorcock',    blurb: 'The albino emperor with a soul-drinking sword — Moorcock invented the tragic antihero template.' },
+    { title: 'The Tainted Cup',               author: 'Robert Jackson Bennett', blurb: 'A mystery inside a military empire defending against monsters the size of buildings. Ingenious.' },
   ],
   'science-fantasy': [
-    'The Familiar',
-    'Translation State',
-    'The Kaiju Preservation Society',
-    'Witch King',
-    'Piranesi',
-    'Service Model',
+    { title: 'Dune',                          author: 'Frank Herbert',        blurb: 'Still the best SF worldbuilding ever committed to paper — ecology, religion, and politics as plot.' },
+    { title: 'Red Rising',                    author: 'Pierce Brown',         blurb: 'Hunger Games meets Roman space empire — the trilogy sustains momentum most series can\'t manage for one book.' },
+    { title: 'Gideon the Ninth',              author: 'Tamsyn Muir',         blurb: 'Lesbian necromancers in space. The description is accurate and nothing about it is what you expect.' },
+    { title: 'A Wizard of Earthsea',          author: 'Ursula K. Le Guin',   blurb: 'The ur-text for every mage protagonist — still the most thoughtful magic system in all of fantasy.' },
+    { title: 'Piranesi',                      author: 'Susanna Clarke',      blurb: 'Science-fantasy at its most literary — a house with infinite halls and tides, endlessly re-readable.' },
+    { title: 'The Book of the New Sun',       author: 'Gene Wolfe',          blurb: 'A dying Earth epic with an unreliable narrator — more reward for every re-read than almost anything.' },
+    { title: 'This Is How You Lose the Time War', author: 'Amal El-Mohtar & Max Gladstone', blurb: 'Two time agents fall in love through letters across history. Elegant and devastating.' },
+    { title: 'A Memory Called Empire',        author: 'Arkady Martine',      blurb: 'A diplomat with a dead man\'s memories in a galactic empire — space opera as literary fiction.' },
   ],
 };
 
-const onSale: Record<string, string[]> = {
-  general: [
-    'The Name of the Wind',
-    'Mistborn: The Final Empire',
-    'The Way of Kings',
-    'A Court of Thorns and Roses',
-    'The Hobbit',
-    'Good Omens',
-  ],
-  epic: [
-    'The Way of Kings',
-    'Mistborn: The Final Empire',
-    'The Eye of the World',
-    'The Lord of the Rings',
-    'Elantris',
-    'Warbreaker',
-  ],
-  romantasy: [
-    'A Court of Thorns and Roses',
-    'From Blood and Ash',
-    'Serpent & Dove',
-    'The Cruel Prince',
-    'Daughter of the Moon Goddess',
-    'Divine Rivals',
-  ],
-  swords: [
-    'Conan the Barbarian',
-    'The Blade Itself',
-    'The Lies of Locke Lamora',
-    'The Black Company',
-    'Elric of Melniboné',
-    'Fafhrd and the Gray Mouser',
-  ],
-  dark: [
-    'The Blade Itself',
-    'The Black Company',
-    'Half a King',
-    'Low Town',
-    'The Gutter Prayer',
-    'Kings of the Wyld',
-  ],
-  urban: [
-    'Neverwhere',
-    'Good Omens',
-    'Rivers of London',
-    'Storm Front',
-    'Anansi Boys',
-    'The City We Became',
-  ],
-  grimdark: [
-    'The Blade Itself',
-    'Best Served Cold',
-    'Gardens of the Moon',
-    'The Heroes',
-    'Prince of Thorns',
-    'The Black Company',
-  ],
-  historical: [
-    'Jonathan Strange & Mr Norrell',
-    'The Bear and the Nightingale',
-    'Circe',
-    'Sorcerer to the Crown',
-    'The Invisible Life of Addie LaRue',
-    'Uprooted',
-  ],
-  academy: [
-    'Harry Potter',
-    'Eragon',
-    'The Name of the Wind',
-    'An Ember in the Ashes',
-    'The Magicians',
-    'Ninth House',
-  ],
-  mythology: [
-    'Circe',
-    'The Song of Achilles',
-    'Norse Mythology',
-    'A Thousand Ships',
-    'Ariadne',
-    'The Penelopiad',
-  ],
-  cozy: [
-    'Legends & Lattes',
-    'The House in the Cerulean Sea',
-    'A Psalm for the Wild-Built',
-    'Piranesi',
-    "Howl's Moving Castle",
-    'Nettle and Bone',
-  ],
-  litrpg: [
-    'Dungeon Crawler Carl',
-    'Cradle',
-    'He Who Fights With Monsters',
-    'Mother of Learning',
-    'Beware of Chicken',
-    'Defiance of the Fall',
-  ],
-  'science-fantasy': [
-    'Dune',
-    'Red Rising',
-    'Gideon the Ninth',
-    'A Wizard of Earthsea',
-    'The Dark Tower',
-    'Dying Earth',
-  ],
-};
+const getWeekNumber = () => Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
 
-const trending: Record<string, string[]> = {
-  general: [
-    'Fourth Wing',
-    'A Court of Thorns and Roses',
-    'Mistborn',
-    'The Way of Kings',
-    'Six of Crows',
-    'The Name of the Wind',
-  ],
-  epic: [
-    'The Way of Kings',
-    'Mistborn',
-    'The Name of the Wind',
-    'The Lord of the Rings',
-    'The Fifth Season',
-    'The Rage of Dragons',
-  ],
-  romantasy: [
-    'Fourth Wing',
-    'A Court of Thorns and Roses',
-    'From Blood and Ash',
-    'Throne of Glass',
-    'The Cruel Prince',
-    'Iron Flame',
-  ],
-  swords: [
-    'The Blade Itself',
-    'The Black Company',
-    'Nevernight',
-    'The Lies of Locke Lamora',
-    'Kings of the Wyld',
-    'The Heroes',
-  ],
-  dark: [
-    'The First Law',
-    'The Blade Itself',
-    'The Poppy War',
-    'Prince of Thorns',
-    'Nevernight',
-    'The Fifth Season',
-  ],
-  urban: [
-    'The Dresden Files',
-    'American Gods',
-    'Good Omens',
-    'Neverwhere',
-    'Rivers of London',
-    'The Magicians',
-  ],
-  grimdark: [
-    'The First Law',
-    'Malazan Book of the Fallen',
-    'The Poppy War',
-    'Prince of Thorns',
-    'The Black Company',
-    'Best Served Cold',
-  ],
-  historical: [
-    'Jonathan Strange & Mr Norrell',
-    'The Bear and the Nightingale',
-    'Circe',
-    'The Invisible Life of Addie LaRue',
-    'Piranesi',
-    'Spinning Silver',
-  ],
-  academy: [
-    'Fourth Wing',
-    'Harry Potter',
-    'The Name of the Wind',
-    'Six of Crows',
-    'Shadow and Bone',
-    'Nevernight',
-  ],
-  mythology: [
-    'Circe',
-    'The Song of Achilles',
-    'American Gods',
-    'Norse Mythology',
-    'A Thousand Ships',
-    'Ariadne',
-  ],
-  cozy: [
-    'Legends & Lattes',
-    'The House in the Cerulean Sea',
-    'A Psalm for the Wild-Built',
-    'The Goblin Emperor',
-    'Piranesi',
-    "Howl's Moving Castle",
-  ],
-  litrpg: [
-    'Dungeon Crawler Carl',
-    'He Who Fights With Monsters',
-    'Cradle',
-    'The Wandering Inn',
-    'Mother of Learning',
-    'Primal Hunter',
-  ],
-  'science-fantasy': [
-    'Dune',
-    'Red Rising',
-    'Gideon the Ninth',
-    'The Dark Tower',
-    'The Book of the New Sun',
-    'Chronicles of Amber',
-  ],
-};
+const booksLike = [
+  { slug: 'acotar',                    title: 'A Court of Thorns and Roses', author: 'Sarah J. Maas',       cover: 'https://covers.openlibrary.org/b/isbn/9781619634459-L.jpg'  },
+  { slug: 'mistborn-the-final-empire', title: 'Mistborn',                    author: 'Brandon Sanderson',   cover: 'https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg'  },
+  { slug: 'fourth-wing',               title: 'Fourth Wing',                 author: 'Rebecca Yarros',      cover: 'https://covers.openlibrary.org/b/isbn/9781649374042-L.jpg'  },
+  { slug: 'the-name-of-the-wind',      title: 'The Name of the Wind',        author: 'Patrick Rothfuss',    cover: 'https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg'  },
+  { slug: 'six-of-crows',              title: 'Six of Crows',                author: 'Leigh Bardugo',       cover: 'https://covers.openlibrary.org/b/isbn/9781627792127-L.jpg'  },
+  { slug: 'the-way-of-kings',          title: 'The Way of Kings',            author: 'Brandon Sanderson',   cover: 'https://covers.openlibrary.org/b/isbn/9780765326355-L.jpg'  },
+  { slug: 'red-rising',                title: 'Red Rising',                  author: 'Pierce Brown',        cover: 'https://covers.openlibrary.org/b/isbn/9780345539786-L.jpg'  },
+  { slug: 'the-poppy-war',             title: 'The Poppy War',               author: 'R.F. Kuang',          cover: 'https://covers.openlibrary.org/b/isbn/9780062662576-L.jpg'  },
+  { slug: 'legends-and-lattes',        title: 'Legends & Lattes',            author: 'Travis Baldree',      cover: 'https://covers.openlibrary.org/b/isbn/9781250883995-L.jpg'  },
+  { slug: 'the-priory-of-the-orange-tree', title: 'The Priory of the Orange Tree', author: 'Samantha Shannon', cover: 'https://covers.openlibrary.org/b/isbn/9781635570298-L.jpg' },
+  { slug: 'piranesi',                  title: 'Piranesi',                    author: 'Susanna Clarke',      cover: 'https://covers.openlibrary.org/b/isbn/9781635575637-L.jpg'  },
+  { slug: 'the-goblin-emperor',        title: 'The Goblin Emperor',          author: 'Katherine Addison',   cover: 'https://covers.openlibrary.org/b/isbn/9780765365682-L.jpg'  },
+];
 
-const upcoming: Record<string, string[]> = {
-  general: [
-    'Winds of Winter',
-    'The Doors of Stone',
-    'The Book of All Hours',
-    'Unnamed Sanderson 2025',
-    'A Memory of Empire sequel',
-    'The Sunlit Man 2',
-  ],
-  epic: [
-    'Winds of Winter',
-    'The Doors of Stone',
-    "The Liar's Oath",
-    'The Book of All Hours',
-    'Unnamed Sanderson 2025',
-    'Malazan: Path to Ascendancy 4',
-  ],
-  romantasy: [
-    'Fifth Wing',
-    'ACOTAR Book 6',
-    'From Blood and Ash 6',
-    'Crescent City 4',
-    'Kingdom of the Wicked 4',
-    'The Midnight Sea sequel',
-  ],
-  swords: [
-    'The Sword Defiant 2',
-    'The Blacktongue Thief 3',
-    'Joe Abercrombie new',
-    'Scott Lynch new',
-    'Age of Assassins 4',
-    'Mark Lawrence new',
-  ],
-  dark: [
-    'Joe Abercrombie new standalone',
-    'Age of Assassins 4',
-    'The Gutter Prayer sequel',
-    'Nevernight 4',
-    'The Dark Descent',
-    'Mark Lawrence new',
-  ],
-  urban: [
-    'The Dresden Files: Twelve Months',
-    'Rivers of London Book 11',
-    'October Daye 22',
-    'Alex Verus new',
-    'Laundry Files new',
-    'Neverwhere companion',
-  ],
-  grimdark: [
-    'Joe Abercrombie new',
-    'Malazan: Path to Ascendancy 4',
-    'Mark Lawrence new',
-    'The Court of Broken Knives sequel',
-    'Age of Assassins 4',
-    'Grimdark anthology 2025',
-  ],
-  historical: [
-    'Naomi Novik new historical',
-    'Piranesi 2',
-    'The Invisible Life sequel',
-    'Susanna Clarke new',
-    'The Bear and Nightingale spin-off',
-    'Sorcerer to the Crown 3',
-  ],
-  academy: [
-    'Fifth Wing',
-    'ACOTAR Book 6',
-    'Nevernight 4',
-    'The Magisterium new',
-    'Legendborn sequel',
-    'Ninth House sequel',
-  ],
-  mythology: [
-    'Madeline Miller new novel',
-    'Pat Barker new',
-    'A Thousand Ships companion',
-    'Song of Achilles prequel',
-    'Norse Mythology 3',
-    'Ariadne sequel',
-  ],
-  cozy: [
-    'Legends & Lattes 3',
-    'TJ Klune new',
-    'A Psalm for the Wild-Built 4',
-    "Emily Wilde's Encyclopaedia 3",
-    'House in the Cerulean Sea 2',
-    'Nettle & Bone 2',
-  ],
-  litrpg: [
-    'Dungeon Crawler Carl 7',
-    'Cradle 13',
-    'The Wandering Inn Vol. 9',
-    'He Who Fights With Monsters 13',
-    'Defiance of the Fall 12',
-    'Primal Hunter 8',
-  ],
-  'science-fantasy': [
-    'Red Rising 8',
-    'Locked Tomb 5',
-    'Dune: Tales of Arrakis',
-    'Andy Weir new',
-    'Ann Leckie new',
-    'The Familiar sequel',
-  ],
+interface BookItem {
+  title: string;
+  cover_url?: string | null;
+  slug?: string | null;
+  goodreads_rating?: number | null;
+  publication_year?: number | null;
+  subgenres?: string[] | null;
+}
+
+// Maps category slugs to subgenre strings used in the DB
+const categorySubgenreMap: Record<string, string[]> = {
+  epic:             ['Epic Fantasy', 'High Fantasy'],
+  romantasy:        ['Romantasy'],
+  litrpg:           ['LitRPG', 'Progression Fantasy', 'Cultivation Fantasy'],
+  dark:             ['Dark Fantasy'],
+  urban:            ['Urban Fantasy', 'Contemporary Fantasy'],
+  grimdark:         ['Grimdark'],
+  historical:       ['Historical Fantasy'],
+  academy:          ['Academy Fantasy'],
+  mythology:        ['Mythic Fantasy', 'Mythology', 'Folklore Fantasy'],
+  swords:           ['Sword & Sorcery'],
+  cozy:             ['Cozy Fantasy'],
+  'science-fantasy':['Science Fantasy'],
 };
 
 export default function CategoryGrid() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [allBooks, setAllBooks]     = useState<BookItem[]>([]);
   const [bookCovers, setBookCovers] = useState<Map<string, string>>(new Map());
-  const [bookSlugs, setBookSlugs] = useState<Map<string, string>>(new Map());
+  const [bookSlugs, setBookSlugs]   = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     fetch('/api/books')
       .then((r) => r.json())
-      .then(
-        (data: {
-          items?: Array<{
-            title: string;
-            cover_url?: string | null;
-            slug?: string | null;
-          }>;
-        }) => {
-          const covers = new Map<string, string>();
-          const slugs = new Map<string, string>();
-          for (const b of data.items ?? []) {
-            const key = b.title.toLowerCase();
-            if (b.cover_url) covers.set(key, b.cover_url);
-            if (b.slug) slugs.set(key, b.slug);
-          }
-          setBookCovers(covers);
-          setBookSlugs(slugs);
-        },
-      )
+      .then((data: { items?: BookItem[] }) => {
+        const items = data.items ?? [];
+        const covers = new Map<string, string>();
+        const slugs  = new Map<string, string>();
+        for (const b of items) {
+          const key = b.title.toLowerCase();
+          if (b.cover_url) covers.set(key, b.cover_url);
+          if (b.slug)      slugs.set(key, b.slug);
+        }
+        setAllBooks(items);
+        setBookCovers(covers);
+        setBookSlugs(slugs);
+      })
       .catch(() => {});
   }, []);
 
-  const handleCategoryClick = (slug: string) => {
-    setSelectedCategory(selectedCategory === slug ? null : slug);
-  };
-
-  const selectedCat = categories.find((c) => c.slug === selectedCategory);
-  const categoryName = selectedCat?.name || 'Fantasy';
-
   const getCoverSrc = (title: string): string => {
-    const dbCover = bookCovers.get(title.toLowerCase());
-    if (dbCover) return dbCover;
-    return `https://covers.openlibrary.org/b/title/${encodeURIComponent(title)}-M.jpg`;
+    const db = bookCovers.get(title.toLowerCase());
+    return db ?? `https://covers.openlibrary.org/b/title/${encodeURIComponent(title)}-M.jpg`;
   };
 
   const getSlug = (title: string): string | null =>
     bookSlugs.get(title.toLowerCase()) ?? null;
 
-  const renderCoverStrip = (titles: string[]) => (
-    <div
-      className="flex gap-2.5 overflow-x-auto -mx-1 px-1 py-1"
-      style={{ scrollbarWidth: 'none' }}
-    >
-      {titles.map((title, i) => {
-        const slug = getSlug(title);
-        const coverEl = (
-          <div className="shrink-0 w-[68px] h-[102px] rounded-lg overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 shadow-sm hover:shadow-md transition-shadow">
+  // Community Favorites — top 12 by rating within selected category (API already sorted rating_desc)
+  const communityFavorites = allBooks
+    .filter((b) => {
+      if (!selectedCategory) return true;
+      const targets = categorySubgenreMap[selectedCategory] ?? [];
+      return b.subgenres?.some((s) =>
+        targets.some((t) => s.toLowerCase().includes(t.toLowerCase()))
+      ) ?? false;
+    })
+    .slice(0, 12);
+
+  // Top Rated — API already returns sorted by rating_desc
+  const topRated = allBooks
+    .filter((b) => b.goodreads_rating && b.goodreads_rating >= 4)
+    .slice(0, 14);
+
+  // New Releases — last 3 years, filtered by selected category if any
+  const currentYear = new Date().getFullYear();
+  const newReleasesAll = [...allBooks]
+    .filter((b) => {
+      if (!b.publication_year || b.publication_year < currentYear - 3) return false;
+      if (selectedCategory) {
+        const targets = categorySubgenreMap[selectedCategory] ?? [];
+        return b.subgenres?.some((s) =>
+          targets.some((t) => s.toLowerCase().includes(t.toLowerCase()))
+        ) ?? false;
+      }
+      return true;
+    })
+    .sort((a, b) => (b.publication_year ?? 0) - (a.publication_year ?? 0));
+  const newReleases = newReleasesAll.slice(0, 12);
+
+  const selectedCat  = categories.find((c) => c.slug === selectedCategory);
+  const categoryName = selectedCat?.name || 'Fantasy';
+
+  const catUrl = (sort?: string) => {
+    const base = selectedCategory ? `/categories/${selectedCategory}/` : '/books/all/';
+    return sort ? `${base}?sort=${sort}` : base;
+  };
+
+  // Book of the Week — stable per week, changes per category
+  const weekNum  = getWeekNumber();
+  const bowPool  = bookOfWeekPools[selectedCategory || 'general'] ?? bookOfWeekPools.general;
+  const bowEntry = bowPool[weekNum % bowPool.length];
+
+  const renderCoverStrip = (books: Array<{ title: string; cover?: string; slug?: string | null }>) => (
+    <div className="flex gap-2.5 overflow-x-auto -mx-1 px-1 py-1" style={{ scrollbarWidth: 'none' }}>
+      {books.map((b, i) => {
+        const slug    = b.slug ?? getSlug(b.title);
+        const coverSrc = b.cover ?? getCoverSrc(b.title);
+        const img = (
+          <div className="shrink-0 w-17 h-25.5 rounded-lg overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 shadow-sm hover:shadow-md transition-shadow">
             <img
-              src={getCoverSrc(title)}
-              alt={title}
-              title={title}
+              src={coverSrc}
+              alt={b.title}
+              title={b.title}
               className="w-full h-full object-cover"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = '/placeholder-cover.svg';
-              }}
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder-cover.svg'; }}
             />
           </div>
         );
         return slug ? (
-          <a
-            key={i}
-            href={`/books/${slug}/`}
-            className="shrink-0 hover:opacity-90 transition-opacity"
-            title={title}
-          >
-            {coverEl}
-          </a>
+          <a key={i} href={`/books/${slug}/`} className="shrink-0 hover:opacity-90 transition-opacity" title={b.title}>{img}</a>
         ) : (
-          <div key={i} className="shrink-0" title={title}>
-            {coverEl}
-          </div>
+          <div key={i} className="shrink-0" title={b.title}>{img}</div>
         );
       })}
     </div>
   );
 
+  const renderTitleStrip = (titles: string[]) =>
+    renderCoverStrip(titles.map((t) => ({ title: t })));
+
   return (
     <>
+      {/* Category grid */}
       <div className="mt-8">
         <div className="flex items-center justify-between mb-3">
-          <p className="text-xs font-semibold text-zinc-400 uppercase tracking-widest">
-            Browse our collection by category
-          </p>
+          <p className="text-xs font-semibold text-zinc-400 uppercase tracking-widest">Browse by category</p>
           <a
-            href={
-              selectedCategory
-                ? `/categories/${selectedCategory}/`
-                : `/books/all/`
-            }
+            href={selectedCategory ? `/categories/${selectedCategory}/` : `/books/all/`}
             className="text-sm font-medium text-purple-700 hover:text-purple-900 hover:underline transition-colors whitespace-nowrap"
           >
             View full {categoryName} →
@@ -617,18 +342,13 @@ export default function CategoryGrid() {
           {categories.map((cat) => (
             <button
               key={cat.slug}
-              onClick={() => handleCategoryClick(cat.slug)}
+              onClick={() => setSelectedCategory(selectedCategory === cat.slug ? null : cat.slug)}
+              onDoubleClick={() => { window.location.href = `/categories/${cat.slug}/`; }}
               className={`group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg text-left ${
-                selectedCategory === cat.slug
-                  ? 'ring-2 ring-blue-500 shadow-lg'
-                  : ''
+                selectedCategory === cat.slug ? 'ring-2 ring-blue-500 shadow-lg' : ''
               }`}
             >
-              <div
-                className={`absolute inset-0 bg-linear-to-br ${cat.gradient} opacity-0 group-hover:opacity-100 transition-opacity ${
-                  selectedCategory === cat.slug ? 'opacity-100' : ''
-                }`}
-              ></div>
+              <div className={`absolute inset-0 bg-linear-to-br ${cat.gradient} opacity-0 group-hover:opacity-100 transition-opacity ${selectedCategory === cat.slug ? 'opacity-100' : ''}`} />
               <div className="relative">
                 <div className="font-medium">{cat.name}</div>
                 <div className="text-sm text-zinc-600">{cat.description}</div>
@@ -639,59 +359,145 @@ export default function CategoryGrid() {
       </div>
 
       <div className="mt-6 flex flex-col gap-6">
-        <div className="rounded-lg border bg-linear-to-br from-violet-50 to-purple-50 p-5">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg">✨</span>
-            <h3 className="font-semibold text-violet-900">
-              {selectedCat ? categoryName : 'Fantasy'} New Releases
+
+        {/* Book of the Week */}
+        <div className="rounded-lg border bg-linear-to-br from-yellow-50 to-amber-50 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg">📖</span>
+            <h3 className="font-semibold text-amber-900">
+              {selectedCat ? categoryName : 'Fantasy'} Book of the Week
             </h3>
-            <span className="ml-auto text-xs bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full">
-              2023–2025
+            <span className="ml-auto text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">
+              Changes every Monday
             </span>
           </div>
-          {renderCoverStrip(newReleases[selectedCategory || 'general'])}
+          {(() => {
+            const slug = getSlug(bowEntry.title);
+            const cover = getCoverSrc(bowEntry.title);
+            const inner = (
+              <div className="flex gap-4 items-start">
+                <div className="shrink-0 w-20 h-30 rounded-lg overflow-hidden shadow-md">
+                  <img
+                    src={cover}
+                    alt={bowEntry.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder-cover.svg'; }}
+                  />
+                </div>
+                <div className="min-w-0">
+                  <p className="font-bold text-amber-900 leading-snug">{bowEntry.title}</p>
+                  <p className="text-sm text-amber-700 mt-0.5">{bowEntry.author}</p>
+                  <p className="mt-2 text-sm text-zinc-700 leading-relaxed">{bowEntry.blurb}</p>
+                  {slug && (
+                    <span className="mt-3 inline-block text-xs font-semibold text-amber-700 hover:text-amber-900 hover:underline">
+                      Read more →
+                    </span>
+                  )}
+                </div>
+              </div>
+            );
+            return slug
+              ? <a href={`/books/${slug}/`} className="block hover:opacity-95 transition-opacity">{inner}</a>
+              : inner;
+          })()}
         </div>
 
+        {/* Top Rated */}
+        {topRated.length > 0 && (
+          <div className="rounded-lg border bg-linear-to-br from-violet-50 to-purple-50 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">⭐</span>
+              <h3 className="font-semibold text-violet-900">Top Rated</h3>
+              <div className="ml-auto flex items-center gap-2">
+                <span className="text-xs bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full">Goodreads 4.0+</span>
+                <a href={catUrl('rating-desc')} className="text-xs font-medium text-violet-600 hover:text-violet-800 hover:underline">View more →</a>
+              </div>
+            </div>
+            {renderCoverStrip(topRated.map((b) => ({ title: b.title, slug: b.slug })))}
+          </div>
+        )}
+
+        {/* New Releases */}
+        {newReleases.length > 0 && (
+          <div className="rounded-lg border bg-linear-to-br from-emerald-50 to-teal-50 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">✨</span>
+              <h3 className="font-semibold text-emerald-900">{selectedCat ? categoryName : 'Fantasy'} New Releases</h3>
+              <a href={catUrl('newest')} className="ml-auto text-xs font-medium text-emerald-600 hover:text-emerald-800 hover:underline">View more →</a>
+            </div>
+            {renderCoverStrip(newReleases.map((b) => ({ title: b.title, slug: b.slug })))}
+          </div>
+        )}
+
+        {/* Community Favorites */}
         <div className="rounded-lg border bg-linear-to-br from-orange-50 to-amber-50 p-5">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-lg">🔥</span>
-            <h3 className="font-semibold text-orange-900">
-              {selectedCat ? categoryName : 'Fantasy'} Trending Now
-            </h3>
-            <span className="ml-auto text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">
-              BookTok & Reddit
-            </span>
+            <h3 className="font-semibold text-orange-900">{selectedCat ? categoryName : 'Fantasy'} Community Favorites</h3>
+            <div className="ml-auto flex items-center gap-2">
+              <span className="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">Highest rated</span>
+              <a href={catUrl()} className="text-xs font-medium text-orange-600 hover:text-orange-800 hover:underline">View more →</a>
+            </div>
           </div>
-          {renderCoverStrip(trending[selectedCategory || 'general'])}
+          {communityFavorites.length > 0
+            ? renderCoverStrip(communityFavorites.map((b) => ({ title: b.title, slug: b.slug })))
+            : <p className="text-sm text-orange-700 opacity-60">Loading…</p>
+          }
         </div>
 
-        <div className="rounded-lg border bg-linear-to-br from-emerald-50 to-teal-50 p-5">
+        {/* If You Liked... */}
+        <div className="rounded-lg border bg-linear-to-br from-rose-50 to-pink-50 p-5">
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg">🏷️</span>
-            <h3 className="font-semibold text-emerald-900">
-              {selectedCat ? categoryName : 'Fantasy'} On Sale This Week
-            </h3>
-            <span className="ml-auto text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">
-              Kindle & paperback deals
-            </span>
+            <span className="text-lg">💡</span>
+            <h3 className="font-semibold text-rose-900">If You Liked…</h3>
+            <a href="/books-like/" className="ml-auto text-xs font-medium text-rose-600 hover:text-rose-800 hover:underline">View all →</a>
           </div>
-          {renderCoverStrip(onSale[selectedCategory || 'general'])}
+          <div className="flex gap-2.5 overflow-x-auto -mx-1 px-1 py-1" style={{ scrollbarWidth: 'none' }}>
+            {booksLike.map((b) => (
+              <a
+                key={b.slug}
+                href={`/books-like/${b.slug}/`}
+                className="shrink-0 hover:opacity-90 transition-opacity"
+                title={`Books like ${b.title}`}
+              >
+                <div className="w-17">
+                  <div className="w-17 h-25.5 rounded-lg overflow-hidden bg-linear-to-br from-rose-100 to-pink-100 shadow-sm hover:shadow-md transition-shadow">
+                    <img
+                      src={b.cover}
+                      alt={b.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder-cover.svg'; }}
+                    />
+                  </div>
+                  <p className="mt-1 text-[10px] text-zinc-500 text-center leading-tight truncate">{b.title}</p>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
 
-        <div className="rounded-lg border bg-linear-to-br from-sky-50 to-blue-50 p-5">
+        {/* Popular Reading Orders */}
+        <div className="rounded-lg border bg-linear-to-br from-indigo-50 to-blue-50 p-5">
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg">📅</span>
-            <h3 className="font-semibold text-sky-900">
-              Upcoming {selectedCat ? categoryName : 'Fantasy'}
-            </h3>
-            <span className="ml-auto text-xs bg-sky-100 text-sky-700 px-2 py-0.5 rounded-full">
-              Anticipated 2025–2026
-            </span>
+            <span className="text-lg">📚</span>
+            <h3 className="font-semibold text-indigo-900">Popular Reading Orders</h3>
+            <a href="/reading-orders/" className="ml-auto text-xs font-medium text-indigo-600 hover:text-indigo-800 hover:underline">View all →</a>
           </div>
-          {renderCoverStrip(upcoming[selectedCategory || 'general'])}
+          <div className="flex gap-2.5 overflow-x-auto -mx-1 px-1 py-1" style={{ scrollbarWidth: 'none' }}>
+            {readingOrders.slice(0, 6).map((s) => (
+              <a
+                key={s.slug}
+                href={`/reading-orders/${s.slug}/`}
+                className={`shrink-0 w-36 rounded-xl border p-3 bg-linear-to-br ${s.color} hover:shadow-md transition-all hover:scale-[1.02]`}
+              >
+                <p className={`font-semibold text-xs leading-snug ${s.text}`}>{s.name}</p>
+                <p className="mt-1 text-[11px] text-zinc-500">{s.bookCount} books</p>
+              </a>
+            ))}
+          </div>
         </div>
+
       </div>
-
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface BookRef {
   title: string;
@@ -6,7 +6,11 @@ interface BookRef {
   series?: string;
   darkness?: number;
   rating?: number;
+  slug?: string;
 }
+
+const toSlug = (title: string) =>
+  title.toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 interface Props {
   best: string[];
@@ -42,31 +46,44 @@ function RichList({ items, page }: { items: BookRef[]; page: number }) {
   const placeholders = PER_PAGE - visible.length;
   return (
     <ol className="space-y-3">
-      {visible.map((book, i) => (
-        <li key={i} className="flex gap-2.5">
-          <span className="text-zinc-400 font-medium text-xs w-4 shrink-0 pt-1">{offset + i + 1}</span>
-          <div className="w-10 shrink-0 rounded overflow-hidden bg-linear-to-br from-purple-100 to-blue-100" style={{ height: '60px' }}>
-            <img
-              src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
-              alt={book.title}
-              className="w-full h-full object-cover"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/placeholder-cover.svg'; }}
-            />
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="font-medium text-xs text-zinc-900 leading-snug">{book.title}</p>
-            <p className="text-[11px] text-zinc-500 mt-0.5 leading-snug">
-              {book.author}{book.series ? ` · ${book.series}` : ''}
-            </p>
-            <div className="flex items-center gap-2 mt-1 flex-wrap">
-              {book.darkness != null && (
-                <span className="text-[10px] leading-none">{CANDLES[book.darkness]}</span>
-              )}
-              {book.rating != null && <Stars rating={book.rating} />}
+      {visible.map((book, i) => {
+        const slug = book.slug ?? toSlug(book.title);
+        const inner = (
+          <>
+            <div className="w-10 shrink-0 rounded overflow-hidden bg-linear-to-br from-purple-100 to-blue-100" style={{ height: '60px' }}>
+              <img
+                src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
+                alt={book.title}
+                className="w-full h-full object-cover"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/placeholder-cover.svg'; }}
+              />
             </div>
-          </div>
-        </li>
-      ))}
+            <div className="flex-1 min-w-0">
+              <p className="font-medium text-xs text-zinc-900 leading-snug group-hover:text-purple-800 transition-colors">{book.title}</p>
+              <p className="text-[11px] text-zinc-500 mt-0.5 leading-snug">
+                {book.author}{book.series ? ` · ${book.series}` : ''}
+              </p>
+              <div className="flex items-center gap-2 mt-1 flex-wrap">
+                {book.darkness != null && (
+                  <span className="text-[10px] leading-none">{CANDLES[book.darkness]}</span>
+                )}
+                {book.rating != null && <Stars rating={book.rating} />}
+              </div>
+            </div>
+          </>
+        );
+        return (
+          <li key={i} className="flex gap-2.5 items-start">
+            <span className="text-zinc-400 font-medium text-xs w-4 shrink-0 pt-1">{offset + i + 1}</span>
+            <a
+              href={`/books/${slug}/`}
+              className="group flex gap-2.5 flex-1 min-w-0 rounded-lg hover:bg-white/70 transition-colors -mx-1 px-1 py-0.5"
+            >
+              {inner}
+            </a>
+          </li>
+        );
+      })}
       {Array.from({ length: placeholders }).map((_, i) => (
         <li key={`ph-${i}`} className="flex gap-2.5 invisible" aria-hidden="true">
           <span className="w-4 shrink-0" />
@@ -91,7 +108,7 @@ function PlainList({ items, page }: { items: string[]; page: number }) {
       {visible.map((title, i) => (
         <li key={i} className="text-sm text-zinc-700 flex items-start gap-2">
           <span className="text-zinc-400 font-medium shrink-0 w-5">{offset + i + 1}.</span>
-          {title}
+          <a href={`/books/${toSlug(title)}/`} className="hover:text-purple-700 hover:underline transition-colors">{title}</a>
         </li>
       ))}
       {Array.from({ length: placeholders }).map((_, i) => (
@@ -109,6 +126,16 @@ export default function CategoryLists({
   accent = 'text-zinc-700',
 }: Props) {
   const [page, setPage] = useState(0);
+  const topRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) { isFirstRender.current = false; return; }
+    if (topRef.current) {
+      const top = topRef.current.getBoundingClientRect().top + window.scrollY - 16;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }, [page]);
 
   const maxLen = Math.min(MAX_ITEMS, Math.max(
     richBest?.length ?? best.length,
@@ -120,7 +147,7 @@ export default function CategoryLists({
   const end = Math.min((page + 1) * PER_PAGE, maxLen);
 
   return (
-    <div>
+    <div ref={topRef}>
       <div className="grid gap-5 sm:grid-cols-3">
         {/* All-Time Greats */}
         <div className={`rounded-xl bg-linear-to-br ${gradient} border ${border} p-5`}>

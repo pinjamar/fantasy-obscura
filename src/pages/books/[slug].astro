@@ -3,7 +3,8 @@ import Layout from '../../components/Layout.astro';
 import { getBookBySlug, authorToSlug, getAllSeries } from '../../lib/db/books';
 import { getApprovedTags } from '../../lib/db/tags';
 import { supabaseClient } from '../../lib/supabaseClient';
-import BookmarkButton from '../../components/BookmarkButton';
+import AddToShelf from '../../components/AddToShelf';
+import FavouriteButton from '../../components/FavouriteButton';
 import CommunityTags from '../../components/CommunityTags';
 
 const { slug } = Astro.params;
@@ -136,6 +137,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
           data-isbn={book.isbn ?? ''}
           onerror="if(!this.dataset.tried&&this.dataset.isbn){this.dataset.tried='1';this.src='https://covers.openlibrary.org/b/isbn/'+this.dataset.isbn+'-L.jpg?default=false';}else{this.onerror=null;this.src='/placeholder-cover.svg';}"
         />
+        <FavouriteButton client:load bookId={book.id} userId={Astro.locals.user?.id ?? null} />
       </div>
 
       <div class="flex flex-col gap-2 max-w-[260px] mx-auto lg:mx-0">
@@ -173,7 +175,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
             </div>
           </div>
         </div>
-        <BookmarkButton client:load bookId={book.id} size="md" className="w-full justify-center rounded-xl py-2.5" />
+        <AddToShelf client:load bookId={book.id} userId={Astro.locals.user?.id ?? null} block />
       </div>
     </div>
 

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../components/Layout.astro';
 import BookDisplay from '../../../components/BookDisplay';
+const user = Astro.locals.user;
 ---
 
 <Layout title="All Books | Fantasy Obscura" description="Browse the complete Fantasy Obscura book collection.">
@@ -15,6 +16,6 @@ import BookDisplay from '../../../components/BookDisplay';
     </a>
   </div>
 
-  <BookDisplay client:load />
+  <BookDisplay client:load userId={user?.id ?? null} />
 
 </Layout>

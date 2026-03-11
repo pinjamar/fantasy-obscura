@@ -1,20 +1,15 @@
 import { useState, useEffect } from 'react';
 
-const KEY = 'fantasy_obscura_saved';
-
-function getSaved(): string[] {
-  try { return JSON.parse(localStorage.getItem(KEY) || '[]'); }
-  catch { return []; }
-}
-
 export default function BookmarkCount() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setCount(getSaved().length);
-    const handler = () => setCount(getSaved().length);
-    window.addEventListener('bookmarks-changed', handler);
-    return () => window.removeEventListener('bookmarks-changed', handler);
+    fetch('/api/shelf')
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.entries) setCount(data.entries.length);
+      })
+      .catch(() => {});
   }, []);
 
   if (count === 0) return null;

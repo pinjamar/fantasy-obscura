@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import BookmarkButton from './BookmarkButton';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
+import AddToShelf from './AddToShelf';
 import Stars from './Stars';
 
 interface Book {
@@ -29,6 +29,7 @@ interface BookDisplayProps {
   genre?: string | string[];
   audience?: string;
   featuredTropes?: string[];
+  userId?: string | null;
 }
 
 type SortKey = 'title-asc' | 'title-desc' | 'rating-desc' | 'newest' | 'oldest' | 'shortest' | 'longest' | 'author-asc';
@@ -88,12 +89,28 @@ function buildPageNums(current: number, total: number): (number | 'ellipsis')[] 
   return pages;
 }
 
-const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTropes }) => {
+const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTropes, userId = null }) => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [sort, setSort] = useState<SortKey>('rating-desc');
+  const [sort, setSort] = useState<SortKey>(() => {
+    if (typeof window !== 'undefined') {
+      const param = new URLSearchParams(window.location.search).get('sort');
+      if (param && ['title-asc','title-desc','rating-desc','newest','oldest','shortest','longest','author-asc'].includes(param))
+        return param as SortKey;
+    }
+    return 'rating-desc';
+  });
   const [currentPage, setCurrentPage] = useState(1);
+  const topRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
+  useEffect(() => {
+    if (isFirstRender.current) { isFirstRender.current = false; return; }
+    if (topRef.current) {
+      const top = topRef.current.getBoundingClientRect().top + window.scrollY - 16;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }, [currentPage]);
   const [searchQuery, setSearchQuery] = useState('');
   const [darknessFilter, setDarknessFilter] = useState<number | null>(null);
   const [heatFilter, setHeatFilter] = useState<number | null>(null);
@@ -209,7 +226,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
   }
 
   return (
-    <div>
+    <div ref={topRef}>
       {/* Search bar */}
       <div className="relative mb-4">
         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none">
@@ -496,7 +513,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                       View details →
                     </p>
                   )}
-                  <BookmarkButton bookId={book.id} size="sm" />
+                  <AddToShelf bookId={book.id} userId={userId} size="sm" />
                 </div>
               </div>
             </>

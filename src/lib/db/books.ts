@@ -218,13 +218,25 @@ export async function getAllAuthors(): Promise<{
   avgRating: number | null;
 }[]> {
   type AuthorRow = { authors: string[] | null; subgenres: string[] | null; avg_rating: number | null };
-  const { data } = await supabaseClient
-    .from('books')
-    .select('authors, subgenres, avg_rating') as { data: AuthorRow[] | null };
+
+  // Paginate to bypass any server-side max-rows cap
+  const PAGE = 1000;
+  const allRows: AuthorRow[] = [];
+  let offset = 0;
+  while (true) {
+    const { data } = await supabaseClient
+      .from('books')
+      .select('authors, subgenres, avg_rating')
+      .range(offset, offset + PAGE - 1) as { data: AuthorRow[] | null };
+    if (!data || data.length === 0) break;
+    allRows.push(...data);
+    if (data.length < PAGE) break;
+    offset += PAGE;
+  }
 
   const authorMap = new Map<string, { bookCount: number; genres: Map<string, number>; ratings: number[] }>();
 
-  data?.forEach((book) => {
+  allRows.forEach((book) => {
     book.authors?.forEach((author: string) => {
       if (!author) return;
       if (!authorMap.has(author)) {

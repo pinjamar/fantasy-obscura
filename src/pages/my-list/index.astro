@@ -1,13 +1,58 @@
 ---
 import Layout from '../../components/Layout.astro';
-import ReadingList from '../../components/ReadingList';
+import MyShelf from '../../components/MyShelf';
+
+const user = Astro.locals.user;
+const userProfile = Astro.locals.userProfile;
 ---
 
-<Layout title="My Bookshelf | Fantasy Obscura" description="Your saved fantasy books, stored in your browser.">
+<Layout title="My Shelf | Fantasy Obscura" description="Your personal reading shelves — track what you want to read, are reading, and have finished.">
   <div class="mb-8">
     <h1 class="text-3xl font-bold tracking-tight">My Shelf</h1>
-    <p class="mt-2 text-zinc-500">Saved in your browser - no account needed.</p>
+    {!user && <p class="mt-2 text-zinc-500">Your personal reading tracker.</p>}
   </div>
 
-  <ReadingList client:load />
+  {user ? (
+    <MyShelf
+      client:load
+      userEmail={user.email ?? ''}
+      initialName={userProfile?.display_name ?? null}
+      initialAvatar={userProfile?.avatar_url ?? null}
+    />
+  ) : (
+    <div class="flex flex-col items-center justify-center py-24 text-center">
+      <p class="text-6xl mb-5">📚</p>
+      <h2 class="text-xl font-semibold text-zinc-800 mb-2">Log in to use your shelves</h2>
+      <p class="text-zinc-500 max-w-sm mb-8">
+        Track what you want to read, what you're currently reading, and what you've finished — all in one place.
+      </p>
+      <div class="flex gap-3">
+        <a
+          href={`/auth/login?redirectTo=/my-list/`}
+          class="px-6 py-2.5 bg-purple-600 text-white rounded-full text-sm font-semibold hover:bg-purple-700 transition-colors"
+        >
+          Log in
+        </a>
+        <a
+          href="/auth/register"
+          class="px-6 py-2.5 border border-zinc-300 text-zinc-700 rounded-full text-sm font-semibold hover:bg-zinc-50 transition-colors"
+        >
+          Sign up
+        </a>
+      </div>
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-lg">
+        {[
+          { icon: '🔖', label: 'Want to Read' },
+          { icon: '📖', label: 'Currently Reading' },
+          { icon: '✅', label: 'Read' },
+          { icon: '❤️', label: 'Favourites' },
+        ].map(({ icon, label }) => (
+          <div class="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-4 text-center opacity-60">
+            <p class="text-2xl mb-1">{icon}</p>
+            <p class="text-xs text-zinc-500 font-medium">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
 </Layout>

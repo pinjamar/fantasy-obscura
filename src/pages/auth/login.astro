@@ -7,11 +7,11 @@ const error = Astro.url.searchParams.get('error');
 const redirectTo = Astro.url.searchParams.get('redirectTo') || '/';
 ---
 
-<Layout title="Sign In | Fantasy Obscura" description="Sign in to Fantasy Obscura">
+<Layout title="Log In | Fantasy Obscura" description="Log in to Fantasy Obscura">
   <div class="max-w-sm mx-auto mt-16">
-    <h1 class="text-2xl font-bold tracking-tight mb-2">Sign in</h1>
+    <h1 class="text-2xl font-bold tracking-tight mb-2">Log in</h1>
     <p class="text-sm text-zinc-500 mb-8">
-      Don't have an account? <a href="/auth/register" class="text-purple-600 hover:underline">Create one</a>
+      Don't have an account? <a href="/auth/register" class="text-purple-600 hover:underline">Sign up</a>
     </p>
 
     {error && (
@@ -51,7 +51,7 @@ const redirectTo = Astro.url.searchParams.get('redirectTo') || '/';
         type="submit"
         class="w-full py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm transition-colors"
       >
-        Sign in
+        Log in
       </button>
     </form>
   </div>
