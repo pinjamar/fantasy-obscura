@@ -2,6 +2,7 @@
 import Layout from '../../components/Layout.astro';
 import { getBookBySlug, authorToSlug, getAllSeries } from '../../lib/db/books';
 import { getApprovedTags } from '../../lib/db/tags';
+import { supabaseClient } from '../../lib/supabaseClient';
 import BookmarkButton from '../../components/BookmarkButton';
 import CommunityTags from '../../components/CommunityTags';
 
@@ -47,12 +48,47 @@ const isRomanceBook = book.subgenres?.some((s) =>
 
 const heat = (isRomanceBook && book.heat_level) ? (HEAT[book.heat_level] ?? null) : null;
 
-const amazonUrl   = `https://www.amazon.com/s?k=${encodeURIComponent((book.title ?? '') + ' ' + (book.authors?.[0] ?? ''))}`;
-const bookshopUrl = `https://bookshop.org/search?keywords=${encodeURIComponent(book.title ?? '')}`;
+const q      = encodeURIComponent((book.title ?? '') + ' ' + (book.authors?.[0] ?? ''));
+const qTitle = encodeURIComponent(book.title ?? '');
+
+const amazonUrl      = `https://www.amazon.com/s?k=${q}`;
+const bookshopUrl    = `https://bookshop.org/search?keywords=${qTitle}`;
+const appleBooksUrl   = `https://books.apple.com/search?term=${q}`;
+const koboUrl         = `https://www.kobo.com/us/en/search?query=${q}`;
+const thriftBooksUrl  = `https://www.thriftbooks.com/browse/?b.search=${q}`;
+const waterstonesUrl  = `https://www.waterstones.com/books/search/term/${q}`;
+const worderyUrl      = `https://wordery.com/search?term=${qTitle}`;
 
 // ~250 words/page ÷ 250 wpm = 1 min/page → pages ÷ 60 = hours
 const readHours = book.page_count ? Math.round(book.page_count / 60) : null;
 
+
+// Similar books — score by subgenre overlap (×2) + trope overlap, tiebreak by rating
+type SimilarBookRow = {
+  id: string; title: string; slug: string | null; authors: string[] | null;
+  cover_url: string | null; avg_rating: number | null;
+  subgenres: string[] | null; tropes: string[] | null;
+  series: string | null; series_number: number | null;
+};
+const bookSubgenres = new Set(book.subgenres ?? []);
+const bookTropes = new Set(book.tropes ?? []);
+
+const { data: candidateBooks } = await supabaseClient
+  .from('books')
+  .select('id, title, slug, authors, cover_url, avg_rating, subgenres, tropes, series, series_number')
+  .not('subgenres', 'is', null)
+  .neq('id', book.id)
+  .limit(1000) as { data: SimilarBookRow[] | null };
+
+const similarBooks = (candidateBooks ?? [])
+  .map((b) => {
+    const subgenreOverlap = (b.subgenres ?? []).filter((s) => bookSubgenres.has(s)).length;
+    const tropeOverlap    = (b.tropes ?? []).filter((t) => bookTropes.has(t)).length;
+    return { ...b, score: subgenreOverlap * 2 + tropeOverlap };
+  })
+  .filter((b) => b.score > 0)
+  .sort((a, b) => b.score - a.score || (b.avg_rating ?? 0) - (a.avg_rating ?? 0))
+  .slice(0, 20);
 
 const metaDescription = book.synopsis
   ? book.synopsis.slice(0, 160)
@@ -108,10 +144,35 @@ function upgradeCoverUrl(url: string | null | undefined): string {
           class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-zinc-900 text-sm font-semibold transition-colors">
           🛒 Buy on Amazon
         </a>
-        <a href={bookshopUrl} target="_blank" rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 text-sm font-semibold transition-colors">
-          🏪 Bookshop.org
-        </a>
+        <!-- More stores dropdown -->
+        <div class="relative" id="stores-wrap">
+          <button id="stores-toggle" class="group relative flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 hover:border-emerald-300 text-emerald-700 text-sm font-semibold transition-all">
+            <span>🏪 More stores</span>
+            <svg id="stores-chevron" class="absolute right-3 w-3.5 h-3.5 opacity-60 group-hover:opacity-100" style="transition:transform 0.2s" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="stores-menu" class="hidden absolute left-0 right-0 mt-1.5 rounded-xl border border-emerald-200 bg-emerald-50 shadow-2xl z-20 overflow-hidden">
+            <div class="divide-y divide-emerald-200">
+              <a href={bookshopUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
+                <span class="text-base leading-none">🏪</span> Bookshop.org
+              </a>
+              <a href={thriftBooksUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
+                <span class="text-base leading-none">💰</span> ThriftBooks
+              </a>
+              <a href={appleBooksUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
+                <span class="text-base leading-none">🍎</span> Apple Books
+              </a>
+              <a href={koboUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
+                <span class="text-base leading-none">📱</span> Kobo
+              </a>
+              <a href={waterstonesUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
+                <span class="text-base leading-none">🏰</span> Waterstones
+              </a>
+              <a href={worderyUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
+                <span class="text-base leading-none">🌍</span> Wordery
+              </a>
+            </div>
+          </div>
+        </div>
         <BookmarkButton client:load bookId={book.id} size="md" className="w-full justify-center rounded-xl py-2.5" />
       </div>
     </div>
@@ -121,17 +182,17 @@ function upgradeCoverUrl(url: string | null | undefined): string {
       <h1 class="text-4xl font-bold tracking-tight text-zinc-900 leading-tight">{book.title}</h1>
 
       {book.series && (
-        <div class="mt-2">
+        <div class="mt-1.5">
           {seriesSlug ? (
             <a
               href={`/reading-orders/${seriesSlug}/`}
-              class="inline-block text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium hover:bg-indigo-100 hover:border-indigo-300 transition-colors"
+              class="text-xl text-zinc-400 font-light italic hover:text-zinc-600 hover:underline transition-colors"
             >
-              {book.series}{book.series_number != null ? ` #${book.series_number}` : ''} ›
+              {book.series}{book.series_number != null ? ` · #${book.series_number}` : ''} ›
             </a>
           ) : (
-            <span class="inline-block text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium">
-              {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
+            <span class="text-lg text-zinc-400 font-light italic">
+              {book.series}{book.series_number != null ? ` · #${book.series_number}` : ''}
             </span>
           )}
         </div>
@@ -149,23 +210,32 @@ function upgradeCoverUrl(url: string | null | undefined): string {
         </p>
       )}
 
+      <!-- Genre pills -->
+      {book.subgenres && book.subgenres.length > 0 && (
+        <div class="mt-3 flex flex-wrap gap-2">
+          {book.subgenres.map((s) => (
+            <span class="px-3 py-1 bg-zinc-100 text-zinc-600 border border-zinc-200 rounded-full text-sm font-medium">{s}</span>
+          ))}
+        </div>
+      )}
+
       <!-- Stats -->
       <div class="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm">
         {book.publication_year && (
-          <span>
+          <span class="text-center">
             <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block">Published</span>
             <span class="font-semibold text-zinc-800">{book.publication_year}</span>
           </span>
         )}
         {book.page_count && (
-          <span>
+          <span class="text-center">
             <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block">Pages</span>
             <span class="font-semibold text-zinc-800">{book.page_count}</span>
             {readHours && <span class="text-zinc-400 text-xs ml-1.5">~{readHours}h</span>}
           </span>
         )}
         {book.avg_rating && (
-          <span>
+          <span class="text-center">
             <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block">Rating</span>
             <span class="font-semibold text-zinc-800 inline-flex items-center gap-1.5">
               <span class="relative inline-block" style={`letter-spacing:0.05em;line-height:1`}>
@@ -177,31 +247,42 @@ function upgradeCoverUrl(url: string | null | undefined): string {
           </span>
         )}
         {book.audience && (
-          <span>
+          <span class="text-center">
             <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block">Audience</span>
             <span class="font-semibold text-zinc-800">{book.audience}</span>
           </span>
         )}
+        {book.heat_level && (
+          <span class="text-center">
+            <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block">Heat</span>
+            <span class="font-semibold text-zinc-800">{HEAT[book.heat_level]?.flames ?? '🔥'}</span>
+          </span>
+        )}
+        {book.pacing && (
+          <span class="text-center">
+            <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block">Pacing</span>
+            <span class="font-semibold text-zinc-800">{book.pacing}</span>
+          </span>
+        )}
+        {book.magic_system && (
+          <span class="text-center">
+            <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block">Magic</span>
+            <span class="font-semibold text-zinc-800">{book.magic_system.split(' ')[0]}</span>
+          </span>
+        )}
       </div>
-
-      <!-- Detail chips -->
-      {(book.pacing || book.magic_system || book.heat_level) && (
-        <div class="mt-3 flex flex-wrap gap-2">
-          {book.pacing       && <span class="text-xs bg-zinc-100 text-zinc-600 px-2.5 py-1 rounded-full">{book.pacing}</span>}
-          {book.magic_system && <span class="text-xs bg-zinc-100 text-zinc-600 px-2.5 py-1 rounded-full">{book.magic_system}</span>}
-          {book.heat_level   && <span class="text-xs bg-pink-50 text-pink-700 border border-pink-200 px-2.5 py-1 rounded-full">{book.heat_level}</span>}
-        </div>
-      )}
 
       <!-- Darkness badge -->
       {darkness && (
-        <div class={`mt-6 inline-flex items-center gap-4 rounded-2xl border-2 ${darkness.border} ${darkness.bg} px-5 py-3.5`}>
-          <span class="text-2xl leading-none">{darkness.candles}</span>
-          <div>
-            <div class={`font-bold ${darkness.color}`}>
-              Darkness Level {book.darkness_level} — {darkness.label}
+        <div class="mt-6">
+          <div class={`inline-flex items-center gap-4 rounded-2xl border-2 ${darkness.border} ${darkness.bg} px-5 py-3.5`}>
+            <span class="text-2xl leading-none">{darkness.candles}</span>
+            <div>
+              <div class={`font-bold ${darkness.color}`}>
+                Darkness Level {book.darkness_level} — {darkness.label}
+              </div>
+              <div class="text-xs text-zinc-500 mt-0.5">{darkness.desc}</div>
             </div>
-            <div class="text-xs text-zinc-500 mt-0.5">{darkness.desc}</div>
           </div>
         </div>
       )}
@@ -257,36 +338,127 @@ function upgradeCoverUrl(url: string | null | undefined): string {
       {book.synopsis && (
         <div class="mt-6">
           <h2 class="text-lg font-semibold text-zinc-900 mb-3">Synopsis</h2>
-          <p class="text-zinc-700 leading-relaxed text-[15px]">{book.synopsis}</p>
+          {book.synopsis.length > 350 ? (
+            <div id="synopsis-wrap">
+              <p class="text-zinc-700 leading-relaxed text-[15px]">
+                <span id="syn-short">{book.synopsis.slice(0, 350)}…</span>
+                <span id="syn-full" class="hidden">{book.synopsis}</span>
+              </p>
+              <button id="syn-toggle" class="mt-2 text-sm text-purple-700 hover:text-purple-900 font-medium">Read more</button>
+            </div>
+          ) : (
+            <p class="text-zinc-700 leading-relaxed text-[15px]">{book.synopsis}</p>
+          )}
         </div>
       )}
 
     </div>
   </div>
 
+  <!-- ── Tropes / Tone / Content Warnings ───────────────────── -->
+  {(book.tropes?.length || book.tone?.length || book.content_warnings?.length) && (
+    <div class="mb-12 flex gap-8 items-start">
+      {book.tropes && book.tropes.length > 0 && (
+        <div class="w-1/2 min-w-0">
+          <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2">Tropes</h3>
+          <div class="flex flex-wrap gap-1.5">
+            {book.tropes.map((t) => (
+              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-sm">{t}</span>
+            ))}
+          </div>
+        </div>
+      )}
+      {(book.tone?.length || book.content_warnings?.length) && (
+        <div class="w-1/2 min-w-0 flex flex-col gap-4">
+          {book.tone && book.tone.length > 0 && (
+            <div>
+              <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2">Tone</h3>
+              <div class="flex flex-wrap gap-1.5">
+                {book.tone.map((t) => (
+                  <span class="px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full text-sm">{t}</span>
+                ))}
+              </div>
+            </div>
+          )}
+          {book.content_warnings && book.content_warnings.length > 0 && (
+            <div>
+              <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2">Content Warnings</h3>
+              <div class="relative inline-flex flex-wrap gap-1.5">
+                <div id="cw-pills" class="flex flex-wrap gap-1.5 blur-sm select-none transition-[filter] duration-300 pointer-events-none">
+                  {book.content_warnings.map((w) => (
+                    <span class="px-3 py-1 bg-red-50 text-red-700 border border-red-200 rounded-full text-sm">{w}</span>
+                  ))}
+                </div>
+                <button id="cw-reveal" class="absolute inset-0 flex items-center justify-center text-xs font-semibold text-zinc-500 hover:text-zinc-800 transition-colors">
+                  Click to reveal
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  )}
+
+  <!-- ── Readers Also Enjoyed ─────────────────────────────────── -->
+  {similarBooks.length > 0 && (
+    <section class="mb-12">
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="text-xl font-semibold">Readers Also Enjoyed</h2>
+        <div class="flex items-center gap-3">
+          <span id="rec-label" class="text-sm text-zinc-400"></span>
+          <div class="flex gap-2">
+            <button id="rec-prev" aria-label="Previous" class="w-8 h-8 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-500 hover:bg-zinc-100 disabled:opacity-30 disabled:cursor-not-allowed transition-all">←</button>
+            <button id="rec-next" aria-label="Next" class="w-8 h-8 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-500 hover:bg-zinc-100 disabled:opacity-30 disabled:cursor-not-allowed transition-all">→</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="rec-grid" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {similarBooks.map((b, i) => {
+          const href = b.slug ? `/books/${b.slug}/` : null;
+          const topGenres = (b.subgenres ?? []).slice(0, 2);
+          const ratingNum = b.avg_rating;
+          const card = (
+            <div class="flex items-start gap-3 rounded-xl border border-zinc-200 bg-white p-3 hover:border-purple-300 hover:bg-purple-50/30 hover:shadow-sm transition-all group h-full">
+              <div class="shrink-0 w-14 h-20 rounded-lg overflow-hidden bg-zinc-100 border border-zinc-200 shadow-sm group-hover:shadow-md group-hover:scale-[1.03] transition-all">
+                {b.cover_url ? (
+                  <img src={b.cover_url} alt={b.title} class="w-full h-full object-cover" loading="lazy" />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center text-zinc-300 text-lg">📖</div>
+                )}
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-semibold text-sm text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug line-clamp-2">{b.title}</p>
+                {b.authors?.[0] && <p class="text-xs text-zinc-400 mt-0.5 truncate">{b.authors[0]}</p>}
+                {ratingNum != null && (
+                  <div class="flex items-center gap-1 mt-1">
+                    <span class="relative inline-block text-xs" style="letter-spacing:0.05em;line-height:1">
+                      <span style="color:#d4d4d8">★★★★★</span>
+                      <span class="absolute inset-0 overflow-hidden whitespace-nowrap" style={`width:${(ratingNum/5*100).toFixed(1)}%;color:#f59e0b`}>★★★★★</span>
+                    </span>
+                    <span class="text-xs text-zinc-500">{ratingNum.toFixed(2)}</span>
+                  </div>
+                )}
+                {topGenres.length > 0 && (
+                  <div class="flex flex-wrap gap-1 mt-1.5">
+                    {topGenres.map((g) => <span class="text-[10px] bg-purple-50 text-purple-700 px-1.5 py-0.5 rounded">{g}</span>)}
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+          return href
+            ? <a href={href} class="block rec-item" data-rec-index={i}>{card}</a>
+            : <div class="rec-item" data-rec-index={i}>{card}</div>;
+        })}
+      </div>
+    </section>
+  )}
+
   <!-- ── Editorial sections ───────────────────────────────────── -->
   {(book.unique_angle || book.ideal_reader || book.reading_experience) && (
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-12">
-
-      {book.unique_angle && (
-        <div class="rounded-2xl border border-violet-200 bg-violet-50 px-5 py-4">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-lg">✨</span>
-            <h3 class="text-xs font-semibold text-violet-500 uppercase tracking-widest">What makes it different</h3>
-          </div>
-          <p class="text-sm text-zinc-700 leading-relaxed">{book.unique_angle}</p>
-        </div>
-      )}
-
-      {book.ideal_reader && (
-        <div class="rounded-2xl border border-sky-200 bg-sky-50 px-5 py-4">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-lg">🎯</span>
-            <h3 class="text-xs font-semibold text-sky-500 uppercase tracking-widest">Who is this for</h3>
-          </div>
-          <p class="text-sm text-zinc-700 leading-relaxed">{book.ideal_reader}</p>
-        </div>
-      )}
+    <div class="flex flex-col gap-5 mb-12">
 
       {(book.reading_experience || book.tone?.length || book.pacing) && (
         <div class="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4">
@@ -310,73 +482,108 @@ function upgradeCoverUrl(url: string | null | undefined): string {
         </div>
       )}
 
+      {book.unique_angle && (
+        <div class="rounded-2xl border border-violet-200 bg-violet-50 px-5 py-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-lg">✨</span>
+            <h3 class="text-xs font-semibold text-violet-500 uppercase tracking-widest">What makes this different</h3>
+          </div>
+          <p class="text-sm text-zinc-700 leading-relaxed">{book.unique_angle}</p>
+        </div>
+      )}
+
+      {book.ideal_reader && (
+        <div class="rounded-2xl border border-sky-200 bg-sky-50 px-5 py-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-lg">🎯</span>
+            <h3 class="text-xs font-semibold text-sky-500 uppercase tracking-widest">Who is this for</h3>
+          </div>
+          <p class="text-sm text-zinc-700 leading-relaxed">{book.ideal_reader}</p>
+        </div>
+      )}
+
     </div>
   )}
 
-  <!-- ── Tags grid ─────────────────────────────────────────────── -->
-  {(book.subgenres?.length || book.tropes?.length || book.tone?.length || book.diversity_rep?.length) && (
-    <section class="mb-12 grid gap-6 sm:grid-cols-2">
-      {book.subgenres && book.subgenres.length > 0 && (
-        <div>
-          <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2.5">Genres</h3>
-          <div class="flex flex-wrap gap-1.5">
-            {book.subgenres.map((s) => (
-              <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">{s}</span>
-            ))}
-          </div>
-        </div>
-      )}
-      {book.tropes && book.tropes.length > 0 && (
-        <div>
-          <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2.5">Tropes</h3>
-          <div class="flex flex-wrap gap-1.5">
-            {book.tropes.map((t) => (
-              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-sm">{t}</span>
-            ))}
-          </div>
-        </div>
-      )}
-      {book.tone && book.tone.length > 0 && (
-        <div>
-          <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2.5">Tone</h3>
-          <div class="flex flex-wrap gap-1.5">
-            {book.tone.map((t) => (
-              <span class="px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full text-sm">{t}</span>
-            ))}
-          </div>
-        </div>
-      )}
-      {book.diversity_rep && book.diversity_rep.length > 0 && (
-        <div>
-          <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2.5">Representation</h3>
-          <div class="flex flex-wrap gap-1.5">
-            {book.diversity_rep.map((d) => (
-              <span class="px-3 py-1 bg-teal-50 text-teal-700 border border-teal-200 rounded-full text-sm">{d}</span>
-            ))}
-          </div>
-        </div>
-      )}
-    </section>
-  )}
 
-  <!-- ── Community Tags ─────────────────────────────────────────── -->
-  <CommunityTags
-    client:load
-    bookId={book.id}
-    bookSlug={slug}
-    initialTags={approvedTags}
-    userEmail={userEmail}
-  />
+  <!-- ── Community Tags (hidden) ──────────────────────────────── -->
+  {false && <CommunityTags client:load bookId={book.id} bookSlug={slug} initialTags={approvedTags} userEmail={userEmail} />}
 
-  <!-- ── Footer CTA ────────────────────────────────────────────── -->
-  <div class="border-t pt-8 flex flex-wrap items-center gap-4">
-    <a
-      href="/craft/"
-      class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 text-white text-sm font-semibold shadow hover:shadow-md hover:scale-105 transition-all"
-    >
-      🔮 Find books like this
-    </a>
-    <BookmarkButton client:load bookId={book.id} size="md" />
-  </div>
 
 </Layout>
+
+<script>
+  const PER_PAGE = 4;
+  const items = Array.from(document.querySelectorAll<HTMLElement>('.rec-item'));
+  const prev  = document.getElementById('rec-prev')  as HTMLButtonElement | null;
+  const next  = document.getElementById('rec-next')  as HTMLButtonElement | null;
+  const label = document.getElementById('rec-label');
+  if (items.length && prev && next) {
+    let page = 0;
+    const totalPages = Math.ceil(items.length / PER_PAGE);
+    const grid = document.getElementById('rec-grid') as HTMLElement;
+    if (grid) grid.style.transition = 'opacity 0.18s ease';
+
+    const render = (animate = false) => {
+      const apply = () => {
+        items.forEach((el, i) => {
+          el.style.display = (i >= page * PER_PAGE && i < (page + 1) * PER_PAGE) ? '' : 'none';
+        });
+        prev.disabled = page === 0;
+        next.disabled = page >= totalPages - 1;
+        if (label) label.textContent = totalPages > 1 ? `${page + 1} / ${totalPages}` : '';
+        if (grid && animate) { grid.style.opacity = '0'; requestAnimationFrame(() => requestAnimationFrame(() => { grid.style.opacity = '1'; })); }
+      };
+      if (grid && animate) {
+        grid.style.opacity = '0';
+        setTimeout(apply, 180);
+      } else {
+        apply();
+      }
+    };
+    prev.addEventListener('click', () => { page--; render(true); });
+    next.addEventListener('click', () => { page++; render(true); });
+    render(false);
+  }
+
+  // More stores dropdown
+  const storesToggle  = document.getElementById('stores-toggle');
+  const storesMenu    = document.getElementById('stores-menu');
+  const storesChevron = document.getElementById('stores-chevron');
+  if (storesToggle && storesMenu) {
+    storesToggle.addEventListener('click', () => {
+      const open = !storesMenu.classList.contains('hidden');
+      storesMenu.classList.toggle('hidden', open);
+      if (storesChevron) storesChevron.style.transform = open ? '' : 'rotate(180deg)';
+    });
+    document.addEventListener('click', (e) => {
+      if (!storesToggle.contains(e.target as Node) && !storesMenu.contains(e.target as Node)) {
+        storesMenu.classList.add('hidden');
+        if (storesChevron) storesChevron.style.transform = '';
+      }
+    });
+  }
+
+  // Content warnings blur reveal
+  const cwReveal = document.getElementById('cw-reveal');
+  const cwPills  = document.getElementById('cw-pills');
+  if (cwReveal && cwPills) {
+    cwReveal.addEventListener('click', () => {
+      cwPills.classList.remove('blur-sm', 'select-none', 'pointer-events-none');
+      cwReveal.remove();
+    });
+  }
+
+  // Main book synopsis read more / read less toggle
+  const synToggle = document.getElementById('syn-toggle') as HTMLButtonElement | null;
+  const synShort  = document.getElementById('syn-short')  as HTMLElement | null;
+  const synFull   = document.getElementById('syn-full')   as HTMLElement | null;
+  if (synToggle && synShort && synFull) {
+    synToggle.addEventListener('click', () => {
+      const isExpanded = !synFull.classList.contains('hidden');
+      synShort.classList.toggle('hidden', !isExpanded);
+      synFull.classList.toggle('hidden', isExpanded);
+      synToggle.textContent = isExpanded ? 'Read more' : 'Read less';
+    });
+  }
+</script>

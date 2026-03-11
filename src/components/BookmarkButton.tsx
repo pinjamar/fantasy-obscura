@@ -44,7 +44,7 @@ export default function BookmarkButton({ bookId, size = 'md', className = '' }: 
   return (
     <button
       onClick={toggle}
-      aria-label={saved ? 'Remove bookmark' : 'Bookmark this book'}
+      aria-label={saved ? 'Remove from Want to Read' : 'Add to Want to Read'}
       className={`inline-flex items-center gap-1.5 rounded-full font-medium transition-all ${
         isSmall ? 'px-2 py-1 text-xs' : 'px-3 py-1.5 text-sm'
       } ${
@@ -67,7 +67,7 @@ export default function BookmarkButton({ bookId, size = 'md', className = '' }: 
           d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
         />
       </svg>
-      {saved ? 'Bookmarked' : 'Bookmark'}
+      {saved ? '✓ Want to Read' : 'Want to Read'}
     </button>
   );
 }

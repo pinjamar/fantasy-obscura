@@ -63,28 +63,32 @@ Year: ${b.publication_year ?? 'Unknown'}
 Genres: ${b.subgenres?.join(', ') || 'Fantasy'}`).join('\n\n');
 
   const prompt = `You are a fantasy audiobook expert with detailed knowledge of the audiobook market.
-For each book below, provide audiobook information based on your knowledge.
+For each book below, provide audiobook information ONLY based on facts you are confident about.
+
+IMPORTANT: Most obscure or self-published fantasy books do NOT have professional audiobooks.
+Only set audiobook_available to true if you are certain a professional human-narrated audiobook exists.
+When in doubt, return false.
 
 Fields to classify:
 
 audiobook_available (boolean):
-  true  — a professional audiobook edition exists (not just text-to-speech)
-  false — no professional audiobook exists
+  true  — you are CERTAIN a professional human-narrated audiobook exists on Audible/similar
+  false — no professional audiobook exists, OR you are not sure
 
 audiobook_narrator (string or null):
-  The name(s) of the narrator(s). Use "Full Cast" for full-cast productions.
-  null if no audiobook available.
+  The exact name(s) of the narrator(s) you are confident about. Use "Full Cast" for full-cast productions.
+  null if audiobook_available is false, or if you don't know the narrator's name.
 
 audiobook_narrator_rating (string or null — community reception of the narrator):
   "excellent" — widely praised, fans consider it the definitive way to experience the book
   "good"      — well received, minor complaints at most
   "mixed"     — divided opinions, some love it some don't
   "avoid"     — commonly disliked or considered a poor match for the material
-  null if no audiobook available.
+  null if audiobook_available is false, or if you don't know the reception.
 
 audiobook_hours (integer or null):
-  Approximate runtime in hours, rounded to nearest whole number.
-  null if no audiobook available or runtime unknown.
+  Approximate runtime in hours, rounded to nearest whole number, only if you know it.
+  null if audiobook_available is false, or if you don't know the runtime.
 
 Books:
 ${bookList}
@@ -94,9 +98,11 @@ Respond with ONLY a valid JSON array — no explanation, no markdown:
 
 Rules:
 - Include every book in the response.
-- If no audiobook exists, set audiobook_available to false and all other fields to null.
+- Default to audiobook_available: false if you have any uncertainty.
+- If audiobook_available is false, all other fields must be null.
 - audiobook_narrator_rating must be exactly one of: "excellent", "good", "mixed", "avoid", or null.
-- audiobook_hours must be an integer or null.`;
+- audiobook_hours must be an integer or null.
+- Do NOT fabricate narrator names — use null if unsure.`;
 
   const result = await model.generateContent(prompt);
   const raw = result.response.text().trim();
