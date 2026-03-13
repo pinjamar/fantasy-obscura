@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
-import AddToShelf from './AddToShelf';
 import Stars from './Stars';
 
 interface Book {
@@ -29,7 +28,6 @@ interface BookDisplayProps {
   genre?: string | string[];
   audience?: string;
   featuredTropes?: string[];
-  userId?: string | null;
   initialBooks?: Book[];
 }
 
@@ -49,7 +47,6 @@ const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯�
 const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
 const DARKNESS_COLORS = ['', 'text-green-700', 'text-yellow-700', 'text-orange-600', 'text-red-600', 'text-red-900'];
 
-const HEAT_FLAMES  = ['', '🔥', '🔥🔥', '🔥🔥🔥', '🔥🔥🔥🔥', '🔥🔥🔥🔥🔥'];
 const HEAT_LEVELS  = ['', 'Sweet Romance', 'Closed Door', 'Open Door', 'Explicit', 'Fiery'];
 
 function sortBooks(books: Book[], key: SortKey): Book[] {
@@ -90,7 +87,7 @@ function buildPageNums(current: number, total: number): (number | 'ellipsis')[] 
   return pages;
 }
 
-const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTropes, userId = null, initialBooks }) => {
+const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTropes, initialBooks }) => {
   const [books, setBooks] = useState<Book[]>(initialBooks ?? []);
   const [loading, setLoading] = useState(!initialBooks || initialBooks.length === 0);
   const [error, setError] = useState<string | null>(null);
@@ -403,20 +400,18 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
         ))}
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-3 sm:grid-cols-2">
         {pagedBooks.map((book) => {
           const href = book.slug ? `/books/${book.slug}` : null;
           const dl = (book.darkness_level != null && book.darkness_level >= 1) ? book.darkness_level : null;
-          const heatIdx = book.heat_level ? HEAT_LEVELS.indexOf(book.heat_level) : -1;
-          const hl = heatIdx >= 1 ? heatIdx : null;
-
           const CardContent = (
-            <>
-              <div className="relative h-48 bg-linear-to-br from-purple-200 to-blue-200 overflow-hidden">
+            <div className="flex gap-0 h-full">
+              {/* Cover */}
+              <div className="relative w-32 shrink-0 self-stretch h-full bg-linear-to-br from-purple-100 to-blue-100">
                 <img
                   src={book.cover_url || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false` : '/placeholder-cover.svg')}
                   alt={book.title}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover block"
                   onError={(e) => {
                     const img = e.currentTarget;
                     if (!img.dataset.tried && book.isbn && book.cover_url) {
@@ -428,111 +423,88 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                     }
                   }}
                 />
-                {dl != null && (
-                  <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                    {DARKNESS_CANDLES[dl]}
-                  </div>
-                )}
-                {hl != null && (
-                  <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                    {HEAT_FLAMES[hl]}
-                  </div>
-                )}
+                <div className="absolute inset-y-0 right-0 w-3 bg-linear-to-r from-transparent to-white/10" />
               </div>
 
-              <div className="p-4">
-                <h3 className="font-semibold text-lg line-clamp-2 mb-1">
+              {/* Content */}
+              <div className="p-3 flex-1 min-w-0 flex flex-col gap-1">
+                <h3 className="font-semibold text-sm leading-tight line-clamp-2">
                   {book.title}
                 </h3>
 
-                <p className="text-sm text-zinc-600 mb-1">
-                  {book.authors && book.authors.length > 0
-                    ? book.authors.join(', ')
-                    : 'Unknown author'}
-                </p>
                 {book.series && (
-                  <p className="text-xs text-indigo-600 font-medium mb-2">
+                  <p className="text-xs text-indigo-600 font-medium truncate">
                     {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
                   </p>
                 )}
 
-                {dl != null && (
-                  <p className={`text-xs font-medium mb-2 ${DARKNESS_COLORS[dl]}`}>
-                    {DARKNESS_CANDLES[dl]} {DARKNESS_LABELS[dl]}
-                  </p>
-                )}
+                <p className="text-xs text-zinc-500 truncate">
+                  {book.authors && book.authors.length > 0 ? book.authors.join(', ') : 'Unknown author'}
+                  {book.publication_year ? ` · ${book.publication_year}` : ''}
+                </p>
 
-                <div className="grid grid-cols-2 gap-2 text-xs mb-3">
-                  {book.publication_year && (
-                    <div>
-                      <span className="text-zinc-500">Year:</span>
-                      <p className="font-medium">{book.publication_year}</p>
-                    </div>
-                  )}
-                  {book.page_count && (
-                    <div>
-                      <span className="text-zinc-500">Pages:</span>
-                      <p className="font-medium">{book.page_count}</p>
-                    </div>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs">
+                  {dl != null && (
+                    <span className={`font-medium ${DARKNESS_COLORS[dl]}`}>
+                      {DARKNESS_CANDLES[dl]} {DARKNESS_LABELS[dl]}
+                    </span>
                   )}
                   {book.avg_rating && (
-                    <div>
-                      <span className="text-zinc-500">Rating:</span>
-                      <p className="font-medium"><Stars rating={book.avg_rating} /> {book.avg_rating.toFixed(2)}/5</p>
-                    </div>
+                    <span className="text-zinc-500 flex items-center gap-1"><Stars rating={book.avg_rating} /> {book.avg_rating.toFixed(1)}</span>
                   )}
                 </div>
 
                 {book.subgenres && book.subgenres.length > 0 && (
-                  <div className="mb-3">
-                    <div className="flex flex-wrap gap-1">
-                      {book.subgenres.slice(0, 3).map((g) => (
-                        <span
-                          key={g}
-                          className="inline-block bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded"
-                        >
-                          {g}
-                        </span>
-                      ))}
-                      {book.subgenres.length > 3 && (
-                        <span className="text-xs text-zinc-500">
-                          +{book.subgenres.length - 3}
-                        </span>
-                      )}
-                    </div>
+                  <div className="flex flex-wrap gap-1">
+                    {book.subgenres.slice(0, 3).map((g) => (
+                      <span key={g} className="bg-purple-50 text-purple-700 text-[10px] px-1.5 py-0.5 rounded">
+                        {g}
+                      </span>
+                    ))}
+                    {book.subgenres.length > 3 && (
+                      <span className="text-[10px] text-zinc-400">+{book.subgenres.length - 3}</span>
+                    )}
+                  </div>
+                )}
+
+                {book.tropes && book.tropes.length > 0 && (
+                  <div className="flex flex-wrap gap-1">
+                    {book.tropes.slice(0, 3).map((t) => (
+                      <span key={t} className="bg-amber-50 text-amber-700 text-[10px] px-1.5 py-0.5 rounded-full">
+                        {t}
+                      </span>
+                    ))}
+                    {book.tropes.length > 3 && (
+                      <span className="text-[10px] text-zinc-400">+{book.tropes.length - 3}</span>
+                    )}
                   </div>
                 )}
 
                 {book.synopsis && (
-                  <p className="text-xs text-zinc-600 line-clamp-3">
-                    {book.synopsis}
-                  </p>
+                  <p className="text-[10px] text-zinc-400 line-clamp-3">{book.synopsis}</p>
                 )}
 
-                <div className="mt-3 flex items-center justify-between gap-2">
-                  {href && (
-                    <p className="text-xs text-purple-600 font-medium">
-                      View details →
-                    </p>
-                  )}
-                  <AddToShelf bookId={book.id} userId={userId} size="sm" />
-                </div>
+                {href && (
+                  <div className="mt-auto pt-1">
+                    <span className="text-[10px] text-purple-600 font-medium">View →</span>
+                  </div>
+                )}
               </div>
-            </>
+            </div>
           );
 
           return href ? (
             <a
               key={book.id}
               href={href}
-              className="border rounded-lg overflow-hidden bg-white hover:shadow-lg transition-shadow block"
+              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all block min-h-32"
             >
               {CardContent}
             </a>
           ) : (
             <div
               key={book.id}
-              className="border rounded-lg overflow-hidden bg-white hover:shadow-lg transition-shadow"
+              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all min-h-32"
             >
               {CardContent}
             </div>

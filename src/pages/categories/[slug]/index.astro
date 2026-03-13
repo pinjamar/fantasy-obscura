@@ -716,6 +716,6 @@ const cat = CATEGORIES[slug as keyof typeof CATEGORIES];
     <h2 class="text-xl font-semibold mb-6">
       {cat.name} in our collection
     </h2>
-    <BookDisplay genre={cat.genre} featuredTropes={cat.featuredTropes} userId={user?.id ?? null} client:load />
+    <BookDisplay genre={cat.genre} featuredTropes={cat.featuredTropes} client:load />
   </div>
 </Layout>
