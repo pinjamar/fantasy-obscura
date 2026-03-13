@@ -119,14 +119,17 @@ async function main() {
     .select('id, title, authors, subgenres, publication_year')
     .order('title');
 
-  if (!ALL) query = query.is('audiobook_available', null);
+  // Default: process books that are NULL (never checked) or false (no audiobook found).
+  // false entries may have been wrong the first time — re-checking is cheap.
+  // Use --all to also re-process books already confirmed as true.
+  if (!ALL) query = query.or('audiobook_available.is.null,audiobook_available.eq.false');
   if (LIMIT) query = query.limit(LIMIT);
 
   const { data: books, error } = await query;
   if (error) { console.error('Supabase error:', error.message); process.exit(1); }
 
   if (!books.length) {
-    console.log('✅ All books already have audiobook data — nothing to do.');
+    console.log('✅ No unclassified or unconfirmed audiobook entries found. Use --all to reprocess everything.');
     return;
   }
 

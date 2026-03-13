@@ -456,8 +456,9 @@ function extractBookData(item) {
   // Must be English
   if (info.language && info.language !== 'en') return null;
 
-  // Must have a title and at least one author
+  // Must have a title and at least one author; skip multi-author compilations
   if (!info.title || !info.authors?.length) return null;
+  if (info.authors.length > 2) return null;
 
   // Must have at least a description or page count — skip completely bare records
   if (!info.description && !info.pageCount) return null;

@@ -134,9 +134,16 @@ npm run discover -- --limit 300          # custom limit
 npm run discover -- --limit 300 --reset  # restart query cycle from beginning
 npm run discover -- --dry-run            # preview without writing to DB
 
+# Equivalent direct node commands (same flags apply)
+node scripts/discover-books.mjs
+node scripts/discover-books.mjs --limit 300
+node scripts/discover-books.mjs --reset
+node scripts/discover-books.mjs --dry-run
+
 # Add a specific book by title/author
 npm run add-book -- "The Wise Man's Fear" "Patrick Rothfuss"
 npm run add-book -- "Dune"
+node scripts/add-books.mjs "Dungeon Crawler Carl" "Matt Dinniman"
 
 # Add multiple books from a file (one "Title | Author" per line)
 npm run add-book -- --file books-to-add.txt
@@ -197,10 +204,11 @@ node scripts/fill-ratings.mjs --limit 50
 node scripts/fill-ratings.mjs --all       # overwrite existing ratings too
 
 # Fill audiobook data (narrator, hours, narrator rating, audible URL)
+# Default: processes NULL + false entries (re-checks books previously marked "no audiobook")
 node scripts/fill-audiobooks.mjs
 node scripts/fill-audiobooks.mjs --dry-run
 node scripts/fill-audiobooks.mjs --limit 50
-node scripts/fill-audiobooks.mjs --all    # re-process books that already have data
+node scripts/fill-audiobooks.mjs --all    # re-process everything including confirmed true
 
 # Fill series sequels for books already in DB
 node scripts/fill-series.mjs
@@ -244,8 +252,9 @@ src/
 │   ├── AlchemyTable.tsx    # Interactive book finder (filters → Supabase)
 │   ├── BookDisplay.tsx     # Book grid with sort, darkness badges, slug links
 │   ├── BookHub.tsx         # Admin import tool (5 external API sources)
-│   ├── CategoryGrid.tsx    # Genre category cards
-│   ├── Layout.astro        # Base layout + nav
+│   ├── BooksLikeMe.tsx     # AI-powered "Alchemist" — add books you love, get recs
+│   ├── CategoryGrid.tsx    # Genre category cards + Book of the Week
+│   ├── Layout.astro        # Base layout + nav + footer
 │   └── ReadingOrder.tsx    # Series reading order display
 ├── lib/
 │   ├── books/providers.ts  # External API integrations (OpenLibrary, Google Books,
@@ -255,26 +264,32 @@ src/
 │   ├── supabaseClient.ts   # Supabase anon client
 │   └── types.ts            # App-wide type definitions
 └── pages/
-    ├── index.astro                  # Home — category grid
+    ├── index.astro                  # Home — category grid (server-prefetched)
     ├── craft/index.astro            # Alchemy Table — book finder
     ├── books/
-    │   ├── index.astro              # Book database hub
+    │   ├── index.astro              # Book database hub (server-prefetched by category)
     │   └── [slug].astro             # Individual book page (SSR, affiliate links)
-    ├── books-like/index.astro       # "Books like..." — placeholder
-    ├── beginner-lists/index.astro   # Starter reading lists
-    ├── reading-orders/              # 8 series reading guides
+    ├── books-like/
+    │   ├── index.astro              # "Books like…" — Alchemist tool
+    │   └── [slug].astro            # Individual "books like X" recommendation page
+    ├── reading-orders/              # 8+ series reading guides
     │   ├── index.astro
     │   ├── cosmere.astro / discworld.astro / first-law.astro
     │   ├── kingkiller.astro / malazan.astro / stormlight.astro
-    │   ├── witcher.astro / dune.mdx
+    │   └── witcher.astro / wheel-of-time.astro / dresden-files.astro
     ├── categories/                  # 12 genre pages (cozy, dark, epic, grimdark,
     │   └── *.astro                  #   historical, litrpg, mythology, paranormal,
     │                                #   romantasy, sci-fi, urban, young)
+    ├── tropes/
+    │   ├── index.astro              # Trope browser
+    │   └── [slug].astro             # Individual trope page
     ├── creatures/index.astro        # Creature & races reference
     ├── magic-system/index.astro     # Magic systems + BookHub import tool
     └── api/
         ├── books.ts                 # GET all books / POST save book
+        ├── books-search.ts          # GET book search for Alchemist autocomplete
         ├── craft.ts                 # GET filtered books for Alchemy Table
+        ├── recommend.ts             # POST AI-powered book recommendations (Claude)
         └── search.ts                # GET external API search (5 sources)
 ```
 
