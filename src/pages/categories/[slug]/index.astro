@@ -663,7 +663,7 @@ const CATEGORIES: Record<string, CategoryMeta> = {
 };
 
 if (!slug || !(slug in CATEGORIES)) {
-  return Astro.redirect('/books/all/');
+  return Astro.redirect('/books/');
 }
 
 const cat = CATEGORIES[slug as keyof typeof CATEGORIES];
@@ -686,7 +686,7 @@ const cat = CATEGORIES[slug as keyof typeof CATEGORIES];
       <span class="text-2xl">{cat.icon}</span>
       <h1 class={`text-2xl font-bold tracking-tight ${cat.accent}`}>{cat.name}</h1>
       <a
-        href="/books/all/"
+        href="/books/"
         class="ml-auto text-xs text-zinc-400 hover:text-zinc-600 transition-colors whitespace-nowrap"
       >
         ← Browse all books

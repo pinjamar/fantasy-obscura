@@ -25,9 +25,24 @@ while (true) {
       <h1 class="text-3xl font-semibold tracking-tight">All Books</h1>
       <p class="text-zinc-500 text-sm mt-1">The complete collection</p>
     </div>
-    <a href="/" class="text-xs text-zinc-400 hover:text-zinc-600 transition-colors whitespace-nowrap">
-      ← Start Here
-    </a>
+    <select
+      onchange="if(this.value) window.location.href=this.value"
+      class="text-sm border border-zinc-200 rounded-lg px-3 py-1.5 bg-white text-zinc-600 hover:border-zinc-300 focus:outline-none focus:ring-2 focus:ring-purple-500 cursor-pointer"
+    >
+      <option value="">Browse by category…</option>
+      <option value="/categories/epic/">Epic & High Fantasy</option>
+      <option value="/categories/romantasy/">Romantasy</option>
+      <option value="/categories/litrpg/">LitRPG / Progression Fantasy</option>
+      <option value="/categories/dark/">Dark Fantasy</option>
+      <option value="/categories/urban/">Urban / Contemporary Fantasy</option>
+      <option value="/categories/grimdark/">Grimdark</option>
+      <option value="/categories/historical/">Historical Fantasy</option>
+      <option value="/categories/academy/">Academy Fantasy</option>
+      <option value="/categories/mythology/">Mythic & Folklore Fantasy</option>
+      <option value="/categories/swords/">Sword & Sorcery</option>
+      <option value="/categories/cozy/">Cozy Fantasy</option>
+      <option value="/categories/science-fantasy/">Science Fantasy</option>
+    </select>
   </div>
 
   <BookDisplay client:load initialBooks={allBooks as any} />

@@ -10,10 +10,10 @@ interface Category {
 const categories: Category[] = [
   { slug: 'epic',           name: 'Epic & High Fantasy',          description: 'Grand worlds with deep lore & ancient magic',   gradient: 'from-purple-50 to-blue-50'   },
   { slug: 'romantasy',      name: 'Romantasy',                    description: 'Fantasy with love stories and relationships',    gradient: 'from-rose-50 to-pink-50'     },
-  { slug: 'litrpg',         name: 'LitRPG / Progression Fantasy', description: 'Literary role-playing story with progression',   gradient: 'from-blue-50 to-cyan-50'     },
-  { slug: 'dark',           name: 'Dark Fantasy',                 description: 'Blends fantasy with horror and brutality',       gradient: 'from-slate-100 to-zinc-100'  },
-  { slug: 'urban',          name: 'Urban / Contemporary Fantasy', description: 'Magic hidden in the modern world',               gradient: 'from-indigo-50 to-violet-50' },
   { slug: 'grimdark',       name: 'Grimdark',                     description: 'Ultra-dark, cynical world with antiheroes',      gradient: 'from-gray-100 to-slate-100'  },
+  { slug: 'urban',          name: 'Urban / Contemporary Fantasy', description: 'Magic hidden in the modern world',               gradient: 'from-indigo-50 to-violet-50' },
+  { slug: 'dark',           name: 'Dark Fantasy',                 description: 'Blends fantasy with horror and brutality',       gradient: 'from-slate-100 to-zinc-100'  },
+  { slug: 'litrpg',         name: 'LitRPG / Progression Fantasy', description: 'Literary role-playing story with progression',   gradient: 'from-blue-50 to-cyan-50'     },
   { slug: 'historical',     name: 'Historical Fantasy',           description: 'Alternative history, often medieval with magic', gradient: 'from-amber-50 to-orange-50'  },
   { slug: 'academy',        name: 'Academy Fantasy',              description: 'Stories set in magical or specialized schools',  gradient: 'from-red-50 to-rose-50'      },
   { slug: 'mythology',      name: 'Mythic & Folklore Fantasy',    description: 'Inspired by myths, legends and folklore',        gradient: 'from-yellow-50 to-amber-50'  },

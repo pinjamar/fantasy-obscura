@@ -405,9 +405,9 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
           const href = book.slug ? `/books/${book.slug}` : null;
           const dl = (book.darkness_level != null && book.darkness_level >= 1) ? book.darkness_level : null;
           const CardContent = (
-            <div className="flex gap-0 h-full">
+            <>
               {/* Cover */}
-              <div className="relative w-32 shrink-0 self-stretch h-full bg-linear-to-br from-purple-100 to-blue-100">
+              <div className="relative w-32 shrink-0 self-stretch bg-linear-to-br from-purple-100 to-blue-100">
                 <img
                   src={book.cover_url || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false` : '/placeholder-cover.svg')}
                   alt={book.title}
@@ -423,7 +423,6 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                     }
                   }}
                 />
-                <div className="absolute inset-y-0 right-0 w-3 bg-linear-to-r from-transparent to-white/10" />
               </div>
 
               {/* Content */}
@@ -484,27 +483,22 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                   <p className="text-[10px] text-zinc-400 line-clamp-3">{book.synopsis}</p>
                 )}
 
-                {href && (
-                  <div className="mt-auto pt-1">
-                    <span className="text-[10px] text-purple-600 font-medium">View →</span>
-                  </div>
-                )}
               </div>
-            </div>
+            </>
           );
 
           return href ? (
             <a
               key={book.id}
               href={href}
-              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all block min-h-32"
+              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all flex min-h-0"
             >
               {CardContent}
             </a>
           ) : (
             <div
               key={book.id}
-              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all min-h-32"
+              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all flex min-h-0"
             >
               {CardContent}
             </div>
