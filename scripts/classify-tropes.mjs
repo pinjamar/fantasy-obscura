@@ -1,7 +1,7 @@
 /**
  * classify-tropes.mjs
  *
- * Uses Claude Haiku to classify which tropes prominently feature in each book
+ * Uses Gemini Flash to classify which tropes prominently feature in each book
  * where `tropes IS NULL`. Uses real-world knowledge of the published book first;
  * synopsis and genres are supplementary.
  *

@@ -1,7 +1,7 @@
 /**
  * generate-ideal-reader.mjs
  *
- * Uses Claude Haiku to write the "ideal_reader" field for books where it's NULL.
+ * Uses Gemini Flash to write the "ideal_reader" field for books where it's NULL.
  * Three focused paragraphs:
  *   1. Positive fit — specific reader types who will love this
  *   2. Comparison fit — similar books/styles they might know

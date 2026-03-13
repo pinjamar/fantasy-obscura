@@ -1,7 +1,7 @@
 /**
  * classify-creatures.mjs
  *
- * Uses Claude Haiku to classify which creatures / races prominently feature
+ * Uses Gemini Flash to classify which creatures / races prominently feature
  * in each book where `creatures IS NULL`. Uses real-world knowledge of the
  * published book first; synopsis and genres are supplementary.
  *

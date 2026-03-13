@@ -1,7 +1,7 @@
 /**
  * classify-content-warnings.mjs
  *
- * Uses Claude Haiku to classify content warnings for books where
+ * Uses Gemini Flash to classify content warnings for books where
  * content_warnings IS NULL. Uses real-world knowledge of the book first;
  * synopsis/genres are supplementary.
  *

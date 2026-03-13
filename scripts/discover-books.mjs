@@ -40,15 +40,12 @@ const PAGE_SIZE = 40; // Google Books max per request
 // Ordered by expected quality/relevance. Script cycles through these.
 
 const QUERIES = [
-  // Author-first queries — best quality, Google Books has full data for these
+  // ── Tier 1: major name authors — best data quality ─────────────────────────
   'inauthor:sanderson fantasy',
   'inauthor:abercrombie fantasy',
   'inauthor:rothfuss fantasy',
   'inauthor:"robin hobb" fantasy',
   'inauthor:"robert jordan" fantasy',
-  'inauthor:"brent weeks" fantasy',
-  'inauthor:"scott lynch" fantasy',
-  'inauthor:erikson fantasy',
   'inauthor:"george r.r. martin" fantasy',
   'inauthor:"r.f. kuang" fantasy',
   'inauthor:"sarah j. maas" fantasy',
@@ -56,72 +53,192 @@ const QUERIES = [
   'inauthor:"naomi novik" fantasy',
   'inauthor:pratchett fantasy',
   'inauthor:"jim butcher" fantasy',
-  'inauthor:"mark lawrence" fantasy',
-  'inauthor:"will wight" fantasy',
-  'inauthor:"brian mcclellan" fantasy',
-  'inauthor:"nicholas eames" fantasy',
-  'inauthor:"evan winter" fantasy',
-  'inauthor:"john gwynne" fantasy',
-  'inauthor:"travis baldree" fantasy',
+  'inauthor:"neil gaiman" fantasy',
+  'inauthor:"n.k. jemisin" fantasy',
+  'inauthor:"ursula k. le guin" fantasy',
+  'inauthor:"china mieville" fantasy',
+  'inauthor:"v.e. schwab" fantasy',
+  'inauthor:"tamsin muir" fantasy',
+  'inauthor:"becky chambers" fantasy',
+  'inauthor:"t. kingfisher" fantasy',
+  'inauthor:"garth nix" fantasy',
+  'inauthor:"andrzej sapkowski" fantasy',
+  'inauthor:"guy gavriel kay" fantasy',
+  'inauthor:"patricia mckillip" fantasy',
+  'inauthor:"peter s. beagle" fantasy',
+  'inauthor:"katherine arden" fantasy',
+  'inauthor:"samantha shannon" fantasy',
+  'inauthor:"cassandra clare" fantasy',
+  'inauthor:"laini taylor" fantasy',
+  'inauthor:"maggie stiefvater" fantasy',
   'inauthor:"holly black" fantasy',
-  'inauthor:"peter v. brett" fantasy',
-  'inauthor:"patrick weekes" fantasy',
-  'inauthor:"kate elliott" fantasy',
   'inauthor:"ken liu" fantasy',
+  'inauthor:"fonda lee" fantasy',
+  'inauthor:"shelley parker-chan" fantasy',
   'inauthor:"tad williams" fantasy',
+  'inauthor:"terry goodkind" fantasy',
   'inauthor:"terry brooks" fantasy',
   'inauthor:"raymond feist" fantasy',
   'inauthor:"david eddings" fantasy',
   'inauthor:"robert salvatore" fantasy',
-  'inauthor:"michael j. sullivan" fantasy',
-  'inauthor:"miles cameron" fantasy',
-  'inauthor:"anna stephens" fantasy',
-  'inauthor:"ed mcdonald" fantasy',
-  'inauthor:"pierre cornuel" fantasy',
-  'inauthor:"andrzej sapkowski" fantasy',
-  'inauthor:"peter orullian" fantasy',
-  'inauthor:"elspeth cooper" fantasy',
-  'inauthor:"peter newman" fantasy',
-  'inauthor:"anna smith spark" fantasy',
-  'inauthor:"sam sykes" fantasy',
-  'inauthor:"peter orullian" fantasy',
+  'inauthor:"anne mccaffrey" fantasy',
+  'inauthor:"tamora pierce" fantasy',
+  'inauthor:"mercedes lackey" fantasy',
+  'inauthor:"diana wynne jones" fantasy',
+  'inauthor:"diane duane" fantasy',
+  'inauthor:"patricia c. wrede" fantasy',
+  'inauthor:"brandon mull" fantasy',
+  'inauthor:"christopher paolini" fantasy',
+  'inauthor:"richelle mead" fantasy',
+  'inauthor:"rachel caine" fantasy',
+  'inauthor:"ilona andrews" fantasy',
+  'inauthor:"patricia briggs" fantasy',
+  'inauthor:"kevin hearne" fantasy',
+  'inauthor:"ben aaronovitch" fantasy',
+  'inauthor:"seanan mcguire" fantasy',
+  'inauthor:"jo walton" fantasy',
+  'inauthor:"katherine addison" fantasy',
+  'inauthor:"k.j. parker" fantasy',
+  'inauthor:"carol berg" fantasy',
+  'inauthor:"rachel hartman" fantasy',
+  'inauthor:"melissa caruso" fantasy',
+  'inauthor:"jenn lyons" fantasy',
+  // ── Classic / seminal authors ───────────────────────────────────────────────
+  'inauthor:"j.r.r. tolkien" fantasy',
+  'inauthor:"c.s. lewis" fantasy',
+  'inauthor:"susanna clarke" fantasy',
+  'inauthor:"philip pullman" fantasy',
+  'inauthor:"lois mcmaster bujold" fantasy',
+  'inauthor:"l.e. modesitt jr" fantasy',
+  'inauthor:"stephen donaldson" fantasy',
+  'inauthor:"gene wolfe" fantasy',
+  'inauthor:"jack vance" fantasy',
+  'inauthor:"roger zelazny" fantasy',
+  'inauthor:"poul anderson" fantasy',
+  'inauthor:"c.j. cherryh" fantasy',
+  'inauthor:"katherine kurtz" fantasy',
+  'inauthor:"margaret weis" fantasy',
+  'inauthor:"tracy hickman" fantasy',
+  'inauthor:"lloyd alexander" fantasy',
+  `inauthor:"madeleine l'engle" fantasy`,
+  'inauthor:"robin mckinley" fantasy',
+  'inauthor:"dave duncan" fantasy',
+  'inauthor:"david farland" fantasy',
+  'inauthor:"michael a. stackpole" fantasy',
+  'inauthor:"ian irvine" fantasy',
+  'inauthor:"greg keyes" fantasy',
+  'inauthor:"kevin j. anderson" fantasy',
+  'inauthor:"ed greenwood" fantasy',
+  // ── Urban fantasy ───────────────────────────────────────────────────────────
+  'inauthor:"kim harrison" fantasy',
+  'inauthor:"laurell k. hamilton" fantasy',
+  'inauthor:"charlaine harris" fantasy',
+  'inauthor:"kelley armstrong" fantasy',
+  'inauthor:"faith hunter" fantasy',
+  'inauthor:"rob thurman" fantasy',
+  'inauthor:"carrie vaughn" fantasy',
+  'inauthor:"kat richardson" fantasy',
+  'inauthor:"mike carey" fantasy',
+  'inauthor:"chloe neill" fantasy',
+  'inauthor:"jaye wells" fantasy',
+  'inauthor:"christopher golden" fantasy',
+  'inauthor:"thomas e. sniegoski" fantasy',
+  'inauthor:"anton strout" fantasy',
+  'inauthor:"mark del franco" fantasy',
+  // ── Romantasy / fantasy romance ─────────────────────────────────────────────
+  'inauthor:"anne bishop" fantasy',
+  'inauthor:"nalini singh" fantasy',
+  'inauthor:"sherrilyn kenyon" fantasy',
+  'inauthor:"thea harrison" fantasy',
+  'inauthor:"grace draven" fantasy',
+  'inauthor:"jennifer l. armentrout" fantasy',
+  'inauthor:"kresley cole" fantasy',
+  'inauthor:"bec mcmaster" fantasy',
+  'inauthor:"lynsay sands" fantasy',
+  'inauthor:"gena showalter" fantasy',
+  'inauthor:"sylvia day" fantasy',
+  'inauthor:"deborah harkness" fantasy',
+  // ── YA Fantasy ──────────────────────────────────────────────────────────────
+  'inauthor:"veronica roth" fantasy',
+  'inauthor:"marie lu" fantasy',
+  'inauthor:"victoria aveyard" fantasy',
+  'inauthor:"shannon hale" fantasy',
+  'inauthor:"sarah beth durst" fantasy',
+  'inauthor:"jessica cluess" fantasy',
+  'inauthor:"jessica day george" fantasy',
+  'inauthor:"sarah rees brennan" fantasy',
+  'inauthor:"scott westerfeld" fantasy',
+  'inauthor:"rachel smythe" fantasy',
+  'inauthor:"rainbow rowell" fantasy',
+  // ── Tier 2: popular series & grimdark authors ───────────────────────────────
+  'inauthor:"mark lawrence" fantasy',
+  'inauthor:"brent weeks" fantasy',
+  'inauthor:"scott lynch" fantasy',
+  'inauthor:erikson fantasy',
   'inauthor:"ian c. esslemont" fantasy',
+  'inauthor:"john gwynne" fantasy',
+  'inauthor:"evan winter" fantasy',
+  'inauthor:"nicholas eames" fantasy',
+  'inauthor:"brian mcclellan" fantasy',
+  'inauthor:"michael j. sullivan" fantasy',
+  'inauthor:"will wight" fantasy',
+  'inauthor:"travis baldree" fantasy',
+  'inauthor:"josiah bancroft" fantasy',
+  'inauthor:"james islington" fantasy',
+  'inauthor:"richard swan" fantasy',
+  'inauthor:"django wexler" fantasy',
+  'inauthor:"seth dickinson" fantasy',
+  'inauthor:"anna smith spark" fantasy',
+  'inauthor:"ed mcdonald" fantasy',
+  'inauthor:"miles cameron" fantasy',
+  'inauthor:"paul kearney" fantasy',
+  'inauthor:"peter v. brett" fantasy',
+  'inauthor:"kate elliott" fantasy',
   'inauthor:"michael moorcock" fantasy',
   'inauthor:"fritz leiber" fantasy',
   'inauthor:"glen cook" fantasy',
   'inauthor:"david gemmell" fantasy',
-  'inauthor:"terry goodkind" fantasy',
-  'inauthor:"robert jordan" fantasy',
-  'inauthor:"guy gavriel kay" fantasy',
-  'inauthor:"ursula k. le guin" fantasy',
-  'inauthor:"patricia mckillip" fantasy',
-  'inauthor:"peter s. beagle" fantasy',
-  'inauthor:"brandon mull" fantasy',
-  'inauthor:"christopher paolini" fantasy',
-  'inauthor:"tamora pierce" fantasy',
-  'inauthor:"mercedes lackey" fantasy',
-  'inauthor:"anne mccaffrey" fantasy',
-  'inauthor:"katherine arden" fantasy',
-  'inauthor:"samantha shannon" fantasy',
-  'inauthor:"v.e. schwab" fantasy',
-  'inauthor:"josiah bancroft" fantasy',
-  'inauthor:"helen lowe" fantasy',
-  'inauthor:"james islington" fantasy',
-  'inauthor:"richard swan" fantasy',
-  'inauthor:"anna stephens" fantasy',
+  'inauthor:"tom lloyd" fantasy',
+  'inauthor:"j.v. jones" fantasy',
+  'inauthor:"peter mclean" fantasy',
   'inauthor:"rob hayes" fantasy',
+  'inauthor:"anna stephens" fantasy',
+  'inauthor:"victor milan" fantasy',
+  'inauthor:"sam sykes" fantasy',
+  'inauthor:"robert v.s. redick" fantasy',
+  'inauthor:"matthew ward" fantasy',
+  'inauthor:"dyrk ashton" fantasy',
+  'inauthor:"kel kade" fantasy',
+  'inauthor:"jeff vandermeer" fantasy',
+  'inauthor:"charles stross" fantasy',
+  'inauthor:"larry correia" fantasy',
+  'inauthor:"marie brennan" fantasy',
+  'inauthor:"genevieve cogman" fantasy',
+  'inauthor:"benedict jacka" fantasy',
+  'inauthor:"simon r. green" fantasy',
+  'inauthor:"charles de lint" fantasy',
+  'inauthor:"jim c. hines" fantasy',
+  'inauthor:"karen miller" fantasy',
+  'inauthor:"trudi canavan" fantasy',
+  'inauthor:"sara douglass" fantasy',
+  'inauthor:"fiona mcintosh" fantasy',
+  'inauthor:"glenda larke" fantasy',
+  'inauthor:"jennifer fallon" fantasy',
+  'inauthor:"kate forsyth" fantasy',
+  'inauthor:"helen lowe" fantasy',
+  'inauthor:"dj mcdonald" fantasy',
+  'inauthor:"charlie n. holmberg" fantasy',
+  'inauthor:"rae carson" fantasy',
+  'inauthor:"k.m. shea" fantasy',
+  'inauthor:"elise kova" fantasy',
+  // ── Tier 3: LitRPG / progression / web serial ───────────────────────────────
   'inauthor:"phil tucker" fantasy',
   'inauthor:"shirtaloon" fantasy',
-  'inauthor:"travis baldree" fantasy',
   'inauthor:"andrew rowe" fantasy',
-  'inauthor:"jason cheyne" fantasy',
   'inauthor:"luke chmilenko" fantasy',
-  'inauthor:"jason m. cheyne" fantasy',
   'inauthor:"tao wong" fantasy',
   'inauthor:"dakota krout" fantasy',
-  'inauthor:"m.h. johnson" fantasy',
   'inauthor:"thomas k. carpenter" fantasy',
-  // High-priority missing authors
   'inauthor:"matt dinniman" fantasy',
   'inauthor:"aleron kong" fantasy',
   'inauthor:"harmon cooper" fantasy',
@@ -129,35 +246,25 @@ const QUERIES = [
   'inauthor:"seth ring" fantasy',
   'inauthor:"cale plamann" fantasy',
   'inauthor:"john bierce" fantasy',
-  'inauthor:"DB jackson" fantasy',
   'inauthor:"dennis e. taylor" fantasy',
-  'inauthor:"jonathan dunne" fantasy',
-  'inauthor:"k.m. shea" fantasy',
-  'inauthor:"elise kova" fantasy',
-  'inauthor:"ilona andrews" fantasy',
-  'inauthor:"patricia briggs" fantasy',
-  'inauthor:"kevin hearne" fantasy',
-  'inauthor:"ben aaronovitch" fantasy',
-  'inauthor:"seanan mcguire" fantasy',
-  'inauthor:"charles stross" fantasy',
-  'inauthor:"larry correia" fantasy',
   'inauthor:"jason anspach" fantasy',
   'inauthor:"nick cole" fantasy',
-  'inauthor:"matthew mather" fantasy',
-  'inauthor:"kel kade" fantasy',
+  'inauthor:"kel kade" litrpg',
   'inauthor:"craig alanson" fantasy',
   'inauthor:"christopher nuttall" fantasy',
+  'inauthor:"m.h. johnson" litrpg',
+  'inauthor:"william d. arand" fantasy',
+  'inauthor:"james a. hunter" litrpg',
+  'inauthor:"sever bronny" fantasy',
+  'inauthor:"eden hudson" fantasy',
+  'inauthor:"edward w. robertson" fantasy',
+  'inauthor:"james e. wisher" fantasy',
+  'inauthor:"timothy mcgowen" litrpg',
+  'inauthor:"travis bagwell" fantasy',
+  'inauthor:"DB jackson" fantasy',
+  'inauthor:"jonathan dunne" fantasy',
   'inauthor:"rr virdi" fantasy',
-  'inauthor:"john hartness" fantasy',
-  'inauthor:"jim c. hines" fantasy',
-  'inauthor:"marie brennan" fantasy',
-  'inauthor:"django wexler" fantasy',
-  'inauthor:"miles cameron" grimdark',
-  'inauthor:"victor milan" fantasy',
-  'inauthor:"scott hawkins" fantasy',
-  'inauthor:"peter mclean" fantasy',
-  'inauthor:"anna stephens" grimdark',
-  // Broad keyword sweeps — each yields up to 1000 results, paginated over time
+  // ── Broad subgenre sweeps ───────────────────────────────────────────────────
   '"epic fantasy" novel',
   '"dark fantasy" novel',
   '"urban fantasy" novel',
@@ -173,168 +280,89 @@ const QUERIES = [
   'mythology fantasy novel',
   'academy fantasy novel',
   'heist fantasy novel',
-  // Subgenre + tone combos
   '"secondary world fantasy" novel',
   '"flintlock fantasy" novel',
   '"gaslamp fantasy" novel',
-  '"solarpunk fantasy" novel',
-  '"biopunk fantasy" novel',
-  '"dungeon fantasy" novel',
   '"military fantasy" novel',
   '"political fantasy" novel',
   '"assassin fantasy" novel',
-  '"dragon fantasy" novel',
+  '"dragon rider" fantasy novel',
+  '"cultivation fantasy" novel',
+  '"xianxia fantasy" novel',
+  '"wuxia fantasy" novel',
+  '"gamelit fantasy" novel',
+  '"isekai fantasy" novel',
+  '"dungeon fantasy" novel',
+  '"magic school fantasy" novel',
+  '"steampunk fantasy" novel',
+  '"silkpunk fantasy" novel',
   '"vampire fantasy" novel',
   '"werewolf fantasy" novel',
   '"fae fantasy" novel',
   '"witch fantasy" novel',
   '"necromancer fantasy" novel',
   '"pirate fantasy" novel',
-  '"steampunk fantasy" novel',
-  '"dieselpunk fantasy" novel',
-  '"silkpunk fantasy" novel',
-  '"wuxia fantasy" novel',
-  '"xianxia fantasy" novel',
-  '"cultivation fantasy" novel',
-  '"gamelit fantasy" novel',
-  '"isekai fantasy" novel',
-  '"reverse harem fantasy" novel',
-  '"slow burn fantasy romance" novel',
-  '"enemies to lovers fantasy" novel',
   '"found family fantasy" novel',
   '"chosen one fantasy" novel',
-  '"magic school fantasy" novel',
+  '"enemies to lovers fantasy" novel',
+  '"slow burn fantasy romance" novel',
+  '"reverse harem fantasy" novel',
   '"thieves guild fantasy" novel',
-  '"gladiator fantasy" novel',
-  '"arena fantasy" novel',
-  '"tournament fantasy" novel',
   '"spy fantasy" novel',
   '"detective fantasy" novel',
-  '"mystery fantasy" novel',
-  '"horror fantasy" novel',
-  // Setting-based sweeps
-  'fantasy "ancient rome" novel',
-  'fantasy "ancient egypt" novel',
+  '"coming of age" fantasy novel',
+  '"blood magic" fantasy novel',
+  '"elemental magic" fantasy novel',
+  '"time travel fantasy" novel',
+  '"alternate history fantasy" novel',
+  '"fairy tale retelling" novel',
+  '"mythology retelling" fantasy novel',
+  '"arthurian fantasy" novel',
+  '"folklore fantasy" novel',
+  '"mythic fantasy" novel',
+  '"noblebright fantasy" novel',
+  '"hopepunk fantasy" novel',
+  // ── Setting-based sweeps ────────────────────────────────────────────────────
   'fantasy "ancient china" novel',
   'fantasy "ancient japan" novel',
   'fantasy "ancient greece" novel',
-  'fantasy "medieval" novel',
-  'fantasy "renaissance" novel',
-  'fantasy "victorian" novel',
+  'fantasy "ancient egypt" novel',
+  'fantasy "ancient rome" novel',
   'fantasy "norse mythology" novel',
+  'fantasy "slavic mythology" novel',
   'fantasy "celtic mythology" novel',
   'fantasy "african mythology" novel',
-  'fantasy "slavic mythology" novel',
   'fantasy "aztec mythology" novel',
   'fantasy "persian mythology" novel',
   'fantasy "indian mythology" novel',
-  // Award + list signals
+  'fantasy "medieval" novel',
+  'fantasy "victorian" novel',
+  // ── Award + list signals ────────────────────────────────────────────────────
   'fantasy "hugo award" novel',
   'fantasy "nebula award" novel',
   'fantasy "world fantasy award" novel',
   'fantasy "locus award" novel',
   'fantasy "british fantasy award" novel',
-  'fantasy "booker prize" novel',
+  'fantasy "david gemmell award"',
+  'fantasy "spfbo" novel',
   'fantasy bestseller novel',
   'fantasy "new york times bestseller" novel',
-  'fantasy "sunday times bestseller" novel',
-  // Audience sweeps
+  // ── Audience / pacing sweeps ────────────────────────────────────────────────
   'young adult fantasy novel',
   'adult fantasy novel',
   'new adult fantasy novel',
-  // Pacing / tone sweeps
-  'fast paced fantasy novel',
-  'epic fantasy series novel',
   'standalone fantasy novel',
-  'fantasy trilogy novel',
-  'dark magic fantasy novel',
-  'light fantasy novel',
-  'humorous fantasy novel',
-  'satirical fantasy novel',
+  'epic fantasy series novel',
   'literary fantasy novel',
   'feminist fantasy novel',
   'diverse fantasy novel',
   'LGBTQ fantasy novel',
-  // Additional author sweeps
-  'inauthor:"matthew ward" fantasy',
-  'inauthor:"robert v.s. redick" fantasy',
-  'inauthor:"michael j. fletcher" fantasy',
-  'inauthor:"edward w. robertson" fantasy',
-  'inauthor:"michael g. manning" fantasy',
-  'inauthor:"michael j. martine" fantasy',
-  'inauthor:"m.r. carey" fantasy',
-  'inauthor:"peter f. hamilton" fantasy',
-  'inauthor:"ian mcdonald" fantasy',
-  'inauthor:"paul kearney" fantasy',
-  'inauthor:"peter brett" fantasy',
-  'inauthor:"karen miller" fantasy',
-  'inauthor:"kate forsyth" fantasy',
-  'inauthor:"trudi canavan" fantasy',
-  'inauthor:"glenda larke" fantasy',
-  'inauthor:"jennifer fallon" fantasy',
-  'inauthor:"sara douglass" fantasy',
-  'inauthor:"russell kirkpatrick" fantasy',
-  'inauthor:"fiona mcintosh" fantasy',
-  'inauthor:"jason letts" fantasy',
-  'inauthor:"michael j. sullivan" fantasy',
-  'inauthor:"kel kade" fantasy',
-  'inauthor:"dyrk ashton" fantasy',
-  'inauthor:"seth dickinson" fantasy',
-  'inauthor:"anna smith spark" fantasy',
-  'inauthor:"ed mcdonald" fantasy',
-  'inauthor:"miles cameron" fantasy',
-  'inauthor:"james e. wisher" fantasy',
-  'inauthor:"dj mcdonald" fantasy',
-  'inauthor:"sever bronny" fantasy',
-  'inauthor:"michael j. scott" fantasy',
-  // More subgenre sweeps
-  '"sword and sorcery" adventure fantasy',
-  '"dark lord" fantasy novel',
-  '"quest fantasy" epic novel',
-  '"coming of age" fantasy novel',
-  '"magic system" fantasy novel',
-  '"lost heir" fantasy novel',
-  '"resistance fantasy" novel',
-  '"rebellion fantasy" novel',
-  '"empire fantasy" novel',
-  '"dragon rider" fantasy novel',
-  '"elemental magic" fantasy novel',
-  '"blood magic" fantasy novel',
-  '"rune magic" fantasy novel',
-  '"rogue fantasy" novel',
-  '"ranger fantasy" novel',
-  '"paladin fantasy" novel',
-  '"bard fantasy" novel',
-  '"druid fantasy" novel',
-  '"shapeshifter fantasy" novel',
-  '"time travel fantasy" novel',
-  '"alternate history fantasy" novel',
-  '"weird fantasy" novel',
-  '"noblebright fantasy" novel',
-  '"hopepunk fantasy" novel',
-  '"mythic fantasy" novel',
-  '"folklore fantasy" novel',
-  '"fairy tale retelling" novel',
-  '"mythology retelling" fantasy novel',
-  '"arthurian fantasy" novel',
-  '"robin hood fantasy" novel',
-  // Award and list sweeps (extended)
-  '"david gemmell award" fantasy',
-  '"spfbo" fantasy novel',
-  '"self published fantasy" novel',
-  'indie fantasy novel bestseller',
-  '"fantasy series" complete novel',
-  // Reading experience sweeps
-  // Specific high-value titles that broad queries miss
+  // ── High-value title queries (web serials & hard-to-find) ──────────────────
   '"dungeon crawler carl" fantasy',
-  '"he who fights with monsters" fantasy',
-  '"everyone loves large chests" fantasy',
+  '"he who fights with monsters" litrpg',
   '"defiance of the fall" fantasy',
-  '"stone burners" fantasy',
-  '"salvos" fantasy novel',
   '"primal hunter" fantasy',
   '"mage errant" fantasy',
-  '"he who fights with monsters" litrpg',
   '"a practical guide to sorcery" fantasy',
   '"cradle series" fantasy',
   '"wandering inn" fantasy',
@@ -342,15 +370,6 @@ const QUERIES = [
   '"beware of chicken" fantasy',
   '"forge of destiny" fantasy',
   '"beneath the dragoneye moons" fantasy',
-  '"he who fights" litrpg novel',
-  // Broad keyword sweeps cont.
-  '"slow burn" fantasy romance novel',
-  '"action packed" fantasy novel',
-  '"character driven" fantasy novel',
-  '"plot twist" fantasy novel',
-  '"unreliable narrator" fantasy novel',
-  '"multiple POV" fantasy novel',
-  '"non linear" fantasy novel',
 ];
 
 // Require averageRating to exist — primary quality gate
@@ -391,6 +410,32 @@ function isLikelyNonEnglish(text) {
   if (letters.length < 20) return false;
   const nonAscii = letters.filter((c) => c.charCodeAt(0) > 127);
   return nonAscii.length / letters.length > 0.05;
+}
+
+/**
+ * Extract ISBN-13 (preferred) or ISBN-10 from a Google Books item.
+ * Used to deduplicate books that appear under different titles/slugs.
+ */
+function extractISBN(item) {
+  const ids = item.volumeInfo?.industryIdentifiers ?? [];
+  const isbn13 = ids.find((id) => id.type === 'ISBN_13');
+  const isbn10 = ids.find((id) => id.type === 'ISBN_10');
+  return isbn13?.identifier ?? isbn10?.identifier ?? null;
+}
+
+/**
+ * Normalize a title for fuzzy deduplication.
+ * "Mistborn: The Final Empire" and "The Final Empire" both → "final empire"
+ * so we won't import them as two separate books.
+ */
+function normalizeTitle(title) {
+  let t = title.toLowerCase().trim();
+  // Strip series prefix (everything up to and including the first colon)
+  const colonIdx = t.indexOf(':');
+  if (colonIdx > 1) t = t.slice(colonIdx + 1).trim();
+  // Remove leading article
+  t = t.replace(/^(the|a|an)\s+/, '');
+  return t.replace(/\s+/g, ' ').trim();
 }
 
 // ── Open Library fallback ─────────────────────────────────────────────────────
@@ -456,8 +501,9 @@ function extractBookData(item) {
   // Must be English
   if (info.language && info.language !== 'en') return null;
 
-  // Must have a title and at least one author; skip multi-author compilations
+  // Must have a title and at least one author
   if (!info.title || !info.authors?.length) return null;
+  // Skip multi-author compilations (anthologies disguised as single books)
   if (info.authors.length > 2) return null;
 
   // Must have at least a description or page count — skip completely bare records
@@ -469,18 +515,20 @@ function extractBookData(item) {
   // Only reject books with explicitly bad ratings — unrated books are fine
   if (info.averageRating != null && info.averageRating < MIN_AVG_RATING) return null;
 
-  // Skip non-novel categories
+  // Skip non-novel categories / junk
   const cats = (info.categories ?? []).join(' ').toLowerCase();
   const title = info.title.toLowerCase();
   const skipKeywords = [
-    // Multi-book bundles
-    'anthology', 'omnibus', 'omnibus edition', 'boxed set', 'box set',
+    // Multi-book bundles & collections
+    'anthology', 'omnibus', 'boxed set', 'box set',
     'complete trilogy', 'complete series', 'complete collection',
     '3-book', '4-book', '5-book', '6-book', '7-book', '8-book',
-    'books 1-', 'volumes 1-', 'the complete ',
+    'books 1-', 'volumes 1-', 'the complete ', 'collected works',
+    'and other stories', 'tales of', 'tales from', 'stories from',
+    'selected works', 'collected stories', 'the best of',
     // Short fiction
-    'short stories', 'short story', 'novelette', 'collected works',
-    // Non-fiction / meta
+    'short stories', 'short story', 'novelette',
+    // Non-fiction / tie-in
     'guide to', 'companion to', 'art of', 'making of', 'the world of',
     'cookbook', 'workbook', 'coloring book', 'activity book',
     'journal', 'notebook', 'planner', 'calendar', 'diary',
@@ -489,10 +537,11 @@ function extractBookData(item) {
     'book club guide', 'critical essay', 'analysis of', 'criticism',
     'annotated edition', 'annotated ', 'with annotations',
     'interview with', 'biography of',
-    // Editions to skip
-    'large print', 'large-print', 'abridged', 'unabridged edition',
-    'illustrated edition', 'graphic novel', 'graphic adaptation',
-    'manga', 'comic book', 'comics',
+    // Special editions that are the same content
+    'deluxe edition', 'special edition', "collector's edition",
+    'illustrated edition', 'large print', 'large-print', 'abridged',
+    // Graphic adaptations
+    'graphic novel', 'graphic adaptation', 'manga', 'comic book', 'comics',
     // Review / summary products
     'summary of', 'review of', 'synopsis of', 'chapter by chapter',
     'book review', 'plot summary',
@@ -541,30 +590,31 @@ async function main() {
     .select('slug, title');
   if (existErr) { console.error(existErr.message); process.exit(1); }
 
-  const existingSlugs  = new Set(existing.map((b) => b.slug).filter(Boolean));
-  const existingTitles = new Set(existing.map((b) => b.title.toLowerCase().trim()));
+  const existingSlugs      = new Set(existing.map((b) => b.slug).filter(Boolean));
+  const existingTitles     = new Set(existing.map((b) => b.title.toLowerCase().trim()));
+  const normalizedTitles   = new Set(existing.map((b) => normalizeTitle(b.title)));
 
   const progress = loadProgress();
+
+  // ISBN tracking — persisted across runs to catch the same book under different titles
+  const seenISBNs = new Set(progress._seenISBNs ?? []);
 
   let imported = 0;
   let queryIdx = progress._queryIdx ?? 0;
   // If progress left off past the end, wrap around
   if (queryIdx >= QUERIES.length) queryIdx = 0;
 
-  // Only count a "full cycle" as a cycle that started from query 0
   let fullCycleCompleted = false;
   let importedThisCycle = 0;
-  // If starting mid-list, treat it as already past zero so first wrap is just continuation
   let startedMidCycle = queryIdx > 0;
 
-  outer: while (imported < LIMIT) {
+  while (imported < LIMIT) {
     if (queryIdx >= QUERIES.length) {
       // Wrap around to beginning
       queryIdx = 0;
       progress._queryIdx = 0;
       saveProgress(progress);
       if (fullCycleCompleted && importedThisCycle === 0) {
-        // Completed a full cycle from 0 with nothing new — truly exhausted
         console.log('\n⚠️  Completed a full cycle with no new books found. Database may be up to date for current queries.');
         break;
       }
@@ -583,7 +633,7 @@ async function main() {
     let pageImported = 0;
     let exhausted = false;
     let consecutiveEmptyPages = 0;
-    const MAX_EMPTY_PAGES = 2; // skip query after 2 pages with no new books
+    const MAX_EMPTY_PAGES = 2;
 
     while (imported < LIMIT) {
       const items = await fetchPage(query, pageStart);
@@ -601,12 +651,22 @@ async function main() {
         const book = extractBookData(item);
         if (!book) { dbg_filtered++; continue; }
 
-        // Dedup
+        // ISBN dedup — catches same book under different titles/editions
+        const isbn = extractISBN(item);
+        if (isbn && seenISBNs.has(isbn)) { dbg_duped++; continue; }
+
+        // Exact slug / title dedup
         if (existingSlugs.has(book.slug) || existingTitles.has(book.title.toLowerCase().trim())) { dbg_duped++; continue; }
+
+        // Normalized title dedup — catches "Mistborn: The Final Empire" vs "The Final Empire"
+        const normTitle = normalizeTitle(book.title);
+        if (normalizedTitles.has(normTitle)) { dbg_duped++; continue; }
 
         // Mark as seen immediately to avoid dupes within the same run
         existingSlugs.add(book.slug);
         existingTitles.add(book.title.toLowerCase().trim());
+        normalizedTitles.add(normTitle);
+        if (isbn) seenISBNs.add(isbn);
 
         // Open Library fallback for missing publication year
         if (!book.publication_year) {
@@ -633,9 +693,11 @@ async function main() {
         }
       }
 
+      // Persist seen ISBNs after every page
+      progress._seenISBNs = [...seenISBNs];
+
       console.log(`    page@${pageStart}: ${dbg_total} items → ${dbg_total - dbg_filtered} passed filter → ${dbg_duped} duped → ${imported - importedBefore} new`);
 
-      // Track consecutive pages with no new books — skip query early if stuck
       if (imported === importedBefore) {
         consecutiveEmptyPages++;
         if (consecutiveEmptyPages >= MAX_EMPTY_PAGES) {

@@ -1,13 +1,17 @@
 /**
  * fill-series.mjs
  *
- * Adds all missing books for every series already present in the DB.
- * Fetches metadata from OpenLibrary. Skips books that already exist.
+ * Phase 1 — adds all missing books from the hardcoded BOOKS list (series fill).
+ * Phase 2 — for every author who already has 7+ books in the DB, discovers and
+ *            imports any of their remaining books found on Google Books.
  *
  * Usage:
- *   node scripts/fill-series.mjs
+ *   node scripts/fill-series.mjs                   (run both phases, up to 100 new in phase 2)
+ *   node scripts/fill-series.mjs --series-only      (phase 1 only)
+ *   node scripts/fill-series.mjs --authors-only     (phase 2 only)
  *   node scripts/fill-series.mjs --dry-run
- *   node scripts/fill-series.mjs --limit 20
+ *   node scripts/fill-series.mjs --limit 50         (cap phase 2 imports at 50)
+ *   node scripts/fill-series.mjs --threshold 5      (lower author book threshold, default 7)
  */
 
 import { createClient } from '@supabase/supabase-js';
@@ -15,10 +19,16 @@ import { config } from 'dotenv';
 
 config();
 
-const DRY_RUN  = process.argv.includes('--dry-run');
-const LIMIT_ARG = process.argv.indexOf('--limit');
-const LIMIT    = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
-const DELAY_MS = 500;
+const DRY_RUN      = process.argv.includes('--dry-run');
+const SERIES_ONLY  = process.argv.includes('--series-only');
+const AUTHORS_ONLY = process.argv.includes('--authors-only');
+const LIMIT_ARG    = process.argv.indexOf('--limit');
+const LIMIT        = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : 100;
+const THRESH_ARG   = process.argv.indexOf('--threshold');
+const THRESHOLD    = THRESH_ARG !== -1 ? parseInt(process.argv[THRESH_ARG + 1], 10) : 7;
+const DELAY_MS     = 500;
+const PAGE_SIZE    = 40;
+const MIN_RATING   = 3.5;
 
 // ── All missing series books ───────────────────────────────────────────────────
 // series name must match EXACTLY what is stored in the DB
@@ -836,6 +846,90 @@ function isLikelyNonEnglish(text) {
   return nonAscii.length / letters.length > 0.05;
 }
 
+/** Strip series prefix and leading article for fuzzy title dedup. */
+function normalizeTitle(title) {
+  let t = title.toLowerCase().trim();
+  const colon = t.indexOf(':');
+  if (colon > 1) t = t.slice(colon + 1).trim();
+  return t.replace(/^(the|a|an)\s+/, '').replace(/\s+/g, ' ').trim();
+}
+
+/** Extract ISBN-13 (preferred) or ISBN-10 from a Google Books item. */
+function extractISBN(item) {
+  const ids = item.volumeInfo?.industryIdentifiers ?? [];
+  const i13 = ids.find((i) => i.type === 'ISBN_13');
+  const i10 = ids.find((i) => i.type === 'ISBN_10');
+  return i13?.identifier ?? i10?.identifier ?? null;
+}
+
+const SKIP_KEYWORDS = [
+  'anthology', 'omnibus', 'boxed set', 'box set',
+  'complete trilogy', 'complete series', 'complete collection',
+  '3-book', '4-book', '5-book', '6-book', '7-book', '8-book',
+  'books 1-', 'volumes 1-', 'the complete ', 'collected works',
+  'and other stories', 'tales of', 'tales from', 'stories from',
+  'selected works', 'collected stories', 'the best of',
+  'short stories', 'short story', 'novelette',
+  'guide to', 'companion to', 'art of', 'making of', 'the world of',
+  'cookbook', 'workbook', 'coloring book', 'activity book',
+  'journal', 'notebook', 'planner', 'calendar', 'diary',
+  'study guide', "reader's guide", 'reading group', 'book club guide',
+  'critical essay', 'analysis of', 'annotated edition', 'annotated ',
+  'deluxe edition', 'special edition', "collector's edition",
+  'illustrated edition', 'large print', 'large-print', 'abridged',
+  'graphic novel', 'graphic adaptation', 'manga', 'comic book',
+  'summary of', 'review of', 'synopsis of', 'book review', 'plot summary',
+];
+
+/** Filter a raw Google Books item — same rules as discover-books.mjs. */
+function extractBookData(item) {
+  const info = item.volumeInfo ?? {};
+  if (info.language && info.language !== 'en') return null;
+  if (!info.title || !info.authors?.length) return null;
+  if (info.authors.length > 2) return null;
+  if (!info.description && !info.pageCount) return null;
+  if (isLikelyNonEnglish(info.description)) return null;
+  if (info.averageRating != null && info.averageRating < MIN_RATING) return null;
+
+  const cats  = (info.categories ?? []).join(' ').toLowerCase();
+  const title = info.title.toLowerCase();
+  if (SKIP_KEYWORDS.some((k) => title.includes(k) || cats.includes(k))) return null;
+  if (info.pageCount && info.pageCount < 120) return null;
+
+  const rawYear  = info.publishedDate;
+  const year     = rawYear ? parseInt(rawYear.slice(0, 4), 10) : null;
+  const validYear = year && year >= 1950 && year <= new Date().getFullYear() ? year : null;
+
+  const thumb = info.imageLinks?.extraLarge ?? info.imageLinks?.large ?? info.imageLinks?.medium ?? info.imageLinks?.thumbnail ?? null;
+  const cover_url = thumb ? thumb.replace(/^http:/, 'https:').replace('&edge=curl', '') : null;
+
+  return {
+    title:            info.title,
+    slug:             slugify(info.title),
+    authors:          info.authors,
+    cover_url,
+    synopsis:         info.description ? info.description.slice(0, 2000) : null,
+    publication_year: validYear,
+    page_count:       info.pageCount ?? null,
+    darkness_level:   null,
+    heat_level:       null,
+  };
+}
+
+/** Paginated Google Books fetch (returns raw items array). */
+async function fetchGoogleBooksPage(query, startIndex) {
+  const q = encodeURIComponent(query);
+  const url = `https://www.googleapis.com/books/v1/volumes?q=${q}&langRestrict=en&maxResults=${PAGE_SIZE}&startIndex=${startIndex}&printType=books&orderBy=relevance&key=${GOOGLE_BOOKS_KEY}`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.items ?? [];
+  } catch {
+    return [];
+  }
+}
+
 async function fetchGoogleBooks(title, author) {
   const queries = [
     `intitle:${title} inauthor:${author}`,
@@ -916,6 +1010,116 @@ async function fetchOpenLibrary(title, author) {
   };
 }
 
+// ── Phase 2: fill prolific authors ────────────────────────────────────────────
+
+async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitles) {
+  console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+  console.log(`📖  Phase 2 — Prolific Author Fill`);
+  console.log(`    Threshold: ${THRESHOLD}+ books · Import cap: ${LIMIT}\n`);
+
+  // Load all books with their authors to count per-author
+  const { data: allBooks, error } = await supabase.from('books').select('authors');
+  if (error) { console.error('Supabase error:', error.message); return; }
+
+  // Count books per primary author (first element of authors array)
+  const authorCount = new Map();
+  for (const book of allBooks) {
+    const primary = (book.authors?.[0] ?? '').trim();
+    if (!primary) continue;
+    const key = primary.toLowerCase();
+    authorCount.set(key, (authorCount.get(key) ?? 0) + 1);
+  }
+
+  // Collect prolific authors (meet threshold), keep original casing
+  const prolificMap = new Map(); // normalized → original casing
+  for (const book of allBooks) {
+    const primary = (book.authors?.[0] ?? '').trim();
+    if (!primary) continue;
+    const key = primary.toLowerCase();
+    if ((authorCount.get(key) ?? 0) >= THRESHOLD && !prolificMap.has(key)) {
+      prolificMap.set(key, primary);
+    }
+  }
+
+  const prolific = [...prolificMap.values()].sort();
+  console.log(`  Found ${prolific.length} authors with ${THRESHOLD}+ books:\n`);
+  for (const a of prolific) console.log(`    • ${a} (${authorCount.get(a.toLowerCase())} books)`);
+  console.log('');
+
+  const seenISBNs = new Set();
+  let imported = 0;
+
+  for (const author of prolific) {
+    if (imported >= LIMIT) break;
+
+    const query = `inauthor:"${author}"`;
+    console.log(`\n  🔍  ${author}`);
+
+    let pageStart = 0;
+    let consecutiveEmpty = 0;
+
+    while (imported < LIMIT) {
+      const items = await fetchGoogleBooksPage(query, pageStart);
+      await sleep(DELAY_MS);
+
+      if (!items.length) break;
+
+      let newThisPage = 0;
+      for (const item of items) {
+        if (imported >= LIMIT) break;
+
+        const book = extractBookData(item);
+        if (!book) continue;
+
+        const isbn = extractISBN(item);
+        if (isbn && seenISBNs.has(isbn)) continue;
+
+        if (existingSlugs.has(book.slug))                             continue;
+        if (existingTitles.has(book.title.toLowerCase().trim()))      continue;
+        const norm = normalizeTitle(book.title);
+        if (normalizedTitles.has(norm))                               continue;
+
+        // Mark seen
+        existingSlugs.add(book.slug);
+        existingTitles.add(book.title.toLowerCase().trim());
+        normalizedTitles.add(norm);
+        if (isbn) seenISBNs.add(isbn);
+
+        process.stdout.write(`    [${imported + 1}/${LIMIT}] "${book.title.slice(0, 48)}" … `);
+
+        if (DRY_RUN) {
+          console.log(`[dry]`);
+          imported++;
+          newThisPage++;
+          continue;
+        }
+
+        const { error: insErr } = await supabase.from('books').insert(book);
+        if (insErr) {
+          console.log(`✗ ${insErr.message.slice(0, 60)}`);
+        } else {
+          console.log(`✓`);
+          imported++;
+          newThisPage++;
+        }
+      }
+
+      if (newThisPage === 0) {
+        consecutiveEmpty++;
+        if (consecutiveEmpty >= 2) break;
+      } else {
+        consecutiveEmpty = 0;
+      }
+
+      pageStart += PAGE_SIZE;
+      if (pageStart >= 1000) break;
+    }
+  }
+
+  console.log(`\n  ✅  Phase 2 imported: ${imported} new books`);
+  return imported;
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
@@ -935,38 +1139,45 @@ const supabase = createClient(
 );
 
 async function main() {
-  console.log(`\n📚 Fantasy Obscura — Series Filler${DRY_RUN ? ' [DRY RUN]' : ''}\n`);
+  const modeLabel = SERIES_ONLY ? ' [series only]' : AUTHORS_ONLY ? ' [authors only]' : '';
+  console.log(`\n📚 Fantasy Obscura — Series + Author Filler${DRY_RUN ? ' [DRY RUN]' : ''}${modeLabel}\n`);
 
   const { data: existing, error: existErr } = await supabase
     .from('books')
-    .select('slug, title');
+    .select('slug, title, authors');
   if (existErr) {
     console.error('Supabase error:', existErr.message);
     process.exit(1);
   }
 
-  const existingSlugs  = new Set(existing.map((b) => b.slug).filter(Boolean));
-  const existingTitles = new Set(existing.map((b) => b.title.toLowerCase().trim()));
+  const existingSlugs    = new Set(existing.map((b) => b.slug).filter(Boolean));
+  const existingTitles   = new Set(existing.map((b) => b.title.toLowerCase().trim()));
+  const normalizedTitles = new Set(existing.map((b) => normalizeTitle(b.title)));
+
+  if (AUTHORS_ONLY) {
+    await fillProlificAuthors(existingSlugs, existingTitles, normalizedTitles);
+    return;
+  }
+
+  // ── Phase 1: series list ────────────────────────────────────────────────────
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  console.log('📖  Phase 1 — Series Fill\n');
 
   const allToImport = BOOKS.filter((b) => {
     if (existingSlugs.has(slugify(b.title)))              return false;
     if (existingTitles.has(b.title.toLowerCase().trim())) return false;
+    if (normalizedTitles.has(normalizeTitle(b.title)))    return false;
     return true;
   });
 
-  const skipped   = BOOKS.length - allToImport.length;
-  const toImport  = LIMIT ? allToImport.slice(0, LIMIT) : allToImport;
+  const skipped  = BOOKS.length - allToImport.length;
+  const toImport = allToImport; // Phase 1 always imports the full list
   console.log(`Total in list:  ${BOOKS.length}`);
   console.log(`Already in DB:  ${skipped}`);
   console.log(`To import:      ${toImport.length}\n`);
 
-  if (toImport.length === 0) {
-    console.log('✅ Nothing to import.');
-    return;
-  }
-
-  let imported = 0;
-  let failed   = 0;
+  let p1imported = 0;
+  let p1failed   = 0;
 
   for (const book of toImport) {
     const slug = slugify(book.title);
@@ -997,25 +1208,37 @@ async function main() {
 
     if (DRY_RUN) {
       console.log(`[dry] ${slug}`);
-      imported++;
+      p1imported++;
+      existingSlugs.add(slug);
+      existingTitles.add(book.title.toLowerCase().trim());
+      normalizedTitles.add(normalizeTitle(book.title));
       continue;
     }
 
     const { error } = await supabase.from('books').insert(record);
     if (error) {
       console.log(`✗ ${error.message}`);
-      failed++;
+      p1failed++;
     } else {
       console.log(`✓`);
-      imported++;
+      p1imported++;
+      existingSlugs.add(slug);
+      existingTitles.add(book.title.toLowerCase().trim());
+      normalizedTitles.add(normalizeTitle(book.title));
     }
   }
 
   console.log(`\n──────────────────────────────────────`);
-  console.log(`✅ Imported: ${imported}`);
-  if (skipped) console.log(`⏭️  Skipped:  ${skipped} (already in DB)`);
-  if (failed)  console.log(`✗  Failed:   ${failed}`);
-  console.log('');
+  console.log(`  Phase 1 imported: ${p1imported}`);
+  if (skipped)    console.log(`  Skipped:         ${skipped} (already in DB)`);
+  if (p1failed)   console.log(`  Failed:          ${p1failed}`);
+
+  // ── Phase 2: prolific author sweep ─────────────────────────────────────────
+  if (!SERIES_ONLY) {
+    await fillProlificAuthors(existingSlugs, existingTitles, normalizedTitles);
+  }
+
+  console.log('\n✅  Done.\n');
 }
 
 main().catch((err) => {

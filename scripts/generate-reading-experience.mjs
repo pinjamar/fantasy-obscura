@@ -1,7 +1,7 @@
 /**
  * generate-reading-experience.mjs
  *
- * Uses Claude Haiku to write the "reading_experience" field for books where it's NULL.
+ * Uses Gemini Flash to write the "reading_experience" field for books where it's NULL.
  * Three focused paragraphs:
  *   1. Emotional feel — how the book feels to read
  *   2. Darkness clarification — anchored to the darkness_level (1–5 scale)
