@@ -28,8 +28,10 @@ export default function AddToShelf({ bookId, userId, size = 'md', block = false,
     fetch('/api/shelf')
       .then((r) => r.json())
       .then((data) => {
-        const entry = (data.entries ?? []).find((e: { books: { id: string }; shelf: ShelfKey }) => e.books?.id === bookId);
-        setCurrentShelf(entry?.shelf ?? null);
+        const entry = (data.entries ?? []).find((e: { books: { id: string }; shelf: string }) => e.books?.id === bookId);
+        const validKeys = SHELVES.map((s) => s.key) as string[];
+        const shelf = entry?.shelf;
+        setCurrentShelf(shelf && validKeys.includes(shelf) ? (shelf as ShelfKey) : null);
       })
       .catch(() => {});
   }, [bookId, userId]);

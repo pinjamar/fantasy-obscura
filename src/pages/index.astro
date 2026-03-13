@@ -1,6 +1,7 @@
 ---
 import Layout from "../components/Layout.astro";
 import CategoryGrid from "../components/CategoryGrid";
+import BookSearch from "../components/BookSearch";
 import { getBooks } from "../lib/db/books";
 
 // Fetch all books server-side so New Releases & Community Favourites render immediately
@@ -27,13 +28,15 @@ while (true) {
     Pick a category, search by trope or simply use our book likes recommendations to find your next read.
   </p>
 
-  <div class="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-zinc-500">
+  <div class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm text-zinc-500">
     <span>🕯️ Lighthearted</span>
     <span>🕯️🕯️ Mild</span>
     <span>🕯️🕯️🕯️ Serious</span>
     <span>🕯️🕯️🕯️🕯️ Dark</span>
     <span>🕯️🕯️🕯️🕯️🕯️ Brutal</span>
   </div>
+
+  <BookSearch client:load />
 
   <CategoryGrid client:load initialBooks={allBooks as any} />
 </Layout>

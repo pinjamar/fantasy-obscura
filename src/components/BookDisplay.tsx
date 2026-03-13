@@ -319,7 +319,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
             >🕯️</button>
           ))}
           {darknessFilter !== null && (
-            <button onClick={() => { setDarknessFilter(null); setCurrentPage(1); }} className="text-xs text-zinc-400 hover:text-zinc-600 ml-2">✕</button>
+            <button onClick={() => { setDarknessFilter(null); setCurrentPage(1); }} className="w-6 h-6 flex items-center justify-center text-xs text-zinc-400 hover:text-zinc-600 ml-2">✕</button>
           )}
         </div>
 
@@ -338,7 +338,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
             >🔥</button>
           ))}
           {heatFilter !== null && (
-            <button onClick={() => { setHeatFilter(null); setCurrentPage(1); }} className="text-xs text-zinc-400 hover:text-zinc-600 ml-2">✕</button>
+            <button onClick={() => { setHeatFilter(null); setCurrentPage(1); }} className="w-6 h-6 flex items-center justify-center text-xs text-zinc-400 hover:text-zinc-600 ml-2">✕</button>
           )}
         </div>
 
@@ -346,7 +346,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
           onClick={() => { setCompletedFilter(completedFilter === true ? null : true); setCurrentPage(1); }}
           className="flex items-center gap-2 group"
         >
-          <span className={`w-4 h-4 rounded flex items-center justify-center border transition-all ${
+          <span className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${
             completedFilter === true
               ? 'bg-zinc-900 border-zinc-900'
               : 'border-zinc-400 group-hover:border-zinc-600'
@@ -364,7 +364,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
           onClick={() => { setStandaloneFilter(!standaloneFilter); setCurrentPage(1); }}
           className="flex items-center gap-2 group"
         >
-          <span className={`w-4 h-4 rounded flex items-center justify-center border transition-all ${
+          <span className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${
             standaloneFilter
               ? 'bg-zinc-900 border-zinc-900'
               : 'border-zinc-400 group-hover:border-zinc-600'
@@ -384,7 +384,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
             onClick={() => { setAudienceFilter(audienceFilter === value ? null : value); setCurrentPage(1); }}
             className="flex items-center gap-2 group"
           >
-            <span className={`w-4 h-4 rounded flex items-center justify-center border transition-all ${
+            <span className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${
               audienceFilter === value
                 ? 'bg-zinc-900 border-zinc-900'
                 : 'border-zinc-400 group-hover:border-zinc-600'
@@ -407,7 +407,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
           const CardContent = (
             <>
               {/* Cover */}
-              <div className="relative w-32 shrink-0 self-stretch bg-linear-to-br from-purple-100 to-blue-100">
+              <div className="relative w-20 sm:w-32 shrink-0 self-stretch bg-linear-to-br from-purple-100 to-blue-100">
                 <img
                   src={book.cover_url || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false` : '/placeholder-cover.svg')}
                   alt={book.title}
@@ -480,7 +480,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                 )}
 
                 {book.synopsis && (
-                  <p className="text-[10px] text-zinc-400 line-clamp-3">{book.synopsis}</p>
+                  <p className="text-xs text-zinc-400 line-clamp-3 leading-relaxed">{book.synopsis}</p>
                 )}
 
               </div>

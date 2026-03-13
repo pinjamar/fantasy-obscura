@@ -400,7 +400,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           {
             title: 'The Poppy War',
             author: 'R.F. Kuang',
-            cover_url: 'https://covers.openlibrary.org/b/isbn/9780062662583-L.jpg',
+            cover_url: 'https://books.google.com/books/content?id=NKB8swEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
             darkness_level: 5,
             heat_level: null,
             standalone: false,
@@ -632,7 +632,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           {
             title: 'The Poppy War',
             author: 'R.F. Kuang',
-            cover_url: 'https://covers.openlibrary.org/b/isbn/9780062662583-L.jpg',
+            cover_url: 'https://books.google.com/books/content?id=NKB8swEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
             darkness_level: 5,
             heat_level: null,
             standalone: false,
@@ -1401,7 +1401,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
     source: {
       title: 'The Poppy War',
       author: 'R.F. Kuang',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780062662576-L.jpg',
+      cover_url: 'https://books.google.com/books/content?id=NKB8swEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
       darkness_level: 5,
       heat_level: null,
       series: 'The Poppy War',
@@ -1535,7 +1535,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
     source: {
       title: 'Legends & Lattes',
       author: 'Travis Baldree',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9781250882080-L.jpg',
+      cover_url: 'https://covers.openlibrary.org/b/title/Legends%20%26%20Lattes-L.jpg',
       darkness_level: 1,
       heat_level: 'Sweet Romance',
       series: null,
@@ -1986,7 +1986,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           {
             title: 'Legends & Lattes',
             author: 'Travis Baldree',
-            cover_url: 'https://covers.openlibrary.org/b/isbn/9781250882080-L.jpg',
+            cover_url: 'https://covers.openlibrary.org/b/title/Legends%20%26%20Lattes-L.jpg',
             darkness_level: 1,
             heat_level: 'Sweet Romance',
             standalone: true,

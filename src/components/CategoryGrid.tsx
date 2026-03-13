@@ -7,6 +7,383 @@ interface Category {
   gradient: string;
 }
 
+// ── Static curated lists ──────────────────────────────────────────────────────
+// Edit these to control Community Favorites & New Releases per category.
+// 'global' is the homepage default (no category selected).
+// slugs must match /books/[slug] in the database.
+type CuratedEntry = { title: string; slug: string };
+
+const CURATED_FAVORITES: Record<string, CuratedEntry[]> = {
+  global: [
+    { title: 'The Way of Kings',                slug: 'the-way-of-kings' },
+    { title: 'The Name of the Wind',            slug: 'the-name-of-the-wind' },
+    { title: 'Mistborn: The Final Empire',      slug: 'mistborn-the-final-empire' },
+    { title: 'The Lies of Locke Lamora',        slug: 'the-lies-of-locke-lamora' },
+    { title: 'A Court of Thorns and Roses',     slug: 'acotar' },
+    { title: 'Six of Crows',                    slug: 'six-of-crows' },
+    { title: 'The Blade Itself',                slug: 'the-blade-itself' },
+    { title: 'Red Rising',                      slug: 'red-rising' },
+    { title: 'The Poppy War',                   slug: 'the-poppy-war' },
+    { title: 'Gardens of the Moon',             slug: 'gardens-of-the-moon' },
+    { title: 'Piranesi',                        slug: 'piranesi' },
+    { title: 'Dungeon Crawler Carl',            slug: 'dungeon-crawler-carl' },
+  ],
+  epic: [
+    { title: 'The Way of Kings',                slug: 'the-way-of-kings' },
+    { title: 'The Name of the Wind',            slug: 'the-name-of-the-wind' },
+    { title: 'Mistborn: The Final Empire',      slug: 'mistborn-the-final-empire' },
+    { title: 'The Eye of the World',            slug: 'the-eye-of-the-world' },
+    { title: 'The Blade Itself',                slug: 'the-blade-itself' },
+    { title: 'Gardens of the Moon',             slug: 'gardens-of-the-moon' },
+    { title: 'The Fifth Season',                slug: 'the-fifth-season' },
+    { title: 'The Priory of the Orange Tree',   slug: 'the-priory-of-the-orange-tree' },
+    { title: 'Red Rising',                      slug: 'red-rising' },
+    { title: 'The Rage of Dragons',             slug: 'the-rage-of-dragons' },
+    { title: 'A Memory Called Empire',          slug: 'a-memory-called-empire' },
+    { title: 'The Stormlight Archive',          slug: 'the-way-of-kings' },
+  ],
+  romantasy: [
+    { title: 'A Court of Thorns and Roses',     slug: 'acotar' },
+    { title: 'A Court of Mist and Fury',        slug: 'a-court-of-mist-and-fury' },
+    { title: 'Fourth Wing',                     slug: 'fourth-wing' },
+    { title: 'From Blood and Ash',              slug: 'from-blood-and-ash' },
+    { title: 'The Cruel Prince',                slug: 'the-cruel-prince' },
+    { title: 'Six of Crows',                    slug: 'six-of-crows' },
+    { title: 'Kingdom of the Wicked',           slug: 'kingdom-of-the-wicked' },
+    { title: 'Divine Rivals',                   slug: 'divine-rivals' },
+    { title: 'Serpent & Dove',                  slug: 'serpent-and-dove' },
+    { title: 'The Bridge Kingdom',              slug: 'the-bridge-kingdom' },
+    { title: 'Shadow and Bone',                 slug: 'shadow-and-bone' },
+    { title: 'A Heart So Fierce and Broken',    slug: 'a-heart-so-fierce-and-broken' },
+  ],
+  grimdark: [
+    { title: 'The Blade Itself',                slug: 'the-blade-itself' },
+    { title: 'Best Served Cold',                slug: 'best-served-cold' },
+    { title: 'Prince of Thorns',                slug: 'prince-of-thorns' },
+    { title: 'Gardens of the Moon',             slug: 'gardens-of-the-moon' },
+    { title: 'The Black Company',               slug: 'the-black-company' },
+    { title: 'The Gutter Prayer',               slug: 'the-gutter-prayer' },
+    { title: 'King of Thorns',                  slug: 'king-of-thorns' },
+    { title: 'The Heroes',                      slug: 'the-heroes' },
+    { title: 'The Poppy War',                   slug: 'the-poppy-war' },
+    { title: 'A Little Hatred',                 slug: 'a-little-hatred' },
+    { title: 'Red Country',                     slug: 'red-country' },
+    { title: 'The First Law',                   slug: 'the-blade-itself' },
+  ],
+  dark: [
+    { title: 'The Blade Itself',                slug: 'the-blade-itself' },
+    { title: 'The Poppy War',                   slug: 'the-poppy-war' },
+    { title: 'Nevernight',                      slug: 'nevernight' },
+    { title: 'Prince of Thorns',                slug: 'prince-of-thorns' },
+    { title: 'A Little Hatred',                 slug: 'a-little-hatred' },
+    { title: 'The Gutter Prayer',               slug: 'the-gutter-prayer' },
+    { title: 'The Black Company',               slug: 'the-black-company' },
+    { title: 'Low Town',                        slug: 'low-town' },
+    { title: 'Gardens of the Moon',             slug: 'gardens-of-the-moon' },
+    { title: 'Red Rising',                      slug: 'red-rising' },
+    { title: 'The Fifth Season',                slug: 'the-fifth-season' },
+    { title: 'Ninth House',                     slug: 'ninth-house' },
+  ],
+  urban: [
+    { title: 'Storm Front',                     slug: 'storm-front' },
+    { title: 'American Gods',                   slug: 'american-gods' },
+    { title: 'Rivers of London',                slug: 'rivers-of-london' },
+    { title: 'Neverwhere',                      slug: 'neverwhere' },
+    { title: 'Good Omens',                      slug: 'good-omens' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'The City We Became',              slug: 'the-city-we-became' },
+    { title: 'A Psalm for the Wild-Built',      slug: 'a-psalm-for-the-wild-built' },
+    { title: 'Piranesi',                        slug: 'piranesi' },
+    { title: 'Ninth House',                     slug: 'ninth-house' },
+    { title: 'Starter Villain',                 slug: 'starter-villain' },
+    { title: 'The Dresden Files',               slug: 'storm-front' },
+  ],
+  historical: [
+    { title: 'Jonathan Strange & Mr Norrell',   slug: 'jonathan-strange-and-mr-norrell' },
+    { title: 'Circe',                           slug: 'circe' },
+    { title: 'The Bear and the Nightingale',    slug: 'the-bear-and-the-nightingale' },
+    { title: 'Spinning Silver',                 slug: 'spinning-silver' },
+    { title: 'Uprooted',                        slug: 'uprooted' },
+    { title: 'Piranesi',                        slug: 'piranesi' },
+    { title: 'The Song of Achilles',            slug: 'the-song-of-achilles' },
+    { title: 'The Invisible Life of Addie LaRue', slug: 'the-invisible-life-of-addie-larue' },
+    { title: 'The Essex Serpent',               slug: 'the-essex-serpent' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'Mexican Gothic',                  slug: 'mexican-gothic' },
+    { title: 'The Once and Future Witches',     slug: 'the-once-and-future-witches' },
+  ],
+  academy: [
+    { title: 'The Name of the Wind',            slug: 'the-name-of-the-wind' },
+    { title: 'A Deadly Education',              slug: 'a-deadly-education' },
+    { title: 'Nevernight',                      slug: 'nevernight' },
+    { title: 'Ninth House',                     slug: 'ninth-house' },
+    { title: 'An Ember in the Ashes',           slug: 'an-ember-in-the-ashes' },
+    { title: 'Shadow and Bone',                 slug: 'shadow-and-bone' },
+    { title: 'The Magicians',                   slug: 'the-magicians' },
+    { title: 'Legendborn',                      slug: 'legendborn' },
+    { title: 'Fourth Wing',                     slug: 'fourth-wing' },
+    { title: 'The Poppy War',                   slug: 'the-poppy-war' },
+    { title: 'Iron Flame',                      slug: 'iron-flame' },
+    { title: 'A Court of Thorns and Roses',     slug: 'acotar' },
+  ],
+  mythology: [
+    { title: 'Circe',                           slug: 'circe' },
+    { title: 'The Song of Achilles',            slug: 'the-song-of-achilles' },
+    { title: 'American Gods',                   slug: 'american-gods' },
+    { title: 'Ariadne',                         slug: 'ariadne' },
+    { title: 'Norse Mythology',                 slug: 'norse-mythology' },
+    { title: "The Witch's Heart",               slug: 'the-witchs-heart' },
+    { title: 'A Thousand Ships',                slug: 'a-thousand-ships' },
+    { title: 'Daughter of the Moon Goddess',    slug: 'daughter-of-the-moon-goddess' },
+    { title: 'Uprooted',                        slug: 'uprooted' },
+    { title: 'The Bear and the Nightingale',    slug: 'the-bear-and-the-nightingale' },
+    { title: 'Spinning Silver',                 slug: 'spinning-silver' },
+    { title: 'Mexican Gothic',                  slug: 'mexican-gothic' },
+  ],
+  cozy: [
+    { title: 'Legends & Lattes',                slug: 'legends-and-lattes' },
+    { title: 'The House in the Cerulean Sea',   slug: 'the-house-in-the-cerulean-sea' },
+    { title: 'A Psalm for the Wild-Built',      slug: 'a-psalm-for-the-wild-built' },
+    { title: 'The Goblin Emperor',              slug: 'the-goblin-emperor' },
+    { title: "Howl's Moving Castle",            slug: 'howls-moving-castle' },
+    { title: 'Nettle and Bone',                 slug: 'nettle-and-bone' },
+    { title: "Emily Wilde's Encyclopaedia of Faeries", slug: 'emily-wildes-encyclopaedia-of-faeries' },
+    { title: 'Piranesi',                        slug: 'piranesi' },
+    { title: 'Good Omens',                      slug: 'good-omens' },
+    { title: 'A Memory Called Empire',          slug: 'a-memory-called-empire' },
+    { title: 'Monk and Robot',                  slug: 'a-psalm-for-the-wild-built' },
+    { title: 'Starter Villain',                 slug: 'starter-villain' },
+  ],
+  litrpg: [
+    { title: 'Dungeon Crawler Carl',            slug: 'dungeon-crawler-carl' },
+    { title: 'He Who Fights With Monsters',     slug: 'he-who-fights-with-monsters' },
+    { title: 'Cradle',                          slug: 'unsouled' },
+    { title: 'Mother of Learning',              slug: 'mother-of-learning' },
+    { title: 'Beware of Chicken',               slug: 'beware-of-chicken' },
+    { title: 'Defiance of the Fall',            slug: 'defiance-of-the-fall' },
+    { title: 'The Wandering Inn',               slug: 'the-wandering-inn' },
+    { title: 'Mark of the Fool',                slug: 'mark-of-the-fool' },
+    { title: 'Dungeon Crawler Carl Book 2',     slug: 'carl-s-doomsday-scenario' },
+    { title: 'He Who Fights With Monsters 2',   slug: 'he-who-fights-with-monsters-2' },
+    { title: 'Cradle: Soulsmith',               slug: 'soulsmith' },
+    { title: 'A Practical Guide to Sorcery',    slug: 'a-practical-guide-to-evil' },
+  ],
+  swords: [
+    { title: 'The Lies of Locke Lamora',        slug: 'the-lies-of-locke-lamora' },
+    { title: 'The Blade Itself',                slug: 'the-blade-itself' },
+    { title: 'Kings of the Wyld',               slug: 'kings-of-the-wyld' },
+    { title: 'The Black Company',               slug: 'the-black-company' },
+    { title: 'The Blacktongue Thief',           slug: 'the-blacktongue-thief' },
+    { title: 'Elric of Melniboné',              slug: 'elric-of-melnibone' },
+    { title: 'The Tainted Cup',                 slug: 'the-tainted-cup' },
+    { title: 'Conan the Barbarian',             slug: 'conan-the-barbarian' },
+    { title: 'Red Rising',                      slug: 'red-rising' },
+    { title: 'Best Served Cold',                slug: 'best-served-cold' },
+    { title: 'The Way of Kings',                slug: 'the-way-of-kings' },
+    { title: 'The Name of the Wind',            slug: 'the-name-of-the-wind' },
+  ],
+  'science-fantasy': [
+    { title: 'Dune',                            slug: 'dune' },
+    { title: 'Red Rising',                      slug: 'red-rising' },
+    { title: 'Gideon the Ninth',                slug: 'gideon-the-ninth' },
+    { title: 'A Memory Called Empire',          slug: 'a-memory-called-empire' },
+    { title: 'This Is How You Lose the Time War', slug: 'this-is-how-you-lose-the-time-war' },
+    { title: 'Piranesi',                        slug: 'piranesi' },
+    { title: 'A Wizard of Earthsea',            slug: 'a-wizard-of-earthsea' },
+    { title: 'The Book of the New Sun',         slug: 'the-shadow-of-the-torturer' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'A Psalm for the Wild-Built',      slug: 'a-psalm-for-the-wild-built' },
+    { title: 'Tress of the Emerald Sea',        slug: 'tress-of-the-emerald-sea' },
+    { title: 'The Fifth Season',                slug: 'the-fifth-season' },
+  ],
+};
+
+const CURATED_NEW_RELEASES: Record<string, CuratedEntry[]> = {
+  global: [
+    { title: 'Fourth Wing',                     slug: 'fourth-wing' },
+    { title: 'Wind and Truth',                  slug: 'wind-and-truth' },
+    { title: 'Iron Flame',                      slug: 'iron-flame' },
+    { title: 'Tress of the Emerald Sea',        slug: 'tress-of-the-emerald-sea' },
+    { title: 'The Sunlit Man',                  slug: 'the-sunlit-man' },
+    { title: 'The Tainted Cup',                 slug: 'the-tainted-cup' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'Starter Villain',                 slug: 'starter-villain' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'Nettle and Bone',                 slug: 'nettle-and-bone' },
+    { title: "Emily Wilde's Encyclopaedia of Faeries", slug: 'emily-wildes-encyclopaedia-of-faeries' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+  ],
+  epic: [
+    { title: 'Wind and Truth',                  slug: 'wind-and-truth' },
+    { title: 'Tress of the Emerald Sea',        slug: 'tress-of-the-emerald-sea' },
+    { title: 'The Sunlit Man',                  slug: 'the-sunlit-man' },
+    { title: 'The Rage of Dragons',             slug: 'the-rage-of-dragons' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'The Tainted Cup',                 slug: 'the-tainted-cup' },
+    { title: 'A Day of Fallen Night',           slug: 'a-day-of-fallen-night' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'The Frugal Wizard\'s Handbook',   slug: 'the-frugal-wizards-handbook-for-surviving-medieval-england' },
+    { title: 'Shards of Earth',                 slug: 'shards-of-earth' },
+    { title: 'Iron Flame',                      slug: 'iron-flame' },
+    { title: 'Onyx Storm',                      slug: 'onyx-storm' },
+  ],
+  romantasy: [
+    { title: 'Fourth Wing',                     slug: 'fourth-wing' },
+    { title: 'Iron Flame',                      slug: 'iron-flame' },
+    { title: 'Onyx Storm',                      slug: 'onyx-storm' },
+    { title: 'Divine Rivals',                   slug: 'divine-rivals' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'A Court of Silver Flames',        slug: 'a-court-of-silver-flames' },
+    { title: 'From Blood and Ash',              slug: 'from-blood-and-ash' },
+    { title: 'House of Salt and Sorrows',       slug: 'house-of-salt-and-sorrows' },
+    { title: 'The Atlas Six',                   slug: 'the-atlas-six' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'Starter Villain',                 slug: 'starter-villain' },
+    { title: 'Nettle and Bone',                 slug: 'nettle-and-bone' },
+  ],
+  grimdark: [
+    { title: 'The Tainted Cup',                 slug: 'the-tainted-cup' },
+    { title: 'A Little Hatred',                 slug: 'a-little-hatred' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'The Blacktongue Thief',           slug: 'the-blacktongue-thief' },
+    { title: 'Wind and Truth',                  slug: 'wind-and-truth' },
+    { title: 'Kings of the Wyld',               slug: 'kings-of-the-wyld' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'Shards of Earth',                 slug: 'shards-of-earth' },
+    { title: 'The Rage of Dragons',             slug: 'the-rage-of-dragons' },
+    { title: 'Fourth Wing',                     slug: 'fourth-wing' },
+    { title: 'Nevernight',                      slug: 'nevernight' },
+    { title: 'Ninth House',                     slug: 'ninth-house' },
+  ],
+  dark: [
+    { title: 'Ninth House',                     slug: 'ninth-house' },
+    { title: 'The Tainted Cup',                 slug: 'the-tainted-cup' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'Hell Bent',                       slug: 'hell-bent' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'A Little Hatred',                 slug: 'a-little-hatred' },
+    { title: 'The Blacktongue Thief',           slug: 'the-blacktongue-thief' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'Nevernight',                      slug: 'nevernight' },
+    { title: 'The Rage of Dragons',             slug: 'the-rage-of-dragons' },
+    { title: 'Wind and Truth',                  slug: 'wind-and-truth' },
+    { title: 'Shards of Earth',                 slug: 'shards-of-earth' },
+  ],
+  urban: [
+    { title: 'Starter Villain',                 slug: 'starter-villain' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'Hell Bent',                       slug: 'hell-bent' },
+    { title: 'Nettle and Bone',                 slug: 'nettle-and-bone' },
+    { title: 'The Kaiju Preservation Society',  slug: 'the-kaiju-preservation-society' },
+    { title: 'A Psalm for the Wild-Built',      slug: 'a-psalm-for-the-wild-built' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'Tress of the Emerald Sea',        slug: 'tress-of-the-emerald-sea' },
+    { title: 'The Sunlit Man',                  slug: 'the-sunlit-man' },
+    { title: 'The Atlas Six',                   slug: 'the-atlas-six' },
+    { title: 'Wind and Truth',                  slug: 'wind-and-truth' },
+  ],
+  historical: [
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'Nettle and Bone',                 slug: 'nettle-and-bone' },
+    { title: "Emily Wilde's Encyclopaedia of Faeries", slug: 'emily-wildes-encyclopaedia-of-faeries' },
+    { title: 'A Day of Fallen Night',           slug: 'a-day-of-fallen-night' },
+    { title: 'The Fragile Threads of Power',    slug: 'the-fragile-threads-of-power' },
+    { title: 'The Frugal Wizard\'s Handbook',   slug: 'the-frugal-wizards-handbook-for-surviving-medieval-england' },
+    { title: 'Mexican Gothic',                  slug: 'mexican-gothic' },
+    { title: 'The Once and Future Witches',     slug: 'the-once-and-future-witches' },
+    { title: 'Starter Villain',                 slug: 'starter-villain' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'The Sunlit Man',                  slug: 'the-sunlit-man' },
+  ],
+  academy: [
+    { title: 'Fourth Wing',                     slug: 'fourth-wing' },
+    { title: 'Iron Flame',                      slug: 'iron-flame' },
+    { title: 'Onyx Storm',                      slug: 'onyx-storm' },
+    { title: 'Hell Bent',                       slug: 'hell-bent' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'A Deadly Education',              slug: 'a-deadly-education' },
+    { title: 'The Atlas Six',                   slug: 'the-atlas-six' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'Ninth House',                     slug: 'ninth-house' },
+    { title: 'Starter Villain',                 slug: 'starter-villain' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'Legendborn',                      slug: 'legendborn' },
+  ],
+  mythology: [
+    { title: 'Ariadne',                         slug: 'ariadne' },
+    { title: 'A Thousand Ships',                slug: 'a-thousand-ships' },
+    { title: "Emily Wilde's Encyclopaedia of Faeries", slug: 'emily-wildes-encyclopaedia-of-faeries' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'Nettle and Bone',                 slug: 'nettle-and-bone' },
+    { title: 'Mexican Gothic',                  slug: 'mexican-gothic' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'Daughter of the Moon Goddess',    slug: 'daughter-of-the-moon-goddess' },
+    { title: 'The Once and Future Witches',     slug: 'the-once-and-future-witches' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'A Day of Fallen Night',           slug: 'a-day-of-fallen-night' },
+    { title: 'Wind and Truth',                  slug: 'wind-and-truth' },
+  ],
+  cozy: [
+    { title: 'Tress of the Emerald Sea',        slug: 'tress-of-the-emerald-sea' },
+    { title: "Emily Wilde's Encyclopaedia of Faeries", slug: 'emily-wildes-encyclopaedia-of-faeries' },
+    { title: 'Nettle and Bone',                 slug: 'nettle-and-bone' },
+    { title: 'Starter Villain',                 slug: 'starter-villain' },
+    { title: 'The Sunlit Man',                  slug: 'the-sunlit-man' },
+    { title: 'The Kaiju Preservation Society',  slug: 'the-kaiju-preservation-society' },
+    { title: 'A Psalm for the Wild-Built',      slug: 'a-psalm-for-the-wild-built' },
+    { title: 'The House in the Cerulean Sea',   slug: 'the-house-in-the-cerulean-sea' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'Divine Rivals',                   slug: 'divine-rivals' },
+    { title: 'Wind and Truth',                  slug: 'wind-and-truth' },
+  ],
+  litrpg: [
+    { title: 'Dungeon Crawler Carl Book 2',     slug: 'carls-doomsday-scenario' },
+    { title: 'Dungeon Crawler Carl Book 3',     slug: 'the-dungeon-anarchist-cookbook' },
+    { title: 'He Who Fights With Monsters 2',   slug: 'he-who-fights-with-monsters-2' },
+    { title: 'Cradle: Soulsmith',               slug: 'soulsmith' },
+    { title: 'Cradle: Blackflame',              slug: 'blackflame' },
+    { title: 'Defiance of the Fall',            slug: 'defiance-of-the-fall' },
+    { title: 'Mark of the Fool',                slug: 'mark-of-the-fool' },
+    { title: 'The Primal Hunter',               slug: 'the-primal-hunter' },
+    { title: 'Dungeon Crawler Carl',            slug: 'dungeon-crawler-carl' },
+    { title: 'He Who Fights With Monsters',     slug: 'he-who-fights-with-monsters' },
+    { title: 'Beware of Chicken',               slug: 'beware-of-chicken' },
+    { title: 'Mother of Learning',              slug: 'mother-of-learning' },
+  ],
+  swords: [
+    { title: 'The Tainted Cup',                 slug: 'the-tainted-cup' },
+    { title: 'The Blacktongue Thief',           slug: 'the-blacktongue-thief' },
+    { title: 'Kings of the Wyld',               slug: 'kings-of-the-wyld' },
+    { title: 'Wind and Truth',                  slug: 'wind-and-truth' },
+    { title: 'A Little Hatred',                 slug: 'a-little-hatred' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'The Rage of Dragons',             slug: 'the-rage-of-dragons' },
+    { title: 'Shards of Earth',                 slug: 'shards-of-earth' },
+    { title: 'Fourth Wing',                     slug: 'fourth-wing' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'Tress of the Emerald Sea',        slug: 'tress-of-the-emerald-sea' },
+  ],
+  'science-fantasy': [
+    { title: 'The Sunlit Man',                  slug: 'the-sunlit-man' },
+    { title: 'Tress of the Emerald Sea',        slug: 'tress-of-the-emerald-sea' },
+    { title: 'Wind and Truth',                  slug: 'wind-and-truth' },
+    { title: 'Shards of Earth',                 slug: 'shards-of-earth' },
+    { title: 'The Familiar',                    slug: 'the-familiar' },
+    { title: 'Witch King',                      slug: 'witch-king' },
+    { title: 'The Tainted Cup',                 slug: 'the-tainted-cup' },
+    { title: 'A Memory Called Empire',          slug: 'a-memory-called-empire' },
+    { title: 'Babel',                           slug: 'babel' },
+    { title: 'Gideon the Ninth',                slug: 'gideon-the-ninth' },
+    { title: 'Starter Villain',                 slug: 'starter-villain' },
+    { title: 'The Atlas Six',                   slug: 'the-atlas-six' },
+  ],
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
 const categories: Category[] = [
   { slug: 'epic',           name: 'Epic & High Fantasy',          description: 'Grand worlds with deep lore & ancient magic',   gradient: 'from-purple-50 to-blue-50'   },
   { slug: 'romantasy',      name: 'Romantasy',                    description: 'Fantasy with love stories and relationships',    gradient: 'from-rose-50 to-pink-50'     },
@@ -189,8 +566,8 @@ const booksLike = [
   { slug: 'six-of-crows',              title: 'Six of Crows',                author: 'Leigh Bardugo',       cover: 'https://covers.openlibrary.org/b/isbn/9781627792127-L.jpg'  },
   { slug: 'the-way-of-kings',          title: 'The Way of Kings',            author: 'Brandon Sanderson',   cover: 'https://covers.openlibrary.org/b/isbn/9780765326355-L.jpg'  },
   { slug: 'red-rising',                title: 'Red Rising',                  author: 'Pierce Brown',        cover: 'https://covers.openlibrary.org/b/isbn/9780345539786-L.jpg'  },
-  { slug: 'the-poppy-war',             title: 'The Poppy War',               author: 'R.F. Kuang',          cover: 'https://covers.openlibrary.org/b/isbn/9780062662576-L.jpg'  },
-  { slug: 'legends-and-lattes',        title: 'Legends & Lattes',            author: 'Travis Baldree',      cover: 'https://covers.openlibrary.org/b/isbn/9781250883995-L.jpg'  },
+  { slug: 'the-poppy-war',             title: 'The Poppy War',               author: 'R.F. Kuang',          cover: 'https://books.google.com/books/content?id=NKB8swEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api'  },
+  { slug: 'legends-and-lattes',        title: 'Legends & Lattes',            author: 'Travis Baldree',      cover: 'https://covers.openlibrary.org/b/title/Legends%20%26%20Lattes-L.jpg'  },
   { slug: 'the-priory-of-the-orange-tree', title: 'The Priory of the Orange Tree', author: 'Samantha Shannon', cover: 'https://covers.openlibrary.org/b/isbn/9781635570298-L.jpg' },
   { slug: 'piranesi',                  title: 'Piranesi',                    author: 'Susanna Clarke',      cover: 'https://covers.openlibrary.org/b/isbn/9781635575637-L.jpg'  },
   { slug: 'the-goblin-emperor',        title: 'The Goblin Emperor',          author: 'Katherine Addison',   cover: 'https://covers.openlibrary.org/b/isbn/9780765365682-L.jpg'  },
@@ -264,37 +641,19 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
   const getSlug = (title: string): string | null =>
     bookSlugs.get(title.toLowerCase()) ?? null;
 
-  // Community Favorites — top 12 by rating within selected category (API already sorted rating_desc)
-  const communityFavorites = allBooks
-    .filter((b) => {
-      if (!selectedCategory) return true;
-      const targets = categorySubgenreMap[selectedCategory] ?? [];
-      return b.subgenres?.some((s) =>
-        targets.some((t) => s.toLowerCase().includes(t.toLowerCase()))
-      ) ?? false;
-    })
-    .slice(0, 12);
+  // Community Favorites — static curated list on homepage, dynamic per category
+  const communityFavorites = selectedCategory
+    ? (CURATED_FAVORITES[selectedCategory] ?? CURATED_FAVORITES.global)
+    : CURATED_FAVORITES.global;
+
+  const newReleases = selectedCategory
+    ? (CURATED_NEW_RELEASES[selectedCategory] ?? CURATED_NEW_RELEASES.global)
+    : CURATED_NEW_RELEASES.global;
 
   // Top Rated — API already returns sorted by rating_desc
   const topRated = allBooks
     .filter((b) => b.goodreads_rating && b.goodreads_rating >= 4)
     .slice(0, 14);
-
-  // New Releases — last 3 years, filtered by selected category if any
-  const currentYear = new Date().getFullYear();
-  const newReleasesAll = [...allBooks]
-    .filter((b) => {
-      if (!b.publication_year || b.publication_year < currentYear - 3) return false;
-      if (selectedCategory) {
-        const targets = categorySubgenreMap[selectedCategory] ?? [];
-        return b.subgenres?.some((s) =>
-          targets.some((t) => s.toLowerCase().includes(t.toLowerCase()))
-        ) ?? false;
-      }
-      return true;
-    })
-    .sort((a, b) => (b.publication_year ?? 0) - (a.publication_year ?? 0));
-  const newReleases = newReleasesAll.slice(0, 12);
 
   const selectedCat  = categories.find((c) => c.slug === selectedCategory);
   const categoryName = selectedCat?.name || 'Fantasy';
