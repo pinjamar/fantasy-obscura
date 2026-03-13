@@ -1,16 +1,39 @@
 ---
 import Layout from "../components/Layout.astro";
 import CategoryGrid from "../components/CategoryGrid";
+import { getBooks } from "../lib/db/books";
+
+// Fetch all books server-side so New Releases & Community Favourites render immediately
+const BATCH = 1000;
+let allBooks: unknown[] = [];
+let page = 1;
+let totalCount = 0;
+while (true) {
+  const result = await getBooks({}, { page, pageSize: BATCH, sort: 'rating_desc' });
+  if (page === 1) totalCount = result.count;
+  allBooks = allBooks.concat(result.data);
+  if (allBooks.length >= totalCount || result.data.length < BATCH) break;
+  page++;
+}
 ---
 
-<Layout title="Fantasy Obscura" description="Fantasy & sci-fi reading orders, lists, and guides.">
+<Layout title="Fantasy Obscura" description="Fantasy reading orders, lists and guides.">
   <h1 class="text-3xl font-semibold tracking-tight">
-    Fantasy & Sci-Fi guides that get to the point
+    Curated fantasy guides that get to the point
   </h1>
 
-  <p class="mt-4 max-w-2xl text-zinc-700">
-    Pick a category below to discover curated book lists, or explore our general recommendations.
+  <p class="mt-3 max-w-2xl text-zinc-600 text-sm leading-relaxed">
+    Every book gets a <strong>darkness rating</strong> - so you always know what you're walking into before you start.
+    Pick a category, search by trope or simply use our book likes recommendations to find your next read.
   </p>
 
-  <CategoryGrid client:load />
+  <div class="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-zinc-500">
+    <span>🕯️ Lighthearted</span>
+    <span>🕯️🕯️ Mild</span>
+    <span>🕯️🕯️🕯️ Serious</span>
+    <span>🕯️🕯️🕯️🕯️ Dark</span>
+    <span>🕯️🕯️🕯️🕯️🕯️ Brutal</span>
+  </div>
+
+  <CategoryGrid client:load initialBooks={allBooks as any} />
 </Layout>

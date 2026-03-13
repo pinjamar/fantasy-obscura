@@ -1,15 +1,35 @@
 ---
 import Layout from '../../components/Layout.astro';
-import CategoryGrid from '../../components/CategoryGrid';
-import BookSearch from '../../components/BookSearch';
+import BookDisplay from '../../components/BookDisplay';
+import { getBooks } from '../../lib/db/books';
+
+const user = Astro.locals.user;
+
+const BATCH = 1000;
+let allBooks: unknown[] = [];
+let page = 1;
+let totalCount = 0;
+while (true) {
+  const result = await getBooks({}, { page, pageSize: BATCH, sort: 'rating_desc' });
+  if (page === 1) totalCount = result.count;
+  allBooks = allBooks.concat(result.data);
+  if (allBooks.length >= totalCount || result.data.length < BATCH) break;
+  page++;
+}
 ---
 
-<Layout title="Start Here | Fantasy Obscura" description="Fantasy & sci-fi reading orders, lists, and guides.">
-  <h1 class="text-3xl font-semibold tracking-tight">
-    Curated Fantasy guides that find your ideal read
-  </h1>
+<Layout title="All Books | Fantasy Obscura" description="Browse the complete Fantasy Obscura book collection.">
 
-  <BookSearch client:load />
+  <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+    <div>
+      <h1 class="text-3xl font-semibold tracking-tight">All Books</h1>
+      <p class="text-zinc-500 text-sm mt-1">The complete collection</p>
+    </div>
+    <a href="/" class="text-xs text-zinc-400 hover:text-zinc-600 transition-colors whitespace-nowrap">
+      ← Start Here
+    </a>
+  </div>
 
-  <CategoryGrid client:load />
+  <BookDisplay client:load userId={user?.id ?? null} initialBooks={allBooks as any} />
+
 </Layout>

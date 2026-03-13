@@ -121,6 +121,42 @@ const QUERIES = [
   'inauthor:"dakota krout" fantasy',
   'inauthor:"m.h. johnson" fantasy',
   'inauthor:"thomas k. carpenter" fantasy',
+  // High-priority missing authors
+  'inauthor:"matt dinniman" fantasy',
+  'inauthor:"aleron kong" fantasy',
+  'inauthor:"harmon cooper" fantasy',
+  'inauthor:"michael chatfield" fantasy',
+  'inauthor:"seth ring" fantasy',
+  'inauthor:"cale plamann" fantasy',
+  'inauthor:"john bierce" fantasy',
+  'inauthor:"DB jackson" fantasy',
+  'inauthor:"dennis e. taylor" fantasy',
+  'inauthor:"jonathan dunne" fantasy',
+  'inauthor:"k.m. shea" fantasy',
+  'inauthor:"elise kova" fantasy',
+  'inauthor:"ilona andrews" fantasy',
+  'inauthor:"patricia briggs" fantasy',
+  'inauthor:"kevin hearne" fantasy',
+  'inauthor:"ben aaronovitch" fantasy',
+  'inauthor:"seanan mcguire" fantasy',
+  'inauthor:"charles stross" fantasy',
+  'inauthor:"larry correia" fantasy',
+  'inauthor:"jason anspach" fantasy',
+  'inauthor:"nick cole" fantasy',
+  'inauthor:"matthew mather" fantasy',
+  'inauthor:"kel kade" fantasy',
+  'inauthor:"craig alanson" fantasy',
+  'inauthor:"christopher nuttall" fantasy',
+  'inauthor:"rr virdi" fantasy',
+  'inauthor:"john hartness" fantasy',
+  'inauthor:"jim c. hines" fantasy',
+  'inauthor:"marie brennan" fantasy',
+  'inauthor:"django wexler" fantasy',
+  'inauthor:"miles cameron" grimdark',
+  'inauthor:"victor milan" fantasy',
+  'inauthor:"scott hawkins" fantasy',
+  'inauthor:"peter mclean" fantasy',
+  'inauthor:"anna stephens" grimdark',
   // Broad keyword sweeps — each yields up to 1000 results, paginated over time
   '"epic fantasy" novel',
   '"dark fantasy" novel',
@@ -289,6 +325,25 @@ const QUERIES = [
   'indie fantasy novel bestseller',
   '"fantasy series" complete novel',
   // Reading experience sweeps
+  // Specific high-value titles that broad queries miss
+  '"dungeon crawler carl" fantasy',
+  '"he who fights with monsters" fantasy',
+  '"everyone loves large chests" fantasy',
+  '"defiance of the fall" fantasy',
+  '"stone burners" fantasy',
+  '"salvos" fantasy novel',
+  '"primal hunter" fantasy',
+  '"mage errant" fantasy',
+  '"he who fights with monsters" litrpg',
+  '"a practical guide to sorcery" fantasy',
+  '"cradle series" fantasy',
+  '"wandering inn" fantasy',
+  '"mother of learning" fantasy',
+  '"beware of chicken" fantasy',
+  '"forge of destiny" fantasy',
+  '"beneath the dragoneye moons" fantasy',
+  '"he who fights" litrpg novel',
+  // Broad keyword sweeps cont.
   '"slow burn" fantasy romance novel',
   '"action packed" fantasy novel',
   '"character driven" fantasy novel',
@@ -416,8 +471,35 @@ function extractBookData(item) {
   // Skip non-novel categories
   const cats = (info.categories ?? []).join(' ').toLowerCase();
   const title = info.title.toLowerCase();
-  const skipKeywords = ['anthology', 'omnibus', 'short stories', 'collected', 'guide to', 'art of', 'making of', 'companion', 'cookbook', 'workbook', 'boxed set', 'box set', 'complete trilogy', 'complete series', 'complete collection', '3-book', '4-book', '5-book', 'omnibus edition'];
+  const skipKeywords = [
+    // Multi-book bundles
+    'anthology', 'omnibus', 'omnibus edition', 'boxed set', 'box set',
+    'complete trilogy', 'complete series', 'complete collection',
+    '3-book', '4-book', '5-book', '6-book', '7-book', '8-book',
+    'books 1-', 'volumes 1-', 'the complete ',
+    // Short fiction
+    'short stories', 'short story', 'novelette', 'collected works',
+    // Non-fiction / meta
+    'guide to', 'companion to', 'art of', 'making of', 'the world of',
+    'cookbook', 'workbook', 'coloring book', 'activity book',
+    'journal', 'notebook', 'planner', 'calendar', 'diary',
+    // Critical / academic
+    'study guide', "reader's guide", "readers' guide", 'reading group',
+    'book club guide', 'critical essay', 'analysis of', 'criticism',
+    'annotated edition', 'annotated ', 'with annotations',
+    'interview with', 'biography of',
+    // Editions to skip
+    'large print', 'large-print', 'abridged', 'unabridged edition',
+    'illustrated edition', 'graphic novel', 'graphic adaptation',
+    'manga', 'comic book', 'comics',
+    // Review / summary products
+    'summary of', 'review of', 'synopsis of', 'chapter by chapter',
+    'book review', 'plot summary',
+  ];
   if (skipKeywords.some((k) => title.includes(k) || cats.includes(k))) return null;
+
+  // Skip very short works — likely novellas, short stories, or pamphlets
+  if (info.pageCount && info.pageCount < 120) return null;
 
   const rawYear = info.publishedDate;
   const year = rawYear ? parseInt(rawYear.slice(0, 4), 10) : null;

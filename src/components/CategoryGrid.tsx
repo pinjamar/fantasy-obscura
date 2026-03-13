@@ -41,139 +41,141 @@ const readingOrders = [
   { slug: 'witcher',        name: 'The Witcher',                   bookCount: 8,  color: 'from-yellow-100 to-amber-100',  text: 'text-yellow-800'  },
 ];
 
-interface BookOfWeekEntry { title: string; author: string; blurb: string; }
+interface BookOfWeekEntry { title: string; author: string; blurb: string; darkness: number; tropes: string[]; }
+const CANDLES = ['','🕯️','🕯️🕯️','🕯️🕯️🕯️','🕯️🕯️🕯️🕯️','🕯️🕯️🕯️🕯️🕯️'];
+const DARKNESS_LABELS = ['','Lighthearted','Mild','Serious','Dark','Brutal'];
 const bookOfWeekPools: Record<string, BookOfWeekEntry[]> = {
   general: [
-    { title: 'The Name of the Wind',          author: 'Patrick Rothfuss',    blurb: 'The gold standard for literary fantasy — Kvothe\'s origin story told with prose that earns every page of hype.' },
-    { title: 'The Way of Kings',              author: 'Brandon Sanderson',   blurb: 'A 1,000-page epic that never feels slow — Sanderson at his most ambitious, with a magic system unlike anything else.' },
-    { title: 'Piranesi',                      author: 'Susanna Clarke',      blurb: 'Genuinely strange and beautiful — a house with infinite halls, statues, and tides. Reads in a single sitting.' },
-    { title: 'The Lies of Locke Lamora',      author: 'Scott Lynch',         blurb: 'Ocean\'s Eleven in a fantasy Venice — witty, brutal, and impossible to put down.' },
-    { title: 'A Memory Called Empire',        author: 'Arkady Martine',      blurb: 'Political intrigue in a galactic empire with a diplomat who carries a dead man\'s memories. Stunning debut.' },
-    { title: 'The Poppy War',                 author: 'R.F. Kuang',          blurb: 'Starts as an academy fantasy, becomes something far darker — one of the most important fantasy novels of the decade.' },
-    { title: 'Legends & Lattes',              author: 'Travis Baldree',      blurb: 'An orc retires from adventuring to open a coffee shop. Low stakes, high charm, genuinely lovely.' },
-    { title: 'Red Rising',                    author: 'Pierce Brown',        blurb: 'Hunger Games meets Roman epic — propulsive, brutal, and one of the best first books in any series.' },
-    { title: 'Six of Crows',                  author: 'Leigh Bardugo',       blurb: 'A heist crew with genuine chemistry and a plot that snaps shut perfectly. Bardugo\'s best work.' },
-    { title: 'Good Omens',                    author: 'Terry Pratchett & Neil Gaiman', blurb: 'An angel and a demon try to stop the apocalypse. Endlessly quotable, still funny after 30 years.' },
+    { title: 'The Name of the Wind',          author: 'Patrick Rothfuss',    darkness: 3, tropes: ['Chosen One', 'Magic School', 'Unreliable Narrator'],       blurb: 'The gold standard for literary fantasy — Kvothe\'s origin story told with prose that earns every page of hype.' },
+    { title: 'The Way of Kings',              author: 'Brandon Sanderson',   darkness: 3, tropes: ['Epic World-Building', 'Hard Magic System', 'Redemption'],   blurb: 'A 1,000-page epic that never feels slow — Sanderson at his most ambitious, with a magic system unlike anything else.' },
+    { title: 'Piranesi',                      author: 'Susanna Clarke',      darkness: 2, tropes: ['Mystery', 'Unreliable Narrator', 'Strange Worlds'],         blurb: 'Genuinely strange and beautiful — a house with infinite halls, statues, and tides. Reads in a single sitting.' },
+    { title: 'The Lies of Locke Lamora',      author: 'Scott Lynch',         darkness: 4, tropes: ['Heist', 'Found Family', 'Con Artists'],                     blurb: 'Ocean\'s Eleven in a fantasy Venice — witty, brutal, and impossible to put down.' },
+    { title: 'A Memory Called Empire',        author: 'Arkady Martine',      darkness: 2, tropes: ['Political Intrigue', 'Space Empire', 'Identity'],            blurb: 'Political intrigue in a galactic empire with a diplomat who carries a dead man\'s memories. Stunning debut.' },
+    { title: 'The Poppy War',                 author: 'R.F. Kuang',          darkness: 5, tropes: ['War', 'Magic Academy', 'Chosen One'],                       blurb: 'Starts as an academy fantasy, becomes something far darker — one of the most important fantasy novels of the decade.' },
+    { title: 'Legends & Lattes',              author: 'Travis Baldree',      darkness: 1, tropes: ['Cozy', 'Found Family', 'Retirement'],                       blurb: 'An orc retires from adventuring to open a coffee shop. Low stakes, high charm, genuinely lovely.' },
+    { title: 'Red Rising',                    author: 'Pierce Brown',        darkness: 4, tropes: ['Rebellion', 'Class Warfare', 'Undercover'],                  blurb: 'Hunger Games meets Roman epic — propulsive, brutal, and one of the best first books in any series.' },
+    { title: 'Six of Crows',                  author: 'Leigh Bardugo',       darkness: 3, tropes: ['Heist', 'Found Family', 'Enemies to Lovers'],                blurb: 'A heist crew with genuine chemistry and a plot that snaps shut perfectly. Bardugo\'s best work.' },
+    { title: 'Good Omens',                    author: 'Terry Pratchett & Neil Gaiman', darkness: 1, tropes: ['Buddy Comedy', 'Apocalypse', 'Unlikely Alliance'], blurb: 'An angel and a demon try to stop the apocalypse. Endlessly quotable, still funny after 30 years.' },
   ],
   epic: [
-    { title: 'The Way of Kings',              author: 'Brandon Sanderson',   blurb: 'The most complete epic fantasy world built in the last 20 years — every book adds another layer.' },
-    { title: 'The Eye of the World',          author: 'Robert Jordan',       blurb: 'The series that defined modern epic fantasy — 14 books of world-building that actually pays off.' },
-    { title: 'The Blade Itself',              author: 'Joe Abercrombie',     blurb: 'A First Law trilogy opener that deconstructs every epic fantasy trope you thought you knew.' },
-    { title: 'The Fifth Season',              author: 'N.K. Jemisin',        blurb: 'Three Hugos in a row for a reason — a broken world, a second person POV, and a twist that hits like a punch.' },
-    { title: 'The Name of the Wind',          author: 'Patrick Rothfuss',    blurb: 'The best prose in modern epic fantasy. Still worth it even unfinished.' },
-    { title: 'The Priory of the Orange Tree', author: 'Samantha Shannon',    blurb: 'A standalone epic with dragons, matriarchal kingdoms, and a map that rewards study.' },
-    { title: 'The Rage of Dragons',           author: 'Evan Winter',         blurb: 'West African-inspired military fantasy with a vengeful protagonist — tightly plotted and fast.' },
-    { title: 'Gardens of the Moon',           author: 'Steven Erikson',      blurb: 'The hardest start in fantasy that becomes one of the most rewarding series ever written.' },
+    { title: 'The Way of Kings',              author: 'Brandon Sanderson',   darkness: 3, tropes: ['Hard Magic System', 'Epic World-Building', 'Redemption Arc'], blurb: 'The most complete epic fantasy world built in the last 20 years — every book adds another layer.' },
+    { title: 'The Eye of the World',          author: 'Robert Jordan',       darkness: 2, tropes: ['Chosen One', 'Epic Quest', 'Prophecy'],                      blurb: 'The series that defined modern epic fantasy — 14 books of world-building that actually pays off.' },
+    { title: 'The Blade Itself',              author: 'Joe Abercrombie',     darkness: 4, tropes: ['Antihero', 'Subverted Tropes', 'Political Intrigue'],         blurb: 'A First Law trilogy opener that deconstructs every epic fantasy trope you thought you knew.' },
+    { title: 'The Fifth Season',              author: 'N.K. Jemisin',        darkness: 4, tropes: ['Apocalypse', 'Second Person POV', 'Oppression'],              blurb: 'Three Hugos in a row for a reason — a broken world, a second person POV, and a twist that hits like a punch.' },
+    { title: 'The Name of the Wind',          author: 'Patrick Rothfuss',    darkness: 3, tropes: ['Chosen One', 'Magic School', 'Frame Narrative'],              blurb: 'The best prose in modern epic fantasy. Still worth it even unfinished.' },
+    { title: 'The Priory of the Orange Tree', author: 'Samantha Shannon',    darkness: 3, tropes: ['Dragons', 'Female Protagonists', 'Political Intrigue'],       blurb: 'A standalone epic with dragons, matriarchal kingdoms, and a map that rewards study.' },
+    { title: 'The Rage of Dragons',           author: 'Evan Winter',         darkness: 4, tropes: ['Revenge', 'Military Fantasy', 'Training Arc'],                blurb: 'West African-inspired military fantasy with a vengeful protagonist — tightly plotted and fast.' },
+    { title: 'Gardens of the Moon',           author: 'Steven Erikson',      darkness: 4, tropes: ['Military Fantasy', 'Gods & Mortals', 'Ensemble Cast'],        blurb: 'The hardest start in fantasy that becomes one of the most rewarding series ever written.' },
   ],
   romantasy: [
-    { title: 'A Court of Mist and Fury',      author: 'Sarah J. Maas',       blurb: 'Book two is where ACOTAR earns its reputation — the slow burn breaks and everything changes.' },
-    { title: 'The Cruel Prince',              author: 'Holly Black',         blurb: 'Fae court politics with a mortal girl who refuses to stay powerless — genuinely sharp.' },
-    { title: 'From Blood and Ash',            author: 'Jennifer L. Armentrout', blurb: 'Impossible not to read in one sitting — the enemies-to-lovers tension is relentless.' },
-    { title: 'Divine Rivals',                 author: 'Rebecca Ross',        blurb: 'Letters, war, and gods — enemies-to-lovers with real emotional stakes and gorgeous writing.' },
-    { title: 'A Heart So Fierce and Broken',  author: 'Brigid Kemmerer',     blurb: 'Beauty and the Beast retelling that gives the villain a perspective worth reading.' },
-    { title: 'Kingdom of the Wicked',         author: 'Kerri Maniscalco',    blurb: 'Victorian Sicily + demons + a Sicilian chef seeking revenge. Atmospheric and addictive.' },
-    { title: 'Serpent & Dove',                author: 'Shelby Mahurin',      blurb: 'A witch forced to marry a witch hunter — the setup sounds clichéd until the execution isn\'t.' },
-    { title: 'The Bridge Kingdom',            author: 'Danielle L. Jensen',  blurb: 'Spy-romance done right — mutual deception that evolves into something genuinely earned.' },
+    { title: 'A Court of Mist and Fury',      author: 'Sarah J. Maas',       darkness: 3, tropes: ['Slow Burn', 'Fae', 'Enemies to Lovers'],                     blurb: 'Book two is where ACOTAR earns its reputation — the slow burn breaks and everything changes.' },
+    { title: 'The Cruel Prince',              author: 'Holly Black',         darkness: 3, tropes: ['Fae Court', 'Enemies to Lovers', 'Political Intrigue'],        blurb: 'Fae court politics with a mortal girl who refuses to stay powerless — genuinely sharp.' },
+    { title: 'From Blood and Ash',            author: 'Jennifer L. Armentrout', darkness: 3, tropes: ['Forbidden Love', 'Enemies to Lovers', 'Chosen One'],       blurb: 'Impossible not to read in one sitting — the enemies-to-lovers tension is relentless.' },
+    { title: 'Divine Rivals',                 author: 'Rebecca Ross',        darkness: 2, tropes: ['Rivals to Lovers', 'War', 'Epistolary'],                      blurb: 'Letters, war, and gods — enemies-to-lovers with real emotional stakes and gorgeous writing.' },
+    { title: 'A Heart So Fierce and Broken',  author: 'Brigid Kemmerer',     darkness: 2, tropes: ['Fairy Tale Retelling', 'Slow Burn', 'Redemption'],            blurb: 'Beauty and the Beast retelling that gives the villain a perspective worth reading.' },
+    { title: 'Kingdom of the Wicked',         author: 'Kerri Maniscalco',    darkness: 3, tropes: ['Demons', 'Revenge', 'Slow Burn'],                             blurb: 'Victorian Sicily + demons + a Sicilian chef seeking revenge. Atmospheric and addictive.' },
+    { title: 'Serpent & Dove',                author: 'Shelby Mahurin',      darkness: 3, tropes: ['Forced Proximity', 'Enemies to Lovers', 'Witch Hunt'],         blurb: 'A witch forced to marry a witch hunter — the setup sounds clichéd until the execution isn\'t.' },
+    { title: 'The Bridge Kingdom',            author: 'Danielle L. Jensen',  darkness: 2, tropes: ['Spy Romance', 'Enemies to Lovers', 'Political Marriage'],      blurb: 'Spy-romance done right — mutual deception that evolves into something genuinely earned.' },
   ],
   dark: [
-    { title: 'The Blade Itself',              author: 'Joe Abercrombie',     blurb: 'The book that taught fantasy it was allowed to be uncomfortable. Logen Ninefingers is one of the great antiheroes.' },
-    { title: 'The Poppy War',                 author: 'R.F. Kuang',          blurb: 'Based on the Second Sino-Japanese War — uncompromising, brilliant, and not for the faint-hearted.' },
-    { title: 'Nevernight',                    author: 'Jay Kristoff',        blurb: 'An assassin school with a footnote narrator and a protagonist who commits to her revenge.' },
-    { title: 'The Gutter Prayer',             author: 'Gareth Hanrahan',     blurb: 'Three thieves, a city that eats people, and a war between gods. Dense and rewarding.' },
-    { title: 'A Little Hatred',               author: 'Joe Abercrombie',     blurb: 'The industrial revolution meets The First Law — grimmer and funnier than anything in the original trilogy.' },
-    { title: 'Prince of Thorns',              author: 'Mark Lawrence',       blurb: 'A 13-year-old prince who is genuinely terrifying — controversial for good reason, but hard to forget.' },
-    { title: 'The Black Company',             author: 'Glen Cook',           blurb: 'The original gritty military fantasy — Cook invented the genre Abercrombie perfected.' },
-    { title: 'Low Town',                      author: 'Daniel Polansky',     blurb: 'Fantasy noir in a city that smells of bad decisions — sharp prose, worse people.' },
+    { title: 'The Blade Itself',              author: 'Joe Abercrombie',     darkness: 4, tropes: ['Antihero', 'War', 'Moral Ambiguity'],                         blurb: 'The book that taught fantasy it was allowed to be uncomfortable. Logen Ninefingers is one of the great antiheroes.' },
+    { title: 'The Poppy War',                 author: 'R.F. Kuang',          darkness: 5, tropes: ['War', 'Trauma', 'Chosen One'],                                blurb: 'Based on the Second Sino-Japanese War — uncompromising, brilliant, and not for the faint-hearted.' },
+    { title: 'Nevernight',                    author: 'Jay Kristoff',        darkness: 4, tropes: ['Assassin', 'Magic School', 'Revenge'],                        blurb: 'An assassin school with a footnote narrator and a protagonist who commits to her revenge.' },
+    { title: 'The Gutter Prayer',             author: 'Gareth Hanrahan',     darkness: 4, tropes: ['Gods & Mortals', 'Thieves Guild', 'Body Horror'],              blurb: 'Three thieves, a city that eats people, and a war between gods. Dense and rewarding.' },
+    { title: 'A Little Hatred',               author: 'Joe Abercrombie',     darkness: 4, tropes: ['Industrial Revolution', 'Class Warfare', 'Antihero'],          blurb: 'The industrial revolution meets The First Law — grimmer and funnier than anything in the original trilogy.' },
+    { title: 'Prince of Thorns',              author: 'Mark Lawrence',       darkness: 5, tropes: ['Antihero', 'Unreliable Narrator', 'Post-Apocalyptic'],         blurb: 'A 13-year-old prince who is genuinely terrifying — controversial for good reason, but hard to forget.' },
+    { title: 'The Black Company',             author: 'Glen Cook',           darkness: 4, tropes: ['Military Fantasy', 'Morally Grey', 'Ensemble Cast'],           blurb: 'The original gritty military fantasy — Cook invented the genre Abercrombie perfected.' },
+    { title: 'Low Town',                      author: 'Daniel Polansky',     darkness: 4, tropes: ['Noir', 'Crime', 'Antihero'],                                   blurb: 'Fantasy noir in a city that smells of bad decisions — sharp prose, worse people.' },
   ],
   grimdark: [
-    { title: 'Best Served Cold',              author: 'Joe Abercrombie',     blurb: 'A revenge thriller that earns its title — Abercrombie at his most focused and vicious.' },
-    { title: 'Prince of Thorns',              author: 'Mark Lawrence',       blurb: 'Polarizing, original, and impossible to forget. Lawrence built grimdark\'s most distinctive voice.' },
-    { title: 'The First Law',                 author: 'Joe Abercrombie',     blurb: 'The trilogy that defined modern grimdark — every heroic trope methodically dismantled.' },
-    { title: 'The Black Company',             author: 'Glen Cook',           blurb: 'Cook\'s mercenary company is where grimdark started before it had a name.' },
-    { title: 'The Gutter Prayer',             author: 'Gareth Hanrahan',     blurb: 'Weird grimdark — gods of industry, city as monster, a plot that refuses to slow down.' },
-    { title: 'Gardens of the Moon',           author: 'Steven Erikson',      blurb: 'Malazan is the most committed grimdark world in existence. Nothing resolves cleanly.' },
-    { title: 'King of Thorns',                author: 'Mark Lawrence',       blurb: 'The second Broken Empire book improves on the first in every way.' },
-    { title: 'The Heroes',                    author: 'Joe Abercrombie',     blurb: 'Three days of battle from every side — Abercrombie\'s most honest book about what war costs.' },
+    { title: 'Best Served Cold',              author: 'Joe Abercrombie',     darkness: 5, tropes: ['Revenge', 'Antihero', 'Betrayal'],                            blurb: 'A revenge thriller that earns its title — Abercrombie at his most focused and vicious.' },
+    { title: 'Prince of Thorns',              author: 'Mark Lawrence',       darkness: 5, tropes: ['Antihero', 'Post-Apocalyptic', 'Unreliable Narrator'],         blurb: 'Polarizing, original, and impossible to forget. Lawrence built grimdark\'s most distinctive voice.' },
+    { title: 'The First Law',                 author: 'Joe Abercrombie',     darkness: 4, tropes: ['Subverted Tropes', 'Antihero', 'Political Intrigue'],           blurb: 'The trilogy that defined modern grimdark — every heroic trope methodically dismantled.' },
+    { title: 'The Black Company',             author: 'Glen Cook',           darkness: 4, tropes: ['Military Fantasy', 'Morally Grey', 'Dark Lord'],               blurb: 'Cook\'s mercenary company is where grimdark started before it had a name.' },
+    { title: 'The Gutter Prayer',             author: 'Gareth Hanrahan',     darkness: 4, tropes: ['Weird Fantasy', 'Gods & Mortals', 'Urban'],                    blurb: 'Weird grimdark — gods of industry, city as monster, a plot that refuses to slow down.' },
+    { title: 'Gardens of the Moon',           author: 'Steven Erikson',      darkness: 5, tropes: ['Military Fantasy', 'Gods & Mortals', 'Ensemble Cast'],         blurb: 'Malazan is the most committed grimdark world in existence. Nothing resolves cleanly.' },
+    { title: 'King of Thorns',                author: 'Mark Lawrence',       darkness: 5, tropes: ['Antihero', 'Memory', 'War'],                                   blurb: 'The second Broken Empire book improves on the first in every way.' },
+    { title: 'The Heroes',                    author: 'Joe Abercrombie',     darkness: 4, tropes: ['Military Fantasy', 'War', 'Multiple POVs'],                    blurb: 'Three days of battle from every side — Abercrombie\'s most honest book about what war costs.' },
   ],
   urban: [
-    { title: 'Storm Front',                   author: 'Jim Butcher',         blurb: 'Harry Dresden: Chicago\'s only wizard-for-hire. Hardboiled mystery + magic, and it never stops improving.' },
-    { title: 'Rivers of London',              author: 'Ben Aaronovitch',     blurb: 'A London constable discovers magic is real and joins the police department\'s one-wizard unit. British, funny, perfect.' },
-    { title: 'American Gods',                 author: 'Neil Gaiman',         blurb: 'Old gods fighting new gods on a road trip across America. Gaiman\'s most ambitious novel.' },
-    { title: 'Neverwhere',                    author: 'Neil Gaiman',         blurb: 'London Below, where the forgotten people go. A doorway into one of fantasy\'s best hidden worlds.' },
-    { title: 'The City We Became',            author: 'N.K. Jemisin',        blurb: 'New York City\'s boroughs each manifest as a human avatar and must fight a cosmic threat. Wildly creative.' },
-    { title: 'Good Omens',                    author: 'Terry Pratchett & Neil Gaiman', blurb: 'The funniest book about the apocalypse ever written. Not close.' },
-    { title: 'Witch King',                    author: 'Martha Wells',        blurb: 'Martha Wells writing a demon protagonist navigating politics and revenge — elegant and sharp.' },
-    { title: 'A Psalm for the Wild-Built',    author: 'Becky Chambers',      blurb: 'A monk who wanders off the path and meets a robot asking what humans need. Quiet and profound.' },
+    { title: 'Storm Front',                   author: 'Jim Butcher',         darkness: 3, tropes: ['Detective', 'Magic System', 'Urban Setting'],                  blurb: 'Harry Dresden: Chicago\'s only wizard-for-hire. Hardboiled mystery + magic, and it never stops improving.' },
+    { title: 'Rivers of London',              author: 'Ben Aaronovitch',     darkness: 2, tropes: ['Detective', 'Magic in Modern World', 'Humor'],                 blurb: 'A London constable discovers magic is real and joins the police department\'s one-wizard unit. British, funny, perfect.' },
+    { title: 'American Gods',                 author: 'Neil Gaiman',         darkness: 3, tropes: ['Gods & Mortals', 'Road Trip', 'Modern Mythology'],              blurb: 'Old gods fighting new gods on a road trip across America. Gaiman\'s most ambitious novel.' },
+    { title: 'Neverwhere',                    author: 'Neil Gaiman',         darkness: 3, tropes: ['Hidden World', 'Ordinary Person in Fantasy', 'London'],        blurb: 'London Below, where the forgotten people go. A doorway into one of fantasy\'s best hidden worlds.' },
+    { title: 'The City We Became',            author: 'N.K. Jemisin',        darkness: 3, tropes: ['City as Character', 'Cosmic Horror', 'Found Family'],          blurb: 'New York City\'s boroughs each manifest as a human avatar and must fight a cosmic threat. Wildly creative.' },
+    { title: 'Good Omens',                    author: 'Terry Pratchett & Neil Gaiman', darkness: 1, tropes: ['Buddy Comedy', 'Apocalypse', 'Satire'],              blurb: 'The funniest book about the apocalypse ever written. Not close.' },
+    { title: 'Witch King',                    author: 'Martha Wells',        darkness: 3, tropes: ['Demon Protagonist', 'Political Intrigue', 'Non-linear'],       blurb: 'Martha Wells writing a demon protagonist navigating politics and revenge — elegant and sharp.' },
+    { title: 'A Psalm for the Wild-Built',    author: 'Becky Chambers',      darkness: 1, tropes: ['Cozy', 'Robots', 'Philosophy'],                               blurb: 'A monk who wanders off the path and meets a robot asking what humans need. Quiet and profound.' },
   ],
   historical: [
-    { title: 'Jonathan Strange & Mr Norrell', author: 'Susanna Clarke',      blurb: 'Regency England with magic treated as a lost scholarly discipline — like Austen wrote Tolkien.' },
-    { title: 'The Bear and the Nightingale',  author: 'Katherine Arden',     blurb: 'Russian folklore in medieval Rus, with a girl who can see spirits her village prays to. Cold and beautiful.' },
-    { title: 'Circe',                         author: 'Madeline Miller',      blurb: 'The witch of mythology given an interior life and a spine — Miller rewrites Ovid without flinching.' },
-    { title: 'Piranesi',                      author: 'Susanna Clarke',      blurb: 'Not strictly historical but Clarke\'s second novel has the same meticulous, eerie perfection.' },
-    { title: 'Spinning Silver',               author: 'Naomi Novik',         blurb: 'A moneylender\'s daughter in Tsarist Russia who outwits winter itself — Novik\'s best work.' },
-    { title: 'The Invisible Life of Addie LaRue', author: 'V.E. Schwab',    blurb: '300 years forgotten by everyone she meets — Schwab\'s most emotionally complete novel.' },
-    { title: 'The Essex Serpent',             author: 'Sarah Perry',         blurb: 'Victorian naturalist investigates a sea creature rumour in a marsh village. Genuinely literary.' },
-    { title: 'Uprooted',                      author: 'Naomi Novik',         blurb: 'Polish folklore with a heroine who does magic completely wrong and saves everyone doing it.' },
+    { title: 'Jonathan Strange & Mr Norrell', author: 'Susanna Clarke',      darkness: 2, tropes: ['Magic in History', 'Rival Magicians', 'Fae'],                  blurb: 'Regency England with magic treated as a lost scholarly discipline — like Austen wrote Tolkien.' },
+    { title: 'The Bear and the Nightingale',  author: 'Katherine Arden',     darkness: 2, tropes: ['Folklore', 'Spirits', 'Coming of Age'],                        blurb: 'Russian folklore in medieval Rus, with a girl who can see spirits her village prays to. Cold and beautiful.' },
+    { title: 'Circe',                         author: 'Madeline Miller',      darkness: 3, tropes: ['Mythology Retelling', 'Female Protagonist', 'Transformation'], blurb: 'The witch of mythology given an interior life and a spine — Miller rewrites Ovid without flinching.' },
+    { title: 'Piranesi',                      author: 'Susanna Clarke',      darkness: 2, tropes: ['Mystery', 'Unreliable Narrator', 'Strange Worlds'],            blurb: 'Not strictly historical but Clarke\'s second novel has the same meticulous, eerie perfection.' },
+    { title: 'Spinning Silver',               author: 'Naomi Novik',         darkness: 3, tropes: ['Fairy Tale Retelling', 'Female Protagonist', 'Fae'],           blurb: 'A moneylender\'s daughter in Tsarist Russia who outwits winter itself — Novik\'s best work.' },
+    { title: 'The Invisible Life of Addie LaRue', author: 'V.E. Schwab',    darkness: 2, tropes: ['Immortality', 'Bargain with Devil', 'Memory'],                 blurb: '300 years forgotten by everyone she meets — Schwab\'s most emotionally complete novel.' },
+    { title: 'The Essex Serpent',             author: 'Sarah Perry',         darkness: 2, tropes: ['Gothic', 'Folklore', 'Victorian'],                             blurb: 'Victorian naturalist investigates a sea creature rumour in a marsh village. Genuinely literary.' },
+    { title: 'Uprooted',                      author: 'Naomi Novik',         darkness: 3, tropes: ['Fairy Tale Retelling', 'Magic System', 'Unlikely Heroes'],     blurb: 'Polish folklore with a heroine who does magic completely wrong and saves everyone doing it.' },
   ],
   academy: [
-    { title: 'The Name of the Wind',          author: 'Patrick Rothfuss',    blurb: 'The University years are the heart of this book — magic as a discipline with tuition you can\'t afford.' },
-    { title: 'Nevernight',                    author: 'Jay Kristoff',        blurb: 'Assassin school run by people who actually want to kill you. Lush prose and zero safety.' },
-    { title: 'An Ember in the Ashes',         author: 'Sabaa Tahir',         blurb: 'A Roman-inspired empire with a brutal military academy — the dual POV keeps you off-balance.' },
-    { title: 'Ninth House',                   author: 'Leigh Bardugo',       blurb: 'Yale\'s secret societies are real and occult — Bardugo writing adult fiction with real teeth.' },
-    { title: 'The Magicians',                 author: 'Lev Grossman',        blurb: 'Magic school for the depressed adult — Brakebills is what happens if Hogwarts got honest.' },
-    { title: 'Shadow and Bone',               author: 'Leigh Bardugo',       blurb: 'The Grisha trilogy opener — the Darkling is one of fantasy\'s most compelling antagonists.' },
-    { title: 'A Deadly Education',            author: 'Naomi Novik',         blurb: 'A school that actively tries to kill students, and a girl who could destroy it with a thought but won\'t.' },
-    { title: 'Legendborn',                    author: 'Tracy Deonn',         blurb: 'Arthurian legend at UNC Chapel Hill with a Black protagonist who changes the myth\'s meaning.' },
+    { title: 'The Name of the Wind',          author: 'Patrick Rothfuss',    darkness: 3, tropes: ['Magic Academy', 'Coming of Age', 'Underdog'],           blurb: 'The University years are the heart of this book — magic as a discipline with tuition you can\'t afford.' },
+    { title: 'Nevernight',                    author: 'Jay Kristoff',        darkness: 4, tropes: ['Assassin', 'Magic Academy', 'Revenge'],                 blurb: 'Assassin school run by people who actually want to kill you. Lush prose and zero safety.' },
+    { title: 'An Ember in the Ashes',         author: 'Sabaa Tahir',         darkness: 4, tropes: ['Military Academy', 'Chosen One', 'Dual POV'],           blurb: 'A Roman-inspired empire with a brutal military academy — the dual POV keeps you off-balance.' },
+    { title: 'Ninth House',                   author: 'Leigh Bardugo',       darkness: 4, tropes: ['Secret Society', 'Occult', 'Female Protagonist'],       blurb: 'Yale\'s secret societies are real and occult — Bardugo writing adult fiction with real teeth.' },
+    { title: 'The Magicians',                 author: 'Lev Grossman',        darkness: 3, tropes: ['Magic Academy', 'Deconstruction', 'Portal Fantasy'],    blurb: 'Magic school for the depressed adult — Brakebills is what happens if Hogwarts got honest.' },
+    { title: 'Shadow and Bone',               author: 'Leigh Bardugo',       darkness: 2, tropes: ['Chosen One', 'Military', 'Romance'],                    blurb: 'The Grisha trilogy opener — the Darkling is one of fantasy\'s most compelling antagonists.' },
+    { title: 'A Deadly Education',            author: 'Naomi Novik',         darkness: 3, tropes: ['Magic Academy', 'Survival', 'Sarcastic Protagonist'],   blurb: 'A school that actively tries to kill students, and a girl who could destroy it with a thought but won\'t.' },
+    { title: 'Legendborn',                    author: 'Tracy Deonn',         darkness: 3, tropes: ['Arthurian Legend', 'Secret Society', 'Legacy Magic'],   blurb: 'Arthurian legend at UNC Chapel Hill with a Black protagonist who changes the myth\'s meaning.' },
   ],
   mythology: [
-    { title: 'Circe',                         author: 'Madeline Miller',      blurb: 'The most compelling reimagining of Greek myth in decades — empathy for a character Homer used as furniture.' },
-    { title: 'The Song of Achilles',          author: 'Madeline Miller',      blurb: 'Patroclus and Achilles\' relationship made devastatingly real. Miller\'s debut is close to perfect.' },
-    { title: 'A Thousand Ships',              author: 'Natalie Haynes',       blurb: 'Every woman\'s story from the Trojan War, each getting her chapter. Devastating in aggregate.' },
-    { title: 'Norse Mythology',               author: 'Neil Gaiman',         blurb: 'Gaiman retells the Norse myths faithfully and makes them feel freshly told. The best introduction.' },
-    { title: 'Ariadne',                       author: 'Jennifer Saint',       blurb: 'Ariadne and Phaedra — two sisters, one monster, and the men who defined them against their will.' },
-    { title: 'The Witch\'s Heart',            author: 'Genevieve Gornichec',  blurb: 'Angrboda — Loki\'s witch wife — living in the woods trying to avoid prophecy. Quiet and aching.' },
-    { title: 'American Gods',                 author: 'Neil Gaiman',         blurb: 'Gods of every mythology living as forgotten Americans — Gaiman\'s road-trip mythology masterpiece.' },
-    { title: 'Daughter of the Moon Goddess',  author: 'Sue Lynn Tan',         blurb: 'Chang\'e\'s daughter journeys through Chinese mythology to free her mother — gorgeous and personal.' },
+    { title: 'Circe',                         author: 'Madeline Miller',     darkness: 3, tropes: ['Mythology Retelling', 'Female Protagonist', 'Transformation'], blurb: 'The most compelling reimagining of Greek myth in decades — empathy for a character Homer used as furniture.' },
+    { title: 'The Song of Achilles',          author: 'Madeline Miller',     darkness: 3, tropes: ['Greek Mythology', 'Romance', 'War'],                   blurb: 'Patroclus and Achilles\' relationship made devastatingly real. Miller\'s debut is close to perfect.' },
+    { title: 'A Thousand Ships',              author: 'Natalie Haynes',      darkness: 4, tropes: ['Greek Mythology', 'Multiple POV', 'War'],               blurb: 'Every woman\'s story from the Trojan War, each getting her chapter. Devastating in aggregate.' },
+    { title: 'Norse Mythology',               author: 'Neil Gaiman',         darkness: 2, tropes: ['Norse Mythology', 'Retelling', 'Short Stories'],        blurb: 'Gaiman retells the Norse myths faithfully and makes them feel freshly told. The best introduction.' },
+    { title: 'Ariadne',                       author: 'Jennifer Saint',      darkness: 3, tropes: ['Greek Mythology', 'Female Protagonist', 'Betrayal'],    blurb: 'Ariadne and Phaedra — two sisters, one monster, and the men who defined them against their will.' },
+    { title: 'The Witch\'s Heart',            author: 'Genevieve Gornichec', darkness: 2, tropes: ['Norse Mythology', 'Witch', 'Prophecy'],                 blurb: 'Angrboda — Loki\'s witch wife — living in the woods trying to avoid prophecy. Quiet and aching.' },
+    { title: 'American Gods',                 author: 'Neil Gaiman',         darkness: 3, tropes: ['Gods Among Us', 'Road Trip', 'Modern Mythology'],       blurb: 'Gods of every mythology living as forgotten Americans — Gaiman\'s road-trip mythology masterpiece.' },
+    { title: 'Daughter of the Moon Goddess',  author: 'Sue Lynn Tan',        darkness: 2, tropes: ['Chinese Mythology', 'Quest', 'Family'],                 blurb: 'Chang\'e\'s daughter journeys through Chinese mythology to free her mother — gorgeous and personal.' },
   ],
   cozy: [
-    { title: 'Legends & Lattes',              author: 'Travis Baldree',      blurb: 'The book that defined cozy fantasy as a genre — Viv the orc barista is one of fiction\'s great retirees.' },
-    { title: 'The House in the Cerulean Sea', author: 'TJ Klune',            blurb: 'A caseworker for magical children finds a family on a remote island. Warm, inclusive, lovely.' },
-    { title: 'A Psalm for the Wild-Built',    author: 'Becky Chambers',      blurb: 'A monk and a robot discuss what people need. Nothing happens and everything happens.' },
-    { title: 'The Goblin Emperor',            author: 'Katherine Addison',   blurb: 'A half-goblin who never wanted the throne becomes the most decent emperor anyone\'s seen. Genuinely good.' },
-    { title: "Howl's Moving Castle",          author: 'Diana Wynne Jones',   blurb: 'The movie is lovely; the book is funnier, stranger, and far less sensible. Jones at her best.' },
-    { title: 'Nettle and Bone',               author: 'T. Kingfisher',       blurb: 'A princess, a dog made of bones, and a quiet quest for justice. Gentle-dark fantasy done perfectly.' },
-    { title: "Emily Wilde's Encyclopaedia of Faeries", author: 'Heather Fawcett', blurb: 'A prickly academic studying faeries in a Norwegian village. Slow-burn romance, excellent faeries.' },
-    { title: 'Monk and Robot',                author: 'Becky Chambers',      blurb: 'The whole Monk and Robot series is a meditation on rest, purpose, and what enough looks like.' },
+    { title: 'Legends & Lattes',              author: 'Travis Baldree',      darkness: 1, tropes: ['Slice of Life', 'Found Family', 'Slow-burn Romance'],   blurb: 'The book that defined cozy fantasy as a genre — Viv the orc barista is one of fiction\'s great retirees.' },
+    { title: 'The House in the Cerulean Sea', author: 'TJ Klune',            darkness: 1, tropes: ['Found Family', 'Romance', 'Magical Creatures'],         blurb: 'A caseworker for magical children finds a family on a remote island. Warm, inclusive, lovely.' },
+    { title: 'A Psalm for the Wild-Built',    author: 'Becky Chambers',      darkness: 1, tropes: ['Solarpunk', 'Philosophical', 'Road Trip'],              blurb: 'A monk and a robot discuss what people need. Nothing happens and everything happens.' },
+    { title: 'The Goblin Emperor',            author: 'Katherine Addison',   darkness: 1, tropes: ['Underdog', 'Political Intrigue', 'Found Family'],       blurb: 'A half-goblin who never wanted the throne becomes the most decent emperor anyone\'s seen. Genuinely good.' },
+    { title: "Howl's Moving Castle",          author: 'Diana Wynne Jones',   darkness: 1, tropes: ['Witch', 'Curse', 'Slow-burn Romance'],                  blurb: 'The movie is lovely; the book is funnier, stranger, and far less sensible. Jones at her best.' },
+    { title: 'Nettle and Bone',               author: 'T. Kingfisher',       darkness: 2, tropes: ['Quest', 'Found Family', 'Dark Fairy Tale'],             blurb: 'A princess, a dog made of bones, and a quiet quest for justice. Gentle-dark fantasy done perfectly.' },
+    { title: "Emily Wilde's Encyclopaedia of Faeries", author: 'Heather Fawcett', darkness: 1, tropes: ['Academia', 'Fae', 'Slow-burn Romance'],           blurb: 'A prickly academic studying faeries in a Norwegian village. Slow-burn romance, excellent faeries.' },
+    { title: 'Monk and Robot',                author: 'Becky Chambers',      darkness: 1, tropes: ['Solarpunk', 'Robot', 'Found Purpose'],                  blurb: 'The whole Monk and Robot series is a meditation on rest, purpose, and what enough looks like.' },
   ],
   litrpg: [
-    { title: 'Dungeon Crawler Carl',          author: 'Matt Dinniman',       blurb: 'A man and his cat in an apocalyptic game show dungeon — funnier and sadder than it has any right to be.' },
-    { title: 'Cradle',                        author: 'Will Wight',          blurb: 'Pure cultivation progression done with kinetic pacing — each book ends just as you hit the next power level.' },
-    { title: 'He Who Fights With Monsters',   author: 'Jason Cheyne',        blurb: 'A isekai portal fantasy with Australian energy and a protagonist who actually thinks.' },
-    { title: 'Mother of Learning',            author: 'Domagoj Kurmaic',     blurb: 'A time loop + magical academy combination that builds one of the most satisfying progression arcs in the genre.' },
-    { title: 'Beware of Chicken',             author: 'Casualfarmer',        blurb: 'A cultivator who decides farming is better than fighting. Peaceful, oddly moving, and very funny.' },
-    { title: 'Defiance of the Fall',          author: 'TheFirstDefier',      blurb: 'System apocalypse with a protagonist who earns every power spike through actual sacrifice.' },
-    { title: 'The Wandering Inn',             author: 'pirateaba',           blurb: 'An innkeeper in a fantasy world — 12 million words and still the most ambitious web serial ever attempted.' },
-    { title: 'Mark of the Fool',              author: 'UnstoppableSloth',    blurb: 'A marked failure at a mage academy who turns his penalty into an advantage. Clever and well-written.' },
+    { title: 'Dungeon Crawler Carl',          author: 'Matt Dinniman',       darkness: 4, tropes: ['Dungeon Crawl', 'Game System', 'Dark Humor'],           blurb: 'A man and his cat in an apocalyptic game show dungeon — funnier and sadder than it has any right to be.' },
+    { title: 'Cradle',                        author: 'Will Wight',          darkness: 3, tropes: ['Cultivation', 'Progression', 'Power System'],           blurb: 'Pure cultivation progression done with kinetic pacing — each book ends just as you hit the next power level.' },
+    { title: 'He Who Fights With Monsters',   author: 'Jason Cheyne',        darkness: 3, tropes: ['Isekai', 'Game System', 'Overpowered Protagonist'],     blurb: 'A isekai portal fantasy with Australian energy and a protagonist who actually thinks.' },
+    { title: 'Mother of Learning',            author: 'Domagoj Kurmaic',     darkness: 2, tropes: ['Time Loop', 'Magic Academy', 'Progression'],            blurb: 'A time loop + magical academy combination that builds one of the most satisfying progression arcs in the genre.' },
+    { title: 'Beware of Chicken',             author: 'Casualfarmer',        darkness: 1, tropes: ['Cultivation', 'Slice of Life', 'Farming'],              blurb: 'A cultivator who decides farming is better than fighting. Peaceful, oddly moving, and very funny.' },
+    { title: 'Defiance of the Fall',          author: 'TheFirstDefier',      darkness: 3, tropes: ['System Apocalypse', 'Progression', 'Game System'],      blurb: 'System apocalypse with a protagonist who earns every power spike through actual sacrifice.' },
+    { title: 'The Wandering Inn',             author: 'pirateaba',           darkness: 3, tropes: ['Isekai', 'Slice of Life', 'Game System'],               blurb: 'An innkeeper in a fantasy world — 12 million words and still the most ambitious web serial ever attempted.' },
+    { title: 'Mark of the Fool',              author: 'UnstoppableSloth',    darkness: 2, tropes: ['Magic Academy', 'Underdog', 'Progression'],             blurb: 'A marked failure at a mage academy who turns his penalty into an advantage. Clever and well-written.' },
   ],
   swords: [
-    { title: 'The Lies of Locke Lamora',      author: 'Scott Lynch',         blurb: 'Fantasy\'s best heist novel and the only one where you cheer for the con artist over the mark.' },
-    { title: 'The Blade Itself',              author: 'Joe Abercrombie',     blurb: 'Three antiheroes walking toward a war they don\'t understand — Abercrombie\'s most patient book.' },
-    { title: 'Kings of the Wyld',             author: 'Nicholas Eames',      blurb: 'A retired adventuring band goes on one last quest to save a daughter. Nostalgic and genuinely moving.' },
-    { title: 'The Black Company',             author: 'Glen Cook',           blurb: 'Cook\'s mercenaries don\'t question who they\'re working for and that\'s the whole point. A founding text.' },
-    { title: 'Conan the Barbarian',           author: 'Robert E. Howard',    blurb: 'The original — lean, muscular prose and a hero who solves every problem by being harder to kill.' },
-    { title: 'The Blacktongue Thief',         author: 'Christopher Buehlman', blurb: 'A thief, a debt to a thieves\' guild, and a world ending slowly. Voice-driven and darkly funny.' },
-    { title: 'Elric of Melniboné',            author: 'Michael Moorcock',    blurb: 'The albino emperor with a soul-drinking sword — Moorcock invented the tragic antihero template.' },
-    { title: 'The Tainted Cup',               author: 'Robert Jackson Bennett', blurb: 'A mystery inside a military empire defending against monsters the size of buildings. Ingenious.' },
+    { title: 'The Lies of Locke Lamora',      author: 'Scott Lynch',         darkness: 4, tropes: ['Heist', 'Found Family', 'Con Artist'],                 blurb: 'Fantasy\'s best heist novel and the only one where you cheer for the con artist over the mark.' },
+    { title: 'The Blade Itself',              author: 'Joe Abercrombie',     darkness: 4, tropes: ['Antihero', 'Political Intrigue', 'War'],               blurb: 'Three antiheroes walking toward a war they don\'t understand — Abercrombie\'s most patient book.' },
+    { title: 'Kings of the Wyld',             author: 'Nicholas Eames',      darkness: 3, tropes: ['Band of Heroes', 'Quest', 'Nostalgia'],                blurb: 'A retired adventuring band goes on one last quest to save a daughter. Nostalgic and genuinely moving.' },
+    { title: 'The Black Company',             author: 'Glen Cook',           darkness: 4, tropes: ['Mercenary', 'War', 'Antihero'],                        blurb: 'Cook\'s mercenaries don\'t question who they\'re working for and that\'s the whole point. A founding text.' },
+    { title: 'Conan the Barbarian',           author: 'Robert E. Howard',    darkness: 3, tropes: ['Barbarian Hero', 'Adventure', 'Ancient Evil'],         blurb: 'The original — lean, muscular prose and a hero who solves every problem by being harder to kill.' },
+    { title: 'The Blacktongue Thief',         author: 'Christopher Buehlman', darkness: 4, tropes: ['Thief', 'Dark Humor', 'Quest'],                      blurb: 'A thief, a debt to a thieves\' guild, and a world ending slowly. Voice-driven and darkly funny.' },
+    { title: 'Elric of Melniboné',            author: 'Michael Moorcock',    darkness: 4, tropes: ['Antihero', 'Cursed Weapon', 'Tragic Hero'],            blurb: 'The albino emperor with a soul-drinking sword — Moorcock invented the tragic antihero template.' },
+    { title: 'The Tainted Cup',               author: 'Robert Jackson Bennett', darkness: 3, tropes: ['Mystery', 'Military', 'Monster Hunting'],           blurb: 'A mystery inside a military empire defending against monsters the size of buildings. Ingenious.' },
   ],
   'science-fantasy': [
-    { title: 'Dune',                          author: 'Frank Herbert',        blurb: 'Still the best SF worldbuilding ever committed to paper — ecology, religion, and politics as plot.' },
-    { title: 'Red Rising',                    author: 'Pierce Brown',         blurb: 'Hunger Games meets Roman space empire — the trilogy sustains momentum most series can\'t manage for one book.' },
-    { title: 'Gideon the Ninth',              author: 'Tamsyn Muir',         blurb: 'Lesbian necromancers in space. The description is accurate and nothing about it is what you expect.' },
-    { title: 'A Wizard of Earthsea',          author: 'Ursula K. Le Guin',   blurb: 'The ur-text for every mage protagonist — still the most thoughtful magic system in all of fantasy.' },
-    { title: 'Piranesi',                      author: 'Susanna Clarke',      blurb: 'Science-fantasy at its most literary — a house with infinite halls and tides, endlessly re-readable.' },
-    { title: 'The Book of the New Sun',       author: 'Gene Wolfe',          blurb: 'A dying Earth epic with an unreliable narrator — more reward for every re-read than almost anything.' },
-    { title: 'This Is How You Lose the Time War', author: 'Amal El-Mohtar & Max Gladstone', blurb: 'Two time agents fall in love through letters across history. Elegant and devastating.' },
-    { title: 'A Memory Called Empire',        author: 'Arkady Martine',      blurb: 'A diplomat with a dead man\'s memories in a galactic empire — space opera as literary fiction.' },
+    { title: 'Dune',                          author: 'Frank Herbert',        darkness: 3, tropes: ['Chosen One', 'Political Intrigue', 'Religion'],        blurb: 'Still the best SF worldbuilding ever committed to paper — ecology, religion, and politics as plot.' },
+    { title: 'Red Rising',                    author: 'Pierce Brown',         darkness: 4, tropes: ['Rebellion', 'Underdog', 'Gladiatorial Combat'],        blurb: 'Hunger Games meets Roman space empire — the trilogy sustains momentum most series can\'t manage for one book.' },
+    { title: 'Gideon the Ninth',              author: 'Tamsyn Muir',         darkness: 4, tropes: ['Necromancer', 'Found Family', 'Mystery'],              blurb: 'Lesbian necromancers in space. The description is accurate and nothing about it is what you expect.' },
+    { title: 'A Wizard of Earthsea',          author: 'Ursula K. Le Guin',   darkness: 2, tropes: ['Coming of Age', 'Magic System', 'Shadow Self'],        blurb: 'The ur-text for every mage protagonist — still the most thoughtful magic system in all of fantasy.' },
+    { title: 'Piranesi',                      author: 'Susanna Clarke',      darkness: 2, tropes: ['Mystery', 'Unreliable Narrator', 'Magical World'],     blurb: 'Science-fantasy at its most literary — a house with infinite halls and tides, endlessly re-readable.' },
+    { title: 'The Book of the New Sun',       author: 'Gene Wolfe',          darkness: 3, tropes: ['Dying Earth', 'Unreliable Narrator', 'Far Future'],    blurb: 'A dying Earth epic with an unreliable narrator — more reward for every re-read than almost anything.' },
+    { title: 'This Is How You Lose the Time War', author: 'Amal El-Mohtar & Max Gladstone', darkness: 2, tropes: ['Time Travel', 'Enemies to Lovers', 'Epistolary'], blurb: 'Two time agents fall in love through letters across history. Elegant and devastating.' },
+    { title: 'A Memory Called Empire',        author: 'Arkady Martine',      darkness: 2, tropes: ['Political Intrigue', 'Memory Magic', 'Space Opera'],   blurb: 'A diplomat with a dead man\'s memories in a galactic empire — space opera as literary fiction.' },
   ],
 };
 
@@ -219,24 +221,34 @@ const categorySubgenreMap: Record<string, string[]> = {
   'science-fantasy':['Science Fantasy'],
 };
 
-export default function CategoryGrid() {
+export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem[] }) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [allBooks, setAllBooks]     = useState<BookItem[]>([]);
-  const [bookCovers, setBookCovers] = useState<Map<string, string>>(new Map());
-  const [bookSlugs, setBookSlugs]   = useState<Map<string, string>>(new Map());
+
+  const buildMaps = (items: BookItem[]) => {
+    const covers = new Map<string, string>();
+    const slugs  = new Map<string, string>();
+    for (const b of items) {
+      const key = b.title.toLowerCase();
+      if (b.cover_url) covers.set(key, b.cover_url);
+      if (b.slug)      slugs.set(key, b.slug);
+    }
+    return { covers, slugs };
+  };
+
+  const seed = initialBooks ?? [];
+  const { covers: seedCovers, slugs: seedSlugs } = buildMaps(seed);
+
+  const [allBooks, setAllBooks]     = useState<BookItem[]>(seed);
+  const [bookCovers, setBookCovers] = useState<Map<string, string>>(seedCovers);
+  const [bookSlugs, setBookSlugs]   = useState<Map<string, string>>(seedSlugs);
 
   useEffect(() => {
+    if (initialBooks && initialBooks.length > 0) return; // already have data
     fetch('/api/books')
       .then((r) => r.json())
       .then((data: { items?: BookItem[] }) => {
         const items = data.items ?? [];
-        const covers = new Map<string, string>();
-        const slugs  = new Map<string, string>();
-        for (const b of items) {
-          const key = b.title.toLowerCase();
-          if (b.cover_url) covers.set(key, b.cover_url);
-          if (b.slug)      slugs.set(key, b.slug);
-        }
+        const { covers, slugs } = buildMaps(items);
         setAllBooks(items);
         setBookCovers(covers);
         setBookSlugs(slugs);
@@ -288,7 +300,7 @@ export default function CategoryGrid() {
   const categoryName = selectedCat?.name || 'Fantasy';
 
   const catUrl = (sort?: string) => {
-    const base = selectedCategory ? `/categories/${selectedCategory}/` : '/books/all/';
+    const base = selectedCategory ? `/categories/${selectedCategory}/` : '/books/';
     return sort ? `${base}?sort=${sort}` : base;
   };
 
@@ -322,9 +334,6 @@ export default function CategoryGrid() {
     </div>
   );
 
-  const renderTitleStrip = (titles: string[]) =>
-    renderCoverStrip(titles.map((t) => ({ title: t })));
-
   return (
     <>
       {/* Category grid */}
@@ -332,7 +341,7 @@ export default function CategoryGrid() {
         <div className="flex items-center justify-between mb-3">
           <p className="text-xs font-semibold text-zinc-400 uppercase tracking-widest">Browse by category</p>
           <a
-            href={selectedCategory ? `/categories/${selectedCategory}/` : `/books/all/`}
+            href={selectedCategory ? `/categories/${selectedCategory}/` : `/books/`}
             className="text-sm font-medium text-purple-700 hover:text-purple-900 hover:underline transition-colors whitespace-nowrap"
           >
             View full {categoryName} →
@@ -387,6 +396,17 @@ export default function CategoryGrid() {
                 <div className="min-w-0">
                   <p className="font-bold text-amber-900 leading-snug">{bowEntry.title}</p>
                   <p className="text-sm text-amber-700 mt-0.5">{bowEntry.author}</p>
+                  <p className="mt-1.5 text-xs text-amber-800 flex items-center gap-1.5">
+                    <span>{CANDLES[bowEntry.darkness]}</span>
+                    <span className="font-medium">{DARKNESS_LABELS[bowEntry.darkness]}</span>
+                  </p>
+                  {bowEntry.tropes.length > 0 && (
+                    <div className="mt-1.5 flex flex-wrap gap-1">
+                      {bowEntry.tropes.map((t) => (
+                        <span key={t} className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">{t}</span>
+                      ))}
+                    </div>
+                  )}
                   <p className="mt-2 text-sm text-zinc-700 leading-relaxed">{bowEntry.blurb}</p>
                   {slug && (
                     <span className="mt-3 inline-block text-xs font-semibold text-amber-700 hover:text-amber-900 hover:underline">

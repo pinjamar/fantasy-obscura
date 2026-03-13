@@ -30,6 +30,7 @@ interface BookDisplayProps {
   audience?: string;
   featuredTropes?: string[];
   userId?: string | null;
+  initialBooks?: Book[];
 }
 
 type SortKey = 'title-asc' | 'title-desc' | 'rating-desc' | 'newest' | 'oldest' | 'shortest' | 'longest' | 'author-asc';
@@ -89,9 +90,9 @@ function buildPageNums(current: number, total: number): (number | 'ellipsis')[] 
   return pages;
 }
 
-const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTropes, userId = null }) => {
-  const [books, setBooks] = useState<Book[]>([]);
-  const [loading, setLoading] = useState(true);
+const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTropes, userId = null, initialBooks }) => {
+  const [books, setBooks] = useState<Book[]>(initialBooks ?? []);
+  const [loading, setLoading] = useState(!initialBooks || initialBooks.length === 0);
   const [error, setError] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>(() => {
     if (typeof window !== 'undefined') {
@@ -122,6 +123,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
   const [audienceFilter, setAudienceFilter] = useState<string | null>(null);
 
   useEffect(() => {
+    if (initialBooks && initialBooks.length > 0 && !genre && !audience) return; // pre-loaded server-side
     const fetchBooks = async () => {
       try {
         setLoading(true);

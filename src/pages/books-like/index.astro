@@ -2,6 +2,7 @@
 import Layout from '../../components/Layout.astro'
 import { BOOKS_LIKE, darknessCandles, getHeat } from '../../data/books-like'
 import { supabaseClient } from '../../lib/supabaseClient'
+import BooksLikeMe from '../../components/BooksLikeMe'
 
 // Fetch DB tropes for all guide source books in one query
 // Use title-based slugs (how books are stored in DB), not guide short-IDs like 'acotar'
@@ -29,6 +30,9 @@ const dbTropesMap = new Map<string, string[]>(
         not just books in the same genre. If the pacing is different, the tone is darker, or the magic system is nothing alike, <em>we say so</em>.
       </p>
     </div>
+
+    <!-- AI recommendations -->
+    <BooksLikeMe client:load />
 
     <!-- Available entries -->
     {BOOKS_LIKE.length > 0 && (
@@ -76,13 +80,14 @@ const dbTropesMap = new Map<string, string[]>(
                   <p class="text-xs text-indigo-600 mt-0.5">{entry.source.series} #{entry.source.series_number}</p>
                 )}
                 <p class="text-sm text-zinc-500 mt-0.5">
-                  {entry.source.author} · {darknessCandles(entry.source.darkness_level)}{(() => { const h = getHeat(entry.source.heat_level); return h ? ` ${h.flames}` : '' })()} · {entry.aspects.reduce((sum, a) => sum + a.recs.length, 0)} picks
+                  {entry.source.author} · {darknessCandles(entry.source.darkness_level)}{(() => { const h = getHeat(entry.source.heat_level); return h ? ` ${h.flames}` : '' })()}
                 </p>
                 <div class="mt-1.5 flex flex-wrap gap-1">
                   {tropes.slice(0, 3).map((t) => (
                     <span class="text-xs px-2 py-0.5 bg-indigo-50 text-indigo-600 border border-indigo-100 rounded-full">{t}</span>
                   ))}
                 </div>
+                <p class="text-xs text-zinc-400 mt-1.5">{entry.aspects.reduce((sum, a) => sum + a.recs.length, 0)} book recommendations</p>
               </div>
               <span class="text-zinc-400 group-hover:text-zinc-600 transition-colors shrink-0">›</span>
             </a>
