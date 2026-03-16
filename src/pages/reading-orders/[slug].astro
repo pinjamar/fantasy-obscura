@@ -1,265 +1,460 @@
 ---
 import Layout from '../../components/Layout.astro';
+import ReadingOrder from '../../components/ReadingOrder';
+import { getReadingOrderEntry } from '../../data/reading-orders';
+import type { ReadingOrderEntry } from '../../data/reading-orders';
 import { getAllSeries, getBooksBySeries, authorToSlug } from '../../lib/db/books';
 import { supabaseClient } from '../../lib/supabaseClient';
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect('/reading-orders/');
 
-const allSeries = await getAllSeries();
-const seriesMeta = allSeries.find((s) => s.slug === slug);
-
-if (!seriesMeta) return new Response(null, { status: 404, statusText: 'Not Found' });
-
-const dbBooks = await getBooksBySeries(seriesMeta.name);
-
-const books = dbBooks.map((b) => ({
-  title: b.title,
-  slug: b.slug ?? null,
-  cover_url: b.cover_url ?? null,
-  publication_year: b.publication_year ?? null,
-  page_count: b.page_count ?? null,
-  darkness_level: (b as any).darkness_level ?? null,
-  avg_rating: (b as any).avg_rating ?? null,
-  series_number: (b as any).series_number ?? null,
-  synopsis: (b as any).synopsis ?? null,
-}));
-
-// Derive author list and aggregate subgenres + tropes for similar series lookup
-const authorNames = [...new Set(dbBooks.flatMap((b) => b.authors ?? []))];
-
-const allSubgenres = dbBooks.flatMap((b) => (b as any).subgenres ?? []);
-const subgenreCounts = new Map<string, number>();
-for (const g of allSubgenres) subgenreCounts.set(g, (subgenreCounts.get(g) ?? 0) + 1);
-const topSubgenres: string[] = [...subgenreCounts.entries()]
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 4)
-  .map(([g]) => g);
-
-const allTropes = dbBooks.flatMap((b) => (b as any).tropes ?? []);
-const tropeCounts = new Map<string, number>();
-for (const t of allTropes) tropeCounts.set(t, (tropeCounts.get(t) ?? 0) + 1);
-const topTropes: string[] = [...tropeCounts.entries()]
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 6)
-  .map(([t]) => t);
-
-// Aggregate content warnings across all books in the series
-const contentWarnings: string[] = [
-  ...new Set(dbBooks.flatMap((b) => (b as any).content_warnings ?? []))
-].sort();
-
-// Similar series — score by subgenre overlap (weight ×2) + trope overlap
-// Score is based on series_number=1 book only (representative of the series).
-// Ratings are averaged across all books in the series via a second query.
-type SimilarRow = { series: string | null; cover_url: string | null; avg_rating: number | null; subgenres: string[] | null; tropes: string[] | null };
-const { data: similarRaw } = await supabaseClient
-  .from('books')
-  .select('series, cover_url, avg_rating, subgenres, tropes')
-  .not('series', 'is', null)
-  .neq('series', seriesMeta.name)
-  .eq('series_number', 1) as { data: SimilarRow[] | null };
-
-const seriesScore = new Map<string, { score: number; cover: string | null; ratings: number[] }>();
-for (const row of similarRaw ?? []) {
-  if (!row.series) continue;
-  const subgenreOverlap = (row.subgenres ?? []).filter((g) => topSubgenres.includes(g)).length;
-  const tropeOverlap = (row.tropes ?? []).filter((t) => topTropes.includes(t)).length;
-  const score = subgenreOverlap * 2 + tropeOverlap;
-  if (score === 0) continue;
-  seriesScore.set(row.series, {
-    score,
-    cover: row.cover_url,
-    ratings: row.avg_rating != null ? [row.avg_rating] : [],
-  });
-}
-
-// Fetch all books of scored series to average ratings across the whole series
-if (seriesScore.size > 0) {
-  type RatingRow = { series: string | null; avg_rating: number | null };
-  const { data: allRatings } = await supabaseClient
-    .from('books')
-    .select('series, avg_rating')
-    .in('series', [...seriesScore.keys()])
-    .not('avg_rating', 'is', null) as { data: RatingRow[] | null };
-  for (const row of allRatings ?? []) {
-    if (!row.series || row.avg_rating == null) continue;
-    const entry = seriesScore.get(row.series);
-    if (entry && !entry.ratings.includes(row.avg_rating)) entry.ratings.push(row.avg_rating);
-  }
-}
-
-const similarSeries = [...seriesScore.entries()]
-  .map(([name, v]) => {
-    const avgRating = v.ratings.length
-      ? v.ratings.reduce((s, r) => s + r, 0) / v.ratings.length
-      : null;
-    return { name, slug: name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), cover: v.cover, score: v.score, avgRating };
-  })
-  .sort((a, b) => b.score - a.score || (b.avgRating ?? 0) - (a.avgRating ?? 0))
-  .slice(0, 8);
-
-const totalPages = books.reduce((sum, b) => sum + (b.page_count ?? 0), 0);
-const ratedBooks = books.filter(b => b.avg_rating != null);
-const avgRating = ratedBooks.length
-  ? (ratedBooks.reduce((s, b) => s + (b.avg_rating ?? 0), 0) / ratedBooks.length).toFixed(2)
-  : null;
-
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
+
+// ── Curated path ──────────────────────────────────────────────────────────────
+const entry = getReadingOrderEntry(slug);
+
+type MergedBook = {
+  title: string; slug: string; status: string; note: string;
+  page_count: number; publication_year: number;
+  cover_url: string | null; darkness_level: number | null;
+  avg_rating: number | null; series_label: string | null;
+};
+
+let isCurated = false;
+let curatedEntry: ReadingOrderEntry | null = null;
+let mergedGroups: { label: string; sublabel?: string; note?: string; noteType?: string; books: MergedBook[] }[] | null = null;
+let mergedBooks: MergedBook[] | null = null;
+let totalPagesCurated = 0;
+let totalHoursCurated = 0;
+let coreCount = 0;
+let allBooksCurated: MergedBook[] = [];
+
+if (entry) {
+  isCurated = true;
+  curatedEntry = entry;
+
+  const rawBooks = entry.groups
+    ? entry.groups.flatMap((g) => g.books)
+    : (entry.books ?? []);
+  const bookSlugs = rawBooks.map((b) => b.slug).filter(Boolean);
+
+  const { data: dbRows } = await supabaseClient
+    .from('books')
+    .select('slug, cover_url, darkness_level, avg_rating, series, series_number')
+    .in('slug', bookSlugs);
+  const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
+
+  function mergeBook(b: typeof rawBooks[number]): MergedBook {
+    const db = dbMap.get(b.slug);
+    return {
+      ...b,
+      cover_url: db?.cover_url ?? null,
+      darkness_level: db?.darkness_level ?? null,
+      avg_rating: db?.avg_rating ?? null,
+      series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null,
+    };
+  }
+
+  if (entry.groups) {
+    mergedGroups = entry.groups.map((g) => ({ ...g, books: g.books.map(mergeBook) }));
+    allBooksCurated = mergedGroups.flatMap((g) => g.books);
+  } else if (entry.books) {
+    mergedBooks = entry.books.map(mergeBook);
+    allBooksCurated = mergedBooks;
+  }
+
+  totalPagesCurated = allBooksCurated.reduce((s, b) => s + (b.page_count ?? 0), 0);
+  totalHoursCurated = Math.round(totalPagesCurated / 30);
+  coreCount = allBooksCurated.filter((b) => b.status === 'mandatory').length;
+}
+
+// ── DB-driven fallback ────────────────────────────────────────────────────────
+let seriesMeta: Awaited<ReturnType<typeof getAllSeries>>[number] | null = null;
+let dbBooks: Awaited<ReturnType<typeof getBooksBySeries>> = [];
+let authorNames: string[] = [];
+let books: any[] = [];
+let similarSeries: { name: string; slug: string; cover: string | null; score: number; avgRating: number | null }[] = [];
+let contentWarnings: string[] = [];
+let avgRatingDb: string | null = null;
+let totalPagesDb = 0;
+
+if (!isCurated) {
+  const allSeries = await getAllSeries();
+  seriesMeta = allSeries.find((s) => s.slug === slug) ?? null;
+
+  if (!seriesMeta) return new Response(null, { status: 404, statusText: 'Not Found' });
+
+  dbBooks = await getBooksBySeries(seriesMeta.name);
+
+  books = dbBooks.map((b) => ({
+    title: b.title,
+    slug: b.slug ?? null,
+    cover_url: b.cover_url ?? null,
+    publication_year: b.publication_year ?? null,
+    page_count: b.page_count ?? null,
+    darkness_level: (b as any).darkness_level ?? null,
+    avg_rating: (b as any).avg_rating ?? null,
+    series_number: (b as any).series_number ?? null,
+    synopsis: (b as any).synopsis ?? null,
+  }));
+
+  authorNames = [...new Set(dbBooks.flatMap((b) => b.authors ?? []))];
+
+  const allSubgenres = dbBooks.flatMap((b) => (b as any).subgenres ?? []);
+  const subgenreCounts = new Map<string, number>();
+  for (const g of allSubgenres) subgenreCounts.set(g, (subgenreCounts.get(g) ?? 0) + 1);
+  const topSubgenres = [...subgenreCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([g]) => g);
+
+  const allTropes = dbBooks.flatMap((b) => (b as any).tropes ?? []);
+  const tropeCounts = new Map<string, number>();
+  for (const t of allTropes) tropeCounts.set(t, (tropeCounts.get(t) ?? 0) + 1);
+  const topTropes = [...tropeCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([t]) => t);
+
+  contentWarnings = [...new Set(dbBooks.flatMap((b) => (b as any).content_warnings ?? []))].sort() as string[];
+
+  type SimilarRow = { series: string | null; cover_url: string | null; avg_rating: number | null; subgenres: string[] | null; tropes: string[] | null };
+  const { data: similarRaw } = await supabaseClient
+    .from('books')
+    .select('series, cover_url, avg_rating, subgenres, tropes')
+    .not('series', 'is', null)
+    .neq('series', seriesMeta.name)
+    .eq('series_number', 1) as { data: SimilarRow[] | null };
+
+  const seriesScore = new Map<string, { score: number; cover: string | null; ratings: number[] }>();
+  for (const row of similarRaw ?? []) {
+    if (!row.series) continue;
+    const subgenreOverlap = (row.subgenres ?? []).filter((g) => topSubgenres.includes(g)).length;
+    const tropeOverlap = (row.tropes ?? []).filter((t) => topTropes.includes(t)).length;
+    const score = subgenreOverlap * 2 + tropeOverlap;
+    if (score === 0) continue;
+    seriesScore.set(row.series, { score, cover: row.cover_url, ratings: row.avg_rating != null ? [row.avg_rating] : [] });
+  }
+
+  if (seriesScore.size > 0) {
+    type RatingRow = { series: string | null; avg_rating: number | null };
+    const { data: allRatings } = await supabaseClient
+      .from('books').select('series, avg_rating')
+      .in('series', [...seriesScore.keys()])
+      .not('avg_rating', 'is', null) as { data: RatingRow[] | null };
+    for (const row of allRatings ?? []) {
+      if (!row.series || row.avg_rating == null) continue;
+      const e = seriesScore.get(row.series);
+      if (e && !e.ratings.includes(row.avg_rating)) e.ratings.push(row.avg_rating);
+    }
+  }
+
+  similarSeries = [...seriesScore.entries()]
+    .map(([name, v]) => {
+      const avgRating = v.ratings.length ? v.ratings.reduce((s, r) => s + r, 0) / v.ratings.length : null;
+      return { name, slug: name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), cover: v.cover, score: v.score, avgRating };
+    })
+    .sort((a, b) => b.score - a.score || (b.avgRating ?? 0) - (a.avgRating ?? 0))
+    .slice(0, 8);
+
+  totalPagesDb = books.reduce((sum, b) => sum + (b.page_count ?? 0), 0);
+  const ratedBooks = books.filter(b => b.avg_rating != null);
+  avgRatingDb = ratedBooks.length
+    ? (ratedBooks.reduce((s, b) => s + (b.avg_rating ?? 0), 0) / ratedBooks.length).toFixed(2)
+    : null;
+}
+
+// Card color classes
+const cardColors: Record<string, { border: string; bg: string; title: string; body: string }> = {
+  blue:   { border: 'border-blue-100',   bg: 'bg-blue-50',   title: 'text-blue-900',   body: 'text-blue-800'   },
+  green:  { border: 'border-green-100',  bg: 'bg-green-50',  title: 'text-green-900',  body: 'text-green-800'  },
+  amber:  { border: 'border-amber-100',  bg: 'bg-amber-50',  title: 'text-amber-900',  body: 'text-amber-800'  },
+  red:    { border: 'border-red-100',    bg: 'bg-red-50',    title: 'text-red-900',    body: 'text-red-800'    },
+  purple: { border: 'border-purple-100', bg: 'bg-purple-50', title: 'text-purple-900', body: 'text-purple-800' },
+};
+
+const pageTitle = curatedEntry
+  ? `${curatedEntry.name} Reading Order | Fantasy Obscura`
+  : `${seriesMeta?.name} Reading Order | Fantasy Obscura`;
+const pageDesc = curatedEntry
+  ? `Complete reading order for ${curatedEntry.name} by ${curatedEntry.author} — ${allBooksCurated.length} books covered.`
+  : `Complete reading order for ${seriesMeta?.name} — ${seriesMeta?.bookCount} books in our database.`;
 ---
 
-<Layout
-  title={`${seriesMeta.name} Reading Order | Fantasy Obscura`}
-  description={`Complete reading order for ${seriesMeta.name} — ${seriesMeta.bookCount} books in our database.`}
->
-  <!-- Breadcrumb -->
-  <nav class="text-sm text-zinc-400 mb-8 flex items-center gap-2">
-    <a href="/reading-orders/" class="hover:text-zinc-700 transition-colors">Reading Orders</a>
-    <span>›</span>
-    <span class="text-zinc-700 font-medium">{seriesMeta.name}</span>
-  </nav>
+<Layout title={pageTitle} description={pageDesc}>
 
-  <!-- Header -->
-  <div class="mb-8">
-    <p class="text-sm font-medium text-purple-600 uppercase tracking-wider mb-1">Reading Order</p>
-    <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{seriesMeta.name}</h1>
+{isCurated && curatedEntry && (
+  <>
+    <!-- Back link -->
+    <div class="mb-6">
+      <a href="/reading-orders/" class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">← Reading Orders</a>
+    </div>
 
-    {authorNames.length > 0 && (
-      <p class="mt-2 text-zinc-500 text-lg">
-        by{' '}
-        {authorNames.map((name, i) => (
-          <span>
-            <a href={`/authors/${authorToSlug(name)}/`} class="text-purple-700 hover:underline font-medium">{name}</a>{i < authorNames.length - 1 ? ', ' : ''}
-          </span>
-        ))}
-      </p>
+    <!-- Header -->
+    <div class="mb-10">
+      <div class="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p class="text-sm font-medium text-purple-600 uppercase tracking-wider mb-1">Reading Order</p>
+          <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{curatedEntry.name}</h1>
+          <p class="mt-1 text-lg text-zinc-500">by {curatedEntry.author}</p>
+        </div>
+        <span class="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-medium">
+          {curatedEntry.seriesStatusLabel}
+        </span>
+      </div>
+
+      <div class="mt-5 flex flex-wrap gap-6 text-sm text-zinc-600 border-y border-zinc-100 py-4">
+        <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {allBooksCurated.length} books ({coreCount} essential)</span>
+        {totalPagesCurated > 0 && (
+          <span class="flex items-center gap-1.5"><span class="text-zinc-400">📄</span> ~{totalPagesCurated.toLocaleString()} pages</span>
+        )}
+        {totalHoursCurated > 0 && (
+          <span class="flex items-center gap-1.5"><span class="text-zinc-400">⏱</span> ~{totalHoursCurated} hours reading time</span>
+        )}
+        <span class="flex items-center gap-1.5">{curatedEntry.darknessDisplay}</span>
+      </div>
+
+      <p class="mt-5 text-base text-zinc-700 leading-relaxed max-w-2xl">{curatedEntry.description}</p>
+    </div>
+
+    <!-- Warning block -->
+    {curatedEntry.warning && (
+      <div class="mb-8 rounded-xl border border-amber-200 bg-amber-50/60 px-5 py-4">
+        <p class="text-sm text-amber-900">⚠️ {curatedEntry.warning}</p>
+      </div>
     )}
 
-    <div class="mt-4 flex flex-wrap gap-5 text-sm text-zinc-600 border-y border-zinc-100 py-4">
-      <span class="flex items-center gap-1.5">
-        <span class="text-zinc-400">📚</span> {seriesMeta.bookCount} {seriesMeta.bookCount === 1 ? 'book' : 'books'}
-      </span>
-      {totalPages > 0 && (
-        <span class="flex items-center gap-1.5">
-          <span class="text-zinc-400">📄</span> ~{totalPages.toLocaleString()} pages
-        </span>
+    <!-- Reading Order -->
+    <div class="mb-12">
+      <h2 class="text-xl font-semibold mb-1">Reading Order</h2>
+      {curatedEntry.orderNote && (
+        <p class="text-sm text-zinc-500 mb-6">{curatedEntry.orderNote}</p>
       )}
-      {avgRating && (
-        <span class="flex items-center gap-1.5">
-          <span class="text-amber-400">★</span> {avgRating} avg rating
-        </span>
-      )}
+      {mergedGroups ? (
+        <ReadingOrder groups={mergedGroups} client:load />
+      ) : mergedBooks ? (
+        <ReadingOrder books={mergedBooks} client:load />
+      ) : null}
     </div>
-  </div>
 
-  <!-- Books — vertical list -->
-  <div class="space-y-3 mb-12">
-    {books.map((book, i) => {
-      const dl = book.darkness_level != null && book.darkness_level >= 1 ? book.darkness_level : null;
-      const shortSynopsis = book.synopsis ? book.synopsis.slice(0, 120).trimEnd() : null;
-      const hasTruncated = book.synopsis && book.synopsis.length > 120;
-      const cardId = `book-synopsis-${i}`;
-      const inner = (
-        <div class="flex items-start gap-4 rounded-xl border border-zinc-200 bg-white px-4 py-3 hover:border-purple-300 hover:bg-purple-50/30 transition-colors group">
-          <!-- Number -->
-          <span class="shrink-0 mt-1 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xs">{i + 1}</span>
-
-          <!-- Cover -->
-          <div class="shrink-0 w-10 h-14 rounded overflow-hidden bg-zinc-100 border border-zinc-200">
-            {book.cover_url ? (
-              <img src={book.cover_url} alt={book.title} class="w-full h-full object-cover" onerror="this.onerror=null;this.src='/placeholder-cover.svg';" />
-            ) : (
-              <div class="w-full h-full flex items-center justify-center text-zinc-300">📖</div>
-            )}
-          </div>
-
-          <!-- Info -->
-          <div class="flex-1 min-w-0">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0">
-                <p class="font-semibold text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug">
-                  {book.title}
-                </p>
-                <p class="text-xs text-indigo-600 mt-0.5">
-                  {seriesMeta.name}{book.series_number != null ? ` #${book.series_number}` : ''}
-                </p>
-              </div>
-              {book.avg_rating != null && (
-                <span class="shrink-0 text-sm font-semibold text-amber-500 whitespace-nowrap">★ {book.avg_rating.toFixed(2)}</span>
-              )}
+    <!-- Quick cards -->
+    {curatedEntry.cards && curatedEntry.cards.length > 0 && (
+      <div class={`mb-10 grid gap-3 ${curatedEntry.cards.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'}`}>
+        {curatedEntry.cards.map((card) => {
+          const cc = cardColors[card.color] ?? cardColors.blue;
+          return (
+            <div class={`rounded-xl border ${cc.border} ${cc.bg} p-5`}>
+              <p class={`font-semibold ${cc.title} mb-2`}>{card.title}</p>
+              <p class={`text-sm ${cc.body}`} set:html={card.body} />
             </div>
+          );
+        })}
+      </div>
+    )}
 
-            {shortSynopsis && (
-              <p class="mt-1.5 text-xs text-zinc-500 leading-relaxed">
-                <span data-short={cardId}>{shortSynopsis}{hasTruncated ? '…' : ''}</span>
-                {hasTruncated && (
-                  <>
-                    <span data-full={cardId} class="hidden">{book.synopsis}</span>
-                    <button
-                      data-toggle={cardId}
-                      class="ml-1 text-purple-600 hover:text-purple-800 font-medium text-xs underline-offset-2 hover:underline"
-                    >read more</button>
-                  </>
-                )}
-              </p>
+    <!-- Info sections -->
+    {curatedEntry.sections && curatedEntry.sections.map((section) => (
+      <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+        {section.type === 'warning' ? (
+          <>
+            <h2 class="font-semibold text-amber-900 mb-3">⚠️ {section.heading}</h2>
+            {section.prose && <p class="text-sm text-amber-800">{section.prose}</p>}
+            {section.bullets && (
+              <ul class="space-y-2 text-sm text-amber-800">
+                {section.bullets.map((b) => (
+                  <li class="flex gap-2"><span class="text-amber-400">→</span> <span set:html={b} /></li>
+                ))}
+              </ul>
             )}
+          </>
+        ) : (
+          <>
+            <h2 class="font-semibold text-zinc-900 mb-3">{section.heading}</h2>
+            {section.prose && <p class="text-sm text-zinc-700 leading-relaxed">{section.prose}</p>}
+            {section.bullets && (
+              <ul class="space-y-2 text-sm text-zinc-700">
+                {section.bullets.map((b) => (
+                  <li class="flex gap-2"><span class="text-zinc-400">→</span> <span set:html={b} /></li>
+                ))}
+              </ul>
+            )}
+          </>
+        )}
+      </div>
+    ))}
 
-            <div class="flex flex-wrap items-center gap-3 mt-1.5 text-xs text-zinc-400">
-              {book.publication_year && <span>{book.publication_year}</span>}
-              {book.page_count && <span>{book.page_count} pp.</span>}
-              {dl && <span>{DARKNESS_CANDLES[dl]}</span>}
+    <!-- Darkness table -->
+    {curatedEntry.darkness && curatedEntry.darkness.length > 0 && (
+      <div class="mb-10 rounded-xl border bg-zinc-50 p-6">
+        <h2 class="font-semibold text-zinc-900 mb-4">Darkness progression</h2>
+        <div class="space-y-3 text-sm">
+          {curatedEntry.darkness.map((row) => (
+            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+              <span class="font-medium text-zinc-700 sm:w-44 shrink-0">{row.label}</span>
+              <span class="text-zinc-400">{DARKNESS_CANDLES[row.level] ?? ''}</span>
+              <span class="text-zinc-500">{row.desc}</span>
             </div>
+          ))}
+        </div>
+        <p class="mt-4 text-xs text-zinc-400">Scale: 🕯️ Lighthearted → 🕯️🕯️🕯️🕯️🕯️ Brutal</p>
+      </div>
+    )}
+
+    <!-- Footer -->
+    <div class="border-t pt-8 flex flex-col sm:flex-row gap-6 justify-between">
+      <div>
+        <p class="text-sm font-medium text-zinc-700 mb-2">{curatedEntry.finishedLabel}</p>
+        <div class="flex flex-wrap gap-3">
+          <a href={curatedEntry.categoryHref} class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">
+            {curatedEntry.categoryLabel} →
+          </a>
+        </div>
+      </div>
+      {curatedEntry.related.length > 0 && (
+        <div>
+          <p class="text-sm font-medium text-zinc-700 mb-2">Related reading orders</p>
+          <div class="flex flex-wrap gap-3">
+            {curatedEntry.related.map((relSlug) => {
+              const relEntry = getReadingOrderEntry(relSlug);
+              return (
+                <a href={`/reading-orders/${relSlug}/`} class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">
+                  {relEntry?.name ?? relSlug}
+                </a>
+              );
+            })}
           </div>
         </div>
-      );
+      )}
+    </div>
+  </>
+)}
 
-      return book.slug ? (
-        <a href={`/books/${book.slug}/`} class="block">{inner}</a>
-      ) : inner;
-    })}
-  </div>
+{!isCurated && seriesMeta && (
+  <>
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-zinc-400 mb-8 flex items-center gap-2">
+      <a href="/reading-orders/" class="hover:text-zinc-700 transition-colors">Reading Orders</a>
+      <span>›</span>
+      <span class="text-zinc-700 font-medium">{seriesMeta.name}</span>
+    </nav>
 
-  <!-- Content Warnings -->
-  {contentWarnings.length > 0 && (
-    <div class="mb-10 rounded-xl border border-amber-200 bg-amber-50/60 px-5 py-4">
-      <h2 class="text-sm font-semibold text-amber-800 uppercase tracking-wider mb-3">⚠️ Content Warnings</h2>
-      <div class="flex flex-wrap gap-2">
-        {contentWarnings.map((w) => (
-          <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-900 border border-amber-200">
-            {w}
+    <!-- Header -->
+    <div class="mb-8">
+      <p class="text-sm font-medium text-purple-600 uppercase tracking-wider mb-1">Reading Order</p>
+      <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{seriesMeta.name}</h1>
+
+      {authorNames.length > 0 && (
+        <p class="mt-2 text-zinc-500 text-lg">
+          by{' '}
+          {authorNames.map((name, i) => (
+            <span>
+              <a href={`/authors/${authorToSlug(name)}/`} class="text-purple-700 hover:underline font-medium">{name}</a>{i < authorNames.length - 1 ? ', ' : ''}
+            </span>
+          ))}
+        </p>
+      )}
+
+      <div class="mt-4 flex flex-wrap gap-5 text-sm text-zinc-600 border-y border-zinc-100 py-4">
+        <span class="flex items-center gap-1.5">
+          <span class="text-zinc-400">📚</span> {seriesMeta.bookCount} {seriesMeta.bookCount === 1 ? 'book' : 'books'}
+        </span>
+        {totalPagesDb > 0 && (
+          <span class="flex items-center gap-1.5">
+            <span class="text-zinc-400">📄</span> ~{totalPagesDb.toLocaleString()} pages
           </span>
-        ))}
+        )}
+        {avgRatingDb && (
+          <span class="flex items-center gap-1.5">
+            <span class="text-amber-400">★</span> {avgRatingDb} avg rating
+          </span>
+        )}
       </div>
     </div>
-  )}
 
-  <!-- Similar series -->
-  {similarSeries.length > 0 && (
-    <div class="border-t pt-8">
-      <h2 class="text-xl font-semibold text-zinc-900 mb-5">More series like this</h2>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {similarSeries.map((s) => (
-          <a
-            href={`/reading-orders/${s.slug}/`}
-            class="group flex items-center gap-4 rounded-xl border border-zinc-200 bg-white p-4 hover:border-purple-300 hover:bg-purple-50/40 transition-colors"
-          >
-            <div class="shrink-0 w-14 h-20 rounded-lg overflow-hidden bg-zinc-100 border border-zinc-200">
-              {s.cover ? (
-                <img src={s.cover} alt={s.name} class="w-full h-full object-cover" onerror="this.onerror=null;this.src='/placeholder-cover.svg';" />
+    <!-- Books — vertical list -->
+    <div class="space-y-3 mb-12">
+      {books.map((book, i) => {
+        const dl = book.darkness_level != null && book.darkness_level >= 1 ? book.darkness_level : null;
+        const shortSynopsis = book.synopsis ? book.synopsis.slice(0, 120).trimEnd() : null;
+        const hasTruncated = book.synopsis && book.synopsis.length > 120;
+        const cardId = `book-synopsis-${i}`;
+        const inner = (
+          <div class="flex items-start gap-4 rounded-xl border border-zinc-200 bg-white px-4 py-3 hover:border-purple-300 hover:bg-purple-50/30 transition-colors group">
+            <span class="shrink-0 mt-1 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xs">{i + 1}</span>
+            <div class="shrink-0 w-10 h-14 rounded overflow-hidden bg-zinc-100 border border-zinc-200">
+              {book.cover_url ? (
+                <img src={book.cover_url} alt={book.title} class="w-full h-full object-cover" onerror="this.onerror=null;this.src='/placeholder-cover.svg';" />
               ) : (
-                <div class="w-full h-full flex items-center justify-center text-zinc-300 text-xl">📖</div>
+                <div class="w-full h-full flex items-center justify-center text-zinc-300">📖</div>
               )}
             </div>
-            <div class="min-w-0">
-              <p class="text-base font-semibold text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug line-clamp-2">{s.name}</p>
-              {s.avgRating && <p class="text-sm text-amber-500 mt-1">★ {s.avgRating.toFixed(2)}</p>}
-              <p class="text-xs text-zinc-400 mt-1">Reading order →</p>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-3">
+                <div class="min-w-0">
+                  <p class="font-semibold text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug">{book.title}</p>
+                  <p class="text-xs text-indigo-600 mt-0.5">{seriesMeta.name}{book.series_number != null ? ` #${book.series_number}` : ''}</p>
+                </div>
+                {book.avg_rating != null && (
+                  <span class="shrink-0 text-sm font-semibold text-amber-500 whitespace-nowrap">★ {book.avg_rating.toFixed(2)}</span>
+                )}
+              </div>
+              {shortSynopsis && (
+                <p class="mt-1.5 text-xs text-zinc-500 leading-relaxed">
+                  <span data-short={cardId}>{shortSynopsis}{hasTruncated ? '…' : ''}</span>
+                  {hasTruncated && (
+                    <>
+                      <span data-full={cardId} class="hidden">{book.synopsis}</span>
+                      <button data-toggle={cardId} class="ml-1 text-purple-600 hover:text-purple-800 font-medium text-xs underline-offset-2 hover:underline">read more</button>
+                    </>
+                  )}
+                </p>
+              )}
+              <div class="flex flex-wrap items-center gap-3 mt-1.5 text-xs text-zinc-400">
+                {book.publication_year && <span>{book.publication_year}</span>}
+                {book.page_count && <span>{book.page_count} pp.</span>}
+                {dl && <span>{DARKNESS_CANDLES[dl]}</span>}
+              </div>
             </div>
-          </a>
-        ))}
-      </div>
+          </div>
+        );
+        return book.slug ? <a href={`/books/${book.slug}/`} class="block">{inner}</a> : inner;
+      })}
     </div>
-  )}
+
+    <!-- Content Warnings -->
+    {contentWarnings.length > 0 && (
+      <div class="mb-10 rounded-xl border border-amber-200 bg-amber-50/60 px-5 py-4">
+        <h2 class="text-sm font-semibold text-amber-800 uppercase tracking-wider mb-3">⚠️ Content Warnings</h2>
+        <div class="flex flex-wrap gap-2">
+          {contentWarnings.map((w) => (
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-900 border border-amber-200">{w}</span>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Similar series -->
+    {similarSeries.length > 0 && (
+      <div class="border-t pt-8">
+        <h2 class="text-xl font-semibold text-zinc-900 mb-5">More series like this</h2>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {similarSeries.map((s) => (
+            <a href={`/reading-orders/${s.slug}/`} class="group flex items-center gap-4 rounded-xl border border-zinc-200 bg-white p-4 hover:border-purple-300 hover:bg-purple-50/40 transition-colors">
+              <div class="shrink-0 w-14 h-20 rounded-lg overflow-hidden bg-zinc-100 border border-zinc-200">
+                {s.cover ? (
+                  <img src={s.cover} alt={s.name} class="w-full h-full object-cover" onerror="this.onerror=null;this.src='/placeholder-cover.svg';" />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center text-zinc-300 text-xl">📖</div>
+                )}
+              </div>
+              <div class="min-w-0">
+                <p class="text-base font-semibold text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug line-clamp-2">{s.name}</p>
+                {s.avgRating && <p class="text-sm text-amber-500 mt-1">★ {s.avgRating.toFixed(2)}</p>}
+                <p class="text-xs text-zinc-400 mt-1">Reading order →</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </>
+)}
+
 </Layout>
 
 <script>
@@ -275,5 +470,4 @@ const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯�
       btn.textContent = nowHidden ? 'read more' : 'read less';
     });
   });
-
 </script>

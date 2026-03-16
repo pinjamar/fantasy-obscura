@@ -14,6 +14,7 @@ type Book = {
   subgenres: string[] | null;
   page_count: number | null;
   darkness_level: number | null;
+  tropes: string[] | null;
 };
 
 type Filters = {
@@ -936,6 +937,15 @@ export default function AlchemyTable() {
                     {['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'][currentBook.darkness_level]}
                   </p>
                 )}
+                {currentBook.tropes && currentBook.tropes.length > 0 && (
+                  <div className="flex flex-wrap gap-1 mt-1">
+                    {currentBook.tropes.slice(0, 2).map((t) => (
+                      <span key={t} className="text-xs bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
             {currentBook.synopsis && (
@@ -996,7 +1006,7 @@ export default function AlchemyTable() {
         {status === 'done' && hasMore && (
           <button
             onClick={nextBook}
-            className="text-xs text-amber-700 hover:text-amber-900 underline text-center"
+            className="text-sm text-amber-700 hover:text-amber-900 underline text-center py-1"
           >
             Try another →
           </button>

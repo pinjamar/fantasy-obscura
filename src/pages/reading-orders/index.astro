@@ -2,6 +2,7 @@
 import Layout from '../../components/Layout.astro';
 import { getAllSeries } from '../../lib/db/books';
 import { supabaseClient } from '../../lib/supabaseClient';
+import { READING_ORDERS } from '../../data/reading-orders';
 
 const [dbSeries, booksRes] = await Promise.all([
   getAllSeries(),
@@ -18,24 +19,14 @@ for (const b of (booksRes.data ?? []) as BooksRow[]) {
   seriesSearchMap.set(b.series, `${existing} ${b.title} ${authors}`.toLowerCase());
 }
 
-// Curated hand-written series (these have static pages with optional/extra markings)
-const curatedSeries = [
-  { slug: 'cosmere',       name: "Brandon Sanderson's Cosmere", bookCount: 15 },
-  { slug: 'stormlight',   name: 'The Stormlight Archive',       bookCount: 5  },
-  { slug: 'first-law',    name: 'The First Law',                bookCount: 10 },
-  { slug: 'discworld',    name: 'Discworld',                    bookCount: 41 },
-  { slug: 'malazan',      name: 'Malazan Book of the Fallen',   bookCount: 10 },
-  { slug: 'wheel-of-time',name: 'The Wheel of Time',            bookCount: 14 },
-  { slug: 'kingkiller',   name: 'The Kingkiller Chronicle',     bookCount: 3  },
-  { slug: 'witcher',      name: 'The Witcher',                  bookCount: 8  },
-  { slug: 'dresden-files', name: 'The Dresden Files',            bookCount: 17 },
-  { slug: 'acotar',       name: 'A Court of Thorns and Roses',  bookCount: 5  },
-  { slug: 'throne-of-glass', name: 'Throne of Glass',           bookCount: 8  },
-  { slug: 'asoiaf',      name: 'A Song of Ice and Fire',        bookCount: 5  },
-  { slug: 'robin-hobb',  name: 'Realm of the Elderlings',       bookCount: 16 },
-  { slug: 'empyrean',    name: 'The Empyrean',                  bookCount: 3  },
-  { slug: 'blood-and-ash', name: 'Blood and Ash',              bookCount: 8  },
-];
+// Derive curated series list from data file
+const curatedSeries = READING_ORDERS.map((e) => ({
+  slug: e.slug,
+  name: e.name,
+  bookCount: e.groups
+    ? e.groups.reduce((sum, g) => sum + g.books.length, 0)
+    : (e.books?.length ?? 0),
+}));
 
 // Merge: curated series take priority; add DB-only series after
 // DB slugs are generated from series names, which differ from our curated slugs
