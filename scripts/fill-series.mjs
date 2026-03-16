@@ -22,8 +22,10 @@ config();
 const DRY_RUN      = process.argv.includes('--dry-run');
 const SERIES_ONLY  = process.argv.includes('--series-only');
 const AUTHORS_ONLY = process.argv.includes('--authors-only');
-const LIMIT_ARG    = process.argv.indexOf('--limit');
-const LIMIT        = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : 100;
+const _limitFlag   = process.argv.find((a) => a === '--limit' || a.startsWith('--limit='));
+const LIMIT        = _limitFlag
+  ? parseInt(_limitFlag.includes('=') ? _limitFlag.split('=')[1] : process.argv[process.argv.indexOf('--limit') + 1], 10)
+  : null;
 const THRESH_ARG   = process.argv.indexOf('--threshold');
 const THRESHOLD    = THRESH_ARG !== -1 ? parseInt(process.argv[THRESH_ARG + 1], 10) : 7;
 const DELAY_MS     = 500;
@@ -1015,11 +1017,17 @@ async function fetchOpenLibrary(title, author) {
 async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitles) {
   console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
   console.log(`📖  Phase 2 — Prolific Author Fill`);
-  console.log(`    Threshold: ${THRESHOLD}+ books · Import cap: ${LIMIT}\n`);
+  const p2Limit = LIMIT ?? Infinity;
+  console.log(`    Threshold: ${THRESHOLD}+ books · Import cap: ${LIMIT ?? 'unlimited'}\n`);
 
-  // Load all books with their authors to count per-author
-  const { data: allBooks, error } = await supabase.from('books').select('authors');
-  if (error) { console.error('Supabase error:', error.message); return; }
+  // Load all books with their authors to count per-author (paginated — DB may exceed 1000 rows)
+  let allBooks;
+  try {
+    allBooks = await fetchAllBooks('authors');
+  } catch (error) {
+    console.error('Supabase error:', error.message);
+    return;
+  }
 
   // Count books per primary author (first element of authors array)
   const authorCount = new Map();
@@ -1050,7 +1058,7 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
   let imported = 0;
 
   for (const author of prolific) {
-    if (imported >= LIMIT) break;
+    if (imported >= p2Limit) break;
 
     const query = `inauthor:"${author}"`;
     console.log(`\n  🔍  ${author}`);
@@ -1065,8 +1073,9 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
       if (!items.length) break;
 
       let newThisPage = 0;
+      let validThisPage = 0; // passed extractBookData filter (not yet a dupe)
       for (const item of items) {
-        if (imported >= LIMIT) break;
+        if (imported >= p2Limit) break;
 
         const book = extractBookData(item);
         if (!book) continue;
@@ -1074,12 +1083,14 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
         const isbn = extractISBN(item);
         if (isbn && seenISBNs.has(isbn)) continue;
 
-        if (existingSlugs.has(book.slug))                             continue;
-        if (existingTitles.has(book.title.toLowerCase().trim()))      continue;
+        if (existingSlugs.has(book.slug))                        continue;
+        if (existingTitles.has(book.title.toLowerCase().trim())) continue;
         const norm = normalizeTitle(book.title);
-        if (normalizedTitles.has(norm))                               continue;
+        if (normalizedTitles.has(norm))                          continue;
 
-        // Mark seen
+        validThisPage++;
+
+        // Mark seen immediately to avoid intra-run dupes
         existingSlugs.add(book.slug);
         existingTitles.add(book.title.toLowerCase().trim());
         normalizedTitles.add(norm);
@@ -1094,9 +1105,14 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
           continue;
         }
 
-        const { error: insErr } = await supabase.from('books').insert(book);
-        if (insErr) {
+        const { error: insErr } = await supabase
+          .from('books')
+          .upsert(book, { onConflict: 'slug', ignoreDuplicates: true });
+
+        if (insErr && insErr.code !== '23505') {
           console.log(`✗ ${insErr.message.slice(0, 60)}`);
+        } else if (insErr?.code === '23505') {
+          console.log(`⏭ skip`);
         } else {
           console.log(`✓`);
           imported++;
@@ -1104,7 +1120,9 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
         }
       }
 
-      if (newThisPage === 0) {
+      // Only stop scanning when Google Books genuinely has no valid new candidates
+      // (duplicates are expected for authors already in DB — keep paginating)
+      if (validThisPage === 0) {
         consecutiveEmpty++;
         if (consecutiveEmpty >= 2) break;
       } else {
@@ -1138,14 +1156,32 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY,
 );
 
+/** Fetch ALL rows from the books table, paginating past Supabase's 1000-row default. */
+async function fetchAllBooks(fields) {
+  const PAGE = 1000;
+  const rows = [];
+  let from = 0;
+  while (true) {
+    const { data, error } = await supabase
+      .from('books')
+      .select(fields)
+      .range(from, from + PAGE - 1);
+    if (error) throw error;
+    rows.push(...data);
+    if (data.length < PAGE) break;
+    from += PAGE;
+  }
+  return rows;
+}
+
 async function main() {
   const modeLabel = SERIES_ONLY ? ' [series only]' : AUTHORS_ONLY ? ' [authors only]' : '';
   console.log(`\n📚 Fantasy Obscura — Series + Author Filler${DRY_RUN ? ' [DRY RUN]' : ''}${modeLabel}\n`);
 
-  const { data: existing, error: existErr } = await supabase
-    .from('books')
-    .select('slug, title, authors');
-  if (existErr) {
+  let existing;
+  try {
+    existing = await fetchAllBooks('slug, title, authors, series, series_number');
+  } catch (existErr) {
     console.error('Supabase error:', existErr.message);
     process.exit(1);
   }
@@ -1153,6 +1189,12 @@ async function main() {
   const existingSlugs    = new Set(existing.map((b) => b.slug).filter(Boolean));
   const existingTitles   = new Set(existing.map((b) => b.title.toLowerCase().trim()));
   const normalizedTitles = new Set(existing.map((b) => normalizeTitle(b.title)));
+  // series+number key catches books already in DB under a different title/slug variant
+  const existingSeriesKeys = new Set(
+    existing
+      .filter((b) => b.series && b.series_number != null)
+      .map((b) => `${b.series.toLowerCase().trim()}::${b.series_number}`)
+  );
 
   if (AUTHORS_ONLY) {
     await fillProlificAuthors(existingSlugs, existingTitles, normalizedTitles);
@@ -1167,11 +1209,14 @@ async function main() {
     if (existingSlugs.has(slugify(b.title)))              return false;
     if (existingTitles.has(b.title.toLowerCase().trim())) return false;
     if (normalizedTitles.has(normalizeTitle(b.title)))    return false;
+    if (b.series && b.series_number != null) {
+      if (existingSeriesKeys.has(`${b.series.toLowerCase().trim()}::${b.series_number}`)) return false;
+    }
     return true;
   });
 
   const skipped  = BOOKS.length - allToImport.length;
-  const toImport = allToImport; // Phase 1 always imports the full list
+  const toImport = LIMIT ? allToImport.slice(0, LIMIT) : allToImport;
   console.log(`Total in list:  ${BOOKS.length}`);
   console.log(`Already in DB:  ${skipped}`);
   console.log(`To import:      ${toImport.length}\n`);
@@ -1212,19 +1257,27 @@ async function main() {
       existingSlugs.add(slug);
       existingTitles.add(book.title.toLowerCase().trim());
       normalizedTitles.add(normalizeTitle(book.title));
+      if (book.series && book.series_number != null) {
+        existingSeriesKeys.add(`${book.series.toLowerCase().trim()}::${book.series_number}`);
+      }
       continue;
     }
 
-    const { error } = await supabase.from('books').insert(record);
-    if (error) {
+    const { error } = await supabase.from('books').upsert(record, { onConflict: 'slug', ignoreDuplicates: true });
+    if (error && error.code !== '23505') {
       console.log(`✗ ${error.message}`);
       p1failed++;
+    } else if (error?.code === '23505') {
+      console.log(`⏭ already exists`);
     } else {
       console.log(`✓`);
       p1imported++;
       existingSlugs.add(slug);
       existingTitles.add(book.title.toLowerCase().trim());
       normalizedTitles.add(normalizeTitle(book.title));
+      if (book.series && book.series_number != null) {
+        existingSeriesKeys.add(`${book.series.toLowerCase().trim()}::${book.series_number}`);
+      }
     }
   }
 

@@ -31,19 +31,27 @@ PUBLIC_SUPABASE_URL=your_supabase_project_url
 PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 ANTHROPIC_API_KEY=your_anthropic_api_key
+GOOGLE_BOOKS_API_KEY=your_google_books_api_key
+GOOGLE_KG_API_KEY=your_google_knowledge_graph_api_key   # optional, for seed-authors
 ```
 
-`SUPABASE_SERVICE_ROLE_KEY` and `ANTHROPIC_API_KEY` are only needed for running classification scripts — not required for the site itself.
+- `SUPABASE_SERVICE_ROLE_KEY` — required for all write scripts
+- `ANTHROPIC_API_KEY` — required for classification scripts (Gemini via Anthropic proxy) and the AI recommendation API
+- `GOOGLE_BOOKS_API_KEY` — required for `discover-books`, `fill-series`, `fill-audiobooks`, `fill-ratings`
+- `GOOGLE_KG_API_KEY` — optional, improves author photo/bio quality in `seed-authors`
 
 ## Database Setup
 
 Run each step **in order** in the Supabase **SQL Editor → New query → Run**.
 
 ### Step 1 — Books table (file: `supabase/schema.sql`)
+
 Creates the core `books` table with indexes and `updated_at` trigger.
 
 ### Step 2 — Books extra columns (run once, safe to re-run)
+
 Adds columns that were added after the initial schema:
+
 ```sql
 ALTER TABLE books ADD COLUMN IF NOT EXISTS darkness_level smallint;
 ALTER TABLE books ADD COLUMN IF NOT EXISTS audience text;
@@ -52,7 +60,9 @@ ALTER TABLE books ADD COLUMN IF NOT EXISTS series_number integer;
 ```
 
 ### Step 3 — Audiobook columns (file: `supabase/add-audiobook-columns.sql`)
+
 Adds audiobook metadata to the books table:
+
 ```sql
 ALTER TABLE books
   ADD COLUMN IF NOT EXISTS audiobook_available        boolean DEFAULT false,
@@ -62,10 +72,13 @@ ALTER TABLE books
   ADD COLUMN IF NOT EXISTS audiobook_hours            integer,
   ADD COLUMN IF NOT EXISTS audiobook_audible_url      text;
 ```
+
 Set `audiobook_available = true` on any book row to show the headphones card on its page.
 
 ### Step 4 — Authors table + RLS (file: `supabase/authors-rls.sql`)
+
 Creates the `authors` profile table and enables public reads:
+
 ```sql
 CREATE TABLE authors (
   id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -83,7 +96,9 @@ CREATE POLICY "public read authors" ON authors FOR SELECT USING (true);
 ```
 
 ### Step 5 — Community book tags table + RLS
+
 Creates the `book_tags` table for user-submitted tags (requires auth):
+
 ```sql
 CREATE TABLE book_tags (
   id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -100,19 +115,20 @@ CREATE POLICY "read approved tags"      ON book_tags FOR SELECT USING (approved 
 CREATE POLICY "authenticated users can tag" ON book_tags FOR INSERT TO authenticated WITH CHECK (auth.uid() = user_id);
 CREATE POLICY "users can remove own tags"   ON book_tags FOR DELETE TO authenticated USING (auth.uid() = user_id);
 ```
+
 Tags default to `approved = false`. Set to `true` in the Supabase dashboard to make them public.
 
 ---
 
 ## Scripts
 
-All scripts live in `scripts/`. Run from the project root.
+All scripts live in `scripts/`. Run from the project root. Requires `.env` with the appropriate keys.
 
 ### Daily pipeline — discover + classify in two commands
 
 ```bash
 npm run discover -- --limit 300    # discover up to 300 new books
-npm run classify                   # classify all unclassified books (runs all 5 scripts)
+npm run classify                   # classify all unclassified books (runs all 5 classifiers)
 ```
 
 Or run both in one go:
@@ -121,7 +137,7 @@ Or run both in one go:
 npm run pipeline                   # discover 100 books then classify (default limit)
 ```
 
-**Free tier limits (Gemini 2.5 Flash):** ~300 books/day classified. For more, enable billing on Google AI Studio.
+**Free tier limits (Gemini Flash):** ~300 books/day classified. For more, enable billing on Google AI Studio.
 
 ---
 
@@ -149,7 +165,32 @@ node scripts/add-books.mjs "Dungeon Crawler Carl" "Matt Dinniman"
 npm run add-book -- --file books-to-add.txt
 ```
 
-Progress is saved in `scripts/.discover-progress.json` (gitignored). Each run resumes from where the last left off across ~175 search queries. Run `--reset` after exhausting all queries to cycle again.
+Progress is saved in `scripts/.discover-progress.json` (gitignored). Each run resumes from where the last left off across ~175 search queries. Run `--reset` after exhausting all queries to cycle again. Already-seen ISBNs are tracked across runs to prevent duplicates.
+
+---
+
+### Series fill
+
+Imports books from a hardcoded curated list (Phase 1) and auto-discovers remaining books by any author who already has 7+ books in the DB (Phase 2).
+
+```bash
+# Run both phases (recommended)
+node scripts/fill-series.mjs
+node scripts/fill-series.mjs --dry-run
+node scripts/fill-series.mjs --limit 50          # cap Phase 2 imports at 50
+
+# Run only one phase
+node scripts/fill-series.mjs --series-only       # Phase 1 only (hardcoded list)
+node scripts/fill-series.mjs --authors-only      # Phase 2 only (prolific author sweep)
+
+# Adjust the prolific-author threshold (default: 7 books in DB)
+node scripts/fill-series.mjs --threshold 5       # include authors with 5+ books
+node scripts/fill-series.mjs --authors-only --threshold 10 --limit 100
+```
+
+**Phase 1** checks slug, exact title, normalized title, and `(series, series_number)` against the DB — already-imported books are skipped with zero API calls even if they were imported under a different title variant (e.g. `"Mistborn: The Final Empire"` vs `"The Final Empire"`).
+
+**Phase 2** paginates Google Books for each prolific author, deduplicates by ISBN → slug → title → normalized title, and uses `upsert` with `ignoreDuplicates: true` to handle any DB constraint violations silently.
 
 ---
 
@@ -159,7 +200,7 @@ Progress is saved in `scripts/.discover-progress.json` (gitignored). Each run re
 npm run classify
 ```
 
-Runs all 5 classifiers in sequence using Gemini 2.5 Flash (each skips books already classified):
+Runs all 5 classifiers in sequence using Gemini Flash (each skips books already classified):
 
 1. `classify-metadata` → `subgenres`, `darkness_level`, `heat_level`, `accessibility`, `awards`, `stakes`, `pov_style`, `pov_count`, `protagonist_gender`, `series_status`
 2. `classify-vibes` → `tone`, `pacing`, `magic_system`, `audience`
@@ -197,52 +238,54 @@ npm run covers                    # fill only missing covers
 npm run covers -- --force         # refresh all covers
 npm run covers -- --dry-run
 
+# Fix books with missing/non-English synopsis or wrong publication year
+node scripts/repair-books.mjs
+node scripts/repair-books.mjs --dry-run
+node scripts/repair-books.mjs --limit 20
+node scripts/repair-books.mjs --all          # force-refresh every book
+
 # Fill Goodreads avg_rating for books where it's NULL (via Gemini recall)
 node scripts/fill-ratings.mjs
 node scripts/fill-ratings.mjs --dry-run
 node scripts/fill-ratings.mjs --limit 50
-node scripts/fill-ratings.mjs --all       # overwrite existing ratings too
+node scripts/fill-ratings.mjs --all          # overwrite existing ratings too
 
-# Fill audiobook data (narrator, hours, narrator rating, audible URL)
-# Default: processes NULL + false entries (re-checks books previously marked "no audiobook")
+# Fill audiobook data (narrator, hours, narrator rating, Audible URL)
 node scripts/fill-audiobooks.mjs
 node scripts/fill-audiobooks.mjs --dry-run
 node scripts/fill-audiobooks.mjs --limit 50
-node scripts/fill-audiobooks.mjs --all    # re-process everything including confirmed true
+node scripts/fill-audiobooks.mjs --all       # re-process everything including confirmed true
 
-# Fill series sequels for books already in DB
-node scripts/fill-series.mjs
-node scripts/fill-series.mjs --dry-run
-node scripts/fill-series.mjs --limit 20
+# Populate the authors table from Open Library / Wikipedia / Google Knowledge Graph
+node scripts/seed-authors.js
+node scripts/seed-authors.js --dry-run
+node scripts/seed-authors.js --only-missing  # skip authors who already have a photo_url
 
 # Find and delete authors with no books in the DB
-node scripts/cleanup-authors.js           # dry run — just lists orphans
-node scripts/cleanup-authors.js --delete  # actually deletes them
+node scripts/cleanup-authors.js              # dry run — just lists orphans
+node scripts/cleanup-authors.js --delete     # actually deletes them
 ```
 
 ---
 
 ### Generate editorial content (optional, costs more)
 
-All three support `--priority` to restrict to the 50 SEO priority books (from `import-books.mjs`).
-
 ```bash
 # "What Makes It Different" — unique angle
 node scripts/generate-what-makes-it-different.mjs
-node scripts/generate-what-makes-it-different.mjs --priority
 node scripts/generate-what-makes-it-different.mjs --dry-run --limit 5
 
 # "Tone & Reading Experience" — feel, darkness, pacing
 node scripts/generate-reading-experience.mjs
-node scripts/generate-reading-experience.mjs --priority
 node scripts/generate-reading-experience.mjs --dry-run --limit 5
 
 # "Who This Is For" — ideal reader + comps
 node scripts/generate-ideal-reader.mjs
-node scripts/generate-ideal-reader.mjs --priority
 node scripts/generate-ideal-reader.mjs --dry-run --limit 5
 node scripts/generate-ideal-reader.mjs --slug six-of-crows    # single book
 ```
+
+---
 
 ## Project Structure
 
@@ -256,6 +299,8 @@ src/
 │   ├── CategoryGrid.tsx    # Genre category cards + Book of the Week
 │   ├── Layout.astro        # Base layout + nav + footer
 │   └── ReadingOrder.tsx    # Series reading order display
+├── data/
+│   └── books-like.ts       # 14 hand-written "Books Like X" recommendation pages
 ├── lib/
 │   ├── books/providers.ts  # External API integrations (OpenLibrary, Google Books,
 │   │                       #   Harvard, BigBook, Gutendex/Project Gutenberg)
@@ -271,7 +316,7 @@ src/
     │   └── [slug].astro             # Individual book page (SSR, affiliate links)
     ├── books-like/
     │   ├── index.astro              # "Books like…" — Alchemist tool
-    │   └── [slug].astro            # Individual "books like X" recommendation page
+    │   └── [slug].astro             # Individual "books like X" page (14 pages)
     ├── reading-orders/              # 8+ series reading guides
     │   ├── index.astro
     │   ├── cosmere.astro / discworld.astro / first-law.astro
@@ -297,25 +342,25 @@ src/
 
 Key fields on every book record:
 
-| Field                                          | Type              | Notes                                        |
-| ---------------------------------------------- | ----------------- | -------------------------------------------- |
-| `title`, `authors`                             | string / string[] | required                                     |
-| `slug`                                         | string            | URL key for `/books/[slug]`                  |
-| `subgenres`, `tropes`                          | string[]          | used for filtering; trope names not slugs    |
-| `creatures`                                    | string[]          | creature/race slugs (e.g. `"dragon"`)        |
-| `tone`, `diversity_rep`, `content_warnings`    | string[]          |                                              |
-| `magic_system`, `pacing`, `heat_level`         | string            |                                              |
-| `audience`                                     | string            | Adult / YA / Children's                      |
-| `darkness_level`                               | 1–5               | 1=Lighthearted → 5=Brutal                    |
-| `accessibility`                                | string            | beginner / intermediate / advanced           |
-| `stakes`                                       | string            | personal / kingdom / world                   |
-| `pov_style`                                    | string            | First Person / Third Limited / Omniscient    |
-| `pov_count`                                    | string            | Single / Dual / Multiple                     |
-| `protagonist_gender`                           | string            | Male / Female / Ensemble                     |
-| `awards`                                       | string[]          | e.g. `["hugo-winner", "nebula-nominee"]`     |
-| `series`, `series_number`, `series_status`     | string / number   | series_status: completed / ongoing           |
-| `avg_rating`, `page_count`, `publication_year` | number            |                                              |
-| `cover_url`, `synopsis`                        | string            |                                              |
+| Field                                          | Type              | Notes                                     |
+| ---------------------------------------------- | ----------------- | ----------------------------------------- |
+| `title`, `authors`                             | string / string[] | required                                  |
+| `slug`                                         | string            | URL key for `/books/[slug]`               |
+| `subgenres`, `tropes`                          | string[]          | used for filtering; trope names not slugs |
+| `creatures`                                    | string[]          | creature/race slugs (e.g. `"dragon"`)     |
+| `tone`, `diversity_rep`, `content_warnings`    | string[]          |                                           |
+| `magic_system`, `pacing`, `heat_level`         | string            |                                           |
+| `audience`                                     | string            | Adult / YA / Children's                   |
+| `darkness_level`                               | 1–5               | 1=Lighthearted → 5=Brutal                 |
+| `accessibility`                                | string            | beginner / intermediate / advanced        |
+| `stakes`                                       | string            | personal / kingdom / world                |
+| `pov_style`                                    | string            | First Person / Third Limited / Omniscient |
+| `pov_count`                                    | string            | Single / Dual / Multiple                  |
+| `protagonist_gender`                           | string            | Male / Female / Ensemble                  |
+| `awards`                                       | string[]          | e.g. `["hugo-winner", "nebula-nominee"]`  |
+| `series`, `series_number`, `series_status`     | string / number   | series_status: completed / ongoing        |
+| `avg_rating`, `page_count`, `publication_year` | number            |                                           |
+| `cover_url`, `synopsis`                        | string            |                                           |
 
 ## Darkness Scale
 
