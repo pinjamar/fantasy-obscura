@@ -12,17 +12,20 @@ interface Props {
 const { faqs, bookTitle } = Astro.props;
 ---
 
-<section class="mt-2 mb-12 border-t border-zinc-100 pt-8">
-  <h2 class="text-xl font-semibold text-zinc-900 mb-4">Frequently Asked Questions</h2>
-  <div class="divide-y divide-zinc-100">
+<section class="mb-12">
+  <div class="flex items-center gap-1.5 mb-2">
+    <span class="text-base">❓</span>
+    <h2 class="text-xs font-semibold text-emerald-600 uppercase tracking-widest">FAQ</h2>
+  </div>
+  <div class="rounded-xl border border-emerald-200 bg-emerald-50 divide-y divide-emerald-100 overflow-hidden">
     {faqs.map((faq) => (
-      <details class="group py-1">
-        <summary class="flex items-center justify-between gap-4 py-3 cursor-pointer list-none text-sm font-medium text-zinc-800 hover:text-zinc-900 transition-colors">
+      <details class="group px-4">
+        <summary class="flex items-center justify-between gap-3 py-2.5 cursor-pointer list-none text-xs font-medium text-zinc-800 hover:text-zinc-900 transition-colors">
           <span>{faq.question}</span>
-          <span class="shrink-0 text-zinc-400 text-lg font-light group-open:hidden">+</span>
-          <span class="shrink-0 text-zinc-400 text-lg font-light hidden group-open:block">−</span>
+          <span class="shrink-0 text-emerald-400 font-light group-open:hidden">+</span>
+          <span class="shrink-0 text-emerald-400 font-light hidden group-open:block">−</span>
         </summary>
-        <p class="pb-4 text-sm text-zinc-600 leading-relaxed">{faq.answer}</p>
+        <p class="pb-3 text-xs text-zinc-600 leading-relaxed">{faq.answer}</p>
       </details>
     ))}
   </div>
