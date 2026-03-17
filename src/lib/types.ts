@@ -29,6 +29,7 @@ export type Book = {
   unique_angle: string | null;
   ideal_reader: string | null;
   reading_experience: string | null;
+  faqs: { question: string; answer: string }[] | null;
   accessibility: string | null;
   awards: string[] | null;
   stakes: string | null;
@@ -72,6 +73,7 @@ export type BookInput = {
   unique_angle?: string | null;
   ideal_reader?: string | null;
   reading_experience?: string | null;
+  faqs?: { question: string; answer: string }[] | null;
   accessibility?: string | null;
   awards?: string[] | null;
   stakes?: string | null;

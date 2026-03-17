@@ -32,15 +32,15 @@ const DELAY_MS  = 1200;
 
 // 50 priority book slugs (from import-books.mjs)
 const PRIORITY_SLUGS = [
-  'mistborn-the-final-empire', 'the-way-of-kings', 'the-name-of-the-wind',
+  'the-final-empire', 'the-way-of-kings', 'the-name-of-the-wind',
   'a-game-of-thrones', 'the-fellowship-of-the-ring', 'the-hobbit',
   'the-blade-itself', 'the-lies-of-locke-lamora', 'assassins-apprentice',
   'the-eye-of-the-world', 'fourth-wing', 'a-court-of-thorns-and-roses',
   'the-priory-of-the-orange-tree', 'the-poppy-war', 'the-shadow-of-the-gods',
   'red-sister', 'malice', 'the-black-prism', 'empire-of-the-vampire',
-  'kings-of-the-wyld', 'jonathan-strange-mr-norrell', 'the-dragonbone-chair',
+  'kings-of-the-wyld', 'jonathan-strange-and-mr-norrell', 'the-dragonbone-chair',
   'elantris', 'the-darkness-that-comes-before', 'the-colour-of-magic',
-  'circe', 'uprooted', 'spinning-silver', 'legends-lattes', 'cradle-unsouled',
+  'circe', 'uprooted', 'spinning-silver', 'legends-and-lattes', 'cradle-unsouled',
   'the-cruel-prince', 'the-will-of-the-many', 'the-justice-of-kings',
   'prince-of-thorns', 'gardens-of-the-moon', 'the-bone-ships',
   'the-bear-and-the-nightingale', 'the-ember-blade', 'the-rage-of-dragons',

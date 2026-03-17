@@ -6,6 +6,7 @@ import { supabaseClient } from '../../lib/supabaseClient';
 import AddToShelf from '../../components/AddToShelf';
 import FavouriteButton from '../../components/FavouriteButton';
 import CommunityTags from '../../components/CommunityTags';
+import BookFAQ from '../../components/BookFAQ.astro';
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect('/books');
@@ -507,6 +508,10 @@ function upgradeCoverUrl(url: string | null | undefined): string {
     </div>
   )}
 
+  <!-- ── FAQ ──────────────────────────────────────────────────── -->
+  {book.faqs && book.faqs.length > 0 && (
+    <BookFAQ faqs={book.faqs} bookTitle={book.title} />
+  )}
 
   <!-- ── Community Tags (hidden) ──────────────────────────────── -->
   {false && <CommunityTags client:load bookId={book.id} bookSlug={slug} initialTags={approvedTags} userEmail={userEmail} />}
