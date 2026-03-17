@@ -5,6 +5,7 @@ import tailwind from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
+  site: 'https://fantasy-obscura.pages.dev',
   output: 'server',
   integrations: [mdx(), react()],
   adapter: cloudflare({

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fantasy-obscura.pages.dev/sitemap.xml

@@ -1,18 +1,42 @@
 ---
 import '../styles.css';
-const { title = "Fantasy Obscura", description = "Fantasy & sci-fi book guides." } = Astro.props;
+const {
+  title = "Fantasy Obscura",
+  description = "Curated fantasy book guides with darkness ratings, trope tags, and honest reading context.",
+  image,
+  ogType = "website",
+} = Astro.props;
 const user = Astro.locals.user;
 const userProfile = Astro.locals.userProfile;
 const displayName = userProfile?.display_name || '';
 const avatarInitials = (displayName || user?.email || '').slice(0, 2).toUpperCase();
+
+const SITE = 'https://fantasy-obscura.pages.dev';
+const canonicalUrl = new URL(Astro.url.pathname, SITE).toString();
+const ogImage = image || `${SITE}/og-default.png`;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Fantasy Obscura" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
 
   <body class="min-h-screen bg-white text-zinc-900">

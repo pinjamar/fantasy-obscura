@@ -1,6 +1,6 @@
 # Fantasy Obscura
 
-A curated guide site for fantasy and sci-fi book lovers — with genre category pages, reading orders, creature references, an interactive book recommendation tool, and individual book pages with affiliate buy links.
+A curated guide site for fantasy book lovers - with genre category pages, reading orders, creature references, an interactive book recommendation tool and individual book pages with affiliate buy links.
 
 Live at: **fantasy-obscura.pages.dev**
 
@@ -30,13 +30,13 @@ Create a `.env` file:
 PUBLIC_SUPABASE_URL=your_supabase_project_url
 PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-ANTHROPIC_API_KEY=your_anthropic_api_key
+GEMINI_API_KEY=your_google_ai_studio_api_key
 GOOGLE_BOOKS_API_KEY=your_google_books_api_key
 GOOGLE_KG_API_KEY=your_google_knowledge_graph_api_key   # optional, for seed-authors
 ```
 
 - `SUPABASE_SERVICE_ROLE_KEY` — required for all write scripts
-- `ANTHROPIC_API_KEY` — required for classification scripts (Gemini via Anthropic proxy) and the AI recommendation API
+- `GEMINI_API_KEY` — required for all classify scripts, all generate scripts, and the AI recommendation API (`/api/recommend`)
 - `GOOGLE_BOOKS_API_KEY` — required for `discover-books`, `fill-series`, `fill-audiobooks`, `fill-ratings`
 - `GOOGLE_KG_API_KEY` — optional, improves author photo/bio quality in `seed-authors`
 
@@ -118,89 +118,94 @@ CREATE POLICY "users can remove own tags"   ON book_tags FOR DELETE TO authentic
 
 Tags default to `approved = false`. Set to `true` in the Supabase dashboard to make them public.
 
+### Step 6 — Editorial columns for generate scripts (run once before using generate-\*)
+
+```sql
+-- Book editorial fields
+ALTER TABLE books ADD COLUMN IF NOT EXISTS ideal_reader       text;
+ALTER TABLE books ADD COLUMN IF NOT EXISTS reading_experience text;
+ALTER TABLE books ADD COLUMN IF NOT EXISTS unique_angle       text;
+ALTER TABLE books ADD COLUMN IF NOT EXISTS faqs               jsonb;
+ALTER TABLE books ADD COLUMN IF NOT EXISTS best_for           text;
+
+-- Author bio fields
+ALTER TABLE authors ADD COLUMN IF NOT EXISTS writing_style       text;
+ALTER TABLE authors ADD COLUMN IF NOT EXISTS best_starting_point text;
+```
+
 ---
 
 ## Scripts
 
 All scripts live in `scripts/`. Run from the project root. Requires `.env` with the appropriate keys.
 
-### Daily pipeline — discover + classify in two commands
-
-```bash
-npm run discover -- --limit 300    # discover up to 300 new books
-npm run classify                   # classify all unclassified books (runs all 5 classifiers)
-```
-
-Or run both in one go:
-
-```bash
-npm run pipeline                   # discover 100 books then classify (default limit)
-```
-
 **Free tier limits (Gemini Flash):** ~300 books/day classified. For more, enable billing on Google AI Studio.
 
 ---
 
-### Book discovery
+### Step 1 — Discover books
 
 ```bash
-# Auto-discover new fantasy books from Google Books API
-npm run discover                          # default 100 books
+npm run discover                          # auto-discover 100 new books from Google Books
 npm run discover -- --limit 300          # custom limit
 npm run discover -- --limit 300 --reset  # restart query cycle from beginning
-npm run discover -- --dry-run            # preview without writing to DB
+npm run discover -- --dry-run
 
-# Equivalent direct node commands (same flags apply)
-node scripts/discover-books.mjs
-node scripts/discover-books.mjs --limit 300
-node scripts/discover-books.mjs --reset
-node scripts/discover-books.mjs --dry-run
-
-# Add a specific book by title/author
+# Add a specific book manually
 npm run add-book -- "The Wise Man's Fear" "Patrick Rothfuss"
-npm run add-book -- "Dune"
 node scripts/add-books.mjs "Dungeon Crawler Carl" "Matt Dinniman"
-
-# Add multiple books from a file (one "Title | Author" per line)
-npm run add-book -- --file books-to-add.txt
+npm run add-book -- --file books-to-add.txt   # bulk from file (one "Title | Author" per line)
 ```
 
-Progress is saved in `scripts/.discover-progress.json` (gitignored). Each run resumes from where the last left off across ~175 search queries. Run `--reset` after exhausting all queries to cycle again. Already-seen ISBNs are tracked across runs to prevent duplicates.
+Progress saved in `scripts/.discover-progress.json` (gitignored). Resumes across runs. Run `--reset` after exhausting all ~175 queries.
 
 ---
 
-### Series fill
+### Step 2 — Fill series & author back-catalogues
 
-Imports books from a hardcoded curated list (Phase 1) and auto-discovers remaining books by any author who already has 7+ books in the DB (Phase 2).
+Patches missing `series`/`series_number` on existing books, imports missing series entries from a curated list (Phase 1), then auto-discovers all books by any author with 7+ books in the DB (Phase 2).
 
 ```bash
-# Run both phases (recommended)
-node scripts/fill-series.mjs
+node scripts/fill-series.mjs              # run both phases
 node scripts/fill-series.mjs --dry-run
-node scripts/fill-series.mjs --limit 50          # cap Phase 2 imports at 50
-
-# Run only one phase
-node scripts/fill-series.mjs --series-only       # Phase 1 only (hardcoded list)
-node scripts/fill-series.mjs --authors-only      # Phase 2 only (prolific author sweep)
-
-# Adjust the prolific-author threshold (default: 7 books in DB)
-node scripts/fill-series.mjs --threshold 5       # include authors with 5+ books
-node scripts/fill-series.mjs --authors-only --threshold 10 --limit 100
+node scripts/fill-series.mjs --series-only     # Phase 1 only — curated list + patch missing series
+node scripts/fill-series.mjs --authors-only    # Phase 2 only — prolific author sweep
+node scripts/fill-series.mjs --limit 50        # cap Phase 2 imports
+node scripts/fill-series.mjs --threshold 5     # lower author book threshold (default: 7)
 ```
-
-**Phase 1** checks slug, exact title, normalized title, and `(series, series_number)` against the DB — already-imported books are skipped with zero API calls even if they were imported under a different title variant (e.g. `"Mistborn: The Final Empire"` vs `"The Final Empire"`).
-
-**Phase 2** paginates Google Books for each prolific author, deduplicates by ISBN → slug → title → normalized title, and uses `upsert` with `ignoreDuplicates: true` to handle any DB constraint violations silently.
 
 ---
 
-### Classify new books — all fields in one command
+### Step 3 — Fix covers, synopsis, ratings
+
+```bash
+# Fix missing/non-English synopsis or wrong publication year
+node scripts/repair-books.mjs
+node scripts/repair-books.mjs --dry-run
+node scripts/repair-books.mjs --limit 20
+node scripts/repair-books.mjs --all          # force-refresh every book
+
+# Update covers (Google Books first, Open Library fallback)
+npm run covers                               # fill only missing
+npm run covers -- --force                   # refresh all
+npm run covers -- --dry-run
+
+# Fill Goodreads avg_rating for books where it's NULL
+node scripts/fill-ratings.mjs
+node scripts/fill-ratings.mjs --dry-run
+node scripts/fill-ratings.mjs --limit 50
+node scripts/fill-ratings.mjs --all          # overwrite existing
+```
+
+---
+
+### Step 4 — Classify all fields
+
+Runs all 5 classifiers in sequence (each skips books already classified):
 
 ```bash
 npm run classify
 ```
-
-Runs all 5 classifiers in sequence using Gemini Flash (each skips books already classified):
 
 1. `classify-metadata` → `subgenres`, `darkness_level`, `heat_level`, `accessibility`, `awards`, `stakes`, `pov_style`, `pov_count`, `protagonist_gender`, `series_status`
 2. `classify-vibes` → `tone`, `pacing`, `magic_system`, `audience`
@@ -208,7 +213,7 @@ Runs all 5 classifiers in sequence using Gemini Flash (each skips books already 
 4. `classify-creatures` → `creatures` (28 creature/race slugs)
 5. `classify-content-warnings` → `content_warnings`
 
-### Individual classifiers
+Individual classifiers and repair options:
 
 ```bash
 npm run classify:metadata
@@ -217,72 +222,87 @@ npm run classify:tropes
 npm run classify:creatures
 npm run classify:warnings
 
-# With options
 node scripts/classify-metadata.mjs --dry-run
 node scripts/classify-metadata.mjs --limit 50
-node scripts/classify-tropes.mjs --reclassify        # redo all, not just NULL
-node scripts/classify-metadata.mjs --refresh-series  # re-check completed/ongoing status
+node scripts/classify-metadata.mjs --refresh-series   # re-check completed/ongoing status
+node scripts/classify-tropes.mjs --reclassify         # redo all, not just NULL
+
+# Fix pacing/tone contradictions and stale tone values automatically
+node scripts/classify-vibes.mjs --repair
+node scripts/classify-vibes.mjs --repair --dry-run
+node scripts/classify-vibes.mjs --slug the-way-of-kings   # re-classify single book
+node scripts/classify-vibes.mjs --reclassify              # overwrite all
 ```
-
-`--reclassify` re-runs on books that already have values — use after updating canonical trope/creature lists.
-
-`--refresh-series` re-evaluates `series_status` for all series books — run periodically as ongoing series finish.
 
 ---
 
-### Utilities
+### Step 5 — Seed authors
+
+Populates the authors table with bio, photo, website and social links from Open Library / Wikipedia / Google Knowledge Graph.
 
 ```bash
-# Update book covers (Google Books first, Open Library fallback)
-npm run covers                    # fill only missing covers
-npm run covers -- --force         # refresh all covers
-npm run covers -- --dry-run
+node scripts/seed-authors.js
+node scripts/seed-authors.js --dry-run
+node scripts/seed-authors.js --only-missing   # skip authors who already have a photo_url
 
-# Fix books with missing/non-English synopsis or wrong publication year
-node scripts/repair-books.mjs
-node scripts/repair-books.mjs --dry-run
-node scripts/repair-books.mjs --limit 20
-node scripts/repair-books.mjs --all          # force-refresh every book
+# Remove authors with no books in the DB
+node scripts/cleanup-authors.js              # dry run — lists orphans
+node scripts/cleanup-authors.js --delete
+```
 
-# Fill Goodreads avg_rating for books where it's NULL (via Gemini recall)
-node scripts/fill-ratings.mjs
-node scripts/fill-ratings.mjs --dry-run
-node scripts/fill-ratings.mjs --limit 50
-node scripts/fill-ratings.mjs --all          # overwrite existing ratings too
+---
 
-# Fill audiobook data (narrator, hours, narrator rating, Audible URL)
+### Step 6 — Fill audiobooks
+
+```bash
 node scripts/fill-audiobooks.mjs
 node scripts/fill-audiobooks.mjs --dry-run
 node scripts/fill-audiobooks.mjs --limit 50
-node scripts/fill-audiobooks.mjs --all       # re-process everything including confirmed true
-
-# Populate the authors table from Open Library / Wikipedia / Google Knowledge Graph
-node scripts/seed-authors.js
-node scripts/seed-authors.js --dry-run
-node scripts/seed-authors.js --only-missing  # skip authors who already have a photo_url
-
-# Find and delete authors with no books in the DB
-node scripts/cleanup-authors.js              # dry run — just lists orphans
-node scripts/cleanup-authors.js --delete     # actually deletes them
+node scripts/fill-audiobooks.mjs --all       # re-process everything
 ```
 
 ---
 
-### Generate editorial content (optional, costs more)
+### Step 7 — Generate editorial content
+
+All generate scripts target books in `scripts/priority-slugs.mjs` (TIER_1 / TIER_2 / TIER_3 / ALL_PRIORITY). Run SQL from DB Setup Step 6 before first use.
 
 ```bash
-# "What Makes It Different" — unique angle
-node scripts/generate-what-makes-it-different.mjs
-node scripts/generate-what-makes-it-different.mjs --dry-run --limit 5
+# "Best For" — one-line descriptor shown below synopsis (ALL_PRIORITY by default)
+node scripts/generate-best-for.mjs
+node scripts/generate-best-for.mjs --dry-run --limit 5
+node scripts/generate-best-for.mjs --slug the-way-of-kings
+node scripts/generate-best-for.mjs --tier1        # TIER_1 only
+node scripts/generate-best-for.mjs --all          # overwrite existing
 
-# "Tone & Reading Experience" — feel, darkness, pacing
-node scripts/generate-reading-experience.mjs
-node scripts/generate-reading-experience.mjs --dry-run --limit 5
-
-# "Who This Is For" — ideal reader + comps
+# "Who This Is For" — ideal_reader field (TIER_1 by default)
 node scripts/generate-ideal-reader.mjs
 node scripts/generate-ideal-reader.mjs --dry-run --limit 5
-node scripts/generate-ideal-reader.mjs --slug six-of-crows    # single book
+node scripts/generate-ideal-reader.mjs --slug the-final-empire
+
+# "Reading Experience" — reading_experience field (TIER_1 by default)
+node scripts/generate-reading-experience.mjs
+node scripts/generate-reading-experience.mjs --dry-run --limit 5
+node scripts/generate-reading-experience.mjs --slug the-final-empire
+
+# "What Makes It Different" — unique_angle field (TIER_1 by default)
+node scripts/generate-what-makes-it-different.mjs
+node scripts/generate-what-makes-it-different.mjs --dry-run --limit 5
+node scripts/generate-what-makes-it-different.mjs --slug the-final-empire
+
+# FAQs — faqs jsonb field (TIER_1 only)
+node scripts/generate-faqs.mjs
+node scripts/generate-faqs.mjs --dry-run --limit 5
+node scripts/generate-faqs.mjs --slug the-final-empire
+node scripts/generate-faqs.mjs --all
+
+# Author bio — writing_style + best_starting_point (authors with 7+ books)
+node scripts/generate-author-bio.mjs
+node scripts/generate-author-bio.mjs --dry-run
+node scripts/generate-author-bio.mjs --limit 10
+node scripts/generate-author-bio.mjs --slug brandon-sanderson
+node scripts/generate-author-bio.mjs --all
+node scripts/generate-author-bio.mjs --threshold 5
 ```
 
 ---
@@ -292,49 +312,80 @@ node scripts/generate-ideal-reader.mjs --slug six-of-crows    # single book
 ```
 src/
 ├── components/
+│   ├── AddToShelf.tsx      # Add/remove book from user's reading shelf
 │   ├── AlchemyTable.tsx    # Interactive book finder (filters → Supabase)
 │   ├── BookDisplay.tsx     # Book grid with sort, darkness badges, slug links
+│   ├── BookFAQ.astro       # FAQ accordion with FAQPage JSON-LD schema
 │   ├── BookHub.tsx         # Admin import tool (5 external API sources)
-│   ├── BooksLikeMe.tsx     # AI-powered "Alchemist" — add books you love, get recs
+│   ├── BookSearch.tsx      # Autocomplete search bar
+│   ├── BookmarkButton.tsx  # Save/unsave book to bookmarks
+│   ├── BookmarkCount.tsx   # Bookmark count badge
+│   ├── BooksLikeMe.tsx     # AI-powered rec tool — add books you love, get recs
 │   ├── CategoryGrid.tsx    # Genre category cards + Book of the Week
-│   ├── Layout.astro        # Base layout + nav + footer
-│   └── ReadingOrder.tsx    # Series reading order display
+│   ├── CategoryLists.tsx   # Book lists within a category page
+│   ├── CommunityTags.tsx   # User-submitted tags (hidden, pending launch)
+│   ├── FavouriteButton.tsx # Heart/favourite toggle on book pages
+│   ├── Layout.astro        # Base layout: nav, footer, OG/Twitter meta, canonical
+│   ├── MyShelf.tsx         # User's reading shelf view
+│   ├── ReadingList.tsx     # Ordered reading list component
+│   ├── ReadingOrder.tsx    # Series reading order display
+│   └── Stars.tsx           # Star rating display
 ├── data/
-│   └── books-like.ts       # 14 hand-written "Books Like X" recommendation pages
+│   ├── books-like.ts       # Hand-written "Books Like X" guide data
+│   ├── reading-orders.ts   # Reading order data for all series guides
+│   └── tropes.ts           # Canonical trope definitions
 ├── lib/
-│   ├── books/providers.ts  # External API integrations (OpenLibrary, Google Books,
-│   │                       #   Harvard, BigBook, Gutendex/Project Gutenberg)
-│   ├── db/books.ts         # Supabase CRUD helpers
+│   ├── auth.ts             # Auth helpers
+│   ├── books/providers.ts  # External API integrations (OpenLibrary, Google Books, etc.)
+│   ├── db/
+│   │   ├── authors.ts      # Supabase author CRUD helpers
+│   │   ├── books.ts        # Supabase book CRUD helpers
+│   │   └── tags.ts         # Supabase community tags helpers
 │   ├── database.types.ts   # Auto-generated Supabase types
 │   ├── supabaseClient.ts   # Supabase anon client
 │   └── types.ts            # App-wide type definitions
+├── middleware.ts            # Auth session injection into Astro.locals
 └── pages/
-    ├── index.astro                  # Home — category grid (server-prefetched)
-    ├── craft/index.astro            # Alchemy Table — book finder
+    ├── index.astro                  # Home — category grid
+    ├── sitemap.xml.ts               # Dynamic sitemap (queries all book/author/trope slugs)
+    ├── auth/
+    │   ├── login.astro
+    │   └── register.astro
+    ├── authors/
+    │   ├── index.astro              # Author directory
+    │   └── [slug].astro            # Author page — bio, series groups, all books
     ├── books/
-    │   ├── index.astro              # Book database hub (server-prefetched by category)
-    │   └── [slug].astro             # Individual book page (SSR, affiliate links)
+    │   ├── index.astro              # Book database hub (filtered by category)
+    │   └── [slug].astro             # Book page — editorial, tropes, FAQs, similar books
     ├── books-like/
-    │   ├── index.astro              # "Books like…" — Alchemist tool
-    │   └── [slug].astro             # Individual "books like X" page (14 pages)
-    ├── reading-orders/              # 8+ series reading guides
-    │   ├── index.astro
-    │   ├── cosmere.astro / discworld.astro / first-law.astro
-    │   ├── kingkiller.astro / malazan.astro / stormlight.astro
-    │   └── witcher.astro / wheel-of-time.astro / dresden-files.astro
-    ├── categories/                  # 12 genre pages (cozy, dark, epic, grimdark,
-    │   └── *.astro                  #   historical, litrpg, mythology, paranormal,
-    │                                #   romantasy, sci-fi, urban, young)
+    │   ├── index.astro              # Books Like index + AI recommendation tool
+    │   └── [slug].astro             # Individual "Books Like X" guide
+    ├── categories/
+    │   └── [slug]/index.astro       # Genre category pages (cozy, grimdark, romantasy, etc.)
+    ├── craft/index.astro            # Alchemy Table — filter-based book finder
+    ├── my-list/index.astro          # User's personal reading shelf
+    ├── reading-orders/
+    │   ├── index.astro              # Reading orders hub
+    │   └── [slug].astro             # Individual series reading guide
     ├── tropes/
     │   ├── index.astro              # Trope browser
     │   └── [slug].astro             # Individual trope page
-    ├── creatures/index.astro        # Creature & races reference
-    ├── magic-system/index.astro     # Magic systems + BookHub import tool
     └── api/
+        ├── auth/
+        │   ├── login.ts
+        │   ├── logout.ts
+        │   └── register.ts
+        ├── books/[slug]/tags.ts     # GET/POST community tags for a book
+        ├── profile/
+        │   ├── index.ts             # GET/PATCH user profile
+        │   └── avatar.ts            # POST avatar upload
+        ├── shelf/
+        │   ├── index.ts             # GET/POST/DELETE shelf entries
+        │   └── reorder.ts           # PATCH shelf order
         ├── books.ts                 # GET all books / POST save book
-        ├── books-search.ts          # GET book search for Alchemist autocomplete
+        ├── books-search.ts          # GET autocomplete search
         ├── craft.ts                 # GET filtered books for Alchemy Table
-        ├── recommend.ts             # POST AI-powered book recommendations (Claude)
+        ├── recommend.ts             # POST Gemini-powered book recommendations
         └── search.ts                # GET external API search (5 sources)
 ```
 

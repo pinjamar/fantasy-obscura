@@ -234,6 +234,11 @@ const BOOKS = [
   { title: 'The Atlas Paradox',                 author: 'Olivie Blake',           series: 'The Atlas',                      series_number: 2 },
   { title: 'The Atlas Complex',                 author: 'Olivie Blake',           series: 'The Atlas',                      series_number: 3 },
 
+  // ── Of Blood and Bone (John Gwynne) ──────────────────────────────────────
+  { title: 'A Time of Dread',                   author: 'John Gwynne',            series: 'Of Blood and Bone',              series_number: 1 },
+  { title: 'A Time of Blood',                   author: 'John Gwynne',            series: 'Of Blood and Bone',              series_number: 2 },
+  { title: 'A Time of Courage',                 author: 'John Gwynne',            series: 'Of Blood and Bone',              series_number: 3 },
+
   // ── The Bloodsworn Saga (John Gwynne) ────────────────────────────────────
   { title: 'The Shadow of the Gods',            author: 'John Gwynne',            series: 'The Bloodsworn Saga',            series_number: 1 },
   { title: 'The Hunger of the Gods',            author: 'John Gwynne',            series: 'The Bloodsworn Saga',            series_number: 2 },
@@ -843,9 +848,9 @@ function slugify(title) {
 function isLikelyNonEnglish(text) {
   if (!text) return false;
   const letters = [...text].filter((c) => /\p{L}/u.test(c));
-  if (letters.length < 20) return false;
+  if (letters.length < 10) return false;
   const nonAscii = letters.filter((c) => c.charCodeAt(0) > 127);
-  return nonAscii.length / letters.length > 0.05;
+  return nonAscii.length / letters.length > 0.03;
 }
 
 /** Strip series prefix and leading article for fuzzy title dedup. */
@@ -879,8 +884,12 @@ const SKIP_KEYWORDS = [
   'study guide', "reader's guide", 'reading group', 'book club guide',
   'critical essay', 'analysis of', 'annotated edition', 'annotated ',
   'deluxe edition', 'special edition', "collector's edition",
+  'limited edition', 'anniversary edition', 'expanded edition',
+  'revised edition', 'signed edition', 'leatherbound', 'leather-bound',
+  'slipcase', 'slip case', 'hardcover collector', 'folio society',
   'illustrated edition', 'large print', 'large-print', 'abridged',
   'graphic novel', 'graphic adaptation', 'manga', 'comic book',
+  'audiobook', 'audio book', 'audio edition', 'unabridged audio',
   'summary of', 'review of', 'synopsis of', 'book review', 'plot summary',
 ];
 
@@ -903,7 +912,12 @@ function authorMatches(item, searchedAuthor) {
 /** Filter a raw Google Books item — same rules as discover-books.mjs. */
 function extractBookData(item) {
   const info = item.volumeInfo ?? {};
-  if (info.language && info.language !== 'en') return null;
+  // Reject if language is explicitly non-English, or if unset and title/description looks non-English
+  if (info.language) {
+    if (info.language !== 'en') return null;
+  } else {
+    if (isLikelyNonEnglish(info.title) || isLikelyNonEnglish(info.description)) return null;
+  }
   if (!info.title || !info.authors?.length) return null;
   if (info.authors.length > 2) return null;
   if (!info.description && !info.pageCount) return null;
@@ -1198,7 +1212,7 @@ async function main() {
 
   let existing;
   try {
-    existing = await fetchAllBooks('slug, title, authors, series, series_number');
+    existing = await fetchAllBooks('id, slug, title, authors, series, series_number');
   } catch (existErr) {
     console.error('Supabase error:', existErr.message);
     process.exit(1);
@@ -1222,6 +1236,33 @@ async function main() {
   // ── Phase 1: series list ────────────────────────────────────────────────────
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
   console.log('📖  Phase 1 — Series Fill\n');
+
+  // Books in DB but missing series metadata — patch them
+  const existingBySlug  = new Map(existing.map((b) => [b.slug, b]));
+  const existingByTitle = new Map(existing.map((b) => [b.title.toLowerCase().trim(), b]));
+  const toPath = BOOKS.filter((b) => {
+    const dbBook =
+      existingBySlug.get(slugify(b.title)) ||
+      existingByTitle.get(b.title.toLowerCase().trim());
+    return dbBook && (!dbBook.series || dbBook.series_number == null);
+  });
+
+  if (toPath.length > 0) {
+    console.log(`🔧  Patching series metadata on ${toPath.length} existing book(s)…\n`);
+    for (const b of toPath) {
+      const dbBook =
+        existingBySlug.get(slugify(b.title)) ||
+        existingByTitle.get(b.title.toLowerCase().trim());
+      process.stdout.write(`  ${b.title.slice(0, 52).padEnd(52)} `);
+      if (DRY_RUN) { console.log(`[dry] → ${b.series} #${b.series_number}`); continue; }
+      const { error } = await supabase
+        .from('books')
+        .update({ series: b.series, series_number: b.series_number })
+        .eq('id', dbBook.id);
+      console.log(error ? `✗ ${error.message.slice(0, 60)}` : `✓ → ${b.series} #${b.series_number}`);
+    }
+    console.log('');
+  }
 
   const allToImport = BOOKS.filter((b) => {
     if (existingSlugs.has(slugify(b.title)))              return false;

@@ -8,9 +8,12 @@
  *   - audience:     'Adult' | 'Young Adult (YA)' | "Children's"
  *
  * Usage:
- *   node scripts/classify-vibes.mjs
+ *   node scripts/classify-vibes.mjs                    # fill NULL fields only
  *   node scripts/classify-vibes.mjs --dry-run
  *   node scripts/classify-vibes.mjs --limit 50
+ *   node scripts/classify-vibes.mjs --reclassify       # overwrite all books
+ *   node scripts/classify-vibes.mjs --slug the-way-of-kings
+ *   node scripts/classify-vibes.mjs --repair           # fix pacing/tone contradictions
  */
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -19,11 +22,15 @@ import { config } from 'dotenv';
 
 config();
 
-const DRY_RUN   = process.argv.includes('--dry-run');
-const LIMIT_ARG = process.argv.indexOf('--limit');
-const LIMIT     = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
-const BATCH_SIZE = 8;
-const DELAY_MS   = 900;
+const DRY_RUN     = process.argv.includes('--dry-run');
+const RECLASSIFY  = process.argv.includes('--reclassify');
+const REPAIR      = process.argv.includes('--repair');
+const LIMIT_ARG   = process.argv.indexOf('--limit');
+const LIMIT       = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
+const SLUG_ARG    = process.argv.indexOf('--slug');
+const SLUG        = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
+const BATCH_SIZE  = 8;
+const DELAY_MS    = 900;
 
 if (!process.env.GEMINI_API_KEY) {
   console.error('Missing GEMINI_API_KEY in .env');
@@ -49,17 +56,29 @@ const VALID_PACING   = ['Fast-paced', 'Slow-burn', 'Mixed'];
 const VALID_MAGIC    = ['Soft Magic', 'Hard Magic', 'No Magic'];
 const VALID_AUDIENCE = ['Adult', 'Young Adult (YA)', "Children's"];
 
+function hasContradiction(book) {
+  if (!book.tone?.length) return false;
+  // Stale data — tone contains values not in the canonical list
+  if (book.tone.some(t => !VALID_TONE.includes(t))) return true;
+  // Slow-burn pacing + any action-implying tone
+  if (book.pacing === 'Slow-burn' && book.tone.some(t => ['Adventurous'].includes(t))) return true;
+  // Fast-paced + only quiet/cosy tones, no active ones
+  const activeTonesPresent = book.tone.some(t => ['Adventurous', 'Epic', 'Grimdark', 'Dark & Serious', 'Mysterious'].includes(t));
+  if (book.pacing === 'Fast-paced' && !activeTonesPresent) return true;
+  return false;
+}
+
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-async function classifyBatch(books) {
+async function classifyBatch(books, forceFields = []) {
   const bookList = books.map((b, i) => {
     const needs = [
-      b.tone         === null && 'tone',
-      b.pacing       === null && 'pacing',
-      b.magic_system === null && 'magic_system',
-      b.audience     === null && 'audience',
+      (b.tone         === null || forceFields.includes('tone'))         && 'tone',
+      (b.pacing       === null || forceFields.includes('pacing'))       && 'pacing',
+      (b.magic_system === null || forceFields.includes('magic_system')) && 'magic_system',
+      (b.audience     === null || forceFields.includes('audience'))     && 'audience',
     ].filter(Boolean).join(', ');
 
     return `[${i + 1}] ID: ${b.id}
@@ -115,34 +134,52 @@ Rules:
 }
 
 async function main() {
-  console.log(`\n🎨 Vibe Classifier${DRY_RUN ? ' [DRY RUN]' : ''}\n`);
+  const modeLabel = REPAIR ? ' [REPAIR]' : RECLASSIFY ? ' [RECLASSIFY]' : SLUG ? ` [${SLUG}]` : '';
+  console.log(`\n🎨 Vibe Classifier${DRY_RUN ? ' [DRY RUN]' : ''}${modeLabel}\n`);
 
   let query = supabase
     .from('books')
-    .select('id, title, authors, synopsis, subgenres, series, series_number, publication_year, tone, pacing, magic_system, audience')
-    .or('tone.is.null,pacing.is.null,magic_system.is.null,audience.is.null')
-    .order('title');
+    .select('id, title, authors, synopsis, subgenres, series, series_number, publication_year, tone, pacing, magic_system, audience');
+
+  if (SLUG) {
+    query = query.eq('slug', SLUG);
+  } else if (REPAIR) {
+    // Fetch all classified books — filter contradictions in JS
+    query = query.not('pacing', 'is', null).not('tone', 'is', null);
+  } else if (RECLASSIFY) {
+    query = query.order('title');
+  } else {
+    query = query.or('tone.is.null,pacing.is.null,magic_system.is.null,audience.is.null').order('title');
+  }
 
   if (LIMIT) query = query.limit(LIMIT);
 
-  const { data: books, error } = await query;
+  const { data: allBooks, error } = await query;
   if (error) { console.error('Supabase error:', error.message); process.exit(1); }
 
+  const books = REPAIR ? allBooks.filter(hasContradiction) : allBooks;
+  const forceFields = (REPAIR || RECLASSIFY || SLUG) ? ['tone', 'pacing', 'magic_system', 'audience'] : [];
+
   if (!books.length) {
-    console.log('✅ All books already classified — nothing to do.');
+    console.log(REPAIR ? '✅ No pacing/tone contradictions found.' : '✅ All books already classified — nothing to do.');
     return;
   }
 
-  const counts = {
-    tone:         books.filter((b) => b.tone === null).length,
-    pacing:       books.filter((b) => b.pacing === null).length,
-    magic_system: books.filter((b) => b.magic_system === null).length,
-    audience:     books.filter((b) => b.audience === null).length,
-  };
-
-  console.log(`Found ${books.length} books to process`);
-  for (const [field, count] of Object.entries(counts)) {
-    if (count) console.log(`  ${field.padEnd(20)} missing: ${count}`);
+  if (REPAIR) {
+    console.log(`Found ${books.length} book(s) with pacing/tone contradictions:\n`);
+    for (const b of books) console.log(`  · ${b.title} — pacing: ${b.pacing}, tone: ${b.tone?.join(', ')}`);
+    console.log('');
+  } else {
+    const counts = {
+      tone:         books.filter((b) => b.tone === null).length,
+      pacing:       books.filter((b) => b.pacing === null).length,
+      magic_system: books.filter((b) => b.magic_system === null).length,
+      audience:     books.filter((b) => b.audience === null).length,
+    };
+    console.log(`Found ${books.length} books to process`);
+    for (const [field, count] of Object.entries(counts)) {
+      if (count) console.log(`  ${field.padEnd(20)} missing: ${count}`);
+    }
   }
   console.log(`  Batch size: ${BATCH_SIZE}  ·  Batches: ${Math.ceil(books.length / BATCH_SIZE)}\n`);
 
@@ -159,7 +196,7 @@ async function main() {
 
     let results;
     try {
-      results = await classifyBatch(batch);
+      results = await classifyBatch(batch, forceFields);
     } catch (err) {
       console.log(`✗ Gemini error: ${err.message}`);
       failed += batch.length;
@@ -174,13 +211,14 @@ async function main() {
       if (!book) continue;
 
       const updates = {};
+      const overwrite = RECLASSIFY || REPAIR || !!SLUG;
 
-      if (book.tone === null && result.tone !== null) {
+      if ((book.tone === null || overwrite) && result.tone !== null) {
         const validTones = (result.tone || []).filter((t) => VALID_TONE.includes(t));
         if (validTones.length) updates.tone = validTones;
       }
 
-      if (book.pacing === null && result.pacing !== null) {
+      if ((book.pacing === null || overwrite) && result.pacing !== null) {
         if (VALID_PACING.includes(result.pacing)) {
           updates.pacing = result.pacing;
         } else {
@@ -188,7 +226,7 @@ async function main() {
         }
       }
 
-      if (book.magic_system === null && result.magic_system !== null) {
+      if ((book.magic_system === null || overwrite) && result.magic_system !== null) {
         if (VALID_MAGIC.includes(result.magic_system)) {
           updates.magic_system = result.magic_system;
         } else {
@@ -196,7 +234,7 @@ async function main() {
         }
       }
 
-      if (book.audience === null && result.audience !== null) {
+      if ((book.audience === null || overwrite) && result.audience !== null) {
         if (VALID_AUDIENCE.includes(result.audience)) {
           updates.audience = result.audience;
         } else {
