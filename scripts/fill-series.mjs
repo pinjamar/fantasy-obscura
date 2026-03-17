@@ -872,6 +872,7 @@ const SKIP_KEYWORDS = [
   'and other stories', 'tales of', 'tales from', 'stories from',
   'selected works', 'collected stories', 'the best of',
   'short stories', 'short story', 'novelette',
+  ' trilogy', 'duology', ' collection',
   'guide to', 'companion to', 'art of', 'making of', 'the world of',
   'cookbook', 'workbook', 'coloring book', 'activity book',
   'journal', 'notebook', 'planner', 'calendar', 'diary',
@@ -882,6 +883,22 @@ const SKIP_KEYWORDS = [
   'graphic novel', 'graphic adaptation', 'manga', 'comic book',
   'summary of', 'review of', 'synopsis of', 'book review', 'plot summary',
 ];
+
+/** Check that a Google Books result actually belongs to the searched author. */
+function authorMatches(item, searchedAuthor) {
+  const bookAuthors = (item.volumeInfo?.authors ?? []).map((a) => a.toLowerCase().trim());
+  if (!bookAuthors.length) return false;
+  const searched = searchedAuthor.toLowerCase().trim();
+  // Accept if any returned author contains the searched surname or vice-versa
+  const searchedParts = searched.split(/\s+/);
+  const searchedSurname = searchedParts[searchedParts.length - 1];
+  return bookAuthors.some((a) =>
+    a === searched ||
+    a.includes(searched) ||
+    searched.includes(a) ||
+    a.includes(searchedSurname)
+  );
+}
 
 /** Filter a raw Google Books item — same rules as discover-books.mjs. */
 function extractBookData(item) {
@@ -1079,6 +1096,7 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
 
         const book = extractBookData(item);
         if (!book) continue;
+        if (!authorMatches(item, author)) continue;
 
         const isbn = extractISBN(item);
         if (isbn && seenISBNs.has(isbn)) continue;
