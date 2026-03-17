@@ -44,7 +44,7 @@ function authorColor(name: string): string {
 }
 ---
 
-<Layout title="Authors | Fantasy Obscura" description="Browse all fantasy and sci-fi authors in our database.">
+<Layout title="Fantasy Authors | Fantasy Obscura" description="Browse fantasy authors — bios, full book lists, series guides, writing style, and the best place to start for every author.">
   <div class="mb-6">
     <h1 class="text-3xl font-bold tracking-tight">Authors</h1>
     <p class="mt-2 text-zinc-600">{authors.length} authors in our database</p>
@@ -94,14 +94,14 @@ function authorColor(name: string): string {
                 <img
                   src={photoMap.get(author.slug)!}
                   alt={author.name}
-                  class="shrink-0 w-12 h-12 rounded-full object-cover shadow-sm"
+                  class="shrink-0 w-20 h-20 rounded-xl object-cover shadow-sm"
                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
                 />
-                <div class={`shrink-0 w-12 h-12 rounded-full ${authorColor(author.name)} items-center justify-center text-white font-bold text-lg hidden`}>
+                <div class={`shrink-0 w-20 h-20 rounded-xl ${authorColor(author.name)} items-center justify-center text-white font-bold text-xl hidden`}>
                   {author.name[0].toUpperCase()}
                 </div>
               ) : (
-                <div class={`shrink-0 w-12 h-12 rounded-full ${authorColor(author.name)} flex items-center justify-center text-white font-bold text-lg`}>
+                <div class={`shrink-0 w-20 h-20 rounded-xl ${authorColor(author.name)} flex items-center justify-center text-white font-bold text-xl`}>
                   {author.name[0].toUpperCase()}
                 </div>
               )}

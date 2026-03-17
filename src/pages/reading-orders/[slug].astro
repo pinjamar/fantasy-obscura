@@ -172,8 +172,8 @@ const pageTitle = curatedEntry
   ? `${curatedEntry.name} Reading Order | Fantasy Obscura`
   : `${seriesMeta?.name} Reading Order | Fantasy Obscura`;
 const pageDesc = curatedEntry
-  ? `Complete reading order for ${curatedEntry.name} by ${curatedEntry.author} — ${allBooksCurated.length} books covered.`
-  : `Complete reading order for ${seriesMeta?.name} — ${seriesMeta?.bookCount} books in our database.`;
+  ? `Complete reading order for ${curatedEntry.name} by ${curatedEntry.author} — ${allBooksCurated.length} books, ${coreCount} core${allBooksCurated.length - coreCount > 0 ? ` + ${allBooksCurated.length - coreCount} optional` : ''}. What to read first, what's skippable.`
+  : `Complete reading order for ${seriesMeta?.name}${authorNames.length ? ` by ${authorNames.slice(0, 2).join(' & ')}` : ''} — ${seriesMeta?.bookCount ?? dbBooks.length} books in our database.`;
 ---
 
 <Layout title={pageTitle} description={pageDesc}>

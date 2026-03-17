@@ -6,7 +6,7 @@ const user = Astro.locals.user;
 const userProfile = Astro.locals.userProfile;
 ---
 
-<Layout title="My Shelf | Fantasy Obscura" description="Your personal reading shelves — track what you want to read, are reading, and have finished.">
+<Layout title="My Shelf | Fantasy Obscura" description="Your personal reading shelves — track what you want to read, are reading, and have finished." noindex>
   <div class="mb-8">
     <h1 class="text-3xl font-bold tracking-tight">My Shelf</h1>
     {!user && <p class="mt-2 text-zinc-500">Your personal reading tracker.</p>}

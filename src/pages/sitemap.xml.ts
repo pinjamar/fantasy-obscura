@@ -1,28 +1,26 @@
 import type { APIRoute } from 'astro';
 import { createClient } from '@supabase/supabase-js';
+import { BOOKS_LIKE } from '../data/books-like';
+import { READING_ORDERS } from '../data/reading-orders';
 
 const SITE = 'https://fantasy-obscura.pages.dev';
+
+// Books-like slugs from static data
+const BOOKS_LIKE_SLUGS = BOOKS_LIKE.map((e) => e.slug);
+
+// Curated reading order slugs from static data
+const CURATED_READING_ORDER_SLUGS = READING_ORDERS.map((e) => e.slug);
 
 // Static routes that are always present
 const STATIC_ROUTES = [
   '/',
   '/books/',
-  '/craft/',
+  '/book-finder/',
   '/tropes/',
   '/books-like/',
   '/reading-orders/',
   '/authors/',
   '/categories/',
-  '/reading-orders/cosmere/',
-  '/reading-orders/first-law/',
-  '/reading-orders/acotar/',
-  '/reading-orders/stormlight/',
-  '/reading-orders/wheel-of-time/',
-  '/reading-orders/malazan/',
-  '/reading-orders/witcher/',
-  '/reading-orders/kingkiller/',
-  '/reading-orders/discworld/',
-  '/reading-orders/dresden-files/',
 ];
 
 function urlEntry(path: string, priority = '0.5', changefreq = 'weekly') {
@@ -70,6 +68,16 @@ export const GET: APIRoute = async ({ locals }) => {
       .map((t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
   )];
 
+  // Fetch DB-driven reading order slugs (series not in curated list)
+  const curatedSet = new Set(CURATED_READING_ORDER_SLUGS);
+  const { data: seriesRows } = await supabase
+    .from('books')
+    .select('series')
+    .not('series', 'is', null);
+  const dbSeriesSlugs = [...new Set(
+    (seriesRows ?? []).map((b) => (b.series as string).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
+  )].filter((s) => !curatedSet.has(s));
+
   const entries: string[] = [
     // Static
     ...STATIC_ROUTES.map((p) => urlEntry(p, p === '/' ? '1.0' : '0.7', 'daily')),
@@ -79,6 +87,12 @@ export const GET: APIRoute = async ({ locals }) => {
     ...authorSlugs.map((s) => urlEntry(`/authors/${s}/`, '0.6', 'monthly')),
     // Tropes
     ...tropeSlugs.map((s) => urlEntry(`/tropes/${s}/`, '0.5', 'monthly')),
+    // Books Like
+    ...BOOKS_LIKE_SLUGS.map((s) => urlEntry(`/books-like/${s}/`, '0.7', 'monthly')),
+    // Reading orders — curated
+    ...CURATED_READING_ORDER_SLUGS.map((s) => urlEntry(`/reading-orders/${s}/`, '0.7', 'monthly')),
+    // Reading orders — DB-driven
+    ...dbSeriesSlugs.map((s) => urlEntry(`/reading-orders/${s}/`, '0.5', 'monthly')),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

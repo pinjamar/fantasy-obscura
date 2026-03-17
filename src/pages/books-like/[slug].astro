@@ -53,7 +53,8 @@ const dbRecCoverMap = new Map<string, string>(
 
 <Layout
   title={`Books Like ${source.title} | Fantasy Obscura`}
-  description={`If you loved ${source.title} by ${source.author}, here are the best reads that capture the same feeling — curated, not algorithmically generated.`}
+  description={`If you loved ${source.title} by ${source.author}, here are the best reads that capture the same feeling.`}
+  image={sourceCover || undefined}
 >
 
   <!-- Breadcrumb -->
@@ -122,6 +123,14 @@ const dbRecCoverMap = new Map<string, string>(
           </div>
         ) : null })()}
       </div>
+
+      <!-- SEO intro -->
+      <p class="mt-4 text-zinc-500 text-sm leading-relaxed">
+        Looking for books like <span class="font-medium text-zinc-700">{source.title}</span>?
+        {source.series && source.series_number != null
+          ? ` These picks capture what makes ${source.series} worth reading.`
+          : ` These picks capture what makes ${source.author}'s work worth reading.`}
+      </p>
 
       <!-- Trope pills -->
       <div class="mt-4 flex flex-wrap gap-2">

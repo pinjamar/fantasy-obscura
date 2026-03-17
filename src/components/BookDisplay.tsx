@@ -342,23 +342,6 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
           )}
         </div>
 
-        <button
-          onClick={() => { setCompletedFilter(completedFilter === true ? null : true); setCurrentPage(1); }}
-          className="flex items-center gap-2 group"
-        >
-          <span className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${
-            completedFilter === true
-              ? 'bg-zinc-900 border-zinc-900'
-              : 'border-zinc-400 group-hover:border-zinc-600'
-          }`}>
-            {completedFilter === true && (
-              <svg className="w-2.5 h-2.5 text-white" viewBox="0 0 10 10" fill="none">
-                <path d="M1.5 5L4 7.5L8.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-          </span>
-          <span className="text-sm font-medium text-zinc-700">Completed Series</span>
-        </button>
 
         <button
           onClick={() => { setStandaloneFilter(!standaloneFilter); setCurrentPage(1); }}

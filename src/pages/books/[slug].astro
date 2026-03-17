@@ -419,7 +419,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
                   const label = a.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
                   return isWinner
                     ? <span class="px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full text-sm">🏆 {label}</span>
-                    : <span class="px-3 py-1 bg-zinc-50 text-zinc-600 border border-zinc-200 rounded-full text-sm">★ {label}</span>;
+                    : <span class="px-3 py-1 bg-slate-100 text-slate-500 border border-slate-300 rounded-full text-sm">★ {label}</span>;
                 })}
               </div>
             </div>
