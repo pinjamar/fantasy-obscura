@@ -54,73 +54,133 @@ export const TIER_2 = [
   'the-witchs-heart', 'throne-of-glass', 'warbreaker', 'words-of-radiance',
 ];
 
-// High-search-volume books not yet in TIER_1/2 — long-term editorial targets
-// Cross-referenced from 500-guide wishlist (romantasy, epic, grimdark, YA, cozy, urban, LitRPG, classic)
+// Full coverage list for books-like guides — every unique title from the 500-guide wishlist
+// not already in TIER_1 or TIER_2. Includes sequels where the sequel itself is a search target.
 export const TIER_3 = [
-  // Romantasy / Dark Romance
-  'a-court-of-silver-flames', 'house-of-earth-and-blood', 'house-of-sky-and-breath',
-  'house-of-flame-and-shadow', 'onyx-storm', 'a-fate-inked-in-blood',
-  'when-the-moon-hatched', 'the-stars-are-dying', 'a-little-hatred',
-  'the-trouble-with-peace', 'the-wisdom-of-crowds',
+  // ── Romantasy / Dark Romance ──────────────────────────────────────────────
+  'a-court-of-mist-and-fury', 'a-court-of-wings-and-ruin', 'a-court-of-frost-and-starlight',
+  'a-court-of-silver-flames',
+  'house-of-earth-and-blood', 'house-of-sky-and-breath', 'house-of-flame-and-shadow',
+  'onyx-storm', 'a-fate-inked-in-blood', 'when-the-moon-hatched',
+  'the-stars-are-dying', 'a-little-hatred', 'the-trouble-with-peace', 'the-wisdom-of-crowds',
+  'a-kingdom-of-flesh-and-fire', 'the-crown-of-gilded-bones', 'the-war-of-two-queens',
+  'kingdom-of-the-wicked', // already TIER_2 but noting for guide coverage
 
-  // Cosmere — major sequels with standalone search demand
-  'the-well-of-ascension', 'the-hero-of-ages', 'oathbringer',
-  'rhythm-of-war', 'wind-and-truth', 'tress-of-the-emerald-sea', 'the-sunlit-man',
+  // ── Cosmere (Sanderson) — sequels & novellas ──────────────────────────────
+  'the-well-of-ascension', 'the-hero-of-ages',
+  'oathbringer', 'rhythm-of-war', 'wind-and-truth',
+  'tress-of-the-emerald-sea', 'the-sunlit-man', 'yumi-and-the-nightmare-painter',
+  'the-rithmatist', 'alcatraz-versus-the-evil-librarians',
+  'starsight', 'cytonic', 'defiant',
 
-  // Grishaverse (Bardugo)
-  'six-of-crows', 'crooked-kingdom', 'siege-and-storm', 'ruin-and-rising',
-  'king-of-scars', 'rule-of-wolves', 'the-gilded-wolves',
+  // ── Grishaverse (Bardugo) ─────────────────────────────────────────────────
+  'six-of-crows', 'crooked-kingdom',
+  'siege-and-storm', 'ruin-and-rising', 'king-of-scars', 'rule-of-wolves',
+  'the-gilded-wolves', 'the-silvered-serpents', 'the-midnight-lie',
 
-  // First Law World — sequels & standalones
-  'before-they-are-hanged', 'last-argument-of-kings', 'the-heroes',
-  'red-country',
+  // ── First Law World (Abercrombie) ─────────────────────────────────────────
+  'before-they-are-hanged', 'last-argument-of-kings',
+  'the-heroes', 'red-country',
+  'the-trouble-with-peace', 'the-wisdom-of-crowds', // Age of Madness
 
-  // Broken Empire sequels
+  // ── Broken Empire (Lawrence) ──────────────────────────────────────────────
   'king-of-thorns', 'emperor-of-thorns',
+  'prince-of-fools', 'the-liar-s-key', 'the-wheel-of-osheim',
 
-  // Locked Tomb (Tamsyn Muir)
-  'gideon-the-ninth', 'harrow-the-ninth', 'nona-the-ninth',
+  // ── Locked Tomb (Tamsyn Muir) ─────────────────────────────────────────────
+  'gideon-the-ninth', 'harrow-the-ninth', 'nona-the-ninth', 'alecto-the-ninth',
 
-  // Green Bone Saga sequels
+  // ── Green Bone Saga (Fonda Lee) ───────────────────────────────────────────
   'jade-war', 'jade-legacy',
 
-  // Poppy War / Kuang sequels & Babel adjacent
+  // ── Poppy War / RF Kuang ──────────────────────────────────────────────────
   'the-burning-god', 'the-oleander-sword', 'the-lotus-empire',
 
-  // Baru Cormorant sequel
+  // ── Radiant Emperor (Parker-Chan) ────────────────────────────────────────
+  'he-who-drowned-the-world',
+
+  // ── Baru Cormorant ────────────────────────────────────────────────────────
   'the-monster-baru-cormorant',
 
-  // Atlas series sequels
+  // ── Atlas Series (Olivie Blake) ───────────────────────────────────────────
   'the-atlas-paradox', 'the-atlas-complex',
 
-  // Grimdark standalones
-  'blood-song', 'the-book-eaters', 'the-warrior-prophet', 'the-thousandfold-thought',
+  // ── Prince of Nothing (Bakker) ────────────────────────────────────────────
+  'the-warrior-prophet', 'the-thousandfold-thought',
 
-  // YA Fantasy
-  'the-wicked-king', 'the-queen-of-nothing', 'a-torch-against-the-night',
-  'the-last-graduate', 'the-golden-enclaves', 'the-lightning-thief',
-  'the-city-of-brass', 'the-kingdom-of-copper', 'siege-and-storm', 'ruin-and-rising',
+  // ── Grimdark standalones ──────────────────────────────────────────────────
+  'blood-song', 'tower-lord', 'queen-of-fire',
+  'the-book-eaters', 'plain-bad-heroines', 'mexican-gothic',
+  'the-black-company', 'shadows-linger', 'the-white-rose',
+  'promise-of-blood', 'the-crimson-campaign', 'the-autumn-republic',
 
-  // Cozy / Heartwarming
-  'a-psalm-for-the-wild-built', 'bookshops-and-bonedust', 'nettle-and-bone',
-  'thornhedge', 'the-very-secret-society-of-irregular-witches',
-  'sorcery-of-thorns', 'the-midnight-library', 'emily-wildes-map-of-the-otherlands',
+  // ── Wheel of Time (Jordan/Sanderson) — major sequels ─────────────────────
+  'the-great-hunt', 'the-dragon-reborn', 'the-shadow-rising',
+  'the-fires-of-heaven', 'lord-of-chaos', 'a-crown-of-swords',
+  'the-gathering-storm', 'towers-of-midnight', 'a-memory-of-light',
 
-  // Urban / Gaiman-adjacent
-  'anansi-boys', 'coraline', 'the-magician-king',
+  // ── YA Fantasy ───────────────────────────────────────────────────────────
+  'the-wicked-king', 'the-queen-of-nothing',
+  'a-torch-against-the-night', 'a-reaper-at-the-gates', 'a-sky-beyond-the-storm',
+  'the-last-graduate', 'the-golden-enclaves',
+  'the-lightning-thief', 'the-sea-of-monsters', 'the-titans-curse',
+  'the-city-of-brass', 'the-kingdom-of-copper', 'the-empire-of-gold',
+  'children-of-virtue-and-vengeance',
+  'siege-and-storm', 'ruin-and-rising', 'king-of-scars', 'rule-of-wolves',
+  'legendborn', 'bloodmarked',
+  'the-bone-witch', 'the-heart-forger', 'the-shadowglass',
+  'daughter-of-the-moon-goddess', 'sea-of-the-jade-serpent',
 
-  // Classic / Literary Fantasy
-  'a-song-for-arbonne', 'under-heaven', 'the-summer-tree', 'the-killing-moon',
+  // ── Cozy / Heartwarming ───────────────────────────────────────────────────
+  'a-psalm-for-the-wild-built', 'a-prayer-for-the-crown-shy',
+  'bookshops-and-bonedust', 'nettle-and-bone', 'thornhedge',
+  'the-very-secret-society-of-irregular-witches', 'witch-of-wild-things',
+  'sorcery-of-thorns', 'the-midnight-library',
+  'emily-wildes-map-of-the-otherlands',
+  'the-undertaking-of-hart-and-mercy',
+  'in-other-lands',
 
-  // LitRPG / SFF crossover
-  'all-systems-red', 'leviathan-wakes', 'old-mans-war',
+  // ── Urban / Gaiman-adjacent ───────────────────────────────────────────────
+  'anansi-boys', 'coraline', 'the-ocean-at-the-end-of-the-lane',
+  'norse-mythology', 'the-magician-king', 'the-magicians-land',
+  'outlander', 'dragonfly-in-amber',
+  'rivers-of-london', 'moon-over-soho',
+
+  // ── Classic & Literary Fantasy ────────────────────────────────────────────
+  'a-song-for-arbonne', 'under-heaven', 'river-of-stars',
+  'the-summer-tree', 'the-wandering-fire', 'the-darkest-road',
+  'the-killing-moon', 'the-shadowed-sun',
+  'nine-princes-in-amber', 'the-guns-of-avalon',
+  'the-mists-of-avalon',
+  'the-crystal-cave',
+
+  // ── LitRPG / Progression Fantasy ─────────────────────────────────────────
+  'soulsmith', 'blackflame', 'ghostwater', 'underlord', 'wintersteel', 'waybound',
+  'all-systems-red', 'artificial-condition', 'rogue-protocol', 'exit-strategy',
+  'network-effect',
   'the-beginning-after-the-end', 'shadow-slave',
+  'mother-of-learning',
+  'leviathan-wakes', 'calibans-war', 'abaddons-gate',
+  'old-mans-war',
 
-  // Robin Hobb deep cuts
-  'ship-of-magic', 'fools-errand',
+  // ── Robin Hobb deep cuts ──────────────────────────────────────────────────
+  'ship-of-magic', 'the-mad-ship', 'ship-of-destiny',
+  'fools-errand', 'the-golden-fool', 'fools-fate',
+  'fools-assassin', 'fools-quest', 'assassins-fate',
 
-  // Other high-search standalones
-  'outlander', 'promise-of-blood', 'mexican-gothic',
+  // ── Broken Earth / NK Jemisin ─────────────────────────────────────────────
+  'the-obelisk-gate', 'the-stone-sky',
+  'the-kingdom-of-gods', 'the-killing-moon',
+
+  // ── Murderbot (Martha Wells) ──────────────────────────────────────────────
+  'artificial-condition', 'rogue-protocol', 'exit-strategy', 'network-effect',
+  'fugitive-telemetry',
+
+  // ── Misc high-search standalones ─────────────────────────────────────────
+  'piranesi', // already TIER_2 — noted for guide coverage
+  'the-book-eaters', 'the-saint-of-bright-doors',
+  'the-city-we-became',
+  'good-omens', // already TIER_2
 ];
 
 // Combined: all books worth full editorial treatment
