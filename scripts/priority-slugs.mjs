@@ -54,5 +54,74 @@ export const TIER_2 = [
   'the-witchs-heart', 'throne-of-glass', 'warbreaker', 'words-of-radiance',
 ];
 
+// High-search-volume books not yet in TIER_1/2 — long-term editorial targets
+// Cross-referenced from 500-guide wishlist (romantasy, epic, grimdark, YA, cozy, urban, LitRPG, classic)
+export const TIER_3 = [
+  // Romantasy / Dark Romance
+  'a-court-of-silver-flames', 'house-of-earth-and-blood', 'house-of-sky-and-breath',
+  'house-of-flame-and-shadow', 'onyx-storm', 'a-fate-inked-in-blood',
+  'when-the-moon-hatched', 'the-stars-are-dying', 'a-little-hatred',
+  'the-trouble-with-peace', 'the-wisdom-of-crowds',
+
+  // Cosmere — major sequels with standalone search demand
+  'the-well-of-ascension', 'the-hero-of-ages', 'oathbringer',
+  'rhythm-of-war', 'wind-and-truth', 'tress-of-the-emerald-sea', 'the-sunlit-man',
+
+  // Grishaverse (Bardugo)
+  'six-of-crows', 'crooked-kingdom', 'siege-and-storm', 'ruin-and-rising',
+  'king-of-scars', 'rule-of-wolves', 'the-gilded-wolves',
+
+  // First Law World — sequels & standalones
+  'before-they-are-hanged', 'last-argument-of-kings', 'the-heroes',
+  'red-country',
+
+  // Broken Empire sequels
+  'king-of-thorns', 'emperor-of-thorns',
+
+  // Locked Tomb (Tamsyn Muir)
+  'gideon-the-ninth', 'harrow-the-ninth', 'nona-the-ninth',
+
+  // Green Bone Saga sequels
+  'jade-war', 'jade-legacy',
+
+  // Poppy War / Kuang sequels & Babel adjacent
+  'the-burning-god', 'the-oleander-sword', 'the-lotus-empire',
+
+  // Baru Cormorant sequel
+  'the-monster-baru-cormorant',
+
+  // Atlas series sequels
+  'the-atlas-paradox', 'the-atlas-complex',
+
+  // Grimdark standalones
+  'blood-song', 'the-book-eaters', 'the-warrior-prophet', 'the-thousandfold-thought',
+
+  // YA Fantasy
+  'the-wicked-king', 'the-queen-of-nothing', 'a-torch-against-the-night',
+  'the-last-graduate', 'the-golden-enclaves', 'the-lightning-thief',
+  'the-city-of-brass', 'the-kingdom-of-copper', 'siege-and-storm', 'ruin-and-rising',
+
+  // Cozy / Heartwarming
+  'a-psalm-for-the-wild-built', 'bookshops-and-bonedust', 'nettle-and-bone',
+  'thornhedge', 'the-very-secret-society-of-irregular-witches',
+  'sorcery-of-thorns', 'the-midnight-library', 'emily-wildes-map-of-the-otherlands',
+
+  // Urban / Gaiman-adjacent
+  'anansi-boys', 'coraline', 'the-magician-king',
+
+  // Classic / Literary Fantasy
+  'a-song-for-arbonne', 'under-heaven', 'the-summer-tree', 'the-killing-moon',
+
+  // LitRPG / SFF crossover
+  'all-systems-red', 'leviathan-wakes', 'old-mans-war',
+  'the-beginning-after-the-end', 'shadow-slave',
+
+  // Robin Hobb deep cuts
+  'ship-of-magic', 'fools-errand',
+
+  // Other high-search standalones
+  'outlander', 'promise-of-blood', 'mexican-gothic',
+];
+
 // Combined: all books worth full editorial treatment
-export const ALL_PRIORITY = [...TIER_1, ...TIER_2];
+export const ALL_PRIORITY = [...TIER_1, ...TIER_2, ...TIER_3];
