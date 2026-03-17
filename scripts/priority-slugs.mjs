@@ -3,8 +3,9 @@
  *
  * Single source of truth for book priority tiers used by all generate-* scripts.
  *
- * TIER_1 — 50 flagship books: fully editorial (ideal_reader, reading_experience, unique_angle, faqs)
- * TIER_2 — secondary books: currently have 1-2 editorial sections filled; candidates for full treatment
+ * TIER_1 — flagship books: fully editorial (ideal_reader, reading_experience, unique_angle, faqs)
+ * TIER_2 — secondary books: 1-2 editorial sections filled; candidates for full treatment
+ * TIER_3 — full coverage for books-like guides; every unique title from the 500-guide wishlist
  */
 
 export const TIER_1 = [
@@ -15,47 +16,48 @@ export const TIER_1 = [
   'the-priory-of-the-orange-tree', 'the-poppy-war', 'the-shadow-of-the-gods',
   'red-sister', 'malice', 'the-black-prism', 'empire-of-the-vampire',
   'kings-of-the-wyld', 'jonathan-strange-and-mr-norrell', 'the-dragonbone-chair',
-  'elantris', 'the-darkness-that-comes-before', 'the-colour-of-magic',
+  'elantris', 'the-colour-of-magic',
   'circe', 'uprooted', 'spinning-silver', 'legends-and-lattes', 'cradle-unsouled',
   'the-cruel-prince', 'the-will-of-the-many', 'the-justice-of-kings',
   'prince-of-thorns', 'gardens-of-the-moon', 'the-bone-ships',
   'the-bear-and-the-nightingale', 'the-ember-blade', 'the-rage-of-dragons',
   'daughter-of-the-empire', 'the-traitor-baru-cormorant', 'the-sword-of-kaigen',
   'senlin-ascends', 'the-goblin-emperor', 'the-atlas-six',
-  'emily-wildes-encyclopaedia-of-faeries', 'the-spear-cuts-through-water',
-  'the-tainted-cup', 'the-book-of-the-new-sun', 'tigana',
+  'emily-wildes-encyclopaedia-of-faeries', 'tigana',
+  // promoted from TIER_2
+  'red-rising', 'piranesi', 'good-omens', 'from-blood-and-ash', 'dune',
+  // added
+  'six-of-crows', 'the-night-circus',
 ];
 
-// Books with 1-2 editorial sections already filled — next in line for full treatment
 export const TIER_2 = [
   'a-darker-shade-of-magic', 'a-deadly-education', 'a-desolation-called-peace',
   'a-long-way-to-a-small-angry-planet', 'a-master-of-djinn', 'a-memory-called-empire',
   'a-wizard-of-earthsea', 'american-gods', 'an-ember-in-the-ashes',
   'babel', 'best-served-cold', 'caraval',
   'children-of-blood-and-bone', 'city-of-bones', 'daughter-of-the-forest',
-  'daughter-of-the-moon-goddess', 'dune', 'dungeon-crawler-carl',
+  'daughter-of-the-moon-goddess', 'dungeon-crawler-carl',
   'empire-of-sand', 'enders-game', 'eragon',
-  'foundryside', 'from-blood-and-ash', 'good-omens',
-  'graceling', 'guards-guards', 'half-a-king',
+  'foundryside', 'graceling', 'guards-guards', 'half-a-king',
   'harry-potter-philosophers-stone', 'he-who-fights-with-monsters', 'ink-and-bone',
   'iron-flame', 'jade-city', 'kingdom-of-the-wicked',
-  'nevernight', 'neverwhere', 'piranesi',
-  'ravensworn', 'red-rising', 'sabriel',
+  'nevernight', 'neverwhere', 'ravensworn', 'sabriel',
   'shadow-and-bone', 'she-who-became-the-sun', 'skyward',
   'stardust', 'storm-front', 'strange-the-dreamer',
   'the-bone-shard-daughter', 'the-dragon-republic', 'the-druids-keep',
   'the-fell-sword', 'the-fifth-season', 'the-graveyard-book',
   'the-hitchhikers-guide-to-the-galaxy', 'the-house-in-the-cerulean-sea', 'the-hundred-thousand-kingdoms',
   'the-invisible-life-of-addie-larue', 'the-jasmine-throne', 'the-last-wish',
-  'the-lions-of-al-rassan', 'the-magicians', 'the-night-circus',
+  'the-lions-of-al-rassan', 'the-magicians',
   'the-ocean-at-the-end-of-the-lane', 'the-once-and-future-king', 'the-once-and-future-witches',
   'the-princess-bride', 'the-silmarillion', 'the-song-of-achilles',
   'the-starless-sea', 'the-ten-thousand-doors-of-january', 'the-way-of-shadows',
   'the-witchs-heart', 'throne-of-glass', 'warbreaker', 'words-of-radiance',
+  // demoted from TIER_1
+  'the-book-of-the-new-sun', 'the-spear-cuts-through-water',
+  'the-darkness-that-comes-before', 'the-tainted-cup',
 ];
 
-// Full coverage list for books-like guides — every unique title from the 500-guide wishlist
-// not already in TIER_1 or TIER_2. Includes sequels where the sequel itself is a search target.
 export const TIER_3 = [
   // ── Romantasy / Dark Romance ──────────────────────────────────────────────
   'a-court-of-mist-and-fury', 'a-court-of-wings-and-ruin', 'a-court-of-frost-and-starlight',
@@ -64,7 +66,6 @@ export const TIER_3 = [
   'onyx-storm', 'a-fate-inked-in-blood', 'when-the-moon-hatched',
   'the-stars-are-dying', 'a-little-hatred', 'the-trouble-with-peace', 'the-wisdom-of-crowds',
   'a-kingdom-of-flesh-and-fire', 'the-crown-of-gilded-bones', 'the-war-of-two-queens',
-  'kingdom-of-the-wicked', // already TIER_2 but noting for guide coverage
 
   // ── Cosmere (Sanderson) — sequels & novellas ──────────────────────────────
   'the-well-of-ascension', 'the-hero-of-ages',
@@ -74,14 +75,13 @@ export const TIER_3 = [
   'starsight', 'cytonic', 'defiant',
 
   // ── Grishaverse (Bardugo) ─────────────────────────────────────────────────
-  'six-of-crows', 'crooked-kingdom',
+  'crooked-kingdom',
   'siege-and-storm', 'ruin-and-rising', 'king-of-scars', 'rule-of-wolves',
   'the-gilded-wolves', 'the-silvered-serpents', 'the-midnight-lie',
 
   // ── First Law World (Abercrombie) ─────────────────────────────────────────
   'before-they-are-hanged', 'last-argument-of-kings',
   'the-heroes', 'red-country',
-  'the-trouble-with-peace', 'the-wisdom-of-crowds', // Age of Madness
 
   // ── Broken Empire (Lawrence) ──────────────────────────────────────────────
   'king-of-thorns', 'emperor-of-thorns',
@@ -114,7 +114,7 @@ export const TIER_3 = [
   'the-black-company', 'shadows-linger', 'the-white-rose',
   'promise-of-blood', 'the-crimson-campaign', 'the-autumn-republic',
 
-  // ── Wheel of Time (Jordan/Sanderson) — major sequels ─────────────────────
+  // ── Wheel of Time — major sequels ────────────────────────────────────────
   'the-great-hunt', 'the-dragon-reborn', 'the-shadow-rising',
   'the-fires-of-heaven', 'lord-of-chaos', 'a-crown-of-swords',
   'the-gathering-storm', 'towers-of-midnight', 'a-memory-of-light',
@@ -126,10 +126,9 @@ export const TIER_3 = [
   'the-lightning-thief', 'the-sea-of-monsters', 'the-titans-curse',
   'the-city-of-brass', 'the-kingdom-of-copper', 'the-empire-of-gold',
   'children-of-virtue-and-vengeance',
-  'siege-and-storm', 'ruin-and-rising', 'king-of-scars', 'rule-of-wolves',
   'legendborn', 'bloodmarked',
   'the-bone-witch', 'the-heart-forger', 'the-shadowglass',
-  'daughter-of-the-moon-goddess', 'sea-of-the-jade-serpent',
+  'sea-of-the-jade-serpent',
 
   // ── Cozy / Heartwarming ───────────────────────────────────────────────────
   'a-psalm-for-the-wild-built', 'a-prayer-for-the-crown-shy',
@@ -141,8 +140,8 @@ export const TIER_3 = [
   'in-other-lands',
 
   // ── Urban / Gaiman-adjacent ───────────────────────────────────────────────
-  'anansi-boys', 'coraline', 'the-ocean-at-the-end-of-the-lane',
-  'norse-mythology', 'the-magician-king', 'the-magicians-land',
+  'anansi-boys', 'coraline', 'norse-mythology',
+  'the-magician-king', 'the-magicians-land',
   'outlander', 'dragonfly-in-amber',
   'rivers-of-london', 'moon-over-soho',
 
@@ -151,16 +150,18 @@ export const TIER_3 = [
   'the-summer-tree', 'the-wandering-fire', 'the-darkest-road',
   'the-killing-moon', 'the-shadowed-sun',
   'nine-princes-in-amber', 'the-guns-of-avalon',
-  'the-mists-of-avalon',
-  'the-crystal-cave',
+  'the-mists-of-avalon', 'the-crystal-cave',
+
+  // ── Murderbot / SFF crossover (Martha Wells) ─────────────────────────────
+  'all-systems-red', 'artificial-condition', 'rogue-protocol',
+  'exit-strategy', 'network-effect', 'fugitive-telemetry',
+
+  // ── Expanse (Corey) ───────────────────────────────────────────────────────
+  'leviathan-wakes', 'calibans-war', 'abaddons-gate',
 
   // ── LitRPG / Progression Fantasy ─────────────────────────────────────────
   'soulsmith', 'blackflame', 'ghostwater', 'underlord', 'wintersteel', 'waybound',
-  'all-systems-red', 'artificial-condition', 'rogue-protocol', 'exit-strategy',
-  'network-effect',
-  'the-beginning-after-the-end', 'shadow-slave',
-  'mother-of-learning',
-  'leviathan-wakes', 'calibans-war', 'abaddons-gate',
+  'the-beginning-after-the-end', 'shadow-slave', 'mother-of-learning',
   'old-mans-war',
 
   // ── Robin Hobb deep cuts ──────────────────────────────────────────────────
@@ -168,19 +169,12 @@ export const TIER_3 = [
   'fools-errand', 'the-golden-fool', 'fools-fate',
   'fools-assassin', 'fools-quest', 'assassins-fate',
 
-  // ── Broken Earth / NK Jemisin ─────────────────────────────────────────────
+  // ── Broken Earth / NK Jemisin sequels ────────────────────────────────────
   'the-obelisk-gate', 'the-stone-sky',
-  'the-kingdom-of-gods', 'the-killing-moon',
-
-  // ── Murderbot (Martha Wells) ──────────────────────────────────────────────
-  'artificial-condition', 'rogue-protocol', 'exit-strategy', 'network-effect',
-  'fugitive-telemetry',
+  'the-kingdom-of-gods',
 
   // ── Misc high-search standalones ─────────────────────────────────────────
-  'piranesi', // already TIER_2 — noted for guide coverage
-  'the-book-eaters', 'the-saint-of-bright-doors',
-  'the-city-we-became',
-  'good-omens', // already TIER_2
+  'the-saint-of-bright-doors', 'the-city-we-became',
 ];
 
 // Combined: all books worth full editorial treatment
