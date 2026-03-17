@@ -40,10 +40,12 @@ const sourceCover: string = upgradeCoverUrl(source.cover_url || dbBook?.cover_ur
 
 // Fetch covers for all rec books from DB (more reliable than hardcoded OpenLibrary ISBNs)
 const recSlugs = aspects.flatMap((a) => a.recs.map((r) => toSlug(r.title)))
+const allCheckSlugs = [...new Set([sourceBookSlug, ...recSlugs])]
 const { data: dbRecCovers } = await supabaseClient
   .from('books')
   .select('slug, cover_url')
-  .in('slug', recSlugs)
+  .in('slug', allCheckSlugs)
+const dbSlugSet = new Set((dbRecCovers ?? []).map((b) => b.slug))
 const dbRecCoverMap = new Map<string, string>(
   (dbRecCovers ?? []).filter((b) => b.cover_url).map((b) => [b.slug, b.cover_url])
 )
@@ -88,7 +90,9 @@ const dbRecCoverMap = new Map<string, string>(
     <div>
       <p class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-2">Books Like...</p>
       <h1 class="text-4xl font-bold tracking-tight text-zinc-900 leading-tight">
-        <a href={`/books/${toSlug(source.title)}/`} class="hover:text-purple-700 transition-colors">{source.title}</a>
+        {dbSlugSet.has(sourceBookSlug)
+          ? <a href={`/books/${sourceBookSlug}/`} class="hover:text-purple-700 transition-colors">{source.title}</a>
+          : source.title}
       </h1>
       {source.series && source.series_number != null && seriesSlug && (
         <a href={`/reading-orders/${seriesSlug}/`} class="inline-block mt-2 text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium hover:bg-indigo-100 transition-colors">
@@ -151,15 +155,14 @@ const dbRecCoverMap = new Map<string, string>(
                 <div class="rounded-xl border border-violet-200 bg-violet-50 p-4 flex gap-5">
                   <!-- Cover + Amazon -->
                   <div class="shrink-0 flex flex-col gap-2">
-                    <a href={`/books/${recSlug}/`} class="relative w-24 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 block">
-                      <img
-                        src={upgradeCoverUrl(recCover) || '/placeholder-cover.svg'}
-                        alt={`Cover of ${r.title}`}
-                        class="absolute inset-0 w-full h-full object-cover"
-                        onerror="this.onerror=null;this.src='/placeholder-cover.svg';"
-                        onload="if(this.naturalWidth<=1||this.naturalHeight<=1){this.src='/placeholder-cover.svg';}"
-                      />
-                    </a>
+                    {dbSlugSet.has(recSlug)
+                      ? <a href={`/books/${recSlug}/`} class="relative w-24 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 block">
+                          <img src={upgradeCoverUrl(recCover) || '/placeholder-cover.svg'} alt={`Cover of ${r.title}`} class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null;this.src='/placeholder-cover.svg';" onload="if(this.naturalWidth<=1||this.naturalHeight<=1){this.src='/placeholder-cover.svg';}" />
+                        </a>
+                      : <div class="relative w-24 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100">
+                          <img src={upgradeCoverUrl(recCover) || '/placeholder-cover.svg'} alt={`Cover of ${r.title}`} class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null;this.src='/placeholder-cover.svg';" onload="if(this.naturalWidth<=1||this.naturalHeight<=1){this.src='/placeholder-cover.svg';}" />
+                        </div>
+                    }
                     <a href={r.amazon_url} target="_blank" rel="noopener noreferrer"
                       class="w-full text-center px-2 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-500 text-zinc-900 text-xs font-semibold transition-colors">
                       Amazon
@@ -170,7 +173,9 @@ const dbRecCoverMap = new Map<string, string>(
                     <!-- Title + ratings row -->
                     <div class="flex items-start justify-between gap-4 mb-1">
                       <p class="font-bold text-zinc-900 leading-tight">
-                        <a href={`/books/${recSlug}/`} class="hover:text-purple-700 transition-colors">{r.title}</a>
+                        {dbSlugSet.has(recSlug)
+                          ? <a href={`/books/${recSlug}/`} class="hover:text-purple-700 transition-colors">{r.title}</a>
+                          : r.title}
                         {r.series && r.series_number != null && (
                           <span class="font-normal text-indigo-600 text-sm"> · {r.series} #{r.series_number}</span>
                         )}
