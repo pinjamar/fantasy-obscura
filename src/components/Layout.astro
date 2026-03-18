@@ -12,7 +12,7 @@ const userProfile = Astro.locals.userProfile;
 const displayName = userProfile?.display_name || '';
 const avatarInitials = (displayName || user?.email || '').slice(0, 2).toUpperCase();
 
-const SITE = 'https://fantasy-obscura.pages.dev';
+const SITE = 'https://www.thegrimoire.co';
 const canonicalUrl = new URL(Astro.url.pathname, SITE).toString();
 const ogImage = image || `${SITE}/og-default.png`;
 ---
@@ -148,9 +148,12 @@ const ogImage = image || `${SITE}/og-default.png`;
         <div class="grid gap-8 sm:grid-cols-3 text-sm">
 
           <div>
-            <p class="font-semibold text-zinc-900 mb-2">The Grimoire</p>
+            <a href="/" class="flex items-center gap-2 mb-3 group w-fit">
+              <img src="/nav-logo.png" alt="" width="115" height="80" class="h-6 w-auto" loading="lazy" />
+              <span class="font-semibold text-zinc-900 group-hover:text-purple-700 transition-colors">The Grimoire</span>
+            </a>
             <p class="text-zinc-500 text-xs leading-relaxed">
-              Curated fantasy & sci-fi guides built for readers who care about what they're getting into. Every book comes with a darkness rating, trope tags, and honest context — so you can pick your next read with confidence.
+              Curated fantasy guides built for readers who care about what they're getting into. Every book comes with a darkness rating, trope tags and honest context - so you can pick your next read with confidence.
             </p>
           </div>
 

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../components/Layout.astro';
 import { TROPES_BY_CATEGORY } from '../../data/tropes';
+import { getTropeIcon } from '../../lib/trope-icons';
 
 const CATEGORY_META = {
   character:    { label: 'Character Tropes',    emoji: '🧙', desc: 'Who the protagonist is and what defines them.' },
@@ -69,6 +70,7 @@ const CATEGORY_META = {
                 data-search={`${t.name.toLowerCase()} ${t.description.toLowerCase()}`}
                 class="trope-card group flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors"
               >
+                <span class="text-lg leading-none mt-0.5 shrink-0">{getTropeIcon(t.slug)}</span>
                 <div class="min-w-0">
                   <div class="font-medium text-zinc-900 group-hover:text-purple-700 transition-colors text-sm">{t.name}</div>
                   <div class="text-xs text-zinc-400 mt-0.5 truncate">{t.description}</div>
