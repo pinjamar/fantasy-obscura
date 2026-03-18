@@ -55,7 +55,7 @@ function RichList({ items, page }: { items: BookRef[]; page: number }) {
                 src={`https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`}
                 alt={book.title}
                 className="w-full h-full object-cover"
-                onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/placeholder-cover.svg'; }}
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/grimplaceholder.png'; }}
               />
             </div>
             <div className="flex-1 min-w-0">

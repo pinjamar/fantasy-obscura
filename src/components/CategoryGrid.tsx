@@ -680,7 +680,7 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
               alt={b.title}
               title={b.title}
               className="w-full h-full object-cover"
-              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder-cover.svg'; }}
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/grimplaceholder.png'; }}
             />
           </div>
         );
@@ -749,7 +749,7 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
                     src={cover}
                     alt={bowEntry.title}
                     className="w-full h-full object-cover"
-                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder-cover.svg'; }}
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/grimplaceholder.png'; }}
                   />
                 </div>
                 <div className="min-w-0">
@@ -845,7 +845,7 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
                       src={b.cover}
                       alt={b.title}
                       className="w-full h-full object-cover"
-                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder-cover.svg'; }}
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/grimplaceholder.png'; }}
                     />
                   </div>
                   <p className="mt-1 text-[10px] text-zinc-500 text-center leading-tight truncate">{b.title}</p>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const KEY = 'fantasy_obscura_saved';
+const KEY = 'grimoire_saved';
 
 function getSaved(): string[] {
   try { return JSON.parse(localStorage.getItem(KEY) || '[]'); }

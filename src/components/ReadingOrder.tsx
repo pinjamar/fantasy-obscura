@@ -62,7 +62,7 @@ function BookCard({ book, index }: { book: Book; index: number }) {
             alt={book.title}
             className="w-full h-full object-cover"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = '/placeholder-cover.svg';
+              (e.target as HTMLImageElement).src = '/grimplaceholder.png';
             }}
           />
         ) : (

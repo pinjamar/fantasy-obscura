@@ -207,7 +207,7 @@ export default function BooksLikeMe() {
                   alt={book.title}
                   title={book.title}
                   className="w-14 h-20 object-cover rounded-lg shadow"
-                  onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder-cover.svg'; }}
+                  onError={(e) => { (e.target as HTMLImageElement).src = '/grimplaceholder.png'; }}
                 />
               ) : (
                 <div className="w-14 h-20 rounded-lg bg-purple-100 shadow flex items-center justify-center text-purple-300 text-xl">📖</div>

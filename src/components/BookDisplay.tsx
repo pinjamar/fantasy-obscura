@@ -392,7 +392,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
               {/* Cover */}
               <div className="relative w-20 sm:w-32 shrink-0 self-stretch bg-linear-to-br from-purple-100 to-blue-100">
                 <img
-                  src={book.cover_url || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false` : '/placeholder-cover.svg')}
+                  src={book.cover_url || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false` : '/grimplaceholder.png')}
                   alt={book.title}
                   className="absolute inset-0 w-full h-full object-cover block"
                   onError={(e) => {
@@ -402,7 +402,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                       img.src = `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false`;
                     } else {
                       img.onerror = null;
-                      img.src = '/placeholder-cover.svg';
+                      img.src = '/grimplaceholder.png';
                     }
                   }}
                 />

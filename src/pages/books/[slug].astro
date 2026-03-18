@@ -94,7 +94,7 @@ const similarBooks = (candidateBooks ?? [])
 
 const metaDescription = book.synopsis
   ? book.synopsis.slice(0, 160)
-  : `${book.title} by ${book.authors?.join(', ')} — explore on Fantasy Obscura.`;
+  : `${book.title} by ${book.authors?.join(', ')} — explore on The Grimoire.`;
 
 function upgradeCoverUrl(url: string | null | undefined): string {
   if (!url) return '';
@@ -109,7 +109,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
 ---
 
 <Layout
-  title={`${book.title} | Fantasy Obscura`}
+  title={`${book.title} | The Grimoire`}
   description={metaDescription}
   image={upgradeCoverUrl(book.cover_url) || undefined}
   ogType="book"
@@ -161,11 +161,11 @@ function upgradeCoverUrl(url: string | null | undefined): string {
     <div class="flex flex-col gap-4">
       <div class="relative w-full max-w-[260px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-linear-to-br from-purple-200 to-blue-200">
         <img
-          src={upgradeCoverUrl(book.cover_url) || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg?default=false` : '/placeholder-cover.svg')}
+          src={upgradeCoverUrl(book.cover_url) || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg?default=false` : '/grimplaceholder.png')}
           alt={`Cover of ${book.title}`}
           class="absolute inset-0 w-full h-full object-cover"
           data-isbn={book.isbn ?? ''}
-          onerror="if(!this.dataset.tried&&this.dataset.isbn){this.dataset.tried='1';this.src='https://covers.openlibrary.org/b/isbn/'+this.dataset.isbn+'-L.jpg?default=false';}else{this.onerror=null;this.src='/placeholder-cover.svg';}"
+          onerror="if(!this.dataset.tried&&this.dataset.isbn){this.dataset.tried='1';this.src='https://covers.openlibrary.org/b/isbn/'+this.dataset.isbn+'-L.jpg?default=false';}else{this.onerror=null;this.src='/grimplaceholder.png';}"
         />
         <FavouriteButton client:load bookId={book.id} userId={Astro.locals.user?.id ?? null} />
       </div>

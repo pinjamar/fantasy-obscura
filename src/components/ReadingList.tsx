@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Stars from './Stars';
 import BookmarkButton from './BookmarkButton';
 
-const KEY = 'fantasy_obscura_saved';
+const KEY = 'grimoire_saved';
 
 function getSaved(): string[] {
   try { return JSON.parse(localStorage.getItem(KEY) || '[]'); }

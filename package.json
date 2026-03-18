@@ -3,6 +3,8 @@
   "description": "Site dedicated to fantasy books lovers",
   "version": "1.0.0",
   "scripts": {
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "images:favicons": "node scripts/optimize-images.mjs --favicons",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -22,6 +24,8 @@
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.1",
     "@types/node": "^20.12.12",
+    "fast-glob": "^3.3.3",
+    "sharp": "^0.34.5",
     "typescript": "^5.4.5"
   },
   "dependencies": {
