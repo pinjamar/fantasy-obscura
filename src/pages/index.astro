@@ -18,15 +18,23 @@ while (true) {
 }
 ---
 
-<Layout title="The Grimoire" description="Curated fantasy book guides with darkness ratings, trope tags, reading orders, and honest recommendations for every kind of fantasy reader.">
-  <h1 class="text-3xl font-semibold tracking-tight">
-    Curated fantasy guides that get to the point
-  </h1>
-
-  <p class="mt-3 max-w-2xl text-zinc-600 text-sm leading-relaxed">
-    Every book gets a <strong>darkness rating</strong> - so you always know what you're walking into before you start.
-    Pick a category, search by trope or simply use our book likes recommendations to find your next read.
-  </p>
+<Layout title="The Grimoire" description="Fantasy book guides with darkness ratings, trope tags, and reading orders — so you always know what you're getting into before you start.">
+  <!-- Homepage hero -->
+  <div class="relative rounded-2xl overflow-hidden mb-8 border border-zinc-200">
+    <picture>
+      <source type="image/avif" srcset="/images/banners/homepage-hero-400.avif 400w, /images/banners/homepage-hero-800.avif 800w" sizes="(min-width: 1024px) 800px, 100vw" />
+      <source type="image/webp" srcset="/images/banners/homepage-hero-400.webp 400w, /images/banners/homepage-hero-800.webp 800w" sizes="(min-width: 1024px) 800px, 100vw" />
+      <img src="/images/banners/homepage-hero-800.webp" alt="" width="800" height="400" loading="eager" decoding="async" class="w-full aspect-3/1 object-cover" />
+    </picture>
+    <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+    <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
+      <h1 class="text-3xl font-semibold tracking-tight text-white">Find Your Next Fantasy Book</h1>
+      <p class="mt-2 max-w-2xl text-white/80 text-sm leading-relaxed">
+        Looking for books like Mistborn? Need the Wheel of Time reading order? Want grimdark with found family but nothing too brutal?
+        The Grimoire has darkness ratings, trope filters and reading orders for every major fantasy series — built so you always know what you're walking into before page one.
+      </p>
+    </div>
+  </div>
 
   <div class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm text-zinc-500">
     <span>🕯️ Lighthearted</span>

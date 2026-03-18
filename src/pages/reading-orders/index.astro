@@ -50,14 +50,23 @@ const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
   title="Fantasy Series Reading Orders | The Grimoire"
   description="Reading orders for every major fantasy series — what to read first, what's optional, and where each series stumbles. Covers Stormlight, Wheel of Time, Malazan, First Law, and more."
 >
-  <h1 class="text-3xl font-bold tracking-tight">Fantasy Series Reading Orders</h1>
-  <div class="prose prose-zinc max-w-2xl mt-3 mb-2 text-sm leading-relaxed">
-    <p>
-      Fantasy series get complicated fast — <strong>novellas, companion books, sequel trilogies, and shared universes</strong> all
-      create genuine confusion about where to start and what to skip. These guides cover every major fantasy series with a clear
-      reading order, honest notes on what's optional, and warnings about where each series stumbles.
-      Every book is labelled <strong>Core</strong>, <strong>Optional</strong>, or <strong>Extra</strong> — so you're never reading filler thinking it's essential.
-    </p>
+  <!-- Banner -->
+  <div class="relative rounded-2xl overflow-hidden mb-8 border border-zinc-200">
+    <picture>
+      <source type="image/avif" srcset="/images/banners/reading-orders-banner-400.avif 400w, /images/banners/reading-orders-banner-800.avif 800w" sizes="(min-width: 1024px) 800px, 100vw" />
+      <source type="image/webp" srcset="/images/banners/reading-orders-banner-400.webp 400w, /images/banners/reading-orders-banner-800.webp 800w" sizes="(min-width: 1024px) 800px, 100vw" />
+      <img src="/images/banners/reading-orders-banner-800.webp" alt="" width="800" height="400" loading="eager" decoding="async" class="w-full aspect-3/1 object-cover" />
+    </picture>
+    <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/10" />
+    <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
+      <h1 class="text-3xl font-bold tracking-tight text-white">Fantasy Series Reading Orders</h1>
+      <p class="mt-2 max-w-2xl text-white/80 text-sm leading-relaxed">
+        Fantasy series get complicated fast — <strong class="text-white">novellas, companion books, sequel trilogies, and shared universes</strong> all
+        create genuine confusion about where to start and what to skip. These guides cover every major fantasy series with a clear
+        reading order, honest notes on what's optional, and warnings about where each series stumbles.
+        Every book is labelled <strong class="text-white">Core</strong>, <strong class="text-white">Optional</strong>, or <strong class="text-white">Extra</strong> — so you're never reading filler thinking it's essential.
+      </p>
+    </div>
   </div>
 
   <!-- Search bar -->

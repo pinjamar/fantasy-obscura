@@ -29,6 +29,51 @@ export type CategorySlug =
   | 'sword'
   | 'urban';
 
+// ── Reading Order Images ──────────────────────────────────────────────────────
+
+export type ReadingOrderImageSlug =
+  | 'cosmere'
+  | 'stormlight'
+  | 'first-law'
+  | 'malazan'
+  | 'wheel-of-time'
+  | 'asoiaf'
+  | 'witcher'
+  | 'discworld'
+  | 'kingkiller'
+  | 'robin-hobb'
+  | 'black-company'
+  | 'kate-daniels';
+
+/** Returns a srcset string for a reading-order hero image (400w and 800w). */
+export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
+  const base = `/images/reading-orders/${slug}`;
+  return `${base}-400.${format} 400w, ${base}-800.${format} 800w`;
+}
+
+/** Returns the 800px WebP fallback src for a reading-order hero image. */
+export function readingOrderFallback(slug: ReadingOrderImageSlug): string {
+  return `/images/reading-orders/${slug}-800.webp`;
+}
+
+/** Maps reading-order URL slugs to their image file slug. */
+export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
+  'cosmere':       'cosmere',
+  'stormlight':    'stormlight',
+  'first-law':     'first-law',
+  'malazan':       'malazan',
+  'wheel-of-time': 'wheel-of-time',
+  'asoiaf':        'asoiaf',
+  'witcher':       'witcher',
+  'discworld':     'discworld',
+  'kingkiller':    'kingkiller',
+  'robin-hobb':    'robin-hobb',
+  'black-company': 'black-company',
+  'kate-daniels':  'kate-daniels',
+};
+
+// ── Category Images ───────────────────────────────────────────────────────────
+
 /** Maps URL category slugs (from /categories/[slug]) to our image file slug. */
 export const CATEGORY_IMAGE_SLUG: Record<string, CategorySlug> = {
   'epic':       'epic',
@@ -40,7 +85,7 @@ export const CATEGORY_IMAGE_SLUG: Record<string, CategorySlug> = {
   'mythology':  'folklore',
   'cozy':       'cozy',
   'litrpg':     'progression',
-  'science':    'science',
+  'science-fantasy': 'science',
   'swords':     'sword',
   'urban':      'urban',
 };

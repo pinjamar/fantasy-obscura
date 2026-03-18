@@ -20,29 +20,40 @@ while (true) {
 
 <Layout title="All Fantasy Books | The Grimoire" description="Browse our fantasy book database — filter by darkness level, tropes, subgenre, magic system, pacing, and more. Find your next read with confidence.">
 
-  <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-    <div>
-      <h1 class="text-3xl font-semibold tracking-tight">All Books</h1>
-      <p class="text-zinc-500 text-sm mt-1">The complete collection</p>
+  <!-- Banner -->
+  <div class="relative rounded-2xl overflow-hidden mb-8 border border-zinc-200">
+    <picture>
+      <source type="image/avif" srcset="/images/banners/all-books-400.avif 400w, /images/banners/all-books-800.avif 800w" sizes="(min-width: 1024px) 800px, 100vw" />
+      <source type="image/webp" srcset="/images/banners/all-books-400.webp 400w, /images/banners/all-books-800.webp 800w" sizes="(min-width: 1024px) 800px, 100vw" />
+      <img src="/images/banners/all-books-800.webp" alt="" width="800" height="400" loading="eager" decoding="async" class="w-full aspect-3/1 object-cover" />
+    </picture>
+    <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+    <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h1 class="text-3xl font-semibold tracking-tight text-white">All Fantasy Books</h1>
+          <p class="mt-1 text-white/70 text-sm">The complete collection</p>
+        </div>
+        <select
+          onchange="if(this.value) window.location.href=this.value"
+          class="text-sm rounded-lg px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer transition"
+        >
+          <option value="" class="text-zinc-800 bg-white">Browse by category…</option>
+          <option value="/categories/epic/" class="text-zinc-800 bg-white">Epic & High Fantasy</option>
+          <option value="/categories/romantasy/" class="text-zinc-800 bg-white">Romantasy</option>
+          <option value="/categories/litrpg/" class="text-zinc-800 bg-white">LitRPG / Progression Fantasy</option>
+          <option value="/categories/dark/" class="text-zinc-800 bg-white">Dark Fantasy</option>
+          <option value="/categories/urban/" class="text-zinc-800 bg-white">Urban / Contemporary Fantasy</option>
+          <option value="/categories/grimdark/" class="text-zinc-800 bg-white">Grimdark</option>
+          <option value="/categories/historical/" class="text-zinc-800 bg-white">Historical Fantasy</option>
+          <option value="/categories/academy/" class="text-zinc-800 bg-white">Academy Fantasy</option>
+          <option value="/categories/mythology/" class="text-zinc-800 bg-white">Mythic & Folklore Fantasy</option>
+          <option value="/categories/swords/" class="text-zinc-800 bg-white">Sword & Sorcery</option>
+          <option value="/categories/cozy/" class="text-zinc-800 bg-white">Cozy Fantasy</option>
+          <option value="/categories/science-fantasy/" class="text-zinc-800 bg-white">Science Fantasy</option>
+        </select>
+      </div>
     </div>
-    <select
-      onchange="if(this.value) window.location.href=this.value"
-      class="text-sm border border-zinc-200 rounded-lg px-3 py-1.5 bg-white text-zinc-600 hover:border-zinc-300 focus:outline-none focus:ring-2 focus:ring-purple-500 cursor-pointer"
-    >
-      <option value="">Browse by category…</option>
-      <option value="/categories/epic/">Epic & High Fantasy</option>
-      <option value="/categories/romantasy/">Romantasy</option>
-      <option value="/categories/litrpg/">LitRPG / Progression Fantasy</option>
-      <option value="/categories/dark/">Dark Fantasy</option>
-      <option value="/categories/urban/">Urban / Contemporary Fantasy</option>
-      <option value="/categories/grimdark/">Grimdark</option>
-      <option value="/categories/historical/">Historical Fantasy</option>
-      <option value="/categories/academy/">Academy Fantasy</option>
-      <option value="/categories/mythology/">Mythic & Folklore Fantasy</option>
-      <option value="/categories/swords/">Sword & Sorcery</option>
-      <option value="/categories/cozy/">Cozy Fantasy</option>
-      <option value="/categories/science-fantasy/">Science Fantasy</option>
-    </select>
   </div>
 
   <BookDisplay client:load initialBooks={allBooks as any} />

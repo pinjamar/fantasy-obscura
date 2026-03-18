@@ -25,13 +25,28 @@ const ROOT = process.cwd();
 const INPUT_DIR  = path.join(ROOT, 'assets', 'raw');
 const OUTPUT_DIR = path.join(ROOT, 'public', 'images');
 
-const FAVICONS_ONLY   = process.argv.includes('--favicons');
-const CATEGORIES_ONLY = process.argv.includes('--categories');
+const FAVICONS_ONLY       = process.argv.includes('--favicons');
+const CATEGORIES_ONLY     = process.argv.includes('--categories');
+const READING_ORDERS_ONLY = process.argv.includes('--reading-orders');
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const CONFIG = {
   // Category images: two widths for responsive srcset
   categories: {
+    widths: [400, 800],
+    height: 400,
+    fit: 'cover',
+    quality: { webp: 76, avif: 58 },
+  },
+  // Reading-order hero images: same dimensions as categories
+  'reading-orders': {
+    widths: [400, 800],
+    height: 400,
+    fit: 'cover',
+    quality: { webp: 76, avif: 58 },
+  },
+  // Page banner/hero images: wide 2:1 crop, two widths
+  banners: {
     widths: [400, 800],
     height: 400,
     fit: 'cover',
@@ -174,18 +189,21 @@ async function main() {
 
   if (!files.length) {
     console.log('No source images found in assets/raw/');
-    console.log('  assets/raw/categories/   → 400 + 800px WebP + AVIF');
-    console.log('  assets/raw/branding/     → 1200px WebP');
-    console.log('  assets/raw/placeholders/ → 300px WebP + AVIF');
+    console.log('  assets/raw/categories/      → 400 + 800px WebP + AVIF');
+    console.log('  assets/raw/reading-orders/  → 400 + 800px WebP + AVIF');
+    console.log('  assets/raw/branding/        → 1200px WebP');
+    console.log('  assets/raw/placeholders/    → 300px WebP + AVIF');
     return;
   }
 
   const toProcess = CATEGORIES_ONLY
     ? files.filter((f) => f.replace(/\\/g, '/').includes('/categories/'))
-    : files;
+    : READING_ORDERS_ONLY
+      ? files.filter((f) => f.replace(/\\/g, '/').includes('/reading-orders/'))
+      : files;
 
   await Promise.all(toProcess.map(processFile));
-  if (!CATEGORIES_ONLY) await generateFavicons();
+  if (!CATEGORIES_ONLY && !READING_ORDERS_ONLY) await generateFavicons();
   console.log(`\nDone — ${toProcess.length} source image(s) processed.`);
 }
 

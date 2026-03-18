@@ -16,29 +16,29 @@ const CATEGORY_META = {
   title="Fantasy Tropes — The Grimoire"
   description="Browse fantasy tropes by category — character, relationship, plot, and world &amp; magic. Find books by the story structures you love most."
 >
-  <div class="max-w-3xl mx-auto">
-    <h1 class="text-3xl font-bold mb-2">Fantasy Tropes</h1>
-    <p class="text-zinc-500 mb-6 text-base">
-      Browse books by the narrative patterns and character dynamics that define your favourite reads.
-    </p>
-
-    <div class="prose prose-zinc max-w-none mb-10 text-sm leading-relaxed">
-      <p>
-        Tropes aren't clichés — they're the structural grammar of storytelling. A <strong>Chosen One</strong>
+  <!-- Banner -->
+  <div class="relative rounded-2xl overflow-hidden mb-8 border border-zinc-200">
+    <picture>
+      <source type="image/avif" srcset="/images/banners/tropes-400.avif 400w, /images/banners/tropes-800.avif 800w" sizes="(min-width: 1024px) 800px, 100vw" />
+      <source type="image/webp" srcset="/images/banners/tropes-400.webp 400w, /images/banners/tropes-800.webp 800w" sizes="(min-width: 1024px) 800px, 100vw" />
+      <img src="/images/banners/tropes-800.webp" alt="" width="800" height="267" loading="eager" decoding="async" class="w-full aspect-3/1 object-cover" />
+    </picture>
+    <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/10" />
+    <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
+      <h1 class="text-3xl font-bold tracking-tight text-white">Fantasy Tropes</h1>
+      <p class="mt-2 max-w-2xl text-white/80 text-sm leading-relaxed">
+        Tropes aren't clichés — they're the structural grammar of storytelling. A <strong class="text-white">Chosen One</strong>
         narrative isn't tired because of the premise; it's tired when the author doesn't interrogate it.
-        The same pattern that produced forgettable YA also produced <em>The Stormlight Archive</em> and
-        <em>The Name of the Wind</em>. What matters is what the author does with the material.
-      </p>
-      <p>
-        This index covers 70 canonical fantasy tropes across four categories: character archetypes, relationship
-        dynamics, plot structures, and world &amp; magic systems. Each trope page lists every book in our
-        database that uses it, rated and searchable — so you can find the best version of the story you're
-        in the mood for.
+        This index covers 70 canonical fantasy tropes — character archetypes, relationship dynamics, plot structures,
+        and world &amp; magic systems — so you can find the best version of the story you're in the mood for.
       </p>
     </div>
+  </div>
+
+  <div class="max-w-3xl mx-auto">
 
     <!-- Search bar -->
-    <div class="relative max-w-lg mb-10">
+    <div class="relative mb-10">
       <input
         id="trope-search"
         type="text"
@@ -86,7 +86,6 @@ const CATEGORY_META = {
 
 <script>
   const input = document.getElementById('trope-search') as HTMLInputElement;
-  const cards = document.querySelectorAll<HTMLElement>('.trope-card');
   const sections = document.querySelectorAll<HTMLElement>('.trope-section');
   const noResults = document.getElementById('trope-no-results')!;
 
