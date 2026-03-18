@@ -19,6 +19,8 @@ type MergedBook = {
   page_count: number; publication_year: number;
   cover_url: string | null; darkness_level: number | null;
   avg_rating: number | null; series_label: string | null;
+  position?: number | null;
+  seriesLabel?: string | null;
 };
 
 let isCurated = false;
@@ -53,6 +55,8 @@ if (entry) {
       darkness_level: db?.darkness_level ?? null,
       avg_rating: db?.avg_rating ?? null,
       series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null,
+      position: b.position ?? null,
+      seriesLabel: (b as any).seriesLabel ?? null,
     };
   }
 

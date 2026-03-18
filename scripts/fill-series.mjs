@@ -891,6 +891,11 @@ const SKIP_KEYWORDS = [
   'graphic novel', 'graphic adaptation', 'manga', 'comic book',
   'audiobook', 'audio book', 'audio edition', 'unabridged audio',
   'summary of', 'review of', 'synopsis of', 'book review', 'plot summary',
+  // House/themed/illustrated editions (e.g. HP Ravenclaw Edition, MinaLima)
+  'gryffindor edition', 'ravenclaw edition', 'slytherin edition', 'hufflepuff edition',
+  'minalima', 'illustrated by', ' - illustrated', 'full-color edition',
+  // Anything ending in generic "edition" variants not already caught
+  'house edition', 'movie tie-in', 'film tie-in', 'tv tie-in',
 ];
 
 /** Check that a Google Books result actually belongs to the searched author. */
@@ -912,22 +917,33 @@ function authorMatches(item, searchedAuthor) {
 /** Filter a raw Google Books item — same rules as discover-books.mjs. */
 function extractBookData(item) {
   const info = item.volumeInfo ?? {};
-  // Reject if language is explicitly non-English, or if unset and title/description looks non-English
-  if (info.language) {
-    if (info.language !== 'en') return null;
-  } else {
-    if (isLikelyNonEnglish(info.title) || isLikelyNonEnglish(info.description)) return null;
-  }
+  // Reject non-English: trust explicit language field, but ALWAYS check title for
+  // non-ASCII characters — Google Books sometimes sets language:'en' on foreign editions.
+  if (info.language && info.language !== 'en') return null;
+  if (isLikelyNonEnglish(info.title)) return null;
   if (!info.title || !info.authors?.length) return null;
   if (info.authors.length > 2) return null;
   if (!info.description && !info.pageCount) return null;
   if (isLikelyNonEnglish(info.description)) return null;
   if (info.averageRating != null && info.averageRating < MIN_RATING) return null;
 
-  const cats  = (info.categories ?? []).join(' ').toLowerCase();
-  const title = info.title.toLowerCase();
+  const catList = info.categories ?? [];
+  const cats    = catList.join(' ').toLowerCase();
+  const title   = info.title.toLowerCase();
   if (SKIP_KEYWORDS.some((k) => title.includes(k) || cats.includes(k))) return null;
   if (info.pageCount && info.pageCount < 120) return null;
+
+  // If categories are explicitly provided, require fiction/fantasy — filters out
+  // non-fiction, essay collections, writing guides, interviews, etc.
+  const FICTION_CATS = ['fantasy', 'fiction', 'science fiction', 'horror', 'fairy tale', 'fable'];
+  const NON_FICTION_CATS = ['biography', 'history', 'true crime', 'self-help', 'business',
+    'cooking', 'travel', 'art', 'photography', 'religion', 'philosophy', 'political',
+    'psychology', 'science', 'technology', 'medical', 'education', 'reference'];
+  if (catList.length > 0) {
+    const hasFiction   = FICTION_CATS.some((c) => cats.includes(c));
+    const hasNonFiction = NON_FICTION_CATS.some((c) => cats.includes(c));
+    if (!hasFiction || hasNonFiction) return null;
+  }
 
   const rawYear  = info.publishedDate;
   const year     = rawYear ? parseInt(rawYear.slice(0, 4), 10) : null;
@@ -1097,7 +1113,7 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
     let pageStart = 0;
     let consecutiveEmpty = 0;
 
-    while (imported < LIMIT) {
+    while (imported < p2Limit) {
       const items = await fetchGoogleBooksPage(query, pageStart);
       await sleep(DELAY_MS);
 
@@ -1128,7 +1144,7 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
         normalizedTitles.add(norm);
         if (isbn) seenISBNs.add(isbn);
 
-        process.stdout.write(`    [${imported + 1}/${LIMIT}] "${book.title.slice(0, 48)}" … `);
+        process.stdout.write(`    [${imported + 1}/${p2Limit === Infinity ? '∞' : p2Limit}] "${book.title.slice(0, 48)}" … `);
 
         if (DRY_RUN) {
           console.log(`[dry]`);

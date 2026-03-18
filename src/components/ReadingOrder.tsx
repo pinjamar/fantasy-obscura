@@ -9,6 +9,8 @@ interface Book {
   darkness_level?: number | null;
   avg_rating?: number | null;
   series_label?: string | null;
+  seriesLabel?: string | null;
+  position?: number | null;
 }
 
 export interface BookGroup {
@@ -73,9 +75,14 @@ function BookCard({ book, index }: { book: Book; index: number }) {
         {book.title}
       </p>
 
-      {/* Series label from DB */}
-      {book.series_label && (
-        <p className="text-[10px] text-zinc-400 leading-snug mb-1 line-clamp-1">{book.series_label}</p>
+      {/* Overall series position (e.g. Discworld #8) */}
+      {book.position != null && (
+        <p className="text-[10px] text-purple-400 font-medium leading-snug mb-0.5">#{book.position} in series</p>
+      )}
+
+      {/* Sub-series label — data file override or DB value */}
+      {(book.seriesLabel ?? book.series_label) && (
+        <p className="text-[10px] text-zinc-400 leading-snug mb-1 line-clamp-1">{book.seriesLabel ?? book.series_label}</p>
       )}
 
       {/* Status badge */}

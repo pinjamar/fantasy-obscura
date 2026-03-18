@@ -19,16 +19,20 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
-import { TIER_1 } from './priority-slugs.mjs';
+import { TIER_1, TIER_2, TIER_3, ALL_PRIORITY } from './priority-slugs.mjs';
 
 config();
 
-const DRY_RUN   = process.argv.includes('--dry-run');
-const PRIORITY  = process.argv.includes('--priority');
-const LIMIT_ARG = process.argv.indexOf('--limit');
-const LIMIT     = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
-const SLUG_ARG  = process.argv.indexOf('--slug');
-const SLUG      = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
+const DRY_RUN    = process.argv.includes('--dry-run');
+const TIER1_ONLY = process.argv.includes('--tier1');
+const TIER2_ONLY = process.argv.includes('--tier2');
+const TIER3_ONLY = process.argv.includes('--tier3');
+const LIMIT_ARG  = process.argv.indexOf('--limit');
+const LIMIT      = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
+const SLUG_ARG   = process.argv.indexOf('--slug');
+const SLUG       = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
+
+const TARGET_SLUGS = TIER1_ONLY ? TIER_1 : TIER2_ONLY ? TIER_2 : TIER3_ONLY ? TIER_3 : ALL_PRIORITY;
 const DELAY_MS  = 1200;
 
 
@@ -101,7 +105,7 @@ async function main() {
       .not('subgenres', 'is', null)
       .not('synopsis', 'is', null)
       .order('avg_rating', { ascending: false, nullsLast: true });
-    if (PRIORITY) query = query.in('slug', TIER_1);
+    query = query.in('slug', TARGET_SLUGS);
     if (LIMIT) query = query.limit(LIMIT);
   }
 

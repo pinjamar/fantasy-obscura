@@ -165,6 +165,8 @@ Progress saved in `scripts/.discover-progress.json` (gitignored). Resumes across
 
 Patches missing `series`/`series_number` on existing books, imports missing series entries from a curated list (Phase 1), then auto-discovers all books by any author with 7+ books in the DB (Phase 2).
 
+Phase 2 filters: English-only (checks title for non-ASCII even when `language: 'en'` is set — catches mislabelled foreign editions), fiction/fantasy categories required when categories are present, minimum 120 pages, minimum 3.5 rating, skips special/limited/house editions, audiobooks, non-fiction.
+
 ```bash
 node scripts/fill-series.mjs              # run both phases
 node scripts/fill-series.mjs --dry-run
@@ -263,40 +265,65 @@ node scripts/fill-audiobooks.mjs --all       # re-process everything
 
 ---
 
-### Step 7 — Generate editorial content
+### Step 7 — Fix bad synopses
 
-All generate scripts target books in `scripts/priority-slugs.mjs` (TIER_1 / TIER_2 / TIER_3 / ALL_PRIORITY). Run SQL from DB Setup Step 6 before first use.
+Detects and rewrites synopses that contain URLs, markdown links, "Preceded by", "BOOK TWO of", or other scraped metadata garbage (typically from Open Library). Uses Gemini to generate a clean synopsis.
 
 ```bash
-# "Best For" — one-line descriptor shown below synopsis (ALL_PRIORITY by default)
-node scripts/generate-best-for.mjs
-node scripts/generate-best-for.mjs --dry-run --limit 5
-node scripts/generate-best-for.mjs --slug the-way-of-kings
-node scripts/generate-best-for.mjs --tier1        # TIER_1 only
-node scripts/generate-best-for.mjs --all          # overwrite existing
+node scripts/fix-synopses.mjs
+node scripts/fix-synopses.mjs --dry-run
+node scripts/fix-synopses.mjs --limit 20
+node scripts/fix-synopses.mjs --slug crooked-kingdom
+```
 
-# "Who This Is For" — ideal_reader field (TIER_1 by default)
+---
+
+### Step 8 — Generate editorial content
+
+All generate scripts target books in `scripts/priority-slugs.mjs`. Use `--tier1/--tier2/--tier3` to target a specific tier, or omit for ALL_PRIORITY (~310 books). Run DB Setup Step 6 SQL before first use.
+
+| Flag | Scope |
+|------|-------|
+| *(none)* | ALL_PRIORITY (~310 books) |
+| `--tier1` | TIER_1 only (~53 highest-priority books) |
+| `--tier2` | TIER_2 only (~71 books) |
+| `--tier3` | TIER_3 only (~187 books) |
+| `--slug <slug>` | Single book only |
+| `--limit N` | Cap number processed |
+| `--all` | Overwrite existing values |
+| `--dry-run` | Preview without writing |
+
+```bash
+# "Best For" — one-line descriptor shown on book cards and pages
+node scripts/generate-best-for.mjs
+node scripts/generate-best-for.mjs --tier1
+node scripts/generate-best-for.mjs --tier2
+node scripts/generate-best-for.mjs --tier3
+node scripts/generate-best-for.mjs --slug the-way-of-kings
+node scripts/generate-best-for.mjs --all --dry-run
+
+# "Who This Is For" — ideal_reader field
 node scripts/generate-ideal-reader.mjs
-node scripts/generate-ideal-reader.mjs --dry-run --limit 5
+node scripts/generate-ideal-reader.mjs --tier1
 node scripts/generate-ideal-reader.mjs --slug the-final-empire
 
-# "Reading Experience" — reading_experience field (TIER_1 by default)
+# "Reading Experience" — reading_experience field
 node scripts/generate-reading-experience.mjs
-node scripts/generate-reading-experience.mjs --dry-run --limit 5
+node scripts/generate-reading-experience.mjs --tier1
 node scripts/generate-reading-experience.mjs --slug the-final-empire
 
-# "What Makes It Different" — unique_angle field (TIER_1 by default)
+# "What Makes It Different" — unique_angle field
 node scripts/generate-what-makes-it-different.mjs
-node scripts/generate-what-makes-it-different.mjs --dry-run --limit 5
+node scripts/generate-what-makes-it-different.mjs --tier1
 node scripts/generate-what-makes-it-different.mjs --slug the-final-empire
 
-# FAQs — faqs jsonb field (TIER_1 only)
+# FAQs — faqs jsonb field
 node scripts/generate-faqs.mjs
-node scripts/generate-faqs.mjs --dry-run --limit 5
+node scripts/generate-faqs.mjs --tier1
 node scripts/generate-faqs.mjs --slug the-final-empire
 node scripts/generate-faqs.mjs --all
 
-# Author bio — writing_style + best_starting_point (authors with 7+ books)
+# Author bio — writing_style + best_starting_point (authors with 7+ books in DB)
 node scripts/generate-author-bio.mjs
 node scripts/generate-author-bio.mjs --dry-run
 node scripts/generate-author-bio.mjs --limit 10
@@ -362,7 +389,7 @@ src/
     │   └── [slug].astro             # Individual "Books Like X" guide
     ├── categories/
     │   └── [slug]/index.astro       # Genre category pages (cozy, grimdark, romantasy, etc.)
-    ├── craft/index.astro            # Alchemy Table — filter-based book finder
+    ├── book-finder/index.astro      # Alchemy Table — filter-based book finder (/book-finder/)
     ├── my-list/index.astro          # User's personal reading shelf
     ├── reading-orders/
     │   ├── index.astro              # Reading orders hub

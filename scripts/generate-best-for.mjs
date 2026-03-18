@@ -14,27 +14,31 @@
  *   node scripts/generate-best-for.mjs --dry-run
  *   node scripts/generate-best-for.mjs --limit 20
  *   node scripts/generate-best-for.mjs --slug the-final-empire
- *   node scripts/generate-best-for.mjs --all   (overwrite existing)
- *   node scripts/generate-best-for.mjs --tier1  (only TIER_1)
+ *   node scripts/generate-best-for.mjs --all     (overwrite existing)
+ *   node scripts/generate-best-for.mjs --tier1   (only TIER_1 — ~53 books)
+ *   node scripts/generate-best-for.mjs --tier2   (only TIER_2 — ~71 books)
+ *   node scripts/generate-best-for.mjs --tier3   (only TIER_3 — ~187 books)
  */
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
-import { TIER_1, ALL_PRIORITY } from './priority-slugs.mjs';
+import { TIER_1, TIER_2, TIER_3, ALL_PRIORITY } from './priority-slugs.mjs';
 
 config();
 
-const DRY_RUN   = process.argv.includes('--dry-run');
-const ALL       = process.argv.includes('--all');
+const DRY_RUN    = process.argv.includes('--dry-run');
+const ALL        = process.argv.includes('--all');
 const TIER1_ONLY = process.argv.includes('--tier1');
-const LIMIT_ARG = process.argv.indexOf('--limit');
-const LIMIT     = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
-const SLUG_ARG  = process.argv.indexOf('--slug');
-const SLUG      = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
-const DELAY_MS  = 800;
+const TIER2_ONLY = process.argv.includes('--tier2');
+const TIER3_ONLY = process.argv.includes('--tier3');
+const LIMIT_ARG  = process.argv.indexOf('--limit');
+const LIMIT      = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
+const SLUG_ARG   = process.argv.indexOf('--slug');
+const SLUG       = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
+const DELAY_MS   = 800;
 
-const TARGET_SLUGS = TIER1_ONLY ? TIER_1 : ALL_PRIORITY;
+const TARGET_SLUGS = TIER1_ONLY ? TIER_1 : TIER2_ONLY ? TIER_2 : TIER3_ONLY ? TIER_3 : ALL_PRIORITY;
 
 if (!process.env.GEMINI_API_KEY) {
   console.error('Missing GEMINI_API_KEY in .env');
@@ -93,7 +97,8 @@ Respond with the single sentence only. No quotes, no punctuation beyond the peri
 }
 
 async function main() {
-  console.log(`\n⭐ Best For Generator${DRY_RUN ? ' [DRY RUN]' : ''}${ALL ? ' [ALL]' : ''}${TIER1_ONLY ? ' [TIER_1 only]' : ''}\n`);
+  const tierLabel = TIER1_ONLY ? ' [TIER_1]' : TIER2_ONLY ? ' [TIER_2]' : TIER3_ONLY ? ' [TIER_3]' : ' [ALL_PRIORITY]';
+  console.log(`\n⭐ Best For Generator${DRY_RUN ? ' [DRY RUN]' : ''}${ALL ? ' [ALL]' : ''}${tierLabel}\n`);
 
   let query = supabase
     .from('books')

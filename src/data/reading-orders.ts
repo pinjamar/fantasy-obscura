@@ -9,6 +9,10 @@ export interface ReadingOrderBook {
   note: string
   page_count: number
   publication_year: number
+  /** Overall position in the parent series (e.g. Discworld #8). Shown below title. */
+  position?: number
+  /** Sub-series label override (e.g. "Witches #2"). Shown when DB has no series_label. */
+  seriesLabel?: string
 }
 
 export interface ReadingOrderGroup {
@@ -695,14 +699,14 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         noteType: 'required',
         note: 'The most popular entry into Discworld. Start with Guards! Guards! — the Watch arc tracks a corrupt city over 20+ years of stories. Night Watch is considered one of the finest books in the series.',
         books: [
-          { title: 'Guards! Guards!',        slug: 'guards-guards',       status: 'mandatory',     note: 'Best starting point. Night Watch is introduced. Dragons invade Ankh-Morpork.',                   page_count: 288, publication_year: 1989 },
-          { title: 'Men at Arms',            slug: 'men-at-arms',         status: 'mandatory',     note: 'The Watch grows. Carrot, Angua, diversity politics — Pratchett at his social best.',             page_count: 300, publication_year: 1993 },
-          { title: 'Feet of Clay',           slug: 'feet-of-clay',        status: 'mandatory',     note: 'Murder mystery involving golems. One of the sharpest Watch books.',                             page_count: 288, publication_year: 1996 },
-          { title: 'Jingo',                  slug: 'jingo',               status: 'mandatory',     note: 'War satire. Vimes at his most furious and politically brilliant.',                               page_count: 288, publication_year: 1997 },
-          { title: 'The Fifth Elephant',     slug: 'the-fifth-elephant',  status: 'mandatory',     note: 'Vimes on a diplomatic mission. Dwarves, werewolves, and a murder.',                             page_count: 321, publication_year: 1999 },
-          { title: 'Night Watch',            slug: 'night-watch',         status: 'mandatory',     note: 'Time travel, revolution, and Vimes at his absolute best. One of the great Discworld novels.',   page_count: 338, publication_year: 2002 },
-          { title: 'Thud!',                  slug: 'thud',                status: 'optional',      note: 'Trolls vs. dwarves in Ankh-Morpork. Vimes dealing with prejudice and fatherhood.',             page_count: 384, publication_year: 2005 },
-          { title: 'Snuff',                  slug: 'snuff',               status: 'optional',      note: "Vimes on a country holiday that turns into a case. The Watch's final novel.",                   page_count: 398, publication_year: 2011 },
+          { title: 'Guards! Guards!',        slug: 'guards-guards',       status: 'mandatory',     note: 'Best starting point. Night Watch is introduced. Dragons invade Ankh-Morpork.',                   page_count: 288, publication_year: 1989, position: 8  },
+          { title: 'Men at Arms',            slug: 'men-at-arms',         status: 'mandatory',     note: 'The Watch grows. Carrot, Angua, diversity politics — Pratchett at his social best.',             page_count: 300, publication_year: 1993, position: 15 },
+          { title: 'Feet of Clay',           slug: 'feet-of-clay',        status: 'mandatory',     note: 'Murder mystery involving golems. One of the sharpest Watch books.',                             page_count: 288, publication_year: 1996, position: 19 },
+          { title: 'Jingo',                  slug: 'jingo',               status: 'mandatory',     note: 'War satire. Vimes at his most furious and politically brilliant.',                               page_count: 288, publication_year: 1997, position: 21 },
+          { title: 'The Fifth Elephant',     slug: 'the-fifth-elephant',  status: 'mandatory',     note: 'Vimes on a diplomatic mission. Dwarves, werewolves, and a murder.',                             page_count: 321, publication_year: 1999, position: 24 },
+          { title: 'Night Watch',            slug: 'night-watch',         status: 'mandatory',     note: 'Time travel, revolution, and Vimes at his absolute best. One of the great Discworld novels.',   page_count: 338, publication_year: 2002, position: 29 },
+          { title: 'Thud!',                  slug: 'thud',                status: 'optional',      note: 'Trolls vs. dwarves in Ankh-Morpork. Vimes dealing with prejudice and fatherhood.',             page_count: 384, publication_year: 2005, position: 34 },
+          { title: 'Snuff',                  slug: 'snuff',               status: 'optional',      note: "Vimes on a country holiday that turns into a case. The Watch's final novel.",                   page_count: 398, publication_year: 2011, position: 39 },
         ],
       },
       {
@@ -711,12 +715,12 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         noteType: 'optional',
         note: 'Start with Wyrd Sisters, not Equal Rites. The Witches trilogy (Wyrd Sisters, Witches Abroad, Lords and Ladies) is feminist, sharp, and very funny. Granny Weatherwax is one of the great characters in all of fantasy.',
         books: [
-          { title: 'Equal Rites',    slug: 'equal-rites',    status: 'supplementary', note: 'Early Pratchett, still finding the voice. First Granny Weatherwax — readable but the weakest Witches entry.',   page_count: 212, publication_year: 1987 },
-          { title: 'Wyrd Sisters',   slug: 'wyrd-sisters',   status: 'mandatory',     note: 'The Witches subseries proper starts here. Shakespeare satire, three-way witch dynamic, magnificent.',           page_count: 265, publication_year: 1988 },
-          { title: 'Witches Abroad', slug: 'witches-abroad', status: 'mandatory',     note: 'Fairy tale deconstruction. Granny and Nanny travel abroad — one of the funniest Discworld books.',             page_count: 284, publication_year: 1991 },
-          { title: 'Lords and Ladies', slug: 'lords-and-ladies', status: 'optional',  note: 'The elves return. Darker in tone. Excellent but harder to appreciate without the prior books.',               page_count: 281, publication_year: 1992 },
-          { title: 'Maskerade',      slug: 'maskerade',      status: 'optional',      note: 'Phantom of the Opera parody with Agnes Nitt. Sharp opera satire.',                                             page_count: 288, publication_year: 1995 },
-          { title: 'Carpe Jugulum', slug: 'carpe-jugulum',   status: 'optional',      note: 'Vampires take over Lancre. Granny Weatherwax at her most complex. The Witches finale.',                       page_count: 368, publication_year: 1998 },
+          { title: 'Equal Rites',      slug: 'equal-rites',      status: 'supplementary', note: 'Early Pratchett, still finding the voice. First Granny Weatherwax — readable but the weakest Witches entry.',   page_count: 212, publication_year: 1987, position: 3,  seriesLabel: 'Witches #1' },
+          { title: 'Wyrd Sisters',     slug: 'wyrd-sisters',     status: 'mandatory',     note: 'The Witches subseries proper starts here. Shakespeare satire, three-way witch dynamic, magnificent.',           page_count: 265, publication_year: 1988, position: 6,  seriesLabel: 'Witches #2' },
+          { title: 'Witches Abroad',   slug: 'witches-abroad',   status: 'mandatory',     note: 'Fairy tale deconstruction. Granny and Nanny travel abroad — one of the funniest Discworld books.',             page_count: 284, publication_year: 1991, position: 12, seriesLabel: 'Witches #3' },
+          { title: 'Lords and Ladies', slug: 'lords-and-ladies', status: 'optional',      note: 'The elves return. Darker in tone. Excellent but harder to appreciate without the prior books.',               page_count: 281, publication_year: 1992, position: 14, seriesLabel: 'Witches #4' },
+          { title: 'Maskerade',        slug: 'maskerade',        status: 'optional',      note: 'Phantom of the Opera parody with Agnes Nitt. Sharp opera satire.',                                             page_count: 288, publication_year: 1995, position: 18, seriesLabel: 'Witches #5' },
+          { title: 'Carpe Jugulum',    slug: 'carpe-jugulum',    status: 'optional',      note: 'Vampires take over Lancre. Granny Weatherwax at her most complex. The Witches finale.',                       page_count: 368, publication_year: 1998, position: 23, seriesLabel: 'Witches #6' },
         ],
       },
       {
@@ -725,11 +729,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         noteType: 'optional',
         note: 'Mort is the best entry after Guards! Guards!. The Death subseries is warmer and more philosophical than the Watch. Hogfather (book 4 of the arc) is a December read.',
         books: [
-          { title: 'Mort',           slug: 'mort',           status: 'mandatory',     note: 'Death takes an apprentice. The Death subseries — darkly funny and surprisingly moving.',                      page_count: 243, publication_year: 1987 },
-          { title: 'Reaper Man',     slug: 'reaper-man',     status: 'mandatory',     note: 'Death gets fired and has to find a job. Surprisingly tender and funny.',                                      page_count: 252, publication_year: 1991 },
-          { title: 'Soul Music',     slug: 'soul-music',     status: 'optional',      note: "Rock'n'roll comes to Discworld. Susan Sto Helit's debut. Slightly overlong but charming.",                   page_count: 388, publication_year: 1994 },
-          { title: 'Hogfather',      slug: 'hogfather',      status: 'mandatory',     note: 'Death plays Father Christmas. Pratchett on belief, gods, and the value of stories. A masterpiece.',          page_count: 336, publication_year: 1996 },
-          { title: 'Thief of Time',  slug: 'thief-of-time',  status: 'optional',      note: "Susan and the History Monks. The Death arc's most philosophical entry.",                                      page_count: 324, publication_year: 2001 },
+          { title: 'Mort',           slug: 'mort',           status: 'mandatory',     note: 'Death takes an apprentice. The Death subseries — darkly funny and surprisingly moving.',                      page_count: 243, publication_year: 1987, position: 4,  seriesLabel: 'Death #1' },
+          { title: 'Reaper Man',     slug: 'reaper-man',     status: 'mandatory',     note: 'Death gets fired and has to find a job. Surprisingly tender and funny.',                                      page_count: 252, publication_year: 1991, position: 11, seriesLabel: 'Death #2' },
+          { title: 'Soul Music',     slug: 'soul-music',     status: 'optional',      note: "Rock'n'roll comes to Discworld. Susan Sto Helit's debut. Slightly overlong but charming.",                   page_count: 388, publication_year: 1994, position: 16, seriesLabel: 'Death #3' },
+          { title: 'Hogfather',      slug: 'hogfather',      status: 'mandatory',     note: 'Death plays Father Christmas. Pratchett on belief, gods, and the value of stories. A masterpiece.',          page_count: 336, publication_year: 1996, position: 20, seriesLabel: 'Death #4' },
+          { title: 'Thief of Time',  slug: 'thief-of-time',  status: 'optional',      note: "Susan and the History Monks. The Death arc's most philosophical entry.",                                      page_count: 324, publication_year: 2001, position: 26, seriesLabel: 'Death #5' },
         ],
       },
       {
@@ -738,14 +742,14 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         noteType: 'optional',
         note: "The original Discworld arc — and the weakest. Colour of Magic and Light Fantastic are historically interesting but not representative of what the series becomes. Sourcery or Interesting Times are the better Rincewind entry points.",
         books: [
-          { title: 'The Colour of Magic',   slug: 'the-colour-of-magic',   status: 'supplementary', note: 'Book 1 — Pratchett finding his feet. Start here only if you want to read in full publication order.',  page_count: 206, publication_year: 1983 },
-          { title: 'The Light Fantastic',   slug: 'the-light-fantastic',   status: 'supplementary', note: 'Direct sequel to Colour of Magic. Stronger, but still early-era Pratchett.',                           page_count: 186, publication_year: 1986 },
-          { title: 'Sourcery',              slug: 'sourcery',              status: 'optional',      note: 'A sourcerer threatens to destroy magic. Good standalone Rincewind entry.',                              page_count: 245, publication_year: 1988 },
-          { title: 'Eric',                  slug: 'eric',                  status: 'supplementary', note: 'Short illustrated novel — Rincewind as a demon summoner. More novella than novel.',                    page_count: 200, publication_year: 1990 },
-          { title: 'Interesting Times',     slug: 'interesting-times',     status: 'optional',      note: 'Rincewind sent to the Agatean Empire. Broad satire of Chinese culture.',                              page_count: 280, publication_year: 1994 },
-          { title: 'The Last Continent',    slug: 'the-last-continent',    status: 'optional',      note: 'Rincewind stranded in XXXX (Australia). Absurdist comedy.',                                           page_count: 290, publication_year: 1998 },
-          { title: 'The Last Hero',         slug: 'the-last-hero',         status: 'supplementary', note: 'Illustrated novella — Cohen the Barbarian tries to return fire to the gods. Beautiful but brief.',    page_count: 176, publication_year: 2001 },
-          { title: 'Unseen Academicals',    slug: 'unseen-academicals',    status: 'optional',      note: 'The Unseen University wizards discover football. Slow start but rewarding.',                           page_count: 514, publication_year: 2009 },
+          { title: 'The Colour of Magic',   slug: 'the-colour-of-magic',   status: 'supplementary', note: 'Book 1 — Pratchett finding his feet. Start here only if you want to read in full publication order.',  page_count: 206, publication_year: 1983, position: 1  },
+          { title: 'The Light Fantastic',   slug: 'the-light-fantastic',   status: 'supplementary', note: 'Direct sequel to Colour of Magic. Stronger, but still early-era Pratchett.',                           page_count: 186, publication_year: 1986, position: 2  },
+          { title: 'Sourcery',              slug: 'sourcery',              status: 'optional',      note: 'A sourcerer threatens to destroy magic. Good standalone Rincewind entry.',                              page_count: 245, publication_year: 1988, position: 5  },
+          { title: 'Eric',                  slug: 'eric',                  status: 'supplementary', note: 'Short illustrated novel — Rincewind as a demon summoner. More novella than novel.',                    page_count: 200, publication_year: 1990, position: 9  },
+          { title: 'Interesting Times',     slug: 'interesting-times',     status: 'optional',      note: 'Rincewind sent to the Agatean Empire. Broad satire of Chinese culture.',                              page_count: 280, publication_year: 1994, position: 17 },
+          { title: 'The Last Continent',    slug: 'the-last-continent',    status: 'optional',      note: 'Rincewind stranded in XXXX (Australia). Absurdist comedy.',                                           page_count: 290, publication_year: 1998, position: 22 },
+          { title: 'The Last Hero',         slug: 'the-last-hero',         status: 'supplementary', note: 'Illustrated novella — Cohen the Barbarian tries to return fire to the gods. Beautiful but brief.',    page_count: 176, publication_year: 2001, position: 27 },
+          { title: 'Unseen Academicals',    slug: 'unseen-academicals',    status: 'optional',      note: 'The Unseen University wizards discover football. Slow start but rewarding.',                           page_count: 514, publication_year: 2009, position: 37 },
         ],
       },
       {
@@ -754,12 +758,12 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         noteType: 'optional',
         note: 'Small Gods is the only mandatory read here — widely considered a top-3 Discworld book and a perfect standalone. The rest can be read in any order or skipped entirely.',
         books: [
-          { title: 'Pyramids',          slug: 'pyramids',          status: 'optional',  note: 'A young man trained as an assassin returns to his kingdom. Ancient Egypt satire.',      page_count: 267, publication_year: 1989 },
-          { title: 'Moving Pictures',   slug: 'moving-pictures',   status: 'optional',  note: 'Holy Wood (Hollywood) comes to Discworld. The movies satire.',                         page_count: 354, publication_year: 1990 },
-          { title: 'Small Gods',        slug: 'small-gods',        status: 'mandatory', note: 'Standalone masterpiece about religion, faith, and institutional power. Read this regardless of where you are in the series.', page_count: 284, publication_year: 1992 },
-          { title: 'The Truth',         slug: 'the-truth',         status: 'optional',  note: 'The first newspaper in Ankh-Morpork. Satire of media and truth. Excellent standalone.', page_count: 304, publication_year: 2000 },
-          { title: 'The Amazing Maurice and His Educated Rodents', slug: 'the-amazing-maurice-and-his-educated-rodents', status: 'supplementary', note: "YA Pied Piper retelling. Carnegie Medal winner. Charming but clearly YA — not a main-series entry.", page_count: 272, publication_year: 2001 },
-          { title: 'Monstrous Regiment',slug: 'monstrous-regiment', status: 'optional', note: 'A girl disguises herself as a soldier. War and gender satire. One of the sharpest late Pratchetts.', page_count: 384, publication_year: 2003 },
+          { title: 'Pyramids',          slug: 'pyramids',          status: 'optional',  note: 'A young man trained as an assassin returns to his kingdom. Ancient Egypt satire.',      page_count: 267, publication_year: 1989, position: 7  },
+          { title: 'Moving Pictures',   slug: 'moving-pictures',   status: 'optional',  note: 'Holy Wood (Hollywood) comes to Discworld. The movies satire.',                         page_count: 354, publication_year: 1990, position: 10 },
+          { title: 'Small Gods',        slug: 'small-gods',        status: 'mandatory', note: 'Standalone masterpiece about religion, faith, and institutional power. Read this regardless of where you are in the series.', page_count: 284, publication_year: 1992, position: 13 },
+          { title: 'The Truth',         slug: 'the-truth',         status: 'optional',  note: 'The first newspaper in Ankh-Morpork. Satire of media and truth. Excellent standalone.', page_count: 304, publication_year: 2000, position: 25 },
+          { title: 'The Amazing Maurice and His Educated Rodents', slug: 'the-amazing-maurice-and-his-educated-rodents', status: 'supplementary', note: "YA Pied Piper retelling. Carnegie Medal winner. Charming but clearly YA — not a main-series entry.", page_count: 272, publication_year: 2001, position: 28 },
+          { title: 'Monstrous Regiment',slug: 'monstrous-regiment', status: 'optional', note: 'A girl disguises herself as a soldier. War and gender satire. One of the sharpest late Pratchetts.', page_count: 384, publication_year: 2003, position: 31 },
         ],
       },
       {
@@ -768,11 +772,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         noteType: 'optional',
         note: "Pratchett's YA series is the best introduction to Discworld for younger readers — and excellent for adults. Start with The Wee Free Men. The Shepherd's Crown is Pratchett's final novel, written as he was dying.",
         books: [
-          { title: 'The Wee Free Men',      slug: 'the-wee-free-men',      status: 'mandatory', note: 'Best YA entry point to Discworld. Young Tiffany Aching becomes a witch. Brilliant.',                   page_count: 268, publication_year: 2003 },
-          { title: 'A Hat Full of Sky',     slug: 'a-hat-full-of-sky',     status: 'optional',  note: "Tiffany's first apprenticeship. A possessing spirit called a hiver.",                                  page_count: 275, publication_year: 2004 },
-          { title: 'Wintersmith',           slug: 'wintersmith',           status: 'optional',  note: 'Tiffany accidentally attracts the Wintersmith. The series at its most mythic.',                        page_count: 336, publication_year: 2006 },
-          { title: 'I Shall Wear Midnight', slug: 'i-shall-wear-midnight', status: 'optional',  note: 'Tiffany fully trained. Tackles witch-hunting and prejudice. The darkest Tiffany book.',               page_count: 322, publication_year: 2010 },
-          { title: "The Shepherd's Crown",  slug: 'the-shepherds-crown',   status: 'optional',  note: "Pratchett's final novel. Unpolished but deeply moving as a farewell.",                                page_count: 276, publication_year: 2015 },
+          { title: 'The Wee Free Men',      slug: 'the-wee-free-men',      status: 'mandatory', note: 'Best YA entry point to Discworld. Young Tiffany Aching becomes a witch. Brilliant.',                   page_count: 268, publication_year: 2003, position: 30 },
+          { title: 'A Hat Full of Sky',     slug: 'a-hat-full-of-sky',     status: 'optional',  note: "Tiffany's first apprenticeship. A possessing spirit called a hiver.",                                  page_count: 275, publication_year: 2004, position: 32 },
+          { title: 'Wintersmith',           slug: 'wintersmith',           status: 'optional',  note: 'Tiffany accidentally attracts the Wintersmith. The series at its most mythic.',                        page_count: 336, publication_year: 2006, position: 35 },
+          { title: 'I Shall Wear Midnight', slug: 'i-shall-wear-midnight', status: 'optional',  note: 'Tiffany fully trained. Tackles witch-hunting and prejudice. The darkest Tiffany book.',               page_count: 322, publication_year: 2010, position: 38 },
+          { title: "The Shepherd's Crown",  slug: 'the-shepherds-crown',   status: 'optional',  note: "Pratchett's final novel. Unpolished but deeply moving as a farewell.",                                page_count: 276, publication_year: 2015, position: 41 },
         ],
       },
       {
@@ -781,9 +785,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         noteType: 'optional',
         note: "Going Postal is the best standalone entry into Discworld after the Watch books. The Moist arc covers postal service, banking, and railways — progressively weaker as Pratchett's health declined.",
         books: [
-          { title: 'Going Postal',   slug: 'going-postal',   status: 'mandatory', note: 'A con artist is forced to run the Ankh-Morpork post office. Perfect standalone entry — the best place to start if Watch feels too long.', page_count: 471, publication_year: 2004 },
-          { title: 'Making Money',   slug: 'making-money',   status: 'optional',  note: 'Moist von Lipwig takes over the Royal Mint. Slightly weaker than Going Postal but still excellent.',                                      page_count: 400, publication_year: 2007 },
-          { title: 'Raising Steam',  slug: 'raising-steam',  status: 'optional',  note: "Railways arrive on Discworld. Pratchett's Alzheimer's beginning to show — a weaker late entry.",                                          page_count: 385, publication_year: 2013 },
+          { title: 'Going Postal',   slug: 'going-postal',   status: 'mandatory', note: 'A con artist is forced to run the Ankh-Morpork post office. Perfect standalone entry — the best place to start if Watch feels too long.', page_count: 471, publication_year: 2004, position: 33 },
+          { title: 'Making Money',   slug: 'making-money',   status: 'optional',  note: 'Moist von Lipwig takes over the Royal Mint. Slightly weaker than Going Postal but still excellent.',                                      page_count: 400, publication_year: 2007, position: 36 },
+          { title: 'Raising Steam',  slug: 'raising-steam',  status: 'optional',  note: "Railways arrive on Discworld. Pratchett's Alzheimer's beginning to show — a weaker late entry.",                                          page_count: 385, publication_year: 2013, position: 40 },
         ],
       },
     ],
@@ -1181,6 +1185,272 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     categoryHref: '/categories/romantasy',
     categoryLabel: 'Browse Romantasy',
     related: ['acotar', 'throne-of-glass'],
+  },
+  // ─── Forgotten Realms — The Legend of Drizzt ──────────────────────────────
+  {
+    slug: 'drizzt',
+    name: 'The Legend of Drizzt',
+    author: 'R.A. Salvatore',
+    seriesStatus: 'ongoing',
+    seriesStatusLabel: '⏳ Ongoing Series',
+    description:
+      "The longest-running fantasy saga in D&D fiction — 30+ novels following Drizzt Do'Urden, a dark elf who abandons the brutal society of the Underdark to forge his own path on the surface world. At its core it's a story about identity, loyalty, and chosen family. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are some of the most beloved characters in fantasy. Start with the Dark Elf Trilogy for the origin, or jump straight into Icewind Dale for the classic adventure.",
+    darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
+    warning: 'The series spans 30+ novels across 10+ arcs. This guide covers the essential reading — the first four arcs are the heart of the series. Later arcs vary in quality but remain popular with fans of the characters.',
+    groups: [
+      {
+        label: 'The Dark Elf Trilogy',
+        sublabel: 'Chronological start — Drizzt\'s origin',
+        note: 'Written as a prequel after Icewind Dale. Start here for chronological order, or skip to Icewind Dale and return later.',
+        noteType: 'optional',
+        books: [
+          { title: 'Homeland',  slug: 'homeland',  status: 'mandatory',     note: "Drizzt's birth into drow society in the Underdark. Brutal, political, and fascinating as a portrait of a world built on cruelty.",            page_count: 343, publication_year: 1990 },
+          { title: 'Exile',     slug: 'exile',     status: 'mandatory',     note: 'Drizzt survives the Underdark after fleeing his city. Tense and claustrophobic — the world trying to kill him at every turn.',               page_count: 314, publication_year: 1990 },
+          { title: 'Sojourn',   slug: 'sojourn',   status: 'mandatory',     note: 'Drizzt reaches the surface world. The prejudice he faces gives the series its emotional core.',                                                 page_count: 311, publication_year: 1991 },
+        ],
+      },
+      {
+        label: 'The Icewind Dale Trilogy',
+        sublabel: 'The original trilogy — written first, most beloved',
+        note: 'This is where R.A. Salvatore introduced Drizzt to the world. Many fans consider this the best entry point.',
+        noteType: 'required',
+        books: [
+          { title: 'The Crystal Shard',   slug: 'the-crystal-shard',   status: 'mandatory', note: "The Companions of the Hall assemble. Wulfgar, Bruenor, Catti-brie, Regis — fantasy's greatest found family.",                    page_count: 336, publication_year: 1988 },
+          { title: 'Streams of Silver',   slug: 'streams-of-silver',   status: 'mandatory', note: 'The Companions travel to Mithral Hall to reclaim Bruenor\'s ancestral dwarven kingdom.',                                          page_count: 352, publication_year: 1989 },
+          { title: "The Halfling's Gem",  slug: 'the-halflings-gem',   status: 'mandatory', note: 'High-stakes conclusion. Regis is taken and the Companions give chase across the continent.',                                      page_count: 352, publication_year: 1990 },
+        ],
+      },
+      {
+        label: 'Legacy of the Drow',
+        sublabel: 'The drow return — the stakes become personal',
+        books: [
+          { title: 'The Legacy',       slug: 'the-legacy',       status: 'mandatory',     note: "Drizzt's past hunts him. The drow come to Mithral Hall. Best arc in the series by many fans.",        page_count: 309, publication_year: 1992 },
+          { title: 'Starless Night',   slug: 'starless-night',   status: 'mandatory',     note: 'Drizzt returns to the Underdark alone. One of the darkest and most personal books.',                   page_count: 303, publication_year: 1993 },
+          { title: 'Siege of Darkness', slug: 'siege-of-darkness', status: 'mandatory',   note: 'Full-scale drow invasion. The war that the series has been building toward.',                           page_count: 314, publication_year: 1994 },
+          { title: 'Passage to Dawn',  slug: 'passage-to-dawn',  status: 'mandatory',     note: 'The aftermath. Drizzt and Catti-brie at sea. Closes the Legacy of the Drow era.',                      page_count: 310, publication_year: 1996 },
+        ],
+      },
+      {
+        label: 'Paths of Darkness',
+        sublabel: 'The Companions scattered — a darker chapter',
+        books: [
+          { title: 'The Silent Blade',       slug: 'the-silent-blade',       status: 'optional',     note: 'Artemis Entreri returns. Drizzt vs. Entreri rivalry reaches a major turning point.',               page_count: 315, publication_year: 1998 },
+          { title: 'The Spine of the World', slug: 'the-spine-of-the-world', status: 'optional',     note: 'Wulfgar-focused departure. Deals with trauma and recovery — divisive but emotionally honest.',      page_count: 345, publication_year: 1999 },
+          { title: 'Servant of the Shard',   slug: 'servant-of-the-shard',   status: 'optional',     note: 'Follows Jarlaxle and Entreri more than Drizzt. Best book in the arc for fans of the villains.',   page_count: 315, publication_year: 2000 },
+          { title: 'Sea of Swords',          slug: 'sea-of-swords',          status: 'optional',     note: 'The Companions reunite. Wraps up the Paths of Darkness arc cleanly.',                              page_count: 312, publication_year: 2001 },
+        ],
+      },
+      {
+        label: 'The Hunter\'s Blades & Beyond',
+        sublabel: 'Continuing the saga (15+ more novels)',
+        note: 'The series continues with The Hunter\'s Blades Trilogy, Transitions, The Neverwinter Saga, and multiple subsequent arcs through 2024. Quality is consistent for fans of the characters — each arc has a self-contained conflict within the ongoing saga.',
+        noteType: 'optional',
+        books: [
+          { title: 'The Thousand Orcs',  slug: 'the-thousand-orcs',  status: 'supplementary', note: 'Start of Hunter\'s Blades Trilogy. Large orc invasion threatens the North.',  page_count: 343, publication_year: 2002 },
+          { title: 'Gauntlgrym',         slug: 'gauntlgrym',         status: 'supplementary', note: 'Start of Neverwinter Saga. 100 years later — a new chapter for Drizzt.',       page_count: 358, publication_year: 2010 },
+          { title: 'Timeless',           slug: 'timeless',           status: 'supplementary', note: 'Start of Generations arc. Introduces a new generation alongside Drizzt.',      page_count: 384, publication_year: 2018 },
+        ],
+      },
+    ],
+    orderNote: 'Two valid starting points: Homeland (Dark Elf Trilogy) for chronological order, or The Crystal Shard (Icewind Dale) for publication order. Both work — publication order is the more common recommendation.',
+    cards: [
+      { title: '⚔️ The Hook',         body: 'Drizzt is one of fantasy\'s most iconic characters — a dark elf who rejects his people\'s evil and builds a life on the surface through sheer will and skill. The found-family dynamic of the Companions of the Hall is the emotional core of the entire series.',   color: 'blue'   },
+      { title: '📚 Where to Start',   body: 'Most readers recommend The Crystal Shard as the entry point — it\'s shorter, faster, and introduces the Companions. The Dark Elf Trilogy is deeper but works better once you already love the character.',                                                            color: 'green'  },
+      { title: '🗺️ The Long Game',   body: 'The series spans 30+ novels. The first two arcs (Icewind Dale + Legacy of the Drow) are universally loved. After that, quality varies but remains solid for fans of the cast. You don\'t have to read all of it — stop when you\'re satisfied.',                  color: 'amber'  },
+    ],
+    sections: [
+      {
+        heading: 'Where to start',
+        type: 'bullets',
+        bullets: [
+          'New reader: Start with The Crystal Shard (Icewind Dale #1) — shorter, faster-paced, and introduces the full cast immediately.',
+          'Want the full origin: Start with Homeland (Dark Elf Trilogy #1) for Drizzt\'s backstory in the Underdark.',
+          'Just want the best arc: Read the Dark Elf Trilogy, then jump to Legacy of the Drow — this is the emotional peak of the series.',
+          'D&D fan: All books are set in the Forgotten Realms setting. No D&D knowledge required, but it adds flavor.',
+        ],
+      },
+      {
+        heading: 'What to know',
+        type: 'bullets',
+        bullets: [
+          'The early books (1988–1996) are the strongest. The series gets more variable in quality after Paths of Darkness.',
+          'Artemis Entreri — Drizzt\'s rival assassin — is a fan favourite who grows into a surprisingly complex character across multiple arcs.',
+          'Later arcs (Neverwinter Saga onwards) reboot the cast and tone. Some fans stop at Legacy of the Drow and consider that the complete experience.',
+          'All books are fast reads — 300–360 pages, action-focused, with short chapters.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'Dark Elf Trilogy',      level: 3, desc: 'Moderate — Underdark society is brutal and political' },
+      { label: 'Icewind Dale Trilogy',  level: 2, desc: 'Light — adventure-focused with low stakes death' },
+      { label: 'Legacy of the Drow',    level: 3, desc: 'Moderate — personal stakes, drow warfare' },
+      { label: 'Paths of Darkness',     level: 3, desc: 'Moderate — trauma explored, darker character arcs' },
+    ],
+    finishedLabel: 'Finished the core arcs?',
+    categoryHref: '/categories/epic',
+    categoryLabel: 'Browse Epic Fantasy',
+    related: ['cosmere', 'wheel-of-time', 'dragonlance'],
+  },
+
+  // ─── Dragonlance ───────────────────────────────────────────────────────────
+  {
+    slug: 'dragonlance',
+    name: 'Dragonlance',
+    author: 'Margaret Weis & Tracy Hickman',
+    seriesStatus: 'complete',
+    seriesStatusLabel: '✓ Core Series Complete',
+    description:
+      'The defining D&D fantasy series of the 1980s. Dragonlance introduced a generation to epic fantasy — a world of dragons, knights, and gods, with a cast of companions whose dynamics defined the genre. The Chronicles trilogy is required reading for fantasy history; the Legends trilogy, following the mage Raistlin, is widely considered the better work. Between them, they represent the peak of TSR-era fantasy fiction.',
+    darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
+    groups: [
+      {
+        label: 'The Chronicles Trilogy',
+        sublabel: 'Start here — the original Dragonlance',
+        books: [
+          { title: 'Dragons of Autumn Twilight', slug: 'dragons-of-autumn-twilight', status: 'mandatory',     note: 'The Companions reunite in a world at war with dragons. Classic fantasy adventure — the template for the genre.', page_count: 447, publication_year: 1984 },
+          { title: 'Dragons of Winter Night',    slug: 'dragons-of-winter-night',    status: 'mandatory',     note: 'The war spreads. Raistlin\'s ambitions take a darker turn. The best book in the Chronicles.',               page_count: 399, publication_year: 1985 },
+          { title: 'Dragons of Spring Dawning',  slug: 'dragons-of-spring-dawning',  status: 'mandatory',     note: 'The war ends. The Companions are broken and changed. A bittersweet conclusion.',                            page_count: 399, publication_year: 1985 },
+        ],
+      },
+      {
+        label: 'The Legends Trilogy',
+        sublabel: 'Raistlin\'s story — widely considered the better trilogy',
+        note: 'Read Chronicles first. Legends is darker, more ambitious, and centres entirely on Raistlin — one of fantasy\'s greatest antiheroes.',
+        noteType: 'required',
+        books: [
+          { title: 'Time of the Twins',  slug: 'time-of-the-twins',  status: 'mandatory',     note: 'Raistlin travels back in time with his twin Caramon. His bid for godhood begins. Darker and more focused than Chronicles.',    page_count: 373, publication_year: 1986 },
+          { title: 'War of the Twins',   slug: 'war-of-the-twins',   status: 'mandatory',     note: 'The consequences of time travel ripple outward. Raistlin\'s plan comes into focus — brilliant and terrifying.',             page_count: 372, publication_year: 1986 },
+          { title: 'Test of the Twins',  slug: 'test-of-the-twins',  status: 'mandatory',     note: 'The conclusion of Raistlin\'s arc. One of the most memorable endings in fantasy — haunting and earned.',                    page_count: 308, publication_year: 1986 },
+        ],
+      },
+      {
+        label: 'Optional — Extended Universe',
+        sublabel: 'Hundreds of Dragonlance novels exist beyond these six',
+        note: 'The core experience is the six books above. Everything below is optional — interesting for fans but not required.',
+        noteType: 'optional',
+        books: [
+          { title: 'The Second Generation',      slug: 'the-second-generation',      status: 'optional',     note: 'Short stories featuring the children of the original Companions. Bridge to Dragons of Summer Flame.',          page_count: 389, publication_year: 1994 },
+          { title: 'Dragons of Summer Flame',    slug: 'dragons-of-summer-flame',    status: 'optional',     note: 'Weis & Hickman return. A new war, a new dragon invasion. Leads into the Fifth Age era.',                      page_count: 506, publication_year: 1995 },
+        ],
+      },
+    ],
+    orderNote: 'Read Chronicles first, then Legends. The two trilogies are deeply intertwined — Legends only works if you know the Chronicles cast.',
+    cards: [
+      { title: '🐉 The Setting',      body: 'Krynn is a world of knights, gods, and dragon armies — high fantasy in the truest sense. The magic system (White/Red/Black robes) and the god-given magic of clerics shaped the D&D ruleset for decades.',         color: 'blue'   },
+      { title: '🧙 Raistlin',         body: 'The mage Raistlin Majere is the reason Dragonlance endures. A frail, bitter genius consumed by ambition — morally grey before that was common in fantasy. The Legends trilogy is fundamentally his story.',        color: 'purple' },
+      { title: '📖 Historical note',  body: 'Dragonlance was designed alongside the D&D game modules in 1984. It feels that way — structured, episodic, occasionally clunky. The Legends trilogy transcends its origins; Chronicles is more nostalgic than great.', color: 'amber'  },
+    ],
+    sections: [
+      {
+        heading: 'Where to start',
+        type: 'bullets',
+        bullets: [
+          'Start with Dragons of Autumn Twilight. It\'s episodic and occasionally slow but establishes the world and cast.',
+          'If Chronicles feels dated, push through — the Legends trilogy is the payoff and it\'s significantly better.',
+          'Already read Chronicles? Go straight to Legends. It\'s the reason Dragonlance is still read today.',
+          'Only want to read one trilogy? Read Legends. You\'ll miss some context but it stands on its own better than Chronicles.',
+        ],
+      },
+      {
+        heading: 'What to know',
+        type: 'bullets',
+        bullets: [
+          'Chronicles was written to accompany D&D adventure modules — the pacing reflects this. Some chapters feel like game sessions.',
+          'Raistlin is one of the first major antiheroes in fantasy. His arc in Legends is one of the genre\'s finest.',
+          'The world has been expanded by over 190 novels by dozens of authors. Only the Weis & Hickman books are essential.',
+          'A film adaptation (Dragons of Autumn Twilight, 2008) exists but is widely considered poor — ignore it.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'Chronicles Trilogy', level: 2, desc: 'Light-moderate — war and loss, but adventure-focused' },
+      { label: 'Legends Trilogy',    level: 3, desc: 'Moderate — darker themes, moral complexity, sacrifice' },
+    ],
+    finishedLabel: 'Finished Weis & Hickman?',
+    categoryHref: '/categories/epic',
+    categoryLabel: 'Browse Epic Fantasy',
+    related: ['drizzt', 'wheel-of-time', 'cosmere'],
+  },
+
+  // ─── Divergent ─────────────────────────────────────────────────────────────
+  {
+    slug: 'divergent',
+    name: 'Divergent',
+    author: 'Veronica Roth',
+    seriesStatus: 'complete',
+    seriesStatusLabel: '✓ Series Complete',
+    description:
+      'A YA dystopian trilogy set in a future Chicago divided into five factions — Dauntless, Erudite, Abnegation, Candor, Amity — each representing a single virtue taken to extremes. Sixteen-year-old Tris Prior chooses to leave her family\'s faction and discovers she is Divergent, a threat to the system. Fast-paced and addictive, with one of YA\'s most debated endings.',
+    darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
+    warning: 'Allegiant (book 3) has a controversial ending that divided the fanbase strongly. Go in prepared.',
+    groups: [
+      {
+        label: 'The Main Trilogy',
+        sublabel: 'read in order',
+        books: [
+          { title: 'Divergent',  slug: 'divergent',  status: 'mandatory', note: 'Tris transfers to Dauntless and endures brutal initiation. World-building through immersion — fast, tense, immediately addictive.',               page_count: 487, publication_year: 2011 },
+          { title: 'Insurgent',  slug: 'insurgent',  status: 'mandatory', note: 'The faction system cracks. Tris deals with survivor\'s guilt while uncovering the truth about her world. Darker and more emotionally demanding.',  page_count: 525, publication_year: 2012 },
+          { title: 'Allegiant',  slug: 'allegiant',  status: 'mandatory', note: 'Tris and Four leave Chicago. Dual POV. The most ambitious and most divisive book — the ending is polarising but intentional.',                    page_count: 526, publication_year: 2013 },
+        ],
+      },
+      {
+        label: "Four's Novellas",
+        sublabel: "Tobias's POV — collected in Four: A Divergent Collection (2014)",
+        note: 'All five pieces retell key events from Four\'s perspective. Read after the main trilogy, in any order. Published individually then collected in one volume.',
+        noteType: 'optional',
+        books: [
+          { title: 'Free Four',    slug: 'free-four',    status: 'supplementary', note: 'Short story (~30 pages). Four\'s POV during the aptitude test and Choosing Ceremony. A good teaser for his perspective.',                  page_count: 36,  publication_year: 2012 },
+          { title: 'The Transfer', slug: 'the-transfer', status: 'supplementary', note: 'Four\'s Choosing Day and first weeks in Dauntless. His origin — why he left Abnegation.',                                                  page_count: 68,  publication_year: 2013 },
+          { title: 'The Initiate', slug: 'the-initiate', status: 'supplementary', note: 'Four\'s second year as a Dauntless initiate. Covers events before Divergent begins.',                                                       page_count: 58,  publication_year: 2014 },
+          { title: 'The Son',      slug: 'the-son',      status: 'supplementary', note: 'Four confronts his father Marcus. Short and dark — the most emotionally intense of the four novellas.',                                     page_count: 51,  publication_year: 2014 },
+          { title: 'The Traitor',  slug: 'the-traitor',  status: 'supplementary', note: 'Four\'s POV during the events of Divergent. Fills in what he was doing while Tris was in initiation.',                                     page_count: 61,  publication_year: 2014 },
+        ],
+      },
+      {
+        label: 'After the Trilogy',
+        sublabel: 'Epilogue & companion',
+        books: [
+          { title: 'We Can Be Mended',              slug: 'we-can-be-mended',              status: 'optional',     note: 'Short epilogue story (~40 pages) set five years after Allegiant. Written for fans who needed closure after the ending. Available free online.',     page_count: 40,  publication_year: 2018 },
+          { title: 'The World of Divergent',        slug: 'the-world-of-divergent',        status: 'supplementary', note: 'Behind-the-scenes companion — Roth\'s path to Allegiant, faction manifestos, quiz. Non-fiction. For fans only.',                                  page_count: 100, publication_year: 2013 },
+        ],
+      },
+    ],
+    orderNote: 'Read the main trilogy first. The Four novellas cover the same timeline from his POV — best after Allegiant so you already know the full story. We Can Be Mended is the emotional coda if you need it.',
+    cards: [
+      { title: '⚡ The Hook',         body: 'The faction system is an instantly compelling premise — which virtue would you choose? The initiation sequences in Dauntless are some of the most gripping in YA dystopian fiction.',                              color: 'blue'   },
+      { title: '💔 The Ending',       body: 'Allegiant\'s ending is one of the most discussed in YA fiction. It is intentional and consistent with Tris\'s character. Prepare yourself — then decide for yourself if it works.',                              color: 'amber'  },
+      { title: '🎬 The Adaptations', body: 'The film series (2014–2016) covers Divergent and Insurgent well. Allegiant was split into two films and the second was never made — the story is unresolved on screen. Read the books.',                         color: 'purple' },
+    ],
+    sections: [
+      {
+        heading: 'Where to start',
+        type: 'bullets',
+        bullets: [
+          'Start with Divergent — no prior reading needed. The world is explained through Tris\'s eyes.',
+          'Read all three back-to-back if possible — the story benefits from momentum and the wait between Insurgent and Allegiant is brutal.',
+          "The Four novellas and We Can Be Mended are optional — best after Allegiant. We Can Be Mended is free online and worth reading if the ending hit hard.",
+        ],
+      },
+      {
+        heading: 'What to know',
+        type: 'bullets',
+        bullets: [
+          'The series gets progressively darker. Divergent is action-focused; Allegiant deals with loss, identity, and sacrifice.',
+          'Allegiant uses dual POV (Tris and Four alternating chapters) — a change from the first two books.',
+          'The faction concept is intentionally reductive — the books are aware of this and deconstruct it over the trilogy.',
+          'The film adaptations cover books 1 and 2 well. Allegiant\'s film split the story and was never finished.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'Divergent',  level: 2, desc: 'Moderate — action and training, some violence' },
+      { label: 'Insurgent',  level: 3, desc: 'Darker — trauma, guilt, heavier losses' },
+      { label: 'Allegiant',  level: 4, desc: 'Dark — significant sacrifice, controversial conclusion' },
+    ],
+    finishedLabel: 'Finished the trilogy?',
+    categoryHref: '/categories/academy',
+    categoryLabel: 'Browse Academy Fantasy',
+    related: ['acotar', 'shadow-and-bone'],
   },
 ]
 
