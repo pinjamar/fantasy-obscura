@@ -65,6 +65,8 @@ export interface ReadingOrderEntry {
   categoryHref: string
   categoryLabel: string
   related: string[]
+  /** Slug for a matching /books-like/ guide, if one exists */
+  booksLikeSlug?: string
 }
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
@@ -129,13 +131,14 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     finishedLabel: 'Finished the series?',
     categoryHref: '/categories/romance-fantasy',
     categoryLabel: 'Browse Romance Fantasy',
-    related: ['throne-of-glass', 'witcher'],
+    booksLikeSlug: 'acotar',
+    related: ['throne-of-glass', 'empyrean'],
   },
 
   // ─── The Cosmere ───────────────────────────────────────────────────────────
   {
     slug: 'cosmere',
-    name: "Brandon Sanderson's Cosmere",
+    name: 'The Cosmere',
     author: 'Brandon Sanderson',
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
@@ -225,6 +228,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     finishedLabel: 'Finished a Cosmere series?',
     categoryHref: '/categories/epic',
     categoryLabel: 'Browse Epic Fantasy',
+    booksLikeSlug: 'mistborn-the-final-empire',
     related: ['stormlight', 'wheel-of-time'],
   },
 
@@ -282,6 +286,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     finishedLabel: 'Finished the arc?',
     categoryHref: '/categories/epic',
     categoryLabel: 'Browse Epic Fantasy',
+    booksLikeSlug: 'the-way-of-kings',
     related: ['cosmere', 'wheel-of-time'],
   },
 
@@ -477,6 +482,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     finishedLabel: 'Finished the series?',
     categoryHref: '/categories/epic',
     categoryLabel: 'Browse Epic Fantasy',
+    booksLikeSlug: 'the-wheel-of-time',
     related: ['cosmere', 'malazan'],
   },
 
@@ -522,6 +528,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     finishedLabel: 'Want more literary fantasy?',
     categoryHref: '/categories/epic',
     categoryLabel: 'Browse Epic Fantasy',
+    booksLikeSlug: 'the-name-of-the-wind',
     related: ['first-law', 'stormlight'],
   },
 
@@ -882,6 +889,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     finishedLabel: 'Finished the published books?',
     categoryHref: '/categories/epic',
     categoryLabel: 'Browse Epic Fantasy',
+    booksLikeSlug: 'a-game-of-thrones',
     related: ['first-law', 'malazan', 'wheel-of-time'],
   },
 
@@ -1055,13 +1063,13 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     finishedLabel: 'Finished the series?',
     categoryHref: '/categories/epic',
     categoryLabel: 'Browse Epic Fantasy',
-    related: ['acotar', 'first-law'],
+    related: ['acotar', 'blood-and-ash'],
   },
 
   // ─── Blood and Ash ─────────────────────────────────────────────────────────
   {
     slug: 'blood-and-ash',
-    name: 'Blood and Ash',
+    name: 'From Blood and Ash',
     author: 'Jennifer L. Armentrout',
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
@@ -1189,7 +1197,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   // ─── Forgotten Realms — The Legend of Drizzt ──────────────────────────────
   {
     slug: 'drizzt',
-    name: 'The Legend of Drizzt',
+    name: 'Legend of Drizzt',
     author: 'R.A. Salvatore',
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
@@ -1450,7 +1458,246 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     finishedLabel: 'Finished the trilogy?',
     categoryHref: '/categories/academy',
     categoryLabel: 'Browse Academy Fantasy',
-    related: ['acotar', 'shadow-and-bone'],
+    related: ['throne-of-glass', 'empyrean'],
+  },
+
+  // ─── Memory, Sorrow and Thorn ──────────────────────────────────────────────
+  {
+    slug: 'memory-sorrow-thorn',
+    name: 'Memory, Sorrow and Thorn',
+    author: 'Tad Williams',
+    seriesStatus: 'complete',
+    seriesStatusLabel: '✓ Series Complete',
+    description:
+      'The epic fantasy series that shaped a generation of writers — George R.R. Martin and Patrick Rothfuss have both cited it as a direct influence. A young kitchen scullion is pulled into an ancient war between human kingdoms and the immortal Sithi as a long-buried prophecy stirs. Williams writes with rare patience and emotional depth — this is the series that proved epic fantasy could be literature.',
+    darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
+    groups: [
+      {
+        label: 'The Main Trilogy',
+        sublabel: 'read in order',
+        books: [
+          { title: 'Brothers of the Wind',  slug: 'brothers-of-the-wind',  status: 'supplementary', note: 'Prequel novella (~256 pages) set long before the trilogy, during the original war with the Norns. Deep lore for Sithi fans — read before the trilogy or save it for after.',                                    page_count: 256,  publication_year: 2021 },
+          { title: 'The Dragonbone Chair',  slug: 'the-dragonbone-chair',  status: 'mandatory',     note: 'Start here. Simon, a kitchen boy, is thrust into a war he barely understands. Slow, immersive opening — trust the build.',                                                                                      page_count: 672,  publication_year: 1988 },
+          { title: 'Stone of Farewell',     slug: 'stone-of-farewell',     status: 'mandatory',     note: 'The war deepens across multiple POVs. Williams broadens the world and the mythology. The middle volume at its best.',                                                                                            page_count: 588,  publication_year: 1990 },
+          { title: 'To Green Angel Tower',       slug: 'to-green-angel-tower',       status: 'mandatory',     note: 'The conclusion. Originally published as a single ~1080-page hardcover; most paperback editions split it into two volumes (Storm and Siege). One of the most satisfying endings in epic fantasy.',                                                                                                        page_count: 1083, publication_year: 1993 },
+          { title: 'The Heart of What Was Lost', slug: 'the-heart-of-what-was-lost', status: 'supplementary', note: 'Short novel (~240 pages) set immediately after the trilogy\'s end. Follows the Norns retreating north. Bridges the original series and the tetralogy — not required, but highly recommended before starting The Witchwood Crown.', page_count: 240,  publication_year: 2017 },
+        ],
+      },
+      {
+        label: 'The Last King of Osten Ard',
+        sublabel: 'tetralogy — set 30 years after the trilogy',
+        books: [
+          { title: 'The Witchwood Crown',      slug: 'the-witchwood-crown',      status: 'optional', note: 'Simon and Miriamele are now king and queen. A new generation faces an ancient threat returning. Slower burn than the original — give it time.',       page_count: 800, publication_year: 2017 },
+          { title: 'Empire of Grass',          slug: 'empire-of-grass',          status: 'optional', note: 'The threat grows across a fractured kingdom. Multiple POVs. Best read back-to-back with The Witchwood Crown.',                                         page_count: 752, publication_year: 2019 },
+          { title: 'Into the Narrowdark',      slug: 'into-the-narrowdark',      status: 'optional', note: 'The penultimate volume. Things unravel. Sets up the finale with brutal efficiency.',                                                                   page_count: 736, publication_year: 2023 },
+          { title: "The Navigator's Children", slug: 'the-navigators-children',  status: 'optional', note: 'The conclusion of the tetralogy. Closes the entire Osten Ard saga.',                                                                                   page_count: 736, publication_year: 2024 },
+        ],
+      },
+    ],
+    orderNote: 'Start with the main trilogy. To Green Angel Tower may arrive as one hardcover or two paperback volumes (Storm and Siege) — both contain the same text. The Heart of What Was Lost is the ideal bridge before the tetralogy.',
+    warning: 'To Green Angel Tower was published as a single ~1080-page hardcover but split into two paperback volumes in most markets. Make sure you have both parts (Storm and Siege) before you begin the conclusion.',
+    sections: [
+      {
+        heading: 'Why it matters',
+        type: 'bullets',
+        bullets: [
+          'Published 1988–1993, it predates A Song of Ice and Fire and is a direct influence on Martin — the political complexity, the grey morality, the willingness to let characters suffer.',
+          'Rothfuss has described it as one of the works that made him want to write fantasy.',
+          "Williams' Sithi are among the most alien and convincing immortal races in fantasy — not Tolkien elves, but something stranger.",
+          'Simon Snowlock is one of the genre\'s great coming-of-age protagonists — he starts as a foolish boy and earns every inch of his growth.',
+          'The pacing is deliberately novelistic — this is not a plot-delivery machine. Give it space.',
+        ],
+      },
+      {
+        heading: 'One book or two?',
+        type: 'prose',
+        prose: "To Green Angel Tower was written as a single novel. The hardcover is one volume (~1080 pages). Most paperback editions split it into Storm (Part 1) and Siege (Part 2) — both contain the same text. Either edition is fine, just make sure you have both halves before you begin the conclusion.",
+      },
+    ],
+    darkness: [
+      { label: 'The Dragonbone Chair', level: 2, desc: 'Epic in scope but accessible — war seen through a young man\'s eyes' },
+      { label: 'Stone of Farewell',    level: 3, desc: 'Darker, more political — loss and sacrifice increase' },
+      { label: 'To Green Angel Tower', level: 3, desc: 'War, grief, and hard-earned resolution — earned emotional weight' },
+    ],
+    finishedLabel: 'Finished the trilogy?',
+    categoryHref: '/categories/epic',
+    categoryLabel: 'Browse Epic Fantasy',
+    related: ['wheel-of-time', 'malazan', 'robin-hobb'],
+  },
+
+  // ─── Kate Daniels ──────────────────────────────────────────────────────────
+  {
+    slug: 'kate-daniels',
+    name: 'World of Kate Daniels',
+    author: 'Ilona Andrews',
+    seriesStatus: 'complete',
+    seriesStatusLabel: '✓ Series Complete',
+    description:
+      'Post-apocalyptic Atlanta where magic and technology take turns failing. When magic is up, cars stop and spells work. When technology is up, guns fire and WiFi returns. Kate Daniels is a mercenary hiding a dangerous bloodline, navigating a city full of shapeshifters, vampires, and ancient gods. Fast, funny, and brutally efficient — one of urban fantasy\'s best series, and one that gets dramatically better as it goes.',
+    darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
+    groups: [
+      {
+        label: 'The Main Series',
+        sublabel: 'novellas interleaved at the point they should be read',
+        books: [
+          { title: 'A Questionable Client', slug: 'a-questionable-client', status: 'supplementary', note: 'Prequel short story (~50 pages). Kate takes a bodyguard job. Good introduction to the world — collected in the anthology Magic: An Anthology of the Fantastic.',                    page_count: 50,  publication_year: 2013 },
+          { title: 'Magic Bites',           slug: 'magic-bites',           status: 'mandatory',     note: 'Start here. Short and fast (~260 pages). Kate as a lone mercenary. Sets up the world, the magic/tech alternation, and the Pack. Not the best book — stick with it.',               page_count: 261, publication_year: 2007 },
+          { title: 'Magic Burns',           slug: 'magic-burns',           status: 'mandatory',     note: 'Better than book 1. Introduces Julie. The mythology deepens and the pacing tightens.',                                                                                               page_count: 260, publication_year: 2008 },
+          { title: 'Magic Strikes',         slug: 'magic-strikes',         status: 'mandatory',     note: 'The series finds its stride. Underground fighting tournament. Curran and Kate\'s dynamic shifts significantly.',                                                                     page_count: 291, publication_year: 2009 },
+          { title: 'Magic Mourns',          slug: 'magic-mourns',          status: 'supplementary', note: 'Andrea\'s story (~90 pages). Read after Magic Strikes (#3). Collected in Must Love Hellhounds.',                                                                                    page_count: 90,  publication_year: 2009 },
+          { title: 'Magic Bleeds',          slug: 'magic-bleeds',          status: 'mandatory',     note: 'The emotional centrepiece of the series. Everything about the Kate/Curran relationship lands here. Many fans consider this the best book.',                                          page_count: 308, publication_year: 2010 },
+          { title: 'Magic Dreams',          slug: 'magic-dreams',          status: 'supplementary', note: 'Jim and Dali\'s story (~110 pages). Read after Magic Bleeds (#4). Collected in Hex Appeal.',                                                                                        page_count: 110, publication_year: 2012 },
+          { title: 'Magic Slays',           slug: 'magic-slays',           status: 'mandatory',     note: 'Kate and Curran deal with running the Pack. Stakes escalate. Kate\'s hidden heritage moves to the foreground.',                                                                     page_count: 305, publication_year: 2011 },
+          { title: 'Magic Tests',           slug: 'magic-tests',           status: 'supplementary', note: 'Julie\'s short story (~32 pages). Kate recruits her ward to investigate a missing student at a magical academy. Read after Magic Slays (#5). Collected in An Apple for the Creature and Small Magics.', page_count: 32, publication_year: 2012 },
+          { title: 'Magic Rises',           slug: 'magic-rises',           status: 'mandatory',     note: 'Europe. Darker than previous entries. A brutal mid-series gut-punch that forces major change.',                                                                                     page_count: 339, publication_year: 2013 },
+          { title: 'Magic Gifts',           slug: 'magic-gifts',           status: 'supplementary', note: 'Kate and Curran novella (~60 pages). Read after Magic Rises (#6). Originally a free online release.',                                                                               page_count: 60,  publication_year: 2011 },
+          { title: 'Magic Breaks',          slug: 'magic-breaks',          status: 'mandatory',     note: 'War with Roland begins in earnest. The political and personal collide.',                                                                                                            page_count: 353, publication_year: 2014 },
+          { title: 'Magic Steals',          slug: 'magic-steals',          status: 'supplementary', note: 'Jim and Dali novella (~100 pages). Read after Magic Breaks (#7). Collected in An Apple for the Creature.',                                                                         page_count: 100, publication_year: 2014 },
+          { title: 'Magic Shifts',          slug: 'magic-shifts',          status: 'mandatory',     note: 'New chapter for Kate and Curran. Egyptian mythology threat. One of the strongest entries in the back half.',                                                                        page_count: 353, publication_year: 2015 },
+          { title: 'Magic Binds',           slug: 'magic-binds',           status: 'mandatory',     note: 'Everything converges. Roland\'s full menace revealed. High stakes on every personal front.',                                                                                        page_count: 320, publication_year: 2016 },
+          { title: 'Magic Stars',           slug: 'magic-stars',           status: 'supplementary', note: 'Derek\'s story (~170 pages). Read after Magic Binds (#9). Grey Wolf spinoff #1.',                                                                                                  page_count: 170, publication_year: 2015 },
+          { title: 'Magic Triumphs',        slug: 'magic-triumphs',        status: 'mandatory',     note: 'The finale. Emotionally earned conclusion to a 10-book arc. Does not disappoint.',                                                                                                 page_count: 369, publication_year: 2018 },
+        ],
+      },
+      {
+        label: 'Spinoffs & World Expansion',
+        sublabel: 'set in the same world — read after the main series',
+        books: [
+          { title: 'Gunmetal Magic', slug: 'gunmetal-magic', status: 'optional', note: 'Andrea\'s full novel. Best read after Magic Slays (#5) or after the main series. Same world, different protagonist — just as good.',                                        page_count: 353, publication_year: 2012 },
+          { title: 'Iron and Magic', slug: 'iron-and-magic', status: 'optional', note: 'Hugh d\'Ambray\'s redemption story. Read after Magic Triumphs — his arc only lands with full context from the main series.',                                               page_count: 341, publication_year: 2018 },
+          { title: 'Blood Heir',     slug: 'blood-heir',     status: 'optional', note: 'Julie\'s story — direct sequel to the main series. Read after Magic Triumphs.',                                                                                            page_count: 323, publication_year: 2021 },
+          { title: 'Magic Tides',    slug: 'magic-tides',    status: 'optional', note: 'Novella continuing the world post-Kate Daniels. Part of the expanding Wilmington Years arc.',                                                                              page_count: 160, publication_year: 2023 },
+          { title: 'Magic Claims',   slug: 'magic-claims',   status: 'optional', note: 'Continues the Wilmington Years storyline.',                                                                                                                                page_count: 200, publication_year: 2023 },
+          { title: 'Sanctuary',      slug: 'sanctuary',      status: 'optional', note: 'Latest Kate Daniels world expansion (2024). The world keeps growing post-Magic Triumphs.',                                                                          page_count: 300, publication_year: 2024 },
+        ],
+      },
+    ],
+    orderNote: 'The first two books are the weakest — short, rough around the edges, and setting the table. By Magic Strikes the series has found itself. By Magic Bleeds it is exceptional. Push through the opening if it feels slow.',
+    cards: [
+      { title: '📖 Core (10 books)',    body: 'The main series. Read in order — each book builds directly on the last and the arc pays off properly only at the end.',                                                             color: 'blue'  },
+      { title: '📝 Novellas (7)',       body: 'Short companion stories interleaved at the right points. All supplementary — skip freely, or read them in place for extra depth on side characters.',                               color: 'green' },
+      { title: '🌍 Spinoffs (6 books)', body: 'Same world, different protagonists. Gunmetal Magic and Blood Heir are the most essential. Best read after finishing the main 10.',                                                  color: 'amber' },
+    ],
+    sections: [
+      {
+        heading: 'The magic/tech alternation',
+        type: 'prose',
+        prose: "The world runs on a Shift — waves of magic and technology alternate unpredictably. When magic is up, cars won't start, guns sometimes misfire, and spells work. When technology is up, the magic fades and the modern world briefly reasserts itself. This mechanic drives both plot and character — the Pack, vampires, and gods all operate on magic; the mercenary guild and Order of Knights run on tech and politics. It's one of urban fantasy's most original world-building conceits.",
+      },
+      {
+        heading: 'The romance',
+        type: 'bullets',
+        bullets: [
+          'Kate and Curran (the Beast Lord, a werelion) have one of urban fantasy\'s best slow-burn central romances.',
+          'It is present from book 1 but doesn\'t dominate — this is action-first, romance second.',
+          'Magic Bleeds (book 4) is where the relationship resolves. The payoff is earned.',
+          'Later books explore what happens after the romance is established — refreshingly rare in the genre.',
+        ],
+      },
+      {
+        heading: 'Why the first books feel different',
+        type: 'bullets',
+        bullets: [
+          'Magic Bites and Magic Burns were written early in Ilona Andrews\' career and are noticeably shorter (~260 pages) and rougher.',
+          'The prose tightens, the humour sharpens, and the world deepens from book 3 onward.',
+          'Many readers consider Magic Strikes (#3) the true starting point for the series\' quality.',
+          'The opening books are still worth reading for context — they are just not representative of what the series becomes.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'Books 1–3',  level: 2, desc: 'Action-heavy urban fantasy — violence, monsters, light stakes' },
+      { label: 'Books 4–7',  level: 3, desc: 'Personal losses, political menace, higher emotional cost' },
+      { label: 'Books 8–10', level: 3, desc: 'War-level stakes — deaths, sacrifice, series-wide consequences' },
+    ],
+    finishedLabel: 'Finished Kate Daniels?',
+    categoryHref: '/categories/urban',
+    categoryLabel: 'Browse Urban Fantasy',
+    related: ['dresden-files', 'witcher'],
+  },
+
+  // ─── Chronicles of the Black Company ───────────────────────────────────────
+  {
+    slug: 'black-company',
+    name: 'Chronicles of the Black Company',
+    author: 'Glen Cook',
+    seriesStatus: 'ongoing',
+    seriesStatusLabel: '📖 Ongoing — new book expected 2026',
+    description:
+      'One of the founding texts of grimdark fantasy — written years before the term existed. The Black Company is a mercenary band that has served under a succession of employers for centuries, keeping its Annals as it goes. The books are narrated by the Company\'s physician and historian, Croaker, in a clipped, unsentimental military voice unlike anything else in the genre. No chosen ones. No prophecy. Just soldiers doing terrible things in service of worse masters, and somehow finding loyalty worth dying for.',
+    darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
+    groups: [
+      {
+        label: 'The Books of the North',
+        sublabel: 'the original trilogy — start here',
+        books: [
+          { title: 'The Black Company', slug: 'the-black-company', status: 'mandatory',     seriesLabel: 'The Black Company #1',   note: 'Start here. The Company takes service under the Lady, one of the most powerful — and evil — magic users alive. Cook\'s terse military voice is unlike anything in the genre. The first 50 pages are deliberately disorienting; this is intentional.',  page_count: 319, publication_year: 1984 },
+          { title: 'Port of Shadows',   slug: 'port-of-shadows',   status: 'supplementary', seriesLabel: 'The Black Company #1.5', note: 'Written 33 years after the original trilogy, set between books 1 and 2 — the Company in garrison during a quiet period. More atmospheric than plot-driven. Rewards familiarity with Croaker and the Lady.',                                           page_count: 337, publication_year: 2018 },
+          { title: 'Shadows Linger',    slug: 'shadows-linger',    status: 'mandatory',     seriesLabel: 'The Black Company #2',   note: 'Darker and tighter than book 1. The Black Castle at Juniper. Dual POV adds a civilian perspective on what the Company leaves in its wake.',                                                                                                            page_count: 296, publication_year: 1984 },
+          { title: 'The White Rose',    slug: 'the-white-rose',    status: 'mandatory',     seriesLabel: 'The Black Company #3',   note: 'The original trilogy concludes. The Lady, the Dominator, the White Rose — everything from books 1–2 resolves. One of the most surprising endings in grimdark.',                                                                                        page_count: 319, publication_year: 1985 },
+        ],
+      },
+      {
+        label: 'The Books of the South',
+        sublabel: 'the Company moves south — new continent, new enemies',
+        books: [
+          { title: 'The Silver Spike', slug: 'the-silver-spike', status: 'optional',  seriesLabel: 'The Black Company #3.5', note: 'Parallel story set during the march south — follows characters left behind in the north after The White Rose. Read before Shadow Games for chronological order.',    page_count: 296, publication_year: 1989 },
+          { title: 'Shadow Games',     slug: 'shadow-games',     status: 'mandatory', seriesLabel: 'The Black Company #4', note: 'The Company marches south toward Khatovar, their mythical origin. New landscape, new tone — more mythological and strange than the original trilogy.',  page_count: 300, publication_year: 1989 },
+          { title: 'Dreams of Steel',  slug: 'dreams-of-steel',  status: 'mandatory', seriesLabel: 'The Black Company #5', note: 'The aftermath of catastrophe. Lady takes centre stage. The series reinvents itself mid-run without losing momentum.',                                   page_count: 305, publication_year: 1990 },
+        ],
+      },
+      {
+        label: 'Glittering Stone',
+        sublabel: 'the final arc — the long march to Khatovar',
+        books: [
+          { title: 'Bleak Seasons',       slug: 'bleak-seasons',       status: 'mandatory', seriesLabel: 'The Black Company #6',  note: 'Non-linear narrative — Murgen\'s fractured memories. Disorienting by design. The Company is trapped and things are very bad.',                                                                                                                                          page_count: 304, publication_year: 1996 },
+          { title: 'She Is the Darkness', slug: 'she-is-the-darkness', status: 'mandatory', seriesLabel: 'The Black Company #7',  note: 'The longest and most ambitious book in the series. Converging armies, converging secrets. The full scope of what the Company has been marching toward begins to emerge.',                                                                              page_count: 494, publication_year: 1997 },
+          { title: 'Water Sleeps',        slug: 'water-sleeps',        status: 'mandatory', seriesLabel: 'The Black Company #8',  note: 'The Company is shattered, scattered, and hunted. Driven by Sleepy, one of the series\' best protagonists. Guerrilla warfare and slow-burn revenge.',                                                                                                  page_count: 351, publication_year: 1999 },
+          { title: 'Soldiers Live',       slug: 'soldiers-live',       status: 'mandatory', seriesLabel: 'The Black Company #9',  note: 'The conclusion of the Glittering Stone arc. Everything the Annals have been building toward. Croaker returns as narrator. One of the most honest endings in fantasy — not triumphant, not tragic, just true.',                                        page_count: 448, publication_year: 2000 },
+          { title: 'They Cry',            slug: 'they-cry',            status: 'mandatory', seriesLabel: 'The Black Company #11', note: 'Upcoming — November 2026. Arkana and Shukrat return to An Abode of Raven with new powers; the Steadfast Guardian (Croaker) struggles to hold his humanity while dark forces mobilise against the Company on Hsien.',                                 page_count: 400, publication_year: 2026 },
+        ],
+      },
+    ],
+    orderNote: 'Read The Chronicles first (books 1–3) — they stand alone and are the best entry point. Port of Shadows is an optional interquel between books 1 and 2. The Books of the South and Glittering Stone follow directly. The Silver Spike sits before Shadow Games in chronological order.',
+    warning: 'Bleak Seasons (book 6) opens with a deliberately fractured, non-linear narrative. This is Cook\'s intentional choice — push through. The timeline becomes clear and the payoff is worth the initial confusion.',
+    cards: [
+      { title: '📖 The Books of the North (3)', body: 'The original trilogy. Self-contained, essential. The best entry point and some of the best military fantasy ever written.',                                                                    color: 'blue'  },
+      { title: '⚔️ Books of the South (2)', body: 'The Company moves south. Shadow Games and Dreams of Steel shift the series\' tone toward myth and strange magic. Read after the trilogy.',                                                  color: 'blue'  },
+      { title: '🏁 Glittering Stone (4)',  body: 'The final arc. Four books across a decade of publication. Soldiers Live closes the Annals.',                                                                                                color: 'blue'  },
+      { title: '📘 Optional (2)',          body: 'The Silver Spike (parallel story from the north) and Port of Shadows (interquel). Both reward series fans but are not essential to the main arc.',                                          color: 'green' },
+    ],
+    sections: [
+      {
+        heading: 'Why it matters',
+        type: 'bullets',
+        bullets: [
+          'Published in 1984 — The Black Company predates A Song of Ice and Fire, The First Law, and every modern grimdark series. It invented the template.',
+          'George R.R. Martin, Joe Abercrombie, and Steven Erikson have all cited it as a direct influence. Malazan Book of the Fallen would not exist without it.',
+          'Cook\'s prose is deliberately unadorned — clipped, military, journalistic. The Annals are written by a soldier, not a storyteller. This is a feature, not a bug.',
+          'The moral ambiguity is structural. The Company serves evil employers. The characters know this and keep serving. The books are about what loyalty costs.',
+          'Women in the series — Lady, Soulcatcher, the White Rose — are among the most genuinely powerful and dangerous characters in fantasy.',
+        ],
+      },
+      {
+        heading: 'The Annals voice',
+        type: 'prose',
+        prose: "Every book is narrated by the Company's Annalist — their physician-historian, responsible for keeping the official record. The voice is Croaker's for most of the series: dry, self-deprecating, occasionally sardonic. He records what he sees and admits what he doesn't know. This unreliable, limited perspective is central to the series' appeal — you piece together the larger picture from the ground level, just like the soldiers do.",
+      },
+      {
+        heading: 'Reading Bleak Seasons',
+        type: 'prose',
+        prose: "Bleak Seasons opens with Murgen narrating from fractured, non-linear memory — he is haunted and displaced in time. Many readers bounce off this. Stick with it: the disorientation is deliberate and the timeline resolves. If you've made it through the first five books, Cook has earned your trust here.",
+      },
+    ],
+    darkness: [
+      { label: 'The Chronicles (1–3)',     level: 4, desc: 'War, atrocity, and complicity — morally compromised from page one' },
+      { label: 'Books of the South (4–5)', level: 4, desc: 'Darker mythology, higher body count, catastrophic defeats' },
+      { label: 'Glittering Stone (6–9)',   level: 4, desc: 'Brutally honest about cost — no heroism left, only endurance' },
+    ],
+    finishedLabel: 'Finished the Annals?',
+    categoryHref: '/categories/grimdark',
+    categoryLabel: 'Browse Grimdark Fantasy',
+    related: ['first-law', 'malazan'],
   },
 ]
 

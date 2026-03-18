@@ -19,14 +19,17 @@ for (const b of (booksRes.data ?? []) as BooksRow[]) {
   seriesSearchMap.set(b.series, `${existing} ${b.title} ${authors}`.toLowerCase());
 }
 
-// Derive curated series list from data file
+// Derive curated series list from data file, sorted alphabetically (ignoring leading articles)
+function sortKey(name: string) {
+  return name.replace(/^the\s+/i, '').toLowerCase();
+}
 const curatedSeries = READING_ORDERS.map((e) => ({
   slug: e.slug,
   name: e.name,
   bookCount: e.groups
     ? e.groups.reduce((sum, g) => sum + g.books.length, 0)
     : (e.books?.length ?? 0),
-}));
+})).sort((a, b) => sortKey(a.name).localeCompare(sortKey(b.name)));
 
 // Merge: curated series take priority; add DB-only series after
 // DB slugs are generated from series names, which differ from our curated slugs

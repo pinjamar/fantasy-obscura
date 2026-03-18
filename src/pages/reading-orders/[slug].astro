@@ -195,7 +195,7 @@ const pageDesc = curatedEntry
         <div>
           <p class="text-sm font-medium text-purple-600 uppercase tracking-wider mb-1">Reading Order</p>
           <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{curatedEntry.name}</h1>
-          <p class="mt-1 text-lg text-zinc-500">by {curatedEntry.author}</p>
+          <p class="mt-1 text-lg text-zinc-500">by <a href={`/authors/${authorToSlug(curatedEntry.author)}/`} class="hover:text-purple-700 hover:underline transition-colors">{curatedEntry.author}</a></p>
         </div>
         <span class="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-medium">
           {curatedEntry.seriesStatusLabel}
@@ -300,24 +300,29 @@ const pageDesc = curatedEntry
     )}
 
     <!-- Footer -->
-    <div class="border-t pt-8 flex flex-col sm:flex-row gap-6 justify-between">
-      <div>
-        <p class="text-sm font-medium text-zinc-700 mb-2">{curatedEntry.finishedLabel}</p>
-        <div class="flex flex-wrap gap-3">
-          <a href={curatedEntry.categoryHref} class="text-sm text-purple-600 hover:text-purple-800 underline underline-offset-2">
+    <div class="mt-12 rounded-2xl bg-zinc-50 border border-zinc-200 px-6 py-6 flex flex-col sm:flex-row gap-8">
+      <div class="flex-1">
+        <p class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">{curatedEntry.finishedLabel}</p>
+        <div class="flex flex-wrap gap-2">
+          <a href={curatedEntry.categoryHref} class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors text-sm font-medium">
             {curatedEntry.categoryLabel} →
           </a>
+          {curatedEntry.booksLikeSlug && (
+            <a href={`/books-like/${curatedEntry.booksLikeSlug}/`} class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors text-sm font-medium">
+              📚 Books like {curatedEntry.name} →
+            </a>
+          )}
         </div>
       </div>
       {curatedEntry.related.length > 0 && (
-        <div>
-          <p class="text-sm font-medium text-zinc-700 mb-2">Related reading orders</p>
-          <div class="flex flex-wrap gap-3">
+        <div class="sm:border-l sm:border-zinc-200 sm:pl-8">
+          <p class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">More reading orders</p>
+          <div class="flex flex-col gap-2">
             {curatedEntry.related.map((relSlug) => {
               const relEntry = getReadingOrderEntry(relSlug);
               return (
-                <a href={`/reading-orders/${relSlug}/`} class="text-sm text-zinc-500 hover:text-zinc-800 transition-colors">
-                  {relEntry?.name ?? relSlug}
+                <a href={`/reading-orders/${relSlug}/`} class="text-sm text-zinc-600 hover:text-purple-700 transition-colors font-medium">
+                  {relEntry?.name ?? relSlug} →
                 </a>
               );
             })}
