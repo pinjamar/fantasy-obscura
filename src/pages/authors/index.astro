@@ -87,7 +87,8 @@ function authorColor(name: string): string {
             <a
               href={`/authors/${author.slug}/`}
               data-name={author.name.toLowerCase()}
-              class="author-card flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group"
+              data-bookcount={author.bookCount}
+              class={`author-card flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group${author.bookCount <= 1 ? ' default-hidden' : ''}`}
             >
               <!-- Avatar / Photo -->
               {photoMap.get(author.slug) ? (
@@ -144,9 +145,21 @@ function authorColor(name: string): string {
 
   let activeLetter = letterBtns[0]?.dataset.letter ?? '';
 
+  // Hide 1-book authors in the initially-visible section
+  document.querySelectorAll<HTMLElement>('.default-hidden').forEach((c) => c.classList.add('hidden'));
+
   function showLetter(letter: string) {
     activeLetter = letter;
-    sections.forEach((s) => s.classList.toggle('hidden', s.id !== `letter-${letter}`));
+    sections.forEach((s) => {
+      const show = s.id === `letter-${letter}`;
+      s.classList.toggle('hidden', !show);
+      if (show) {
+        // Re-apply default-hidden for 1-book authors when not in search mode
+        s.querySelectorAll<HTMLElement>('.author-card').forEach((c) => {
+          c.classList.toggle('hidden', c.classList.contains('default-hidden'));
+        });
+      }
+    });
     letterBtns.forEach((btn) => {
       const active = btn.dataset.letter === letter;
       btn.classList.toggle('bg-purple-600', active);
@@ -161,8 +174,6 @@ function authorColor(name: string): string {
       input.value = '';
       noResults.classList.add('hidden');
       azNav.classList.remove('hidden');
-      // Reset all cards visibility first
-      sections.forEach((s) => s.querySelectorAll<HTMLElement>('.author-card').forEach((c) => c.classList.remove('hidden')));
       showLetter(btn.dataset.letter!);
     });
   });
@@ -172,12 +183,11 @@ function authorColor(name: string): string {
     if (!q) {
       noResults.classList.add('hidden');
       azNav.classList.remove('hidden');
-      sections.forEach((s) => s.querySelectorAll<HTMLElement>('.author-card').forEach((c) => c.classList.remove('hidden')));
       showLetter(activeLetter);
       return;
     }
 
-    // Search mode: show all sections, filter cards
+    // Search mode: show all sections, filter cards (including 1-book authors)
     azNav.classList.add('hidden');
     let total = 0;
     sections.forEach((section) => {

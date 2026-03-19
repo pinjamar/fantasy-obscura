@@ -16,6 +16,15 @@ const CATEGORY_META = {
   title="Fantasy Tropes — The Grimoire"
   description="Browse fantasy tropes by category — character, relationship, plot, and world &amp; magic. Find books by the story structures you love most."
 >
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json">{JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Fantasy Tropes',
+      description: 'Browse fantasy tropes by category — character, relationship, plot, and world & magic.',
+      url: 'https://www.thegrimoire.co/tropes/',
+    })}</script>
+  </Fragment>
   <!-- Banner -->
   <div class="relative rounded-2xl overflow-hidden mb-8 border border-zinc-200">
     <picture>

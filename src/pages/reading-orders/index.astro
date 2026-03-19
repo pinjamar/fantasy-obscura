@@ -52,6 +52,15 @@ const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
   title="Fantasy Series Reading Orders | The Grimoire"
   description="Reading orders for every major fantasy series — what to read first, what's optional, and where each series stumbles. Covers Stormlight, Wheel of Time, Malazan, First Law, and more."
 >
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json">{JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Fantasy Series Reading Orders',
+      description: 'Reading orders for every major fantasy series — what to read first, what\'s optional, and where each series stumbles.',
+      url: 'https://www.thegrimoire.co/reading-orders/',
+    })}</script>
+  </Fragment>
   <!-- Banner -->
   <div class="relative rounded-2xl overflow-hidden mb-8 border border-zinc-200">
     <picture>

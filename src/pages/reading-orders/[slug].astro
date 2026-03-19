@@ -174,14 +174,47 @@ const cardColors: Record<string, { border: string; bg: string; title: string; bo
 };
 
 const pageTitle = curatedEntry
-  ? `${curatedEntry.name} Reading Order | The Grimoire`
-  : `${seriesMeta?.name} Reading Order | The Grimoire`;
+  ? `${curatedEntry.name} Reading Order: All ${curatedEntry.author} Books in Order | The Grimoire`
+  : `${seriesMeta?.name} Reading Order${authorNames.length ? `: All ${authorNames[0]} Books in Order` : ''} | The Grimoire`;
 const pageDesc = curatedEntry
   ? `Complete reading order for ${curatedEntry.name} by ${curatedEntry.author} — ${allBooksCurated.length} books, ${coreCount} core${allBooksCurated.length - coreCount > 0 ? ` + ${allBooksCurated.length - coreCount} optional` : ''}. What to read first, what's skippable.`
   : `Complete reading order for ${seriesMeta?.name}${authorNames.length ? ` by ${authorNames.slice(0, 2).join(' & ')}` : ''} — ${seriesMeta?.bookCount ?? dbBooks.length} books in our database.`;
+
+const SITE = 'https://www.thegrimoire.co';
+const imgSlug = READING_ORDER_IMAGE_SLUG[slug!];
+const heroImageUrl = imgSlug ? `${SITE}${readingOrderFallback(imgSlug)}` : null;
+const seriesName = isCurated ? curatedEntry?.name : seriesMeta?.name;
+const seriesAuthor = isCurated ? curatedEntry?.author : (authorNames[0] ?? null);
+const seriesBookList = (isCurated ? allBooksCurated : dbBooks).slice(0, 20);
+const readingOrderJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BookSeries',
+  name: seriesName,
+  url: `${SITE}/reading-orders/${slug}/`,
+  description: pageDesc,
+  ...(seriesAuthor ? { author: { '@type': 'Person', name: seriesAuthor } } : {}),
+  ...(heroImageUrl ? { image: heroImageUrl } : {}),
+  hasPart: seriesBookList.map((b, i) => ({
+    '@type': 'Book',
+    position: i + 1,
+    name: b.title,
+    ...(b.slug ? { url: `${SITE}/books/${b.slug}/` } : {}),
+  })),
+});
 ---
 
-<Layout title={pageTitle} description={pageDesc}>
+<Layout title={pageTitle} description={pageDesc} image={heroImageUrl || undefined}>
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={readingOrderJsonLd} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Reading Orders', item: `${SITE}/reading-orders/` },
+        { '@type': 'ListItem', position: 2, name: seriesName, item: `${SITE}/reading-orders/${slug}/` },
+      ],
+    })} />
+  </Fragment>
 
 {isCurated && curatedEntry && (
   <>
@@ -208,8 +241,7 @@ const pageDesc = curatedEntry
     <div class="mb-10">
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p class="text-sm font-medium text-purple-600 uppercase tracking-wider mb-1">Reading Order</p>
-          <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{curatedEntry.name}</h1>
+          <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{curatedEntry.name} Reading Order</h1>
           <p class="mt-1 text-lg text-zinc-500">by <a href={`/authors/${authorToSlug(curatedEntry.author)}/`} class="hover:text-purple-700 hover:underline transition-colors">{curatedEntry.author}</a></p>
         </div>
         <span class="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-medium">
@@ -359,8 +391,7 @@ const pageDesc = curatedEntry
 
     <!-- Header -->
     <div class="mb-8">
-      <p class="text-sm font-medium text-purple-600 uppercase tracking-wider mb-1">Reading Order</p>
-      <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{seriesMeta.name}</h1>
+      <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{seriesMeta.name} Reading Order</h1>
 
       {authorNames.length > 0 && (
         <p class="mt-2 text-zinc-500 text-lg">
