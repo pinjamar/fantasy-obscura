@@ -1789,6 +1789,426 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     categoryLabel: 'Browse Epic Fantasy',
     related: ['wheel-of-time', 'memory-sorrow-thorn', 'robin-hobb'],
   },
+
+  // ─── Inheritance Cycle ────────────────────────────────────────────────────
+  {
+    slug: 'inheritance-cycle',
+    name: 'The Inheritance Cycle',
+    author: 'Christopher Paolini',
+    seriesStatus: 'complete',
+    seriesStatusLabel: '✅ Complete — 4 novels + companion works',
+    description:
+      'One of the most remarkable debut achievements in fantasy — Christopher Paolini began writing Eragon at fifteen and published it at seventeen. The Inheritance Cycle follows Eragon, a farm boy who discovers a dragon egg and is pulled into a war against the tyrant king Galbatorix. The Star Wars and Lord of the Rings influences in the first book are impossible to miss, but Paolini genuinely grows as a writer across four volumes. By Brisingr and Inheritance the world has real depth, the magic system has genuine teeth, and the stakes feel earned. This is the series that made a generation of readers fall in love with dragons.',
+    darknessDisplay: '🕯️🕯️ Mild',
+    orderNote: 'Read the four main books in order — they form one continuous story. The Fork, the Witch, and the Worm and Murtagh are best read after finishing Inheritance.',
+    groups: [
+      {
+        label: 'The Inheritance Cycle',
+        sublabel: 'the complete tetralogy — read in order',
+        books: [
+          { title: 'Eragon',      slug: 'eragon',      status: 'mandatory', seriesLabel: 'Inheritance Cycle #1', note: 'Start here. A farm boy, a dragon egg, and a world under a tyrant king. The Lord of the Rings and Star Wars bones are visible but the enthusiasm is infectious. Paolini was fifteen when he wrote this — the ambition alone is remarkable.',  page_count: 503, publication_year: 2003 },
+          { title: 'Eldest',      slug: 'eldest',      status: 'mandatory', seriesLabel: 'Inheritance Cycle #2', note: 'Eragon trains with the elves while Roran fights back home in Carvahall. The dual storyline expands the world significantly. Paolini is visibly maturing — the elf culture and magic theory are more developed than anything in book 1.',              page_count: 668, publication_year: 2005 },
+          { title: 'Brisingr',    slug: 'brisingr',    status: 'mandatory', seriesLabel: 'Inheritance Cycle #3', note: 'Originally planned as the trilogy finale, the story grew too large. The Ancient Language magic system gets its deepest exploration. Long but rewarding — the Paolini who wrote this is a different writer to the fifteen-year-old who started Eragon.',  page_count: 748, publication_year: 2008 },
+          { title: 'Inheritance', slug: 'inheritance', status: 'mandatory', seriesLabel: 'Inheritance Cycle #4', note: 'The conclusion. The final confrontation with Galbatorix is one of the most creative boss fights in fantasy. The ending is divisive — not triumphant in the way readers expected — but it is honest and earned.',                                            page_count: 849, publication_year: 2011 },
+        ],
+      },
+      {
+        label: 'Return to Alagaësia',
+        sublabel: 'after the main cycle — read in publication order',
+        books: [
+          { title: 'The Fork, the Witch, and the Worm', slug: 'the-fork-the-witch-and-the-worm', status: 'optional',      seriesLabel: 'Tales from Alagaësia #1', note: 'Three short stories set after Inheritance, framed by a new narrator. A gentle return to Alagaësia — light on plot, heavy on world texture. For fans who aren\'t ready to leave.',  page_count: 272, publication_year: 2018 },
+          { title: 'Murtagh',                          slug: 'murtagh',                          status: 'optional',      seriesLabel: 'Alagaësia #5',            note: 'The full novel follow-up, focused on the series\' most complex character. Far more psychologically nuanced than the main cycle. If Murtagh was your favourite, this is essential.',                                                                               page_count: 672, publication_year: 2023 },
+        ],
+      },
+    ],
+    cards: [
+      { title: '🐉 The Tetralogy (4)',       body: 'Eragon through Inheritance — one continuous story. All four are core. The series gets stronger with each book.',                                   color: 'blue'  },
+      { title: '📖 Return to Alagaësia (2)', body: 'The Fork, the Witch, and the Worm and Murtagh. Optional but rewarding for fans — especially Murtagh if you loved the character.',               color: 'green' },
+    ],
+    sections: [
+      {
+        heading: 'The Paolini factor',
+        type: 'bullets',
+        bullets: [
+          'Paolini started writing Eragon at 15 and self-published it at 17 before Knopf picked it up. The debut-at-fifteen story is real, not marketing.',
+          'The first book wears its influences openly — Eragon is structurally very close to A New Hope, and the fantasy DNA is Tolkien and Tolkien adjacent. Later books shake this off as Paolini finds his own voice.',
+          'The Ancient Language magic system — where magic is bound by the true names of things — is one of the more philosophically interesting systems in epic fantasy.',
+          'Murtagh (2023) is a genuine surprise: psychologically complex, slower-paced, and far more mature than anything in the main cycle.',
+          'The map of Alagaësia is worth studying before you start — the geography matters and the journey covers most of the continent.',
+        ],
+      },
+      {
+        heading: 'On the ending',
+        type: 'prose',
+        prose: "Inheritance's ending split readers when it came out in 2011. Without spoiling it: Paolini makes a choice that prioritises thematic honesty over wish fulfilment. Some readers found it deeply moving. Others felt cheated. Either way it is a deliberate authorial choice, not a failure of craft — and Murtagh (2023) adds significant context that reframes the finale.",
+      },
+    ],
+    darkness: [
+      { label: 'Eragon / Eldest',       level: 2, desc: 'Violence in battle, some death — standard epic fantasy stakes' },
+      { label: 'Brisingr / Inheritance', level: 3, desc: 'War atrocities, psychological cost, the ending carries real weight' },
+    ],
+    finishedLabel: 'Finished Alagaësia?',
+    categoryHref: '/categories/epic/',
+    categoryLabel: 'Browse Epic Fantasy',
+    related: ['pern', 'dragonlance', 'stormlight'],
+  },
+
+  // ─── Grishaverse ──────────────────────────────────────────────────────────
+  {
+    slug: 'grishaverse',
+    name: 'The Grishaverse',
+    author: 'Leigh Bardugo',
+    seriesStatus: 'ongoing',
+    seriesStatusLabel: '📖 Ongoing — new entries expected',
+    description:
+      'Leigh Bardugo\'s Grishaverse is one of the most successful fantasy universes of the last decade — a Russian-inspired world of Grisha magic users, criminal heist crews, and morally complex power politics. The series has three distinct entry points across three duologies, but Six of Crows is the peak: a tight heist novel with one of the best ensemble casts in modern fantasy. Start with Shadow and Bone to understand the world, then Six of Crows to fall in love with it.',
+    darknessDisplay: '🕯️🕯️🕯️ Serious',
+    orderNote: 'Read the Shadow and Bone trilogy first — it establishes the world, the Grisha, and the Fold. Six of Crows is set in the same world but with a new cast, and assumes you understand the setting. King of Scars picks up threads from both trilogies.',
+    warning: 'Six of Crows is widely considered the stronger entry point for adult readers, but it spoils major Shadow and Bone trilogy events. Read Shadow and Bone first if you want the full experience unspoiled.',
+    groups: [
+      {
+        label: 'Shadow and Bone Trilogy',
+        sublabel: 'start here — sets up the world and the Fold',
+        books: [
+          { title: 'Shadow and Bone', slug: 'shadow-and-bone', status: 'mandatory', seriesLabel: 'Shadow and Bone #1', note: 'Alina Starkov discovers she is a Sun Summoner — possibly the only person who can destroy the Fold, a swathe of living darkness that splits Ravka. Introduces the Grisha system, the Darkling, and the Russian-inspired world. The most YA-feeling of the trilogy.',  page_count: 358, publication_year: 2012 },
+          { title: 'Siege and Storm',  slug: 'siege-and-storm',  status: 'mandatory', seriesLabel: 'Shadow and Bone #2', note: 'Alina and Mal are hunted. A privateer captain and a sea monster complicate everything. The political stakes of Ravka come into focus. Bardugo\'s plotting gets noticeably tighter.',                                                                                                   page_count: 435, publication_year: 2013 },
+          { title: 'Ruin and Rising',  slug: 'ruin-and-rising',  status: 'mandatory', seriesLabel: 'Shadow and Bone #3', note: 'The trilogy concludes. Underground rebellion, the Darkling\'s true endgame, and an ending that divided fans. The conclusion is honest even if it is not the one most readers wanted.',                                                                                       page_count: 422, publication_year: 2014 },
+        ],
+      },
+      {
+        label: 'Six of Crows Duology',
+        sublabel: 'the best of the Grishaverse — read after Shadow and Bone',
+        books: [
+          { title: 'Six of Crows',      slug: 'six-of-crows',      status: 'mandatory', seriesLabel: 'Six of Crows #1', note: 'Six criminals. An impossible heist. One of the tightest ensemble casts in modern fantasy. Kaz Brekker plans an infiltration of an impenetrable prison-fortress for the score of the century. Each POV character is fully realised. The best book in the Grishaverse.',  page_count: 465, publication_year: 2015 },
+          { title: 'Crooked Kingdom', slug: 'crooked-kingdom', status: 'mandatory', seriesLabel: 'Six of Crows #2', note: 'The heist becomes a war for survival in Ketterdam. The crew gets their revenge. Character payoffs are deeply satisfying — this duology is one of the better-concluded two-book series in fantasy.',                                                                             page_count: 536, publication_year: 2016 },
+        ],
+      },
+      {
+        label: 'King of Scars Duology',
+        sublabel: 'sequel series — draws from both previous trilogies',
+        note: 'Heavily spoils both Shadow and Bone and Six of Crows. Read both duologies first.',
+        noteType: 'warning',
+        books: [
+          { title: 'King of Scars', slug: 'king-of-scars', status: 'optional', seriesLabel: 'King of Scars #1', note: 'Nikolai Lantsov — everyone\'s favourite side character from the first trilogy — takes centre stage as King of Ravka. Juggles multiple POVs and a new supernatural threat. More satisfying if you loved Nikolai in the first trilogy.',  page_count: 512, publication_year: 2019 },
+          { title: 'Rule of Wolves', slug: 'rule-of-wolves', status: 'optional', seriesLabel: 'King of Scars #2', note: 'War arrives in Ravka. Brings Six of Crows characters back into the fold alongside Nikolai\'s storyline. A crowd-pleasing conclusion to this duology — fan service in the best sense.',                                              page_count: 512, publication_year: 2021 },
+        ],
+      },
+      {
+        label: 'Companion Works',
+        sublabel: 'world-building extras — read anytime after Shadow and Bone',
+        books: [
+          { title: 'The Language of Thorns', slug: 'the-language-of-thorns', status: 'supplementary', seriesLabel: 'Grishaverse companion', note: 'Six original fairy tales set in the Grishaverse world. Dark, beautiful, and illustrated. Works as a standalone — read between any of the main series entries or after.',                                              page_count: 274, publication_year: 2017 },
+          { title: 'The Lives of Saints',    slug: 'the-lives-of-saints',    status: 'supplementary', seriesLabel: 'Grishaverse companion', note: 'Illustrated companion of Ravkan saints referenced throughout the series. Background enrichment rather than plot. Best appreciated mid-series once you know the mythology.',                                     page_count: 176, publication_year: 2020 },
+        ],
+      },
+    ],
+    cards: [
+      { title: '🌑 Shadow and Bone (3)', body: 'The foundation trilogy. Introduces Ravka, Grisha magic, and the Fold. Required reading before anything else.',                                        color: 'blue'  },
+      { title: '🃏 Six of Crows (2)',    body: 'The best of the Grishaverse — a heist duology with one of the finest ensemble casts in modern fantasy. The reason most people stay.',               color: 'blue'  },
+      { title: '👑 King of Scars (2)',   body: 'Nikolai\'s duology. Optional but rewarding — especially for readers who want more after Six of Crows.',                                             color: 'green' },
+      { title: '📖 Companion works (2)', body: 'The Language of Thorns and The Lives of Saints. World-building extras — not essential to the main story.',                                          color: 'amber' },
+    ],
+    sections: [
+      {
+        heading: 'Six of Crows first?',
+        type: 'prose',
+        prose: "Many readers and online guides recommend starting with Six of Crows because it's the stronger book and works as a standalone. The problem: it casually spoils major Shadow and Bone trilogy events as background context. If you don't mind spoilers, Six of Crows first is a legitimate choice. If you want the full experience in order, start with Shadow and Bone — the trilogy is shorter and faster than it looks.",
+      },
+      {
+        heading: 'What makes it work',
+        type: 'bullets',
+        bullets: [
+          'The Grisha system — magic users who manipulate matter at the molecular level, divided into Orders — is one of the better-constructed soft magic systems in YA fantasy.',
+          'Ketterdam, the setting of Six of Crows, is one of the most fully realised fantasy cities of the last decade: a Dutch East India Company analogue built on gang politics and financial crime.',
+          'Kaz Brekker is one of the most written-about characters in modern fantasy fandom for a reason: he is a strategist, not a fighter, and his emotional arc is handled with unusual restraint.',
+          'The Grishaverse has been adapted twice by Netflix — Shadow and Bone as a TV series, Six of Crows in development. The TV series combines timelines and casts.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'Shadow and Bone trilogy', level: 2, desc: 'YA-adjacent — threat, loss, and moral complexity but relatively light' },
+      { label: 'Six of Crows duology',    level: 3, desc: 'Trauma, violence, slavery, and addiction handled directly — darker than the first trilogy' },
+      { label: 'King of Scars duology',   level: 3, desc: 'War and political violence — sits between the two earlier series in tone' },
+    ],
+    finishedLabel: 'Finished the Grishaverse?',
+    categoryHref: '/categories/romantasy/',
+    categoryLabel: 'Browse Romantasy',
+    related: ['acotar', 'throne-of-glass', 'empyrean'],
+  },
+
+  // ─── Shannara ─────────────────────────────────────────────────────────────
+  {
+    slug: 'shannara',
+    name: 'The Shannara Chronicles',
+    author: 'Terry Brooks',
+    seriesStatus: 'complete',
+    seriesStatusLabel: '✅ Complete — 30+ novels across 10 story arcs',
+    description:
+      'One of the longest-running fantasy series ever written — Terry Brooks began publishing Shannara in 1977 and concluded the main arc in 2020. The world\'s best-kept secret: Shannara is set on a post-apocalyptic Earth, thousands of years after civilisation collapsed and magic returned. The series spans multiple interconnected trilogies across thousands of years of in-world history. The Sword of Shannara is famously derivative of Tolkien, but Elfstones of Shannara — the second book — is where Brooks found his own voice, and it is genuinely excellent. Start there.',
+    darknessDisplay: '🕯️🕯️ Mild',
+    orderNote: 'Do not start with The Sword of Shannara. Start with The Elfstones of Shannara — it is a better book, works as a standalone entry point, and will tell you if the series is for you. The Sword can be read after if curiosity strikes.',
+    warning: 'The Sword of Shannara (1977) is a close structural retelling of The Lord of the Rings. Many first-time readers bounce off it. Skip it or save it for after Elfstones — you won\'t miss any essential context.',
+    groups: [
+      {
+        label: 'The Original Shannara Trilogy',
+        sublabel: 'start with Elfstones — skip Sword or read it last',
+        books: [
+          { title: 'The Sword of Shannara',    slug: 'the-sword-of-shannara',    status: 'supplementary', seriesLabel: 'Shannara #1', note: 'Skip or read last. Structurally mirrors The Lord of the Rings so closely that critics called it out on publication. Brooks has acknowledged the influence. Of historical interest once you love the world, but a poor entry point.',                                            page_count: 726, publication_year: 1977 },
+          { title: 'The Elfstones of Shannara', slug: 'the-elfstones-of-shannara', status: 'mandatory',     seriesLabel: 'Shannara #2', note: 'Start here. Wil Ohmsford and the druid Allanon must escort the last Chosen of the Ellcrys as the Forbidding fails and demons pour through. Brooks found his own voice here — the pacing is tight, the stakes are real, and the ending lands hard.',  page_count: 564, publication_year: 1982 },
+          { title: 'The Wishsong of Shannara',  slug: 'the-wishsong-of-shannara',  status: 'mandatory',     seriesLabel: 'Shannara #3', note: 'Brin and Jair Ohmsford — descendants of Wil — face a corrupted forest and a dark magic that threatens to consume Brin herself. Darker and more psychologically interesting than the first two books.',                                                  page_count: 501, publication_year: 1985 },
+        ],
+      },
+      {
+        label: 'The Heritage of Shannara',
+        sublabel: 'set 300 years later — the series finds its stride',
+        books: [
+          { title: 'The Scions of Shannara',    slug: 'the-scions-of-shannara',    status: 'mandatory', seriesLabel: 'Heritage #1', note: 'Par and Coll Ohmsford are called by the shade of Allanon to save the Four Lands. The world has changed: magic is outlawed, the Druids are gone. A strong start to the best arc of the early series.',  page_count: 403, publication_year: 1990 },
+          { title: 'The Druid of Shannara',     slug: 'the-druid-of-shannara',     status: 'mandatory', seriesLabel: 'Heritage #2', note: 'Walker Boh\'s arc takes centre stage. The quest to restore the Druids begins. Parallel storylines across the Four Lands — each advancing one piece of the larger puzzle.',                            page_count: 338, publication_year: 1991 },
+          { title: 'The Elf Queen of Shannara', slug: 'the-elf-queen-of-shannara', status: 'mandatory', seriesLabel: 'Heritage #3', note: 'Wren Ohmsford journeys to Morrowindl to find the missing Elves. One of the most self-contained and propulsive entries in the entire series — Wren is an excellent protagonist.',                         page_count: 323, publication_year: 1992 },
+          { title: 'The Talismans of Shannara', slug: 'the-talismans-of-shannara', status: 'mandatory', seriesLabel: 'Heritage #4', note: 'All threads converge. Par, Walker, and Wren each reach their destinations. A satisfying multi-arc conclusion — the best of early Shannara.',                                                              page_count: 453, publication_year: 1993 },
+        ],
+      },
+      {
+        label: 'Word & Void',
+        sublabel: 'modern-day prequel trilogy — set in our world',
+        note: 'Set in contemporary America, thousands of years before Shannara. Bridges our world to the Shannara future. Can be read independently — but reading it after Heritage of Shannara enriches the mythology.',
+        noteType: 'optional',
+        books: [
+          { title: 'Running with the Demon', slug: 'running-with-the-demon', status: 'optional', seriesLabel: 'Word & Void #1', note: 'A Knight of the Word protects a small Illinois town from a Demon seeking to corrupt it. Urban fantasy set in the real world — feels completely different from Shannara. Quietly excellent.',    page_count: 420, publication_year: 1997 },
+          { title: 'A Knight of the Word',   slug: 'a-knight-of-the-word',   status: 'optional', seriesLabel: 'Word & Void #2', note: 'John Ross doubts his purpose and faces the consequence of abandoning his role as Knight. The darkest of the three — deals with guilt, addiction, and faith.',                                page_count: 352, publication_year: 1998 },
+          { title: 'Angel Fire East',        slug: 'angel-fire-east',        status: 'optional', seriesLabel: 'Word & Void #3', note: 'A gypsy morph appears — a being of pure magic that could tip the balance in the war between Word and Void. Concludes the modern-day arc and sets up the distant Shannara future.',                page_count: 368, publication_year: 1999 },
+        ],
+      },
+      {
+        label: 'Later Shannara Arcs',
+        sublabel: 'for committed fans — multiple further trilogies',
+        note: 'The series continues through Voyage of the Jerle Shannara, High Druid of Shannara, Dark Legacy of Shannara, and concludes with The Fall of Shannara tetralogy (2017–2020). All are optional for casual readers.',
+        noteType: 'optional',
+        books: [
+          { title: 'Ilse Witch',         slug: 'ilse-witch',         status: 'optional', seriesLabel: 'Voyage of the Jerle Shannara #1', note: 'A new generation of Ohmsfords. An airship crew chases an ancient map. Brooks embraces adventure-quest plotting with a faster pace than Heritage.', page_count: 387, publication_year: 2000 },
+          { title: 'Jarka Ruus',         slug: 'jarka-ruus',         status: 'optional', seriesLabel: 'High Druid of Shannara #1',       note: 'Twenty years after Voyage. Grianne Ohmsford as Ard Rhys of the Druid order. Political intrigue at Paranor. More interested in character psychology than quest plotting.',     page_count: 320, publication_year: 2003 },
+          { title: 'The Black Elfstone', slug: 'the-black-elfstone', status: 'optional', seriesLabel: 'The Fall of Shannara #1',         note: 'Start of the concluding tetralogy. A new threat from beyond the known Four Lands. Brooks ties together threads from across the entire series. The beginning of the end.',                    page_count: 333, publication_year: 2017 },
+          { title: 'The Last Druid',     slug: 'the-last-druid',     status: 'optional', seriesLabel: 'The Fall of Shannara #4',         note: 'The conclusion of the entire Shannara saga. More than four decades of story reaches its end. Rewarding for readers who have followed the series across its full run.',                            page_count: 320, publication_year: 2020 },
+        ],
+      },
+    ],
+    cards: [
+      { title: '⚔️ Original Trilogy (3)',   body: 'Skip Sword of Shannara or read it last. Elfstones is the real starting point — one of the best standalone portal-fantasy novels of the 1980s.',        color: 'blue'  },
+      { title: '🌿 Heritage (4)',            body: 'The best arc of early Shannara. Three parallel quests converge in one of Brooks\'s most satisfying conclusions.',                                        color: 'blue'  },
+      { title: '🌆 Word & Void (3)',         body: 'A standalone trilogy set in modern America. Completely different tone — urban fantasy. Rewards readers who want to understand Shannara\'s origins.',    color: 'green' },
+      { title: '📚 Later Arcs (20+ books)', body: 'Multiple further trilogies through 2020. Optional for casual readers — essential for those who fall in love with the Four Lands.',                       color: 'amber' },
+    ],
+    sections: [
+      {
+        heading: 'The secret of Shannara',
+        type: 'prose',
+        prose: "Shannara is set on Earth. This is revealed gradually — the ruins of skyscrapers are ancient rubble, the races of Elves and Gnomes and Trolls evolved from humans after civilisation collapsed thousands of years ago. The Word & Void trilogy, set in our present day, shows the beginning of the cataclysm. Brooks treats this as mythology rather than science fiction — but knowing it going in changes how you read the world-building.",
+      },
+      {
+        heading: 'Where the series stands',
+        type: 'bullets',
+        bullets: [
+          'The Sword of Shannara (1977) was the first fantasy novel published by a major publisher after Tolkien — Del Rey bet its entire genre list on it. It sold over a million copies.',
+          'Elfstones of Shannara was adapted as The Shannara Chronicles on MTV (2016–2017). The show is set during the Heritage era and uses Elfstones as its source material.',
+          'The Fall of Shannara (2017–2020) concludes the main saga after 43 years of publication — one of the longest continuous fantasy series ever completed by a single author.',
+          'The Heritage of Shannara is the consensus favourite arc among long-term fans — four books, three simultaneous quests, and a world that has genuinely evolved from the original trilogy.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'Original trilogy',       level: 2, desc: 'Classic adventure — peril and loss but nothing heavy' },
+      { label: 'Heritage of Shannara',   level: 2, desc: 'Higher stakes, some character deaths — still family-friendly epic fantasy' },
+      { label: 'Word & Void',            level: 3, desc: 'Darker urban fantasy tone — deals with corruption, addiction, and despair' },
+      { label: 'Later arcs',             level: 2, desc: 'Varies by arc — generally consistent with the original tone' },
+    ],
+    finishedLabel: 'Finished the Four Lands?',
+    categoryHref: '/categories/epic/',
+    categoryLabel: 'Browse Epic Fantasy',
+    related: ['wheel-of-time', 'dragonlance', 'memory-sorrow-thorn'],
+  },
+
+  // ─── Mistborn ─────────────────────────────────────────────────────────────
+  {
+    slug: 'mistborn',
+    name: 'Mistborn',
+    author: 'Brandon Sanderson',
+    seriesStatus: 'ongoing',
+    seriesStatusLabel: '📖 Ongoing — Era 3 in progress',
+    description:
+      'Brandon Sanderson\'s Mistborn is one of the most ingeniously constructed fantasy series ever written — set on a world where the prophesied hero failed a thousand years ago and a dark lord has ruled ever since. The original trilogy is a complete story of revolution, consequence, and cosmic revelation. Era 2 jumps 300 years forward into a Western-flavoured world of guns, trains, and new Allomancers. Era 3 — currently in progress — will advance to a near-modern spy-thriller setting. Each era can be read largely standalone, but the rewards for reading all of them in order are enormous.',
+    darknessDisplay: '🕯️🕯️🕯️ Serious',
+    orderNote: 'Read Era 1 completely before starting Era 2. Secret History is a novella set during Era 1 events — read it after The Bands of Mourning, not after Hero of Ages, as it references Era 2 lore. Era 3 has not yet been published.',
+    warning: 'Mistborn is part of the wider Cosmere universe. Era 2\'s The Lost Metal contains significant Cosmere crossover content. Reading the Cosmere guide alongside this one is recommended for the full experience.',
+    groups: [
+      {
+        label: 'Era 1 — The Original Trilogy',
+        sublabel: 'start here — a complete story in three books',
+        books: [
+          { title: 'The Final Empire',      slug: 'the-final-empire',      status: 'mandatory', seriesLabel: 'Mistborn #1', note: 'Start here. A crew of thieves and Mistborn plan a heist to overthrow a god-emperor who has ruled for a thousand years. One of the best first novels in epic fantasy — the magic system, the world, and the twist all land perfectly.',                                                              page_count: 541, publication_year: 2006 },
+          { title: 'The Well of Ascension', slug: 'the-well-of-ascension', status: 'mandatory', seriesLabel: 'Mistborn #2', note: 'The revolution succeeded — now the harder work begins. A political siege novel that tests your patience before delivering one of the best final acts in the trilogy. The slowest of the three but essential.',                                                                                             page_count: 590, publication_year: 2007 },
+          { title: 'The Hero of Ages',      slug: 'the-hero-of-ages',      status: 'mandatory', seriesLabel: 'Mistborn #3', note: 'Everything converges. The full cosmological scope of what Sanderson has been building is revealed. The climax answers questions you didn\'t know you were asking. One of the best trilogy conclusions in the genre.',                                                                                page_count: 572, publication_year: 2008 },
+        ],
+      },
+      {
+        label: 'Era 1 Extras',
+        sublabel: 'supplementary — read after completing Era 1',
+        books: [
+          { title: 'The Eleventh Metal',  slug: 'the-eleventh-metal',  status: 'supplementary', seriesLabel: 'Mistborn short story', note: 'Short story (~6k words) set before The Final Empire, following Kelsier\'s training. Free on Sanderson\'s website. Adds colour to Kelsier\'s backstory — read before or after The Final Empire.',  page_count: 30,  publication_year: 2012 },
+          { title: 'Secret History',      slug: 'mistborn-secret-history', status: 'supplementary', seriesLabel: 'Mistborn novella',    note: 'Read after The Bands of Mourning, not after Hero of Ages — it references Era 2 events. Shows what happened behind the scenes of the Era 1 trilogy. Major Cosmere revelations. Essential for Cosmere readers, optional for Mistborn-only readers.',  page_count: 175, publication_year: 2016 },
+        ],
+      },
+      {
+        label: 'Era 2 — Wax and Wayne',
+        sublabel: '300 years later — Western-flavoured Scadrial',
+        books: [
+          { title: 'The Alloy of Law',      slug: 'the-alloy-of-law',      status: 'mandatory', seriesLabel: 'Mistborn #4', note: 'A lighter, faster Mistborn — half the length of Era 1 books. Waxillium Ladrian is a lawman dragged back to the city. An excellent palate cleanser after the weight of Era 1. Works almost as a standalone.',                                        page_count: 332, publication_year: 2011 },
+          { title: 'Shadows of Self',       slug: 'shadows-of-self',       status: 'mandatory', seriesLabel: 'Mistborn #5', note: 'Darker and more personal than Alloy. A murderer is killing city leaders and Wax must uncover why. Important Cosmere lore drops and a gut-punch of an ending.',                                                                                       page_count: 383, publication_year: 2015 },
+          { title: 'The Bands of Mourning', slug: 'the-bands-of-mourning', status: 'mandatory', seriesLabel: 'Mistborn #6', note: 'Adventure-quest plotting — Wax and the crew travel far from Elendel. Big reveals connecting to the broader Cosmere. The most fun of the Era 2 books.',                                                                                               page_count: 448, publication_year: 2016 },
+          { title: 'The Lost Metal',        slug: 'the-lost-metal',        status: 'mandatory', seriesLabel: 'Mistborn #7', note: 'Era 2 finale. Massive Cosmere crossover payoff — characters and concepts from across the Cosmere converge on Scadrial. The most ambitious Mistborn book since Hero of Ages. Read this after Stormlight 4 for full context.',                      page_count: 528, publication_year: 2022 },
+        ],
+      },
+      {
+        label: 'Era 3 — The Ghostbloods',
+        sublabel: 'announced trilogy — not yet published',
+        note: 'Era 3 will advance Scadrial to a near-modern, spy-thriller setting roughly equivalent to the 1980s. All three books are planned but none have been published as of 2025.',
+        noteType: 'optional',
+        books: [
+          { title: 'Era 3, Book 1', slug: 'mistborn-era-3-book-1', status: 'mandatory', seriesLabel: 'Mistborn #8', note: 'First book of the announced Era 3 spy-thriller trilogy. Set on a more technologically advanced Scadrial — cars, electricity, Cold War-era politics. Publication date TBA.',         page_count: 0, publication_year: 2026 },
+          { title: 'Era 3, Book 2', slug: 'mistborn-era-3-book-2', status: 'mandatory', seriesLabel: 'Mistborn #9', note: 'Second book of the Era 3 trilogy. Not yet published.',                                                                                                                             page_count: 0, publication_year: 2027 },
+          { title: 'Era 3, Book 3', slug: 'mistborn-era-3-book-3', status: 'mandatory', seriesLabel: 'Mistborn #10', note: 'Third and final book of the Era 3 trilogy. Will conclude the Wax-and-Wayne-era story threads and connect to the wider Cosmere endgame. Not yet published.',                      page_count: 0, publication_year: 2028 },
+        ],
+      },
+    ],
+    cards: [
+      { title: '⚗️ Era 1 (3)',        body: 'The complete original trilogy. The best entry point and one of the finest fantasy trilogies ever written. Read all three before moving on.',                               color: 'blue'  },
+      { title: '🔫 Era 2 (4)',        body: 'Wax and Wayne — Western-flavoured Mistborn set 300 years later. Faster and lighter than Era 1. The Lost Metal is the best Cosmere payoff yet published.',               color: 'blue'  },
+      { title: '🕵️ Era 3 (3)',        body: 'Announced spy-thriller trilogy set on a near-modern Scadrial. Not yet published as of 2025.',                                                                             color: 'amber' },
+      { title: '📄 Extras (2)',       body: 'The Eleventh Metal (short story) and Secret History (novella). Read Secret History after The Bands of Mourning, not after Hero of Ages.',                                 color: 'green' },
+    ],
+    sections: [
+      {
+        heading: 'The magic system',
+        type: 'bullets',
+        bullets: [
+          'Allomancy: swallowing and burning metals to gain powers — each of the 16 metals does something different. Mistborn can burn all metals; Mistings only one.',
+          'Feruchemy: storing attributes (strength, speed, memory, health) in metal minds for later use. Feruchemists are rarer than Allomancers.',
+          'Hemalurgy: a darker third magic system introduced gradually — steals powers and attributes by driving metal spikes through living things at precise moments.',
+          'Era 2 introduces new alloys and hybrid powers as Scadrial\'s technology advances — the magic system evolves alongside the world.',
+        ],
+      },
+      {
+        heading: 'Era 1 vs Era 2',
+        type: 'prose',
+        prose: "Era 1 is epic fantasy — long books, cosmic stakes, slow-burn revelation. Era 2 is closer to a Western-flavoured adventure serial — faster pacing, lighter tone, shorter books. Some readers prefer Era 2 for this reason. Both are set on the same world with the same magic, but the feel is genuinely different. If you bounced off Era 1's length, try The Alloy of Law — it was written as a palate cleanser and shows a very different side of Sanderson's range.",
+      },
+      {
+        heading: 'Cosmere placement',
+        type: 'prose',
+        prose: "Mistborn is the most important series in the Cosmere after Stormlight. Era 1 can be read in isolation with no Cosmere knowledge. Era 2 starts dropping Cosmere threads. The Lost Metal (Era 2 finale) has the most explicit Cosmere crossover in any Sanderson novel to date — it assumes familiarity with Stormlight and Warbreaker. If you're reading the Cosmere in full, read The Lost Metal after Rhythm of War.",
+      },
+    ],
+    darkness: [
+      { label: 'Era 1',      level: 3, desc: 'Revolution, genocide, and cosmic horror — the darkness is purposeful and earns its weight' },
+      { label: 'Era 2',      level: 2, desc: 'Lighter tone overall — violence and personal loss but less cosmically heavy than Era 1' },
+      { label: 'Era 3',      level: 3, desc: 'Expected to match Era 2 — spy thriller tone with moral complexity' },
+    ],
+    finishedLabel: 'Finished Scadrial?',
+    categoryHref: '/categories/epic/',
+    categoryLabel: 'Browse Epic Fantasy',
+    related: ['cosmere', 'stormlight', 'kingkiller'],
+    booksLikeSlug: 'mistborn-the-final-empire',
+  },
+
+  // ─── Valdemar ─────────────────────────────────────────────────────────────
+  {
+    slug: 'valdemar',
+    name: 'The World of Valdemar',
+    author: 'Mercedes Lackey',
+    seriesStatus: 'ongoing',
+    seriesStatusLabel: '📖 Ongoing — 40+ novels since 1987',
+    description:
+      'One of the most expansive and enduring worlds in fantasy — Mercedes Lackey has been writing Valdemar since 1987 and shows no signs of stopping. The kingdom of Valdemar is protected by Heralds: individuals Chosen by magical white horses called Companions, bound for life in a telepathic partnership. The series spans thousands of years of in-world history across more than a dozen sub-series. It is warm, character-driven fantasy that takes trauma seriously without wallowing in it. The Vanyel trilogy — one of fantasy\'s first major LGBTQ+ storylines — remains among the most emotionally devastating things Lackey has written.',
+    darknessDisplay: '🕯️🕯️ Mild',
+    orderNote: 'Two equally valid entry points: Arrows of the Queen (publication order, Talia\'s story) or Magic\'s Pawn (Vanyel\'s story, set 500 years earlier). Most readers start with Arrows. The Mage Wars and Founding of Valdemar prequels work best after you already love the world.',
+    warning: 'Magic\'s Pawn deals directly with homophobia, emotional abuse, and grief. It is not as light as the Talia books. The ending will hurt. This is by design.',
+    groups: [
+      {
+        label: 'Heralds of Valdemar',
+        sublabel: 'start here — the original trilogy',
+        books: [
+          { title: 'Arrows of the Queen', slug: 'arrows-of-the-queen', status: 'mandatory', seriesLabel: 'Heralds of Valdemar #1', note: 'Talia is rescued from an abusive household by a Companion and brought to Haven to train as a Herald. A gentle, warm introduction to the world. Reads fast — you\'ll finish it in a day.',                               page_count: 320, publication_year: 1987 },
+          { title: 'Arrow\'s Flight',     slug: 'arrows-flight',      status: 'mandatory', seriesLabel: 'Heralds of Valdemar #2', note: 'Talia\'s internship on the Valdemar border. Cut off, snowed in, and dealing with powers that are spiralling out of control. The darkest of the trilogy and the most psychologically interesting.',                         page_count: 337, publication_year: 1987 },
+          { title: 'Arrow\'s Fall',       slug: 'arrows-fall',        status: 'mandatory', seriesLabel: 'Heralds of Valdemar #3', note: 'Political intrigue, war threats, and the cost of being a Herald. A satisfying conclusion to Talia\'s arc — earned, not easy.',                                                                                           page_count: 324, publication_year: 1988 },
+        ],
+      },
+      {
+        label: 'The Last Herald-Mage',
+        sublabel: 'set 500 years before Talia — Vanyel\'s story',
+        note: 'One of fantasy\'s first and most important LGBTQ+ storylines. Devastating and beautiful. Read after the Heralds trilogy or as a standalone entry point.',
+        noteType: 'optional',
+        books: [
+          { title: 'Magic\'s Pawn',    slug: 'magics-pawn',    status: 'mandatory', seriesLabel: 'Last Herald-Mage #1', note: 'Vanyel — a nobleman\'s son sent away to train — discovers he is a Herald-Mage and falls in love for the first time. Lackey does not protect the reader. The ending of this book is one of the most painful in fantasy.',      page_count: 350, publication_year: 1989 },
+          { title: 'Magic\'s Promise',  slug: 'magics-promise',  status: 'mandatory', seriesLabel: 'Last Herald-Mage #2', note: 'Vanyel on furlough, dealing with isolation, grief, and a supernatural threat in a neighbouring kingdom. Quieter than book 1 but essential — this is where Vanyel becomes fully himself.',                                   page_count: 287, publication_year: 1990 },
+          { title: 'Magic\'s Price',    slug: 'magics-price',    status: 'mandatory', seriesLabel: 'Last Herald-Mage #3', note: 'The final reckoning. Vanyel is the last Herald-Mage and the darkness closing in cannot be stopped by one person alone. The conclusion is heartbreaking and perfect. Bring tissues.',                                      page_count: 318, publication_year: 1991 },
+        ],
+      },
+      {
+        label: 'Mage Winds & Mage Storms',
+        sublabel: 'direct sequel era — set after the Heralds trilogy',
+        books: [
+          { title: 'Winds of Fate',     slug: 'winds-of-fate',     status: 'mandatory', seriesLabel: 'Mage Winds #1',  note: 'Elspeth, Talia\'s ward, rides out to find a Mage-teacher. A new generation of Heralds faces a magical threat the kingdom hasn\'t seen in centuries. Picks up the political threads of the Talia books.',  page_count: 387, publication_year: 1991 },
+          { title: 'Winds of Change',   slug: 'winds-of-change',   status: 'mandatory', seriesLabel: 'Mage Winds #2',  note: 'Elspeth trains among the Tayledras. Magic returns to Valdemar. The world expands significantly — new peoples, new powers, new threats.',                                                                   page_count: 400, publication_year: 1992 },
+          { title: 'Winds of Fury',     slug: 'winds-of-fury',     status: 'mandatory', seriesLabel: 'Mage Winds #3',  note: 'The Mage Winds arc concludes. Ancar of Hardorn, the threat that has loomed since Arrow\'s Fall, finally reaches its crisis point.',                                                                          page_count: 401, publication_year: 1993 },
+          { title: 'Storm Warning',     slug: 'storm-warning',     status: 'mandatory', seriesLabel: 'Mage Storms #1', note: 'A new threat — magical storms that wipe out Gifts and powers — descends on the entire continent. Shifts from Valdemar-only politics to a continent-wide coalition.',                                         page_count: 400, publication_year: 1994 },
+          { title: 'Storm Rising',      slug: 'storm-rising',      status: 'mandatory', seriesLabel: 'Mage Storms #2', note: 'The storms worsen. Uncomfortable alliances form. Lackey\'s political plotting at its most complex.',                                                                                                             page_count: 377, publication_year: 1995 },
+          { title: 'Storm Breaking',    slug: 'storm-breaking',    status: 'mandatory', seriesLabel: 'Mage Storms #3', note: 'Conclusion of the Mage Storms arc and effectively the conclusion of the original Valdemar saga. A satisfying endpoint for readers who want a natural stopping place.',                                         page_count: 403, publication_year: 1996 },
+        ],
+      },
+      {
+        label: 'Prequels & Further Series',
+        sublabel: 'for committed Valdemar fans',
+        books: [
+          { title: 'By the Sword',          slug: 'by-the-sword',          status: 'optional',      seriesLabel: 'Valdemar standalone',   note: 'Kerowyn — mercenary granddaughter of Lackey\'s earlier character Tarma. Bridges the Vows & Honor world with the Heralds universe. Works as a standalone.',                                                    page_count: 512, publication_year: 1991 },
+          { title: 'The Black Gryphon',     slug: 'the-black-gryphon',     status: 'optional',      seriesLabel: 'Mage Wars #1',          note: 'Set 3,000 years before Arrows of the Queen, during the Mage Wars that shaped Valdemar\'s world. Gryphons as POV characters. Best read after the main two arcs.',                                              page_count: 400, publication_year: 1994 },
+          { title: 'Brightly Burning',      slug: 'brightly-burning',      status: 'optional',      seriesLabel: 'Valdemar standalone',   note: 'Set between the Last Herald-Mage and Heralds eras. Lavan Firestorm — a Herald with devastating and uncontrollable fire gifts. A tragic standalone. Best for readers who want more of Vanyel\'s era.',        page_count: 384, publication_year: 2000 },
+          { title: 'Foundation',            slug: 'foundation',            status: 'optional',      seriesLabel: 'Collegium Chronicles #1', note: 'Mags — a mine slave discovered to be a Herald-trainee. Written as a new entry point to Valdemar. More deliberate pacing than the original trilogy. Good for younger readers.',                               page_count: 337, publication_year: 2008 },
+          { title: 'Beyond',                slug: 'beyond',                status: 'supplementary', seriesLabel: 'Founding of Valdemar #1', note: 'The newest sub-series — how Valdemar was founded. Best read after you know and love the kingdom. Works backwards from the world you already know.',                                                          page_count: 352, publication_year: 2021 },
+        ],
+      },
+    ],
+    cards: [
+      { title: '🐴 Heralds of Valdemar (3)',   body: 'The original Talia trilogy. The warmest and most accessible entry point — start here if you\'re new to Valdemar.',                                   color: 'blue'  },
+      { title: '💙 Last Herald-Mage (3)',       body: 'Vanyel\'s story — one of fantasy\'s most emotionally devastating trilogies. Essential reading. Have tissues ready for book 3.',                     color: 'blue'  },
+      { title: '⚡ Mage Winds & Storms (6)',    body: 'The direct sequel arcs. Six books covering the return of magic and continent-wide catastrophe. For readers who want to continue after Talia.',       color: 'blue'  },
+      { title: '📚 Prequels & More (5+)',       body: 'By the Sword, Mage Wars, Collegium Chronicles, and more. Valdemar has 40+ novels — this is where the rabbit hole goes.',                           color: 'green' },
+    ],
+    sections: [
+      {
+        heading: 'The Companions',
+        type: 'prose',
+        prose: "Companions are not horses. They are white, blue-eyed beings who Choose their Heralds — a lifelong telepathic bond that ends only with death. When a Companion dies, the Herald usually follows. When a Herald dies, the Companion always does. This bond is the emotional core of every Valdemar book, and Lackey never lets you forget what it costs.",
+      },
+      {
+        heading: 'Why it matters',
+        type: 'bullets',
+        bullets: [
+          'The Last Herald-Mage trilogy (1989–1991) was one of the first mainstream fantasy series to feature a gay protagonist whose sexuality was treated as normal and central to his story — not a subplot, not a tragedy to be fixed.',
+          'Lackey\'s Valdemar takes trauma seriously. Talia, Vanyel, and many others carry histories of abuse and neglect — and the books deal with recovery, not just survival.',
+          'The series is still being written. Lackey published the first Founding of Valdemar book in 2021 and continues to expand the world at the rate of roughly one book a year.',
+          'Storm Breaking (1996) is a natural endpoint if you want a complete arc — the original saga concludes there. Everything after is expansion rather than continuation.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'Heralds of Valdemar',    level: 2, desc: 'Emotional difficulty — trauma and abuse — but warm in tone overall' },
+      { label: 'Last Herald-Mage',       level: 3, desc: 'Grief, homophobia, isolation, and devastating loss — Lackey\'s darkest work' },
+      { label: 'Mage Winds / Storms',    level: 2, desc: 'Political violence and war — lighter than the Vanyel books' },
+    ],
+    finishedLabel: 'Finished Valdemar?',
+    categoryHref: '/categories/epic/',
+    categoryLabel: 'Browse Epic Fantasy',
+    related: ['pern', 'wheel-of-time', 'memory-sorrow-thorn'],
+  },
 ]
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

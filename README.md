@@ -450,6 +450,58 @@ Key fields on every book record:
 | 🕯️🕯️🕯️🕯️   | Dark         | Violence, trauma, morally grey characters        |
 | 🕯️🕯️🕯️🕯️🕯️ | Brutal       | Grimdark, no redemption guaranteed               |
 
+## Image Pipeline
+
+Source images live in `assets/raw/` and are processed into optimised WebP + AVIF at multiple widths via `scripts/optimize-images.mjs`.
+
+### Folder structure
+
+| Source folder | Output folder | Widths | Use |
+|---|---|---|---|
+| `assets/raw/categories/` | `public/images/categories/` | 400, 800px | Category hero images |
+| `assets/raw/reading-orders/` | `public/images/reading-orders/` | 400, 800px | Reading order card + detail page heroes |
+| `assets/raw/banners/` | `public/images/banners/` | 400, 800px | Homepage, books, books-like, reading orders index, tropes banners |
+| `assets/raw/branding/` | `public/images/branding/` | 1200px | OG image, logo (no AVIF) |
+| `assets/raw/placeholders/` | `public/images/placeholders/` | 300px | Book cover placeholders |
+
+All output images are committed to the repo so they are available on Cloudflare Pages without a build step.
+
+### Commands
+
+```bash
+npm run images:optimize        # process everything + regenerate favicons
+npm run images:categories      # categories only
+npm run images:favicons        # favicons + nav-logo + og-default only
+
+node scripts/optimize-images.mjs --reading-orders   # reading order images only
+```
+
+### Adding a new reading order image
+
+1. Drop the source PNG/JPG into `assets/raw/reading-orders/` — name it exactly matching the guide slug (e.g. `wheel-of-time.png`)
+2. Add the slug to `ReadingOrderImageSlug` type and `READING_ORDER_IMAGE_SLUG` map in `src/data/image-map.ts`
+3. Run `node scripts/optimize-images.mjs --reading-orders`
+4. Commit the generated files in `public/images/reading-orders/`
+
+The detail page hero and the index card image both pick up automatically once the slug is in the map.
+
+### Adding a new category image
+
+1. Drop source PNG/JPG into `assets/raw/categories/` — name it matching the `CategorySlug` value (e.g. `grimdark.png`)
+2. Add the entry to `CATEGORY_IMAGE_SLUG` in `src/data/image-map.ts` mapping the URL slug to the image slug
+3. Run `npm run images:categories`
+4. Commit generated files in `public/images/categories/`
+
+### Recommended source image size
+
+Generate at **1600×800px** minimum (2:1 ratio). The pipeline crops to a **3:1** display ratio on most pages — images are cropped from centre by default. To use the top half instead of centre, add the slug to the `object-top` condition in the relevant page template.
+
+### Favicon pipeline
+
+`public/favicon.png` → rounded-corner favicons at 16×16 and 32×32 (dark gold background, ~22% border radius), 180×180 apple-touch-icon, and `nav-logo.png`. Regenerated automatically by `npm run images:optimize` and `npm run images:favicons`.
+
+---
+
 ## Deployment
 
 Deployed to **Cloudflare Pages**. Push to `main` triggers automatic redeploy.

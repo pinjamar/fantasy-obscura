@@ -1,0 +1,386 @@
+/**
+ * check-reading-order-books.mjs
+ * Checks which reading order book slugs are missing from the DB.
+ * Run: node scripts/check-reading-order-books.mjs
+ */
+import { createClient } from '@supabase/supabase-js';
+import { config } from 'dotenv';
+
+config();
+
+const supabase = createClient(
+  process.env.PUBLIC_SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY,
+);
+
+const ALL_BOOKS = [
+  // ACOTAR
+  { slug: 'a-court-of-thorns-and-roses', title: 'A Court of Thorns and Roses', author: 'Sarah J. Maas' },
+  { slug: 'a-court-of-mist-and-fury', title: 'A Court of Mist and Fury', author: 'Sarah J. Maas' },
+  { slug: 'a-court-of-wings-and-ruin', title: 'A Court of Wings and Ruin', author: 'Sarah J. Maas' },
+  { slug: 'a-court-of-frost-and-starlight', title: 'A Court of Frost and Starlight', author: 'Sarah J. Maas' },
+  { slug: 'a-court-of-silver-flames', title: 'A Court of Silver Flames', author: 'Sarah J. Maas' },
+  // Cosmere / Stormlight / Mistborn Era 1+2
+  { slug: 'the-final-empire', title: 'The Final Empire', author: 'Brandon Sanderson' },
+  { slug: 'the-well-of-ascension', title: 'The Well of Ascension', author: 'Brandon Sanderson' },
+  { slug: 'the-hero-of-ages', title: 'The Hero of Ages', author: 'Brandon Sanderson' },
+  { slug: 'warbreaker', title: 'Warbreaker', author: 'Brandon Sanderson' },
+  { slug: 'the-way-of-kings', title: 'The Way of Kings', author: 'Brandon Sanderson' },
+  { slug: 'words-of-radiance', title: 'Words of Radiance', author: 'Brandon Sanderson' },
+  { slug: 'edgedancer', title: 'Edgedancer', author: 'Brandon Sanderson' },
+  { slug: 'oathbringer', title: 'Oathbringer', author: 'Brandon Sanderson' },
+  { slug: 'the-alloy-of-law', title: 'The Alloy of Law', author: 'Brandon Sanderson' },
+  { slug: 'shadows-of-self', title: 'Shadows of Self', author: 'Brandon Sanderson' },
+  { slug: 'the-bands-of-mourning', title: 'The Bands of Mourning', author: 'Brandon Sanderson' },
+  { slug: 'dawnshard', title: 'Dawnshard', author: 'Brandon Sanderson' },
+  { slug: 'rhythm-of-war', title: 'Rhythm of War', author: 'Brandon Sanderson' },
+  { slug: 'the-lost-metal', title: 'The Lost Metal', author: 'Brandon Sanderson' },
+  { slug: 'wind-and-truth', title: 'Wind and Truth', author: 'Brandon Sanderson' },
+  { slug: 'the-eleventh-metal', title: 'The Eleventh Metal', author: 'Brandon Sanderson' },
+  { slug: 'mistborn-secret-history', title: 'Mistborn: Secret History', author: 'Brandon Sanderson' },
+  // First Law
+  { slug: 'the-blade-itself', title: 'The Blade Itself', author: 'Joe Abercrombie' },
+  { slug: 'before-they-are-hanged', title: 'Before They Are Hanged', author: 'Joe Abercrombie' },
+  { slug: 'last-argument-of-kings', title: 'Last Argument of Kings', author: 'Joe Abercrombie' },
+  { slug: 'best-served-cold', title: 'Best Served Cold', author: 'Joe Abercrombie' },
+  { slug: 'the-heroes', title: 'The Heroes', author: 'Joe Abercrombie' },
+  { slug: 'red-country', title: 'Red Country', author: 'Joe Abercrombie' },
+  { slug: 'sharp-ends', title: 'Sharp Ends', author: 'Joe Abercrombie' },
+  { slug: 'a-little-hatred', title: 'A Little Hatred', author: 'Joe Abercrombie' },
+  { slug: 'the-trouble-with-peace', title: 'The Trouble With Peace', author: 'Joe Abercrombie' },
+  { slug: 'the-wisdom-of-crowds', title: 'The Wisdom of Crowds', author: 'Joe Abercrombie' },
+  // Malazan
+  { slug: 'gardens-of-the-moon', title: 'Gardens of the Moon', author: 'Steven Erikson' },
+  { slug: 'deadhouse-gates', title: 'Deadhouse Gates', author: 'Steven Erikson' },
+  { slug: 'memories-of-ice', title: 'Memories of Ice', author: 'Steven Erikson' },
+  { slug: 'house-of-chains', title: 'House of Chains', author: 'Steven Erikson' },
+  { slug: 'midnight-tides', title: 'Midnight Tides', author: 'Steven Erikson' },
+  { slug: 'the-bonehunters', title: 'The Bonehunters', author: 'Steven Erikson' },
+  { slug: 'reapers-gale', title: "Reaper's Gale", author: 'Steven Erikson' },
+  { slug: 'toll-the-hounds', title: 'Toll the Hounds', author: 'Steven Erikson' },
+  { slug: 'dust-of-dreams', title: 'Dust of Dreams', author: 'Steven Erikson' },
+  { slug: 'the-crippled-god', title: 'The Crippled God', author: 'Steven Erikson' },
+  // Wheel of Time
+  { slug: 'the-eye-of-the-world', title: 'The Eye of the World', author: 'Robert Jordan' },
+  { slug: 'the-great-hunt', title: 'The Great Hunt', author: 'Robert Jordan' },
+  { slug: 'the-dragon-reborn', title: 'The Dragon Reborn', author: 'Robert Jordan' },
+  { slug: 'the-shadow-rising', title: 'The Shadow Rising', author: 'Robert Jordan' },
+  { slug: 'the-fires-of-heaven', title: 'The Fires of Heaven', author: 'Robert Jordan' },
+  { slug: 'lord-of-chaos', title: 'Lord of Chaos', author: 'Robert Jordan' },
+  { slug: 'a-crown-of-swords', title: 'A Crown of Swords', author: 'Robert Jordan' },
+  { slug: 'the-path-of-daggers', title: 'The Path of Daggers', author: 'Robert Jordan' },
+  { slug: 'winters-heart', title: "Winter's Heart", author: 'Robert Jordan' },
+  { slug: 'crossroads-of-twilight', title: 'Crossroads of Twilight', author: 'Robert Jordan' },
+  { slug: 'knife-of-dreams', title: 'Knife of Dreams', author: 'Robert Jordan' },
+  { slug: 'the-gathering-storm', title: 'The Gathering Storm', author: 'Robert Jordan' },
+  { slug: 'towers-of-midnight', title: 'Towers of Midnight', author: 'Robert Jordan' },
+  { slug: 'a-memory-of-light', title: 'A Memory of Light', author: 'Robert Jordan' },
+  // Kingkiller
+  { slug: 'the-name-of-the-wind', title: 'The Name of the Wind', author: 'Patrick Rothfuss' },
+  { slug: 'the-wise-mans-fear', title: "The Wise Man's Fear", author: 'Patrick Rothfuss' },
+  { slug: 'the-slow-regard-of-silent-things', title: 'The Slow Regard of Silent Things', author: 'Patrick Rothfuss' },
+  // Throne of Glass
+  { slug: 'throne-of-glass', title: 'Throne of Glass', author: 'Sarah J. Maas' },
+  { slug: 'the-assassins-blade', title: "The Assassin's Blade", author: 'Sarah J. Maas' },
+  { slug: 'crown-of-midnight', title: 'Crown of Midnight', author: 'Sarah J. Maas' },
+  { slug: 'heir-of-fire', title: 'Heir of Fire', author: 'Sarah J. Maas' },
+  { slug: 'queen-of-shadows', title: 'Queen of Shadows', author: 'Sarah J. Maas' },
+  { slug: 'empire-of-storms', title: 'Empire of Storms', author: 'Sarah J. Maas' },
+  { slug: 'tower-of-dawn', title: 'Tower of Dawn', author: 'Sarah J. Maas' },
+  { slug: 'kingdom-of-ash', title: 'Kingdom of Ash', author: 'Sarah J. Maas' },
+  // Blood and Ash
+  { slug: 'from-blood-and-ash', title: 'From Blood and Ash', author: 'Jennifer L. Armentrout' },
+  { slug: 'a-kingdom-of-flesh-and-fire', title: 'A Kingdom of Flesh and Fire', author: 'Jennifer L. Armentrout' },
+  { slug: 'the-crown-of-gilded-bones', title: 'The Crown of Gilded Bones', author: 'Jennifer L. Armentrout' },
+  { slug: 'the-war-of-two-queens', title: 'The War of Two Queens', author: 'Jennifer L. Armentrout' },
+  { slug: 'a-soul-of-ash-and-blood', title: 'A Soul of Ash and Blood', author: 'Jennifer L. Armentrout' },
+  { slug: 'a-light-in-the-flame', title: 'A Light in the Flame', author: 'Jennifer L. Armentrout' },
+  { slug: 'a-fire-in-the-flesh', title: 'A Fire in the Flesh', author: 'Jennifer L. Armentrout' },
+  { slug: 'a-veil-of-gods-and-skin', title: 'A Veil of Gods and Skin', author: 'Jennifer L. Armentrout' },
+  // Empyrean
+  { slug: 'fourth-wing', title: 'Fourth Wing', author: 'Rebecca Yarros' },
+  { slug: 'iron-flame', title: 'Iron Flame', author: 'Rebecca Yarros' },
+  { slug: 'onyx-storm', title: 'Onyx Storm', author: 'Rebecca Yarros' },
+  // Drizzt
+  { slug: 'homeland', title: 'Homeland', author: 'R.A. Salvatore' },
+  { slug: 'exile', title: 'Exile', author: 'R.A. Salvatore' },
+  { slug: 'sojourn', title: 'Sojourn', author: 'R.A. Salvatore' },
+  { slug: 'the-crystal-shard', title: 'The Crystal Shard', author: 'R.A. Salvatore' },
+  { slug: 'streams-of-silver', title: 'Streams of Silver', author: 'R.A. Salvatore' },
+  { slug: 'the-halflings-gem', title: "The Halfling's Gem", author: 'R.A. Salvatore' },
+  { slug: 'the-legacy', title: 'The Legacy', author: 'R.A. Salvatore' },
+  { slug: 'starless-night', title: 'Starless Night', author: 'R.A. Salvatore' },
+  { slug: 'siege-of-darkness', title: 'Siege of Darkness', author: 'R.A. Salvatore' },
+  { slug: 'passage-to-dawn', title: 'Passage to Dawn', author: 'R.A. Salvatore' },
+  { slug: 'the-silent-blade', title: 'The Silent Blade', author: 'R.A. Salvatore' },
+  { slug: 'the-spine-of-the-world', title: 'The Spine of the World', author: 'R.A. Salvatore' },
+  { slug: 'servant-of-the-shard', title: 'Servant of the Shard', author: 'R.A. Salvatore' },
+  { slug: 'sea-of-swords', title: 'Sea of Swords', author: 'R.A. Salvatore' },
+  { slug: 'the-thousand-orcs', title: 'The Thousand Orcs', author: 'R.A. Salvatore' },
+  { slug: 'gauntlgrym', title: 'Gauntlgrym', author: 'R.A. Salvatore' },
+  { slug: 'timeless', title: 'Timeless', author: 'R.A. Salvatore' },
+  // Dragonlance
+  { slug: 'dragons-of-autumn-twilight', title: 'Dragons of Autumn Twilight', author: 'Margaret Weis & Tracy Hickman' },
+  { slug: 'dragons-of-winter-night', title: 'Dragons of Winter Night', author: 'Margaret Weis & Tracy Hickman' },
+  { slug: 'dragons-of-spring-dawning', title: 'Dragons of Spring Dawning', author: 'Margaret Weis & Tracy Hickman' },
+  { slug: 'time-of-the-twins', title: 'Time of the Twins', author: 'Margaret Weis & Tracy Hickman' },
+  { slug: 'war-of-the-twins', title: 'War of the Twins', author: 'Margaret Weis & Tracy Hickman' },
+  { slug: 'test-of-the-twins', title: 'Test of the Twins', author: 'Margaret Weis & Tracy Hickman' },
+  { slug: 'the-second-generation', title: 'The Second Generation', author: 'Margaret Weis & Tracy Hickman' },
+  { slug: 'dragons-of-summer-flame', title: 'Dragons of Summer Flame', author: 'Margaret Weis & Tracy Hickman' },
+  // Divergent
+  { slug: 'divergent', title: 'Divergent', author: 'Veronica Roth' },
+  { slug: 'insurgent', title: 'Insurgent', author: 'Veronica Roth' },
+  { slug: 'allegiant', title: 'Allegiant', author: 'Veronica Roth' },
+  { slug: 'free-four', title: 'Free Four', author: 'Veronica Roth' },
+  { slug: 'the-transfer', title: 'The Transfer', author: 'Veronica Roth' },
+  { slug: 'the-initiate', title: 'The Initiate', author: 'Veronica Roth' },
+  { slug: 'the-son', title: 'The Son', author: 'Veronica Roth' },
+  { slug: 'the-traitor', title: 'The Traitor', author: 'Veronica Roth' },
+  { slug: 'we-can-be-mended', title: 'We Can Be Mended', author: 'Veronica Roth' },
+  { slug: 'the-world-of-divergent', title: 'The World of Divergent', author: 'Veronica Roth' },
+  // Memory, Sorrow, and Thorn
+  { slug: 'brothers-of-the-wind', title: 'Brothers of the Wind', author: 'Tad Williams' },
+  { slug: 'the-dragonbone-chair', title: 'The Dragonbone Chair', author: 'Tad Williams' },
+  { slug: 'stone-of-farewell', title: 'Stone of Farewell', author: 'Tad Williams' },
+  { slug: 'to-green-angel-tower', title: 'To Green Angel Tower', author: 'Tad Williams' },
+  { slug: 'the-heart-of-what-was-lost', title: 'The Heart of What Was Lost', author: 'Tad Williams' },
+  { slug: 'the-witchwood-crown', title: 'The Witchwood Crown', author: 'Tad Williams' },
+  { slug: 'empire-of-grass', title: 'Empire of Grass', author: 'Tad Williams' },
+  { slug: 'into-the-narrowdark', title: 'Into the Narrowdark', author: 'Tad Williams' },
+  { slug: 'the-navigators-children', title: "The Navigator's Children", author: 'Tad Williams' },
+  // Valdemar
+  { slug: 'arrows-of-the-queen', title: 'Arrows of the Queen', author: 'Mercedes Lackey' },
+  { slug: 'arrows-flight', title: "Arrow's Flight", author: 'Mercedes Lackey' },
+  { slug: 'arrows-fall', title: "Arrow's Fall", author: 'Mercedes Lackey' },
+  { slug: 'magics-pawn', title: "Magic's Pawn", author: 'Mercedes Lackey' },
+  { slug: 'magics-promise', title: "Magic's Promise", author: 'Mercedes Lackey' },
+  { slug: 'magics-price', title: "Magic's Price", author: 'Mercedes Lackey' },
+  { slug: 'winds-of-fate', title: 'Winds of Fate', author: 'Mercedes Lackey' },
+  { slug: 'winds-of-change', title: 'Winds of Change', author: 'Mercedes Lackey' },
+  { slug: 'winds-of-fury', title: 'Winds of Fury', author: 'Mercedes Lackey' },
+  { slug: 'storm-warning', title: 'Storm Warning', author: 'Mercedes Lackey' },
+  { slug: 'storm-rising', title: 'Storm Rising', author: 'Mercedes Lackey' },
+  { slug: 'storm-breaking', title: 'Storm Breaking', author: 'Mercedes Lackey' },
+  { slug: 'by-the-sword', title: 'By the Sword', author: 'Mercedes Lackey' },
+  { slug: 'the-black-gryphon', title: 'The Black Gryphon', author: 'Mercedes Lackey' },
+  { slug: 'brightly-burning', title: 'Brightly Burning', author: 'Mercedes Lackey' },
+  { slug: 'foundation', title: 'Foundation', author: 'Mercedes Lackey' },
+  { slug: 'beyond', title: 'Beyond', author: 'Mercedes Lackey' },
+  // Witcher
+  { slug: 'the-last-wish', title: 'The Last Wish', author: 'Andrzej Sapkowski' },
+  { slug: 'sword-of-destiny', title: 'Sword of Destiny', author: 'Andrzej Sapkowski' },
+  { slug: 'blood-of-elves', title: 'Blood of Elves', author: 'Andrzej Sapkowski' },
+  { slug: 'time-of-contempt', title: 'Time of Contempt', author: 'Andrzej Sapkowski' },
+  { slug: 'baptism-of-fire', title: 'Baptism of Fire', author: 'Andrzej Sapkowski' },
+  { slug: 'the-tower-of-swallows', title: 'The Tower of Swallows', author: 'Andrzej Sapkowski' },
+  { slug: 'lady-of-the-lake', title: 'Lady of the Lake', author: 'Andrzej Sapkowski' },
+  { slug: 'season-of-storms', title: 'Season of Storms', author: 'Andrzej Sapkowski' },
+  // Dresden Files
+  { slug: 'storm-front', title: 'Storm Front', author: 'Jim Butcher' },
+  { slug: 'fool-moon', title: 'Fool Moon', author: 'Jim Butcher' },
+  { slug: 'grave-peril', title: 'Grave Peril', author: 'Jim Butcher' },
+  { slug: 'summer-knight', title: 'Summer Knight', author: 'Jim Butcher' },
+  { slug: 'death-masks', title: 'Death Masks', author: 'Jim Butcher' },
+  { slug: 'blood-rites', title: 'Blood Rites', author: 'Jim Butcher' },
+  { slug: 'dead-beat', title: 'Dead Beat', author: 'Jim Butcher' },
+  { slug: 'proven-guilty', title: 'Proven Guilty', author: 'Jim Butcher' },
+  { slug: 'white-night', title: 'White Night', author: 'Jim Butcher' },
+  { slug: 'small-favor', title: 'Small Favor', author: 'Jim Butcher' },
+  { slug: 'turn-coat', title: 'Turn Coat', author: 'Jim Butcher' },
+  { slug: 'changes', title: 'Changes', author: 'Jim Butcher' },
+  { slug: 'ghost-story', title: 'Ghost Story', author: 'Jim Butcher' },
+  { slug: 'cold-days', title: 'Cold Days', author: 'Jim Butcher' },
+  { slug: 'skin-game', title: 'Skin Game', author: 'Jim Butcher' },
+  { slug: 'peace-talks', title: 'Peace Talks', author: 'Jim Butcher' },
+  { slug: 'battle-ground', title: 'Battle Ground', author: 'Jim Butcher' },
+  { slug: 'side-jobs', title: 'Side Jobs', author: 'Jim Butcher' },
+  { slug: 'brief-cases', title: 'Brief Cases', author: 'Jim Butcher' },
+  // Discworld
+  { slug: 'guards-guards', title: 'Guards! Guards!', author: 'Terry Pratchett' },
+  { slug: 'men-at-arms', title: 'Men at Arms', author: 'Terry Pratchett' },
+  { slug: 'feet-of-clay', title: 'Feet of Clay', author: 'Terry Pratchett' },
+  { slug: 'jingo', title: 'Jingo', author: 'Terry Pratchett' },
+  { slug: 'the-fifth-elephant', title: 'The Fifth Elephant', author: 'Terry Pratchett' },
+  { slug: 'night-watch', title: 'Night Watch', author: 'Terry Pratchett' },
+  { slug: 'thud', title: 'Thud!', author: 'Terry Pratchett' },
+  { slug: 'snuff', title: 'Snuff', author: 'Terry Pratchett' },
+  { slug: 'equal-rites', title: 'Equal Rites', author: 'Terry Pratchett' },
+  { slug: 'wyrd-sisters', title: 'Wyrd Sisters', author: 'Terry Pratchett' },
+  { slug: 'witches-abroad', title: 'Witches Abroad', author: 'Terry Pratchett' },
+  { slug: 'lords-and-ladies', title: 'Lords and Ladies', author: 'Terry Pratchett' },
+  { slug: 'maskerade', title: 'Maskerade', author: 'Terry Pratchett' },
+  { slug: 'carpe-jugulum', title: 'Carpe Jugulum', author: 'Terry Pratchett' },
+  { slug: 'mort', title: 'Mort', author: 'Terry Pratchett' },
+  { slug: 'reaper-man', title: 'Reaper Man', author: 'Terry Pratchett' },
+  { slug: 'soul-music', title: 'Soul Music', author: 'Terry Pratchett' },
+  { slug: 'hogfather', title: 'Hogfather', author: 'Terry Pratchett' },
+  { slug: 'thief-of-time', title: 'Thief of Time', author: 'Terry Pratchett' },
+  { slug: 'the-colour-of-magic', title: 'The Colour of Magic', author: 'Terry Pratchett' },
+  { slug: 'the-light-fantastic', title: 'The Light Fantastic', author: 'Terry Pratchett' },
+  { slug: 'sourcery', title: 'Sourcery', author: 'Terry Pratchett' },
+  { slug: 'eric', title: 'Eric', author: 'Terry Pratchett' },
+  { slug: 'interesting-times', title: 'Interesting Times', author: 'Terry Pratchett' },
+  { slug: 'the-last-continent', title: 'The Last Continent', author: 'Terry Pratchett' },
+  { slug: 'the-last-hero', title: 'The Last Hero', author: 'Terry Pratchett' },
+  { slug: 'unseen-academicals', title: 'Unseen Academicals', author: 'Terry Pratchett' },
+  { slug: 'pyramids', title: 'Pyramids', author: 'Terry Pratchett' },
+  { slug: 'moving-pictures', title: 'Moving Pictures', author: 'Terry Pratchett' },
+  { slug: 'small-gods', title: 'Small Gods', author: 'Terry Pratchett' },
+  { slug: 'the-truth', title: 'The Truth', author: 'Terry Pratchett' },
+  { slug: 'the-amazing-maurice-and-his-educated-rodents', title: 'The Amazing Maurice and His Educated Rodents', author: 'Terry Pratchett' },
+  { slug: 'monstrous-regiment', title: 'Monstrous Regiment', author: 'Terry Pratchett' },
+  { slug: 'the-wee-free-men', title: 'The Wee Free Men', author: 'Terry Pratchett' },
+  { slug: 'a-hat-full-of-sky', title: 'A Hat Full of Sky', author: 'Terry Pratchett' },
+  { slug: 'wintersmith', title: 'Wintersmith', author: 'Terry Pratchett' },
+  { slug: 'i-shall-wear-midnight', title: 'I Shall Wear Midnight', author: 'Terry Pratchett' },
+  { slug: 'the-shepherds-crown', title: "The Shepherd's Crown", author: 'Terry Pratchett' },
+  { slug: 'going-postal', title: 'Going Postal', author: 'Terry Pratchett' },
+  { slug: 'making-money', title: 'Making Money', author: 'Terry Pratchett' },
+  { slug: 'raising-steam', title: 'Raising Steam', author: 'Terry Pratchett' },
+  // ASOIAF
+  { slug: 'a-game-of-thrones', title: 'A Game of Thrones', author: 'George R.R. Martin' },
+  { slug: 'a-clash-of-kings', title: 'A Clash of Kings', author: 'George R.R. Martin' },
+  { slug: 'a-storm-of-swords', title: 'A Storm of Swords', author: 'George R.R. Martin' },
+  { slug: 'a-feast-for-crows', title: 'A Feast for Crows', author: 'George R.R. Martin' },
+  { slug: 'a-dance-with-dragons', title: 'A Dance with Dragons', author: 'George R.R. Martin' },
+  // Robin Hobb
+  { slug: 'assassins-apprentice', title: "Assassin's Apprentice", author: 'Robin Hobb' },
+  { slug: 'royal-assassin', title: 'Royal Assassin', author: 'Robin Hobb' },
+  { slug: 'assassins-quest', title: "Assassin's Quest", author: 'Robin Hobb' },
+  { slug: 'ship-of-magic', title: 'Ship of Magic', author: 'Robin Hobb' },
+  { slug: 'the-mad-ship', title: 'The Mad Ship', author: 'Robin Hobb' },
+  { slug: 'ship-of-destiny', title: 'Ship of Destiny', author: 'Robin Hobb' },
+  { slug: 'fools-errand', title: "Fool's Errand", author: 'Robin Hobb' },
+  { slug: 'the-golden-fool', title: 'The Golden Fool', author: 'Robin Hobb' },
+  { slug: 'fools-fate', title: "Fool's Fate", author: 'Robin Hobb' },
+  { slug: 'dragon-keeper', title: 'Dragon Keeper', author: 'Robin Hobb' },
+  { slug: 'dragon-haven', title: 'Dragon Haven', author: 'Robin Hobb' },
+  { slug: 'city-of-dragons', title: 'City of Dragons', author: 'Robin Hobb' },
+  { slug: 'blood-of-dragons', title: 'Blood of Dragons', author: 'Robin Hobb' },
+  { slug: 'fools-assassin', title: "Fool's Assassin", author: 'Robin Hobb' },
+  { slug: 'fools-quest', title: "Fool's Quest", author: 'Robin Hobb' },
+  { slug: 'assassins-fate', title: "Assassin's Fate", author: 'Robin Hobb' },
+  // Kate Daniels
+  { slug: 'a-questionable-client', title: 'A Questionable Client', author: 'Ilona Andrews' },
+  { slug: 'magic-bites', title: 'Magic Bites', author: 'Ilona Andrews' },
+  { slug: 'magic-burns', title: 'Magic Burns', author: 'Ilona Andrews' },
+  { slug: 'magic-strikes', title: 'Magic Strikes', author: 'Ilona Andrews' },
+  { slug: 'magic-mourns', title: 'Magic Mourns', author: 'Ilona Andrews' },
+  { slug: 'magic-bleeds', title: 'Magic Bleeds', author: 'Ilona Andrews' },
+  { slug: 'magic-dreams', title: 'Magic Dreams', author: 'Ilona Andrews' },
+  { slug: 'magic-slays', title: 'Magic Slays', author: 'Ilona Andrews' },
+  { slug: 'magic-tests', title: 'Magic Tests', author: 'Ilona Andrews' },
+  { slug: 'magic-rises', title: 'Magic Rises', author: 'Ilona Andrews' },
+  { slug: 'magic-gifts', title: 'Magic Gifts', author: 'Ilona Andrews' },
+  { slug: 'magic-breaks', title: 'Magic Breaks', author: 'Ilona Andrews' },
+  { slug: 'magic-steals', title: 'Magic Steals', author: 'Ilona Andrews' },
+  { slug: 'magic-shifts', title: 'Magic Shifts', author: 'Ilona Andrews' },
+  { slug: 'magic-binds', title: 'Magic Binds', author: 'Ilona Andrews' },
+  { slug: 'magic-stars', title: 'Magic Stars', author: 'Ilona Andrews' },
+  { slug: 'magic-triumphs', title: 'Magic Triumphs', author: 'Ilona Andrews' },
+  { slug: 'gunmetal-magic', title: 'Gunmetal Magic', author: 'Ilona Andrews' },
+  { slug: 'iron-and-magic', title: 'Iron and Magic', author: 'Ilona Andrews' },
+  { slug: 'blood-heir', title: 'Blood Heir', author: 'Ilona Andrews' },
+  { slug: 'magic-tides', title: 'Magic Tides', author: 'Ilona Andrews' },
+  { slug: 'magic-claims', title: 'Magic Claims', author: 'Ilona Andrews' },
+  { slug: 'sanctuary', title: 'Sanctuary', author: 'Ilona Andrews' },
+  // Black Company
+  { slug: 'the-black-company', title: 'The Black Company', author: 'Glen Cook' },
+  { slug: 'port-of-shadows', title: 'Port of Shadows', author: 'Glen Cook' },
+  { slug: 'shadows-linger', title: 'Shadows Linger', author: 'Glen Cook' },
+  { slug: 'the-white-rose', title: 'The White Rose', author: 'Glen Cook' },
+  { slug: 'the-silver-spike', title: 'The Silver Spike', author: 'Glen Cook' },
+  { slug: 'shadow-games', title: 'Shadow Games', author: 'Glen Cook' },
+  { slug: 'dreams-of-steel', title: 'Dreams of Steel', author: 'Glen Cook' },
+  { slug: 'bleak-seasons', title: 'Bleak Seasons', author: 'Glen Cook' },
+  { slug: 'she-is-the-darkness', title: 'She Is the Darkness', author: 'Glen Cook' },
+  { slug: 'water-sleeps', title: 'Water Sleeps', author: 'Glen Cook' },
+  { slug: 'soldiers-live', title: 'Soldiers Live', author: 'Glen Cook' },
+  { slug: 'they-cry', title: 'They Cry', author: 'Glen Cook' },
+  // Pern
+  { slug: 'dragonflight', title: 'Dragonflight', author: 'Anne McCaffrey' },
+  { slug: 'dragonquest', title: 'Dragonquest', author: 'Anne McCaffrey' },
+  { slug: 'the-white-dragon', title: 'The White Dragon', author: 'Anne McCaffrey' },
+  { slug: 'dragonsong', title: 'Dragonsong', author: 'Anne McCaffrey' },
+  { slug: 'dragonsinger', title: 'Dragonsinger', author: 'Anne McCaffrey' },
+  { slug: 'dragondrums', title: 'Dragondrums', author: 'Anne McCaffrey' },
+  { slug: 'dragonsdawn', title: 'Dragonsdawn', author: 'Anne McCaffrey' },
+  { slug: 'moreta-dragonlady-of-pern', title: 'Moreta: Dragonlady of Pern', author: 'Anne McCaffrey' },
+  { slug: 'nerilkas-story', title: "Nerilka's Story", author: 'Anne McCaffrey' },
+  { slug: 'the-renegades-of-pern', title: 'The Renegades of Pern', author: 'Anne McCaffrey' },
+  { slug: 'all-the-weyrs-of-pern', title: 'All the Weyrs of Pern', author: 'Anne McCaffrey' },
+  { slug: 'the-chronicles-of-pern-first-fall', title: 'The Chronicles of Pern: First Fall', author: 'Anne McCaffrey' },
+  { slug: 'the-dolphins-of-pern', title: 'The Dolphins of Pern', author: 'Anne McCaffrey' },
+  { slug: 'the-masterharper-of-pern', title: 'The Masterharper of Pern', author: 'Anne McCaffrey' },
+  { slug: 'the-skies-of-pern', title: 'The Skies of Pern', author: 'Anne McCaffrey' },
+  { slug: 'a-gift-of-dragons', title: 'A Gift of Dragons', author: 'Anne McCaffrey' },
+  // Inheritance Cycle
+  { slug: 'eragon', title: 'Eragon', author: 'Christopher Paolini' },
+  { slug: 'eldest', title: 'Eldest', author: 'Christopher Paolini' },
+  { slug: 'brisingr', title: 'Brisingr', author: 'Christopher Paolini' },
+  { slug: 'inheritance', title: 'Inheritance', author: 'Christopher Paolini' },
+  { slug: 'the-fork-the-witch-and-the-worm', title: 'The Fork, the Witch, and the Worm', author: 'Christopher Paolini' },
+  { slug: 'murtagh', title: 'Murtagh', author: 'Christopher Paolini' },
+  // Grishaverse
+  { slug: 'shadow-and-bone', title: 'Shadow and Bone', author: 'Leigh Bardugo' },
+  { slug: 'siege-and-storm', title: 'Siege and Storm', author: 'Leigh Bardugo' },
+  { slug: 'ruin-and-rising', title: 'Ruin and Rising', author: 'Leigh Bardugo' },
+  { slug: 'six-of-crows', title: 'Six of Crows', author: 'Leigh Bardugo' },
+  { slug: 'crooked-kingdom', title: 'Crooked Kingdom', author: 'Leigh Bardugo' },
+  { slug: 'king-of-scars', title: 'King of Scars', author: 'Leigh Bardugo' },
+  { slug: 'rule-of-wolves', title: 'Rule of Wolves', author: 'Leigh Bardugo' },
+  { slug: 'the-language-of-thorns', title: 'The Language of Thorns', author: 'Leigh Bardugo' },
+  { slug: 'the-lives-of-saints', title: 'The Lives of Saints', author: 'Leigh Bardugo' },
+  // Shannara
+  { slug: 'the-sword-of-shannara', title: 'The Sword of Shannara', author: 'Terry Brooks' },
+  { slug: 'the-elfstones-of-shannara', title: 'The Elfstones of Shannara', author: 'Terry Brooks' },
+  { slug: 'the-wishsong-of-shannara', title: 'The Wishsong of Shannara', author: 'Terry Brooks' },
+  { slug: 'the-scions-of-shannara', title: 'The Scions of Shannara', author: 'Terry Brooks' },
+  { slug: 'the-druid-of-shannara', title: 'The Druid of Shannara', author: 'Terry Brooks' },
+  { slug: 'the-elf-queen-of-shannara', title: 'The Elf Queen of Shannara', author: 'Terry Brooks' },
+  { slug: 'the-talismans-of-shannara', title: 'The Talismans of Shannara', author: 'Terry Brooks' },
+  { slug: 'running-with-the-demon', title: 'Running with the Demon', author: 'Terry Brooks' },
+  { slug: 'a-knight-of-the-word', title: 'A Knight of the Word', author: 'Terry Brooks' },
+  { slug: 'angel-fire-east', title: 'Angel Fire East', author: 'Terry Brooks' },
+  { slug: 'ilse-witch', title: 'Ilse Witch', author: 'Terry Brooks' },
+  { slug: 'jarka-ruus', title: 'Jarka Ruus', author: 'Terry Brooks' },
+  { slug: 'the-black-elfstone', title: 'The Black Elfstone', author: 'Terry Brooks' },
+  { slug: 'the-last-druid', title: 'The Last Druid', author: 'Terry Brooks' },
+];
+
+// Dedupe by slug
+const unique = [...new Map(ALL_BOOKS.map((b) => [b.slug, b])).values()];
+const slugs = unique.map((b) => b.slug);
+
+console.log(`Checking ${unique.length} unique book slugs...`);
+
+const { data, error } = await supabase
+  .from('books')
+  .select('slug')
+  .in('slug', slugs);
+
+if (error) {
+  console.error('DB error:', error.message);
+  process.exit(1);
+}
+
+const found = new Set((data ?? []).map((b) => b.slug));
+const missing = unique.filter((b) => !found.has(b.slug));
+
+console.log(`\nFound in DB: ${found.size}`);
+console.log(`Missing from DB: ${missing.length}`);
+
+if (missing.length > 0) {
+  console.log('\n--- Missing books (copy for add-books) ---');
+  for (const b of missing) {
+    console.log(`${b.title} | ${b.author}`);
+  }
+
+  // Write to a file for batch processing
+  const lines = missing.map((b) => `${b.title} | ${b.author}`).join('\n');
+  import('fs').then(({ writeFileSync }) => {
+    writeFileSync('scripts/missing-books.txt', lines);
+    console.log('\nAlso written to scripts/missing-books.txt');
+  });
+}
