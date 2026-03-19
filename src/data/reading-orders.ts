@@ -1699,6 +1699,96 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     categoryLabel: 'Browse Grimdark Fantasy',
     related: ['first-law', 'malazan'],
   },
+
+  // ─── Dragonriders of Pern ──────────────────────────────────────────────────
+  {
+    slug: 'pern',
+    name: 'Dragonriders of Pern',
+    author: 'Anne McCaffrey',
+    seriesStatus: 'complete',
+    seriesStatusLabel: '✅ Complete — 24 novels',
+    description:
+      'One of the most beloved science fantasy series ever written — set on a planet where dragonriders bond with telepathic dragons to fight the deadly spore known as Thread. Pern reads like pure fantasy but is technically science fiction: the dragons are bioengineered, the world is a lost colony. McCaffrey never lets the science get in the way of the story. At its heart this is a series about the bond between rider and dragon, class and tradition versus change, and what it costs to protect a world that doesn\'t always appreciate the protection.',
+    darknessDisplay: '🕯️🕯️ Mild',
+    orderNote: 'Start with the original Dragonriders trilogy. The Harper Hall trilogy is YA but essential — read it alongside or immediately after Dragonquest. Dragonsdawn is the chronological origin story but works best once you love the world, not as an entry point.',
+    warning: 'Some early Pern books contain dated attitudes toward gender and consent that reflect their 1960s–70s publication era. The Harper Hall trilogy and later books are notably better in this regard.',
+    groups: [
+      {
+        label: 'Dragonriders Trilogy',
+        sublabel: 'start here — the foundation of Pern',
+        books: [
+          { title: 'Dragonflight',    slug: 'dragonflight',    status: 'mandatory', seriesLabel: 'Pern #1', note: 'Start here. Lessa impresses queen dragon Ramoth and becomes Weyrwoman as the deadly Thread returns after 400 years. Groundbreaking when published — still a page-turner.',          page_count: 309, publication_year: 1968 },
+          { title: 'Dragonquest',     slug: 'dragonquest',     status: 'mandatory', seriesLabel: 'Pern #2', note: 'F\'nor and bronze Canth take centre stage. The conflict between tradition and necessity deepens. Read the Harper Hall trilogy alongside or immediately after this.',               page_count: 331, publication_year: 1971 },
+          { title: 'The White Dragon', slug: 'the-white-dragon', status: 'mandatory', seriesLabel: 'Pern #5', note: 'Jaxom and the unique white dragon Ruth. A coming-of-age story woven into a larger mystery about Pern\'s past. Best book in the series by consensus — read after Harper Hall.',  page_count: 497, publication_year: 1978 },
+        ],
+      },
+      {
+        label: 'Harper Hall Trilogy',
+        sublabel: 'YA — read alongside the main trilogy',
+        note: 'Set concurrently with the main trilogy. Menolly\'s story is among the best in the series. Do not skip.',
+        noteType: 'optional',
+        books: [
+          { title: 'Dragonsong',   slug: 'dragonsong',   status: 'mandatory', seriesLabel: 'Harper Hall #1', note: 'Menolly, a girl forbidden from music, finds fire lizards — the tiny ancestors of dragons. One of McCaffrey\'s finest books. Works as a standalone entry point, especially for younger readers.',           page_count: 202, publication_year: 1976 },
+          { title: 'Dragonsinger', slug: 'dragonsinger', status: 'mandatory', seriesLabel: 'Harper Hall #2', note: 'Menolly arrives at Harper Hall. The politics of craft mastery and the cost of talent. Reads fast — you\'ll finish it the same day.',                                                                      page_count: 264, publication_year: 1977 },
+          { title: 'Dragondrums',  slug: 'dragondrums',  status: 'optional',  seriesLabel: 'Harper Hall #3', note: 'Switches protagonist to Piemur. Less essential than the first two but rounds out the Harper Hall world nicely. Read before The White Dragon.',                                                              page_count: 243, publication_year: 1979 },
+        ],
+      },
+      {
+        label: 'Pern History & Expansion',
+        sublabel: 'deeper Pern — best after the core books',
+        books: [
+          { title: 'Dragonsdawn',               slug: 'dragonsdawn',               status: 'optional',      seriesLabel: 'Pern #8',  note: 'The origin story — the colonists arrive on Pern and the first dragons are created. Spoils some mysteries if read first. Rewards readers who already love the world.',                                               page_count: 384, publication_year: 1988 },
+          { title: 'Moreta: Dragonlady of Pern', slug: 'moreta-dragonlady-of-pern', status: 'optional',      seriesLabel: 'Pern #6',  note: 'Set 1,500 turns before Dragonflight during a deadly plague. A standalone tragedy — bittersweet and beautifully written. Best read after the main trilogy.',                                                         page_count: 302, publication_year: 1983 },
+          { title: 'Nerilka\'s Story',           slug: 'nerilkas-story',            status: 'supplementary', seriesLabel: 'Pern #7',  note: 'Short companion novella to Moreta — same plague, different perspective. Only meaningful if you loved Moreta.',                                                                                                      page_count: 224, publication_year: 1986 },
+          { title: 'The Renegades of Pern',      slug: 'the-renegades-of-pern',     status: 'optional',      seriesLabel: 'Pern #9',  note: 'Parallel events to the main trilogy from the perspective of holdless outcasts. Fills in background and resolves loose threads. Best for committed fans.',                                                           page_count: 384, publication_year: 1989 },
+          { title: 'All the Weyrs of Pern',      slug: 'all-the-weyrs-of-pern',     status: 'optional',      seriesLabel: 'Pern #10', note: 'AIVAS — the ancient computer awakens. Pern\'s science fiction roots become explicit here. Divisive but important for the overall arc.',                                                                               page_count: 384, publication_year: 1991 },
+          { title: 'The Masterharper of Pern',   slug: 'the-masterharper-of-pern',  status: 'optional',      seriesLabel: 'Pern #15', note: 'Robinton\'s life from childhood to his role in the main trilogy. A love letter to the Harper Hall. Essential for anyone who fell for Robinton in the earlier books.',                                                  page_count: 432, publication_year: 1998 },
+          { title: 'The Skies of Pern',          slug: 'the-skies-of-pern',         status: 'optional',      seriesLabel: 'Pern #16', note: 'Final Anne McCaffrey solo Pern novel. Deals with the aftermath of Thread\'s end and a new source of conflict. A gentle farewell from McCaffrey to the world she built.',                                              page_count: 368, publication_year: 2001 },
+        ],
+      },
+      {
+        label: 'Extra & Short Fiction',
+        sublabel: 'completionists only',
+        books: [
+          { title: 'The Chronicles of Pern: First Fall', slug: 'the-chronicles-of-pern-first-fall', status: 'supplementary', seriesLabel: 'Pern #11', note: 'Five short stories covering the earliest days of the colony and the first Thread falls. Interesting background but not essential.',           page_count: 245, publication_year: 1993 },
+          { title: 'The Dolphins of Pern',               slug: 'the-dolphins-of-pern',               status: 'supplementary', seriesLabel: 'Pern #12', note: 'T\'lion and his dolphin partner. A gentle, low-stakes side story. More for younger readers or completionists.',                                page_count: 340, publication_year: 1994 },
+          { title: 'A Gift of Dragons',                  slug: 'a-gift-of-dragons',                  status: 'supplementary', seriesLabel: 'Pern #17', note: 'Four short stories, one previously unpublished. Light reading — a treat for fans rather than essential Pern.',                                 page_count: 160, publication_year: 2002 },
+        ],
+      },
+    ],
+    cards: [
+      { title: '🐉 Core trilogy (3)',       body: 'Dragonflight, Dragonquest, The White Dragon. The heart of Pern — read these first.',                                                   color: 'blue'  },
+      { title: '🎵 Harper Hall (3)',        body: 'Menolly\'s story runs parallel to the main trilogy. Dragonsong and Dragonsinger are essential; Dragondrums is optional.',              color: 'blue'  },
+      { title: '📖 Expansion novels (7)',   body: 'Dragonsdawn, Moreta, Renegades, and more. Best appreciated once you love the world.',                                                  color: 'green' },
+      { title: '📄 Short fiction (3)',      body: 'First Fall, Dolphins, and A Gift of Dragons. Completionist territory — skip unless you want everything.',                              color: 'amber' },
+    ],
+    sections: [
+      {
+        heading: 'What makes Pern special',
+        type: 'bullets',
+        bullets: [
+          'The dragon-rider bond is one of the most emotionally resonant relationships in all of fantasy — telepathic, lifelong, and ended only by death. When a dragon dies, the rider often does not survive the grief.',
+          'Pern is technically science fiction — the planet is a lost colony, the dragons are bioengineered from native fire lizards. McCaffrey won the Hugo and Nebula for it. The SF roots never overwhelm the fantasy feel.',
+          'The Harper Hall trilogy is YA before YA was a marketing category. Dragonsong works as a standalone for readers who prefer a quieter, character-driven entry point.',
+          'The series spans thousands of years of in-world history across its 24 novels — from the first colony landing (Dragonsdawn) to the end of Thread (The Skies of Pern).',
+        ],
+      },
+      {
+        heading: 'On the reading order',
+        type: 'prose',
+        prose: "Publication order is not chronological. Dragonsdawn, published in 1988, is set thousands of years before Dragonflight. Reading it first spoils the mystery of Pern's origins that the earlier books slowly reveal. Start with Dragonflight and the Harper Hall trilogy — let the world enchant you before you learn how it was built.",
+      },
+    ],
+    darkness: [
+      { label: 'Main trilogy',       level: 2, desc: 'Some violence and threat — Thread is genuinely dangerous — but light overall' },
+      { label: 'Harper Hall',        level: 1, desc: 'YA — the darkest element is social cruelty and parental neglect' },
+      { label: 'Expansion novels',   level: 2, desc: 'Moreta is the darkest — plague, sacrifice, and tragedy' },
+    ],
+    finishedLabel: 'Finished Pern?',
+    categoryHref: '/categories/epic/',
+    categoryLabel: 'Browse Epic Fantasy',
+    related: ['wheel-of-time', 'memory-sorrow-thorn', 'robin-hobb'],
+  },
 ]
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

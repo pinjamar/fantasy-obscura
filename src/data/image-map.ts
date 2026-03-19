@@ -43,7 +43,17 @@ export type ReadingOrderImageSlug =
   | 'kingkiller'
   | 'robin-hobb'
   | 'black-company'
-  | 'kate-daniels';
+  | 'kate-daniels'
+  | 'acotar'
+  | 'throne-of-glass'
+  | 'blood-and-ash'
+  | 'empyrean'
+  | 'drizzt'
+  | 'dragonlance'
+  | 'divergent'
+  | 'memory-sorrow-thorn'
+  | 'dresden-files'
+  | 'pern';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -68,8 +78,18 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'discworld':     'discworld',
   'kingkiller':    'kingkiller',
   'robin-hobb':    'robin-hobb',
-  'black-company': 'black-company',
-  'kate-daniels':  'kate-daniels',
+  'black-company':        'black-company',
+  'kate-daniels':         'kate-daniels',
+  'acotar':               'acotar',
+  'throne-of-glass':      'throne-of-glass',
+  'blood-and-ash':        'blood-and-ash',
+  'empyrean':             'empyrean',
+  'drizzt':               'drizzt',
+  'dragonlance':          'dragonlance',
+  'divergent':            'divergent',
+  'memory-sorrow-thorn':  'memory-sorrow-thorn',
+  'dresden-files':        'dresden-files',
+  'pern':                 'pern',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────
