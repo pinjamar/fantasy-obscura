@@ -875,10 +875,10 @@ export default function AlchemyTable() {
 
   const TransmuteSquare = () => (
     <div className="w-full max-w-sm min-h-105 rounded-2xl border-2 border-dashed border-amber-300 bg-white/70 backdrop-blur p-5 shadow-inner flex flex-col">
-      <div className="flex-1">
+      <div className="flex-1 flex flex-col justify-end">
         {status === 'idle' && (
-          <div className="h-52 w-full rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-400 text-5xl">
-            📖
+          <div className="h-52 w-full rounded-xl flex items-center justify-center">
+            <img src="/grimplaceholder.png" alt="" className="h-full w-auto rounded-xl" />
           </div>
         )}
         {status === 'loading' && (
@@ -993,7 +993,7 @@ export default function AlchemyTable() {
         </p>
       )}
 
-      <div className="mt-4 flex flex-col gap-2">
+      <div className="mt-4 flex flex-col gap-2 flex-1 justify-center items-center">
         <button
           onClick={transmute}
           disabled={status === 'loading'}

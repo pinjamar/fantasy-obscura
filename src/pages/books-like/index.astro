@@ -7,13 +7,18 @@ import BooksLikeMe from '../../components/BooksLikeMe'
 // Fetch DB tropes for all guide source books in one query
 // Use title-based slugs (how books are stored in DB), not guide short-IDs like 'acotar'
 const toSlug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-const slugs = BOOKS_LIKE.map((e) => toSlug(e.source.title))
+const toDbSlug = (s: string) => toSlug(s.replace(/\s*\([^)]*\)/g, '').trim())
+const getSourceSlug = (e: typeof BOOKS_LIKE[0]) => e.source.db_slug ?? toDbSlug(e.source.title)
+const slugs = BOOKS_LIKE.map((e) => getSourceSlug(e))
 const { data: dbBooks } = await supabaseClient
   .from('books')
-  .select('slug, tropes')
+  .select('slug, tropes, cover_url')
   .in('slug', slugs)
 const dbTropesMap = new Map<string, string[]>(
   (dbBooks ?? []).map((b) => [b.slug, b.tropes ?? []])
+)
+const dbCoverMap = new Map<string, string>(
+  (dbBooks ?? []).filter((b) => b.cover_url && !b.cover_url.includes('archive.org') && !b.cover_url.includes('covers.openlibrary.org')).map((b) => [b.slug, b.cover_url])
 )
 ---
 
@@ -76,7 +81,7 @@ const dbTropesMap = new Map<string, string[]>(
             >
               <div class="relative w-12 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 shrink-0">
                 <img
-                  src={entry.source.cover_url}
+                  src={dbCoverMap.get(getSourceSlug(entry)) || entry.source.cover_url || '/grimplaceholder.png'}
                   alt={entry.source.title}
                   class="absolute inset-0 w-full h-full object-cover"
                   onerror="this.onerror=null;this.src='/grimplaceholder.png';"

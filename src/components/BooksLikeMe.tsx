@@ -31,6 +31,8 @@ export default function BooksLikeMe() {
   const [recs, setRecs] = useState<Recommendation[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [rateLimited, setRateLimited] = useState(false);
+  const [remaining, setRemaining] = useState<number | null>(null);
   const [showDrop, setShowDrop] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -107,6 +109,7 @@ export default function BooksLikeMe() {
     if (!likedBooks.length) return;
     setLoading(true);
     setError('');
+    setRateLimited(false);
     setRecs([]);
     try {
       const res = await fetch('/api/recommend', {
@@ -115,8 +118,10 @@ export default function BooksLikeMe() {
         body: JSON.stringify({ books: likedBooks.map((b) => ({ title: b.title, author: b.author })) }),
       });
       const data = await res.json();
+      if (data.rateLimited) { setRateLimited(true); setError(data.error); return; }
       if (data.error) throw new Error(data.error);
       setRecs(data.recommendations ?? []);
+      if (data.remaining != null) setRemaining(data.remaining);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
@@ -246,7 +251,17 @@ export default function BooksLikeMe() {
         </button>
       )}
 
-      {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
+      {error && (
+        <p className={`mt-3 text-sm ${rateLimited ? 'text-amber-700' : 'text-red-600'}`}>
+          {error}
+          {rateLimited && error.includes('Sign in') && (
+            <> — <a href="/login/" className="underline font-medium">Sign in</a></>
+          )}
+        </p>
+      )}
+      {remaining !== null && !rateLimited && recs.length > 0 && (
+        <p className="mt-2 text-xs text-zinc-400">{remaining} recommendation{remaining !== 1 ? 's' : ''} remaining today</p>
+      )}
 
       {/* Recommendations */}
       {recs.length > 0 && (

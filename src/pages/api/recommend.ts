@@ -2,14 +2,64 @@ import type { APIRoute } from 'astro';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { supabaseClient } from '../../lib/supabaseClient';
 
-export const POST: APIRoute = async ({ request }) => {
+const LIMIT_ANON = 3;
+const LIMIT_AUTH = 10;
+const JSON_HEADERS = { 'Content-Type': 'application/json' };
+
+async function checkRateLimit(key: string, limit: number): Promise<{ allowed: boolean; remaining: number }> {
+  const now = new Date();
+  const resetAt = new Date(now);
+  resetAt.setUTCHours(24, 0, 0, 0); // midnight UTC
+
+  const { data } = await supabaseClient
+    .from('rate_limits')
+    .select('count, reset_at')
+    .eq('key', key)
+    .maybeSingle();
+
+  // Expired or new — reset to 1
+  if (!data || new Date(data.reset_at) <= now) {
+    await supabaseClient.from('rate_limits').upsert({ key, count: 1, reset_at: resetAt.toISOString() });
+    return { allowed: true, remaining: limit - 1 };
+  }
+
+  if (data.count >= limit) {
+    return { allowed: false, remaining: 0 };
+  }
+
+  await supabaseClient.from('rate_limits').update({ count: data.count + 1 }).eq('key', key);
+  return { allowed: true, remaining: limit - data.count - 1 };
+}
+
+export const POST: APIRoute = async ({ request, locals }) => {
+  const user = locals.user;
+  const ip =
+    request.headers.get('cf-connecting-ip') ??
+    request.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
+    'unknown';
+
+  const rateLimitKey = user ? `user:${user.id}` : `ip:${ip}`;
+  const limit = user ? LIMIT_AUTH : LIMIT_ANON;
+
+  const { allowed, remaining } = await checkRateLimit(rateLimitKey, limit);
+
+  if (!allowed) {
+    const message = user
+      ? 'You have used all 10 daily recommendations. Come back tomorrow!'
+      : 'You have used all 3 free recommendations today. Sign in for 10 per day.';
+    return new Response(JSON.stringify({ error: message, rateLimited: true }), {
+      status: 429,
+      headers: JSON_HEADERS,
+    });
+  }
+
   const body = await request.json().catch(() => null);
   const books: { title: string; author: string }[] = body?.books ?? [];
 
   if (!books.length) {
     return new Response(JSON.stringify({ error: 'No books provided' }), {
       status: 400,
-      headers: { 'Content-Type': 'application/json' },
+      headers: JSON_HEADERS,
     });
   }
 
@@ -53,7 +103,7 @@ Respond ONLY with valid JSON in this exact format, no extra text:
   } catch {
     return new Response(JSON.stringify({ error: 'Failed to parse recommendations' }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
+      headers: JSON_HEADERS,
     });
   }
 
@@ -65,7 +115,9 @@ Respond ONLY with valid JSON in this exact format, no extra text:
     .in('title', titles);
 
   const coverMap = new Map<string, { cover_url: string; slug: string }>(
-    (dbBooks ?? []).map((b) => [b.title.toLowerCase(), { cover_url: b.cover_url, slug: b.slug }])
+    (dbBooks ?? [])
+      .filter((b) => b.cover_url && !b.cover_url.includes('archive.org'))
+      .map((b) => [b.title.toLowerCase(), { cover_url: b.cover_url, slug: b.slug }])
   );
 
   const enriched = parsed.recommendations.map((rec) => ({
@@ -74,8 +126,8 @@ Respond ONLY with valid JSON in this exact format, no extra text:
     ...( coverMap.get(rec.title.toLowerCase()) ?? {} ),
   }));
 
-  return new Response(JSON.stringify({ recommendations: enriched }), {
+  return new Response(JSON.stringify({ recommendations: enriched, remaining }), {
     status: 200,
-    headers: { 'Content-Type': 'application/json' },
+    headers: JSON_HEADERS,
   });
 };

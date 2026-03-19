@@ -14,7 +14,7 @@ const { source, aspects, recommendations, related } = entry
 const toSlug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 const authorSlug = toSlug(source.author)
 const seriesSlug = source.series ? toSlug(source.series) : null
-const sourceBookSlug = toSlug(source.title)
+const sourceBookSlug = source.db_slug ?? toSlug(source.title.replace(/\s*\([^)]*\)/g, '').trim())
 
 const amazonSource   = `https://www.amazon.com/s?k=${encodeURIComponent(source.title + ' ' + source.author)}`
 const bookshopSource = `https://bookshop.org/search?keywords=${encodeURIComponent(source.title)}`
@@ -29,6 +29,7 @@ const sourcetropes: string[] = dbBook?.tropes?.length ? dbBook.tropes : source.t
 
 function upgradeCoverUrl(url: string | null | undefined): string {
   if (!url) return '';
+  if (url.includes('archive.org')) return '';
   if (url.includes('books.google.com/books/content')) {
     const m = url.match(/[?&]id=([^&]+)/);
     if (m) return `https://books.google.com/books/publisher/content/images/frontcover/${m[1]}?fife=w400-h600`;
@@ -36,7 +37,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
   return url.replace(/-M\.jpg/, '-L.jpg');
 }
 
-const sourceCover: string = upgradeCoverUrl(source.cover_url || dbBook?.cover_url)
+const sourceCover: string = upgradeCoverUrl(dbBook?.cover_url || source.cover_url)
 
 // Fetch covers for all rec books from DB (more reliable than hardcoded OpenLibrary ISBNs)
 const recSlugs = aspects.flatMap((a) => a.recs.map((r) => toSlug(r.title)))
@@ -47,7 +48,7 @@ const { data: dbRecCovers } = await supabaseClient
   .in('slug', allCheckSlugs)
 const dbSlugSet = new Set((dbRecCovers ?? []).map((b) => b.slug))
 const dbRecCoverMap = new Map<string, string>(
-  (dbRecCovers ?? []).filter((b) => b.cover_url).map((b) => [b.slug, b.cover_url])
+  (dbRecCovers ?? []).filter((b) => b.cover_url && !b.cover_url.includes('archive.org')).map((b) => [b.slug, b.cover_url])
 )
 ---
 
@@ -124,14 +125,6 @@ const dbRecCoverMap = new Map<string, string>(
         ) : null })()}
       </div>
 
-      <!-- SEO intro -->
-      <p class="mt-4 text-zinc-500 text-sm leading-relaxed">
-        Looking for books like <span class="font-medium text-zinc-700">{source.title}</span>?
-        {source.series && source.series_number != null
-          ? ` These picks capture what makes ${source.series} worth reading.`
-          : ` These picks capture what makes ${source.author}'s work worth reading.`}
-      </p>
-
       <!-- Trope pills -->
       <div class="mt-4 flex flex-wrap gap-2">
         {sourcetropes.map((t) => (
@@ -149,7 +142,13 @@ const dbRecCoverMap = new Map<string, string>(
 
   <!-- ── WHAT YOU'RE REALLY LOOKING FOR ─────────────────────────── -->
   <section class="mb-12">
-    <h2 class="text-2xl font-bold text-zinc-900 mb-8">What you're really looking for?</h2>
+    <h2 class="text-2xl font-bold text-zinc-900 mb-3">What you're really looking for?</h2>
+    <p class="text-zinc-500 text-sm leading-relaxed mb-8">
+      Looking for books like <span class="font-medium text-zinc-700">{source.title}</span>?
+      {source.series && source.series_number != null
+        ? ` These picks capture what makes ${source.series} worth reading.`
+        : ` These picks capture what makes ${source.author}'s work worth reading.`}
+    </p>
     <div class="space-y-8">
       {aspects.map((aspect) => (
         <div>
@@ -159,7 +158,7 @@ const dbRecCoverMap = new Map<string, string>(
               const h = getHeat(r.heat_level)
               const seriesLabel = r.series_label ?? (r.standalone ? 'Standalone' : 'Series')
               const recSlug = toSlug(r.title)
-              const recCover = dbRecCoverMap.get(recSlug) ?? r.cover_url
+              const recCover = dbRecCoverMap.get(recSlug) ?? (r.cover_url?.includes('archive.org') ? '' : r.cover_url)
               return (
                 <div class="rounded-xl border border-violet-200 bg-violet-50 p-4 flex gap-5">
                   <!-- Cover + Amazon -->
@@ -209,9 +208,17 @@ const dbRecCoverMap = new Map<string, string>(
                       ))}
                     </div>
                     {r.warning && (
-                      <p class="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
-                        <span class="font-semibold">⚠️ Content Warnings: </span>{r.warning}
-                      </p>
+                      <div class="relative mt-1">
+                        <p class="blur-sm select-none transition-[filter] duration-300 pointer-events-none text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+                          <span class="font-semibold">⚠️ Content Warnings: </span>{r.warning}
+                        </p>
+                        <button
+                          onclick="this.previousElementSibling.classList.remove('blur-sm','select-none','pointer-events-none');this.remove()"
+                          class="absolute inset-0 flex items-center justify-center text-xs font-semibold text-zinc-500 hover:text-zinc-800 transition-colors"
+                        >
+                          Click to reveal Content Warnings
+                        </button>
+                      </div>
                     )}
                   </div>
                 </div>
