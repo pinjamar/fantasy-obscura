@@ -56,6 +56,15 @@ while (true) {
     </div>
   </div>
 
-  <BookDisplay client:load initialBooks={allBooks as any} />
+  <BookDisplay
+    client:load
+    initialBooks={allBooks as any}
+    featuredTropes={[
+      'Chosen One', 'Found Family', 'Enemies to Lovers', 'Slow Burn',
+      'Anti-Hero', 'Political Intrigue', 'Quest', 'Fated Mates',
+      'Morally Grey Hero', 'Revenge Story', 'Coming of Age', 'Prophecy',
+      'Betrayal', 'Forbidden Romance', 'Ancient Evil Awakens',
+    ]}
+  />
 
 </Layout>

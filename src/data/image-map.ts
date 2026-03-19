@@ -53,7 +53,12 @@ export type ReadingOrderImageSlug =
   | 'divergent'
   | 'memory-sorrow-thorn'
   | 'dresden-files'
-  | 'pern';
+  | 'pern'
+  | 'grishaverse'
+  | 'inheritance-cycle'
+  | 'mistborn'
+  | 'shannara'
+  | 'valdemar';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -90,6 +95,11 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'memory-sorrow-thorn':  'memory-sorrow-thorn',
   'dresden-files':        'dresden-files',
   'pern':                 'pern',
+  'grishaverse':          'grishaverse',
+  'inheritance-cycle':    'inheritance-cycle',
+  'mistborn':             'mistborn',
+  'shannara':             'shannara',
+  'valdemar':             'valdemar',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

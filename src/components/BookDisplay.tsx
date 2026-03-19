@@ -432,7 +432,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                     </span>
                   )}
                   {book.avg_rating && (
-                    <span className="text-zinc-500 flex items-center gap-1"><Stars rating={book.avg_rating} /> {book.avg_rating.toFixed(1)}</span>
+                    <span className="text-zinc-500 flex items-center gap-1"><Stars rating={book.avg_rating} /> {book.avg_rating.toFixed(2)}</span>
                   )}
                 </div>
 

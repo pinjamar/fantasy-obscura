@@ -27,6 +27,7 @@ function sortKey(name: string) {
 const curatedSeries = READING_ORDERS.map((e) => ({
   slug: e.slug,
   name: e.name,
+  author: e.author,
   bookCount: e.groups
     ? e.groups.reduce((sum, g) => sum + g.books.length, 0)
     : (e.books?.length ?? 0),
@@ -76,10 +77,10 @@ const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
       id="series-search"
       type="text"
       placeholder="Search series, author, or book title…"
-      class="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 pl-10 text-sm shadow-sm focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 transition"
+      class="w-full rounded-xl border-2 border-zinc-300 bg-white px-4 py-3 pl-10 text-sm shadow-md focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 transition"
       autocomplete="off"
     />
-    <svg class="absolute left-3 top-3.5 h-4 w-4 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg class="absolute left-3 top-3.5 h-4 w-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
     </svg>
   </div>
@@ -91,7 +92,7 @@ const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
       return (
         <a
           href={`/reading-orders/${s.slug}/`}
-          data-search={`${s.name.toLowerCase()} ${seriesSearchMap.get(s.name) ?? ''}`}
+          data-search={`${s.name.toLowerCase()} ${s.author.toLowerCase()} ${seriesSearchMap.get(s.name) ?? ''}`}
           class="series-card group relative overflow-hidden rounded-xl border transition-all hover:shadow-lg hover:border-purple-200 bg-white flex flex-col"
         >
           {imgSlug ? (

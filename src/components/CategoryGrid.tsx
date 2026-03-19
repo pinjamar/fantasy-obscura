@@ -712,14 +712,14 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
               key={cat.slug}
               onClick={() => setSelectedCategory(selectedCategory === cat.slug ? null : cat.slug)}
               onDoubleClick={() => { window.location.href = `/categories/${cat.slug}/`; }}
-              className={`group relative overflow-hidden rounded-xl border p-4 transition-all hover:shadow-lg text-left ${
+              className={`group relative overflow-hidden rounded-xl border border-zinc-300 p-4 transition-all shadow-sm hover:shadow-lg text-center ${
                 selectedCategory === cat.slug ? 'ring-2 ring-blue-500 shadow-lg' : ''
               }`}
             >
-              <div className={`absolute inset-0 bg-linear-to-br ${cat.gradient} opacity-0 group-hover:opacity-100 transition-opacity ${selectedCategory === cat.slug ? 'opacity-100' : ''}`} />
+              <div className={`absolute inset-0 bg-linear-to-br ${cat.gradient} transition-opacity ${selectedCategory === cat.slug ? 'opacity-100' : 'opacity-30 group-hover:opacity-100'}`} />
               <div className="relative">
-                <div className="font-medium">{cat.name}</div>
-                <div className="text-sm text-zinc-600">{cat.description}</div>
+                <div className="font-semibold text-lg">{cat.name}</div>
+                <div className="text-xs text-zinc-600 italic">{cat.description}</div>
               </div>
             </button>
           ))}
