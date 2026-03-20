@@ -93,12 +93,14 @@ const ogImage = image || `${SITE}/og-default.png`;
           <a class="hover:underline whitespace-nowrap" href="/authors/">✍️ Authors</a>
         </nav>
 
-        <div class="flex items-center gap-3 shrink-0 text-sm">
+        <div class="flex items-center gap-3 shrink-0 text-sm ml-auto">
           <!-- Burger button (mobile only) -->
-          <button id="burger" class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 items-center" aria-label="Menu">
-            <span class="block w-5 h-0.5 bg-zinc-700 transition-all"></span>
-            <span class="block w-5 h-0.5 bg-zinc-700 transition-all"></span>
-            <span class="block w-5 h-0.5 bg-zinc-700 transition-all"></span>
+          <button id="burger" class="md:hidden p-1" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3f3f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
           </button>
 
           <!-- Auth -->

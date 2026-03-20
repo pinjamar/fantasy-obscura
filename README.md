@@ -607,9 +607,19 @@ More curated fantasy picks → thegrimoire.co
 
 ### Hybrid Static/Server Architecture (Cloudflare 1102 long-term fix)
 
+**Current status (as of March 2026)**
+
+The 1102 crashes are resolved. The root causes were:
+- Middleware making a Supabase auth call on every request, even for anonymous visitors → **fixed**: middleware now skips Supabase entirely when no auth cookie is present
+- `index.astro` and `books/index.astro` doing `while(true)` loops fetching all 47 000 books server-side → **fixed**: both pages now render instantly, books load client-side via `/api/books`
+- `authors/index.astro` calling `getAllAuthors()` (another full books scan) → **fixed**: per-author stats pre-computed into the `authors` table via `scripts/update-author-stats.mjs`; page now does a single targeted query
+- `authors/[slug].astro` calling `getAllAuthors()` just to resolve an author name → **fixed**: uses `getAuthorProfile(slug)` directly
+
+The only remaining slowness is `/books/` taking a moment to populate — that's expected UX for a client-side fetch of 47 000 books and is not causing crashes.
+
 **Background**
 
-The site currently runs as `output: 'server'` — every page, including fully public content like book pages, trope pages, and reading orders, is rendered on-demand by a Cloudflare Worker on each request. This means every visitor triggers a live Supabase query before they see anything. The middleware fix (already done) eliminates the auth round trip for anonymous visitors, but the underlying architecture is still fragile under load or cold starts.
+The site runs as `output: 'server'` — every page is rendered on-demand by a Cloudflare Worker. This is fine for the current load. If traffic grows significantly, the proper long-term fix is switching public content pages to static pre-rendering.
 
 **The proper fix**
 
@@ -632,12 +642,11 @@ Switch public content pages to `output: 'static'` — pre-built as plain HTML at
 **When to do this**
 
 Do this when:
-- The site is getting consistent traffic and you're seeing 1102 errors again despite the middleware fix, OR
-- You're about to do a push (social media, ProductHunt, etc.) and need the site to be bulletproof under a traffic spike, OR
-- Build times are fast enough that pre-rendering ~500 book pages isn't painful
+- You're about to do a big push (social media, ProductHunt, etc.) and want the site bulletproof under a spike, OR
+- 1102 errors come back under sustained real traffic
 
-Don't do this yet if:
-- You're still adding/changing lots of content frequently (static pages rebuild on every deploy — fine, but worth knowing)
-- You haven't confirmed the middleware fix resolved the 1102 issue
+Don't do this yet:
+- You're still adding/changing content frequently (static pages rebuild on every deploy)
+- The site isn't under meaningful load — current fixes are holding fine
 
 **Effort estimate:** half a day. The config change is one line. The real work is moving the navbar auth to client-side and testing that all pre-rendered pages build without errors.

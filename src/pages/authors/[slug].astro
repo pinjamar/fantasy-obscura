@@ -8,15 +8,20 @@ const { slug } = Astro.params;
 
 if (!slug) return Astro.redirect('/authors/');
 
-const allAuthors = await getAllAuthors();
-const author = allAuthors.find((a) => a.slug === slug);
+// Get author name from the authors table first (single targeted query).
+// Only fall back to the expensive getAllAuthors() scan if no profile entry exists.
+const profile = await getAuthorProfile(slug);
 
-if (!author) return new Response(null, { status: 404, statusText: 'Not Found' });
+let authorName: string | null = profile?.name ?? null;
+if (!authorName) {
+  const allAuthors = await getAllAuthors();
+  const found = allAuthors.find((a) => a.slug === slug);
+  if (!found) return new Response(null, { status: 404, statusText: 'Not Found' });
+  authorName = found.name;
+}
 
-const [books, profile] = await Promise.all([
-  getBooksByAuthor(author.name),
-  getAuthorProfile(slug),
-]);
+const author = { name: authorName };
+const books = await getBooksByAuthor(author.name);
 
 // Fetch photos for similar authors (resolved after similarAuthors is computed below)
 

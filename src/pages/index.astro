@@ -2,20 +2,6 @@
 import Layout from "../components/Layout.astro";
 import CategoryGrid from "../components/CategoryGrid";
 import BookSearch from "../components/BookSearch";
-import { getBooks } from "../lib/db/books";
-
-// Fetch all books server-side so New Releases & Community Favourites render immediately
-const BATCH = 1000;
-let allBooks: unknown[] = [];
-let page = 1;
-let totalCount = 0;
-while (true) {
-  const result = await getBooks({}, { page, pageSize: BATCH, sort: 'rating_desc' });
-  if (page === 1) totalCount = result.count;
-  allBooks = allBooks.concat(result.data);
-  if (allBooks.length >= totalCount || result.data.length < BATCH) break;
-  page++;
-}
 ---
 
 <Layout title="The Grimoire — Fantasy Book Guides, Darkness Ratings & Reading Orders" description="Fantasy book guides with darkness ratings, trope tags, and reading orders — so you always know what you're getting into before you start.">
@@ -46,5 +32,5 @@ while (true) {
 
   <BookSearch client:load />
 
-  <CategoryGrid client:load initialBooks={allBooks as any} />
+  <CategoryGrid client:load />
 </Layout>

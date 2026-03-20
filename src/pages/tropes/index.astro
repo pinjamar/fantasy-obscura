@@ -77,7 +77,7 @@ const CATEGORY_META = {
               <a
                 href={`/tropes/${t.slug}/`}
                 data-search={`${t.name.toLowerCase()} ${t.description.toLowerCase()}`}
-                class="trope-card group flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors"
+                class="trope-card group flex gap-3 items-start px-4 py-3 rounded-xl border border-zinc-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors min-w-0 overflow-hidden"
               >
                 <span class="text-lg leading-none mt-0.5 shrink-0">{getTropeIcon(t.slug)}</span>
                 <div class="min-w-0">

@@ -1,21 +1,6 @@
 ---
 import Layout from '../../components/Layout.astro';
 import BookDisplay from '../../components/BookDisplay';
-import { getBooks } from '../../lib/db/books';
-
-const user = Astro.locals.user;
-
-const BATCH = 1000;
-let allBooks: unknown[] = [];
-let page = 1;
-let totalCount = 0;
-while (true) {
-  const result = await getBooks({}, { page, pageSize: BATCH, sort: 'rating_desc' });
-  if (page === 1) totalCount = result.count;
-  allBooks = allBooks.concat(result.data);
-  if (allBooks.length >= totalCount || result.data.length < BATCH) break;
-  page++;
-}
 ---
 
 <Layout title="All Fantasy Books | The Grimoire" description="Browse our fantasy book database — filter by darkness level, tropes, subgenre, magic system, pacing, and more. Find your next read with confidence.">
@@ -58,7 +43,6 @@ while (true) {
 
   <BookDisplay
     client:load
-    initialBooks={allBooks as any}
     featuredTropes={[
       'Chosen One', 'Found Family', 'Enemies to Lovers', 'Slow Burn',
       'Anti-Hero', 'Political Intrigue', 'Quest', 'Fated Mates',

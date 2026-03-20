@@ -225,7 +225,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
   }
 
   return (
-    <div ref={topRef}>
+    <div ref={topRef} className="w-full min-w-0">
       {/* Search bar */}
       <div className="relative mb-4">
         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none">
@@ -251,7 +251,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
 
       {/* Popular trope chips */}
       {featuredTropes && featuredTropes.length > 0 && (
-        <div className="mb-4">
+        <div className="mb-4 min-w-0">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-sm text-zinc-500 mr-1">Tropes:</span>
             {featuredTropes.map((trope) => (
@@ -301,7 +301,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
       </div>
 
       {/* Darkness + Heat filters in one row */}
-      <div className="flex flex-wrap items-center gap-6 mb-6">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mb-6">
         <div className="flex items-center gap-1">
           <span className="text-sm font-medium text-zinc-700 mr-2">Darkness:</span>
           {[1, 2, 3, 4, 5].map((level) => (
@@ -465,7 +465,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                 )}
 
                 {book.synopsis && (
-                  <p className="hidden sm:block text-xs text-zinc-400 line-clamp-3 leading-relaxed">{book.synopsis}</p>
+                  <p className="hidden sm:line-clamp-3 text-xs text-zinc-400 leading-relaxed">{book.synopsis}</p>
                 )}
 
               </div>

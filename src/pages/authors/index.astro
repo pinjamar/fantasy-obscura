@@ -1,19 +1,22 @@
 ---
 import Layout from '../../components/Layout.astro';
-import { getAllAuthors } from '../../lib/db/books';
 import { supabaseClient } from '../../lib/supabaseClient';
 
-const [authors, profilesRes] = await Promise.all([
-  getAllAuthors(),
-  supabaseClient.from('authors').select('slug, photo_url'),
-]);
+type AuthorRow = {
+  name: string;
+  slug: string;
+  photo_url: string | null;
+  book_count: number | null;
+  top_genres: string[] | null;
+  avg_rating: number | null;
+};
 
-// Build slug → photo_url map
-type ProfileRow = { slug: string; photo_url: string | null };
-const photoMap = new Map<string, string | null>();
-for (const p of (profilesRes.data ?? []) as ProfileRow[]) {
-  photoMap.set(p.slug, p.photo_url);
-}
+const { data } = await supabaseClient
+  .from('authors')
+  .select('name, slug, photo_url, book_count, top_genres, avg_rating')
+  .order('name');
+
+const authors = (data ?? []) as unknown as AuthorRow[];
 
 // Group by first letter of last name for the A–Z jump nav
 // Strips parenthetical pen names and trailing suffixes before picking last token
@@ -40,7 +43,9 @@ const letters = [...new Set(authors.map((a) => normalizeInitial(lastName(a.name)
 
 const grouped = letters.map((letter) => ({
   letter,
-  authors: authors.filter((a) => normalizeInitial(lastName(a.name)[0]) === letter),
+  authors: authors
+    .filter((a) => normalizeInitial(lastName(a.name)[0]) === letter)
+    .sort((a, b) => lastName(a.name).localeCompare(lastName(b.name))),
 }));
 
 // Avatar colour — deterministic from name
@@ -60,6 +65,7 @@ function authorColor(name: string): string {
   <div class="mb-6">
     <h1 class="text-3xl font-bold tracking-tight">Authors</h1>
     <p class="mt-2 text-zinc-600">{authors.length} authors in our database</p>
+
   </div>
 
   <!-- Search bar -->
@@ -99,13 +105,13 @@ function authorColor(name: string): string {
             <a
               href={`/authors/${author.slug}/`}
               data-name={author.name.toLowerCase()}
-              data-bookcount={author.bookCount}
-              class={`author-card flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group${author.bookCount <= 1 ? ' default-hidden' : ''}`}
+              data-bookcount={author.book_count ?? 0}
+              class={`author-card flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group${(author.book_count ?? 0) <= 1 ? ' default-hidden' : ''}`}
             >
               <!-- Avatar / Photo -->
-              {photoMap.get(author.slug) ? (
+              {author.photo_url ? (
                 <img
-                  src={photoMap.get(author.slug)!}
+                  src={author.photo_url}
                   alt={author.name}
                   class="shrink-0 w-20 h-20 rounded-xl object-cover shadow-sm"
                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
@@ -125,14 +131,14 @@ function authorColor(name: string): string {
                   {author.name}
                 </p>
                 <p class="text-xs text-zinc-500 mt-0.5">
-                  {author.bookCount} {author.bookCount === 1 ? 'book' : 'books'}
-                  {author.avgRating != null && (
-                    <span class="ml-2">· ★ {author.avgRating}</span>
+                  {author.book_count ?? 0} {(author.book_count ?? 0) === 1 ? 'book' : 'books'}
+                  {author.avg_rating != null && (
+                    <span class="ml-2">· ★ {author.avg_rating}</span>
                   )}
                 </p>
-                {author.topGenres.length > 0 && (
+                {(author.top_genres ?? []).length > 0 && (
                   <div class="flex flex-wrap gap-1 mt-1.5">
-                    {author.topGenres.map((g) => (
+                    {(author.top_genres ?? []).map((g) => (
                       <span class="text-xs bg-purple-50 text-purple-700 px-1.5 py-0.5 rounded">
                         {g}
                       </span>

@@ -701,7 +701,8 @@ export default function AlchemyTable() {
     if (status === 'done' && resultsRef.current) {
       const isMobile = window.innerWidth < 1024;
       if (isMobile) {
-        resultsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const top = resultsRef.current.getBoundingClientRect().top + window.scrollY - 72;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     }
   }, [status, bookIndex]);
