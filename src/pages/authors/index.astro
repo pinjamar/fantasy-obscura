@@ -16,13 +16,21 @@ for (const p of (profilesRes.data ?? []) as ProfileRow[]) {
 }
 
 // Group by first letter of last name for the A–Z jump nav
-// Strips trailing suffixes (Jr., Sr., II, III, IV, etc.) before picking last token
+// Strips parenthetical pen names and trailing suffixes before picking last token
 const SUFFIXES = /^(jr\.?|sr\.?|ii|iii|iv|v|esq\.?)$/i;
+const stripParens = (n: string) => {
+  // Remove balanced (...) groups, then strip any leftover ( ) chars
+  const cleaned = n.replace(/\([^)]*\)/g, '').replace(/[()]/g, '').replace(/\s+/g, ' ').trim();
+  if (cleaned) return cleaned;
+  // Entire name was parenthetical — strip just the brackets, keep the text
+  return n.replace(/[()]/g, '').replace(/\s+/g, ' ').trim() || n;
+};
 const lastName = (n: string) => {
-  const parts = n.trim().split(/\s+/);
+  const parts = stripParens(n).split(/\s+/).filter(Boolean);
   while (parts.length > 1 && SUFFIXES.test(parts[parts.length - 1])) parts.pop();
   return parts.at(-1) ?? n;
 };
+const authorInitial = (n: string) => stripParens(n)[0]?.toUpperCase() ?? '?';
 
 const letters = [...new Set(authors.map((a) => lastName(a.name)[0].toUpperCase()))].sort();
 
@@ -99,11 +107,11 @@ function authorColor(name: string): string {
                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
                 />
                 <div class={`shrink-0 w-20 h-20 rounded-xl ${authorColor(author.name)} items-center justify-center text-white font-bold text-xl hidden`}>
-                  {author.name[0].toUpperCase()}
+                  {authorInitial(author.name)}
                 </div>
               ) : (
                 <div class={`shrink-0 w-20 h-20 rounded-xl ${authorColor(author.name)} flex items-center justify-center text-white font-bold text-xl`}>
-                  {author.name[0].toUpperCase()}
+                  {authorInitial(author.name)}
                 </div>
               )}
 

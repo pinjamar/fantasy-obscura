@@ -125,7 +125,6 @@ const QUERIES = [
   'inauthor:"alix e. harrow" fantasy',
   'inauthor:"juliet marillier" fantasy',
   'inauthor:"s.a. chakraborty" fantasy',
-  'inauthor:"shannon chakraborty" fantasy',
   // ── Classic / seminal authors ───────────────────────────────────────────────
   'inauthor:"j.r.r. tolkien" fantasy',
   'inauthor:"c.s. lewis" fantasy',
@@ -145,6 +144,15 @@ const QUERIES = [
   'inauthor:"lloyd alexander" fantasy',
   `inauthor:"madeleine l'engle" fantasy`,
   'inauthor:"robin mckinley" fantasy',
+  'inauthor:"piers anthony" fantasy',
+  'inauthor:"jacqueline carey" fantasy',
+  'inauthor:"orson scott card" fantasy',
+  'inauthor:"stephen king" fantasy',
+  'inauthor:"andre norton" fantasy',
+  'inauthor:"marion zimmer bradley" fantasy',
+  'inauthor:"susan cooper" fantasy',
+  'inauthor:"michael ende" fantasy',
+  'inauthor:"tim powers" fantasy',
   'inauthor:"dave duncan" fantasy',
   'inauthor:"david farland" fantasy',
   'inauthor:"michael a. stackpole" fantasy',
@@ -195,6 +203,7 @@ const QUERIES = [
   'inauthor:"susanne valenti" fantasy',
   'inauthor:"penn cole" fantasy',
   'inauthor:"rachel gillig" fantasy',
+  'inauthor:"harley laroux" fantasy',
   'inauthor:"kristen ciccarelli" fantasy',
   'inauthor:"amber v. nicole" fantasy',
   'inauthor:"hannah nicole maehrer" fantasy',
@@ -228,10 +237,13 @@ const QUERIES = [
   'inauthor:"kerri maniscalco" fantasy',
   'inauthor:"sangu mandanna" fantasy',
   'inauthor:"olivia atwater" fantasy',
-  'inauthor:"rachel gillig" fantasy',
-  'inauthor:"senlinyu" fantasy',
-  'inauthor:"rachel gillig" fantasy',
   // ── YA Fantasy ──────────────────────────────────────────────────────────────
+  'inauthor:"kristin cashore" fantasy',
+  'inauthor:"jonathan stroud" fantasy',
+  'inauthor:"john flanagan" fantasy',
+  'inauthor:"jessica townsend" fantasy',
+  'inauthor:"nnedi okorafor" fantasy',
+  'inauthor:"pierce brown" fantasy',
   'inauthor:"veronica roth" fantasy',
   'inauthor:"marie lu" fantasy',
   'inauthor:"victoria aveyard" fantasy',
@@ -342,6 +354,9 @@ const QUERIES = [
   'inauthor:"gareth hanrahan" fantasy',
   'inauthor:"jen williams" fantasy',
   'inauthor:"daniel abraham" fantasy',
+  // ── Historical fantasy ───────────────────────────────────────────────────────
+  'inauthor:"harry turtledove" fantasy',
+  'inauthor:"mary robinette kowal" fantasy',
   // ── Mythology / folklore retelling ──────────────────────────────────────────
   'inauthor:"madeline miller" fantasy',
   'inauthor:"pat barker" fantasy',
@@ -517,7 +532,7 @@ const QUERIES = [
 ];
 
 // Require averageRating to exist — primary quality gate
-const MIN_AVG_RATING = 3.5;
+const MIN_AVG_RATING = 3.0;
 
 // ── Env checks ────────────────────────────────────────────────────────────────
 
@@ -575,16 +590,138 @@ function extractISBN(item) {
 /**
  * Normalize a title for fuzzy deduplication.
  * "Mistborn: The Final Empire" and "The Final Empire" both → "final empire"
- * so we won't import them as two separate books.
+ * "The Name of the Wind (Kingkiller Chronicle, Book 1)" → "name of the wind"
  */
 function normalizeTitle(title) {
   let t = title.toLowerCase().trim();
+  // Strip parenthetical series info: "Title (Series, Book 1)" → "Title"
+  t = t.replace(/\s*\(.*?\)\s*$/, '').trim();
   // Strip series prefix (everything up to and including the first colon)
   const colonIdx = t.indexOf(':');
   if (colonIdx > 1) t = t.slice(colonIdx + 1).trim();
   // Remove leading article
   t = t.replace(/^(the|a|an)\s+/, '');
   return t.replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Clean a synopsis by stripping common marketing preamble sentences.
+ * Google Books often prepends "#1 NYT Bestseller" or "From the author of…" blurbs
+ * that make lousy synopses. Strip them, keeping the actual plot description.
+ */
+function cleanSynopsis(raw) {
+  if (!raw) return null;
+  // Split into sentences and drop leading ones that are pure marketing
+  const PROMO_PATTERNS = [
+    /^#\d/,                                    // "#1 New York Times…"
+    /^a #\d/i,
+    /^new york times best/i,
+    /^instant new york times/i,
+    /^national book award/i,
+    /^hugo award/i,
+    /^nebula award/i,
+    /^\*{1,3}[^*]/,                            // ***Starred review***
+    /^from the (author|creator|bestselling)/i, // "From the author of…"
+    /^the (author|creator) of/i,
+    /^by the (author|creator)/i,
+    /^a (new york times|usa today|wall street)/i,
+    /^soon to be (a|an) (major|netflix|hbo|amazon)/i,
+    /^now (a|an) (major|netflix|hbo|amazon)/i,
+    /^(a|an) (instant|major) bestseller/i,
+    /^(a|an) (stunning|breathtaking|gripping|thrilling|dazzling|spellbinding|unforgettable) (new novel|debut|fantasy)/i,
+  ];
+
+  // Split on sentence boundaries (period/exclamation followed by space or end)
+  const sentences = raw.split(/(?<=[.!?])\s+/);
+  let start = 0;
+  for (let i = 0; i < Math.min(sentences.length, 5); i++) {
+    const s = sentences[i].trim();
+    if (PROMO_PATTERNS.some((p) => p.test(s))) {
+      start = i + 1;
+    } else {
+      break; // stop at first non-promo sentence
+    }
+  }
+
+  const cleaned = sentences.slice(start).join(' ').trim();
+  // If we stripped too much and are left with nothing meaningful, use original
+  return cleaned.length >= 80 ? cleaned.slice(0, 2000) : raw.slice(0, 2000);
+}
+
+function normalizeAuthor(author) {
+  return (author || '')
+    .toLowerCase()
+    .replace(/\./g, '')
+    .replace(/[^a-z0-9\s]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function makeAuthorTitleKey(title, authors) {
+  return `${normalizeTitle(title)}__${normalizeAuthor(authors?.[0] ?? '')}`;
+}
+
+function looksLikeJunkTitle(title) {
+  const t = (title || '').toLowerCase();
+  const patterns = [
+    /\bantho?logy\b/, /\bomnibus\b/, /\bbox(ed)?\s+set\b/,
+    /\bcomplete\s+(trilogy|series|collection)\b/, /\bcollected\b/,
+    /\band other stories\b/, /\bshort stor(y|ies)\b/, /\bnovelette\b/,
+    /\bguide\b/, /\bcompanion\b/, /\bart of\b/, /\bmaking of\b/,
+    /\bcookbook\b/, /\bworkbook\b/, /\bcoloring book\b/, /\bactivity book\b/,
+    /\bjournal\b/, /\bnotebook\b/, /\bplanner\b/, /\bcalendar\b/, /\bdiary\b/,
+    /\bstudy guide\b/, /\breader'?s guide\b/, /\breading group\b/,
+    /\bbook club guide\b/, /\bcritical essay\b/, /\banalysis of\b/,
+    /\bcriticism\b/, /\bannotated\b/, /\bbiography of\b/,
+    /\bdeluxe edition\b/, /\bspecial edition\b/, /\bcollector'?s edition\b/,
+    /\billustrated edition\b/, /\blarge[\s-]print\b/, /\babridged\b/,
+    /\bgraphic (novel|adaptation)\b/, /\bmanga\b/, /\bcomic book\b/, /\bcomics\b/,
+    /\bsummary of\b/, /\breview of\b/, /\bsynopsis of\b/, /\bplot summary\b/,
+    /\bbooks?\s+\d+\s*(to|-)\s*\d+\b/, /\bvolumes?\s+\d+\s*(to|-)\s*\d+\b/,
+    /\b\d+-book\b/,
+  ];
+  return patterns.some((r) => r.test(t));
+}
+
+function hasBadCategories(categories) {
+  const joined = (categories ?? []).join(' ').toLowerCase();
+  return [
+    'study aids', 'juvenile nonfiction', 'literary criticism',
+    'comics & graphic novels', 'games & activities',
+    'reference', 'body, mind & spirit', 'performing arts',
+  ].some((k) => joined.includes(k));
+}
+
+function scoreCandidate(item, book) {
+  const info = item.volumeInfo ?? {};
+  let score = 0;
+  if (book.cover_url) score += 2;
+  if (book.synopsis) score += 2;
+  if (book.isbn) score += 2;
+  if (book.publication_year) score += 1;
+  if (book.page_count >= 180 && book.page_count <= 1200) score += 1;
+  if ((info.ratingsCount ?? 0) > 20) score += 1;
+  return score;
+}
+
+/**
+ * From a raw page of Google Books items, extract valid books, then keep only
+ * the best-scoring edition per author-title pair. This prevents importing
+ * paperback + hardcover + anniversary edition of the same book.
+ */
+function pickBestCandidates(items) {
+  const best = new Map();
+  for (const item of items) {
+    const book = extractBookData(item);
+    if (!book) continue;
+    const key = book.authorTitleKey;
+    const score = scoreCandidate(item, book);
+    const current = best.get(key);
+    if (!current || score > current.score) {
+      best.set(key, { book, score });
+    }
+  }
+  return [...best.values()].map((x) => x.book);
 }
 
 // ── Open Library fallback ─────────────────────────────────────────────────────
@@ -671,92 +808,9 @@ function extractBookData(item) {
   if (info.averageRating != null && info.averageRating < MIN_AVG_RATING)
     return null;
 
-  // Skip non-novel categories / junk
-  const cats = (info.categories ?? []).join(' ').toLowerCase();
-  const title = info.title.toLowerCase();
-  const skipKeywords = [
-    // Multi-book bundles & collections
-    'anthology',
-    'omnibus',
-    'boxed set',
-    'box set',
-    'complete trilogy',
-    'complete series',
-    'complete collection',
-    '3-book',
-    '4-book',
-    '5-book',
-    '6-book',
-    '7-book',
-    '8-book',
-    'books 1-',
-    'volumes 1-',
-    'the complete ',
-    'collected works',
-    'and other stories',
-    'tales of',
-    'tales from',
-    'stories from',
-    'selected works',
-    'collected stories',
-    'the best of',
-    // Short fiction
-    'short stories',
-    'short story',
-    'novelette',
-    // Non-fiction / tie-in
-    'guide to',
-    'companion to',
-    'art of',
-    'making of',
-    'the world of',
-    'cookbook',
-    'workbook',
-    'coloring book',
-    'activity book',
-    'journal',
-    'notebook',
-    'planner',
-    'calendar',
-    'diary',
-    // Critical / academic
-    'study guide',
-    "reader's guide",
-    "readers' guide",
-    'reading group',
-    'book club guide',
-    'critical essay',
-    'analysis of',
-    'criticism',
-    'annotated edition',
-    'annotated ',
-    'with annotations',
-    'interview with',
-    'biography of',
-    // Special editions that are the same content
-    'deluxe edition',
-    'special edition',
-    "collector's edition",
-    'illustrated edition',
-    'large print',
-    'large-print',
-    'abridged',
-    // Graphic adaptations
-    'graphic novel',
-    'graphic adaptation',
-    'manga',
-    'comic book',
-    'comics',
-    // Review / summary products
-    'summary of',
-    'review of',
-    'synopsis of',
-    'chapter by chapter',
-    'book review',
-    'plot summary',
-  ];
-  if (skipKeywords.some((k) => title.includes(k) || cats.includes(k)))
-    return null;
+  // Skip junk titles and bad categories
+  if (looksLikeJunkTitle(info.title)) return null;
+  if (hasBadCategories(info.categories)) return null;
 
   // Skip very short works — likely novellas, short stories, or pamphlets
   if (info.pageCount && info.pageCount < 120) return null;
@@ -777,15 +831,19 @@ function extractBookData(item) {
     : null;
 
   return {
+    // DB columns
     title: info.title,
     slug: slugify(info.title),
     authors: info.authors,
     cover_url,
-    synopsis: info.description ? info.description.slice(0, 2000) : null,
+    synopsis: cleanSynopsis(info.description),
     publication_year: validYear,
     page_count: info.pageCount ?? null,
     darkness_level: null,
     heat_level: null,
+    // Dedup helpers — NOT written to DB
+    _isbn: extractISBN(item),
+    authorTitleKey: makeAuthorTitleKey(info.title, info.authors),
   };
 }
 
@@ -797,10 +855,10 @@ async function main() {
   );
   console.log(`    Target: ${LIMIT} new books\n`);
 
-  // Load all existing slugs + titles for fast dedup
+  // Load all existing slugs + titles + authors for fast dedup
   const { data: existing, error: existErr } = await supabase
     .from('books')
-    .select('slug, title');
+    .select('slug, title, authors');
   if (existErr) {
     console.error(existErr.message);
     process.exit(1);
@@ -813,50 +871,46 @@ async function main() {
   const normalizedTitles = new Set(
     existing.map((b) => normalizeTitle(b.title)),
   );
+  const existingAuthorTitleKeys = new Set(
+    existing.map((b) => makeAuthorTitleKey(b.title, b.authors)),
+  );
 
   const progress = loadProgress();
 
   // ISBN tracking — persisted across runs to catch the same book under different titles
   const seenISBNs = new Set(progress._seenISBNs ?? []);
+  // Keys of books that failed to insert — skip on future runs
+  const rejectedKeys = new Set(progress._rejectedKeys ?? []);
+
+  // Queries exhausted in previous runs — skip them, start fresh when all done
+  const completedQueries = new Set(progress._completedQueries ?? []);
+  let remaining = QUERIES.filter((q) => !completedQueries.has(q));
+  if (remaining.length === 0) {
+    console.log('🔄  All queries exhausted — starting a fresh cycle.\n');
+    completedQueries.clear();
+    remaining = [...QUERIES];
+  }
+
+  // Shuffle so every run visits queries in a different order
+  for (let i = remaining.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
+  }
+
+  console.log(`    ${remaining.length} queries available this run (${QUERIES.length - remaining.length} already exhausted)\n`);
 
   let imported = 0;
-  let queryIdx = progress._queryIdx ?? 0;
-  // If progress left off past the end, wrap around
-  if (queryIdx >= QUERIES.length) queryIdx = 0;
 
-  let fullCycleCompleted = false;
-  let importedThisCycle = 0;
-  let startedMidCycle = queryIdx > 0;
+  for (const query of remaining) {
+    if (imported >= LIMIT) break;
 
-  while (imported < LIMIT) {
-    if (queryIdx >= QUERIES.length) {
-      // Wrap around to beginning
-      queryIdx = 0;
-      progress._queryIdx = 0;
-      saveProgress(progress);
-      if (fullCycleCompleted && importedThisCycle === 0) {
-        console.log(
-          '\n⚠️  Completed a full cycle with no new books found. Database may be up to date for current queries.',
-        );
-        break;
-      }
-      if (!startedMidCycle) fullCycleCompleted = true;
-      startedMidCycle = false;
-      importedThisCycle = 0;
-      console.log(
-        '\n🔄  Wrapped around to start of query list — skipping already-imported books automatically.',
-      );
-    }
-
-    const query = QUERIES[queryIdx];
     const startIndex = progress[query] ?? 0;
 
     console.log(
-      `\n📖  Query ${queryIdx + 1}/${QUERIES.length}: "${query}" (from index ${startIndex})`,
+      `\n📖  Query "${query}" (from index ${startIndex})`,
     );
 
     let pageStart = startIndex;
-    let pageImported = 0;
     let exhausted = false;
     let consecutiveEmptyPages = 0;
     const MAX_EMPTY_PAGES = 2;
@@ -871,22 +925,23 @@ async function main() {
       }
 
       const importedBefore = imported;
-      let dbg_total = 0,
-        dbg_filtered = 0,
-        dbg_duped = 0;
 
-      for (const item of items) {
+      // Pick best edition per author-title pair from this page
+      const candidates = pickBestCandidates(items);
+      let dbg_duped = 0;
+
+      for (const book of candidates) {
         if (imported >= LIMIT) break;
-        dbg_total++;
 
-        const book = extractBookData(item);
-        if (!book) {
-          dbg_filtered++;
+        const { _isbn: isbn, authorTitleKey } = book;
+
+        // Author-title dedup — catches cross-edition duplicates
+        if (rejectedKeys.has(authorTitleKey) || existingAuthorTitleKeys.has(authorTitleKey)) {
+          dbg_duped++;
           continue;
         }
 
-        // ISBN dedup — catches same book under different titles/editions
-        const isbn = extractISBN(item);
+        // ISBN dedup — catches same book under different titles
         if (isbn && seenISBNs.has(isbn)) {
           dbg_duped++;
           continue;
@@ -901,7 +956,7 @@ async function main() {
           continue;
         }
 
-        // Normalized title dedup — catches "Mistborn: The Final Empire" vs "The Final Empire"
+        // Normalized title dedup
         const normTitle = normalizeTitle(book.title);
         if (normalizedTitles.has(normTitle)) {
           dbg_duped++;
@@ -912,14 +967,12 @@ async function main() {
         existingSlugs.add(book.slug);
         existingTitles.add(book.title.toLowerCase().trim());
         normalizedTitles.add(normTitle);
+        existingAuthorTitleKeys.add(authorTitleKey);
         if (isbn) seenISBNs.add(isbn);
 
         // Open Library fallback for missing publication year
         if (!book.publication_year) {
-          book.publication_year = await fetchOpenLibraryYear(
-            book.title,
-            book.authors,
-          );
+          book.publication_year = await fetchOpenLibraryYear(book.title, book.authors);
           await sleep(200);
         }
 
@@ -933,24 +986,26 @@ async function main() {
           continue;
         }
 
-        const { error } = await supabase.from('books').insert(book);
+        // Strip internal dedup fields before inserting
+        const { _isbn: _i, authorTitleKey: _k, ...dbBook } = book;
+        const { error } = await supabase.from('books').insert(dbBook);
         if (error) {
           console.log(`✗ ${error.message.slice(0, 60)}`);
+          rejectedKeys.add(authorTitleKey);
         } else {
           console.log(
             `✓ cover:${book.cover_url ? '✓' : '✗'} · ${book.publication_year ?? '?'}`,
           );
           imported++;
-          pageImported++;
-          importedThisCycle++;
         }
       }
 
-      // Persist seen ISBNs after every page
+      // Persist dedup state after every page
       progress._seenISBNs = [...seenISBNs];
+      progress._rejectedKeys = [...rejectedKeys];
 
       console.log(
-        `    page@${pageStart}: ${dbg_total} items → ${dbg_total - dbg_filtered} passed filter → ${dbg_duped} duped → ${imported - importedBefore} new`,
+        `    page@${pageStart}: ${items.length} raw → ${candidates.length} candidates → ${dbg_duped} duped → ${imported - importedBefore} new`,
       );
 
       if (imported === importedBefore) {
@@ -968,9 +1023,9 @@ async function main() {
 
       pageStart += PAGE_SIZE;
 
-      // Save progress after each page
+      // Save page offset and completed set after each page
       progress[query] = pageStart;
-      progress._queryIdx = queryIdx;
+      progress._completedQueries = [...completedQueries];
       saveProgress(progress);
 
       // Google Books caps at 1000 results per query
@@ -982,9 +1037,9 @@ async function main() {
 
     if (exhausted) {
       console.log(`  ↳ Query exhausted — moving to next`);
-      progress[query] = 0; // reset this query for future cycles
-      queryIdx++;
-      progress._queryIdx = queryIdx;
+      completedQueries.add(query);
+      delete progress[query];
+      progress._completedQueries = [...completedQueries];
       saveProgress(progress);
     }
   }
