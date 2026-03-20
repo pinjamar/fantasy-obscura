@@ -372,7 +372,7 @@ src/
 ├── components/
 │   ├── AddToShelf.tsx      # Add/remove book from user's reading shelf
 │   ├── AlchemyTable.tsx    # Interactive book finder (filters → Supabase)
-│   ├── BookDisplay.tsx     # Book grid with sort, darkness badges, slug links
+│   ├── BookDisplay.tsx     # Book grid with sort/filter bar, darkness badges, slug links
 │   ├── BookFAQ.astro       # FAQ accordion with FAQPage JSON-LD schema
 │   ├── BookHub.tsx         # Admin import tool (5 external API sources)
 │   ├── BookSearch.tsx      # Autocomplete search bar
@@ -383,17 +383,19 @@ src/
 │   ├── CategoryLists.tsx   # Book lists within a category page
 │   ├── CommunityTags.tsx   # User-submitted tags (hidden, pending launch)
 │   ├── FavouriteButton.tsx # Heart/favourite toggle on book pages
-│   ├── Layout.astro        # Base layout: nav, footer, OG/Twitter meta, canonical
+│   ├── Layout.astro        # Base layout: sticky nav, footer, GA, OG/Twitter meta, canonical
 │   ├── MyShelf.tsx         # User's reading shelf view
 │   ├── ReadingList.tsx     # Ordered reading list component
 │   ├── ReadingOrder.tsx    # Series reading order display
 │   └── Stars.tsx           # Star rating display
 ├── data/
-│   ├── books-like.ts       # Hand-written "Books Like X" guide data
+│   ├── books-like.ts       # Hand-written "Books Like X" guide data (22 guides)
 │   ├── categories-meta.ts  # Genre category metadata + curated 30-title lists (all-time greats / start with / hidden gems)
+│   ├── image-map.ts        # Maps slugs to optimised image filenames for banners/categories/reading orders
 │   ├── reading-orders.ts   # Reading order data for all series guides
 │   └── tropes.ts           # Canonical trope definitions
 ├── lib/
+│   ├── alt.ts              # Alt text helpers for images
 │   ├── auth.ts             # Auth helpers
 │   ├── books/providers.ts  # External API integrations (OpenLibrary, Google Books, etc.)
 │   ├── db/
@@ -402,37 +404,39 @@ src/
 │   │   └── tags.ts         # Supabase community tags helpers
 │   ├── database.types.ts   # Auto-generated Supabase types
 │   ├── supabaseClient.ts   # Supabase anon client
+│   ├── trope-icons.ts      # Emoji/icon map for trope slugs
 │   └── types.ts            # App-wide type definitions
 ├── middleware.ts            # Auth session injection into Astro.locals
+├── styles.css               # Global styles (Tailwind base + custom)
 └── pages/
     ├── index.astro                  # Home — category grid
-    ├── sitemap.xml.ts               # Dynamic sitemap (queries all book/author/trope slugs)
+    ├── sitemap.xml.ts               # Dynamic sitemap (all book/author/trope/books-like/reading-order slugs)
     ├── auth/
     │   ├── login.astro
     │   └── register.astro
     ├── authors/
-    │   ├── index.astro              # Author directory
-    │   └── [slug].astro            # Author page — bio, series groups, all books
+    │   ├── index.astro              # Author directory — A-Z with avatar initials
+    │   └── [slug].astro             # Author page — bio, series groups, all books
     ├── books/
-    │   ├── index.astro              # Book database hub (filtered by category)
+    │   ├── index.astro              # Book database — sortable/filterable grid
     │   └── [slug].astro             # Book page — editorial, tropes, FAQs, similar books
     ├── books-like/
-    │   ├── index.astro              # Books Like index + AI recommendation tool
-    │   └── [slug].astro             # Individual "Books Like X" guide
+    │   ├── index.astro              # Books Like hub + AI recommendation tool
+    │   └── [slug].astro             # Individual "Books Like X" guide (aspects, recs, related)
     ├── fantasy/
     │   └── [slug]/
-    │       ├── index.astro          # Genre category page (12 categories: epic, grimdark, romantasy, etc.)
-    │       ├── all-time-greats.astro# Top 20 all-time greats — curated list cross-referenced with DB
-    │       ├── start-with.astro     # Top 20 beginner picks — curated list cross-referenced with DB
-    │       └── hidden-gems.astro    # Top 20 hidden gems — curated list cross-referenced with DB
-    ├── book-finder/index.astro      # Alchemy Table — filter-based book finder (/book-finder/)
+    │       ├── index.astro          # Genre category page (12 categories)
+    │       ├── all-time-greats.astro# Top 20 all-time greats — curated + DB cross-referenced
+    │       ├── start-with.astro     # Top 20 beginner picks
+    │       └── hidden-gems.astro    # Top 20 hidden gems
+    ├── book-finder/index.astro      # Alchemy Table — advanced filter-based book finder
     ├── my-list/index.astro          # User's personal reading shelf
     ├── reading-orders/
     │   ├── index.astro              # Reading orders hub
     │   └── [slug].astro             # Individual series reading guide
     ├── tropes/
     │   ├── index.astro              # Trope browser
-    │   └── [slug].astro             # Individual trope page
+    │   └── [slug].astro             # Individual trope page — all books with that trope
     └── api/
         ├── auth/
         │   ├── login.ts
