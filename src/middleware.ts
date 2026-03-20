@@ -3,6 +3,19 @@ import { createSupabaseServerClient } from './lib/auth';
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const responseHeaders = new Headers();
+
+  // Skip Supabase entirely for anonymous visitors (no auth cookie present).
+  // This avoids a network round trip on every public page request and prevents
+  // Cloudflare Worker CPU/startup limit errors (error 1102) for non-logged-in users.
+  const cookie = context.request.headers.get('Cookie') ?? '';
+  const hasAuthCookie = cookie.includes('sb-') || cookie.includes('supabase');
+
+  if (!hasAuthCookie) {
+    context.locals.user = null;
+    context.locals.userProfile = null;
+    return next();
+  }
+
   const supabase = createSupabaseServerClient(context.request, responseHeaders);
 
   const { data: { user } } = await supabase.auth.getUser();

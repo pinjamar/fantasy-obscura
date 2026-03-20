@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Stars from './Stars';
 import { PUBLIC_TROPES } from '../data/tropes';
 
@@ -695,6 +695,17 @@ export default function AlchemyTable() {
   const [bookIndex, setBookIndex] = useState(0);
   const [error, setError] = useState('');
 
+  const resultsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (status === 'done' && resultsRef.current) {
+      const isMobile = window.innerWidth < 1024;
+      if (isMobile) {
+        resultsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [status, bookIndex]);
+
   const toggle = (vialId: string, optIdx: number) => {
     setSelections((prev) => {
       if (prev[vialId] === optIdx) {
@@ -1016,7 +1027,7 @@ export default function AlchemyTable() {
   );
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-24 lg:pb-0">
       {/* Creatures / Category / Series Status  |  Darkness Level  |  Heat Level */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
 
@@ -1247,9 +1258,110 @@ export default function AlchemyTable() {
         </div>
       </div>
 
-      {/* Mobile Transmutation Square */}
-      <div className="flex lg:hidden items-stretch justify-center">
-        <TransmuteSquare />
+      {/* Mobile Results (below all filters) */}
+      <div ref={resultsRef} className="lg:hidden">
+        {status !== 'idle' && (
+          <div className="rounded-2xl border-2 border-dashed border-amber-300 bg-white/70 backdrop-blur p-5 shadow-inner">
+            {status === 'loading' && (
+              <div className="h-32 flex items-center justify-center">
+                <span className="text-amber-500 text-sm animate-pulse">⚗️ Transmuting...</span>
+              </div>
+            )}
+            {status === 'done' && !currentBook && (
+              <div className="h-32 flex items-center justify-center text-center">
+                <div>
+                  <p className="text-amber-700 font-medium">No books match</p>
+                  <p className="text-amber-600 text-xs mt-1">Try different ingredients</p>
+                </div>
+              </div>
+            )}
+            {status === 'done' && currentBook && (
+              <div className="space-y-3">
+                <div className="flex gap-3">
+                  {currentBook.cover_url ? (
+                    <img
+                      src={currentBook.cover_url}
+                      alt={currentBook.title}
+                      className="w-20 shrink-0 rounded-lg object-cover shadow-md self-start"
+                    />
+                  ) : (
+                    <div className="w-20 h-28 shrink-0 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-3xl">
+                      📖
+                    </div>
+                  )}
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-zinc-900 text-sm leading-tight">{currentBook.title}</h3>
+                    {currentBook.authors?.length && (
+                      <p className="text-xs text-zinc-500 mt-0.5">{currentBook.authors.join(', ')}</p>
+                    )}
+                    {currentBook.avg_rating && (
+                      <p className="text-xs text-amber-600 mt-0.5">
+                        <Stars rating={currentBook.avg_rating} /> {currentBook.avg_rating.toFixed(2)}
+                      </p>
+                    )}
+                    {currentBook.darkness_level != null && currentBook.darkness_level >= 1 && (
+                      <p className="text-xs text-zinc-500 mt-0.5">
+                        {'🕯️'.repeat(currentBook.darkness_level)}{' '}
+                        {['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'][currentBook.darkness_level]}
+                      </p>
+                    )}
+                    {currentBook.tropes && currentBook.tropes.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {currentBook.tropes.slice(0, 2).map((t) => (
+                          <span key={t} className="text-xs bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full">{t}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                {currentBook.synopsis && (
+                  <p className="text-xs text-zinc-600 leading-relaxed line-clamp-4">{currentBook.synopsis}</p>
+                )}
+                {currentBook.subgenres?.length && (
+                  <div className="flex flex-wrap gap-1">
+                    {currentBook.subgenres.slice(0, 3).map((s) => (
+                      <span key={s} className="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">{s}</span>
+                    ))}
+                  </div>
+                )}
+                {currentBook.slug && (
+                  <a href={`/books/${currentBook.slug}`} className="text-xs text-amber-700 hover:text-amber-900 underline">
+                    View full details →
+                  </a>
+                )}
+                {hasMore && (
+                  <p className="text-xs text-amber-600 text-center">{books.length} books match · #{bookIndex + 1}</p>
+                )}
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="h-32 flex items-center justify-center text-center">
+                <p className="text-red-700 font-medium text-sm">⚠️ {error}</p>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Mobile sticky transmute button */}
+      <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white/90 backdrop-blur border-t border-amber-200 px-4 py-3 flex flex-col items-center gap-2">
+        <button
+          onClick={transmute}
+          disabled={status === 'loading'}
+          className="w-full max-w-sm inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-amber-500 to-orange-500 text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
+        >
+          <span className="text-lg">✨</span>
+          {status === 'loading' ? 'Transmuting...' : 'Transmute Book'}
+          <span className="text-lg">✨</span>
+        </button>
+        {status === 'done' && hasMore && (
+          <button
+            onClick={nextBook}
+            className="text-sm text-amber-700 hover:text-amber-900 underline py-1"
+          >
+            Try another →
+          </button>
+        )}
       </div>
     </div>
   );

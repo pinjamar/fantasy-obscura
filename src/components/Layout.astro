@@ -94,6 +94,13 @@ const ogImage = image || `${SITE}/og-default.png`;
         </nav>
 
         <div class="flex items-center gap-3 shrink-0 text-sm">
+          <!-- Burger button (mobile only) -->
+          <button id="burger" class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 items-center" aria-label="Menu">
+            <span class="block w-5 h-0.5 bg-zinc-700 transition-all"></span>
+            <span class="block w-5 h-0.5 bg-zinc-700 transition-all"></span>
+            <span class="block w-5 h-0.5 bg-zinc-700 transition-all"></span>
+          </button>
+
           <!-- Auth -->
           {user ? (
             <div class="flex items-center gap-3">
@@ -119,13 +126,6 @@ const ogImage = image || `${SITE}/og-default.png`;
               <a href="/auth/register" class="hidden sm:block px-3 py-1.5 rounded-full bg-purple-600 text-white text-xs font-semibold hover:bg-purple-700 transition-colors">Sign up</a>
             </div>
           )}
-
-          <!-- Burger button (mobile only) -->
-          <button id="burger" class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 items-center" aria-label="Menu">
-            <span class="block w-5 h-0.5 bg-zinc-700 transition-all"></span>
-            <span class="block w-5 h-0.5 bg-zinc-700 transition-all"></span>
-            <span class="block w-5 h-0.5 bg-zinc-700 transition-all"></span>
-          </button>
         </div>
       </div>
 

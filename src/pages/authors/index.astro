@@ -32,11 +32,15 @@ const lastName = (n: string) => {
 };
 const authorInitial = (n: string) => stripParens(n)[0]?.toUpperCase() ?? '?';
 
-const letters = [...new Set(authors.map((a) => lastName(a.name)[0].toUpperCase()))].sort();
+// Normalize diacritics so Á/Ă/Â/Ä etc. all map to their base letter (A, B, C…)
+const normalizeInitial = (ch: string) =>
+  ch.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+
+const letters = [...new Set(authors.map((a) => normalizeInitial(lastName(a.name)[0])))].sort();
 
 const grouped = letters.map((letter) => ({
   letter,
-  authors: authors.filter((a) => lastName(a.name)[0].toUpperCase() === letter),
+  authors: authors.filter((a) => normalizeInitial(lastName(a.name)[0]) === letter),
 }));
 
 // Avatar colour — deterministic from name

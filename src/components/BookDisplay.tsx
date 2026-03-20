@@ -392,7 +392,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
           const CardContent = (
             <>
               {/* Cover */}
-              <div className="relative w-20 sm:w-32 shrink-0 self-stretch bg-linear-to-br from-purple-100 to-blue-100">
+              <div className="relative w-28 sm:w-32 shrink-0 self-stretch bg-linear-to-br from-purple-100 to-blue-100">
                 <img
                   src={book.cover_url || (book.isbn ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false` : '/grimplaceholder.png')}
                   alt={book.title}
@@ -465,7 +465,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
                 )}
 
                 {book.synopsis && (
-                  <p className="text-xs text-zinc-400 line-clamp-3 leading-relaxed">{book.synopsis}</p>
+                  <p className="hidden sm:block text-xs text-zinc-400 line-clamp-3 leading-relaxed">{book.synopsis}</p>
                 )}
 
               </div>

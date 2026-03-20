@@ -602,3 +602,42 @@ More curated fantasy picks → thegrimoire.co
 - `bot/requirements.txt`
 - `dry_run` mode flag that prints what would be posted without posting
 - Deployment instructions for Railway or Render (free tier)
+
+---
+
+### Hybrid Static/Server Architecture (Cloudflare 1102 long-term fix)
+
+**Background**
+
+The site currently runs as `output: 'server'` — every page, including fully public content like book pages, trope pages, and reading orders, is rendered on-demand by a Cloudflare Worker on each request. This means every visitor triggers a live Supabase query before they see anything. The middleware fix (already done) eliminates the auth round trip for anonymous visitors, but the underlying architecture is still fragile under load or cold starts.
+
+**The proper fix**
+
+Switch public content pages to `output: 'static'` — pre-built as plain HTML at deploy time and served straight from Cloudflare's CDN. No Worker runs, no DB query, no cold start. Only the interactive features (auth, shelf, book finder API, recommendations) stay as Workers.
+
+**What needs to change**
+
+- `astro.config.mjs`: change to `output: 'hybrid'` (Astro's mode that allows per-page opt-in to SSR)
+- All public content pages get `export const prerender = true` at the top:
+  - `src/pages/index.astro`
+  - `src/pages/books/[slug].astro` and `index.astro`
+  - `src/pages/tropes/[slug].astro` and `index.astro`
+  - `src/pages/authors/[slug].astro` and `index.astro`
+  - `src/pages/reading-orders/[slug].astro` and `index.astro`
+  - `src/pages/books-like/[slug].astro` and `index.astro`
+  - `src/pages/fantasy/[slug]/` all sub-pages
+- The navbar auth state (avatar, display name) needs to move from server-rendered to a small client-side fetch on load — since static pages can't know who's logged in at build time
+- API routes and auth/shelf pages stay server-rendered (no `prerender` flag needed, they're SSR by default in hybrid mode)
+
+**When to do this**
+
+Do this when:
+- The site is getting consistent traffic and you're seeing 1102 errors again despite the middleware fix, OR
+- You're about to do a push (social media, ProductHunt, etc.) and need the site to be bulletproof under a traffic spike, OR
+- Build times are fast enough that pre-rendering ~500 book pages isn't painful
+
+Don't do this yet if:
+- You're still adding/changing lots of content frequently (static pages rebuild on every deploy — fine, but worth knowing)
+- You haven't confirmed the middleware fix resolved the 1102 issue
+
+**Effort estimate:** half a day. The config change is one line. The real work is moving the navbar auth to client-side and testing that all pre-rendered pages build without errors.
