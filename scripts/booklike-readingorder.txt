@@ -7,11 +7,11 @@
 *Highest traffic, weakest competition — these drive 80% of organic traffic*
 
 ### Romantasy & BookTok (20)
-1. Books like Fourth Wing-------
-2. Books like ACOTAR (A Court of Thorns and Roses)-----
-3. Books like From Blood and Ash----------
-4. Books like Iron Flame----------
-5. Books like A Court of Silver Flames-----------
+1. Books like Fourth Wing------- ✅
+2. Books like ACOTAR (A Court of Thorns and Roses)----- ✅
+3. Books like From Blood and Ash---------- ✅
+4. Books like Iron Flame---------- ✅
+5. Books like A Court of Silver Flames----------- ✅
 6. Books like Throne of Glass
 7. Books like Kingdom of the Wicked
 8. Books like Crescent City
@@ -29,27 +29,27 @@
 20. Books like House of Flame and Shadow
 
 ### Epic Fantasy Pillars (9)
-21. Books like Mistborn / The Final Empire-----------
-22. Books like The Way of Kings----------
-23. Books like The Name of the Wind-------------
-24. Books like The Lord of the Rings-----------
-25. Books like A Game of Thrones---------
-26. Books like The Wheel of Time / The Eye of the World----------
-27. Books like The Hobbit---------
+21. Books like Mistborn / The Final Empire----------- ✅
+22. Books like The Way of Kings---------- ✅
+23. Books like The Name of the Wind------------- ✅
+24. Books like The Lord of the Rings----------- ✅
+25. Books like A Game of Thrones--------- ✅
+26. Books like The Wheel of Time / The Eye of the World---------- ✅
+27. Books like The Hobbit--------- ✅
 28. Books like Warbreaker
 29. Books like Elantris
 
 ### Fantasy Crossover Hits (12)
-30. Books like Six of Crows-----------
-31. Books like Red Rising-----------
-32. Books like The Poppy War------------
-33. Books like Piranesi-----------
+30. Books like Six of Crows----------- ✅
+31. Books like Red Rising----------- ✅
+32. Books like The Poppy War------------ ✅
+33. Books like Piranesi----------- ✅
 34. Books like The Night Circus
 35. Books like Circe
 36. Books like The House in the Cerulean Sea
-37. Books like Legends & Lattes---------
-38. Books like The Goblin Emperor---------
-39. Books like Uprooted-----------
+37. Books like Legends & Lattes--------- ✅
+38. Books like The Goblin Emperor--------- ✅
+39. Books like Uprooted----------- ✅
 40. Books like Spinning Silver
 41. Books like American Gods
 
@@ -82,9 +82,9 @@
 62. Books like Tress of the Emerald Sea
 
 ### YA Fantasy (14)
-63. Books like Harry Potter (for adults)
+63. Books like Harry Potter (for adults)----------- ✅
 64. Books like Eragon
-65. Books like Percy Jackson (for adults)
+65. Books like Percy Jackson (for adults)---------- ✅
 66. Books like The Cruel Prince
 67. Books like An Ember in the Ashes
 68. Books like Children of Blood and Bone
@@ -128,7 +128,7 @@
 
 ### Additional Tier 2 (67)
 102. Books like The Lies of Locke Lamora
-103. Books like The Priory of the Orange Tree--------
+103. Books like The Priory of the Orange Tree-------- ✅
 104. Books like A Memory Called Empire
 105. Books like Dune
 106. Books like The Fifth Season
