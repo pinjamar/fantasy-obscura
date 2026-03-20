@@ -178,6 +178,32 @@ node scripts/fill-series.mjs --threshold 5     # lower author book threshold (de
 
 ---
 
+### Replace a book with a better edition (visual cover picker)
+
+Fetches up to 15 candidates from Google Books, opens a **browser preview** showing all cover images side by side (current vs candidates), and lets you pick by number. Then walks you through each differing field (title, authors, year, pages, ISBN, synopsis) with a `y/N` prompt before writing anything.
+
+```bash
+# Interactive — visual browser preview + field-by-field prompts
+node scripts/replace-book.mjs <slug>
+node scripts/replace-book.mjs harry-potter-philosophers-stone
+
+# Only swap the cover, skip all other fields
+node scripts/replace-book.mjs harry-potter-philosophers-stone --cover-only
+
+# Preview without writing to DB
+node scripts/replace-book.mjs harry-potter-philosophers-stone --dry-run
+```
+
+**How it works:**
+1. Fetches the current DB record and prints it
+2. Searches Google Books with multiple query strategies, collects up to 15 candidates that have a cover image
+3. Opens a browser tab showing all covers in a grid — current on the left, candidates numbered
+4. You type the number of the candidate you want
+5. For each field that differs (title, authors, year, pages, ISBN, synopsis) it asks `y/N` — cover is always updated
+6. Final confirm before writing to DB
+
+---
+
 ### Step 3 — Fix covers, synopsis, ratings
 
 ```bash
@@ -256,11 +282,16 @@ node scripts/cleanup-authors.js --delete
 
 ### Step 6 — Fill audiobooks
 
+Two-source detection: **Google Books API** (live lookup across all editions) + **Gemini** (knowledge-base fallback). If either source confirms an audiobook exists, it's marked available. Google Books narrator/hours take priority; Gemini fills gaps. Narrator rating (community reception) always comes from Gemini.
+
+By default only processes books never checked (`audiobook_available IS NULL`). Use `--recheck` to re-verify books previously marked false.
+
 ```bash
-node scripts/fill-audiobooks.mjs
+node scripts/fill-audiobooks.mjs               # only unchecked (NULL) — safe to re-run
+node scripts/fill-audiobooks.mjs --recheck     # NULL + previously false (re-verify)
+node scripts/fill-audiobooks.mjs --all         # everything including confirmed true
 node scripts/fill-audiobooks.mjs --dry-run
 node scripts/fill-audiobooks.mjs --limit 50
-node scripts/fill-audiobooks.mjs --all       # re-process everything
 ```
 
 ---

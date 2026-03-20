@@ -1,19 +1,27 @@
 /**
  * fill-audiobooks.mjs
  *
- * Uses Gemini 2.5 Flash to classify audiobook data for books where audiobook_available IS NULL.
+ * Two-source audiobook detection:
+ *   1. Google Books API — live lookup across all editions for audiobook signals,
+ *      narrator name, and runtime. Most reliable for popular titles.
+ *   2. Gemini — knowledge-base fallback for books Google Books misses, plus
+ *      narrator rating (community reception) for every confirmed audiobook.
+ *
+ * If EITHER source confirms an audiobook exists → audiobook_available = true.
+ * Google Books narrator/hours take priority; Gemini fills gaps.
  *
  *   - audiobook_available:       boolean
  *   - audiobook_narrator:        string | null
- *   - audiobook_narrator_rating: 'excellent' | 'good' | 'mixed' | 'avoid' | null
+ *   - audiobook_narrator_rating: 'excellent'|'good'|'mixed'|'avoid' — always Gemini
  *   - audiobook_hours:           integer | null
- *   - audiobook_audible_url:     auto-generated search URL (no AI needed)
+ *   - audiobook_audible_url:     auto-generated search URL
  *
  * Usage:
- *   node scripts/fill-audiobooks.mjs
+ *   node scripts/fill-audiobooks.mjs               # only books never checked (NULL)
+ *   node scripts/fill-audiobooks.mjs --recheck     # NULL + previously false (re-verify)
+ *   node scripts/fill-audiobooks.mjs --all         # everything including confirmed true
  *   node scripts/fill-audiobooks.mjs --dry-run
  *   node scripts/fill-audiobooks.mjs --limit 50
- *   node scripts/fill-audiobooks.mjs --all     (re-process all books, not just NULL ones)
  */
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -24,21 +32,28 @@ config();
 
 const DRY_RUN   = process.argv.includes('--dry-run');
 const ALL       = process.argv.includes('--all');
+const RECHECK   = process.argv.includes('--recheck');
 const LIMIT_ARG = process.argv.indexOf('--limit');
 const LIMIT     = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
-const BATCH_SIZE = 8;
-const DELAY_MS   = 900;
 
-if (!process.env.GEMINI_API_KEY) {
-  console.error('Missing GEMINI_API_KEY in .env');
-  process.exit(1);
-}
+const DELAY_MS   = 350;
+const BATCH_SIZE = 8; // Gemini batch size
+
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
   console.error('Missing Supabase env vars in .env');
   process.exit(1);
 }
+if (!process.env.GOOGLE_BOOKS_API_KEY) {
+  console.error('Missing GOOGLE_BOOKS_API_KEY in .env');
+  process.exit(1);
+}
+if (!process.env.GEMINI_API_KEY) {
+  console.error('Missing GEMINI_API_KEY in .env');
+  process.exit(1);
+}
 
-const model   = new GoogleGenerativeAI(process.env.GEMINI_API_KEY).getGenerativeModel({ model: 'gemini-2.5-flash' });
+const GB_KEY   = process.env.GOOGLE_BOOKS_API_KEY;
+const model    = new GoogleGenerativeAI(process.env.GEMINI_API_KEY).getGenerativeModel({ model: 'gemini-2.5-flash' });
 const supabase = createClient(
   process.env.PUBLIC_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY,
@@ -52,57 +67,114 @@ function sleep(ms) {
 
 function buildAudibleUrl(title, authors) {
   const author = authors?.[0] ?? '';
-  const keywords = `${title} ${author}`.trim().replace(/\s+/g, '+');
-  return `https://www.audible.com/search?keywords=${encodeURIComponent(keywords).replace(/%2B/g, '+')}`;
+  return `https://www.audible.com/search?keywords=${encodeURIComponent(`${title} ${author}`.trim())}`;
 }
+
+// ── Source 1: Google Books API ────────────────────────────────────────────────
+// Searches multiple query strategies and inspects each edition for audiobook
+// signals (categories, title keywords, description keywords).
+
+async function lookupGoogleBooks(title, authors) {
+  const author = Array.isArray(authors) ? authors[0] : (authors ?? '');
+
+  const queries = [
+    `intitle:"${title}" inauthor:"${author}" audiobook`,
+    `"${title}" "${author}" unabridged`,
+    `intitle:"${title}" inauthor:"${author}"`,
+  ];
+
+  for (const query of queries) {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=10&printType=books&key=${GB_KEY}`;
+    let data;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) { await sleep(DELAY_MS); continue; }
+      data = await res.json();
+    } catch {
+      await sleep(DELAY_MS);
+      continue;
+    }
+
+    for (const item of data.items ?? []) {
+      const info  = item.volumeInfo ?? {};
+      const cats  = (info.categories ?? []).join(' ').toLowerCase();
+      const desc  = info.description ?? '';
+      const descL = desc.toLowerCase();
+      const t     = (info.title ?? '').toLowerCase();
+
+      const isAudio =
+        cats.includes('audiobook') ||
+        t.includes('unabridged') ||
+        t.includes('audiobook') ||
+        descL.includes('narrated by') ||
+        descL.includes('read by ') ||
+        descL.includes('narrator:') ||
+        descL.includes('audio edition') ||
+        descL.includes('audio version');
+
+      if (!isAudio) continue;
+
+      // Extract narrator
+      let narrator = null;
+      const narratorPatterns = [
+        /narrated by ([A-Z][^.,\n(]{2,40})/i,
+        /read by ([A-Z][^.,\n(]{2,40})/i,
+        /narrator[:\s]+([A-Z][^.,\n(]{2,40})/i,
+      ];
+      for (const p of narratorPatterns) {
+        const m = desc.match(p);
+        if (m) { narrator = m[1].trim(); break; }
+      }
+
+      // Extract hours
+      let hours = null;
+      const hoursMatch = desc.match(/(\d+)\s*(?:hours?|hrs?)/i);
+      if (hoursMatch) {
+        hours = parseInt(hoursMatch[1]);
+      } else if (info.pageCount >= 60 && info.pageCount <= 2400) {
+        const asHours = Math.round(info.pageCount / 60);
+        if (asHours >= 1 && asHours <= 40) hours = asHours;
+      }
+
+      await sleep(DELAY_MS);
+      return { available: true, narrator, hours, source: 'Google Books' };
+    }
+
+    await sleep(DELAY_MS);
+  }
+
+  return { available: false, narrator: null, hours: null, source: null };
+}
+
+// ── Source 2: Gemini batch ────────────────────────────────────────────────────
+// Used as fallback for availability + to fill narrator/hours when Google Books
+// didn't find them. Batched to reduce API calls.
 
 async function classifyBatch(books) {
   const bookList = books.map((b, i) => `[${i + 1}] ID: ${b.id}
-Title: "${b.title}" by ${b.authors?.join(', ') || 'Unknown'}
-Year: ${b.publication_year ?? 'Unknown'}
-Genres: ${b.subgenres?.join(', ') || 'Fantasy'}`).join('\n\n');
+Title: "${b.title}" by ${(b.authors ?? []).join(', ')}
+Year: ${b.publication_year ?? 'Unknown'}`).join('\n\n');
 
-  const prompt = `You are a fantasy audiobook expert with detailed knowledge of the audiobook market.
-For each book below, provide audiobook information ONLY based on facts you are confident about.
+  const prompt = `You are a fantasy audiobook expert.
+For each book, confirm whether a professional human-narrated audiobook exists.
 
-IMPORTANT: Most obscure or self-published fantasy books do NOT have professional audiobooks.
-Only set audiobook_available to true if you are certain a professional human-narrated audiobook exists.
-When in doubt, return false.
+audiobook_available: true ONLY if you are CERTAIN it exists on Audible or similar.
+When in doubt → false.
 
-Fields to classify:
-
-audiobook_available (boolean):
-  true  — you are CERTAIN a professional human-narrated audiobook exists on Audible/similar
-  false — no professional audiobook exists, OR you are not sure
-
-audiobook_narrator (string or null):
-  The exact name(s) of the narrator(s) you are confident about. Use "Full Cast" for full-cast productions.
-  null if audiobook_available is false, or if you don't know the narrator's name.
-
-audiobook_narrator_rating (string or null — community reception of the narrator):
-  "excellent" — widely praised, fans consider it the definitive way to experience the book
-  "good"      — well received, minor complaints at most
-  "mixed"     — divided opinions, some love it some don't
-  "avoid"     — commonly disliked or considered a poor match for the material
-  null if audiobook_available is false, or if you don't know the reception.
-
-audiobook_hours (integer or null):
-  Approximate runtime in hours, rounded to nearest whole number, only if you know it.
-  null if audiobook_available is false, or if you don't know the runtime.
+audiobook_narrator: exact narrator name if known, null otherwise. Do NOT fabricate.
+audiobook_hours: integer runtime in hours if known, null otherwise.
 
 Books:
 ${bookList}
 
-Respond with ONLY a valid JSON array — no explanation, no markdown:
-[{"id":"<uuid>","audiobook_available":true,"audiobook_narrator":"Name","audiobook_narrator_rating":"excellent","audiobook_hours":12},...]
+Respond with ONLY a valid JSON array, no explanation:
+[{"id":"<uuid>","audiobook_available":true,"audiobook_narrator":"Name","audiobook_hours":12},...]
 
 Rules:
-- Include every book in the response.
-- Default to audiobook_available: false if you have any uncertainty.
-- If audiobook_available is false, all other fields must be null.
-- audiobook_narrator_rating must be exactly one of: "excellent", "good", "mixed", "avoid", or null.
-- audiobook_hours must be an integer or null.
-- Do NOT fabricate narrator names — use null if unsure.`;
+- Include every book.
+- Default to false if any uncertainty.
+- If false, narrator and hours must be null.
+- Do NOT fabricate narrator names.`;
 
   const result = await model.generateContent(prompt);
   const raw = result.response.text().trim();
@@ -111,111 +183,184 @@ Rules:
   return JSON.parse(jsonMatch[0]);
 }
 
+// ── Narrator rating (always Gemini) ──────────────────────────────────────────
+// Single targeted call per confirmed audiobook.
+
+async function getNarratorRating(title, author, narrator) {
+  if (!narrator) return null;
+
+  const prompt = `Fantasy audiobook: "${title}" by ${author}, narrated by ${narrator}.
+
+Community reception of this narrator's performance?
+Answer with exactly one word: excellent / good / mixed / avoid
+- excellent: widely praised, considered the definitive experience
+- good: well received, minor complaints
+- mixed: divided opinions
+- avoid: commonly disliked
+
+If not confident → good
+
+One word only.`;
+
+  try {
+    const result = await model.generateContent(prompt);
+    const rating = result.response.text().trim().toLowerCase().replace(/[^a-z]/g, '');
+    return VALID_NARRATOR_RATING.includes(rating) ? rating : null;
+  } catch {
+    return null;
+  }
+}
+
+// ── Main ──────────────────────────────────────────────────────────────────────
+
 async function main() {
-  console.log(`\n🎧 Audiobook Classifier${DRY_RUN ? ' [DRY RUN]' : ''}${ALL ? ' [ALL]' : ''}\n`);
+  const modeLabel = ALL ? '[ALL]' : RECHECK ? '[RECHECK: null + false]' : '[DEFAULT: null only]';
+  console.log(`\n🎧 Audiobook Lookup (Google Books + Gemini) ${DRY_RUN ? '[DRY RUN] ' : ''}${modeLabel}\n`);
 
   let query = supabase
     .from('books')
-    .select('id, title, authors, subgenres, publication_year')
+    .select('id, title, authors, publication_year')
     .order('title');
 
-  // Default: process books that are NULL (never checked) or false (no audiobook found).
-  // false entries may have been wrong the first time — re-checking is cheap.
-  // Use --all to also re-process books already confirmed as true.
-  if (!ALL) query = query.or('audiobook_available.is.null,audiobook_available.eq.false');
+  if (!ALL) {
+    if (RECHECK) {
+      query = query.or('audiobook_available.is.null,audiobook_available.eq.false');
+    } else {
+      query = query.is('audiobook_available', null);
+    }
+  }
+
   if (LIMIT) query = query.limit(LIMIT);
 
   const { data: books, error } = await query;
   if (error) { console.error('Supabase error:', error.message); process.exit(1); }
 
   if (!books.length) {
-    console.log('✅ No unclassified or unconfirmed audiobook entries found. Use --all to reprocess everything.');
+    console.log('✅ Nothing to process.');
+    if (!RECHECK && !ALL) console.log('   Tip: use --recheck to re-verify previously false entries.');
     return;
   }
 
-  console.log(`Found ${books.length} books to process`);
-  console.log(`  Batch size: ${BATCH_SIZE}  ·  Batches: ${Math.ceil(books.length / BATCH_SIZE)}\n`);
+  console.log(`Processing ${books.length} books\n`);
 
-  let updated = 0;
-  let failed  = 0;
+  // ── Step 1: Google Books lookup for all books ──────────────────────────────
+  console.log('── Step 1: Google Books live lookup ──\n');
 
-  for (let i = 0; i < books.length; i += BATCH_SIZE) {
-    const batch        = books.slice(i, i + BATCH_SIZE);
-    const batchNum     = Math.floor(i / BATCH_SIZE) + 1;
-    const totalBatches = Math.ceil(books.length / BATCH_SIZE);
+  const gbResults = new Map(); // id → { available, narrator, hours, source }
 
-    process.stdout.write(`Batch ${batchNum}/${totalBatches}  `);
+  for (let i = 0; i < books.length; i++) {
+    const book = books[i];
+    process.stdout.write(`[${i + 1}/${books.length}] ${book.title.slice(0, 45).padEnd(45)} `);
 
-    let results;
     try {
-      results = await classifyBatch(batch);
+      const result = await lookupGoogleBooks(book.title, book.authors);
+      gbResults.set(book.id, result);
+      console.log(result.available
+        ? `✓ GB: ${result.narrator ?? 'narrator?'} · ${result.hours ?? '?'}h`
+        : `— not found`);
     } catch (err) {
-      console.log(`✗ Gemini error: ${err.message}`);
-      failed += batch.length;
+      console.log(`✗ ${err.message}`);
+      gbResults.set(book.id, { available: false, narrator: null, hours: null, source: null });
+    }
+  }
+
+  // ── Step 2: Gemini batch for books Google Books didn't confirm ─────────────
+  const needsGemini = books.filter((b) => !gbResults.get(b.id)?.available);
+
+  console.log(`\n── Step 2: Gemini fallback (${needsGemini.length} books not confirmed by Google Books) ──\n`);
+
+  const geminiResults = new Map(); // id → { available, narrator, hours }
+
+  for (let i = 0; i < needsGemini.length; i += BATCH_SIZE) {
+    const batch = needsGemini.slice(i, i + BATCH_SIZE);
+    const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+    const totalBatches = Math.ceil(needsGemini.length / BATCH_SIZE);
+    process.stdout.write(`Batch ${batchNum}/${totalBatches} … `);
+
+    try {
+      const results = await classifyBatch(batch);
+      for (const r of results) {
+        geminiResults.set(r.id, {
+          available: r.audiobook_available === true,
+          narrator: r.audiobook_narrator ?? null,
+          hours: r.audiobook_hours ?? null,
+          source: r.audiobook_available ? 'Gemini' : null,
+        });
+      }
+      const confirmed = results.filter((r) => r.audiobook_available).length;
+      console.log(`✓ (${confirmed}/${batch.length} confirmed)`);
+    } catch (err) {
+      console.log(`✗ ${err.message}`);
+      for (const b of batch) {
+        geminiResults.set(b.id, { available: false, narrator: null, hours: null, source: null });
+      }
+    }
+
+    await sleep(900);
+  }
+
+  // ── Step 3: Merge results + get narrator ratings for confirmed audiobooks ──
+  console.log('\n── Step 3: Narrator ratings + DB write ──\n');
+
+  let found    = 0;
+  let notFound = 0;
+  let failed   = 0;
+
+  for (const book of books) {
+    const gb     = gbResults.get(book.id) ?? { available: false, narrator: null, hours: null };
+    const gemini = geminiResults.get(book.id) ?? { available: false, narrator: null, hours: null };
+
+    // Either source confirming = available
+    const available = gb.available || gemini.available;
+    // Prefer Google Books for narrator/hours, fall back to Gemini
+    const narrator  = gb.narrator ?? gemini.narrator ?? null;
+    const hours     = gb.hours ?? gemini.hours ?? null;
+    const source    = gb.available ? 'GB' : (gemini.available ? 'Gemini' : null);
+
+    let narratorRating = null;
+    if (available && narrator && !DRY_RUN) {
+      narratorRating = await getNarratorRating(book.title, book.authors?.[0] ?? '', narrator);
       await sleep(DELAY_MS);
+    }
+
+    const updates = {
+      audiobook_available:       available,
+      audiobook_narrator:        available ? narrator : null,
+      audiobook_narrator_rating: available ? narratorRating : null,
+      audiobook_hours:           available ? hours : null,
+      audiobook_audible_url:     available ? buildAudibleUrl(book.title, book.authors) : null,
+    };
+
+    const line = available
+      ? `✓ [${source}] ${narrator ?? 'narrator?'} · ${hours ?? '?'}h · rating: ${narratorRating ?? '?'}`
+      : `— no audiobook`;
+
+    process.stdout.write(`${book.title.slice(0, 45).padEnd(45)} `);
+
+    if (DRY_RUN) {
+      console.log(`[dry] ${line}`);
+      available ? found++ : notFound++;
       continue;
     }
 
-    console.log('');
+    const { error: updateErr } = await supabase
+      .from('books')
+      .update(updates)
+      .eq('id', book.id);
 
-    for (const result of results) {
-      const book = batch.find((b) => b.id === result.id);
-      if (!book) continue;
-
-      const updates = {
-        audiobook_available: result.audiobook_available === true,
-      };
-
-      if (result.audiobook_available) {
-        updates.audiobook_narrator = result.audiobook_narrator ?? null;
-        updates.audiobook_hours    = result.audiobook_hours ?? null;
-        updates.audiobook_audible_url = buildAudibleUrl(book.title, book.authors);
-
-        if (result.audiobook_narrator_rating) {
-          if (VALID_NARRATOR_RATING.includes(result.audiobook_narrator_rating)) {
-            updates.audiobook_narrator_rating = result.audiobook_narrator_rating;
-          } else {
-            console.warn(`  ⚠️  "${book.title}": invalid narrator_rating "${result.audiobook_narrator_rating}"`);
-          }
-        }
-      } else {
-        updates.audiobook_narrator        = null;
-        updates.audiobook_narrator_rating = null;
-        updates.audiobook_hours           = null;
-        updates.audiobook_audible_url     = null;
-      }
-
-      const available = updates.audiobook_available;
-      const line = available
-        ? `  ${book.title.slice(0, 40).padEnd(40)} → ✓ ${updates.audiobook_narrator ?? 'Unknown'} (${updates.audiobook_hours ?? '?'}h) [${updates.audiobook_narrator_rating ?? '?'}]`
-        : `  ${book.title.slice(0, 40).padEnd(40)} → no audiobook`;
-
-      if (DRY_RUN) {
-        console.log(`[dry] ${line}`);
-        updated++;
-        continue;
-      }
-
-      const { error: updateError } = await supabase
-        .from('books')
-        .update(updates)
-        .eq('id', book.id);
-
-      if (updateError) {
-        console.log(`  ✗ ${book.title}: ${updateError.message}`);
-        failed++;
-      } else {
-        console.log(`  ✓ ${line}`);
-        updated++;
-      }
+    if (updateErr) {
+      console.log(`✗ DB: ${updateErr.message}`);
+      failed++;
+    } else {
+      console.log(line);
+      available ? found++ : notFound++;
     }
-
-    if (i + BATCH_SIZE < books.length) await sleep(DELAY_MS);
   }
 
-  console.log(`\n──────────────────────────────`);
-  console.log(`✅ Updated:  ${updated}`);
-  if (failed) console.log(`✗  Failed:   ${failed}`);
+  console.log(`\n──────────────────────────────────`);
+  console.log(`✅ Audiobooks found:  ${found}`);
+  console.log(`   No audiobook:      ${notFound}`);
+  if (failed) console.log(`✗  Errors:           ${failed}`);
   console.log('');
 }
 

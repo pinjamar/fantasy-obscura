@@ -1,6 +1,6 @@
 ---
 import Layout from '../../components/Layout.astro'
-import { getBooksLikeEntry, getDarkness, darknessCandles, darknessLabel, getHeat } from '../../data/books-like'
+import { getBooksLikeEntry, getDarkness, darknessCandles, getHeat } from '../../data/books-like'
 import { supabaseClient } from '../../lib/supabaseClient'
 
 const { slug } = Astro.params
@@ -9,15 +9,13 @@ if (!slug) return Astro.redirect('/books-like/')
 const entry = getBooksLikeEntry(slug)
 if (!entry) return new Response(null, { status: 404, statusText: 'Not Found' })
 
-const { source, aspects, recommendations, related } = entry
+const { source, aspects, related } = entry
 
 const toSlug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 const authorSlug = toSlug(source.author)
 const seriesSlug = source.series ? toSlug(source.series) : null
 const sourceBookSlug = source.db_slug ?? toSlug(source.title.replace(/\s*\([^)]*\)/g, '').trim())
 
-const amazonSource   = `https://www.amazon.com/s?k=${encodeURIComponent(source.title + ' ' + source.author)}`
-const bookshopSource = `https://bookshop.org/search?keywords=${encodeURIComponent(source.title)}`
 
 // Fetch tropes + cover from DB for the source book
 const { data: dbBook } = await supabaseClient
@@ -101,22 +99,24 @@ const booksLikeJsonLd = JSON.stringify({
 
     <!-- Cover -->
     <div class="flex flex-col gap-3">
-      <div class="relative w-full max-w-[200px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-purple-200 to-blue-200">
-        <img
-          src={sourceCover || '/grimplaceholder.png'}
-          alt={`Cover of ${source.title}`}
-          class="absolute inset-0 w-full h-full object-cover"
-          onerror="this.onerror=null;this.src='/grimplaceholder.png';"
-        />
-      </div>
-      <a href={amazonSource} target="_blank" rel="noopener noreferrer"
-        class="flex items-center justify-center gap-2 w-full max-w-[200px] mx-auto lg:mx-0 px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-500 text-zinc-900 text-sm font-semibold transition-colors">
-        🛒 Buy on Amazon
-      </a>
-      <a href={bookshopSource} target="_blank" rel="noopener noreferrer"
-        class="flex items-center justify-center gap-2 w-full max-w-[200px] mx-auto lg:mx-0 px-4 py-2 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 text-sm font-semibold transition-colors">
-        🏪 Bookshop.org
-      </a>
+      {dbSlugSet.has(sourceBookSlug)
+        ? <a href={`/books/${sourceBookSlug}/`} class="relative w-full max-w-[200px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-purple-200 to-blue-200 block">
+            <img
+              src={sourceCover || '/grimplaceholder.png'}
+              alt={`Cover of ${source.title}`}
+              class="absolute inset-0 w-full h-full object-cover"
+              onerror="this.onerror=null;this.src='/grimplaceholder.png';"
+            />
+          </a>
+        : <div class="relative w-full max-w-[200px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-purple-200 to-blue-200">
+            <img
+              src={sourceCover || '/grimplaceholder.png'}
+              alt={`Cover of ${source.title}`}
+              class="absolute inset-0 w-full h-full object-cover"
+              onerror="this.onerror=null;this.src='/grimplaceholder.png';"
+            />
+          </div>
+      }
     </div>
 
     <!-- Title + meta -->
@@ -162,12 +162,13 @@ const booksLikeJsonLd = JSON.stringify({
         ))}
       </div>
 
-      <!-- Why people love it -->
-      <div class="mt-6 p-5 rounded-2xl bg-zinc-50 border border-zinc-200">
-        <h2 class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Why people love this book</h2>
-        <p class="text-zinc-700 leading-relaxed text-[15px]">{source.why_people_love}</p>
-      </div>
     </div>
+  </div>
+
+  <!-- Why people love it -->
+  <div class="mb-8 -mt-6 p-5 rounded-2xl bg-zinc-50 border border-zinc-200">
+    <h2 class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Why people love this book</h2>
+    <p class="text-zinc-700 leading-relaxed text-[15px]">{source.why_people_love}</p>
   </div>
 
   <!-- ── WHAT YOU'RE REALLY LOOKING FOR ─────────────────────────── -->
@@ -194,14 +195,9 @@ const booksLikeJsonLd = JSON.stringify({
                 <div class="rounded-xl border border-violet-200 bg-violet-50 p-4 flex gap-5">
                   <!-- Cover + Amazon -->
                   <div class="shrink-0 flex flex-col gap-2">
-                    {dbSlugSet.has(recSlug)
-                      ? <a href={`/books/${recSlug}/`} class="relative w-24 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 block">
-                          <img src={upgradeCoverUrl(recCover) || '/grimplaceholder.png'} alt={`Cover of ${r.title}`} class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null;this.src='/grimplaceholder.png';" onload="if(this.naturalWidth<=1||this.naturalHeight<=1){this.src='/grimplaceholder.png';}" />
-                        </a>
-                      : <div class="relative w-24 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100">
-                          <img src={upgradeCoverUrl(recCover) || '/grimplaceholder.png'} alt={`Cover of ${r.title}`} class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null;this.src='/grimplaceholder.png';" onload="if(this.naturalWidth<=1||this.naturalHeight<=1){this.src='/grimplaceholder.png';}" />
-                        </div>
-                    }
+                    <a href={`/books/${recSlug}/`} class="relative w-24 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 block">
+                      <img src={upgradeCoverUrl(recCover) || '/grimplaceholder.png'} alt={`Cover of ${r.title}`} class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null;this.src='/grimplaceholder.png';" onload="if(this.naturalWidth<=1||this.naturalHeight<=1){this.src='/grimplaceholder.png';}" />
+                    </a>
                     <a href={r.amazon_url} target="_blank" rel="noopener noreferrer"
                       class="w-full text-center px-2 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-500 text-zinc-900 text-xs font-semibold transition-colors">
                       Amazon

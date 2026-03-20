@@ -280,26 +280,24 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
       )}
 
       {/* Sort bar */}
-      <div className="flex flex-wrap items-center gap-2 mb-6">
-        <span className="text-sm text-zinc-500 mr-1">Sort:</span>
-        {SORT_OPTIONS.map((opt) => (
-          <button
-            key={opt.key}
-            onClick={() => { setSort(opt.key); setCurrentPage(1); }}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all ${
-              sort === opt.key
-                ? 'bg-zinc-900 text-white font-medium'
-                : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
-            }`}
-          >
-            <span>{opt.icon}</span>
-            {opt.label}
-          </button>
-        ))}
-        <span className="ml-auto text-xs text-zinc-400">
-          {filteredBooks.length}{searchQuery.trim().length >= 2 && filteredBooks.length !== sortedBooks.length ? ` of ${sortedBooks.length}` : ''} books
-          {totalBooksPages > 1 && ` · page ${currentPage}/${totalBooksPages}`}
-        </span>
+      <div className="mb-6">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          <span className="text-sm text-zinc-500 shrink-0">Sort:</span>
+          {SORT_OPTIONS.map((opt) => (
+            <button
+              key={opt.key}
+              onClick={() => { setSort(opt.key); setCurrentPage(1); }}
+              className={`shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all ${
+                sort === opt.key
+                  ? 'bg-zinc-900 text-white font-medium'
+                  : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
+              }`}
+            >
+              <span>{opt.icon}</span>
+              {opt.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Darkness + Heat filters in one row */}
@@ -381,6 +379,10 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
             <span className="text-sm font-medium text-zinc-700">{label}</span>
           </button>
         ))}
+        <span className="ml-auto text-xs text-zinc-400 shrink-0">
+          {filteredBooks.length}{searchQuery.trim().length >= 2 && filteredBooks.length !== sortedBooks.length ? ` of ${sortedBooks.length}` : ''} books
+          {totalBooksPages > 1 && ` · page ${currentPage}/${totalBooksPages}`}
+        </span>
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
