@@ -137,11 +137,11 @@ const cleanBio = profile?.bio
   .trim() || null;
 
 // Similar authors: query authors table for those sharing genres, sorted by book count
-type SimilarAuthorRow = { name: string; slug: string; photo_url: string | null };
+type SimilarAuthorRow = { name: string; slug: string; photo_url: string | null; book_count: number | null };
 const { data: simData } = topGenres.length > 0
   ? await (supabaseClient
       .from('authors')
-      .select('name, slug, photo_url')
+      .select('name, slug, photo_url, book_count')
       .overlaps('top_genres', topGenres)
       .neq('slug', slug)
       .order('book_count', { ascending: false, nullsFirst: false })
@@ -189,7 +189,7 @@ const authorJsonLd = JSON.stringify({
   </nav>
 
   <!-- Author hero -->
-  <div class="flex flex-col sm:flex-row gap-6 items-start mb-10">
+  <div class="flex flex-row gap-6 items-start mb-10">
     {profile?.photo_url ? (
       <img
         src={profile.photo_url}
@@ -363,7 +363,7 @@ const authorJsonLd = JSON.stringify({
 
   <!-- Similar Authors -->
   {similarAuthors.length > 0 && (
-    <div class="mb-10">
+    <div class="hidden sm:block mb-10">
       <h2 class="text-xl font-semibold mb-4">Similar Authors</h2>
       <div class="grid gap-3 grid-cols-5">
         {similarAuthors.map((a) => {
@@ -395,7 +395,7 @@ const authorJsonLd = JSON.stringify({
               )}
               <div class="min-w-0">
                 <p class="font-medium text-sm text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug line-clamp-2">{a.name}</p>
-                <p class="text-xs text-zinc-400 mt-0.5">{a.bookCount} {a.bookCount === 1 ? 'book' : 'books'}</p>
+                <p class="text-xs text-zinc-400 mt-0.5">{a.book_count ?? 0} {(a.book_count ?? 0) === 1 ? 'book' : 'books'}</p>
               </div>
             </a>
           );
@@ -486,9 +486,9 @@ const authorJsonLd = JSON.stringify({
       );
 
       return href ? (
-        <a href={href} class="block book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0}>{inner}</a>
+        <a href={href} class="block book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0} style={i >= 8 ? 'display:none' : ''}>{inner}</a>
       ) : (
-        <div class="book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0}>{inner}</div>
+        <div class="book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0} style={i >= 8 ? 'display:none' : ''}>{inner}</div>
       );
     })}
   </div>

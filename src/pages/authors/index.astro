@@ -14,6 +14,7 @@ type AuthorRow = {
 const { data } = await supabaseClient
   .from('authors')
   .select('name, slug, photo_url, book_count, top_genres, avg_rating')
+  .gt('book_count', 1)
   .order('name');
 
 const authors = (data ?? []) as unknown as AuthorRow[];
@@ -106,7 +107,7 @@ function authorColor(name: string): string {
               href={`/authors/${author.slug}/`}
               data-name={author.name.toLowerCase()}
               data-bookcount={author.book_count ?? 0}
-              class={`author-card flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group${(author.book_count ?? 0) <= 1 ? ' default-hidden' : ''}`}
+              class="author-card flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group"
             >
               <!-- Avatar / Photo -->
               {author.photo_url ? (
@@ -163,20 +164,10 @@ function authorColor(name: string): string {
 
   let activeLetter = letterBtns[0]?.dataset.letter ?? '';
 
-  // Hide 1-book authors in the initially-visible section
-  document.querySelectorAll<HTMLElement>('.default-hidden').forEach((c) => c.classList.add('hidden'));
-
   function showLetter(letter: string) {
     activeLetter = letter;
     sections.forEach((s) => {
-      const show = s.id === `letter-${letter}`;
-      s.classList.toggle('hidden', !show);
-      if (show) {
-        // Re-apply default-hidden for 1-book authors when not in search mode
-        s.querySelectorAll<HTMLElement>('.author-card').forEach((c) => {
-          c.classList.toggle('hidden', c.classList.contains('default-hidden'));
-        });
-      }
+      s.classList.toggle('hidden', s.id !== `letter-${letter}`);
     });
     letterBtns.forEach((btn) => {
       const active = btn.dataset.letter === letter;
@@ -205,7 +196,7 @@ function authorColor(name: string): string {
       return;
     }
 
-    // Search mode: show all sections, filter cards (including 1-book authors)
+    // Search mode: show all sections, filter cards
     azNav.classList.add('hidden');
     let total = 0;
     sections.forEach((section) => {
