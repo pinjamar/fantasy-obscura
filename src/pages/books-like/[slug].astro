@@ -51,7 +51,7 @@ const dbRecCoverMap = new Map<string, string>(
   (dbRecCovers ?? []).filter((b) => b.cover_url && !b.cover_url.includes('archive.org')).map((b) => [b.slug, b.cover_url])
 )
 
-const SITE = 'https://www.thegrimoire.co';
+const SITE = 'https://thegrimoire.co';
 const allRecs = aspects.flatMap((a) => a.recs);
 const booksLikeJsonLd = JSON.stringify({
   '@context': 'https://schema.org',

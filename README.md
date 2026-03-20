@@ -2,7 +2,7 @@
 
 A curated guide site for fantasy book lovers - with genre category pages, reading orders, creature references, an interactive book recommendation tool and individual book pages with affiliate buy links.
 
-Live at: **[thegrimoire.co](https://www.thegrimoire.co)**
+Live at: **[thegrimoire.co](https://thegrimoire.co)**
 
 ## Quick Start
 

@@ -7,7 +7,7 @@ import { CATEGORIES_META } from '../data/categories-meta';
 const CATEGORY_SLUGS = Object.keys(CATEGORIES_META);
 const CATEGORY_LIST_TYPES = ['all-time-greats', 'start-with', 'hidden-gems'] as const;
 
-const SITE = 'https://www.thegrimoire.co';
+const SITE = 'https://thegrimoire.co';
 
 // Books-like slugs from static data
 const BOOKS_LIKE_SLUGS = BOOKS_LIKE.map((e) => e.slug);

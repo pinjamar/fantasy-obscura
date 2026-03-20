@@ -339,3 +339,373 @@
 
 ### Rule applied
 > "Would someone search 'books like [X]' having read ONLY this book, not the rest of the series?"
+
+# Reading Orders — Priority List
+*Focus on series where order genuinely matters and readers actively search for guidance*
+
+---
+
+## TIER 1 — Build Immediately (Highest Traffic)
+*These drive the majority of reading order search traffic*
+
+### Brandon Sanderson (4 pages)
+1. **Sanderson's Cosmere — Complete Guide**
+   - All Cosmere works in recommended reading order
+   - Three paths: newcomer / Mistborn-first / Stormlight-first
+   - Novellas placement (Edgedancer, Dawnshard, Tress, Yumi, Sunlit Man)
+   - Crossover connections explained spoiler-free
+   - Slug: `/reading-orders/cosmere`
+
+2. **Mistborn Reading Order**
+   - Era 1 (original trilogy) → Era 2 (Wax & Wayne) → Era 3 (future)
+   - Where Secret History fits
+   - Short stories placement
+   - Slug: `/reading-orders/mistborn`
+
+3. **Stormlight Archive Reading Order**
+   - Books 1-5 + novellas (Edgedancer, Dawnshard)
+   - When to read Warbreaker (before book 2)
+   - Rhythm of War / Wind and Truth placement
+   - Slug: `/reading-orders/stormlight-archive`
+
+4. **Where to Start with Sanderson**
+   - Decision guide: Mistborn vs Stormlight vs Elantris vs Warbreaker
+   - For new-to-fantasy vs experienced readers
+   - Slug: `/reading-orders/sanderson-start-here`
+
+### Sarah J. Maas (4 pages)
+5. **Complete SJM Reading Order**
+   - All three series + optimal reading order across them
+   - Crescent City / ACOTAR / Throne of Glass crossover points
+   - Slug: `/reading-orders/sarah-j-maas`
+
+6. **ACOTAR Reading Order**
+   - Books 1-5 + A Court of Frost and Starlight placement
+   - Which books can be skipped / read standalone
+   - Companion novellas
+   - Slug: `/reading-orders/acotar`
+
+7. **Throne of Glass Reading Order**
+   - 8 books + novellas (The Assassin's Blade — read first or after book 1?)
+   - Celaena short stories placement
+   - Slug: `/reading-orders/throne-of-glass`
+
+8. **Crescent City Reading Order**
+   - 3 books + Crescent City / ACOTAR crossover point (book 3)
+   - Read ACOTAR first or not?
+   - Slug: `/reading-orders/crescent-city`
+
+### Rebecca Yarros (1 page)
+9. **Empyrean / Fourth Wing Reading Order**
+   - Fourth Wing → Iron Flame → Onyx Storm + future books
+   - No reading order complexity but readers search it constantly
+   - Slug: `/reading-orders/empyrean`
+
+### Robert Jordan / Brandon Sanderson (1 page)
+10. **Wheel of Time Reading Order**
+    - All 14 books in order
+    - New Spring placement (prequel — before or after?)
+    - Where Sanderson takes over (book 12) and what changes
+    - Is book 10 really that bad? Honest answer
+    - Slug: `/reading-orders/wheel-of-time`
+
+### Joe Abercrombie (1 page)
+11. **First Law World Reading Order**
+    - Original trilogy → standalones → Age of Madness
+    - Sharp Ends placement (optional short stories)
+    - Why standalones must come before Age of Madness
+    - Darkness progression across the series
+    - Slug: `/reading-orders/first-law`
+
+### George R.R. Martin (1 page)
+12. **A Song of Ice and Fire Reading Order**
+    - 5 main books + Fire & Blood + The World of Ice and Fire
+    - Should you read The Princess and the Queen / Rogue Prince?
+    - Where the show diverges from books
+    - Winds of Winter honest status update
+    - Slug: `/reading-orders/asoiaf`
+
+### Steven Erikson (1 page)
+13. **Malazan Book of the Fallen Reading Order**
+    - 10 main books + ICE companion series
+    - Honest "should you read this" guide (it's brutal)
+    - The Gardens of the Moon problem — push through or skip?
+    - Where Ian C. Esslemont's books fit
+    - Slug: `/reading-orders/malazan`
+
+### Terry Pratchett (1 page)
+14. **Discworld Reading Order**
+    - Publication order vs subseries order
+    - 4 entry points: Rincewind / Death / City Watch / Witches
+    - Which books work as standalones
+    - Which subseries to skip if you bounce off Colour of Magic
+    - Slug: `/reading-orders/discworld`
+
+### Robin Hobb (1 page)
+15. **Realm of the Elderlings Reading Order**
+    - Farseer → Liveship → Tawny Man → Rain Wild → Fitz and Fool
+    - Can you skip Liveship Traders? (No, and here's why)
+    - Darkness progression guide
+    - Slug: `/reading-orders/realm-of-the-elderlings`
+
+---
+
+## TIER 2 — Write Within 3 Months (20 pages)
+
+### Jennifer L. Armentrout (2 pages)
+16. **From Blood and Ash / Blood and Ash Reading Order**
+    - Blood and Ash series (6 books)
+    - Flesh and Fire prequel series order
+    - Which series first?
+    - Slug: `/reading-orders/blood-and-ash`
+
+17. **Jennifer L. Armentrout Complete Reading Order**
+    - All series and how they connect
+    - Slug: `/reading-orders/jennifer-armentrout`
+
+### Leigh Bardugo (1 page)
+18. **Grishaverse Reading Order**
+    - Shadow and Bone trilogy vs Six of Crows duology — which first?
+    - King of Scars placement
+    - The Familiar connection
+    - Show vs book differences
+    - Slug: `/reading-orders/grishaverse`
+
+### Patrick Rothfuss (1 page)
+19. **Kingkiller Chronicle Reading Order**
+    - Name of the Wind → Wise Man's Fear → Slow Regard (optional)
+    - Honest update on book 3 status (14 years, no release date)
+    - Should you start an unfinished series?
+    - Slug: `/reading-orders/kingkiller-chronicle`
+
+### Mark Lawrence (1 page)
+20. **Broken Empire / Lawrence Reading Order**
+    - Broken Empire trilogy → Red Queen's War → Book of the Ancestor → Book of the Ice
+    - Do the trilogies connect? (Yes, but how)
+    - Slug: `/reading-orders/mark-lawrence`
+
+### Terry Brooks (1 page)
+21. **Shannara Reading Order**
+    - Decades of books, multiple entry points
+    - Original trilogy vs chronological order
+    - Which series to skip
+    - Slug: `/reading-orders/shannara`
+
+### Callie Hart (1 page)
+22. **Fae & Alchemy / Quicksilver Reading Order**
+    - Quicksilver → Brimstone
+    - Slug: `/reading-orders/fae-and-alchemy`
+
+### Danielle L. Jensen (1 page)
+23. **Bridge Kingdom Reading Order**
+    - Bridge Kingdom series + Saga of the Unfated
+    - Slug: `/reading-orders/bridge-kingdom`
+
+### Holly Black (1 page)
+24. **Folk of the Air / Cruel Prince Reading Order**
+    - The Cruel Prince → Wicked King → Queen of Nothing
+    - How the World of Faerie connects
+    - Slug: `/reading-orders/folk-of-the-air`
+
+### Garth Nix (1 page)
+25. **Old Kingdom / Sabriel Reading Order**
+    - Sabriel → Lirael → Abhorsen + novellas
+    - Slug: `/reading-orders/old-kingdom`
+
+### Ursula Le Guin (1 page)
+26. **Earthsea Reading Order**
+    - 6 books in order
+    - Which are essential vs optional
+    - Publication vs internal chronology
+    - Slug: `/reading-orders/earthsea`
+
+### Tamsyn Muir (1 page)
+27. **Locked Tomb Reading Order**
+    - Gideon → Harrow → Nona → Alecto
+    - The re-read question (Harrow hits differently on re-read)
+    - Slug: `/reading-orders/locked-tomb`
+
+### Fonda Lee (1 page)
+28. **Green Bone Saga Reading Order**
+    - Jade City → Jade War → Jade Legacy
+    - All three essential — no optional entries
+    - Slug: `/reading-orders/green-bone-saga`
+
+### Brian McClellan (1 page)
+29. **Powder Mage Reading Order**
+    - Original trilogy + Gods of Blood and Powder
+    - Cosmere connection? (No — standalone world)
+    - Slug: `/reading-orders/powder-mage`
+
+### R.F. Kuang (1 page)
+30. **R.F. Kuang Reading Order**
+    - Poppy War trilogy → Babel (standalone) → Yellowface
+    - Do they connect? (No — different worlds)
+    - Slug: `/reading-orders/rf-kuang`
+
+### Peter V. Brett (1 page)
+31. **Demon Cycle Reading Order**
+    - 5 books in order
+    - The Painted Man / Warded Man naming confusion (same book)
+    - Slug: `/reading-orders/demon-cycle`
+
+### Guy Gavriel Kay (1 page)
+32. **Guy Gavriel Kay Reading Order**
+    - Fionavar Tapestry → standalone novels → Sarantine Mosaic → Children of Earth and Sky
+    - Which are connected vs standalone
+    - Best entry point for new readers
+    - Slug: `/reading-orders/guy-gavriel-kay`
+
+### Rebecca Ross (1 page)
+33. **Divine Rivals / Wintersea Reading Order**
+    - Divine Rivals → Ruthless Vows + Wild Reverence spinoff
+    - Slug: `/reading-orders/divine-rivals`
+
+### Raven Kennedy (1 page)
+34. **Plated Prisoner Reading Order**
+    - 5 books in order
+    - Slug: `/reading-orders/plated-prisoner`
+
+### Lauren Roberts (1 page)
+35. **Powerless Reading Order**
+    - Powerless → Powerful → Fearless
+    - Slug: `/reading-orders/powerless`
+
+---
+
+## TIER 3 — Long Term (25 pages)
+
+### Epic Fantasy Deep Cuts
+36. **Memory, Sorrow and Thorn Reading Order** (Tad Williams)
+    - Slug: `/reading-orders/memory-sorrow-thorn`
+
+37. **Chronicles of the One Reading Order** (Nora Roberts)
+    - Slug: `/reading-orders/chronicles-of-the-one`
+
+38. **Black Company Reading Order** (Glen Cook)
+    - Slug: `/reading-orders/black-company`
+
+39. **Chronicles of Amber Reading Order** (Roger Zelazny)
+    - Slug: `/reading-orders/chronicles-of-amber`
+
+40. **Farseer / Robin Hobb Entry Points**
+    - Can you start with Liveship Traders? (No)
+    - Slug: `/reading-orders/farseer-trilogy`
+
+41. **Dragonbone Chair / Memory Sorrow Thorn** (Tad Williams)
+    - Slug: `/reading-orders/tad-williams`
+
+42. **Kate Daniels Reading Order** (Ilona Andrews)
+    - Slug: `/reading-orders/kate-daniels`
+
+43. **Dresden Files Reading Order** (Jim Butcher)
+    - 17+ books + short stories
+    - Side Jobs and Brief Cases placement
+    - Slug: `/reading-orders/dresden-files`
+
+44. **Rivers of London Reading Order** (Ben Aaronovitch)
+    - Slug: `/reading-orders/rivers-of-london`
+
+### Romantasy Complete Guides
+45. **Caroline Peckham & Susanne Valenti Reading Order**
+    - Zodiac Academy + all connected series
+    - Slug: `/reading-orders/peckham-valenti`
+
+46. **Elise Kova Reading Order**
+    - A Deal with the Elf King + Arcana Academy
+    - Slug: `/reading-orders/elise-kova`
+
+47. **Penn Cole Reading Order**
+    - Burn of the Everflame series
+    - Slug: `/reading-orders/penn-cole`
+
+48. **Charlie N. Holmberg Reading Order**
+    - Spellbreaker + Paper Magician + other series
+    - Slug: `/reading-orders/charlie-holmberg`
+
+### Sci-Fi Fantasy
+49. **Dune Complete Reading Order**
+    - Frank Herbert's 6 books vs Brian Herbert continuations
+    - Which books to stop at (honest opinion)
+    - Slug: `/reading-orders/dune`
+
+50. **The Expanse Reading Order**
+    - 9 books + novellas
+    - Slug: `/reading-orders/expanse`
+
+51. **Old Man's War Reading Order** (Scalzi)
+    - Slug: `/reading-orders/old-mans-war`
+
+52. **Becky Chambers Reading Order**
+    - Wayfarers series — standalone vs connected
+    - Monk and Robot
+    - Slug: `/reading-orders/becky-chambers`
+
+### LitRPG & Progression
+53. **Cradle / Willwight Reading Order**
+    - All 12 books in order
+    - Slug: `/reading-orders/cradle`
+
+54. **Dungeon Crawler Carl Reading Order**
+    - Slug: `/reading-orders/dungeon-crawler-carl`
+
+55. **He Who Fights With Monsters Reading Order**
+    - Slug: `/reading-orders/he-who-fights-with-monsters`
+
+### Special Feature Pages
+56. **Which Fantasy Series Should You Start? (Epic Fantasy Comparison)**
+    - Sanderson vs Jordan vs Erikson vs Abercrombie
+    - Difficulty ratings, time commitment, darkness ratings
+    - Slug: `/reading-orders/which-epic-fantasy-series`
+
+57. **Complete Sarah J. Maas Universe Reading Order**
+    - All three series chronologically with crossover points
+    - Slug: `/reading-orders/complete-sjm-universe`
+
+58. **Romantasy Series Ranked by Reading Order Complexity**
+    - Which series are easy to follow vs confusing
+    - Slug: `/reading-orders/romantasy-reading-order-guide`
+
+59. **Unfinished Series Tracker**
+    - Winds of Winter, Doors of Stone, Stormlight 6
+    - Last update dates, author statements
+    - Slug: `/reading-orders/unfinished-series`
+
+60. **Fantasy Standalones — No Reading Order Needed**
+    - Best complete fantasy novels requiring zero commitment
+    - Piranesi, Circe, The Goblin Emperor, Spinning Silver etc.
+    - Slug: `/reading-orders/fantasy-standalones`
+
+---
+
+## Notes for Claude Code
+
+### Page structure (every reading order page)
+- Series name + author + total books + estimated reading hours
+- Darkness progression (does it get darker across the series?)
+- Core vs Optional vs Extra labels per book
+- "Safe starting point" section
+- Publication order vs chronological order (only where they differ)
+- Spoiler-free notes
+- "Finished? Find books like [Series]" → internal link to Books Like page
+- Related reading orders (3 links at bottom)
+
+### Priority slugs to build first
+```
+/reading-orders/cosmere
+/reading-orders/mistborn
+/reading-orders/stormlight-archive
+/reading-orders/acotar
+/reading-orders/throne-of-glass
+/reading-orders/wheel-of-time
+/reading-orders/first-law
+/reading-orders/malazan
+/reading-orders/asoiaf
+/reading-orders/grishaverse
+```
+
+### SEO note
+Reading order pages rank faster than Books Like pages.
+Less competition, more specific intent, reader is already committed.
+Target keyword always in first sentence:
+"The [Series Name] reading order matters because..."
