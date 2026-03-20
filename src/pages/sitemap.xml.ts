@@ -2,8 +2,12 @@ import type { APIRoute } from 'astro';
 import { createClient } from '@supabase/supabase-js';
 import { BOOKS_LIKE } from '../data/books-like';
 import { READING_ORDERS } from '../data/reading-orders';
+import { CATEGORIES_META } from '../data/categories-meta';
 
-const SITE = 'https://fantasy-obscura.pages.dev';
+const CATEGORY_SLUGS = Object.keys(CATEGORIES_META);
+const CATEGORY_LIST_TYPES = ['all-time-greats', 'start-with', 'hidden-gems'] as const;
+
+const SITE = 'https://www.thegrimoire.co';
 
 // Books-like slugs from static data
 const BOOKS_LIKE_SLUGS = BOOKS_LIKE.map((e) => e.slug);
@@ -87,6 +91,12 @@ export const GET: APIRoute = async ({ locals }) => {
     ...authorSlugs.map((s) => urlEntry(`/authors/${s}/`, '0.6', 'monthly')),
     // Tropes
     ...tropeSlugs.map((s) => urlEntry(`/tropes/${s}/`, '0.5', 'monthly')),
+    // Fantasy category pages
+    ...CATEGORY_SLUGS.map((s) => urlEntry(`/fantasy/${s}/`, '0.7', 'weekly')),
+    // Fantasy category sub-pages (all-time-greats, start-with, hidden-gems)
+    ...CATEGORY_SLUGS.flatMap((s) =>
+      CATEGORY_LIST_TYPES.map((t) => urlEntry(`/fantasy/${s}/${t}/`, '0.6', 'monthly'))
+    ),
     // Books Like
     ...BOOKS_LIKE_SLUGS.map((s) => urlEntry(`/books-like/${s}/`, '0.7', 'monthly')),
     // Reading orders — curated

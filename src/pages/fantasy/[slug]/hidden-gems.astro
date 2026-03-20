@@ -22,12 +22,34 @@ const books = (allMatches ?? [])
 const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
 
 function starPct(r: number) { return ((r / 5) * 100).toFixed(2) + '%'; }
+
+const SITE = 'https://www.thegrimoire.co';
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `${cat.name} Hidden Gems`,
+  description: `20 underrated ${cat.name} books that deserve more attention — great reads with less hype.`,
+  numberOfItems: books.length,
+  itemListElement: books.map((b, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Book',
+      name: b.title,
+      author: (b.authors ?? []).map((a: string) => ({ '@type': 'Person', name: a })),
+      url: `${SITE}/books/${b.slug}/`,
+    },
+  })),
+});
 ---
 
 <Layout
   title={`${cat.name} Hidden Gems — 20 Underrated Books | The Grimoire`}
   description={`Discover 20 underrated ${cat.name} books that deserve more attention — great ratings, less hype.`}
 >
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={jsonLd} />
+  </Fragment>
   <div class="max-w-2xl mx-auto">
     <nav class="text-sm text-zinc-400 mb-6 flex items-center gap-2">
       <a href="/books/" class="hover:text-zinc-700 transition-colors">Start Here</a>

@@ -2,7 +2,7 @@
 
 A curated guide site for fantasy book lovers - with genre category pages, reading orders, creature references, an interactive book recommendation tool and individual book pages with affiliate buy links.
 
-Live at: **fantasy-obscura.pages.dev**
+Live at: **[thegrimoire.co](https://www.thegrimoire.co)**
 
 ## Quick Start
 
@@ -359,6 +359,7 @@ src/
 │   └── Stars.tsx           # Star rating display
 ├── data/
 │   ├── books-like.ts       # Hand-written "Books Like X" guide data
+│   ├── categories-meta.ts  # Genre category metadata + curated 30-title lists (all-time greats / start with / hidden gems)
 │   ├── reading-orders.ts   # Reading order data for all series guides
 │   └── tropes.ts           # Canonical trope definitions
 ├── lib/
@@ -387,8 +388,12 @@ src/
     ├── books-like/
     │   ├── index.astro              # Books Like index + AI recommendation tool
     │   └── [slug].astro             # Individual "Books Like X" guide
-    ├── categories/
-    │   └── [slug]/index.astro       # Genre category pages (cozy, grimdark, romantasy, etc.)
+    ├── fantasy/
+    │   └── [slug]/
+    │       ├── index.astro          # Genre category page (12 categories: epic, grimdark, romantasy, etc.)
+    │       ├── all-time-greats.astro# Top 20 all-time greats — curated list cross-referenced with DB
+    │       ├── start-with.astro     # Top 20 beginner picks — curated list cross-referenced with DB
+    │       └── hidden-gems.astro    # Top 20 hidden gems — curated list cross-referenced with DB
     ├── book-finder/index.astro      # Alchemy Table — filter-based book finder (/book-finder/)
     ├── my-list/index.astro          # User's personal reading shelf
     ├── reading-orders/
@@ -544,7 +549,7 @@ Based on what you're looking for, here are some picks:
 
 **[Title]** by [Author] — [synopsis excerpt]. Darkness: 🕯️🕯️ (Mild) | Standalone
 
-More curated fantasy picks → fantasy-obscura.pages.dev
+More curated fantasy picks → thegrimoire.co
 ```
 
 **Safety rules:**
