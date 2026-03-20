@@ -106,7 +106,7 @@ const dbCoverMap = new Map<string, string>(
                 <p class="text-sm text-zinc-500 mt-0.5">
                   {entry.source.author} · {darknessCandles(entry.source.darkness_level)}{(() => { const h = getHeat(entry.source.heat_level); return h ? ` ${h.flames}` : '' })()}
                 </p>
-                <div class="mt-1.5 flex flex-wrap gap-1">
+                <div class="hidden sm:flex mt-1.5 flex-wrap gap-1">
                   {tropes.slice(0, 3).map((t) => (
                     <span class="text-xs px-2 py-0.5 bg-indigo-50 text-indigo-600 border border-indigo-100 rounded-full">{t}</span>
                   ))}

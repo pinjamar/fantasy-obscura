@@ -1,6 +1,6 @@
 ---
 import Layout from '../../components/Layout.astro';
-import { getAllAuthors, getBooksByAuthor } from '../../lib/db/books';
+import { getBooksByAuthor } from '../../lib/db/books';
 import { getAuthorProfile } from '../../lib/db/authors';
 import { supabaseClient } from '../../lib/supabaseClient';
 
@@ -8,22 +8,11 @@ const { slug } = Astro.params;
 
 if (!slug) return Astro.redirect('/authors/');
 
-// Get author name from the authors table first (single targeted query).
-// Only fall back to the expensive getAllAuthors() scan if no profile entry exists.
 const profile = await getAuthorProfile(slug);
+if (!profile) return new Response(null, { status: 404, statusText: 'Not Found' });
+const authorName = profile.name;
 
-let authorName: string | null = profile?.name ?? null;
-if (!authorName) {
-  const allAuthors = await getAllAuthors();
-  const found = allAuthors.find((a) => a.slug === slug);
-  if (!found) return new Response(null, { status: 404, statusText: 'Not Found' });
-  authorName = found.name;
-}
-
-const author = { name: authorName };
-const books = await getBooksByAuthor(author.name);
-
-// Fetch photos for similar authors (resolved after similarAuthors is computed below)
+const books = await getBooksByAuthor(authorName);
 
 // Sort books by avg_rating desc (nulls last)
 const sortedBooks = [...books].sort((a, b) => {
@@ -135,7 +124,7 @@ const palette = [
   'from-rose-500 to-pink-500',     'from-fuchsia-500 to-purple-500',
 ];
 let h = 0;
-for (const c of author.name) h = (h * 31 + c.charCodeAt(0)) & 0xff;
+for (const c of authorName) h = (h * 31 + c.charCodeAt(0)) & 0xff;
 const avatarGradient = palette[h % palette.length];
 
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
@@ -147,33 +136,28 @@ const cleanBio = profile?.bio
   .join('\n')
   .trim() || null;
 
-// Similar authors: other authors sharing the most subgenres
-const authorGenreSet = new Set(topGenres);
-const similarAuthors = allAuthors
-  .filter((a) => a.slug !== slug)
-  .map((a) => ({ ...a, common: a.topGenres.filter((g) => authorGenreSet.has(g)).length }))
-  .filter((a) => a.common > 0)
-  .sort((a, b) => b.common - a.common || b.bookCount - a.bookCount)
-  .slice(0, 5);
-
-// Fetch photos for similar authors
-type PhotoRow = { slug: string; photo_url: string | null };
-const { data: simPhotosData } = await supabaseClient
-  .from('authors')
-  .select('slug, photo_url')
-  .in('slug', similarAuthors.map((a) => a.slug)) as { data: PhotoRow[] | null };
-const simPhotoMap = new Map<string, string | null>();
-for (const p of simPhotosData ?? []) simPhotoMap.set(p.slug, p.photo_url);
+// Similar authors: query authors table for those sharing genres, sorted by book count
+type SimilarAuthorRow = { name: string; slug: string; photo_url: string | null };
+const { data: simData } = topGenres.length > 0
+  ? await (supabaseClient
+      .from('authors')
+      .select('name, slug, photo_url')
+      .overlaps('top_genres', topGenres)
+      .neq('slug', slug)
+      .order('book_count', { ascending: false, nullsFirst: false })
+      .limit(5) as unknown as Promise<{ data: SimilarAuthorRow[] | null }>)
+  : { data: [] as SimilarAuthorRow[] };
+const similarAuthors = simData ?? [];
 
 const metaDescription = cleanBio
   ? cleanBio.slice(0, 160)
-  : `Explore all ${books.length} fantasy books by ${author.name} on The Grimoire — genres, tropes, and darkness ratings.`;
+  : `Explore all ${books.length} fantasy books by ${authorName} on The Grimoire — genres, tropes, and darkness ratings.`;
 
 const SITE = 'https://thegrimoire.co';
 const authorJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: author.name,
+  name: authorName,
   url: `${SITE}/authors/${slug}/`,
   ...(cleanBio ? { description: cleanBio.slice(0, 300) } : {}),
   ...(profile?.photo_url ? { image: profile.photo_url } : {}),
@@ -185,7 +169,7 @@ const authorJsonLd = JSON.stringify({
 });
 ---
 
-<Layout title={`${author.name} — Fantasy Books & Series | The Grimoire`} description={metaDescription} image={profile?.photo_url || undefined}>
+<Layout title={`${authorName} — Fantasy Books & Series | The Grimoire`} description={metaDescription} image={profile?.photo_url || undefined}>
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={authorJsonLd} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -193,7 +177,7 @@ const authorJsonLd = JSON.stringify({
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Authors', item: `${SITE}/authors/` },
-        { '@type': 'ListItem', position: 2, name: author.name, item: `${SITE}/authors/${slug}/` },
+        { '@type': 'ListItem', position: 2, name: authorName, item: `${SITE}/authors/${slug}/` },
       ],
     })} />
   </Fragment>
@@ -201,7 +185,7 @@ const authorJsonLd = JSON.stringify({
   <nav class="text-sm text-zinc-500 mb-6">
     <a href="/authors/" class="hover:underline">Authors</a>
     <span class="mx-2">›</span>
-    <span class="text-zinc-700">{author.name}</span>
+    <span class="text-zinc-700">{authorName}</span>
   </nav>
 
   <!-- Author hero -->
@@ -209,18 +193,18 @@ const authorJsonLd = JSON.stringify({
     {profile?.photo_url ? (
       <img
         src={profile.photo_url}
-        alt={author.name}
+        alt={authorName}
         class="shrink-0 w-24 h-24 rounded-2xl object-cover shadow-lg"
         onerror="this.style.display='none'"
       />
     ) : (
       <div class={`shrink-0 w-24 h-24 rounded-2xl bg-linear-to-br ${avatarGradient} flex items-center justify-center text-white font-bold text-4xl shadow-lg`}>
-        {author.name[0].toUpperCase()}
+        {authorName[0].toUpperCase()}
       </div>
     )}
 
     <div class="flex-1">
-      <h1 class="text-3xl font-bold tracking-tight text-zinc-900">{author.name}</h1>
+      <h1 class="text-3xl font-bold tracking-tight text-zinc-900">{authorName}</h1>
 
       <div class="mt-3 flex flex-wrap gap-4 text-sm text-zinc-600">
         <span>
@@ -297,7 +281,7 @@ const authorJsonLd = JSON.stringify({
   <!-- Series section -->
   {seriesList.length > 0 && (
     <div class="mb-12">
-      <h2 class="text-xl font-semibold mb-4">Series by {author.name}</h2>
+      <h2 class="text-xl font-semibold mb-4">Series by {authorName}</h2>
       <div class="flex flex-wrap gap-4">
         {seriesList.map((s) => {
           const seriesBooks = sortedBooks
@@ -386,7 +370,7 @@ const authorJsonLd = JSON.stringify({
           let ah = 0;
           for (const c of a.name) ah = (ah * 31 + c.charCodeAt(0)) & 0xff;
           const aGradient = palette[ah % palette.length];
-          const photo = simPhotoMap.get(a.slug);
+          const photo = a.photo_url;
           return (
             <a
               href={`/authors/${a.slug}/`}
@@ -422,7 +406,7 @@ const authorJsonLd = JSON.stringify({
 
   <!-- Books list -->
   <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
-    <h2 class="text-xl font-semibold">Books by {author.name}</h2>
+    <h2 class="text-xl font-semibold">Books by {authorName}</h2>
     <div class="flex items-center gap-2">
       <span class="text-sm text-zinc-400">{books.length} total</span>
       <div class="flex gap-1">

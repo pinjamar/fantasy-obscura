@@ -45,7 +45,7 @@ function BookCard({ book, index }: { book: Book; index: number }) {
   const cfg = statusConfig[book.status];
 
   const inner = (
-    <div className="flex flex-col items-center text-center group w-28 sm:w-32 shrink-0">
+    <div className="flex flex-col items-center text-center group w-24 sm:w-32 shrink-0">
       {/* Number badge with connecting line (line hidden on mobile) */}
       <div className="relative w-full flex justify-center mb-2">
         <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-zinc-200 -translate-y-1/2 hidden sm:block" />
@@ -55,7 +55,7 @@ function BookCard({ book, index }: { book: Book; index: number }) {
       </div>
 
       {/* Cover */}
-      <div className="w-24 sm:w-28 h-36 sm:h-40 rounded-lg overflow-hidden border border-zinc-200 shadow-sm bg-zinc-100 mb-3 transition-all group-hover:shadow-md group-hover:scale-[1.02]">
+      <div className="w-[72px] sm:w-28 h-[108px] sm:h-40 rounded-lg overflow-hidden border border-zinc-200 shadow-sm bg-zinc-100 mb-3 transition-all group-hover:shadow-md group-hover:scale-[1.02]">
         {book.cover_url ? (
           <img
             src={book.cover_url}
@@ -163,7 +163,7 @@ export default function ReadingOrder({ books, groups, description, showLegend = 
 
             {/* Books row */}
             <div className="relative">
-              <div className="flex flex-wrap gap-4 pb-2">
+              <div className="flex flex-wrap gap-2 sm:gap-4 pb-2">
                 {group.books.map((book, bi) => (
                   <BookCard key={bi} book={book} index={group.startIndex + bi} />
                 ))}

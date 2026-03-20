@@ -231,7 +231,7 @@ const readingOrderJsonLd = JSON.stringify({
           <picture>
             <source type="image/avif" srcset={readingOrderSrcset(imgSlug, 'avif')} sizes="(min-width: 1024px) 800px, 100vw" />
             <source type="image/webp" srcset={readingOrderSrcset(imgSlug, 'webp')} sizes="(min-width: 1024px) 800px, 100vw" />
-            <img src={readingOrderFallback(imgSlug)} alt="" width="800" height="400" loading="eager" decoding="async" class="w-full aspect-2/1 sm:aspect-3/1 object-cover" />
+            <img src={readingOrderFallback(imgSlug)} alt="" width="800" height="400" loading="eager" decoding="async" class="w-full aspect-3/1 object-cover" />
           </picture>
         </div>
       ) : null;

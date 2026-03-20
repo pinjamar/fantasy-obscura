@@ -192,9 +192,9 @@ const booksLikeJsonLd = JSON.stringify({
               const recSlug = toSlug(r.title)
               const recCover = dbRecCoverMap.get(recSlug) ?? (r.cover_url?.includes('archive.org') ? '' : r.cover_url)
               return (
-                <div class="rounded-xl border border-violet-200 bg-violet-50 p-4 flex gap-5">
-                  <!-- Cover + Amazon -->
-                  <div class="shrink-0 flex flex-col gap-2">
+                <div class="rounded-xl border border-violet-200 bg-violet-50 p-4 grid grid-cols-[auto_1fr] gap-x-5 gap-y-3">
+                  <!-- Cover + Amazon: spans 2 rows on sm+ so description stays in col 2 -->
+                  <div class="sm:row-span-2 flex flex-col gap-2">
                     <a href={`/books/${recSlug}/`} class="relative w-24 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 block">
                       <img src={upgradeCoverUrl(recCover) || '/grimplaceholder.png'} alt={`Cover of ${r.title}`} class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null;this.src='/grimplaceholder.png';" onload="if(this.naturalWidth<=1||this.naturalHeight<=1){this.src='/grimplaceholder.png';}" />
                     </a>
@@ -203,9 +203,8 @@ const booksLikeJsonLd = JSON.stringify({
                       Amazon
                     </a>
                   </div>
-                  <!-- Info -->
-                  <div class="flex-1 min-w-0">
-                    <!-- Title + ratings row -->
+                  <!-- Basic info: title, author, series -->
+                  <div class="min-w-0">
                     <div class="flex items-start justify-between gap-4 mb-1">
                       <p class="font-bold text-zinc-900 leading-tight">
                         {dbSlugSet.has(recSlug)
@@ -224,12 +223,22 @@ const booksLikeJsonLd = JSON.stringify({
                       by {r.author}
                       {r.author_note && <span class="text-zinc-400"> ({r.author_note})</span>}
                     </p>
-                    <p class="text-xs text-zinc-400 mb-3">
+                    <p class="text-xs text-zinc-400">
                       {r.series_label ?? (r.standalone ? 'Standalone' : 'Series')}
                       {r.audiobook && ' · Audiobook ✅'}
                     </p>
+                    <!-- Tags: mobile only (above description, next to cover) -->
+                    <div class="flex flex-wrap gap-1.5 mt-2 sm:hidden">
+                      {r.tags.map((tag) => (
+                        <span class="px-2.5 py-0.5 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-xs font-medium">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <!-- Description + tags + warning: full width on mobile, col 2 row 2 on sm+ -->
+                  <div class="col-span-2 sm:col-span-1">
                     <p class="text-sm text-zinc-700 leading-relaxed mb-3">{r.note}</p>
-                    <div class="flex flex-wrap gap-1.5 mb-3">
+                    <!-- Tags: desktop only (below description) -->
+                    <div class="hidden sm:flex flex-wrap gap-1.5 mb-3">
                       {r.tags.map((tag) => (
                         <span class="px-2.5 py-0.5 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-xs font-medium">{tag}</span>
                       ))}

@@ -281,7 +281,21 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
 
       {/* Sort bar */}
       <div className="mb-6">
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
+        {/* Mobile: dropdown */}
+        <div className="flex items-center gap-2 sm:hidden">
+          <span className="text-sm text-zinc-500 shrink-0">Sort:</span>
+          <select
+            value={sort}
+            onChange={(e) => { setSort(e.target.value as SortKey); setCurrentPage(1); }}
+            className="flex-1 rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-sm text-zinc-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          >
+            {SORT_OPTIONS.map((opt) => (
+              <option key={opt.key} value={opt.key}>{opt.icon} {opt.label}</option>
+            ))}
+          </select>
+        </div>
+        {/* Desktop: pill buttons */}
+        <div className="hidden sm:flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
           <span className="text-sm text-zinc-500 shrink-0">Sort:</span>
           {SORT_OPTIONS.map((opt) => (
             <button
@@ -303,7 +317,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
       {/* Darkness + Heat filters in one row */}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mb-6">
         <div className="flex items-center gap-1">
-          <span className="text-sm font-medium text-zinc-700 mr-2">Darkness:</span>
+          <span className="hidden sm:inline text-sm font-medium text-zinc-700 mr-2">Darkness:</span>
           {[1, 2, 3, 4, 5].map((level) => (
             <button
               key={level}
@@ -322,7 +336,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
         </div>
 
         <div className="flex items-center gap-1">
-          <span className="text-sm font-medium text-zinc-700 mr-2">Heat:</span>
+          <span className="hidden sm:inline text-sm font-medium text-zinc-700 mr-2">Heat:</span>
           {[1, 2, 3, 4, 5].map((level) => (
             <button
               key={level}
@@ -343,7 +357,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
 
         <button
           onClick={() => { setStandaloneFilter(!standaloneFilter); setCurrentPage(1); }}
-          className="flex items-center gap-2 group"
+          className="hidden sm:flex items-center gap-2 group"
         >
           <span className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${
             standaloneFilter
@@ -363,7 +377,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
           <button
             key={value}
             onClick={() => { setAudienceFilter(audienceFilter === value ? null : value); setCurrentPage(1); }}
-            className="flex items-center gap-2 group"
+            className="hidden sm:flex items-center gap-2 group"
           >
             <span className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${
               audienceFilter === value

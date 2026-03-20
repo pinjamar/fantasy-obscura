@@ -149,6 +149,13 @@ const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
     ))}
   </div>
 
+  <!-- Pagination -->
+  <div id="ro-pagination" class="mt-8 flex items-center justify-between gap-2">
+    <button id="ro-prev" disabled class="px-4 py-2 rounded-lg border border-zinc-200 text-sm text-zinc-600 hover:bg-zinc-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors">← Previous</button>
+    <span id="ro-page-label" class="text-sm text-zinc-400"></span>
+    <button id="ro-next" class="px-4 py-2 rounded-lg border border-zinc-200 text-sm text-zinc-600 hover:bg-zinc-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors">Next →</button>
+  </div>
+
   <!-- Empty state -->
   <p id="no-results" class="hidden mt-10 text-center text-zinc-500">No series found for that search.</p>
 
@@ -173,22 +180,59 @@ const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
 </Layout>
 
 <script>
+  const PER_PAGE = 24;
   const input = document.getElementById('series-search') as HTMLInputElement;
-  const cards = document.querySelectorAll<HTMLElement>('.series-card');
+  const allCards = Array.from(document.querySelectorAll<HTMLElement>('.series-card'));
+  const curatedCards = allCards.filter(c => c.dataset.dbonly !== 'true');
   const noResults = document.getElementById('no-results')!;
+  const pagination = document.getElementById('ro-pagination')!;
+  const prevBtn = document.getElementById('ro-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('ro-next') as HTMLButtonElement;
+  const pageLabel = document.getElementById('ro-page-label')!;
+
+  let currentPage = 0;
+
+  function renderPage() {
+    const totalPages = Math.ceil(curatedCards.length / PER_PAGE) || 1;
+    const start = currentPage * PER_PAGE;
+    const end = start + PER_PAGE;
+    curatedCards.forEach((card, i) => {
+      card.classList.toggle('hidden', i < start || i >= end);
+    });
+    pageLabel.textContent = `Page ${currentPage + 1} of ${totalPages}`;
+    prevBtn.disabled = currentPage === 0;
+    nextBtn.disabled = currentPage >= totalPages - 1;
+    pagination.style.display = curatedCards.length <= PER_PAGE ? 'none' : '';
+  }
+
+  prevBtn.addEventListener('click', () => { if (currentPage > 0) { currentPage--; renderPage(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+  nextBtn.addEventListener('click', () => {
+    const totalPages = Math.ceil(curatedCards.length / PER_PAGE);
+    if (currentPage < totalPages - 1) { currentPage++; renderPage(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  });
 
   input.addEventListener('input', () => {
     const q = input.value.toLowerCase().trim();
-    let visible = 0;
-    cards.forEach((card) => {
-      const searchText = card.dataset.search ?? '';
-      const isDbOnly = card.dataset.dbonly === 'true';
-      const matches = !q || searchText.includes(q);
-      // DB-only cards: show only when there's an active query and it matches
-      const show = isDbOnly ? (!!q && matches) : matches;
-      card.classList.toggle('hidden', !show);
-      if (show) visible++;
-    });
-    noResults.classList.toggle('hidden', visible > 0 || !q);
+    if (q) {
+      // Search mode: show all matching (curated + db-only), hide pagination
+      pagination.style.display = 'none';
+      let visible = 0;
+      allCards.forEach((card) => {
+        const matches = (card.dataset.search ?? '').includes(q);
+        const isDbOnly = card.dataset.dbonly === 'true';
+        const show = isDbOnly ? matches : matches;
+        card.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      noResults.classList.toggle('hidden', visible > 0);
+    } else {
+      // Back to paginated view
+      noResults.classList.add('hidden');
+      allCards.filter(c => c.dataset.dbonly === 'true').forEach(c => c.classList.add('hidden'));
+      currentPage = 0;
+      renderPage();
+    }
   });
+
+  renderPage();
 </script>
