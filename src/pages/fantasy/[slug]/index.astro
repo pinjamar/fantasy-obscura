@@ -1,7 +1,6 @@
 ---
 import Layout from '../../../components/Layout.astro';
 import BookDisplay from '../../../components/BookDisplay';
-import CategoryLists from '../../../components/CategoryLists';
 import { CATEGORY_IMAGE_SLUG, categorySrcset, categoryFallback } from '../../../data/image-map';
 
 const { slug } = Astro.params;
@@ -733,20 +732,35 @@ const imgSlug = slug ? CATEGORY_IMAGE_SLUG[slug] : undefined;
     </div>
   )}
 
-  <!-- Curated lists -->
-  <div class="mb-6">
-    <CategoryLists
-      best={cat.best}
-      starter={cat.starter}
-      hidden={cat.hidden}
-      richBest={cat.richBooks?.best}
-      richStarter={cat.richBooks?.starter}
-      richHidden={cat.richBooks?.hidden}
-      gradient={cat.gradient}
-      border={cat.border}
-      accent={cat.accent}
-      client:load
-    />
+  <!-- Reading list cards -->
+  <div class="grid gap-4 sm:grid-cols-3 mb-5 mt-2">
+    <a
+      href={`/fantasy/${slug}/all-time-greats/`}
+      class={`rounded-xl bg-linear-to-br ${cat.gradient} border ${cat.border} p-5 hover:shadow-md transition-shadow group`}
+    >
+      <p class="text-2xl mb-2">⭐</p>
+      <p class={`font-semibold text-sm ${cat.accent}`}>{cat.name} All-Time Greats</p>
+      <p class="text-xs text-zinc-500 mt-1">The 20 highest-rated books in the genre</p>
+      <p class={`text-xs mt-3 font-medium ${cat.accent} group-hover:underline`}>Explore →</p>
+    </a>
+    <a
+      href={`/fantasy/${slug}/start-with/`}
+      class={`rounded-xl bg-linear-to-br ${cat.gradient} border ${cat.border} p-5 hover:shadow-md transition-shadow group`}
+    >
+      <p class="text-2xl mb-2">🚀</p>
+      <p class={`font-semibold text-sm ${cat.accent}`}>Best {cat.name} to Start With</p>
+      <p class="text-xs text-zinc-500 mt-1">Accessible entry points, not too dark</p>
+      <p class={`text-xs mt-3 font-medium ${cat.accent} group-hover:underline`}>Explore →</p>
+    </a>
+    <a
+      href={`/fantasy/${slug}/hidden-gems/`}
+      class={`rounded-xl bg-linear-to-br ${cat.gradient} border ${cat.border} p-5 hover:shadow-md transition-shadow group`}
+    >
+      <p class="text-2xl mb-2">💎</p>
+      <p class={`font-semibold text-sm ${cat.accent}`}>{cat.name} Hidden Gems</p>
+      <p class="text-xs text-zinc-500 mt-1">Great books that fly under the radar</p>
+      <p class={`text-xs mt-3 font-medium ${cat.accent} group-hover:underline`}>Explore →</p>
+    </a>
   </div>
 
   <!-- DB books for this genre -->

@@ -20,7 +20,7 @@ const STATIC_ROUTES = [
   '/books-like/',
   '/reading-orders/',
   '/authors/',
-  '/categories/',
+  '/fantasy/',
 ];
 
 function urlEntry(path: string, priority = '0.5', changefreq = 'weekly') {

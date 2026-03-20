@@ -652,7 +652,7 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
   const categoryName = selectedCat?.name || 'Fantasy';
 
   const catUrl = (sort?: string) => {
-    const base = selectedCategory ? `/categories/${selectedCategory}/` : '/books/';
+    const base = selectedCategory ? `/fantasy/${selectedCategory}/` : '/books/';
     return sort ? `${base}?sort=${sort}` : base;
   };
 
@@ -693,7 +693,7 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
         <div className="flex items-center justify-between mb-3">
           <p className="text-xs font-semibold text-zinc-400 uppercase tracking-widest">Browse by category</p>
           <a
-            href={selectedCategory ? `/categories/${selectedCategory}/` : `/books/`}
+            href={selectedCategory ? `/fantasy/${selectedCategory}/` : `/books/`}
             className="text-sm font-medium text-purple-700 hover:text-purple-900 hover:underline transition-colors whitespace-nowrap"
           >
             View full {categoryName} →
@@ -704,7 +704,7 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
             <button
               key={cat.slug}
               onClick={() => setSelectedCategory(selectedCategory === cat.slug ? null : cat.slug)}
-              onDoubleClick={() => { window.location.href = `/categories/${cat.slug}/`; }}
+              onDoubleClick={() => { window.location.href = `/fantasy/${cat.slug}/`; }}
               className={`group relative overflow-hidden rounded-xl border border-zinc-300 p-4 transition-all shadow-sm hover:shadow-lg text-center ${
                 selectedCategory === cat.slug ? 'ring-2 ring-blue-500 shadow-lg' : ''
               }`}

@@ -29,6 +29,7 @@ export default function BooksLikeMe() {
   const [suggestions, setSuggestions] = useState<BookEntry[]>([]);
   const [likedBooks, setLikedBooks] = useState<BookEntry[]>([]);
   const [recs, setRecs] = useState<Recommendation[]>([]);
+  const [shownTitles, setShownTitles] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [rateLimited, setRateLimited] = useState(false);
@@ -115,12 +116,17 @@ export default function BooksLikeMe() {
       const res = await fetch('/api/recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ books: likedBooks.map((b) => ({ title: b.title, author: b.author })) }),
+        body: JSON.stringify({
+          books: likedBooks.map((b) => ({ title: b.title, author: b.author })),
+          exclude: shownTitles,
+        }),
       });
       const data = await res.json();
       if (data.rateLimited) { setRateLimited(true); setError(data.error); return; }
       if (data.error) throw new Error(data.error);
-      setRecs(data.recommendations ?? []);
+      const newRecs: Recommendation[] = data.recommendations ?? [];
+      setRecs(newRecs);
+      setShownTitles((prev) => [...new Set([...prev, ...newRecs.map((r) => r.title)])]);
       if (data.remaining != null) setRemaining(data.remaining);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
@@ -147,7 +153,7 @@ export default function BooksLikeMe() {
               placeholder={
                 likedBooks.length >= MAX_BOOKS
                   ? 'Maximum 4 books reached'
-                  : 'Search by title or series...'
+                  : 'Search by title, author or series...'
               }
               disabled={likedBooks.length >= MAX_BOOKS}
               className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-2.5 pr-10 text-sm focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 disabled:opacity-50"
@@ -271,7 +277,7 @@ export default function BooksLikeMe() {
               Recommended for you
             </h3>
             <button
-              onClick={() => { setLikedBooks([]); setRecs([]); setQuery(''); setError(''); localStorage.removeItem(STORAGE_KEY); }}
+              onClick={() => { setLikedBooks([]); setRecs([]); setQuery(''); setError(''); setShownTitles([]); localStorage.removeItem(STORAGE_KEY); }}
               className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-purple-600 transition-colors"
               title="Start over"
             >
