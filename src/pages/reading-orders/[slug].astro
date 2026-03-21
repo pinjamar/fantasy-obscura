@@ -233,6 +233,12 @@ const readingOrderJsonLd = JSON.stringify({
             <source type="image/webp" srcset={readingOrderSrcset(imgSlug, 'webp')} sizes="(min-width: 1024px) 800px, 100vw" />
             <img src={readingOrderFallback(imgSlug)} alt="" width="800" height="400" loading="eager" decoding="async" class="w-full aspect-3/1 object-cover" />
           </picture>
+          <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
+          <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
+            <p class="text-xs font-semibold uppercase tracking-widest text-white/60 mb-1">Reading Order</p>
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">{curatedEntry.name}</h1>
+            <p class="mt-1 text-sm text-white/75">by {curatedEntry.author}</p>
+          </div>
         </div>
       ) : null;
     })()}
@@ -277,9 +283,9 @@ const readingOrderJsonLd = JSON.stringify({
         <p class="text-sm text-zinc-500 mb-6">{curatedEntry.orderNote}</p>
       )}
       {mergedGroups ? (
-        <ReadingOrder groups={mergedGroups} client:load />
+        <ReadingOrder groups={mergedGroups as any} client:load />
       ) : mergedBooks ? (
-        <ReadingOrder books={mergedBooks} client:load />
+        <ReadingOrder books={mergedBooks as any} client:load />
       ) : null}
     </div>
 

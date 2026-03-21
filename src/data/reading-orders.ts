@@ -138,7 +138,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   // ─── The Cosmere ───────────────────────────────────────────────────────────
   {
     slug: 'cosmere',
-    name: 'The Cosmere',
+    name: "Sanderson's Cosmere",
     author: 'Brandon Sanderson',
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
@@ -159,15 +159,15 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
       {
         label: 'Stormlight Archive — Books 1–3',
-        sublabel: 'with Warbreaker & Edgedancer novella',
+        sublabel: 'with Warbreaker & Edgedancer before Oathbringer',
         noteType: 'optional',
-        note: "Warbreaker is optional but free on Sanderson's website — read it before Oathbringer for a meaningful payoff. Edgedancer (novella) is best read just before Oathbringer too.",
+        note: "Warbreaker (optional, free on Sanderson's site) and Edgedancer (novella) are both positioned right before Oathbringer — that's where their connections pay off most.",
         books: [
-          { title: 'Warbreaker',         slug: 'warbreaker',         status: 'optional',      note: 'Standalone. Connects to Stormlight. Read before Way of Kings or after Era 1.',                       page_count: 592, publication_year: 2009 },
-          { title: 'The Way of Kings',   slug: 'the-way-of-kings',   status: 'mandatory',     note: 'Epic scope, multiple POVs, world unlike anything else. Long but worth it.',                         page_count: 1007, publication_year: 2010 },
-          { title: 'Words of Radiance',  slug: 'words-of-radiance',  status: 'mandatory',     note: 'Raises every bar set by book 1.',                                                                   page_count: 1088, publication_year: 2014 },
-          { title: 'Edgedancer',         slug: 'edgedancer',         status: 'supplementary', note: 'Novella, ~40k words. Read before Oathbringer for context on Lift.',                               page_count: 226, publication_year: 2016 },
-          { title: 'Oathbringer',        slug: 'oathbringer',        status: 'mandatory',     note: "Dalinar's past revealed. Biggest worldbuilding drop in the series.",                               page_count: 1248, publication_year: 2017 },
+          { title: 'The Way of Kings',   slug: 'the-way-of-kings',   status: 'mandatory',     note: 'Epic scope, multiple POVs, world unlike anything else. Long but worth it.',                                                                        page_count: 1007, publication_year: 2010 },
+          { title: 'Words of Radiance',  slug: 'words-of-radiance',  status: 'mandatory',     note: 'Raises every bar set by book 1.',                                                                                                                   page_count: 1088, publication_year: 2014 },
+          { title: 'Warbreaker',         slug: 'warbreaker',         status: 'optional',      note: 'Standalone Cosmere novel. Free on Sanderson\'s site. Read here — before Oathbringer — for a meaningful payoff in book 3.',                        page_count: 592,  publication_year: 2009 },
+          { title: 'Edgedancer',         slug: 'edgedancer',         status: 'supplementary', note: 'Novella, ~40k words. Follows Lift. Read before Oathbringer for important context.',                                                               page_count: 226,  publication_year: 2016 },
+          { title: 'Oathbringer',        slug: 'oathbringer',        status: 'mandatory',     note: "Dalinar's past revealed. Biggest worldbuilding drop in the series.",                                                                               page_count: 1248, publication_year: 2017 },
         ],
       },
       {
@@ -179,24 +179,35 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
           { title: 'The Alloy of Law',      slug: 'the-alloy-of-law',      status: 'mandatory', note: 'Western-flavoured Mistborn, 300 years later. Fast, breezy entry into Era 2.',          page_count: 332, publication_year: 2011 },
           { title: 'Shadows of Self',       slug: 'shadows-of-self',       status: 'mandatory', note: 'Darker Era 2. Important Cosmere lore drops.',                                          page_count: 383, publication_year: 2015 },
           { title: 'The Bands of Mourning', slug: 'the-bands-of-mourning', status: 'mandatory', note: 'Era 2 penultimate. Big reveals connecting to the broader Cosmere.',                   page_count: 448, publication_year: 2016 },
+          { title: 'The Lost Metal',        slug: 'the-lost-metal',        status: 'mandatory', note: 'Era 2 finale. Massive Cosmere crossover payoff.',                                    page_count: 528, publication_year: 2022 },
         ],
       },
       {
         label: 'Stormlight Archive — Books 4–5',
-        sublabel: 'with Dawnshard novella and Mistborn Era 2 finale',
+        sublabel: 'with Dawnshard novella',
         books: [
           { title: 'Dawnshard',       slug: 'dawnshard',       status: 'supplementary', note: 'Novella, ~26k words. Read before Rhythm of War.',                                             page_count: 176, publication_year: 2020 },
           { title: 'Rhythm of War',   slug: 'rhythm-of-war',   status: 'mandatory',     note: 'Shifts from battlefield to politics and science. Divisive but essential.',                  page_count: 1232, publication_year: 2020 },
-          { title: 'The Lost Metal',  slug: 'the-lost-metal',  status: 'mandatory',     note: 'Mistborn Era 2 finale. Massive Cosmere crossover payoff.',                                  page_count: 528, publication_year: 2022 },
           { title: 'Wind and Truth',  slug: 'wind-and-truth',  status: 'mandatory',     note: 'Stormlight 5. Closes the first arc of the series.',                                         page_count: 1330, publication_year: 2024 },
+        ],
+      },
+      {
+        label: 'The Secret Projects',
+        sublabel: 'standalone Cosmere novellas',
+        noteType: 'optional',
+        note: 'Three standalone Cosmere stories written during the pandemic and originally funded via Kickstarter. Best read after Rhythm of War or Wind and Truth — all are self-contained but reward readers who know the broader Cosmere.',
+        books: [
+          { title: 'Tress of the Emerald Sea',       slug: 'tress-of-the-emerald-sea',       status: 'optional', note: 'A fairy-tale adventure on a sea of spores. Charming, standalone, and surprisingly moving.',                                          page_count: 363, publication_year: 2023 },
+          { title: 'Yumi and the Nightmare Painter',  slug: 'yumi-and-the-nightmare-painter',  status: 'optional', note: 'Two protagonists on two worlds who can\'t interact — until they can. Emotionally the strongest of the three.',                       page_count: 480, publication_year: 2023 },
+          { title: 'The Sunlit Man',                  slug: 'the-sunlit-man',                  status: 'optional', note: 'High-action adventure on a world perpetually fleeing its own sun. Best read after Wind and Truth for full Cosmere impact.',          page_count: 368, publication_year: 2023 },
         ],
       },
     ],
     orderNote: 'Optimised for maximum Cosmere payoff — not pure publication order. Each series works standalone; connections build over time.',
     cards: [
-      { title: '⚡ Essential (12 books)', body: 'Both Mistborn trilogies + full Stormlight Archive. These carry the main Cosmere narrative.',                                          color: 'blue'  },
-      { title: '📖 Optional (1 book)',   body: "Warbreaker — standalone, free on Sanderson's site. Adds depth to Stormlight but not required.",                                       color: 'green' },
-      { title: '🔀 Novellas (2 books)',  body: 'Edgedancer and Dawnshard — short, best read in the positions listed above.',                                                         color: 'amber' },
+      { title: '⚡ Essential (12 books)', body: 'Both Mistborn trilogies + full Stormlight Archive. These carry the main Cosmere narrative.',                                                                                    color: 'blue'  },
+      { title: '📖 Optional (4 books)',  body: "Warbreaker (free on Sanderson's site, adds Stormlight depth) + the three Secret Project novellas — all standalone, all rewarding after Era 2.",                                 color: 'green' },
+      { title: '🔀 Novellas (2 books)',  body: 'Edgedancer and Dawnshard — short, best read in the positions listed above.',                                                                                                    color: 'amber' },
     ],
     sections: [
       {
@@ -224,6 +235,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       { label: 'Mistborn Era 1',         level: 3, desc: 'Moderate — oppression, sacrifice, hope' },
       { label: 'Stormlight Archive',     level: 3, desc: 'Moderate — war, depression, trauma handled with care' },
       { label: 'Mistborn Era 2',         level: 2, desc: 'Mild — lighter tone, detective/western flavour' },
+      { label: 'Secret Projects',        level: 2, desc: 'Mild — generally lighter and more whimsical than the main series' },
     ],
     finishedLabel: 'Finished a Cosmere series?',
     categoryHref: '/fantasy/epic',
@@ -245,6 +257,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     books: [
       { title: 'The Way of Kings',  slug: 'the-way-of-kings',  status: 'mandatory',     note: 'Start here. Kaladin, Shallan, Dalinar. Worldbuilding unlike anything else in fantasy.',                                               page_count: 1007, publication_year: 2010 },
       { title: 'Words of Radiance', slug: 'words-of-radiance',  status: 'mandatory',     note: 'Raises the bar on every level. Best fight scenes Sanderson has written.',                                                           page_count: 1088, publication_year: 2014 },
+      { title: 'Warbreaker',        slug: 'warbreaker',         status: 'optional',      note: 'Standalone Cosmere novel. Free on Sanderson\'s site. Read here — before Oathbringer — for a meaningful payoff in book 3.',           page_count: 592,  publication_year: 2009 },
       { title: 'Edgedancer',        slug: 'edgedancer',         status: 'supplementary', note: 'Novella about Lift (~40k words). Short but adds important context — read before Oathbringer.',                                       page_count: 226,  publication_year: 2016 },
       { title: 'Oathbringer',       slug: 'oathbringer',        status: 'mandatory',     note: "Dalinar's history revealed. Largest worldbuilding expansion in the series.",                                                        page_count: 1248, publication_year: 2017 },
       { title: 'Dawnshard',         slug: 'dawnshard',          status: 'supplementary', note: 'Novella with Rysn (~26k words). Sets up important elements for Rhythm of War.',                                                    page_count: 176,  publication_year: 2020 },
@@ -253,8 +266,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     ],
     orderNote: 'Read in publication order. Position the novellas as listed — they\'re short but add meaningful context.',
     cards: [
-      { title: '⚡ Main novels (5 books)',   body: 'Way of Kings → Words of Radiance → Oathbringer → Rhythm of War → Wind and Truth. All essential, all massive.',                        color: 'blue'  },
-      { title: '🔀 Novellas (2 books)',      body: 'Edgedancer before Oathbringer, Dawnshard before Rhythm of War — short reads, best in position.',                                      color: 'amber' },
+      { title: '⚡ Main novels (5 books)',   body: 'Way of Kings → Words of Radiance → Oathbringer → Rhythm of War → Wind and Truth. All essential, all massive.',                                    color: 'blue'  },
+      { title: '📖 Optional (1 book)',      body: "Warbreaker — standalone, free on Sanderson's site. Positioned before Oathbringer where its Stormlight connections pay off.",                          color: 'green' },
+      { title: '🔀 Novellas (2 books)',      body: 'Edgedancer before Oathbringer, Dawnshard before Rhythm of War — short reads, best in position.',                                                      color: 'amber' },
     ],
     sections: [
       {
@@ -2037,34 +2051,29 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     description:
       'Brandon Sanderson\'s Mistborn is one of the most ingeniously constructed fantasy series ever written — set on a world where the prophesied hero failed a thousand years ago and a dark lord has ruled ever since. The original trilogy is a complete story of revolution, consequence, and cosmic revelation. Era 2 jumps 300 years forward into a Western-flavoured world of guns, trains, and new Allomancers. Era 3 — currently in progress — will advance to a near-modern spy-thriller setting. Each era can be read largely standalone, but the rewards for reading all of them in order are enormous.',
     darknessDisplay: '🕯️🕯️🕯️ Serious',
-    orderNote: 'Read Era 1 completely before starting Era 2. Secret History is a novella set during Era 1 events — read it after The Bands of Mourning, not after Hero of Ages, as it references Era 2 lore. Era 3 has not yet been published.',
+    orderNote: 'Extras are placed where they should actually be read, not just by series number. Secret History is #3.5 but positioned after Bands of Mourning — its note explains why. Era 3 has not yet been published.',
     warning: 'Mistborn is part of the wider Cosmere universe. Era 2\'s The Lost Metal contains significant Cosmere crossover content. Reading the Cosmere guide alongside this one is recommended for the full experience.',
     groups: [
       {
         label: 'Era 1 — The Original Trilogy',
         sublabel: 'start here — a complete story in three books',
         books: [
-          { title: 'The Final Empire',      slug: 'the-final-empire',      status: 'mandatory', seriesLabel: 'Mistborn #1', note: 'Start here. A crew of thieves and Mistborn plan a heist to overthrow a god-emperor who has ruled for a thousand years. One of the best first novels in epic fantasy — the magic system, the world, and the twist all land perfectly.',                                                              page_count: 541, publication_year: 2006 },
-          { title: 'The Well of Ascension', slug: 'the-well-of-ascension', status: 'mandatory', seriesLabel: 'Mistborn #2', note: 'The revolution succeeded — now the harder work begins. A political siege novel that tests your patience before delivering one of the best final acts in the trilogy. The slowest of the three but essential.',                                                                                             page_count: 590, publication_year: 2007 },
-          { title: 'The Hero of Ages',      slug: 'the-hero-of-ages',      status: 'mandatory', seriesLabel: 'Mistborn #3', note: 'Everything converges. The full cosmological scope of what Sanderson has been building is revealed. The climax answers questions you didn\'t know you were asking. One of the best trilogy conclusions in the genre.',                                                                                page_count: 572, publication_year: 2008 },
-        ],
-      },
-      {
-        label: 'Era 1 Extras',
-        sublabel: 'supplementary — read after completing Era 1',
-        books: [
-          { title: 'The Eleventh Metal',  slug: 'the-eleventh-metal',  status: 'supplementary', seriesLabel: 'Mistborn short story', note: 'Short story (~6k words) set before The Final Empire, following Kelsier\'s training. Free on Sanderson\'s website. Adds colour to Kelsier\'s backstory — read before or after The Final Empire.',  page_count: 30,  publication_year: 2012 },
-          { title: 'Secret History',      slug: 'mistborn-secret-history', status: 'supplementary', seriesLabel: 'Mistborn novella',    note: 'Read after The Bands of Mourning, not after Hero of Ages — it references Era 2 events. Shows what happened behind the scenes of the Era 1 trilogy. Major Cosmere revelations. Essential for Cosmere readers, optional for Mistborn-only readers.',  page_count: 175, publication_year: 2016 },
+          { title: 'The Final Empire',      slug: 'the-final-empire',         status: 'mandatory',     seriesLabel: 'Mistborn #1',   note: 'Start here. A crew of thieves and Mistborn plan a heist to overthrow a god-emperor who has ruled for a thousand years. One of the best first novels in epic fantasy — the magic system, the world, and the twist all land perfectly.',              page_count: 541, publication_year: 2006 },
+          { title: 'The Eleventh Metal',    slug: 'the-eleventh-metal',        status: 'supplementary', seriesLabel: 'Mistborn #1.5', note: '~6k words. Kelsier\'s training before The Final Empire. Free on Sanderson\'s site. Best read right after The Final Empire.',                                                                                                                   page_count: 30,  publication_year: 2012 },
+          { title: 'The Well of Ascension', slug: 'the-well-of-ascension',     status: 'mandatory',     seriesLabel: 'Mistborn #2',   note: 'The revolution succeeded — now the harder work begins. A political siege novel that tests your patience before delivering one of the best final acts in the trilogy. The slowest of the three but essential.',                                   page_count: 590, publication_year: 2007 },
+          { title: 'The Hero of Ages',      slug: 'the-hero-of-ages',          status: 'mandatory',     seriesLabel: 'Mistborn #3',   note: 'Everything converges. The full cosmological scope of what Sanderson has been building is revealed. The climax answers questions you didn\'t know you were asking. One of the best trilogy conclusions in the genre.',                           page_count: 572, publication_year: 2008 },
         ],
       },
       {
         label: 'Era 2 — Wax and Wayne',
         sublabel: '300 years later — Western-flavoured Scadrial',
         books: [
-          { title: 'The Alloy of Law',      slug: 'the-alloy-of-law',      status: 'mandatory', seriesLabel: 'Mistborn #4', note: 'A lighter, faster Mistborn — half the length of Era 1 books. Waxillium Ladrian is a lawman dragged back to the city. An excellent palate cleanser after the weight of Era 1. Works almost as a standalone.',                                        page_count: 332, publication_year: 2011 },
-          { title: 'Shadows of Self',       slug: 'shadows-of-self',       status: 'mandatory', seriesLabel: 'Mistborn #5', note: 'Darker and more personal than Alloy. A murderer is killing city leaders and Wax must uncover why. Important Cosmere lore drops and a gut-punch of an ending.',                                                                                       page_count: 383, publication_year: 2015 },
-          { title: 'The Bands of Mourning', slug: 'the-bands-of-mourning', status: 'mandatory', seriesLabel: 'Mistborn #6', note: 'Adventure-quest plotting — Wax and the crew travel far from Elendel. Big reveals connecting to the broader Cosmere. The most fun of the Era 2 books.',                                                                                               page_count: 448, publication_year: 2016 },
-          { title: 'The Lost Metal',        slug: 'the-lost-metal',        status: 'mandatory', seriesLabel: 'Mistborn #7', note: 'Era 2 finale. Massive Cosmere crossover payoff — characters and concepts from across the Cosmere converge on Scadrial. The most ambitious Mistborn book since Hero of Ages. Read this after Stormlight 4 for full context.',                      page_count: 528, publication_year: 2022 },
+          { title: 'The Alloy of Law',                       slug: 'the-alloy-of-law',                      status: 'mandatory',     seriesLabel: 'Mistborn #4',   note: 'A lighter, faster Mistborn — half the length of Era 1 books. Waxillium Ladrian is a lawman dragged back to the city. An excellent palate cleanser after the weight of Era 1.',         page_count: 332, publication_year: 2011 },
+          { title: 'Shadows of Self',                        slug: 'shadows-of-self',                       status: 'mandatory',     seriesLabel: 'Mistborn #5',   note: 'Darker and more personal than Alloy. A murderer is killing city leaders and Wax must uncover why. Important Cosmere lore drops and a gut-punch of an ending.',                     page_count: 383, publication_year: 2015 },
+          { title: 'Allomancer Jak and the Pits of Eltania', slug: 'allomancer-jak-and-the-pits-of-eltania', status: 'supplementary', seriesLabel: 'Mistborn #5.5', note: 'Comedic pulp-adventure short set in the Era 2 world. Light, fun, self-contained. Part of the Arcanum Unbounded collection.',                                                              page_count: 35,  publication_year: 2014 },
+          { title: 'The Bands of Mourning',                  slug: 'the-bands-of-mourning',                 status: 'mandatory',     seriesLabel: 'Mistborn #6',   note: 'Adventure-quest plotting — Wax and the crew travel far from Elendel. Big reveals connecting to the broader Cosmere. The most fun of the Era 2 books.',                                  page_count: 448, publication_year: 2016 },
+          { title: 'Secret History',                         slug: 'mistborn-secret-history',               status: 'supplementary', seriesLabel: 'Mistborn #3.5', note: 'Novella. Chronologically Era 1 — but must be read here, after Bands of Mourning, as it spoils Era 2 plot points. Shows what happened behind the scenes of Era 1. Essential for Cosmere readers.', page_count: 175, publication_year: 2016 },
+          { title: 'The Lost Metal',                         slug: 'the-lost-metal',                        status: 'mandatory',     seriesLabel: 'Mistborn #7',   note: 'Era 2 finale. Massive Cosmere crossover payoff — characters and concepts from across the Cosmere converge on Scadrial. The most ambitious Mistborn book since Hero of Ages.',          page_count: 528, publication_year: 2022 },
         ],
       },
       {
@@ -2083,7 +2092,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       { title: '⚗️ Era 1 (3)',        body: 'The complete original trilogy. The best entry point and one of the finest fantasy trilogies ever written. Read all three before moving on.',                               color: 'blue'  },
       { title: '🔫 Era 2 (4)',        body: 'Wax and Wayne — Western-flavoured Mistborn set 300 years later. Faster and lighter than Era 1. The Lost Metal is the best Cosmere payoff yet published.',               color: 'blue'  },
       { title: '🕵️ Era 3 (3)',        body: 'Announced spy-thriller trilogy set on a near-modern Scadrial. Not yet published as of 2025.',                                                                             color: 'amber' },
-      { title: '📄 Extras (2)',       body: 'The Eleventh Metal (short story) and Secret History (novella). Read Secret History after The Bands of Mourning, not after Hero of Ages.',                                 color: 'green' },
+      { title: '📄 Extras (3)',       body: 'The Eleventh Metal (#1.5), Allomancer Jak (#5.5), Secret History (#3.5 novella). Placed in series number order — see each book\'s note for the ideal read point.',     color: 'green' },
     ],
     sections: [
       {

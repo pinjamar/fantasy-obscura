@@ -163,13 +163,24 @@ function olAuthorMatches(olAuthorNames, expectedAuthor) {
   });
 }
 
+function olTitleMatches(olTitle, queryTitle) {
+  if (!olTitle || !queryTitle) return false;
+  const STOP = new Set(['the','a','an','and','or','of','in','to','for','its','is','by']);
+  const sig = (s) => s.toLowerCase().replace(/[^a-z\s]/g, '').split(/\s+/)
+    .filter((w) => w.length > 2 && !STOP.has(w));
+  const olWords    = new Set(sig(olTitle));
+  const queryWords = sig(queryTitle);
+  if (queryWords.length === 0) return true;
+  const overlap = queryWords.filter((w) => olWords.has(w)).length;
+  return overlap / queryWords.length >= 0.6;
+}
+
 /**
  * Fetches the first publication year from Open Library using two-step validation:
- * 1. Search top 3 results and pick the one whose author actually matches — prevents
- *    "merge pollution" where a similarly-titled old book contaminates the result.
- * 2. Work editions endpoint gives all known publish dates — compute min ourselves
- *    (more reliable than the pre-computed search index which can be stale).
- * Returns null if no author-matched result is found, rather than a wrong year.
+ * 1. Search top 5 results, require BOTH title and author to match — author-only check
+ *    caused series books to match book 1 (same author, book 1 has more OL relevance).
+ * 2. Work editions endpoint gives all known publish dates — compute min ourselves.
+ * Returns null if no matched result is found, rather than a wrong year.
  */
 async function fetchFirstPublishYear(title, authors) {
   const author = Array.isArray(authors) ? authors[0] : (authors ?? '');
@@ -177,17 +188,17 @@ async function fetchFirstPublishYear(title, authors) {
   const currentYear = new Date().getFullYear();
 
   try {
-    // Step 1 — search, get top 3 results with author_name for validation
+    // Step 1 — search, get top 5 results with title + author_name for validation
     const searchRes = await fetch(
-      `https://openlibrary.org/search.json?q=${q}&fields=key,first_publish_year,author_name&limit=3`,
+      `https://openlibrary.org/search.json?q=${q}&fields=key,first_publish_year,author_name,title&limit=5`,
     );
     if (!searchRes.ok) return null;
     const searchData = await searchRes.json();
 
-    // Pick the first doc whose author matches — avoids using a random old book
-    const doc = author
-      ? (searchData.docs ?? []).find((d) => olAuthorMatches(d.author_name, author)) ?? null
-      : searchData.docs?.[0] ?? null;
+    // Require both title AND author to match
+    const doc = (searchData.docs ?? []).find((d) =>
+      olTitleMatches(d.title, title) && (!author || olAuthorMatches(d.author_name, author))
+    ) ?? null;
     if (!doc) return null;
 
     const searchIndexYear = doc.first_publish_year ? parseInt(doc.first_publish_year) : null;

@@ -140,19 +140,31 @@ function olAuthorMatches(olAuthorNames, expectedAuthor) {
   });
 }
 
+function olTitleMatches(olTitle, queryTitle) {
+  if (!olTitle || !queryTitle) return false;
+  const STOP = new Set(['the','a','an','and','or','of','in','to','for','its','is','by']);
+  const sig = (s) => s.toLowerCase().replace(/[^a-z\s]/g, '').split(/\s+/)
+    .filter((w) => w.length > 2 && !STOP.has(w));
+  const olWords    = new Set(sig(olTitle));
+  const queryWords = sig(queryTitle);
+  if (queryWords.length === 0) return true;
+  const overlap = queryWords.filter((w) => olWords.has(w)).length;
+  return overlap / queryWords.length >= 0.6;
+}
+
 async function fetchOpenLibraryMeta(title, author) {
   const q = encodeURIComponent(`${title} ${author ?? ''}`);
-  const url = `https://openlibrary.org/search.json?q=${q}&limit=3&fields=cover_i,isbn,number_of_pages_median,key,first_publish_year,author_name`;
+  const url = `https://openlibrary.org/search.json?q=${q}&limit=5&fields=cover_i,isbn,number_of_pages_median,key,first_publish_year,author_name,title`;
   const currentYear = new Date().getFullYear();
   try {
     const res = await fetch(url);
     if (!res.ok) return null;
     const data = await res.json();
-    // Pick the first result whose author matches — prevents old unrelated books
-    // from polluting the publication year (e.g. returning 1872 for a 2025 book)
-    const doc = author
-      ? (data.docs ?? []).find((d) => olAuthorMatches(d.author_name, author)) ?? null
-      : data.docs?.[0] ?? null;
+    // Require both title AND author to match — author-only check caused series books
+    // to match book 1 of the same series (same author, book 1 has higher OL relevance)
+    const doc = (data.docs ?? []).find((d) =>
+      olTitleMatches(d.title, title) && (!author || olAuthorMatches(d.author_name, author))
+    ) ?? null;
     if (!doc) return null;
 
     let synopsis = null;

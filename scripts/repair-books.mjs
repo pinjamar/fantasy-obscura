@@ -94,6 +94,21 @@ function olAuthorMatches(olAuthorNames, expectedAuthor) {
   });
 }
 
+// Requires ≥60% of significant query words to appear in the OL title.
+// Prevents "Harry Potter and the Philosopher's Stone" matching a search for
+// "Harry Potter and the Chamber of Secrets" (they share harry/potter but not the unique words).
+function olTitleMatches(olTitle, queryTitle) {
+  if (!olTitle || !queryTitle) return false;
+  const STOP = new Set(['the','a','an','and','or','of','in','to','for','its','is','by']);
+  const sig = (s) => s.toLowerCase().replace(/[^a-z\s]/g, '').split(/\s+/)
+    .filter((w) => w.length > 2 && !STOP.has(w));
+  const olWords   = new Set(sig(olTitle));
+  const queryWords = sig(queryTitle);
+  if (queryWords.length === 0) return true;
+  const overlap = queryWords.filter((w) => olWords.has(w)).length;
+  return overlap / queryWords.length >= 0.6;
+}
+
 /**
  * Fetch the first publication year from Open Library.
  * Validates the result against the expected author to prevent "merge pollution"
@@ -105,15 +120,16 @@ async function fetchOLFirstPublishYear(title, author) {
   const currentYear = new Date().getFullYear();
   try {
     const searchRes = await fetch(
-      `https://openlibrary.org/search.json?q=${q}&fields=key,first_publish_year,author_name&limit=3`,
+      `https://openlibrary.org/search.json?q=${q}&fields=key,first_publish_year,author_name,title&limit=5`,
     );
     if (!searchRes.ok) return null;
     const searchData = await searchRes.json();
 
-    // Pick the first doc whose author matches — avoids using a random old book's year
-    const doc = author
-      ? (searchData.docs ?? []).find((d) => olAuthorMatches(d.author_name, author)) ?? null
-      : searchData.docs?.[0] ?? null;
+    // Require both title AND author to match — author-only check caused series books
+    // (e.g. HP 2-5) to match HP book 1 since the author (Rowling) is the same
+    const doc = (searchData.docs ?? []).find((d) =>
+      olTitleMatches(d.title, title) && (!author || olAuthorMatches(d.author_name, author))
+    ) ?? null;
     if (!doc) return null;
 
     const searchIndexYear = doc.first_publish_year ? parseInt(doc.first_publish_year) : null;
