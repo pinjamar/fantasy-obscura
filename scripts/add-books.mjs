@@ -123,20 +123,43 @@ async function searchGoogleBooks(title, author) {
 }
 
 /**
- * Open Library fallback for cover + isbn + page count.
+ * Open Library metadata: cover, isbn, page count, AND first publication year.
+ * The `first_publish_year` field is cross-validated against actual edition records
+ * so we get the original publication year, not a reprint/edition date.
+ * Google Books `publishedDate` returns edition dates only — never use it for pub year.
  */
+function olAuthorMatches(olAuthorNames, expectedAuthor) {
+  if (!expectedAuthor || !olAuthorNames?.length) return false;
+  const norm = (s) => s.toLowerCase().replace(/[^a-z\s]/g, '').trim();
+  const expParts = norm(expectedAuthor).split(/\s+/);
+  const expLast  = expParts[expParts.length - 1];
+  return olAuthorNames.some((name) => {
+    const n = norm(name);
+    const nParts = n.split(/\s+/);
+    return n.includes(expLast) || expParts.some((p) => nParts.includes(p));
+  });
+}
+
 async function fetchOpenLibraryMeta(title, author) {
   const q = encodeURIComponent(`${title} ${author ?? ''}`);
-  const url = `https://openlibrary.org/search.json?q=${q}&limit=1&fields=cover_i,isbn,number_of_pages_median,key,first_publish_year`;
+  const url = `https://openlibrary.org/search.json?q=${q}&limit=3&fields=cover_i,isbn,number_of_pages_median,key,first_publish_year,author_name`;
+  const currentYear = new Date().getFullYear();
   try {
     const res = await fetch(url);
     if (!res.ok) return null;
     const data = await res.json();
-    const doc = data.docs?.[0];
+    // Pick the first result whose author matches — prevents old unrelated books
+    // from polluting the publication year (e.g. returning 1872 for a 2025 book)
+    const doc = author
+      ? (data.docs ?? []).find((d) => olAuthorMatches(d.author_name, author)) ?? null
+      : data.docs?.[0] ?? null;
     if (!doc) return null;
 
     let synopsis = null;
+    let firstPublishYear = doc.first_publish_year ? parseInt(doc.first_publish_year) : null;
+
     if (doc.key) {
+      // Fetch Work record for synopsis
       try {
         const workRes = await fetch(`https://openlibrary.org${doc.key}.json`);
         if (workRes.ok) {
@@ -144,6 +167,23 @@ async function fetchOpenLibraryMeta(title, author) {
           const desc = work.description;
           const raw = typeof desc === 'string' ? desc : (desc?.value ?? null);
           if (raw && !isLikelyNonEnglish(raw)) synopsis = raw.slice(0, 2000);
+        }
+      } catch {}
+
+      // Cross-validate publication year via actual editions (search index can be stale)
+      try {
+        const editionsRes = await fetch(
+          `https://openlibrary.org${doc.key}/editions.json?limit=100`,
+        );
+        if (editionsRes.ok) {
+          const editionsData = await editionsRes.json();
+          const years = (editionsData.entries ?? [])
+            .map((e) => {
+              const m = String(e.publish_date ?? '').match(/\b(1[89]\d{2}|20[012]\d)\b/);
+              return m ? parseInt(m[1]) : null;
+            })
+            .filter((y) => y && y >= 1800 && y <= currentYear);
+          if (years.length > 0) firstPublishYear = Math.min(...years);
         }
       } catch {}
     }
@@ -154,7 +194,7 @@ async function fetchOpenLibraryMeta(title, author) {
         : null,
       isbn: doc.isbn?.[0] ?? null,
       page_count: doc.number_of_pages_median ?? null,
-      publication_year: doc.first_publish_year ?? null,
+      publication_year: firstPublishYear,
       synopsis,
     };
   } catch {
@@ -254,25 +294,28 @@ async function main() {
     };
 
     if (gb) {
-      record.title           = gb.title;
-      record.authors         = gb.authors ?? record.authors;
-      record.cover_url       = gb.cover_url;
-      record.synopsis        = gb.synopsis;
-      record.publication_year = gb.publication_year;
-      record.page_count      = gb.page_count;
+      record.title      = gb.title;
+      record.authors    = gb.authors ?? record.authors;
+      record.cover_url  = gb.cover_url;
+      record.synopsis   = gb.synopsis;
+      record.page_count = gb.page_count;
+      // NOTE: do NOT use gb.publication_year — Google Books returns edition dates,
+      // not first publication year. Open Library is fetched below for this field.
     }
 
-    // Open Library fallback for missing fields
-    if (!record.cover_url || !record.isbn || !record.synopsis) {
-      const ol = await fetchOpenLibraryMeta(title, author);
-      await sleep(DELAY_MS);
-      if (ol) {
-        record.cover_url       = record.cover_url       ?? ol.cover_url;
-        record.isbn            = record.isbn            ?? ol.isbn;
-        record.page_count      = record.page_count      ?? ol.page_count;
-        record.publication_year = record.publication_year ?? ol.publication_year;
-        record.synopsis        = record.synopsis        ?? ol.synopsis;
-      }
+    // Open Library — always fetch for publication_year (first pub, not edition date)
+    // Also fills cover, isbn, page_count, synopsis if still missing from Google Books
+    const ol = await fetchOpenLibraryMeta(title, author);
+    await sleep(DELAY_MS);
+    if (ol) {
+      record.cover_url        = record.cover_url  ?? ol.cover_url;
+      record.isbn             = record.isbn       ?? ol.isbn;
+      record.page_count       = record.page_count ?? ol.page_count;
+      record.synopsis         = record.synopsis   ?? ol.synopsis;
+      // OL first_publish_year always wins — fall back to GB edition year only if OL has nothing
+      record.publication_year = ol.publication_year ?? gb?.publication_year ?? null;
+    } else {
+      record.publication_year = gb?.publication_year ?? null;
     }
 
     const { error } = await supabase.from('books').insert(record);

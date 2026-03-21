@@ -200,7 +200,8 @@ node scripts/replace-book.mjs harry-potter-philosophers-stone --dry-run
 3. Opens a browser tab showing all covers in a grid — current on the left, candidates numbered
 4. You type the number of the candidate you want
 5. For each field that differs (title, authors, year, pages, ISBN, synopsis) it asks `y/N` — cover is always updated
-6. Final confirm before writing to DB
+6. For `publication_year`: queries Open Library editions to get the **first publication year** (not reprint/edition date) — cross-validated against the Work's full edition list for accuracy
+7. Final confirm before writing to DB
 
 ---
 
@@ -211,7 +212,14 @@ node scripts/replace-book.mjs harry-potter-philosophers-stone --dry-run
 node scripts/repair-books.mjs
 node scripts/repair-books.mjs --dry-run
 node scripts/repair-books.mjs --limit 20
-node scripts/repair-books.mjs --all          # force-refresh every book
+node scripts/repair-books.mjs --all              # force-refresh every book (synopsis + year)
+
+# Recheck publication years only — no Google Books calls, no quota used
+# Uses Open Library editions API (first pub year, not edition/reprint dates)
+node scripts/repair-books.mjs --year-only        # recheck all books
+node scripts/repair-books.mjs --year-only --dry-run
+node scripts/repair-books.mjs --year-only --limit 200              # process in batches
+node scripts/repair-books.mjs --year-only --limit 200 --offset 200 # resume after interruption
 
 # Update covers (Google Books first, Open Library fallback)
 npm run covers                               # fill only missing
@@ -650,3 +658,62 @@ Don't do this yet:
 - The site isn't under meaningful load — current fixes are holding fine
 
 **Effort estimate:** half a day. The config change is one line. The real work is moving the navbar auth to client-side and testing that all pre-rendered pages build without errors.
+
+---
+
+### Affiliate Links
+
+The site already has buy buttons on every book page (`/books/[slug]`) and on books-like guide pages. All links currently go to stores without affiliate tags — adding tags is pure revenue with no UX change.
+
+**Where links appear in the codebase:**
+- `src/pages/books/[slug].astro` — Amazon main button + 6-store "More stores" dropdown + Audible button
+- `src/pages/books-like/[slug].astro` — Amazon button on every recommendation card
+
+**Add a footer affiliate disclosure** (required by law and all affiliate programs) before activating any links. One line in `src/components/Layout.astro` footer is enough: *"This site contains affiliate links. We may earn a commission at no extra cost to you."*
+
+---
+
+#### 1. Amazon Associates ✅ do this first
+- Apply at: affiliate-program.amazon.com
+- **What to change:** append `&tag=YOURTAG-20` to every `amazon.com` URL
+- In `books/[slug].astro`: `amazonUrl` on line ~56
+- In `books-like/[slug].astro`: every `r.amazon_url` link
+- Highest conversion of all stores. Apply before any traffic push.
+
+#### 2. Audible (Amazon Associates)
+- Same Associates account as Amazon — no separate application
+- **What to change:** Audible links use `book.audiobook_audible_url` (direct URLs per book, stored in DB). Append `&tag=YOURTAG-20` when rendering the Audible button in `books/[slug].astro` around line ~358
+- Note: many Audible affiliate links use a different tag format (`ref=as_li_ss_tl` + Associates tag). Check Amazon's Audible linking guide after joining Associates.
+
+#### 3. Bookshop.org
+- Apply at: bookshop.org/affiliates — instant approval, 10% commission
+- Great fit for the audience (indie bookstore supporters)
+- **What to change:** `bookshopUrl` in `books/[slug].astro` — append `&affiliate=YOURID` to the search URL
+- Also consider adding Bookshop as a primary button alongside Amazon (some readers actively prefer it)
+
+#### 4. ThriftBooks
+- Apply via Impact (impact.com) — search "ThriftBooks" in their marketplace
+- Good for readers who buy used/discounted — different audience segment than Amazon
+- **What to change:** `thriftBooksUrl` in `books/[slug].astro` — add affiliate tracking param after approval (format given by Impact dashboard)
+
+#### 5. Apple Books
+- Apply at: Apple Performance Partners (affiliate.itunes.apple.com)
+- Approval can take 1–2 weeks, stricter requirements
+- **What to change:** `appleBooksUrl` in `books/[slug].astro` — affiliate links use a different URL format with your token. Apple provides a link builder tool after approval.
+
+#### 6. Kobo (Rakuten)
+- Apply at: rakutenadvertising.com or directly via Kobo's affiliate page
+- Strong in Canada, UK, Europe — good complement to Amazon
+- **What to change:** `koboUrl` in `books/[slug].astro` — append affiliate tracking param after approval
+
+#### 7. Waterstones
+- Apply at: waterstones.com/affiliates (UK-focused, Awin network)
+- Best for UK traffic. Commission ~5%
+- **What to change:** `waterstonesUrl` in `books/[slug].astro`
+
+#### 8. Wordery
+- Apply via Awin (awin.com) — search "Wordery"
+- International shipping, popular alternative to Amazon in Europe
+- **What to change:** `worderyUrl` in `books/[slug].astro`
+
+**Recommended order:** Amazon → Bookshop.org → Audible → ThriftBooks → Kobo → Waterstones → Wordery → Apple Books

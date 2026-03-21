@@ -4,7 +4,7 @@ import CategoryGrid from "../components/CategoryGrid";
 import BookSearch from "../components/BookSearch";
 ---
 
-<Layout title="The Grimoire — Fantasy Book Guides, Darkness Ratings & Reading Orders" description="Fantasy book guides with darkness ratings, trope tags, and reading orders — so you always know what you're getting into before you start.">
+<Layout title="The Grimoire - Fantasy Book Guides & Reading Orders" description="Fantasy book guides with darkness ratings, trope tags, and reading orders — so you always know what you're getting into before you start.">
   <!-- Homepage hero -->
   <div class="relative rounded-2xl overflow-hidden mb-8 border border-zinc-200">
     <picture>
@@ -33,4 +33,32 @@ import BookSearch from "../components/BookSearch";
   <BookSearch client:load />
 
   <CategoryGrid client:load />
+
+  <!-- Static prose: SEO content, word count, h2 bridge -->
+  <section class="mt-16 border-t pt-10 grid sm:grid-cols-2 gap-10 text-sm text-zinc-600 leading-relaxed">
+    <div>
+      <h2 class="text-lg font-semibold text-zinc-900 mb-3">What is The Grimoire?</h2>
+      <p class="mb-3">
+        The Grimoire is a fantasy book database built for readers who want to know exactly what they're getting into before they start a new series. Every book comes with a <strong>darkness rating</strong> on a five-point candle scale - from lighthearted cozy fantasy all the way up to brutal grimdark - so you can match the book to your mood rather than being blindsided by content you weren't ready for.
+      </p>
+      <p class="mb-3">
+        We cover thousands of fantasy books across every subgenre: epic fantasy, romantasy, grimdark, urban fantasy, LitRPG, historical fantasy, cozy fantasy and more. Each entry includes trope tags, pacing notes, heat level, magic system type, point-of-view style and content warnings - the details that actually matter when you're deciding what to read next.
+      </p>
+      <p>
+        Use the <a href="/book-finder/" class="text-purple-700 hover:underline">Book Finder</a> to filter by any combination of these tags, or browse <a href="/tropes/" class="text-purple-700 hover:underline">by trope</a> if you know exactly what kind of story you're in the mood for.
+      </p>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold text-zinc-900 mb-3">Reading Orders & Series Guides</h2>
+      <p class="mb-3">
+        Long fantasy series can be intimidating. The Grimoire has step-by-step <a href="/reading-orders/" class="text-purple-700 hover:underline">reading orders</a> for all the major series - from Brandon Sanderson's sprawling Cosmere to the Wheel of Time, the First Law, Malazan, and dozens more. Each guide tells you which books are essential, which are standalone side stories and the best entry point if you're new to the series.
+      </p>
+      <p class="mb-3">
+        Not sure where to start? The <a href="/books-like/" class="text-purple-700 hover:underline">Books Like...</a> section recommends what to read next based on books you already love. If you loved Mistborn, the Name of the Wind or the Way of Kings, we have handpicked lists that explain exactly why each recommendation fits - not just a generic "readers also liked" list.
+      </p>
+      <p>
+        Browse our <a href="/authors/" class="text-purple-700 hover:underline">author pages</a> for full bibliographies, writing style breakdowns and the best place to start with each author's work. Whether you're new to an author or trying to fill gaps in a backlist, every page is built to give you the full picture without spoilers.
+      </p>
+    </div>
+  </section>
 </Layout>

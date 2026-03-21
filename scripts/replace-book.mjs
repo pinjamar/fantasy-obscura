@@ -147,6 +147,78 @@ function pick(n) {
   }
 }
 
+/**
+ * Returns true if any of the OL author_name strings match the expected author.
+ * Matches on last name to handle "J.K. Rowling" vs "Rowling, Joanne" etc.
+ */
+function olAuthorMatches(olAuthorNames, expectedAuthor) {
+  if (!expectedAuthor || !olAuthorNames?.length) return false;
+  const norm = (s) => s.toLowerCase().replace(/[^a-z\s]/g, '').trim();
+  const expParts = norm(expectedAuthor).split(/\s+/);
+  const expLast  = expParts[expParts.length - 1];
+  return olAuthorNames.some((name) => {
+    const n = norm(name);
+    const nParts = n.split(/\s+/);
+    return n.includes(expLast) || expParts.some((p) => nParts.includes(p));
+  });
+}
+
+/**
+ * Fetches the first publication year from Open Library using two-step validation:
+ * 1. Search top 3 results and pick the one whose author actually matches — prevents
+ *    "merge pollution" where a similarly-titled old book contaminates the result.
+ * 2. Work editions endpoint gives all known publish dates — compute min ourselves
+ *    (more reliable than the pre-computed search index which can be stale).
+ * Returns null if no author-matched result is found, rather than a wrong year.
+ */
+async function fetchFirstPublishYear(title, authors) {
+  const author = Array.isArray(authors) ? authors[0] : (authors ?? '');
+  const q = encodeURIComponent(`${title} ${author}`);
+  const currentYear = new Date().getFullYear();
+
+  try {
+    // Step 1 — search, get top 3 results with author_name for validation
+    const searchRes = await fetch(
+      `https://openlibrary.org/search.json?q=${q}&fields=key,first_publish_year,author_name&limit=3`,
+    );
+    if (!searchRes.ok) return null;
+    const searchData = await searchRes.json();
+
+    // Pick the first doc whose author matches — avoids using a random old book
+    const doc = author
+      ? (searchData.docs ?? []).find((d) => olAuthorMatches(d.author_name, author)) ?? null
+      : searchData.docs?.[0] ?? null;
+    if (!doc) return null;
+
+    const searchIndexYear = doc.first_publish_year ? parseInt(doc.first_publish_year) : null;
+
+    // Step 2 — fetch Work editions and compute actual minimum publish year
+    if (doc.key) {
+      try {
+        const editionsRes = await fetch(
+          `https://openlibrary.org${doc.key}/editions.json?limit=100`,
+        );
+        if (editionsRes.ok) {
+          const editionsData = await editionsRes.json();
+          const years = (editionsData.entries ?? [])
+            .map((e) => {
+              const raw = e.publish_date;
+              if (!raw) return null;
+              const m = String(raw).match(/\b(1[89]\d{2}|20[012]\d)\b/);
+              return m ? parseInt(m[1]) : null;
+            })
+            .filter((y) => y && y >= 1800 && y <= currentYear);
+          if (years.length > 0) return Math.min(...years);
+        }
+      } catch {}
+    }
+
+    return searchIndexYear;
+  } catch {
+    return null;
+  }
+}
+
 async function fetchCandidates(title, authors) {
   const author = Array.isArray(authors) ? authors[0] : (authors ?? '');
   const queries = [
@@ -259,6 +331,13 @@ async function main() {
   const chosen = candidates[idx];
   console.log(`\nYou picked: [${idx + 1}] ${chosen.title}\n`);
 
+  // Fetch first publication year from Open Library (edition-agnostic)
+  process.stdout.write('Fetching first publication year from Open Library… ');
+  const firstPublishYear = await fetchFirstPublishYear(chosen.title, chosen.authors);
+  const yearSource = firstPublishYear ? 'Open Library first_publish_year' : 'Google Books edition date';
+  const resolvedYear = firstPublishYear ?? (chosen.year ? parseInt(chosen.year) : null);
+  console.log(resolvedYear ? `${resolvedYear} (${yearSource})` : 'not found');
+
   // 4. Build update payload
   const updates = { cover_url: chosen.cover_url };
 
@@ -267,7 +346,7 @@ async function main() {
     const fields = [
       { key: 'title',            label: 'Title',        current: book.title,              next: chosen.title },
       { key: 'authors',          label: 'Authors',      current: (book.authors ?? []).join(', '), next: chosen.authors.join(', ') },
-      { key: 'publication_year', label: 'Year',         current: book.publication_year,   next: chosen.year ? parseInt(chosen.year) : null },
+      { key: 'publication_year', label: 'Year',         current: book.publication_year,   next: resolvedYear },
       { key: 'page_count',       label: 'Page count',   current: book.page_count,         next: chosen.pages },
       { key: 'isbn',             label: 'ISBN',         current: book.isbn,               next: chosen.isbn },
     ];
@@ -283,7 +362,7 @@ async function main() {
       console.log(`  ${f.label.padEnd(12)} ${currentStr} → ${nextStr}`);
       const yn = await ask(rl, `  Update ${f.label}? [y/N] `);
       if (yn.toLowerCase() === 'y') {
-        updates[f.key] = f.key === 'authors' ? chosen.authors : (f.key === 'publication_year' ? parseInt(chosen.year) : f.next);
+        updates[f.key] = f.key === 'authors' ? chosen.authors : f.next;
       }
     }
 
