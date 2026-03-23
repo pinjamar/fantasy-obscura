@@ -304,6 +304,89 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     related: ['cosmere', 'wheel-of-time'],
   },
 
+  // ─── Earthsea ──────────────────────────────────────────────────────────────
+  {
+    slug: 'earthsea',
+    name: 'Earthsea Cycle',
+    author: 'Ursula K. Le Guin',
+    seriesStatus: 'complete',
+    seriesStatusLabel: '✓ Completed Series',
+    description:
+      'Six books set across an archipelago world where magic is rooted in the true names of things, and power always comes with a cost. Le Guin wrote the original trilogy between 1968 and 1972, then returned to Earthsea eighteen years later with a fundamentally different perspective — the second half of the series is quieter, more philosophical, and concerned with questions the first half never thought to ask.',
+    darknessDisplay: '🕯️🕯️ Mild to Moderate',
+    groups: [
+      {
+        label: 'The Original Trilogy',
+        sublabel: 'books 1–3 — start here',
+        noteType: 'required',
+        note: 'Read in publication order. Each book shifts focus — different protagonist in book 2, different generation in book 3. All three are short. The trilogy follows Ged from student to Archmage.',
+        books: [
+          { title: 'A Wizard of Earthsea', slug: 'a-wizard-of-earthsea', status: 'mandatory',     note: 'Start here. Ged, a gifted boy from a poor island, enters wizard school and unleashes something dangerous. The original magic school fantasy.',           page_count: 183, publication_year: 1968 },
+          { title: 'The Tombs of Atuan',   slug: 'the-tombs-of-atuan',   status: 'mandatory',     note: 'Shifts to a new protagonist — Tenar, a girl raised as a high priestess in a labyrinthine tomb. Claustrophobic and beautifully strange.',              page_count: 173, publication_year: 1971 },
+          { title: 'The Farthest Shore',   slug: 'the-farthest-shore',   status: 'mandatory',     note: 'Ged as Archmage, travelling with a young prince to the edge of the world. Explores death and what it costs to cheat it.',                            page_count: 223, publication_year: 1972 },
+        ],
+      },
+      {
+        label: 'The Second Trilogy',
+        sublabel: 'books 4–6 — written 18 years later',
+        noteType: 'required',
+        note: 'Le Guin returned to Earthsea in 1990 with different questions. The tone is slower and more interior — less adventure, more reckoning. Tehanu picks up directly after The Farthest Shore with Tenar as the focus. The Other Wind is the true conclusion to the whole series.',
+        books: [
+          { title: 'Tehanu',            slug: 'tehanu',            status: 'mandatory',     note: 'Tenar, now middle-aged, takes in a badly burned child. Ged returns changed. Le Guin revisits the world through a feminist lens — quieter and more unsettling than the original trilogy.',  page_count: 260, publication_year: 1990 },
+          { title: 'Tales from Earthsea', slug: 'tales-from-earthsea', status: 'supplementary', note: 'Five stories set across different eras of Earthsea history. Read between Tehanu and The Other Wind — the story "Dragonfly" directly sets up The Other Wind.',                           page_count: 328, publication_year: 2001 },
+          { title: 'The Other Wind',       slug: 'the-other-wind',       status: 'mandatory',     note: 'The true finale. Resolves threads from across the entire series. Le Guin considered this the conclusion she needed to write after Tehanu left things unfinished.',    page_count: 271, publication_year: 2001 },
+          { title: 'The Daughter of Odren', slug: 'the-daughter-of-odren', status: 'supplementary', note: 'A short story set in Earthsea, published in 2014 as an ebook original. Standalone — read after The Other Wind.',                                                       page_count: 48,  publication_year: 2014 },
+        ],
+      },
+    ],
+    orderNote: 'Publication order is the right order. Le Guin designed the books to be read sequentially. Tales from Earthsea is best read between Tehanu and The Other Wind — the story "Dragonfly" bridges them directly.',
+    cards: [
+      { title: '📚 Short Books',         body: 'All six books are short — 170 to 330 pages each. The entire series is under 1,500 pages combined. One of the most complete and efficient fantasy universes ever written.',    color: 'blue'   },
+      { title: '🌊 Two Different Tones', body: 'Books 1–3 are adventure-focused and accessible. Books 4–6 are slower, more philosophical, and concerned with age, power, and what the first trilogy left unexamined.',         color: 'amber'  },
+      { title: '🐉 The Dragon Lore',    body: 'Dragons in Earthsea are not creatures — they are something closer to truth itself. They cannot lie (they speak only in the Old Speech). Their role deepens significantly in the second trilogy.', color: 'purple' },
+    ],
+    sections: [
+      {
+        heading: 'What to expect',
+        type: 'bullets',
+        bullets: [
+          'The original trilogy (1968–72) is foundational fantasy — elegant, swift, and deceptively simple. Perfect for readers who want the genre\'s roots.',
+          'The second trilogy (1990–2001) is different in register — slower, introverted, and feminist. Le Guin was in her 60s when she wrote Tehanu and was asking different questions than she was at 39.',
+          'The magic system is built around true names: every person, place, and thing has a true name in the Old Speech, and knowing it gives you power over it. Simple premise with enormous implications.',
+          'The world is an archipelago of islands. There is no continent, no map-sprawl — just sea, islands, and the spaces between.',
+        ],
+      },
+      {
+        heading: 'On Tales from Earthsea',
+        type: 'bullets',
+        bullets: [
+          'Tales from Earthsea is a short story collection — five stories spanning different eras of Earthsea history.',
+          'The story "Dragonfly" is the most important — it directly sets up characters and events in The Other Wind. Read it before The Other Wind.',
+          'The other four stories are optional enrichment. Skip the collection and just read "Dragonfly" if you\'re impatient to reach the finale.',
+          'All five stories are available in the collected editions (The Books of Earthsea: The Complete Illustrated Edition, 2018).',
+        ],
+      },
+      {
+        heading: 'Why it matters',
+        type: 'bullets',
+        bullets: [
+          'Earthsea (1968) was one of the first fantasy series to centre characters of colour as the default — Ged is brown-skinned, most Earthsea islanders are dark-complexioned. Le Guin did this four years after the Civil Rights Act.',
+          'A Wizard of Earthsea predates Hogwarts by almost 30 years — it established the wizard school template.',
+          'Le Guin influenced N.K. Jemisin, Brandon Sanderson, Patrick Rothfuss, and China Miéville, among many others.',
+          'The series is short enough to read in a week but dense enough to reward re-reading for decades.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'Books 1–3', level: 2, desc: 'Adventure and consequence — death present but not dwelt upon' },
+      { label: 'Books 4–6', level: 3, desc: 'More interior — trauma, loss, and questions without easy answers' },
+    ],
+    finishedLabel: 'Finished Earthsea?',
+    categoryHref: '/fantasy/epic',
+    categoryLabel: 'Browse Epic Fantasy',
+    related: ['wheel-of-time', 'kingkiller', 'malazan'],
+  },
+
   // ─── The First Law World ───────────────────────────────────────────────────
   {
     slug: 'first-law',
@@ -1024,7 +1107,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     groups: [
       {
         label: 'The Main Series',
-        sublabel: 'books 1–6 + optional prequel',
+        sublabel: 'books 1–5 + optional prequel',
         noteType: 'required',
         note: "All main books are essential and must be read in order. The Assassin's Blade (prequel) is optional — read it after Throne of Glass or skip it. The series takes off at Crown of Midnight.",
         books: [
@@ -1072,12 +1155,222 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     darkness: [
       { label: 'Books 1–2', level: 2, desc: 'Competition, intrigue, assassination — relatively contained' },
       { label: 'Books 3–5', level: 3, desc: 'War builds, magic escalates, loss becomes real' },
-      { label: 'Books 6–8', level: 4, desc: 'Full-scale war, sacrifice, world-ending stakes' },
+      { label: 'Books 6–7', level: 4, desc: 'Full-scale war, sacrifice, world-ending stakes' },
     ],
     finishedLabel: 'Finished the series?',
     categoryHref: '/fantasy/epic',
     categoryLabel: 'Browse Epic Fantasy',
     related: ['acotar', 'blood-and-ash'],
+  },
+
+  // ─── Sarah J. Maas ─────────────────────────────────────────────────────────
+  {
+    slug: 'sarah-j-maas',
+    name: 'Sarah J. Maas Universe',
+    author: 'Sarah J. Maas',
+    seriesStatus: 'ongoing',
+    seriesStatusLabel: '⏳ All three series ongoing',
+    description:
+      'The complete SJM reading order across all three series: Throne of Glass, A Court of Thorns and Roses, and Crescent City. The three worlds form a shared multiverse — connections are subtle at first, then explicit by the time you reach Crescent City. The recommended order maximises every crossover payoff.',
+    darknessDisplay: '🕯️🕯️🕯️–🕯️🕯️🕯️🕯️ Moderate to Dark · 🔥🔥–🔥🔥🔥 Explicit from ACMAF onward',
+    warning: 'Do not start with Crescent City. House of Sky and Breath and House of Flame and Shadow contain major crossover content from ACOTAR — reading CC first will spoil both series. Throne of Glass and ACOTAR can be read in either order.',
+    groups: [
+      {
+        label: 'Throne of Glass',
+        sublabel: 'books 1–7 + optional prequel — start here or with ACOTAR',
+        noteType: 'required',
+        note: 'Read TOG before or after ACOTAR — either order works. The series must be finished before starting Crescent City. Kingdom of Ash ends with a multiverse moment that gains meaning once you know the wider SJM world.',
+        books: [
+          { title: 'Throne of Glass',       slug: 'throne-of-glass',       status: 'mandatory',     note: 'Start here. Celaena Sardothien enters a deadly competition. YA-adjacent in tone — the series grows from here.',                          page_count: 404, publication_year: 2012 },
+          { title: "The Assassin's Blade",  slug: 'the-assassins-blade',   status: 'optional',      note: 'Five prequel novellas collected in one volume. Read after book 1 or skip — adds emotional depth, not plot.',                            page_count: 432, publication_year: 2014 },
+          { title: 'Crown of Midnight',     slug: 'crown-of-midnight',     status: 'mandatory',     note: 'The series finds its footing. Darker and faster, with a reveal that reframes everything.',                                             page_count: 418, publication_year: 2013 },
+          { title: 'Heir of Fire',          slug: 'heir-of-fire',          status: 'mandatory',     note: 'World expands into Fae and ancient magic. The true threat arrives.',                                                                   page_count: 565, publication_year: 2014 },
+          { title: 'Queen of Shadows',      slug: 'queen-of-shadows',      status: 'mandatory',     note: 'Aelin returns to Rifthold. Cast converges, alliances shift.',                                                                          page_count: 648, publication_year: 2015 },
+          { title: 'Empire of Storms',      slug: 'empire-of-storms',      status: 'mandatory',     note: 'War begins. Read before Tower of Dawn or alternate chapters — both cover the same timeline.',                                          page_count: 689, publication_year: 2016 },
+          { title: 'Tower of Dawn',         slug: 'tower-of-dawn',         status: 'mandatory',     note: "Chaol's story runs parallel to Empire of Storms. Do not skip — its events are essential for the finale.",                             page_count: 660, publication_year: 2017 },
+          { title: 'Kingdom of Ash',        slug: 'kingdom-of-ash',        status: 'mandatory',     note: 'The finale. All storylines converge. The closing chapters pierce the veil between worlds — the first hint of the SJM multiverse.',    page_count: 992, publication_year: 2018 },
+        ],
+      },
+      {
+        label: 'A Court of Thorns and Roses',
+        sublabel: 'books 1–5 — start here or after TOG',
+        noteType: 'required',
+        note: 'Complete the full ACOTAR series before starting Crescent City. A Court of Silver Flames must be read before House of Flame and Shadow — Nesta and Azriel appear in CC book 3.',
+        books: [
+          { title: 'A Court of Thorns and Roses',    slug: 'a-court-of-thorns-and-roses',    status: 'mandatory',     note: 'Beauty and the Beast retelling. Feyre is pulled into the Fae world. Slower start — the series takes off at book 2.',            page_count: 419, publication_year: 2015 },
+          { title: 'A Court of Mist and Fury',       slug: 'a-court-of-mist-and-fury',       status: 'mandatory',     note: 'The best book in the series by wide consensus. Everything expands — world, stakes, romance. Where most readers fall hard for the series.', page_count: 624, publication_year: 2016 },
+          { title: 'A Court of Wings and Ruin',      slug: 'a-court-of-wings-and-ruin',      status: 'mandatory',     note: 'War arrives. Closes the main trilogy with full cast convergence.',                                                              page_count: 699, publication_year: 2017 },
+          { title: 'A Court of Frost and Starlight', slug: 'a-court-of-frost-and-starlight', status: 'supplementary', note: 'Short bridge novella (~230 pages). War aftermath. Read before A Court of Silver Flames.',                                          page_count: 232, publication_year: 2018 },
+          { title: 'A Court of Silver Flames',       slug: 'a-court-of-silver-flames',       status: 'mandatory',     note: "Nesta and Cassian's book. READ THIS before Crescent City book 3 — Nesta and Azriel play major roles in House of Flame and Shadow.", page_count: 757, publication_year: 2021 },
+        ],
+      },
+      {
+        label: 'Crescent City',
+        sublabel: 'books 1–3 — read last',
+        noteType: 'warning',
+        note: 'Do not start Crescent City until you have finished both TOG and ACOTAR. House of Sky and Breath ends with Bryce accidentally crossing into Prythian (the ACOTAR world). House of Flame and Shadow spends roughly a third of its pages there — with Nesta and Azriel. Reading CC first will spoil both previous series.',
+        books: [
+          { title: 'House of Earth and Blood',   slug: 'house-of-earth-and-blood',   status: 'mandatory', note: 'Bryce Quinlan investigates her best friend\'s murder in a modern city of humans, Fae, angels, and wolves. Urban fantasy foundation before the worlds collide.', page_count: 803, publication_year: 2020 },
+          { title: 'House of Sky and Breath',    slug: 'house-of-sky-and-breath',    status: 'mandatory', note: 'The SJM multiverse begins. The final pages send Bryce to Prythian — the ACOTAR world. The crossover starts here.',                                        page_count: 804, publication_year: 2022 },
+          { title: 'House of Flame and Shadow',  slug: 'house-of-flame-and-shadow',  status: 'mandatory', note: '~1/3 of this book is set in Prythian with Nesta and Azriel. Requires ACOTAR to be fully read. The multiverse payoff is here.',                           page_count: 896, publication_year: 2024 },
+        ],
+      },
+    ],
+    orderNote: 'TOG and ACOTAR can be read in either order. Crescent City must always come last — it pays off both previous series.',
+    cards: [
+      { title: '🗺️ The Multiverse',      body: "All three series exist in the same multiverse. Throne of Glass hints at it in Kingdom of Ash. ACOTAR and Crescent City collide directly starting in House of Sky and Breath.",                         color: 'blue'   },
+      { title: '⚠️ Order Matters for CC', body: 'Finish all of ACOTAR (including A Court of Silver Flames) before starting Crescent City. Nesta and Azriel appear as major characters in House of Flame and Shadow.',                               color: 'amber'  },
+      { title: '🔗 The Crossover Key',   body: 'The eight-pointed star appears across all three series. Rhysand (ACOTAR) and Bryce (CC) share Starborn Fae ancestry through Queen Theia. The TOG/Prythian connection is confirmed in Kingdom of Ash.', color: 'purple' },
+    ],
+    sections: [
+      {
+        heading: 'Where to start',
+        type: 'bullets',
+        bullets: [
+          'New to SJM? Start with either Throne of Glass or ACOTAR — both work as entry points. Most readers recommend ACOTAR first because it\'s slightly more accessible.',
+          'Already read TOG or ACOTAR? Add the other series before starting Crescent City — the CC crossovers hit much harder with both under your belt.',
+          'Already read all of ACOTAR? You can start Crescent City — but finish ACSF first so you know Nesta and Azriel before House of Flame and Shadow.',
+          'Never start with Crescent City — the payoff requires knowing the other worlds.',
+        ],
+      },
+      {
+        heading: 'The crossover moments explained (minor spoilers)',
+        type: 'bullets',
+        bullets: [
+          'Kingdom of Ash (TOG #7, end): Aelin pierces the veil between worlds — the first confirmation that the SJM worlds are connected.',
+          'House of Sky and Breath (CC #2, end): Bryce is transported to Prythian instead of Hel. The ACOTAR crossover begins here.',
+          'House of Flame and Shadow (CC #3): Bryce spends ~1/3 of the book in Prythian with Nesta and Azriel. Bryce learns the Fae of Midgard descended from Prythian. The multiverse becomes explicit.',
+          'Connecting lore: the eight-pointed star, Starborn Fae lineage, and Queen Theia link ACOTAR and Crescent City through shared bloodlines.',
+        ],
+      },
+      {
+        heading: 'Content notes',
+        type: 'bullets',
+        bullets: [
+          'Throne of Glass: YA-adjacent at first, grows into dark epic fantasy. Explicit content from later books onward.',
+          'ACOTAR: Explicit from A Court of Mist and Fury onward. War, trauma, and recovery arcs.',
+          'Crescent City: The most mature of the three — explicit throughout, with urban fantasy violence and higher darkness level.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'TOG books 1–2',  level: 2, desc: 'Competition, intrigue — relatively contained' },
+      { label: 'TOG books 3–7',  level: 4, desc: 'Full-scale war, sacrifice, world-ending stakes' },
+      { label: 'ACOTAR 1–3',     level: 3, desc: 'Dark fairy tale, trauma, war' },
+      { label: 'ACSF',           level: 3, desc: 'Intense recovery arc, darker tone' },
+      { label: 'Crescent City',  level: 4, desc: 'Most mature — explicit, violent, high stakes throughout' },
+    ],
+    finishedLabel: 'Finished the SJM universe?',
+    categoryHref: '/fantasy/romantasy',
+    categoryLabel: 'Browse Romantasy',
+    related: ['acotar', 'throne-of-glass', 'empyrean'],
+  },
+
+  // ─── The Broken Empire ─────────────────────────────────────────────────────
+  {
+    slug: 'mark-lawrence',
+    name: 'The Broken Empire',
+    author: 'Mark Lawrence',
+    seriesStatus: 'complete',
+    seriesStatusLabel: '✓ All four trilogies complete',
+    description:
+      'Four trilogies, two connected worlds, one deeply cohesive author vision. The Broken Empire and Red Queen\'s War share the same post-apocalyptic Earth — told concurrently from two very different protagonists. The Book of the Ancestor and Book of the Ice share the ice-bound world of Abeth. Lawrence writes morally complex antiheroes, dark humour, and reveals that reframe everything you thought you knew.',
+    darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
+    warning: 'The Broken Empire opens with an extremely dark and violent prologue — this is intentional. Jorg is one of the most divisive protagonists in modern fantasy. If the opening repels you, try Prince of Fools (Red Queen\'s War) first — same world, much lighter tone with a comedic coward as the hero.',
+    groups: [
+      {
+        label: 'The Broken Empire',
+        sublabel: 'start here — or with Prince of Fools if you prefer lighter tone',
+        noteType: 'required',
+        note: 'The recommended starting point. Jorg Ancrath is one of fantasy\'s most notorious antiheroes — cruel, intelligent, and compelling. The trilogy is set in post-apocalyptic Europe a thousand years after nuclear war. Read before or after Red Queen\'s War — both work.',
+        books: [
+          { title: 'Prince of Thorns',  slug: 'prince-of-thorns',  status: 'mandatory', note: 'Start here. Jorg is 14, leads a band of outlaws, and is deeply unsettling from page one. Lawrence earns the darkness.',          page_count: 338, publication_year: 2011 },
+          { title: 'King of Thorns',    slug: 'king-of-thorns',    status: 'mandatory', note: 'Jorg at 18. Non-linear structure adds layers. The world opens up considerably.',                                                  page_count: 442, publication_year: 2012 },
+          { title: 'Emperor of Thorns', slug: 'emperor-of-thorns', status: 'mandatory', note: 'The conclusion. Everything about the world and its hidden history comes together.',                                             page_count: 418, publication_year: 2013 },
+        ],
+      },
+      {
+        label: 'The Red Queen\'s War',
+        sublabel: 'same world, concurrent timeline — lighter tone',
+        noteType: 'optional',
+        note: 'Set in the same world as The Broken Empire, running concurrently. Prince Jalan Kendeth is a coward and a liar — a deliberate tonal contrast to Jorg. The two series briefly intersect (Jalan and Jorg share a scene). Can be read before or after Broken Empire.',
+        books: [
+          { title: 'Prince of Fools',     slug: 'prince-of-fools',     status: 'mandatory', note: 'Jalan Kendeth and the viking Snorri set off on an unwilling quest. Funnier and more accessible than Broken Empire — a good entry point if you want lighter fare first.', page_count: 337, publication_year: 2014 },
+          { title: 'The Liar\'s Key',     slug: 'the-liars-key',       status: 'mandatory', note: 'The quest deepens. Lawrence\'s dark humour is at its best here.',                                                                                                     page_count: 375, publication_year: 2015 },
+          { title: 'The Wheel of Osheim', slug: 'the-wheel-of-osheim', status: 'mandatory', note: 'The finale. Stakes rise to world-ending levels. Callbacks to Broken Empire land hardest if you\'ve read both.',                                                        page_count: 393, publication_year: 2016 },
+        ],
+      },
+      {
+        label: 'Book of the Ancestor',
+        sublabel: 'new world — start fresh',
+        noteType: 'required',
+        note: 'Set on the ice-bound world of Abeth — a different world from the Broken Empire but connected in ways Lawrence reveals slowly. A convent of warrior nuns, a magic rooted in light and darkness, and a dying sun. Darker than Red Queen\'s War, with a very different kind of protagonist.',
+        books: [
+          { title: 'Red Sister',  slug: 'red-sister',  status: 'mandatory', note: 'Nona Grey is sold to a convent after nearly killing a boy. Learns to fight, kill, and wield the Path. Excellent magic system and character work.', page_count: 469, publication_year: 2017 },
+          { title: 'Grey Sister', slug: 'grey-sister', status: 'mandatory', note: 'Nona faces internal politics and external threats to the convent. The magic deepens.',                                                           page_count: 400, publication_year: 2018 },
+          { title: 'Holy Sister', slug: 'holy-sister', status: 'mandatory', note: 'The conclusion. War comes to the convent. Everything Lawrence built across three books pays off.',                                               page_count: 330, publication_year: 2019 },
+        ],
+      },
+      {
+        label: 'Book of the Ice',
+        sublabel: 'read after Book of the Ancestor',
+        noteType: 'warning',
+        note: 'Do not read before completing Book of the Ancestor — Book of the Ice contains significant spoilers for the Ancestor trilogy. Set in the same world (Abeth) but among the ice tribes far from the convent. Callbacks to Ancestor characters appear from book 2 onward.',
+        books: [
+          { title: 'The Girl and the Stars',    slug: 'the-girl-and-the-stars',    status: 'mandatory', note: 'Yaz is cast into the ice — literally. A different culture, a different magic, the same dying world.',       page_count: 368, publication_year: 2020 },
+          { title: 'The Girl and the Mountain', slug: 'the-girl-and-the-mountain', status: 'mandatory', note: 'Yaz climbs out of the ice world. Ancestor trilogy characters begin to appear.',                            page_count: 371, publication_year: 2021 },
+          { title: 'The Girl and the Moon',     slug: 'the-girl-and-the-moon',     status: 'mandatory', note: 'The finale. Both Abeth trilogies converge. The full picture of this dying world snaps into focus.',         page_count: 373, publication_year: 2023 },
+        ],
+      },
+    ],
+    orderNote: 'Broken Empire and Red Queen\'s War can be read in either order — they are concurrent stories in the same world. Book of the Ancestor can be started independently. Book of the Ice must come after Book of the Ancestor.',
+    cards: [
+      { title: '🗺️ Two Worlds',           body: 'Post-apocalyptic Earth: Broken Empire + Red Queen\'s War (concurrent). Ice-bound Abeth: Book of the Ancestor + Book of the Ice. The worlds have a deep connection Lawrence reveals across all four trilogies.',  color: 'blue'   },
+      { title: '⚔️ Two Entry Points',     body: 'Start with Prince of Thorns for the darkest, most celebrated entry. Start with Prince of Fools if you want a lighter tone — same world, comedic antihero, equally rewarding.',                                color: 'amber'  },
+      { title: '⚠️ Book of the Ice Last', body: 'Do not read Book of the Ice before finishing Book of the Ancestor. It spoils the Ancestor trilogy and its payoffs require knowing those characters.',                                                          color: 'purple' },
+    ],
+    sections: [
+      {
+        heading: 'Where to start',
+        type: 'bullets',
+        bullets: [
+          'New to Lawrence? Start with Prince of Thorns if grimdark antiheroes appeal to you. Start with Prince of Fools if you want the same world with a much lighter, funnier tone.',
+          'The two Earth-set trilogies (Broken Empire + Red Queen\'s War) share the same world and timeline — Jorg and Jalan briefly share a scene. Reading both gives you the full picture.',
+          'Book of the Ancestor is a clean entry point regardless of whether you\'ve read the Earth trilogies — it stands alone well.',
+          'Book of the Ice requires Book of the Ancestor first. Don\'t skip that order.',
+        ],
+      },
+      {
+        heading: 'The world-building secret',
+        type: 'bullets',
+        bullets: [
+          'The Broken Empire is set on Earth — roughly 1,000 years after a global nuclear war called "the Thousand Suns." The ruins of our civilisation (called "the Builders") are everywhere.',
+          'Magic in the Broken Empire world comes from the remnants of pre-war technology — what characters call "the old power" is often something more familiar.',
+          'Abeth (Book of the Ancestor / Book of the Ice) is the same Earth in a far more distant future — the sun is dying, the world freezing. The connection to the Broken Empire era is subtle but real.',
+          'Lawrence plants clues across all four trilogies. Second reads reveal layers that were invisible the first time.',
+        ],
+      },
+      {
+        heading: 'Content notes',
+        type: 'bullets',
+        bullets: [
+          'Prince of Thorns opens with very dark content involving Jorg as a child — this is not gratuitous; it is the foundation of his character arc.',
+          'The Broken Empire is grimdark. Violence, moral ambiguity, and an unreliable narrator are features, not bugs.',
+          'Red Queen\'s War is much lighter — dark fantasy with genuine comedy. Jalan is a deliberate foil to Jorg.',
+          'Book of the Ancestor has violence but is less grimdark — closer to dark YA in tone for the first book, though it deepens considerably.',
+        ],
+      },
+    ],
+    darkness: [
+      { label: 'Broken Empire',        level: 4, desc: 'Grimdark — violent, morally black antihero, unflinching' },
+      { label: "Red Queen's War",      level: 3, desc: 'Dark fantasy — danger and loss, but comedic tone throughout' },
+      { label: 'Book of the Ancestor', level: 3, desc: 'Dark but hopeful — violence with purpose, strong character arc' },
+      { label: 'Book of the Ice',      level: 3, desc: 'Similar to Ancestor — bleak world, resilient protagonist' },
+    ],
+    finishedLabel: 'Finished the Lawrence universe?',
+    categoryHref: '/fantasy/grimdark',
+    categoryLabel: 'Browse Grimdark',
+    related: ['first-law', 'black-company', 'malazan'],
   },
 
   // ─── Blood and Ash ─────────────────────────────────────────────────────────
@@ -1166,10 +1459,28 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     description:
       'Military fantasy academy meets dragon-rider romance — fast-paced, explicitly romantic, and increasingly dark as the series progresses. Fourth Wing reads like romantasy; by Onyx Storm it\'s leaning hard into epic fantasy. If you\'re here for the romance and action combo, all three books deliver. If explicit content isn\'t for you, this series isn\'t for you.',
     darknessDisplay: '🕯️🕯️🕯️ Serious · 🔥🔥🔥 Explicit',
-    books: [
-      { title: 'Fourth Wing', slug: 'fourth-wing', status: 'mandatory', note: 'Start here. Violet Sorrengail enters Basgiath War College to become a rider. Fast pacing, strong voice, explicit romance begins immediately.', page_count: 517, publication_year: 2023 },
-      { title: 'Iron Flame',  slug: 'iron-flame',  status: 'mandatory', note: 'Raises the stakes considerably — the war plot becomes the focus and the world expands. Longer and denser than book one.',                    page_count: 623, publication_year: 2023 },
-      { title: 'Onyx Storm', slug: 'onyx-storm',   status: 'mandatory', note: 'The series shifts into full epic fantasy territory. Higher body count, bigger consequences, a lot of threads in motion.',                   page_count: 608, publication_year: 2025 },
+    groups: [
+      {
+        label: 'Published',
+        sublabel: 'books 1–3',
+        noteType: 'required',
+        note: 'All three books are essential and must be read in order. The series ends on a cliffhanger — you will be waiting for book 4.',
+        books: [
+          { title: 'Fourth Wing', slug: 'fourth-wing', status: 'mandatory', note: 'Start here. Violet Sorrengail enters Basgiath War College to become a rider. Fast pacing, strong voice, explicit romance begins immediately.', page_count: 517, publication_year: 2023 },
+          { title: 'Iron Flame',  slug: 'iron-flame',  status: 'mandatory', note: 'Raises the stakes considerably — the war plot becomes the focus and the world expands. Longer and denser than book one.',                    page_count: 623, publication_year: 2023 },
+          { title: 'Onyx Storm', slug: 'onyx-storm',   status: 'mandatory', note: 'The series shifts into full epic fantasy territory. Higher body count, bigger consequences, a lot of threads in motion.',                   page_count: 608, publication_year: 2025 },
+        ],
+      },
+      {
+        label: 'Coming Soon',
+        sublabel: 'books 4–5 — no release dates yet',
+        noteType: 'optional',
+        note: 'Yarros confirmed in March 2026 that she is actively writing book 4. No title or release date announced. The series is planned for 5 books total.',
+        books: [
+          { title: 'Empyrean Book 4', slug: null, status: 'upcoming', note: 'Title not yet revealed. Yarros began writing in early 2026. Expected POVs include Violet, Xaden, Dain, and Ridoc.', page_count: null, publication_year: null },
+          { title: 'Empyrean Book 5', slug: null, status: 'upcoming', note: 'The planned series finale. No details announced.', page_count: null, publication_year: null },
+        ],
+      },
     ],
     orderNote: 'Publication order is the only order. No companion novels or prequels currently exist.',
     cards: [

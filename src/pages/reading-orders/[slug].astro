@@ -256,7 +256,7 @@ const readingOrderJsonLd = JSON.stringify({
       </div>
 
       <div class="mt-5 flex flex-wrap gap-6 text-sm text-zinc-600 border-y border-zinc-100 py-4">
-        <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {allBooksCurated.length} books ({coreCount} essential)</span>
+        <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {allBooksCurated.filter((b: any) => b.status !== 'upcoming').length} books ({coreCount} essential)</span>
         {totalPagesCurated > 0 && (
           <span class="flex items-center gap-1.5"><span class="text-zinc-400">📄</span> ~{totalPagesCurated.toLocaleString()} pages</span>
         )}

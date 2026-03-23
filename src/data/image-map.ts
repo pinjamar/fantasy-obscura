@@ -58,7 +58,10 @@ export type ReadingOrderImageSlug =
   | 'inheritance-cycle'
   | 'mistborn'
   | 'shannara'
-  | 'valdemar';
+  | 'valdemar'
+  | 'earthsea'
+  | 'mark-lawrence'
+  | 'sarah-j-maas';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -100,6 +103,9 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'mistborn':             'mistborn',
   'shannara':             'shannara',
   'valdemar':             'valdemar',
+  'earthsea':             'earthsea',
+  'mark-lawrence':        'mark-lawrence',
+  'sarah-j-maas':         'sarah-j-maas',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

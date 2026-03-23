@@ -180,8 +180,8 @@ function upgradeCoverUrl(url: string | null | undefined): string {
           class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-zinc-900 text-sm font-semibold transition-colors">
           🛒 Buy on Amazon
         </a>
-        <!-- More stores dropdown -->
-        <div class="relative" id="stores-wrap">
+        <!-- More stores dropdown — hidden until affiliate links are set up -->
+        <div class="relative hidden" id="stores-wrap">
           <button id="stores-toggle" class="group relative flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 hover:border-emerald-300 text-emerald-700 text-sm font-semibold transition-all">
             <span>🏪 More stores</span>
             <svg id="stores-chevron" class="absolute right-3 w-3.5 h-3.5 opacity-60 group-hover:opacity-100" style="transition:transform 0.2s" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
