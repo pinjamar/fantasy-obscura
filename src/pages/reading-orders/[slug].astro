@@ -10,6 +10,16 @@ import { READING_ORDER_IMAGE_SLUG, readingOrderSrcset, readingOrderFallback } fr
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect('/reading-orders/');
 
+function upgradeCoverUrl(url: string | null | undefined): string {
+  if (!url) return '';
+  if (url.includes('archive.org')) return '';
+  if (url.includes('books.google.com/books/content')) {
+    const m = url.match(/[?&]id=([^&]+)/);
+    if (m) return `https://books.google.com/books/publisher/content/images/frontcover/${m[1]}?fife=w400-h600`;
+  }
+  return url.replace(/-M\.jpg/, '-L.jpg');
+}
+
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
 
 // ── Curated path ──────────────────────────────────────────────────────────────
@@ -44,7 +54,7 @@ if (entry) {
 
   const { data: dbRows } = await supabaseClient
     .from('books')
-    .select('slug, cover_url, darkness_level, avg_rating, series, series_number')
+    .select('slug, cover_url, isbn, darkness_level, avg_rating, series, series_number')
     .in('slug', bookSlugs);
   const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
 
@@ -52,7 +62,7 @@ if (entry) {
     const db = dbMap.get(b.slug);
     return {
       ...b,
-      cover_url: db?.cover_url ?? null,
+      cover_url: upgradeCoverUrl(db?.cover_url) || (db?.isbn ? `https://covers.openlibrary.org/b/isbn/${db.isbn}-L.jpg?default=false` : null),
       darkness_level: db?.darkness_level ?? null,
       avg_rating: db?.avg_rating ?? null,
       series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null,
@@ -276,6 +286,21 @@ const readingOrderJsonLd = JSON.stringify({
       </div>
     )}
 
+    <!-- Quick cards (above timeline) -->
+    {curatedEntry.cards && curatedEntry.cards.length > 0 && curatedEntry.cardsPosition === 'above' && (
+      <div class={`mb-8 grid gap-3 ${curatedEntry.cards.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'}`}>
+        {curatedEntry.cards.map((card) => {
+          const cc = cardColors[card.color] ?? cardColors.blue;
+          return (
+            <div class={`rounded-xl border ${cc.border} ${cc.bg} p-5`}>
+              <p class={`font-semibold ${cc.title} mb-2`}>{card.title}</p>
+              <p class={`text-sm ${cc.body}`} set:html={card.body} />
+            </div>
+          );
+        })}
+      </div>
+    )}
+
     <!-- Reading Order -->
     <div class="mb-12">
       <h2 class="text-xl font-semibold mb-1">Reading Order</h2>
@@ -289,8 +314,8 @@ const readingOrderJsonLd = JSON.stringify({
       ) : null}
     </div>
 
-    <!-- Quick cards -->
-    {curatedEntry.cards && curatedEntry.cards.length > 0 && (
+    <!-- Quick cards (below timeline) -->
+    {curatedEntry.cards && curatedEntry.cards.length > 0 && curatedEntry.cardsPosition !== 'above' && (
       <div class={`mb-10 grid gap-3 ${curatedEntry.cards.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'}`}>
         {curatedEntry.cards.map((card) => {
           const cc = cardColors[card.color] ?? cardColors.blue;

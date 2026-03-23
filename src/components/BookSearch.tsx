@@ -54,7 +54,7 @@ export default function BookSearch() {
           placeholder="Search by title or author…"
           onFocus={ensureLoaded}
           onChange={(e) => { setQuery(e.target.value); ensureLoaded(); }}
-          className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm bg-white shadow-sm"
+          className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-purple-500 text-base bg-white shadow-sm"
         />
         {query && (
           <button

@@ -59,6 +59,8 @@ export interface ReadingOrderEntry {
   /** Amber warning block displayed before the reading order list */
   warning?: string
   cards?: QuickCard[]
+  /** Where to render the quick cards relative to the timeline. Defaults to 'below'. */
+  cardsPosition?: 'above' | 'below'
   sections?: InfoSection[]
   darkness?: DarknessRow[]
   finishedLabel: string
@@ -124,9 +126,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     darkness: [
-      { label: 'ACOTAR',        level: 2, desc: 'Dark fairy tale — captivity, monster threats, sacrifice' },
-      { label: 'ACMAF',         level: 3, desc: 'Trauma, war build-up, political intrigue' },
-      { label: 'ACWAR + ACSF',  level: 3, desc: 'Full war, loss, recovery arcs' },
+      { label: 'ACOTAR',  level: 3, desc: 'Dark fairy tale — captivity, monster threats, sacrifice' },
+      { label: 'ACMAF',   level: 4, desc: 'Trauma, war build-up, political intrigue' },
+      { label: 'ACWAR',   level: 3, desc: 'Full war, loss, and convergence' },
+      { label: 'ACFAS',   level: 2, desc: 'Recovery and aftermath — the lightest entry' },
+      { label: 'ACSF',    level: 3, desc: "Nesta's arc — darker and more intense than the trilogy" },
     ],
     finishedLabel: 'Finished the series?',
     categoryHref: '/fantasy/romance-fantasy',
@@ -896,9 +900,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     orderNote: 'Organized by subseries — each arc is self-contained. Start with City Watch or Death. Book numbers in the sublabels refer to publication order.',
+    cardsPosition: 'above',
     cards: [
-      { title: '⚡ Where to start',  body: 'Guards! Guards! for the full Watch experience. Mort or Hogfather for Death. Going Postal for a quick, funny standalone. Small Gods if you want Pratchett at his most serious.', color: 'blue'  },
-      { title: '⚠️ Skip books 1–2', body: 'The Colour of Magic and The Light Fantastic are Pratchett finding his voice — they\'re fine but very different from the rest. Most fans recommend starting from book 3 or later.',  color: 'amber' },
+      { title: '⚡ Where to start',    body: 'Guards! Guards! for the full Watch experience. Mort or Hogfather for Death. Going Postal for a quick, funny standalone. Small Gods if you want Pratchett at his most serious.', color: 'blue'  },
+      { title: '⚠️ Skip books 1–2',   body: 'The Colour of Magic and The Light Fantastic are Pratchett finding his voice — they\'re fine but very different from the rest. Most fans recommend starting from book 3 or later.',  color: 'amber' },
+      { title: '📚 41 Books, No Pressure', body: 'You don\'t need to read all 41. Each subseries is self-contained — pick the arcs that interest you and ignore the rest. Most fans never finish the full series and don\'t feel they missed anything.', color: 'green' },
     ],
     sections: [
       {
@@ -925,6 +931,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         ],
       },
     ],
+    darkness: [
+      { label: 'Most of the series',   level: 1, desc: 'Light — satire and comedy with warmth at its core' },
+      { label: 'Lords and Ladies',      level: 3, desc: 'The darkest Discworld — elves as genuine terror, real menace' },
+      { label: "The Shepherd's Crown", level: 2, desc: "Bittersweet — Pratchett's farewell, tinged with grief" },
+    ],
     finishedLabel: 'Want more like Discworld?',
     categoryHref: '/fantasy/cozy',
     categoryLabel: 'Browse Cozy Fantasy',
@@ -946,9 +957,12 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       { title: 'A Clash of Kings',    slug: 'a-clash-of-kings',    status: 'mandatory', note: "Five kings claim the throne. The political complexity doubles and the world expands beyond King's Landing.",                          page_count: 768,  publication_year: 1998 },
       { title: 'A Storm of Swords',   slug: 'a-storm-of-swords',   status: 'mandatory', note: 'The peak of the series. Contains the most devastating and celebrated chapters Martin has written. Do not look anything up.',          page_count: 973,  publication_year: 2000 },
       { title: 'A Feast for Crows',   slug: 'a-feast-for-crows',   status: 'mandatory', note: 'Slower, more political. Many fan-favourite characters are absent — Martin split books 4 and 5 by POV, not timeline.',                page_count: 753,  publication_year: 2005 },
-      { title: 'A Dance with Dragons',slug: 'a-dance-with-dragons',status: 'mandatory', note: 'Runs parallel to Feast for the first half, then moves forward. The series is unfinished here — book 6 has no release date.',         page_count: 1016, publication_year: 2011 },
+      { title: 'A Dance with Dragons',slug: 'a-dance-with-dragons',status: 'mandatory',   note: 'Runs parallel to Feast for the first half, then moves forward. The series is unfinished here — book 6 has no release date.',         page_count: 1016, publication_year: 2011 },
+      { title: 'The Winds of Winter',  slug: null,                  status: 'incomplete', note: 'In progress since 2011. No confirmed release date.',                                                                                      page_count: null, publication_year: null },
+      { title: 'A Dream of Spring',    slug: null,                  status: 'incomplete', note: 'Final book in the series. Unwritten.',                                                                                                     page_count: null, publication_year: null },
     ],
     orderNote: 'Publication order is the only order. There are no prequels or companion novels required for the main series.',
+    cardsPosition: 'above',
     cards: [
       { title: '⚡ The Peak',      body: 'A Storm of Swords is the series at its best — dense, brutal, and with some of the most discussed chapters in modern fantasy. Do not look anything up before reading it.',                                    color: 'blue'  },
       { title: '📖 Books 4 & 5',  body: 'Martin split the story by POV character across two books covering the same timeline. A Feast for Crows and A Dance with Dragons are best read back-to-back.',                                              color: 'amber' },
@@ -977,10 +991,10 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     darkness: [
-      { label: 'A Game of Thrones',    level: 3, desc: 'Serious — political violence, moral complexity' },
-      { label: 'A Clash of Kings',     level: 4, desc: 'Dark — war begins in earnest' },
-      { label: 'A Storm of Swords',    level: 5, desc: "Brutal — the series' most devastating events" },
-      { label: 'A Feast for Crows',    level: 4, desc: 'Dark — aftermath and political decay' },
+      { label: 'A Game of Thrones',    level: 5, desc: 'Brutal from the start — political violence, executions, moral ambiguity' },
+      { label: 'A Clash of Kings',     level: 4, desc: 'Dark — war begins in earnest, atrocities multiply' },
+      { label: 'A Storm of Swords',    level: 5, desc: "Brutal — the series' most devastating events back to back" },
+      { label: 'A Feast for Crows',    level: 4, desc: 'Dark — aftermath, political decay, diminishing hope' },
       { label: 'A Dance with Dragons', level: 4, desc: 'Dark — isolation, survival, and hard choices' },
     ],
     finishedLabel: 'Finished the published books?',
@@ -1324,6 +1338,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     orderNote: 'Broken Empire and Red Queen\'s War can be read in either order — they are concurrent stories in the same world. Book of the Ancestor can be started independently. Book of the Ice must come after Book of the Ancestor.',
+    cardsPosition: 'above',
     cards: [
       { title: '🗺️ Two Worlds',           body: 'Post-apocalyptic Earth: Broken Empire + Red Queen\'s War (concurrent). Ice-bound Abeth: Book of the Ancestor + Book of the Ice. The worlds have a deep connection Lawrence reveals across all four trilogies.',  color: 'blue'   },
       { title: '⚔️ Two Entry Points',     body: 'Start with Prince of Thorns for the darkest, most celebrated entry. Start with Prince of Fools if you want a lighter tone — same world, comedic antihero, equally rewarding.',                                color: 'amber'  },
@@ -1362,10 +1377,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     darkness: [
-      { label: 'Broken Empire',        level: 4, desc: 'Grimdark — violent, morally black antihero, unflinching' },
-      { label: "Red Queen's War",      level: 3, desc: 'Dark fantasy — danger and loss, but comedic tone throughout' },
-      { label: 'Book of the Ancestor', level: 3, desc: 'Dark but hopeful — violence with purpose, strong character arc' },
-      { label: 'Book of the Ice',      level: 3, desc: 'Similar to Ancestor — bleak world, resilient protagonist' },
+      { label: 'Broken Empire',           level: 5, desc: 'Brutal grimdark — violent, morally black antihero, unflinching from page one' },
+      { label: "Red Queen's War",         level: 5, desc: 'Dark fantasy — genuine danger and loss beneath the comedic tone' },
+      { label: 'Red Sister',              level: 3, desc: 'Darker than expected YA — violence with purpose, strong character foundation' },
+      { label: 'Book of the Ancestor 2–3', level: 4, desc: 'Escalates significantly — war, sacrifice, and a dying world closing in' },
+      { label: 'Book of the Ice',         level: 4, desc: 'Bleak and relentless — survival on a freezing world with high stakes' },
     ],
     finishedLabel: 'Finished the Lawrence universe?',
     categoryHref: '/fantasy/grimdark',
@@ -1696,8 +1712,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     darkness: [
-      { label: 'Chronicles Trilogy', level: 2, desc: 'Light-moderate — war and loss, but adventure-focused' },
-      { label: 'Legends Trilogy',    level: 3, desc: 'Moderate — darker themes, moral complexity, sacrifice' },
+      { label: 'Chronicles Trilogy', level: 3, desc: 'Moderate — war, loss, and sacrifice throughout' },
+      { label: 'Legends Trilogy',    level: 3, desc: 'Moderate — moral complexity, darker ambition, sacrifice' },
     ],
     finishedLabel: 'Finished Weis & Hickman?',
     categoryHref: '/fantasy/epic',
@@ -1776,7 +1792,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     darkness: [
-      { label: 'Divergent',  level: 2, desc: 'Moderate — action and training, some violence' },
+      { label: 'Divergent',  level: 3, desc: 'Moderate — action and training, some violence' },
       { label: 'Insurgent',  level: 3, desc: 'Darker — trauma, guilt, heavier losses' },
       { label: 'Allegiant',  level: 4, desc: 'Dark — significant sacrifice, controversial conclusion' },
     ],
@@ -1979,17 +1995,17 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
           { title: 'She Is the Darkness', slug: 'she-is-the-darkness', status: 'mandatory', seriesLabel: 'The Black Company #7',  note: 'The longest and most ambitious book in the series. Converging armies, converging secrets. The full scope of what the Company has been marching toward begins to emerge.',                                                                              page_count: 494, publication_year: 1997 },
           { title: 'Water Sleeps',        slug: 'water-sleeps',        status: 'mandatory', seriesLabel: 'The Black Company #8',  note: 'The Company is shattered, scattered, and hunted. Driven by Sleepy, one of the series\' best protagonists. Guerrilla warfare and slow-burn revenge.',                                                                                                  page_count: 351, publication_year: 1999 },
           { title: 'Soldiers Live',       slug: 'soldiers-live',       status: 'mandatory', seriesLabel: 'The Black Company #9',  note: 'The conclusion of the Glittering Stone arc. Everything the Annals have been building toward. Croaker returns as narrator. One of the most honest endings in fantasy — not triumphant, not tragic, just true.',                                        page_count: 448, publication_year: 2000 },
-          { title: 'They Cry',            slug: 'they-cry',            status: 'mandatory', seriesLabel: 'The Black Company #11', note: 'Upcoming — November 2026. Arkana and Shukrat return to An Abode of Raven with new powers; the Steadfast Guardian (Croaker) struggles to hold his humanity while dark forces mobilise against the Company on Hsien.',                                 page_count: 400, publication_year: 2026 },
+          { title: 'They Cry',            slug: 'they-cry',            status: 'upcoming',  seriesLabel: 'The Black Company #11', note: 'Upcoming — November 2026. Arkana and Shukrat return to An Abode of Raven with new powers; the Steadfast Guardian (Croaker) struggles to hold his humanity while dark forces mobilise against the Company on Hsien.',                                 page_count: 400, publication_year: 2026 },
         ],
       },
     ],
     orderNote: 'Read The Chronicles first (books 1–3) — they stand alone and are the best entry point. Port of Shadows is an optional interquel between books 1 and 2. The Books of the South and Glittering Stone follow directly. The Silver Spike sits before Shadow Games in chronological order.',
     warning: 'Bleak Seasons (book 6) opens with a deliberately fractured, non-linear narrative. This is Cook\'s intentional choice — push through. The timeline becomes clear and the payoff is worth the initial confusion.',
+    cardsPosition: 'above',
     cards: [
-      { title: '📖 The Books of the North (3)', body: 'The original trilogy. Self-contained, essential. The best entry point and some of the best military fantasy ever written.',                                                                    color: 'blue'  },
-      { title: '⚔️ Books of the South (2)', body: 'The Company moves south. Shadow Games and Dreams of Steel shift the series\' tone toward myth and strange magic. Read after the trilogy.',                                                  color: 'blue'  },
-      { title: '🏁 Glittering Stone (4)',  body: 'The final arc. Four books across a decade of publication. Soldiers Live closes the Annals.',                                                                                                color: 'blue'  },
-      { title: '📘 Optional (2)',          body: 'The Silver Spike (parallel story from the north) and Port of Shadows (interquel). Both reward series fans but are not essential to the main arc.',                                          color: 'green' },
+      { title: '📖 Start with the North',    body: 'The Black Company, Shadows Linger, The White Rose — the original trilogy is self-contained and the best entry point. Many readers stop here and feel satisfied. The rest of the series rewards those who continue.',            color: 'blue'   },
+      { title: '⚠️ Brace for Bleak Seasons', body: 'Book 6 opens with a deliberately fractured, non-linear narrative. Push through — the disorientation is intentional and the timeline resolves. Every book after it is stronger for the confusion.',                         color: 'amber'  },
+      { title: '🏁 Soldiers Live Is Worth It', body: 'The Glittering Stone arc is slower and stranger than the North trilogy, but Soldiers Live delivers one of the most honest endings in fantasy. No triumphalism — just soldiers, and what it cost.',                      color: 'purple' },
     ],
     sections: [
       {
@@ -2015,9 +2031,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     darkness: [
-      { label: 'The Chronicles (1–3)',     level: 4, desc: 'War, atrocity, and complicity — morally compromised from page one' },
-      { label: 'Books of the South (4–5)', level: 4, desc: 'Darker mythology, higher body count, catastrophic defeats' },
-      { label: 'Glittering Stone (6–9)',   level: 4, desc: 'Brutally honest about cost — no heroism left, only endurance' },
+      { label: 'The Chronicles (1–3)',     level: 5, desc: 'War, atrocity, and complicity — morally compromised from page one' },
+      { label: 'Books of the South (4–5)', level: 5, desc: 'Darker mythology, higher body count, catastrophic defeats' },
+      { label: 'Glittering Stone (6–9)',   level: 5, desc: 'Brutally honest about cost — no heroism left, only endurance' },
     ],
     finishedLabel: 'Finished the Annals?',
     categoryHref: '/fantasy/grimdark',
