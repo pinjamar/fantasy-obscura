@@ -4909,7 +4909,202 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
     ],
   },
 
-  // ── The Way of Kings ──────────────────────────────────────────────,
+  // ── Uprooted ──────────────────────────────────────────────────────
+  {
+    slug: 'uprooted',
+    source: {
+      title: 'Uprooted',
+      author: 'Naomi Novik',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9780804179034-L.jpg',
+      darkness_level: 3,
+      heat_level: 'Closed Door',
+      series: null,
+      series_number: null,
+      tropes: [
+        'Dark Forest',
+        'Hidden Magic',
+        'Enemies to Lovers',
+        'Mentor & Student',
+        'Folk Magic',
+        'Slavic Folklore',
+        'Coming of Age',
+      ],
+      angle: 'Dark Fairy Tale Fantasy',
+      answer_line:
+        'If you loved Uprooted for the folklore-rooted magic, uneasy mentor dynamic, living forest menace, and fairy-tale atmosphere, start with Spinning Silver, The Bear and the Nightingale and Circe.',
+      why_people_love: `Uprooted is built around two things that rarely coexist: a genuinely terrifying antagonist and a genuinely tender romance. The Wood — an ancient, malevolent forest that corrupts everything it touches — is one of the most effective threats in modern fantasy, not because of violence but because of wrongness. Against this backdrop, Agnieszka discovers that her magic is wild, instinctive, and nothing like what her aloof wizard mentor Sarkan considers proper — and the novel is partly about the clash between her chaotic power and his rigid precision, and partly about what happens when two people who irritate each other enormously start to depend on each other. Novik's prose has a fairy-tale cadence that makes even brutal scenes feel mythic. Readers return to it because it's a complete story — a standalone that actually ends, with a romance that earns its resolution and a world that feels genuinely ancient.`,
+    },
+    aspects: [
+      {
+        heading:
+          'If you loved The Wood — the dark, ancient forest as a living threat...',
+        recs: [
+          {
+            title: 'The Bear and the Nightingale',
+            author: 'Katherine Arden',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9781101885963-L.jpg',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'Winternight Trilogy',
+            series_number: 1,
+            series_label: 'Series (trilogy, complete)',
+            audiobook: true,
+            note: `The most natural companion read to Uprooted. Arden writes Slavic folklore with the same instinctive authority as Novik — the frost demons, the household spirits, and the dark forest are treated as genuinely real and genuinely dangerous. Vasya is a young woman who can see the old spirits that Christianity is slowly erasing, and the tension between her wild nature and the world's expectations mirrors Agnieszka's arc closely. The prose has the same fairy-tale weight. Caveat: the romance is far less central — this is primarily a coming-of-age story about a woman refusing to be tamed, with the romantic thread developed more in later books.`,
+            tags: [
+              'Slavic Folklore',
+              'Dark Forest',
+              'Hidden Magic',
+              'Coming of Age',
+              'Folk Spirits',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Bear+Nightingale+Katherine+Arden',
+          },
+          {
+            title: 'Spinning Silver',
+            author: 'Naomi Novik',
+            author_note: 'same author',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780525619369-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: `Novik's follow-up uses Ashkenazi Jewish folklore the way Uprooted uses Slavic — as foundational architecture rather than decoration. A moneylender's daughter catches the attention of the Staryk king, a cold and dangerous figure from a frozen otherworld, and has to bargain her way to survival. The fairy-tale logic is tighter here — every deal has consequences, every gift has a price — and the prose has the same lyrical weight. Caveat: Spinning Silver has multiple POV characters and a more complex plot structure than Uprooted; the romance is slower and less central but ultimately delivers the same emotional payoff.`,
+            tags: [
+              'Jewish Folklore',
+              'Fairy Tale',
+              'Dangerous Fae',
+              'Enemies to Lovers',
+              'Winter Magic',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Spinning+Silver+Naomi+Novik',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved Agnieszka discovering her wild magic and the antagonistic mentor dynamic...',
+        recs: [
+          {
+            title: 'Sorcery of Thorns',
+            author: 'Margaret Rogerson',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9781534439146-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Open Door',
+            standalone: true,
+            audiobook: true,
+            note: `An apprentice librarian discovers she has powers she shouldn't, and gets tangled up with a sorcerer who is not what he appears. Rogerson is directly in Novik's tradition — the magic has a tactile, instinctive quality, the antagonism between the two leads is well-written, and the romance earns its slow burn. The library-as-magical-archive setting gives it a distinctive atmosphere, and the pacing is tight for a standalone. Caveat: somewhat lighter in tone than Uprooted, the darkness is more adventure-thriller than psychological horror, and the romantic tension resolves earlier.`,
+            tags: [
+              'Hidden Magic',
+              'Enemies to Lovers',
+              'Magic Libraries',
+              'Antagonistic Romance',
+              'Standalone',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Sorcery+of+Thorns+Margaret+Rogerson',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Sorcery+of+Thorns+Margaret+Rogerson',
+          },
+          {
+            title: 'A Wizard of Earthsea',
+            author: 'Ursula K. Le Guin',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780547773742-L.jpg',
+            darkness_level: 2,
+            heat_level: null,
+            standalone: false,
+            series: 'Earthsea Cycle',
+            series_number: 1,
+            series_label: 'Series (6 books, each standalone)',
+            audiobook: true,
+            note: `The foundational text for everything Uprooted does with hidden power and unconventional magic. Ged's path from goat-boy to great wizard is told with Le Guin's characteristic economy — no wasted words, no wasted scenes — and the climax, which turns on Ged confronting what he cannot run from, is the same psychological courage Agnieszka has to find. Le Guin invented the template for "protagonist whose magic doesn't work the way the rules say it should." Caveat: short and written for a younger audience in register; no romance. Recommended as the essential ancestor, not a structural match.`,
+            tags: [
+              'Classic Fantasy',
+              'Coming of Age',
+              'Magic School',
+              'True Names',
+              'Quiet Power',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Le+Guin',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Wizard+Earthsea+Le+Guin',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the lyrical prose and fairy-tale completeness...',
+        recs: [
+          {
+            title: "Howl's Moving Castle",
+            author: 'Diana Wynne Jones',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780064410342-L.jpg',
+            darkness_level: 2,
+            heat_level: 'Sweet Romance',
+            standalone: true,
+            audiobook: true,
+            note: `The direct predecessor to Uprooted's spirit: a young woman taken from her ordinary life ends up working for an infuriating, powerful wizard, and the whole story is about unexpected magic and a romance that develops through sustained irritation. Jones writes fairy-tale logic with the same casual confidence as Novik — the rules are internally consistent but never over-explained — and the ending has the same sense of deep satisfaction. The tone is lighter and more comedic, and the darkness is low stakes. Recommended for anyone who wants more of the wizard-and-unexpected-girl dynamic with warmth dialled up and horror dialled down.`,
+            tags: [
+              'Fairy Tale',
+              'Unexpected Magic',
+              'Antagonistic Romance',
+              'Classic',
+              'Standalone',
+            ],
+            amazon_url:
+              "https://www.amazon.com/s?k=Howl's+Moving+Castle+Diana+Wynne+Jones",
+            bookshop_url:
+              "https://bookshop.org/search?keywords=Howl's+Moving+Castle+Diana+Wynne+Jones",
+          },
+          {
+            title: 'Circe',
+            author: 'Madeline Miller',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Open Door',
+            standalone: true,
+            audiobook: true,
+            note: `The closest match to Uprooted's prose register. Miller writes with the same mythic cadence — sentences that feel like they have weight and age — and Circe's arc of discovering power that the gods dismiss, learning it in isolation, and becoming something no one anticipated mirrors Agnieszka's closely. The setting is Greek mythology rather than Slavic folklore, but the emotional core is identical: a woman who was underestimated transforming through her own effort and loss. Caveat: Circe is more internal and reflective in pace, the romance is a smaller component, and some sections are deliberately episodic.`,
+            tags: [
+              'Mythological Retelling',
+              'Self-Discovery',
+              'Lyrical Prose',
+              'Powerful Protagonist',
+              'Standalone',
+            ],
+            warning: 'Sexual assault (non-graphic, mythological context)',
+            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Circe+Madeline+Miller',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like The Goblin Emperor', slug: 'the-goblin-emperor' },
+      { title: 'Books Like Piranesi', slug: 'piranesi' },
+      {
+        title: 'Books Like The Priory of the Orange Tree',
+        slug: 'the-priory-of-the-orange-tree',
+      },
+    ],
+  },
+
+  // ── The Way of Kings ──────────────────────────────────────────────
   {
     slug: 'the-way-of-kings',
     source: {
@@ -5374,202 +5569,375 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
     ],
   },
 
-  // ── Red Rising ────────────────────────────────────────────────────,
-
+  // ── The Will of the Many ──────────────────────────────────────────────────
   {
-    slug: 'uprooted',
+    slug: 'the-will-of-the-many',
     source: {
-      title: 'Uprooted',
-      author: 'Naomi Novik',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780804179034-L.jpg',
-      darkness_level: 3,
-      heat_level: 'Closed Door',
-      series: null,
-      series_number: null,
+      title: 'The Will of the Many',
+      author: 'James Islington',
+      db_slug: 'the-will-of-the-many',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9780316362757-L.jpg',
+      darkness_level: 4,
+      heat_level: null,
+      series: 'Hierarchy',
+      series_number: 1,
       tropes: [
-        'Dark Forest',
-        'Hidden Magic',
-        'Enemies to Lovers',
-        'Mentor & Student',
-        'Folk Magic',
-        'Slavic Folklore',
-        'Coming of Age',
+        'Hidden Identity',
+        'Academy Setting',
+        'Roman-Inspired World',
+        'Political Intrigue',
+        'Clever Protagonist',
+        'Power Hierarchy',
+        'Unreliable Information',
+        'Mystery',
+        'Reluctant Hero',
       ],
-      angle: 'Dark Fairy Tale Fantasy',
+      angle: 'Political Academy Fantasy with Hidden Identity',
       answer_line:
-        'If you loved Uprooted for the folklore-rooted magic, uneasy mentor dynamic, living forest menace, and fairy-tale atmosphere, start with Spinning Silver, The Bear and the Nightingale and Circe.',
-      why_people_love: `Uprooted is built around two things that rarely coexist: a genuinely terrifying antagonist and a genuinely tender romance. The Wood — an ancient, malevolent forest that corrupts everything it touches — is one of the most effective threats in modern fantasy, not because of violence but because of wrongness. Against this backdrop, Agnieszka discovers that her magic is wild, instinctive, and nothing like what her aloof wizard mentor Sarkan considers proper — and the novel is partly about the clash between her chaotic power and his rigid precision, and partly about what happens when two people who irritate each other enormously start to depend on each other. Novik's prose has a fairy-tale cadence that makes even brutal scenes feel mythic. Readers return to it because it's a complete story — a standalone that actually ends, with a romance that earns its resolution and a world that feels genuinely ancient.`,
+        'If you loved The Will of the Many for its layered mystery, Roman-world politics, and a protagonist who survives by being three steps ahead, start with Red Rising, An Ember in the Ashes, and The Lies of Locke Lamora.',
+      why_people_love:
+        "The Will of the Many works because Vis Telimus is not a chosen hero — he's a survivor playing a very long con. The Catenan Republic runs on Will: citizens literally donate willpower upward through the hierarchy, and Vis refuses to participate, making him a social pariah hiding inside an elite academy full of people who would destroy him if they knew the truth. Islington builds the tension through information asymmetry — you're always slightly behind what Vis is working out, and the revelations land because the groundwork is genuinely there. The Roman-flavoured world is unusually well-realised, the power system is thoughtfully constructed, and the book has the rare quality of respecting reader intelligence throughout. It's lighter on action than most epic fantasy but dense with scheming, political positioning, and a mystery that escalates without becoming frustrating. No meaningful romance; the hook is entirely the puzzle.",
     },
     aspects: [
       {
         heading:
-          'If you loved The Wood — the dark, ancient forest as a living threat...',
+          'If you loved the hidden identity inside a hostile elite institution — surviving by pretending to be someone you\'re not...',
         recs: [
           {
-            title: 'The Bear and the Nightingale',
-            author: 'Katherine Arden',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9781101885963-L.jpg',
-            darkness_level: 3,
-            heat_level: null,
+            title: 'An Ember in the Ashes',
+            author: 'Sabaa Tahir',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Sweet Romance',
             standalone: false,
-            series: 'Winternight Trilogy',
+            series: 'An Ember in the Ashes',
             series_number: 1,
-            series_label: 'Series (trilogy, complete)',
+            series_label: 'Series (4 books)',
             audiobook: true,
-            note: `The most natural companion read to Uprooted. Arden writes Slavic folklore with the same instinctive authority as Novik — the frost demons, the household spirits, and the dark forest are treated as genuinely real and genuinely dangerous. Vasya is a young woman who can see the old spirits that Christianity is slowly erasing, and the tension between her wild nature and the world's expectations mirrors Agnieszka's arc closely. The prose has the same fairy-tale weight. Caveat: the romance is far less central — this is primarily a coming-of-age story about a woman refusing to be tamed, with the romantic thread developed more in later books.`,
+            note: "The most direct structural parallel: a protagonist embedded in an enemy institution under a false identity, surrounded by people who would kill them if the truth came out, navigating a brutal hierarchy that is designed to break them. Laia's infiltration of Blackcliff mirrors Vis's position at the Academy — the stakes feel personal and immediate because discovery means death, not just expulsion. The dual POV adds a second layer of political complexity. Considerably more romance than The Will of the Many; the action pacing is faster. But if the 'survive by lying to everyone including the reader' core is what hooked you, this is the closest match in fantasy.",
             tags: [
-              'Slavic Folklore',
-              'Dark Forest',
-              'Hidden Magic',
-              'Coming of Age',
-              'Folk Spirits',
+              'Hidden Identity',
+              'Enemy Academy',
+              'Political Oppression',
+              'Survival',
+              'Dual POV',
             ],
-            amazon_url:
-              'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=Bear+Nightingale+Katherine+Arden',
+            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+            bookshop_url: 'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
           {
-            title: 'Spinning Silver',
-            author: 'Naomi Novik',
-            author_note: 'same author',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9780525619369-L.jpg',
+            title: 'Red Rising',
+            author: 'Pierce Brown',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780345539809-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Red Rising',
+            series_number: 1,
+            series_label: 'Series (6 books)',
+            audiobook: true,
+            note: "Darrow infiltrates the Gold ruling class the same way Vis infiltrates the Catenan Academy — by becoming something he despises in order to destroy it from within. Both books share the Roman-world aesthetic (Brown's is explicitly Roman-coded, Islington's is its own flavour), the rigid class hierarchy built on extracting something from the lower orders, and a protagonist who must out-think opponents who are better resourced and more entitled. Red Rising is faster-paced and more action-driven, with higher violence. But the core tension — keeping a secret in an environment specifically designed to root out weakness — is the same engine.",
+            tags: [
+              'Hidden Identity',
+              'Roman-Inspired World',
+              'Class Hierarchy',
+              'Elite Institution',
+              'Political Scheming',
+            ],
+            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown',
+            bookshop_url: 'https://bookshop.org/search?keywords=Red+Rising+Pierce+Brown',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the intricate Roman-inspired political world and the power system built on extraction...',
+        recs: [
+          {
+            title: 'The Traitor Baru Cormorant',
+            author: 'Seth Dickinson',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780765380722-L.jpg',
+            darkness_level: 5,
+            heat_level: null,
+            standalone: false,
+            series: 'The Masquerade',
+            series_number: 1,
+            series_label: 'Series (4 books)',
+            audiobook: true,
+            note: "If the Catenan Republic's will-extraction economy made you think about what it costs to survive inside an empire that owns you, Baru Cormorant is the darkest version of that question. Baru is a colonial subject who climbs the imperial bureaucracy to destroy it — and the book is brutally honest about what that compromise costs her. The political machinery is dense and rewarding, the prose is controlled and cold, and the ending is genuinely punishing. No academy setting, no action sequences. This is pure political fantasy for readers who want the scheming to have real weight. Caveat: one of the most emotionally brutal endings in modern fantasy.",
+            tags: [
+              'Political Scheming',
+              'Empire & Colonialism',
+              'Hidden Agenda',
+              'Accountancy as Warfare',
+              'Morally Grey',
+            ],
+            warning: 'Homophobia as a tool of empire, psychological torture, deeply tragic ending.',
+            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+            bookshop_url: 'https://bookshop.org/search?keywords=Traitor+Baru+Cormorant',
+          },
+          {
+            title: 'The Way of Kings',
+            author: 'Brandon Sanderson',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780765326355-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The Stormlight Archive',
+            series_number: 1,
+            series_label: 'Series (10 books planned)',
+            audiobook: true,
+            note: "Sanderson's Roshar shares The Will of the Many's appetite for a magic system rooted in a society-shaping resource — here it's Stormlight, a raw power extracted from storms, and the Shardplate that runs on it concentrates power in the hands of the highprinces the way Will concentrates it in the Catenan hierarchy. The scale is larger, the cast is broader, and the book is twice the length. But readers who finished The Will of the Many hungry for more world-building that actually explains the social structure, rather than just decorating it, will find Sanderson's depth rewarding. Start here if you want the political complexity matched with epic scope.",
+            tags: [
+              'Political Intrigue',
+              'Complex Magic System',
+              'Multi-POV',
+              'Class & Power',
+              'Epic Scale',
+            ],
+            amazon_url: 'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson',
+            bookshop_url: 'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the clever, scheming protagonist who outplays everyone but is never quite safe...',
+        recs: [
+          {
+            title: 'The Lies of Locke Lamora',
+            author: 'Scott Lynch',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780553588941-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'Gentleman Bastard',
+            series_number: 1,
+            series_label: 'Series (3 books published)',
+            audiobook: true,
+            note: "Locke Lamora is the patron saint of fantasy protagonists who survive by being smarter than everyone around them and constantly one bad decision away from catastrophe. The city of Camorr is as intricately constructed as the Catenan Republic, the schemes are layered with counter-schemes, and Lynch has the same gift as Islington for making intelligence feel like a genuine form of power rather than a shortcut. The violence is sharper and more visceral than The Will of the Many, the humour is darker, and the pacing is more chaotic. But if Vis's particular brand of calm, analytical danger is what pulled you in, Locke is the next best thing.",
+            tags: [
+              'Clever Protagonist',
+              'Political Scheming',
+              'Con Artist',
+              'City Fantasy',
+              'Dark Humour',
+            ],
+            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+            bookshop_url: 'https://bookshop.org/search?keywords=Lies+of+Locke+Lamora',
+          },
+          {
+            title: 'The Name of the Wind',
+            author: 'Patrick Rothfuss',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780756405533-L.jpg',
             darkness_level: 3,
             heat_level: 'Closed Door',
-            standalone: true,
-            audiobook: true,
-            note: `Novik's follow-up uses Ashkenazi Jewish folklore the way Uprooted uses Slavic — as foundational architecture rather than decoration. A moneylender's daughter catches the attention of the Staryk king, a cold and dangerous figure from a frozen otherworld, and has to bargain her way to survival. The fairy-tale logic is tighter here — every deal has consequences, every gift has a price — and the prose has the same lyrical weight. Caveat: Spinning Silver has multiple POV characters and a more complex plot structure than Uprooted; the romance is slower and less central but ultimately delivers the same emotional payoff.`,
-            tags: [
-              'Jewish Folklore',
-              'Fairy Tale',
-              'Dangerous Fae',
-              'Enemies to Lovers',
-              'Winter Magic',
-            ],
-            amazon_url:
-              'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=Spinning+Silver+Naomi+Novik',
-          },
-        ],
-      },
-      {
-        heading:
-          'If you loved Agnieszka discovering her wild magic and the antagonistic mentor dynamic...',
-        recs: [
-          {
-            title: 'Sorcery of Thorns',
-            author: 'Margaret Rogerson',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9781534439146-L.jpg',
-            darkness_level: 3,
-            heat_level: 'Open Door',
-            standalone: true,
-            audiobook: true,
-            note: `An apprentice librarian discovers she has powers she shouldn't, and gets tangled up with a sorcerer who is not what he appears. Rogerson is directly in Novik's tradition — the magic has a tactile, instinctive quality, the antagonism between the two leads is well-written, and the romance earns its slow burn. The library-as-magical-archive setting gives it a distinctive atmosphere, and the pacing is tight for a standalone. Caveat: somewhat lighter in tone than Uprooted, the darkness is more adventure-thriller than psychological horror, and the romantic tension resolves earlier.`,
-            tags: [
-              'Hidden Magic',
-              'Enemies to Lovers',
-              'Magic Libraries',
-              'Antagonistic Romance',
-              'Standalone',
-            ],
-            amazon_url:
-              'https://www.amazon.com/s?k=Sorcery+of+Thorns+Margaret+Rogerson',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=Sorcery+of+Thorns+Margaret+Rogerson',
-          },
-          {
-            title: 'A Wizard of Earthsea',
-            author: 'Ursula K. Le Guin',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9780547773742-L.jpg',
-            darkness_level: 2,
-            heat_level: null,
             standalone: false,
-            series: 'Earthsea Cycle',
+            series: 'The Kingkiller Chronicle',
             series_number: 1,
-            series_label: 'Series (6 books, each standalone)',
+            series_label: 'Series (2 books published, unfinished)',
             audiobook: true,
-            note: `The foundational text for everything Uprooted does with hidden power and unconventional magic. Ged's path from goat-boy to great wizard is told with Le Guin's characteristic economy — no wasted words, no wasted scenes — and the climax, which turns on Ged confronting what he cannot run from, is the same psychological courage Agnieszka has to find. Le Guin invented the template for "protagonist whose magic doesn't work the way the rules say it should." Caveat: short and written for a younger audience in register; no romance. Recommended as the essential ancestor, not a structural match.`,
+            note: "Kvothe at the University is the closest the genre has to Vis at the Academy: a brilliant, poor outsider at an elite institution, navigating social hierarchies and institutional politics through sheer intelligence while hiding the scale of what he's actually capable of. Both books are structured as mysteries about the protagonist's past, both use the academy setting as a political arena, and both have a particular pleasure in watching a clever person work a room. Rothfuss's prose is richer and more lyrical; Islington's plotting is tighter. Caveat: the series is unfinished and has been for over a decade — go in knowing you may not get a conclusion.",
             tags: [
-              'Classic Fantasy',
-              'Coming of Age',
-              'Magic School',
-              'True Names',
-              'Quiet Power',
+              'Academy Setting',
+              'Hidden Power',
+              'Clever Protagonist',
+              'Magic System',
+              'Framing Narrative',
             ],
-            amazon_url:
-              'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Le+Guin',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=Wizard+Earthsea+Le+Guin',
-          },
-        ],
-      },
-      {
-        heading:
-          'If you loved the lyrical prose and fairy-tale completeness...',
-        recs: [
-          {
-            title: "Howl's Moving Castle",
-            author: 'Diana Wynne Jones',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9780064410342-L.jpg',
-            darkness_level: 2,
-            heat_level: 'Sweet Romance',
-            standalone: true,
-            audiobook: true,
-            note: `The direct predecessor to Uprooted's spirit: a young woman taken from her ordinary life ends up working for an infuriating, powerful wizard, and the whole story is about unexpected magic and a romance that develops through sustained irritation. Jones writes fairy-tale logic with the same casual confidence as Novik — the rules are internally consistent but never over-explained — and the ending has the same sense of deep satisfaction. The tone is lighter and more comedic, and the darkness is low stakes. Recommended for anyone who wants more of the wizard-and-unexpected-girl dynamic with warmth dialled up and horror dialled down.`,
-            tags: [
-              'Fairy Tale',
-              'Unexpected Magic',
-              'Antagonistic Romance',
-              'Classic',
-              'Standalone',
-            ],
-            amazon_url:
-              "https://www.amazon.com/s?k=Howl's+Moving+Castle+Diana+Wynne+Jones",
-            bookshop_url:
-              "https://bookshop.org/search?keywords=Howl's+Moving+Castle+Diana+Wynne+Jones",
-          },
-          {
-            title: 'Circe',
-            author: 'Madeline Miller',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg',
-            darkness_level: 3,
-            heat_level: 'Open Door',
-            standalone: true,
-            audiobook: true,
-            note: `The closest match to Uprooted's prose register. Miller writes with the same mythic cadence — sentences that feel like they have weight and age — and Circe's arc of discovering power that the gods dismiss, learning it in isolation, and becoming something no one anticipated mirrors Agnieszka's closely. The setting is Greek mythology rather than Slavic folklore, but the emotional core is identical: a woman who was underestimated transforming through her own effort and loss. Caveat: Circe is more internal and reflective in pace, the romance is a smaller component, and some sections are deliberately episodic.`,
-            tags: [
-              'Mythological Retelling',
-              'Self-Discovery',
-              'Lyrical Prose',
-              'Powerful Protagonist',
-              'Standalone',
-            ],
-            warning: 'Sexual assault (non-graphic, mythological context)',
-            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=Circe+Madeline+Miller',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+            bookshop_url: 'https://bookshop.org/search?keywords=Name+of+the+Wind+Rothfuss',
           },
         ],
       },
     ],
     recommendations: [],
     related: [
-      { title: 'Books Like The Goblin Emperor', slug: 'the-goblin-emperor' },
-      { title: 'Books Like Piranesi', slug: 'piranesi' },
+      { title: 'Books Like Red Rising', slug: 'red-rising' },
+      { title: 'Books Like The Name of the Wind', slug: 'the-name-of-the-wind' },
+      { title: 'Books Like Mistborn', slug: 'mistborn-the-final-empire' },
+    ],
+  },
+
+  // ── Circe ─────────────────────────────────────────────────────────
+  {
+    slug: 'circe',
+    source: {
+      title: 'Circe',
+      author: 'Madeline Miller',
+      db_slug: 'circe',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg',
+      darkness_level: 3,
+      heat_level: 'Open Door',
+      series: null,
+      series_number: null,
+      tropes: [
+        'Mythological Retelling',
+        'Female Protagonist',
+        'Self-Discovery',
+        'Isolation Arc',
+        'Witchcraft',
+        'Greek Mythology',
+        'Lyrical Prose',
+        'Coming into Power',
+      ],
+      angle: 'Lyrical Greek Mythology Retelling',
+      answer_line:
+        'If you loved Circe for the mythic prose, the female perspective on stories usually told by men, and Circe\'s slow transformation from overlooked outcast to something extraordinary, start with The Song of Achilles, Ariadne, and The Bear and the Nightingale.',
+      why_people_love:
+        "Circe works because Miller takes a character who exists in the margins of the Odyssey — a convenient obstacle, a witch who turns men into pigs — and asks what her actual life looked like. The answer is a novel about a woman dismissed by gods and mortals alike, spending centuries on an island learning her own power in silence, and eventually becoming someone the world has to reckon with. The prose is the main event: measured, unhurried, and dense with the weight of mythological time. Miller doesn't modernise Circe or make her sympathetic in a contemporary way — she stays genuinely strange, occasionally cruel, and morally her own. The romance is present but secondary to the self-discovery arc. Readers return to it because the ending earns everything the novel builds toward, and because there are very few fantasy books that make solitude feel this rich.",
+    },
+    aspects: [
       {
-        title: 'Books Like The Priory of the Orange Tree',
-        slug: 'the-priory-of-the-orange-tree',
+        heading:
+          'If you loved the mythological retelling told from the perspective of a woman the original story ignored...',
+        recs: [
+          {
+            title: 'The Song of Achilles',
+            author: 'Madeline Miller',
+            author_note: 'same author',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780062060624-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Open Door',
+            standalone: true,
+            audiobook: true,
+            note: "Miller's first novel and the most direct companion to Circe: the same mythic register, the same unhurried prose that makes the Trojan War feel genuinely ancient, and the same gift for making you care about characters whose deaths are already written. Patroclus narrates his own life alongside Achilles — a perspective the Iliad has no interest in — and the result is one of the most effective love stories in modern fantasy. Darker than Circe in its ending and more focused on war and loss than self-discovery. If the prose was the reason you loved Circe, this is the first book to reach for.",
+            tags: [
+              'Greek Mythology',
+              'Lyrical Prose',
+              'Tragic Romance',
+              'War',
+              'Outsider Perspective',
+            ],
+            amazon_url: 'https://www.amazon.com/s?k=The+Song+of+Achilles+Madeline+Miller',
+            bookshop_url: 'https://bookshop.org/search?keywords=Song+of+Achilles+Miller',
+          },
+          {
+            title: 'Ariadne',
+            author: 'Jennifer Saint',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781250816139-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "Saint does for Ariadne what Miller does for Circe: takes a woman who exists in myth as a plot device — the princess who helped Theseus kill the Minotaur and was then abandoned on an island — and reconstructs her full interiority. The prose is less dense than Miller's but carries the same anger at how the canonical versions erase female agency, and the dual narrative (Ariadne and her sister Phaedra) adds a structural sophistication the myth doesn't have. Caveat: the pacing is slower in the second half, and the emotional register is more melancholic than empowering. Recommended for readers who want more female-perspective Greek retellings rather than a direct stylistic match.",
+            tags: [
+              'Greek Mythology',
+              'Female Perspective',
+              'Betrayal',
+              'Standalone',
+              'Mythology Retelling',
+            ],
+            amazon_url: 'https://www.amazon.com/s?k=Ariadne+Jennifer+Saint',
+            bookshop_url: 'https://bookshop.org/search?keywords=Ariadne+Jennifer+Saint',
+          },
+        ],
       },
+      {
+        heading:
+          'If you loved the lyrical prose and the sense of mythic time — a world where gods are real and indifferent...',
+        recs: [
+          {
+            title: 'Piranesi',
+            author: 'Susanna Clarke',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781635575637-L.jpg',
+            darkness_level: 2,
+            heat_level: null,
+            standalone: true,
+            audiobook: true,
+            note: "The most unexpected match for Circe's atmosphere: a narrator living alone inside a vast, impossible house filled with statues and tides, cataloguing its beauty with the same quiet patience Circe brings to her island. Both books are about a character who has accepted solitude as a condition of existence and found a kind of dignity in it — and both build toward a revelation that recontextualises everything. Clarke's prose has the same measured cadence as Miller's, and the mystery is constructed with the same care. No mythology, no romance, much lighter in darkness. Recommended for readers who loved Circe's reflective, singular voice above everything else.",
+            tags: [
+              'Lyrical Prose',
+              'Solitude',
+              'Mystery',
+              'Unreliable Narrator',
+              'Standalone',
+            ],
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            bookshop_url: 'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
+          },
+          {
+            title: 'A Thousand Ships',
+            author: 'Natalie Haynes',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780385543453-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: true,
+            audiobook: true,
+            note: "Haynes retells the Trojan War through the perspectives of every woman in it — Penelope, Cassandra, Hecuba, Calypso, the nymphs, the Trojan women — cycling through voices to reconstruct what the war cost the people Homer treated as backdrop. The approach is angrier and more polemical than Miller's, the prose less lyrical but sharper. Where Circe finds power and escape, most of Haynes's women find only loss — which is historically accurate and deliberately uncomfortable. Recommended for readers who loved the feminist reframing of Circe but want the full weight of what the myths actually do to women.",
+            tags: [
+              'Greek Mythology',
+              'Multi-POV',
+              'Female Perspective',
+              'Trojan War',
+              'Standalone',
+            ],
+            warning: 'War, sexual violence, grief — sustained and unflinching.',
+            amazon_url: 'https://www.amazon.com/s?k=A+Thousand+Ships+Natalie+Haynes',
+            bookshop_url: 'https://bookshop.org/search?keywords=A+Thousand+Ships+Haynes',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved Circe\'s isolation arc — a woman becoming powerful entirely through her own effort and loss...',
+        recs: [
+          {
+            title: 'Uprooted',
+            author: 'Naomi Novik',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780804179034-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "The emotional arc is nearly identical: a young woman dismissed as unremarkable discovers magic that doesn't fit the established rules, learns it in isolation and adversity, and becomes something no one anticipated. Novik's folklore-rooted world has the same mythic quality as Miller's Greece, and Agnieszka's relationship with the Dragon has the same antagonistic charge as Circe's encounters with the gods. The tone is warmer and the ending more conventionally satisfying. Recommended as the fantasy novel that best captures Circe's specific combination of quiet power-building and earned transformation.",
+            tags: [
+              'Self-Discovery',
+              'Hidden Magic',
+              'Isolation',
+              'Folklore',
+              'Coming into Power',
+            ],
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+            bookshop_url: 'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
+          },
+          {
+            title: 'Spinning Silver',
+            author: 'Naomi Novik',
+            author_note: 'same author as Uprooted',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780525619369-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "Where Circe bargains with gods, Miryem bargains with the Staryk king — and the dynamic is structurally similar: a woman with no formal power using her wits and her specific knowledge to navigate a supernatural entity that has every advantage. Novik's Ashkenazi Jewish folklore setting gives it a different cultural texture than Miller's Greece, but the fairy-tale logic (every promise has a price, every gift has a cost) mirrors the mythological logic Circe lives inside. More plot-driven than Circe, with multiple POV characters. Recommended for readers who loved Circe's bargaining intelligence and want it in a different folkloric key.",
+            tags: [
+              'Folklore',
+              'Female Protagonist',
+              'Bargaining',
+              'Dangerous Fae',
+              'Standalone',
+            ],
+            amazon_url: 'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik',
+            bookshop_url: 'https://bookshop.org/search?keywords=Spinning+Silver+Naomi+Novik',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like Uprooted', slug: 'uprooted' },
+      { title: 'Books Like Piranesi', slug: 'piranesi' },
+      { title: 'Books Like The Priory of the Orange Tree', slug: 'the-priory-of-the-orange-tree' },
     ],
   },
 ];
+
+// Sort alphabetically by title, ignoring leading "The / A / An"
+BOOKS_LIKE.sort((a, b) => {
+  const strip = (s: string) => s.replace(/^(the|a|an)\s+/i, '').toLowerCase();
+  return strip(a.source.title).localeCompare(strip(b.source.title));
+});
 
 export function getBooksLikeEntry(slug: string): BooksLikeEntry | undefined {
   return BOOKS_LIKE.find((e) => e.slug === slug);

@@ -45,7 +45,7 @@
 32. Books like The Poppy War------------ ✅
 33. Books like Piranesi----------- ✅
 34. Books like The Night Circus
-35. Books like Circe
+35. Books like Circe----------- ✅
 36. Books like The House in the Cerulean Sea
 37. Books like Legends & Lattes--------- ✅
 38. Books like The Goblin Emperor--------- ✅
@@ -160,7 +160,7 @@
 132. Books like The Painted Man / Demon Cycle
 133. Books like Kings of the Wyld
 134. Books like Senlin Ascends
-135. Books like The Will of the Many
+135. Books like The Will of the Many----------- ✅
 136. Books like The Justice of Kings
 137. Books like The Tainted Cup
 138. Books like The Bone Ships

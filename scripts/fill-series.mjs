@@ -1,21 +1,27 @@
 /**
  * fill-series.mjs
  *
- * Phase 1 — adds all missing books from the hardcoded BOOKS list (series fill).
- * Phase 2 — for every author who already has 7+ books in the DB, discovers and
- *            imports any of their remaining books found on Google Books.
+ * Phase 1a — fills missing books from the hardcoded BOOKS list (tracks completed series).
+ * Phase 1b — detects integer gaps in series already in the DB but NOT in BOOKS list.
+ * Phase 2  — for every author who already has 7+ books in the DB, discovers and
+ *             imports any of their remaining books found on Google Books.
+ *
+ * Progress is persisted to .fill-series-progress.json so completed series / authors
+ * are skipped on subsequent runs. Use --reset to clear all progress and re-scan everything.
  *
  * Usage:
- *   node scripts/fill-series.mjs                   (run both phases, up to 100 new in phase 2)
- *   node scripts/fill-series.mjs --series-only      (phase 1 only)
+ *   node scripts/fill-series.mjs                   (run all phases)
+ *   node scripts/fill-series.mjs --series-only      (phases 1a + 1b only)
  *   node scripts/fill-series.mjs --authors-only     (phase 2 only)
  *   node scripts/fill-series.mjs --dry-run
  *   node scripts/fill-series.mjs --limit 50         (cap phase 2 imports at 50)
  *   node scripts/fill-series.mjs --threshold 5      (lower author book threshold, default 7)
+ *   node scripts/fill-series.mjs --reset            (clear all progress and re-scan everything)
  */
 
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
+import { readFileSync, writeFileSync } from 'fs';
 
 config();
 
@@ -28,7 +34,28 @@ const LIMIT        = _limitFlag
   : null;
 const THRESH_ARG   = process.argv.indexOf('--threshold');
 const THRESHOLD    = THRESH_ARG !== -1 ? parseInt(process.argv[THRESH_ARG + 1], 10) : 7;
+const RESET        = process.argv.includes('--reset');
 const DELAY_MS     = 500;
+
+// ── Phase 2 progress file ─────────────────────────────────────────────────────
+const PROGRESS_FILE = new URL('../.fill-series-progress.json', import.meta.url).pathname.replace(/^\/([A-Z]:)/, '$1');
+
+function loadProgress() {
+  if (RESET) return { completedAuthors: [], completedSeries: [], completedGapSeries: [] };
+  try {
+    const data = JSON.parse(readFileSync(PROGRESS_FILE, 'utf8'));
+    data.completedAuthors  ??= [];
+    data.completedSeries   ??= [];
+    data.completedGapSeries ??= [];
+    return data;
+  } catch {
+    return { completedAuthors: [], completedSeries: [], completedGapSeries: [] };
+  }
+}
+
+function saveProgress(data) {
+  writeFileSync(PROGRESS_FILE, JSON.stringify(data, null, 2));
+}
 const PAGE_SIZE    = 40;
 const MIN_RATING   = 3.5;
 
@@ -1059,13 +1086,151 @@ async function fetchOpenLibrary(title, author) {
   };
 }
 
+// ── Phase 1b: fill gaps in DB series not covered by BOOKS list ───────────────
+
+async function fillSeriesGapsInDB(existing, existingSlugs, existingTitles, normalizedTitles, existingSeriesKeys, progressData) {
+  console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+  console.log(`📖  Phase 1b — DB Series Gap Fill\n`);
+
+  // Group DB books by series → detect integer gaps
+  const seriesGroups = new Map();
+  for (const b of existing) {
+    if (!b.series || b.series_number == null) continue;
+    const num = Number(b.series_number);
+    if (!Number.isInteger(num) || num < 1) continue;
+    const key = b.series.toLowerCase().trim();
+    if (!seriesGroups.has(key)) {
+      seriesGroups.set(key, { series: b.series, author: b.authors?.[0] ?? '', numbers: new Set() });
+    }
+    seriesGroups.get(key).numbers.add(num);
+  }
+
+  // Series covered by the hardcoded BOOKS list (Phase 1a handles those)
+  const booksSeriesSet = new Set(BOOKS.map((b) => (b.series ?? '').toLowerCase().trim()).filter(Boolean));
+
+  const completedGapSeries = new Set((progressData.completedGapSeries ?? []).map((s) => s.toLowerCase()));
+
+  // Find series with gaps not covered by BOOKS and not yet swept
+  const toSweep = [];
+  for (const [key, info] of seriesGroups) {
+    if (booksSeriesSet.has(key))      continue; // covered by Phase 1a
+    if (completedGapSeries.has(key))  continue; // already swept with 0 results
+
+    const nums = [...info.numbers].sort((a, b) => a - b);
+    if (nums.length < 2) continue; // need at least 2 books to detect a gap
+
+    const gaps = [];
+    for (let i = nums[0]; i <= nums[nums.length - 1]; i++) {
+      if (!info.numbers.has(i)) gaps.push(i);
+    }
+    if (gaps.length > 0) toSweep.push({ ...info, gaps, nums });
+  }
+
+  if (toSweep.length === 0) {
+    console.log('  No uncovered series gaps found in DB.\n');
+    return 0;
+  }
+
+  console.log(`  Found ${toSweep.length} series with gaps:\n`);
+  for (const s of toSweep) {
+    console.log(`    • ${s.series} (${s.author}): missing #${s.gaps.join(', ')}`);
+  }
+  console.log('');
+
+  let imported = 0;
+
+  for (const seriesInfo of toSweep) {
+    const query = `inauthor:"${seriesInfo.author}" "${seriesInfo.series}"`;
+    console.log(`  🔍  ${seriesInfo.series} — ${seriesInfo.author}`);
+
+    let importedForSeries = 0;
+    let pageStart = 0;
+    let consecutiveEmpty = 0;
+
+    while (true) {
+      const items = await fetchGoogleBooksPage(query, pageStart);
+      await sleep(DELAY_MS);
+
+      if (!items.length) break;
+
+      let validThisPage = 0;
+      for (const item of items) {
+        const book = extractBookData(item);
+        if (!book) continue;
+        if (!authorMatches(item, seriesInfo.author)) continue;
+
+        if (existingSlugs.has(book.slug))                        continue;
+        if (existingTitles.has(book.title.toLowerCase().trim())) continue;
+        const norm = normalizeTitle(book.title);
+        if (normalizedTitles.has(norm))                          continue;
+
+        validThisPage++;
+        existingSlugs.add(book.slug);
+        existingTitles.add(book.title.toLowerCase().trim());
+        normalizedTitles.add(norm);
+
+        // Attach series name; series_number left null (can't reliably determine from Google Books)
+        const record = { ...book, series: seriesInfo.series, series_number: null };
+
+        process.stdout.write(`    "${book.title.slice(0, 48)}" … `);
+
+        if (DRY_RUN) {
+          console.log(`[dry]`);
+          imported++;
+          importedForSeries++;
+          continue;
+        }
+
+        const { error: insErr } = await supabase
+          .from('books')
+          .upsert(record, { onConflict: 'slug', ignoreDuplicates: true });
+
+        if (insErr && insErr.code !== '23505') {
+          console.log(`✗ ${insErr.message.slice(0, 60)}`);
+        } else if (insErr?.code === '23505') {
+          console.log(`⏭ skip`);
+        } else {
+          console.log(`✓`);
+          imported++;
+          importedForSeries++;
+        }
+      }
+
+      if (validThisPage === 0) {
+        consecutiveEmpty++;
+        if (consecutiveEmpty >= 2) break;
+      } else {
+        consecutiveEmpty = 0;
+      }
+
+      pageStart += PAGE_SIZE;
+      if (pageStart >= 400) break; // keep focused; deeper results unlikely to be relevant
+    }
+
+    if (importedForSeries === 0) {
+      console.log(`    (no new books found)`);
+      completedGapSeries.add(seriesInfo.series.toLowerCase());
+      progressData.completedGapSeries = [...completedGapSeries];
+      saveProgress(progressData);
+    }
+    console.log('');
+  }
+
+  console.log(`  ✅  Phase 1b imported: ${imported} new books`);
+  return imported;
+}
+
 // ── Phase 2: fill prolific authors ────────────────────────────────────────────
 
 async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitles) {
   console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
   console.log(`📖  Phase 2 — Prolific Author Fill`);
   const p2Limit = LIMIT ?? Infinity;
+  if (RESET) console.log(`    ⚠️  --reset: clearing author progress`);
   console.log(`    Threshold: ${THRESHOLD}+ books · Import cap: ${LIMIT ?? 'unlimited'}\n`);
+
+  const progress = loadProgress();
+  const completedAuthors = new Set((progress.completedAuthors ?? []).map((a) => a.toLowerCase()));
 
   // Load all books with their authors to count per-author (paginated — DB may exceed 1000 rows)
   let allBooks;
@@ -1103,15 +1268,23 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
 
   const seenISBNs = new Set();
   let imported = 0;
+  let skippedAuthors = 0;
 
   for (const author of prolific) {
     if (imported >= p2Limit) break;
+
+    if (completedAuthors.has(author.toLowerCase())) {
+      skippedAuthors++;
+      console.log(`  ⏭  ${author} (already swept — no new books last time)`);
+      continue;
+    }
 
     const query = `inauthor:"${author}"`;
     console.log(`\n  🔍  ${author}`);
 
     let pageStart = 0;
     let consecutiveEmpty = 0;
+    let importedForAuthor = 0;
 
     while (imported < p2Limit) {
       const items = await fetchGoogleBooksPage(query, pageStart);
@@ -1149,6 +1322,7 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
         if (DRY_RUN) {
           console.log(`[dry]`);
           imported++;
+          importedForAuthor++;
           newThisPage++;
           continue;
         }
@@ -1164,6 +1338,7 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
         } else {
           console.log(`✓`);
           imported++;
+          importedForAuthor++;
           newThisPage++;
         }
       }
@@ -1180,8 +1355,18 @@ async function fillProlificAuthors(existingSlugs, existingTitles, normalizedTitl
       pageStart += PAGE_SIZE;
       if (pageStart >= 1000) break;
     }
+
+    // If this author produced nothing new, mark them as exhausted so future runs skip them
+    if (importedForAuthor === 0) {
+      completedAuthors.add(author.toLowerCase());
+      progress.completedAuthors = [...completedAuthors];
+      saveProgress(progress);
+    }
   }
 
+  if (skippedAuthors > 0) {
+    console.log(`\n  ⏭  Skipped ${skippedAuthors} already-swept author(s) (run with --reset to re-scan)`);
+  }
   console.log(`\n  ✅  Phase 2 imported: ${imported} new books`);
   return imported;
 }
@@ -1249,9 +1434,12 @@ async function main() {
     return;
   }
 
-  // ── Phase 1: series list ────────────────────────────────────────────────────
+  // ── Phase 1a: series list (with per-series progress tracking) ──────────────
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log('📖  Phase 1 — Series Fill\n');
+  console.log('📖  Phase 1a — Series Fill\n');
+
+  const p1progress = loadProgress();
+  const completedSeries = new Set((p1progress.completedSeries ?? []).map((s) => s.toLowerCase()));
 
   // Books in DB but missing series metadata — patch them
   const existingBySlug  = new Map(existing.map((b) => [b.slug, b]));
@@ -1280,86 +1468,113 @@ async function main() {
     console.log('');
   }
 
-  const allToImport = BOOKS.filter((b) => {
-    if (existingSlugs.has(slugify(b.title)))              return false;
-    if (existingTitles.has(b.title.toLowerCase().trim())) return false;
-    if (normalizedTitles.has(normalizeTitle(b.title)))    return false;
-    if (b.series && b.series_number != null) {
-      if (existingSeriesKeys.has(`${b.series.toLowerCase().trim()}::${b.series_number}`)) return false;
+  // Group BOOKS by series for per-series progress tracking
+  const seriesByName = new Map(); // seriesKey → { displayName, books: [] }
+  for (const b of BOOKS) {
+    const key = (b.series ?? '__standalone__').toLowerCase().trim();
+    if (!seriesByName.has(key)) {
+      seriesByName.set(key, { displayName: b.series ?? '(standalone)', books: [] });
     }
-    return true;
-  });
+    seriesByName.get(key).books.push(b);
+  }
 
-  const skipped  = BOOKS.length - allToImport.length;
-  const toImport = LIMIT ? allToImport.slice(0, LIMIT) : allToImport;
-  console.log(`Total in list:  ${BOOKS.length}`);
-  console.log(`Already in DB:  ${skipped}`);
-  console.log(`To import:      ${toImport.length}\n`);
+  let p1imported = 0, p1failed = 0, p1seriesComplete = 0;
 
-  let p1imported = 0;
-  let p1failed   = 0;
-
-  for (const book of toImport) {
-    const slug = slugify(book.title);
-    process.stdout.write(`  ${book.title.slice(0, 52).padEnd(52)} `);
-
-    let meta = {};
-    try {
-      meta = (await fetchOpenLibrary(book.title, book.author)) ?? {};
-      await sleep(DELAY_MS);
-    } catch {
-      meta = {};
-    }
-
-    const record = {
-      title:            book.title,
-      slug,
-      authors:          [book.author],
-      series:           book.series ?? null,
-      series_number:    book.series_number ?? null,
-      cover_url:        meta.cover_url ?? null,
-      isbn:             meta.isbn ?? null,
-      publication_year: meta.publication_year ?? null,
-      page_count:       meta.page_count ?? null,
-      synopsis:         meta.synopsis ?? null,
-      darkness_level:   null,
-      heat_level:       null,
-    };
-
-    if (DRY_RUN) {
-      console.log(`[dry] ${slug}`);
-      p1imported++;
-      existingSlugs.add(slug);
-      existingTitles.add(book.title.toLowerCase().trim());
-      normalizedTitles.add(normalizeTitle(book.title));
-      if (book.series && book.series_number != null) {
-        existingSeriesKeys.add(`${book.series.toLowerCase().trim()}::${book.series_number}`);
-      }
+  for (const [seriesKey, { displayName, books }] of seriesByName) {
+    // Skip series already marked as fully imported
+    if (completedSeries.has(seriesKey)) {
+      p1seriesComplete++;
       continue;
     }
 
-    const { error } = await supabase.from('books').upsert(record, { onConflict: 'slug', ignoreDuplicates: true });
-    if (error && error.code !== '23505') {
-      console.log(`✗ ${error.message}`);
-      p1failed++;
-    } else if (error?.code === '23505') {
-      console.log(`⏭ already exists`);
-    } else {
-      console.log(`✓`);
-      p1imported++;
-      existingSlugs.add(slug);
-      existingTitles.add(book.title.toLowerCase().trim());
-      normalizedTitles.add(normalizeTitle(book.title));
-      if (book.series && book.series_number != null) {
-        existingSeriesKeys.add(`${book.series.toLowerCase().trim()}::${book.series_number}`);
+    // Find which books in this series are missing from DB
+    const missing = books.filter((b) => {
+      if (existingSlugs.has(slugify(b.title)))              return false;
+      if (existingTitles.has(b.title.toLowerCase().trim())) return false;
+      if (normalizedTitles.has(normalizeTitle(b.title)))    return false;
+      if (b.series && b.series_number != null) {
+        if (existingSeriesKeys.has(`${b.series.toLowerCase().trim()}::${b.series_number}`)) return false;
+      }
+      return true;
+    });
+
+    if (missing.length === 0) {
+      // All books for this series are in DB — mark as complete
+      completedSeries.add(seriesKey);
+      p1progress.completedSeries = [...completedSeries];
+      saveProgress(p1progress);
+      p1seriesComplete++;
+      continue;
+    }
+
+    console.log(`  📗  ${displayName} — ${missing.length} missing:`);
+
+    for (const book of missing) {
+      const slug = slugify(book.title);
+      process.stdout.write(`    ${book.title.slice(0, 50).padEnd(50)} `);
+
+      let meta = {};
+      try {
+        meta = (await fetchOpenLibrary(book.title, book.author)) ?? {};
+        await sleep(DELAY_MS);
+      } catch {
+        meta = {};
+      }
+
+      const record = {
+        title:            book.title,
+        slug,
+        authors:          [book.author],
+        series:           book.series ?? null,
+        series_number:    book.series_number ?? null,
+        cover_url:        meta.cover_url ?? null,
+        isbn:             meta.isbn ?? null,
+        publication_year: meta.publication_year ?? null,
+        page_count:       meta.page_count ?? null,
+        synopsis:         meta.synopsis ?? null,
+        darkness_level:   null,
+        heat_level:       null,
+      };
+
+      if (DRY_RUN) {
+        console.log(`[dry] ${slug}`);
+        p1imported++;
+        existingSlugs.add(slug);
+        existingTitles.add(book.title.toLowerCase().trim());
+        normalizedTitles.add(normalizeTitle(book.title));
+        if (book.series && book.series_number != null) {
+          existingSeriesKeys.add(`${book.series.toLowerCase().trim()}::${book.series_number}`);
+        }
+        continue;
+      }
+
+      const { error } = await supabase.from('books').upsert(record, { onConflict: 'slug', ignoreDuplicates: true });
+      if (error && error.code !== '23505') {
+        console.log(`✗ ${error.message}`);
+        p1failed++;
+      } else if (error?.code === '23505') {
+        console.log(`⏭ already exists`);
+      } else {
+        console.log(`✓`);
+        p1imported++;
+        existingSlugs.add(slug);
+        existingTitles.add(book.title.toLowerCase().trim());
+        normalizedTitles.add(normalizeTitle(book.title));
+        if (book.series && book.series_number != null) {
+          existingSeriesKeys.add(`${book.series.toLowerCase().trim()}::${book.series_number}`);
+        }
       }
     }
+    console.log('');
   }
 
-  console.log(`\n──────────────────────────────────────`);
-  console.log(`  Phase 1 imported: ${p1imported}`);
-  if (skipped)    console.log(`  Skipped:         ${skipped} (already in DB)`);
-  if (p1failed)   console.log(`  Failed:          ${p1failed}`);
+  console.log(`──────────────────────────────────────`);
+  console.log(`  Phase 1a imported:        ${p1imported}`);
+  console.log(`  Complete series (skipped): ${p1seriesComplete} of ${seriesByName.size}`);
+  if (p1failed) console.log(`  Failed:                   ${p1failed}`);
+
+  // ── Phase 1b: dynamic gap detection for series in DB not in BOOKS list ──────
+  await fillSeriesGapsInDB(existing, existingSlugs, existingTitles, normalizedTitles, existingSeriesKeys, p1progress);
 
   // ── Phase 2: prolific author sweep ─────────────────────────────────────────
   if (!SERIES_ONLY) {

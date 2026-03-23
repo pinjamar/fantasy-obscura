@@ -92,9 +92,24 @@ const similarBooks = (candidateBooks ?? [])
   .sort((a, b) => b.score - a.score || (b.avg_rating ?? 0) - (a.avg_rating ?? 0))
   .slice(0, 20);
 
+// Normalise authors: some DB entries have both names merged into one string
+// e.g. ["Mo Xiang Tong Xiu, Andrea Kriz"] → ["Mo Xiang Tong Xiu", "Andrea Kriz"]
+function splitAuthors(raw: string[] | null | undefined): string[] {
+  if (!raw?.length) return [];
+  return raw.flatMap((a) => {
+    // "Author A & Author B"
+    if (a.includes(' & ')) return a.split(' & ').map((s) => s.trim()).filter(Boolean);
+    // "Author A, Author B" or "Author A,Author B"
+    const parts = a.split(',').map((s) => s.trim()).filter(Boolean);
+    if (parts.length >= 2) return parts;
+    return [a];
+  });
+}
+const authors = splitAuthors(book.authors);
+
 const metaDescription = book.synopsis
   ? book.synopsis.slice(0, 160)
-  : `${book.title} by ${book.authors?.join(', ')} — explore on The Grimoire.`;
+  : `${book.title} by ${authors.join(', ')} — explore on The Grimoire.`;
 
 function upgradeCoverUrl(url: string | null | undefined): string {
   if (!url) return '';
@@ -111,7 +126,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
 ---
 
 <Layout
-  title={`${book.title} by ${book.authors?.[0] ?? ''} | The Grimoire`}
+  title={`${book.title} by ${authors[0] ?? ''} | The Grimoire`}
   description={metaDescription}
   image={upgradeCoverUrl(book.cover_url) || undefined}
   ogType="book"
@@ -122,8 +137,8 @@ function upgradeCoverUrl(url: string | null | undefined): string {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Books', item: 'https://thegrimoire.co/books/' },
-        ...(book.authors?.[0] ? [{ '@type': 'ListItem', position: 2, name: book.authors[0], item: `https://thegrimoire.co/authors/${authorToSlug(book.authors[0])}/` }] : []),
-        { '@type': 'ListItem', position: book.authors?.[0] ? 3 : 2, name: book.title, item: `https://thegrimoire.co/books/${slug}/` },
+        ...(authors[0] ? [{ '@type': 'ListItem', position: 2, name: authors[0], item: `https://thegrimoire.co/authors/${authorToSlug(authors[0])}/` }] : []),
+        { '@type': 'ListItem', position: authors[0] ? 3 : 2, name: book.title, item: `https://thegrimoire.co/books/${slug}/` },
       ],
     })} />
   </Fragment>
@@ -131,7 +146,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
     "@context": "https://schema.org",
     "@type": "Book",
     "name": book.title,
-    "author": (book.authors ?? []).map((a: string) => ({ "@type": "Person", "name": a })),
+    "author": authors.map((a: string) => ({ "@type": "Person", "name": a })),
     ...(book.isbn ? { "isbn": book.isbn } : {}),
     ...(book.publication_year ? { "datePublished": String(book.publication_year) } : {}),
     ...(book.page_count ? { "numberOfPages": book.page_count } : {}),
@@ -147,10 +162,10 @@ function upgradeCoverUrl(url: string | null | undefined): string {
   <nav class="text-sm text-zinc-400 mb-8 flex items-center flex-wrap gap-1.5">
     <a href="/books/" class="hover:text-zinc-700 transition-colors">Books</a>
     <span>›</span>
-    {book.authors?.[0] && (
+    {authors[0] && (
       <>
-        <a href={`/authors/${authorToSlug(book.authors[0])}/`} class="hover:text-zinc-700 transition-colors">
-          {book.authors[0]}
+        <a href={`/authors/${authorToSlug(authors[0])}/`} class="hover:text-zinc-700 transition-colors">
+          {authors[0]}
         </a>
         <span>›</span>
       </>
@@ -234,13 +249,13 @@ function upgradeCoverUrl(url: string | null | undefined): string {
         </div>
       )}
 
-      {book.authors && book.authors.length > 0 && (
+      {authors.length > 0 && (
         <p class="mt-3 text-base sm:text-xl text-zinc-500">
           by{' '}
-          {book.authors.map((a, i) => (
+          {authors.map((a, i) => (
             <span>
               <a href={`/authors/${authorToSlug(a)}/`} class="text-purple-700 hover:underline font-medium">{a}</a>
-              {i < book.authors!.length - 1 ? ', ' : ''}
+              {i < authors.length - 1 ? ', ' : ''}
             </span>
           ))}
         </p>
