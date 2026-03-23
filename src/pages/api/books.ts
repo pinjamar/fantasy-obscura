@@ -68,15 +68,39 @@ export const POST: APIRoute = async ({ request }) => {
 export const GET: APIRoute = async ({ request }) => {
   try {
     const url = new URL(request.url);
-    const genre = url.searchParams.get('genre');
+    const genre   = url.searchParams.get('genre');
+    const compact = url.searchParams.get('compact') === '1';
+
+    // Compact mode: only fetch the 4 fields needed by CategoryGrid covers/slugs/ratings.
+    // Avoids transferring 30+ columns * 2000+ rows on every homepage load.
+    if (compact) {
+      const { supabaseClient } = await import('../../lib/supabaseClient');
+      const BATCH = 1000;
+      let allBooks: unknown[] = [];
+      let from = 0;
+      while (true) {
+        const { data, error } = await supabaseClient
+          .from('books')
+          .select('title, slug, cover_url, avg_rating')
+          .order('avg_rating', { ascending: false, nullsFirst: false })
+          .range(from, from + BATCH - 1);
+        if (error) return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { 'Content-Type': 'application/json' } });
+        if (!data || data.length === 0) break;
+        allBooks = allBooks.concat(data);
+        if (data.length < BATCH) break;
+        from += BATCH;
+      }
+      return new Response(JSON.stringify({ items: allBooks }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
 
     const filters: Record<string, unknown> = {};
     if (genre) {
-      // Support comma-separated genres (e.g. "Epic Fantasy,High Fantasy")
       filters.subgenres = genre.split(',').map((g) => g.trim()).filter(Boolean);
     }
 
-    // Supabase has a hard 1000-row limit per query — fetch in batches until done.
     const BATCH = 1000;
     let allBooks: unknown[] = [];
     let page = 1;

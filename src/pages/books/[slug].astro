@@ -98,6 +98,8 @@ const metaDescription = book.synopsis
 
 function upgradeCoverUrl(url: string | null | undefined): string {
   if (!url) return '';
+  // archive.org zip paths are broken/slow — fall back to default OG image
+  if (url.includes('archive.org')) return '';
   // Google Books gbs_api thumbnail → high-res publisher content URL
   if (url.includes('books.google.com/books/content')) {
     const m = url.match(/[?&]id=([^&]+)/);

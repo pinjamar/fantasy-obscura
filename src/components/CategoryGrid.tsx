@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { normalizeCoverUrl } from '../lib/covers';
 
 interface Category {
   slug: string;
@@ -615,7 +616,7 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
 
   useEffect(() => {
     if (initialBooks && initialBooks.length > 0) return; // already have data
-    fetch('/api/books')
+    fetch('/api/books?compact=1')
       .then((r) => r.json())
       .then((data: { items?: BookItem[] }) => {
         const items = data.items ?? [];
@@ -629,7 +630,7 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
 
   const getCoverSrc = (title: string): string => {
     const db = bookCovers.get(title.toLowerCase());
-    return db ?? `https://covers.openlibrary.org/b/title/${encodeURIComponent(title)}-M.jpg`;
+    return normalizeCoverUrl(db) ?? '/grimplaceholder.png';
   };
 
   const getSlug = (title: string): string | null =>

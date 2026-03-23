@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import Stars from './Stars';
+import { normalizeCoverUrl } from '../lib/covers';
 
 interface Book {
   id: string;
@@ -83,7 +84,7 @@ export default function BookSearch() {
                         onClick={() => setQuery('')}
                       >
                         {book.cover_url ? (
-                          <img src={book.cover_url} alt="" className="w-8 h-12 object-cover rounded shrink-0" />
+                          <img src={normalizeCoverUrl(book.cover_url)!} alt="" className="w-8 h-12 object-cover rounded shrink-0" />
                         ) : (
                           <div className="w-8 h-12 rounded bg-purple-100 flex items-center justify-center text-base shrink-0">📖</div>
                         )}
