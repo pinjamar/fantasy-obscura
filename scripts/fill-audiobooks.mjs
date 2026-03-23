@@ -17,8 +17,8 @@
  *   - audiobook_audible_url:     auto-generated search URL
  *
  * Usage:
- *   node scripts/fill-audiobooks.mjs               # only books never checked (NULL)
- *   node scripts/fill-audiobooks.mjs --recheck     # NULL + previously false (re-verify)
+ *   node scripts/fill-audiobooks.mjs               # NULL + false (new or unconfirmed)
+ *   node scripts/fill-audiobooks.mjs --recheck     # same as default (kept for compat)
  *   node scripts/fill-audiobooks.mjs --all         # everything including confirmed true
  *   node scripts/fill-audiobooks.mjs --dry-run
  *   node scripts/fill-audiobooks.mjs --limit 50
@@ -32,7 +32,6 @@ config();
 
 const DRY_RUN   = process.argv.includes('--dry-run');
 const ALL       = process.argv.includes('--all');
-const RECHECK   = process.argv.includes('--recheck');
 const LIMIT_ARG = process.argv.indexOf('--limit');
 const LIMIT     = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
 
@@ -214,30 +213,41 @@ One word only.`;
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  const modeLabel = ALL ? '[ALL]' : RECHECK ? '[RECHECK: null + false]' : '[DEFAULT: null only]';
+  const modeLabel = ALL ? '[ALL]' : '[DEFAULT: null + false]';
   console.log(`\n🎧 Audiobook Lookup (Google Books + Gemini) ${DRY_RUN ? '[DRY RUN] ' : ''}${modeLabel}\n`);
 
-  let query = supabase
-    .from('books')
-    .select('id, title, authors, publication_year')
-    .order('title');
+  // Paginate to bypass Supabase 1000-row cap
+  const PAGE = 1000;
+  const allBooks = [];
+  let pageOffset = 0;
 
-  if (!ALL) {
-    if (RECHECK) {
-      query = query.or('audiobook_available.is.null,audiobook_available.eq.false');
-    } else {
-      query = query.is('audiobook_available', null);
+  while (true) {
+    let q = supabase
+      .from('books')
+      .select('id, title, authors, publication_year')
+      .order('title')
+      .range(pageOffset, pageOffset + PAGE - 1);
+
+    if (!ALL) {
+      q = q.or('audiobook_available.is.null,audiobook_available.eq.false');
     }
+
+    const { data: pageData, error: pageErr } = await q;
+    if (pageErr) { console.error('Supabase error:', pageErr.message); process.exit(1); }
+    if (!pageData || pageData.length === 0) break;
+    allBooks.push(...pageData);
+    if (pageData.length < PAGE) break;
+    pageOffset += PAGE;
   }
 
-  if (LIMIT) query = query.limit(LIMIT);
+  const books = LIMIT ? allBooks.slice(0, LIMIT) : allBooks;
 
   const { data: books, error } = await query;
   if (error) { console.error('Supabase error:', error.message); process.exit(1); }
 
   if (!books.length) {
     console.log('✅ Nothing to process.');
-    if (!RECHECK && !ALL) console.log('   Tip: use --recheck to re-verify previously false entries.');
+    if (!ALL) console.log('   Tip: use --all to re-verify already confirmed true entries.');
     return;
   }
 
