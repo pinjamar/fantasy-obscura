@@ -242,9 +242,6 @@ async function main() {
 
   const books = LIMIT ? allBooks.slice(0, LIMIT) : allBooks;
 
-  const { data: books, error } = await query;
-  if (error) { console.error('Supabase error:', error.message); process.exit(1); }
-
   if (!books.length) {
     console.log('✅ Nothing to process.');
     if (!ALL) console.log('   Tip: use --all to re-verify already confirmed true entries.');
