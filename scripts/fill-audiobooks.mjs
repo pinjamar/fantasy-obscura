@@ -229,7 +229,8 @@ async function main() {
       .range(pageOffset, pageOffset + PAGE - 1);
 
     if (!ALL) {
-      q = q.or('audiobook_available.is.null,audiobook_available.eq.false');
+      // null = never had a value; false+null audible_url = checked but no audiobook found marker not set yet
+      q = q.or('audiobook_available.is.null,and(audiobook_available.eq.false,audiobook_audible_url.is.null)');
     }
 
     const { data: pageData, error: pageErr } = await q;
@@ -335,7 +336,8 @@ async function main() {
       audiobook_narrator:        available ? narrator : null,
       audiobook_narrator_rating: available ? narratorRating : null,
       audiobook_hours:           available ? hours : null,
-      audiobook_audible_url:     available ? buildAudibleUrl(book.title, book.authors) : null,
+      // Use '' (not null) when false so re-runs can skip already-checked books
+      audiobook_audible_url:     available ? buildAudibleUrl(book.title, book.authors) : '',
     };
 
     const line = available
