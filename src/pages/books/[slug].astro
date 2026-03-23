@@ -357,7 +357,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
               <span class={`text-xs font-semibold px-2.5 py-1 rounded-full border ${r.color}`}>{r.label}</span>
             ) : null;
           })()}
-          {book.audiobook_audible_url && (
+          {book.audiobook_audible_url && book.audiobook_audible_url !== 'none' && (
             <a
               href={book.audiobook_audible_url}
               target="_blank"
