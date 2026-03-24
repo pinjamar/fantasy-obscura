@@ -383,6 +383,9 @@ const QUERIES = [
   'inauthor:"molly harper" fantasy',
   'inauthor:"nghi vo" fantasy',
   'inauthor:"alexandra rowland" fantasy',
+  'inauthor:"rebecca thorne" fantasy',
+  'inauthor:"charlie n. holmberg" fantasy',
+  'inauthor:"delemhach" fantasy',
   // ── Academy fantasy ─────────────────────────────────────────────────────────
   'inauthor:"cc hunter" fantasy',
   // ── Tier 3: LitRPG / progression / web serial ───────────────────────────────
@@ -613,14 +616,14 @@ function cleanSynopsis(raw) {
   if (!raw) return null;
   // Split into sentences and drop leading ones that are pure marketing
   const PROMO_PATTERNS = [
-    /^#\d/,                                    // "#1 New York Times…"
+    /^#\d/, // "#1 New York Times…"
     /^a #\d/i,
     /^new york times best/i,
     /^instant new york times/i,
     /^national book award/i,
     /^hugo award/i,
     /^nebula award/i,
-    /^\*{1,3}[^*]/,                            // ***Starred review***
+    /^\*{1,3}[^*]/, // ***Starred review***
     /^from the (author|creator|bestselling)/i, // "From the author of…"
     /^the (author|creator) of/i,
     /^by the (author|creator)/i,
@@ -648,6 +651,27 @@ function cleanSynopsis(raw) {
   return cleaned.length >= 80 ? cleaned.slice(0, 2000) : raw.slice(0, 2000);
 }
 
+/**
+ * Extract the author name from an inauthor: query string.
+ * 'inauthor:"robin hobb" fantasy' → 'robin hobb'
+ * 'inauthor:sanderson fantasy'    → 'sanderson'
+ */
+function extractAuthorFromQuery(q) {
+  const m = q.match(/^inauthor:"?([^"]+?)"?\s/);
+  return m ? m[1].toLowerCase() : null;
+}
+
+/**
+ * Count how many books in existingBooks have an author matching the given name.
+ * Uses substring match so 'sanderson' hits 'Brandon Sanderson'.
+ */
+function countBooksForAuthor(authorName, existingBooks) {
+  const name = authorName.toLowerCase();
+  return existingBooks.filter((b) =>
+    (b.authors ?? []).some((a) => a.toLowerCase().includes(name)),
+  ).length;
+}
+
 function normalizeAuthor(author) {
   return (author || '')
     .toLowerCase()
@@ -664,21 +688,84 @@ function makeAuthorTitleKey(title, authors) {
 function looksLikeJunkTitle(title) {
   const t = (title || '').toLowerCase();
   const patterns = [
-    /\bantho?logy\b/, /\bomnibus\b/, /\bbox(ed)?\s+set\b/,
-    /\bcomplete\s+(trilogy|series|collection)\b/, /\bcollected\b/,
-    /\band other stories\b/, /\bshort stor(y|ies)\b/, /\bnovelette\b/,
-    /\bguide\b/, /\bcompanion\b/, /\bart of\b/, /\bmaking of\b/,
-    /\bcookbook\b/, /\bworkbook\b/, /\bcoloring book\b/, /\bactivity book\b/,
-    /\bjournal\b/, /\bnotebook\b/, /\bplanner\b/, /\bcalendar\b/, /\bdiary\b/,
-    /\bstudy guide\b/, /\breader'?s guide\b/, /\breading group\b/,
-    /\bbook club guide\b/, /\bcritical essay\b/, /\banalysis of\b/,
-    /\bcriticism\b/, /\bannotated\b/, /\bbiography of\b/,
-    /\bdeluxe edition\b/, /\bspecial edition\b/, /\bcollector'?s edition\b/,
-    /\billustrated edition\b/, /\blarge[\s-]print\b/, /\babridged\b/,
-    /\bgraphic (novel|adaptation)\b/, /\bmanga\b/, /\bcomic book\b/, /\bcomics\b/,
-    /\bsummary of\b/, /\breview of\b/, /\bsynopsis of\b/, /\bplot summary\b/,
-    /\bbooks?\s+\d+\s*(to|-)\s*\d+\b/, /\bvolumes?\s+\d+\s*(to|-)\s*\d+\b/,
+    /\bantho?logy\b/,
+    /\bomnibus\b/,
+    /\bbox(ed)?\s+set\b/,
+    /\bcomplete\s+(trilogy|series|collection)\b/,
+    /\bcollected\b/,
+    /\band other stories\b/,
+    /\bshort stor(y|ies)\b/,
+    /\bnovelette\b/,
+    /\bguide\b/,
+    /\bcompanion\b/,
+    /\bart of\b/,
+    /\bmaking of\b/,
+    /\bcookbook\b/,
+    /\bworkbook\b/,
+    /\bcoloring book\b/,
+    /\bactivity book\b/,
+    /\bjournal\b/,
+    /\bnotebook\b/,
+    /\bplanner\b/,
+    /\bcalendar\b/,
+    /\bdiary\b/,
+    /\bstudy guide\b/,
+    /\breader'?s guide\b/,
+    /\breading group\b/,
+    /\bbook club guide\b/,
+    /\bcritical essay\b/,
+    /\banalysis of\b/,
+    /\bcriticism\b/,
+    /\bannotated\b/,
+    /\bbiography of\b/,
+    /\bdeluxe edition\b/,
+    /\bspecial edition\b/,
+    /\bcollector'?s edition\b/,
+    /\billustrated edition\b/,
+    /\blarge[\s-]print\b/,
+    /\babridged\b/,
+    /\bgraphic (novel|adaptation)\b/,
+    /\bmanga\b/,
+    /\bcomic book\b/,
+    /\bcomics\b/,
+    /\bsummary of\b/,
+    /\breview of\b/,
+    /\bsynopsis of\b/,
+    /\bplot summary\b/,
+    /\bbooks?\s+\d+\s*(to|-)\s*\d+\b/,
+    /\bvolumes?\s+\d+\s*(to|-)\s*\d+\b/,
     /\b\d+-book\b/,
+    // Reference & academic works
+    /\bencyclopedia\b/,
+    /\bbibliograph/,
+    /\bcatalogue?\b/,
+    /\btransactions\b/,
+    /\bproceedings\b/,
+    /\bindex\s+of\b/,
+    /\bhandbook\b/,
+    /\balmanac\b/,
+    /\bdictionary\b/,
+    /\blexicon\b/,
+    /\bwho'?s\s+who\b/,
+    /\byearbook\b/,
+    /\bannual\s+report\b/,
+    // "Fiction writers", "science fiction stories" (academic/reference titles)
+    /\bfiction\s+writers?\b/,
+    /\bauthors?\s+autobiograph/,
+    /\bscience\s+fiction\s+stories\b/,
+    // Multi-volume reference sets e.g. "[2 Volumes]"
+    /\[\d+\s*volumes?\]/,
+    /\b\d+\s*volumes?\b/,
+    // Library & bibliographic entries
+    /\blibrary\s+collection\b/,
+    /\bbooks\s+on\s+\w/,
+    /\bnational\s+bibliography\b/,
+    /\btitle[\s-]entries\b/,
+    /\bcatalogue\s+of\s+additions\b/,
+    // Children's literature studies
+    /\bchildren'?s\s+literature\s+(remembered|review|criticism)\b/,
+    /\bliterature\s+for\s+(children|young)\b/,
+    /\bschool\s+library\s+collection\b/,
   ];
   return patterns.some((r) => r.test(t));
 }
@@ -686,9 +773,21 @@ function looksLikeJunkTitle(title) {
 function hasBadCategories(categories) {
   const joined = (categories ?? []).join(' ').toLowerCase();
   return [
-    'study aids', 'juvenile nonfiction', 'literary criticism',
-    'comics & graphic novels', 'games & activities',
-    'reference', 'body, mind & spirit', 'performing arts',
+    'study aids',
+    'juvenile nonfiction',
+    'literary criticism',
+    'comics & graphic novels',
+    'games & activities',
+    'reference',
+    'body, mind & spirit',
+    'performing arts',
+    'language arts & disciplines',
+    'biography & autobiography',
+    'social science',
+    'history',
+    'education',
+    'language arts',
+    'library science',
   ].some((k) => joined.includes(k));
 }
 
@@ -891,13 +990,36 @@ async function main() {
     remaining = [...QUERIES];
   }
 
-  // Shuffle so every run visits queries in a different order
-  for (let i = remaining.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
-  }
+  // Major authors = Tier 1 block only (everything before the classics section)
+  const tier1Boundary = QUERIES.indexOf('inauthor:"j.r.r. tolkien" fantasy');
+  const majorAuthorQueries = new Set(
+    tier1Boundary > 0 ? QUERIES.slice(0, tier1Boundary) : [],
+  );
 
-  console.log(`    ${remaining.length} queries available this run (${QUERIES.length - remaining.length} already exhausted)\n`);
+  // Prioritise Tier 1 inauthor: queries where the author has ≤ 3 books in DB
+  const thinAuthorQueries = remaining.filter((q) => {
+    if (!majorAuthorQueries.has(q)) return false;
+    const author = extractAuthorFromQuery(q);
+    if (!author) return false;
+    return countBooksForAuthor(author, existing) <= 3;
+  });
+  const otherQueries = remaining.filter((q) => !thinAuthorQueries.includes(q));
+
+  // Shuffle the non-priority queries; thin-author queries run first, unshuffled
+  for (let i = otherQueries.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [otherQueries[i], otherQueries[j]] = [otherQueries[j], otherQueries[i]];
+  }
+  remaining = [...thinAuthorQueries, ...otherQueries];
+
+  if (thinAuthorQueries.length > 0) {
+    console.log(
+      `    ⭐ ${thinAuthorQueries.length} thin-coverage author(s) prioritised\n`,
+    );
+  }
+  console.log(
+    `    ${remaining.length} queries available this run (${QUERIES.length - remaining.length} already exhausted)\n`,
+  );
 
   let imported = 0;
 
@@ -906,9 +1028,7 @@ async function main() {
 
     const startIndex = progress[query] ?? 0;
 
-    console.log(
-      `\n📖  Query "${query}" (from index ${startIndex})`,
-    );
+    console.log(`\n📖  Query "${query}" (from index ${startIndex})`);
 
     let pageStart = startIndex;
     let exhausted = false;
@@ -936,7 +1056,10 @@ async function main() {
         const { _isbn: isbn, authorTitleKey } = book;
 
         // Author-title dedup — catches cross-edition duplicates
-        if (rejectedKeys.has(authorTitleKey) || existingAuthorTitleKeys.has(authorTitleKey)) {
+        if (
+          rejectedKeys.has(authorTitleKey) ||
+          existingAuthorTitleKeys.has(authorTitleKey)
+        ) {
           dbg_duped++;
           continue;
         }
@@ -972,7 +1095,10 @@ async function main() {
 
         // Open Library fallback for missing publication year
         if (!book.publication_year) {
-          book.publication_year = await fetchOpenLibraryYear(book.title, book.authors);
+          book.publication_year = await fetchOpenLibraryYear(
+            book.title,
+            book.authors,
+          );
           await sleep(200);
         }
 

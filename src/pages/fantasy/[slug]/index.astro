@@ -701,7 +701,7 @@ const imgSlug = slug ? CATEGORY_IMAGE_SLUG[slug] : undefined;
       <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
         <div class="flex items-end justify-between gap-4">
           <div>
-            <div class="flex items-center gap-2.5 mb-2">
+            <div class="hidden sm:flex items-center gap-2.5 mb-2">
               <span class="text-2xl">{cat.icon}</span>
               <h1 class="text-2xl font-bold tracking-tight text-white">{cat.name}</h1>
             </div>
@@ -709,7 +709,7 @@ const imgSlug = slug ? CATEGORY_IMAGE_SLUG[slug] : undefined;
           </div>
           <a
             href="/books/"
-            class="shrink-0 text-sm font-medium text-white/80 hover:text-white transition-colors whitespace-nowrap"
+            class="hidden sm:block shrink-0 text-sm font-medium text-white/80 hover:text-white transition-colors whitespace-nowrap"
           >
             ← Browse all books
           </a>

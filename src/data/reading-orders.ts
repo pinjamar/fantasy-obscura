@@ -2097,11 +2097,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         ],
       },
     ],
+    cardsPosition: 'above',
     cards: [
-      { title: '🐉 Core trilogy (3)',       body: 'Dragonflight, Dragonquest, The White Dragon. The heart of Pern — read these first.',                                                   color: 'blue'  },
-      { title: '🎵 Harper Hall (3)',        body: 'Menolly\'s story runs parallel to the main trilogy. Dragonsong and Dragonsinger are essential; Dragondrums is optional.',              color: 'blue'  },
-      { title: '📖 Expansion novels (7)',   body: 'Dragonsdawn, Moreta, Renegades, and more. Best appreciated once you love the world.',                                                  color: 'green' },
-      { title: '📄 Short fiction (3)',      body: 'First Fall, Dolphins, and A Gift of Dragons. Completionist territory — skip unless you want everything.',                              color: 'amber' },
+      { title: '🐉 Two Entry Points',      body: 'Start with Dragonflight if you want the full epic sweep — Lessa impressing a queen dragon as Thread returns after 400 years. Or start with Dragonsong if you prefer a quieter, character-driven opening. Both lead you to the same world.', color: 'blue'  },
+      { title: '🎵 Don\'t Skip Harper Hall', body: 'The Harper Hall trilogy runs parallel to the main series and is among McCaffrey\'s best writing. Dragonsong and Dragonsinger are essential, not optional extras. Read them alongside or immediately after Dragonquest — before The White Dragon.', color: 'blue'  },
+      { title: '📖 Stop After the Core',   body: 'The first six books (Dragonriders trilogy + Harper Hall) are Pern at its best. The expansion novels are for readers who love the world and want more — Dragonsdawn and Moreta are the highlights. The short fiction is completionist territory only.', color: 'green' },
     ],
     sections: [
       {
@@ -2123,7 +2123,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     darkness: [
       { label: 'Main trilogy',       level: 2, desc: 'Some violence and threat — Thread is genuinely dangerous — but light overall' },
       { label: 'Harper Hall',        level: 1, desc: 'YA — the darkest element is social cruelty and parental neglect' },
-      { label: 'Expansion novels',   level: 2, desc: 'Moreta is the darkest — plague, sacrifice, and tragedy' },
+      { label: 'Expansion novels',   level: 3, desc: 'Moreta is the darkest — plague, sacrifice, and tragedy' },
     ],
     finishedLabel: 'Finished Pern?',
     categoryHref: '/fantasy/epic/',
