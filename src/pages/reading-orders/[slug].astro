@@ -93,6 +93,8 @@ let similarSeries: { name: string; slug: string; cover: string | null; score: nu
 let contentWarnings: string[] = [];
 let avgRatingDb: string | null = null;
 let totalPagesDb = 0;
+let topSubgenres: string[] = [];
+let topTropes: string[] = [];
 
 if (!isCurated) {
   const allSeries = await getAllSeries();
@@ -119,12 +121,12 @@ if (!isCurated) {
   const allSubgenres = dbBooks.flatMap((b) => (b as any).subgenres ?? []);
   const subgenreCounts = new Map<string, number>();
   for (const g of allSubgenres) subgenreCounts.set(g, (subgenreCounts.get(g) ?? 0) + 1);
-  const topSubgenres = [...subgenreCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([g]) => g);
+  topSubgenres = [...subgenreCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([g]) => g);
 
   const allTropes = dbBooks.flatMap((b) => (b as any).tropes ?? []);
   const tropeCounts = new Map<string, number>();
   for (const t of allTropes) tropeCounts.set(t, (tropeCounts.get(t) ?? 0) + 1);
-  const topTropes = [...tropeCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([t]) => t);
+  topTropes = [...tropeCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([t]) => t);
 
   contentWarnings = [...new Set(dbBooks.flatMap((b) => (b as any).content_warnings ?? []))].sort() as string[];
 
@@ -174,6 +176,30 @@ if (!isCurated) {
     : null;
 }
 
+// ── Non-curated derived display values ────────────────────────────────────────
+const dbYears = books.map(b => b.publication_year).filter(Boolean) as number[];
+const dbYearMin = dbYears.length ? Math.min(...dbYears) : null;
+const dbYearMax = dbYears.length ? Math.max(...dbYears) : null;
+const dbYearRange = dbYearMin && dbYearMax
+  ? dbYearMin === dbYearMax ? `${dbYearMin}` : `${dbYearMin}–${dbYearMax}`
+  : null;
+
+const dbDarknessLevels = books.map(b => b.darkness_level).filter(Boolean) as number[];
+const dbAvgDarkness = dbDarknessLevels.length
+  ? Math.round(dbDarknessLevels.reduce((s, d) => s + d, 0) / dbDarknessLevels.length)
+  : null;
+const CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
+const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
+
+const dbHeatLevels = [...new Set(
+  dbBooks.map(b => (b as any).heat_level).filter(Boolean) as string[]
+)];
+const dbHeatDisplay = dbHeatLevels.length === 1
+  ? dbHeatLevels[0]
+  : dbHeatLevels.length > 1
+    ? dbHeatLevels.join(' / ')
+    : null;
+
 // Card color classes
 const cardColors: Record<string, { border: string; bg: string; title: string; body: string }> = {
   blue:   { border: 'border-blue-100',   bg: 'bg-blue-50',   title: 'text-blue-900',   body: 'text-blue-800'   },
@@ -185,7 +211,7 @@ const cardColors: Record<string, { border: string; bg: string; title: string; bo
 
 const pageTitle = curatedEntry
   ? `${curatedEntry.name} Reading Order: All ${curatedEntry.author} Books in Order | The Grimoire`
-  : `${seriesMeta?.name} Reading Order${authorNames.length ? `: All ${authorNames[0]} Books in Order` : ''} | The Grimoire`;
+  : `${seriesMeta?.name} Series Reading Order${authorNames.length ? `: All ${authorNames[0]} Books in Order` : ''} | The Grimoire`;
 const pageDesc = curatedEntry
   ? `Complete reading order for ${curatedEntry.name} by ${curatedEntry.author} — ${allBooksCurated.length} books, ${coreCount} core${allBooksCurated.length - coreCount > 0 ? ` + ${allBooksCurated.length - coreCount} optional` : ''}. What to read first, what's skippable.`
   : `Complete reading order for ${seriesMeta?.name}${authorNames.length ? ` by ${authorNames.slice(0, 2).join(' & ')}` : ''} — ${seriesMeta?.bookCount ?? dbBooks.length} books in our database.`;
@@ -209,8 +235,95 @@ const readingOrderJsonLd = JSON.stringify({
     position: i + 1,
     name: b.title,
     ...(b.slug ? { url: `${SITE}/books/${b.slug}/` } : {}),
+    ...((b as any).publication_year ? { datePublished: String((b as any).publication_year) } : {}),
+    ...((b as any).page_count ? { numberOfPages: (b as any).page_count } : {}),
   })),
 });
+
+const itemListJsonLd = isCurated ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `${seriesName} Reading Order`,
+  url: `${SITE}/reading-orders/${slug}/`,
+  numberOfItems: allBooksCurated.length,
+  itemListElement: allBooksCurated.map((b, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: b.title,
+    ...(b.slug ? { url: `${SITE}/books/${b.slug}/` } : {}),
+  })),
+}) : null;
+
+const faqItems = (curatedEntry?.sections ?? []).filter(s => s.prose || (s.bullets && s.bullets.length > 0));
+const faqJsonLd = faqItems.length > 0 ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(s => ({
+    '@type': 'Question',
+    name: s.heading,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: s.prose ?? (s.bullets ?? []).join(' '),
+    },
+  })),
+}) : null;
+
+const seoProseText = curatedEntry
+  ? `Looking for the complete ${curatedEntry.name} reading order? This guide covers all ${allBooksCurated.filter(b => b.status !== 'upcoming').length} ${curatedEntry.author} books in ${curatedEntry.name} in order — including which are essential, which are optional, and the best place to start. Whether you're reading ${curatedEntry.name} for the first time or catching up before the next release, this is the order we recommend.`
+  : null;
+
+// ── Non-curated SEO additions ─────────────────────────────────────────────────
+const dbShouldNoIndex = !isCurated && (seriesMeta?.bookCount ?? 0) < 3;
+
+const dbItemListJsonLd = !isCurated && seriesMeta ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `${seriesMeta.name} Reading Order`,
+  url: `${SITE}/reading-orders/${slug}/`,
+  numberOfItems: books.length,
+  itemListElement: books.map((b, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: b.title,
+    ...(b.slug ? { url: `${SITE}/books/${b.slug}/` } : {}),
+  })),
+}) : null;
+
+const dbTotalHours = totalPagesDb > 0 ? Math.round(totalPagesDb / 30) : null;
+const dbFaqJsonLd = !isCurated && seriesMeta ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: `How many books are in ${seriesMeta.name}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${seriesMeta.name} contains ${seriesMeta.bookCount} ${seriesMeta.bookCount === 1 ? 'book' : 'books'}${authorNames.length ? ` by ${authorNames.slice(0, 2).join(' & ')}` : ''}.`,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: `What order should I read ${seriesMeta.name}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Read ${seriesMeta.name} in publication order, starting with book one. Each book builds on the events of the previous, so following the order listed on this page is the recommended approach.`,
+      },
+    },
+    ...(dbTotalHours ? [{
+      '@type': 'Question',
+      name: `How long does it take to read ${seriesMeta.name}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${seriesMeta.name} spans approximately ${totalPagesDb.toLocaleString()} pages across all ${seriesMeta.bookCount} books — roughly ${dbTotalHours} hours of reading at an average pace.`,
+      },
+    }] : []),
+  ],
+}) : null;
+
+const dbSeoProse = !isCurated && seriesMeta
+  ? `Looking for the complete ${seriesMeta.name} reading order?${authorNames.length ? ` This guide lists all ${seriesMeta.bookCount} ${authorNames[0]} books in ${seriesMeta.name} in order` : ` This guide lists all ${seriesMeta.bookCount} books in ${seriesMeta.name} in order`} — with covers, ratings, and page counts for every entry.${totalPagesDb > 0 ? ` The full series spans approximately ${totalPagesDb.toLocaleString()} pages.` : ''}`
+  : null;
 ---
 
 <Layout title={pageTitle} description={pageDesc} image={heroImageUrl || undefined}>
@@ -224,6 +337,11 @@ const readingOrderJsonLd = JSON.stringify({
         { '@type': 'ListItem', position: 2, name: seriesName, item: `${SITE}/reading-orders/${slug}/` },
       ],
     })} />
+    {itemListJsonLd && <script is:inline type="application/ld+json" set:html={itemListJsonLd} />}
+    {faqJsonLd && <script is:inline type="application/ld+json" set:html={faqJsonLd} />}
+    {dbItemListJsonLd && <script is:inline type="application/ld+json" set:html={dbItemListJsonLd} />}
+    {dbFaqJsonLd && <script is:inline type="application/ld+json" set:html={dbFaqJsonLd} />}
+    {dbShouldNoIndex && <meta name="robots" content="noindex, follow" />}
   </Fragment>
 
 {isCurated && curatedEntry && (
@@ -277,6 +395,9 @@ const readingOrderJsonLd = JSON.stringify({
       </div>
 
       <p class="mt-5 text-base text-zinc-700 leading-relaxed max-w-2xl">{curatedEntry.description}</p>
+      {seoProseText && (
+        <p class="hidden mt-3 text-sm text-zinc-400 leading-relaxed max-w-2xl">{seoProseText}</p>
+      )}
     </div>
 
     <!-- Warning block -->
@@ -422,7 +543,7 @@ const readingOrderJsonLd = JSON.stringify({
 
     <!-- Header -->
     <div class="mb-8">
-      <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{seriesMeta.name} Reading Order</h1>
+      <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{seriesMeta.name} Series Reading Order</h1>
 
       {authorNames.length > 0 && (
         <p class="mt-2 text-zinc-500 text-lg">
@@ -449,7 +570,33 @@ const readingOrderJsonLd = JSON.stringify({
             <span class="text-amber-400">★</span> {avgRatingDb} avg rating
           </span>
         )}
+        {dbYearRange && (
+          <span class="flex items-center gap-1.5">
+            <span class="text-zinc-400">📅</span> {dbYearRange}
+          </span>
+        )}
+        {dbAvgDarkness && (
+          <span class="flex items-center gap-1.5" title={`Darkness: ${DARKNESS_LABELS[dbAvgDarkness]}`}>
+            {CANDLES[dbAvgDarkness]} {DARKNESS_LABELS[dbAvgDarkness]}
+          </span>
+        )}
+        {dbHeatDisplay && (
+          <span class="flex items-center gap-1.5">
+            <span class="text-rose-400">🔥</span> {dbHeatDisplay}
+          </span>
+        )}
       </div>
+      {(topSubgenres.length > 0 || topTropes.length > 0) && (
+        <div class="mt-4 flex flex-wrap gap-2">
+          {topSubgenres.map((g) => (
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200">{g}</span>
+          ))}
+          {topTropes.map((t) => (
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-zinc-100 text-zinc-600 border border-zinc-200">{t}</span>
+          ))}
+        </div>
+      )}
+      {dbSeoProse && <p class="hidden mt-4 text-sm text-zinc-400 leading-relaxed max-w-2xl">{dbSeoProse}</p>}
     </div>
 
     <!-- Books — vertical list -->

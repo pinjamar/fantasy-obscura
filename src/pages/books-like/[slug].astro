@@ -51,11 +51,18 @@ const dbRecCoverMap = new Map<string, string>(
 
 const SITE = 'https://thegrimoire.co';
 const allRecs = aspects.flatMap((a) => a.recs);
+const pageDesc = (() => {
+  const recCount = allRecs.length;
+  const aspectSummary = aspects.slice(0, 2).map(a =>
+    a.heading.replace(/^if you loved\s+/i, '').replace(/\.\.\.$/, '').trim()
+  ).join(', ');
+  return `${recCount} books like ${source.title} by ${source.author}${source.angle ? ` (${source.angle})` : ''} — grouped by what made it great: ${aspectSummary}.`;
+})();
 const booksLikeJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: `Books Like ${source.title}`,
-  description: `If you loved ${source.title} by ${source.author}, here are the best reads that capture the same feeling.`,
+  description: pageDesc,
   url: `${SITE}/books-like/${entry.slug}/`,
   numberOfItems: allRecs.length,
   itemListElement: allRecs.map((r, i) => ({
@@ -72,7 +79,7 @@ const booksLikeJsonLd = JSON.stringify({
 
 <Layout
   title={`Books Like ${source.title}${source.angle ? `: ${source.angle}` : ''} | The Grimoire`}
-  description={`If you loved ${source.title} by ${source.author}, here are the best reads that capture the same feeling.`}
+  description={pageDesc}
   image={sourceCover || undefined}
 >
   <Fragment slot="head">

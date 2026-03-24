@@ -80,7 +80,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Main Series Complete',
     description:
-      'A dark fairy tale retelling that becomes a full epic fantasy by book two. Feyre is pulled into a world of immortal fae, political power, and war — with romance woven through every layer. ACMAF is the breakout book that defines the series.',
+      'A dark fairy tale retelling that becomes a full epic fantasy by book two. Feyre is pulled into a world of immortal fae, political power, and war — with romance woven through every layer. ACMAF is the breakout book that defines the series. The reading order matters here — each book builds directly on the last, and the world expands significantly between books one and two. If you\'re new to Sarah J. Maas, this is the series most readers recommend starting with.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     groups: [
       {
@@ -147,7 +147,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
     description:
-      'A shared universe spanning multiple worlds, where every magic system follows hard rules and every book connects in ways you won\'t see coming. The most ambitious construction project in modern fantasy.',
+      'A shared universe spanning multiple worlds, where every magic system follows hard rules and every book connects in ways you won\'t see coming. The most ambitious construction project in modern fantasy. If you\'re wondering where to start with Brandon Sanderson, this guide covers the full Cosmere reading order — which books to read first, which connections matter, and which are safe to skip.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     groups: [
       {
@@ -256,7 +256,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '✓ First Arc Complete (5 books)',
     description:
-      'The most ambitious epic fantasy currently being written. A world of perpetual storms, ancient knights, and a cosmology that rewards every re-read. Each book raises the stakes. The payoff across the arc is extraordinary.',
+      'The most ambitious epic fantasy currently being written. A world of perpetual storms, ancient knights, and a cosmology that rewards every re-read. Each book raises the stakes. The payoff across the arc is extraordinary. The Way of Kings is where to start — and while Warbreaker is optional, reading it before Words of Radiance enriches book two considerably. This is the Stormlight Archive reading order most readers recommend.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     books: [
       { title: 'The Way of Kings',  slug: 'the-way-of-kings',  status: 'mandatory',     note: 'Start here. Kaladin, Shallan, Dalinar. Worldbuilding unlike anything else in fantasy.',                                               page_count: 1007, publication_year: 2010 },
@@ -316,7 +316,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Completed Series',
     description:
-      'Six books set across an archipelago world where magic is rooted in the true names of things, and power always comes with a cost. Le Guin wrote the original trilogy between 1968 and 1972, then returned to Earthsea eighteen years later with a fundamentally different perspective — the second half of the series is quieter, more philosophical, and concerned with questions the first half never thought to ask.',
+      'Six books set across an archipelago world where magic is rooted in the true names of things, and power always comes with a cost. Le Guin wrote the original trilogy between 1968 and 1972, then returned to Earthsea eighteen years later with a fundamentally different perspective — the second half of the series is quieter, more philosophical, and concerned with questions the first half never thought to ask. A Wizard of Earthsea is where to start: it is short, perfect, and one of the best entry points in all of fantasy. Read the Earthsea books in publication order.',
     darknessDisplay: '🕯️🕯️ Mild to Moderate',
     groups: [
       {
@@ -399,7 +399,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Completed Series',
     description:
-      'A grimdark masterclass where the heroes are as broken as the villains — and the world keeps punishing both. Abercrombie dismantles every fantasy trope with wit, cruelty, and genuine craft.',
+      'A grimdark masterclass where the heroes are as broken as the villains — and the world keeps punishing both. Abercrombie dismantles every fantasy trope with wit, cruelty, and genuine craft. Start with The Blade Itself — the three standalones and the Age of Madness trilogy all share the same world and reward reading in publication order. If you\'re new to Joe Abercrombie, this is the First Law reading order most fans recommend.',
     darknessDisplay: '🕯️🕯️🕯️🕯️ Dark → Brutal',
     groups: [
       {
@@ -484,7 +484,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Completed Series',
     description:
-      'The most vast and uncompromising epic fantasy ever written. No other series trusts its readers this completely — or rewards them as deeply. You will be lost. Then you will be changed.',
+      'The most vast and uncompromising epic fantasy ever written. No other series trusts its readers this completely — or rewards them as deeply. You will be lost. Then you will be changed. Gardens of the Moon is where to start — it does not hold your hand, and that is intentional. The Malazan Book of the Fallen reading order is linear: all ten main books in publication order, with Erikson\'s novellas best read as you encounter them.',
     darknessDisplay: '🕯️🕯️🕯️🕯️🕯️ Brutal',
     books: [
       { title: 'Gardens of the Moon', slug: 'gardens-of-the-moon', status: 'mandatory', note: 'Brutal opening. No hand-holding. Push through the first 200 pages — it rewards patience.',               page_count: 666,  publication_year: 1999 },
@@ -537,7 +537,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Completed Series',
     description:
-      'The defining epic fantasy of the 1990s and still one of the most ambitious — 14 books, ~11,000 pages, hundreds of characters, a prophecy 3,000 years in the making. You will laugh, you will despair through the slog, and the ending will earn it all.',
+      'The defining epic fantasy of the 1990s and still one of the most ambitious — 14 books, ~11,000 pages, hundreds of characters, a prophecy 3,000 years in the making. You will laugh, you will despair through the slog, and the ending will earn it all. The Eye of the World is where to start. The Wheel of Time reading order is linear — all fourteen books plus the prequel New Spring, which is best read after book three.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     books: [
       { title: 'The Eye of the World',    slug: 'the-eye-of-the-world',    status: 'mandatory', note: 'Start here. Very Tolkien-flavoured at first — it evolves. Pay attention to the women.',                                             page_count: 782,  publication_year: 1990 },
@@ -595,7 +595,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'incomplete',
     seriesStatusLabel: '⚠️ Incomplete — Book 3 unreleased',
     description:
-      'A legendary hero sits in a country inn and tells a scribe his life story over three days. Rothfuss writes with more craft and precision than almost anyone in the genre — and book 3 has been in development since 2011 with no release date.',
+      'A legendary hero sits in a country inn and tells a scribe his life story over three days. Rothfuss writes with more craft and precision than almost anyone in the genre — and book 3 has been in development since 2011 with no release date. The Name of the Wind is where to start — one of the most acclaimed fantasy debuts ever written. Be aware before you begin: the Kingkiller Chronicle reading order currently ends on a cliffhanger, with no confirmed date for The Doors of Stone.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     books: [
       { title: 'The Name of the Wind',              slug: 'the-name-of-the-wind',              status: 'mandatory',     note: 'Day one of Kvothe telling his story. Lyrical, slow-burn, unforgettable prose.',                                          page_count: 662, publication_year: 2007 },
@@ -641,7 +641,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Completed Series',
     description:
-      'A monster hunter in a morally grey world who is far more interesting than the monsters. Sapkowski takes fairy tales apart and rebuilds them as tragedy. The books behind the games, the show, and a generation of dark fantasy.',
+      'A monster hunter in a morally grey world who is far more interesting than the monsters. Sapkowski takes fairy tales apart and rebuilds them as tragedy. The books behind the games, the show, and a generation of dark fantasy. Start with The Last Wish — a short story collection that introduces Geralt and reads as a standalone. The Witcher reading order matters: both story collections come before the five-novel saga.',
     darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
     books: [
       { title: 'The Last Wish',        slug: 'the-last-wish',        status: 'mandatory', note: 'Start here. Short stories introducing Geralt and the world. Brilliant fairy tale deconstructions.',            page_count: 288, publication_year: 1993 },
@@ -697,7 +697,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
     description:
-      "Urban fantasy noir — Harry Dresden is Chicago's only professional wizard, listed in the Yellow Pages. What starts as hardboiled detective fiction with magic escalates across 17 books into a cosmic war with genuine consequences. The first two books are the weakest; by book four the series is exceptional.",
+      "Urban fantasy noir — Harry Dresden is Chicago's only professional wizard, listed in the Yellow Pages. What starts as hardboiled detective fiction with magic escalates across 17 books into a cosmic war with genuine consequences. The first two books are the weakest; by book four the series is exceptional. Storm Front is where to start. The Dresden Files reading order is strictly linear — each book builds on the last, and the payoff of the later entries depends entirely on everything that came before.",
     darknessDisplay: '🕯️🕯️🕯️ → 🕯️🕯️🕯️🕯️🕯️ Serious → Brutal',
     groups: [
       {
@@ -798,7 +798,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Completed Series (41 books)',
     description:
-      'Forty-one novels of razor-sharp satire dressed as comedy fantasy — organized into seven subseries you can read in any order. Pratchett used a flat world on the back of a turtle to say more about humanity than most literary fiction manages. Every book is a standalone. Start anywhere.',
+      'Forty-one novels of razor-sharp satire dressed as comedy fantasy — organized into seven subseries you can read in any order. Pratchett used a flat world on the back of a turtle to say more about humanity than most literary fiction manages. Every book is a standalone. Start anywhere. The recommended Discworld reading order for new readers is Guards! Guards! (City Watch) or Mort (Death sub-series) — both work immediately with no prior context required.',
     darknessDisplay: '🕯️🕯️ Mild darkness',
     groups: [
       {
@@ -950,7 +950,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'incomplete',
     seriesStatusLabel: '⚠️ Unfinished Series',
     description:
-      'The series that redefined epic fantasy for a generation. Five books of political chess, moral complexity, and the systematic destruction of the idea that protagonists are safe. No character is guaranteed survival; no storyline is guaranteed resolution. Read the books — they are significantly richer than the show.',
+      'The series that redefined epic fantasy for a generation. Five books of political chess, moral complexity, and the systematic destruction of the idea that protagonists are safe. No character is guaranteed survival; no storyline is guaranteed resolution. Read the books — they are significantly richer than the show. A Game of Thrones is where to start. The ASOIAF reading order is linear; the series is currently unfinished at five books, with The Winds of Winter still unannounced.',
     darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
     books: [
       { title: 'A Game of Thrones',   slug: 'a-game-of-thrones',   status: 'mandatory', note: 'The foundation. Introduces the major houses, the political web, and the first major shock that signals what kind of series this is.', page_count: 694,  publication_year: 1996 },
@@ -1012,7 +1012,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✅ Complete Series',
     description:
-      'Sixteen books across four interconnected series, all set in the same world, all building toward a conclusion that has been in progress since 1995. Robin Hobb writes character-driven fantasy with a particular genius for emotional devastation — her protagonists make choices that hurt, and she never lets them off easily. This is the most complete emotional journey in epic fantasy.',
+      'Sixteen books across four interconnected series, all set in the same world, all building toward a conclusion that has been in progress since 1995. Robin Hobb writes character-driven fantasy with a particular genius for emotional devastation — her protagonists make choices that hurt, and she never lets them off easily. This is the most complete emotional journey in epic fantasy. Assassin\'s Apprentice is where to start — one of the finest fantasy debuts ever written. Follow the Robin Hobb reading order exactly: the reveals across series depend on it.',
     darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
     groups: [
       {
@@ -1116,7 +1116,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Completed Series',
     description:
-      'An assassin forced to compete for her freedom becomes the fulcrum of a war against an immortal darkness. Starts as a YA competition novel and grows into a full-scale epic fantasy with Fae, ancient magic, and a world-ending threat. The series earns its scope.',
+      'An assassin forced to compete for her freedom becomes the fulcrum of a war against an immortal darkness. Starts as a YA competition novel and grows into a full-scale epic fantasy with Fae, ancient magic, and a world-ending threat. The series earns its scope. Throne of Glass is where to start. Readers who finish the full series before beginning ACOTAR will catch every crossover — this reading order is designed for maximum SJM payoff.',
     darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
     groups: [
       {
@@ -1185,7 +1185,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ All three series ongoing',
     description:
-      'The complete SJM reading order across all three series: Throne of Glass, A Court of Thorns and Roses, and Crescent City. The three worlds form a shared multiverse — connections are subtle at first, then explicit by the time you reach Crescent City. The recommended order maximises every crossover payoff.',
+      'The complete Sarah J. Maas reading order across all three series: Throne of Glass, A Court of Thorns and Roses, and Crescent City. The three worlds form a shared multiverse — connections are subtle at first, then explicit by the time you reach Crescent City. The recommended order maximises every crossover payoff. Do not start with Crescent City — finish ACOTAR first. This guide tells you the exact order to read all Sarah J. Maas books.',
     darknessDisplay: '🕯️🕯️🕯️–🕯️🕯️🕯️🕯️ Moderate to Dark · 🔥🔥–🔥🔥🔥 Explicit from ACMAF onward',
     warning: 'Do not start with Crescent City. House of Sky and Breath and House of Flame and Shadow contain major crossover content from ACOTAR — reading CC first will spoil both series. Throne of Glass and ACOTAR can be read in either order.',
     groups: [
@@ -1288,7 +1288,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ All four trilogies complete',
     description:
-      'Four trilogies, two connected worlds, one deeply cohesive author vision. The Broken Empire and Red Queen\'s War share the same post-apocalyptic Earth — told concurrently from two very different protagonists. The Book of the Ancestor and Book of the Ice share the ice-bound world of Abeth. Lawrence writes morally complex antiheroes, dark humour, and reveals that reframe everything you thought you knew.',
+      'Four trilogies, two connected worlds, one deeply cohesive author vision. The Broken Empire and Red Queen\'s War share the same post-apocalyptic Earth — told concurrently from two very different protagonists. The Book of the Ancestor and Book of the Ice share the ice-bound world of Abeth. Lawrence writes morally complex antiheroes, dark humour, and reveals that reframe everything you thought you knew. Start with Prince of Thorns (darker, divisive) or Prince of Fools (lighter entry point) — both work. This guide covers the full Mark Lawrence reading order across all four series.',
     darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
     warning: 'The Broken Empire opens with an extremely dark and violent prologue — this is intentional. Jorg is one of the most divisive protagonists in modern fantasy. If the opening repels you, try Prince of Fools (Red Queen\'s War) first — same world, much lighter tone with a comedic coward as the hero.',
     groups: [
@@ -1397,7 +1397,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
     description:
-      'Romantasy with slow-burn enemies-to-lovers at its core — From Blood and Ash starts as a sheltered Maiden meets her mysterious guard and spirals into a full-scale fantasy epic. The first book reads like pure romantasy; by book three it\'s a proper political fantasy with war, gods, and a sprawling world. Explicit throughout.',
+      'Romantasy with slow-burn enemies-to-lovers at its core — From Blood and Ash starts as a sheltered Maiden meets her mysterious guard and spirals into a full-scale fantasy epic. The first book reads like pure romantasy; by book three it\'s a proper political fantasy with war, gods, and a sprawling world. Explicit throughout. From Blood and Ash is where to start — it works as a standalone entry and the series is best read in publication order. If you\'re new to Jennifer L. Armentrout\'s fantasy work, this is the series most readers recommend first.',
     darknessDisplay: '🕯️🕯️🕯️ Serious · 🔥🔥🔥 Explicit',
     groups: [
       {
@@ -1473,7 +1473,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
     description:
-      'Military fantasy academy meets dragon-rider romance — fast-paced, explicitly romantic, and increasingly dark as the series progresses. Fourth Wing reads like romantasy; by Onyx Storm it\'s leaning hard into epic fantasy. If you\'re here for the romance and action combo, all three books deliver. If explicit content isn\'t for you, this series isn\'t for you.',
+      'Military fantasy academy meets dragon-rider romance — fast-paced, explicitly romantic, and increasingly dark as the series progresses. Fourth Wing reads like romantasy; by Onyx Storm it\'s leaning hard into epic fantasy. If you\'re here for the romance and action combo, all three books deliver. If explicit content isn\'t for you, this series isn\'t for you. Fourth Wing is where to start — no prior reading required. The Empyrean reading order is: Fourth Wing → Iron Flame → Onyx Storm, with more books planned.',
     darknessDisplay: '🕯️🕯️🕯️ Serious · 🔥🔥🔥 Explicit',
     groups: [
       {
@@ -1543,7 +1543,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
     description:
-      "The longest-running fantasy saga in D&D fiction — 30+ novels following Drizzt Do'Urden, a dark elf who abandons the brutal society of the Underdark to forge his own path on the surface world. At its core it's a story about identity, loyalty, and chosen family. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are some of the most beloved characters in fantasy. Start with the Dark Elf Trilogy for the origin, or jump straight into Icewind Dale for the classic adventure.",
+      "The longest-running fantasy saga in D&D fiction — 30+ novels following Drizzt Do'Urden, a dark elf who abandons the brutal society of the Underdark to forge his own path on the surface world. At its core it's a story about identity, loyalty, and chosen family. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are some of the most beloved characters in fantasy. Start with the Dark Elf Trilogy for Drizzt's origin, or Icewind Dale for classic adventure. This guide covers all 30+ Drizzt books in recommended reading order.",
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     warning: 'The series spans 30+ novels across 10+ arcs. This guide covers the essential reading — the first four arcs are the heart of the series. Later arcs vary in quality but remain popular with fans of the characters.',
     groups: [
@@ -1649,7 +1649,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Core Series Complete',
     description:
-      'The defining D&D fantasy series of the 1980s. Dragonlance introduced a generation to epic fantasy — a world of dragons, knights, and gods, with a cast of companions whose dynamics defined the genre. The Chronicles trilogy is required reading for fantasy history; the Legends trilogy, following the mage Raistlin, is widely considered the better work. Between them, they represent the peak of TSR-era fantasy fiction.',
+      'The defining D&D fantasy series of the 1980s. Dragonlance introduced a generation to epic fantasy — a world of dragons, knights, and gods, with a cast of companions whose dynamics defined the genre. The Chronicles trilogy is required reading for fantasy history; the Legends trilogy, following the mage Raistlin, is widely considered the better work. Between them, they represent the peak of TSR-era fantasy fiction. Dragons of Autumn Twilight is where to start. Read Chronicles first, then Legends — the Dragonlance reading order for those two trilogies is the foundation everything else builds on.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     groups: [
       {
@@ -1729,7 +1729,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Series Complete',
     description:
-      'A YA dystopian trilogy set in a future Chicago divided into five factions — Dauntless, Erudite, Abnegation, Candor, Amity — each representing a single virtue taken to extremes. Sixteen-year-old Tris Prior chooses to leave her family\'s faction and discovers she is Divergent, a threat to the system. Fast-paced and addictive, with one of YA\'s most debated endings.',
+      'A YA dystopian trilogy set in a future Chicago divided into five factions — Dauntless, Erudite, Abnegation, Candor, Amity — each representing a single virtue taken to extremes. Sixteen-year-old Tris Prior chooses to leave her family\'s faction and discovers she is Divergent, a threat to the system. Fast-paced and addictive, with one of YA\'s most debated endings. Divergent is where to start — the series is read in order: Divergent → Insurgent → Allegiant, with no required side reads. Go in knowing that Allegiant\'s ending is one of the most controversial in YA fiction.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     warning: 'Allegiant (book 3) has a controversial ending that divided the fanbase strongly. Go in prepared.',
     groups: [
@@ -1810,7 +1810,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Series Complete',
     description:
-      'The epic fantasy series that shaped a generation of writers — George R.R. Martin and Patrick Rothfuss have both cited it as a direct influence. A young kitchen scullion is pulled into an ancient war between human kingdoms and the immortal Sithi as a long-buried prophecy stirs. Williams writes with rare patience and emotional depth — this is the series that proved epic fantasy could be literature.',
+      'The epic fantasy series that shaped a generation of writers — George R.R. Martin and Patrick Rothfuss have both cited it as a direct influence. A young kitchen scullion is pulled into an ancient war between human kingdoms and the immortal Sithi as a long-buried prophecy stirs. Williams writes with rare patience and emotional depth — this is the series that proved epic fantasy could be literature. The Dragonbone Chair is where to start. Read Memory, Sorrow and Thorn in order — it is one of the most under-appreciated trilogies in the genre and the most direct ancestor of modern epic fantasy.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     groups: [
       {
@@ -1874,7 +1874,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Series Complete',
     description:
-      'Post-apocalyptic Atlanta where magic and technology take turns failing. When magic is up, cars stop and spells work. When technology is up, guns fire and WiFi returns. Kate Daniels is a mercenary hiding a dangerous bloodline, navigating a city full of shapeshifters, vampires, and ancient gods. Fast, funny, and brutally efficient — one of urban fantasy\'s best series, and one that gets dramatically better as it goes.',
+      'Post-apocalyptic Atlanta where magic and technology take turns failing. When magic is up, cars stop and spells work. When technology is up, guns fire and WiFi returns. Kate Daniels is a mercenary hiding a dangerous bloodline, navigating a city full of shapeshifters, vampires, and ancient gods. Fast, funny, and brutally efficient — one of urban fantasy\'s best series, and one that gets dramatically better as it goes. Magic Bites is where to start — it reads as a self-contained mystery. The Kate Daniels reading order is strictly linear: each book builds on the last and the arc rewards readers who go in sequence.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     groups: [
       {
@@ -1965,7 +1965,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '📖 Ongoing — new book expected 2026',
     description:
-      'One of the founding texts of grimdark fantasy — written years before the term existed. The Black Company is a mercenary band that has served under a succession of employers for centuries, keeping its Annals as it goes. The books are narrated by the Company\'s physician and historian, Croaker, in a clipped, unsentimental military voice unlike anything else in the genre. No chosen ones. No prophecy. Just soldiers doing terrible things in service of worse masters, and somehow finding loyalty worth dying for.',
+      'One of the founding texts of grimdark fantasy — written years before the term existed. The Black Company is a mercenary band that has served under a succession of employers for centuries, keeping its Annals as it goes. The books are narrated by the Company\'s physician and historian, Croaker, in a clipped, unsentimental military voice unlike anything else in the genre. No chosen ones. No prophecy. Just soldiers doing terrible things in service of worse masters, and somehow finding loyalty worth dying for. The Black Company is where to start — short, dense, immediately distinctive. Glen Cook\'s influence on modern grimdark is enormous: Abercrombie, Erikson, and Martin have all cited this series. Read the first four books in order for the complete core story.',
     darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
     groups: [
       {
@@ -2049,7 +2049,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✅ Complete — 24 novels',
     description:
-      'One of the most beloved science fantasy series ever written — set on a planet where dragonriders bond with telepathic dragons to fight the deadly spore known as Thread. Pern reads like pure fantasy but is technically science fiction: the dragons are bioengineered, the world is a lost colony. McCaffrey never lets the science get in the way of the story. At its heart this is a series about the bond between rider and dragon, class and tradition versus change, and what it costs to protect a world that doesn\'t always appreciate the protection.',
+      'One of the most beloved science fantasy series ever written — set on a planet where dragonriders bond with telepathic dragons to fight the deadly spore known as Thread. Pern reads like pure fantasy but is technically science fiction: the dragons are bioengineered, the world is a lost colony. McCaffrey never lets the science get in the way of the story. At its heart this is a series about the bond between rider and dragon, class and tradition versus change, and what it costs to protect a world that doesn\'t always appreciate the protection. Start with Dragonflight for the full epic sweep, or Dragonsong if you want a quieter YA entry point. This guide covers the complete Pern reading order and tells you where the series peaks.',
     darknessDisplay: '🕯️🕯️ Mild',
     orderNote: 'Start with the original Dragonriders trilogy. The Harper Hall trilogy is YA but essential — read it alongside or immediately after Dragonquest. Dragonsdawn is the chronological origin story but works best once you love the world, not as an entry point.',
     warning: 'Some early Pern books contain dated attitudes toward gender and consent that reflect their 1960s–70s publication era. The Harper Hall trilogy and later books are notably better in this regard.',
@@ -2139,7 +2139,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✅ Complete — 4 novels + companion works',
     description:
-      'One of the most remarkable debut achievements in fantasy — Christopher Paolini began writing Eragon at fifteen and published it at seventeen. The Inheritance Cycle follows Eragon, a farm boy who discovers a dragon egg and is pulled into a war against the tyrant king Galbatorix. The Star Wars and Lord of the Rings influences in the first book are impossible to miss, but Paolini genuinely grows as a writer across four volumes. By Brisingr and Inheritance the world has real depth, the magic system has genuine teeth, and the stakes feel earned. This is the series that made a generation of readers fall in love with dragons.',
+      'One of the most remarkable debut achievements in fantasy — Christopher Paolini began writing Eragon at fifteen and published it at seventeen. The Inheritance Cycle follows Eragon, a farm boy who discovers a dragon egg and is pulled into a war against the tyrant king Galbatorix. The Star Wars and Lord of the Rings influences in the first book are impossible to miss, but Paolini genuinely grows as a writer across four volumes. By Brisingr and Inheritance the world has real depth, the magic system has genuine teeth, and the stakes feel earned. This is the series that made a generation of readers fall in love with dragons. Eragon is where to start — the Inheritance Cycle reading order is linear, following one continuous story across all four books.',
     darknessDisplay: '🕯️🕯️ Mild',
     orderNote: 'Read the four main books in order — they form one continuous story. The Fork, the Witch, and the Worm and Murtagh are best read after finishing Inheritance.',
     groups: [
@@ -2202,7 +2202,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '📖 Ongoing — new entries expected',
     description:
-      'Leigh Bardugo\'s Grishaverse is one of the most successful fantasy universes of the last decade — a Russian-inspired world of Grisha magic users, criminal heist crews, and morally complex power politics. The series has three distinct entry points across three duologies, but Six of Crows is the peak: a tight heist novel with one of the best ensemble casts in modern fantasy. Start with Shadow and Bone to understand the world, then Six of Crows to fall in love with it.',
+      'Leigh Bardugo\'s Grishaverse is one of the most successful fantasy universes of the last decade — a Russian-inspired world of Grisha magic users, criminal heist crews, and morally complex power politics. The series has three distinct entry points across three duologies, but Six of Crows is the peak: a tight heist novel with one of the best ensemble casts in modern fantasy. Start with Shadow and Bone to understand the world, then Six of Crows to fall in love with it. This guide covers the full Grishaverse reading order — all six books in the order that maximises every payoff across the Shadow and Bone trilogy, Six of Crows duology, and King of Scars duology.',
     darknessDisplay: '🕯️🕯️🕯️ Serious',
     orderNote: 'Read the Shadow and Bone trilogy first — it establishes the world, the Grisha, and the Fold. Six of Crows is set in the same world but with a new cast, and assumes you understand the setting. King of Scars picks up threads from both trilogies.',
     warning: 'Six of Crows is widely considered the stronger entry point for adult readers, but it spoils major Shadow and Bone trilogy events. Read Shadow and Bone first if you want the full experience unspoiled.',
@@ -2285,7 +2285,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✅ Complete — 30+ novels across 10 story arcs',
     description:
-      'One of the longest-running fantasy series ever written — Terry Brooks began publishing Shannara in 1977 and concluded the main arc in 2020. The world\'s best-kept secret: Shannara is set on a post-apocalyptic Earth, thousands of years after civilisation collapsed and magic returned. The series spans multiple interconnected trilogies across thousands of years of in-world history. The Sword of Shannara is famously derivative of Tolkien, but Elfstones of Shannara — the second book — is where Brooks found his own voice, and it is genuinely excellent. Start there.',
+      'One of the longest-running fantasy series ever written — Terry Brooks began publishing Shannara in 1977 and concluded the main arc in 2020. The world\'s best-kept secret: Shannara is set on a post-apocalyptic Earth, thousands of years after civilisation collapsed and magic returned. The series spans multiple interconnected trilogies across thousands of years of in-world history. The Sword of Shannara is famously derivative of Tolkien, but Elfstones of Shannara — the second book — is where Brooks found his own voice, and it is genuinely excellent. Start there. This guide covers the complete Shannara reading order and tells you what to read, what to skip, and where the series peaks.',
     darknessDisplay: '🕯️🕯️ Mild',
     orderNote: 'Do not start with The Sword of Shannara. Start with The Elfstones of Shannara — it is a better book, works as a standalone entry point, and will tell you if the series is for you. The Sword can be read after if curiosity strikes.',
     warning: 'The Sword of Shannara (1977) is a close structural retelling of The Lord of the Rings. Many first-time readers bounce off it. Skip it or save it for after Elfstones — you won\'t miss any essential context.',
@@ -2376,7 +2376,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '📖 Ongoing — Era 3 in progress',
     description:
-      'Brandon Sanderson\'s Mistborn is one of the most ingeniously constructed fantasy series ever written — set on a world where the prophesied hero failed a thousand years ago and a dark lord has ruled ever since. The original trilogy is a complete story of revolution, consequence, and cosmic revelation. Era 2 jumps 300 years forward into a Western-flavoured world of guns, trains, and new Allomancers. Era 3 — currently in progress — will advance to a near-modern spy-thriller setting. Each era can be read largely standalone, but the rewards for reading all of them in order are enormous.',
+      'Brandon Sanderson\'s Mistborn is one of the most ingeniously constructed fantasy series ever written — set on a world where the prophesied hero failed a thousand years ago and a dark lord has ruled ever since. The original trilogy is a complete story of revolution, consequence, and cosmic revelation. Era 2 jumps 300 years forward into a Western-flavoured world of guns, trains, and new Allomancers. Era 3 — currently in progress — will advance to a near-modern spy-thriller setting. Each era can be read largely standalone, but the rewards for reading all of them in order are enormous. The Final Empire is where to start — one of the best heist novels in fantasy and a complete story in its own right. If you\'re new to Sanderson, the Mistborn reading order is the most recommended entry point before tackling the broader Cosmere.',
     darknessDisplay: '🕯️🕯️🕯️ Serious',
     orderNote: 'Extras are placed where they should actually be read, not just by series number. Secret History is #3.5 but positioned after Bands of Mourning — its note explains why. Era 3 has not yet been published.',
     warning: 'Mistborn is part of the wider Cosmere universe. Era 2\'s The Lost Metal contains significant Cosmere crossover content. Reading the Cosmere guide alongside this one is recommended for the full experience.',
@@ -2463,7 +2463,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '📖 Ongoing — 40+ novels since 1987',
     description:
-      'One of the most expansive and enduring worlds in fantasy — Mercedes Lackey has been writing Valdemar since 1987 and shows no signs of stopping. The kingdom of Valdemar is protected by Heralds: individuals Chosen by magical white horses called Companions, bound for life in a telepathic partnership. The series spans thousands of years of in-world history across more than a dozen sub-series. It is warm, character-driven fantasy that takes trauma seriously without wallowing in it. The Vanyel trilogy — one of fantasy\'s first major LGBTQ+ storylines — remains among the most emotionally devastating things Lackey has written.',
+      'One of the most expansive and enduring worlds in fantasy — Mercedes Lackey has been writing Valdemar since 1987 and shows no signs of stopping. The kingdom of Valdemar is protected by Heralds: individuals Chosen by magical white horses called Companions, bound for life in a telepathic partnership. The series spans thousands of years of in-world history across more than a dozen sub-series. It is warm, character-driven fantasy that takes trauma seriously without wallowing in it. The Vanyel trilogy — one of fantasy\'s first major LGBTQ+ storylines — remains among the most emotionally devastating things Lackey has written. Arrows of the Queen is the most common entry point for Valdemar. This guide covers the full reading order across all sub-series and tells you where to start based on what kind of story you want.',
     darknessDisplay: '🕯️🕯️ Mild',
     orderNote: 'Two equally valid entry points: Arrows of the Queen (publication order, Talia\'s story) or Magic\'s Pawn (Vanyel\'s story, set 500 years earlier). Most readers start with Arrows. The Mage Wars and Founding of Valdemar prequels work best after you already love the world.',
     warning: 'Magic\'s Pawn deals directly with homophobia, emotional abuse, and grief. It is not as light as the Talia books. The ending will hurt. This is by design.',
