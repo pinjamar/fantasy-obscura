@@ -102,12 +102,13 @@ function authorColor(name: string): string {
       <section id={`letter-${letter}`} class={`author-section${i !== 0 ? ' hidden' : ''}`}>
         <h2 class="text-lg font-semibold text-zinc-400 border-b pb-2 mb-5">{letter}</h2>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {group.map((author) => (
+          {group.map((author, j) => (
             <a
               href={`/authors/${author.slug}/`}
               data-name={author.name.toLowerCase()}
               data-bookcount={author.book_count ?? 0}
-              class="author-card flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group"
+              data-index={j}
+              class={`author-card flex items-center gap-4 rounded-xl border p-4 hover:shadow-md hover:border-zinc-300 transition-all group${j >= 24 ? ' hidden' : ''}`}
             >
               <!-- Avatar / Photo -->
               {author.photo_url ? (
@@ -150,6 +151,13 @@ function authorColor(name: string): string {
             </a>
           ))}
         </div>
+        {group.length > 24 && (
+          <div class="letter-pagination mt-6 flex items-center justify-center gap-3" data-total={group.length} data-page="0" data-per-page="24">
+            <button class="prev-btn px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-700 text-sm font-medium transition-colors disabled:opacity-30 disabled:cursor-not-allowed" disabled>← Prev</button>
+            <span class="page-label text-sm text-zinc-500">Page 1 of {Math.ceil(group.length / 24)}</span>
+            <button class="next-btn px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-700 text-sm font-medium transition-colors">Next →</button>
+          </div>
+        )}
       </section>
     ))}
   </div>
@@ -185,6 +193,31 @@ function authorColor(name: string): string {
       azNav.classList.remove('hidden');
       showLetter(btn.dataset.letter!);
     });
+  });
+
+  document.querySelectorAll<HTMLElement>('.letter-pagination').forEach((pagination) => {
+    const section = pagination.closest<HTMLElement>('.author-section')!;
+    const total = parseInt(pagination.dataset.total!);
+    const perPage = parseInt(pagination.dataset.perPage!);
+    const totalPages = Math.ceil(total / perPage);
+    const prevBtn = pagination.querySelector<HTMLButtonElement>('.prev-btn')!;
+    const nextBtn = pagination.querySelector<HTMLButtonElement>('.next-btn')!;
+    const label = pagination.querySelector<HTMLElement>('.page-label')!;
+
+    function goToPage(page: number) {
+      pagination.dataset.page = String(page);
+      section.querySelectorAll<HTMLElement>('.author-card').forEach((card) => {
+        const idx = parseInt(card.dataset.index!);
+        card.classList.toggle('hidden', idx < page * perPage || idx >= (page + 1) * perPage);
+      });
+      label.textContent = `Page ${page + 1} of ${totalPages}`;
+      prevBtn.disabled = page === 0;
+      nextBtn.disabled = page === totalPages - 1;
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    prevBtn.addEventListener('click', () => goToPage(parseInt(pagination.dataset.page!) - 1));
+    nextBtn.addEventListener('click', () => goToPage(parseInt(pagination.dataset.page!) + 1));
   });
 
   input.addEventListener('input', () => {

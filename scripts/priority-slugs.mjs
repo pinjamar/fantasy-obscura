@@ -14,20 +14,22 @@ export const TIER_1 = [
   'the-blade-itself', 'the-lies-of-locke-lamora', 'assassins-apprentice',
   'the-eye-of-the-world', 'fourth-wing', 'a-court-of-thorns-and-roses',
   'the-priory-of-the-orange-tree', 'the-poppy-war', 'the-shadow-of-the-gods',
-  'red-sister', 'malice', 'the-black-prism', 'empire-of-the-vampire',
-  'kings-of-the-wyld', 'jonathan-strange-and-mr-norrell', 'the-dragonbone-chair',
+  'the-black-prism', 'empire-of-the-vampire',
+  'jonathan-strange-and-mr-norrell',
   'elantris', 'the-colour-of-magic',
   'circe', 'uprooted', 'spinning-silver', 'legends-and-lattes', 'cradle-unsouled',
   'the-cruel-prince', 'the-will-of-the-many', 'the-justice-of-kings',
-  'prince-of-thorns', 'gardens-of-the-moon', 'the-bone-ships',
-  'the-bear-and-the-nightingale', 'the-ember-blade', 'the-rage-of-dragons',
-  'daughter-of-the-empire', 'the-traitor-baru-cormorant', 'the-sword-of-kaigen',
-  'senlin-ascends', 'the-goblin-emperor', 'the-atlas-six',
-  'emily-wildes-encyclopaedia-of-faeries', 'tigana',
+  'prince-of-thorns', 'gardens-of-the-moon',
+  'the-bear-and-the-nightingale', 'the-goblin-emperor', 'the-atlas-six',
   // promoted from TIER_2
   'red-rising', 'piranesi', 'good-omens', 'from-blood-and-ash', 'dune',
   // added
   'six-of-crows', 'the-night-circus',
+  // high search volume promotions
+  'harry-potter-philosophers-stone', 'the-song-of-achilles',
+  'iron-flame', 'onyx-storm', 'eragon', 'shadow-and-bone',
+  'gideon-the-ninth', 'words-of-radiance', 'city-of-bones',
+  'the-hitchhikers-guide-to-the-galaxy', 'enders-game', 'american-gods',
 ];
 
 export const TIER_2 = [
@@ -56,6 +58,10 @@ export const TIER_2 = [
   // demoted from TIER_1
   'the-book-of-the-new-sun', 'the-spear-cuts-through-water',
   'the-darkness-that-comes-before', 'the-tainted-cup',
+  'red-sister', 'malice', 'kings-of-the-wyld', 'the-dragonbone-chair',
+  'the-bone-ships', 'the-ember-blade', 'the-rage-of-dragons',
+  'daughter-of-the-empire', 'the-traitor-baru-cormorant', 'the-sword-of-kaigen',
+  'senlin-ascends', 'emily-wildes-encyclopaedia-of-faeries', 'tigana',
 ];
 
 export const TIER_3 = [

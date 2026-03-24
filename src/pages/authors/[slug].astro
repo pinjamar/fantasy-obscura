@@ -486,15 +486,15 @@ const authorJsonLd = JSON.stringify({
       );
 
       return href ? (
-        <a href={href} class="block book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0} style={i >= 8 ? 'display:none' : ''}>{inner}</a>
+        <a href={href} class="block book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0} style={i >= 10 ? 'display:none' : ''}>{inner}</a>
       ) : (
-        <div class="book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0} style={i >= 8 ? 'display:none' : ''}>{inner}</div>
+        <div class="book-card-wrap" data-index={i} data-rating={book.avg_rating ?? 0} data-year={book.publication_year ?? 0} style={i >= 10 ? 'display:none' : ''}>{inner}</div>
       );
     })}
   </div>
 
   <!-- Pagination -->
-  {books.length > 8 && (
+  {books.length > 10 && (
     <div id="books-pagination" class="mt-8 flex items-center justify-between gap-2">
       <button
         id="books-prev"
@@ -535,7 +535,7 @@ const authorJsonLd = JSON.stringify({
     });
   });
 
-  const PER_PAGE = 8;
+  const PER_PAGE = 10;
   const grid = document.getElementById('books-grid')!;
   let wraps = Array.from(document.querySelectorAll<HTMLElement>('.book-card-wrap'));
   const prevBtn = document.getElementById('books-prev') as HTMLButtonElement | null;
