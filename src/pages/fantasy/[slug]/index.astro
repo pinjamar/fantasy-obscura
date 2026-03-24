@@ -694,18 +694,18 @@ const imgSlug = slug ? CATEGORY_IMAGE_SLUG[slug] : undefined;
           height="400"
           loading="eager"
           decoding="async"
-          class={`w-full aspect-2/1 sm:aspect-3/1 object-cover ${['romantasy', 'sword'].includes(imgSlug) ? 'object-top' : 'object-center'}`}
+          class={`w-full aspect-3/2 sm:aspect-3/1 object-cover ${['romantasy', 'sword'].includes(imgSlug) ? 'object-top' : 'object-center'}`}
         />
       </picture>
       <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/20" />
-      <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
+      <div class="absolute inset-0 px-3 py-3 sm:px-6 sm:py-6 flex flex-col justify-end">
         <div class="flex items-end justify-between gap-4">
           <div>
             <div class="hidden sm:flex items-center gap-2.5 mb-2">
               <span class="text-2xl">{cat.icon}</span>
               <h1 class="text-2xl font-bold tracking-tight text-white">{cat.name}</h1>
             </div>
-            <p class="text-zinc-200 text-sm max-w-2xl">{cat.longDesc}</p>
+            <p class="text-zinc-200 text-xs sm:text-sm max-w-2xl">{cat.longDesc}</p>
           </div>
           <a
             href="/books/"

@@ -88,7 +88,7 @@
 66. Books like The Cruel Prince
 67. Books like An Ember in the Ashes
 68. Books like Children of Blood and Bone
-69. Books like Shadow and Bone
+69. Books like Shadow and Bone----------- ✅
 70. Books like The Gilded Wolves
 71. Books like A Deadly Education
 72. Books like Fireborne
@@ -135,7 +135,7 @@
 107. Books like The Hundred Thousand Kingdoms
 108. Books like Dungeon Crawler Carl
 109. Books like He Who Fights with Monsters
-110. Books like Cradle / Unsouled
+110. Books like Cradle / Unsouled----------- ✅
 111. Books like The Night Circus
 112. Books like Circe (deep dive)
 113. Books like The City We Became

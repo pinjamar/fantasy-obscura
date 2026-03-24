@@ -100,7 +100,7 @@ const booksLikeJsonLd = JSON.stringify({
     <!-- Cover -->
     <div class="flex flex-col gap-3">
       {dbSlugSet.has(sourceBookSlug)
-        ? <a href={`/books/${sourceBookSlug}/`} class="relative w-full max-w-[200px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-purple-200 to-blue-200 block">
+        ? <a href={`/books/${sourceBookSlug}/`} class="relative w-full max-w-[200px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-linear-to-br from-purple-200 to-blue-200 block">
             <img
               src={sourceCover || '/grimplaceholder.png'}
               alt={`Cover of ${source.title}`}
@@ -108,7 +108,7 @@ const booksLikeJsonLd = JSON.stringify({
               onerror="this.onerror=null;this.src='/grimplaceholder.png';"
             />
           </a>
-        : <div class="relative w-full max-w-[200px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-purple-200 to-blue-200">
+        : <div class="relative w-full max-w-[200px] mx-auto lg:mx-0 aspect-[2/3] rounded-2xl shadow-2xl overflow-hidden bg-linear-to-br from-purple-200 to-blue-200">
             <img
               src={sourceCover || '/grimplaceholder.png'}
               alt={`Cover of ${source.title}`}

@@ -490,14 +490,14 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience, featuredTrop
             <a
               key={book.id}
               href={href}
-              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all flex min-h-0"
+              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all flex min-h-[160px]"
             >
               {CardContent}
             </a>
           ) : (
             <div
               key={book.id}
-              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all flex min-h-0"
+              className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all flex min-h-[160px]"
             >
               {CardContent}
             </div>
