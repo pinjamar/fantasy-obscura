@@ -475,8 +475,8 @@ const QUERIES = [
   '"coming of age" fantasy novel',
   '"blood magic" fantasy novel',
   '"elemental magic" fantasy novel',
-  '"time travel fantasy" novel',
-  '"alternate history fantasy" novel',
+  '"time travel fantasy" fiction novel',
+  '"alternate history fantasy" fiction novel',
   '"fairy tale retelling" novel',
   '"mythology retelling" fantasy novel',
   '"arthurian fantasy" novel',
@@ -497,8 +497,8 @@ const QUERIES = [
   'fantasy "aztec mythology" novel',
   'fantasy "persian mythology" novel',
   'fantasy "indian mythology" novel',
-  'fantasy "medieval" novel',
-  'fantasy "victorian" novel',
+  'fantasy "medieval setting" novel',
+  'fantasy "victorian setting" novel',
   // ── Award + list signals ────────────────────────────────────────────────────
   'fantasy "hugo award" novel',
   'fantasy "nebula award" novel',
@@ -766,6 +766,49 @@ function looksLikeJunkTitle(title) {
     /\bchildren'?s\s+literature\s+(remembered|review|criticism)\b/,
     /\bliterature\s+for\s+(children|young)\b/,
     /\bschool\s+library\s+collection\b/,
+    // Library catalogs & finding lists
+    /\bfinding\s+list\b/,
+    /\bsubject\s+catalog\b/,
+    /\bunion\s+catalog\b/,
+    /\bstandard\s+catalog\b/,
+    /\bpublic\s+library\b/,
+    /\blibrary\s+of\s+congress\b/,
+    /\bcumulative\s+book\s+index\b/,
+    /\bnational\s+union\s+catalog\b/,
+    // "What Do I/Young Adults Read Next?" reference series
+    /\bwhat\s+do\s+\w+\s+(read|need)\b/,
+    /\bwhat\s+to\s+read\s+next\b/,
+    // Academic literary criticism patterns
+    /\b(victorian|edwardian|elizabethan)\s+(fiction|novel|literature|prose)\b/,
+    /\bin\s+(victorian|edwardian|medieval)\s+fiction\b/,
+    /\bof\s+(english|american|british)\s+(fiction|literature|novel)\b/,
+    /\b(english|american|british)\s+(prose|fiction)\s+(between|from|in)\b/,
+    /\bhistory\s+of\s+(english|american|british)\s+literature\b/,
+    /\bintroduction\s+to\s+(english|american)\s+literature\b/,
+    /\blecture\s+on\b/,
+    /\bseries\s+of\s+lectures\b/,
+    /\boutspoken\s+essays\b/,
+    /\bcurrent\s+literature\b/,
+    /\b(masters?|mistresses?)\s+of\s+(victorian|english|american)\b/,
+    // Sports/non-genre noise
+    /\bsymposium\s+on\b/,
+    /\bbaseball\b/,
+    /\bsoccer\b/,
+    /\bfootball\b/,
+    // Romance non-fantasy patterns (billionaire/contemporary)
+    /\bbillionaire'?s?\b/,
+    /\bsecond\s+chance\s+(romance|love|kiss|secret|destiny)\b/,
+    /\baccidentally\s+married\b/,
+    /\bmeet\s+me\s+in\s+\d{4}\b/,
+    // "Sneak peek" / preview editions
+    /\bsneak\s+peek\b/,
+    /\buntitled\b/,
+    /\ben\s+espa[ñn]ol\b/,
+    // Collected/bundle editions not caught above
+    /\bcomplete\s+ink\s+trilogy\b/,
+    /\bquartet\s+digital\s+collection\b/,
+    /\bvolume\s+one\s*$/,
+    /\bseries\s+volume\b/,
   ];
   return patterns.some((r) => r.test(t));
 }

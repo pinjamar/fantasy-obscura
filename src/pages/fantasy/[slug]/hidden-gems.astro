@@ -24,6 +24,15 @@ const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'
 function starPct(r: number) { return ((r / 5) * 100).toFixed(2) + '%'; }
 
 const SITE = 'https://thegrimoire.co';
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Books', item: `${SITE}/books/` },
+    { '@type': 'ListItem', position: 2, name: cat.name, item: `${SITE}/fantasy/${slug}/` },
+    { '@type': 'ListItem', position: 3, name: 'Hidden Gems', item: `${SITE}/fantasy/${slug}/hidden-gems/` },
+  ],
+});
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -48,9 +57,11 @@ const jsonLd = JSON.stringify({
   description={`Discover 20 underrated ${cat.name} books that deserve more attention — great ratings, less hype.`}
 >
   <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={breadcrumbLd} />
     <script is:inline type="application/ld+json" set:html={jsonLd} />
   </Fragment>
   <div class="max-w-2xl mx-auto">
+    <p class="hidden">Discover the best underrated {cat.name} books — hidden gems with great ratings and less hype. These {cat.name} novels deserve far more attention than they get.</p>
     <nav class="text-sm text-zinc-400 mb-6 flex items-center gap-2">
       <a href="/books/" class="hover:text-zinc-700 transition-colors">Start Here</a>
       <span>›</span>

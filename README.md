@@ -161,6 +161,33 @@ Progress saved in `scripts/.discover-progress.json` (gitignored). Resumes across
 
 ---
 
+### Step 1b — Auto-fill missing series names
+
+Fills `series` (and `series_number` where possible) on books that have `series = null` in the DB, using two phases:
+
+- **Phase A — same-author inference** (no API, instant): if an author already has 3+ books tagged to one series, untagged books by the same author are assigned that series using title-keyword matching.
+- **Phase B — Google Books subtitle parsing**: remaining books are looked up by ISBN; the script parses human-readable series info from `subtitle`/`description` fields (e.g. *"Book One of The Stormlight Archive"*, *"(The Dresden Files, #3)"*). Stops automatically on 429 quota hit.
+- **`--series` targeted fill** (no API): find all authors of a known series, assign that series to any of their untagged books. Use this when you know exactly which series to fill.
+
+```bash
+node scripts/auto-fill-series.mjs                           # run Phase A + B
+node scripts/auto-fill-series.mjs --dry-run                 # preview, no writes
+node scripts/auto-fill-series.mjs --phase-a                 # inference only (no API quota)
+node scripts/auto-fill-series.mjs --phase-b                 # ISBN lookup only
+node scripts/auto-fill-series.mjs --limit 100               # cap Phase B API calls
+node scripts/auto-fill-series.mjs --series "The Dresden Files"           # targeted fill
+node scripts/auto-fill-series.mjs --series "The Dresden Files" --dry-run # preview
+```
+
+For reading-order books specifically (curated list of ~280 slugs, zero API calls):
+
+```bash
+node scripts/fix-missing-series.mjs           # patch all missing reading-order series
+node scripts/fix-missing-series.mjs --dry-run
+```
+
+---
+
 ### Step 2 — Fill series & author back-catalogues
 
 Patches missing `series`/`series_number` on existing books, imports missing series entries from a curated list (Phase 1), then auto-discovers all books by any author with 7+ books in the DB (Phase 2).

@@ -194,11 +194,11 @@ const authorJsonLd = JSON.stringify({
       <img
         src={profile.photo_url}
         alt={authorName}
-        class="shrink-0 w-24 h-24 rounded-2xl object-cover shadow-lg"
+        class="shrink-0 w-16 h-16 sm:w-24 sm:h-24 rounded-2xl object-cover shadow-lg"
         onerror="this.style.display='none'"
       />
     ) : (
-      <div class={`shrink-0 w-24 h-24 rounded-2xl bg-linear-to-br ${avatarGradient} flex items-center justify-center text-white font-bold text-4xl shadow-lg`}>
+      <div class={`shrink-0 w-16 h-16 sm:w-24 sm:h-24 rounded-2xl bg-linear-to-br ${avatarGradient} flex items-center justify-center text-white font-bold text-3xl sm:text-4xl shadow-lg`}>
         {authorName[0].toUpperCase()}
       </div>
     )}
@@ -246,31 +246,22 @@ const authorJsonLd = JSON.stringify({
         </div>
       )}
 
-      {topGenres.length > 0 && (
-        <div class="mt-4 flex flex-wrap gap-2">
-          {topGenres.map((g) => (
-            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">{g}</span>
-          ))}
-        </div>
-      )}
-
-      {topTropes.length > 0 && (
-        <div class="mt-2 flex flex-wrap gap-2">
-          {topTropes.map((t) => (
-            <span class="px-3 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-sm">{t}</span>
-          ))}
-        </div>
-      )}
-
-      {topTones.length > 0 && (
-        <div class="mt-2 flex flex-wrap gap-2">
-          {topTones.map((t) => (
-            <span class="px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full text-sm">{t}</span>
-          ))}
-        </div>
-      )}
     </div>
   </div>
+
+  {(topGenres.length > 0 || topTropes.length > 0 || topTones.length > 0) && (
+    <div class="mb-6 flex flex-wrap gap-2">
+      {topGenres.map((g) => (
+        <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">{g}</span>
+      ))}
+      {topTropes.map((t) => (
+        <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-xs sm:text-sm">{t}</span>
+      ))}
+      {topTones.map((t) => (
+        <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-zinc-100 text-zinc-700 rounded-full text-xs sm:text-sm">{t}</span>
+      ))}
+    </div>
+  )}
 
   {cleanBio && (
     <div class="mb-10 max-w-3xl">
