@@ -38,3 +38,4 @@ pnpm-debug.log*
 *.pem
 scripts/.discover-progress.json
 .fill-series-progress.json
+scripts/*.json

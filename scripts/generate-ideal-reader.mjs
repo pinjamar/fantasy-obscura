@@ -16,7 +16,7 @@
  *   node scripts/generate-ideal-reader.mjs --slug six-of-crows
  */
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { getGeminiModel } from './lib/gemini.mjs';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
 import { TIER_1, TIER_2, TIER_3, ALL_PRIORITY } from './priority-slugs.mjs';
@@ -36,16 +36,12 @@ const TARGET_SLUGS = TIER1_ONLY ? TIER_1 : TIER2_ONLY ? TIER_2 : TIER3_ONLY ? TI
 const DELAY_MS  = 1200;
 
 
-if (!process.env.GEMINI_API_KEY) {
-  console.error('Missing GEMINI_API_KEY in .env');
-  process.exit(1);
-}
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
   console.error('Missing Supabase env vars in .env');
   process.exit(1);
 }
 
-const model = new GoogleGenerativeAI(process.env.GEMINI_API_KEY).getGenerativeModel({ model: 'gemini-2.5-flash' });
+const model = getGeminiModel();
 const supabase  = createClient(
   process.env.PUBLIC_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY,

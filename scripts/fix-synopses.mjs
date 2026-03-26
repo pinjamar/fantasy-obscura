@@ -12,7 +12,7 @@
  *   node scripts/fix-synopses.mjs --limit 20         cap to 20 books
  */
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { getGeminiModel } from './lib/gemini.mjs';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
 
@@ -26,17 +26,12 @@ const LIMIT_ARG = process.argv.indexOf('--limit');
 const LIMIT    = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
 const DELAY_MS = 800;
 
-if (!process.env.GEMINI_API_KEY) {
-  console.error('Missing GEMINI_API_KEY in .env');
-  process.exit(1);
-}
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
   console.error('Missing Supabase env vars in .env');
   process.exit(1);
 }
 
-const model = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
-  .getGenerativeModel({ model: 'gemini-2.5-flash' });
+const model = getGeminiModel();
 
 const supabase = createClient(
   process.env.PUBLIC_SUPABASE_URL,

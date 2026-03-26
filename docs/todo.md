@@ -1,5 +1,16 @@
 # TODO / Future Plans
 
+## Task List
+
+1. Migrate Gemini scripts from `@google-cloud/vertexai` (deprecated June 2026) to `@google/genai` unified SDK — same Vertex AI backend, same $300 credit, no breaking change needed urgently
+2. Apply for Amazon Associates affiliate program — append `&tag=YOURTAG-20` to all Amazon/Audible links (`books/[slug].astro`, `books-like/[slug].astro`)
+3. Apply for Bookshop.org affiliate program — instant approval, 10% commission
+4. Run `node scripts/seed-authors.js --only-missing` after any batch of new books to keep author pages working
+5. Run `node scripts/backfill-isbn.mjs` periodically to fill missing ISBNs (unlocks `auto-fill-series` for more books)
+6. Run classify pipeline after any batch of new books: `classify-metadata` → `classify-vibes` → `classify-tropes` → `classify-creatures`
+7. Build Reddit recommendation bot (see section below)
+8. Switch to hybrid static/server architecture before any major traffic push (see section below)
+
 ---
 
 ## Reddit Recommendation Bot

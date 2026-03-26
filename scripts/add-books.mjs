@@ -344,6 +344,14 @@ async function main() {
       imported++;
       existingSlugs.add(slug);
       existingTitles.add(title.toLowerCase().trim());
+
+      // Ensure a minimal author row exists so the author page works immediately.
+      // seed-authors.js will enrich it with bio/photo later.
+      for (const authorName of (record.authors ?? [])) {
+        const authorSlug = slugify(authorName);
+        await supabase.from('authors')
+          .upsert({ name: authorName, slug: authorSlug }, { onConflict: 'slug', ignoreDuplicates: true });
+      }
     }
 
     await sleep(DELAY_MS);

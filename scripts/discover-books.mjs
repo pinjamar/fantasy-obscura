@@ -1000,6 +1000,14 @@ async function main() {
             `✓ cover:${book.cover_url ? '✓' : '✗'} · ${book.publication_year ?? '?'}`,
           );
           imported++;
+
+          // Ensure a minimal author row exists so the author page works immediately.
+          // seed-authors.js will enrich it with bio/photo later.
+          for (const authorName of (dbBook.authors ?? [])) {
+            const authorSlug = slugify(authorName);
+            await supabase.from('authors')
+              .upsert({ name: authorName, slug: authorSlug }, { onConflict: 'slug', ignoreDuplicates: true });
+          }
         }
       }
 
