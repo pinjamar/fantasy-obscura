@@ -814,10 +814,10 @@ function extractBookData(item) {
     synopsis: cleanSynopsis(info.description),
     publication_year: validYear,
     page_count: info.pageCount ?? null,
+    isbn: extractISBN(item),
     darkness_level: null,
     heat_level: null,
-    // Dedup helpers — NOT written to DB
-    _isbn: extractISBN(item),
+    // Dedup helper — NOT written to DB
     authorTitleKey: makeAuthorTitleKey(info.title, info.authors),
   };
 }
@@ -930,7 +930,7 @@ async function main() {
       for (const book of candidates) {
         if (imported >= LIMIT) break;
 
-        const { _isbn: isbn, authorTitleKey } = book;
+        const { isbn, authorTitleKey } = book;
 
         // Author-title dedup — catches cross-edition duplicates
         if (
@@ -990,7 +990,7 @@ async function main() {
         }
 
         // Strip internal dedup fields before inserting
-        const { _isbn: _i, authorTitleKey: _k, ...dbBook } = book;
+        const { authorTitleKey: _k, ...dbBook } = book;
         const { error } = await supabase.from('books').insert(dbBook);
         if (error) {
           console.log(`✗ ${error.message.slice(0, 60)}`);

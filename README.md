@@ -161,7 +161,21 @@ Progress saved in `scripts/.discover-progress.json` (gitignored). Resumes across
 
 ---
 
-### Step 1b — Auto-fill missing series names
+### Step 1b — Backfill missing ISBNs
+
+Fills the `isbn` field for books that have `isbn = null` in the DB. ISBNs are required for Phase B of the series auto-fill script. Queries Open Library first (no API key, no quota), then falls back to Google Books. Prefers ISBN-13 over ISBN-10.
+
+```bash
+node scripts/backfill-isbn.mjs                # fill all books missing an ISBN
+node scripts/backfill-isbn.mjs --dry-run      # preview, no writes
+node scripts/backfill-isbn.mjs --limit 500    # process in batches
+```
+
+Run this before `auto-fill-series.mjs` to maximize Phase B coverage.
+
+---
+
+### Step 1c — Auto-fill missing series names
 
 Fills `series` (and `series_number` where possible) on books that have `series = null` in the DB, using two phases:
 
