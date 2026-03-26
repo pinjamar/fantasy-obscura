@@ -156,26 +156,28 @@ if (RUN_ALL || PHASE_A) {
       const seriesMap = authorSeriesMap.get(author);
       if (!seriesMap) continue;
 
-      // If author has exactly one series → strong signal
-      if (seriesMap.size === 1) {
-        const [[seriesName, titles]] = [...seriesMap.entries()];
-        // Only auto-assign if the author has 3+ books in this series (high confidence)
-        if (titles.length >= 3) {
-          matched = { series: seriesName };
-          break;
-        }
-      }
+      const stopWords = new Set(['the','a','an','of','and','in','to','for','on','at','by','with']);
+      const bookTitleLower = book.title.toLowerCase();
 
-      // If author has multiple series, try title-keyword matching
       for (const [seriesName, titles] of seriesMap.entries()) {
-        // Extract significant words from series titles (skip stop words)
-        const stopWords = new Set(['the','a','an','of','and','in','to','for','on','at','by','with']);
-        const keywords = titles
+        // Extract keywords from known series book titles
+        const titleKeywords = titles
           .flatMap(t => t.split(/\s+/))
+          .map(w => w.toLowerCase().replace(/[^a-z0-9]/g, ''))
           .filter(w => w.length > 3 && !stopWords.has(w));
-        const bookTitleLower = book.title.toLowerCase();
-        const matchCount = keywords.filter(kw => bookTitleLower.includes(kw)).length;
-        if (matchCount >= 2) {
+
+        // Also extract keywords from the series name itself
+        const seriesKeywords = seriesName
+          .split(/\s+/)
+          .map(w => w.toLowerCase().replace(/[^a-z0-9]/g, ''))
+          .filter(w => w.length > 3 && !stopWords.has(w));
+
+        const allKeywords = [...new Set([...titleKeywords, ...seriesKeywords])];
+        const matchCount = allKeywords.filter(kw => bookTitleLower.includes(kw)).length;
+
+        // Require 2 keyword matches regardless of how many series the author has
+        const threshold = 2;
+        if (matchCount >= threshold && titles.length >= 3) {
           matched = { series: seriesName };
           break;
         }
