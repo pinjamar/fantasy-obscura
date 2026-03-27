@@ -62,7 +62,11 @@ const BAD_PATTERNS = [
 
 function isBadSynopsis(synopsis) {
   if (!synopsis || synopsis.trim().length < 30) return true;
-  return BAD_PATTERNS.some((re) => re.test(synopsis));
+  if (BAD_PATTERNS.some((re) => re.test(synopsis))) return true;
+  // Too short to be useful: only one sentence (no second sentence-ending punctuation)
+  const sentences = synopsis.trim().split(/(?<=[.!?])\s+/);
+  if (sentences.length < 2) return true;
+  return false;
 }
 
 async function generate(book) {

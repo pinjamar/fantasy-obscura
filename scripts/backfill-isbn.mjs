@@ -17,6 +17,8 @@
 
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
+import fs from 'fs';
+import path from 'path';
 
 config();
 
@@ -24,6 +26,26 @@ const DRY_RUN  = process.argv.includes('--dry-run');
 const limitIdx = process.argv.indexOf('--limit');
 const LIMIT    = limitIdx !== -1 ? parseInt(process.argv[limitIdx + 1], 10) : null;
 const DELAY_MS = 350;
+
+// ── Progress tracking (skip books already attempted and not found) ─────────────
+
+const PROGRESS_FILE = path.join(process.cwd(), 'scripts', '.isbn-backfill-progress.json');
+
+function loadAttempted() {
+  try {
+    if (fs.existsSync(PROGRESS_FILE)) {
+      return new Set(JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf8')));
+    }
+  } catch {}
+  return new Set();
+}
+
+function saveAttempted(set) {
+  if (DRY_RUN) return;
+  try {
+    fs.writeFileSync(PROGRESS_FILE, JSON.stringify([...set], null, 2));
+  } catch {}
+}
 
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
   console.error('❌  Missing Supabase env vars'); process.exit(1);
@@ -122,6 +144,8 @@ async function fetchIsbnGoogleBooks(title, author) {
 
 console.log(`\n📚 Backfill ISBN${DRY_RUN ? ' [DRY RUN]' : ''}${LIMIT ? ` [limit ${LIMIT}]` : ''}\n`);
 
+const attempted = loadAttempted();
+
 let query = supabase
   .from('books')
   .select('slug, title, authors')
@@ -133,12 +157,13 @@ if (LIMIT) query = query.limit(LIMIT);
 const { data: books, error } = await query;
 if (error) { console.error('DB error:', error.message); process.exit(1); }
 
-console.log(`Books missing ISBN: ${books.length}\n`);
+const toProcess = books.filter(b => !attempted.has(b.slug));
+console.log(`Books missing ISBN: ${books.length} (${books.length - toProcess.length} already attempted, skipping)\n`);
 
 let filled = 0;
 let notFound = 0;
 
-for (const book of books) {
+for (const book of toProcess) {
   const author = book.authors?.[0] ?? null;
   process.stdout.write(`  "${book.title}" … `);
 
@@ -153,6 +178,8 @@ for (const book of books) {
   if (!isbn) {
     console.log('not found');
     notFound++;
+    attempted.add(book.slug);
+    saveAttempted(attempted);
     continue;
   }
 

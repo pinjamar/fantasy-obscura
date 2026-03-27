@@ -196,17 +196,27 @@ const booksJson = JSON.stringify(
     <section class="mb-12">
       <div class="flex items-center justify-between gap-4 mb-3 flex-wrap">
         <h2 class="text-xl font-bold">Best {trope.name} Books</h2>
-        {books && books.length > 0 && (
-          <span id="book-count" class="text-sm text-zinc-400">
-            {books.length} {books.length === 1 ? 'book' : 'books'}
-          </span>
-        )}
+        <div class="flex items-center gap-3 ml-auto">
+          {books && books.length > 0 && (
+            <span id="book-count" class="text-sm text-zinc-400 shrink-0">
+              {books.length} {books.length === 1 ? 'book' : 'books'}
+            </span>
+          )}
+          {books && books.length > 0 && (
+            <select
+              id="genre-filter"
+              class="rounded-xl border border-zinc-300 bg-white px-3 py-1 text-xs shadow-sm focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 transition text-zinc-600 shrink-0"
+            >
+              <option value="">All subgenres</option>
+            </select>
+          )}
+        </div>
       </div>
 
       {books && books.length > 0 ? (
         <>
-          <!-- Search + genre filter -->
-          <div class="flex gap-2 mb-5">
+          <!-- Search + darkness filter -->
+          <div class="flex items-center gap-3 mb-5">
             <div class="relative flex-1">
               <input
                 id="trope-search"
@@ -219,12 +229,7 @@ const booksJson = JSON.stringify(
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
               </svg>
             </div>
-            <select
-              id="genre-filter"
-              class="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 text-sm shadow-sm focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 transition text-zinc-600 shrink-0"
-            >
-              <option value="">All subgenres</option>
-            </select>
+            <div id="darkness-btns" class="flex items-center gap-1 shrink-0"></div>
           </div>
 
           <!-- Rendered book list (SSR, hidden via JS after mount) -->
@@ -337,15 +342,53 @@ const booksJson = JSON.stringify(
   let filtered = allBooks;
   let currentPage = 0;
 
-  const listEl    = document.getElementById('book-list');
-  const pagEl     = document.getElementById('pagination');
-  const prevBtn   = document.getElementById('prev-btn');
-  const nextBtn   = document.getElementById('next-btn');
-  const pageInfo  = document.getElementById('page-info');
-  const noResults = document.getElementById('no-results');
-  const countEl   = document.getElementById('book-count');
-  const searchEl  = document.getElementById('trope-search');
-  const genreEl   = document.getElementById('genre-filter');
+  const listEl      = document.getElementById('book-list');
+  const pagEl       = document.getElementById('pagination');
+  const prevBtn     = document.getElementById('prev-btn');
+  const nextBtn     = document.getElementById('next-btn');
+  const pageInfo    = document.getElementById('page-info');
+  const noResults   = document.getElementById('no-results');
+  const countEl     = document.getElementById('book-count');
+  const searchEl    = document.getElementById('trope-search');
+  const genreEl     = document.getElementById('genre-filter');
+  const darknessBtns = document.getElementById('darkness-btns');
+
+  let selectedDarkness = null;
+  let darknessHover = null;
+
+
+  function updateCandles() {
+    const active = darknessHover ?? selectedDarkness ?? 0;
+    darknessBtns.querySelectorAll('.candle-btn').forEach((btn, i) => {
+      btn.style.opacity = (i + 1) <= active ? '1' : '0.2';
+    });
+    const clearBtn = document.getElementById('darkness-clear');
+    if (clearBtn) clearBtn.style.display = selectedDarkness !== null ? 'flex' : 'none';
+  }
+
+  for (let level = 1; level <= 5; level++) {
+    const btn = document.createElement('button');
+    btn.textContent = '🕯️';
+    btn.title = DARKNESS_LABEL[level];
+    btn.className = 'text-base transition-opacity leading-none candle-btn';
+    btn.style.opacity = '0.2';
+    btn.addEventListener('mouseenter', () => { darknessHover = level; updateCandles(); });
+    btn.addEventListener('mouseleave', () => { darknessHover = null; updateCandles(); });
+    btn.addEventListener('click', () => {
+      selectedDarkness = selectedDarkness === level ? null : level;
+      applyFilters();
+      updateCandles();
+    });
+    darknessBtns.appendChild(btn);
+  }
+
+  const darknessClr = document.createElement('button');
+  darknessClr.id = 'darkness-clear';
+  darknessClr.className = 'w-6 h-6 items-center justify-center text-xs text-zinc-400 hover:text-zinc-600 ml-1';
+  darknessClr.style.display = 'none';
+  darknessClr.textContent = '✕';
+  darknessClr.addEventListener('click', () => { selectedDarkness = null; applyFilters(); updateCandles(); });
+  darknessBtns.appendChild(darknessClr);
 
   const GENRE_OPTIONS = [
     { value: 'epic',            label: '⚔️ Epic & High Fantasy',  subgenres: ['Epic Fantasy', 'High Fantasy'] },
@@ -443,7 +486,8 @@ const booksJson = JSON.stringify(
         (b.authors ?? []).some((a) => a.toLowerCase().includes(q)) ||
         (b.series ?? '').toLowerCase().includes(q);
       const matchGenre = !genreVal || (b.subgenres ?? []).some((s) => genreSubgenres.includes(s));
-      return matchQ && matchGenre;
+      const matchDarkness = selectedDarkness === null || b.darkness_level === selectedDarkness;
+      return matchQ && matchGenre && matchDarkness;
     });
     currentPage = 0;
     render();

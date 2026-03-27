@@ -39,3 +39,4 @@ pnpm-debug.log*
 scripts/.discover-progress.json
 .fill-series-progress.json
 scripts/*.json
+CLAUDE.md
