@@ -38,8 +38,8 @@
 27. ✅ Books like Elantris
 28. ✅ Books like Dune
 29. ✅ Books like The Witcher
-30. Books like Malazan / Gardens of the Moon
-31. Books like Discworld / Terry Pratchett
+30. ✅ Books like Malazan / Gardens of the Moon
+31. ✅ Books like Discworld / Terry Pratchett
 
 ### Fantasy Crossover, Dark & High-Volume (23)
 32. ✅ Books like Six of Crows
@@ -61,7 +61,7 @@
 48. ✅ Books like The Will of the Many
 49. ✅ Books like The Fifth Season
 50. ✅ Books like Gideon the Ninth
-51. Books like A Deadly Education
+51. ✅ Books like A Deadly Education
 52. Books like The Hunger Games
 53. Books like Twilight
 54. ✅ Books like The Dark Tower (Stephen King)
@@ -174,7 +174,7 @@
 140. ✅ Books like The Lies of Locke Lamora
 141. ✅ Books like The Priory of the Orange Tree
 142. ✅ Books like Cradle / Unsouled
-143. Books like A Memory Called Empire
+143. ✅ Books like A Memory Called Empire
 144. Books like The Hundred Thousand Kingdoms
 145. Books like Dungeon Crawler Carl
 146. Books like He Who Fights with Monsters
@@ -769,3 +769,157 @@ Reading order pages rank faster than Books Like pages.
 Less competition, more specific intent, reader is already committed.
 Target keyword always in first sentence:
 "The [Series Name] reading order matters because..."
+
+---
+
+## Reading Order Banner Image Prompts (AI Generation)
+
+Style guide for all banners:
+- Photorealistic cinematic fantasy digital art
+- Dramatic atmospheric lighting, strong contrast between dark shadows and vibrant focal light
+- No text, no legible writing anywhere in image
+- No clearly visible character faces (implied presence, silhouettes, or backs only)
+- Square crop (1:1), approximately 800×800px output
+- Mood-first: each image should feel like the series before you know what it is
+
+### Already have banners
+cosmere, stormlight, first-law, malazan, wheel-of-time, asoiaf, witcher, discworld,
+kingkiller, robin-hobb, black-company, kate-daniels, acotar, throne-of-glass,
+blood-and-ash, empyrean, drizzt, dragonlance, divergent, memory-sorrow-thorn,
+dresden-files, pern, grishaverse, inheritance-cycle, mistborn, shannara, valdemar,
+earthsea, mark-lawrence, sarah-j-maas
+
+### Need banners — prompts below
+
+---
+
+**folk-of-the-air** (Holly Black — The Cruel Prince)
+Slug: /reading-orders/folk-of-the-air
+Prompt:
+A twilight faerie court deep in an ancient thorn-forest. Twisted silver trees arch overhead like cathedral vaults, their bark pale as bone. Bioluminescent flowers in cold white and violet blue dot the undergrowth. A stone throne in the middle distance is empty but lit by ethereal moonlight filtering through the canopy. Fallen rose petals — deep crimson — cover the mossy ground. The atmosphere is seductive and dangerous, beautiful and cold. Photorealistic digital fantasy art, cinematic lighting, no characters, no text.
+
+---
+
+**old-kingdom** (Garth Nix — Sabriel)
+Slug: /reading-orders/old-kingdom
+Prompt:
+A massive ancient stone wall stretches across a bleak northern landscape at dusk, dividing a frost-dusted world in two. On one side: a grey living world of snow-covered pines and pale sky. On the other: darkness, mist, and the suggestion of the dead — faint glowing wisps rising from black soil. Seven bells hang from a weathered iron hook mounted in the wall, each casting a faint golden glow. The Wall is crumbling in places, and something cold seeps through the gaps. Photorealistic cinematic fantasy art, dramatic lighting divide, no text, no legible characters.
+
+---
+
+**locked-tomb** (Tamsyn Muir — Gideon the Ninth)
+Slug: /reading-orders/locked-tomb
+Prompt:
+A gothic cathedral floating in the void of space. The exterior is ancient stone covered in carved skeletal motifs and necromantic runes that pulse with dim golden light. Through massive stained-glass windows: the cold blue glow of magic. Distant stars and a gas nebula in deep purple and orange frame the structure. Bones and fragments of armor drift in the vacuum around the cathedral. The scene is simultaneously magnificent and horrifying. Photorealistic sci-fi dark fantasy digital art, cinematic void lighting, no text, no visible faces.
+
+---
+
+**green-bone-saga** (Fonda Lee — Jade City)
+Slug: /reading-orders/green-bone-saga
+Prompt:
+A rain-slicked street in a neon-lit Asian city at night. Glowing green jade light radiates from lanterns and carved totems mounted on the walls of clan buildings. A narrow alley stretches back into foggy darkness, the wet cobblestones reflecting streaks of green and gold neon. Cherry blossom petals blow through the scene despite the rain. The architecture blends traditional curved rooftops with mid-century concrete. The mood is tense and cinematic — organized crime meets martial-arts power. Photorealistic atmospheric digital art, rain and neon lighting, no text, no faces.
+
+---
+
+**dune** (Frank Herbert)
+Slug: /reading-orders/dune
+Prompt:
+An endless orange-gold desert under a vast alien sky with two moons. Massive sculpted sandstone formations rise in the distance, casting long blue shadows across rippling dunes. At the center of the foreground, the curved back of a colossal sandworm breaches the sand — its segmented hide the size of a mountain range. The horizon glows deep amber from twin suns. The scale is overwhelming, the silence total. Photorealistic cinematic sci-fi fantasy digital art, golden-hour desert lighting, no text, no human figures visible.
+
+---
+
+**dark-tower** (Stephen King — The Dark Tower)
+Slug: /reading-orders/dark-tower
+Prompt:
+A lone obsidian tower rises impossibly tall from a cracked desert plain under a blood-red sky. The land around it is broken and dead — scorched earth, bleached bones, the ruins of collapsed civilization half-buried in dust. Roses — brilliant red, incongruous — bloom in a perfect circle at the tower's base. The sky is crossed by streaks of strange light, as if the world's fabric is tearing. The mood is desolate, mythic, inexorable. Photorealistic dark fantasy digital art, red-sky dramatic lighting, vast scale, no text, no visible characters.
+
+---
+
+**narnia** (C.S. Lewis — The Chronicles of Narnia)
+Slug: /reading-orders/narnia
+Prompt:
+A snow-covered forest at night, lit by a single iron lamppost glowing warm amber in the cold dark. The lamppost stands at a crossroads of ancient trees whose branches are thick with snow and draped with icicles. Through the trees: the distant golden glow of a castle's towers. The air shimmers with faint magic — snowflakes frozen mid-fall, a lion's paw-print in the snow. The mood is wondrous and slightly uncanny, a child's imagination made real. Photorealistic cinematic fantasy digital art, lamppost warm light against cold blue snow, no text, no visible characters.
+
+---
+
+**expanse** (James S.A. Corey — The Expanse)
+Slug: /reading-orders/expanse
+Prompt:
+A massive orbital space station hangs in the black, its ring-structure slowly rotating. The asteroid belt stretches across the background — millions of rocks in a golden band of reflected sunlight. A fleet of ships — ranging from tiny shuttles to kilometer-long warships — drift in loose formation around the station. On the station's hull, lights blink in patterns. Far below, the curve of a pale blue planet is just visible. The protomolecule glows faint blue-green in the asteroid closest to the viewer. Photorealistic hard sci-fi digital art, deep space cinematic lighting, no text, no visible faces.
+
+---
+
+**outlander** (Diana Gabaldon — Outlander)
+Slug: /reading-orders/outlander
+Prompt:
+A circle of massive ancient standing stones on a misty Scottish highland at dawn. The stones are weathered granite, etched with carved spirals and Celtic knotwork. A thin crack of golden light appears between two of the tallest stones — a doorway between times. The moorland stretches away in all directions, heather just visible through the ground-hugging mist. The sky transitions from deep indigo overhead to pale gold at the horizon. The mood is mystical, ancient, suspended between worlds. Photorealistic atmospheric fantasy art, dawn mist lighting, no text, no human figures.
+
+---
+
+**cradle** (Will Wight — Cradle series)
+Slug: /reading-orders/cradle
+Prompt:
+A lone figure silhouetted against an impossibly vast sky, ascending a staircase of crystallized madra energy that spirals upward into the clouds. Below: a valley kingdom of ancient pagodas and glowing sacred arts forges. The energy around the figure crackles in gold and white — the visual language of advancement through sacred arts stages. Heaven-realm clouds part above, revealing a light so intense it is almost unbearable to look at. The scale and ambition of the image mirror the progression fantasy genre. Photorealistic cinematic fantasy digital art, ascending light, cultivation energy, no text, figure silhouette only.
+
+---
+
+**dungeon-crawler-carl** (Jason Cheyne — Dungeon Crawler Carl)
+Slug: /reading-orders/dungeon-crawler-carl
+Prompt:
+A massive glowing dungeon portal in the fractured floor of a collapsed city, looking down into a descending labyrinth of glowing neon runes and ancient traps. The dungeon below teems with monster shadows and the faint glimmer of treasure. Around the portal's edge, holographic UI elements float in the air — damage numbers, loot indicators, minimap fragments — giving it a video-game-meets-reality feel. The surface above is ruined cityscape, ash and debris. One tabby cat sits at the portal's edge. Photorealistic dark fantasy sci-fi digital art, neon dungeon lighting, cinematic composition, no text, cat visible.
+
+---
+
+**rf-kuang** (R.F. Kuang)
+Slug: /reading-orders/rf-kuang
+Prompt:
+A neoclassical stone university library at night, viewed from outside through tall arched windows. Inside, warm candlelight and glowing lanterns illuminate stacks of ancient texts, maps of fictional Asian empires, and shelves of opium tins. The building's facade is carved with academic motifs, but the stone is scorched — as if there was a fire here once. Falling cherry blossoms mix with ash in the cold air outside. The mood is intellectual, beautiful, and haunted by violence. Photorealistic cinematic dark academia digital art, warm-interior cold-exterior contrast, no text, no faces.
+
+---
+
+**guy-gavriel-kay**
+Slug: /reading-orders/guy-gavriel-kay
+Prompt:
+A sun-drenched Mediterranean city at golden hour — white marble columns, terracotta rooftops, and the glittering blue sea beyond. In the foreground, a Byzantine mosaic floor reflects the sunset. On the mosaic: a pattern of a ship and a crescent moon. The architecture blends Greco-Roman, Byzantine, and Arab influences. The light is warm gold and amber. In the far distance, soldiers on horseback are visible as silhouettes on a hilltop road. The mood is elegiac — beauty and history both glorious and fragile. Photorealistic cinematic historical fantasy art, golden-hour Mediterranean light, no text, no close character faces.
+
+---
+
+**jennifer-armentrout** (Jennifer L. Armentrout — Complete Reading Order)
+Slug: /reading-orders/jennifer-armentrout
+Prompt:
+A glowing obsidian portal ringed with stone carvings of gods and ancient runes, standing in an overgrown ancient forest at twilight. Through the portal: a world of shimmering divine light and impossible beauty — a pantheon city of white spires. The forest around it is dark and old, roots cracking through the stone courtyard before the gate. Fireflies drift through the misty air. The mood is paranormal romance meets mythological epic — beautiful, charged, otherworldly. Photorealistic cinematic dark fantasy digital art, portal glow, twilight forest, no text, no visible faces.
+
+---
+
+**chronicles-of-amber** (Roger Zelazny — The Chronicles of Amber)
+Slug: /reading-orders/chronicles-of-amber
+Prompt:
+An infinite staircase descending through countless shadowed reflections of the same city — each version subtly different, each a shadow of the one above. At the top: a golden city of perfect spires (Amber). At the bottom: darkness (the Courts of Chaos). Tarot cards float in the space between the levels — their painted faces each showing a different royal figure. The geometry is Escher-like but photorealistic. The mood is philosophical and regal, a multiverse held together by will. Photorealistic surreal fantasy digital art, infinite-staircase perspective, dramatic golden-to-dark lighting, no text.
+
+---
+
+**rivers-of-london** (Ben Aaronovitch — Rivers of London)
+Slug: /reading-orders/rivers-of-london
+Prompt:
+London at night, seen from the Thames. The river reflects the glow of street lamps and the blurred lights of the city. On the north bank, Folly House — a Georgian townhouse — glows with magic: subtle runes visible in the windows, a shimmer of spell-light around the doorframe. A ghost flickers on the bridge, barely visible, translucent. The Houses of Parliament and Big Ben are visible in the distance. The mood is British, procedural, and magically charged. Photorealistic cinematic urban fantasy art, nighttime London Thames lighting, no text, ghost silhouette only.
+
+---
+
+**powder-mage** (Brian McClellan — Powder Mage trilogy)
+Slug: /reading-orders/powder-mage
+Prompt:
+A Napoleonic-era battlefield at dusk, lit by the flash of muskets and the glow of powder-fire. In the foreground, hundreds of musket balls hang suspended in midair — controlled by invisible will — tracing arcing paths toward enemy lines. Smoke fills the air in dramatic columns. Cannons and siege equipment flank an ornate stone city under assault in the background. The sky is dark amber and grey. The atmosphere fuses epic military fantasy with 18th-century warfare aesthetics. Photorealistic cinematic flintlock fantasy digital art, battlefield smoke and gunpowder glow, no text, no visible faces close-up.
+
+---
+
+**crescent-city** (Sarah J. Maas — Crescent City)
+Slug: /reading-orders/crescent-city
+Prompt:
+A futuristic fantasy city at night — gleaming glass towers and ancient stone temples side by side, streets lit by hovering orbs and neon signage. Above the skyline, a massive crescent moon dominates the sky, and through a rift in the clouds: a stormlight-green portal tears open, revealing another world beyond. Angels with dark wings circle the tallest towers. The streets below glow with city life — magic and technology intertwined. The mood is epic urban fantasy, glamorous and dangerous. Photorealistic cinematic digital art, nighttime city glow, moon-portal light, no text, no close faces.
+
+---
+
+**sanderson-start-here** (Brandon Sanderson — Where to Start)
+Slug: /reading-orders/sanderson-start-here
+Prompt:
+A vast underground library carved into a cavern, its walls lined floor-to-ceiling with glowing tomes. Each shelf radiates a different color of magic: gold (allomancy), white-blue (stormlight), red (aons), violet (breath). At the center, a reading table is lit by a single overhead light — four open books arranged in a circle, each glowing with its respective magic system's color. The ceiling of the cavern is a natural dome of black stone. The mood is wonder and choice — a gateway into many worlds. Photorealistic cinematic fantasy digital art, multi-colored magic light, library cavern, no text, no visible characters.

@@ -204,17 +204,24 @@ node scripts/fix-missing-series.mjs --dry-run
 
 ### Step 2 — Fill series & author back-catalogues
 
-Patches missing `series`/`series_number` on existing books, imports missing series entries from a curated list (Phase 1), then auto-discovers all books by any author with 7+ books in the DB (Phase 2).
+Imports missing series books and auto-discovers back-catalogues via three phases:
+
+- **Phase 1a — curated list**: imports books from a hardcoded list of known series (tracked completed series, won't re-import).
+- **Phase 1b — gap detection**: scans series already in the DB (but not in the curated list) and imports any missing entries by detecting integer gaps in `series_number`.
+- **Phase 2 — prolific author sweep**: for every author with 7+ books in the DB, discovers and imports their remaining books from Google Books.
 
 Phase 2 filters: English-only (checks title for non-ASCII even when `language: 'en'` is set — catches mislabelled foreign editions), fiction/fantasy categories required when categories are present, minimum 120 pages, minimum 3.5 rating, skips special/limited/house editions, audiobooks, non-fiction.
 
+Progress is persisted to `.fill-series-progress.json` (gitignored) so completed series/authors are skipped on subsequent runs.
+
 ```bash
-node scripts/fill-series.mjs              # run both phases
+node scripts/fill-series.mjs              # run all phases
 node scripts/fill-series.mjs --dry-run
-node scripts/fill-series.mjs --series-only     # Phase 1 only — curated list + patch missing series
+node scripts/fill-series.mjs --series-only     # Phases 1a + 1b only — no author sweep
 node scripts/fill-series.mjs --authors-only    # Phase 2 only — prolific author sweep
 node scripts/fill-series.mjs --limit 50        # cap Phase 2 imports
 node scripts/fill-series.mjs --threshold 5     # lower author book threshold (default: 7)
+node scripts/fill-series.mjs --reset           # clear all progress and re-scan everything
 ```
 
 ---

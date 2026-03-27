@@ -159,6 +159,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
           { title: 'The Final Empire',       slug: 'the-final-empire',       status: 'mandatory',     note: 'Best entry point. Heist fantasy, magic tied to metals, incredible twist.',              page_count: 541, publication_year: 2006 },
           { title: 'The Well of Ascension',  slug: 'the-well-of-ascension',  status: 'mandatory',     note: 'Political siege. Tests your patience before rewarding it.',                            page_count: 590, publication_year: 2007 },
           { title: 'The Hero of Ages',       slug: 'the-hero-of-ages',       status: 'mandatory',     note: 'Everything converges. One of the best trilogy conclusions in epic fantasy.',           page_count: 572, publication_year: 2008 },
+          { title: 'Mistborn: Secret History', slug: 'mistborn-secret-history', status: 'supplementary', note: 'Novella (~200 pages) set during and after the Era 1 trilogy, following a key character behind the scenes. Read ONLY after finishing all three Era 1 books — it is dense with spoilers and rewards readers who already know how the trilogy ends. Do not read it earlier.', page_count: 200, publication_year: 2016 },
         ],
       },
       {
@@ -196,23 +197,46 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         ],
       },
       {
-        label: 'The Secret Projects',
+        label: "Hoid's Travails",
         sublabel: 'standalone Cosmere novellas',
         noteType: 'optional',
-        note: 'Three standalone Cosmere stories written during the pandemic and originally funded via Kickstarter. Best read after Rhythm of War or Wind and Truth — all are self-contained but reward readers who know the broader Cosmere.',
+        note: "Standalone Cosmere stories narrated by Hoid himself, following him across different worlds. Originally funded via Kickstarter. Best read after Rhythm of War or Wind and Truth — self-contained but reward readers who know the broader Cosmere.",
         books: [
-          { title: 'Tress of the Emerald Sea',       slug: 'tress-of-the-emerald-sea',       status: 'optional', note: 'A fairy-tale adventure on a sea of spores. Charming, standalone, and surprisingly moving.',                                          page_count: 363, publication_year: 2023 },
-          { title: 'Yumi and the Nightmare Painter',  slug: 'yumi-and-the-nightmare-painter',  status: 'optional', note: 'Two protagonists on two worlds who can\'t interact — until they can. Emotionally the strongest of the three.',                       page_count: 480, publication_year: 2023 },
-          { title: 'The Sunlit Man',                  slug: 'the-sunlit-man',                  status: 'optional', note: 'High-action adventure on a world perpetually fleeing its own sun. Best read after Wind and Truth for full Cosmere impact.',          page_count: 368, publication_year: 2023 },
+          { title: 'Tress of the Emerald Sea',      slug: 'tress-of-the-emerald-sea',      status: 'optional', seriesLabel: "Hoid's Travails #1", note: 'A fairy-tale adventure on a sea of spores. Charming, standalone, and surprisingly moving.',                            page_count: 363, publication_year: 2023 },
+          { title: 'Yumi and the Nightmare Painter', slug: 'yumi-and-the-nightmare-painter', status: 'optional', seriesLabel: "Hoid's Travails #2", note: "Two protagonists on two worlds who can't interact — until they can. Emotionally the strongest of the three.",         page_count: 480, publication_year: 2023 },
+          { title: 'The Fires of December',          slug: 'the-fires-of-december',          status: 'optional', seriesLabel: "Hoid's Travails #3", note: 'The next Hoid standalone — expected 2026. Details limited; follows Hoid on a new world.',                             page_count: 0,   publication_year: 2026 },
+        ],
+      },
+      {
+        label: 'Nomad',
+        sublabel: 'The Sunlit Man duology',
+        noteType: 'optional',
+        note: 'Two books following Nomad (Sigzil), a character from Stormlight Archive. Best read after Wind and Truth — significant Stormlight spoilers and Cosmere context assumed.',
+        books: [
+          { title: 'The Sunlit Man',       slug: 'the-sunlit-man',       status: 'optional', seriesLabel: 'Nomad #1', note: 'High-action adventure on a world perpetually fleeing its own sun. Best read after Wind and Truth for full Cosmere impact.',          page_count: 368, publication_year: 2023 },
+          { title: 'Isles of the Emberdark', slug: 'isles-of-the-emberdark', status: 'optional', seriesLabel: 'Nomad #2', note: 'Direct sequel — Nomad/Sigzil continues. Read after The Sunlit Man.',                                                           page_count: 320, publication_year: 2025 },
+        ],
+      },
+      {
+        label: 'Other Cosmere',
+        sublabel: 'standalone entry points — read anytime',
+        noteType: 'optional',
+        note: 'Self-contained Cosmere works that can be read at any point — good for readers who want a shorter taste before committing to a main series.',
+        books: [
+          { title: 'The Emperor\'s Soul', slug: 'the-emperors-soul', status: 'optional', note: 'Hugo Award-winning novella (~175 pages). A forger who can replicate souls is imprisoned and tasked with an impossible job. The best short Sanderson work — self-contained, emotionally complete, and an ideal first taste of Cosmere magic if the main series feels daunting.', page_count: 175, publication_year: 2012 },
+          { title: 'Elantris',            slug: 'elantris',          status: 'optional', note: 'The first published Cosmere novel (2005). A fallen magical city, a prince transformed into a cursed undead, and a political marriage. Shorter and lighter than the main series — good as an extra Cosmere story after Era 1 or Stormlight.', page_count: 496, publication_year: 2005 },
         ],
       },
     ],
     orderNote: 'Optimised for maximum Cosmere payoff — not pure publication order. Each series works standalone; connections build over time.',
     cards: [
-      { title: '⚡ Essential (12 books)', body: 'Both Mistborn trilogies + full Stormlight Archive. These carry the main Cosmere narrative.',                                                                                    color: 'blue'  },
-      { title: '📖 Optional (4 books)',  body: "Warbreaker (free on Sanderson's site, adds Stormlight depth) + the three Secret Project novellas — all standalone, all rewarding after Era 2.",                                 color: 'green' },
-      { title: '🔀 Novellas (2 books)',  body: 'Edgedancer and Dawnshard — short, best read in the positions listed above.',                                                                                                    color: 'amber' },
+      { title: '🌌 What is the Cosmere?',  body: "Every Cosmere book takes place on a different planet, but they share the same universe, the same underlying physics (Shards of Adonalsium), and a mysterious traveler named Hoid who appears in every story. You don't need to track the connections to enjoy individual books — but the more you read, the more things click.",                          color: 'purple' },
+      { title: '🚪 Three ways in',         body: "The Final Empire — best entry, fastest payoff, greatest magic system. The Way of Kings — if you want epic scale immediately (commit to 1,000 pages). The Emperor's Soul — if you want a 2-hour novella taste before deciding.",                                                                                                                            color: 'blue'   },
+      { title: '⚡ Essential (12 books)',  body: 'Mistborn Era 1 (trilogy) + Era 2 (4 books) + full Stormlight Archive (5 books). These carry the main Cosmere narrative.',                                                                                                                                                                                                                              color: 'blue'   },
+      { title: '📖 Optional (8 books)',   body: "Warbreaker (free on Sanderson's site) + Hoid's Travails (Tress, Yumi, Fires of December) + Nomad (Sunlit Man, Isles of the Emberdark) + Elantris + The Emperor's Soul. All standalone, all reward Cosmere readers.",                                                                                                                color: 'green'  },
+      { title: '🔀 Novellas (3)',          body: 'Edgedancer and Dawnshard — interleaved in the positions listed above. Secret History — only after finishing Era 1, spoilers are severe.',                                                                                                                                                                                                               color: 'amber'  },
     ],
+    cardsPosition: 'above',
     sections: [
       {
         heading: 'Where to start',
@@ -229,9 +253,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         bullets: [
           "Each series is fully readable standalone — you don't need to read everything to enjoy individual books.",
           'Connections become richer as you read more, especially by Stormlight book 3+.',
-          "Mistborn: Secret History is a novella with massive spoilers — only after completing Era 1.",
           "Era 2 Mistborn can be read anytime after finishing Era 1 — even before starting Stormlight.",
-          "Warbreaker's connection to Stormlight is a genuine treat — reading it before Way of Kings pays off in book 3+.",
+          "Warbreaker's connection to Stormlight is a genuine treat — reading it before Oathbringer (book 3) is the sweet spot where the payoff lands.",
         ],
       },
     ],
@@ -1042,6 +1065,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         noteType: 'required',
         note: "New characters and merchant ships, but the world-building here is load-bearing for everything that follows, especially the Fool trilogy.",
         books: [
+          { title: 'Homecoming',       slug: 'homecoming',       status: 'supplementary', note: 'Short story (~50 pages) serving as a prequel to Ship of Magic — the first liveship voyage, before the Vestrit family. Published in the Legends II anthology (2003). Read immediately before Ship of Magic for maximum impact.', page_count: 50, publication_year: 2003 },
           { title: 'Ship of Magic',    slug: 'ship-of-magic',    status: 'mandatory', note: "Different characters, same world. Sentient ships, a merchant family in crisis, and pirates. Essential for the later Fitz books.", page_count: 880, publication_year: 1998 },
           { title: 'The Mad Ship',     slug: 'the-mad-ship',     status: 'mandatory', note: "The Liveship Traders hits its stride. Althea, Brashen, and the Paragon — one of Hobb's most compelling relationship triangles.", page_count: 906, publication_year: 1999 },
           { title: 'Ship of Destiny',  slug: 'ship-of-destiny',  status: 'mandatory', note: 'Closes the Liveship arc and quietly sets up the mythology that underpins the entire Elderlings world. Do not skip this.',        page_count: 789, publication_year: 2000 },
@@ -1053,6 +1077,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         noteType: 'required',
         note: 'Directly continues the Farseer Trilogy 15 years later. The Fitz/Fool relationship becomes the emotional core of the entire sequence.',
         books: [
+          { title: 'The Wilful Princess and the Piebald Prince', slug: 'the-wilful-princess-and-the-piebald-prince', status: 'supplementary', note: 'Novella (~64 pages) telling the history of how the Wit became a persecuted magic in the Six Duchies — the backstory the Tawny Man trilogy references but never fully explains. Read between Tawny Man and Fitz & the Fool, or before Fool\'s Errand.', page_count: 64, publication_year: 2013 },
           { title: "Fool's Errand",   slug: 'fools-errand',   status: 'mandatory', note: 'Fitz returns, fifteen years later. The Fitz/Fool relationship is now the emotional core of the entire sequence.',                   page_count: 661, publication_year: 2001 },
           { title: 'The Golden Fool', slug: 'the-golden-fool', status: 'mandatory', note: "Court intrigue, the Wit persecutions, and the Fool's identity pulled into sharp focus.",                                           page_count: 688, publication_year: 2002 },
           { title: "Fool's Fate",     slug: 'fools-fate',     status: 'mandatory', note: "The conclusion of the Tawny Man — and arguably of the Fitz arc as a whole. Hobb goes further emotionally than most readers expect.", page_count: 896, publication_year: 2003 },
@@ -1082,6 +1107,13 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         ],
       },
     ],
+    cards: [
+      { title: "🗡️ Fitz's Arc (9 books)",    body: "FitzChivalry Farseer is the protagonist of three separate trilogies spanning his entire life — from orphaned bastard to old man. The Farseer Trilogy, The Tawny Man, and Fitz and the Fool form one complete emotional arc. Read them in order, no exceptions.",                                                    color: 'blue'   },
+      { title: '🚢 The Liveship Question',    body: "Can you skip Liveship Traders? Technically yes — Fitz's story continues without it. But the mythology of the Elderlings, the liveships, and the Servants underpins Assassin's Fate in ways that hit much harder with Liveship context. Most fans regret skipping it.",                                              color: 'green'  },
+      { title: '💔 Emotional Warning',        body: "Robin Hobb is one of fantasy's most emotionally devastating writers. Fitz is a frustrating protagonist by design — his passivity and self-sabotage are deliberate. The Fool is one of the most beloved characters in fantasy. Do not get attached to anyone. Come prepared.",                                       color: 'red'    },
+      { title: '🐉 Rain Wild Chronicles',     body: 'Optional but enriching. Set in the same world with new characters — damaged dragons and the lost Elderling cities. Best read between Tawny Man and Fitz & the Fool. Skip it if you want to stay with Fitz; read it if you want the full world.', color: 'amber'  },
+    ],
+    cardsPosition: 'above',
     orderNote: 'Publication order. The Rain Wild Chronicles (books 10–13) can be read after completing the Tawny Man or after the full sequence — both work.',
     sections: [
       {
@@ -1557,9 +1589,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
     description:
-      "The longest-running fantasy saga in D&D fiction — 30+ novels following Drizzt Do'Urden, a dark elf who abandons the brutal society of the Underdark to forge his own path on the surface world. At its core it's a story about identity, loyalty, and chosen family. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are some of the most beloved characters in fantasy. Start with the Dark Elf Trilogy for Drizzt's origin, or Icewind Dale for classic adventure. This guide covers all 30+ Drizzt books in recommended reading order.",
+      "Forty novels. One dark elf who refused to be what his world made him. Drizzt Do'Urden abandoned the Underdark's brutal drow society and built a life on the surface through sheer will, friendship, and twin scimitars — and R.A. Salvatore has been telling that story since 1988. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are among the most beloved found families in fantasy. This guide covers all 40 Drizzt books across 13 arcs in recommended reading order, from the Underdark origin story to the concluding Way of the Drow trilogy.",
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
-    warning: 'The series spans 30+ novels across 10+ arcs. This guide covers the essential reading — the first four arcs are the heart of the series. Later arcs vary in quality but remain popular with fans of the characters.',
+    warning: 'The series spans 40 novels across 13+ arcs. The first four arcs are the heart of the series. Later arcs vary in quality but remain popular with fans of the characters.',
     groups: [
       {
         label: 'The Dark Elf Trilogy',
@@ -1567,9 +1599,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         note: 'Written as a prequel after Icewind Dale. Start here for chronological order, or skip to Icewind Dale and return later.',
         noteType: 'optional',
         books: [
-          { title: 'Homeland',  slug: 'homeland',  status: 'mandatory',     note: "Drizzt's birth into drow society in the Underdark. Brutal, political, and fascinating as a portrait of a world built on cruelty.",            page_count: 343, publication_year: 1990 },
-          { title: 'Exile',     slug: 'exile',     status: 'mandatory',     note: 'Drizzt survives the Underdark after fleeing his city. Tense and claustrophobic — the world trying to kill him at every turn.',               page_count: 314, publication_year: 1990 },
-          { title: 'Sojourn',   slug: 'sojourn',   status: 'mandatory',     note: 'Drizzt reaches the surface world. The prejudice he faces gives the series its emotional core.',                                                 page_count: 311, publication_year: 1991 },
+          { title: 'Homeland',  slug: 'homeland',  status: 'mandatory', note: "Drizzt's birth into drow society in the Underdark. Brutal, political, and fascinating as a portrait of a world built on cruelty.", page_count: 343, publication_year: 1990 },
+          { title: 'Exile',     slug: 'exile',     status: 'mandatory', note: 'Drizzt survives the Underdark after fleeing his city. Tense and claustrophobic — the world trying to kill him at every turn.', page_count: 314, publication_year: 1990 },
+          { title: 'Sojourn',   slug: 'sojourn',   status: 'mandatory', note: 'Drizzt reaches the surface world. The prejudice he faces gives the series its emotional core.', page_count: 311, publication_year: 1991 },
         ],
       },
       {
@@ -1578,48 +1610,130 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         note: 'This is where R.A. Salvatore introduced Drizzt to the world. Many fans consider this the best entry point.',
         noteType: 'required',
         books: [
-          { title: 'The Crystal Shard',   slug: 'the-crystal-shard',   status: 'mandatory', note: "The Companions of the Hall assemble. Wulfgar, Bruenor, Catti-brie, Regis — fantasy's greatest found family.",                    page_count: 336, publication_year: 1988 },
-          { title: 'Streams of Silver',   slug: 'streams-of-silver',   status: 'mandatory', note: 'The Companions travel to Mithral Hall to reclaim Bruenor\'s ancestral dwarven kingdom.',                                          page_count: 352, publication_year: 1989 },
-          { title: "The Halfling's Gem",  slug: 'the-halflings-gem',   status: 'mandatory', note: 'High-stakes conclusion. Regis is taken and the Companions give chase across the continent.',                                      page_count: 352, publication_year: 1990 },
+          { title: 'The Crystal Shard',  slug: 'the-crystal-shard',  status: 'mandatory', note: "The Companions of the Hall assemble. Wulfgar, Bruenor, Catti-brie, Regis — fantasy's greatest found family.", page_count: 336, publication_year: 1988 },
+          { title: 'Streams of Silver',  slug: 'streams-of-silver',  status: 'mandatory', note: "The Companions travel to Mithral Hall to reclaim Bruenor's ancestral dwarven kingdom.", page_count: 352, publication_year: 1989 },
+          { title: "The Halfling's Gem", slug: 'the-halflings-gem',  status: 'mandatory', note: 'High-stakes conclusion. Regis is taken and the Companions give chase across the continent.', page_count: 352, publication_year: 1990 },
         ],
       },
       {
         label: 'Legacy of the Drow',
         sublabel: 'The drow return — the stakes become personal',
         books: [
-          { title: 'The Legacy',       slug: 'the-legacy',       status: 'mandatory',     note: "Drizzt's past hunts him. The drow come to Mithral Hall. Best arc in the series by many fans.",        page_count: 309, publication_year: 1992 },
-          { title: 'Starless Night',   slug: 'starless-night',   status: 'mandatory',     note: 'Drizzt returns to the Underdark alone. One of the darkest and most personal books.',                   page_count: 303, publication_year: 1993 },
-          { title: 'Siege of Darkness', slug: 'siege-of-darkness', status: 'mandatory',   note: 'Full-scale drow invasion. The war that the series has been building toward.',                           page_count: 314, publication_year: 1994 },
-          { title: 'Passage to Dawn',  slug: 'passage-to-dawn',  status: 'mandatory',     note: 'The aftermath. Drizzt and Catti-brie at sea. Closes the Legacy of the Drow era.',                      page_count: 310, publication_year: 1996 },
+          { title: 'The Legacy',         slug: 'the-legacy',         status: 'mandatory', note: "Drizzt's past hunts him. The drow come to Mithral Hall. Best arc in the series by many fans.", page_count: 309, publication_year: 1992 },
+          { title: 'Starless Night',     slug: 'starless-night',     status: 'mandatory', note: 'Drizzt returns to the Underdark alone. One of the darkest and most personal books.', page_count: 303, publication_year: 1993 },
+          { title: 'Siege of Darkness',  slug: 'siege-of-darkness',  status: 'mandatory', note: 'Full-scale drow invasion. The war that the series has been building toward.', page_count: 314, publication_year: 1994 },
+          { title: 'Passage to Dawn',    slug: 'passage-to-dawn',    status: 'mandatory', note: 'The aftermath. Drizzt and Catti-brie at sea. Closes the Legacy of the Drow era.', page_count: 310, publication_year: 1996 },
         ],
       },
       {
         label: 'Paths of Darkness',
         sublabel: 'The Companions scattered — a darker chapter',
         books: [
-          { title: 'The Silent Blade',       slug: 'the-silent-blade',       status: 'optional',     note: 'Artemis Entreri returns. Drizzt vs. Entreri rivalry reaches a major turning point.',               page_count: 315, publication_year: 1998 },
-          { title: 'The Spine of the World', slug: 'the-spine-of-the-world', status: 'optional',     note: 'Wulfgar-focused departure. Deals with trauma and recovery — divisive but emotionally honest.',      page_count: 345, publication_year: 1999 },
-          { title: 'Servant of the Shard',   slug: 'servant-of-the-shard',   status: 'optional',     note: 'Follows Jarlaxle and Entreri more than Drizzt. Best book in the arc for fans of the villains.',   page_count: 315, publication_year: 2000 },
-          { title: 'Sea of Swords',          slug: 'sea-of-swords',          status: 'optional',     note: 'The Companions reunite. Wraps up the Paths of Darkness arc cleanly.',                              page_count: 312, publication_year: 2001 },
+          { title: 'The Silent Blade',        slug: 'the-silent-blade',        status: 'optional', note: 'Artemis Entreri returns. Drizzt vs. Entreri rivalry reaches a major turning point.', page_count: 315, publication_year: 1998 },
+          { title: 'The Spine of the World',  slug: 'the-spine-of-the-world',  status: 'optional', note: 'Wulfgar-focused departure. Deals with trauma and recovery — divisive but emotionally honest.', page_count: 345, publication_year: 1999 },
+          { title: 'Sea of Swords',           slug: 'sea-of-swords',           status: 'optional', note: 'The Companions reunite. Wraps up the Paths of Darkness arc cleanly.', page_count: 312, publication_year: 2001 },
         ],
       },
       {
-        label: 'The Hunter\'s Blades & Beyond',
-        sublabel: 'Continuing the saga (15+ more novels)',
-        note: 'The series continues with The Hunter\'s Blades Trilogy, Transitions, The Neverwinter Saga, and multiple subsequent arcs through 2024. Quality is consistent for fans of the characters — each arc has a self-contained conflict within the ongoing saga.',
+        label: 'The Sellswords Trilogy',
+        sublabel: 'Jarlaxle & Entreri take centre stage',
+        note: 'Drizzt is largely absent. These books follow Jarlaxle and Entreri — darker, more morally complex. Essential for fans of the villains; skippable otherwise.',
         noteType: 'optional',
         books: [
-          { title: 'The Thousand Orcs',  slug: 'the-thousand-orcs',  status: 'supplementary', note: 'Start of Hunter\'s Blades Trilogy. Large orc invasion threatens the North.',  page_count: 343, publication_year: 2002 },
-          { title: 'Gauntlgrym',         slug: 'gauntlgrym',         status: 'supplementary', note: 'Start of Neverwinter Saga. 100 years later — a new chapter for Drizzt.',       page_count: 358, publication_year: 2010 },
-          { title: 'Timeless',           slug: 'timeless',           status: 'supplementary', note: 'Start of Generations arc. Introduces a new generation alongside Drizzt.',      page_count: 384, publication_year: 2018 },
+          { title: 'The Servant of the Shard',   slug: 'the-servant-of-the-shard',   status: 'optional', note: 'Jarlaxle and Entreri navigate power and politics in Calimport. The best Entreri book.', page_count: 315, publication_year: 2000 },
+          { title: 'Promise of the Witch King',  slug: 'promise-of-the-witch-king',  status: 'optional', note: 'The pair venture into the savage North. Fast and entertaining — lesser than book one.', page_count: 343, publication_year: 2005 },
+          { title: 'Road of the Patriarch',      slug: 'road-of-the-patriarch',      status: 'optional', note: "Concludes Entreri's character arc. A satisfying close to one of fantasy's great rivals.", page_count: 352, publication_year: 2006 },
+        ],
+      },
+      {
+        label: "The Hunter's Blades Trilogy",
+        sublabel: 'Orc armies threaten the North',
+        books: [
+          { title: 'The Thousand Orcs',  slug: 'the-thousand-orcs',  status: 'supplementary', note: 'A massive orc horde descends on the North. Large-scale warfare returns to the series.', page_count: 343, publication_year: 2002 },
+          { title: 'The Lone Drow',      slug: 'the-lone-drow',      status: 'supplementary', note: 'Drizzt fights alone, stripped of his companions. Brutal and energetic.', page_count: 352, publication_year: 2003 },
+          { title: 'The Two Swords',     slug: 'the-two-swords',     status: 'supplementary', note: 'The orc war concludes. Seeds the political fallout explored in Transitions.', page_count: 352, publication_year: 2004 },
+        ],
+      },
+      {
+        label: 'The Transitions Trilogy',
+        sublabel: 'A world changing around the Companions',
+        books: [
+          { title: 'The Orc King',    slug: 'the-orc-king',    status: 'supplementary', note: 'Political fallout from the orc wars. The series broadens its scope.', page_count: 352, publication_year: 2007 },
+          { title: 'The Pirate King', slug: 'the-pirate-king', status: 'supplementary', note: 'Drizzt and Regis take to the seas. Lighter in tone, faster in pace.', page_count: 339, publication_year: 2008 },
+          { title: 'The Ghost King',  slug: 'the-ghost-king',  status: 'supplementary', note: 'The Spellplague reshapes the Forgotten Realms. Major cast changes — the end of an era.', page_count: 352, publication_year: 2009 },
+        ],
+      },
+      {
+        label: 'The Neverwinter Saga',
+        sublabel: 'A century later — Drizzt nearly alone',
+        note: 'Set 100 years after the Transitions arc due to the Spellplague. The cast largely resets — a fresh entry point for some readers.',
+        noteType: 'optional',
+        books: [
+          { title: 'Gauntlgrym',          slug: 'gauntlgrym',          status: 'supplementary', note: 'Drizzt and Bruenor search for the legendary dwarven city. A new beginning after The Ghost King.', page_count: 358, publication_year: 2010 },
+          { title: 'Neverwinter',         slug: 'neverwinter',         status: 'supplementary', note: 'Drizzt joins a new companion. Darker and more introspective than earlier books.', page_count: 352, publication_year: 2011 },
+          { title: "Charon's Claw",       slug: 'charons-claw',        status: 'supplementary', note: 'Artemis Entreri returns. Builds toward the conclusion of the Neverwinter arc.', page_count: 352, publication_year: 2012 },
+          { title: 'The Last Threshold',  slug: 'the-last-threshold',  status: 'supplementary', note: "Closes the Neverwinter arc. Drizzt's lowest point — and the setup for a major restoration.", page_count: 342, publication_year: 2013 },
+        ],
+      },
+      {
+        label: 'Companions Codex',
+        sublabel: 'The Companions return — the drow conflict resumes',
+        note: "Read The Companions first — it's Salvatore's contribution to the multi-author Sundering event and the book that restores the original cast. Must read before Night of the Hunter.",
+        noteType: 'required',
+        books: [
+          { title: 'The Companions',               slug: 'the-companions',               status: 'supplementary', note: 'The original Companions return from death — joyful and earned after years of absence. The hinge on which everything that follows turns.', page_count: 296, publication_year: 2013 },
+          { title: 'Night of the Hunter',          slug: 'night-of-the-hunter',          status: 'supplementary', note: 'The reunited Companions return to the Underdark. Energy that recalls the Legacy of the Drow era.', page_count: 352, publication_year: 2014 },
+          { title: 'Rise of the King',             slug: 'rise-of-the-king',             status: 'supplementary', note: 'An orc horde marches again. Large-scale warfare with the full cast engaged.', page_count: 384, publication_year: 2014 },
+          { title: 'Vengeance of the Iron Dwarf',  slug: 'vengeance-of-the-iron-dwarf',  status: 'supplementary', note: 'The orc war reaches its conclusion. Satisfying arc closure.', page_count: 352, publication_year: 2015 },
+        ],
+      },
+      {
+        label: 'Homecoming',
+        sublabel: 'Return to Menzoberranzan',
+        books: [
+          { title: 'Archmage',  slug: 'archmage',  status: 'supplementary', note: 'Drizzt returns to the Underdark in force. The political machinations of Menzoberranzan are back in focus.', page_count: 368, publication_year: 2015 },
+          { title: 'Maestro',   slug: 'maestro',   status: 'supplementary', note: "Jarlaxle orchestrates events across the Underdark. The series' best political scheming in years.", page_count: 384, publication_year: 2016 },
+          { title: 'Hero',      slug: 'hero',      status: 'supplementary', note: 'Closes the Homecoming arc. A major reckoning for Menzoberranzan and for Drizzt himself.', page_count: 400, publication_year: 2016 },
+        ],
+      },
+      {
+        label: 'Generations',
+        sublabel: 'A new generation alongside Drizzt',
+        note: "Introduces Brizmorla 'Breezy' Do'Urden, daughter of Drizzt and Catti-brie. Dual timeline structure — past and present interweave.",
+        noteType: 'optional',
+        books: [
+          { title: 'Timeless',   slug: 'timeless',   status: 'supplementary', note: "Drizzt's history retold through a new lens, alongside stories of his descendants. The dual timeline is the series' most ambitious structure.", page_count: 384, publication_year: 2018 },
+          { title: 'Boundless',  slug: 'boundless',  status: 'supplementary', note: 'Breezy comes into focus as a character in her own right. The next generation takes shape.', page_count: 352, publication_year: 2019 },
+          { title: 'Relentless', slug: 'relentless', status: 'supplementary', note: 'Closes the Generations arc with the full cast engaged. Salvatore at a confident late-series pace.', page_count: 384, publication_year: 2020 },
+        ],
+      },
+      {
+        label: 'The Way of the Drow',
+        sublabel: 'The concluding Drizzt arc',
+        note: "Salvatore has described this as the closing arc for Drizzt's own story. Leads directly into the Drizzt's Daughter series.",
+        noteType: 'required',
+        books: [
+          { title: 'Starlight Enclave',  slug: 'starlight-enclave',  status: 'supplementary', note: "Drizzt ventures to Q'Xorlarrin, a new drow city. Fresh setting and renewed energy.", page_count: 384, publication_year: 2021 },
+          { title: "Glacier's Edge",     slug: 'glaciers-edge',      status: 'supplementary', note: 'The party pushes into the frozen North. Builds momentum toward the final confrontation.', page_count: 384, publication_year: 2022 },
+          { title: "Lolth's Warrior",    slug: 'lolths-warrior',     status: 'supplementary', note: "The Spider Queen's long game concludes. The definitive end of Drizzt's primary story arc.", page_count: 368, publication_year: 2023 },
+        ],
+      },
+      {
+        label: "Drizzt's Daughter",
+        sublabel: "New series — Breezy Do'Urden",
+        note: "A new series starring Brizmorla 'Breezy' Do'Urden. Drizzt's story has concluded; this is the next generation's saga.",
+        noteType: 'optional',
+        books: [
+          { title: 'The Finest Edge of Twilight', slug: 'the-finest-edge-of-twilight', status: 'supplementary', note: 'Breezy takes centre stage in her own adventure. A fresh start for new readers already familiar with the world.', page_count: 400, publication_year: 2025 },
         ],
       },
     ],
     orderNote: 'Two valid starting points: Homeland (Dark Elf Trilogy) for chronological order, or The Crystal Shard (Icewind Dale) for publication order. Both work — publication order is the more common recommendation.',
+    cardsPosition: 'above',
     cards: [
-      { title: '⚔️ The Hook',         body: 'Drizzt is one of fantasy\'s most iconic characters — a dark elf who rejects his people\'s evil and builds a life on the surface through sheer will and skill. The found-family dynamic of the Companions of the Hall is the emotional core of the entire series.',   color: 'blue'   },
-      { title: '📚 Where to Start',   body: 'Most readers recommend The Crystal Shard as the entry point — it\'s shorter, faster, and introduces the Companions. The Dark Elf Trilogy is deeper but works better once you already love the character.',                                                            color: 'green'  },
-      { title: '🗺️ The Long Game',   body: 'The series spans 30+ novels. The first two arcs (Icewind Dale + Legacy of the Drow) are universally loved. After that, quality varies but remains solid for fans of the cast. You don\'t have to read all of it — stop when you\'re satisfied.',                  color: 'amber'  },
+      { title: '⚔️ The Companions', body: "The heart of the series isn't Drizzt — it's the found family he builds. Bruenor the dwarf king, Catti-brie the archer, Wulfgar the barbarian, Regis the halfling. They're assembled in The Crystal Shard and tested across every arc that follows. When the series is at its best, it's their story as much as his.", color: 'blue'   },
+      { title: '📚 Two Entry Points', body: "The great Drizzt debate: start with Homeland (Dark Elf Trilogy) for Drizzt's brutal origin in drow society, or The Crystal Shard (Icewind Dale) where the Companions first meet. Most guides recommend Crystal Shard — it's faster, introduces the full cast, and the origin story hits harder once you love the character.", color: 'green'  },
+      { title: '🗡️ Artemis Entreri', body: "Drizzt's greatest rival is the assassin Artemis Entreri — a dark mirror who made the same choices Drizzt made and arrived somewhere entirely different. Their conflict across the first five arcs is the series' finest thread. The Sellswords Trilogy follows Entreri alone and is worth reading for fans who want his full arc.", color: 'purple' },
     ],
     sections: [
       {
@@ -1628,26 +1742,28 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         bullets: [
           'New reader: Start with The Crystal Shard (Icewind Dale #1) — shorter, faster-paced, and introduces the full cast immediately.',
           'Want the full origin: Start with Homeland (Dark Elf Trilogy #1) for Drizzt\'s backstory in the Underdark.',
-          'Just want the best arc: Read the Dark Elf Trilogy, then jump to Legacy of the Drow — this is the emotional peak of the series.',
-          'D&D fan: All books are set in the Forgotten Realms setting. No D&D knowledge required, but it adds flavor.',
+          'Just want the best arc: Read the Dark Elf Trilogy, then jump to Legacy of the Drow — the emotional peak of the series.',
+          'D&D fan: All books are set in the Forgotten Realms. No prior D&D knowledge required, but it adds flavour.',
         ],
       },
       {
         heading: 'What to know',
         type: 'bullets',
         bullets: [
-          'The early books (1988–1996) are the strongest. The series gets more variable in quality after Paths of Darkness.',
-          'Artemis Entreri — Drizzt\'s rival assassin — is a fan favourite who grows into a surprisingly complex character across multiple arcs.',
-          'Later arcs (Neverwinter Saga onwards) reboot the cast and tone. Some fans stop at Legacy of the Drow and consider that the complete experience.',
-          'All books are fast reads — 300–360 pages, action-focused, with short chapters.',
+          'The early books (1988–1996) are the strongest. Quality becomes more variable after Paths of Darkness.',
+          'Artemis Entreri — Drizzt\'s rival assassin — grows into a surprisingly complex character; The Sellswords Trilogy is his best showcase.',
+          'The Ghost King (Transitions #3) ends an era — some fans stop here and consider it a satisfying close before the Spellplague reboot.',
+          'All books are fast reads — 300–400 pages, action-focused, with short chapters. The later arcs are longer on average than the early ones.',
         ],
       },
     ],
     darkness: [
-      { label: 'Dark Elf Trilogy',      level: 3, desc: 'Moderate — Underdark society is brutal and political' },
-      { label: 'Icewind Dale Trilogy',  level: 2, desc: 'Light — adventure-focused with low stakes death' },
-      { label: 'Legacy of the Drow',    level: 3, desc: 'Moderate — personal stakes, drow warfare' },
-      { label: 'Paths of Darkness',     level: 3, desc: 'Moderate — trauma explored, darker character arcs' },
+      { label: 'Dark Elf Trilogy',     level: 3, desc: 'Moderate — Underdark society is brutal and political' },
+      { label: 'Icewind Dale Trilogy', level: 2, desc: 'Light — adventure-focused with low-stakes tone' },
+      { label: 'Legacy of the Drow',   level: 3, desc: 'Moderate — personal stakes, drow warfare' },
+      { label: 'Paths of Darkness',    level: 3, desc: 'Moderate — trauma explored, darker character arcs' },
+      { label: 'Neverwinter Saga',     level: 4, desc: 'Dark — Drizzt at his lowest, allies lost' },
+      { label: 'Way of the Drow',      level: 3, desc: 'Moderate — large-scale conflict, series conclusion' },
     ],
     finishedLabel: 'Finished the core arcs?',
     categoryHref: '/fantasy/epic',
@@ -1826,7 +1942,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Series Complete',
     description:
-      'The epic fantasy series that shaped a generation of writers — George R.R. Martin and Patrick Rothfuss have both cited it as a direct influence. A young kitchen scullion is pulled into an ancient war between human kingdoms and the immortal Sithi as a long-buried prophecy stirs. Williams writes with rare patience and emotional depth — this is the series that proved epic fantasy could be literature. The Dragonbone Chair is where to start. Read Memory, Sorrow and Thorn in order — it is one of the most under-appreciated trilogies in the genre and the most direct ancestor of modern epic fantasy.',
+      'The epic fantasy series that shaped a generation of writers — George R.R. Martin and Patrick Rothfuss have both cited it as a direct influence. A young kitchen scullion is pulled into an ancient war between human kingdoms and the immortal Sithi as a long-buried prophecy stirs. Williams writes with rare patience and emotional depth — this is the series that proved epic fantasy could be literature. The Dragonbone Chair is where to start. In 2024, Williams completed the sequel tetralogy The Last King of Osten Ard, making the entire Osten Ard saga now fully finished — nine novels and two novellas, all rewarding readers who go in order.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     groups: [
       {
@@ -1838,6 +1954,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
           { title: 'Stone of Farewell',     slug: 'stone-of-farewell',     status: 'mandatory',     note: 'The war deepens across multiple POVs. Williams broadens the world and the mythology. The middle volume at its best.',                                                                                            page_count: 588,  publication_year: 1990 },
           { title: 'To Green Angel Tower',       slug: 'to-green-angel-tower',       status: 'mandatory',     note: 'The conclusion. Originally published as a single ~1080-page hardcover; most paperback editions split it into two volumes (Storm and Siege). One of the most satisfying endings in epic fantasy.',                                                                                                        page_count: 1083, publication_year: 1993 },
           { title: 'The Heart of What Was Lost', slug: 'the-heart-of-what-was-lost', status: 'supplementary', note: 'Short novel (~240 pages) set immediately after the trilogy\'s end. Follows the Norns retreating north. Bridges the original series and the tetralogy — not required, but highly recommended before starting The Witchwood Crown.', page_count: 240,  publication_year: 2017 },
+          { title: 'The Burning Man', slug: 'the-burning-man', status: 'supplementary', note: 'Short story set in Osten Ard, published in the Legends anthology (1998) edited by Robert Silverberg. Backstory of a key character from the original trilogy. Read after Memory, Sorrow and Thorn.', page_count: 60, publication_year: 1998 },
         ],
       },
       {
@@ -1847,10 +1964,16 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
           { title: 'The Witchwood Crown',      slug: 'the-witchwood-crown',      status: 'optional', note: 'Simon and Miriamele are now king and queen. A new generation faces an ancient threat returning. Slower burn than the original — give it time.',       page_count: 800, publication_year: 2017 },
           { title: 'Empire of Grass',          slug: 'empire-of-grass',          status: 'optional', note: 'The threat grows across a fractured kingdom. Multiple POVs. Best read back-to-back with The Witchwood Crown.',                                         page_count: 752, publication_year: 2019 },
           { title: 'Into the Narrowdark',      slug: 'into-the-narrowdark',      status: 'optional', note: 'The penultimate volume. Things unravel. Sets up the finale with brutal efficiency.',                                                                   page_count: 736, publication_year: 2023 },
-          { title: "The Navigator's Children", slug: 'the-navigators-children',  status: 'optional', note: 'The conclusion of the tetralogy. Closes the entire Osten Ard saga.',                                                                                   page_count: 736, publication_year: 2024 },
+          { title: "The Navigator's Children", slug: 'the-navigators-children',  status: 'optional', note: 'The conclusion of the tetralogy and the entire Osten Ard saga (2024). Williams wraps every thread — Simon and Miriamele, the Norns, the Sithi, and the next generation. A worthy ending to a saga that began in 1988.',                                                                                   page_count: 736, publication_year: 2024 },
         ],
       },
     ],
+    cards: [
+      { title: '📖 The Original Trilogy', body: 'The Dragonbone Chair → Stone of Farewell → To Green Angel Tower. One of the most complete and emotionally satisfying arcs in epic fantasy. The direct ancestor of A Song of Ice and Fire.', color: 'blue' },
+      { title: '🏰 The Sequel Tetralogy', body: 'The Last King of Osten Ard follows Simon and Miriamele 30 years later. Slower and more political than the original, but rewards those who stayed. Completed in 2024 with The Navigator\'s Children.', color: 'green' },
+      { title: '📚 The Hidden Influence', body: 'George R.R. Martin has said MST showed him that epic fantasy could be about real human complexity. Patrick Rothfuss cites it as essential reading. Required context for any serious fantasy reader.', color: 'purple' },
+    ],
+    cardsPosition: 'above',
     orderNote: 'Start with the main trilogy. To Green Angel Tower may arrive as one hardcover or two paperback volumes (Storm and Siege) — both contain the same text. The Heart of What Was Lost is the ideal bridge before the tetralogy.',
     warning: 'To Green Angel Tower was published as a single ~1080-page hardcover but split into two paperback volumes in most markets. Make sure you have both parts (Storm and Siege) before you begin the conclusion.',
     sections: [
@@ -1872,9 +1995,13 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     darkness: [
-      { label: 'The Dragonbone Chair', level: 2, desc: 'Epic in scope but accessible — war seen through a young man\'s eyes' },
-      { label: 'Stone of Farewell',    level: 3, desc: 'Darker, more political — loss and sacrifice increase' },
-      { label: 'To Green Angel Tower', level: 3, desc: 'War, grief, and hard-earned resolution — earned emotional weight' },
+      { label: 'The Dragonbone Chair',   level: 2, desc: 'Epic in scope but accessible — war seen through a young man\'s eyes' },
+      { label: 'Stone of Farewell',      level: 3, desc: 'Darker, more political — loss and sacrifice increase' },
+      { label: 'To Green Angel Tower',   level: 3, desc: 'War, grief, and hard-earned resolution — earned emotional weight' },
+      { label: 'The Witchwood Crown',    level: 3, desc: 'Political intrigue and creeping dread — darker undertone than the original' },
+      { label: 'Empire of Grass',        level: 3, desc: 'Multiple threads fracturing — violence and betrayal escalate' },
+      { label: 'Into the Narrowdark',    level: 4, desc: 'Things unravel — brutal penultimate volume with significant losses' },
+      { label: "The Navigator's Children", level: 3, desc: 'Hard-won resolution — difficult but not nihilistic' },
     ],
     finishedLabel: 'Finished the trilogy?',
     categoryHref: '/fantasy/epic',
@@ -2327,6 +2454,16 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         ],
       },
       {
+        label: 'Prequels',
+        sublabel: 'read after Elfstones — not before',
+        noteType: 'optional',
+        note: 'Both are set before the original trilogy but reward readers who already know the world. Reading them first spoils the mythology that the original trilogy slowly reveals.',
+        books: [
+          { title: 'Galaphile',                slug: 'galaphile',                  status: 'optional', seriesLabel: 'Prequel #1', note: 'The earliest story in the Shannara timeline — the founding of the first Druid order by Galaphile himself, thousands of years before the original trilogy. Published 2023. Best read after getting into the series.', page_count: 416, publication_year: 2023 },
+          { title: 'First King of Shannara',   slug: 'first-king-of-shannara',     status: 'optional', seriesLabel: 'Prequel #2', note: 'Set hundreds of years before The Sword of Shannara — the Second War of the Races and the forging of the Sword itself. The Druid Bremen is the central character. Best read after Elfstones, when you already know what the Sword means.', page_count: 350, publication_year: 1996 },
+        ],
+      },
+      {
         label: 'Word & Void',
         sublabel: 'modern-day prequel trilogy — set in our world',
         note: 'Set in contemporary America, thousands of years before Shannara. Bridges our world to the Shannara future. Can be read independently — but reading it after Heritage of Shannara enriches the mythology.',
@@ -2338,15 +2475,80 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         ],
       },
       {
-        label: 'Later Shannara Arcs',
-        sublabel: 'for committed fans — multiple further trilogies',
-        note: 'The series continues through Voyage of the Jerle Shannara, High Druid of Shannara, Dark Legacy of Shannara, and concludes with The Fall of Shannara tetralogy (2017–2020). All are optional for casual readers.',
+        label: 'Voyage of the Jerle Shannara',
+        sublabel: 'airship adventure — new generation of Ohmsfords',
         noteType: 'optional',
+        note: 'Walker Boh leads an airship crew chasing an ancient map to a lost world. Faster-paced than Heritage with a stronger science-fiction undercurrent.',
         books: [
-          { title: 'Ilse Witch',         slug: 'ilse-witch',         status: 'optional', seriesLabel: 'Voyage of the Jerle Shannara #1', note: 'A new generation of Ohmsfords. An airship crew chases an ancient map. Brooks embraces adventure-quest plotting with a faster pace than Heritage.', page_count: 387, publication_year: 2000 },
-          { title: 'Jarka Ruus',         slug: 'jarka-ruus',         status: 'optional', seriesLabel: 'High Druid of Shannara #1',       note: 'Twenty years after Voyage. Grianne Ohmsford as Ard Rhys of the Druid order. Political intrigue at Paranor. More interested in character psychology than quest plotting.',     page_count: 320, publication_year: 2003 },
-          { title: 'The Black Elfstone', slug: 'the-black-elfstone', status: 'optional', seriesLabel: 'The Fall of Shannara #1',         note: 'Start of the concluding tetralogy. A new threat from beyond the known Four Lands. Brooks ties together threads from across the entire series. The beginning of the end.',                    page_count: 333, publication_year: 2017 },
-          { title: 'The Last Druid',     slug: 'the-last-druid',     status: 'optional', seriesLabel: 'The Fall of Shannara #4',         note: 'The conclusion of the entire Shannara saga. More than four decades of story reaches its end. Rewarding for readers who have followed the series across its full run.',                            page_count: 320, publication_year: 2020 },
+          { title: 'Ilse Witch', slug: 'ilse-witch', status: 'optional', seriesLabel: 'Voyage #1', note: 'Walker Boh hires a crew and an airship to find a lost ancient world. The Ilse Witch — a powerful, mysterious antagonist — pursues the same prize.', page_count: 464, publication_year: 2000 },
+          { title: 'Antrax',     slug: 'antrax',     status: 'optional', seriesLabel: 'Voyage #2', note: 'The crew reaches Castledown and its terrifying guardian — a machine intelligence from the old world. One of the most science-fiction-adjacent entries in the series.', page_count: 375, publication_year: 2001 },
+          { title: 'Morgawr',    slug: 'morgawr',    status: 'optional', seriesLabel: 'Voyage #3', note: 'The crew faces the Morgawr — the Ilse Witch\'s master — while scattered storylines converge. Closes the arc with parallel action across multiple threads.', page_count: 416, publication_year: 2002 },
+        ],
+      },
+      {
+        label: 'High Druid of Shannara',
+        sublabel: 'Grianne Ohmsford — Ard Rhys and the Forbidding',
+        noteType: 'optional',
+        note: 'Twenty years after Voyage. Grianne, once the Ilse Witch, now leads the Druid order — and is trapped in the Forbidding. Her nephew Penderrin attempts the impossible to free her.',
+        books: [
+          { title: 'Jarka Ruus', slug: 'jarka-ruus', status: 'optional', seriesLabel: 'High Druid #1', note: 'Grianne Ohmsford as Ard Rhys of the reformed Druid order. Enemies conspire to trap her in the Forbidding. Political intrigue at Paranor with more psychological depth than earlier arcs.', page_count: 416, publication_year: 2003 },
+          { title: 'Tanequil',   slug: 'tanequil',   status: 'optional', seriesLabel: 'High Druid #2', note: 'Penderrin must find the tanequil — a living tree — and carve a staff that can open a door into the Forbidding to save his aunt. A quest within a quest.', page_count: 416, publication_year: 2004 },
+          { title: 'Straken',    slug: 'straken',    status: 'optional', seriesLabel: 'High Druid #3', note: "Penderrin's quest reaches its conclusion. Grianne's transformation from Ilse Witch to Ard Rhys — and the price paid for it — is completed. One of the better arc conclusions in later Shannara.", page_count: 368, publication_year: 2005 },
+        ],
+      },
+      {
+        label: 'Genesis of Shannara',
+        sublabel: 'the bridge — Word & Void meets the Four Lands',
+        noteType: 'optional',
+        note: 'Set in a devastated near-future Earth — the direct sequel to Word & Void. Shows the cataclysm that transforms the modern world into the Four Lands of Shannara. Best read after Word & Void.',
+        books: [
+          { title: "Armageddon's Children", slug: 'armageddons-children',    status: 'optional', seriesLabel: 'Genesis #1', note: 'Knights of the Word protect the last scattered human communities as demons overrun a ruined near-future Earth. The transition from our world to Shannara begins.', page_count: 384, publication_year: 2006 },
+          { title: 'The Elves of Cintra',   slug: 'the-elves-of-cintra',     status: 'optional', seriesLabel: 'Genesis #2', note: 'The remaining elves must reach a sanctuary. Angel Perez leads them while Logan Tom continues protecting the scattered human communities.', page_count: 384, publication_year: 2007 },
+          { title: 'The Gypsy Morph',       slug: 'the-gypsy-morph',         status: 'optional', seriesLabel: 'Genesis #3', note: 'The gypsy morph leads the survivors to their destination — the valley that will become the home of the races of the Four Lands. The world of Shannara is born.', page_count: 416, publication_year: 2008 },
+        ],
+      },
+      {
+        label: 'Legends of Shannara',
+        sublabel: '500 years after Genesis — the ancient world fading',
+        noteType: 'optional',
+        note: 'Set 500 years after Genesis of Shannara, as the magic barriers protecting the survivors begin to fail. Best read after Genesis.',
+        books: [
+          { title: 'Bearers of the Black Staff', slug: 'bearers-of-the-black-staff', status: 'optional', seriesLabel: 'Legends #1', note: 'The protective valley\'s magic barrier begins to weaken. A Tracker discovers a way through — and what waits outside. The races of the Four Lands are still forming.', page_count: 448, publication_year: 2010 },
+          { title: 'The Measure of the Magic',   slug: 'the-measure-of-the-magic',   status: 'optional', seriesLabel: 'Legends #2', note: "The valley's defenders must find a way to protect their people as the barriers fall and old enemies return. Closes the gap between Genesis and the main Shannara timeline.", page_count: 400, publication_year: 2011 },
+        ],
+      },
+      {
+        label: 'Dark Legacy of Shannara',
+        sublabel: 'the Forbidding fails again — echoes Elfstones',
+        noteType: 'optional',
+        note: 'A spiritual successor to Elfstones — the Forbidding begins to fail again, but in a world that has changed dramatically since Wil Ohmsford\'s time.',
+        books: [
+          { title: 'Wards of Faerie',  slug: 'wards-of-faerie',  status: 'optional', seriesLabel: 'Dark Legacy #1', note: 'The missing Elfstones must be found before the Forbidding collapses. Twin sisters Arling and Aphen Elessedil lead the search. Consciously echoes Elfstones with a modern Shannara sensibility.', page_count: 366, publication_year: 2012 },
+          { title: 'Bloodfire Quest',  slug: 'bloodfire-quest',  status: 'optional', seriesLabel: 'Dark Legacy #2', note: 'The quest for the Elfstones continues as the Forbidding weakens and the demon Straken Lord prepares his forces. Multiple storylines race toward the same crisis.', page_count: 339, publication_year: 2013 },
+          { title: 'Witch Wraith',     slug: 'witch-wraith',     status: 'optional', seriesLabel: 'Dark Legacy #3', note: 'All threads converge as the Forbidding collapses. For readers who loved Elfstones — this trilogy is its most direct descendant in later Shannara.', page_count: 432, publication_year: 2013 },
+        ],
+      },
+      {
+        label: 'Defenders of Shannara',
+        sublabel: 'standalone novels — new druid defender',
+        noteType: 'optional',
+        note: 'Three standalone novels following Paxon Leah, who becomes the High Druid\'s sword. Each works largely independently — can be read in any order after High Druid of Shannara.',
+        books: [
+          { title: "The High Druid's Blade", slug: 'the-high-druids-blade',   status: 'optional', seriesLabel: 'Defenders #1', note: 'Paxon Leah discovers the magic in his ancestral blade and is recruited as the Druid order\'s defender. A good entry point to late-era Shannara with a fresh protagonist.', page_count: 305, publication_year: 2014 },
+          { title: 'The Darkling Child',     slug: 'the-darkling-child',      status: 'optional', seriesLabel: 'Defenders #2', note: 'Paxon faces a mysterious child with wild, dangerous magic. Standalone adventure in the Four Lands.', page_count: 300, publication_year: 2015 },
+          { title: "The Sorcerer's Daughter", slug: 'the-sorcerers-daughter', status: 'optional', seriesLabel: 'Defenders #3', note: "Final Defenders novel — bridges directly to the Fall of Shannara tetralogy. Paxon's arc sets up the political situation for the concluding arc.", page_count: 334, publication_year: 2016 },
+        ],
+      },
+      {
+        label: 'The Fall of Shannara',
+        sublabel: 'the concluding tetralogy — 43 years of story ends here',
+        noteType: 'optional',
+        note: 'The final arc. Brooks brings together threads from across the entire saga as an unstoppable force from beyond the known world threatens to end everything.',
+        books: [
+          { title: 'The Black Elfstone',   slug: 'the-black-elfstone',  status: 'optional', seriesLabel: 'Fall #1', note: 'A new threat from beyond the known Four Lands. The Druid order investigates. Brooks begins tying together the threads of four decades of storytelling.', page_count: 352, publication_year: 2017 },
+          { title: 'The Skaar Invasion',   slug: 'the-skaar-invasion',  status: 'optional', seriesLabel: 'Fall #2', note: 'The Skaar — warriors from a dying land — have arrived and intend to conquer. A military and political crisis unlike anything the Four Lands has faced before.', page_count: 464, publication_year: 2018 },
+          { title: 'The Stiehl Assassin',  slug: 'the-stiehl-assassin', status: 'optional', seriesLabel: 'Fall #3', note: 'The Skaar war intensifies. An assassin wielding the legendary Stiehl — a blade that can kill anything — is loose in the Four Lands. The Ohmsford legacy comes full circle.', page_count: 496, publication_year: 2019 },
+          { title: 'The Last Druid',       slug: 'the-last-druid',      status: 'optional', seriesLabel: 'Fall #4', note: 'The conclusion of the entire Shannara saga. 43 years and 33 novels reach their end. Rewarding for readers who have stayed the full course.', page_count: 448, publication_year: 2020 },
         ],
       },
     ],
@@ -2354,7 +2556,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       { title: '⚔️ Original Trilogy (3)',   body: 'Skip Sword of Shannara or read it last. Elfstones is the real starting point — one of the best standalone portal-fantasy novels of the 1980s.',        color: 'blue'  },
       { title: '🌿 Heritage (4)',            body: 'The best arc of early Shannara. Three parallel quests converge in one of Brooks\'s most satisfying conclusions.',                                        color: 'blue'  },
       { title: '🌆 Word & Void (3)',         body: 'A standalone trilogy set in modern America. Completely different tone — urban fantasy. Rewards readers who want to understand Shannara\'s origins.',    color: 'green' },
-      { title: '📚 Later Arcs (20+ books)', body: 'Multiple further trilogies through 2020. Optional for casual readers — essential for those who fall in love with the Four Lands.',                       color: 'amber' },
+      { title: '📚 Later Arcs (7 arcs, 20 books)', body: 'Voyage → High Druid → Genesis → Legends → Dark Legacy → Defenders → Fall of Shannara. All optional — each arc works largely standalone. The Fall of Shannara (2017–2020) concludes the entire 33-novel saga.',  color: 'amber' },
     ],
     sections: [
       {
@@ -2395,7 +2597,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     description:
       'Brandon Sanderson\'s Mistborn is one of the most ingeniously constructed fantasy series ever written — set on a world where the prophesied hero failed a thousand years ago and a dark lord has ruled ever since. The original trilogy is a complete story of revolution, consequence, and cosmic revelation. Era 2 jumps 300 years forward into a Western-flavoured world of guns, trains, and new Allomancers. Era 3 — currently in progress — will advance to a near-modern spy-thriller setting. Each era can be read largely standalone, but the rewards for reading all of them in order are enormous. The Final Empire is where to start — one of the best heist novels in fantasy and a complete story in its own right. If you\'re new to Sanderson, the Mistborn reading order is the most recommended entry point before tackling the broader Cosmere.',
     darknessDisplay: '🕯️🕯️🕯️ Serious',
-    orderNote: 'Extras are placed where they should actually be read, not just by series number. Secret History is #3.5 but positioned after Bands of Mourning — its note explains why. Era 3 has not yet been published.',
+    orderNote: 'Extras are placed where they should actually be read, not just by series number. Secret History is #3.5 but positioned after Bands of Mourning — its note explains why. Era 3 (The Ghostbloods) is in progress — first book expected December 2028.',
     warning: 'Mistborn is part of the wider Cosmere universe. Era 2\'s The Lost Metal contains significant Cosmere crossover content. Reading the Cosmere guide alongside this one is recommended for the full experience.',
     groups: [
       {
@@ -2403,7 +2605,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         sublabel: 'start here — a complete story in three books',
         books: [
           { title: 'The Final Empire',      slug: 'the-final-empire',         status: 'mandatory',     seriesLabel: 'Mistborn #1',   note: 'Start here. A crew of thieves and Mistborn plan a heist to overthrow a god-emperor who has ruled for a thousand years. One of the best first novels in epic fantasy — the magic system, the world, and the twist all land perfectly.',              page_count: 541, publication_year: 2006 },
-          { title: 'The Eleventh Metal',    slug: 'the-eleventh-metal',        status: 'supplementary', seriesLabel: 'Mistborn #1.5', note: '~6k words. Kelsier\'s training before The Final Empire. Free on Sanderson\'s site. Best read right after The Final Empire.',                                                                                                                   page_count: 30,  publication_year: 2012 },
+          { title: 'The Eleventh Metal',    slug: 'the-eleventh-metal',        status: 'supplementary', seriesLabel: 'Mistborn #1.5', note: '~6k words. Kelsier\'s training before The Final Empire. Free on Sanderson\'s site. Best read right after The Final Empire.',                                                                                                                   page_count: 30,  publication_year: 2011 },
           { title: 'The Well of Ascension', slug: 'the-well-of-ascension',     status: 'mandatory',     seriesLabel: 'Mistborn #2',   note: 'The revolution succeeded — now the harder work begins. A political siege novel that tests your patience before delivering one of the best final acts in the trilogy. The slowest of the three but essential.',                                   page_count: 590, publication_year: 2007 },
           { title: 'The Hero of Ages',      slug: 'the-hero-of-ages',          status: 'mandatory',     seriesLabel: 'Mistborn #3',   note: 'Everything converges. The full cosmological scope of what Sanderson has been building is revealed. The climax answers questions you didn\'t know you were asking. One of the best trilogy conclusions in the genre.',                           page_count: 572, publication_year: 2008 },
         ],
@@ -2422,20 +2624,16 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
       {
         label: 'Era 3 — The Ghostbloods',
-        sublabel: 'announced trilogy — not yet published',
-        note: 'Era 3 will advance Scadrial to a near-modern, spy-thriller setting roughly equivalent to the 1980s. All three books are planned but none have been published as of 2025.',
+        sublabel: 'coming 2028–2030 — not yet published',
+        note: 'Officially titled The Ghostbloods. Era 3 advances Scadrial to a near-modern spy-thriller setting — cars, electricity, Cold War-era politics. Sanderson began writing after finishing Wind and Truth (2024) and gave the first public reading in late 2025. Three books planned; first expected December 2028.',
         noteType: 'optional',
-        books: [
-          { title: 'Era 3, Book 1', slug: 'mistborn-era-3-book-1', status: 'mandatory', seriesLabel: 'Mistborn #8', note: 'First book of the announced Era 3 spy-thriller trilogy. Set on a more technologically advanced Scadrial — cars, electricity, Cold War-era politics. Publication date TBA.',         page_count: 0, publication_year: 2026 },
-          { title: 'Era 3, Book 2', slug: 'mistborn-era-3-book-2', status: 'mandatory', seriesLabel: 'Mistborn #9', note: 'Second book of the Era 3 trilogy. Not yet published.',                                                                                                                             page_count: 0, publication_year: 2027 },
-          { title: 'Era 3, Book 3', slug: 'mistborn-era-3-book-3', status: 'mandatory', seriesLabel: 'Mistborn #10', note: 'Third and final book of the Era 3 trilogy. Will conclude the Wax-and-Wayne-era story threads and connect to the wider Cosmere endgame. Not yet published.',                      page_count: 0, publication_year: 2028 },
-        ],
+        books: [],
       },
     ],
     cards: [
       { title: '⚗️ Era 1 (3)',        body: 'The complete original trilogy. The best entry point and one of the finest fantasy trilogies ever written. Read all three before moving on.',                               color: 'blue'  },
       { title: '🔫 Era 2 (4)',        body: 'Wax and Wayne — Western-flavoured Mistborn set 300 years later. Faster and lighter than Era 1. The Lost Metal is the best Cosmere payoff yet published.',               color: 'blue'  },
-      { title: '🕵️ Era 3 (3)',        body: 'Announced spy-thriller trilogy set on a near-modern Scadrial. Not yet published as of 2025.',                                                                             color: 'amber' },
+      { title: '🕵️ Era 3 (3)',        body: 'Officially titled The Ghostbloods. Spy-thriller Scadrial in a Cold War-era setting. Sanderson started writing in 2025 — first book expected December 2028.',           color: 'amber' },
       { title: '📄 Extras (3)',       body: 'The Eleventh Metal (#1.5), Allomancer Jak (#5.5), Secret History (#3.5 novella). Placed in series number order — see each book\'s note for the ideal read point.',     color: 'green' },
     ],
     sections: [
