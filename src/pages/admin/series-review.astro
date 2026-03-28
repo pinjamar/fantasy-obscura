@@ -1,0 +1,210 @@
+---
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  import.meta.env.PUBLIC_SUPABASE_URL,
+  import.meta.env.SUPABASE_SERVICE_ROLE_KEY,
+);
+
+const PAGE_SIZE = 200;
+const page = parseInt(Astro.url.searchParams.get('page') ?? '1', 10);
+const offset = (page - 1) * PAGE_SIZE;
+
+const { data: pending, error } = await supabase
+  .from('books')
+  .select('slug,title,authors,series,series_number,series_confidence,series_review,series_source')
+  .eq('series_review', 'pending')
+  .order('series_confidence', { ascending: false })
+  .range(offset, offset + PAGE_SIZE - 1);
+
+const { count: totalPending } = await supabase
+  .from('books')
+  .select('*', { count: 'exact', head: true })
+  .eq('series_review', 'pending');
+
+if (error) throw new Error(error.message);
+
+const totalPages = Math.ceil((totalPending ?? 0) / PAGE_SIZE);
+
+const SOURCE_LABELS: Record<string, string> = {
+  regex: 'Regex',
+  google_books: 'Google Books',
+  llm: 'Gemini LLM',
+  manual: 'Manual',
+};
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Series Review — Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #0f0f13; color: #e2e2e8; padding: 2rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .subtitle { color: #888; margin-bottom: 1rem; font-size: 0.9rem; }
+    .toolbar { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .pagination { display: flex; gap: 0.5rem; align-items: center; margin-left: auto; }
+    .pagination a { color: #a78bfa; text-decoration: none; padding: 4px 10px; border: 1px solid #2a2a40; border-radius: 4px; font-size: 0.85rem; }
+    .pagination a:hover { background: #1e1e2e; }
+    .pagination .current { background: #2a2a3e; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; color: #e2e2e8; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    th { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid #2a2a35; color: #aaa; font-weight: 500; }
+    td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #1e1e28; vertical-align: middle; }
+    tr:hover td { background: #16161f; }
+    .conf-high  { color: #4ade80; }
+    .conf-med   { color: #facc15; }
+    .conf-low   { color: #f87171; }
+    .source-tag { font-size: 0.7rem; background: #2a2a3e; padding: 2px 6px; border-radius: 4px; color: #a0a0c0; }
+    .series-input { background: #1e1e2e; border: 1px solid #2a2a40; color: #e2e2e8; padding: 4px 8px; border-radius: 4px; width: 200px; }
+    .num-input { width: 60px; }
+    .btn { padding: 4px 12px; border-radius: 4px; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+    .btn-confirm { background: #16a34a; color: #fff; }
+    .btn-confirm:hover { background: #15803d; }
+    .btn-reject  { background: #991b1b; color: #fff; margin-left: 4px; }
+    .btn-reject:hover { background: #7f1d1d; }
+    .btn-all { background: #1d4ed8; color: #fff; padding: 6px 16px; font-size: 0.85rem; }
+    .btn-all:hover { background: #1e40af; }
+    .btn:disabled { opacity: 0.4; cursor: default; }
+    .done { opacity: 0.3; }
+    .empty { text-align: center; padding: 4rem; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Series Review Queue</h1>
+  <p class="subtitle">{totalPending ?? 0} total pending — page {page} of {totalPages} — sorted by confidence (highest first)</p>
+
+  {!pending?.length ? (
+    <div class="empty">✅ Queue is empty — nothing to review</div>
+  ) : (
+    <>
+      <div class="toolbar">
+        <button class="btn btn-all" id="confirm-all-btn">✓ Confirm all {pending.length} on this page</button>
+        <div class="pagination">
+          {page > 1 && <a href={`?page=${page - 1}`}>← Prev</a>}
+          <span class="current">Page {page} / {totalPages}</span>
+          {page < totalPages && <a href={`?page=${page + 1}`}>Next →</a>}
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Detected Series</th>
+            <th>#</th>
+            <th>Conf</th>
+            <th>Source</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="queue">
+          {pending.map(book => {
+            const conf = book.series_confidence ?? 0;
+            const confClass = conf >= 0.85 ? 'conf-high' : conf >= 0.70 ? 'conf-med' : 'conf-low';
+            return (
+              <tr id={`row-${book.slug}`}>
+                <td>
+                  <a href={`/books/${book.slug}`} target="_blank" style="color:#a78bfa">
+                    {book.title}
+                  </a>
+                </td>
+                <td style="color:#aaa">{book.authors?.join(', ')}</td>
+                <td>
+                  <input
+                    class="series-input"
+                    id={`series-${book.slug}`}
+                    type="text"
+                    value={book.series ?? ''}
+                  />
+                </td>
+                <td>
+                  <input
+                    class="series-input num-input"
+                    id={`num-${book.slug}`}
+                    type="number"
+                    step="0.5"
+                    value={book.series_number ?? ''}
+                    placeholder="—"
+                  />
+                </td>
+                <td class={confClass}>{(conf * 100).toFixed(0)}%</td>
+                <td><span class="source-tag">{SOURCE_LABELS[book.series_source ?? ''] ?? book.series_source}</span></td>
+                <td>
+                  <button class="btn btn-confirm" onclick={`act('${book.slug}', 'confirm')`}>✓</button>
+                  <button class="btn btn-reject"  onclick={`act('${book.slug}', 'reject')`}>✗</button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+
+      <div class="toolbar" style="margin-top:1.5rem">
+        <div class="pagination">
+          {page > 1 && <a href={`?page=${page - 1}`}>← Prev</a>}
+          <span class="current">Page {page} / {totalPages}</span>
+          {page < totalPages && <a href={`?page=${page + 1}`}>Next →</a>}
+        </div>
+      </div>
+    </>
+  )}
+
+  <script is:inline>
+    async function act(slug, action) {
+      const row = document.getElementById('row-' + slug);
+      const seriesName = document.getElementById('series-' + slug)?.value?.trim();
+      const numRaw = document.getElementById('num-' + slug)?.value;
+      const seriesNumber = numRaw ? parseFloat(numRaw) : null;
+
+      row.querySelectorAll('.btn').forEach(b => b.disabled = true);
+
+      const res = await fetch('/api/admin/series-review', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, action, series_name: seriesName, series_number: seriesNumber }),
+      });
+
+      if (res.ok) {
+        row.classList.add('done');
+        setTimeout(() => row.remove(), 600);
+      } else {
+        const err = await res.json();
+        alert('Error: ' + err.error);
+        row.querySelectorAll('.btn').forEach(b => b.disabled = false);
+      }
+    }
+
+    document.getElementById('confirm-all-btn')?.addEventListener('click', async function() {
+      const slugs = [...document.querySelectorAll('#queue tr[id]')]
+        .map(r => r.id.replace('row-', ''));
+      if (!slugs.length) return;
+      this.disabled = true;
+      this.textContent = 'Confirming…';
+
+      const res = await fetch('/api/admin/series-confirm-all', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slugs }),
+      });
+
+      if (res.ok) {
+        document.querySelectorAll('#queue tr').forEach(r => r.classList.add('done'));
+        setTimeout(() => {
+          const next = new URL(window.location.href);
+          next.searchParams.set('page', new URLSearchParams(window.location.search).get('page') || '1');
+          window.location.href = next.toString();
+        }, 800);
+      } else {
+        const err = await res.json();
+        alert('Error: ' + err.error);
+        this.disabled = false;
+        this.textContent = '✓ Confirm all on this page';
+      }
+    });
+  </script>
+</body>
+</html>

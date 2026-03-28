@@ -118,7 +118,20 @@ CREATE POLICY "users can remove own tags"   ON book_tags FOR DELETE TO authentic
 
 Tags default to `approved = false`. Set to `true` in the Supabase dashboard to make them public.
 
-### Step 6 — Editorial columns for generate scripts (run once before using generate-\*)
+### Step 6 — Series detection columns (file: `migrations/20260327_add_series_detect.sql`)
+
+Required for `detect-series.mjs`. Adds confidence tracking and review workflow to the books table:
+
+```sql
+ALTER TABLE books
+  ADD COLUMN IF NOT EXISTS series_confidence numeric(3,2),
+  ADD COLUMN IF NOT EXISTS series_review     text CHECK (series_review IN ('auto','pending','confirmed','rejected')),
+  ADD COLUMN IF NOT EXISTS series_source     text CHECK (series_source IN ('regex','google_books','llm','manual'));
+
+CREATE INDEX IF NOT EXISTS books_series_review_idx ON books (series_review) WHERE series_review = 'pending';
+```
+
+### Step 7 — Editorial columns for generate scripts (run once before using generate-\*)
 
 ```sql
 -- Book editorial fields
@@ -199,6 +212,33 @@ For reading-order books specifically (curated list of ~280 slugs, zero API calls
 node scripts/fix-missing-series.mjs           # patch all missing reading-order series
 node scripts/fix-missing-series.mjs --dry-run
 ```
+
+---
+
+### Step 1d — Detect series (bulk pipeline)
+
+Three-pass pipeline that fills `series` / `series_number` for the books that `auto-fill-series` couldn't catch. Requires the migration in `migrations/20260327_add_series_detect.sql` to be run first (adds `series_confidence`, `series_review`, `series_source` columns).
+
+**Passes:**
+- **Pass 1 — Regex** (free, instant): detects series from title/synopsis patterns like `(Mistborn, #1)`, `(Wheel of Time, Book 1)`, `Book Two of the Stormlight Archive`. High precision, low recall.
+- **Pass 2 — Google Books** (free quota): looks up books by ISBN, parses series info from subtitle/description fields. Batched 10 ISBNs per request.
+- **Pass 3 — Gemini LLM** (Vertex AI, ~$0.05 total): groups unresolved books by author and sends each author's batch to Gemini in one call. Catches series like "The Blade Itself" (First Law #1) where the title gives no hints. ~$0.05 for the entire catalog.
+
+**Confidence thresholds:**
+- ≥ 0.90 → auto-applied directly (`series_review = 'auto'`)
+- 0.60–0.89 → queued for manual review (`series_review = 'pending'`) — visit `/admin/series-review`
+- < 0.60 → skipped
+
+```bash
+node scripts/detect-series.mjs --dry-run       # preview all three passes, no writes
+node scripts/detect-series.mjs --pass-1        # regex only (free)
+node scripts/detect-series.mjs --pass-2 --limit 500   # Google Books (cap at 500)
+node scripts/detect-series.mjs --pass-3        # LLM only
+node scripts/detect-series.mjs                 # run all three passes
+node scripts/detect-series.mjs --include-pending      # re-run on pending books too
+```
+
+After running, go to `/admin/series-review` to confirm or reject the pending queue. Confirmed books stay as-is; rejected books are marked `series_review = 'rejected'` and skipped on future runs.
 
 ---
 
