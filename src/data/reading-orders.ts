@@ -293,10 +293,12 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     ],
     orderNote: 'Read in publication order. Position the novellas as listed — they\'re short but add meaningful context.',
     cards: [
-      { title: '⚡ Main novels (5 books)',   body: 'Way of Kings → Words of Radiance → Oathbringer → Rhythm of War → Wind and Truth. All essential, all massive.',                                    color: 'blue'  },
-      { title: '📖 Optional (1 book)',      body: "Warbreaker — standalone, free on Sanderson's site. Positioned before Oathbringer where its Stormlight connections pay off.",                          color: 'green' },
-      { title: '🔀 Novellas (2 books)',      body: 'Edgedancer before Oathbringer, Dawnshard before Rhythm of War — short reads, best in position.',                                                      color: 'amber' },
+      { title: '📏 The Commitment',   body: 'Five books. Each one is 1,000–1,330 pages. This is not a casual read — it is a multi-year undertaking for most people. The Way of Kings also has a slow opening (~200 pages before the series finds its stride). Go in knowing what you are signing up for. The payoff is extraordinary.', color: 'blue'   },
+      { title: '💙 Kaladin',          body: "Kaladin Stormblessed is one of the finest protagonists in modern fantasy. His arc is about depression, hopelessness, and finding a reason to protect people when you have every reason not to. Sanderson handles it with unusual care and honesty. His chapters are why most readers keep going.", color: 'purple' },
+      { title: '🌌 The Cosmere',      body: "Stormlight is part of Sanderson's Cosmere — a shared universe across multiple series. Each book stands alone, but connections accumulate. Warbreaker (a standalone Cosmere novel, free on Sanderson's site) is positioned before Oathbringer in this guide — a character from it appears in book 3 and the payoff is significant.", color: 'green'  },
     ],
+    cardsPosition: 'above',
+    warning: 'Rhythm of War (book 4) is the most divisive entry — slower, more focused on politics and mental health, with less of the kinetic action that defines the earlier books. It is also essential. The setup it creates is the foundation for Wind and Truth. Push through even if it feels like a detour.',
     sections: [
       {
         heading: 'Before you start',
@@ -570,13 +572,14 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✓ Completed Series',
     description:
-      'The defining epic fantasy of the 1990s and still one of the most ambitious — 14 books, ~11,000 pages, hundreds of characters, a prophecy 3,000 years in the making. You will laugh, you will despair through the slog, and the ending will earn it all. The Eye of the World is where to start. The Wheel of Time reading order is linear — all fourteen books plus the prequel New Spring, which is best read after book three.',
+      'The defining epic fantasy of the 1990s and still one of the most ambitious ever written — 14 books, ~11,000 pages, hundreds of named characters, and a prophecy 3,000 years in the making. Robert Jordan built a world of staggering depth: politics, religion, magic, and gender dynamics woven together across a cast that grows to rival small nations. It is not a fast series and it does not pretend to be. The middle books slow to a crawl before the pace snaps back — and the ending, completed by Brandon Sanderson after Jordan\'s death in 2007, earns every page of the investment. The Eye of the World is where to start. The reading order is strictly linear.',
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
     books: [
       { title: 'The Eye of the World',    slug: 'the-eye-of-the-world',    status: 'mandatory', note: 'Start here. Very Tolkien-flavoured at first — it evolves. Pay attention to the women.',                                             page_count: 782,  publication_year: 1990 },
       { title: 'The Great Hunt',          slug: 'the-great-hunt',          status: 'mandatory', note: 'The Horn of Valere. The world expands significantly.',                                                                              page_count: 681,  publication_year: 1990 },
-      { title: 'The Dragon Reborn',       slug: 'the-dragon-reborn',       status: 'mandatory', note: "Rand accepts his fate. Egwene, Nynaeve, and Elayne step up.",                                                                      page_count: 675,  publication_year: 1991 },
-      { title: 'The Shadow Rising',       slug: 'the-shadow-rising',       status: 'mandatory', note: 'Many call this the best book. Tear, the Aiel Waste, the Two Rivers — all at once.',                                                page_count: 981,  publication_year: 1992 },
+      { title: 'The Dragon Reborn',       slug: 'the-dragon-reborn',       status: 'mandatory',     note: "Rand accepts his fate. Egwene, Nynaeve, and Elayne step up.",                                                                      page_count: 675,  publication_year: 1991 },
+      { title: 'New Spring',              slug: 'new-spring',              status: 'supplementary', note: "Prequel novella. Moiraine and Lan before the series begins. Best read here once you know Moiraine — or save it for after the full series.", page_count: 334, publication_year: 2004 },
+      { title: 'The Shadow Rising',       slug: 'the-shadow-rising',       status: 'mandatory',     note: 'Many call this the best book. Tear, the Aiel Waste, the Two Rivers — all at once.',                                                page_count: 981,  publication_year: 1992 },
       { title: 'The Fires of Heaven',     slug: 'the-fires-of-heaven',     status: 'mandatory', note: 'Rand and Mat in the south. Nynaeve and Elayne on the run. Tension everywhere.',                                                    page_count: 963,  publication_year: 1993 },
       { title: 'Lord of Chaos',           slug: 'lord-of-chaos',           status: 'mandatory', note: "Dumai's Wells. One of the most explosive sequences in the series.",                                                                page_count: 1011, publication_year: 1994 },
       { title: 'A Crown of Swords',       slug: 'a-crown-of-swords',       status: 'mandatory', note: 'Political intrigue and the Bowl of the Winds. The beginning of the "slog."',                                                       page_count: 856,  publication_year: 1996 },
@@ -588,13 +591,19 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       { title: 'Towers of Midnight',      slug: 'towers-of-midnight',      status: 'mandatory', note: "Runs parallel to The Gathering Storm. Mat and Perrin's arcs resolved.",                                                           page_count: 843,  publication_year: 2010 },
       { title: 'A Memory of Light',       slug: 'a-memory-of-light',       status: 'mandatory', note: "Tarmon Gai'don. The Last Battle. Epic, overwhelming, earned.",                                                                     page_count: 912,  publication_year: 2013 },
     ],
+    cards: [
+      { title: '📏 The Scale',       body: '14 books. ~11,000 pages. Hundreds of named characters. A prophecy 3,000 years in the making. The Wheel of Time is the largest single fantasy series ever completed — and it is completed. Every thread gets resolved. The ending earns the investment.', color: 'blue'   },
+      { title: '✍️ The Handoff',     body: "Robert Jordan died in 2007 with the series unfinished. Brandon Sanderson completed it from Jordan's extensive notes and outlines. The transition is remarkably seamless — books 12–14 are excellent, and the ending is everything long-time fans hoped for.", color: 'green'  },
+      { title: '👥 The Women',       body: "Don't sleep on the female cast. Egwene al'Vere, Nynaeve al'Meara, and Moiraine are among the most compelling characters in the series — many readers consider them more interesting than Rand. The Aes Sedai politics are a highlight, not a detour.", color: 'purple' },
+    ],
+    cardsPosition: 'above',
     warning: '"The Slog" — books 7–10: Books 7–10 (A Crown of Swords through Crossroads of Twilight) are the most divisive in the series. Pacing slows dramatically, storylines stall, and Crossroads of Twilight in particular covers almost no ground. This is real — but it ends. Knife of Dreams (book 11) brings the pace back, and the Sanderson trilogy is some of the best fantasy writing in the series. Push through.',
-    orderNote: 'All 14 books in publication order. All are essential. There are no optional reads.',
+    orderNote: 'All 14 main books in publication order — all essential. New Spring (prequel novella) is optional and best read after book 3 or after the full series.',
     sections: [
       {
         heading: 'Publication order vs Chronological order',
         type: 'prose',
-        prose: "These are mostly the same. New Spring (a prequel novella) can technically be read anytime after book 10 but adds nothing essential for the main story. The only ordering question is whether to read The Gathering Storm and Towers of Midnight interleaved (they share a timeline) — but most readers read them sequentially in publication order, which works fine.",
+        prose: "These are mostly the same. New Spring is the one exception — a prequel novella (~334 pages) covering how the Aes Sedai learned the Dragon had been reborn and how Moiraine began her 20-year search for Rand. Published in 2004 between books 10 and 11, it can technically be read at any point, but it works best after book 3: by then you know Moiraine well enough for her origin to land. It can also be saved for after the full series without any loss to the main story. The only other ordering question is whether to read The Gathering Storm and Towers of Midnight interleaved (they share a timeline) — most readers take them sequentially in publication order, which works fine.",
       },
       {
         heading: 'Spoiler-free notes',
@@ -683,31 +692,51 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     description:
       'A monster hunter in a morally grey world who is far more interesting than the monsters. Sapkowski takes fairy tales apart and rebuilds them as tragedy. The books behind the games, the show, and a generation of dark fantasy. Start with The Last Wish — a short story collection that introduces Geralt and reads as a standalone. The Witcher reading order matters: both story collections come before the five-novel saga.',
     darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
-    books: [
-      { title: 'The Last Wish',        slug: 'the-last-wish',        status: 'mandatory', note: 'Start here. Short stories introducing Geralt and the world. Brilliant fairy tale deconstructions.',            page_count: 288, publication_year: 1993 },
-      { title: 'Sword of Destiny',     slug: 'sword-of-destiny',     status: 'mandatory', note: 'More short stories — Ciri appears. These two collections are the foundation of everything.',                  page_count: 384, publication_year: 1992 },
-      { title: 'Blood of Elves',       slug: 'blood-of-elves',       status: 'mandatory', note: 'First novel. The war begins and Geralt must protect Ciri.',                                                   page_count: 288, publication_year: 1994 },
-      { title: 'Time of Contempt',     slug: 'time-of-contempt',     status: 'mandatory', note: 'Political intrigue, mage politics, and everything accelerates.',                                              page_count: 352, publication_year: 1995 },
-      { title: 'Baptism of Fire',      slug: 'baptism-of-fire',      status: 'mandatory', note: 'War-torn journey. Geralt travels through a world at war.',                                                   page_count: 352, publication_year: 1996 },
-      { title: 'The Tower of Swallows',slug: 'the-tower-of-swallows',status: 'mandatory', note: 'The penultimate novel. Ciri on her own. Dark and relentless.',                                               page_count: 400, publication_year: 1997 },
-      { title: 'Lady of the Lake',     slug: 'lady-of-the-lake',     status: 'mandatory', note: 'Epic conclusion to the saga. Everything converges.',                                                         page_count: 544, publication_year: 1999 },
-      { title: 'Season of Storms',     slug: 'season-of-storms',     status: 'optional',  note: 'Standalone prequel/interquel. Set between the short stories. Read after the main saga.',                     page_count: 368, publication_year: 2013 },
-    ],
-    orderNote: 'Start with the short story collections — they are not prologues, they are essential. The saga novels follow.',
-    cards: [
-      { title: '⚡ Essential (7 books)',  body: 'Both short story collections + the 5 saga novels. The short stories are not optional — they introduce Ciri and set up the entire saga.',     color: 'blue'  },
-      { title: '📖 Optional (1 book)',   body: 'Season of Storms — a standalone set between the short stories. Contains spoilers for the saga, so read it last.',                           color: 'green' },
-    ],
-    sections: [
+    groups: [
       {
-        heading: 'Why start with the short stories?',
-        type: 'bullets',
-        bullets: [
-          'The short stories were written first and establish the world, tone, and moral framework.',
-          'Key characters — including Ciri, who becomes central to the saga — are introduced in Sword of Destiny.',
-          'The saga novels assume knowledge of the short story characters. Starting at Blood of Elves causes confusion.',
+        label: 'The Short Story Collections',
+        sublabel: 'start here — not optional',
+        noteType: 'required',
+        note: 'Written first, these are the foundation. They establish the world, Geralt\'s moral code, and introduce Ciri. The saga novels assume you know these characters. Starting at Blood of Elves causes confusion.',
+        books: [
+          { title: 'The Last Wish',    slug: 'the-last-wish',    status: 'mandatory', note: 'Start here. Geralt as monster-hunter-for-hire, deconstructing fairy tales. Brilliant standalone stories that double as world-building. Each one reframes a classic tale as moral tragedy.', page_count: 288, publication_year: 1993 },
+          { title: 'Sword of Destiny', slug: 'sword-of-destiny', status: 'mandatory', note: 'Ciri appears for the first time. The relationship between Geralt and his destiny — something he has spent his life refusing — begins to close around him. Essential before the saga.', page_count: 384, publication_year: 1992 },
         ],
       },
+      {
+        label: 'The Witcher Saga',
+        sublabel: '5 novels — read in order',
+        noteType: 'required',
+        note: 'A continuous war story told across five novels. Ciri, not Geralt, is the true protagonist of the saga — she is what everyone is hunting, protecting, or using. The tone shifts from the short stories into full-scale political and military darkness.',
+        books: [
+          { title: 'Blood of Elves',           slug: 'blood-of-elves',           status: 'mandatory', note: 'The saga begins. The war has already happened — Geralt navigates the aftermath while trying to protect Ciri from every faction that wants her.',                                                     page_count: 288, publication_year: 1994 },
+          { title: 'Time of Contempt',         slug: 'time-of-contempt',         status: 'mandatory', note: 'Mage politics, betrayal, and the world fracturing. The council scenes are among the best political writing in fantasy. Things get much worse.',                                                      page_count: 352, publication_year: 1995 },
+          { title: 'Baptism of Fire',          slug: 'baptism-of-fire',          status: 'mandatory', note: "Geralt's journey through a devastated continent at war. Slower than the others — more concerned with the human cost. The Hansa (his companions) are the heart of this book.", page_count: 352, publication_year: 1996 },
+          { title: 'The Tower of the Swallow', slug: 'the-tower-of-the-swallow', status: 'mandatory', note: "Ciri alone. No Geralt. Dark, relentless, and the best showcase for why she's the real protagonist. The book that earns the ending.",                                                                page_count: 400, publication_year: 1997 },
+          { title: 'Lady of the Lake',         slug: 'lady-of-the-lake',         status: 'mandatory', note: 'The conclusion. Non-linear structure, mythological scope, and an ending that divides readers — some find it devastating, others transcendent. Either way, it earns it.',                             page_count: 544, publication_year: 1999 },
+        ],
+      },
+      {
+        label: 'Standalone Extras',
+        sublabel: 'read after the saga',
+        noteType: 'optional',
+        note: 'Two standalone novels that sit outside the main saga. Season of Storms is set chronologically during the short story era but written in 2013 — its epilogue spoils the saga ending. Crossroads of Ravens (2025) is a prequel about Geralt\'s earliest days as a Witcher, best read knowing who he eventually becomes.',
+        books: [
+          { title: 'Season of Storms',    slug: 'season-of-storms',    status: 'optional', note: "A standalone Geralt adventure — lighter in tone than the saga, closer to the short story register. Fun for fans who want more time in the world. The epilogue in particular rewards those who've finished the saga.", page_count: 368, publication_year: 2013 },
+          { title: 'Crossroads of Ravens', slug: 'crossroads-of-ravens', status: 'optional', note: "Geralt as a young, newly made Witcher — the origin before the legend. Set chronologically first but written and published last. Sapkowski returns to the character stripped of everything that came after. Read it knowing who Geralt becomes.", page_count: 304, publication_year: 2025 },
+        ],
+      },
+    ],
+    orderNote: 'Short story collections first — they are essential, not optional. The saga follows in publication order. Season of Storms and Crossroads of Ravens last.',
+    cards: [
+      { title: '🧚 The Fairy Tales',    body: "Sapkowski built the Witcher world on deconstructed fairy tales. The Last Wish retells Snow White, Beauty and the Beast, the Fisherman's Wife — but strips away the happy endings and asks what these stories actually cost. It is the most original thing about the series and it works on every level.", color: 'blue'   },
+      { title: '⚔️ Ciri',              body: "The short stories are Geralt's. The saga is Ciri's. She is what every faction in the world is hunting — a girl with Elder Blood who can reshape reality. Geralt's entire arc in the novels is defined by his attempt to protect someone who increasingly doesn't need protecting.", color: 'purple' },
+      { title: '🎮 Games & Show',       body: "The Witcher games are sequels to the books, not adaptations — they assume the book endings and continue from there. The Netflix show takes major liberties with the timeline and characters. The books are darker, more morally complex, and significantly better than either.", color: 'green'  },
+      { title: '📚 The Hussite Trilogy', body: "Sapkowski also wrote a separate historical fantasy trilogy — Narrenturm, Boże Bojownicy, and Lux Perpetua — set in 15th century Bohemia during the Hussite Wars. It has no connection to the Witcher universe and is not part of this reading order. A separate series for readers who want more Sapkowski.", color: 'zinc'   },
+      { title: '🖼️ Graphic Novel Adaptations', body: "Dark Horse Comics has published graphic novel adaptations of individual short stories from The Last Wish — A Grain of Truth, The Lesser Evil, The Edge of the World, The Witcher, and A Question of Price. They adapt stories you will already have read. Recommended for fans who want to revisit the world in a different format, not as a replacement for the prose.", color: 'amber'  },
+    ],
+    cardsPosition: 'above',
+    sections: [
       {
         heading: 'If you know the games or show',
         type: 'bullets',
@@ -1045,7 +1074,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'complete',
     seriesStatusLabel: '✅ Complete Series',
     description:
-      'Sixteen books across four interconnected series, all set in the same world, all building toward a conclusion that has been in progress since 1995. Robin Hobb writes character-driven fantasy with a particular genius for emotional devastation — her protagonists make choices that hurt, and she never lets them off easily. This is the most complete emotional journey in epic fantasy. Assassin\'s Apprentice is where to start — one of the finest fantasy debuts ever written. Follow the Robin Hobb reading order exactly: the reveals across series depend on it.',
+      'Sixteen books across five interconnected series, all set in the same world, all building toward a conclusion that has been in progress since 1995. Robin Hobb writes character-driven fantasy with a particular genius for emotional devastation — her protagonists make choices that hurt, and she never lets them off easily. This is the most complete emotional journey in epic fantasy. Assassin\'s Apprentice is where to start — one of the finest fantasy debuts ever written. Follow the Robin Hobb reading order exactly: the reveals across series depend on it.',
     darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
     groups: [
       {
@@ -1063,9 +1092,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         label: 'Liveship Traders',
         sublabel: 'new POVs, same world — do not skip',
         noteType: 'required',
-        note: "New characters and merchant ships, but the world-building here is load-bearing for everything that follows, especially the Fool trilogy.",
+        note: "New characters and merchant ships, but the world-building here is load-bearing for everything that follows, especially the Fool trilogy. There is also a short prequel story 'Homecoming' (~50 pages, in the Legends II anthology) covering the first liveship voyage — read it before Ship of Magic if you can find it, but it's not essential.",
         books: [
-          { title: 'Homecoming',       slug: 'homecoming',       status: 'supplementary', note: 'Short story (~50 pages) serving as a prequel to Ship of Magic — the first liveship voyage, before the Vestrit family. Published in the Legends II anthology (2003). Read immediately before Ship of Magic for maximum impact.', page_count: 50, publication_year: 2003 },
           { title: 'Ship of Magic',    slug: 'ship-of-magic',    status: 'mandatory', note: "Different characters, same world. Sentient ships, a merchant family in crisis, and pirates. Essential for the later Fitz books.", page_count: 880, publication_year: 1998 },
           { title: 'The Mad Ship',     slug: 'the-mad-ship',     status: 'mandatory', note: "The Liveship Traders hits its stride. Althea, Brashen, and the Paragon — one of Hobb's most compelling relationship triangles.", page_count: 906, publication_year: 1999 },
           { title: 'Ship of Destiny',  slug: 'ship-of-destiny',  status: 'mandatory', note: 'Closes the Liveship arc and quietly sets up the mythology that underpins the entire Elderlings world. Do not skip this.',        page_count: 789, publication_year: 2000 },
@@ -1186,17 +1214,16 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         ],
       },
     ],
-    orderNote: 'Publication order is the correct order. The Empire of Storms / Tower of Dawn overlap is the one structural complication — see the note below.',
+    orderNote: 'Publication order is the correct order. The Empire of Storms / Tower of Dawn overlap is the one structural complication — see the warning above.',
+    warning: 'Empire of Storms and Tower of Dawn cover the same timeline from different POVs. Option A (recommended): read EoS in full, then Tower of Dawn. Option B: alternate chapters using an online interleave guide (search "ToG EoS ToD reading guide") — more work, better immersion. Do not skip Tower of Dawn regardless — its events are essential for the finale.',
     cards: [
-      { title: '⚡ Essential (7 books)', body: 'All main books — ToG through Kingdom of Ash. Tower of Dawn is mandatory despite being a "companion" novel.',                    color: 'blue'  },
-      { title: '📖 Optional (1 book)',  body: "The Assassin's Blade — prequel novellas. Adds emotional depth but nothing you'll lose without. Read after book 1.",             color: 'green' },
+      { title: '📈 Stick With Book 1',   body: "Throne of Glass is the weakest entry. The competition premise feels YA-light, and the protagonist is deliberately unreliable about who she really is. Crown of Midnight is where the series finds its voice — darker, faster, with a reveal that reframes everything before it. Don't judge the series on book 1 alone.", color: 'blue'   },
+      { title: '🌍 The Tone Shift',      body: 'This series starts as YA-adjacent and ends as full-scale epic fantasy with world-ending stakes, ancient magic, and a body count. The shift is gradual but real — by Heir of Fire (book 3) the Fae, the true antagonist, and the larger mythology arrive. Book 7 is not the same genre as book 1.', color: 'green'  },
+      { title: '🔗 The SJM Universe',    body: 'Throne of Glass and ACOTAR share a universe — characters and lore cross over, and reading ToG first adds significant context to ACOTAR. Maas has said the full picture only emerges across both series. If you plan to read both, start here.', color: 'purple' },
+      { title: "📖 The Assassin's Blade", body: 'Five prequel novellas collected in one volume. Optional — the main series works without them. Best read after book 1 (they spoil nothing forward, but hit harder once you know Celaena). Skip entirely if you want to stay on the main thread.', color: 'amber'  },
     ],
+    cardsPosition: 'above',
     sections: [
-      {
-        heading: '⚠️ The Empire of Storms / Tower of Dawn problem',
-        type: 'warning',
-        prose: "These two books cover the same timeline from different POVs. Option A (recommended): Read Empire of Storms in full, then Tower of Dawn. Slightly less immersive but easier to follow. Option B: Use the chapter-interleave guide (search \"ToG EoS ToD reading guide\"). More work, better payoff. Do not skip Tower of Dawn — its events directly affect the finale.",
-      },
       {
         heading: 'Before you start',
         type: 'bullets',
@@ -1589,9 +1616,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatus: 'ongoing',
     seriesStatusLabel: '⏳ Ongoing Series',
     description:
-      "Forty novels. One dark elf who refused to be what his world made him. Drizzt Do'Urden abandoned the Underdark's brutal drow society and built a life on the surface through sheer will, friendship, and twin scimitars — and R.A. Salvatore has been telling that story since 1988. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are among the most beloved found families in fantasy. This guide covers all 40 Drizzt books across 13 arcs in recommended reading order, from the Underdark origin story to the concluding Way of the Drow trilogy.",
+      "Over 40 novels. One dark elf who refused to be what his world made him. Drizzt Do'Urden abandoned the Underdark's brutal drow society and built a life on the surface through sheer will, friendship, and twin scimitars — and R.A. Salvatore has been telling that story since 1988. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are among the most beloved found families in fantasy. This guide covers the full Drizzt saga across 14 arcs in recommended reading order — from the Underdark origin story through the Way of the Drow trilogy, and into the ongoing Drizzt's Daughter series that follows.",
     darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
-    warning: 'The series spans 40 novels across 13+ arcs. The first four arcs are the heart of the series. Later arcs vary in quality but remain popular with fans of the characters.',
+    warning: 'The series spans 40+ novels across 14 arcs and is still ongoing with the Drizzt\'s Daughter series. The first four arcs are the heart of the series. Later arcs vary in quality but remain popular with fans of the characters.',
     groups: [
       {
         label: 'The Dark Elf Trilogy',
@@ -1628,10 +1655,12 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       {
         label: 'Paths of Darkness',
         sublabel: 'The Companions scattered — a darker chapter',
+        note: 'The Servant of the Shard is technically Paths of Darkness #3 but listed under The Sellswords below — it was later repackaged as the start of that spin-off trilogy and fits better there narratively.',
+        noteType: 'optional',
         books: [
-          { title: 'The Silent Blade',        slug: 'the-silent-blade',        status: 'optional', note: 'Artemis Entreri returns. Drizzt vs. Entreri rivalry reaches a major turning point.', page_count: 315, publication_year: 1998 },
-          { title: 'The Spine of the World',  slug: 'the-spine-of-the-world',  status: 'optional', note: 'Wulfgar-focused departure. Deals with trauma and recovery — divisive but emotionally honest.', page_count: 345, publication_year: 1999 },
-          { title: 'Sea of Swords',           slug: 'sea-of-swords',           status: 'optional', note: 'The Companions reunite. Wraps up the Paths of Darkness arc cleanly.', page_count: 312, publication_year: 2001 },
+          { title: 'The Silent Blade',        slug: 'the-silent-blade',        status: 'optional', seriesLabel: 'Paths of Darkness #1', note: 'Artemis Entreri returns. Drizzt vs. Entreri rivalry reaches a major turning point.', page_count: 315, publication_year: 1998 },
+          { title: 'The Spine of the World',  slug: 'the-spine-of-the-world',  status: 'optional', seriesLabel: 'Paths of Darkness #2', note: 'Wulfgar-focused departure. Deals with trauma and recovery — divisive but emotionally honest.', page_count: 345, publication_year: 1999 },
+          { title: 'Sea of Swords',           slug: 'sea-of-swords',           status: 'optional', seriesLabel: 'Paths of Darkness #4', note: 'The Companions reunite. Wraps up the Paths of Darkness arc cleanly.', page_count: 312, publication_year: 2001 },
         ],
       },
       {
@@ -1640,7 +1669,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         note: 'Drizzt is largely absent. These books follow Jarlaxle and Entreri — darker, more morally complex. Essential for fans of the villains; skippable otherwise.',
         noteType: 'optional',
         books: [
-          { title: 'The Servant of the Shard',   slug: 'the-servant-of-the-shard',   status: 'optional', note: 'Jarlaxle and Entreri navigate power and politics in Calimport. The best Entreri book.', page_count: 315, publication_year: 2000 },
+          { title: 'The Servant of the Shard',   slug: 'servant-of-the-shard',   status: 'optional', note: 'Jarlaxle and Entreri navigate power and politics in Calimport. The best Entreri book.', page_count: 315, publication_year: 2000 },
           { title: 'Promise of the Witch King',  slug: 'promise-of-the-witch-king',  status: 'optional', note: 'The pair venture into the savage North. Fast and entertaining — lesser than book one.', page_count: 343, publication_year: 2005 },
           { title: 'Road of the Patriarch',      slug: 'road-of-the-patriarch',      status: 'optional', note: "Concludes Entreri's character arc. A satisfying close to one of fantasy's great rivals.", page_count: 352, publication_year: 2006 },
         ],
@@ -1676,12 +1705,25 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         ],
       },
       {
+        label: 'The Sundering',
+        sublabel: 'multi-author Forgotten Realms event — read The Companions first',
+        noteType: 'optional',
+        note: 'A six-book crossover event across the Forgotten Realms by six different authors. Only The Companions (#1) is essential for Drizzt readers — it restores the original cast and directly leads into Companions Codex. The other five are optional deep cuts for Forgotten Realms fans.',
+        books: [
+          { title: 'The Companions',  slug: 'the-companions',          status: 'mandatory',     seriesLabel: 'The Sundering #1', note: "Salvatore's entry. The original Companions reborn — joyful and earned after years of absence. The hinge on which everything that follows turns. Required before Companions Codex.", page_count: 296, publication_year: 2013 },
+          { title: 'The Godborn',     slug: 'the-godborn',             status: 'optional',      seriesLabel: 'The Sundering #2', note: 'By Paul S. Kemp. Follows Vasen Cale, son of Erevis Cale. For Erevis Cale fans only.', page_count: 352, publication_year: 2014 },
+          { title: 'The Adversary',   slug: 'the-adversary-sundering', status: 'optional',      seriesLabel: 'The Sundering #3', note: "By Erin M. Evans. Follows Farideh from the Brimstone Angels series. Unrelated to Drizzt's storyline.", page_count: 352, publication_year: 2013 },
+          { title: 'The Reaver',      slug: 'the-reaver-sundering',    status: 'optional',      seriesLabel: 'The Sundering #4', note: 'By Richard Lee Byers. Pirate adventure during the Sundering chaos. Standalone among the six.', page_count: 320, publication_year: 2014 },
+          { title: 'The Sentinel',    slug: 'the-sentinel-sundering',  status: 'optional',      seriesLabel: 'The Sundering #5', note: 'By Troy Denning. Follows Kleef Kenric, a paladin of Helm. Minimal connection to Drizzt.', page_count: 352, publication_year: 2014 },
+          { title: 'The Herald',      slug: 'the-herald',              status: 'optional',      seriesLabel: 'The Sundering #6', note: 'By Ed Greenwood. Follows Elminster during the Sundering. For Elminster fans.', page_count: 352, publication_year: 2014 },
+        ],
+      },
+      {
         label: 'Companions Codex',
         sublabel: 'The Companions return — the drow conflict resumes',
-        note: "Read The Companions first — it's Salvatore's contribution to the multi-author Sundering event and the book that restores the original cast. Must read before Night of the Hunter.",
+        note: 'Read The Sundering #1 (The Companions) before starting this arc.',
         noteType: 'required',
         books: [
-          { title: 'The Companions',               slug: 'the-companions',               status: 'supplementary', note: 'The original Companions return from death — joyful and earned after years of absence. The hinge on which everything that follows turns.', page_count: 296, publication_year: 2013 },
           { title: 'Night of the Hunter',          slug: 'night-of-the-hunter',          status: 'supplementary', note: 'The reunited Companions return to the Underdark. Energy that recalls the Legacy of the Drow era.', page_count: 352, publication_year: 2014 },
           { title: 'Rise of the King',             slug: 'rise-of-the-king',             status: 'supplementary', note: 'An orc horde marches again. Large-scale warfare with the full cast engaged.', page_count: 384, publication_year: 2014 },
           { title: 'Vengeance of the Iron Dwarf',  slug: 'vengeance-of-the-iron-dwarf',  status: 'supplementary', note: 'The orc war reaches its conclusion. Satisfying arc closure.', page_count: 352, publication_year: 2015 },
@@ -1731,9 +1773,12 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     orderNote: 'Two valid starting points: Homeland (Dark Elf Trilogy) for chronological order, or The Crystal Shard (Icewind Dale) for publication order. Both work — publication order is the more common recommendation.',
     cardsPosition: 'above',
     cards: [
-      { title: '⚔️ The Companions', body: "The heart of the series isn't Drizzt — it's the found family he builds. Bruenor the dwarf king, Catti-brie the archer, Wulfgar the barbarian, Regis the halfling. They're assembled in The Crystal Shard and tested across every arc that follows. When the series is at its best, it's their story as much as his.", color: 'blue'   },
-      { title: '📚 Two Entry Points', body: "The great Drizzt debate: start with Homeland (Dark Elf Trilogy) for Drizzt's brutal origin in drow society, or The Crystal Shard (Icewind Dale) where the Companions first meet. Most guides recommend Crystal Shard — it's faster, introduces the full cast, and the origin story hits harder once you love the character.", color: 'green'  },
-      { title: '🗡️ Artemis Entreri', body: "Drizzt's greatest rival is the assassin Artemis Entreri — a dark mirror who made the same choices Drizzt made and arrived somewhere entirely different. Their conflict across the first five arcs is the series' finest thread. The Sellswords Trilogy follows Entreri alone and is worth reading for fans who want his full arc.", color: 'purple' },
+      { title: '⚔️ The Companions',   body: "The heart of the series isn't Drizzt — it's the found family he builds. Bruenor the dwarf king, Catti-brie the archer, Wulfgar the barbarian, Regis the halfling. They're assembled in The Crystal Shard and tested across every arc that follows. When the series is at its best, it's their story as much as his.", color: 'blue'   },
+      { title: '📚 Two Entry Points',  body: "The great Drizzt debate: start with Homeland (Dark Elf Trilogy) for Drizzt's brutal origin in drow society, or The Crystal Shard (Icewind Dale) where the Companions first meet. Most guides recommend Crystal Shard — it's faster, introduces the full cast, and the origin story hits harder once you love the character.", color: 'green'  },
+      { title: '🗡️ Artemis Entreri',  body: "Drizzt's greatest rival is the assassin Artemis Entreri — a dark mirror who made the same choices Drizzt made and arrived somewhere entirely different. Their conflict across the first five arcs is the series' finest thread. The Sellswords Trilogy follows Entreri alone and is worth reading for fans who want his full arc.", color: 'purple' },
+      { title: '🌍 The Sundering',     body: "A six-book Forgotten Realms crossover event (2013–2014) by six different authors. Only book #1 — The Companions by Salvatore — is required for Drizzt readers. It brings back the original cast after years of absence and directly leads into Companions Codex. The other five follow unrelated characters and are for deep Forgotten Realms fans only.", color: 'amber'  },
+      { title: '⚡ Paths of Darkness', body: "The fourth arc is where the series shifts. Entreri and Jarlaxle — the assassin and the charismatic drow mercenary — stop being antagonists and become the most compelling characters in the room. Paths of Darkness sets up their dynamic, and the Sellswords Trilogy that follows gives them their own story entirely. If you find Drizzt's arc thinning out, Entreri's is just getting started.", color: 'red'    },
+      { title: '🔄 The Return Era',    body: "After the time jump in The Companions (The Sundering #1), the original cast is back and younger. Companions Codex and the arcs that follow feel lighter than the early books — more adventurous, less grim. Readers who loved the dark tone of Legacy of the Drow may find the shift jarring. Those who just want the gang back together will enjoy it.", color: 'zinc'   },
     ],
     sections: [
       {

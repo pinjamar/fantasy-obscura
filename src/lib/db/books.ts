@@ -287,14 +287,20 @@ export async function getBooksBySeries(seriesName: string): Promise<Book[]> {
  * Get all distinct series names that have 2+ books, with book count
  */
 export async function getAllSeries(): Promise<{ name: string; slug: string; bookCount: number }[]> {
-  const { data } = await supabaseClient
-    .from('books')
-    .select('series')
-    .not('series', 'is', null) as { data: { series: string | null }[] | null };
-
+  // Paginate in chunks of 1000 to bypass the anon key row cap
+  const PAGE = 1000;
   const counts = new Map<string, number>();
-  for (const row of data ?? []) {
-    if (row.series) counts.set(row.series, (counts.get(row.series) ?? 0) + 1);
+  for (let page = 0; ; page++) {
+    const { data } = await supabaseClient
+      .from('books')
+      .select('series')
+      .not('series', 'is', null)
+      .range(page * PAGE, (page + 1) * PAGE - 1) as { data: { series: string | null }[] | null };
+    if (!data || data.length === 0) break;
+    for (const row of data) {
+      if (row.series) counts.set(row.series, (counts.get(row.series) ?? 0) + 1);
+    }
+    if (data.length < PAGE) break;
   }
 
   return Array.from(counts.entries())

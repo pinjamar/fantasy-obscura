@@ -1,6 +1,7 @@
 ---
 import Layout from '../../components/Layout.astro';
-import { getBookBySlug, authorToSlug, getAllSeries } from '../../lib/db/books';
+import { getBookBySlug, authorToSlug } from '../../lib/db/books';
+import { READING_ORDERS } from '../../data/reading-orders';
 import { getApprovedTags } from '../../lib/db/tags';
 import { supabaseClient } from '../../lib/supabaseClient';
 import AddToShelf from '../../components/AddToShelf';
@@ -14,12 +15,10 @@ if (!slug) return Astro.redirect('/books');
 const book = await getBookBySlug(slug);
 if (!book) return new Response(null, { status: 404, statusText: 'Not Found' });
 
-const [approvedTags, allSeries] = await Promise.all([
-  getApprovedTags(book.id),
-  book.series ? getAllSeries() : Promise.resolve([]),
-]);
+const approvedTags = await getApprovedTags(book.id);
 const seriesSlug = book.series
-  ? (allSeries.find((s) => s.name === book.series)?.slug ?? null)
+  ? (READING_ORDERS.find((e) => e.name === book.series)?.slug
+    ?? book.series.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
   : null;
 const userEmail = Astro.locals.user?.email ?? null;
 
@@ -234,18 +233,12 @@ function upgradeCoverUrl(url: string | null | undefined): string {
 
       {book.series && (
         <div class="mt-1.5">
-          {seriesSlug ? (
-            <a
-              href={`/reading-orders/${seriesSlug}/`}
-              class="text-lg sm:text-xl text-zinc-400 font-light italic hover:text-zinc-600 hover:underline transition-colors"
-            >
-              {book.series}{book.series_number != null ? ` · #${book.series_number}` : ''} ›
-            </a>
-          ) : (
-            <span class="text-base sm:text-lg text-zinc-400 font-light italic">
-              {book.series}{book.series_number != null ? ` · #${book.series_number}` : ''}
-            </span>
-          )}
+          <a
+            href={`/reading-orders/${seriesSlug}/`}
+            class="text-lg sm:text-xl text-zinc-400 font-light italic hover:text-zinc-600 hover:underline transition-colors"
+          >
+            {book.series}{book.series_number != null ? ` · #${book.series_number}` : ''} ›
+          </a>
         </div>
       )}
 

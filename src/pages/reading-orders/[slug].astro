@@ -1,7 +1,7 @@
 ---
 import Layout from '../../components/Layout.astro';
 import ReadingOrder from '../../components/ReadingOrder';
-import { getReadingOrderEntry } from '../../data/reading-orders';
+import { getReadingOrderEntry, READING_ORDERS } from '../../data/reading-orders';
 import type { ReadingOrderEntry } from '../../data/reading-orders';
 import { getAllSeries, getBooksBySeries, authorToSlug } from '../../lib/db/books';
 import { supabaseClient } from '../../lib/supabaseClient';
@@ -23,7 +23,14 @@ function upgradeCoverUrl(url: string | null | undefined): string {
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
 
 // ── Curated path ──────────────────────────────────────────────────────────────
-const entry = getReadingOrderEntry(slug);
+const dbSlugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+let entry = getReadingOrderEntry(slug);
+if (!entry) {
+  // If the DB-derived slug for a curated entry's name matches this slug,
+  // redirect to the canonical curated slug (e.g. "memory-sorrow-and-thorn" → "memory-sorrow-thorn")
+  const nameMatch = READING_ORDERS.find((e) => dbSlugify(e.name) === slug);
+  if (nameMatch) return Astro.redirect(`/reading-orders/${nameMatch.slug}/`, 301);
+}
 
 type MergedBook = {
   title: string; slug: string; status: string; note: string;
@@ -100,9 +107,34 @@ if (!isCurated) {
   const allSeries = await getAllSeries();
   seriesMeta = allSeries.find((s) => s.slug === slug) ?? null;
 
+  // Fallback: series has <2 books — find by wildcard matching the slug pattern
+  if (!seriesMeta) {
+    const toSlug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const wildcardPattern = '%' + slug.split('-').join('%') + '%';
+    const { data: candidates } = await supabaseClient
+      .from('books')
+      .select('series')
+      .ilike('series', wildcardPattern)
+      .not('series', 'is', null)
+      .limit(20);
+    const matchedSeries = (candidates ?? []).find((b) => b.series && toSlug(b.series) === slug)?.series ?? null;
+    if (matchedSeries) {
+      seriesMeta = { name: matchedSeries, slug, bookCount: 1 };
+    }
+  }
+
   if (!seriesMeta) return new Response(null, { status: 404, statusText: 'Not Found' });
 
   dbBooks = await getBooksBySeries(seriesMeta.name);
+
+  // Only 1 book in DB — not enough for a series page. Redirect to the author's page instead.
+  if (dbBooks.length <= 1) {
+    const authors: string[] = dbBooks[0]?.authors ?? [];
+    if (authors.length > 0) {
+      return Astro.redirect(`/authors/${authorToSlug(authors[0])}/`, 302);
+    }
+    return new Response(null, { status: 404, statusText: 'Not Found' });
+  }
 
   books = dbBooks.map((b) => ({
     title: b.title,
