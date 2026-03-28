@@ -72,14 +72,23 @@ export const GET: APIRoute = async ({ locals }) => {
       .map((t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
   )];
 
-  // Fetch DB-driven reading order slugs (series not in curated list)
+  // Fetch DB-driven reading order slugs (series not in curated list) — paginated to bypass 1000-row cap
   const curatedSet = new Set(CURATED_READING_ORDER_SLUGS);
-  const { data: seriesRows } = await supabase
-    .from('books')
-    .select('series')
-    .not('series', 'is', null);
+  const allSeriesNames = new Set<string>();
+  let seriesFrom = 0;
+  while (true) {
+    const { data: seriesRows } = await supabase
+      .from('books')
+      .select('series')
+      .not('series', 'is', null)
+      .range(seriesFrom, seriesFrom + PAGE - 1);
+    if (!seriesRows?.length) break;
+    for (const b of seriesRows) if (b.series) allSeriesNames.add(b.series as string);
+    if (seriesRows.length < PAGE) break;
+    seriesFrom += PAGE;
+  }
   const dbSeriesSlugs = [...new Set(
-    (seriesRows ?? []).map((b) => (b.series as string).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
+    [...allSeriesNames].map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
   )].filter((s) => !curatedSet.has(s));
 
   const entries: string[] = [

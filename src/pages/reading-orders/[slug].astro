@@ -246,7 +246,7 @@ const pageTitle = curatedEntry
   : `${seriesMeta?.name} Series Reading Order${authorNames.length ? `: All ${authorNames[0]} Books in Order` : ''} | The Grimoire`;
 const pageDesc = curatedEntry
   ? `Complete reading order for ${curatedEntry.name} by ${curatedEntry.author} — ${allBooksCurated.length} books, ${coreCount} core${allBooksCurated.length - coreCount > 0 ? ` + ${allBooksCurated.length - coreCount} optional` : ''}. What to read first, what's skippable.`
-  : `Complete reading order for ${seriesMeta?.name}${authorNames.length ? ` by ${authorNames.slice(0, 2).join(' & ')}` : ''} — ${seriesMeta?.bookCount ?? dbBooks.length} books in our database.`;
+  : `Complete reading order for ${seriesMeta?.name}${authorNames.length ? ` by ${authorNames.slice(0, 2).join(' & ')}` : ''}. All ${seriesMeta?.bookCount ?? dbBooks.length} books in order — what to read first and what comes next.`;
 
 const SITE = 'https://thegrimoire.co';
 const imgSlug = READING_ORDER_IMAGE_SLUG[slug!];

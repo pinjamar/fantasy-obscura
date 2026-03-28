@@ -1290,8 +1290,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       {
         label: 'Crescent City',
         sublabel: 'books 1–3 — read last',
-        noteType: 'warning',
-        note: 'Do not start Crescent City until you have finished both TOG and ACOTAR. House of Sky and Breath ends with Bryce accidentally crossing into Prythian (the ACOTAR world). House of Flame and Shadow spends roughly a third of its pages there — with Nesta and Azriel. Reading CC first will spoil both previous series.',
+        noteType: 'required',
+        note: 'The most mature of the three series — urban fantasy with angels, wolves, Fae, and humans in a contemporary city. House of Sky and Breath ends with Bryce crossing into Prythian. House of Flame and Shadow is roughly one-third set there, with Nesta and Azriel as major presences. A Court of Silver Flames must be read before book 3.',
         books: [
           { title: 'House of Earth and Blood',   slug: 'house-of-earth-and-blood',   status: 'mandatory', note: 'Bryce Quinlan investigates her best friend\'s murder in a modern city of humans, Fae, angels, and wolves. Urban fantasy foundation before the worlds collide.', page_count: 803, publication_year: 2020 },
           { title: 'House of Sky and Breath',    slug: 'house-of-sky-and-breath',    status: 'mandatory', note: 'The SJM multiverse begins. The final pages send Bryce to Prythian — the ACOTAR world. The crossover starts here.',                                        page_count: 804, publication_year: 2022 },
@@ -1301,10 +1301,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     ],
     orderNote: 'TOG and ACOTAR can be read in either order. Crescent City must always come last — it pays off both previous series.',
     cards: [
-      { title: '🗺️ The Multiverse',      body: "All three series exist in the same multiverse. Throne of Glass hints at it in Kingdom of Ash. ACOTAR and Crescent City collide directly starting in House of Sky and Breath.",                         color: 'blue'   },
-      { title: '⚠️ Order Matters for CC', body: 'Finish all of ACOTAR (including A Court of Silver Flames) before starting Crescent City. Nesta and Azriel appear as major characters in House of Flame and Shadow.',                               color: 'amber'  },
-      { title: '🔗 The Crossover Key',   body: 'The eight-pointed star appears across all three series. Rhysand (ACOTAR) and Bryce (CC) share Starborn Fae ancestry through Queen Theia. The TOG/Prythian connection is confirmed in Kingdom of Ash.', color: 'purple' },
+      { title: '🗺️ The Multiverse',    body: "All three series exist in the same multiverse. Throne of Glass hints at it in Kingdom of Ash. ACOTAR and Crescent City collide directly from House of Sky and Breath onward — Bryce ends up in Prythian, and Nesta and Azriel cross over into Crescent City.", color: 'blue'   },
+      { title: '📈 Where Each Peaks',  body: "TOG starts YA-light and doesn't hit full stride until Crown of Midnight — it becomes exceptional by Heir of Fire. ACOTAR's breakout book is A Court of Mist and Fury (book 2). Crescent City is the most consistent from the start but requires the other two series to land its biggest moments.", color: 'green'  },
+      { title: '🔗 The Crossover Key', body: 'The eight-pointed star appears across all three series. Rhysand (ACOTAR) and Bryce (CC) share Starborn Fae ancestry through Queen Theia. The Prythian connection is seeded in Kingdom of Ash and paid off in House of Flame and Shadow.', color: 'purple' },
     ],
+    cardsPosition: 'above',
     sections: [
       {
         heading: 'Where to start',
@@ -2103,10 +2104,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     ],
     orderNote: 'The first two books are the weakest — short, rough around the edges, and setting the table. By Magic Strikes the series has found itself. By Magic Bleeds it is exceptional. Push through the opening if it feels slow.',
     cards: [
-      { title: '📖 Core (10 books)',    body: 'The main series. Read in order — each book builds directly on the last and the arc pays off properly only at the end.',                                                             color: 'blue'  },
-      { title: '📝 Novellas (7)',       body: 'Short companion stories interleaved at the right points. All supplementary — skip freely, or read them in place for extra depth on side characters.',                               color: 'green' },
-      { title: '🌍 Spinoffs (6 books)', body: 'Same world, different protagonists. Gunmetal Magic and Blood Heir are the most essential. Best read after finishing the main 10.',                                                  color: 'amber' },
+      { title: '⚡ The Shift',               body: "Atlanta runs on alternating waves of magic and technology. When magic surges, cars fail, spells work, and the supernatural emerges in force. When tech reasserts itself, modernity briefly returns. The timing is unpredictable. It's one of urban fantasy's most original conceits and it drives everything — the Pack, the vampires, the gods, and Kate's enemies all operate under its rules.", color: 'blue'   },
+      { title: '📈 Push Through Book 1',     body: "Magic Bites and Magic Burns are short and noticeably rougher than the rest of the series — written early in Andrews' career. The series finds its voice at Magic Strikes (book 3) and becomes exceptional at Magic Bleeds (book 4). Many readers who quit at book 1 are abandoning one of urban fantasy's best series. Push through.", color: 'amber'  },
+      { title: '🦁 Kate and Curran',         body: "The central romance between Kate and Curran (the Beast Lord — a werelion) is one of urban fantasy's best slow burns. It's action-first, romance second — present from book 1 but never dominating. Magic Bleeds (book 4) is where the relationship resolves and the payoff is fully earned. The later books then deal with what comes after the chase, which is rare.", color: 'purple' },
     ],
+    cardsPosition: 'above',
     sections: [
       {
         heading: 'The magic/tech alternation',
@@ -2482,6 +2484,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       {
         label: 'The Original Shannara Trilogy',
         sublabel: 'start with Elfstones — skip Sword or read it last',
+        noteType: 'required',
+        note: 'Elfstones is where the series becomes worth reading — tight pacing, real stakes, and an ending that hits hard. Wishsong is darker and more psychologically complex than either predecessor. The Sword can be read after if curiosity strikes; no essential context is lost by skipping it.',
         books: [
           { title: 'The Sword of Shannara',    slug: 'the-sword-of-shannara',    status: 'supplementary', seriesLabel: 'Shannara #1', note: 'Skip or read last. Structurally mirrors The Lord of the Rings so closely that critics called it out on publication. Brooks has acknowledged the influence. Of historical interest once you love the world, but a poor entry point.',                                            page_count: 726, publication_year: 1977 },
           { title: 'The Elfstones of Shannara', slug: 'the-elfstones-of-shannara', status: 'mandatory',     seriesLabel: 'Shannara #2', note: 'Start here. Wil Ohmsford and the druid Allanon must escort the last Chosen of the Ellcrys as the Forbidding fails and demons pour through. Brooks found his own voice here — the pacing is tight, the stakes are real, and the ending lands hard.',  page_count: 564, publication_year: 1982 },
@@ -2491,6 +2495,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       {
         label: 'The Heritage of Shannara',
         sublabel: 'set 300 years later — the series finds its stride',
+        noteType: 'required',
+        note: 'The consensus best arc in the entire series. Three parallel quests — Par, Walker, and Wren — each pursuing a different piece of the same larger puzzle, converging in The Talismans. Set 300 years after the original trilogy with magic outlawed and the Druids gone. A significant step up in ambition from the first three books.',
         books: [
           { title: 'The Scions of Shannara',    slug: 'the-scions-of-shannara',    status: 'mandatory', seriesLabel: 'Heritage #1', note: 'Par and Coll Ohmsford are called by the shade of Allanon to save the Four Lands. The world has changed: magic is outlawed, the Druids are gone. A strong start to the best arc of the early series.',  page_count: 403, publication_year: 1990 },
           { title: 'The Druid of Shannara',     slug: 'the-druid-of-shannara',     status: 'mandatory', seriesLabel: 'Heritage #2', note: 'Walker Boh\'s arc takes centre stage. The quest to restore the Druids begins. Parallel storylines across the Four Lands — each advancing one piece of the larger puzzle.',                            page_count: 338, publication_year: 1991 },
@@ -2598,11 +2604,12 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     cards: [
-      { title: '⚔️ Original Trilogy (3)',   body: 'Skip Sword of Shannara or read it last. Elfstones is the real starting point — one of the best standalone portal-fantasy novels of the 1980s.',        color: 'blue'  },
-      { title: '🌿 Heritage (4)',            body: 'The best arc of early Shannara. Three parallel quests converge in one of Brooks\'s most satisfying conclusions.',                                        color: 'blue'  },
-      { title: '🌆 Word & Void (3)',         body: 'A standalone trilogy set in modern America. Completely different tone — urban fantasy. Rewards readers who want to understand Shannara\'s origins.',    color: 'green' },
-      { title: '📚 Later Arcs (7 arcs, 20 books)', body: 'Voyage → High Druid → Genesis → Legends → Dark Legacy → Defenders → Fall of Shannara. All optional — each arc works largely standalone. The Fall of Shannara (2017–2020) concludes the entire 33-novel saga.',  color: 'amber' },
+      { title: '🌍 Shannara Is Set on Earth',    body: "The world's best-kept secret. The Four Lands are the ruins of our world, thousands of years after civilisation collapsed and magic returned. Elves, Gnomes, and Trolls evolved from humans. The ruined skyscrapers are just old rubble. Word & Void, set in the modern day, shows the cataclysm that began it all — best read after Heritage.", color: 'blue'   },
+      { title: '📖 Start with Elfstones',        body: "The Sword of Shannara (1977) is structurally so close to The Lord of the Rings that critics called it out on publication. Elfstones of Shannara is where Brooks found his own voice — it's tight, propulsive, emotionally effective, and works as a complete standalone. The best entry point and still the best book in the series for many readers.", color: 'green'  },
+      { title: '🌿 Where It Peaks',              body: "Elfstones is excellent. Heritage of Shannara (1990–1993) is the consensus favourite — three simultaneous quests across the Four Lands, converging in one of Brooks's most satisfying conclusions. Word & Void is a completely different register. Everything after Heritage is for committed fans who want to stay in the world.", color: 'purple' },
+      { title: '🛑 Natural Stopping Points',     body: "You do not need to read all 33 books. Natural stopping places: Elfstones alone (best standalone), Heritage of Shannara (best complete arc), or the Fall of Shannara tetralogy (full saga conclusion, 2017–2020). Word & Void can be read independently at any point. Nothing after Heritage is essential.", color: 'zinc'   },
     ],
+    cardsPosition: 'above',
     sections: [
       {
         heading: 'The secret of Shannara',
@@ -2731,6 +2738,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       {
         label: 'Heralds of Valdemar',
         sublabel: 'start here — the original trilogy',
+        noteType: 'required',
+        note: 'Talia\'s story. The warmest and most accessible entry point — Lackey eases you into the world through a girl who has never been treated with kindness before. The Companion bond is introduced here, and Lackey makes you feel why it matters before she puts it under pressure.',
         books: [
           { title: 'Arrows of the Queen', slug: 'arrows-of-the-queen', status: 'mandatory', seriesLabel: 'Heralds of Valdemar #1', note: 'Talia is rescued from an abusive household by a Companion and brought to Haven to train as a Herald. A gentle, warm introduction to the world. Reads fast — you\'ll finish it in a day.',                               page_count: 320, publication_year: 1987 },
           { title: 'Arrow\'s Flight',     slug: 'arrows-flight',      status: 'mandatory', seriesLabel: 'Heralds of Valdemar #2', note: 'Talia\'s internship on the Valdemar border. Cut off, snowed in, and dealing with powers that are spiralling out of control. The darkest of the trilogy and the most psychologically interesting.',                         page_count: 337, publication_year: 1987 },
@@ -2751,6 +2760,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       {
         label: 'Mage Winds & Mage Storms',
         sublabel: 'direct sequel era — set after the Heralds trilogy',
+        noteType: 'required',
+        note: 'Six books covering the return of magic to Valdemar and a continent-wide catastrophe. The POV shifts from Talia to Elspeth, her ward. The scope expands significantly — new peoples, new allies, new kinds of danger. Best read in order; each trilogy feeds directly into the next.',
         books: [
           { title: 'Winds of Fate',     slug: 'winds-of-fate',     status: 'mandatory', seriesLabel: 'Mage Winds #1',  note: 'Elspeth, Talia\'s ward, rides out to find a Mage-teacher. A new generation of Heralds faces a magical threat the kingdom hasn\'t seen in centuries. Picks up the political threads of the Talia books.',  page_count: 387, publication_year: 1991 },
           { title: 'Winds of Change',   slug: 'winds-of-change',   status: 'mandatory', seriesLabel: 'Mage Winds #2',  note: 'Elspeth trains among the Tayledras. Magic returns to Valdemar. The world expands significantly — new peoples, new powers, new threats.',                                                                   page_count: 400, publication_year: 1992 },
@@ -2773,17 +2784,13 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     cards: [
-      { title: '🐴 Heralds of Valdemar (3)',   body: 'The original Talia trilogy. The warmest and most accessible entry point — start here if you\'re new to Valdemar.',                                   color: 'blue'  },
-      { title: '💙 Last Herald-Mage (3)',       body: 'Vanyel\'s story — one of fantasy\'s most emotionally devastating trilogies. Essential reading. Have tissues ready for book 3.',                     color: 'blue'  },
-      { title: '⚡ Mage Winds & Storms (6)',    body: 'The direct sequel arcs. Six books covering the return of magic and continent-wide catastrophe. For readers who want to continue after Talia.',       color: 'blue'  },
-      { title: '📚 Prequels & More (5+)',       body: 'By the Sword, Mage Wars, Collegium Chronicles, and more. Valdemar has 40+ novels — this is where the rabbit hole goes.',                           color: 'green' },
+      { title: '🐴 The Companion Bond',        body: "Companions are not horses. They are ancient beings who Choose their Heralds — a lifelong telepathic bond that ends only with death. When a Companion dies, the Herald usually follows. When a Herald dies, the Companion always does. This bond is the emotional core of every Valdemar book. Lackey makes you love it before she puts it under pressure.", color: 'blue'   },
+      { title: '🚪 Two Ways In',               body: "Arrows of the Queen is the warmest entry — Talia's story, gentle and accessible, written first. Magic's Pawn is the more devastating option — Vanyel's story, set 500 years earlier, one of fantasy's most emotionally brutal trilogies. Most readers start with Arrows. Either works. Do not start with Magic's Pawn if you want warm comfort fantasy.", color: 'green'  },
+      { title: '💙 Why Vanyel Matters',        body: "Magic's Pawn was published in 1989. It was one of the first mainstream fantasy novels to feature a gay protagonist whose sexuality was treated as simply part of who he is — not a subplot, not something to be fixed or punished. Lackey wrote this 35 years ago and the trilogy still hits harder than most fantasy published this decade. The ending will hurt.", color: 'purple' },
+      { title: '📖 How Large Is This?',        body: "Lackey has been writing Valdemar since 1987 and the world spans 40+ novels across 12+ sub-series. Storm Breaking (1996) is a natural stopping place — the original saga concludes there and nothing after it is required. Everything beyond is expansion. You do not need to read all of it to feel like you got the full story.", color: 'zinc'   },
     ],
+    cardsPosition: 'above',
     sections: [
-      {
-        heading: 'The Companions',
-        type: 'prose',
-        prose: "Companions are not horses. They are white, blue-eyed beings who Choose their Heralds — a lifelong telepathic bond that ends only with death. When a Companion dies, the Herald usually follows. When a Herald dies, the Companion always does. This bond is the emotional core of every Valdemar book, and Lackey never lets you forget what it costs.",
-      },
       {
         heading: 'Why it matters',
         type: 'bullets',
