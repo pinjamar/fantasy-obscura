@@ -96,7 +96,7 @@ export const GET: APIRoute = async ({ request }) => {
 
     // ── Paginated + filtered mode ────────────────────────────────────────────
     const page      = Math.max(1, parseInt(url.searchParams.get('page')  ?? '1',  10));
-    const limit     = Math.min(100, Math.max(1, parseInt(url.searchParams.get('limit') ?? '48', 10)));
+    const limit     = Math.max(1, parseInt(url.searchParams.get('limit') ?? '48', 10));
     const sort      = url.searchParams.get('sort')      ?? 'rating-desc';
     const search    = (url.searchParams.get('search')   ?? '').trim();
     const genre     = url.searchParams.get('genre')     ?? '';
@@ -132,6 +132,24 @@ export const GET: APIRoute = async ({ request }) => {
       case 'longest':    query = query.order('page_count',        { ascending: false, nullsFirst: false }); break;
       case 'author-asc': query = query.order('authors',           { ascending: true }); break;
       default:           query = query.order('avg_rating',        { ascending: false, nullsFirst: false }); break;
+    }
+
+    // For large limits (search/export), paginate internally to bypass Supabase 1000-row cap
+    if (limit > 1000) {
+      const BATCH = 1000;
+      const allItems: unknown[] = [];
+      let offset = 0;
+      let total = 0;
+      while (allItems.length < limit) {
+        const { data, error, count } = await (query as any).range(offset, offset + BATCH - 1);
+        if (error) return jsonError(error.message);
+        if (offset === 0) total = count ?? 0;
+        if (!data?.length) break;
+        allItems.push(...data);
+        if (data.length < BATCH || allItems.length >= total) break;
+        offset += BATCH;
+      }
+      return jsonOk({ items: allItems.slice(0, limit), total, page: 1, totalPages: 1 });
     }
 
     const from = (page - 1) * limit;

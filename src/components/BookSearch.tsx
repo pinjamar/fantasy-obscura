@@ -23,7 +23,7 @@ export default function BookSearch() {
   // Lazy-load books on first keystroke
   const ensureLoaded = async () => {
     if (loaded) return;
-    const res = await fetch('/api/books');
+    const res = await fetch('/api/books?limit=99999&sort=title-asc');
     const data = await res.json();
     setAllBooks(data.items ?? []);
     setLoaded(true);

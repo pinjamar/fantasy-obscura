@@ -52,7 +52,7 @@ const heat = (isRomanceBook && book.heat_level) ? (HEAT[book.heat_level] ?? null
 const q      = encodeURIComponent((book.title ?? '') + ' ' + (book.authors?.[0] ?? ''));
 const qTitle = encodeURIComponent(book.title ?? '');
 
-const amazonUrl      = `https://www.amazon.com/s?k=${q}`;
+const amazonUrl      = `https://www.amazon.com/s?k=${q}&tag=librariancura-20`;
 const bookshopUrl    = `https://bookshop.org/search?keywords=${qTitle}`;
 const appleBooksUrl   = `https://books.apple.com/search?term=${q}`;
 const koboUrl         = `https://www.kobo.com/us/en/search?query=${q}`;
@@ -345,7 +345,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
           <div class="flex items-center gap-2 shrink-0">
             {book.audiobook_audible_url && book.audiobook_audible_url !== 'none' && (
               <a
-                href={book.audiobook_audible_url}
+                href={`${book.audiobook_audible_url}&tag=librariancura-20`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-white text-xs font-semibold transition-colors"

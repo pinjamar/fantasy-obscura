@@ -181,7 +181,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Dark Secrets',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout',
+              'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=From+Blood+and+Ash',
           },
@@ -206,7 +206,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Slow Burn',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco',
+              'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Kingdom+of+the+Wicked+Maniscalco',
           },
@@ -238,7 +238,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning:
               'Extreme violence, genocide, substance addiction, war crimes.',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Poppy+War+Kuang',
           },
@@ -263,7 +263,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Resistance',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
@@ -293,7 +293,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'War Fantasy',
               'Explicit',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros',
+            amazon_url: 'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Fourth+Wing+Yarros',
           },
@@ -318,7 +318,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Court Politics',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Shadow+and+Bone+Leigh+Bardugo',
+              'https://www.amazon.com/s?k=Shadow+and+Bone+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Shadow+and+Bone+Bardugo',
           },
@@ -374,7 +374,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: 'Two POVs, both trapped in impossible situations, both drawn to each other despite every reason not to be. The slow burn here is arguably executed better than in most romantasy — the tension earns its payoff across the full series. Caveat: this leans more toward dark epic fantasy than romantasy. Much less spice, much more stakes. If you read ACOTAR primarily for the romance, recalibrate.',
             tags: ['Dual POV', 'Military Fantasy', "Will They Won't They"],
             amazon_url:
-              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
@@ -398,7 +398,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Enemies to Lovers',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout',
+              'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=From+Blood+and+Ash',
           },
@@ -422,7 +422,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Victorian Sicily meets demon mythology. Emilia and Wrath have sharp banter and the enemies-to-lovers dynamic has somewhere to go — a murder mystery gives the tension structure. The atmosphere is vivid and the morally questionable love interest is handled with the same knowing craft as ACOTAR's Rhysand. Caveat: the mystery itself is thin. You're really here for the banter and the setting.",
             tags: ['Demons', 'Historical Setting', 'Dark Romance'],
             amazon_url:
-              'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco',
+              'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Kingdom+of+the+Wicked',
           },
@@ -441,7 +441,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "If ACOTAR is the gateway drug, The Cruel Prince is what comes next. Holly Black's Fae are genuinely unsettling — cruel, capricious, not safely romantic — and the political scheming in the courts is more sophisticated than anything in ACOTAR book one. Caveat: far less spice, much more brain.",
             tags: ['Fae Courts', 'Political Intrigue', 'Enemies to Lovers'],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+              'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
           },
@@ -465,7 +465,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Dreamer Magic',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Strange+the+Dreamer+Laini+Taylor',
+              'https://www.amazon.com/s?k=Strange+the+Dreamer+Laini+Taylor&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Strange+the+Dreamer+Laini+Taylor',
           },
@@ -486,7 +486,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: 'The antidote to series commitment: an 848-page standalone epic with dragons, political intrigue across three continents, and a slow-burn romance that earns its payoff. The worldbuilding is dense and original, the female characters are fully realised. Caveat: this is first and foremost epic fantasy with romantic threads — not romantasy. The ratio of plot to romance is inverted compared to ACOTAR.',
             tags: ['Dragons', 'Epic Fantasy', 'Sapphic Romance', 'Standalone'],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon',
+              'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Priory+of+the+Orange+Tree',
           },
@@ -511,7 +511,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Female Power',
               'Standalone',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
           },
@@ -536,7 +536,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+J+Maas',
+          'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+J+Maas&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=A+Court+of+Mist+and+Fury',
       },
@@ -555,7 +555,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "If ACOTAR is the gateway drug, The Cruel Prince is what comes next. Holly Black's Fae are genuinely unsettling — cruel, capricious, not safely romantic — and Jude is a far more interesting protagonist than Feyre in book one. The enemies-to-lovers tension is sharper, the political scheming more satisfying. Caveat: far less spice, much more brain. If you read ACOTAR primarily for the romance, recalibrate expectations.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+        amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
       },
@@ -576,7 +576,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+          'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
       },
@@ -597,7 +597,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout',
+          'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=From+Blood+and+Ash',
       },
       {
@@ -617,7 +617,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: true,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon',
+          'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Priory+of+the+Orange+Tree',
       },
@@ -638,7 +638,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco',
+          'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Kingdom+of+the+Wicked',
       },
@@ -704,7 +704,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Graphic violence, torture, war',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
           },
@@ -729,7 +729,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Queerphobia as systemic theme, emotional devastation',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+              'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Traitor+Baru+Cormorant+Dickinson',
           },
@@ -760,7 +760,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Graphic violence, war, mature themes throughout',
             amazon_url:
-              'https://www.amazon.com/s?k=Gardens+of+the+Moon+Steven+Erikson',
+              'https://www.amazon.com/s?k=Gardens+of+the+Moon+Steven+Erikson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Gardens+of+the+Moon+Erikson',
           },
@@ -784,7 +784,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Rich World',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan',
+              'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Eye+of+the+World+Robert+Jordan',
           },
@@ -814,7 +814,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Female Protagonist',
             ],
             warning: 'War atrocity, genocide, drug addiction, graphic violence',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Poppy+War+RF+Kuang',
           },
@@ -839,7 +839,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Graphic violence, war crimes, disturbing protagonist',
             amazon_url:
-              'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence',
+              'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Prince+of+Thorns+Mark+Lawrence',
           },
@@ -863,7 +863,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+          'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
       },
@@ -884,7 +884,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+          'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora+Scott+Lynch',
       },
@@ -904,7 +904,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "For the ASOIAF reader who wants comparable scope and no-safe-characters stakes at twice the pace. Brown studied ASOIAF's structure explicitly — the alliances that last only as long as they're useful, the protagonists who are not immune to consequence, the political factions each with coherent self-interest — and the debt is visible. The saga expands from a single mine to a solar system across six complete books. Caveat: significantly more action-driven and less interested in prose quality than Martin; the political scheming is legitimate but the emotional register is more kinetic.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown',
+        amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Red+Rising+Pierce+Brown',
       },
@@ -963,7 +963,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Classic Fantasy',
               'Chosen One',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Eragon+Christopher+Paolini',
+            amazon_url: 'https://www.amazon.com/s?k=Eragon+Christopher+Paolini&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Eragon+Paolini',
           },
           {
@@ -986,7 +986,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Platonic Depth',
             ],
             amazon_url:
-              "https://www.amazon.com/s?k=His+Majesty's+Dragon+Naomi+Novik",
+              "https://www.amazon.com/s?k=His+Majesty&tag=librariancura-20's+Dragon+Naomi+Novik",
             bookshop_url:
               "https://bookshop.org/search?keywords=His+Majesty's+Dragon+Novik",
           },
@@ -1016,7 +1016,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Secrets',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout',
+              'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=From+Blood+and+Ash',
           },
@@ -1041,7 +1041,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Romantasy',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+J+Maas',
+              'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+J+Maas&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=A+Court+of+Thorns+and+Roses',
           },
@@ -1072,7 +1072,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning:
               'War Crimes, Genocide, Drug Addiction, Torture. Significant tonal shift from military school to atrocity.',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Poppy+War+Kuang',
           },
@@ -1097,7 +1097,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Oppressive System',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
@@ -1127,7 +1127,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Quest',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Daughter+of+the+Moon+Goddess+Sue+Lynn+Tan',
+              'https://www.amazon.com/s?k=Daughter+of+the+Moon+Goddess+Sue+Lynn+Tan&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Daughter+of+the+Moon+Goddess',
           },
@@ -1186,7 +1186,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: 'The Jude-Cardan dynamic is the best literary parallel to Violet and Xaden: power imbalance, manipulation deployed as armour, love that neither person wants to admit because admitting it is weakness. Holly Black executes the "I cannot trust you but I cannot let you go" dynamic with more precision than almost anyone writing romantasy. The Wicked King (book 2) is where the tension pays off — go in expecting to read both. Caveat: significantly less heat than Onyx Storm, heavier on court politics.',
             tags: ['Enemies to Lovers', 'Power Imbalance', 'Fae Courts', 'Slow Burn', 'Trust Issues'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
           },
           {
@@ -1202,7 +1202,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A human woman fights to survive a death tournament run by vampires, and falls for the only competitor more dangerous than the arena itself. The love interest is genuinely monstrous in ways Xaden gestures at but Raihn actually embodies — and yet Broadbent makes the romance work because the emotional honesty is real. The heat matches Onyx Storm, the stakes are credible, and people die. If you read Onyx Storm for the romantasy that finally stopped protecting its cast, this is the next step.",
             tags: ['Death Tournament', 'Monster Love Interest', 'Fated Mates', 'Explicit', 'High Stakes'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Serpent+and+the+Wings+of+Night+Carissa+Broadbent',
+            amazon_url: 'https://www.amazon.com/s?k=The+Serpent+and+the+Wings+of+Night+Carissa+Broadbent&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Serpent+and+the+Wings+of+Night',
           },
         ],
@@ -1220,7 +1220,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "An 800-page standalone with three POVs, one of them a female dragon rider whose bond with her dragon is the emotional core of the book. The ruling class has been lying about the nature of the existential threat for a thousand years — which maps precisely onto Onyx Storm's revelation that Navarre's leadership understood the venin problem and buried it. Shannon's dragons are not Yarros's dragons, but the sense of a world bigger and more dangerous than the protagonists were told runs through both books. Caveat: no spice, slow start, literary in its pacing.",
             tags: ['Dragon Riders', 'Female Protagonist', 'Existential Threat', 'Political Lies', 'Epic Scope'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon',
+            amazon_url: 'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Priory+of+the+Orange+Tree',
           },
           {
@@ -1236,7 +1236,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Six candidates with exceptional abilities are recruited into a secret society — except the institution is lying about what they're being selected for, and the candidates are lying to each other about everything else. The dark-academia atmosphere is very different from Yarros's war-college energy, but the structural DNA is shared: impossible competition, found family that may or may not survive, and the slow dawning realisation that the people running things have priorities that have nothing to do with the candidates' welfare. Dense and morally grey throughout.",
             tags: ['Secret Society', 'Dark Academia', 'Morally Grey', 'Hidden Powers', 'Betrayal'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Atlas+Six+Olivie+Blake',
+            amazon_url: 'https://www.amazon.com/s?k=The+Atlas+Six+Olivie+Blake&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Atlas+Six+Olivie+Blake',
           },
         ],
@@ -1258,7 +1258,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "An assassin school where the found family is real, the deaths are permanent, and Mia Corvere has the same stubborn competence and dark sense of humour as Violet Sorrengail. The footnote-heavy narrator is either something you love immediately or don't — but the emotional investment is genuine, and Kristoff does not protect his characters the way most romantasy authors do. If Onyx Storm hit hardest in its grief and its irreversible losses, Nevernight is built on that same commitment. Significantly darker and more violent than Yarros.",
             warning: 'Graphic violence, sexual content, torture.',
             tags: ['Assassin School', 'Found Family Losses', 'Dark Atmosphere', 'Explicit', 'Morally Grey Protagonist'],
-            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff',
+            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff',
           },
           {
@@ -1274,7 +1274,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Six morally grey characters attempt an impossible heist, and the tension works because Bardugo makes you care about all of them before she starts endangering them. The Kaz-Inej dynamic has the same emotional architecture as Violet-Xaden: a love interest who keeps himself unreachable, a relationship built on trust that's hard-won and easily broken. The world is darker than Ravka, the heat is lower than Onyx Storm, but if you loved the series for its ensemble of flawed people in genuine danger, Six of Crows is essential.",
             tags: ['Heist', 'Found Family', 'Ensemble Cast', 'Morally Grey', 'High Stakes'],
-            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Six+of+Crows+Bardugo',
           },
         ],
@@ -1336,7 +1336,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Female Power',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+Maas',
+              'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+Maas&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=A+Court+of+Thorns+and+Roses',
           },
@@ -1360,7 +1360,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Political Marriage',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Bridge+Kingdom+Danielle+Jensen',
+              'https://www.amazon.com/s?k=The+Bridge+Kingdom+Danielle+Jensen&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Bridge+Kingdom+Danielle+Jensen',
           },
@@ -1389,7 +1389,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Morally Grey Love Interest',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+              'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
           },
@@ -1413,7 +1413,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Female Power',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Daughter+of+the+Moon+Goddess+Sue+Lynn+Tan',
+              'https://www.amazon.com/s?k=Daughter+of+the+Moon+Goddess+Sue+Lynn+Tan&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Daughter+of+the+Moon+Goddess',
           },
@@ -1442,7 +1442,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Spicy',
               'War Stakes',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros',
+            amazon_url: 'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Fourth+Wing+Rebecca+Yarros',
           },
@@ -1467,7 +1467,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Mystery',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco',
+              'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Kingdom+of+the+Wicked',
           },
@@ -1496,7 +1496,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               "Will They Won't They",
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
@@ -1521,7 +1521,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=A+Kingdom+of+Flesh+and+Fire+Armentrout',
+          'https://www.amazon.com/s?k=A+Kingdom+of+Flesh+and+Fire+Armentrout&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=A+Kingdom+of+Flesh+and+Fire',
       },
@@ -1542,7 +1542,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+Maas',
+          'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+Maas&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=A+Court+of+Mist+and+Fury',
       },
@@ -1562,7 +1562,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "The current dominant force in the same lane as FBAA — explicit romantasy with a layered world and a love interest hiding secrets. The dragon-rider academy gives the tension a physical setting and a ticking clock. Caveat: world-building is shallower than FBAA's and the plot structure is looser, but the pacing is faster and the dragon element adds genuine spectacle.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros',
+        amazon_url: 'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Fourth+Wing+Rebecca+Yarros',
       },
@@ -1582,7 +1582,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Bridge+Kingdom+Danielle+Jensen',
+          'https://www.amazon.com/s?k=The+Bridge+Kingdom+Danielle+Jensen&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Bridge+Kingdom+Danielle+Jensen',
       },
@@ -1601,7 +1601,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "Shares FBAA's core pleasure — a love interest whose cruelty is a performance hiding something more complicated — but executes it with more literary craft and political complexity. Jude is a more interesting protagonist than Poppy in terms of agency. Caveat: significantly less explicit. If heat is the primary draw, this delivers the tension without the content.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+        amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
       },
@@ -1621,7 +1621,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+          'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
       },
@@ -1668,7 +1668,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A man who catalogues an impossible world with perfect contentment and genuine care for everything in it. Clarke's protagonist shares Maia's essential quality: an absolute moral clarity that the narrative treats as strength rather than innocence. The tonal register is completely different — mysterious, strange, literary — but both books centre on a protagonist whose decency is their defining characteristic and whose perspective shapes how the reader experiences the world. Caveat: no court politics, minimal interpersonal conflict, almost entirely atmosphere and mystery.",
             tags: ['Kind Protagonist', 'Unique World', 'Literary', 'Quiet'],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
           },
@@ -1690,7 +1690,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Queer Romance',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune',
+              'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+House+in+the+Cerulean+Sea',
           },
@@ -1719,7 +1719,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Magic Politics',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Sorcerer+to+the+Crown+Zen+Cho',
+              'https://www.amazon.com/s?k=Sorcerer+to+the+Crown+Zen+Cho&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Sorcerer+to+the+Crown+Zen+Cho',
           },
@@ -1744,7 +1744,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Queerphobia as systemic theme, emotional devastation',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+              'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Traitor+Baru+Cormorant+Dickinson',
           },
@@ -1772,7 +1772,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Queer',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune',
+              'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=House+Cerulean+Sea+TJ+Klune',
           },
@@ -1794,7 +1794,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Queer',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Legends+and+Lattes+Travis+Baldree',
+              'https://www.amazon.com/s?k=Legends+and+Lattes+Travis+Baldree&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Legends+Lattes+Travis+Baldree',
           },
@@ -1819,7 +1819,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: true,
         audiobook: true,
         amazon_url:
-          "https://www.amazon.com/s?k=Howl's+Moving+Castle+Diana+Wynne+Jones",
+          "https://www.amazon.com/s?k=Howl&tag=librariancura-20's+Moving+Castle+Diana+Wynne+Jones",
         bookshop_url:
           "https://bookshop.org/search?keywords=Howl's+Moving+Castle+Diana+Wynne+Jones",
       },
@@ -1840,7 +1840,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: true,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Very+Secret+Society+of+Irregular+Witches+Mandanna',
+          'https://www.amazon.com/s?k=The+Very+Secret+Society+of+Irregular+Witches+Mandanna&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Very+Secret+Society+Irregular+Witches+Mandanna',
       },
@@ -1899,7 +1899,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The most deliberate adult answer to Harry Potter ever written — Grossman has said as much. Quentin Coldwater discovers Brakebills, a secret college for magicians, and the book immediately starts dismantling the wish-fulfilment fantasy: magic is hard, boring to learn, and doesn't fix depression. The Narnia parallel running through the series is even more on-the-nose. If you want the same premise but with an adult's emotional register — grief, aimlessness, the problem of getting what you wanted — this is the direct line. The protagonist is not particularly likeable, which is part of the point.",
             tags: ['Magic School', 'Adult Fantasy', 'Deconstruction', 'Depression', 'Portal World'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman',
+            amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Magicians+Lev+Grossman',
           },
           {
@@ -1912,7 +1912,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "If Harry Potter is magic for children and The Magicians is magic for depressed twenty-somethings, Jonathan Strange is magic for adults who like their historical fiction footnoted and their fairies genuinely threatening. Set in Napoleonic England, it imagines English magic returning after centuries of absence. The prose is dense, unhurried, and witty in the way of 19th-century novels — not for everyone, but if it clicks, it's unlike anything else. The Raven King is one of the most unsettling presences in modern fantasy. Genuinely long and slow, but rewarding.",
             tags: ['British Magic', 'Historical Fantasy', 'Literary', 'Fairies', 'Slow Burn'],
-            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell',
           },
           {
@@ -1929,7 +1929,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: 'Yale secret societies as real magic schools — and the book does not romanticise it. Alex Stern is a scholarship student from a violent background recruited to police the secret magical societies of Yale, and the story is about what it costs the powerless to maintain a system that was never built for them. Dark, explicitly so — content warnings for assault and trauma — but the premise scratches the exact itch of "what if the magical elite were genuinely sinister." Bardugo at her most grown-up.',
             tags: ['Magic School', 'Dark Academia', 'Secret Societies', 'Ghosts', 'Adult Fantasy'],
             warning: 'Graphic depictions of assault and trauma',
-            amazon_url: 'https://www.amazon.com/s?k=Ninth+House+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Ninth+House+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Ninth+House+Leigh+Bardugo',
           },
         ],
@@ -1951,7 +1951,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The University sections of Kvothe's story are the best magic school sequences since Hogwarts — sympathy (splitting your attention to power magic) is as internally consistent as Rowling's spell system and more intellectually interesting. Kvothe is a scholarship student surrounded by old-money peers, which gives the school dynamic genuine tension. The prose is beautiful and the first book is complete as a reading experience. Caveat: book 2 ends on a cliffhanger and book 3 has no release date. Go in knowing that.",
             tags: ['Magic School', 'Prodigy Hero', 'Scholarship Student', 'Lore-Heavy', 'Beautiful Prose'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
           {
@@ -1967,7 +1967,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A magic school that is actively trying to kill its students — maleficaria hide in the showers, the cafeteria food might be a trap, and graduation means running a gauntlet of monsters. El, the protagonist, has catastrophic dark magic she refuses to use. Novik builds the school as a real ecosystem with faction politics (popular kids survive better) and the frustration of a system rigged toward wealth. Funnier than it sounds, and the trilogy pays off. If you loved Hogwarts for its architecture and danger, this delivers both at higher intensity.",
             tags: ['Magic School', 'Survival', 'Dark Humor', 'Anti-Hero Protagonist', 'Loner Heroine'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Deadly+Education+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=A+Deadly+Education+Naomi+Novik&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Deadly+Education+Naomi+Novik',
           },
           {
@@ -1983,7 +1983,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Sabriel grows up in a boarding school on one side of a magical wall, knowing that on the other side her father controls the dead. When he goes missing she has to cross over and use the necromantic bells she barely understands. The magic system — seven bells, each with a different power over the dead — is Rowling-level inventive and the world is genuinely eerie. Sabriel herself is the template for the competent, quietly courageous heroine that YA fantasy spent a decade trying to replicate. Doesn't get nearly enough credit.",
             tags: ['Necromancer', 'Magic System', 'Young Hero', 'Dark Atmosphere', 'Wall Between Worlds'],
-            amazon_url: 'https://www.amazon.com/s?k=Sabriel+Garth+Nix',
+            amazon_url: 'https://www.amazon.com/s?k=Sabriel+Garth+Nix&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Sabriel+Garth+Nix',
           },
         ],
@@ -2005,7 +2005,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "PC Peter Grant is recruited into the one-man magical division of the Metropolitan Police after a ghost gives him witness testimony. The London of this series is exactly like the world of Harry Potter in structure — ordinary city with magical infrastructure hidden underneath — but filtered through the voice of a Black British cop who is sarcastic, observant, and very funny about bureaucracy. The magic system has real rules and the crimes have real consequences. If Diagon Alley is your happy place, this series is the adult version of believing London has hidden layers.",
             tags: ['Urban Fantasy', 'Hidden Magic', 'London', 'Detective', 'Witty Narrator'],
-            amazon_url: 'https://www.amazon.com/s?k=Rivers+of+London+Ben+Aaronovitch',
+            amazon_url: 'https://www.amazon.com/s?k=Rivers+of+London+Ben+Aaronovitch&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Rivers+of+London+Aaronovitch',
           },
           {
@@ -2021,7 +2021,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest spiritual companion to Harry Potter in British fantasy — a child protagonist, an institution (Jordan College) that mirrors Hogwarts in its sense of ancient privilege and hidden knowledge, and a story that escalates from adventure into something genuinely philosophical about free will, death, and the Church. Lyra is the best child protagonist in British fantasy since Harry. The trilogy gets harder and stranger as it goes; The Amber Spyglass divides people. But Northern Lights / The Golden Compass is close to perfect as an opening volume.",
             tags: ['Parallel Worlds', 'Child Protagonist', 'Daemons', 'British', 'Coming of Age'],
-            amazon_url: 'https://www.amazon.com/s?k=His+Dark+Materials+Philip+Pullman',
+            amazon_url: 'https://www.amazon.com/s?k=His+Dark+Materials+Philip+Pullman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=His+Dark+Materials+Philip+Pullman',
           },
           {
@@ -2034,7 +2034,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Shares Harry Potter's core belief that the magical and mundane world overlap — and that the mundane world is funnier for having magic in it. An angel and a demon who have gone native on Earth try to stop the apocalypse because they like it here. British, warm, absurd, and genuinely funny. The humour is drier than Rowling's and the theology more explicit, but the sensibility — ordinary people caught in extraordinary circumstances, the world is stranger and kinder than it looks — is the same. Best read without having seen the Amazon show first.",
             tags: ['Angels & Demons', 'Comedy', 'British', 'Apocalypse', 'Buddy Comedy'],
-            amazon_url: 'https://www.amazon.com/s?k=Good+Omens+Terry+Pratchett+Neil+Gaiman',
+            amazon_url: 'https://www.amazon.com/s?k=Good+Omens+Terry+Pratchett+Neil+Gaiman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Good+Omens+Pratchett+Gaiman',
           },
         ],
@@ -2051,7 +2051,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: 'The most direct adult answer to Harry Potter — Brakebills is Hogwarts filtered through depression, disappointment, and the question of what magic actually solves. If you grew up with HP and want the same premise taken seriously, start here.',
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman',
+        amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=The+Magicians+Lev+Grossman',
       },
       {
@@ -2064,7 +2064,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "The closest spiritual companion to Harry Potter in British fantasy — Jordan College feels like Hogwarts, Lyra is as good a protagonist as Harry, and the trilogy escalates from adventure into something deeply serious about death, consciousness, and authority. Reads beautifully as an adult.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=His+Dark+Materials+Philip+Pullman',
+        amazon_url: 'https://www.amazon.com/s?k=His+Dark+Materials+Philip+Pullman&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=His+Dark+Materials+Philip+Pullman',
       },
       {
@@ -2077,7 +2077,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "The University chapters are the best magic school sequences since Hogwarts — a consistent, intellectually interesting magic system, a protagonist who is poor among the privileged, and a school with real factions and politics. Caveat: the trilogy is unfinished.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss',
+        amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
       },
       {
@@ -2090,7 +2090,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "English magic returning after centuries of absence, set against Napoleonic England. Dense, witty, footnoted — the adult version of believing Britain has magical history running beneath the surface. The Raven King is one of the most unsettling presences in modern fantasy.",
         standalone: true,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
+        amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell',
       },
       {
@@ -2103,7 +2103,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "A magic school that is actively trying to kill you — monsters in the showers, politics in the cafeteria, and graduation as a gauntlet. The social structure (popular kids survive better) gives the Hogwarts-style school setting real stakes. Funnier than it sounds.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=A+Deadly+Education+Naomi+Novik',
+        amazon_url: 'https://www.amazon.com/s?k=A+Deadly+Education+Naomi+Novik&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=A+Deadly+Education+Naomi+Novik',
       },
       {
@@ -2116,7 +2116,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "A London cop recruited into the magical division of the Met — same structural premise as Harry Potter (ordinary world with magical infrastructure hidden underneath) but filtered through a sarcastic British police procedural. If Diagon Alley is your happy place, this is the adult version.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Rivers+of+London+Ben+Aaronovitch',
+        amazon_url: 'https://www.amazon.com/s?k=Rivers+of+London+Ben+Aaronovitch&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=Rivers+of+London+Aaronovitch',
       },
     ],
@@ -2176,7 +2176,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Cozy Fantasy',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+              'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Goblin+Emperor+Addison',
           },
@@ -2201,7 +2201,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Charming',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Legends+and+Lattes+Travis+Baldree',
+              'https://www.amazon.com/s?k=Legends+and+Lattes+Travis+Baldree&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Legends+and+Lattes+Baldree',
           },
@@ -2232,7 +2232,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Quest',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Le+Guin',
+              'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Le+Guin&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=A+Wizard+of+Earthsea',
           },
@@ -2257,7 +2257,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Lyrical Prose',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss',
+              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
@@ -2288,7 +2288,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'World-Building',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan',
+              'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Eye+of+the+World+Jordan',
           },
@@ -2313,7 +2313,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Multiple POV',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson',
+              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson',
           },
@@ -2381,7 +2381,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Resistance',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
@@ -2406,7 +2406,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Slow Burn',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Jasmine+Throne+Tasha+Suri',
+              'https://www.amazon.com/s?k=The+Jasmine+Throne+Tasha+Suri&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Jasmine+Throne+Suri',
           },
@@ -2439,7 +2439,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning:
               'Sexual assault (referenced/aftermath), PTSD themes, explicit sexual content.',
             amazon_url:
-              'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+J+Maas',
+              'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+J+Maas&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=A+Court+of+Mist+and+Fury',
           },
@@ -2464,7 +2464,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Slow Burn',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout',
+              'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=From+Blood+and+Ash',
           },
@@ -2497,7 +2497,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning:
               'Extreme violence, genocide, substance addiction, war crimes.',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Dragon+Republic+RF+Kuang',
+              'https://www.amazon.com/s?k=The+Dragon+Republic+RF+Kuang&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Dragon+Republic+Kuang',
           },
@@ -2523,7 +2523,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Graphic violence, torture, war crimes.',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
           },
@@ -2580,7 +2580,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Literary',
               'Found Contentment',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
           },
@@ -2595,7 +2595,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "A fourteen-year-old bread mage who can make gingerbread men walk. The food magic is warm and inventive, the protagonist is genuinely funny, and Kingfisher writes with the same low-key delight in small magical things that makes Legends & Lattes work. Slightly darker than Baldree's book — there are actual stakes and some genuine tension — but the tone is fundamentally kind. The gingerbread sourdough starter character may be the best character in cozy fantasy.",
             tags: ['Food Magic', 'Cozy', 'Young Protagonist', 'Warm Tone'],
             amazon_url:
-              'https://www.amazon.com/s?k=A+Wizard%27s+Guide+to+Defensive+Baking+T+Kingfisher',
+              'https://www.amazon.com/s?k=A+Wizard%27s+Guide+to+Defensive+Baking+T+Kingfisher&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Wizard+Guide+Defensive+Baking+Kingfisher',
           },
@@ -2622,7 +2622,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Queer',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune',
+              'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=House+Cerulean+Sea+Klune',
           },
@@ -2643,7 +2643,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Warm Tone',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Very+Secret+Society+of+Irregular+Witches+Mandanna',
+              'https://www.amazon.com/s?k=The+Very+Secret+Society+of+Irregular+Witches+Mandanna&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Very+Secret+Society+Irregular+Witches+Mandanna',
           },
@@ -2674,7 +2674,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Female Protagonist',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=A+Natural+History+of+Dragons+Marie+Brennan',
+              'https://www.amazon.com/s?k=A+Natural+History+of+Dragons+Marie+Brennan&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Natural+History+Dragons+Marie+Brennan',
           },
@@ -2695,7 +2695,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Female Power',
               'Forced Proximity',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
           },
@@ -2720,7 +2720,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: true,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+          'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Goblin+Emperor+Katherine+Addison',
       },
@@ -2741,7 +2741,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: true,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=Under+the+Whispering+Door+TJ+Klune',
+          'https://www.amazon.com/s?k=Under+the+Whispering+Door+TJ+Klune&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Under+Whispering+Door+TJ+Klune',
       },
@@ -2756,7 +2756,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: true,
         audiobook: true,
         amazon_url:
-          "https://www.amazon.com/s?k=Howl's+Moving+Castle+Diana+Wynne+Jones",
+          "https://www.amazon.com/s?k=Howl&tag=librariancura-20's+Moving+Castle+Diana+Wynne+Jones",
         bookshop_url:
           "https://bookshop.org/search?keywords=Howl's+Moving+Castle+Diana+Wynne+Jones",
       },
@@ -2822,7 +2822,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Deep World-Building',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan',
+              'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Eye+of+the+World+Robert+Jordan',
           },
@@ -2847,7 +2847,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Long Series',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson',
+              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Way+of+Kings+Brandon+Sanderson',
           },
@@ -2878,7 +2878,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Storytelling',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Name+of+the+Wind+Patrick+Rothfuss',
           },
@@ -2900,7 +2900,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Queer Romance',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon',
+              'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Priory+Orange+Tree+Samantha+Shannon',
           },
@@ -2931,7 +2931,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'True Names',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Ursula+Le+Guin',
+              'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Ursula+Le+Guin&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Wizard+Earthsea+Ursula+Le+Guin',
           },
@@ -2953,7 +2953,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Hopeful',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+              'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Goblin+Emperor+Katherine+Addison',
           },
@@ -3013,7 +3013,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Stormlight Archive is Sanderson operating at full scale. The magic — Stormlight, Shardblades, Radiant powers — is even more elaborately constructed than Allomancy. Slower opening than Mistborn, but by book's end you'll understand why people call it the best epic fantasy being written today. Caveat: the first 200 pages test your patience. Push through.",
             tags: ['Hard Magic', 'Epic Scale', 'Multiple POVs'],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson',
+              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson',
           },
@@ -3032,7 +3032,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Where Sanderson builds systems, Rothfuss builds atmosphere. The magic here — Sympathy — has its own internal logic but feels more like chemistry than physics. Kvothe is the anti-Vin: arrogant, brilliant, unreliable. The prose is genuinely beautiful in a way Sanderson's isn't. Caveat: book 3 has been unfinished for 14 years. Read knowing this.",
             tags: ['Hard Magic', 'Single POV', 'Slower Burn'],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
@@ -3055,7 +3055,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The most purely fun book on this list. Six morally compromised people plan an impossible heist. The ensemble structure means you're never bored, and Bardugo's Ketterdam feels as lived-in as the Final Empire. Less hard magic, more character chemistry. Caveat: read Bardugo's Shadow and Bone trilogy first or you'll miss context.",
             tags: ['Heist', 'Found Family', 'Morally Grey Characters'],
-            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Six+of+Crows+Leigh+Bardugo',
           },
@@ -3074,7 +3074,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: 'If the heist planning and crew chemistry were your main draws, this is the more hardcore version. The Gentleman Bastards are con artists in a city that feels genuinely dangerous, and the schemes are elaborately satisfying. Lynch writes banter better than almost anyone. Caveat: significantly darker and more violent than Mistborn. The pacing in the middle third is uneven but the payoff is real.',
             tags: ['Heist', 'Con Artists', 'Dark World'],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+              'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora',
           },
@@ -3098,7 +3098,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "This is where the caveats matter most. The Poppy War starts feeling somewhat like Mistborn — scrappy underdog enters elite military academy, discovers terrifying power — and then it becomes one of the darkest fantasy novels published in the last decade. Inspired by the Second Sino-Japanese War. If you can handle it, it's extraordinary. If you want something hopeful, go elsewhere.",
             tags: ['Underdog', 'Military Academy', 'Hard Power System'],
             warning: 'War Crimes, Genocide, Drug Addiction, Torture',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Poppy+War+Kuang',
           },
@@ -3123,7 +3123,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Graphic violence, torture, war crimes.',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
           },
@@ -3144,7 +3144,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "His first published novel, and it shows — the prose is rougher, the characters less developed than Mistborn — but the mystery of the broken magic system is compelling and it resolves completely in one volume. A good Sanderson on-ramp if you're not ready to commit to a 10-book series.",
             tags: ['Standalone', 'Broken Magic System', 'Political Intrigue'],
-            amazon_url: 'https://www.amazon.com/s?k=Elantris+Brandon+Sanderson',
+            amazon_url: 'https://www.amazon.com/s?k=Elantris+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Elantris+Sanderson',
           },
@@ -3169,7 +3169,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+          'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora',
       },
@@ -3188,7 +3188,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "If Mistborn's heist structure and found family dynamic were your main draws, Six of Crows delivers both with more romance. A crew of misfit criminals planning an impossible prison break — the structure is familiar, the execution is sharp, and Kaz Brekker is one of the genre's better morally grey leads. Caveat: lighter in tone and the magic system is less central. It's Bardugo at her best, which is very good, but a different kind of book.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo',
+        amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Six+of+Crows+Leigh+Bardugo',
       },
@@ -3208,7 +3208,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+          'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
       },
@@ -3223,7 +3223,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson',
+          'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson',
       },
@@ -3244,7 +3244,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+          'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
       },
@@ -3264,7 +3264,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: 'If you want more Sanderson before committing to a 10-book series, Elantris is the gentler on-ramp. His first published novel — the prose is rougher and the characters less developed — but the mystery of the broken magic system is compelling and it resolves completely in one volume. Caveat: lower expectations on prose and character depth, enjoy the puzzle plot.',
         standalone: true,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Elantris+Brandon+Sanderson',
+        amazon_url: 'https://www.amazon.com/s?k=Elantris+Brandon+Sanderson&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=Elantris+Sanderson',
       },
     ],
@@ -3324,7 +3324,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Unique Voice',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
+              'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell',
           },
@@ -3349,7 +3349,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Found Family',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+              'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora',
           },
@@ -3381,7 +3381,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning:
               'Depression, suicidal ideation, substance abuse, sexual content.',
-            amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman',
+            amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Magicians+Lev+Grossman',
           },
@@ -3406,7 +3406,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Slow Burn',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=A+Deadly+Education+Naomi+Novik',
+              'https://www.amazon.com/s?k=A+Deadly+Education+Naomi+Novik&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=A+Deadly+Education+Novik',
           },
@@ -3436,7 +3436,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'World-Building',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Mistborn+Final+Empire+Brandon+Sanderson',
+              'https://www.amazon.com/s?k=Mistborn+Final+Empire+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Mistborn+Final+Empire+Sanderson',
           },
@@ -3463,7 +3463,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Fairy-Tale Vibes',
               'Female Power',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
           },
@@ -3488,7 +3488,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          "https://www.amazon.com/s?k=The+Wise+Man's+Fear+Patrick+Rothfuss",
+          "https://www.amazon.com/s?k=The+Wise+Man&tag=librariancura-20's+Fear+Patrick+Rothfuss",
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Wise+Man+Fear+Rothfuss',
       },
@@ -3509,7 +3509,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+          'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora',
       },
@@ -3530,7 +3530,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: true,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
+          'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell',
       },
@@ -3551,7 +3551,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=Mistborn+Final+Empire+Brandon+Sanderson',
+          'https://www.amazon.com/s?k=Mistborn+Final+Empire+Brandon+Sanderson&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Mistborn+Final+Empire+Sanderson',
       },
@@ -3571,7 +3571,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "What happens if you take Rothfuss's magic university premise and strip away all the heroic framing? Grossman asks that question seriously. Quentin is as gifted as Kvothe and even less emotionally equipped to deal with it, and Brakebills has the same rigorous approach to magical theory. The book is sharply written and genuinely melancholy. Caveat: this is a deconstruction of fantasy wish-fulfilment, not an endorsement of it. If you read Kingkiller primarily for the adventure, recalibrate.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman',
+        amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Magicians+Grossman',
       },
@@ -3591,7 +3591,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: 'The best answer to the "I need something beautiful that actually finishes" problem. Novik\'s prose has a lyrical quality in the Rothfuss register, the magic feels organic and uncategorisable, and the slow-burn tension earns a genuine resolution. One book, complete, satisfying. Caveat: smaller stakes than Kingkiller, more intimate in scope. The ambition is different but the craft is real.',
         standalone: true,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+        amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
       },
@@ -3644,7 +3644,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The adult answer to Percy Jackson's love of Greek mythology — Miller retells the Iliad through the relationship between Patroclus and Achilles, and treats the gods as genuinely terrifying rather than comic. The writing is beautiful and precise, the mythology is accurate and resonant, and the ending is devastating in the way that only Greek tragedy can be. If Percy Jackson gave you a love of Greek myth and you want a book that honours that love with adult emotional weight, this is the direct line.",
             tags: ['Greek Mythology', 'Ancient Greece', 'Literary Fantasy', 'Troy', 'Emotional'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Song+of+Achilles+Madeline+Miller',
+            amazon_url: 'https://www.amazon.com/s?k=The+Song+of+Achilles+Madeline+Miller&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Song+of+Achilles+Miller',
           },
           {
@@ -3657,7 +3657,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Miller again, this time through Circe — the witch of Aeaea, daughter of Helios, the woman Odysseus spent a year with. Where Percy Jackson treats the gods as fun antagonists, Circe examines what it means to be the least powerful member of an immortal family: the gods are vast, cruel, and indifferent, and power is something you have to build from scratch. The book covers enormous stretches of mythology — Daedalus, Medea, the Minotaur, Odysseus — and makes it feel coherent. A more patient book than Song of Achilles but equally rewarding.",
             tags: ['Greek Mythology', 'Witches', 'Female Protagonist', 'Literary Fantasy', 'Gods'],
-            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller',
+            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Circe+Madeline+Miller',
           },
           {
@@ -3671,7 +3671,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "The same core premise as Percy Jackson — the old gods are real and living in America — but taken to its darkest, most literary extreme. Shadow Moon is released from prison and recruited by Mr Wednesday (Odin) to fight a war between the old gods and new ones (Media, Technology, the Internet). The book is slow, strange, and melancholy in ways Percy Jackson never is, but it asks the same question: what happens to gods when people stop believing in them? If you loved the mythology but want it treated with full adult gravity, Gaiman's answer is unmatched.",
             tags: ['Mythology', 'Road Trip', 'Gods', 'Dark', 'American Setting'],
             warning: 'Sexual content, graphic violence',
-            amazon_url: 'https://www.amazon.com/s?k=American+Gods+Neil+Gaiman',
+            amazon_url: 'https://www.amazon.com/s?k=American+Gods+Neil+Gaiman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=American+Gods+Neil+Gaiman',
           },
         ],
@@ -3693,7 +3693,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Part of the Rick Riordan Presents imprint — Rick Riordan championing other-mythology books for exactly the Percy Jackson audience. Aru Shah accidentally frees a demon tied to the end of the universe and discovers she's a reincarnation of one of the Pandava brothers from the Mahabharata. Hindu mythology gets the same treatment Riordan gave Greek: vivid, fast, funny, reverent without being dry. Chokshi's prose is warmer and more poetic than Riordan's. The perfect next step for a Percy Jackson reader who wants the same energy with a different mythology.",
             tags: ['Hindu Mythology', 'Hidden Magic', 'Chosen One', 'Found Family', 'Middle Grade'],
-            amazon_url: 'https://www.amazon.com/s?k=Aru+Shah+End+of+Time+Chokshi',
+            amazon_url: 'https://www.amazon.com/s?k=Aru+Shah+End+of+Time+Chokshi&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Aru+Shah+End+of+Time',
           },
           {
@@ -3709,7 +3709,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "If you loved Percy Jackson and want exactly that energy but with Norse mythology — this is the obvious next read. Same author, same formula, deliberately so. Magnus Chase is a Boston homeless teen who dies on page one and wakes up in Valhalla. Riordan applies his full Percy Jackson toolkit to the Norse pantheon: Odin as an eccentric manipulator, Thor as a red-headed thunderer with a weakness for flattery, Loki as the chaos agent. Funnier than the Norse myths deserve. The diversity of the cast (a Muslim Valkyrie, a deaf elf) is handled with more care than the Percy Jackson books managed.",
             tags: ['Norse Mythology', 'Hidden Magic', 'Quest', 'Valhalla', 'Middle Grade'],
-            amazon_url: 'https://www.amazon.com/s?k=Magnus+Chase+Gods+Asgard+Riordan',
+            amazon_url: 'https://www.amazon.com/s?k=Magnus+Chase+Gods+Asgard+Riordan&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Magnus+Chase+Gods+Asgard',
           },
           {
@@ -3725,7 +3725,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Not mythology — but if what you loved about Percy Jackson was the puzzle-solving, the conspiracy layered under everyday life, and the fast-paced plot that keeps you reading past your bedtime, this delivers all of it in a contemporary YA setting. Avery Grambs is left a billion dollars by a dead billionaire she never met, and has to live in his mansion with his four grandsons to claim it. Fun, addictive, difficult to put down — the same brain-chemistry Percy Jackson triggers.",
             tags: ['Mystery', 'Puzzle', 'Contemporary', 'Fast-Paced', 'YA'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Inheritance+Games+Jennifer+Lynn+Barnes',
+            amazon_url: 'https://www.amazon.com/s?k=The+Inheritance+Games+Jennifer+Lynn+Barnes&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Inheritance+Games+Barnes',
           },
         ],
@@ -3747,7 +3747,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: false,
             note: "If you want to revisit the world rather than find something new — the graphic novel adaptation is genuinely excellent. Venditti condenses the book without losing its best moments and the art makes Camp Half-Blood feel real in a way the film adaptations never managed. Great for a reread, great for introducing the series to younger readers, and surprisingly moving for something that's also just very fun.",
             tags: ['Graphic Novel', 'Mythology', 'Camp Half-Blood', 'Quest', 'Adaptation'],
-            amazon_url: 'https://www.amazon.com/s?k=Percy+Jackson+Lightning+Thief+Graphic+Novel',
+            amazon_url: 'https://www.amazon.com/s?k=Percy+Jackson+Lightning+Thief+Graphic+Novel&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Percy+Jackson+Lightning+Thief+Graphic+Novel',
           },
           {
@@ -3763,7 +3763,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Riordan does Egyptian mythology with the same formula — and it works. Carter and Sadie Kane discover that their father has accidentally released Set, god of chaos, and that Egyptian gods have been living quietly in America for centuries. Narrated in alternating voices (brother and sister), which gives it slightly more dynamic character tension than Percy Jackson. Egyptian mythology is less familiar to most Western readers, which makes the reveals land harder. Best read directly after Percy Jackson.",
             tags: ['Egyptian Mythology', 'Quest', 'Siblings', 'Found Family', 'Middle Grade'],
-            amazon_url: 'https://www.amazon.com/s?k=Kane+Chronicles+Red+Pyramid+Riordan',
+            amazon_url: 'https://www.amazon.com/s?k=Kane+Chronicles+Red+Pyramid+Riordan&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Kane+Chronicles+Red+Pyramid',
           },
           {
@@ -3779,7 +3779,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Morrigan Crow is cursed to die on her eleventh birthday — then is rescued by a mysterious patron and brought to Nevermoor, a magical city, to compete for a spot in the Wundrous Society. The book has Percy Jackson's energy exactly: fast, funny, inventive, with a protagonist who is told she's worthless and proves everyone wrong through stubbornness and friends. Townsend's world-building is genuinely original — Nevermoor doesn't borrow from any existing mythology, it builds its own folklore. The series keeps getting better.",
             tags: ['Magic School', 'Chosen One', 'Competitions', 'Hidden World', 'Middle Grade'],
-            amazon_url: 'https://www.amazon.com/s?k=Nevermoor+Trials+Morrigan+Crow+Townsend',
+            amazon_url: 'https://www.amazon.com/s?k=Nevermoor+Trials+Morrigan+Crow+Townsend&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Nevermoor+Trials+Morrigan+Crow',
           },
         ],
@@ -3796,7 +3796,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: 'The adult answer to Percy Jackson\'s Greek mythology — devastating, beautiful, and treats the gods as genuinely terrifying. If you want the mythology honoured with full adult emotional weight, this is it.',
         standalone: true,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=The+Song+of+Achilles+Madeline+Miller',
+        amazon_url: 'https://www.amazon.com/s?k=The+Song+of+Achilles+Madeline+Miller&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=The+Song+of+Achilles+Miller',
       },
       {
@@ -3809,7 +3809,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: 'Same mythological world as Percy Jackson but from the margins — Circe, the witch who hosted Odysseus, building power in a world that dismisses her. Covers enormous stretches of the mythology and makes it feel coherent.',
         standalone: true,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller',
+        amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=Circe+Madeline+Miller',
       },
       {
@@ -3822,7 +3822,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "Rick Riordan Presents — exactly the Percy Jackson formula applied to Hindu mythology. Fast, funny, reverent. The perfect next step for readers who want the same energy with a different mythology.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Aru+Shah+End+of+Time+Chokshi',
+        amazon_url: 'https://www.amazon.com/s?k=Aru+Shah+End+of+Time+Chokshi&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=Aru+Shah+End+of+Time',
       },
       {
@@ -3835,7 +3835,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "Same premise as Percy Jackson — old gods living in modern America — but taken to its darkest, most literary extreme. If you loved the concept and want it treated with full adult gravity, Gaiman's answer is unmatched.",
         standalone: true,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=American+Gods+Neil+Gaiman',
+        amazon_url: 'https://www.amazon.com/s?k=American+Gods+Neil+Gaiman&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=American+Gods+Neil+Gaiman',
       },
       {
@@ -3848,7 +3848,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "Shares Percy Jackson's exact energy — fast, funny, inventive protagonist told she's worthless who proves everyone wrong. Townsend's world-building is genuinely original and the series keeps getting better.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Nevermoor+Trials+Morrigan+Crow+Townsend',
+        amazon_url: 'https://www.amazon.com/s?k=Nevermoor+Trials+Morrigan+Crow+Townsend&tag=librariancura-20',
         bookshop_url: 'https://bookshop.org/search?keywords=Nevermoor+Trials+Morrigan+Crow',
       },
     ],
@@ -3903,7 +3903,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Literary',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
+              'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell+Clarke',
           },
@@ -3924,7 +3924,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Bittersweet',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Buried+Giant+Kazuo+Ishiguro',
+              'https://www.amazon.com/s?k=The+Buried+Giant+Kazuo+Ishiguro&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Buried+Giant+Ishiguro',
           },
@@ -3954,7 +3954,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Portal Fantasy',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Unspoken+Name+AK+Larkwood',
+              'https://www.amazon.com/s?k=The+Unspoken+Name+AK+Larkwood&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Unspoken+Name+Larkwood',
           },
@@ -3975,7 +3975,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Standalone',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Starless+Sea+Erin+Morgenstern',
+              'https://www.amazon.com/s?k=The+Starless+Sea+Erin+Morgenstern&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Starless+Sea+Morgenstern',
           },
@@ -4002,7 +4002,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Standalone',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Ocean+at+the+End+of+the+Lane+Neil+Gaiman',
+              'https://www.amazon.com/s?k=The+Ocean+at+the+End+of+the+Lane+Neil+Gaiman&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Ocean+End+Lane+Neil+Gaiman',
           },
@@ -4022,7 +4022,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Warm Tone',
               'Standalone',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Anansi+Boys+Neil+Gaiman',
+            amazon_url: 'https://www.amazon.com/s?k=Anansi+Boys+Neil+Gaiman&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Anansi+Boys+Neil+Gaiman',
           },
@@ -4047,7 +4047,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: true,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Night+Circus+Erin+Morgenstern',
+          'https://www.amazon.com/s?k=The+Night+Circus+Erin+Morgenstern&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Night+Circus+Erin+Morgenstern',
       },
@@ -4068,7 +4068,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: true,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Starless+Sea+Erin+Morgenstern',
+          'https://www.amazon.com/s?k=The+Starless+Sea+Erin+Morgenstern&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Starless+Sea+Erin+Morgenstern',
       },
@@ -4135,7 +4135,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Revenge',
             ],
             warning: 'Graphic violence, explicit sexual content',
-            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff',
+            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff',
           },
@@ -4159,7 +4159,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Female Warrior',
             ],
             warning: 'Violence, dark themes',
-            amazon_url: 'https://www.amazon.com/s?k=Red+Sister+Mark+Lawrence',
+            amazon_url: 'https://www.amazon.com/s?k=Red+Sister+Mark+Lawrence&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Red+Sister+Mark+Lawrence',
           },
@@ -4189,7 +4189,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Violence, torture, war atrocity',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
           },
@@ -4214,7 +4214,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Violence, war, themes of gender and identity',
             amazon_url:
-              'https://www.amazon.com/s?k=She+Who+Became+the+Sun+Shelley+Parker-Chan',
+              'https://www.amazon.com/s?k=She+Who+Became+the+Sun+Shelley+Parker-Chan&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=She+Who+Became+the+Sun',
           },
@@ -4243,7 +4243,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Extreme violence, sexual violence referenced',
             amazon_url:
-              'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence',
+              'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Prince+of+Thorns+Mark+Lawrence',
           },
@@ -4266,7 +4266,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Found Family',
             ],
             warning: 'Violence, character deaths',
-            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown',
+            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Red+Rising+Pierce+Brown',
           },
@@ -4329,7 +4329,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Queerphobia as systemic theme, emotional devastation',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+              'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Traitor+Baru+Cormorant+Dickinson',
           },
@@ -4349,7 +4349,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Steampunk-Adjacent',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+              'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Goblin+Emperor+Katherine+Addison',
           },
@@ -4377,7 +4377,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Character Relationship',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=His+Majesty%27s+Dragon+Naomi+Novik',
+              'https://www.amazon.com/s?k=His+Majesty%27s+Dragon+Naomi+Novik&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=His+Majesty+Dragon+Naomi+Novik',
           },
@@ -4400,7 +4400,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Creature Reverence',
             ],
             warning: 'Violence, death',
-            amazon_url: 'https://www.amazon.com/s?k=The+Bone+Ships+RJ+Barker',
+            amazon_url: 'https://www.amazon.com/s?k=The+Bone+Ships+RJ+Barker&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Bone+Ships+RJ+Barker',
           },
@@ -4428,7 +4428,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Sexual violence (referenced), war, trauma.',
             amazon_url:
-              'https://www.amazon.com/s?k=A+Strange+and+Stubborn+Endurance+Foz+Meadows',
+              'https://www.amazon.com/s?k=A+Strange+and+Stubborn+Endurance+Foz+Meadows&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=A+Strange+and+Stubborn+Endurance',
           },
@@ -4453,7 +4453,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Female Protagonists',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Jasmine+Throne+Tasha+Suri',
+              'https://www.amazon.com/s?k=The+Jasmine+Throne+Tasha+Suri&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Jasmine+Throne+Tasha+Suri',
           },
@@ -4477,7 +4477,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "Three women in a Russian fairy tale world use intelligence, resourcefulness, and ruthless pragmatism to survive powerful men who want to use them. Novik builds female protagonists who navigate dangerous worlds with the same patience and strategic intelligence Shannon's queens deploy. The prose is exceptional, the political dynamics are intricate, and the book stands alone in one volume. The tonal match is closest to Priory's female-led political thriller elements — less epic in scale, more intimate in focus, but the same seriousness about women in power.",
         standalone: true,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik',
+        amazon_url: 'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Spinning+Silver+Naomi+Novik',
       },
@@ -4498,7 +4498,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=She+Who+Became+the+Sun+Shelley+Parker-Chan',
+          'https://www.amazon.com/s?k=She+Who+Became+the+Sun+Shelley+Parker-Chan&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=She+Who+Became+the+Sun+Parker-Chan',
       },
@@ -4519,7 +4519,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden',
+          'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Bear+and+the+Nightingale+Katherine+Arden',
       },
@@ -4580,7 +4580,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Violence, assault, torture',
             amazon_url:
-              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
@@ -4605,7 +4605,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning:
               'Graphic violence, explicit sexual content, death of multiple POV characters',
-            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff',
+            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff',
           },
@@ -4633,7 +4633,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Hard Magic',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Mistborn+Final+Empire+Sanderson',
+              'https://www.amazon.com/s?k=Mistborn+Final+Empire+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Mistborn+Final+Empire',
           },
@@ -4658,7 +4658,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Roman-Inspired',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes+Sabaa+Tahir',
           },
@@ -4687,7 +4687,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Found Family',
               'Heist',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Six+of+Crows+Bardugo',
           },
@@ -4706,7 +4706,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             tags: ['Con Artistry', 'Found Family', 'Morally Grey', 'Dark City'],
             warning: 'Graphic violence, torture scenes',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+              'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora',
           },
@@ -4771,7 +4771,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Banter',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+              'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora',
           },
@@ -4796,7 +4796,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Oppressive Empire',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Mistborn+Final+Empire+Brandon+Sanderson',
+              'https://www.amazon.com/s?k=Mistborn+Final+Empire+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Mistborn+Final+Empire+Sanderson',
           },
@@ -4826,7 +4826,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Revenge',
             ],
             warning: 'Sexual violence, torture, extreme violence',
-            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff',
+            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff',
           },
@@ -4852,7 +4852,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Graphic violence, torture, war crimes.',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
           },
@@ -4883,7 +4883,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               "Will They Won't They",
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
@@ -4913,7 +4913,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Training',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Way+of+Shadows+Brent+Weeks',
+              'https://www.amazon.com/s?k=The+Way+of+Shadows+Brent+Weeks&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Way+of+Shadows+Brent+Weeks',
           },
@@ -4937,7 +4937,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "Non-optional. Six of Crows ends mid-story and Crooked Kingdom is where everything pays off — the romances, the character arcs, the scheming. Bardugo wrote book two with full knowledge of the emotional debts she'd built in book one, and she collects them methodically. The heists are bigger, the stakes are personal, and the final chapters deliver some of the best-earned emotional payoffs in recent fantasy. Caveat: it ends. Read it, then mourn.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Crooked+Kingdom+Leigh+Bardugo',
+        amazon_url: 'https://www.amazon.com/s?k=Crooked+Kingdom+Leigh+Bardugo&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Crooked+Kingdom+Leigh+Bardugo',
       },
@@ -4958,7 +4958,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+          'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora',
       },
@@ -4979,7 +4979,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=Mistborn+Final+Empire+Brandon+Sanderson',
+          'https://www.amazon.com/s?k=Mistborn+Final+Empire+Brandon+Sanderson&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Mistborn+Final+Empire+Sanderson',
       },
@@ -4999,7 +4999,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "Kaz Brekker's ruthlessness, taken to a darker and more explicit place. Mia Corvere is an assassin-in-training with a controlled, unsentimental intelligence and a backstory full of specific grievance — the emotional architecture is similar. The prose is more stylised than Bardugo's, the world is more brutal, and the training-school sections have the same political complexity as the Ice Court. Caveat: significantly more explicit in all directions — heat, violence, content warnings apply.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff',
+        amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff',
       },
@@ -5020,7 +5020,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+          'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
       },
@@ -5041,7 +5041,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+          'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
       },
@@ -5107,7 +5107,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Folk Spirits',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden',
+              'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Bear+Nightingale+Katherine+Arden',
           },
@@ -5130,7 +5130,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Winter Magic',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik',
+              'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Spinning+Silver+Naomi+Novik',
           },
@@ -5158,7 +5158,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Standalone',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Sorcery+of+Thorns+Margaret+Rogerson',
+              'https://www.amazon.com/s?k=Sorcery+of+Thorns+Margaret+Rogerson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Sorcery+of+Thorns+Margaret+Rogerson',
           },
@@ -5183,7 +5183,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Quiet Power',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Le+Guin',
+              'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Le+Guin&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Wizard+Earthsea+Le+Guin',
           },
@@ -5211,7 +5211,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Standalone',
             ],
             amazon_url:
-              "https://www.amazon.com/s?k=Howl's+Moving+Castle+Diana+Wynne+Jones",
+              "https://www.amazon.com/s?k=Howl&tag=librariancura-20's+Moving+Castle+Diana+Wynne+Jones",
             bookshop_url:
               "https://bookshop.org/search?keywords=Howl's+Moving+Castle+Diana+Wynne+Jones",
           },
@@ -5233,7 +5233,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Standalone',
             ],
             warning: 'Sexual assault (non-graphic, mythological context)',
-            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller',
+            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Circe+Madeline+Miller',
           },
@@ -5301,7 +5301,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Violence throughout; some graphic scenes',
             amazon_url:
-              'https://www.amazon.com/s?k=Gardens+of+the+Moon+Steven+Erikson',
+              'https://www.amazon.com/s?k=Gardens+of+the+Moon+Steven+Erikson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Gardens+of+the+Moon+Erikson',
           },
@@ -5324,7 +5324,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Intricate World',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss',
+              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
@@ -5354,7 +5354,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Violence, torture, no redemption arcs guaranteed',
             amazon_url:
-              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
           },
@@ -5378,7 +5378,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Oppressive World',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Mistborn+Final+Empire+Sanderson',
+              'https://www.amazon.com/s?k=Mistborn+Final+Empire+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Mistborn+Final+Empire',
           },
@@ -5407,7 +5407,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Complete Series',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Eye+of+the+World+Robert+Jordan',
+              'https://www.amazon.com/s?k=Eye+of+the+World+Robert+Jordan&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Eye+of+the+World+Jordan',
           },
@@ -5432,7 +5432,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning:
               'Graphic violence, sexual content including assault, character deaths',
             amazon_url:
-              'https://www.amazon.com/s?k=A+Game+of+Thrones+George+Martin',
+              'https://www.amazon.com/s?k=A+Game+of+Thrones+George+Martin&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=A+Game+of+Thrones+Martin',
           },
@@ -5502,7 +5502,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Massive Scope',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson',
+              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson',
           },
@@ -5527,7 +5527,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Violence, mature themes throughout',
             amazon_url:
-              'https://www.amazon.com/s?k=Gardens+of+the+Moon+Steven+Erikson',
+              'https://www.amazon.com/s?k=Gardens+of+the+Moon+Steven+Erikson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Gardens+of+the+Moon+Erikson',
           },
@@ -5558,7 +5558,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             ],
             warning: 'Graphic violence, sexual violence, war atrocity',
             amazon_url:
-              'https://www.amazon.com/s?k=A+Game+of+Thrones+George+RR+Martin',
+              'https://www.amazon.com/s?k=A+Game+of+Thrones+George+RR+Martin&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=A+Game+of+Thrones+George+RR+Martin',
           },
@@ -5582,7 +5582,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Rich Mythology',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Dragonbone+Chair+Tad+Williams',
+              'https://www.amazon.com/s?k=The+Dragonbone+Chair+Tad+Williams&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Dragonbone+Chair+Tad+Williams',
           },
@@ -5612,7 +5612,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Same Author (completed WoT)',
             ],
             amazon_url:
-              'https://www.amazon.com/s?k=Mistborn+The+Final+Empire+Brandon+Sanderson',
+              'https://www.amazon.com/s?k=Mistborn+The+Final+Empire+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Mistborn+Final+Empire+Sanderson',
           },
@@ -5636,7 +5636,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Historical Basis',
             ],
             warning: 'War atrocity, genocide, drug addiction, graphic violence',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Poppy+War+RF+Kuang',
           },
@@ -5660,7 +5660,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+          'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
       },
@@ -5681,7 +5681,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         standalone: false,
         audiobook: true,
         amazon_url:
-          'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+          'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
       },
@@ -5701,7 +5701,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         why: "For the WoT reader who wants the chosen-one arc and the epic scope but with completely different pacing. Where Jordan builds his world slowly and carefully, Brown moves at an almost violent pace — each chapter escalates, the political stakes expand across six books from a single mine to an entire solar system, and the protagonist's transformation from nobody to legend is written with kinetic momentum. The series is complete at six books (Red Rising trilogy + follow-up trilogy) and rewards binge-reading. Caveat: more violent and morally ruthless than WoT, less interested in world-building depth, entirely different in register — but the sense of a protagonist becoming something the world wasn't ready for is recognisable.",
         standalone: false,
         audiobook: true,
-        amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown',
+        amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown&tag=librariancura-20',
         bookshop_url:
           'https://bookshop.org/search?keywords=Red+Rising+Pierce+Brown',
       },
@@ -5769,7 +5769,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Survival',
               'Dual POV',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
           {
@@ -5791,7 +5791,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Elite Institution',
               'Political Scheming',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown',
+            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Red+Rising+Pierce+Brown',
           },
         ],
@@ -5820,7 +5820,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Morally Grey',
             ],
             warning: 'Homophobia as a tool of empire, psychological torture, deeply tragic ending.',
-            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Traitor+Baru+Cormorant',
           },
           {
@@ -5842,7 +5842,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Class & Power',
               'Epic Scale',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson',
           },
         ],
@@ -5870,7 +5870,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'City Fantasy',
               'Dark Humour',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Lies+of+Locke+Lamora',
           },
           {
@@ -5892,7 +5892,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Magic System',
               'Framing Narrative',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Name+of+the+Wind+Rothfuss',
           },
         ],
@@ -5956,7 +5956,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'War',
               'Outsider Perspective',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=The+Song+of+Achilles+Madeline+Miller',
+            amazon_url: 'https://www.amazon.com/s?k=The+Song+of+Achilles+Madeline+Miller&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Song+of+Achilles+Miller',
           },
           {
@@ -5975,7 +5975,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Standalone',
               'Mythology Retelling',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Ariadne+Jennifer+Saint',
+            amazon_url: 'https://www.amazon.com/s?k=Ariadne+Jennifer+Saint&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Ariadne+Jennifer+Saint',
           },
         ],
@@ -6000,7 +6000,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Unreliable Narrator',
               'Standalone',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
           },
           {
@@ -6020,7 +6020,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Standalone',
             ],
             warning: 'War, sexual violence, grief — sustained and unflinching.',
-            amazon_url: 'https://www.amazon.com/s?k=A+Thousand+Ships+Natalie+Haynes',
+            amazon_url: 'https://www.amazon.com/s?k=A+Thousand+Ships+Natalie+Haynes&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Thousand+Ships+Haynes',
           },
         ],
@@ -6045,7 +6045,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Folklore',
               'Coming into Power',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
           },
           {
@@ -6065,7 +6065,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'Dangerous Fae',
               'Standalone',
             ],
-            amazon_url: 'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Spinning+Silver+Naomi+Novik',
           },
         ],
@@ -6122,7 +6122,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest thing in modern fantasy to Hobb's first-person intimacy. Kvothe narrates his own life with the same obsessive self-examination as Fitz — the prose is exceptional, the emotional beats hit hard, and the gap between who he is and who he claims to be is the real story. Caveat: the series is unfinished and has been for over a decade. Read knowing you may not get a conclusion.",
             tags: ['First-Person Narration', 'Coming of Age', 'Unreliable Narrator', 'Literary Prose'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind',
           },
           {
@@ -6135,7 +6135,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Maia is thrust onto a throne he never wanted, surrounded by people who either fear or resent him, and the novel is entirely about the interior life of someone trying to be good under impossible circumstances. The emotional register — outsider in a court, desperate for belonging, choosing kindness when cruelty would be easier — is the closest any standalone comes to the Farseer experience. Caveat: much lighter in tone and stakes than Hobb. No betrayal here will break you.",
             tags: ['Outsider Protagonist', 'Court Politics', 'Identity', 'Kindness as Strength'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Goblin+Emperor',
           },
         ],
@@ -6153,7 +6153,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Kay writes literary fantasy at the same emotional register as Hobb — every political manoeuvre has a personal cost, every betrayal lands because you understand all sides. Tigana is about a conquered people whose very name has been erased from memory, and the book handles grief, identity, and resistance with the same care Hobb brings to loyalty and belonging. Caveat: broader cast and less intimate than Fitz's first-person — but equally devastating by the end.",
             tags: ['Literary Fantasy', 'Political Intrigue', 'Identity', 'Bittersweet Ending'],
-            amazon_url: 'https://www.amazon.com/s?k=Tigana+Guy+Gavriel+Kay',
+            amazon_url: 'https://www.amazon.com/s?k=Tigana+Guy+Gavriel+Kay&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Tigana+Guy+Gavriel+Kay',
           },
           {
@@ -6169,7 +6169,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: 'An ambassador from a small station arrives at the heart of a vast empire and must navigate deadly court politics while carrying the recorded memory of her murdered predecessor. The political intrigue is as layered as anything in the Farseer books, and Martine is equally interested in identity — what makes you yourself when another mind lives in yours. Caveat: more science fiction in setting; the emotional beats are pure literary fantasy.',
             tags: ['Court Intrigue', 'Identity', 'Political Mystery', 'Literary SF'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine',
+            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Memory+Called+Empire',
           },
         ],
@@ -6190,7 +6190,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Baru Cormorant is an accountant who decides to destroy an empire from within, and the novel is ruthless about what that costs her. It shares Hobb's core obsession — loyalty, identity, and the price of survival — and like Hobb it is completely unwilling to protect its protagonist from consequences. One of the most politically sophisticated and emotionally brutal fantasy novels of the last decade. Caveat: the ending is one of the most discussed gut-punches in modern fantasy. Go in knowing it will not be kind.",
             tags: ['Political Fantasy', 'Sacrifice', 'Identity', 'Devastating Ending'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Traitor+Baru+Cormorant',
           },
           {
@@ -6206,7 +6206,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Where Hobb breaks your heart through intimacy, Abercrombie does it through disillusionment. The First Law systematically dismantles every fantasy hero archetype — the barbarian, the torturer, the crippled knight — and the political machinery that surrounds them is as corrupt and grinding as anything in the Six Duchies. Caveat: much drier, more ironic tone than Hobb. Less emotional warmth, more cold clarity.",
             tags: ['Grimdark', 'Political Intrigue', 'Subverted Tropes', 'Anti-Hero'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
           },
         ],
@@ -6263,7 +6263,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The universe as absurdist comedy — Earth destroyed by bureaucratic oversight, meaning-of-life questions answered by a supercomputer, and a cosmos that is specifically indifferent to human dignity. Adams and Pratchett were close friends and it shows: both write jokes that have arguments inside them. The funniest book in this list, and the one that most directly shares Good Omens' conviction that the universe is ridiculous and that's somehow fine.",
             tags: ['Cosmic Absurdism', 'British Humour', 'Satirical', 'Bureaucracy as Comedy', 'Existential Comedy'],
-            amazon_url: "https://www.amazon.com/s?k=The+Hitchhiker%27s+Guide+to+the+Galaxy+Douglas+Adams",
+            amazon_url: "https://www.amazon.com/s?k=The+Hitchhiker%27s+Guide+to+the+Galaxy+Douglas+Adams&tag=librariancura-20",
             bookshop_url: "https://bookshop.org/search?keywords=Hitchhiker%27s+Guide+Galaxy+Adams",
           },
           {
@@ -6278,7 +6278,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Pratchett without Gaiman, but at full satirical power on religion specifically. A great god has been reduced to a tortoise because no one truly believes in him anymore — only one simple monk does, and that faith has to be enough. The premise is Good Omens' satirical DNA applied directly to faith and institutional religion. One of Pratchett's best standalone novels, devastating under the jokes, and the most obvious companion read if the theological satire was what got you.",
             tags: ['Religious Satire', 'British Humour', 'Discworld', 'Standalone', 'Philosophy as Comedy'],
-            amazon_url: 'https://www.amazon.com/s?k=Small+Gods+Terry+Pratchett',
+            amazon_url: 'https://www.amazon.com/s?k=Small+Gods+Terry+Pratchett&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Small+Gods+Pratchett',
           },
         ],
@@ -6296,7 +6296,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Gaiman's warmest, funniest novel — a man discovers his recently deceased father was Anansi, the spider god of stories, and that he has a brother he never knew about. The same blend of mythology made mundane and genuine affection for its characters as Good Omens, but this time Gaiman is writing without Pratchett's structural discipline, which makes it looser and dreamier. If Crowley and Aziraphale's dynamic was the heart of Good Omens for you, the relationship at the centre of Anansi Boys runs on the same frequency.",
             tags: ['Mythology', 'Found Family', 'Gods Among Us', 'British Humour', 'Dark Comedy'],
-            amazon_url: 'https://www.amazon.com/s?k=Anansi+Boys+Neil+Gaiman',
+            amazon_url: 'https://www.amazon.com/s?k=Anansi+Boys+Neil+Gaiman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Anansi+Boys+Gaiman',
           },
           {
@@ -6309,7 +6309,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A caseworker for magical creatures is sent to investigate a suspicious orphanage and falls in love with everything he finds there. The warmest fantasy novel of the last decade — supernatural found family, gentle stakes, and the same conviction as Good Omens that kindness is a radical act. Less funny, more openly romantic, but the spirit is identical: a world full of beings that are supposed to be dangerous who turn out to be mostly just trying to get by. Perfect for readers who loved the gentleness underneath Good Omens' comedy.",
             tags: ['Found Family', 'Cozy Fantasy', 'Supernatural', 'Slow-Burn Romance', 'Wholesome'],
-            amazon_url: 'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune',
+            amazon_url: 'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=House+Cerulean+Sea+Klune',
           },
         ],
@@ -6327,7 +6327,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Quiet, strange, and deeply humane — Clarke writes with the same quality of intelligence as Gaiman: finding the profound in the fantastical without announcing it. A man living alone in a house of infinite halls, writing careful observations in journals, slowly uncovering a mystery about who he is. Not funny like Good Omens, but it shares the same quality of care — for its protagonist, for its world, for the reader. Short, perfect, unlike anything else, and the novel most Good Omens readers name as their next best discovery.",
             tags: ['Literary Fantasy', 'Strange Worlds', 'Mystery', 'Quiet Profundity', 'Susanna Clarke'],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Piranesi+Clarke',
           },
           {
@@ -6340,7 +6340,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The full Clarke experience — footnoted, British, slow-burning, and quietly one of the best fantasy novels ever written. Two magicians in Napoleonic England disagree about the proper nature of English magic, and Clarke uses that disagreement to say something about institutions, knowledge, and power that takes 800 pages and lands perfectly. The humour is drier and the pace is slower than Good Omens, but if the Pratchett/Gaiman literary quality — wit that carries real weight — was what you came for, this is the natural next step.",
             tags: ['British Fantasy', 'Literary', 'Footnoted Prose', 'Historical Fantasy', 'Two Protagonists'],
-            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell',
           },
         ],
@@ -6394,7 +6394,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Set in the same world as American Gods — Mr. Nancy (Anansi) dies, and his son Fat Charlie discovers he has a brother called Spider who inherited all their father's divine gifts. Where American Gods is melancholy and slow, Anansi Boys is warmer and funnier — it's essentially a British comedy about family embarrassment with a trickster god at its centre. The best direct follow-up for American Gods readers. Caveat: much lighter in tone. If you came to American Gods for the darkness and the dread, this won't scratch the same itch.",
             tags: ['Trickster God', 'Family', 'British Comedy', 'Mythology'],
-            amazon_url: 'https://www.amazon.com/s?k=Anansi+Boys+Neil+Gaiman',
+            amazon_url: 'https://www.amazon.com/s?k=Anansi+Boys+Neil+Gaiman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Anansi+Boys+Neil+Gaiman',
           },
           {
@@ -6407,7 +6407,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Gaiman and Miller share the same approach to mythology: both write gods and heroes not as untouchable archetypes but as complicated beings worn down by long lives and poor decisions. Circe is the witch from The Odyssey — dismissed by the Olympians, exiled, slowly discovering the power she was always told she didn't have. Miller's prose has the same lyrical precision as Gaiman's, the same sense that the old myths are true and the truth is stranger than the story. Caveat: more intimate in scale than American Gods — one character, one island, rather than a continent-spanning road trip.",
             tags: ['Greek Mythology', 'Female Protagonist', 'Literary Fantasy', 'Divine Politics'],
-            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller',
+            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Circe+Madeline+Miller',
           },
         ],
@@ -6428,7 +6428,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A golem from Jewish folklore and a djinni from Arabic mythology both arrive in 1899 New York, living unnoticed among immigrant communities in Lower Manhattan. Wecker shares Gaiman's core fascination — what does a creature from an ancient mythology do in the modern world, and how does the modern world change them? The historical immigrant setting gives the mythology the same weight as American Gods' heartland America. Both novels are about displacement, faded power, and what you carry from your old world into the new one. Caveat: more character-driven and less plot-driven than American Gods. The mystery elements are gentler.",
             tags: ['Mythology in the Modern World', 'Historical Fantasy', 'Immigrant Stories', 'Literary Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Golem+and+the+Djinni+Helene+Wecker',
+            amazon_url: 'https://www.amazon.com/s?k=The+Golem+and+the+Djinni+Helene+Wecker&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Golem+and+the+Djinni',
           },
           {
@@ -6441,7 +6441,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "An ordinary man falls through a crack in London and discovers a hidden city beneath it — London Below — inhabited by the people and monsters that mainstream society has discarded. Neverwhere has the same DNA as American Gods: a passive, ordinary protagonist pulled into a hidden world full of mythological figures, dark humour, and real menace. Gaiman wrote both, and the atmospheric quality is identical. If you prefer the road-trip structure of American Gods but want to try Gaiman's other worlds, this is the most direct equivalent. Caveat: more plot-driven and faster than American Gods — less slow-burn mythology, more adventure.",
             tags: ['Hidden World', 'Urban Fantasy', 'Mythology', 'Dark Fairy Tale'],
-            amazon_url: 'https://www.amazon.com/s?k=Neverwhere+Neil+Gaiman',
+            amazon_url: 'https://www.amazon.com/s?k=Neverwhere+Neil+Gaiman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Neverwhere+Neil+Gaiman',
           },
         ],
@@ -6459,7 +6459,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A man lives alone in a vast house of endless halls and tidal statues, cataloguing the tides and the skeletons, not fully understanding what he is or how he came to be there. Piranesi shares American Gods' most distinctive quality: the prose creates a mood so specific and strange that you feel displaced from your own world while reading it. Both novels are about identity — who you are when stripped of the context that usually defines you. Clarke's restraint and Gaiman's melancholy are different expressions of the same literary instinct. Caveat: almost no plot by conventional standards. Entirely atmosphere and mystery.",
             tags: ['Literary Fantasy', 'Mystery', 'Strange Worlds', 'Identity'],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
           },
           {
@@ -6472,7 +6472,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Two magicians attempt to restore magic to England during the Napoleonic Wars, and the fairy magic they disturb is far older and stranger than either of them understands. Clarke's debut is the closest literary fantasy comes to the register of American Gods — both are slow, atmospheric, and written with the conviction that the supernatural is real and its implications are unsettling rather than exciting. The footnotes alone (hundreds of them, detailing a fictional history of English magic) have the same quality as Gaiman's mythology-building. Caveat: very long and deliberately slow. The pace is Dickensian by design.",
             tags: ['Literary Fantasy', 'Historical Fantasy', 'Faerie', 'Dark Magic'],
-            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell',
           },
         ],
@@ -6529,7 +6529,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A British naval captain captures a French ship carrying a dragon egg, which hatches and bonds to him — derailing his naval career and pulling him into the Aerial Corps during the Napoleonic Wars. The Eragon-Saphira dynamic is the closest point of comparison: Temeraire is highly intelligent, deeply attached to Laurence, and constantly asking the kind of questions about the world that make you love him immediately. The historical setting is immersive and Novik writes the bond with exactly the same warmth Paolini does. Caveat: slower-paced than Eragon — more military procedural, less quest adventure.",
             tags: ['Dragon Bond', 'Historical Fantasy', 'Napoleonic Era', 'Found Family'],
-            amazon_url: 'https://www.amazon.com/s?k=His+Majesty%27s+Dragon+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=His+Majesty%27s+Dragon+Naomi+Novik&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=His+Majesty%27s+Dragon+Novik',
           },
           {
@@ -6545,7 +6545,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The book that invented the dragon rider as a fantasy archetype. Lessa impresses Ramoth, the first queen dragon to hatch in centuries, and everything about her life changes. McCaffrey's dragon bond is the template Paolini grew up reading — telepathic, lifelong, and genuinely affecting when a dragon or rider dies. The Pern setting is technically science fiction (the dragons are bioengineered) but reads as pure fantasy. Caveat: some attitudes in the early books reflect their 1960s publication era. The Harper Hall trilogy that follows is notably better in this regard.",
             tags: ['Dragon Bond', 'Chosen Nobody', 'Telepathic Connection', 'Science Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=Dragonflight+Anne+McCaffrey',
+            amazon_url: 'https://www.amazon.com/s?k=Dragonflight+Anne+McCaffrey&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Dragonflight+Anne+McCaffrey',
           },
         ],
@@ -6566,7 +6566,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Three young men from a small village are forced to flee when the Dark One's servants come looking for one of them, and the world they discover is nothing like they imagined. The Eye of the World shares Eragon's core structure — rural nobody, prophesied destiny, mentor figure, vast evil — but runs at epic length and with enormous depth. If Eragon was your entry into fantasy, this is the natural next step into adult epic fantasy. Caveat: the series is fourteen books and never rushes. Books 7–10 are notoriously slow. The payoff is real but the commitment is enormous.",
             tags: ['Farm Boy Hero', 'Chosen One', 'Dark Lord', 'Epic Quest'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan',
+            amazon_url: 'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Eye+of+the+World+Jordan',
           },
           {
@@ -6582,7 +6582,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Kvothe grows up as an outsider, discovers he has exceptional gifts, trains at a legendary university, and narrates his own mythologised story with an awareness that the legend and the man are not the same. The Name of the Wind shares Eragon's coming-of-age energy and the same pleasure of watching an exceptional young person master something difficult — here it's magic and music rather than sword and dragon. The prose is significantly more literary than Eragon. Caveat: the series is unfinished and has been for over fifteen years. Read knowing you may not get a conclusion.",
             tags: ['Coming of Age', 'Magic Academy', 'Exceptional Protagonist', 'Literary Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
         ],
@@ -6600,7 +6600,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Eragon was written by a teenager who had absorbed Tolkien completely, and it shows in the best way. If you loved Eragon's sense of a world with deep history, ancient languages, and a journey that feels genuinely epic, The Hobbit is the source. It is shorter and lighter than The Lord of the Rings — a single hobbit, a dragon, a quest — and it has the same quality of wonder that made Eragon compelling: a small person discovering that the world is enormous and magic is real. Caveat: written in 1937. The prose style is more old-fashioned than modern fantasy.",
             tags: ['Classic Fantasy', 'Quest', 'Dragon', 'Found Family'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Hobbit+Tolkien',
+            amazon_url: 'https://www.amazon.com/s?k=The+Hobbit+Tolkien&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Hobbit+Tolkien',
           },
           {
@@ -6616,7 +6616,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A teenage girl discovers she has powers no one expected, joins a rebellion against an immortal dark lord who has ruled for a thousand years, and learns to master abilities that most people don't even know exist. Mistborn shares Eragon's structure — exceptional young protagonist, evil empire, mentor who teaches everything, magic as the key to the conflict — but Sanderson's magic system is more rigorous and the political plotting sharper. The best stepping stone from YA epic fantasy into adult epic fantasy. Caveat: darker in tone than Eragon and more willing to be cruel to its characters.",
             tags: ['Chosen One', 'Dark Lord', 'Rebellion', 'Magic System'],
-            amazon_url: 'https://www.amazon.com/s?k=Mistborn+The+Final+Empire+Brandon+Sanderson',
+            amazon_url: 'https://www.amazon.com/s?k=Mistborn+The+Final+Empire+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Mistborn+Final+Empire+Sanderson',
           },
         ],
@@ -6673,7 +6673,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: 'An ambassador from a small station arrives at the centre of a vast empire and must navigate assassination, court politics, and a dead predecessor\'s memories — all before the empire decides her home station is worth conquering. The political texture is the closest modern SF comes to Herbert: factions with centuries-old agendas, language as power, and a protagonist who is both seduced by and terrified of the civilisation she\'s dealing with. Caveat: cosier in tone than Dune. The empire is frightening but not merciless.',
             tags: ['Political Intrigue', 'Empire', 'Identity', 'Literary SF'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine',
+            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Memory+Called+Empire',
           },
           {
@@ -6686,7 +6686,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A conquered land has been erased from memory by a sorcerer emperor — its very name unpronounceable to all but its own people. Kay's political fantasy operates at the same emotional register as Herbert: resistance movements with competing agendas, rulers who are neither simply evil nor simply wrong, and a climax that refuses easy victory. Where Dune is cool and analytical, Tigana is warmer and more elegiac — but the underlying argument about power, identity, and history is the same. Caveat: standalone, no sequels. The world ends with this book.",
             tags: ['Political Fantasy', 'Resistance', 'Memory and Identity', 'Literary Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=Tigana+Guy+Gavriel+Kay',
+            amazon_url: 'https://www.amazon.com/s?k=Tigana+Guy+Gavriel+Kay&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Tigana+Guy+Gavriel+Kay',
           },
         ],
@@ -6707,7 +6707,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Baru Cormorant watches her homeland be absorbed by an empire as a child and decides to destroy that empire from the inside — by becoming its most efficient instrument. Herbert's central question in Dune is whether a messianic figure can avoid becoming what they set out to defeat. Dickinson asks the same question with a female accountant and a more direct answer. The political mechanics are intricate, the moral cost is real, and the ending is one of the most debated gut-punches in modern SF/F. Caveat: the ending will devastate you. Herbert at least gave Paul a partial victory.",
             tags: ['Political Fantasy', 'Power Corrupts', 'Chosen One Subversion', 'Sacrifice'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Traitor+Baru+Cormorant',
           },
           {
@@ -6724,7 +6724,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Rin is a war orphan who discovers godlike power and uses it — and the trilogy tracks, in explicit and unflinching detail, what that costs everyone around her. Like Paul Atreides, she is a weapon shaped by her circumstances and her own will, and like Paul she cannot undo what she becomes. Kuang uses Chinese military history as her skeleton, which gives the atrocities a weight that fantasy violence usually avoids. Caveat: significantly darker than Dune. The second and third books contain graphic depictions of wartime atrocity.",
             tags: ['Chosen One', 'Power Corrupts', 'Military Fantasy', 'War Is Hell'],
             warning: 'Graphic wartime atrocities, genocide, sexual violence',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+Kuang',
           },
         ],
@@ -6745,7 +6745,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Seven pilgrims travel to a planet where time moves backwards near a terrifying creature called the Shrike, and each tells their story en route. Simmons builds a future civilisation with the same density and ambition Herbert brought to the Imperium — religions that have evolved across centuries, factions whose agendas span generations, and a central mystery that uses all of it. The Canterbury Tales structure means you get six completely different tones in one book. Caveat: the series declines sharply after the first two books. Hyperion and The Fall of Hyperion are the complete story.",
             tags: ['Far Future', 'Deep World-Building', 'Religious Themes', 'Literary SF'],
-            amazon_url: 'https://www.amazon.com/s?k=Hyperion+Dan+Simmons',
+            amazon_url: 'https://www.amazon.com/s?k=Hyperion+Dan+Simmons&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Hyperion+Dan+Simmons',
           },
           {
@@ -6758,7 +6758,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "An envoy from a galactic civilisation arrives on a planet where humans have no fixed gender and must navigate its politics from complete cultural incomprehension. Le Guin does what Herbert does at his best — uses an alien ecology and society to ask questions about human nature that only become visible when the familiar assumptions are removed. The prose is precise and literary, the political stakes are real, and the central friendship is one of the most quietly moving in SF. Caveat: more interior and slower than Dune. Action is not the point.",
             tags: ['Anthropological SF', 'Political Intrigue', 'Identity', 'Literary SF'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Left+Hand+of+Darkness+Le+Guin',
+            amazon_url: 'https://www.amazon.com/s?k=The+Left+Hand+of+Darkness+Le+Guin&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Left+Hand+of+Darkness',
           },
         ],
@@ -6815,7 +6815,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "An office worker from Australia ends up in a fantasy world with a special ability — aura manipulation — that everyone else considers useless, and proceeds to become extremely dangerous with it. The closest Western fantasy to Cradle's feel: clear advancement stages, monsters, loot, and a protagonist who wins through creative application of his particular power set rather than raw strength. The tone is lighter and more comedic than Cradle — Jason is self-aware about his situation in a way Lindon isn't. Caveat: the early books are more LitRPG in feel than Cradle. The game-like elements are explicit.",
             tags: ['Progression Fantasy', 'Isekai', 'Power System', 'Underdog Rises'],
-            amazon_url: 'https://www.amazon.com/s?k=He+Who+Fights+with+Monsters+Jason+Cheyne',
+            amazon_url: 'https://www.amazon.com/s?k=He+Who+Fights+with+Monsters+Jason+Cheyne&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=He+Who+Fights+with+Monsters',
           },
           {
@@ -6828,7 +6828,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A magic student gets trapped in a time loop — the same month repeating indefinitely — and uses the infinite repetitions to master every school of magic the academy teaches. Mother of Learning shares Cradle's core appeal: watching a character become systematically, measurably more powerful through intelligence and hard work rather than talent or destiny. The time loop structure means the progression is methodical and deeply satisfying. Originally a web serial, now published in two volumes. Caveat: slower start than Cradle — the first few loops feel repetitive by design.",
             tags: ['Time Loop', 'Progression Fantasy', 'Magic Study', 'Underdog Rises'],
-            amazon_url: 'https://www.amazon.com/s?k=Mother+of+Learning+Kurmaic',
+            amazon_url: 'https://www.amazon.com/s?k=Mother+of+Learning+Kurmaic&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Mother+of+Learning+Kurmaic',
           },
           {
@@ -6844,7 +6844,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Earth has been demolished and converted into a dungeon game broadcast for alien entertainment — Carl and his cat Princess Donut have to fight their way down through increasingly lethal floors to survive. Like Cradle, the entire series is built around the satisfaction of watching a protagonist climb a clearly defined power structure floor by floor, with each level bringing harder enemies and better loot. The tone is much funnier and more satirical than Cradle — Dinniman's humour is sharp — and the LitRPG elements are explicit (visible stats, game notifications). Caveat: if you came to Cradle for the wuxia culture, DCC's meta-comedy is a significant tonal shift.",
             tags: ['LitRPG', 'Progression Fantasy', 'Power Levels', 'Dark Comedy'],
-            amazon_url: 'https://www.amazon.com/s?k=Dungeon+Crawler+Carl+Matt+Dinniman',
+            amazon_url: 'https://www.amazon.com/s?k=Dungeon+Crawler+Carl+Matt+Dinniman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Dungeon+Crawler+Carl',
           },
         ],
@@ -6865,7 +6865,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A cultivator from a powerful sect abandons his ambition, buys a farm, and decides to just live quietly — except his spiritual power keeps accidentally overflowing into his crops, his animals, and everyone around him. Beware of Chicken is a cozy love letter to wuxia cultivation that pokes gentle fun at every trope Cradle takes seriously. If Cradle is the power fantasy, this is its warm, good-natured counterpart. The farm animals achieving enlightenment through proximity to their owner is as delightful as it sounds. Caveat: completely different in tone — no tournament arcs, no grinding. Pure comfort reading.",
             tags: ['Wuxia-Inspired', 'Cozy Fantasy', 'Cultivation', 'Found Family'],
-            amazon_url: 'https://www.amazon.com/s?k=Beware+of+Chicken+CKJ',
+            amazon_url: 'https://www.amazon.com/s?k=Beware+of+Chicken+CKJ&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Beware+of+Chicken',
           },
           {
@@ -6882,7 +6882,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Rin claws her way into an elite military academy through pure stubbornness and discovers she has access to shamanic power the modern world considers myth. The Poppy War shares Cradle's DNA — the impossible underdog, the martial academy, the power that costs something real — but strips away every element of comfort. This is not progression fantasy; it's historical fiction with cultivation at its edges, and Kuang uses Chinese military history to ground the atrocities that follow. Caveat: dramatically darker than Cradle. The second and third books depict wartime genocide in explicit detail.",
             tags: ['Military Academy', 'Chinese-Inspired', 'Chosen One', 'War Is Hell'],
             warning: 'Graphic wartime atrocities, genocide, sexual violence',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+Kuang',
           },
         ],
@@ -6903,7 +6903,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Vaelin Al Sorna is given to a brutal military order as a boy and trained into one of the most dangerous fighters alive. Blood Song is the closest traditional fantasy comes to Cradle's training arc satisfaction — the early chapters follow Vaelin through years of gruelling tests, brotherhood forged under pressure, and the discovery of a power nobody fully understands. The prose is better than the early Cradle books, the world-building is meticulous, and the first book is among the finest military fantasy debuts of the last decade. Caveat: the sequels don't match the first book. Many readers consider Blood Song a standalone.",
             tags: ['Military Training', 'Underdog Rises', 'Brotherhood', 'Dark Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=Blood+Song+Anthony+Ryan',
+            amazon_url: 'https://www.amazon.com/s?k=Blood+Song+Anthony+Ryan&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Blood+Song+Anthony+Ryan',
           },
           {
@@ -6919,7 +6919,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Darrow is a Red — the lowest caste in a rigidly stratified society — who infiltrates the Gold elite through brutal deception and refuses to stop climbing. Red Rising shares Cradle's fundamental appeal: the satisfaction of watching someone at the absolute bottom of a hierarchy dismantle it from the inside through intelligence and willpower. The Institute sections (books 1–2) have the same tournament/competition energy as Cradle's early advancement trials. Caveat: more violent and politically complex than Cradle. The series is darker and the stakes feel more grounded.",
             tags: ['Underdog Rises', 'Caste System', 'Competition Arc', 'Political Intrigue'],
-            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown',
+            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Red+Rising+Pierce+Brown',
           },
         ],
@@ -6976,7 +6976,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Cardan is the Darkling's closest equivalent in YA fantasy — cruel, charismatic, and constructed in a way that makes you understand the appeal even as he's doing awful things. The fae court scheming is sharper than anything in Shadow and Bone, Jude is a more active protagonist than Alina, and Holly Black is better at the push-pull of enemy dynamics than almost anyone in the genre. Caveat: the romance payoff takes longer — the first book is mostly setup and provocation.",
             tags: ['Enemies to Lovers', 'Fae Courts', 'Morally Grey Love Interest', 'Political Intrigue'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
           },
           {
@@ -6992,7 +6992,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Like Shadow and Bone, ACOTAR builds its tension around a heroine caught between a compelling but dangerous figure and her own awakening power — and like Bardugo, Maas understands that the most interesting romantic tension comes from genuine moral uncertainty. The world-building is lush, the stakes escalate sharply from book two onwards, and Rhysand occupies the same 'is he actually good?' space the Darkling does in Shadow and Bone. Caveat: the first book is the weakest of the series — the real ACOTAR experience starts with A Court of Mist and Fury.",
             tags: ['Enemies to Lovers', 'Fae Courts', 'Morally Grey Love Interest', 'Slow Burn'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Maas',
+            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Maas&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Court+of+Thorns+and+Roses',
           },
         ],
@@ -7013,7 +7013,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Two protagonists — a Scholar girl who infiltrates a brutal military academy to rescue her brother, and a Mask soldier who begins to question everything he was trained to be. An Ember in the Ashes has the same core tension as Shadow and Bone — ordinary person thrust into a world of power and violence — but Tahir's world is darker, the stakes are more immediate, and the romance is built on genuine moral conflict rather than magical destiny. Caveat: darker than Shadow and Bone in tone and content. The violence is not softened.",
             tags: ['Military Academy', 'Dual POV', 'Chosen One', 'Forbidden Romance'],
-            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
           {
@@ -7029,7 +7029,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A young assassin competes in a deadly tournament at the king's court while slowly uncovering a magic she didn't know she had. Throne of Glass shares Shadow and Bone's trajectory — the first book is the lightest and most YA, and the series transforms into something much larger across eight books. Like Alina, Celaena's arc is about accepting a power and a destiny she didn't ask for. Caveat: the series requires patience. Books three and four are where it becomes exceptional.",
             tags: ['Female Assassin', 'Chosen One', 'Magic Reveal', 'Enemies to Lovers'],
-            amazon_url: 'https://www.amazon.com/s?k=Throne+of+Glass+Sarah+J+Maas',
+            amazon_url: 'https://www.amazon.com/s?k=Throne+of+Glass+Sarah+J+Maas&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Throne+of+Glass+Sarah+Maas',
           },
         ],
@@ -7050,7 +7050,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The most direct match for Shadow and Bone's Russian aesthetic — set in medieval Russia and drawing on actual Slavic folklore. Vasya can see the household spirits and winter demons that everyone else dismisses as superstition, and the novel is about the cost of that sight in a world that wants to extinguish it. The prose is beautiful, the cold is palpable, and the supernatural elements feel genuinely mythic rather than decorative. Caveat: slower-paced and more literary than Shadow and Bone. The romance is secondary to the folklore.",
             tags: ['Slavic Folklore', 'Russian Setting', 'Female Protagonist', 'Dark Fairy Tale'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden',
+            amazon_url: 'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Bear+and+the+Nightingale+Arden',
           },
           {
@@ -7063,7 +7063,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A girl from a valley protected by a powerful and cold wizard discovers she has magic he didn't expect — and everything changes. Uprooted has the same Eastern European folk-magic atmosphere as Shadow and Bone, the same dynamic between an inexperienced girl and a powerful, difficult mentor-figure, and the same sense that the magic is alive and strange rather than systematised. The Dragon shares DNA with the Darkling — demanding, complicated, impossible to read. Caveat: standalone. No sequels. The story completes here.",
             tags: ['Slavic-Inspired', 'Magic Discovery', 'Morally Complex Mentor', 'Dark Fairy Tale'],
-            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
           },
         ],
@@ -7121,7 +7121,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Jorg of Ancrath is fourteen years old and already one of the most unsettling protagonists in fantasy. Lawrence writes first-person like Abercrombie — tight, sardonic, and completely unwilling to soften the character's worst impulses. Where Glokta is broken by the world, Jorg broke himself on purpose. Same cold intelligence, same dark humour, much higher body count. Caveat: darker and more nihilistic than First Law. No warmth in the early chapters.",
             tags: ['Anti-Hero', 'First-Person Narration', 'Dark Humour', 'Post-Apocalyptic Medieval'],
             warning: 'Violence against children, sexual violence implied',
-            amazon_url: 'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence',
+            amazon_url: 'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Prince+of+Thorns+Mark+Lawrence',
           },
           {
@@ -7137,7 +7137,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Where Abercrombie gives you tortured killers, Lynch gives you charming thieves — but the moral greyness is equally sharp and the world-building equally meticulous. Locke is not a good person; he's just funnier about it. The Venice-inspired setting, the elaborate cons, and the devastating mid-book gut-punch all share Abercrombie's approach to likeable characters doing terrible things. Caveat: lighter in tone, heavier on banter — the darkness arrives suddenly rather than being constant.",
             tags: ['Thieves Guild', 'Heist', 'Dark Comedy', 'Morally Grey Protagonist'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora',
           },
         ],
@@ -7157,7 +7157,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Set in the same world as the trilogy, Best Served Cold is a revenge thriller about a mercenary captain hunting down the seven men who betrayed her. It's sharper, faster, and in many ways more satisfying than the trilogy itself — every character has a motive you understand, every alliance is provisional, and Abercrombie's core argument that revenge corrodes the person seeking it is never more clearly stated. Can be read without the trilogy, though the world is richer if you have.",
             tags: ['Revenge', 'Political Intrigue', 'Female Protagonist', 'Morally Grey Cast'],
-            amazon_url: 'https://www.amazon.com/s?k=Best+Served+Cold+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=Best+Served+Cold+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Best+Served+Cold+Abercrombie',
           },
           {
@@ -7173,7 +7173,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The book that Abercrombie credits as a major influence. The Black Company is a mercenary unit in service to a dark lord, narrated by their surgeon-chronicler. Cook strips war of all glamour — it's logistics, fear, and compromised loyalties — and the moral ambiguity is never resolved. Darker and less polished than First Law but foundational to everything Abercrombie built on top of it. Caveat: prose is rougher and the early chapters throw you in cold.",
             tags: ['Military Fantasy', 'Mercenaries', 'Dark Fantasy', 'War Is Hell'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook',
+            amazon_url: 'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Black+Company+Glen+Cook',
           },
         ],
@@ -7193,7 +7193,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A single three-day battle told from both sides — Union soldiers and Northmen — and the clearest statement of Abercrombie's thesis that war has no heroes, only survivors with different explanations. If The Blade Itself is where you fall for the world, The Heroes is where you understand what it's really about. Generals make catastrophically bad decisions for political reasons; men die for ground that will be traded back. Often cited by fans as the best First Law book.",
             tags: ['Military Fantasy', 'War Is Hell', 'Multiple POVs', 'Political Satire'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Heroes+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=The+Heroes+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Heroes+Abercrombie',
           },
           {
@@ -7210,7 +7210,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Rin claws her way into the elite military academy on talent and rage alone, and the series uses Chinese history as its skeleton to show exactly how wars are won, who pays the price, and what power does to the people who wield it. Like Abercrombie, Kuang is interested in institutions — what the military makes of people, how ideology becomes atrocity, how the exceptional individual is both created and destroyed by the system around them. Caveat: significantly darker than First Law. The second and third books contain graphic depictions of historical genocide.",
             tags: ['Military Fantasy', 'War Is Hell', 'Political Corruption', 'Dark Coming of Age'],
             warning: 'Graphic wartime atrocities, genocide, sexual violence',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+Kuang',
           },
         ],
@@ -7268,7 +7268,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The template Abercrombie built his career on. Mercenaries serving a wizard-tyrant they know is evil, written from inside the company — not as heroes but as professional soldiers doing a job and rationalising the cost. Cook invented the grimdark mode here: no chosen ones, no redemption arcs, just complicity, attrition, and dark humour. The prose is sparse and immediate. If A Little Hatred resonated in its depiction of people who understand the system is rotten and participate anyway, this is the origin point.",
             tags: ['Grimdark', 'Military Fantasy', 'Cynicism', 'Dark Humour', 'Morally Grey'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook',
+            amazon_url: 'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Black+Company+Glen+Cook',
           },
           {
@@ -7285,7 +7285,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "A fourteen-year-old prince leads a band of killers across a ruined post-apocalyptic Europe, and the voice is the whole point: Jorg is charismatic, monstrous, self-aware, and never once asks for your sympathy. Lawrence writes the anti-hero with more commitment than almost anyone in fantasy — Jorg has no redemptive arc waiting for him, just escalating capability and increasingly costly choices. If Savine's willingness to do whatever it takes without apologising for it was your entry point into A Little Hatred, this is the direct companion.",
             warning: 'Sexual violence, child soldiers, extreme cruelty. The protagonist commits atrocities.',
             tags: ['Anti-Hero', 'Post-Apocalyptic Fantasy', 'Grimdark', 'Dark Humour', 'No Redemption Arc'],
-            amazon_url: 'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence',
+            amazon_url: 'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Prince+of+Thorns+Mark+Lawrence',
           },
         ],
@@ -7306,7 +7306,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "New Crobuzon is the best industrial-fantasy city in the genre: dirty, stratified, full of people who cannot afford the city's promises and a government that enforces poverty as policy. Miéville is explicitly political in how he builds his world — the factories, the Remade (humans surgically altered as criminal punishment), and the militia's indifference to working-class suffering map directly onto what Abercrombie is doing with the Union's northern mills. Darker and stranger than A Little Hatred, less humorous, and Miéville doesn't give you a plot hook for the first 200 pages. Worth it.",
             tags: ['Industrial Fantasy', 'Class Politics', 'Dark City', 'Weird Fiction', 'Literary'],
-            amazon_url: 'https://www.amazon.com/s?k=Perdido+Street+Station+China+Mieville',
+            amazon_url: 'https://www.amazon.com/s?k=Perdido+Street+Station+China+Mieville&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Perdido+Street+Station+Mieville',
           },
           {
@@ -7322,7 +7322,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Class warfare from below: thieves who steal from the nobility not because they're Robin Hood but because they can, in a city built on the ruins of something older and stranger. Lynch's Camorr is stratified in ways that feel true to how class actually works — not as moral commentary but as texture. Darker than the cover suggests, with reversals that genuinely hurt. If Broad's arc — the working man who discovers violence is the only tool that gets results — resonated, Locke Lamora runs the same thread from the other end of the social ladder.",
             tags: ['Heist Fantasy', 'Class Warfare', 'Dark City', 'Thieves Guild', 'Anti-Hero'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora',
           },
         ],
@@ -7344,7 +7344,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "An accountant working within an empire she hates, attempting to destroy it from the inside using its own tools. The political cynicism is equivalent to Abercrombie's — no one gets out clean, every choice costs something, and the system is designed to ensure that the people who want to change it must first become it. Savine's arc in A Little Hatred has the same texture: operating within corrupt structures for personal advancement while telling yourself the ends justify the means. Dickinson is more literary and slower-burning; the payoffs are devastating.",
             warning: 'Colonialism, eugenics, genocide, suicide. The book does not soften these.',
             tags: ['Political Cynicism', 'Empire Critique', 'Grimdark', 'Literary Fantasy', 'Tragedy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Traitor+Baru+Cormorant',
           },
           {
@@ -7361,7 +7361,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "A scrappy outsider claws her way into an elite military academy and discovers a power that changes everything — then the war arrives and the power costs more than she understood. Kuang and Abercrombie are thematic twins in how they handle what winning actually requires: Rin gains everything she wanted and loses everything that made the wanting worthwhile. The industrial-scale violence of the later books is the spiritual successor to what A Little Hatred is building toward. Essential grimdark.",
             warning: 'War crimes, genocide, drug addiction, torture. Tonal shift from book 1 to book 2 is severe.',
             tags: ['War College', 'Power Corrupts', 'Dark Turn', 'Military Fantasy', 'Grimdark'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+Kuang',
           },
         ],
@@ -7419,7 +7419,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: 'The most direct heir to Locke Lamora\'s heist energy. Six criminals, one impossible job, everyone playing angles you don\'t see until they matter. YA in name only — the darkness, the reversals, and the character work are fully adult. Bardugo is openly in debt to Lynch, and it shows in the best possible way: this is the book for readers who want the same impossible-job structure with an equally memorable ensemble.',
             tags: ['Heist Fantasy', 'Ensemble Cast', 'Dark Fantasy', 'Found Family', 'Thieves'],
-            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Six+of+Crows+Bardugo',
           },
           {
@@ -7434,7 +7434,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: 'Revenge as elaborate scheme. Monza Murcatto assembles a crew to kill the seven men who betrayed her, and Abercrombie is as good as Lynch at making you feel the cost of each step. The same dark wit, the same willingness to let plans go wrong in ways that hurt, the same cast of morally compromised professionals who are better at their jobs than at being human. Darker than Locke Lamora, and the ending doesn\'t flinch.',
             tags: ['Grimdark', 'Revenge', 'Ensemble Cast', 'Dark Humour', 'Heist-like Structure'],
-            amazon_url: 'https://www.amazon.com/s?k=Best+Served+Cold+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=Best+Served+Cold+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Best+Served+Cold+Abercrombie',
           },
         ],
@@ -7455,7 +7455,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Daevabad is Camorr's spiritual cousin — ancient, layered, stratified, full of people whose survival depends on knowing which rules apply to them and which don't. Djinn politics instead of thieves guilds, but the sense of a city with centuries of weight behind every street corner is identical. A con artist protagonist pulled into a world of immortal power games — the Lynch reader will feel immediately at home in the texture of this world.",
             tags: ['Dark City', 'Political Intrigue', 'Djinn', 'Class Warfare', 'Con Artist Protagonist'],
-            amazon_url: 'https://www.amazon.com/s?k=The+City+of+Brass+SA+Chakraborty',
+            amazon_url: 'https://www.amazon.com/s?k=The+City+of+Brass+SA+Chakraborty&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+City+of+Brass+Chakraborty',
           },
           {
@@ -7472,7 +7472,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Godsgrave is another city with real menace, and Kristoff's footnoted, irreverent prose style is openly modelled on Lynch's voice. An assassin school novel about a girl who trains to kill the men who destroyed her family — darker and more explicit than Locke Lamora, with the same sense of a beautifully constructed world that enjoys punishing the people who live in it. The footnotes are either charming or annoying depending on your tolerance; most Lynch readers find them charming.",
             warning: 'Explicit sexual content, graphic violence. Considerably darker in tone than Locke Lamora.',
             tags: ['Dark City', 'Assassins', 'Dark Humour', 'Revenge', 'Footnoted Prose'],
-            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff',
+            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Nevernight+Kristoff',
           },
         ],
@@ -7493,7 +7493,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Kvothe's Tarbean years have the same texture as Locke's childhood — a street kid surviving by wit and luck, shaped by a father figure who teaches him to be more than his circumstances. Rothfuss writes with the same kind of precise, witty, deeply felt prose as Lynch. The found family is smaller and the heists are replaced by university politics, but the voice and the warmth are identical. Be aware: the series is currently unfinished with no confirmed date for book three.",
             tags: ['Found Family', 'Street Kid Origin', 'Witty Prose', 'Chosen One Subverted', 'Literary Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
           {
@@ -7509,7 +7509,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: 'Found family of aging mercenaries on one last impossible job. The same warmth under the grimdark exterior, the same dark humour, the same absolute conviction that these people would die for each other — and probably will. Eames writes with obvious love for the genre and for his characters, and the result is one of the most purely enjoyable fantasy novels of the last decade. If the Gentleman Bastards\' loyalty was the part that got you, this is your next read.',
             tags: ['Found Family', 'Dark Humour', 'One Last Job', 'Mercenaries', 'Warmth Under Darkness'],
-            amazon_url: 'https://www.amazon.com/s?k=Kings+of+the+Wyld+Nicholas+Eames',
+            amazon_url: 'https://www.amazon.com/s?k=Kings+of+the+Wyld+Nicholas+Eames&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Kings+of+the+Wyld+Eames',
           },
         ],
@@ -7566,7 +7566,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: 'Dual POV between a Scholar girl and a soldier in an empire modelled on brutal Rome. Both protagonists are trapped by the system, both have to fight their way through impossible circumstances. The training sequences and competition arc mirror Throne of Glass but with significantly higher stakes from page one. Caveat: much less romance-focused than Maas. The tension is there but the series earns it slowly.',
             tags: ['Dual POV', 'Competition Arc', 'Military Fantasy', 'Forbidden Romance'],
-            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
           {
@@ -7582,7 +7582,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Katsa is the best direct predecessor to Celaena — a young woman with a lethal gift who is used as a weapon by those in power and has to find her own identity. The political intrigue is tighter and the romance is healthier than most in this space. Caveat: published in 2008, before the romantasy genre codified its tropes — it reads somewhat differently but holds up well.",
             tags: ['Female Fighter', 'Political Intrigue', 'Found Identity', 'Enemies to Lovers'],
-            amazon_url: 'https://www.amazon.com/s?k=Graceling+Kristin+Cashore',
+            amazon_url: 'https://www.amazon.com/s?k=Graceling+Kristin+Cashore&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Graceling+Kristin+Cashore',
           },
         ],
@@ -7603,7 +7603,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A mortal girl in a Fae court who refuses to be powerless — the political scheming here is more intricate and the love interest more genuinely threatening than in most romantasy. Jude and Cardan have the same antagonistic push-pull dynamic as Celaena and Dorian/Chaol, with sharper edges. Caveat: less spice, more brain. The romance is earned over three books, not rushed.",
             tags: ['Fae Courts', 'Political Scheming', 'Enemies to Lovers', 'Mortal in Fae World'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
           },
           {
@@ -7619,7 +7619,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: 'A girl from the lower class inserted into a royal court where one wrong step means death. The power reveal, the love triangle, and the political betrayals hit similar beats to early Throne of Glass — the sense that everyone is using you and you have to figure out who to trust. Caveat: the series loses momentum in the later books and the love triangle is divisive.',
             tags: ['Chosen One', 'Court Intrigue', 'Love Triangle', 'Power Reveal'],
-            amazon_url: 'https://www.amazon.com/s?k=Red+Queen+Victoria+Aveyard',
+            amazon_url: 'https://www.amazon.com/s?k=Red+Queen+Victoria+Aveyard&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Red+Queen+Victoria+Aveyard',
           },
         ],
@@ -7641,7 +7641,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "If you've finished Throne of Glass and want the same author at her most romance-focused, ACOTAR is the natural next step. Maas applies the same structure — a female protagonist pulled into a dangerous magical world, a slow-burn romance with a morally grey male lead, stakes that escalate across the series — but leans harder into the heat. Caveat: even more romance-heavy than ToG. ACOMAF is where the series becomes exceptional.",
             tags: ['Fae Courts', 'Enemies to Lovers', 'Slow Burn', 'Same Author'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+J+Maas',
+            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+J+Maas&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Court+of+Thorns+and+Roses',
           },
           {
@@ -7657,7 +7657,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A girl discovers a rare power that makes her suddenly important to everyone around her — and dangerous. The Grishaverse starts here but peaks with Six of Crows, which shares the world. The political tension, the morally grey Darkling, and the sense of a world in crisis all echo the Throne of Glass experience. Caveat: the Shadow and Bone trilogy is the weakest part of the Grishaverse — Six of Crows is significantly better.",
             tags: ['Magic Academy', 'Chosen One', 'Morally Grey Villain', 'Slow Burn'],
-            amazon_url: 'https://www.amazon.com/s?k=Shadow+and+Bone+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Shadow+and+Bone+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Shadow+and+Bone+Leigh+Bardugo',
           },
         ],
@@ -7713,7 +7713,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest thing in fantasy to the exact emotional register of Cerulean Sea: a retired orc barbarian opens a coffee shop and builds something with the people who wander in. Baldree is writing about found family, queer romance, and the radical act of choosing a quiet life — the same thesis as Klune, applied to a different premise. The stakes are low, the warmth is genuine, and the supporting cast earns its place. If you want the cozy fantasy hit without any of the shadow of institutional cruelty that runs under Cerulean Sea, this is the purest version of the genre.",
             tags: ['Cozy Fantasy', 'Found Family', 'Queer Romance', 'Standalone', 'Low Stakes'],
-            amazon_url: 'https://www.amazon.com/s?k=Legends+and+Lattes+Travis+Baldree',
+            amazon_url: 'https://www.amazon.com/s?k=Legends+and+Lattes+Travis+Baldree&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Legends+Lattes+Baldree',
           },
           {
@@ -7726,7 +7726,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A witch hired to teach three young magical girls discovers a found family she never expected. The structural parallel to Cerulean Sea is almost exact: isolated magical children, an authority figure sent to assess them who ends up belonging to them instead, a slow-burn romance with someone on the property, a background threat from the institution that keeps their existence secret. Mandanna's tone is lighter and more romantically focused, but if the children of Cerulean Sea were the part that broke you, this is the direct companion read.",
             tags: ['Found Family', 'Magical Children', 'Slow Burn', 'Cozy Fantasy', 'Queer Romance'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Very+Secret+Society+of+Irregular+Witches+Mandanna',
+            amazon_url: 'https://www.amazon.com/s?k=The+Very+Secret+Society+of+Irregular+Witches+Mandanna&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Very+Secret+Society+Irregular+Witches',
           },
         ],
@@ -7747,7 +7747,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A monk abandons a comfortable life to search for something they cannot name, and meets a robot who asks a simple question: what do people need? Chambers is doing what Klune does — writing warmth as a philosophical position, not just a tone. There is no villain, no action, no romance in the conventional sense; just two characters learning what it means to be present. If the part of Cerulean Sea that resonated was Linus slowly understanding what he actually wants from life, this is the most precise version of that feeling in the genre. Very short — two novellas — and exactly enough.",
             tags: ['Cozy Fantasy', 'Philosophical', 'Queer Characters', 'Found Meaning', 'Gentle'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Psalm+for+the+Wild-Built+Becky+Chambers',
+            amazon_url: 'https://www.amazon.com/s?k=A+Psalm+for+the+Wild-Built+Becky+Chambers&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Psalm+Wild-Built+Chambers',
           },
           {
@@ -7763,7 +7763,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A found family on a spaceship tunnelling through deep space — each crew member a different species with a different way of understanding love, belonging, and what a life is for. Chambers writes radical inclusivity as texture rather than message: the crew's diversity is simply how the world works. The emotional DNA is identical to Cerulean Sea — warmth earned through specificity, a community built out of misfits, no villain worthy of the name. Technically science fiction, but it reads like fantasy and requires no genre knowledge to love.",
             tags: ['Found Family', 'Queer Characters', 'Inclusive World', 'Low Stakes', 'Found Belonging'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Long+Way+to+a+Small+Angry+Planet+Becky+Chambers',
+            amazon_url: 'https://www.amazon.com/s?k=The+Long+Way+to+a+Small+Angry+Planet+Becky+Chambers&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Long+Way+Small+Angry+Planet+Chambers',
           },
         ],
@@ -7781,7 +7781,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A half-goblin outcast becomes emperor and refuses to let the court make him cruel. Addison and Klune are writing the same book from different angles: both are about what it costs to maintain decency in a system designed to reward ruthlessness, and both insist that it is possible. Maia has no magic, no combat skill, and no political allies — just a genuine desire to be good and a willingness to learn. The Goblin Emperor is darker in setting than Cerulean Sea (court politics, assassination attempts) but equally hopeful in conclusion. One of the most beloved standalones in the genre.",
             tags: ['Hopeful Fantasy', 'Court Politics', 'Kindness as Strength', 'Standalone', 'Found Family'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Goblin+Emperor+Katherine+Addison',
           },
           {
@@ -7797,7 +7797,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A young woman cursed into an old body moves into a wizard's castle and proceeds to reorganise it, its occupants, and eventually the fate of everyone involved. Jones writes whimsy with the same structural rigour as Klune — the absurdity is consistent, the found family is earned, and the romance is slow-burn and genuinely sweet. Sophie is a Linus Baker prototype: a person who was taught to think small, discovering that she is capable of enormous things. One of the warmest books in the genre and, despite being written for younger readers, deeply satisfying for adults.",
             tags: ['Whimsy', 'Found Family', 'Slow Burn', 'Cozy Fantasy', 'Standalone-ish'],
-            amazon_url: "https://www.amazon.com/s?k=Howl's+Moving+Castle+Diana+Wynne+Jones",
+            amazon_url: "https://www.amazon.com/s?k=Howl&tag=librariancura-20's+Moving+Castle+Diana+Wynne+Jones",
             bookshop_url: "https://bookshop.org/search?keywords=Howl's+Moving+Castle+Jones",
           },
         ],
@@ -7853,7 +7853,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A man lives alone in a house of infinite halls and tidal statues, cataloguing its rules — and slowly realising that the rules he thinks he knows are not the whole picture. Clarke builds the same sense of a world with an underlying logic that the protagonist is piecing together from the inside, and the revelation lands with the same satisfying click as understanding what broke Elantris. Piranesi is shorter, stranger, and more literary than Sanderson, but the experience of slowly assembling the truth from fragments is nearly identical. One of the few books where the mystery cannot be spoiled without ruining the entire reading experience.",
             tags: ['Mystery', 'Standalone', 'Unreliable Narrator', 'Strange Worlds', 'Literary'],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
           },
           {
@@ -7870,7 +7870,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "A world that ends regularly, a magic system directly tied to the catastrophe that keeps breaking it, and a structure built around slowly revealing what actually happened to cause the current state of things. Jemisin and Sanderson are working the same theme — magic as something once whole that was shattered by a specific historical event — but Jemisin's execution is more brutal, more personal, and more structurally experimental. Darker than Elantris by several orders of magnitude, and the prose is deliberately challenging. The payoff across all three books is extraordinary. Caveat: not hopeful in the way Elantris is; Jemisin earns her hope expensively.",
             warning: 'Child death, slavery, genocide, systemic oppression. Intense and unrelenting.',
             tags: ['Broken Magic', 'World Mystery', 'Tragedy', 'Multiple POV', 'Literary Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Fifth+Season+NK+Jemisin',
+            amazon_url: 'https://www.amazon.com/s?k=The+Fifth+Season+NK+Jemisin&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Fifth+Season+Jemisin',
           },
         ],
@@ -7888,7 +7888,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Three protagonists from three different faiths in a world modelled on medieval Spain, each serving their own civilization as it moves toward inevitable conflict. Kay builds his political structure the same way Sanderson builds Elantris: each POV has its own logic, its own blind spots, and the tragedy emerges from watching people you understand deeply move toward collision. The religious intrigue is more sophisticated than Hrathen's arc — Kay doesn't make any faith the villain — and the emotional weight is considerably heavier. One of the most acclaimed standalones in epic fantasy.",
             tags: ['Political Intrigue', 'Religious Conflict', 'Multiple POV', 'Standalone', 'Bittersweet'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Lions+of+Al-Rassan+Guy+Gavriel+Kay',
+            amazon_url: 'https://www.amazon.com/s?k=The+Lions+of+Al-Rassan+Guy+Gavriel+Kay&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Lions+of+Al-Rassan+Kay',
           },
           {
@@ -7904,7 +7904,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The political and academic intrigue at the University has the same quality as Elantris's court politics — people with competing agendas manoeuvring around each other while the protagonist tries to learn something the establishment doesn't want known. Rothfuss is the better prose stylist and Kvothe is a more fully realised character than Raoden, but the shared DNA is the puzzle-box structure: the sense that there is a hidden logic to this world and you are slowly being given the pieces. Caveat: book three has been unfinished for fifteen years. Read knowing this.",
             tags: ['Academic Fantasy', 'Magic System', 'Mystery', 'Slow Build', 'Unreliable Narrator'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
         ],
@@ -7922,7 +7922,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A half-goblin outcast unexpectedly becomes emperor and refuses to survive court by becoming cruel, manipulative, or cold — which is essentially Raoden's thesis applied to a throne instead of a ruined city. Both books are about what it costs to maintain decency in a system designed to strip it away, and both are unusually hopeful for epic fantasy. The Goblin Emperor has no action sequences, no magic system, and no villain: just a good person learning to govern while the court tests whether goodness can survive power. Addison delivers.",
             tags: ['Hopeful Fantasy', 'Court Politics', 'Standalone', 'Found Family', 'Cosy Epic Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Goblin+Emperor+Katherine+Addison',
           },
           {
@@ -7936,7 +7936,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest thing in the Cosmere to Elantris in tone and structure: a complete standalone, political intrigue in a single city, a magic system that is visually spectacular but morally complicated, and two female protagonists navigating court with very different methods. Where Elantris has Raoden piecing together the Aons, Warbreaker has Vasher and the mystery of the Returned. Sanderson is more confident here — the prose is sharper, the characters more layered — and BioChromatic Breath is one of his most inventive systems. If you finished Elantris wanting more of exactly this, this is the answer.",
             tags: ['Cosmere', 'Standalone', 'Political Intrigue', 'Magic System', 'Court Politics'],
-            amazon_url: 'https://www.amazon.com/s?k=Warbreaker+Brandon+Sanderson',
+            amazon_url: 'https://www.amazon.com/s?k=Warbreaker+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Warbreaker+Sanderson',
           },
         ],
@@ -7982,7 +7982,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest structural parallel — a woman forbidden from contact with a specific man, a slow-burn that builds across 600 pages before anything breaks, a love interest who is more dangerous than he seems and keeping secrets that reframe the entire dynamic. Armentrout is more explicit than Maniscalco and her world expands into full epic fantasy by book three, but the central tension — wanting someone you absolutely should not want — is the same engine. If Wrath was the reason you stayed, Hawke will keep you reading.",
             tags: ['Enemies to Lovers', 'Forbidden Love', 'Slow Burn', 'Supernatural Love Interest', 'Dark Romantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Armentrout',
+            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Armentrout&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=From+Blood+and+Ash+Armentrout',
           },
           {
@@ -7997,7 +7997,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "ACOTAR shares the supernatural captor/protector dynamic and the slow reveal that the dangerous immortal being is more complex than he appears. Maas builds the enemies-to-lovers tension across the first book with the same patience Maniscalco uses for Wrath, and the world expands dramatically in book two. More explicitly romantic and less mystery-driven than Kingdom of the Wicked, but readers who came for the push-pull between a stubborn heroine and an ancient inhuman love interest will be very comfortable here.",
             tags: ['Enemies to Lovers', 'Fae Courts', 'Forbidden Love', 'Dark Romantasy', 'Slow Burn'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Maas',
+            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Maas&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Court+of+Thorns+and+Roses+Maas',
           },
         ],
@@ -8017,7 +8017,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "1872 New Orleans, a series of brutal murders, and a vampire society operating beneath polite Creole society — The Beautiful is the most direct atmospheric match for Kingdom of the Wicked. Ahdieh writes setting the way Maniscalco does: as a character in itself. The gothic tension, the slow-burn romance with a dangerous supernatural man, and the murder mystery driving the plot are all present. The historical detail is richer and the romance is more restrained, but the mood is almost identical.",
             tags: ['Gothic Romance', 'Historical Fantasy', 'Vampires', 'Murder Mystery', 'Atmospheric'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Beautiful+Renee+Ahdieh',
+            amazon_url: 'https://www.amazon.com/s?k=The+Beautiful+Renee+Ahdieh&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Beautiful+Renee+Ahdieh',
           },
           {
@@ -8032,7 +8032,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "15th-century Brittany, a convent of assassin nuns serving the goddess of Death, and a heroine who uses her skills to investigate a political conspiracy. LaFevers shares Maniscalco's gift for making historical settings feel lived-in and dangerous, and Ismae's arc — a young woman taking control of her fate through a deadly institution — mirrors Emilia's drive for justice. The romance is slower and more understated, the supernatural elements more subtle, but the core of a woman weaponising her grief in a world that underestimates her is the same.",
             tags: ['Historical Fantasy', 'Gothic Atmosphere', 'Assassin Heroine', 'Slow Burn', 'Female Protagonist'],
-            amazon_url: 'https://www.amazon.com/s?k=Grave+Mercy+Robin+LaFevers',
+            amazon_url: 'https://www.amazon.com/s?k=Grave+Mercy+Robin+LaFevers&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Grave+Mercy+Robin+LaFevers',
           },
         ],
@@ -8052,7 +8052,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Laia enters a brutal military academy to save her captured brother — Emilia summons a demon to avenge her murdered sister. Both heroines are driven by love for a sibling, both enter a world that should destroy them, and both form a dangerous bond with someone on the wrong side of every moral line. Tahir is darker and more violent than Maniscalco, and the romance is slower to develop, but the core drive — a woman refusing to accept her powerlessness — is identical. One of the best YA crossover series of the decade.",
             tags: ['Grief-Driven Heroine', 'Forbidden Romance', 'Dark Fantasy', 'Dual POV', 'Found Family'],
-            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes+Tahir',
           },
           {
@@ -8067,7 +8067,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Jude Duarte is mortal in a fae court that treats her as lesser, and her response is to out-manoeuvre everyone around her by sheer force of will. The dynamic with Cardan — cruel, beautiful, contemptuous — is the closest fae equivalent to Wrath's demonic antagonism. Black's prose is sharper and colder than Maniscalco's, the world is more fae than gothic, and the romance is slower to soften. But readers who loved watching Emilia hold her ground against something that should have crushed her will recognise exactly what Jude is doing.",
             tags: ['Enemies to Lovers', 'Fae Courts', 'Morally Grey Love Interest', 'Political Intrigue', 'Strong Heroine'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
           },
         ],
@@ -8113,7 +8113,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Abercrombie's First Law trilogy set the template for literary grimdark antiheroes — Logen Ninefingers (a warrior who cannot stop killing) and Sand dan Glotka (a torturer who interrogates prisoners with cheerful professionalism) are the closest equivalents to Jorg's unflinching self-awareness. Abercrombie is more humorous and less lyrical than Lawrence, but shares the same refusal to redeem characters they have no business redeeming. The world-building is more conventional — no hidden history here — but the character work is the best in the genre.",
             tags: ['Antihero', 'Grimdark', 'Moral Ambiguity', 'Dark Humour', 'Political Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
           },
           {
@@ -8128,7 +8128,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Mia Corvere is training to become an assassin in a school built on murder, and she is as cold and deliberate about it as Jorg is about his own violence. Kristoff matches Lawrence's literary ambition — footnotes, stylistic flourishes, a narrator who comments on the story as it unfolds — and the darkness is just as uncompromising. The main difference is tone: Nevernight has more wit, more explicit content, and a more sympathetic backstory for its protagonist. If Jorg was the reason you stayed, Mia will keep you.",
             tags: ['Antihero', 'Assassin Training', 'Dark Academia', 'Literary Fantasy', 'Revenge'],
-            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff',
+            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff',
           },
         ],
@@ -8149,7 +8149,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Rothfuss is the other pole of literary fantasy prose — where Lawrence is spare and brutal, Rothfuss is lyrical and expansive, but both are writers first and world-builders second. The contrast between Jorg and Kvothe is instructive: Kvothe is the legend of a hero; Jorg is the truth of a monster. Both are unreliable narrators performing a version of themselves. The Kingkiller Chronicle is lighter in darkness but heavier in craft. Caveat: book three has been unfinished since 2011.",
             tags: ['Literary Fantasy', 'Unreliable Narrator', 'Magic System', 'Lyrical Prose', 'Frame Narrative'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
           {
@@ -8164,7 +8164,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Lynch writes with wit and darkness in roughly equal measure — The Lies of Locke Lamora is the Gentleman Bastard series opener, following a gang of con artists in a city built on the bones of an older civilisation. The prose is sharp, the violence is real, and the plotting is surgical. Where Lawrence keeps Jorg cold and controlled, Lynch lets his protagonist suffer — the emotional cost is higher here. Both books share the quality of making you care about people who do terrible things, and both have a world that rewards attention.",
             tags: ['Heist Fantasy', 'Con Artists', 'Dark Humour', 'Literary Prose', 'Morally Grey'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora+Lynch',
           },
         ],
@@ -8184,7 +8184,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest parallel to Prince of Thorns' structural trick — The Book of the New Sun is set on far-future Earth (called Urth), where the sun is dying, forgotten technology has become indistinguishable from magic, and the narrator is an unreliable young man from a guild of torturers who doesn't understand half of what he sees. Wolfe invented the trick Lawrence uses. The prose is denser and more demanding — this is literary science fiction dressed as fantasy — but readers who responded to Lawrence's hidden-world reveal will find the New Sun one of the richest experiences in the genre.",
             tags: ['Post-Apocalyptic', 'Hidden Sci-Fi World', 'Unreliable Narrator', 'Literary Fantasy', 'Dying Earth'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Shadow+of+the+Torturer+Gene+Wolfe',
+            amazon_url: 'https://www.amazon.com/s?k=The+Shadow+of+the+Torturer+Gene+Wolfe&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Shadow+of+the+Torturer+Gene+Wolfe',
           },
           {
@@ -8199,7 +8199,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Jemisin's world is being destroyed by recurring apocalyptic events, and the history of how it got this way is revealed across three books with the same slow-build payoff as Lawrence's world reveal. The Fifth Season matches Prince of Thorns in darkness and shares its refusal to comfort the reader. The protagonist is a mother, not a warlord prince, and the prose experiments with second-person POV in a way that feels deliberate rather than gimmicky. The Broken Earth won three consecutive Hugo Awards — the hidden-world architecture is its own reward.",
             tags: ['Post-Apocalyptic', 'Hidden World History', 'Brutal Grimdark', 'Award-Winning', 'Second-Person POV'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Fifth+Season+NK+Jemisin',
+            amazon_url: 'https://www.amazon.com/s?k=The+Fifth+Season+NK+Jemisin&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Fifth+Season+NK+Jemisin',
           },
         ],
@@ -8245,7 +8245,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest structural parallel to BioChroma in all of fantasy — Weeks built an entire magic system around color, where drafters absorb light of specific wavelengths and shape it into solid matter called luxin, each color with its own physical properties and psychological cost. The correspondence to Warbreaker's Breath-and-color logic isn't coincidence; both authors were working in the same design space. The Black Prism is darker in tone and more politically brutal than Warbreaker, but if the magic was the reason you stayed, Lightbringer is the series that rewards that instinct most directly.",
             tags: ['Color Magic', 'Magic System', 'Political Intrigue', 'Chosen One Subverted', 'Multi-POV'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Black+Prism+Brent+Weeks',
+            amazon_url: 'https://www.amazon.com/s?k=The+Black+Prism+Brent+Weeks&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Black+Prism+Brent+Weeks',
           },
           {
@@ -8261,7 +8261,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Sympathy magic in The Kingkiller Chronicle operates on the same cause-and-effect rigor as BioChroma — it has costs, failure states, and internal rules that the plot respects. Kvothe learning sympathy at the University is the best depiction of a magic student in the genre. The tone is lyrical rather than witty, and the world-building is delivered through a frame narrative rather than political intrigue. Caveat: the third book has been unfinished since 2011, and Rothfuss has given no release date.",
             tags: ['Rules-Based Magic', 'Magic School', 'Unreliable Narrator', 'Literary Fantasy', 'Lyrical Prose'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
         ],
@@ -8279,7 +8279,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Maia, a half-goblin who never expected to inherit the throne, is thrust into a court he doesn't understand and must navigate without anyone he trusts — the emotional geometry of his situation is identical to Lightsong's. Both are reluctant authority figures surrounded by people with agendas, trying to do the right thing with inadequate information and no training. The Goblin Emperor is warmer and less sarcastic than Lightsong's chapters; it won the Hugo for its radical commitment to a kind protagonist in a genre that usually punishes kindness. If Lightsong's hidden decency was what you responded to, this is the most direct continuation of that feeling.",
             tags: ['Reluctant Ruler', 'Court Intrigue', 'Found Family', 'Hopepunk', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Goblin+Emperor+Katherine+Addison',
           },
           {
@@ -8294,7 +8294,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Lynch's Locke Lamora shares Lightsong's quality of using wit as armor — sharp observations about a corrupt world delivered by someone who is in far more danger than they let on. The tone is darker and the violence is more real than anything in Warbreaker, but the underlying dynamic of a clever character operating in a system designed to destroy them is the same. Where Lightsong hides behind irony, Locke hides behind performance. Both are more competent than they admit and more vulnerable than they show.",
             tags: ['Heist Fantasy', 'Wit & Banter', 'Dark Humour', 'Con Artists', 'Morally Grey'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora+Lynch',
           },
         ],
@@ -8315,7 +8315,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Jemisin's debut is the strongest parallel to Warbreaker's divine court premise: a young woman arrives at the seat of power expecting enemies and finds gods — actual imprisoned gods, weaponised by the ruling family, full of rage and desire and grief. The political dynamics map almost directly onto Hallandren's Court of Gods, but Jemisin's version is darker, more personal, and more explicitly romantic. Where Warbreaker keeps its gods at some distance, Jemisin makes hers inescapable. If the God King's court was what drew you in, this is the most direct next step.",
             tags: ['Divine Politics', 'Imprisoned Gods', 'Court Intrigue', 'Female Protagonist', 'Unique World'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Hundred+Thousand+Kingdoms+NK+Jemisin',
+            amazon_url: 'https://www.amazon.com/s?k=The+Hundred+Thousand+Kingdoms+NK+Jemisin&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Hundred+Thousand+Kingdoms+Jemisin',
           },
           {
@@ -8331,7 +8331,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "An ambassador from a tiny space station arrives at the heart of a vast empire and must navigate court politics while investigating a murder — the structure of an outsider learning the rules of an alien court while something larger threatens to collapse around her is very close to Vivenna's arc. Martine writes political intrigue with the same attention to how power actually moves through institutions that Sanderson brings to Hallandren. Hugo Award winner. The science fiction framing is light — readers who are not sci-fi readers find this accessible.",
             tags: ['Political Intrigue', 'Court Machinations', 'Outsider Protagonist', 'Identity', 'Award-Winning'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine',
+            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Memory+Called+Empire+Arkady+Martine',
           },
         ],
@@ -8375,7 +8375,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Novik's earlier standalone is the closest match in her own catalogue: the Dragon takes a girl from the valley every ten years, Agnieszka is the one he chooses, and the power dynamic is cold and formal until it isn't. Like the Staryk, the Dragon has rules he follows because they are correct — not to be cruel, but because the world demands precision. Agnieszka's response to him (stubbornness, lateral thinking, refusing to be what he expects) is the same energy as Miryem's. If Spinning Silver worked for you, you almost certainly haven't read the wrong Novik novel — this is the other one.",
             tags: ['Fairy Tale Adjacent', 'Dangerous Suitor', 'Female Protagonist', 'Polish Folklore', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
           },
           {
@@ -8388,7 +8388,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Koschei the Deathless is the oldest version of the cold, impossible, death-adjacent suitor in Slavic folklore — and Valente's retelling sets him in Soviet Russia, which turns out to be the perfect mirror. Marya Morevna knows she will love him and suffer for it and does it anyway. Where Spinning Silver's Miryem beats the system through cleverness, Marya survives it through will. The prose is extraordinary — more poetic and demanding than Novik — and the darkness is heavier, but readers drawn to the Staryk's inhuman beauty will find Koschei the original template. Heat level is higher than Spinning Silver.",
             tags: ['Russian Folklore', 'Fairy Tale Logic', 'Koschei', 'Literary Prose', 'Soviet Setting'],
-            amazon_url: 'https://www.amazon.com/s?k=Deathless+Catherynne+Valente',
+            amazon_url: 'https://www.amazon.com/s?k=Deathless+Catherynne+Valente&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Deathless+Catherynne+Valente',
           },
         ],
@@ -8409,7 +8409,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest match to Spinning Silver's setting in all of fantasy fiction. Arden's Winternight Trilogy is set in medieval Russia, where the old household spirits are real, the frost demon Morozko walks the winter forests, and a girl named Vasilisa refuses to stop feeding the spirits her Christian stepmother wants her to ignore. The atmosphere — cold, close, smelling of woodsmoke and pine — is exactly what Novik evokes in her Staryk chapters. The Bear and the Nightingale is less focused on bargain logic and more on folklore as lived reality, but readers who came for the winter will find more of it here.",
             tags: ['Slavic Folklore', 'Russian Setting', 'Old Gods', 'Female Protagonist', 'Winter Atmosphere'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden',
+            amazon_url: 'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Bear+and+the+Nightingale+Katherine+Arden',
           },
           {
@@ -8425,7 +8425,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Wecker transplants Jewish and Arab folklore into 1899 New York: a golem created to be a wife and a jinni freed from a copper flask, both navigating a world that has no category for what they are. The Jewish cultural specificity resonates directly with Spinning Silver's treatment of Miryem's family — both books take Jewish identity seriously as something that shapes how a protagonist moves through the world, not as background detail. The Golem and the Jinni is quieter and more character-focused than Spinning Silver but shares its interest in folklore as daily lived reality.",
             tags: ['Jewish Folklore', 'Mythology', 'Historical Fantasy', 'Female Protagonist', 'Outsider Navigating the World'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Golem+and+the+Jinni+Helene+Wecker',
+            amazon_url: 'https://www.amazon.com/s?k=The+Golem+and+the+Jinni+Helene+Wecker&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Golem+and+the+Jinni+Helene+Wecker',
           },
         ],
@@ -8443,7 +8443,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Circe is dismissed as weak by every immortal around her and responds by working — methodically, patiently — until she understands her own power better than anyone who was born into it. That dynamic (capability built rather than given, competence earned through effort) is the spine of all three women's arcs in Spinning Silver. Miller's prose is gorgeous without being showy, the mythological world feels inhabited rather than decorative, and Circe's final act of self-determination is the most satisfying ending in recent literary fantasy. Completely standalone.",
             tags: ['Myth Retelling', 'Female Protagonist', 'Competence Fantasy', 'Greek Mythology', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller',
+            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Circe+Madeline+Miller',
           },
           {
@@ -8456,7 +8456,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Shannon's doorstopper standalone follows four POV characters — mostly women — who hold together a world their kings have failed to protect. Like Spinning Silver, the central argument is that women who are ignored or underestimated are often the ones actually doing the work. The scale is much larger (900 pages, multiple continents, dragons), but the underlying interest in competence and patience over heroics is the same. The F/F romance is handled with care and is the emotional heart of the book. Good for readers who want Spinning Silver's dynamic at epic fantasy scale.",
             tags: ['Multiple Female POVs', 'Political Fantasy', 'Dragons', 'F/F Romance', 'Standalone Epic'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon',
+            amazon_url: 'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Priory+of+the+Orange+Tree+Shannon',
           },
         ],
@@ -8500,7 +8500,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Morgenstern's second novel is even more committed to atmosphere over plot — a graduate student finds a book that contains a story about his own life, which leads him to an underground library where all the stories that have ever been lost are kept. The Starless Sea is more labyrinthine and harder to follow than The Night Circus, and readers who wanted more plot from the circus will not find it here. But readers who wanted more of that feeling — layered, sensory, a world that operates on the logic of fairy tales and beloved objects — will find it in abundance. The prose is the experience.",
             tags: ['Atmospheric Fantasy', 'Library Fantasy', 'Non-Linear', 'Love Story', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Starless+Sea+Erin+Morgenstern',
+            amazon_url: 'https://www.amazon.com/s?k=The+Starless+Sea+Erin+Morgenstern&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Starless+Sea+Erin+Morgenstern',
           },
           {
@@ -8513,7 +8513,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A man lives alone in a house of infinite halls and tidal statues, cataloguing its wonders in careful journals — he doesn't know how he got there or who he was before. Piranesi has the same quality as The Night Circus: a world so specifically itself that the reader's instinct is to move through it slowly and pay attention to everything. Clarke's prose is precise where Morgenstern's is lush, but both achieve the same effect of making the impossible feel more real than the real. Short enough to read in a single sitting, with a mystery that resolves with unusual grace.",
             tags: ['Atmospheric Fantasy', 'Strange Beautiful World', 'Mystery', 'Standalone', 'Literary'],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
           },
         ],
@@ -8531,7 +8531,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Clarke's debut traces the relationship between England's only two practicing magicians — the older, hoarding Norrell who hates competition and the younger, intuitive Strange who was always going to surpass him. Their dynamic is not romantic but it is one of the most psychologically precise depictions of creative rivalry in fiction: the teacher who needs the student to remain lesser, the student who cannot help exceeding the master. The prose is deliberately archaic (complete with footnotes) and the book is long, but the atmosphere of Regency-era magic and the cost of the relationship between these two men is the closest thing in the genre to the Celia-and-Marco dynamic at its most literary.",
             tags: ['English Magic', 'Rival Magicians', 'Historical Fantasy', 'Literary', 'Standalone Epic'],
-            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
           },
           {
@@ -8547,7 +8547,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The most direct tonal heir to The Night Circus in YA: a legendary magical performance called Caraval invites participants to compete in a game where the audience becomes the story. Scarlett has wanted to attend her whole life; when she finally does, the competition is more dangerous than the letters promised. Garber captures the same black-and-gold aesthetic of impossible spectacle, and the romance has the same quality of intimacy built through performance and misdirection. Less literary than Morgenstern and more plot-driven, but the atmosphere of enchanted danger is closer to The Night Circus than almost anything else written since.",
             tags: ['Magical Competition', 'Enchanted Performance', 'Sisters', 'Slow-Burn Romance', 'Atmospheric'],
-            amazon_url: 'https://www.amazon.com/s?k=Caraval+Stephanie+Garber',
+            amazon_url: 'https://www.amazon.com/s?k=Caraval+Stephanie+Garber&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Caraval+Stephanie+Garber',
           },
         ],
@@ -8565,7 +8565,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Bradbury invented the dark carnival that The Night Circus descends from — a travelling autumn carnival arrives in a small Illinois town and offers the townspeople what they most desire, at a price they don't understand until too late. Where Morgenstern's circus is beautiful and safe, Bradbury's is beautiful and predatory: wonder as a trap for the weak-willed. The prose is lyrical in a different register — American Gothic, October-drenched — and the book is short enough to read in an evening. Anyone who felt the pull of the circus's impossible tents and wants to understand where that aesthetic comes from should read this.",
             tags: ['Dark Carnival', 'Small Town', 'Coming of Age', 'Classic Fantasy', 'Atmospheric Horror'],
-            amazon_url: 'https://www.amazon.com/s?k=Something+Wicked+This+Way+Comes+Ray+Bradbury',
+            amazon_url: 'https://www.amazon.com/s?k=Something+Wicked+This+Way+Comes+Ray+Bradbury&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Something+Wicked+This+Way+Comes+Bradbury',
           },
           {
@@ -8581,7 +8581,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A boy in post-war Barcelona discovers a mysterious novel in a labyrinthine library called the Cemetery of Forgotten Books — and then discovers that someone has been destroying every copy of it in existence. Zafón writes about the love of beautiful, hidden, impossible things in exactly the way Morgenstern does, and his Barcelona has the same quality as the circus: a place out of time, preserved in amber, full of secrets that reward investigation. The Shadow of the Wind is darker and more melancholy than The Night Circus, the romance is bittersweet, and the mystery at its centre genuinely aches. A book for readers who like their wonder to cost something.",
             tags: ['Literary Mystery', 'Atmospheric', 'Post-War Spain', 'Hidden Library', 'Bittersweet Romance'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Shadow+of+the+Wind+Carlos+Ruiz+Zafon',
+            amazon_url: 'https://www.amazon.com/s?k=The+Shadow+of+the+Wind+Carlos+Ruiz+Zafon&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Shadow+of+the+Wind+Zafon',
           },
         ],
@@ -8627,7 +8627,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Ahdieh's Scheherazade retelling is set in a Silk Road-inspired court where a new bride is executed every morning — until Shahrzad volunteers to be next, armed only with stories and a plan for revenge. The lush, sensory prose and the slow-burn romance between Shahrzad and the Caliph share City of Brass's quality of making the reader trust a morally compromised love interest before they're ready to. The world is slightly more Ottoman than Islamic mythology-focused, but the cultural specificity and the atmosphere of opulent danger are the closest match to Chakraborty's Cairo and Daevabad.",
             tags: ['Scheherazade Retelling', '1001 Nights', 'Ottoman-Inspired', 'Slow-Burn Romance', 'Atmospheric'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Wrath+and+the+Dawn+Renee+Ahdieh',
+            amazon_url: 'https://www.amazon.com/s?k=The+Wrath+and+the+Dawn+Renee+Ahdieh&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Wrath+and+the+Dawn+Renee+Ahdieh',
           },
           {
@@ -8643,7 +8643,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Clark's Dead Djinn Universe is set in a 1910s Cairo where djinn and other supernatural beings crossed into the mortal world forty years ago and now live alongside humans — the most direct continuation of City of Brass's interest in djinn as political actors with their own factions, grudges, and agendas. Fatma el-Sha'arawi is a Ministry of Alchemy investigator who wears a three-piece suit and solves supernatural crimes. The mystery plotting is tighter than Chakraborty's, the world-building is inventive, and the Egyptological detail is exceptional. Start with the novella A Dead Djinn in Cairo if you want a shorter entry point.",
             tags: ['Djinn', 'Egyptian Fantasy', 'Historical Fantasy', 'Detective Fantasy', 'Islamic Mythology'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Master+of+Djinn+P+Djeli+Clark',
+            amazon_url: 'https://www.amazon.com/s?k=A+Master+of+Djinn+P+Djeli+Clark&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Master+of+Djinn+Clark',
           },
         ],
@@ -8664,7 +8664,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A young woman from the margins of the empire is summoned to its capital and discovers that its ruling family controls the gods themselves — weaponised, enslaved, full of rage. The divine court politics map almost directly onto Daevabad: an outsider female protagonist, immortal beings with ancient grudges used as instruments of mortal power, and a love interest who is dangerous and morally compromised in ways the heroine cannot entirely forgive. Jemisin's prose is more intimate and the romance more central, but the architecture of the world is the same type of problem Chakraborty builds.",
             tags: ['Divine Court Politics', 'Imprisoned Gods', 'Outsider Protagonist', 'Morally Complex', 'Hidden Power Structures'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Hundred+Thousand+Kingdoms+NK+Jemisin',
+            amazon_url: 'https://www.amazon.com/s?k=The+Hundred+Thousand+Kingdoms+NK+Jemisin&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Hundred+Thousand+Kingdoms+Jemisin',
           },
           {
@@ -8680,7 +8680,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Lee's Green Bone Saga follows two clan families in a city where jade gives certain bloodlines supernatural martial ability — and anyone not of that bloodline is permanently subordinate. The factional politics, the city as a pressure cooker of ethnic and class resentments, and the way ancient loyalties curdle into political violence are the same structural elements as Daevabad, executed at a more brutal intensity. Jade City is darker and more focused on family dynamics than Chakraborty, but readers who came to City of Brass for the sense of a society visibly held together by old bargains are the exact audience for this.",
             tags: ['Clan Politics', 'Hidden Magical Society', 'Family Loyalty', 'Political Violence', 'East Asian-Inspired'],
-            amazon_url: 'https://www.amazon.com/s?k=Jade+City+Fonda+Lee',
+            amazon_url: 'https://www.amazon.com/s?k=Jade+City+Fonda+Lee&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Jade+City+Fonda+Lee',
           },
         ],
@@ -8701,7 +8701,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Tahir's Roman-inspired empire gives us the same core dynamic as Nahri's situation: a young woman with no power and exceptional capability dropped into the centre of a political conflict she didn't choose, surrounded by morally grey men whose loyalties are never certain. The dual POV (Laia the scholar-turned-spy, Elias the soldier who hates what he serves) mirrors City of Brass's Nahri/Ali split. The darkness is heavier — slavery, violence, and coercion are foregrounded — but the emotional architecture is the same type of problem: a heroine learning to navigate danger through intelligence rather than strength.",
             tags: ['Roman-Inspired', 'Dual POV', 'Morally Grey Love Interests', 'Political Intrigue', 'Female Protagonist'],
-            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes+Sabaa+Tahir',
           },
           {
@@ -8717,7 +8717,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Suri's Burning Kingdoms trilogy is set in a South Asian-inspired empire where a deposed princess and an imperial prisoner discover they share a magic the conquering empire has tried to eradicate. The political setup — a woman with dangerous knowledge trapped in a court that wants her dead — is structurally close to Nahri in Daevabad, and the way both books handle the tension between cultural identity and political survival is unusually careful. The F/F romance is the emotional centre and is handled with more depth than most fantasy manages. Slightly warmer heat level than City of Brass.",
             tags: ['South Asian-Inspired', 'F/F Romance', 'Political Intrigue', 'Forbidden Magic', 'Enemies to Lovers'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Jasmine+Throne+Tasha+Suri',
+            amazon_url: 'https://www.amazon.com/s?k=The+Jasmine+Throne+Tasha+Suri&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Jasmine+Throne+Tasha+Suri',
           },
         ],
@@ -8763,7 +8763,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The most structurally comparable urban fantasy series: a young woman discovers a hidden world of Shadowhunters, demons, warlocks, and vampires layered over contemporary New York City, where different supernatural factions have legal standing, territory disputes, and ancient grudges. Clare's world-building is messier than Maas's and the prose lighter, but the core appeal — a modern city as the backdrop for supernatural politics — is the same. City of Bones is the entry point to one of the largest connected fantasy universes in the genre; how deep you go depends entirely on tolerance for ongoing series.",
             tags: ['Shadowhunters', 'Urban Fantasy', 'Modern Supernatural World', 'Demons', 'Factions'],
-            amazon_url: 'https://www.amazon.com/s?k=City+of+Bones+Cassandra+Clare',
+            amazon_url: 'https://www.amazon.com/s?k=City+of+Bones+Cassandra+Clare&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=City+of+Bones+Cassandra+Clare',
           },
           {
@@ -8779,7 +8779,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Atlanta after the Shift — where magic and technology alternate in waves, shapeshifters run the city's most powerful faction, and a mercenary named Kate Daniels investigates supernatural crimes with a sword and a smartass commentary. Andrews writes a female protagonist in a supernatural modern city better than almost anyone in the genre: Kate is competent without being invulnerable, the world-building rewards binge-reading, and the slow-burn romance with the Beast Lord is one of the most satisfying in urban fantasy. Comparable heat and darkness to Crescent City, but more action-focused and less grief-driven.",
             tags: ['Urban Fantasy', 'Shapeshifters', 'Magic & Technology', 'Female Protagonist', 'Slow-Burn Romance'],
-            amazon_url: 'https://www.amazon.com/s?k=Magic+Bites+Ilona+Andrews',
+            amazon_url: 'https://www.amazon.com/s?k=Magic+Bites+Ilona+Andrews&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Magic+Bites+Ilona+Andrews+Kate+Daniels',
           },
         ],
@@ -8800,7 +8800,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The Guild Hunter series is the most direct parallel to Hunt's dynamic in all of urban fantasy: Elena is a vampire hunter hired by the Archangel Raphael — the most powerful being in North America — and the romance is built entirely on the tension between his absolute power and the fact that she is the first human in recorded history to make him feel uncertain. Singh writes explicit romance in a world of angels and vampires with the same seriousness Maas brings to Hunt and Bryce. The power differential is intentional and the series earns it across multiple books. Start here if Hunt was the reason you stayed.",
             tags: ['Fallen Angel', 'Power Imbalance', 'Explicit Romance', 'Urban Fantasy', 'Archangel Love Interest'],
-            amazon_url: "https://www.amazon.com/s?k=Angel's+Blood+Nalini+Singh",
+            amazon_url: "https://www.amazon.com/s?k=Angel&tag=librariancura-20's+Blood+Nalini+Singh",
             bookshop_url: "https://bookshop.org/search?keywords=Angel's+Blood+Nalini+Singh+Guild+Hunter",
           },
           {
@@ -8816,7 +8816,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest match to the guard-and-ward, forbidden-power-imbalance dynamic of Bryce and Hunt translated into a more traditional fantasy setting: Poppy is kept sheltered and untouchable, Hawke is the guard assigned to her who is not what he seems, and the romance is built on charged tension that neither of them admits until they can't help it. Armentrout's explicit heat level, the slow-build chemistry, and the eventual world-scale stakes mirror the Crescent City formula closely. Readers who came to Crescent City from the Maas universe and haven't read this are the most likely to rate it as high.",
             tags: ['Guard & Ward', 'Forbidden Romance', 'Power Imbalance', 'Explicit', 'Dark Secrets'],
-            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout',
+            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=From+Blood+and+Ash+Jennifer+Armentrout',
           },
         ],
@@ -8838,7 +8838,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'Contains graphic depictions of sexual assault and extreme violence.',
             note: "Alex Stern is admitted to Yale on a scholarship no one can explain — because she can see ghosts, and the university's secret societies use magic and the dead for rituals the administration would rather not examine. When a girl is murdered and no one will investigate, Alex does. Bardugo writes grief and survival trauma with the same honesty Maas brings to Bryce, and the magical-world-layered-over-a-modern-institution structure is the same architecture. Ninth House is significantly darker — the darkness rating is not a caveat, it's a real warning — but readers who came to Crescent City for the murder investigation and the fury underneath the grief will find the most direct equivalent here.",
             tags: ['Murder Mystery', 'Secret Societies', 'Grief-Driven Protagonist', 'Yale Setting', 'Ghosts'],
-            amazon_url: 'https://www.amazon.com/s?k=Ninth+House+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Ninth+House+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Ninth+House+Leigh+Bardugo',
           },
           {
@@ -8854,7 +8854,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Harry Dresden is Chicago's only wizard-for-hire — he advertises in the phone book — and his cases put him in contact with every supernatural faction in the city: vampires, faeries, werewolves, and demons who all operate behind a veil the general public doesn't see. The structure is supernatural detective fiction in a modern city with established magical factions, which is the same skeleton as House of Earth and Blood. The tone is noir and often funny where Crescent City is emotional and explicit; there is almost no romance heat. But for readers who came to Crescent City for the world-building of a supernatural city with political structure, Dresden is the series that takes that premise furthest across seventeen books.",
             tags: ['Supernatural Detective', 'Modern Chicago', 'Wizard Protagonist', 'Magical Factions', 'Urban Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=Storm+Front+Jim+Butcher+Dresden+Files',
+            amazon_url: 'https://www.amazon.com/s?k=Storm+Front+Jim+Butcher+Dresden+Files&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Storm+Front+Jim+Butcher+Dresden+Files',
           },
         ],
@@ -8900,7 +8900,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The most direct structural parallel to Best Served Cold's revenge narrative: Mia Corvere watched the men who destroyed her family walk free when she was ten years old, and has spent the years since training herself to kill them. Where Monza assembles a crew, Mia trains alone inside a school built on murder — but the engine is identical: a methodical, skills-accumulating approach to killing specific named targets, with the reader rooting for someone who is becoming genuinely dangerous. Kristoff matches Abercrombie's darkness and adds literary flourishes (footnotes, a sarcastic narrator-god). The heat level is higher than Best Served Cold.",
             tags: ['Revenge Narrative', 'Assassin Training', 'Dark Academy', 'Methodical Kills', 'Literary Grimdark'],
-            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff',
+            amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff',
           },
           {
@@ -8916,7 +8916,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The crew-assembling structure of Best Served Cold — specialist characters recruited for their specific damage, planning an impossible job together — is what Six of Crows does best. Bardugo writes ensemble casts with individual damage and individual humour in exactly the way Abercrombie does, and the planning-and-execution rhythm of both books produces the same reader satisfaction. Six of Crows is significantly less dark: the violence is real but not brutalising, and there is genuine warmth between the characters that Abercrombie withholds. If the crew dynamic was what you came for more than the nihilism, this is the most direct next read.",
             tags: ['Crew Assembly', 'Heist Fantasy', 'Ensemble Cast', 'Morally Grey', 'Found Family'],
-            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Six+of+Crows+Leigh+Bardugo',
           },
         ],
@@ -8938,7 +8938,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'Contains graphic depictions of genocide and war atrocities based on historical events.',
             note: "Rin's arc across the Poppy War trilogy is the best moral deterioration narrative in recent fantasy — she begins as a scholarship student from nothing, becomes a soldier, discovers a catastrophic power, and makes choices that each feel survivable until they aren't. The parallels to Shivers are structural: both characters enter their stories with something worth preserving and lose it incrementally under pressure from people who use them as instruments. The Poppy War is longer, heavier, and based on actual atrocities (the Nanjing Massacre); readers should approach it knowing what it is. But for Shivers specifically, this is the sequel he never got.",
             tags: ['Moral Deterioration', 'War Fantasy', 'Power at a Cost', 'Darkening Protagonist', 'Historical Inspiration'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+RF+Kuang',
           },
           {
@@ -8954,7 +8954,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Baru Cormorant watches the empire she despises absorb her island home, then decides the only way to destroy it from within is to become exactly what it wants her to be — an excellent accountant and a loyal servant. Dickinson writes the cost of that compromise with the same precision Abercrombie applies to Shivers: every choice is legible, every sacrifice lands, and the ending is one of the most genuinely devastating in the genre. The prose is dense and economic rather than lyrical, the world-building is political rather than spectacular, and the darkness accumulates quietly rather than arriving in bursts. Essential reading for anyone who responded to the Shivers arc.",
             tags: ['Moral Compromise', 'Political Intrigue', 'Empire vs Identity', 'Slow Burn Destruction', 'Literary Grimdark'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Traitor+Baru+Cormorant+Dickinson',
           },
         ],
@@ -8974,7 +8974,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Lynch built Camorr on Venice and Florence — canals, ancient towers, a criminal aristocracy operating inside a legitimate one — and populated it with the same kind of professional criminals who populate Styria in Best Served Cold. The Gentlemen Bastards are con artists rather than mercenaries, but the dynamic of skilled specialists navigating a world where betrayal is structural and the powerful always win is identical. Lynch is more humorous than Abercrombie and the darkness lands in concentrated bursts rather than as a sustained tone. The city is the best-realised Italian-fantasy setting in the genre.",
             tags: ['Renaissance Italy-Inspired', 'Con Artists', 'Political Betrayal', 'Literary Prose', 'Corrupt City-State'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora+Lynch',
           },
           {
@@ -8991,7 +8991,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Best Served Cold is set in the same world as the First Law trilogy, and Caul Shivers first appears as an optimist in The Blade Itself. Reading the original trilogy after Best Served Cold puts Shivers's arc in full context — you can see exactly what he was and trace how the person in Best Served Cold got there. The First Law is also where Logen Ninefingers, Glotka, and Jezal dan Luthar are introduced; if the grimdark moral architecture of BSC is what you want more of, the original trilogy is the deepest version of that world.",
             tags: ['Grimdark', 'Morally Grey Characters', 'Political Fantasy', 'Same World', 'Dark Humour'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Blade+Itself+Joe+Abercrombie',
           },
         ],
@@ -9037,7 +9037,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The most structurally precise parallel to the Laia-and-Elias dynamic in all of fantasy: Kestrel is a general's daughter in the conquering empire who buys a slave at auction — Arin, who was enslaved when his people were conquered. The romance builds entirely through their conversations and the growing impossibility of their positions, not through action sequences. Rutkoski writes the psychology of conquest and resistance with the same care Tahir brings to the Martial Empire, and both books have the discipline to keep politics and survival above the romance without sacrificing the romance. The Winner's Curse is slightly less dark than Ember but lands harder emotionally.",
             tags: ['Dual POV', 'Conqueror & Conquered', 'Slow-Burn Romance', 'Political Intrigue', 'Enemies Adjacent'],
-            amazon_url: "https://www.amazon.com/s?k=The+Winner's+Curse+Marie+Rutkoski",
+            amazon_url: "https://www.amazon.com/s?k=The+Winner&tag=librariancura-20's+Curse+Marie+Rutkoski",
             bookshop_url: "https://bookshop.org/search?keywords=The+Winner's+Curse+Marie+Rutkoski",
           },
           {
@@ -9053,7 +9053,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Adeyemi's West African-inspired empire suppressed its magical underclass a generation ago — Zélie is one of the last who can restore that magic, and the prince sent to stop her is the son of the king who ordered the purge. The dual POV gives both protagonists genuine interiority, and the shifting allegiances between them mirror the Laia/Elias dynamic closely. The world-building draws on Yoruba mythology and is more visually inventive than Ember's Rome, and the darkness level matches. Readers who came to Ember for the oppressor/oppressed romance arc will find the direct equivalent here.",
             tags: ['Dual POV', 'Oppressor & Oppressed', 'West African-Inspired', 'Magic System', 'Slow-Burn Romance'],
-            amazon_url: 'https://www.amazon.com/s?k=Children+of+Blood+and+Bone+Tomi+Adeyemi',
+            amazon_url: 'https://www.amazon.com/s?k=Children+of+Blood+and+Bone+Tomi+Adeyemi&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Children+of+Blood+and+Bone+Tomi+Adeyemi',
           },
         ],
@@ -9074,7 +9074,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Brown's stratified society is explicitly built on Roman mythology — the ruling Golds, the slave Reds, a caste system running from Obsidian to Copper that keeps billions in permanent servitude. Darrow infiltrates the ruling class in a brutal training ground designed to select the next generation of conquerors, and his double life mirrors Laia's spy arc with higher body counts and more cynicism. Red Rising is darker and more science-fictional in its scope, but the core dynamic — a person from the lowest caste surviving inside the machinery of the empire that destroyed them — is the same engine as Ember, pushed further and harder.",
             tags: ['Roman-Inspired', 'Caste System', 'Infiltration', 'Brutal Training', 'Revolution'],
-            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown',
+            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Red+Rising+Pierce+Brown',
           },
           {
@@ -9091,7 +9091,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'Contains graphic depictions of genocide and war atrocities based on historical events.',
             note: "Kuang's Chinese empire analogue gives us the same scholarship-student-enters-elite-military-academy structure as Laia's infiltration arc, with the same discovery that the institution is more brutal than advertised and the same cost extracted from the protagonist by surviving it. Rin's trajectory diverges radically from Laia's after the academy — where Ember keeps its heroine fighting for something, The Poppy War becomes a war novel based on the Nanjing Massacre. Much darker than Ember; the content warning is not a caveat but a genuine warning. For readers who came to Ember for the empire-and-training structure and want that taken to its furthest point.",
             tags: ['Military Academy', 'Chinese Empire-Inspired', 'War Fantasy', 'Darkening Protagonist', 'Historical Atrocities'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+RF+Kuang',
           },
         ],
@@ -9112,7 +9112,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Alina discovers a power that makes her valuable to the empire's most dangerous man, gets pulled away from the person she loves into a court she doesn't understand, and must choose between the safety of being useful and the cost of what being useful requires. The romantic tension in Shadow and Bone builds on the same impossible-circumstances structure as Ember — people who want each other and cannot act on it because survival is more immediate. Bardugo is less brutal than Tahir and the darkness is lower, but the emotional architecture is the same. The Grisha Trilogy is also a direct gateway to Six of Crows if you want the universe in full.",
             tags: ['Forbidden Romance', 'Magical Power Discovery', 'Russian-Inspired', 'Dangerous Court', 'Slow-Burn'],
-            amazon_url: 'https://www.amazon.com/s?k=Shadow+and+Bone+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Shadow+and+Bone+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Shadow+and+Bone+Leigh+Bardugo',
           },
           {
@@ -9128,7 +9128,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The guard-and-ward dynamic, the impossible circumstances, the slow erosion of the distance between two people who shouldn't want each other — the romantic architecture of From Blood and Ash is the closest adult match to what Ember builds. Poppy is kept sheltered and untouchable; Hawke is assigned to protect her and is not what he seems. Armentrout's version is more explicit in its heat, less brutal in its violence, and more romance-forward than Ember — survival is still a factor but the romance moves to the centre earlier. If the tension between Laia and Elias was the reason you stayed, this is the most direct continuation of that feeling at a higher heat level.",
             tags: ['Guard & Ward', 'Forbidden Romance', 'Impossible Circumstances', 'Dark Secrets', 'Slow-Burn'],
-            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout',
+            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=From+Blood+and+Ash+Jennifer+Armentrout',
           },
         ],
@@ -9175,7 +9175,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Wang and Kuang are working in the same space: East Asian-inspired worlds where martial excellence is a survival mechanism, where the empire's mythology is a weapon used against its own people, and where the protagonist pays for their power with everything they have. The Poppy War is louder and more externally violent than Sword of Kaigen — Rin's arc moves from military school into a war modelled on the Nanjing Massacre — but the underlying argument is identical: being trained to serve an empire means being trained to destroy yourself for it.",
             tags: ['East Asian Setting', 'Military School', 'Elemental Power', 'War Atrocity', 'Political Betrayal'],
             warning: 'Extreme graphic violence, genocide depictions, drug addiction',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+RF+Kuang',
           },
           {
@@ -9191,7 +9191,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest match to the martial honour culture at the centre of Sword of Kaigen. Fonda Lee builds a Hong Kong-inspired world where clan warriors channel power through jade — a substance that enhances the body at a cost — and where family loyalty, martial identity, and political power are completely fused. The Kaul family, like Misaki's household, is the unit through which the story is told; when external pressure arrives, it destroys the family from the inside. Lee writes combat with the same physical specificity as Wang. Darker in its criminal politics, but the emotional architecture is very close.",
             tags: ['East Asian Setting', 'Martial Culture', 'Family Saga', 'Jade Magic', 'Political Violence'],
-            amazon_url: 'https://www.amazon.com/s?k=Jade+City+Fonda+Lee',
+            amazon_url: 'https://www.amazon.com/s?k=Jade+City+Fonda+Lee&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Jade+City+Fonda+Lee',
           },
         ],
@@ -9209,7 +9209,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Misaki suppressed who she was to fit a role. Circe was suppressed by everyone around her from birth. Both books are about women defined by what they weren't allowed to be — and both follow the long, costly process of refusing that definition. Miller writes Circe's transformation slowly and with the same attention to what erasure actually costs that Wang brings to Misaki. The tone is mythological rather than martial, but the emotional core is the same: a woman reclaiming the power she was told was too much, one difficult choice at a time.",
             tags: ['Female Protagonist', 'Identity', 'Transformation', 'Mythology', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller',
+            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Circe+Madeline+Miller',
           },
           {
@@ -9225,7 +9225,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A peasant girl takes her dead brother's identity and fate to survive a brutal Ming dynasty-inspired world. Like Misaki, the protagonist has buried their true self beneath a survival performance — and the story is about what that costs over years, across a life. Parker-Chan writes 14th-century Chinese warfare with the same unflinching commitment to the physical reality of violence that Wang brings to jijakalu combat. The prose is denser and more literary, the scope is larger, but the question at the centre is the same: what does a person owe themselves?",
             tags: ['East Asian Setting', 'Identity', 'Female Warrior', 'Historical Basis', 'Dark Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=She+Who+Became+the+Sun+Shelley+Parker-Chan',
+            amazon_url: 'https://www.amazon.com/s?k=She+Who+Became+the+Sun+Shelley+Parker-Chan&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=She+Who+Became+the+Sun+Parker-Chan',
           },
         ],
@@ -9247,7 +9247,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Jemisin opens The Fifth Season with a mother, a destroyed home, and the line 'let's start with the end of the world.' Both books begin in a domestic space — a specific family, a specific kind of ordinary life — and then shatter it in a way the first half has carefully, precisely prepared you to feel. The Fifth Season is more experimental in form (second-person narration, multiple timelines) and darker overall, but the structural logic is identical: invest you in the small, then destroy the small. Hugo Award winner.",
             tags: ['Mother Protagonist', 'World-Ending Stakes', 'Elemental Power', 'Dark Fantasy', 'Award-Winning'],
             warning: 'Violence against children, grief, systemic oppression',
-            amazon_url: 'https://www.amazon.com/s?k=The+Fifth+Season+NK+Jemisin',
+            amazon_url: 'https://www.amazon.com/s?k=The+Fifth+Season+NK+Jemisin&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Fifth+Season+NK+Jemisin',
           },
           {
@@ -9263,7 +9263,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Both books are about what happens when someone discovers the history they were taught is a lie constructed to serve power. Mahit arrives in the Teixcalaanli Empire as a believer — she has absorbed its culture, its poetry, its identity — and her story is the slow, precise dismantling of that faith. The pacing mirrors the first half of Sword of Kaigen: quieter, more political, more interested in how ideology operates through culture rather than open combat. But the emotional damage is the same.",
             tags: ['Political Awakening', 'Empire Critique', 'Identity', 'Outsider Protagonist', 'Award-Winning'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine',
+            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Memory+Called+Empire+Arkady+Martine',
           },
         ],
@@ -9310,7 +9310,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Rin is discovered to have shamanic power and is taken to the Nikara Empire's elite military academy — the same architecture as the Fulcrum: a state that identifies people with dangerous gifts, brings them inside the institution, and deploys them as weapons. Both Jemisin and Kuang are writing about how empires convert their most vulnerable people into tools for their own survival, and what that costs the people being converted. The Poppy War is louder and more externally violent; The Fifth Season is more structural and interior. Both will break you.",
             tags: ['State-Controlled Magic', 'Empire Critique', 'Systemic Oppression', 'War', 'Dark Power'],
             warning: 'Extreme graphic violence, genocide depictions, drug addiction',
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+RF+Kuang',
           },
           {
@@ -9324,7 +9324,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "The Fifth Season is in explicit conversation with Butler's work — Jemisin has said so directly. Kindred follows a Black woman in 1976 who is repeatedly pulled back in time to an antebellum plantation, forced to protect the enslaver whose survival enables her own existence. Butler and Jemisin are working on the same problem: how do you write about systemic dehumanisation with enough specificity that the reader cannot abstract it into metaphor? Both books refuse comfort. Both are essential. Kindred is the shorter and more immediately devastating read.",
             tags: ['Slavery', 'Time Travel', 'Systemic Oppression', 'Survival', 'Award-Winning'],
             warning: 'Slavery, sexual violence, racial violence',
-            amazon_url: 'https://www.amazon.com/s?k=Kindred+Octavia+Butler',
+            amazon_url: 'https://www.amazon.com/s?k=Kindred+Octavia+Butler&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Kindred+Octavia+Butler',
           },
         ],
@@ -9342,7 +9342,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Clarke uses diary narration the same way Jemisin uses second-person: the narrator's voice is precisely calibrated to obscure a truth the reader can sense but not name. Piranesi records his strange, beautiful world with total sincerity, and everything he tells you is accurate — the horror is in what he cannot tell you because he does not know. Both books use the intimacy of their chosen form to deliver a structural revelation that reframes everything that came before. Piranesi is far gentler in tone — darkness level 2 versus 5 — but the formal gambit is identical.",
             tags: ['Unreliable Narrator', 'Structural Revelation', 'Mysterious World', 'Literary Fantasy', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
           },
           {
@@ -9359,7 +9359,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Dickinson and Jemisin are solving a similar structural problem: how do you make the reader feel an ideological trap close? Baru Cormorant is an accountant working to destroy the empire that colonised her homeland — from inside the empire's own financial system. The book withholds a key piece of information for the entire narrative, and when it lands, the reader feels exactly what Jemisin wants you to feel in The Fifth Season's final pages: the realisation that you have been complicit in a lie. Deeply political, formally rigorous, extremely dark.",
             tags: ['Empire Critique', 'Unreliable Narrator', 'Political Intrigue', 'Colonialism', 'Structural Reveal'],
             warning: 'Homophobia (systemic, not authorial), violence, dark themes',
-            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Traitor+Baru+Cormorant+Dickinson',
           },
         ],
@@ -9377,7 +9377,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: false,
             note: "Both books centre on a mother who has buried who she was to survive her world — and both build a quiet domestic life precisely so they can shatter it. Where Essun's grief is geological in scale, Misaki's is intimate and precise, but the emotional architecture is the same: a woman who suppressed herself into the role of perfect wife and mother, whose world collapses when external violence arrives, and who must reckon with everything she chose not to be. Wang's book is shorter, less formally experimental, and more concentrated. If the Essun sections were what held you, this is the most direct continuation of that feeling.",
             tags: ['Mother Protagonist', 'Suppressed Identity', 'Political Awakening', 'War', 'Elemental Magic'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Sword+of+Kaigen+ML+Wang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Sword+of+Kaigen+ML+Wang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Sword+of+Kaigen+ML+Wang',
           },
           {
@@ -9393,7 +9393,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Both Jemisin and Martine are writing about what empires do to the identities of the people they absorb — the way that being made useful to power requires becoming something other than yourself. Mahit carries the neural imprint of her predecessor, a dead man whose memories she cannot fully access; Essun carries the neural imprint of the Fulcrum, which shaped her into something the empire could use. Martine's version is warmer in tone and more explicitly political in structure. Hugo Award winner. Lighter darkness but identical thematic DNA.",
             tags: ['Empire Critique', 'Identity', 'Political Intrigue', 'Outsider Protagonist', 'Award-Winning'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine',
+            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Memory+Called+Empire+Arkady+Martine',
           },
         ],
@@ -9439,7 +9439,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Abercrombie has called Glen Cook the most direct influence on his work, and The Black Company is the reason. Cook's mercenary company serves whoever pays, fights wars they don't believe in, and records their history through a company annalist who writes what actually happened rather than what the victors prefer. The prose is terse and close to the bone — nothing is heroised, nothing is beautified. The Black Company invented the territory The Heroes occupies: war as profession, soldiers as the people the legends are never written about.",
             tags: ['Mercenaries', 'Anti-Heroism', 'War', 'Morally Grey', 'Dark Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook',
+            amazon_url: 'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Black+Company+Glen+Cook',
           },
           {
@@ -9456,7 +9456,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Erikson and Abercrombie are the two architects of the modern grimdark war novel, and Malazan is the larger structure. Gardens of the Moon opens in the middle of a siege, drops you into a world with no hand-holding, and introduces a cast where soldiers die before you know their names — deliberately. Erikson writes war the same way Abercrombie does: as a system that grinds through people, where individual heroics are swallowed by scale. The Heroes is tighter and more immediately readable; Malazan is ten times the size and rewards the full investment.",
             tags: ['Epic Fantasy', 'War', 'Ensemble Cast', 'Dark Fantasy', 'Morally Grey'],
             warning: 'Challenging opening — no hand-holding, requires patience',
-            amazon_url: 'https://www.amazon.com/s?k=Gardens+of+the+Moon+Erikson',
+            amazon_url: 'https://www.amazon.com/s?k=Gardens+of+the+Moon+Erikson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Gardens+of+the+Moon+Steven+Erikson',
           },
         ],
@@ -9477,7 +9477,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The name of the book is a clue. Kvothe is famous — a legend, a name that means something — and the entire novel is him sitting in a tavern explaining how the legend was constructed. The Heroes deconstructs heroism by putting you inside a battle and showing you that nobody is what the songs say; Rothfuss deconstructs it by making the hero himself the narrator of his own myth, fully aware that what he's telling you has been shaped by what he wants you to believe. Both books ask the same question: what do we need heroes to be, and what does that need cost the actual people?",
             tags: ['Heroism Deconstructed', 'Unreliable Narrator', 'Magic School', 'Literary Fantasy', 'Legend & Myth'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
           {
@@ -9494,7 +9494,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             note: "Lawrence and Abercrombie are solving the same problem: what does a fantasy novel look like when its protagonist is fully aware of what role the narrative wants him to play and refuses to play it? Jorg occupies the hero slot the way Gorst occupies the hero slot in The Heroes — brilliant at violence, deeply wrong about almost everything else, held up as exceptional by a system that rewards exactly the wrong qualities. Lawrence writes it with more gothic energy; Abercrombie writes it with more structural irony. Both are essential grimdark.",
             tags: ['Anti-Hero', 'Dark Fantasy', 'Morally Grey', 'Grimdark', 'Deconstructed Hero'],
             warning: 'Graphic violence, sexual violence',
-            amazon_url: 'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence',
+            amazon_url: 'https://www.amazon.com/s?k=Prince+of+Thorns+Mark+Lawrence&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Prince+of+Thorns+Mark+Lawrence',
           },
         ],
@@ -9513,7 +9513,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             author_note: 'Same author — set in the same world',
             note: "The other First Law standalone, and the better entry point if you haven't read the original trilogy. Monza Murcatto, the best mercenary captain in Styria, is thrown from a window and left for dead by the duke she made powerful. She spends the rest of the novel killing everyone responsible, one by one. Where The Heroes is about a battle as a system, Best Served Cold is about revenge as a system — what it costs, who it destroys, whether it's worth it. Same world, same refusal to let anyone be simply good or simply bad, sharper and more propulsive than The Heroes.",
             tags: ['Revenge', 'Heist-like Structure', 'Morally Grey', 'Grimdark', 'Crew'],
-            amazon_url: 'https://www.amazon.com/s?k=Best+Served+Cold+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=Best+Served+Cold+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Best+Served+Cold+Joe+Abercrombie',
           },
           {
@@ -9530,7 +9530,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             author_note: 'Same author — the original First Law trilogy',
             note: "If you read The Heroes as a standalone and haven't read the original trilogy, go here next. The Blade Itself introduces Logen Ninefingers, Jezal dan Luthar, and Sand dan Glokta across three converging storylines — and Bayaz, the First Mage, whose presence in The Heroes suddenly reads differently once you know his history. The trilogy is where Abercrombie established the vocabulary; The Heroes is him at the peak of his ability with that vocabulary.",
             tags: ['Grimdark', 'Morally Grey', 'Multi-POV', 'Dark Fantasy', 'Anti-Hero'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Blade+Itself+Joe+Abercrombie',
           },
         ],
@@ -9573,7 +9573,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Novik is writing from the same Polish folklore tradition as Sapkowski — the Wood, the Dragon, the village girl taken by the wizard are all drawn from the same source material. Where Sapkowski deconstructs through irony (the monster hunter who reveals the humans as the real monsters), Novik deconstructs through love and attention: she takes the fairy tale seriously enough to ask what it would actually feel like, and the answer is stranger and more complicated than the original. The prose is beautiful in a way Sapkowski's rarely is. Standalone. If the Eastern European flavour of The Witcher is what drew you, this is the most direct continuation of that feeling.",
             tags: ['Slavic Folklore', 'Fairy Tale Retelling', 'Forest Magic', 'Standalone', 'Female Protagonist'],
-            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
           },
           {
@@ -9589,7 +9589,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Arden writes Russian winter the way Sapkowski writes Polish forests: as a place where the old magic is still alive, indifferent to human prayer, and increasingly threatened by a new religion that would replace it with something tidier and less honest. Vasya, like Geralt, can perceive what others cannot — the household spirits, the frost demon, the creatures that the Church has decided don't exist. Both series are fundamentally about what is lost when the mythological world recedes, and what it costs the people who can still see it. The Winternight trilogy is warmer in tone than The Witcher but shares its folkloric DNA entirely.",
             tags: ['Slavic Folklore', 'Russian Setting', 'Old Gods', 'Fairy Tale', 'Winter Atmosphere'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden',
+            amazon_url: 'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Bear+and+the+Nightingale+Katherine+Arden',
           },
         ],
@@ -9610,7 +9610,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Logen Ninefingers is the Geralt of grimdark: a warrior whose reputation for violence precedes him everywhere he goes, who has tried to retire from the killing and cannot, who operates by a personal moral code in a world that has no use for personal moral codes. Abercrombie builds his First Law world with the same refusal to let anyone be simply right that Sapkowski uses — every institution is corrupt, every noble cause is being used by someone, and the people who survive are the ones who stopped believing their own heroic narrative. Where Sapkowski uses wit and folklore, Abercrombie uses structural irony and political cynicism. The endpoint is identical.",
             tags: ['Morally Grey', 'Grimdark', 'Anti-Hero', 'Political Cynicism', 'Professional Violence'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie',
           },
           {
@@ -9623,7 +9623,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Gaiman and Sapkowski are working in the same territory: what happens to old mythological creatures when the world stops believing in them? The Witcher's monsters are remnants of a magical age being driven out by human expansion; Gaiman's gods are immigrants, run-down and forgotten, surviving on the margins of an America that has moved on to new objects of worship. Shadow navigates between gods and humans with the same wary neutrality Geralt applies to his contracts — both are professionals caught in conflicts larger than themselves, trying to find a line of least harm. Tonally different (American Gods is road novel, elegy) but spiritually identical.",
             tags: ['Mythology', 'Old Gods', 'Road Fantasy', 'Morally Grey', 'Dark Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=American+Gods+Neil+Gaiman',
+            amazon_url: 'https://www.amazon.com/s?k=American+Gods+Neil+Gaiman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=American+Gods+Neil+Gaiman',
           },
         ],
@@ -9644,7 +9644,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "FitzChivalry Farseer is a royal bastard — a child of destiny who is also a problem — raised by reluctant guardians who come to love him against their better judgment. The Fitz/Burrich/Chade dynamic is the closest thing in fantasy to the Geralt/Ciri dynamic: hard men who aren't built for tenderness, slowly destroyed by how much they care about a child who was never supposed to be their problem. Hobb writes emotional damage with the same precision Sapkowski applies to moral philosophy. The series is darker and slower than The Witcher; by the end of the trilogy you will feel it the same way.",
             tags: ['Found Family', 'Child of Destiny', 'Reluctant Guardian', 'Dark Fantasy', 'Emotional Depth'],
-            amazon_url: "https://www.amazon.com/s?k=Assassin's+Apprentice+Robin+Hobb",
+            amazon_url: "https://www.amazon.com/s?k=Assassin&tag=librariancura-20's+Apprentice+Robin+Hobb",
             bookshop_url: "https://bookshop.org/search?keywords=Assassin's+Apprentice+Robin+Hobb",
           },
           {
@@ -9659,7 +9659,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Lynch's origin story for Locke Lamora mirrors the Geralt/Ciri structure from the other side: a boy taken in by a criminal mastermind and raised as a weapon, becoming something the people who raised him didn't entirely plan. The found family in The Lies of Locke Lamora — Chains, Locke, Bug, Jean — is built and destroyed in the same novel, with the same understanding of how much those unlikely attachments cost that Sapkowski brings to the Witcher saga. The world is pseudo-Venetian rather than Slavic but the moral register is identical: wit as armor, violence as profession, loyalty as the one thing that isn't for sale.",
             tags: ['Found Family', 'Heist Fantasy', 'Morally Grey', 'Con Artists', 'Dark Wit'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora+Lynch',
           },
         ],
@@ -9702,7 +9702,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Clarke and Muir are doing the same thing with setting: they place you inside an impossible location — the House of infinite halls and tides and statues, the Canaan House with its locked doors and lethal puzzles — and make understanding the location synonymous with understanding the book. Both narrators are unreliable not from dishonesty but from incomplete information about where they are. Both books reveal their truth in a structural moment that reframes everything you've read. Piranesi is smaller, quieter, and gentler — darkness level 2 versus 4 — but the formal DNA is identical. Start here if the Gothic strangeness of Canaan House was what hooked you.",
             tags: ['Mysterious Location', 'Unreliable Narrator', 'Structural Revelation', 'Literary Fantasy', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
           },
           {
@@ -9715,7 +9715,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Morgenstern builds Le Cirque des Rêves the way Muir builds Canaan House: as a location that is also a trap, also a competition, also a love story. Both books are structured around two young people bound to each other by a contest they didn't choose, the setting expressing the relationship between them. The Night Circus is warmer and more atmospheric than Gideon — it doesn't have the sarcasm or the body horror — but the formal gambit of a magical location that only exists because of the connection between two specific people maps directly onto what Muir does with the Locked Tomb.",
             tags: ['Magical Location', 'Rival Romance', 'Atmospheric', 'Slow Burn', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Night+Circus+Erin+Morgenstern',
+            amazon_url: 'https://www.amazon.com/s?k=The+Night+Circus+Erin+Morgenstern&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Night+Circus+Erin+Morgenstern',
           },
         ],
@@ -9735,7 +9735,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Locke Lamora is the closest analogue to Gideon's voice in classic fantasy: someone who deploys wit at precisely the moment when being serious would cost him something, whose actual emotional state is completely obscured by how funny he's being. Both narrators use humor as a defense mechanism in situations that are genuinely lethal, and both books are structurally surprising in the same way — the genre keeps shifting under your feet. Lynch's world is pseudo-Venetian rather than necromantic, but the character voice is the same engine.",
             tags: ['Witty Narrator', 'Dark Humour', 'Heist Fantasy', 'Morally Grey', 'Found Family'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch',
+            amazon_url: 'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora+Lynch',
           },
           {
@@ -9751,7 +9751,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Darrow's first-person narration has the same forward momentum as Gideon's — both are action-driven, emotionally intense, and use the narrator's voice to carry you through situations that should be overwhelming. Both characters are people who were built for a specific function (Gideon: weapon; Darrow: mine slave turned revolutionary) and discover over the course of their story that they are considerably more than that function. Brown writes action with more traditional epic scope; Muir writes it with more gothic wit. If Gideon's propulsive first-person energy was what kept you reading, Red Rising is the most direct continuation of that.",
             tags: ['First-Person Propulsive', 'Action Fantasy', 'Identity', 'Revolution', 'Dark Sci-Fi Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown',
+            amazon_url: 'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Red+Rising+Pierce+Brown',
           },
         ],
@@ -9772,7 +9772,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The Kaz/Inej relationship runs on the same fuel as Gideon/Harrow: the mutual dependency that neither party will name, the care expressed entirely through action and never through language, the question of whether what they have is survivable. Bardugo builds her found family — six criminals who shouldn't trust each other — with the same attention to the specific texture of each relationship that Muir brings to the Ninth House. Six of Crows is more plot-forward and more immediately satisfying; Gideon the Ninth is stranger and more formally ambitious. Both reward re-reading.",
             tags: ['Found Family', 'Enemies Dynamic', 'Heist', 'Morally Grey', 'Queer Characters'],
-            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Six+of+Crows+Leigh+Bardugo',
           },
           {
@@ -9788,7 +9788,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "For readers who loved that Gideon and Harrow are both women: The Jasmine Throne is the F/F slow-burn political fantasy with comparable emotional stakes. Priya is a maidservant with forbidden magic; Malini is an imprisoned princess. The power imbalance, the co-dependence, the gradual shift from necessity to something else — the dynamic is structurally very close to Gideon/Harrow, but delivered in a different register (South Asian-inspired political fantasy rather than gothic sci-fi horror). Suri writes desire under constraint with exceptional precision. The body horror is absent; the emotional damage is equivalent.",
             tags: ['F/F Romance', 'Enemies to Allies', 'Political Fantasy', 'Slow Burn', 'Queer Protagonists'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Jasmine+Throne+Tasha+Suri',
+            amazon_url: 'https://www.amazon.com/s?k=The+Jasmine+Throne+Tasha+Suri&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Jasmine+Throne+Tasha+Suri',
           },
         ],
@@ -9834,7 +9834,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Empire of Storms is where Maas begins laying the crossover infrastructure — the Wyrdkeys, the Lock, the magic system mechanics that will eventually connect Prythian, Erilea, and Midgard. Reading it in Maas publication order before HoFaS transforms every cameo from a fun surprise into a worked-out puzzle: you see exactly which threads she had been planning years ahead. If the crossover was your favourite part of HoFaS, the ToG series is the other half of the picture — and Empire of Storms, the penultimate entry, is where the scope of Maas's shared universe ambition becomes unmistakable.",
             tags: ['Shared Universe', 'Crossover Setup', 'Fae Courts', 'Chosen One', 'Explicit Romance'],
-            amazon_url: 'https://www.amazon.com/s?k=Empire+of+Storms+Sarah+J+Maas',
+            amazon_url: 'https://www.amazon.com/s?k=Empire+of+Storms+Sarah+J+Maas&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Empire+of+Storms+Sarah+J+Maas',
           },
           {
@@ -9850,7 +9850,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Sanderson's Cosmere is the gold standard for what Maas is building across her three series: a shared universe where characters from different books appear across each other's stories, magic systems interconnect in ways not visible until the sixth book you've read, and a figure called Hoid threads through every major work as a cosmic observer. The Way of Kings is the entry point to all of it — Stormlight's first volume, massive and complete in itself. If the crossover in HoFaS was the hook that has you wanting a shared universe to live in for a decade, the Cosmere will do that. A Books Like guide exists on this site if you want to explore further.",
             tags: ['Shared Universe', 'Epic Fantasy', 'Magic Systems', 'Long-Form Series', 'World-Building'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Way+of+Kings+Brandon+Sanderson',
           },
         ],
@@ -9868,7 +9868,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Ead Duryan serves a secret religious order — the Priory — embedded as a lady-in-waiting at a court that would have her burned for her beliefs and her magic. The double life, the daily performance of loyalty to people she's actively protecting via deception, the moment when the deception ends and the reckoning arrives: the structural DNA is identical to Lidia's arc. Shannon writes the cost of the spy's position with more interiority than Maas — Ead's chapters are slower and more psychological — but the emotional payload, the woman who survived by becoming something she has to justify to herself, is the same. The book is also quietly queer, which maps onto where Lidia's story goes.",
             tags: ['Spy/Double Agent', 'Hidden Identity', 'Female Protagonist', 'Political Fantasy', 'Queer Characters', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon',
+            amazon_url: 'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Priory+of+the+Orange+Tree+Shannon',
           },
           {
@@ -9885,7 +9885,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'systemic homophobia, graphic violence, severe psychological distress',
             note: "This is Lidia's arc taken to its absolute limit. Baru is a colonial subject who climbs inside the empire that destroyed her home — becomes its accountant, its proxy, its most ruthless operator — because it is the only lever long enough to tear it down. The question the book asks and refuses to answer is whether a person can destroy themselves completely in service of a mission and still be the person who started it. Dickinson writes moral destruction with forensic precision. Darkness level 5 and the content warning is serious. But if Lidia's sacrifice was the part of HoFaS that hit hardest, this is the direct, uncompromising version of that story.",
             tags: ['Spy/Infiltrator', 'Moral Destruction', 'Empire', 'Political Fantasy', 'Queer Protagonist'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Traitor+Baru+Cormorant+Dickinson',
           },
         ],
@@ -9906,7 +9906,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The Lord Ruler has held the world captive for a thousand years, and the book's entire second half is structured around Vin and Kelsier finally understanding what they're actually fighting — not just a tyrannical emperor but a deeper mechanism, an older agreement. The Asteri reveal in HoFaS lands the same way: the villain you thought you were fighting is a symptom, and the true system is something older and stranger. Sanderson constructs the escalating-scope revelation better than almost anyone working in epic fantasy; Mistborn's final act is the purest version of the thing HoFaS is going for. A Books Like guide exists on this site if you want to explore further.",
             tags: ['Ancient Evil', 'Power Revelation', 'Revolution', 'Magic Systems', 'Cosmic Threat'],
-            amazon_url: 'https://www.amazon.com/s?k=Mistborn+The+Final+Empire+Brandon+Sanderson',
+            amazon_url: 'https://www.amazon.com/s?k=Mistborn+The+Final+Empire+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Mistborn+The+Final+Empire+Sanderson',
           },
           {
@@ -9922,7 +9922,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Mahit Dzmare arrives at the capitol of the Teixcalaanli Empire as the new ambassador for a tiny mining station and spends the novel gradually understanding the full scope of what the empire has been consuming — cultures, peoples, memories, identity itself — across centuries. It's a quieter book than HoFaS, more politically slow-burn, sci-fi rather than fantasy. But the central discovery is structurally identical to the Asteri reveal: the protagonist pieces together, from inside the system, how much deeper and older the predation goes than she was ever allowed to know. Hugo Award winner. The prose is exceptional.",
             tags: ['Cosmic Empire', 'Political Intrigue', 'Identity', 'Sci-Fi Fantasy', 'Hugo Winner'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine',
+            amazon_url: 'https://www.amazon.com/s?k=A+Memory+Called+Empire+Arkady+Martine&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Memory+Called+Empire+Arkady+Martine',
           },
         ],
@@ -9966,7 +9966,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'graphic violence, child in danger, unrelenting despair',
             note: "McCarthy's American landscape after an unnamed apocalypse is the literary parallel to Mid-World: a world that has passed its end, still physically present but drained of meaning, traversed by a man and a boy moving toward something that may not save them. The Man's relationship with the Boy is Roland and Jake seen from the other side — the protector's perspective, the cost of keeping someone alive in a world built to kill them, the question of what you owe a child you've drawn into your disaster. Both are road narratives structured around motion through devastation. The Road is shorter, quieter, more devastating in prose. It does not provide the genre pleasures of Dark Tower; it provides the same grief.",
             tags: ['Post-Apocalyptic', 'Father and Child', 'Desolate World', 'Literary Fiction', 'Road Journey'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Road+Cormac+McCarthy',
+            amazon_url: 'https://www.amazon.com/s?k=The+Road+Cormac+McCarthy&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Road+Cormac+McCarthy',
           },
           {
@@ -9982,7 +9982,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Humanity has retreated to warded villages as corelings — demons — reclaim the world each night. The roads between settlements are abandoned and lethal. Arlen Bales walks them anyway, tattooing the ward symbols directly onto his skin to become a weapon, becoming something legend calls the Painted Man before he chooses the name himself. The atmosphere of Mid-World — civilisation in retreat, the spaces between places more dangerous than the places themselves, a lone marked figure moving through a world that cannot be held — maps exactly onto the Demon Cycle's premise. Brett's world is its own thing; the feeling of walking through ruins toward a confrontation you don't fully understand is the Dark Tower's.",
             tags: ['Post-Apocalyptic', 'Lone Hero', 'World in Decay', 'Dark Fantasy', 'Marked Warrior'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Warded+Man+Peter+Brett',
+            amazon_url: 'https://www.amazon.com/s?k=The+Warded+Man+Peter+Brett&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Warded+Man+Peter+V+Brett',
           },
         ],
@@ -10002,7 +10002,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'child harm, graphic violence, sexual content involving minors (flashback)',
             note: "The Losers Club is King's other great found family: seven children in Derry drawn together by a shared encounter with something ancient and cosmic, forming bonds that hold across thirty years. It and the Dark Tower share the same cosmology — the Turtle, Gan, the Deadlights connect directly to Mid-World's mythology — so reading It is less a comparison than an expansion of the same universe. The ka-tet structure is identical: the wrong people from wrong circumstances, made essential to each other by what they faced together, and then tested by having to face it again as adults who've forgotten what they once were. The content warning is serious. This is the darkest entry on this page.",
             tags: ['Found Family', 'Cosmic Horror', 'Coming of Age', 'Connected Universe', 'Small Town Horror'],
-            amazon_url: 'https://www.amazon.com/s?k=It+Stephen+King',
+            amazon_url: 'https://www.amazon.com/s?k=It+Stephen+King&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=It+Stephen+King',
           },
           {
@@ -10018,7 +10018,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Tolkien established the template the ka-tet follows: unlikely people drawn together by a quest none of them chose, each essential in a way not visible at the start, and the Fellowship's fracture — when it comes — costing exactly as much as you were afraid it would. King has been explicit about Tolkien's influence on the Dark Tower. The tonal register is completely different (Tolkien is elegiac where King is visceral) but the structural logic of a company built and broken by a quest, each member carrying weight that cannot be replaced, runs in both directions. A Books Like guide exists on this site if you want to explore further.",
             tags: ['Quest Fantasy', 'Found Family', 'Fellowship', 'Epic Fantasy', 'Classic'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Fellowship+of+the+Ring+Tolkien',
+            amazon_url: 'https://www.amazon.com/s?k=The+Fellowship+of+the+Ring+Tolkien&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Fellowship+of+the+Ring+Tolkien',
           },
         ],
@@ -10039,7 +10039,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Rothfuss has cited Dark Tower as a direct influence, and the connection is structural: Kvothe is also a legendary figure telling his story to a chronicler from a position of ruin, also a man whose obsession — with the Chandrian who killed his family — destroyed everyone around him in pursuit of something he may have been chasing the wrong way for his entire life. Both Roland and Kvothe are narrators whose reputation precedes them and whose actual story is an interrogation of whether they deserved it. Both series leave the central question open in ways that feel intentional and costly. A Books Like guide exists on this site if you want to explore further.",
             tags: ['Legendary Hero', 'Obsession', 'Frame Narrative', 'Magic School', 'Anti-Hero'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss',
+            amazon_url: 'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss',
           },
           {
@@ -10052,7 +10052,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Gaiman and King are working the same American geography: a continent where something old and mythological still exists beneath the surface, where the roads and the landscape carry the weight of violence and story, where a man can be drawn into a cosmic war he didn't choose by forces he can barely name. Shadow's cross-country journey through American strangeness is the closest thing in literary fantasy to Roland's traverse of Mid-World — the same sense that America is a place where the myths bleed through, the same lone figure moving through it toward a confrontation that will cost him. Gaiman's register is quieter and more ironic; the structural resonance is direct. A Books Like guide exists on this site if you want to explore further.",
             tags: ['American Mythology', 'Road Fantasy', 'Old Gods', 'Lone Hero', 'Dark Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=American+Gods+Neil+Gaiman',
+            amazon_url: 'https://www.amazon.com/s?k=American+Gods+Neil+Gaiman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=American+Gods+Neil+Gaiman',
           },
         ],
@@ -10096,7 +10096,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "An angel and a demon who have been on Earth since the Beginning have grown rather fond of it and are quietly conspiring to prevent the Apocalypse. Co-written by Pratchett and Gaiman, Good Omens has Pratchett's comic engine running at full power — the timing, the footnotes, the jokes that are also philosophical observations about the nature of good and evil — combined with Gaiman's mythology and darkness. It is the most direct translation of the Discworld sensibility into a non-Discworld context, and the collaboration brings out the best in both writers. If you have already read it: try Pratchett's standalone Nation (2008), his most explicitly philosophical book and the one he wrote knowing he was dying.",
             tags: ['Comedy Fantasy', 'Angels and Demons', 'Apocalypse', 'British Wit', 'Buddy Comedy', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Good+Omens+Pratchett+Gaiman',
+            amazon_url: 'https://www.amazon.com/s?k=Good+Omens+Pratchett+Gaiman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Good+Omens+Pratchett+Gaiman',
           },
           {
@@ -10112,7 +10112,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The other pillar of British comic fantasy. Adams and Pratchett are not the same writer — Adams is cooler, more absurdist, more interested in the comedy of meaninglessness; Pratchett is warmer and more interested in what people do with the absurdity. But both are doing the thing where the jokes are actually about something, where the comedy is the vehicle for genuinely interesting thought about consciousness, bureaucracy, and the human condition. The Hitchhiker's Guide is the gold standard for wit-as-philosophy in genre fiction, and if Discworld's wordplay is what you loved most, this is the obvious next read. Start with book 1 — it's also the funniest.",
             tags: ['Sci-Fi Comedy', 'Absurdist Humour', 'British Wit', 'Space Opera', 'Philosophical Comedy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Hitchhiker%27s+Guide+to+the+Galaxy+Douglas+Adams',
+            amazon_url: 'https://www.amazon.com/s?k=The+Hitchhiker%27s+Guide+to+the+Galaxy+Douglas+Adams&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Hitchhikers+Guide+to+the+Galaxy+Adams',
           },
         ],
@@ -10130,7 +10130,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Clarke is doing exactly what Pratchett does — using fantasy to satirise a very specific slice of English society — but at novel-length depth and with a Victorian register instead of comedy. The footnotes are Pratchettian (dry, elaborate, occasionally revealing more than the main text), the target is the English professional class and its relationship to magic as property, and the Napoleonic backdrop gives it the same texture of institutions grinding individuals. It is slower and more melancholy than Discworld, but readers who loved the way Pratchett used world-building to make a point will find Clarke doing the same thing with greater darkness. Standalone and one of the finest British fantasy novels written. A Books Like guide exists on this site if you want to explore further.",
             tags: ['British Fantasy', 'Satire', 'Historical Fantasy', 'Footnotes', 'Literary Fantasy', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Jonathan+Strange+Mr+Norrell+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell+Clarke',
           },
           {
@@ -10146,7 +10146,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Thursday Next is a literary detective in a 1985 where time travel is mundane, cloning extinct animals is legal, and people care intensely about whether Francis Bacon wrote Shakespeare. Fforde is the writer most directly in Pratchett's comic tradition — the same pleasure in an absurd premise taken with complete seriousness, the same footnote-adjacent wit, the same jokes-that-are-also-observations. The Eyre Affair is structured around Jane Eyre being kidnapped from inside the novel, which tells you everything you need to know. If you loved the City Watch books' procedural-comedy structure or the way Pratchett made bureaucracy funny, Fforde is the writer to read next.",
             tags: ['Literary Satire', 'Comedy Fantasy', 'British Wit', 'Time Travel', 'Detective', 'Absurdist'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Eyre+Affair+Jasper+Fforde',
+            amazon_url: 'https://www.amazon.com/s?k=The+Eyre+Affair+Jasper+Fforde&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Eyre+Affair+Jasper+Fforde',
           },
         ],
@@ -10164,7 +10164,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A caseworker for magical creatures falls in love with a man running a home for children who might end the world. Klune is working in a different register from Pratchett — gentler, more explicitly cozy, without the satire — but the underlying argument is identical: kindness is a form of resistance, bureaucracy is the enemy of human connection, and the found family that forms around shared decency is the most valuable thing the world contains. The House in the Cerulean Sea is what you read when you want the warmth of the best Discworld books (Reaper Man, Going Postal, the Tiffany Aching books) without the acidity. Standalone.",
             tags: ['Cozy Fantasy', 'Found Family', 'Kindness as Power', 'Magical Creatures', 'Queer Romance', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune',
+            amazon_url: 'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+House+in+the+Cerulean+Sea+Klune',
           },
           {
@@ -10177,7 +10177,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Maia, a half-goblin outcast, unexpectedly becomes emperor and tries, earnestly and persistently, to be kind in a court designed to grind kindness out of rulers. Addison shares Pratchett's central conviction — that decency is not weakness, that a person can hold moral ground inside an immoral system — and The Goblin Emperor is essentially a novel about that argument. Maia has Sam Vimes' moral clarity without Vimes' anger; the court has Ankh-Morpork's institutional corruption without the comedy. If you loved the Watch books for the way Vimes refuses to let the system make him into the system, The Goblin Emperor is the quieter, warmer version of the same story. Standalone. A Books Like guide exists on this site if you want to explore further.",
             tags: ['Court Politics', 'Kindness as Strength', 'Unlikely Ruler', 'Found Family', 'Hopeful Fantasy', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Goblin+Emperor+Katherine+Addison',
           },
         ],
@@ -10223,7 +10223,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Erikson has been explicit: The Black Company is the direct ancestor of Malazan. Cook invented the military fantasy subgenre in 1984 — a mercenary company told from the grunt's-eye view, no heroes, no chosen ones, just soldiers doing their job for whoever's paying and trying to stay alive. The prose is terse and deliberate where Erikson's is dense and vast, but the moral framework is identical: the people who keep showing up, the loyalty that forms inside a unit, the way war grinds down everything except the bonds between the people in it. Start here if Malazan's scope is what drew you and you want to see where it came from. A Books Like guide exists on this site if you want to explore further.",
             tags: ['Military Fantasy', 'Mercenaries', 'Ground-Level War', 'Gritty Fantasy', 'Classic Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook',
+            amazon_url: 'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Black+Company+Glen+Cook',
           },
           {
@@ -10239,7 +10239,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Abercrombie is the most direct inheritor of what Malazan did to fantasy — the refusal of clean heroism, the soldiers as moral centre, the darkness that doesn't flinch. The First Law trilogy is more contained and more sardonic than Malazan (Abercrombie's register is black comedy where Erikson's is tragic grandeur), but both are fundamentally about the gap between the stories people tell about war and what war actually is. Glokta, Logen Ninefingers, and Jezal are the closest thing to a Malazan cast in terms of moral complexity. Start with The Blade Itself — and read the standalones after the trilogy, they're some of Abercrombie's best work. A Books Like guide exists on this site if you want to explore further.",
             tags: ['Grimdark', 'Anti-Hero', 'Military Fantasy', 'Subverted Tropes', 'Dark Humour'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie',
+            amazon_url: 'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Blade+Itself+Joe+Abercrombie',
           },
         ],
@@ -10260,7 +10260,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The Way of Kings shares Malazan's ambition — 10 planned books, a world with deep pre-history, gods (the Shards of Adonalsium) operating at a scale that makes human politics look temporary — but approaches it from the opposite direction. Sanderson builds scaffolding first; Erikson throws you in. The Stormlight Archive is more accessible and more explicitly hopeful than Malazan, but it earns its scale with the same seriousness. If what drew you to Malazan was the sense of a world incomprehensibly old and still moving, the Roshar chapters interleaved with the ancient histories do exactly that work. Kaladin's arc in book 1 lands in the same emotional register as the Bridgeburners. A Books Like guide exists on this site if you want to explore further.",
             tags: ['Epic Scale', 'Deep History', 'Gods and Power', 'Military Fantasy', 'Magic Systems', 'Hugo Winner'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Way+of+Kings+Brandon+Sanderson',
           },
           {
@@ -10276,7 +10276,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Martin and Erikson are contemporaries doing the same thing from different angles: both were reacting against fantasy's tendency to protect its protagonists and honour its genre conventions. Where Malazan kills characters inside enormous narrative structures that dwarf any individual, Martin kills them at the precise moment they would be safe in a lesser book. Both series are fundamentally about the texture of power — how it works, who it destroys, what it costs — and both refuse the satisfying resolution. ASOIAF is tighter in scope and more character-focused than Malazan; the world-scale horror is implied rather than staged. A Books Like guide exists on this site if you want to explore further.",
             tags: ['Political Intrigue', 'Multiple POV', 'Subverted Heroes', 'War', 'Dark Fantasy', 'Epic Scale'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Game+of+Thrones+George+RR+Martin',
+            amazon_url: 'https://www.amazon.com/s?k=A+Game+of+Thrones+George+RR+Martin&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Game+of+Thrones+George+Martin',
           },
         ],
@@ -10298,7 +10298,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'sexual violence, extreme darkness, philosophical nihilism',
             note: "Bakker is the closest philosophical cousin to Erikson — both are academics (Erikson an anthropologist, Bakker a philosopher) who brought their disciplines into fantasy, and both wrote series that are deliberately difficult, densely allusive, and rewarding only to the patient. The Second Apocalypse drops you into a holy war with as little explanation as Malazan and explores questions of consciousness, free will, and civilisation with the same relentlessness. It is darker than Malazan — nihilism runs closer to the surface, and the content warnings are real — but if Malazan's in-medias-res density and philosophical weight are what you loved, this is the series that exists in the same register. The complete series is published.",
             tags: ['Demanding Fantasy', 'Philosophy', 'Holy War', 'Dark Fantasy', 'In Medias Res', 'Unreliable Consciousness'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Darkness+that+Comes+Before+Bakker',
+            amazon_url: 'https://www.amazon.com/s?k=The+Darkness+that+Comes+Before+Bakker&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Darkness+that+Comes+Before+Bakker',
           },
           {
@@ -10314,7 +10314,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Gene Wolfe is the writer Erikson most resembles in terms of what he demands from a reader. The Book of the New Sun is narrated by an unreliable torturer on a dying Earth rendered as fantasy, full of words that are real but archaic, events that mean more than they appear to, and a narrator who cannot be trusted about his own story. Wolfe rewards re-reads the way Malazan does — the second pass reveals structures invisible on the first. The scale is smaller than Malazan but the density is comparable; both authors are doing the same thing (building a world that preceded the reader's arrival and will outlast it), just at different magnitudes. One of the most important works in fantasy. Start with The Shadow of the Torturer.",
             tags: ['Literary Fantasy', 'Unreliable Narrator', 'Dense Prose', 'Dying Earth', 'Far Future Fantasy', 'Classic'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Shadow+of+the+Torturer+Gene+Wolfe',
+            amazon_url: 'https://www.amazon.com/s?k=The+Shadow+of+the+Torturer+Gene+Wolfe&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Shadow+of+the+Torturer+Gene+Wolfe',
           },
         ],
@@ -10360,7 +10360,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'sexual assault (backstory), graphic violence, substance abuse',
             note: "Alex Stern gets into Yale on a mysterious scholarship and discovers the university's secret magical societies — the Houses of the Veil — practice real magic and have always operated above consequences. Alex has El's same energy: outsider, dark-powered, furious, refused by a system built to exclude people like her. Bardugo writes the institution as villain with the same clarity Novik brings to the Scholomance — the elite school as place where power and privilege calcify into something genuinely monstrous. Darker and more grounded than A Deadly Education, without the satirical wit, but the core premise (dangerous magic, corrupt institution, female protagonist with unusual power who survives by her own rules) lands in exactly the same space.",
             tags: ['Dark Academia', 'Secret Societies', 'Female Protagonist', 'Dark Magic', 'Outsider Protagonist', 'Yale'],
-            amazon_url: 'https://www.amazon.com/s?k=Ninth+House+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Ninth+House+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Ninth+House+Leigh+Bardugo',
           },
           {
@@ -10377,7 +10377,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'war atrocities, genocide, drug addiction, extreme violence',
             note: "Rin is a war orphan who gets into the elite Sinegard military academy by brute force and finds a school designed to confirm that people like her don't belong. Kuang is working with the same dynamic as Novik — a female protagonist from the wrong background, admitted to an institution that expected her to fail, discovering that her 'wrong' kind of power is more dangerous than anything the academy teaches. Where A Deadly Education stays sardonic, The Poppy War turns genuinely horrific in act two — it is a history of China's twentieth century rendered in fantasy, and it does not flinch. Start it knowing where it goes. The school section (roughly the first third) is a near-perfect dark academia novel by itself.",
             tags: ['Military Academy', 'Dark Power', 'War Fantasy', 'Class Warfare', 'Anti-Hero', 'Asian-Inspired'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+R.F.+Kuang',
           },
         ],
@@ -10398,7 +10398,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The Magicians is the anti-Harry Potter in the same way A Deadly Education is — a magic school story that takes the logical consequences of its premise seriously. Quentin Coldwater is El's mirror image: she refuses to be the dark chosen one; he desperately wants to be a special one and is repeatedly shown the gap between that desire and reality. Grossman's Brakebills has actual pedagogy, actual depression, actual adult consequences, and the series gets progressively darker as the Narnia-analogue (Fillory) is revealed to be exactly as dangerous as the real world. If you want El's dark wit extended into even grimmer territory with a protagonist whose arc is about disillusionment rather than refusal, this is the trilogy.",
             tags: ['Dark Magic School', 'Deconstructive Fantasy', 'Anti-Hero', 'Adult Magic School', 'Disillusionment'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman',
+            amazon_url: 'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Magicians+Lev+Grossman',
           },
           {
@@ -10412,7 +10412,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Agnieszka is a village girl taken by a powerful wizard to serve in his tower — and discovers that her magic is wild, rule-breaking, and completely unlike anything in his training. Novik is writing the same character archetype she later perfected in El: a female protagonist whose power is the 'wrong' kind, who learns by instinct rather than theory, who refuses the constraints of the magical tradition she's been handed. Uprooted is a standalone fairy tale with Eastern European folklore as its foundation; it's warmer and less sardonic than A Deadly Education but comes from the same authorial sensibility. If you loved El's approach to magic and want a self-contained story with the same DNA, start here.",
             tags: ['Dark Fairy Tale', 'Wild Magic', 'Reluctant Heroine', 'Folklore', 'Enemies to Lovers', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik',
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik',
           },
         ],
@@ -10431,7 +10431,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'colonial violence, racism, character death',
             note: "Oxford's Royal Institute of Translation runs on silver-worked magic that extracts power from untranslatable gaps between languages — and the Empire depends on scholars from colonised nations who are fluent enough to generate that power but not equal enough to benefit from it. Kuang's class commentary is even more explicit than Novik's: where the Scholomance's enclave system is a satire of meritocracy, Babel is a direct indictment of how institutions extract value from the people they exclude. The mechanism is different (colonialism rather than magical capitalism) but the emotional logic — a protagonist who is brilliant enough to succeed by the institution's rules and angry enough to understand why those rules are unjust — is identical. Standalone.",
             tags: ['Class Inequality', 'Colonial Themes', 'Dark Academia', 'Language as Power', 'Moral Ambiguity'],
-            amazon_url: 'https://www.amazon.com/s?k=Babel+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=Babel+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Babel+R.F.+Kuang',
           },
           {
@@ -10447,7 +10447,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Jude is a mortal girl raised in the faerie court — a human among beings who are faster, stronger, and who can compel her with a word. She has no magic, no status, and no reason to be there except stubbornness and fury. Black is building the same power-structure fantasy as Novik: a protagonist who shouldn't survive the world she's in, who wins through intelligence and refusal rather than conventional power, surrounded by a social hierarchy where her position at the bottom is considered permanent and natural. The fae court politics are as meticulous as the enclave dynamics, and Cardan is a more romantically viable Orion — the sharp banter and the slow-burn enemies-to-lovers arc land with the same satisfaction.",
             tags: ['Fae Court', 'Enemies to Lovers', 'Class Outsider', 'Female Protagonist', 'Political Intrigue', 'Dark Romance'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
           },
         ],
@@ -10490,7 +10490,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'colonial violence, racism, character death',
             note: "A group of scholars from colonised nations attend Oxford's Royal Institute of Translation, where silver-worked magic runs on the untranslatable gap between languages — and where the Empire depends on their labour while treating them as perpetually foreign. Kuang is writing the same central problem as Martine: the specific grief of loving a culture built on your people's subjugation, the way fluency in the coloniser's language is both tool and trap. Babel is darker and more overtly political (it is, after all, subtitled 'the necessity of violence'), but the emotional texture of the two books maps directly — the ambivalence is the same, the cost is the same, and both authors refuse the comfortable resolution where love and resistance turn out to be compatible. Standalone.",
             tags: ['Colonial Themes', 'Language as Power', 'Dark Academia', 'Historical Fantasy', 'Moral Ambiguity'],
-            amazon_url: 'https://www.amazon.com/s?k=Babel+RF+Kuang',
+            amazon_url: 'https://www.amazon.com/s?k=Babel+RF+Kuang&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Babel+R.F.+Kuang',
           },
           {
@@ -10507,7 +10507,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             warning: 'systemic homophobia, graphic violence, severe psychological manipulation, devastating ending',
             note: "Baru Cormorant watched the Empire of Masks colonise her home island as a child and decided the only way to destroy it was to excel within it — to become the most useful tool the Empire has, and then use that position to break it apart from the inside. Dickinson is writing with the same clarity as Martine about what empire does to a person who internalises its logic, and the novel's central bargain — how much of yourself can you sacrifice in service of a goal that may be impossible? — is the darkest version of what Mahit is navigating. Much harder and more brutal than A Memory Called Empire, and the ending is not safe. But if you want the colonial-ambivalence theme taken to its absolute limit, this is the book.",
             tags: ['Colonial Empire', 'Political Manipulation', 'Queer Protagonist', 'Spy/Infiltrator', 'Moral Destruction'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson',
+            amazon_url: 'https://www.amazon.com/s?k=The+Traitor+Baru+Cormorant+Seth+Dickinson&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Traitor+Baru+Cormorant+Dickinson',
           },
         ],
@@ -10528,7 +10528,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The closest parallel to A Memory Called Empire in tone, ambition, and setting. Leckie won every major SF award with this novel about Breq, a former warship's AI in a single human body, navigating the politics of a vast empire built on annexation and the meticulous maintenance of its own civilised self-image. Both novels use the formal structure of empire — the names, the ranks, the rituals, the poetry — as the primary texture of the world; both are fundamentally about what happens when someone positioned outside the imperial centre looks at it with clear eyes. Leckie's prose is cooler and more controlled; Martine's is warmer and more poetic. Both are essential reading for the same kind of reader.",
             tags: ['Imperial SF', 'Political Intrigue', 'AI Consciousness', 'Hugo Winner', 'Literary SF'],
-            amazon_url: 'https://www.amazon.com/s?k=Ancillary+Justice+Ann+Leckie',
+            amazon_url: 'https://www.amazon.com/s?k=Ancillary+Justice+Ann+Leckie&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Ancillary+Justice+Ann+Leckie',
           },
           {
@@ -10541,7 +10541,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A half-goblin outcast becomes emperor of the elven court against all expectation and tries, desperately and sincerely, to be kind in a system designed to grind kindness out of rulers. The court politics are meticulous — ranks, titles, formal speech registers, the architecture of deference — and Addison shares Martine's interest in the way political systems encode themselves in language and etiquette. Much warmer in tone (Maia is the inverse of Mahit: not an outsider who loves the court, but an insider who was excluded from it and now must navigate it with grace), but the same granular attention to how power moves through ritual and how a genuine person survives inside it. Standalone, and one of the most comforting books in fantasy.",
             tags: ['Court Politics', 'Unlikely Ruler', 'Found Family', 'Kindness as Strength', 'Intricate World-Building'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison',
+            amazon_url: 'https://www.amazon.com/s?k=The+Goblin+Emperor+Katherine+Addison&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Goblin+Emperor+Katherine+Addison',
           },
         ],
@@ -10559,7 +10559,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A man lives in a House of infinite halls and tides and statues, keeping careful journals of its wonders, slowly uncovering that his memory of himself is not his memory of himself. Clarke is working in a completely different register from Martine — quiet, strange, dream-logic rather than political thriller — but the central question is identical: if the past you remember was constructed by someone else, who are you? Piranesi is shorter than A Memory Called Empire and even more precise; every sentence is load-bearing. It is one of the best novels of the last decade and pairs perfectly with Martine for readers interested in the phenomenology of memory and selfhood. Standalone.",
             tags: ['Memory and Identity', 'Mystery', 'Unreliable Narrator', 'Literary Fantasy', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke',
+            amazon_url: 'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Piranesi+Susanna+Clarke',
           },
           {
@@ -10575,7 +10575,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Necromancers in space: a foul-mouthed swordswoman is paired with her lifelong enemy, a necromancer of terrifying power, to compete in a lethal house competition for a God-Emperor who may not be what he appears. The identity theme is pushed even further in book 2 (Harrow the Ninth), where questions about whose consciousness lives where and what memories can be trusted become the entire architecture of the novel. Start with Gideon: it's funny and brutal and completely unlike anything else in SF/fantasy. The tonal register — sardonic, gory, queer, surprisingly tender — is the polar opposite of A Memory Called Empire's formal elegance, which makes it the ideal companion read. The tetralogy completed in 2024.",
             tags: ['Necromancy', 'Queer Characters', 'Identity', 'Dark Humor', 'Sci-Fi Horror', 'Found Family'],
-            amazon_url: 'https://www.amazon.com/s?k=Gideon+the+Ninth+Tamsyn+Muir',
+            amazon_url: 'https://www.amazon.com/s?k=Gideon+the+Ninth+Tamsyn+Muir&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Gideon+the+Ninth+Tamsyn+Muir',
           },
         ],
@@ -10634,7 +10634,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Rhysand is the direct predecessor to Hades in the romantasy canon — a powerful immortal with a fearsome reputation that conceals something more complicated, who slowly dismantles the protagonist's defences across an entire book. ACOMAF is where the ACOTAR series becomes exceptional and where Maas's version of this dynamic reaches its peak. The Night Court has the same energy as the Underworld. Caveat: start with A Court of Thorns and Roses — ACOMAF is book two and needs the setup. The first book is lighter; push through.",
             tags: ['Morally Grey Love Interest', 'Fae Courts', 'Slow Burn', 'Enemies to Lovers', 'High Heat'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+J+Maas',
+            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+J+Maas&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Court+of+Mist+and+Fury',
           },
           {
@@ -10650,7 +10650,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The same formula executed with similar confidence: a sheltered protagonist, a morally grey guard who is not what he appears, slow-burn tension that builds across the whole book before the heat arrives. Hawke has the same controlled, quietly menacing energy as Hades. The world is fantasy rather than mythology but the emotional beats are almost identical. Caveat: starts slowly — the first quarter is world-building heavy. The payoff is worth it.",
             tags: ['Morally Grey Love Interest', 'Slow Burn', 'Possessive Love Interest', 'Sheltered Protagonist'],
-            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout',
+            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=From+Blood+and+Ash',
           },
         ],
@@ -10671,7 +10671,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A Sicilian girl in 1800s Palermo who summons a demon prince to help avenge her murdered twin — Wrath is cold, powerful, and frustrating in the exact same way Hades is. The mythology is demonic rather than Greek but the structure is the same: a mortal woman navigating a world of immortal political games, with a love interest who is more than his reputation. Darker and more gothic in atmosphere, less heat but more dread. Caveat: the enemies-to-lovers is slower than St. Clair — the series earns it over three books.",
             tags: ['Mythology Retelling', 'Morally Grey Love Interest', 'Enemies to Lovers', 'Gothic', 'Historical Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco',
+            amazon_url: 'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Kingdom+of+the+Wicked+Maniscalco',
           },
           {
@@ -10684,7 +10684,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The literary end of the Greek mythology retelling spectrum — Circe is the daughter of Helios, dismissed by gods and mortals alike, who discovers her own power slowly over centuries. Where A Touch of Darkness is romance-forward, Circe is character-forward: it is about what it means to exist on the margins of the divine world, how power is discovered and what it costs, and the specific loneliness of immortality. The gods feel genuinely alien rather than romantic. Caveat: much less romance. If you want mythology explored rather than used as a backdrop for a love story, this is the better book.",
             tags: ['Greek Mythology', 'Female Protagonist', 'Coming Into Power', 'Literary Fantasy', 'Standalone'],
-            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller',
+            amazon_url: 'https://www.amazon.com/s?k=Circe+Madeline+Miller&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Circe+Madeline+Miller',
           },
         ],
@@ -10705,7 +10705,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Feyre is similarly underestimated — a mortal girl pulled into a world of immortals who shouldn't be able to survive, let alone matter. The arc across the series from passive participant to someone who reshapes the world is the same arc as Persephone's, stretched over more books and more thoroughly earned. The Fae courts share the same beautiful-and-dangerous atmosphere as the Underworld. Caveat: the first book is Beauty and the Beast — the series becomes significantly more ambitious from book two.",
             tags: ['Mortal in Magical World', 'Coming Into Power', 'Fae Courts', 'Enemies to Lovers', 'Romance-Forward'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+J+Maas',
+            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+J+Maas&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Court+of+Thorns+and+Roses',
           },
           {
@@ -10721,7 +10721,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Jude is a mortal girl in a fae court, powerless by the world's definition, who refuses to accept that — she schemes, manipulates, and claws her way to a position nobody expected her to reach. The power dynamic between Jude and Cardan is the intellectual version of Persephone and Hades: two people who underestimate each other, circling a push-pull that neither fully controls. Caveat: much less heat, much more political scheming. If you want the tension without the explicit content, this is the cleaner version of the same dynamic.",
             tags: ['Mortal in Fae World', 'Coming Into Power', 'Enemies to Lovers', 'Political Scheming', 'Fae Courts'],
-            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black',
+            amazon_url: 'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black',
           },
         ],
@@ -10780,7 +10780,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Rhysand is the direct template for Cardan — a powerful fae who uses cruelty as armour and is genuinely dangerous before he becomes the love interest. ACOMAF is where the ACOTAR series becomes exceptional: the court politics deepen, the protagonist finds her agency, and the slow-burn pays off in a way most romantasy doesn't manage. Caveat: start with A Court of Thorns and Roses — ACOMAF requires the setup. The first book is lighter; push through.",
             tags: ['Fae Courts', 'Enemies to Lovers', 'Morally Grey Love Interest', 'Court Intrigue'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+J+Maas',
+            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Mist+and+Fury+Sarah+J+Maas&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Court+of+Mist+and+Fury',
           },
           {
@@ -10796,7 +10796,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Hawke has the same energy as Cardan — a guard assigned to protect a sheltered young woman who is clearly more than he says, morally grey, and the source of most of the book's tension. The enemies-to-lovers build is slower and considerably spicier than The Cruel Prince. Poppy is similarly stubborn and refuses to stay in the box the world has built for her. Caveat: much higher heat level than Black's trilogy — if Closed Door is your preference, this is a significant step up.",
             tags: ['Enemies to Lovers', 'Morally Grey Love Interest', 'Sheltered Protagonist', 'Slow Burn'],
-            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout',
+            amazon_url: 'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=From+Blood+and+Ash',
           },
         ],
@@ -10817,7 +10817,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "Kaz Brekker is the male Jude — a strategist who uses manipulation, reputation, and misdirection instead of brute force, in a world that would grind him into nothing if he let it. Six of Crows is a heist novel but its real subject is a group of broken people who are excellent at what they do. The slow-burn between Kaz and Inej is the most restrained in romantasy and arguably the most effective. Caveat: no fae, much darker, and the romance is deliberately held back — this is about the heist first.",
             tags: ['Cunning Protagonist', 'Heist', 'Morally Grey Characters', 'Slow Burn', 'Ensemble'],
-            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo',
+            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=Six+of+Crows+Bardugo',
           },
           {
@@ -10833,7 +10833,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "A Scholar girl in an empire modelled on brutal Rome who is just as trapped as Jude — and just as determined to fight her way out using whatever she has. The dual POV structure lets you see both sides of the power dynamic, and the competition arc that runs through the book mirrors the political danger of the fae court. Caveat: significantly less romance-focused than Black. The tension between Laia and Elias is slow and painful rather than enemies-to-lovers charged.",
             tags: ['Cunning Protagonist', 'Competition Arc', 'Political Danger', 'Dual POV', 'Military Fantasy'],
-            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir',
+            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
           },
         ],
@@ -10854,7 +10854,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "The most obvious next read after The Cruel Prince: a mortal girl pulled into a fae world that is beautiful and lethal in equal measure, with a love interest who is dangerous before he is kind. Maas and Black share a sensibility about fae — the world has rules, the glamour is real, and the politics matter — but ACOTAR is considerably more romance-focused and the heat increases significantly across the series. Caveat: the first book is the lightest entry; it becomes exceptional from the second book onwards.",
             tags: ['Fae Courts', 'Mortal in Fae World', 'Enemies to Lovers', 'Slow Burn', 'Romance-Forward'],
-            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+J+Maas',
+            amazon_url: 'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Sarah+J+Maas&tag=librariancura-20',
             bookshop_url: 'https://bookshop.org/search?keywords=A+Court+of+Thorns+and+Roses',
           },
           {
@@ -10870,7 +10870,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             audiobook: true,
             note: "No fae, but the same dynamic at its core: a girl in a court where the wrong move gets you killed, falling for a man on the opposing side of a war, both of them playing political games that neither fully controls. Kestrel is the intellectual match for Jude — a strategist in a world that expects her to be decorative. The series is underread and consistently underrated. Caveat: lighter heat than most in this space and the political arc takes time to develop, but the payoff across three books is exceptional.",
             tags: ['Political Scheming', 'Enemies to Lovers', 'Court Intrigue', 'Cunning Protagonist', 'Forbidden Romance'],
-            amazon_url: "https://www.amazon.com/s?k=The+Winner's+Curse+Marie+Rutkoski",
+            amazon_url: "https://www.amazon.com/s?k=The+Winner&tag=librariancura-20's+Curse+Marie+Rutkoski",
             bookshop_url: "https://bookshop.org/search?keywords=Winner's+Curse+Rutkoski",
           },
         ],
@@ -10881,6 +10881,274 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       { title: 'Books Like A Court of Thorns and Roses', slug: 'acotar' },
       { title: 'Books Like Six of Crows', slug: 'six-of-crows' },
       { title: 'Books Like From Blood and Ash', slug: 'from-blood-and-ash' },
+    ],
+  },
+  {
+    slug: 'children-of-blood-and-bone',
+    source: {
+      title: 'Children of Blood and Bone',
+      author: 'Tomi Adeyemi',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9781250170972-L.jpg',
+      darkness_level: 3,
+      heat_level: 'Sweet Romance',
+      series: 'Legacy of Orïsha',
+      series_number: 1,
+      tropes: ['Chosen One', 'Oppression & Resistance', 'Dual POV', 'Coming of Age', 'Found Family', 'Magic Suppression', 'West African Mythology'],
+      angle: 'YA Fantasy with West African Mythology',
+      answer_line: 'If you loved Children of Blood and Bone for its West African mythology, the oppression-and-resistance spine, and the fierce protagonists fighting a system built to erase them, start with An Ember in the Ashes, The Gilded Ones, and Akata Witch.',
+      why_people_love: "Children of Blood and Bone works because the stakes are personal before they are political. Zélie isn't trying to save the world in the abstract — she watched her mother die, she knows what the oppression costs, and the magic system is inseparable from identity and culture in a way that most YA fantasy never attempts. Adeyemi draws on Yoruba mythology and gives the maji a history rooted in loss rather than destiny. The dual POV adds the complexity that a single narrator would flatten — Amari's arc is its own story about complicity and inherited guilt, and the two protagonists push against each other in ways that keep the politics from becoming simple. The pacing is relentless. Caveat: the romance is present but secondary; readers coming for slow-burn heat will find this lighter than most YA romantasy.",
+    },
+    aspects: [
+      {
+        heading: 'If you loved the West African mythology and a magic system rooted in culture and identity...',
+        recs: [
+          {
+            title: 'Akata Witch',
+            author: 'Nnedi Okofor',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780670784226-L.jpg',
+            darkness_level: 2,
+            heat_level: null,
+            standalone: false,
+            series: 'Nsibidi Scripts',
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "The closest structural match: a young girl in a Nigerian setting who discovers she carries magical ability tied to Igbo and Yoruba cultural tradition. Okofor builds a magic system from West African cosmology with the same seriousness Adeyemi brings to Yoruba mythology — the magic is cultural identity, not window dressing. Tonally lighter than Children of Blood and Bone and aimed at a slightly younger audience, but the cultural specificity and the sense of discovering a hidden world beneath the familiar one are exactly the same.",
+            tags: ['West African Mythology', 'Coming of Age', 'Hidden Magic World', 'Cultural Identity', 'Nigerian Setting'],
+            amazon_url: 'https://www.amazon.com/s?k=Akata+Witch+Nnedi+Okofor&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=Akata+Witch+Okofor',
+          },
+          {
+            title: 'The Gilded Ones',
+            author: 'Namina Forna',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781984848697-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Sweet Romance',
+            standalone: false,
+            series: 'Deathless',
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "West African-inspired world, a girl who discovers forbidden power during a ritual that was designed to exclude her, and a society built on suppressing women who bleed gold. The parallel to Children of Blood and Bone is direct: power tied to identity, a ruling class with a vested interest in erasing that power, and a protagonist radicalised by what the system does to people she loves. Considerably darker in tone — the violence is more graphic and the oppression more explicit. Caveat: the romance is present but the book's focus is squarely on the power and resistance arc.",
+            tags: ['West African Inspired', 'Oppression & Resistance', 'Forbidden Power', 'Coming of Age', 'Female Protagonist'],
+            amazon_url: 'https://www.amazon.com/s?k=The+Gilded+Ones+Namina+Forna&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=The+Gilded+Ones+Forna',
+          },
+        ],
+      },
+      {
+        heading: 'If you loved the oppression-and-resistance spine — a world that criminalises who you are...',
+        recs: [
+          {
+            title: 'An Ember in the Ashes',
+            author: 'Sabaa Tahir',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Sweet Romance',
+            standalone: false,
+            series: 'An Ember in the Ashes',
+            series_number: 1,
+            series_label: 'Series (4 books)',
+            audiobook: true,
+            note: "The closest match in terms of structure and emotional register: a Scholar girl in a Roman-inspired empire that has conquered her people, driven underground by a military state, who is forced into the heart of that state to survive. Tahir's dual POV gives you both the oppressed and the soldier who enforces the system, and both characters are trapped rather than villainous. The stakes are personal before they are political, exactly as in Adeyemi. Caveat: no magic system on Zélie's scale, and the romance is slower and more restrained.",
+            tags: ['Oppression & Resistance', 'Dual POV', 'Military Fantasy', 'Coming of Age', 'Forbidden Romance'],
+            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
+          },
+          {
+            title: 'The Poppy War',
+            author: 'R.F. Kuang',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780062662569-L.jpg',
+            darkness_level: 5,
+            heat_level: null,
+            standalone: false,
+            series: 'The Poppy War',
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "A girl from a despised ethnic underclass who discovers shamanic power rooted in her people's mythology and uses it to fight a war that was never meant to include her. The power-as-cultural-identity thread is the same as Adeyemi's, and Kuang takes the oppression narrative further and harder than most fantasy is willing to. This is where the similarity ends in terms of tone — The Poppy War is brutal, historically grounded, and the later books go to places Children of Blood and Bone never approaches. Caveat: significantly darker, no YA sensibility, violence is extreme.",
+            tags: ['Oppression & Resistance', 'Mythology-Based Magic', 'Coming of Age', 'War', 'Power at a Cost'],
+            warning: 'Extreme violence, genocide, war crimes. Not YA.',
+            amazon_url: 'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=The+Poppy+War+Kuang',
+          },
+        ],
+      },
+      {
+        heading: 'If you loved the dual POV and the YA adventure pace — multiple protagonists under pressure...',
+        recs: [
+          {
+            title: 'Six of Crows',
+            author: 'Leigh Bardugo',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781627792127-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Six of Crows',
+            series_number: 1,
+            series_label: 'Duology (2 books)',
+            audiobook: true,
+            note: "Multi-POV ensemble of outcasts, each carrying a history of being discarded by the world that created them, executing something impossibly dangerous together. The momentum and the sense that every chapter raises the stakes are the same. Bardugo's world is different — no African mythology, more heist than quest — but the ensemble chemistry and the way the characters' outsider status fuels rather than limits them is exactly what drives Children of Blood and Bone. Caveat: darker, more cynical in tone, and the magic is secondary to the plot mechanics.",
+            tags: ['Ensemble Cast', 'Outcasts', 'Heist', 'Multi-POV', 'High Stakes'],
+            amazon_url: 'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=Six+of+Crows+Bardugo',
+          },
+          {
+            title: 'Flame in the Mist',
+            author: 'Renée Ahdieh',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780147515940-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Flame in the Mist',
+            series_number: 1,
+            series_label: 'Duology (2 books)',
+            audiobook: true,
+            note: "Feudal Japan setting, a young noblewoman who disguises herself and infiltrates the group sent to destroy her, with lush prose and a magic system woven into the cultural fabric of the world. Ahdieh writes setting and atmosphere with the same richness Adeyemi brings to Orïsha — the world feels like it has weight and history rather than backdrop. The pace is slower, the romance more central, and there is nothing approaching the scale of Adeyemi's magic, but the sense of a protagonist finding power she wasn't supposed to have is consistent.",
+            tags: ['Cultural World-Building', 'Disguise', 'Coming of Age', 'Slow Burn', 'Historical Setting'],
+            amazon_url: 'https://www.amazon.com/s?k=Flame+in+the+Mist+Renee+Ahdieh&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=Flame+in+the+Mist+Ahdieh',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like An Ember in the Ashes', slug: 'an-ember-in-the-ashes' },
+      { title: 'Books Like Six of Crows', slug: 'six-of-crows' },
+      { title: 'Books Like The Poppy War', slug: 'the-poppy-war' },
+    ],
+  },
+  {
+    slug: 'daughter-of-the-moon-goddess',
+    source: {
+      title: 'Daughter of the Moon Goddess',
+      author: 'Sue Lynn Tan',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9780063031937-L.jpg',
+      darkness_level: 2,
+      heat_level: 'Closed Door',
+      series: 'The Celestial Kingdom Duology',
+      series_number: 1,
+      tropes: ['Chinese Mythology', 'Celestial Court', 'Coming of Age', 'Slow Burn', 'Duty vs Heart', 'Quest', 'Love Triangle', 'Found Family'],
+      angle: 'Lyrical Chinese Mythology Fantasy',
+      answer_line: 'If you loved Daughter of the Moon Goddess for its Chinese mythology, lyrical prose, and the tension between duty and longing, start with A Magic Steeped in Poison, The Bear and the Nightingale, and Flame in the Mist.',
+      why_people_love: "Daughter of the Moon Goddess works because it takes the legend of Chang'e — already a story about sacrifice and longing — and builds a daughter's perspective from the silence the myth never filled in. Xingyin doesn't start as a warrior or a chosen one; she starts as a girl who loves her mother and will cross every celestial border to protect her. The world is vast and genuinely mythological: the Celestial Kingdom, the Dragon Courts, the mortal realm all feel like they have centuries of history beneath them. Sue Lynn Tan's prose is deliberate and unhurried, which suits the scale. The romance is present from early on but never overtakes the quest — Liwei and Wenzhi serve different functions and the love triangle, unusually, is earned rather than manufactured. Caveat: readers expecting fast pacing or high action will find this meditative by the standards of popular fantasy. The emotional register is closer to classical epic than romantasy.",
+    },
+    aspects: [
+      {
+        heading: 'If you loved the Chinese mythology and the celestial world-building rooted in legend...',
+        recs: [
+          {
+            title: 'A Magic Steeped in Poison',
+            author: 'Judy I. Lin',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781250845009-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Book of Tea',
+            series_number: 1,
+            series_label: 'Duology (2 books)',
+            audiobook: true,
+            note: "The most direct tonal match: Chinese-inspired court, a magic system rooted in tea ceremony and poison that feels genuinely embedded in its culture, and a young woman navigating a world of elegant danger in order to save someone she loves. Lin writes with the same unhurried beauty as Tan and the stakes are personal before they are political. Caveat: the world-building is narrower — one court, one competition — compared to Daughter of the Moon Goddess's multi-realm scope, but the atmosphere and cultural specificity are equivalent.",
+            tags: ['Chinese-Inspired', 'Tea Magic', 'Court Intrigue', 'Female Protagonist', 'Lyrical Prose'],
+            amazon_url: 'https://www.amazon.com/s?k=A+Magic+Steeped+in+Poison+Judy+Lin&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=A+Magic+Steeped+in+Poison',
+          },
+          {
+            title: 'The Iron Widow',
+            author: 'Xiran Jay Zhao',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780735269934-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Open Door',
+            standalone: false,
+            series: 'Iron Widow',
+            series_number: 1,
+            series_label: 'Duology (2 books)',
+            audiobook: true,
+            note: "Also rooted in Chinese mythology and history — specifically the legend of Wu Zetian reframed in a mecha-fantasy world — with the same sense of a female protagonist punching through a system that wasn't built for her survival. Zhao's prose is faster and angrier than Tan's, the heat is higher, and the politics are more explicit. If Daughter of the Moon Goddess is the lyrical end of Chinese-mythology fantasy, The Iron Widow is the furious end. Caveat: very different in tone — this is rage where Tan is longing — and the mecha setting is unusual.",
+            tags: ['Chinese Mythology', 'Female Protagonist', 'Political Rage', 'Found Family', 'Mythology Retelling'],
+            amazon_url: 'https://www.amazon.com/s?k=The+Iron+Widow+Xiran+Jay+Zhao&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=The+Iron+Widow+Zhao',
+          },
+        ],
+      },
+      {
+        heading: 'If you loved the lyrical prose and mythology woven into the fabric of the world...',
+        recs: [
+          {
+            title: 'The Bear and the Nightingale',
+            author: 'Katherine Arden',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781101885956-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Winternight',
+            series_number: 1,
+            series_label: 'Trilogy (3 books)',
+            audiobook: true,
+            note: "The closest Western equivalent in terms of what it does with mythology: Slavic folklore rendered not as backdrop but as living reality, a young woman who can see the old spirits when everyone around her has stopped believing in them, and prose that moves at the pace of a long Russian winter. The longing and the cold and the sense of a world with deep mythological roots beneath the surface are all there. Caveat: no celestial courts, no Chinese mythology — the cultural reference is entirely different — but readers who respond to how Tan writes will almost certainly respond to how Arden writes.",
+            tags: ['Mythology-Based', 'Lyrical Prose', 'Female Protagonist', 'Folklore', 'Slow Burn'],
+            amazon_url: 'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=The+Bear+and+the+Nightingale+Arden',
+          },
+          {
+            title: 'Uprooted',
+            author: 'Naomi Novik',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780804179034-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Open Door',
+            standalone: true,
+            audiobook: true,
+            note: "A standalone that shares Daughter of the Moon Goddess's most distinctive quality: a female protagonist who discovers the scope of her power gradually, through love and necessity rather than training montages, in a world where the magic feels genuinely old. Novik writes with the same care for prose rhythm as Tan, and the relationship between Agnieszka and the Dragon has the same slow-building charge as Xingyin and Liwei — antagonism that isn't quite antagonism, duty that isn't quite duty. Caveat: Polish folklore setting, faster pacing in the back half, and the heat is higher than anything in Tan's duology.",
+            tags: ['Lyrical Prose', 'Slow Burn', 'Female Protagonist', 'Hidden Power', 'Folklore Magic'],
+            amazon_url: 'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=Uprooted+Novik',
+          },
+        ],
+      },
+      {
+        heading: 'If you loved the slow-burn romance pulled between duty, loyalty, and longing...',
+        recs: [
+          {
+            title: 'Flame in the Mist',
+            author: 'Renée Ahdieh',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780147515940-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Flame in the Mist',
+            series_number: 1,
+            series_label: 'Duology (2 books)',
+            audiobook: true,
+            note: "Feudal Japan, a noblewoman who disguises herself to survive, and a romantic tension built on proximity and secrets rather than declarations. Ahdieh's prose has the same sensory richness as Tan's — food, fabric, incense, the weight of ceremony — and the East Asian setting means the cultural atmosphere is closer than most Western comparisons. The slow burn is real and the reveals are earned. Caveat: the pacing is slower in the first half and the magic is less central than in Daughter of the Moon Goddess.",
+            tags: ['East Asian Setting', 'Slow Burn', 'Disguise', 'Lyrical Prose', 'Duty vs Heart'],
+            amazon_url: 'https://www.amazon.com/s?k=Flame+in+the+Mist+Renee+Ahdieh&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=Flame+in+the+Mist+Ahdieh',
+          },
+          {
+            title: 'An Ember in the Ashes',
+            author: 'Sabaa Tahir',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Sweet Romance',
+            standalone: false,
+            series: 'An Ember in the Ashes',
+            series_number: 1,
+            series_label: 'Series (4 books)',
+            audiobook: true,
+            note: "Two people on opposite sides of a brutal system, pulled toward each other across a gap that loyalty and survival keep forcing wider. The structure of the romance — present from the first act, never allowed to resolve cleanly, always secondary to survival — mirrors Xingyin and Liwei's arc. Tahir is more action-focused and considerably darker in tone, but the emotional mechanics of duty pulling against feeling are identical. Caveat: no mythology-based world-building; the setting is Roman-inspired military empire, not celestial court.",
+            tags: ['Slow Burn', 'Duty vs Heart', 'Dual POV', 'Forbidden Romance', 'High Stakes'],
+            amazon_url: 'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
+            bookshop_url: 'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like The Bear and the Nightingale', slug: 'the-bear-and-the-nightingale' },
+      { title: 'Books Like Uprooted', slug: 'uprooted' },
+      { title: 'Books Like An Ember in the Ashes', slug: 'an-ember-in-the-ashes' },
     ],
   },
 ];

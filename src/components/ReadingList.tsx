@@ -41,7 +41,7 @@ export default function ReadingList() {
     const ids = getSaved();
     if (ids.length === 0) { setLoading(false); return; }
 
-    fetch('/api/books')
+    fetch('/api/books?limit=99999&sort=title-asc')
       .then((r) => r.json())
       .then((data) => {
         const all: Book[] = data.items || [];
