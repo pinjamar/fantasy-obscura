@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import type { BookInput } from '../../lib/types';
-import { createBook, getBooks } from '../../lib/db/books';
+import { createBook } from '../../lib/db/books';
 
 const normalizeBook = (payload: BookInput) => {
   const title = payload.title?.trim();
@@ -65,16 +65,17 @@ export const POST: APIRoute = async ({ request }) => {
   }
 };
 
+const BOOK_COLS = 'id,title,slug,authors,cover_url,isbn,publication_year,page_count,avg_rating,synopsis,subgenres,series,series_number,darkness_level,heat_level,series_status,audiobook_available,tropes,audience';
+
 export const GET: APIRoute = async ({ request }) => {
   try {
     const url = new URL(request.url);
-    const genre   = url.searchParams.get('genre');
     const compact = url.searchParams.get('compact') === '1';
 
-    // Compact mode: only fetch the 4 fields needed by CategoryGrid covers/slugs/ratings.
-    // Avoids transferring 30+ columns * 2000+ rows on every homepage load.
+    const { supabaseClient } = await import('../../lib/supabaseClient');
+
+    // ── Compact mode (category grids — 4 columns only) ──────────────────────
     if (compact) {
-      const { supabaseClient } = await import('../../lib/supabaseClient');
       const BATCH = 1000;
       let allBooks: unknown[] = [];
       let from = 0;
@@ -84,49 +85,67 @@ export const GET: APIRoute = async ({ request }) => {
           .select('title, slug, cover_url, avg_rating')
           .order('avg_rating', { ascending: false, nullsFirst: false })
           .range(from, from + BATCH - 1);
-        if (error) return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { 'Content-Type': 'application/json' } });
-        if (!data || data.length === 0) break;
+        if (error) return jsonError(error.message);
+        if (!data?.length) break;
         allBooks = allBooks.concat(data);
         if (data.length < BATCH) break;
         from += BATCH;
       }
-      return new Response(JSON.stringify({ items: allBooks }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return jsonOk({ items: allBooks });
     }
 
-    const filters: Record<string, unknown> = {};
+    // ── Paginated + filtered mode ────────────────────────────────────────────
+    const page      = Math.max(1, parseInt(url.searchParams.get('page')  ?? '1',  10));
+    const limit     = Math.min(100, Math.max(1, parseInt(url.searchParams.get('limit') ?? '48', 10)));
+    const sort      = url.searchParams.get('sort')      ?? 'rating-desc';
+    const search    = (url.searchParams.get('search')   ?? '').trim();
+    const genre     = url.searchParams.get('genre')     ?? '';
+    const darkness  = url.searchParams.get('darkness');
+    const heat      = url.searchParams.get('heat');
+    const trope     = url.searchParams.get('trope');
+    const audience  = url.searchParams.get('audience');
+    const standalone = url.searchParams.get('standalone') === '1';
+    const completed  = url.searchParams.get('completed')  === '1';
+
+    let query = supabaseClient.from('books').select(BOOK_COLS, { count: 'exact' });
+
+    if (search.length >= 2) {
+      query = query.or(`title.ilike.%${search}%,series.ilike.%${search}%`);
+    }
     if (genre) {
-      filters.subgenres = genre.split(',').map((g) => g.trim()).filter(Boolean);
+      const genres = genre.split(',').map((g: string) => g.trim()).filter(Boolean);
+      if (genres.length) query = query.overlaps('subgenres', genres);
+    }
+    if (darkness)   query = query.eq('darkness_level', parseInt(darkness, 10));
+    if (heat)       query = query.eq('heat_level', heat);
+    if (trope)      query = query.overlaps('tropes', [trope]);
+    if (audience)   query = query.eq('audience', audience);
+    if (standalone) query = query.is('series', null);
+    if (completed)  query = query.eq('series_status', 'completed');
+
+    switch (sort) {
+      case 'title-asc':  query = query.order('title', { ascending: true }); break;
+      case 'title-desc': query = query.order('title', { ascending: false }); break;
+      case 'newest':     query = query.order('publication_year', { ascending: false, nullsFirst: false }); break;
+      case 'oldest':     query = query.order('publication_year', { ascending: true,  nullsFirst: false }); break;
+      case 'shortest':   query = query.order('page_count',        { ascending: true,  nullsFirst: false }); break;
+      case 'longest':    query = query.order('page_count',        { ascending: false, nullsFirst: false }); break;
+      case 'author-asc': query = query.order('authors',           { ascending: true }); break;
+      default:           query = query.order('avg_rating',        { ascending: false, nullsFirst: false }); break;
     }
 
-    const BATCH = 1000;
-    let allBooks: unknown[] = [];
-    let page = 1;
-    let totalCount = 0;
+    const from = (page - 1) * limit;
+    query = query.range(from, from + limit - 1);
 
-    while (true) {
-      const result = await getBooks(filters, { page, pageSize: BATCH, sort: 'rating_desc' });
-      if (result.error) {
-        return new Response(JSON.stringify({ error: result.error }), {
-          status: 500,
-          headers: { 'Content-Type': 'application/json' },
-        });
-      }
-      if (page === 1) totalCount = result.count;
-      allBooks = allBooks.concat(result.data);
-      if (allBooks.length >= totalCount || result.data.length < BATCH) break;
-      page++;
-    }
+    const { data, error, count } = await query;
+    if (error) return jsonError(error.message);
 
-    return new Response(
-      JSON.stringify({ items: allBooks, count: totalCount }),
-      {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      },
-    );
+    return jsonOk({
+      items:      data ?? [],
+      total:      count ?? 0,
+      page,
+      totalPages: Math.ceil((count ?? 0) / limit),
+    });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Failed to load books';
     return new Response(JSON.stringify({ error: message }), {
@@ -135,3 +154,17 @@ export const GET: APIRoute = async ({ request }) => {
     });
   }
 };
+
+function jsonOk(data: object) {
+  return new Response(JSON.stringify(data), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' },
+  });
+}
+
+function jsonError(message: string, status = 500) {
+  return new Response(JSON.stringify({ error: message }), {
+    status,
+    headers: { 'Content-Type': 'application/json' },
+  });
+}

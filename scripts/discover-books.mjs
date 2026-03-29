@@ -831,12 +831,21 @@ async function main() {
   console.log(`    Target: ${LIMIT} new books\n`);
 
   // Load all existing slugs + titles + authors for fast dedup
-  const { data: existing, error: existErr } = await supabase
-    .from('books')
-    .select('slug, title, authors');
-  if (existErr) {
-    console.error(existErr.message);
-    process.exit(1);
+  const existing = [];
+  {
+    const PAGE = 1000;
+    let offset = 0;
+    while (true) {
+      const { data, error: existErr } = await supabase
+        .from('books')
+        .select('slug, title, authors')
+        .range(offset, offset + PAGE - 1);
+      if (existErr) { console.error(existErr.message); process.exit(1); }
+      if (!data?.length) break;
+      existing.push(...data);
+      if (data.length < PAGE) break;
+      offset += PAGE;
+    }
   }
 
   const existingSlugs = new Set(existing.map((b) => b.slug).filter(Boolean));

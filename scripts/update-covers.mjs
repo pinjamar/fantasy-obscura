@@ -90,15 +90,23 @@ async function fetchOpenLibraryCover(title, authors) {
 async function main() {
   console.log(`\n🖼️  Fantasy Obscura — Cover Updater${DRY_RUN ? ' [DRY RUN]' : ''}${FORCE ? ' [FORCE]' : ''}\n`);
 
-  // Fetch all books
-  const { data: books, error } = await supabase
-    .from('books')
-    .select('id, title, authors, cover_url')
-    .order('title');
-
-  if (error) {
-    console.error('Supabase error:', error.message);
-    process.exit(1);
+  // Fetch all books (paginated to bypass Supabase 1000-row cap)
+  const books = [];
+  {
+    const PAGE = 1000;
+    let offset = 0;
+    while (true) {
+      const { data, error } = await supabase
+        .from('books')
+        .select('id, title, authors, cover_url')
+        .order('title')
+        .range(offset, offset + PAGE - 1);
+      if (error) { console.error('Supabase error:', error.message); process.exit(1); }
+      if (!data?.length) break;
+      books.push(...data);
+      if (data.length < PAGE) break;
+      offset += PAGE;
+    }
   }
 
   const targets = FORCE ? books : books.filter((b) => !b.cover_url);

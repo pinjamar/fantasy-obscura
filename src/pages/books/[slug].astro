@@ -194,35 +194,10 @@ function upgradeCoverUrl(url: string | null | undefined): string {
           class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-zinc-900 text-sm font-semibold transition-colors">
           🛒 Buy on Amazon
         </a>
-        <!-- More stores dropdown — hidden until affiliate links are set up -->
-        <div class="relative hidden" id="stores-wrap">
-          <button id="stores-toggle" class="group relative flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 hover:border-emerald-300 text-emerald-700 text-sm font-semibold transition-all">
-            <span>🏪 More stores</span>
-            <svg id="stores-chevron" class="absolute right-3 w-3.5 h-3.5 opacity-60 group-hover:opacity-100" style="transition:transform 0.2s" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div id="stores-menu" class="hidden absolute left-0 right-0 mt-1.5 rounded-xl border border-emerald-200 bg-emerald-50 shadow-2xl z-20 overflow-hidden">
-            <div class="divide-y divide-emerald-200">
-              <a href={bookshopUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
-                <span class="text-base leading-none">🏪</span> Bookshop.org
-              </a>
-              <a href={thriftBooksUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
-                <span class="text-base leading-none">💰</span> ThriftBooks
-              </a>
-              <a href={appleBooksUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
-                <span class="text-base leading-none">🍎</span> Apple Books
-              </a>
-              <a href={koboUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
-                <span class="text-base leading-none">📱</span> Kobo
-              </a>
-              <a href={waterstonesUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
-                <span class="text-base leading-none">🏰</span> Waterstones
-              </a>
-              <a href={worderyUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-3 py-2.5 hover:bg-emerald-100 hover:text-emerald-800 text-sm text-emerald-700 font-medium transition-colors">
-                <span class="text-base leading-none">🌍</span> Wordery
-              </a>
-            </div>
-          </div>
-        </div>
+        <a href={bookshopUrl} target="_blank" rel="noopener noreferrer"
+          class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 hover:border-emerald-300 text-emerald-700 text-sm font-semibold transition-colors">
+          🏪 Bookshop.org
+        </a>
         <AddToShelf client:load bookId={book.id} userId={Astro.locals.user?.id ?? null} block />
       </div>
     </div>
@@ -367,16 +342,26 @@ function upgradeCoverUrl(url: string | null | undefined): string {
               <span class={`text-xs font-semibold px-2.5 py-1 rounded-full border ${r.color}`}>{r.label}</span>
             ) : null;
           })()}
-          {book.audiobook_audible_url && book.audiobook_audible_url !== 'none' && (
+          <div class="flex items-center gap-2 shrink-0">
+            {book.audiobook_audible_url && book.audiobook_audible_url !== 'none' && (
+              <a
+                href={book.audiobook_audible_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-white text-xs font-semibold transition-colors"
+              >
+                🎧 Audible
+              </a>
+            )}
             <a
-              href={book.audiobook_audible_url}
+              href={`https://libro.fm/search#q=${encodeURIComponent(book.isbn ?? (book.title ?? '') + ' ' + (book.authors?.[0] ?? ''))}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-400 hover:bg-orange-500 text-white text-xs font-semibold transition-colors"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition-colors"
             >
-              🎧 Listen on Audible
+              🎙️ Libro.fm
             </a>
-          )}
+          </div>
         </div>
       )}
 

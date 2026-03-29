@@ -187,20 +187,36 @@ async function fetchTwitterFromWikidata(wikidataId) {
 // ─── Supabase helpers ────────────────────────────────────────────────────────
 
 async function getAllAuthorNames() {
-  const { data, error } = await supabase.from('books').select('authors');
-  if (error) throw new Error(`Supabase: ${error.message}`);
+  const PAGE = 1000;
   const names = new Set();
-  for (const row of data ?? []) {
-    for (const n of row.authors ?? []) {
-      if (n?.trim()) names.add(n.trim());
+  let offset = 0;
+  while (true) {
+    const { data, error } = await supabase.from('books').select('authors').range(offset, offset + PAGE - 1);
+    if (error) throw new Error(`Supabase: ${error.message}`);
+    if (!data || data.length === 0) break;
+    for (const row of data) {
+      for (const n of row.authors ?? []) {
+        if (n?.trim()) names.add(n.trim());
+      }
     }
+    if (data.length < PAGE) break;
+    offset += PAGE;
   }
   return [...names].sort((a, b) => a.localeCompare(b));
 }
 
 async function getExistingProfiles() {
-  const { data } = await supabase.from('authors').select('slug, photo_url');
-  return new Map((data ?? []).map((r) => [r.slug, r.photo_url]));
+  const PAGE = 1000;
+  const rows = [];
+  let offset = 0;
+  while (true) {
+    const { data } = await supabase.from('authors').select('slug, photo_url').range(offset, offset + PAGE - 1);
+    if (!data?.length) break;
+    rows.push(...data);
+    if (data.length < PAGE) break;
+    offset += PAGE;
+  }
+  return new Map(rows.map((r) => [r.slug, r.photo_url]));
 }
 
 // ─── main ────────────────────────────────────────────────────────────────────

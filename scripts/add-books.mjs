@@ -261,12 +261,21 @@ async function main() {
   console.log(`\n📚 Fantasy Obscura — Add Books (${books.length} to process)\n`);
 
   // Fetch existing books for dedup
-  const { data: existing, error: existErr } = await supabase
-    .from('books')
-    .select('slug, title');
-  if (existErr) {
-    console.error('Supabase error:', existErr.message);
-    process.exit(1);
+  const existing = [];
+  {
+    const PAGE = 1000;
+    let offset = 0;
+    while (true) {
+      const { data, error: existErr } = await supabase
+        .from('books')
+        .select('slug, title')
+        .range(offset, offset + PAGE - 1);
+      if (existErr) { console.error('Supabase error:', existErr.message); process.exit(1); }
+      if (!data?.length) break;
+      existing.push(...data);
+      if (data.length < PAGE) break;
+      offset += PAGE;
+    }
   }
   const existingSlugs  = new Set(existing.map((b) => b.slug).filter(Boolean));
   const existingTitles = new Set(existing.map((b) => b.title.toLowerCase().trim()));

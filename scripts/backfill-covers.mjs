@@ -71,17 +71,23 @@ async function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-// Fetch books needing covers
-let query = supabase.from('books').select('id, slug, title, isbn, authors, cover_url');
-if (!ALL) {
-  query = query.is('cover_url', null);
-} else {
-  // fetch all and filter client-side (Supabase can't OR across LIKE patterns easily)
-  // We'll over-fetch and filter below
+// Fetch books needing covers (paginated to bypass Supabase 1000-row cap)
+const books = [];
+{
+  const PAGE = 1000;
+  let offset = 0;
+  while (true) {
+    let q = supabase.from('books').select('id, slug, title, isbn, authors, cover_url').order('title');
+    if (!ALL) q = q.is('cover_url', null);
+    q = q.range(offset, offset + PAGE - 1);
+    const { data, error } = await q;
+    if (error) { console.error('DB error:', error.message); process.exit(1); }
+    if (!data?.length) break;
+    books.push(...data);
+    if (data.length < PAGE) break;
+    offset += PAGE;
+  }
 }
-
-const { data: books, error } = await query.order('title');
-if (error) { console.error('DB error:', error.message); process.exit(1); }
 
 const targets = ALL
   ? books.filter((b) => isBadCover(b.cover_url))

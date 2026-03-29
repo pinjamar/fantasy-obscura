@@ -1107,7 +1107,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         books: [
           { title: 'The Wilful Princess and the Piebald Prince', slug: 'the-wilful-princess-and-the-piebald-prince', status: 'supplementary', note: 'Novella (~64 pages) telling the history of how the Wit became a persecuted magic in the Six Duchies — the backstory the Tawny Man trilogy references but never fully explains. Read between Tawny Man and Fitz & the Fool, or before Fool\'s Errand.', page_count: 64, publication_year: 2013 },
           { title: "Fool's Errand",   slug: 'fools-errand',   status: 'mandatory', note: 'Fitz returns, fifteen years later. The Fitz/Fool relationship is now the emotional core of the entire sequence.',                   page_count: 661, publication_year: 2001 },
-          { title: 'The Golden Fool', slug: 'the-golden-fool', status: 'mandatory', note: "Court intrigue, the Wit persecutions, and the Fool's identity pulled into sharp focus.",                                           page_count: 688, publication_year: 2002 },
+          { title: 'Golden Fool', slug: 'golden-fool', status: 'mandatory', note: "Court intrigue, the Wit persecutions, and the Fool's identity pulled into sharp focus.",                                           page_count: 688, publication_year: 2002 },
           { title: "Fool's Fate",     slug: 'fools-fate',     status: 'mandatory', note: "The conclusion of the Tawny Man — and arguably of the Fitz arc as a whole. Hobb goes further emotionally than most readers expect.", page_count: 896, publication_year: 2003 },
         ],
       },

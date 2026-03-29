@@ -2,13 +2,13 @@
  * fill-audiobooks.mjs
  *
  * Two-source audiobook detection:
- *   1. Google Books API — live lookup across all editions for audiobook signals,
- *      narrator name, and runtime. Most reliable for popular titles.
- *   2. Gemini — knowledge-base fallback for books Google Books misses, plus
- *      narrator rating (community reception) for every confirmed audiobook.
+ *   1. Gemini batch — cheap pre-filter across all books (8 per call).
+ *      Only books Gemini confirms proceed to step 2.
+ *   2. Google Books API — enrichment only for Gemini-confirmed titles.
+ *      Adds narrator name and runtime where available.
  *
- * If EITHER source confirms an audiobook exists → audiobook_available = true.
- * Google Books narrator/hours take priority; Gemini fills gaps.
+ * Gemini is the gate; Google Books enriches. Avoids per-book API calls
+ * on the majority of books that have no audiobook.
  *
  *   - audiobook_available:       boolean
  *   - audiobook_narrator:        string | null
@@ -247,38 +247,15 @@ async function main() {
 
   console.log(`Processing ${books.length} books\n`);
 
-  // ── Step 1: Google Books lookup for all books ──────────────────────────────
-  console.log('── Step 1: Google Books live lookup ──\n');
-
-  const gbResults = new Map(); // id → { available, narrator, hours, source }
-
-  for (let i = 0; i < books.length; i++) {
-    const book = books[i];
-    process.stdout.write(`[${i + 1}/${books.length}] ${book.title.slice(0, 45).padEnd(45)} `);
-
-    try {
-      const result = await lookupGoogleBooks(book.title, book.authors);
-      gbResults.set(book.id, result);
-      console.log(result.available
-        ? `✓ GB: ${result.narrator ?? 'narrator?'} · ${result.hours ?? '?'}h`
-        : `— not found`);
-    } catch (err) {
-      console.log(`✗ ${err.message}`);
-      gbResults.set(book.id, { available: false, narrator: null, hours: null, source: null });
-    }
-  }
-
-  // ── Step 2: Gemini batch for books Google Books didn't confirm ─────────────
-  const needsGemini = books.filter((b) => !gbResults.get(b.id)?.available);
-
-  console.log(`\n── Step 2: Gemini fallback (${needsGemini.length} books not confirmed by Google Books) ──\n`);
+  // ── Step 1: Gemini batch — cheap pre-filter ───────────────────────────────
+  console.log('── Step 1: Gemini batch pre-filter ──\n');
 
   const geminiResults = new Map(); // id → { available, narrator, hours }
 
-  for (let i = 0; i < needsGemini.length; i += BATCH_SIZE) {
-    const batch = needsGemini.slice(i, i + BATCH_SIZE);
+  for (let i = 0; i < books.length; i += BATCH_SIZE) {
+    const batch = books.slice(i, i + BATCH_SIZE);
     const batchNum = Math.floor(i / BATCH_SIZE) + 1;
-    const totalBatches = Math.ceil(needsGemini.length / BATCH_SIZE);
+    const totalBatches = Math.ceil(books.length / BATCH_SIZE);
     process.stdout.write(`Batch ${batchNum}/${totalBatches} … `);
 
     try {
@@ -303,6 +280,29 @@ async function main() {
     await sleep(900);
   }
 
+  // ── Step 2: Google Books — only for Gemini-confirmed audiobooks ────────────
+  const needsGB = books.filter((b) => geminiResults.get(b.id)?.available);
+
+  console.log(`\n── Step 2: Google Books enrichment (${needsGB.length} confirmed by Gemini) ──\n`);
+
+  const gbResults = new Map(); // id → { available, narrator, hours, source }
+
+  for (let i = 0; i < needsGB.length; i++) {
+    const book = needsGB[i];
+    process.stdout.write(`[${i + 1}/${needsGB.length}] ${book.title.slice(0, 45).padEnd(45)} `);
+
+    try {
+      const result = await lookupGoogleBooks(book.title, book.authors);
+      gbResults.set(book.id, result);
+      console.log(result.available
+        ? `✓ GB: ${result.narrator ?? 'narrator?'} · ${result.hours ?? '?'}h`
+        : `— not enriched`);
+    } catch (err) {
+      console.log(`✗ ${err.message}`);
+      gbResults.set(book.id, { available: false, narrator: null, hours: null, source: null });
+    }
+  }
+
   // ── Step 3: Merge results + get narrator ratings for confirmed audiobooks ──
   console.log('\n── Step 3: Narrator ratings + DB write ──\n');
 
@@ -311,15 +311,15 @@ async function main() {
   let failed   = 0;
 
   for (const book of books) {
-    const gb     = gbResults.get(book.id) ?? { available: false, narrator: null, hours: null };
     const gemini = geminiResults.get(book.id) ?? { available: false, narrator: null, hours: null };
+    const gb     = gbResults.get(book.id) ?? { available: false, narrator: null, hours: null };
 
-    // Either source confirming = available
-    const available = gb.available || gemini.available;
+    // Gemini is the gate; GB enriches narrator/hours when available
+    const available = gemini.available;
     // Prefer Google Books for narrator/hours, fall back to Gemini
     const narrator  = gb.narrator ?? gemini.narrator ?? null;
     const hours     = gb.hours ?? gemini.hours ?? null;
-    const source    = gb.available ? 'GB' : (gemini.available ? 'Gemini' : null);
+    const source    = gb.available ? 'GB+Gemini' : (gemini.available ? 'Gemini' : null);
 
     let narratorRating = null;
     if (available && narrator && !DRY_RUN) {

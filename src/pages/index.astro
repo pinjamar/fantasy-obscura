@@ -2,6 +2,25 @@
 import Layout from "../components/Layout.astro";
 import CategoryGrid from "../components/CategoryGrid";
 import BookSearch from "../components/BookSearch";
+import { supabaseClient } from '../lib/supabaseClient';
+
+// Prefetch compact book data server-side so CategoryGrid has covers on first paint
+const initialBooks: { title: string; slug: string | null; cover_url: string | null; avg_rating: number | null }[] = [];
+{
+  const PAGE = 1000;
+  let from = 0;
+  while (true) {
+    const { data } = await supabaseClient
+      .from('books')
+      .select('title, slug, cover_url, avg_rating')
+      .order('avg_rating', { ascending: false, nullsFirst: false })
+      .range(from, from + PAGE - 1);
+    if (!data?.length) break;
+    initialBooks.push(...data as typeof initialBooks);
+    if (data.length < PAGE) break;
+    from += PAGE;
+  }
+}
 ---
 
 <Layout title="The Grimoire - Fantasy Book Guides & Reading Orders" description="Fantasy book guides with darkness ratings, trope tags, and reading orders — so you always know what you're getting into before you start.">
@@ -32,7 +51,7 @@ import BookSearch from "../components/BookSearch";
 
   <BookSearch client:load />
 
-  <CategoryGrid client:load />
+  <CategoryGrid client:load initialBooks={initialBooks} />
 
   <!-- Static prose: SEO content, word count, h2 bridge -->
   <section class="hidden sm:grid mt-16 border-t pt-10 grid-cols-2 gap-10 text-sm text-zinc-600 leading-relaxed">

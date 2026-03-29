@@ -146,16 +146,27 @@ console.log(`\n📚 Backfill ISBN${DRY_RUN ? ' [DRY RUN]' : ''}${LIMIT ? ` [limi
 
 const attempted = loadAttempted();
 
-let query = supabase
-  .from('books')
-  .select('slug, title, authors')
-  .is('isbn', null)
-  .order('title');
-
-if (LIMIT) query = query.limit(LIMIT);
-
-const { data: books, error } = await query;
-if (error) { console.error('DB error:', error.message); process.exit(1); }
+const books = [];
+{
+  const PAGE = 1000;
+  let offset = 0;
+  while (true) {
+    let q = supabase
+      .from('books')
+      .select('slug, title, authors')
+      .is('isbn', null)
+      .order('title')
+      .range(offset, offset + PAGE - 1);
+    const { data, error } = await q;
+    if (error) { console.error('DB error:', error.message); process.exit(1); }
+    if (!data?.length) break;
+    books.push(...data);
+    if (data.length < PAGE) break;
+    offset += PAGE;
+    if (LIMIT && books.length >= LIMIT) break;
+  }
+  if (LIMIT && books.length > LIMIT) books.splice(LIMIT);
+}
 
 const toProcess = books.filter(b => !attempted.has(b.slug));
 console.log(`Books missing ISBN: ${books.length} (${books.length - toProcess.length} already attempted, skipping)\n`);

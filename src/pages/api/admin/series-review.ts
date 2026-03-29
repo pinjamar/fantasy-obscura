@@ -3,6 +3,10 @@ import { createClient } from '@supabase/supabase-js';
 import type { SeriesReviewAction } from '../../../types/series-detect';
 
 export const POST: APIRoute = async ({ request }) => {
+  if (request.headers.get('x-admin-key') !== import.meta.env.ADMIN_SECRET) {
+    return json({ error: 'Unauthorized' }, 401);
+  }
+
   const supabase = createClient(
     import.meta.env.PUBLIC_SUPABASE_URL,
     import.meta.env.SUPABASE_SERVICE_ROLE_KEY,

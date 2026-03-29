@@ -20,17 +20,41 @@ const supabase = createClient(
 async function main() {
   console.log('🔍 Checking for orphaned authors...\n');
 
-  // 1. Get all author slugs from the authors table
-  const { data: authorRows, error: authErr } = await supabase
-    .from('authors')
-    .select('id, name, slug');
-  if (authErr) throw new Error(`authors fetch: ${authErr.message}`);
+  // 1. Get all author slugs from the authors table (paginated)
+  const authorRows = [];
+  {
+    const PAGE = 1000;
+    let offset = 0;
+    while (true) {
+      const { data, error: authErr } = await supabase
+        .from('authors')
+        .select('id, name, slug')
+        .range(offset, offset + PAGE - 1);
+      if (authErr) throw new Error(`authors fetch: ${authErr.message}`);
+      if (!data?.length) break;
+      authorRows.push(...data);
+      if (data.length < PAGE) break;
+      offset += PAGE;
+    }
+  }
 
-  // 2. Get all unique author names from books.authors[]
-  const { data: bookRows, error: bookErr } = await supabase
-    .from('books')
-    .select('authors');
-  if (bookErr) throw new Error(`books fetch: ${bookErr.message}`);
+  // 2. Get all unique author names from books.authors[] (paginated)
+  const bookRows = [];
+  {
+    const PAGE = 1000;
+    let offset = 0;
+    while (true) {
+      const { data, error: bookErr } = await supabase
+        .from('books')
+        .select('authors')
+        .range(offset, offset + PAGE - 1);
+      if (bookErr) throw new Error(`books fetch: ${bookErr.message}`);
+      if (!data?.length) break;
+      bookRows.push(...data);
+      if (data.length < PAGE) break;
+      offset += PAGE;
+    }
+  }
 
   const activeNames = new Set(
     (bookRows ?? []).flatMap((b) => b.authors ?? []).map((n) => n.trim()),
