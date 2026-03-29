@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { normalizeCoverUrl } from '../lib/covers';
+import { READING_ORDER_IMAGE_SLUG } from '../data/image-map';
 
 interface Category {
   slug: string;
@@ -586,6 +587,7 @@ const categorySubgenreMap: Record<string, string[]> = {
 
 export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem[] }) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [showAllCats, setShowAllCats] = useState(false);
 
   const buildMaps = (items: BookItem[]) => {
     const covers = new Map<string, string>();
@@ -693,14 +695,14 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
           </a>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
-          {categories.map((cat) => (
+          {categories.map((cat, i) => (
             <button
               key={cat.slug}
               onClick={() => setSelectedCategory(selectedCategory === cat.slug ? null : cat.slug)}
               onDoubleClick={() => { window.location.href = `/fantasy/${cat.slug}/`; }}
               className={`group relative overflow-hidden rounded-xl border border-zinc-300 p-4 transition-all shadow-sm hover:shadow-lg text-center ${
                 selectedCategory === cat.slug ? 'ring-2 ring-blue-500 shadow-lg' : ''
-              }`}
+              } ${i >= 6 && !showAllCats ? 'hidden sm:block' : ''}`}
             >
               <div className={`absolute inset-0 bg-linear-to-br ${cat.gradient} transition-opacity ${selectedCategory === cat.slug ? 'opacity-100' : 'opacity-30 group-hover:opacity-100'}`} />
               <div className="relative">
@@ -709,6 +711,14 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
               </div>
             </button>
           ))}
+          {!showAllCats && (
+            <button
+              onClick={() => setShowAllCats(true)}
+              className="sm:hidden rounded-xl border border-zinc-200 p-4 text-sm text-zinc-500 hover:text-zinc-700 hover:border-zinc-300 transition-colors"
+            >
+              Show all categories ↓
+            </button>
+          )}
         </div>
       </div>
 
@@ -728,15 +738,28 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
           {(() => {
             const slug = getSlug(bowEntry.title);
             const cover = getCoverSrc(bowEntry.title);
+            const q = encodeURIComponent(`${bowEntry.title} ${bowEntry.author}`);
+            const amazonUrl = `https://www.amazon.com/s?k=${q}&tag=librariancura-20`;
             const inner = (
               <div className="flex gap-4 items-start">
-                <div className="shrink-0 w-20 h-30 rounded-lg overflow-hidden shadow-md">
-                  <img
-                    src={cover}
-                    alt={bowEntry.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/grimplaceholder.png'; }}
-                  />
+                <div className="shrink-0 flex flex-col items-center gap-1.5">
+                  <div className="w-20 h-30 rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src={cover}
+                      alt={bowEntry.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/grimplaceholder.png'; }}
+                    />
+                  </div>
+                  <a
+                    href={amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-full text-center text-[11px] font-medium bg-amber-300/70 hover:bg-amber-400/80 text-amber-900 px-2 py-0.5 rounded-full transition-colors"
+                  >
+                    Amazon
+                  </a>
                 </div>
                 <div className="min-w-0">
                   <p className="font-bold text-amber-900 leading-snug">{bowEntry.title}</p>
@@ -849,16 +872,32 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
             <a href="/reading-orders/" className="ml-auto text-xs font-medium text-indigo-600 hover:text-indigo-800 hover:underline">View all →</a>
           </div>
           <div className="flex gap-2.5 overflow-x-auto -mx-1 px-1 py-1" style={{ scrollbarWidth: 'none' }}>
-            {readingOrders.slice(0, 6).map((s) => (
-              <a
-                key={s.slug}
-                href={`/reading-orders/${s.slug}/`}
-                className={`shrink-0 w-36 rounded-xl border p-3 bg-linear-to-br ${s.color} hover:shadow-md transition-all hover:scale-[1.02]`}
-              >
-                <p className={`font-semibold text-xs leading-snug ${s.text}`}>{s.name}</p>
-                <p className="mt-1 text-[11px] text-zinc-500">{s.bookCount} books</p>
-              </a>
-            ))}
+            {readingOrders.slice(0, 6).map((s) => {
+              const imgSlug = READING_ORDER_IMAGE_SLUG[s.slug];
+              return (
+                <a
+                  key={s.slug}
+                  href={`/reading-orders/${s.slug}/`}
+                  className="relative shrink-0 w-36 h-48 rounded-xl border overflow-hidden hover:shadow-md transition-all hover:scale-[1.02]"
+                >
+                  {imgSlug ? (
+                    <img
+                      src={`/images/reading-orders/${imgSlug}-400.webp`}
+                      alt={s.name}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className={`w-full h-full bg-linear-to-br ${s.color}`} />
+                  )}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-2.5">
+                    <p className="font-semibold text-xs leading-snug text-white">{s.name}</p>
+                    <p className="mt-0.5 text-[10px] text-white/70">{s.bookCount} books</p>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
 

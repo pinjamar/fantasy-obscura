@@ -98,10 +98,10 @@
 76. ✅ Books like Shadow and Bone
 77. ✅ Books like An Ember in the Ashes
 78. ✅ Books like City of Brass
-79. Books like Children of Blood and Bone
+79. ✅ Books like Children of Blood and Bone
 80. Books like The Gilded Wolves
 81. Books like Fireborne
-82. Books like Daughter of the Moon Goddess
+82. ✅ Books like Daughter of the Moon Goddess
 83. Books like Legendborn
 84. Books like Skyward (Sanderson)
 85. Books like The Chronicles of Narnia
@@ -110,7 +110,7 @@
 ### Cozy Fantasy & Heartwarming (14)
 87. Books like A Psalm for the Wild-Built
 88. Books like The Very Secret Society of Irregular Witches
-89. Books like Emily Wilde's Encyclopaedia of Faeries
+89. ✅ Books like Emily Wilde's Encyclopaedia of Faeries
 90. Books like Witch of Wild Things
 91. Books like Thornhedge
 92. Books like Nettle and Bone
@@ -143,7 +143,7 @@
 115. Books like The Long Way to a Small Angry Planet
 
 ### Classic & Foundational Fantasy (10)
-116. Books like A Wizard of Earthsea
+116. ✅ Books like A Wizard of Earthsea
 117. Books like The Belgariad (David Eddings)
 118. Books like The Sword of Truth (Terry Goodkind)
 119. Books like The Once and Future King

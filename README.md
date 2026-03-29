@@ -39,6 +39,7 @@ GOOGLE_KG_API_KEY=your_google_knowledge_graph_api_key   # optional, for seed-aut
 - `GEMINI_API_KEY` — required for all classify scripts, all generate scripts, and the AI recommendation API (`/api/recommend`)
 - `GOOGLE_BOOKS_API_KEY` — required for `discover-books`, `fill-series`, `fill-audiobooks`, `fill-ratings`
 - `GOOGLE_KG_API_KEY` — optional, improves author photo/bio quality in `seed-authors`
+- `HARDCOVER_API_KEY` — optional (`Bearer <token>`), used by `seed-authors`, `backfill-covers`, `fill-ratings`, `detect-series`, `backfill-metadata`
 
 ## Database Setup
 
@@ -230,11 +231,12 @@ Three-pass pipeline that fills `series` / `series_number` for the books that `au
 - < 0.60 → skipped
 
 ```bash
-node scripts/detect-series.mjs --dry-run       # preview all three passes, no writes
+node scripts/detect-series.mjs --dry-run       # preview all passes, no writes
 node scripts/detect-series.mjs --pass-1        # regex only (free)
 node scripts/detect-series.mjs --pass-2 --limit 500   # Google Books (cap at 500)
+node scripts/detect-series.mjs --pass-2.5      # Hardcover lookup (requires HARDCOVER_API_KEY)
 node scripts/detect-series.mjs --pass-3        # LLM only
-node scripts/detect-series.mjs                 # run all three passes
+node scripts/detect-series.mjs                 # run all passes
 node scripts/detect-series.mjs --include-pending      # re-run on pending books too
 ```
 
@@ -314,11 +316,18 @@ npm run covers                               # fill only missing
 npm run covers -- --force                   # refresh all
 npm run covers -- --dry-run
 
-# Fill Goodreads avg_rating for books where it's NULL
+# Fill avg_rating — Hardcover (real community data) first, Gemini fallback
 node scripts/fill-ratings.mjs
 node scripts/fill-ratings.mjs --dry-run
 node scripts/fill-ratings.mjs --limit 50
 node scripts/fill-ratings.mjs --all          # overwrite existing
+
+# Fill missing page_count and/or publication_year via Hardcover
+node scripts/backfill-metadata.mjs
+node scripts/backfill-metadata.mjs --dry-run
+node scripts/backfill-metadata.mjs --pages-only
+node scripts/backfill-metadata.mjs --year-only
+node scripts/backfill-metadata.mjs --limit 100
 ```
 
 ---
@@ -368,6 +377,9 @@ Populates the authors table with bio, photo, website and social links from Open 
 node scripts/seed-authors.js
 node scripts/seed-authors.js --dry-run
 node scripts/seed-authors.js --only-missing   # skip authors who already have a photo_url
+
+# Recalculate book_count, top_genres, avg_rating for all authors (run after adding new books)
+node scripts/update-author-stats.mjs
 
 # Remove authors with no books in the DB
 node scripts/cleanup-authors.js              # dry run — lists orphans

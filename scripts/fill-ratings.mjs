@@ -17,6 +17,7 @@
 import { getGeminiModel } from './lib/gemini.mjs';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
+import { fetchHardcoverBook } from './lib/hardcover.mjs';
 
 config();
 
@@ -91,16 +92,53 @@ async function main() {
   }
 
   console.log(`Found ${books.length} books to process`);
-  console.log(`  Batch size: ${BATCH_SIZE}  ·  Batches: ${Math.ceil(books.length / BATCH_SIZE)}\n`);
 
-  let updated = 0;
+  // ── Phase 1: Hardcover (real community ratings) ───────────────────────────
+  const hcKey = process.env.HARDCOVER_API_KEY;
+  const geminiInput = [];
+  let hcUpdated = 0;
+
+  if (hcKey) {
+    console.log(`\n── Phase 1: Hardcover ratings ───────────────────────────────────────────\n`);
+    for (let i = 0; i < books.length; i++) {
+      const book = books[i];
+      process.stdout.write(`\r   ${i + 1}/${books.length} — ${book.title.slice(0, 50)}`);
+      const hc = await fetchHardcoverBook(book.title, book.authors);
+      await sleep(300);
+
+      if (hc?.rating != null && (hc.ratings_count ?? 0) >= 50) {
+        if (!DRY_RUN) {
+          const { error } = await supabase.from('books').update({ avg_rating: hc.rating }).eq('id', book.id);
+          if (!error) hcUpdated++;
+        } else {
+          hcUpdated++;
+        }
+      } else {
+        geminiInput.push(book);
+      }
+    }
+    console.log(`\n\n   Hardcover: ${hcUpdated} rated, ${geminiInput.length} sent to Gemini\n`);
+  } else {
+    geminiInput.push(...books);
+  }
+
+  // ── Phase 2: Gemini fallback ───────────────────────────────────────────────
+  if (!geminiInput.length) {
+    console.log('✅ All ratings filled by Hardcover.\n');
+    return;
+  }
+
+  console.log(`── Phase 2: Gemini fallback (${geminiInput.length} books) ───────────────────────────\n`);
+  console.log(`  Batch size: ${BATCH_SIZE}  ·  Batches: ${Math.ceil(geminiInput.length / BATCH_SIZE)}\n`);
+
+  let updated = hcUpdated;
   let noData  = 0;
   let failed  = 0;
 
-  for (let i = 0; i < books.length; i += BATCH_SIZE) {
-    const batch        = books.slice(i, i + BATCH_SIZE);
+  for (let i = 0; i < geminiInput.length; i += BATCH_SIZE) {
+    const batch        = geminiInput.slice(i, i + BATCH_SIZE);
     const batchNum     = Math.floor(i / BATCH_SIZE) + 1;
-    const totalBatches = Math.ceil(books.length / BATCH_SIZE);
+    const totalBatches = Math.ceil(geminiInput.length / BATCH_SIZE);
 
     process.stdout.write(`Batch ${batchNum}/${totalBatches}  `);
 

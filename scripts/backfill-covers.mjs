@@ -12,6 +12,7 @@
 
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
+import { fetchHardcoverBook } from './lib/hardcover.mjs';
 
 config();
 
@@ -99,7 +100,17 @@ let updated = 0;
 let skipped = 0;
 
 for (const book of targets) {
-  const cover = await fetchGoogleBooksCover(book.isbn, book.title, book.authors);
+  let cover = await fetchGoogleBooksCover(book.isbn, book.title, book.authors);
+  await sleep(200);
+
+  // Hardcover fallback
+  if (!cover) {
+    const hc = await fetchHardcoverBook(book.title, book.authors);
+    cover = hc?.cover_url ?? null;
+    if (cover) console.log(`  [HC] ${book.title}`);
+    await sleep(300);
+  }
+
   if (!cover) {
     console.log(`  ✗ ${book.title} — no cover found (isbn: ${book.isbn ?? 'none'})`);
     skipped++;
@@ -115,8 +126,6 @@ for (const book of targets) {
       else updated++;
     }
   }
-  // Respect Google Books API rate limit (~1 req/sec is safe)
-  await sleep(200);
 }
 
 console.log(`\nDone. Updated: ${updated}, No cover found: ${skipped}`);

@@ -24,9 +24,10 @@
 
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
-import { regexDetect }  from './lib/series/regex-pass.mjs';
-import { googleDetect } from './lib/series/google-pass.mjs';
-import { llmDetect }    from './lib/series/llm-pass.mjs';
+import { regexDetect }      from './lib/series/regex-pass.mjs';
+import { googleDetect }     from './lib/series/google-pass.mjs';
+import { llmDetect }        from './lib/series/llm-pass.mjs';
+import { fetchHardcoverBook } from './lib/hardcover.mjs';
 
 config();
 
@@ -34,14 +35,16 @@ config();
 const DRY_RUN         = process.argv.includes('--dry-run');
 const PASS_1_ONLY     = process.argv.includes('--pass-1');
 const PASS_2_ONLY     = process.argv.includes('--pass-2');
+const PASS_25_ONLY    = process.argv.includes('--pass-2.5');
 const PASS_3_ONLY     = process.argv.includes('--pass-3');
 const INCL_PENDING    = process.argv.includes('--include-pending');
 const limitIdx        = process.argv.indexOf('--limit');
 const LIMIT           = limitIdx !== -1 ? parseInt(process.argv[limitIdx + 1], 10) : null;
 
-const RUN_ALL  = !PASS_1_ONLY && !PASS_2_ONLY && !PASS_3_ONLY;
+const RUN_ALL  = !PASS_1_ONLY && !PASS_2_ONLY && !PASS_25_ONLY && !PASS_3_ONLY;
 const RUN_P1   = RUN_ALL || PASS_1_ONLY;
 const RUN_P2   = RUN_ALL || PASS_2_ONLY;
+const RUN_P25  = RUN_ALL || PASS_25_ONLY;
 const RUN_P3   = RUN_ALL || PASS_3_ONLY;
 
 // ── Confidence thresholds ─────────────────────────────────────────────────────
@@ -191,6 +194,34 @@ if (RUN_P2) {
 
   pass3Input = pass2Input.filter(b => !googleResolved.has(b.slug));
   console.log(`\n   Pass 2 done — ${detections.length} matched, ${pass3Input.length} remaining\n`);
+}
+
+// ── Pass 2.5: Hardcover ───────────────────────────────────────────────────────
+let hcResolved = new Set();
+
+if (RUN_P25 && process.env.HARDCOVER_API_KEY) {
+  const input = RUN_ALL ? pass3Input : allBooks;
+  console.log('── Pass 2.5: Hardcover (title lookup) ───────────────────────────────────\n');
+  console.log(`   Books to check: ${input.length}\n`);
+
+  for (const book of input) {
+    const hc = await fetchHardcoverBook(book.title, book.authors);
+    await sleep(300);
+    if (!hc?.series_name) continue;
+
+    // Hardcover series data is high confidence when from a known database
+    const confidence = hc.series_number != null ? 0.92 : 0.80;
+    await applyDetection(book, {
+      series_name:   hc.series_name,
+      series_number: hc.series_number,
+      confidence,
+      source: 'hardcover',
+    });
+    hcResolved.add(book.slug);
+  }
+
+  pass3Input = input.filter(b => !hcResolved.has(b.slug));
+  console.log(`\n   Pass 2.5 done — ${hcResolved.size} matched, ${pass3Input.length} remaining\n`);
 }
 
 // ── Pass 3: LLM ──────────────────────────────────────────────────────────────

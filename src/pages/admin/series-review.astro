@@ -208,57 +208,57 @@ function href(params: Record<string, string | number>) {
       </>
     )}
 
-    <script is:inline define:vars={{ adminKey }}>
-      async function act(slug, action) {
-        const row = document.getElementById('row-' + slug);
-        const seriesName = document.getElementById('series-' + slug)?.value?.trim();
-        const numRaw = document.getElementById('num-' + slug)?.value;
-        const seriesNumber = numRaw ? parseFloat(numRaw) : null;
-
-        row.querySelectorAll('.btn').forEach(b => b.disabled = true);
-
-        const res = await fetch('/api/admin/series-review', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey },
-          body: JSON.stringify({ slug, action, series_name: seriesName, series_number: seriesNumber }),
-        });
-
-        if (res.ok) {
-          row.classList.add('done');
-          setTimeout(() => row.remove(), 600);
-        } else {
-          const err = await res.json();
-          alert('Error: ' + err.error);
-          row.querySelectorAll('.btn').forEach(b => b.disabled = false);
-        }
-      }
-
-      document.getElementById('confirm-all-btn')?.addEventListener('click', async function() {
-        const slugs = [...document.querySelectorAll('#queue tr[id]')]
-          .map(r => r.id.replace('row-', ''));
-        if (!slugs.length) return;
-        this.disabled = true;
-        this.textContent = 'Confirming…';
-
-        const res = await fetch('/api/admin/series-confirm-all', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey },
-          body: JSON.stringify({ slugs }),
-        });
-
-        if (res.ok) {
-          document.querySelectorAll('#queue tr').forEach(r => r.classList.add('done'));
-          setTimeout(() => window.location.reload(), 800);
-        } else {
-          const err = await res.json();
-          alert('Error: ' + err.error);
-          this.disabled = false;
-          this.textContent = '✓ Confirm all on this page';
-        }
-      });
-    </script>
   </>
 )}
 
+<script is:inline define:vars={{ adminKey }}>
+  window.act = async function act(slug, action) {
+    const row = document.getElementById('row-' + slug);
+    const seriesName = document.getElementById('series-' + slug)?.value?.trim();
+    const numRaw = document.getElementById('num-' + slug)?.value;
+    const seriesNumber = numRaw ? parseFloat(numRaw) : null;
+
+    row.querySelectorAll('.btn').forEach(b => b.disabled = true);
+
+    const res = await fetch('/api/admin/series-review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey },
+      body: JSON.stringify({ slug, action, series_name: seriesName, series_number: seriesNumber }),
+    });
+
+    if (res.ok) {
+      row.classList.add('done');
+      setTimeout(() => row.remove(), 600);
+    } else {
+      const err = await res.json();
+      alert('Error: ' + err.error);
+      row.querySelectorAll('.btn').forEach(b => b.disabled = false);
+    }
+  }
+
+  document.getElementById('confirm-all-btn')?.addEventListener('click', async function() {
+    const slugs = [...document.querySelectorAll('#queue tr[id]')]
+      .map(r => r.id.replace('row-', ''));
+    if (!slugs.length) return;
+    this.disabled = true;
+    this.textContent = 'Confirming…';
+
+    const res = await fetch('/api/admin/series-confirm-all', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey },
+      body: JSON.stringify({ slugs }),
+    });
+
+    if (res.ok) {
+      document.querySelectorAll('#queue tr').forEach(r => r.classList.add('done'));
+      setTimeout(() => window.location.reload(), 800);
+    } else {
+      const err = await res.json();
+      alert('Error: ' + err.error);
+      this.disabled = false;
+      this.textContent = '✓ Confirm all on this page';
+    }
+  });
+</script>
 </body>
 </html>

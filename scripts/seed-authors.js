@@ -99,7 +99,7 @@ async function fetchOpenLibrary(name) {
   const bio = rawBio ? truncateBio(rawBio.replace(/\n?\nSource:.*$/s, '').trim()) : null;
 
   // Photo
-  const photoId = author.photos?.[0];
+  const photoId = author.photos?.find((id) => id > 0) ?? null;
   const photo_url = photoId ? `https://covers.openlibrary.org/a/id/${photoId}-L.jpg` : null;
 
   // IDs
@@ -173,6 +173,54 @@ async function fetchGoogleKG(name) {
   return { bio, photo_url, website };
 }
 
+// ─── Hardcover ────────────────────────────────────────────────────────────────
+
+async function fetchHardcover(name) {
+  const key = process.env.HARDCOVER_API_KEY;
+  if (!key) return null;
+
+  const query = `query {
+    authors(where: {name: {_ilike: "${name.replace(/['"]/g, '')}"}}, limit: 3) {
+      name
+      bio
+      image { url }
+    }
+  }`;
+
+  let data;
+  try {
+    const res = await fetch('https://api.hardcover.app/v1/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': key,
+        'User-Agent': 'FantasyObscura/1.0 (contact@fantasyobscura.com)',
+      },
+      body: JSON.stringify({ query }),
+    });
+    if (!res.ok) return null;
+    data = await res.json();
+  } catch {
+    return null;
+  }
+
+  const authors = data?.data?.authors ?? [];
+  if (!authors.length) return null;
+
+  const nameLower = name.toLowerCase();
+  const match =
+    authors.find((a) => a.name?.toLowerCase() === nameLower) ||
+    authors.find((a) => a.name?.toLowerCase().includes(nameLower.split(' ').at(-1))) ||
+    authors[0];
+
+  if (!match) return null;
+
+  const photo_url = match.image?.url ?? null;
+  const bio = match.bio ? truncateBio(match.bio) : null;
+
+  return { bio, photo_url };
+}
+
 // ─── Wikidata (Twitter) ───────────────────────────────────────────────────────
 
 async function fetchTwitterFromWikidata(wikidataId) {
@@ -235,10 +283,7 @@ async function seed() {
   for (const name of allNames) {
     const slug = authorToSlug(name);
 
-    if (ONLY_MISSING && existing.get(slug)) {
-      nSkipped++;
-      continue;
-    }
+    if (ONLY_MISSING && existing.get(slug)) { nSkipped++; continue; }
 
     // ── 1. Open Library ──
     const ol = await fetchOpenLibrary(name);
@@ -272,6 +317,17 @@ async function seed() {
         photo_url = photo_url || kg.photo_url;
         website   = website   || kg.website;
         source    = source ? `${source}+KG` : 'KG';
+      }
+    }
+
+    // ── 4. Hardcover fallback (if still missing bio or photo) ──
+    if (!bio || !photo_url) {
+      const hc = await fetchHardcover(name);
+      await sleep(DELAY_MS);
+      if (hc) {
+        bio       = bio       || hc.bio;
+        photo_url = photo_url || hc.photo_url;
+        source    = source ? `${source}+HC` : 'HC';
       }
     }
 

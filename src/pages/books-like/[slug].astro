@@ -274,24 +274,22 @@ const booksLikeJsonLd = JSON.stringify({
                   </div>
                   <!-- Basic info: title, author, series -->
                   <div class="min-w-0">
-                    <div class="flex items-start justify-between gap-4 mb-1">
-                      <p class="font-bold text-zinc-900 leading-tight">
-                        {dbSlugSet.has(recSlug)
-                          ? <a href={`/books/${recSlug}/`} class="hover:text-purple-700 transition-colors">{r.title}</a>
-                          : r.title}
-                        {r.series && r.series_number != null && (
-                          <span class="font-normal text-indigo-600 text-sm"> · {r.series} #{r.series_number}</span>
-                        )}
-                      </p>
-                      <div class="shrink-0 flex items-center gap-2 text-sm">
-                        <span title={`Darkness ${r.darkness_level}/5`}>{darknessCandles(r.darkness_level)}</span>
-                        {h && <span title={`Heat — ${h.label}`}>{h.flames}</span>}
-                      </div>
-                    </div>
+                    <p class="font-bold text-zinc-900 leading-tight mb-1">
+                      {dbSlugSet.has(recSlug)
+                        ? <a href={`/books/${recSlug}/`} class="hover:text-purple-700 transition-colors">{r.title}</a>
+                        : r.title}
+                      {r.series && r.series_number != null && (
+                        <span class="font-normal text-indigo-600 text-sm"> · {r.series} #{r.series_number}</span>
+                      )}
+                    </p>
                     <p class="text-sm text-zinc-500 mb-0.5">
                       by {r.author}
                       {r.author_note && <span class="text-zinc-400"> ({r.author_note})</span>}
                     </p>
+                    <div class="flex items-center gap-2 text-sm mt-0.5">
+                      <span title={`Darkness ${r.darkness_level}/5`}>{darknessCandles(r.darkness_level)}</span>
+                      {h && <span title={`Heat — ${h.label}`}>{h.flames}</span>}
+                    </div>
                     <p class="text-xs text-zinc-400">
                       {r.series_label ?? (r.standalone ? 'Standalone' : 'Series')}
                       {r.audiobook && ' · Audiobook ✅'}
