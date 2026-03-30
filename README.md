@@ -242,6 +242,15 @@ node scripts/detect-series.mjs --include-pending      # re-run on pending books 
 
 After running, go to `/admin/series-review` to confirm or reject the pending queue. Confirmed books stay as-is; rejected books are marked `series_review = 'rejected'` and skipped on future runs.
 
+#### `/admin/fill-review`
+
+Review books recently imported by `fill-series.mjs` or any bulk import script. Shows all books added in the last N days (default 7), filterable by author. Use this after any fill-series run to spot and remove junk (movie companions, wrong-genre books, omnibus editions, etc.).
+
+- **✓ Keep** — removes the row from view, no DB change
+- **✗ Delete** — permanently deletes the book from the DB
+- Adjustable time window (1 / 2 / 3 / 7 / 14 / 30 days)
+- Sortable by date added, author, or title
+
 ---
 
 ### Step 2 — Fill series & author back-catalogues
@@ -261,10 +270,12 @@ node scripts/fill-series.mjs              # run all phases
 node scripts/fill-series.mjs --dry-run
 node scripts/fill-series.mjs --series-only     # Phases 1a + 1b only — no author sweep
 node scripts/fill-series.mjs --authors-only    # Phase 2 only — prolific author sweep
-node scripts/fill-series.mjs --limit 50        # cap Phase 2 imports
+node scripts/fill-series.mjs --limit 50        # cap imports (Phase 1a+1b when --series-only, Phase 2 otherwise)
 node scripts/fill-series.mjs --threshold 5     # lower author book threshold (default: 7)
 node scripts/fill-series.mjs --reset           # clear all progress and re-scan everything
 ```
+
+**Tip — batch workflow:** Use `--series-only --limit 100` to import series books in small batches, or `--authors-only --limit 100` (or `200`) for author back-catalogue batches. Review each batch via `/admin/fill-review` before running more. The menu (`npm run menu`) has dedicated entries for all three combinations.
 
 ---
 

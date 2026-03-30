@@ -21,7 +21,8 @@
     "classify:warnings": "node scripts/classify-content-warnings.mjs",
     "covers": "node scripts/update-covers.mjs",
     "ratings": "node scripts/fill-ratings.mjs",
-    "add-book": "node scripts/add-books.mjs"
+    "add-book": "node scripts/add-books.mjs",
+    "menu": "node scripts/menu.mjs"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.1",

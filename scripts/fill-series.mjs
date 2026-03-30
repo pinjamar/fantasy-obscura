@@ -14,7 +14,7 @@
  *   node scripts/fill-series.mjs --series-only      (phases 1a + 1b only)
  *   node scripts/fill-series.mjs --authors-only     (phase 2 only)
  *   node scripts/fill-series.mjs --dry-run
- *   node scripts/fill-series.mjs --limit 50         (cap phase 2 imports at 50)
+ *   node scripts/fill-series.mjs --limit 50         (cap imports at 50 — applies to phase 1a+1b when --series-only, phase 2 otherwise)
  *   node scripts/fill-series.mjs --threshold 5      (lower author book threshold, default 7)
  *   node scripts/fill-series.mjs --reset            (clear all progress and re-scan everything)
  */
@@ -923,6 +923,10 @@ const SKIP_KEYWORDS = [
   'minalima', 'illustrated by', ' - illustrated', 'full-color edition',
   // Anything ending in generic "edition" variants not already caught
   'house edition', 'movie tie-in', 'film tie-in', 'tv tie-in',
+  'movie companion', 'official companion', 'illustrated companion',
+  'official guide', 'official movie', 'official illustrated',
+  'behind the scenes', 'the making of', 'the world of', 'exploring the',
+  'three novels', 'four novels', 'complete novels', 'two novels',
 ];
 
 /** Check that a Google Books result actually belongs to the searched author. */
@@ -960,16 +964,31 @@ function extractBookData(item) {
   if (SKIP_KEYWORDS.some((k) => title.includes(k) || cats.includes(k))) return null;
   if (info.pageCount && info.pageCount < 120) return null;
 
-  // If categories are explicitly provided, require fiction/fantasy — filters out
-  // non-fiction, essay collections, writing guides, interviews, etc.
   const FICTION_CATS = ['fantasy', 'fiction', 'science fiction', 'horror', 'fairy tale', 'fable'];
   const NON_FICTION_CATS = ['biography', 'history', 'true crime', 'self-help', 'business',
     'cooking', 'travel', 'art', 'photography', 'religion', 'philosophy', 'political',
     'psychology', 'science', 'technology', 'medical', 'education', 'reference'];
+
   if (catList.length > 0) {
-    const hasFiction   = FICTION_CATS.some((c) => cats.includes(c));
+    // If Google Books provided categories, require fiction and reject non-fiction
+    const hasFiction    = FICTION_CATS.some((c) => cats.includes(c));
     const hasNonFiction = NON_FICTION_CATS.some((c) => cats.includes(c));
     if (!hasFiction || hasNonFiction) return null;
+  } else if (info.description) {
+    // No categories — require fiction/fantasy keywords in description to filter
+    // out non-fantasy works by authors who write across genres (e.g. romance, thriller)
+    const FICTION_KEYWORDS = [
+      'fantasy', 'magic', 'wizard', 'witch', 'dragon', 'vampire', 'werewolf',
+      'fae', 'faerie', 'fairy', 'demon', 'supernatural', 'paranormal', 'enchant',
+      'sorcerer', 'sorcery', 'prophecy', 'kingdom', 'realm', 'quest', 'spell',
+      'science fiction', 'sci-fi', 'dystopia', 'spaceship', 'alien', 'futuristic',
+      'horror', 'undead', 'zombie', 'mythical', 'legend', 'gods', 'elves', 'dwarves',
+    ];
+    const desc = info.description.toLowerCase();
+    if (!FICTION_KEYWORDS.some((k) => desc.includes(k))) return null;
+  } else {
+    // No categories and no description — too risky to import
+    return null;
   }
 
   const rawYear  = info.publishedDate;
@@ -1088,7 +1107,7 @@ async function fetchOpenLibrary(title, author) {
 
 // ── Phase 1b: fill gaps in DB series not covered by BOOKS list ───────────────
 
-async function fillSeriesGapsInDB(existing, existingSlugs, existingTitles, normalizedTitles, existingSeriesKeys, progressData) {
+async function fillSeriesGapsInDB(existing, existingSlugs, existingTitles, normalizedTitles, existingSeriesKeys, progressData, remaining = Infinity) {
   console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
   console.log(`📖  Phase 1b — DB Series Gap Fill\n`);
 
@@ -1140,6 +1159,8 @@ async function fillSeriesGapsInDB(existing, existingSlugs, existingTitles, norma
   let imported = 0;
 
   for (const seriesInfo of toSweep) {
+    if (imported >= remaining) break;
+
     const query = `inauthor:"${seriesInfo.author}" "${seriesInfo.series}"`;
     console.log(`  🔍  ${seriesInfo.series} — ${seriesInfo.author}`);
 
@@ -1148,6 +1169,8 @@ async function fillSeriesGapsInDB(existing, existingSlugs, existingTitles, norma
     let consecutiveEmpty = 0;
 
     while (true) {
+      if (imported >= remaining) break;
+
       const items = await fetchGoogleBooksPage(query, pageStart);
       await sleep(DELAY_MS);
 
@@ -1155,6 +1178,8 @@ async function fillSeriesGapsInDB(existing, existingSlugs, existingTitles, norma
 
       let validThisPage = 0;
       for (const item of items) {
+        if (imported >= remaining) break;
+
         const book = extractBookData(item);
         if (!book) continue;
         if (!authorMatches(item, seriesInfo.author)) continue;
@@ -1479,8 +1504,12 @@ async function main() {
   }
 
   let p1imported = 0, p1failed = 0, p1seriesComplete = 0;
+  const p1Limit = LIMIT ?? Infinity;
+  if (LIMIT) console.log(`    Import cap: ${LIMIT} books across Phase 1a + 1b\n`);
 
   for (const [seriesKey, { displayName, books }] of seriesByName) {
+    if (p1imported >= p1Limit) break;
+
     // Skip series already marked as fully imported
     if (completedSeries.has(seriesKey)) {
       p1seriesComplete++;
@@ -1510,6 +1539,8 @@ async function main() {
     console.log(`  📗  ${displayName} — ${missing.length} missing:`);
 
     for (const book of missing) {
+      if (p1imported >= p1Limit) break;
+
       const slug = slugify(book.title);
       process.stdout.write(`    ${book.title.slice(0, 50).padEnd(50)} `);
 
@@ -1574,7 +1605,7 @@ async function main() {
   if (p1failed) console.log(`  Failed:                   ${p1failed}`);
 
   // ── Phase 1b: dynamic gap detection for series in DB not in BOOKS list ──────
-  await fillSeriesGapsInDB(existing, existingSlugs, existingTitles, normalizedTitles, existingSeriesKeys, p1progress);
+  await fillSeriesGapsInDB(existing, existingSlugs, existingTitles, normalizedTitles, existingSeriesKeys, p1progress, p1Limit - p1imported);
 
   // ── Phase 2: prolific author sweep ─────────────────────────────────────────
   if (!SERIES_ONLY) {

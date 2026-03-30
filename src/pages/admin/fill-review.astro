@@ -1,0 +1,297 @@
+---
+import { createClient } from '@supabase/supabase-js';
+
+const adminKey  = Astro.url.searchParams.get('key') ?? '';
+const isAuthed  = !!import.meta.env.ADMIN_SECRET && adminKey === import.meta.env.ADMIN_SECRET;
+
+const PAGE_SIZE = 100;
+const page      = Math.max(1, parseInt(Astro.url.searchParams.get('page') ?? '1', 10));
+const sort      = Astro.url.searchParams.get('sort') ?? 'created';
+const days      = Math.max(1, parseInt(Astro.url.searchParams.get('days') ?? '7', 10));
+const author    = (Astro.url.searchParams.get('author') ?? '').trim();
+
+let books: any[]     = [];
+let total: number    = 0;
+let totalPages       = 0;
+let authors: string[] = [];
+
+if (isAuthed) {
+  const supabase = createClient(
+    import.meta.env.PUBLIC_SUPABASE_URL,
+    import.meta.env.SUPABASE_SERVICE_ROLE_KEY,
+  );
+
+  const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  const offset = (page - 1) * PAGE_SIZE;
+
+  const orderMap: Record<string, { col: string; asc: boolean }> = {
+    created: { col: 'created_at', asc: false },
+    author:  { col: 'authors',    asc: true  },
+    title:   { col: 'title',      asc: true  },
+  };
+  const { col: orderCol, asc: orderAsc } = orderMap[sort] ?? orderMap.created;
+
+  // Fetch all authors from this window for the filter dropdown
+  const { data: allRecent } = await supabase
+    .from('books')
+    .select('authors')
+    .gte('created_at', since);
+
+  const authorSet = new Set<string>();
+  for (const row of allRecent ?? []) {
+    for (const a of row.authors ?? []) authorSet.add(a);
+  }
+  authors = [...authorSet].sort((a, b) => a.localeCompare(b));
+
+  // Main query with optional author filter
+  let q = supabase
+    .from('books')
+    .select('slug, title, authors, cover_url, synopsis, series, series_number, page_count, publication_year, created_at', { count: 'exact' })
+    .gte('created_at', since)
+    .order(orderCol, { ascending: orderAsc })
+    .range(offset, offset + PAGE_SIZE - 1);
+
+  if (author) q = q.contains('authors', [author]);
+
+  const { data, count, error } = await q;
+  if (error) throw new Error(error.message);
+
+  books      = data ?? [];
+  total      = count ?? 0;
+  totalPages = Math.ceil(total / PAGE_SIZE);
+}
+
+function href(params: Record<string, string | number>) {
+  const p = new URLSearchParams({ key: adminKey, sort, page: String(page), days: String(days), ...(author ? { author } : {}), ...params });
+  return '?' + p.toString();
+}
+
+function fmtDate(iso: string) {
+  return new Date(iso).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
+}
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fill Review — Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #0f0f13; color: #e2e2e8; padding: 2rem; }
+    h1   { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .subtitle { color: #888; margin-bottom: 1.25rem; font-size: 0.9rem; }
+    .toolbar { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; }
+    .toolbar select, .toolbar input { background: #1e1e2e; border: 1px solid #2a2a40; color: #e2e2e8; padding: 5px 10px; border-radius: 4px; font-size: 0.85rem; }
+    .toolbar label { color: #aaa; font-size: 0.85rem; }
+    .pagination { display: flex; gap: 0.5rem; align-items: center; margin-left: auto; }
+    .pagination a { color: #a78bfa; text-decoration: none; padding: 4px 10px; border: 1px solid #2a2a40; border-radius: 4px; font-size: 0.85rem; }
+    .pagination a:hover { background: #1e1e2e; }
+    .pagination .current { background: #2a2a3e; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid #2a2a35; color: #aaa; font-weight: 500; white-space: nowrap; }
+    td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #1e1e28; vertical-align: middle; }
+    tr:hover td { background: #16161f; }
+    .cover { width: 36px; height: 52px; object-fit: cover; border-radius: 3px; display: block; }
+    .cover-empty { width: 36px; height: 52px; background: #2a2a3e; border-radius: 3px; }
+    .synopsis { color: #888; font-size: 0.78rem; max-width: 340px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .tag { font-size: 0.7rem; background: #2a2a3e; padding: 2px 6px; border-radius: 4px; color: #a0a0c0; white-space: nowrap; }
+    .btn { padding: 4px 12px; border-radius: 4px; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+    .btn-keep   { background: #16a34a; color: #fff; }
+    .btn-keep:hover { background: #15803d; }
+    .btn-delete { background: #991b1b; color: #fff; margin-left: 4px; }
+    .btn-delete:hover { background: #7f1d1d; }
+    .btn-all    { background: #1d4ed8; color: #fff; padding: 6px 16px; font-size: 0.85rem; }
+    .btn-all:hover { background: #1e40af; }
+    .btn:disabled { opacity: 0.4; cursor: default; }
+    .done { opacity: 0.25; }
+    .empty { text-align: center; padding: 4rem; color: #555; }
+    .sort-link { color: #aaa; text-decoration: none; }
+    .sort-link:hover { color: #e2e2e8; }
+    .sort-active { color: #a78bfa; font-weight: 600; }
+    .gate { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; gap: 1rem; }
+    .gate input { background: #1e1e2e; border: 1px solid #3a3a50; color: #e2e2e8; padding: 10px 14px; border-radius: 6px; font-size: 1rem; width: 260px; }
+    .gate button { background: #4f46e5; color: #fff; border: none; padding: 10px 28px; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+    .gate .err { color: #f87171; font-size: 0.875rem; }
+    .no-synopsis { color: #555; font-style: italic; font-size: 0.78rem; }
+  </style>
+</head>
+<body>
+
+{!isAuthed ? (
+  <div class="gate">
+    <h1>Fill Review — Admin</h1>
+    <input type="password" id="key-input" placeholder="Admin key" autofocus />
+    <button id="login-btn">Enter</button>
+    {adminKey && <p class="err">Incorrect key</p>}
+    <script is:inline>
+      document.getElementById('login-btn').addEventListener('click', () => {
+        const key = document.getElementById('key-input').value.trim();
+        if (key) window.location.href = '?key=' + encodeURIComponent(key);
+      });
+      document.getElementById('key-input').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') document.getElementById('login-btn').click();
+      });
+    </script>
+  </div>
+) : (
+  <>
+    <h1>Fill Review</h1>
+    <p class="subtitle">
+      {total} book{total !== 1 ? 's' : ''} imported in the last {days} day{days !== 1 ? 's' : ''}
+      {author ? ` · filtered by "${author}"` : ''}
+      {' — '}page {page} of {totalPages || 1}
+    </p>
+
+    <div class="toolbar">
+      <!-- Author filter -->
+      <label>Author:
+        <select id="author-select" onchange="applyFilter()">
+          <option value="">All authors</option>
+          {authors.map(a => (
+            <option value={a} selected={a === author}>{a}</option>
+          ))}
+        </select>
+      </label>
+
+      <!-- Days range -->
+      <label>Last
+        <select id="days-select" onchange="applyFilter()">
+          {[1,2,3,7,14,30].map(d => (
+            <option value={d} selected={d === days}>{d} day{d !== 1 ? 's' : ''}</option>
+          ))}
+        </select>
+      </label>
+
+      <!-- Sort -->
+      <label>Sort:
+        <select id="sort-select" onchange="applyFilter()">
+          <option value="created" selected={sort === 'created'}>Newest first</option>
+          <option value="author"  selected={sort === 'author'}>Author</option>
+          <option value="title"   selected={sort === 'title'}>Title</option>
+        </select>
+      </label>
+
+      {books.length > 0 && (
+        <button class="btn btn-all" id="keep-all-btn">✓ Keep all {books.length} on page</button>
+      )}
+
+      <div class="pagination">
+        {page > 1      && <a href={href({ page: page - 1 })}>← Prev</a>}
+        <span class="current">Page {page} / {totalPages || 1}</span>
+        {page < totalPages && <a href={href({ page: page + 1 })}>Next →</a>}
+      </div>
+    </div>
+
+    {!books.length ? (
+      <div class="empty">✅ Nothing to review in this window</div>
+    ) : (
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th><a class={`sort-link ${sort === 'title'   ? 'sort-active' : ''}`} href={href({ sort: 'title',   page: 1 })}>Title</a></th>
+            <th><a class={`sort-link ${sort === 'author'  ? 'sort-active' : ''}`} href={href({ sort: 'author',  page: 1 })}>Author</a></th>
+            <th>Description</th>
+            <th>Series</th>
+            <th>Pages</th>
+            <th><a class={`sort-link ${sort === 'created' ? 'sort-active' : ''}`} href={href({ sort: 'created', page: 1 })}>Added</a></th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="queue">
+          {books.map(book => (
+            <tr id={`row-${book.slug}`}>
+              <td>
+                {book.cover_url
+                  ? <img class="cover" src={book.cover_url} alt="" loading="lazy" />
+                  : <div class="cover-empty" />
+                }
+              </td>
+              <td>
+                <a href={`/books/${book.slug}/`} target="_blank" style="color:#a78bfa">
+                  {book.title}
+                </a>
+              </td>
+              <td style="color:#aaa; white-space:nowrap">{book.authors?.join(', ')}</td>
+              <td>
+                {book.synopsis
+                  ? <p class="synopsis">{book.synopsis}</p>
+                  : <span class="no-synopsis">no synopsis</span>
+                }
+              </td>
+              <td>
+                {book.series
+                  ? <span class="tag">{book.series}{book.series_number ? ` #${book.series_number}` : ''}</span>
+                  : <span style="color:#555">—</span>
+                }
+              </td>
+              <td style="color:#aaa">{book.page_count ?? '—'}</td>
+              <td style="color:#666; white-space:nowrap; font-size:0.78rem">{fmtDate(book.created_at)}</td>
+              <td style="white-space:nowrap">
+                <button class="btn btn-keep"   onclick={`act('${book.slug}', 'keep')`}>✓</button>
+                <button class="btn btn-delete" onclick={`act('${book.slug}', 'delete')`}>✗</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+
+    <div class="toolbar" style="margin-top:1.5rem">
+      <div class="pagination">
+        {page > 1          && <a href={href({ page: page - 1 })}>← Prev</a>}
+        <span class="current">Page {page} / {totalPages || 1}</span>
+        {page < totalPages && <a href={href({ page: page + 1 })}>Next →</a>}
+      </div>
+    </div>
+  </>
+)}
+
+<script is:inline define:vars={{ adminKey, sort, days, author }}>
+  function applyFilter() {
+    const a = document.getElementById('author-select')?.value ?? '';
+    const d = document.getElementById('days-select')?.value ?? '7';
+    const s = document.getElementById('sort-select')?.value ?? 'created';
+    const p = new URLSearchParams({ key: adminKey, sort: s, page: '1', days: d });
+    if (a) p.set('author', a);
+    window.location.href = '?' + p.toString();
+  }
+
+  window.act = async function(slug, action) {
+    const row = document.getElementById('row-' + slug);
+    row.querySelectorAll('.btn').forEach(b => b.disabled = true);
+
+    if (action === 'keep') {
+      row.classList.add('done');
+      setTimeout(() => row.remove(), 400);
+      return;
+    }
+
+    const res = await fetch('/api/admin/fill-review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey },
+      body: JSON.stringify({ slug, action }),
+    });
+
+    if (res.ok) {
+      row.classList.add('done');
+      setTimeout(() => row.remove(), 400);
+    } else {
+      const err = await res.json();
+      alert('Error: ' + err.error);
+      row.querySelectorAll('.btn').forEach(b => b.disabled = false);
+    }
+  };
+
+  document.getElementById('keep-all-btn')?.addEventListener('click', function() {
+    document.querySelectorAll('#queue tr[id]').forEach(row => {
+      row.classList.add('done');
+      setTimeout(() => row.remove(), 400);
+    });
+  });
+</script>
+
+</body>
+</html>
