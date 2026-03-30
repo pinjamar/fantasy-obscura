@@ -76,7 +76,7 @@
 56. ✅ Books like The Sword of Kaigen
 57. ✅ Books like A Little Hatred
 58. ✅ Books like The Heroes (Abercrombie)
-59. Books like Red Country
+59. ✅ Books like Red Country
 60. Books like The Black Company
 61. Books like The Darkness That Comes Before
 62. Books like Blood Song
@@ -128,7 +128,7 @@
 102. Books like Anansi Boys
 103. Books like Jonathan Strange and Mr Norrell
 104. Books like The Magicians
-105. Books like The Dresden Files
+105. ✅ Books like The Dresden Files
 106. Books like Rivers of London
 107. Books like Kate Daniels series
 108. Books like Burn for Me (Hidden Legacy)

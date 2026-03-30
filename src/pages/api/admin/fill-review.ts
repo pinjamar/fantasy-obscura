@@ -26,6 +26,9 @@ export const POST: APIRoute = async ({ request }) => {
   if (action === 'keep') return json({ ok: true });
 
   if (action === 'delete') {
+    // Record as rejected so fill-series won't re-import it
+    await supabase.from('rejected_books').upsert({ slug }, { onConflict: 'slug', ignoreDuplicates: true });
+
     const { error } = await supabase.from('books').delete().eq('slug', slug);
     if (error) return json({ error: error.message }, 500);
     return json({ ok: true });

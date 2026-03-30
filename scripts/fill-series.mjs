@@ -1454,6 +1454,12 @@ async function main() {
       .map((b) => `${b.series.toLowerCase().trim()}::${b.series_number}`)
   );
 
+  // Load rejected slugs (books deleted via /admin/fill-review) so we never re-import them
+  const { data: rejectedRows } = await supabase.from('rejected_books').select('slug');
+  const rejectedCount = rejectedRows?.length ?? 0;
+  for (const r of rejectedRows ?? []) existingSlugs.add(r.slug);
+  if (rejectedCount > 0) console.log(`  ⛔  Skipping ${rejectedCount} previously rejected book(s)\n`);
+
   if (AUTHORS_ONLY) {
     await fillProlificAuthors(existingSlugs, existingTitles, normalizedTitles);
     return;
