@@ -33,7 +33,7 @@ const LIMIT      = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) 
 const SLUG_ARG   = process.argv.indexOf('--slug');
 const SLUG       = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
 const THRESH_ARG = process.argv.indexOf('--threshold');
-const THRESHOLD  = THRESH_ARG !== -1 ? parseInt(process.argv[THRESH_ARG + 1], 10) : 7;
+const THRESHOLD  = THRESH_ARG !== -1 ? parseInt(process.argv[THRESH_ARG + 1], 10) : 5;
 const DELAY_MS   = 1200;
 
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
@@ -51,6 +51,14 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
+function isLikelyNonEnglish(text) {
+  if (!text) return false;
+  const letters = [...text].filter((c) => /\p{L}/u.test(c));
+  if (letters.length < 20) return false;
+  const nonAscii = letters.filter((c) => c.charCodeAt(0) > 127);
+  return nonAscii.length / letters.length > 0.05;
+}
+
 async function generate(author, books) {
   // Build a summary of the author's catalogue for context
   const topBooks = books
@@ -64,8 +72,10 @@ async function generate(author, books) {
   const subgenres = [...new Set(books.flatMap((b) => b.subgenres ?? []))].slice(0, 6).join(', ');
   const tropes    = [...new Set(books.flatMap((b) => b.tropes ?? []))].slice(0, 8).join(', ');
 
+  const needsBio = !author.bio || author.bio.trim().length < 80 || isLikelyNonEnglish(author.bio);
+
   const prompt = `You are an editorial writer for a fantasy book discovery website.
-Write two short sections for the author page of ${author.name}.
+Write sections for the author page of ${author.name}.
 
 AUTHOR: ${author.name}
 KNOWN FOR: ${subgenres || 'Fantasy'}
@@ -73,8 +83,11 @@ RECURRING THEMES/TROPES: ${tropes || 'Fantasy'}
 TOP-RATED BOOKS:
 ${bookList}
 
-Write exactly two sections:
-
+Write exactly ${needsBio ? 'three' : 'two'} sections:
+${needsBio ? `
+BIO (2-3 sentences):
+A short factual biography — who this author is, what genre(s) they write, and what they are best known for. Factual and neutral, not promotional.
+` : ''}
 WRITING STYLE (2-3 sentences):
 Describe what makes this author's prose and storytelling distinctive. Focus on: sentence rhythm, atmosphere, emotional register, pacing, and what the reading experience actually feels like. Be specific — not "vivid world-building" but what makes THEIR world-building distinctive. Start directly with the observation, not the author's name.
 
@@ -83,11 +96,14 @@ Name the single best book for a first-time reader of this author and explain why
 
 OUTPUT FORMAT — respond with JSON only, no markdown:
 {
-  "writing_style": "...",
+  ${needsBio ? '"bio": "...",\n  ' : ''}"writing_style": "...",
   "best_starting_point": "..."
 }`;
 
-  const result = await model.generateContent(prompt);
+  const result = await Promise.race([
+    model.generateContent(prompt),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Gemini timeout')), 30_000)),
+  ]);
   const text = result.response.text().trim();
   const cleaned = text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '').trim();
 
@@ -106,6 +122,7 @@ OUTPUT FORMAT — respond with JSON only, no markdown:
   }
 
   return {
+    bio: (needsBio && typeof parsed?.bio === 'string' && parsed.bio.trim()) ? parsed.bio.trim() : null,
     writing_style: parsed.writing_style.trim(),
     best_starting_point: parsed.best_starting_point.trim(),
   };
@@ -143,26 +160,30 @@ async function main() {
   // Fetch author rows
   let authorsQuery = supabase
     .from('authors')
-    .select('id, name, slug, writing_style, best_starting_point');
+    .select('id, name, slug, bio, writing_style, best_starting_point');
 
   if (SLUG) {
     authorsQuery = authorsQuery.eq('slug', SLUG);
-  } else {
-    if (!ALL) {
-      authorsQuery = authorsQuery.is('writing_style', null);
-    }
-    if (LIMIT) authorsQuery = authorsQuery.limit(LIMIT);
   }
 
   const { data: authorRows, error: authErr } = await authorsQuery;
   if (authErr) { console.error('Supabase error:', authErr.message); process.exit(1); }
 
-  // Filter to authors with enough books
-  const targets = authorRows.filter((a) => {
+  // Needs update if writing_style or bio is null, too short, or non-English
+  function needsUpdate(a) {
+    if (ALL) return true;
+    if (!a.writing_style || a.writing_style.trim().length < 80 || isLikelyNonEnglish(a.writing_style)) return true;
+    if (!a.bio || a.bio.trim().length < 80 || isLikelyNonEnglish(a.bio)) return true;
+    return false;
+  }
+
+  // Filter to authors with enough books and missing/short fields, then apply limit
+  let targets = authorRows.filter((a) => {
     const key = a.name.toLowerCase();
     const count = authorBookMap.get(key)?.books.length ?? 0;
-    return count >= THRESHOLD;
+    return count >= THRESHOLD && needsUpdate(a);
   });
+  if (LIMIT) targets = targets.slice(0, LIMIT);
 
   if (!targets.length) {
     console.log(`✅ No authors to process (need ${THRESHOLD}+ books in DB).`);
@@ -206,9 +227,12 @@ async function main() {
       continue;
     }
 
+    const updates = { writing_style: result.writing_style, best_starting_point: result.best_starting_point };
+    if (result.bio) updates.bio = result.bio;
+
     const { error: upErr } = await supabase
       .from('authors')
-      .update({ writing_style: result.writing_style, best_starting_point: result.best_starting_point })
+      .update(updates)
       .eq('id', author.id);
 
     if (upErr) {

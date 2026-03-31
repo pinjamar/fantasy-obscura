@@ -14,17 +14,17 @@
 //   4. Add to .env:  GOOGLE_KG_API_KEY=your_key_here
 //
 // Run:
-//   node scripts/seed-authors.js
-//   node scripts/seed-authors.js --dry-run        (no DB writes)
-//   node scripts/seed-authors.js --only-missing   (skip authors with existing photo_url)
+//   node scripts/seed-authors.js               (skips authors already in authors table)
+//   node scripts/seed-authors.js --dry-run      (no DB writes)
+//   node scripts/seed-authors.js --all          (rerun all authors, even already attempted)
 
 import { createClient } from '@supabase/supabase-js';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const DRY_RUN      = process.argv.includes('--dry-run');
-const ONLY_MISSING = process.argv.includes('--only-missing');
-const DELAY_MS     = 400;
+const DRY_RUN  = process.argv.includes('--dry-run');
+const ALL      = process.argv.includes('--all');
+const DELAY_MS = 400;
 
 const supabase = createClient(
   process.env.PUBLIC_SUPABASE_URL,
@@ -271,8 +271,9 @@ async function getExistingProfiles() {
 
 async function seed() {
   console.log('📚 Fantasy Obscura — seed-authors');
-  if (DRY_RUN)      console.log('   --dry-run: no DB writes');
-  if (ONLY_MISSING) console.log('   --only-missing: skipping authors with existing photo');
+  if (DRY_RUN) console.log('   --dry-run: no DB writes');
+  if (ALL)     console.log('   --all: rerunning all authors');
+  else         console.log('   skipping authors already in the authors table (use --all to rerun)');
   console.log();
 
   const [allNames, existing] = await Promise.all([getAllAuthorNames(), getExistingProfiles()]);
@@ -283,8 +284,7 @@ async function seed() {
   for (const name of allNames) {
     const slug = authorToSlug(name);
 
-    if (ONLY_MISSING && existing.get(slug)) { nSkipped++; continue; }
-
+    if (!ALL && existing.has(slug)) { nSkipped++; continue; }
     // ── 1. Open Library ──
     const ol = await fetchOpenLibrary(name);
     await sleep(DELAY_MS);
@@ -384,7 +384,7 @@ async function seed() {
   console.log(`✓  Open Library (± Wiki fallback) : ${nFound}`);
   console.log(`~  Wikipedia only                 : ${nWiki}`);
   console.log(`✗  Not found anywhere             : ${nMissing}`);
-  if (nSkipped) console.log(`   Skipped (already had photo)    : ${nSkipped}`);
+  if (nSkipped) console.log(`   Skipped (already in table)     : ${nSkipped}`);
   if (nErrors)  console.log(`   DB errors                      : ${nErrors}`);
   console.log(`   Total                          : ${allNames.length}`);
 }

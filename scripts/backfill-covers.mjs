@@ -68,6 +68,30 @@ async function fetchGoogleBooksCover(isbn, title, authors) {
   return null;
 }
 
+function isbn13toAmazonUrl(isbn13) {
+  if (!isbn13 || isbn13.length !== 13) return null;
+  const digits = isbn13.replace(/[^0-9]/g, '');
+  if (digits.length !== 13 || !digits.startsWith('978')) return null;
+  const core = digits.slice(3, 12); // 9 digits
+  let sum = 0;
+  for (let i = 0; i < 9; i++) sum += parseInt(core[i]) * (10 - i);
+  const check = (11 - (sum % 11)) % 11;
+  const isbn10 = core + (check === 10 ? 'X' : String(check));
+  return `https://images-na.ssl-images-amazon.com/images/P/${isbn10}.01.L.jpg`;
+}
+
+async function fetchAmazonCover(isbn13) {
+  const url = isbn13toAmazonUrl(isbn13);
+  if (!url) return null;
+  try {
+    const res = await fetch(url, { method: 'HEAD' });
+    const size = parseInt(res.headers.get('content-length') ?? '0');
+    return (res.ok && size > 5000) ? url : null;
+  } catch {
+    return null;
+  }
+}
+
 async function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
@@ -109,6 +133,13 @@ for (const book of targets) {
     cover = hc?.cover_url ?? null;
     if (cover) console.log(`  [HC] ${book.title}`);
     await sleep(300);
+  }
+
+  // Amazon fallback (works well for indie/self-published books)
+  if (!cover && book.isbn) {
+    cover = await fetchAmazonCover(book.isbn);
+    if (cover) console.log(`  [Amazon] ${book.title}`);
+    await sleep(200);
   }
 
   if (!cover) {
