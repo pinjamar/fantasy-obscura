@@ -20,7 +20,7 @@ export const GET: APIRoute = async ({ url }) => {
     supabaseClient
       .from('books')
       .select('id, title, authors, slug, cover_url, series, series_number')
-      .filter('authors::text', 'ilike', `%${q}%`)
+      .ilike('authors_search', `%${q.toLowerCase()}%`)
       .not('title', 'ilike', `%${q}%`)
       .order('title')
       .limit(4),

@@ -110,7 +110,7 @@ export const GET: APIRoute = async ({ request }) => {
     let query = supabaseClient.from('books').select(BOOK_COLS, { count: 'exact' });
 
     if (search.length >= 2) {
-      query = query.or(`title.ilike.%${search}%,series.ilike.%${search}%`);
+      query = query.or(`title.ilike.%${search}%,series.ilike.%${search}%,authors_search.ilike.%${search.toLowerCase()}%`);
     }
     if (genre) {
       const genres = genre.split(',').map((g: string) => g.trim()).filter(Boolean);

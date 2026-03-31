@@ -171,7 +171,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience: audienceProp
         <input
           type="text"
           value={searchQuery}
-          placeholder="Search by title or series…"
+          placeholder="Search by title, author, or series…"
           onChange={(e) => { setSearchQuery(e.target.value); resetPage(); }}
           className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-zinc-300 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm bg-white shadow-sm"
         />

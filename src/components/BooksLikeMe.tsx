@@ -22,7 +22,6 @@ interface Recommendation {
 }
 
 const MAX_BOOKS = 8;
-const STORAGE_KEY = 'booksLikeMe';
 
 export default function BooksLikeMe() {
   const [query, setQuery] = useState('');
@@ -37,19 +36,6 @@ export default function BooksLikeMe() {
   const [showDrop, setShowDrop] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-
-  // Load saved books from localStorage
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setLikedBooks(JSON.parse(saved));
-    } catch {}
-  }, []);
-
-  // Save to localStorage whenever likedBooks changes
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(likedBooks));
-  }, [likedBooks]);
 
   // Click outside to close dropdown
   useEffect(() => {
@@ -121,7 +107,9 @@ export default function BooksLikeMe() {
           exclude: shownTitles,
         }),
       });
-      const data = await res.json();
+      const text = await res.text();
+      let data: any;
+      try { data = JSON.parse(text); } catch { throw new Error('Unexpected server response — please try again'); }
       if (data.rateLimited) { setRateLimited(true); setError(data.error); return; }
       if (data.error) throw new Error(data.error);
       const newRecs: Recommendation[] = data.recommendations ?? [];
@@ -277,7 +265,7 @@ export default function BooksLikeMe() {
               Recommended for you
             </h3>
             <button
-              onClick={() => { setLikedBooks([]); setRecs([]); setQuery(''); setError(''); setShownTitles([]); localStorage.removeItem(STORAGE_KEY); }}
+              onClick={() => { setLikedBooks([]); setRecs([]); setQuery(''); setError(''); setShownTitles([]); }}
               className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-purple-600 transition-colors"
               title="Start over"
             >

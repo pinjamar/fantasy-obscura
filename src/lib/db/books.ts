@@ -319,7 +319,7 @@ export async function getAllSeries(): Promise<{ name: string; slug: string; book
 export async function getBooksByAuthor(authorName: string): Promise<Book[]> {
   const { data } = await supabaseClient
     .from('books')
-    .select('slug, title, cover_url, series, series_number, avg_rating, publication_year, page_count, darkness_level, subgenres, tropes, tone')
+    .select('slug, title, cover_url, series, series_number, avg_rating, publication_year, page_count, darkness_level, subgenres, tropes, tone, synopsis')
     .contains('authors', [authorName])
     .order('publication_year', { ascending: true, nullsFirst: false });
 

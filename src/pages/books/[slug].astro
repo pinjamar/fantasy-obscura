@@ -53,7 +53,7 @@ const q      = encodeURIComponent((book.title ?? '') + ' ' + (book.authors?.[0] 
 const qTitle = encodeURIComponent(book.title ?? '');
 
 const amazonUrl      = `https://www.amazon.com/s?k=${q}&tag=librariancura-20`;
-const bookshopUrl    = `https://bookshop.org/search?keywords=${qTitle}`;
+const bookshopUrl    = `https://bookshop.org/search?keywords=${qTitle}&affiliate=122720`;
 const appleBooksUrl   = `https://books.apple.com/search?term=${q}`;
 const koboUrl         = `https://www.kobo.com/us/en/search?query=${q}`;
 const thriftBooksUrl  = `https://www.thriftbooks.com/browse/?b.search=${q}`;

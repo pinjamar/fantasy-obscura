@@ -97,8 +97,14 @@ Respond ONLY with valid JSON in this exact format, no extra text:
   ]
 }`;
 
-  const result = await model.generateContent(prompt);
-  const text = result.response.text();
+  let text: string;
+  try {
+    const result = await model.generateContent(prompt);
+    text = result.response.text();
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'AI service unavailable';
+    return new Response(JSON.stringify({ error: msg }), { status: 503, headers: JSON_HEADERS });
+  }
 
   let parsed: { recommendations: { title: string; author: string; series: string | null; series_number: number | null; reason: string }[] };
 
