@@ -300,71 +300,71 @@ const QUERIES = [
   'inauthor:"c. mantis" fantasy',
   'inauthor:"brian j. nordon" fantasy',
   'inauthor:"m.l. wang" fantasy',
-  // ── Broad subgenre sweeps ───────────────────────────────────────────────────
-  '"dark fantasy" novel',
-  '"urban fantasy" novel',
-  '"romantic fantasy" novel',
-  '"historical fantasy" novel',
-  '"sword and sorcery" fantasy',
-  '"high fantasy" novel',
-  'grimdark fantasy novel',
-  'progression fantasy novel',
-  'portal fantasy novel',
-  'academy fantasy novel',
-  'heist fantasy novel',
-  '"flintlock fantasy" novel',
-  '"gaslamp fantasy" novel',
-  '"military fantasy" novel',
-  '"political fantasy" novel',
-  '"dragon rider" fantasy novel',
-  '"dungeon fantasy" novel',
-  '"vampire fantasy" novel',
-  '"fae fantasy" novel',
-  '"pirate fantasy" novel',
-  '"found family fantasy" novel',
-  '"chosen one fantasy" novel',
-  '"slow burn fantasy romance" novel',
-  '"reverse harem fantasy" novel',
-  '"spy fantasy" novel',
-  '"detective fantasy" novel',
-  '"coming of age" fantasy novel',
-  '"blood magic" fantasy novel',
-  '"elemental magic" fantasy novel',
-  '"time travel fantasy" fiction novel',
-  '"alternate history fantasy" fiction novel',
-  '"fairy tale retelling" novel',
-  '"mythology retelling" fantasy novel',
-  '"arthurian fantasy" novel',
-  '"folklore fantasy" novel',
-  '"mythic fantasy" novel',
-  '"noblebright fantasy" novel',
-  // ── Setting-based sweeps ────────────────────────────────────────────────────
-  'fantasy "ancient china" novel',
-  'fantasy "ancient greece" novel',
-  'fantasy "ancient egypt" novel',
-  'fantasy "ancient rome" novel',
-  'fantasy "slavic mythology" novel',
-  'fantasy "african mythology" novel',
-  'fantasy "persian mythology" novel',
-  'fantasy "medieval setting" novel',
-  // ── Award + list signals ────────────────────────────────────────────────────
-  'fantasy "hugo award" novel',
-  'fantasy "nebula award" novel',
-  'fantasy "world fantasy award" novel',
-  'fantasy "locus award" novel',
-  'fantasy "british fantasy award" novel',
-  'fantasy "david gemmell award"',
-  'fantasy bestseller novel',
-  // ── Audience / pacing sweeps ────────────────────────────────────────────────
-  'young adult fantasy novel',
-  'adult fantasy novel',
-  'epic fantasy series novel',
-  // ── High-value title queries (web serials & hard-to-find) ──────────────────
-  '"defiance of the fall" fantasy',
-  '"mage errant" fantasy',
-  '"cradle series" fantasy',
-  '"mother of learning" fantasy',
-  '"beware of chicken" fantasy',
+  // // ── Broad subgenre sweeps ───────────────────────────────────────────────────
+  // '"dark fantasy" novel',
+  // '"urban fantasy" novel',
+  // '"romantic fantasy" novel',
+  // '"historical fantasy" novel',
+  // '"sword and sorcery" fantasy',
+  // '"high fantasy" novel',
+  // 'grimdark fantasy novel',
+  // 'progression fantasy novel',
+  // 'portal fantasy novel',
+  // 'academy fantasy novel',
+  // 'heist fantasy novel',
+  // '"flintlock fantasy" novel',
+  // '"gaslamp fantasy" novel',
+  // '"military fantasy" novel',
+  // '"political fantasy" novel',
+  // '"dragon rider" fantasy novel',
+  // '"dungeon fantasy" novel',
+  // '"vampire fantasy" novel',
+  // '"fae fantasy" novel',
+  // '"pirate fantasy" novel',
+  // '"found family fantasy" novel',
+  // '"chosen one fantasy" novel',
+  // '"slow burn fantasy romance" novel',
+  // '"reverse harem fantasy" novel',
+  // '"spy fantasy" novel',
+  // '"detective fantasy" novel',
+  // '"coming of age" fantasy novel',
+  // '"blood magic" fantasy novel',
+  // '"elemental magic" fantasy novel',
+  // '"time travel fantasy" fiction novel',
+  // '"alternate history fantasy" fiction novel',
+  // '"fairy tale retelling" novel',
+  // '"mythology retelling" fantasy novel',
+  // '"arthurian fantasy" novel',
+  // '"folklore fantasy" novel',
+  // '"mythic fantasy" novel',
+  // '"noblebright fantasy" novel',
+  // // ── Setting-based sweeps ────────────────────────────────────────────────────
+  // 'fantasy "ancient china" novel',
+  // 'fantasy "ancient greece" novel',
+  // 'fantasy "ancient egypt" novel',
+  // 'fantasy "ancient rome" novel',
+  // 'fantasy "slavic mythology" novel',
+  // 'fantasy "african mythology" novel',
+  // 'fantasy "persian mythology" novel',
+  // 'fantasy "medieval setting" novel',
+  // // ── Award + list signals ────────────────────────────────────────────────────
+  // 'fantasy "hugo award" novel',
+  // 'fantasy "nebula award" novel',
+  // 'fantasy "world fantasy award" novel',
+  // 'fantasy "locus award" novel',
+  // 'fantasy "british fantasy award" novel',
+  // 'fantasy "david gemmell award"',
+  // 'fantasy bestseller novel',
+  // // ── Audience / pacing sweeps ────────────────────────────────────────────────
+  // 'young adult fantasy novel',
+  // 'adult fantasy novel',
+  // 'epic fantasy series novel',
+  // // ── High-value title queries (web serials & hard-to-find) ──────────────────
+  // '"defiance of the fall" fantasy',
+  // '"mage errant" fantasy',
+  // '"cradle series" fantasy',
+  // '"mother of learning" fantasy',
+  // '"beware of chicken" fantasy',
 ];
 
 // Require averageRating to exist — primary quality gate
@@ -840,7 +840,10 @@ async function main() {
         .from('books')
         .select('slug, title, authors')
         .range(offset, offset + PAGE - 1);
-      if (existErr) { console.error(existErr.message); process.exit(1); }
+      if (existErr) {
+        console.error(existErr.message);
+        process.exit(1);
+      }
       if (!data?.length) break;
       existing.push(...data);
       if (data.length < PAGE) break;
@@ -1012,10 +1015,14 @@ async function main() {
 
           // Ensure a minimal author row exists so the author page works immediately.
           // seed-authors.js will enrich it with bio/photo later.
-          for (const authorName of (dbBook.authors ?? [])) {
+          for (const authorName of dbBook.authors ?? []) {
             const authorSlug = slugify(authorName);
-            await supabase.from('authors')
-              .upsert({ name: authorName, slug: authorSlug }, { onConflict: 'slug', ignoreDuplicates: true });
+            await supabase
+              .from('authors')
+              .upsert(
+                { name: authorName, slug: authorSlug },
+                { onConflict: 'slug', ignoreDuplicates: true },
+              );
           }
         }
       }
@@ -1064,7 +1071,9 @@ async function main() {
         progress._completedQueries = [...completedQueries];
         saveProgress(progress);
       } else {
-        console.log(`  ↳ Query exhausted with 0 new books — will retry next cycle`);
+        console.log(
+          `  ↳ Query exhausted with 0 new books — will retry next cycle`,
+        );
         delete progress[query];
         saveProgress(progress);
       }
