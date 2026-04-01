@@ -100,6 +100,7 @@ const READING_ORDER_MAP: Record<string, string> = {
   // Blood and Ash
   'Blood and Ash':               'blood-and-ash',
   'From Blood and Ash':          'blood-and-ash',
+
 };
 
 const seriesMap = new Map<string, number>();
@@ -312,9 +313,9 @@ const authorJsonLd = JSON.stringify({
                   >
                     Reading order →
                   </a>
-                ) : (
-                  <span class="shrink-0 text-xs text-zinc-400 whitespace-nowrap">No guide yet</span>
-                )}
+                ) : seriesBooks.length > 1 ? (
+                  <a href={`/reading-orders/${s.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/, '')}/`} class="shrink-0 text-xs font-medium text-zinc-400 bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded-full whitespace-nowrap hover:bg-zinc-100 transition-colors">Explore</a>
+                ) : null}
               </div>
 
               <!-- Book covers row -->

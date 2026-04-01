@@ -856,6 +856,242 @@ const BOOKS = [
   { title: 'Court Wizard',                      author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 8 },
   { title: 'Shadowmage',                        author: 'Terry Mancour',           series: 'The Spellmonger',                series_number: 9 },
 
+  // ── Dungeon Crawler Carl (Matt Dinniman) ─────────────────────────────────
+  { title: "Carl's Doomsday Scenario",          author: 'Matt Dinniman',           series: 'Dungeon Crawler Carl',           series_number: 2 },
+  { title: "The Dungeon Anarchist's Cookbook",  author: 'Matt Dinniman',           series: 'Dungeon Crawler Carl',           series_number: 3 },
+  { title: 'The Mountain Was Supposed to Be Safe', author: 'Matt Dinniman',        series: 'Dungeon Crawler Carl',           series_number: 4 },
+  { title: 'The Eye of the Bedlam Bride',       author: 'Matt Dinniman',           series: 'Dungeon Crawler Carl',           series_number: 6 },
+
+  // ── Remembrance of Earth's Past (Cixin Liu) ───────────────────────────────
+  { title: 'The Three-Body Problem',            author: 'Cixin Liu',               series: "Remembrance of Earth's Past",    series_number: 1 },
+  { title: 'The Dark Forest',                   author: 'Cixin Liu',               series: "Remembrance of Earth's Past",    series_number: 2 },
+
+  // ── He Who Fights With Monsters (Travis Deverell) ────────────────────────
+  { title: 'He Who Fights With Monsters 2',     author: 'Jason Cheyne',            series: 'He Who Fights With Monsters',    series_number: 2 },
+  { title: 'He Who Fights With Monsters 3',     author: 'Jason Cheyne',            series: 'He Who Fights With Monsters',    series_number: 4 },
+  { title: 'He Who Fights With Monsters 6',     author: 'Jason Cheyne',            series: 'He Who Fights With Monsters',    series_number: 6 },
+  { title: 'He Who Fights With Monsters 8',     author: 'Jason Cheyne',            series: 'He Who Fights With Monsters',    series_number: 8 },
+
+  // ── The Murderbot Diaries (Martha Wells) ─────────────────────────────────
+  { title: 'All Systems Red',                   author: 'Martha Wells',            series: 'The Murderbot Diaries',          series_number: 1 },
+  { title: 'Rogue Protocol',                    author: 'Martha Wells',            series: 'The Murderbot Diaries',          series_number: 3 },
+  { title: 'Exit Strategy',                     author: 'Martha Wells',            series: 'The Murderbot Diaries',          series_number: 4 },
+
+  // ── Vampire Academy (Richelle Mead) ──────────────────────────────────────
+  { title: 'Frostbite',                         author: 'Richelle Mead',           series: 'Vampire Academy',                series_number: 2 },
+
+  // ── The Book of Dust (Philip Pullman) ────────────────────────────────────
+  { title: 'La Belle Sauvage',                  author: 'Philip Pullman',          series: 'The Book of Dust',               series_number: 1 },
+
+  // ── The Goblin Emperor (Katherine Addison) ───────────────────────────────
+  { title: 'The Witness for the Dead',          author: 'Katherine Addison',       series: 'The Goblin Emperor',             series_number: 2 },
+
+  // ── Rivers of London (Ben Aaronovitch) ────────────────────────────────────
+  { title: 'Lies Sleeping',                     author: 'Ben Aaronovitch',         series: 'Rivers of London',               series_number: 7 },
+
+  // ── The Laundry Files (Charles Stross) ───────────────────────────────────
+  { title: 'The Rhesus Chart',                  author: 'Charles Stross',          series: 'The Laundry Files',              series_number: 5 },
+  { title: 'Dead Lies Dreaming',                author: 'Charles Stross',          series: 'The Laundry Files',              series_number: 9 },
+
+  // ── Shadows of the Apt (Adrian Tchaikovsky) ───────────────────────────────
+  { title: 'The Scarab Path',                   author: 'Adrian Tchaikovsky',      series: 'Shadows of the Apt',             series_number: 5 },
+  { title: 'The Sea Watch',                     author: 'Adrian Tchaikovsky',      series: 'Shadows of the Apt',             series_number: 6 },
+  { title: 'Heirs of the Blade',                author: 'Adrian Tchaikovsky',      series: 'Shadows of the Apt',             series_number: 7 },
+  { title: 'The Air War',                       author: 'Adrian Tchaikovsky',      series: 'Shadows of the Apt',             series_number: 8 },
+
+  // ── Codex Alera (Jim Butcher) ─────────────────────────────────────────────
+  { title: "Academ's Fury",                     author: 'Jim Butcher',             series: 'Codex Alera',                    series_number: 2 },
+  { title: "Captain's Fury",                    author: 'Jim Butcher',             series: 'Codex Alera',                    series_number: 4 },
+
+  // ── Falling Kingdoms (Morgan Rhodes) ─────────────────────────────────────
+  { title: 'Rebel Spring',                      author: 'Morgan Rhodes',           series: 'Falling Kingdoms',               series_number: 2 },
+
+  // ── Hush, Hush (Becca Fitzpatrick) ───────────────────────────────────────
+  { title: 'Crescendo',                         author: 'Becca Fitzpatrick',       series: 'Hush, Hush',                     series_number: 2 },
+
+  // ── Alex Verus (Benedict Jacka) ──────────────────────────────────────────
+  { title: 'Cursed',                            author: 'Benedict Jacka',          series: 'Alex Verus',                     series_number: 2 },
+
+  // ── A Chorus of Dragons (Jenn Lyons) ─────────────────────────────────────
+  { title: 'The Name of All Things',            author: 'Jenn Lyons',              series: 'A Chorus of Dragons',            series_number: 2 },
+
+  // ── The Craft Sequence (Max Gladstone) ───────────────────────────────────
+  { title: 'Full Fathom Five',                  author: 'Max Gladstone',           series: 'The Craft Sequence',             series_number: 3 },
+
+  // ── Green Creek (TJ Klune) ────────────────────────────────────────────────
+  { title: 'Ravensong',                         author: 'TJ Klune',                series: 'Green Creek',                    series_number: 2 },
+
+  // ── Grimnoir Chronicles (Larry Correia) ──────────────────────────────────
+  { title: 'Spellbound',                        author: 'Larry Correia',           series: 'Grimnoir Chronicles',            series_number: 2 },
+
+  // ── Women of the Otherworld (Kelley Armstrong) ───────────────────────────
+  { title: 'Haunted',                           author: 'Kelley Armstrong',        series: 'Women of the Otherworld',        series_number: 5 },
+  { title: 'Personal Demon',                    author: 'Kelley Armstrong',        series: 'Women of the Otherworld',        series_number: 8 },
+
+  // ── October Daye (Seanan McGuire) ────────────────────────────────────────
+  { title: 'Late Eclipses',                     author: 'Seanan McGuire',          series: 'October Daye',                   series_number: 4 },
+  { title: 'Chimes at Midnight',                author: 'Seanan McGuire',          series: 'October Daye',                   series_number: 7 },
+  { title: 'A Red-Rose Chain',                  author: 'Seanan McGuire',          series: 'October Daye',                   series_number: 9 },
+  { title: 'Night and Silence',                 author: 'Seanan McGuire',          series: 'October Daye',                   series_number: 12 },
+  { title: 'The Unkindest Tide',                author: 'Seanan McGuire',          series: 'October Daye',                   series_number: 13 },
+
+  // ── Monster Hunter International (Larry Correia) ──────────────────────────
+  { title: 'Monster Hunter Legion',             author: 'Larry Correia',           series: 'Monster Hunter International',   series_number: 3 },
+
+  // ── Wells of Sorcery (Django Wexler) ─────────────────────────────────────
+  { title: 'City of Stone and Silence',         author: 'Django Wexler',           series: 'Wells of Sorcery',               series_number: 2 },
+
+  // ── Blackthorn & Grim (Juliet Marillier) ─────────────────────────────────
+  { title: 'Tower of Thorns',                   author: 'Juliet Marillier',        series: 'Blackthorn & Grim',              series_number: 2 },
+
+  // ── The Bridge Kingdom (Danielle L. Jensen) ──────────────────────────────
+  { title: 'The Traitor Queen',                 author: 'Danielle L. Jensen',      series: 'The Bridge Kingdom',             series_number: 2 },
+
+  // ── Legend (Marie Lu) ─────────────────────────────────────────────────────
+  { title: 'Legend',                            author: 'Marie Lu',                series: 'Legend',                         series_number: 1 },
+
+  // ── Ghost Roads (Seanan McGuire) ─────────────────────────────────────────
+  { title: 'The Girl in the Green Silk Gown',   author: 'Seanan McGuire',          series: 'Ghost Roads',                    series_number: 2 },
+
+  // ── The Wars of Light and Shadow (Janny Wurts) ───────────────────────────
+  { title: 'Stormed Fortress',                  author: 'Janny Wurts',             series: 'The Wars of Light and Shadow',   series_number: 7 },
+
+  // ── The Symphony of Ages (Elizabeth Haydon) ──────────────────────────────
+  { title: 'Destiny',                           author: 'Elizabeth Haydon',        series: 'The Symphony of Ages',           series_number: 3 },
+
+  // ── The Nicci Chronicles (Terry Goodkind) ────────────────────────────────
+  { title: 'Siege of Stone',                    author: 'Terry Goodkind',          series: 'The Nicci Chronicles',           series_number: 3 },
+
+  // ── The Sword of Truth (Terry Goodkind) — gaps ───────────────────────────
+  { title: 'Blood of the Fold',                 author: 'Terry Goodkind',          series: 'The Sword of Truth',             series_number: 3 },
+  { title: 'The Pillars of Creation',           author: 'Terry Goodkind',          series: 'The Sword of Truth',             series_number: 7 },
+
+  // ── Cainsville (Kelley Armstrong) ────────────────────────────────────────
+  { title: 'Vision',                            author: 'Kelley Armstrong',        series: 'Cainsville',                     series_number: 2 },
+  { title: 'Deceptions',                        author: 'Kelley Armstrong',        series: 'Cainsville',                     series_number: 3 },
+
+  // ── Mythos Trilogy (Stephen Fry) ─────────────────────────────────────────
+  { title: 'Heroes',                            author: 'Stephen Fry',             series: 'Mythos Trilogy',                 series_number: 2 },
+
+  // ── Ithaca (Claire North) ─────────────────────────────────────────────────
+  { title: 'House of Odysseus',                 author: 'Claire North',            series: 'Ithaca',                         series_number: 2 },
+
+  // ── Incryptid (Seanan McGuire) ────────────────────────────────────────────
+  { title: 'Midnight Blue-Light Special',       author: 'Seanan McGuire',          series: 'Incryptid',                      series_number: 4 },
+
+  // ── Psy-Changeling Trinity (Nalini Singh) ─────────────────────────────────
+  { title: 'Last Guard',                        author: 'Nalini Singh',            series: 'Psy-Changeling Trinity',         series_number: 4 },
+
+  // ── The Goblin Emperor series — The Cemeteries of Amalo ──────────────────
+  // (series_number 2 handled above; series name in DB is 'The Goblin Emperor')
+
+  // ── Chaos Seeds (Aleron Kong) ─────────────────────────────────────────────
+  { title: 'The Land: Alliances',               author: 'Aleron Kong',             series: 'Chaos Seeds',                    series_number: 3 },
+  { title: 'The Land: Swarm',                   author: 'Aleron Kong',             series: 'Chaos Seeds',                    series_number: 5 },
+  { title: 'The Land: Monsters',                author: 'Aleron Kong',             series: 'Chaos Seeds',                    series_number: 6 },
+
+  // ── Emerilia (Michael Chatfield) ─────────────────────────────────────────
+  { title: 'A Touch of Farmhand',               author: 'Michael Chatfield',       series: 'Emerilia',                       series_number: 1 },
+  { title: 'Rocky Shores',                      author: 'Michael Chatfield',       series: 'Emerilia',                       series_number: 2 },
+
+  // ── The System Apocalypse (Tao Wong) — gaps ──────────────────────────────
+  { title: 'A Healer\'s Gift',                  author: 'Tao Wong',                series: 'The System Apocalypse',          series_number: 3 },
+  { title: 'Redeemer of the Dead',              author: 'Tao Wong',                series: 'The System Apocalypse',          series_number: 9 },
+  { title: 'The Calm Before',                   author: 'Tao Wong',                series: 'The System Apocalypse',          series_number: 10 },
+  { title: 'Cities in Chains',                  author: 'Tao Wong',                series: 'The System Apocalypse',          series_number: 11 },
+  { title: 'Broken Council',                    author: 'Tao Wong',                series: 'The System Apocalypse',          series_number: 12 },
+  { title: 'Stars Awoken',                      author: 'Tao Wong',                series: 'The System Apocalypse',          series_number: 13 },
+  { title: 'Eternal Night',                     author: 'Tao Wong',                series: 'The System Apocalypse',          series_number: 14 },
+
+  // ── Adventures on Brad (Tao Wong) ────────────────────────────────────────
+  { title: "A Farmer's Life",                   author: 'Tao Wong',                series: 'Adventures on Brad',             series_number: 1 },
+  { title: "A Gamer's Life",                    author: 'Tao Wong',                series: 'Adventures on Brad',             series_number: 2 },
+  { title: 'Quests',                            author: 'Tao Wong',                series: 'Adventures on Brad',             series_number: 3 },
+  { title: 'The Farm',                          author: 'Tao Wong',                series: 'Adventures on Brad',             series_number: 4 },
+
+  // ── Zodiac Academy (Caroline Peckham) ────────────────────────────────────
+  { title: 'Ruthless Fae',                      author: 'Caroline Peckham',        series: 'Zodiac Academy',                 series_number: 2 },
+  { title: 'The Reckoning',                     author: 'Caroline Peckham',        series: 'Zodiac Academy',                 series_number: 3 },
+  { title: 'Shadow Princess',                   author: 'Caroline Peckham',        series: 'Zodiac Academy',                 series_number: 4 },
+
+  // ── Nova Terra (Seth Ring) ────────────────────────────────────────────────
+  { title: 'Titan',                             author: 'Seth Ring',               series: 'Nova Terra',                     series_number: 2 },
+  { title: 'Shattered',                         author: 'Seth Ring',               series: 'Nova Terra',                     series_number: 3 },
+  { title: 'Castles',                           author: 'Seth Ring',               series: 'Nova Terra',                     series_number: 4 },
+  { title: 'Siege',                             author: 'Seth Ring',               series: 'Nova Terra',                     series_number: 5 },
+
+  // ── The Ten Realms (Michael Chatfield) ───────────────────────────────────
+  { title: 'The Two Week Curse',                author: 'Michael Chatfield',       series: 'The Ten Realms',                 series_number: 2 },
+  { title: 'The Seventh Realm, Part 1',         author: 'Michael Chatfield',       series: 'The Ten Realms',                 series_number: 4 },
+  { title: 'The Seventh Realm, Part 2',         author: 'Michael Chatfield',       series: 'The Ten Realms',                 series_number: 7 },
+
+  // ── Viridian Gate Online (James Hunter) ──────────────────────────────────
+  { title: 'Ruins of Dust',                     author: 'James Hunter',            series: 'Viridian Gate Online',           series_number: 3 },
+  { title: 'Crimson Alliance',                  author: 'James Hunter',            series: 'Viridian Gate Online',           series_number: 4 },
+  { title: 'The Jade Lord',                     author: 'James Hunter',            series: 'Viridian Gate Online',           series_number: 5 },
+
+  // ── The Death Gate Cycle (Margaret Weis) ─────────────────────────────────
+  { title: 'Elven Star',                        author: 'Margaret Weis',           series: 'The Death Gate Cycle',           series_number: 2 },
+  { title: 'Fire Sea',                          author: 'Margaret Weis',           series: 'The Death Gate Cycle',           series_number: 3 },
+  { title: 'The Hand of Chaos',                 author: 'Margaret Weis',           series: 'The Death Gate Cycle',           series_number: 5 },
+  { title: 'Into the Labyrinth',                author: 'Margaret Weis',           series: 'The Death Gate Cycle',           series_number: 6 },
+
+  // ── The Riyria Revelations gaps (Michael J. Sullivan) ─────────────────────
+  // books 4-6 are likely The Riyria Chronicles prequels numbered sequentially in DB
+  { title: 'The Crown Conspiracy',              author: 'Michael J. Sullivan',     series: 'The Riyria Revelations',         series_number: 4 },
+  { title: 'Avempartha',                        author: 'Michael J. Sullivan',     series: 'The Riyria Revelations',         series_number: 5 },
+
+  // ── The Riyria Chronicles (Michael J. Sullivan) ───────────────────────────
+  { title: 'The Rose and the Thorn',            author: 'Michael J. Sullivan',     series: 'The Riyria Chronicles',          series_number: 2 },
+
+  // ── Drenai Saga (David Gemmell) ──────────────────────────────────────────
+  { title: 'Legend',                            author: 'David Gemmell',           series: 'Drenai Saga',                    series_number: 1 },
+  { title: 'The King Beyond the Gate',          author: 'David Gemmell',           series: 'Drenai Saga',                    series_number: 2 },
+  { title: 'Waylander',                         author: 'David Gemmell',           series: 'Drenai Saga',                    series_number: 3 },
+  { title: 'Quest for Lost Heroes',             author: 'David Gemmell',           series: 'Drenai Saga',                    series_number: 4 },
+  { title: 'In the Realm of the Wolf',          author: 'David Gemmell',           series: 'Drenai Saga',                    series_number: 6 },
+  { title: 'The First Chronicles of Druss the Legend', author: 'David Gemmell',   series: 'Drenai Saga',                    series_number: 9 },
+
+  // ── Deathstalker (Simon R. Green) ────────────────────────────────────────
+  { title: 'Deathstalker',                      author: 'Simon R. Green',          series: 'Deathstalker',                   series_number: 1 },
+
+  // ── The Hollows (Kim Harrison) ────────────────────────────────────────────
+  { title: 'Dead Witch Walking',                author: 'Kim Harrison',            series: 'The Hollows',                    series_number: 1 },
+  { title: 'The Good, the Bad, and the Undead', author: 'Kim Harrison',            series: 'The Hollows',                    series_number: 2 },
+  { title: 'A Fistful of Charms',               author: 'Kim Harrison',            series: 'The Hollows',                    series_number: 6 },
+  { title: 'The Outlaw Demon Wails',            author: 'Kim Harrison',            series: 'The Hollows',                    series_number: 7 },
+  { title: 'Pale Demon',                        author: 'Kim Harrison',            series: 'The Hollows',                    series_number: 13 },
+
+  // ── Meredith Gentry (Laurell K. Hamilton) ────────────────────────────────
+  { title: 'A Caress of Twilight',              author: 'Laurell K. Hamilton',     series: 'Meredith Gentry',                series_number: 3 },
+  { title: 'Mistral\'s Kiss',                   author: 'Laurell K. Hamilton',     series: 'Meredith Gentry',                series_number: 6 },
+
+  // ── The Singing Hills Cycle (Nghi Vo) — starter already in list above ─────
+  // DB shows series "Singing Hills Cycle" (without "The") have [5], missing [1-4]
+  { title: 'The Empress of Salt and Fortune',   author: 'Nghi Vo',                 series: 'Singing Hills Cycle',            series_number: 1 },
+  { title: 'When the Tiger Came Down the Mountain', author: 'Nghi Vo',             series: 'Singing Hills Cycle',            series_number: 2 },
+  { title: 'Into the Riverlands',               author: 'Nghi Vo',                 series: 'Singing Hills Cycle',            series_number: 3 },
+  { title: 'Mammoths at the Gates',             author: 'Nghi Vo',                 series: 'Singing Hills Cycle',            series_number: 4 },
+
+  // ── Discworld sub-series: Death, Witches, Rincewind, Moist von Lipwig ─────
+  // "Death" series (Pratchett) have [1,5], missing [2,3,4]
+  { title: 'Reaper Man',                        author: 'Terry Pratchett',         series: 'Death',                          series_number: 2 },
+  { title: 'Soul Music',                        author: 'Terry Pratchett',         series: 'Death',                          series_number: 3 },
+  { title: 'Hogfather',                         author: 'Terry Pratchett',         series: 'Death',                          series_number: 4 },
+  // "Witches" series have [3,4,6], missing [1,2,5]
+  { title: 'Equal Rites',                       author: 'Terry Pratchett',         series: 'Witches',                        series_number: 1 },
+  { title: 'Wyrd Sisters',                      author: 'Terry Pratchett',         series: 'Witches',                        series_number: 2 },
+  { title: 'Carpe Jugulum',                     author: 'Terry Pratchett',         series: 'Witches',                        series_number: 5 },
+  // "Rincewind" have [3], missing [1,2]
+  { title: 'The Colour of Magic',               author: 'Terry Pratchett',         series: 'Rincewind',                      series_number: 1 },
+  { title: 'The Light Fantastic',               author: 'Terry Pratchett',         series: 'Rincewind',                      series_number: 2 },
+  // "Moist von Lipwig" have [2], missing [1]
+  { title: 'Going Postal',                      author: 'Terry Pratchett',         series: 'Moist von Lipwig',               series_number: 1 },
+
+  // ── Artemis Fowl (Eoin Colfer) ────────────────────────────────────────────
+  { title: 'The Arctic Incident',               author: 'Eoin Colfer',             series: 'Artemis Fowl',                   series_number: 2 },
+  { title: 'The Eternity Code',                 author: 'Eoin Colfer',             series: 'Artemis Fowl',                   series_number: 3 },
+
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────

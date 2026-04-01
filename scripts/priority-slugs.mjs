@@ -25,36 +25,38 @@ export const TIER_1 = [
   'red-rising', 'piranesi', 'good-omens', 'from-blood-and-ash', 'dune',
   // added
   'six-of-crows', 'the-night-circus',
-  // high search volume promotions
+  // high search volume
   'harry-potter-philosophers-stone', 'the-song-of-achilles',
   'iron-flame', 'onyx-storm', 'eragon', 'shadow-and-bone',
   'gideon-the-ninth', 'words-of-radiance', 'city-of-bones',
   'the-hitchhikers-guide-to-the-galaxy', 'enders-game', 'american-gods',
+  // massive mainstream / TV-driven search volume
+  'the-midnight-library', 'the-three-body-problem', 'outlander',
+  'interview-with-the-vampire', 'the-hunger-games',
 ];
 
 export const TIER_2 = [
   'a-darker-shade-of-magic', 'a-deadly-education', 'a-desolation-called-peace',
   'a-long-way-to-a-small-angry-planet', 'a-master-of-djinn', 'a-memory-called-empire',
-  'a-wizard-of-earthsea', 'american-gods', 'an-ember-in-the-ashes',
+  'a-wizard-of-earthsea', 'an-ember-in-the-ashes',
   'babel', 'best-served-cold', 'caraval',
-  'children-of-blood-and-bone', 'city-of-bones', 'daughter-of-the-forest',
+  'children-of-blood-and-bone', 'daughter-of-the-forest',
   'daughter-of-the-moon-goddess', 'dungeon-crawler-carl',
-  'empire-of-sand', 'enders-game', 'eragon',
-  'foundryside', 'graceling', 'guards-guards', 'half-a-king',
-  'harry-potter-philosophers-stone', 'he-who-fights-with-monsters', 'ink-and-bone',
-  'iron-flame', 'jade-city', 'kingdom-of-the-wicked',
+  'empire-of-sand', 'foundryside', 'graceling', 'guards-guards', 'half-a-king',
+  'he-who-fights-with-monsters', 'ink-and-bone',
+  'jade-city', 'kingdom-of-the-wicked',
   'nevernight', 'neverwhere', 'ravensworn', 'sabriel',
-  'shadow-and-bone', 'she-who-became-the-sun', 'skyward',
+  'she-who-became-the-sun', 'skyward',
   'stardust', 'storm-front', 'strange-the-dreamer',
   'the-bone-shard-daughter', 'the-dragon-republic', 'the-druids-keep',
   'the-fell-sword', 'the-fifth-season', 'the-graveyard-book',
-  'the-hitchhikers-guide-to-the-galaxy', 'the-house-in-the-cerulean-sea', 'the-hundred-thousand-kingdoms',
+  'the-house-in-the-cerulean-sea', 'the-hundred-thousand-kingdoms',
   'the-invisible-life-of-addie-larue', 'the-jasmine-throne', 'the-last-wish',
   'the-lions-of-al-rassan', 'the-magicians',
   'the-ocean-at-the-end-of-the-lane', 'the-once-and-future-king', 'the-once-and-future-witches',
-  'the-princess-bride', 'the-silmarillion', 'the-song-of-achilles',
+  'the-princess-bride', 'the-silmarillion',
   'the-starless-sea', 'the-ten-thousand-doors-of-january', 'the-way-of-shadows',
-  'the-witchs-heart', 'throne-of-glass', 'warbreaker', 'words-of-radiance',
+  'the-witchs-heart', 'throne-of-glass', 'warbreaker',
   // demoted from TIER_1
   'the-book-of-the-new-sun', 'the-spear-cuts-through-water',
   'the-darkness-that-comes-before', 'the-tainted-cup',
@@ -62,6 +64,12 @@ export const TIER_2 = [
   'the-bone-ships', 'the-ember-blade', 'the-rage-of-dragons',
   'daughter-of-the-empire', 'the-traitor-baru-cormorant', 'the-sword-of-kaigen',
   'senlin-ascends', 'emily-wildes-encyclopaedia-of-faeries', 'tigana',
+  // TV adaptations / high 2024-25 search volume
+  'fire-and-blood', 'the-sandman-vol-1-preludes-nocturnes',
+  'altered-carbon', 'snow-crash', 'kindred',
+  'somewhere-beyond-the-sea', 'the-familiar',
+  'the-mercy-of-gods', 'sunrise-on-the-reaping',
+  'the-maze-runner', 'divergent',
 ];
 
 export const TIER_3 = [
@@ -69,7 +77,7 @@ export const TIER_3 = [
   'a-court-of-mist-and-fury', 'a-court-of-wings-and-ruin', 'a-court-of-frost-and-starlight',
   'a-court-of-silver-flames',
   'house-of-earth-and-blood', 'house-of-sky-and-breath', 'house-of-flame-and-shadow',
-  'onyx-storm', 'a-fate-inked-in-blood', 'when-the-moon-hatched',
+  'a-fate-inked-in-blood', 'when-the-moon-hatched',
   'the-stars-are-dying', 'a-little-hatred', 'the-trouble-with-peace', 'the-wisdom-of-crowds',
   'a-kingdom-of-flesh-and-fire', 'the-crown-of-gilded-bones', 'the-war-of-two-queens',
 
@@ -135,12 +143,15 @@ export const TIER_3 = [
   'legendborn', 'bloodmarked',
   'the-bone-witch', 'the-heart-forger', 'the-shadowglass',
   'sea-of-the-jade-serpent',
+  'catching-fire', 'mockingjay',
+  'the-scorch-trials', 'the-death-cure',
+  'fireborne', 'the-gilded-wolves', 'the-daughters-war',
 
   // ── Cozy / Heartwarming ───────────────────────────────────────────────────
   'a-psalm-for-the-wild-built', 'a-prayer-for-the-crown-shy',
   'bookshops-and-bonedust', 'nettle-and-bone', 'thornhedge',
   'the-very-secret-society-of-irregular-witches', 'witch-of-wild-things',
-  'sorcery-of-thorns', 'the-midnight-library',
+  'sorcery-of-thorns',
   'emily-wildes-map-of-the-otherlands',
   'the-undertaking-of-hart-and-mercy',
   'in-other-lands',
@@ -148,8 +159,8 @@ export const TIER_3 = [
   // ── Urban / Gaiman-adjacent ───────────────────────────────────────────────
   'anansi-boys', 'coraline', 'norse-mythology',
   'the-magician-king', 'the-magicians-land',
-  'outlander', 'dragonfly-in-amber',
   'rivers-of-london', 'moon-over-soho',
+  'dead-witch-walking', 'burn-for-me',
 
   // ── Classic & Literary Fantasy ────────────────────────────────────────────
   'a-song-for-arbonne', 'under-heaven', 'river-of-stars',
@@ -164,6 +175,12 @@ export const TIER_3 = [
 
   // ── Expanse (Corey) ───────────────────────────────────────────────────────
   'leviathan-wakes', 'calibans-war', 'abaddons-gate',
+
+  // ── Sci-Fi classics (steady search, TV/film adaptations) ─────────────────
+  'neuromancer', 'do-androids-dream-of-electric-sheep',
+  'the-dark-forest', 'deaths-end',
+  'hyperion', 'the-fall-of-hyperion',
+  'ready-player-one',
 
   // ── LitRPG / Progression Fantasy ─────────────────────────────────────────
   'soulsmith', 'blackflame', 'ghostwater', 'underlord', 'wintersteel', 'waybound',
