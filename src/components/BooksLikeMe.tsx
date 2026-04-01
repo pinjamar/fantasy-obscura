@@ -21,7 +21,7 @@ interface Recommendation {
   slug?: string;
 }
 
-const MAX_BOOKS = 8;
+const MAX_BOOKS = 4;
 
 export default function BooksLikeMe() {
   const [query, setQuery] = useState('');
@@ -124,10 +124,15 @@ export default function BooksLikeMe() {
   }
 
   return (
-    <div className="mt-8 mb-12 rounded-2xl border border-purple-200 bg-linear-to-br from-purple-50 to-indigo-50 p-6">
-      <p className="text-sm text-zinc-500 mb-5">
-        <span className="font-semibold text-zinc-700">Alchemist</span> — add up to 8 books you love — he'll find what they share and recommend similar reads.
-      </p>
+    <div className="mt-8 mb-12 rounded-2xl border-2 border-purple-300 bg-linear-to-br from-purple-50 via-indigo-50 to-purple-50 p-6 shadow-md shadow-purple-100">
+      <div className="mb-5">
+        <div className="flex items-center gap-2.5 mb-1.5">
+          <h2 className="text-xl font-bold text-zinc-900 tracking-tight">Book Recommender</h2>
+        </div>
+        <p className="text-sm text-zinc-500 leading-relaxed">
+          Add up to 4 books you love — the AI finds what they share and recommends your next read.
+        </p>
+      </div>
 
       {/* Search input */}
       <div ref={wrapperRef} className="relative mb-4">

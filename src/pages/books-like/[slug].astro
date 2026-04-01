@@ -141,17 +141,22 @@ const booksLikeJsonLd = JSON.stringify({
             />
           </div>
       }
-      {sourceAudiobook && (
-        <div class="w-full max-w-50 text-center">
-          <span class="block text-xs font-semibold text-zinc-500 mb-1">🎧 Audiobook</span>
-          {sourceNarrator && <span class="block text-xs text-zinc-400">{sourceNarrator}</span>}
-          {sourceNarratorRating && NARRATOR_BADGE[sourceNarratorRating] && (
-            <span class={`inline-flex items-center mt-1 px-2 py-0.5 rounded-full text-xs font-medium border ${NARRATOR_BADGE[sourceNarratorRating].color}`}>
-              {NARRATOR_BADGE[sourceNarratorRating].label}
-            </span>
-          )}
-        </div>
-      )}
+      <div class="w-full max-w-50 flex flex-col gap-2">
+        <a
+          href={`https://www.amazon.com/s?k=${encodeURIComponent(source.title + ' ' + source.author)}&tag=librariancura-20`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full text-center px-2 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-500 text-zinc-900 text-xs font-semibold transition-colors"
+        >Amazon</a>
+        {sourceAudiobook && (
+          <a
+            href={dbAudibleMap.get(sourceBookSlug) ?? `https://www.audible.com/search?keywords=${encodeURIComponent(source.title + ' ' + source.author)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full text-center px-2 py-1.5 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-800 text-xs font-semibold transition-colors border border-sky-200"
+          >🎧 Audible</a>
+        )}
+      </div>
     </div>
 
     <!-- Title + meta -->
@@ -162,8 +167,8 @@ const booksLikeJsonLd = JSON.stringify({
           : source.title}
       </h1>
       {source.series && source.series_number != null && seriesSlug && (
-        <a href={`/reading-orders/${seriesSlug}/`} class="inline-block mt-2 text-sm bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full font-medium hover:bg-indigo-100 transition-colors">
-          {source.series} #{source.series_number}
+        <a href={`/reading-orders/${seriesSlug}/`} class="inline-block mt-1.5 text-xl text-zinc-400 font-light italic hover:text-zinc-600 transition-colors">
+          {source.series} · #{source.series_number} ›
         </a>
       )}
       <p class="mt-2 text-xl text-zinc-500">by <a href={`/authors/${authorSlug}/`} class="hover:text-purple-700 transition-colors">{source.author}</a></p>
@@ -247,7 +252,6 @@ const booksLikeJsonLd = JSON.stringify({
           <div class="space-y-4">
             {aspect.recs.map((r) => {
               const h = getHeat(r.heat_level)
-              const seriesLabel = r.series_label ?? (r.standalone ? 'Standalone' : 'Series')
               const recSlug = toSlug(r.title)
               const recCover = dbRecCoverMap.get(recSlug) ?? (r.cover_url?.includes('archive.org') ? '' : r.cover_url)
               return (
@@ -279,21 +283,18 @@ const booksLikeJsonLd = JSON.stringify({
                         ? <a href={`/books/${recSlug}/`} class="hover:text-purple-700 transition-colors">{r.title}</a>
                         : r.title}
                       {r.series && r.series_number != null && (
-                        <span class="font-normal text-indigo-600 text-sm"> · {r.series} #{r.series_number}</span>
+                        <a href={`/reading-orders/${toSlug(r.series)}/`} class="font-normal text-zinc-400 text-sm italic hover:text-zinc-600 transition-colors"> · {r.series} #{r.series_number}</a>
                       )}
                     </p>
                     <p class="text-sm text-zinc-500 mb-0.5">
-                      by {r.author}
+                      by <a href={`/authors/${toSlug(r.author)}/`} class="hover:text-purple-700 transition-colors">{r.author}</a>
                       {r.author_note && <span class="text-zinc-400"> ({r.author_note})</span>}
                     </p>
                     <div class="flex items-center gap-2 text-sm mt-0.5">
                       <span title={`Darkness ${r.darkness_level}/5`}>{darknessCandles(r.darkness_level)}</span>
                       {h && <span title={`Heat — ${h.label}`}>{h.flames}</span>}
                     </div>
-                    <p class="text-xs text-zinc-400">
-                      {r.series_label ?? (r.standalone ? 'Standalone' : 'Series')}
-                      {r.audiobook && ' · Audiobook ✅'}
-                    </p>
+
                     <!-- Tags: mobile only (above description, next to cover) -->
                     <div class="flex flex-wrap gap-1.5 mt-2 sm:hidden">
                       {r.tags.map((tag) => (

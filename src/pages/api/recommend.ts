@@ -33,6 +33,7 @@ async function checkRateLimit(key: string, limit: number): Promise<{ allowed: bo
 
 export const POST: APIRoute = async ({ request, locals }) => {
   const user = locals.user;
+  const geminiKey = (locals.runtime?.env?.GEMINI_API_KEY as string | undefined) ?? import.meta.env.GEMINI_API_KEY;
   const ip =
     request.headers.get('cf-connecting-ip') ??
     request.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
@@ -66,7 +67,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
   const bookList = books.map((b, i) => `${i + 1}. "${b.title}" by ${b.author}`).join('\n');
 
-  const genAI = new GoogleGenerativeAI(import.meta.env.GEMINI_API_KEY);
+  if (!geminiKey) {
+    return new Response(JSON.stringify({ error: 'Recommender is not configured yet — check back soon.' }), { status: 503, headers: JSON_HEADERS });
+  }
+
+  const genAI = new GoogleGenerativeAI(geminiKey);
   const model = genAI.getGenerativeModel({
     model: 'gemini-2.5-flash',
     generationConfig: { thinkingConfig: { thinkingBudget: 0 } } as any,
