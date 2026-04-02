@@ -13,7 +13,6 @@ export const GET: APIRoute = async ({ request }) => {
   const { data, error } = await supabaseClient
     .from('authors')
     .select('name, slug, photo_url, book_count, top_genres, avg_rating')
-    .gt('book_count', 1)
     .ilike('name', `%${search}%`)
     .order('name')
     .limit(60);

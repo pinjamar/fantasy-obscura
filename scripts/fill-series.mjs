@@ -1360,35 +1360,37 @@ async function fillSeriesGapsInDB(existing, existingSlugs, existingTitles, norma
     seriesGroups.get(key).numbers.add(num);
   }
 
-  // Series covered by the hardcoded BOOKS list (Phase 1a handles those)
-  const booksSeriesSet = new Set(BOOKS.map((b) => (b.series ?? '').toLowerCase().trim()).filter(Boolean));
-
   const completedGapSeries = new Set((progressData.completedGapSeries ?? []).map((s) => s.toLowerCase()));
 
-  // Find series with gaps not covered by BOOKS and not yet swept
   const toSweep = [];
   for (const [key, info] of seriesGroups) {
-    if (booksSeriesSet.has(key))      continue; // covered by Phase 1a
     if (completedGapSeries.has(key))  continue; // already swept with 0 results
 
     const nums = [...info.numbers].sort((a, b) => a - b);
-    if (nums.length < 2) continue; // need at least 2 books to detect a gap
+    if (nums.length < 1) continue;
 
+    // Inner gaps between min and max we already have
     const gaps = [];
     for (let i = nums[0]; i <= nums[nums.length - 1]; i++) {
       if (!info.numbers.has(i)) gaps.push(i);
     }
-    if (gaps.length > 0) toSweep.push({ ...info, gaps, nums });
+    // Always sweep — even if no inner gaps, the tail (max+1, max+2…) may exist
+    toSweep.push({ ...info, gaps, nums });
   }
 
   if (toSweep.length === 0) {
-    console.log('  No uncovered series gaps found in DB.\n');
+    console.log('  No uncovered series found in DB.\n');
     return 0;
   }
 
-  console.log(`  Found ${toSweep.length} series with gaps:\n`);
-  for (const s of toSweep) {
+  const withGaps   = toSweep.filter(s => s.gaps.length > 0);
+  const tailOnly   = toSweep.filter(s => s.gaps.length === 0);
+  console.log(`  Found ${toSweep.length} series to sweep (${withGaps.length} with inner gaps, ${tailOnly.length} tail-check only):\n`);
+  for (const s of withGaps) {
     console.log(`    • ${s.series} (${s.author}): missing #${s.gaps.join(', ')}`);
+  }
+  for (const s of tailOnly) {
+    console.log(`    • ${s.series} (${s.author}): checking for books after #${s.nums[s.nums.length - 1]}`);
   }
   console.log('');
 
