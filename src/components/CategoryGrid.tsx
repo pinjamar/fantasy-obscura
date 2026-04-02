@@ -585,27 +585,30 @@ const categorySubgenreMap: Record<string, string[]> = {
   'science-fantasy':['Science Fantasy'],
 };
 
-export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem[] }) {
+export default function CategoryGrid({ initialBooks, coverMap }: { initialBooks?: BookItem[]; coverMap?: Record<string, string> }) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [showAllCats, setShowAllCats] = useState(false);
 
   const buildMaps = (items: BookItem[]) => {
-    const covers = new Map<string, string>();
-    const slugs  = new Map<string, string>();
+    const covers     = new Map<string, string>(); // title → cover
+    const coversBySlug = new Map<string, string>(); // slug → cover
+    const slugs      = new Map<string, string>();
     for (const b of items) {
       const key = b.title.toLowerCase();
       if (b.cover_url) covers.set(key, b.cover_url);
-      if (b.slug)      slugs.set(key, b.slug);
+      if (b.cover_url && b.slug) coversBySlug.set(b.slug, b.cover_url);
+      if (b.slug) slugs.set(key, b.slug);
     }
-    return { covers, slugs };
+    return { covers, coversBySlug, slugs };
   };
 
   const seed = initialBooks ?? [];
-  const { covers: seedCovers, slugs: seedSlugs } = buildMaps(seed);
+  const { covers: seedCovers, coversBySlug: seedCoversBySlug, slugs: seedSlugs } = buildMaps(seed);
 
-  const [allBooks, setAllBooks]     = useState<BookItem[]>(seed);
-  const [bookCovers, setBookCovers] = useState<Map<string, string>>(seedCovers);
-  const [bookSlugs, setBookSlugs]   = useState<Map<string, string>>(seedSlugs);
+  const [allBooks, setAllBooks]           = useState<BookItem[]>(seed);
+  const [bookCovers, setBookCovers]       = useState<Map<string, string>>(seedCovers);
+  const [coversBySlug, setCoversBySlug]   = useState<Map<string, string>>(seedCoversBySlug);
+  const [bookSlugs, setBookSlugs]         = useState<Map<string, string>>(seedSlugs);
 
   useEffect(() => {
     if (initialBooks && initialBooks.length > 0) return; // already have data
@@ -613,16 +616,17 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
       .then((r) => r.json())
       .then((data: { items?: BookItem[] }) => {
         const items = data.items ?? [];
-        const { covers, slugs } = buildMaps(items);
+        const { covers, coversBySlug, slugs } = buildMaps(items);
         setAllBooks(items);
         setBookCovers(covers);
+        setCoversBySlug(coversBySlug);
         setBookSlugs(slugs);
       })
       .catch(() => {});
   }, []);
 
-  const getCoverSrc = (title: string): string => {
-    const db = bookCovers.get(title.toLowerCase());
+  const getCoverSrc = (title: string, slug?: string | null): string => {
+    const db = (slug ? (coverMap?.[slug] ?? coversBySlug.get(slug)) : null) ?? bookCovers.get(title.toLowerCase());
     return normalizeCoverUrl(db) ?? '/grimplaceholder.png';
   };
 
@@ -660,7 +664,7 @@ export default function CategoryGrid({ initialBooks }: { initialBooks?: BookItem
     <div className="flex gap-2.5 overflow-x-auto -mx-1 px-1 py-1" style={{ scrollbarWidth: 'none' }}>
       {books.map((b, i) => {
         const slug    = b.slug ?? getSlug(b.title);
-        const coverSrc = b.cover ?? getCoverSrc(b.title);
+        const coverSrc = b.cover ?? getCoverSrc(b.title, slug);
         const img = (
           <div className="shrink-0 w-17 h-25.5 rounded-lg overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 shadow-sm hover:shadow-md transition-shadow">
             <img

@@ -4,7 +4,22 @@ import CategoryGrid from "../components/CategoryGrid";
 import BookSearch from "../components/BookSearch";
 import { supabaseClient } from '../lib/supabaseClient';
 
-// Prefetch compact book data server-side so CategoryGrid has covers on first paint
+// Fetch covers only for the curated slugs used in CategoryGrid — avoids serializing 8000+ books
+const CURATED_SLUGS = ["the-way-of-kings","the-name-of-the-wind","the-final-empire","the-lies-of-locke-lamora","a-court-of-thorns-and-roses","six-of-crows","the-blade-itself","red-rising","the-poppy-war","gardens-of-the-moon","piranesi","dungeon-crawler-carl","the-eye-of-the-world","the-fifth-season","the-priory-of-the-orange-tree","the-rage-of-dragons","a-memory-called-empire","words-of-radiance","a-court-of-mist-and-fury","fourth-wing","from-blood-and-ash","the-cruel-prince","kingdom-of-the-wicked","divine-rivals","serpent-dove","kingdom-of-ash","shadow-and-bone","heir-of-fire","best-served-cold","prince-of-thorns","the-black-company","the-gutter-prayer","king-of-thorns","the-heroes","a-little-hatred","red-country","crooked-kingdom","nevernight","ninth-house","storm-front","american-gods","rivers-of-london","neverwhere","good-omens","house-of-earth-and-blood","changes","battle-ground","the-eye-of-the-bedlam-bride","jonathan-strange-and-mr-norrell","circe","the-bear-and-the-nightingale","spinning-silver","uprooted","the-song-of-achilles","the-invisible-life-of-addie-larue","daughter-of-the-moon-goddess","babel","mexican-gothic","the-once-and-future-witches","a-deadly-education","an-ember-in-the-ashes","the-magicians","mark-of-the-fool","iron-flame","ariadne","the-witchs-heart","legends-and-lattes","the-house-in-the-cerulean-sea","somewhere-beyond-the-sea","the-goblin-emperor","bookshops-bonedust","emily-wildes-encyclopaedia-of-faeries","tress-of-the-emerald-sea","waybound","wintersteel","underlord","dreadgod","uncrowned","ghostwater","he-who-fights-with-monsters","unsouled","soulsmith","blackflame","kings-of-the-wyld","the-riyria-revelations","elric-of-melnibone","the-tainted-cup","conan-the-victorious","dune","gideon-the-ninth","morning-star","a-wizard-of-earthsea","the-shadow-of-the-torturer","golden-son","defiant","wind-and-truth","onyx-storm","the-strength-of-the-few","the-sunlit-man","yumi-and-the-nightmare-painter","house-of-flame-and-shadow","murtagh","sword-catcher","of-war-and-ruin","the-fury-of-the-gods","last-violent-call","the-warm-hands-of-ghosts","empire-of-the-damned","the-trials-of-empire","the-tyranny-of-faith","witch-queen-of-redwinter","the-book-that-broke-the-world","the-doors-of-midnight","the-will-of-the-many","mistborn-the-final-empire"];
+
+const coverMap: Record<string, string> = {};
+{
+  const { data } = await supabaseClient
+    .from('books')
+    .select('slug, cover_url, avg_rating')
+    .in('slug', CURATED_SLUGS)
+    .not('cover_url', 'is', null);
+  for (const b of (data ?? [])) {
+    if (b.slug && b.cover_url) coverMap[b.slug] = b.cover_url;
+  }
+}
+
+// Keep initialBooks for top-rated section (needs avg_rating across all books)
 const initialBooks: { title: string; slug: string | null; cover_url: string | null; avg_rating: number | null }[] = [];
 {
   const PAGE = 1000;
@@ -13,6 +28,7 @@ const initialBooks: { title: string; slug: string | null; cover_url: string | nu
     const { data } = await supabaseClient
       .from('books')
       .select('title, slug, cover_url, avg_rating')
+      .not('avg_rating', 'is', null)
       .order('avg_rating', { ascending: false, nullsFirst: false })
       .range(from, from + PAGE - 1);
     if (!data?.length) break;
@@ -51,7 +67,7 @@ const initialBooks: { title: string; slug: string | null; cover_url: string | nu
 
   <BookSearch client:load />
 
-  <CategoryGrid client:load initialBooks={initialBooks} />
+  <CategoryGrid client:load initialBooks={initialBooks} coverMap={coverMap} />
 
   <!-- Static prose: SEO content, word count, h2 bridge -->
   <section class="hidden sm:grid mt-16 border-t pt-10 grid-cols-2 gap-10 text-sm text-zinc-600 leading-relaxed">

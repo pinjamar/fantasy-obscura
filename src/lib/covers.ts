@@ -8,9 +8,15 @@
  */
 export function normalizeCoverUrl(url: string | null | undefined): string | null {
   if (!url) return null;
-  const m = url.match(/\/(\d+)-[A-Z]\.jpg$/);
-  if (m && url.includes('archive.org')) {
-    return `https://covers.openlibrary.org/b/id/${parseInt(m[1], 10)}-L.jpg`;
+  // archive.org zip-path → OL CDN
+  if (url.includes('archive.org')) {
+    const m = url.match(/\/(\d+)-[A-Z]\.jpg$/);
+    if (m) return `https://covers.openlibrary.org/b/id/${parseInt(m[1], 10)}-L.jpg`;
+  }
+  // Google Books books/content → publisher/content (higher-res, no hotlink block)
+  if (url.includes('books.google.com/books/content')) {
+    const m = url.match(/[?&]id=([^&]+)/);
+    if (m) return `https://books.google.com/books/publisher/content/images/frontcover/${m[1]}?fife=w400-h600`;
   }
   return url;
 }
