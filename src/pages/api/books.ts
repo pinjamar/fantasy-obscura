@@ -65,7 +65,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 };
 
-const BOOK_COLS = 'id,title,slug,authors,cover_url,isbn,publication_year,page_count,avg_rating,synopsis,subgenres,series,series_number,darkness_level,heat_level,series_status,audiobook_available,tropes,audience';
+const BOOK_COLS = 'id,title,slug,authors,cover_url,isbn,publication_year,page_count,avg_rating,synopsis,subgenres,series,series_number,darkness_level,heat_level,series_status,audiobook_available,tropes,audience,protagonist_gender';
 
 export const GET: APIRoute = async ({ request }) => {
   try {
@@ -103,7 +103,8 @@ export const GET: APIRoute = async ({ request }) => {
     const darkness  = url.searchParams.get('darkness');
     const heat      = url.searchParams.get('heat');
     const trope     = url.searchParams.get('trope');
-    const audience  = url.searchParams.get('audience');
+    const audience     = url.searchParams.get('audience');
+    const protagonist  = url.searchParams.get('protagonist');
     const standalone = url.searchParams.get('standalone') === '1';
     const completed  = url.searchParams.get('completed')  === '1';
 
@@ -119,7 +120,8 @@ export const GET: APIRoute = async ({ request }) => {
     if (darkness)   query = query.eq('darkness_level', parseInt(darkness, 10));
     if (heat)       query = query.eq('heat_level', heat);
     if (trope)      query = query.overlaps('tropes', [trope]);
-    if (audience)   query = query.eq('audience', audience);
+    if (audience)      query = query.eq('audience', audience);
+    if (protagonist)   query = query.eq('protagonist_gender', protagonist);
     if (standalone) query = query.is('series', null);
     if (completed)  query = query.eq('series_status', 'completed');
 

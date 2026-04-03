@@ -92,7 +92,22 @@ async function fetchAmazonCover(isbn13) {
   }
 }
 
-async function sleep(ms) {
+async function fetchOpenLibraryCover(isbn) {
+  try {
+    const res = await fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const entry = Object.values(data)[0];
+    const large = entry?.cover?.large;
+    if (!large) return null;
+    const m = large.match(/\/b\/id\/(\d+)/);
+    return m ? `https://covers.openlibrary.org/b/id/${m[1]}-L.jpg` : null;
+  } catch {
+    return null;
+  }
+}
+
+function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
@@ -140,6 +155,13 @@ for (const book of targets) {
     cover = await fetchAmazonCover(book.isbn);
     if (cover) console.log(`  [Amazon] ${book.title}`);
     await sleep(200);
+  }
+
+  // Open Library fallback (good for older/obscure titles)
+  if (!cover && book.isbn) {
+    cover = await fetchOpenLibraryCover(book.isbn);
+    if (cover) console.log(`  [OL] ${book.title}`);
+    await sleep(400);
   }
 
   if (!cover) {

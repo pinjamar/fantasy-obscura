@@ -83,6 +83,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience: audienceProp
   const [standaloneFilter, setStandaloneFilter] = useState(false);
   const [tropeFilter, setTropeFilter]       = useState<string | null>(null);
   const [audienceFilter, setAudienceFilter] = useState<string | null>(null);
+  const [protagonistFilter, setProtagonistFilter] = useState<string | null>(null);
 
   const topRef        = useRef<HTMLDivElement>(null);
   const isFirstRender = useRef(true);
@@ -122,6 +123,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience: audienceProp
         if (tropeFilter)              params.set('trope', tropeFilter);
         if (audienceFilter)           params.set('audience', audienceFilter);
         else if (audienceProp)        params.set('audience', audienceProp);
+        if (protagonistFilter)        params.set('protagonist', protagonistFilter);
         if (standaloneFilter)         params.set('standalone', '1');
         if (completedFilter)          params.set('completed', '1');
 
@@ -145,7 +147,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience: audienceProp
     const timer = setTimeout(doFetch, delay);
     return () => { clearTimeout(timer); controller.abort(); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sort, searchQuery, darknessFilter, heatFilter, completedFilter, standaloneFilter, tropeFilter, audienceFilter, currentPage, genre, audienceProp]);
+  }, [sort, searchQuery, darknessFilter, heatFilter, completedFilter, standaloneFilter, tropeFilter, audienceFilter, protagonistFilter, currentPage, genre, audienceProp]);
 
   // Reset to page 1 when any filter (not page itself) changes
   const resetPage = () => setCurrentPage(1);
@@ -321,6 +323,21 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience: audienceProp
             <span className="text-sm font-medium text-zinc-700">{label}</span>
           </button>
         ))}
+
+        <div className="hidden sm:flex items-center gap-2">
+          <span className="text-sm font-medium text-zinc-700">Protagonist</span>
+          {([['M', 'Male'], ['F', 'Female']] as [string, string][]).map(([label, value]) => (
+            <button
+              key={value}
+              onClick={() => { setProtagonistFilter(protagonistFilter === value ? null : value); resetPage(); }}
+              className={`w-7 h-7 rounded flex items-center justify-center border text-sm font-medium transition-all ${
+                protagonistFilter === value ? 'bg-zinc-900 border-zinc-900 text-white' : 'border-zinc-400 text-zinc-700 hover:border-zinc-600'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
 
         <span className="ml-auto text-xs text-zinc-400 shrink-0">
           {loading ? 'Loading…' : `${total} books${totalPages > 1 ? ` · page ${currentPage}/${totalPages}` : ''}`}

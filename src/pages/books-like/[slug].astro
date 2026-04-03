@@ -27,14 +27,6 @@ const sourcetropes: string[] = dbBook?.tropes?.length ? dbBook.tropes : source.t
 const sourceSubgenres: string[] = (dbBook as any)?.subgenres ?? []
 const sourceWarnings: string[] = (dbBook as any)?.content_warnings ?? []
 const sourceAudiobook: boolean = (dbBook as any)?.audiobook_available ?? false
-const sourceNarrator: string | null = (dbBook as any)?.audiobook_narrator ?? null
-const sourceNarratorRating: string | null = (dbBook as any)?.audiobook_narrator_rating ?? null
-const NARRATOR_BADGE: Record<string, { label: string; color: string }> = {
-  excellent: { label: 'Excellent narrator', color: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
-  good:      { label: 'Good narrator',      color: 'text-blue-700 bg-blue-50 border-blue-200' },
-  mixed:     { label: 'Mixed reviews',      color: 'text-amber-700 bg-amber-50 border-amber-200' },
-  avoid:     { label: 'Skip the audiobook', color: 'text-red-700 bg-red-50 border-red-200' },
-}
 
 function upgradeCoverUrl(url: string | null | undefined): string {
   if (!url) return '';
@@ -53,7 +45,7 @@ const recSlugs = aspects.flatMap((a) => a.recs.map((r) => toSlug(r.title)))
 const allCheckSlugs = [...new Set([sourceBookSlug, ...recSlugs])]
 const { data: dbRecCovers } = await supabaseClient
   .from('books')
-  .select('slug, cover_url, content_warnings, audiobook_audible_url')
+  .select('slug, cover_url, content_warnings, audiobook_audible_url, protagonist_gender')
   .in('slug', allCheckSlugs)
 const dbSlugSet = new Set((dbRecCovers ?? []).map((b) => b.slug))
 const dbRecCoverMap = new Map<string, string>(
@@ -64,6 +56,9 @@ const dbWarningsMap = new Map<string, string[]>(
 )
 const dbAudibleMap = new Map<string, string>(
   (dbRecCovers ?? []).filter((b: any) => b.audiobook_audible_url).map((b: any) => [b.slug, b.audiobook_audible_url])
+)
+const dbProtagonistMap = new Map<string, string>(
+  (dbRecCovers ?? []).filter((b: any) => b.protagonist_gender).map((b: any) => [b.slug, b.protagonist_gender])
 )
 
 const SITE = 'https://thegrimoire.co';

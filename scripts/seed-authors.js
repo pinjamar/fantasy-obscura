@@ -22,8 +22,9 @@ import { createClient } from '@supabase/supabase-js';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const DRY_RUN  = process.argv.includes('--dry-run');
-const ALL      = process.argv.includes('--all');
+const DRY_RUN      = process.argv.includes('--dry-run');
+const ALL          = process.argv.includes('--all');
+const PHOTOS_ONLY  = process.argv.includes('--photos-only'); // only authors missing photo_url
 const DELAY_MS = 400;
 
 const supabase = createClient(
@@ -272,8 +273,9 @@ async function getExistingProfiles() {
 async function seed() {
   console.log('📚 Fantasy Obscura — seed-authors');
   if (DRY_RUN) console.log('   --dry-run: no DB writes');
-  if (ALL)     console.log('   --all: rerunning all authors');
-  else         console.log('   skipping authors already in the authors table (use --all to rerun)');
+  if (ALL)          console.log('   --all: rerunning all authors');
+  else if (PHOTOS_ONLY) console.log('   --photos-only: only authors missing a photo');
+  else              console.log('   skipping authors already in the authors table (use --all to rerun)');
   console.log();
 
   const [allNames, existing] = await Promise.all([getAllAuthorNames(), getExistingProfiles()]);
@@ -284,7 +286,8 @@ async function seed() {
   for (const name of allNames) {
     const slug = authorToSlug(name);
 
-    if (!ALL && existing.has(slug)) { nSkipped++; continue; }
+    if (PHOTOS_ONLY && existing.has(slug) && existing.get(slug)) { nSkipped++; continue; }
+    else if (!ALL && !PHOTOS_ONLY && existing.has(slug)) { nSkipped++; continue; }
     // ── 1. Open Library ──
     const ol = await fetchOpenLibrary(name);
     await sleep(DELAY_MS);
@@ -366,9 +369,9 @@ async function seed() {
       continue;
     }
 
-    const { error } = await supabase
-      .from('authors')
-      .upsert(record, { onConflict: 'slug' });
+    const { error } = PHOTOS_ONLY
+      ? await supabase.from('authors').update({ photo_url }).eq('slug', slug)
+      : await supabase.from('authors').upsert(record, { onConflict: 'slug' });
 
     if (error) {
       console.error(`✗  ${name}  DB error: ${error.message}`);
