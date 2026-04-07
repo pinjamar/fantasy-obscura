@@ -123,24 +123,67 @@ Respond ONLY with valid JSON in this exact format, no extra text:
     });
   }
 
-  // Look up covers + slugs from DB by title
-  const titles = parsed.recommendations.map((r) => r.title);
+  // Look up covers + slugs from DB — try multiple slug variants per title
+  const toSlug = (s: string) => s.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const slugVariants = (title: string): string[] => {
+    const variants = new Set<string>();
+    variants.add(toSlug(title));
+    // Strip subtitle after ': '  e.g. "Mistborn: The Final Empire" → "The Final Empire"
+    const colonIdx = title.indexOf(': ');
+    if (colonIdx > 0) variants.add(toSlug(title.slice(colonIdx + 2)));
+    // Strip leading article  e.g. "A Crown of Stars" → "Crown of Stars"
+    variants.add(toSlug(title.replace(/^(A|An|The) /i, '')));
+    return [...variants];
+  };
+  const allSlugs = [...new Set(parsed.recommendations.flatMap((r) => slugVariants(r.title)))];
   const { data: dbBooks } = await supabaseClient
     .from('books')
     .select('title, cover_url, slug')
-    .in('title', titles);
+    .in('slug', allSlugs);
 
-  const coverMap = new Map<string, { cover_url: string; slug: string }>(
-    (dbBooks ?? [])
+  // Series-based fallback: when AI returns a series name as the title (e.g. "Memory, Sorrow, and Thorn #1")
+  const recsNeedingSeriesLookup = parsed.recommendations.filter((r) => {
+    const found = slugVariants(r.title).some((s) => (dbBooks ?? []).find((b) => b.slug === s));
+    return !found && r.series && r.series_number;
+  });
+  let seriesBooks: { title: string; cover_url: string | null; slug: string; series: string | null; series_number: number | null }[] = [];
+  if (recsNeedingSeriesLookup.length) {
+    for (const rec of recsNeedingSeriesLookup) {
+      const { data } = await supabaseClient
+        .from('books')
+        .select('title, cover_url, slug, series, series_number')
+        .ilike('series', `%${rec.series!.replace(/[,.']/g, '%')}%`)
+        .eq('series_number', rec.series_number!)
+        .limit(1);
+      if (data?.length) seriesBooks.push(...data as any);
+    }
+  }
+
+  const coverMapBySlug = new Map<string, { cover_url: string; slug: string }>(
+    [...(dbBooks ?? []), ...seriesBooks]
       .filter((b) => b.cover_url && !b.cover_url.includes('archive.org'))
-      .map((b) => [b.title.toLowerCase(), { cover_url: b.cover_url, slug: b.slug }])
+      .map((b) => [b.slug, { cover_url: b.cover_url!, slug: b.slug }])
+  );
+  // Map series title → slug for series-based matches
+  const seriesSlugMap = new Map<string, { cover_url: string; slug: string }>(
+    seriesBooks
+      .filter((b) => b.cover_url && !b.cover_url.includes('archive.org'))
+      .map((b) => [`${b.series?.toLowerCase()}:${b.series_number}`, { cover_url: b.cover_url!, slug: b.slug }])
   );
 
-  const enriched = parsed.recommendations.map((rec) => ({
-    ...rec,
-    series: rec.series === 'null' || rec.series === '' ? null : rec.series,
-    ...( coverMap.get(rec.title.toLowerCase()) ?? {} ),
-  }));
+  const enriched = parsed.recommendations.map((rec) => {
+    const cleanSeries = rec.series === 'null' || rec.series === '' ? null : rec.series;
+    const match =
+      slugVariants(rec.title).reduce<{ cover_url: string; slug: string } | undefined>(
+        (found, s) => found ?? coverMapBySlug.get(s),
+        undefined
+      ) ?? seriesSlugMap.get(`${cleanSeries?.toLowerCase()}:${rec.series_number}`);
+    return {
+      ...rec,
+      series: cleanSeries,
+      ...(match ?? {}),
+    };
+  });
 
   return new Response(JSON.stringify({ recommendations: enriched, remaining }), {
     status: 200,

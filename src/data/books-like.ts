@@ -2594,6 +2594,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: "A Wizard's Guide to Defensive Baking",
+            slug: 'a-wizards-guide-to-defensive-baking',
             author: 'T. Kingfisher',
             cover_url:
               'https://covers.openlibrary.org/b/isbn/9781614504139-L.jpg',
@@ -3425,6 +3426,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: 'Mistborn: The Final Empire',
+            slug: 'the-final-empire',
             author: 'Brandon Sanderson',
             cover_url:
               'https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg',
@@ -3745,6 +3747,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: "Harry Potter and the Sorcerer's Stone",
+            slug: 'harry-potter-philosophers-stone',
             author: 'J.K. Rowling',
             cover_url: 'https://images-na.ssl-images-amazon.com/images/P/0439708184.01._SCLZZZZZZZ_.jpg',
             darkness_level: 2,
@@ -4370,6 +4373,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: "His Majesty's Dragon",
+            slug: 'his-majestys-dragon',
             author: 'Naomi Novik',
             cover_url:
               'https://covers.openlibrary.org/b/isbn/9780345481283-L.jpg',
@@ -4787,6 +4791,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: 'Mistborn: The Final Empire',
+            slug: 'the-final-empire',
             author: 'Brandon Sanderson',
             cover_url:
               'https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg',
@@ -5205,6 +5210,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: "Howl's Moving Castle",
+            slug: 'howls-moving-castle',
             author: 'Diana Wynne Jones',
             cover_url:
               'https://covers.openlibrary.org/b/isbn/9780064410342-L.jpg',
@@ -5604,6 +5610,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: 'Mistborn: The Final Empire',
+            slug: 'the-final-empire',
             author: 'Brandon Sanderson',
             cover_url:
               'https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg',
@@ -6817,7 +6824,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: 'He Who Fights with Monsters',
-            author: 'Jason Cheyne',
+            author: 'Shirtaloon',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9781645679868-L.jpg',
             darkness_level: 3,
             heat_level: null,
@@ -13389,6 +13396,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: "Kushiel's Dart",
+            slug: 'kushiels-dart',
             author: 'Jacqueline Carey',
             cover_url: 'https://images-na.ssl-images-amazon.com/images/P/0312872380.01._SCLZZZZZZZ_.jpg',
             darkness_level: 4,
