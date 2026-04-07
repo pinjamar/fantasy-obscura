@@ -18,7 +18,7 @@ const dbTropesMap = new Map<string, string[]>(
   (dbBooks ?? []).map((b) => [b.slug, b.tropes ?? []])
 )
 const dbCoverMap = new Map<string, string>(
-  (dbBooks ?? []).filter((b) => b.cover_url && !b.cover_url.includes('archive.org') && !b.cover_url.includes('covers.openlibrary.org')).map((b) => [b.slug, b.cover_url])
+  (dbBooks ?? []).filter((b) => b.cover_url && !b.cover_url.includes('archive.org')).map((b) => [b.slug, b.cover_url])
 )
 const dbDarknessMap = new Map<string, number>(
   (dbBooks ?? []).filter((b: any) => b.darkness_level != null).map((b: any) => [b.slug, b.darkness_level])
@@ -96,7 +96,7 @@ const dbHeatMap = new Map<string, string>(
             >
               <div class="relative w-12 aspect-2/3 rounded-lg shadow overflow-hidden bg-linear-to-br from-purple-100 to-blue-100 shrink-0">
                 <img
-                  src={dbCoverMap.get(getSourceSlug(entry)) || entry.source.cover_url || '/grimplaceholder.png'}
+                  src={dbCoverMap.get(getSourceSlug(entry)) || (entry.source.cover_url?.includes('archive.org') || entry.source.cover_url?.includes('covers.openlibrary.org') ? null : entry.source.cover_url) || '/grimplaceholder.png'}
                   alt={entry.source.title}
                   class="absolute inset-0 w-full h-full object-cover"
                   onerror="this.onerror=null;this.src='/grimplaceholder.png';"

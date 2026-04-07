@@ -41,7 +41,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
 const sourceCover: string = upgradeCoverUrl(dbBook?.cover_url || source.cover_url)
 
 // Fetch covers for all rec books from DB (more reliable than hardcoded OpenLibrary ISBNs)
-const recSlugs = aspects.flatMap((a) => a.recs.map((r) => toSlug(r.title)))
+const recSlugs = aspects.flatMap((a) => a.recs.map((r) => (r as any).slug ?? toSlug(r.title)))
 const allCheckSlugs = [...new Set([sourceBookSlug, ...recSlugs])]
 const { data: dbRecCovers } = await supabaseClient
   .from('books')
@@ -247,7 +247,7 @@ const booksLikeJsonLd = JSON.stringify({
           <div class="space-y-4">
             {aspect.recs.map((r) => {
               const h = getHeat(r.heat_level)
-              const recSlug = toSlug(r.title)
+              const recSlug = (r as any).slug ?? toSlug(r.title)
               const recCover = dbRecCoverMap.get(recSlug) ?? (r.cover_url?.includes('archive.org') ? '' : r.cover_url)
               return (
                 <div class="rounded-xl border border-violet-200 bg-violet-50 p-4 grid grid-cols-[auto_1fr] gap-x-5 gap-y-3">
@@ -307,7 +307,7 @@ const booksLikeJsonLd = JSON.stringify({
                       ))}
                     </div>
                     {(() => {
-                      const rSlug = toSlug(r.title)
+                      const rSlug = (r as any).slug ?? toSlug(r.title)
                       const dbWarnings = dbWarningsMap.get(rSlug)
                       const warningText = dbWarnings?.length
                         ? dbWarnings.join(', ')

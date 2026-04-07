@@ -1,5 +1,6 @@
 export interface BooksLikeRec {
   title: string;
+  slug?: string; // override when DB slug differs from title-based slug
   author: string;
   cover_url: string;
   darkness_level: number; // 1-5
@@ -14,6 +15,7 @@ export interface BooksLikeRec {
 
 export interface BooksLikeAspectRec {
   title: string;
+  slug?: string; // override when DB slug differs from title-based slug
   author: string;
   author_note?: string; // e.g. "(yes, more Sanderson — unavoidable)"
   cover_url: string;
@@ -968,6 +970,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: "His Majesty's Dragon",
+            slug: 'his-majestys-dragon',
             author: 'Naomi Novik',
             cover_url:
               'https://covers.openlibrary.org/b/isbn/9780345481283-L.jpg',
@@ -1778,6 +1781,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: 'Legends & Lattes',
+            slug: 'legends-and-lattes',
             author: 'Travis Baldree',
             cover_url:
               'https://covers.openlibrary.org/b/title/Legends%20%26%20Lattes-L.jpg',
@@ -2184,6 +2188,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: 'Legends & Lattes',
+            slug: 'legends-and-lattes',
             author: 'Travis Baldree',
             cover_url:
               'https://covers.openlibrary.org/b/isbn/9781250888808-L.jpg',
@@ -6524,6 +6529,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: 'His Majesty\'s Dragon',
+            slug: 'his-majestys-dragon',
             author: 'Naomi Novik',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9780345481283-L.jpg',
             darkness_level: 3,
@@ -6611,6 +6617,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: 'Mistborn: The Final Empire',
+            slug: 'the-final-empire',
             author: 'Brandon Sanderson',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg',
             darkness_level: 3,
@@ -7711,6 +7718,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: 'Legends & Lattes',
+            slug: 'legends-and-lattes',
             author: 'Travis Baldree',
             cover_url: 'https://covers.openlibrary.org/b/title/Legends%20%26%20Lattes-L.jpg',
             darkness_level: 1,
@@ -7792,6 +7800,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: "Howl's Moving Castle",
+            slug: 'howls-moving-castle',
             author: 'Diana Wynne Jones',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9780061447198-L.jpg',
             darkness_level: 1,
@@ -8795,6 +8804,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: "Angel's Blood",
+            slug: 'angels-blood',
             author: 'Nalini Singh',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9780425226926-L.jpg',
             darkness_level: 3,
@@ -9032,6 +9042,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: "The Winner's Curse",
+            slug: 'the-winners-curse',
             author: 'Marie Rutkoski',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9780374384678-L.jpg',
             darkness_level: 3,
@@ -9639,6 +9650,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: "Assassin's Apprentice",
+            slug: 'assassins-apprentice',
             author: 'Robin Hobb',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9780553573398-L.jpg',
             darkness_level: 4,
@@ -9901,6 +9913,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         recs: [
           {
             title: 'Mistborn: The Final Empire',
+            slug: 'the-final-empire',
             author: 'Brandon Sanderson',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg',
             darkness_level: 4,
@@ -10868,6 +10881,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: 'The Winner\'s Curse',
+            slug: 'the-winners-curse',
             author: 'Marie Rutkoski',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9780374384678-L.jpg',
             darkness_level: 3,
@@ -11262,6 +11276,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: "Legends & Lattes",
+            slug: 'legends-and-lattes',
             author: 'Travis Baldree',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9781250886439-L.jpg',
             darkness_level: 1,
@@ -11298,6 +11313,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: "The Witch's Heart",
+            slug: 'the-witchs-heart',
             author: 'Genevieve Gornichec',
             cover_url: 'https://covers.openlibrary.org/b/isbn/9780593099940-L.jpg',
             darkness_level: 3,
@@ -12135,7 +12151,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       title: 'Gild',
       author: 'Raven Kennedy',
       db_slug: 'gild',
-      cover_url: 'https://covers.openlibrary.org/b/id/13290449-L.jpg',
+      cover_url: 'https://images-na.ssl-images-amazon.com/images/P/0593200071.01.L.jpg',
       darkness_level: 3,
       heat_level: 2,
       series: 'The Plated Prisoner',
@@ -12316,7 +12332,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       title: 'The Hunger Games',
       author: 'Suzanne Collins',
       db_slug: 'the-hunger-games',
-      cover_url: 'https://covers.openlibrary.org/b/id/12646537-L.jpg',
+      cover_url: 'https://images-na.ssl-images-amazon.com/images/P/0439023483.01.L.jpg',
       darkness_level: 4,
       heat_level: null,
       series: 'The Hunger Games',
@@ -12433,6 +12449,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
           },
           {
             title: "Ender's Game",
+            slug: 'enders-game',
             author: 'Orson Scott Card',
             cover_url: 'https://books.google.com/books/content?id=_ZghmgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
             darkness_level: 4,
