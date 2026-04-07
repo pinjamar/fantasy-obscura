@@ -487,6 +487,54 @@ node scripts/generate-author-bio.mjs --threshold 5
 
 ---
 
+### Goodreads Import (find missing books)
+
+**URL:** `/admin/goodreads-import?key=YOUR_KEY`
+
+Scrapes any Goodreads list and shows which books are not yet in the DB.
+
+#### How to use
+
+1. Open the admin page in your browser:
+   ```
+   http://localhost:4321/admin/goodreads-import?key=YOUR_KEY
+   ```
+
+2. You'll see a **Console Script** text box. Click **Copy**.
+
+3. Open any Goodreads list in a new tab. Examples:
+   - `https://www.goodreads.com/list/show/47.Best_Fantasy_Books`
+   - `https://www.goodreads.com/list/show/50.The_Best_Epic_Fantasy`
+
+4. On the Goodreads page, open **DevTools** → **Console** tab:
+   - Windows/Linux: `F12`, then click "Console"
+   - Mac: `Cmd+Option+I`, then click "Console"
+
+5. Click inside the console input (the line starting with `>`), paste with `Ctrl+V`, and press **Enter**.
+
+6. The script scrapes the list and cross-references with your DB. When done it **redirects you back** to the admin page with results.
+
+#### What you see
+
+| Column | Meaning |
+|--------|---------|
+| # | Goodreads list rank |
+| Title / Author | From Goodreads |
+| Rating | Goodreads average rating |
+| GR ↗ | Opens the book's Goodreads page in a new tab |
+| Skip | Hides the row from the list (persists across refreshes) |
+
+Stats at the top show total on list / already in DB / missing.
+
+#### Notes
+
+- The console script is pre-filled with your admin key and site URL — just copy and paste, no editing needed
+- Title matching is fuzzy: tries full title, strips subtitles (`Mistborn: The Final Empire` → `The Final Empire`), strips leading articles (`A`, `An`, `The`), strips parenthetical series tags (`The Eye of the World (Wheel of Time, #1)` → `The Eye of the World`)
+- Results are stored in `localStorage` — they persist until you click **Clear results & start over**
+- Only works on `goodreads.com/list/show/...` URLs
+
+---
+
 ## Project Structure
 
 ```

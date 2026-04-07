@@ -1,4 +1,53 @@
+# robots.txt for https://thegrimoire.co/
+
+# Block AI training crawlers (separate from search/citation bots)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# Google-Extended = Google's AI/model training control (does NOT affect normal Googlebot)
+User-agent: Google-Extended
+Disallow: /
+
+# Allow AI search/citation agents explicitly
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Standard search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Default: allow everything, block private/internal paths
 User-agent: *
 Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /login/
+Disallow: /logout/
+Disallow: /register/
+Disallow: /my-list/
+Disallow: /profile/
 
 Sitemap: https://thegrimoire.co/sitemap.xml

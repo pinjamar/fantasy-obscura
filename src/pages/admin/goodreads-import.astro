@@ -1,0 +1,459 @@
+---
+const adminKey = Astro.url.searchParams.get('key') ?? '';
+const isAuthed = !!import.meta.env.ADMIN_SECRET && adminKey === import.meta.env.ADMIN_SECRET;
+const siteOrigin = Astro.url.origin;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goodreads Import — Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #0f0f13; color: #e2e2e8; padding: 2rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .subtitle { color: #888; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .section { margin-bottom: 2rem; }
+    .section h2 { font-size: 1rem; color: #a78bfa; margin-bottom: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .steps { color: #aaa; font-size: 0.875rem; line-height: 1.8; margin-bottom: 1rem; }
+    .steps strong { color: #e2e2e8; }
+    .script-box { position: relative; }
+    .script-box textarea {
+      width: 100%; height: 120px; background: #1a1a28; border: 1px solid #2a2a40;
+      color: #7dd3fc; font-family: monospace; font-size: 0.75rem; padding: 0.75rem;
+      border-radius: 6px; resize: none; outline: none;
+    }
+    .copy-btn {
+      position: absolute; top: 8px; right: 8px;
+      background: #4f46e5; color: #fff; border: none; padding: 4px 12px;
+      border-radius: 4px; font-size: 0.75rem; cursor: pointer;
+    }
+    .copy-btn:hover { background: #4338ca; }
+    .stats { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; font-size: 0.875rem; color: #aaa; }
+    .stats span strong { color: #e2e2e8; font-size: 1.1rem; }
+    .list-title { font-size: 0.8rem; color: #6b6b8a; margin-bottom: 1rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    th { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid #2a2a35; color: #aaa; font-weight: 500; }
+    td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #1e1e28; vertical-align: middle; }
+    tr:hover td { background: #16161f; }
+    .rank { color: #555; font-size: 0.8rem; width: 40px; }
+    .rating { color: #facc15; font-size: 0.8rem; }
+    .btn { padding: 4px 12px; border-radius: 4px; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+    .btn-skip { background: #3f3f60; color: #aaa; }
+    .btn-skip:hover { background: #991b1b; color: #fff; }
+    .btn-gr { background: #1e1e2e; color: #a78bfa; border: 1px solid #3a3a55; font-size: 0.75rem; }
+    .btn-gr:hover { background: #2a2a40; }
+    .btn-add { background: #16a34a; color: #fff; font-size: 0.75rem; }
+    .btn-add:hover { background: #15803d; }
+    .btn-add:disabled { opacity: 0.5; cursor: default; }
+    .btn-added { background: #1e3a2e; color: #4ade80; border: 1px solid #166534; font-size: 0.75rem; cursor: default; }
+    .done { opacity: 0.25; pointer-events: none; }
+    .empty { text-align: center; padding: 4rem; color: #555; }
+    .clear-btn { background: #3f3f60; color: #aaa; border: none; padding: 5px 14px; border-radius: 4px; font-size: 0.8rem; cursor: pointer; margin-bottom: 1rem; }
+    .clear-btn:hover { background: #991b1b; color: #fff; }
+    /* login gate */
+    .gate { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; gap: 1rem; }
+    .gate input { background: #1e1e2e; border: 1px solid #3a3a50; color: #e2e2e8; padding: 10px 14px; border-radius: 6px; font-size: 1rem; width: 260px; }
+    .gate button { background: #4f46e5; color: #fff; border: none; padding: 10px 28px; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+    .gate button:hover { background: #4338ca; }
+    .gate .err { color: #f87171; font-size: 0.875rem; }
+    .notice { background: #1a1a28; border: 1px solid #2a2a40; border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.8rem; color: #888; margin-bottom: 1.5rem; }
+    .notice strong { color: #e2e2e8; }
+  </style>
+</head>
+<body>
+
+{!isAuthed ? (
+  <div class="gate">
+    <h1>Goodreads Import — Admin</h1>
+    <input type="password" id="key-input" placeholder="Admin key" autofocus />
+    <button id="login-btn">Enter</button>
+    {adminKey && <p class="err">Incorrect key</p>}
+    <script is:inline>
+      document.getElementById('login-btn').addEventListener('click', () => {
+        const key = document.getElementById('key-input').value.trim();
+        if (key) window.location.href = '?key=' + encodeURIComponent(key);
+      });
+      document.getElementById('key-input').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') document.getElementById('login-btn').click();
+      });
+    </script>
+  </div>
+) : (
+  <>
+    <h1>Goodreads Import</h1>
+    <p class="subtitle">Scrape a Goodreads list and see which books are missing from the DB.</p>
+
+    <!-- Results panel (shown when localStorage has data) -->
+    <div id="results-panel" style="display:none">
+      <div class="section">
+        <div class="stats" id="stats-row"></div>
+        <p class="list-title" id="list-title-el"></p>
+        <button class="clear-btn" id="clear-btn">✕ Clear results &amp; start over</button>
+        <div id="results-content"></div>
+      </div>
+    </div>
+
+    <!-- Instructions panel (shown when no data) -->
+    <div id="instructions-panel">
+      <div class="notice">
+        <strong>How it works:</strong> Open any Goodreads list page (e.g. <em>goodreads.com/list/show/47.Best_Fantasy_Books</em>),
+        open DevTools (F12), paste the script below into the Console tab, and press Enter.
+        It scrapes all pages, cross-references with the DB, then brings you back here with the results.
+      </div>
+
+      <div class="section">
+        <h2>Console Script</h2>
+        <p class="steps">
+          1. Go to a Goodreads list page<br />
+          2. Open DevTools → Console (F12)<br />
+          3. Paste the script below and press <strong>Enter</strong><br />
+          4. Wait for it to finish — you'll be redirected back here with results
+        </p>
+        <div class="script-box">
+          <textarea id="script-output" readonly></textarea>
+          <button class="copy-btn" id="copy-btn">Copy</button>
+        </div>
+      </div>
+    </div>
+  </>
+)}
+
+<script is:inline define:vars={{ adminKey, siteOrigin }}>
+
+// ── Build the console script with injected values ──────────────────────────
+const CONSOLE_SCRIPT = `(async () => {
+  const SITE = ${JSON.stringify(siteOrigin)};
+  const KEY  = ${JSON.stringify(adminKey)};
+  const ADMIN_PAGE = SITE + '/admin/goodreads-import?key=' + encodeURIComponent(KEY);
+
+  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+  const decodeHtml = (html) => {
+    const el = document.createElement('textarea');
+    el.innerHTML = html;
+    return el.value;
+  };
+
+  const cleanText = (s) =>
+    decodeHtml(String(s || ''))
+      .replace(/<[^>]+>/g, '')
+      .replace(/\\s+/g, ' ')
+      .trim();
+
+  const absoluteUrl = (href) => {
+    try { return new URL(href, location.origin).href; } catch { return href || ''; }
+  };
+
+  const getBaseListUrl = () => {
+    const m = location.href.match(/^(https:\\/\\/www\\.goodreads\\.com\\/list\\/show\\/\\d+[^?#]*)/);
+    if (!m) throw new Error('Open a Goodreads list page first (goodreads.com/list/show/...)');
+    return m[1];
+  };
+
+  // Read page count from the already-loaded DOM — no extra fetch needed
+  const detectTotalPages = () => {
+    const html = document.documentElement.innerHTML;
+    const pageNums = [...html.matchAll(/[?&]page=(\\d+)/g)].map(m => Number(m[1])).filter(Number.isFinite);
+    const maxFromLinks = pageNums.length ? Math.max(...pageNums) : 1;
+    const countMatch = html.match(/([\\d,]+)\\s+books/i);
+    const totalBooks = countMatch ? Number(countMatch[1].replace(/,/g, '')) : null;
+    const inferredPages = totalBooks ? Math.ceil(totalBooks / 100) : 1;
+    return Math.max(maxFromLinks, inferredPages, 1);
+  };
+
+  const extractAverageRating = (row) => {
+    const candidates = [...row.querySelectorAll('.minirating, .greyText.smallText, .smallText.uitext')]
+      .map(el => cleanText(el.textContent));
+    for (const txt of candidates) {
+      const m = txt.match(/avg rating\\s+([0-9]+\\.[0-9]+)/i);
+      if (m) return m[1];
+    }
+    const m = cleanText(row.textContent).match(/avg rating\\s+([0-9]+\\.[0-9]+)/i);
+    return m ? m[1] : '';
+  };
+
+  const parseDoc = (doc) => {
+    const entries = [];
+    for (const row of doc.querySelectorAll('tr')) {
+      const numberEl = row.querySelector('.number');
+      const titleEl  = row.querySelector('a.bookTitle');
+      const authorEl = row.querySelector('a.authorName');
+      if (!numberEl || !titleEl) continue;
+      const rankText = cleanText(numberEl.textContent).replace(/\\.$/, '');
+      const title  = cleanText(titleEl.textContent);
+      const author = authorEl ? cleanText(authorEl.textContent) : '';
+      const bookUrl = absoluteUrl(titleEl.getAttribute('href') || '');
+      if (!/^\\d+$/.test(rankText) || !title) continue;
+      entries.push({ rank: Number(rankText), title, author, book_url: bookUrl, average_rating: extractAverageRating(row) });
+    }
+    return entries;
+  };
+
+  const dedupeAndSort = (items) => {
+    const byRank = new Map();
+    for (const item of items) if (!byRank.has(item.rank)) byRank.set(item.rank, item);
+    return [...byRank.values()].sort((a, b) => a.rank - b.rank);
+  };
+
+  let baseUrl, listTitle, totalPages;
+  try {
+    baseUrl = getBaseListUrl();
+    listTitle = cleanText(document.querySelector('h1')?.textContent) || cleanText(document.title.replace(/\\s*\\|.*$/, '')) || 'Goodreads List';
+    totalPages = detectTotalPages();
+  } catch (e) {
+    alert(e.message);
+    return;
+  }
+
+  console.log('Scraping:', listTitle, '— pages:', totalPages, '— stay on this tab!');
+
+  let all = [];
+  for (let page = 1; page <= totalPages; page++) {
+    let doc;
+    if (page === 1) {
+      doc = document;
+    } else {
+      try {
+        const res = await fetch(baseUrl + '?page=' + page, { credentials: 'include' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const html = await res.text();
+        doc = new DOMParser().parseFromString(html, 'text/html');
+      } catch (e) {
+        console.warn('Page', page, 'failed:', e.message, '— skipping');
+        await sleep(1000);
+        continue;
+      }
+      await sleep(400);
+    }
+    const rows = parseDoc(doc);
+    console.log('Page', page + '/' + totalPages + ':', rows.length, 'books');
+    all.push(...rows);
+  }
+  all = dedupeAndSort(all);
+  console.log('Total scraped:', all.length);
+
+  // window.name persists across origin changes in the same tab — localStorage does not
+  window.name = JSON.stringify({
+    grimoire_import: true,
+    list_title: listTitle,
+    list_url: baseUrl,
+    books: all,
+    scraped_at: new Date().toISOString(),
+  });
+
+  console.log('Done. Redirecting to admin page...');
+  window.location.href = ADMIN_PAGE;
+})();`;
+
+// ── Wire up the UI ──────────────────────────────────────────────────────────
+
+const RESULTS_KEY = 'grimoire_goodreads_import';
+
+function loadRaw() {
+  try {
+    const parsed = JSON.parse(window.name || 'null');
+    return parsed?.grimoire_import ? parsed : null;
+  } catch { return null; }
+}
+function loadResults() { try { return JSON.parse(localStorage.getItem(RESULTS_KEY) || 'null'); } catch { return null; } }
+function saveResults(data) { localStorage.setItem(RESULTS_KEY, JSON.stringify(data)); }
+
+function renderResults(data) {
+  const resultsPanel     = document.getElementById('results-panel');
+  const instructionsPanel = document.getElementById('instructions-panel');
+  const statsRow         = document.getElementById('stats-row');
+  const listTitleEl      = document.getElementById('list-title-el');
+  const resultsContent   = document.getElementById('results-content');
+
+  if (!data || !data.missing) {
+    if (resultsPanel) resultsPanel.style.display = 'none';
+    if (instructionsPanel) instructionsPanel.style.display = '';
+    return;
+  }
+
+  if (resultsPanel) resultsPanel.style.display = '';
+  if (instructionsPanel) instructionsPanel.style.display = 'none';
+
+  if (statsRow) statsRow.innerHTML = `
+    <span>Total on list: <strong>${data.total}</strong></span>
+    <span>Already in DB: <strong style="color:#4ade80">${data.found}</strong></span>
+    <span>Missing: <strong style="color:#f87171">${data.missing.length}</strong></span>
+  `;
+
+  if (listTitleEl) {
+    const d = new Date(data.scraped_at);
+    listTitleEl.innerHTML = `<a href="${data.list_url}" target="_blank" style="color:#a78bfa">${data.list_title}</a> &mdash; scraped ${d.toLocaleString()}`;
+  }
+
+  if (!resultsContent) return;
+
+  if (!data.missing.length) {
+    resultsContent.innerHTML = '<div class="empty">✅ All books on this list are already in the DB!</div>';
+    return;
+  }
+
+  const table = document.createElement('table');
+  table.innerHTML = `
+    <thead>
+      <tr><th>#</th><th>Title</th><th>Author</th><th>Rating</th><th>Actions</th></tr>
+    </thead>
+    <tbody id="missing-tbody"></tbody>
+  `;
+  const tbody = table.querySelector('#missing-tbody');
+  data.missing.forEach((b, i) => {
+    const tr = document.createElement('tr');
+    tr.id = 'miss-row-' + i;
+    const grLink = b.book_url
+      ? `<a href="${b.book_url}" target="_blank"><button class="btn btn-gr">GR ↗</button></a>`
+      : '';
+    tr.dataset.title = b.title;
+    tr.innerHTML = `
+      <td class="rank">${b.rank}</td>
+      <td style="font-weight:500">${b.title}</td>
+      <td style="color:#aaa">${b.author}</td>
+      <td class="rating">${b.average_rating ? '★ ' + b.average_rating : '—'}</td>
+      <td style="display:flex;gap:6px;align-items:center">
+        ${grLink}
+        <button class="btn btn-add" data-title="${b.title}" data-author="${b.author}" data-action="add">+ Add</button>
+        <button class="btn btn-skip" data-title="${b.title}" data-action="skip">Skip</button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+  resultsContent.appendChild(table);
+
+  // Event delegation — no inline onclick needed
+  tbody.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-action]');
+    if (!btn) return;
+    if (btn.dataset.action === 'skip') skipRow(btn.dataset.title, btn);
+    if (btn.dataset.action === 'add')  addBook(btn.dataset.title, btn.dataset.author, btn);
+  });
+}
+
+async function checkRawAndCrossRef() {
+  const raw = loadRaw();
+  if (!raw || !raw.books) return;
+
+  // Show loading state
+  const resultsPanel     = document.getElementById('results-panel');
+  const instructionsPanel = document.getElementById('instructions-panel');
+  const statsRow         = document.getElementById('stats-row');
+  const listTitleEl      = document.getElementById('list-title-el');
+  const resultsContent   = document.getElementById('results-content');
+
+  if (resultsPanel) resultsPanel.style.display = '';
+  if (instructionsPanel) instructionsPanel.style.display = 'none';
+  if (statsRow) statsRow.innerHTML = '<span style="color:#888">Checking DB…</span>';
+  if (listTitleEl) listTitleEl.textContent = raw.list_title || '';
+  if (resultsContent) resultsContent.innerHTML = '';
+
+  let result;
+  try {
+    const res = await fetch('/api/admin/goodreads-import', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey },
+      body: JSON.stringify({ books: raw.books }),
+    });
+    result = await res.json();
+    if (!res.ok) throw new Error(result.error || 'API error ' + res.status);
+  } catch (e) {
+    if (statsRow) statsRow.innerHTML = `<span style="color:#f87171">DB check failed: ${e.message}</span>`;
+    return;
+  }
+
+  // Clear window.name, store processed results in localStorage
+  window.name = '';
+  const processed = {
+    list_title: raw.list_title,
+    list_url: raw.list_url,
+    scraped_at: raw.scraped_at,
+    total: result.total,
+    found: result.found,
+    missing: result.missing,
+  };
+  saveResults(processed);
+  renderResults(processed);
+}
+
+async function addBook(title, author, btn) {
+  btn.disabled = true;
+  btn.textContent = '…';
+
+  const res = await fetch('/api/admin/quick-add', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey },
+    body: JSON.stringify({ title, author }),
+  });
+  const result = await res.json();
+
+  if (res.ok) {
+    btn.className = 'btn btn-added';
+    btn.textContent = '✓ Added';
+    window.open('/books/' + result.slug + '/', '_blank');
+    removeFromList(title);
+  } else if (res.status === 409) {
+    btn.className = 'btn btn-added';
+    btn.textContent = '✓ Exists';
+    removeFromList(title);
+  } else {
+    btn.disabled = false;
+    btn.textContent = '+ Add';
+    alert('Failed: ' + (result.error ?? 'unknown error'));
+  }
+}
+
+function skipRow(title, btn) {
+  removeFromList(title);
+}
+
+function removeFromList(title) {
+  // Remove from DOM
+  const row = document.querySelector(`tr[data-title="${CSS.escape(title)}"]`);
+  if (row) row.remove();
+
+  // Remove from localStorage
+  const data = loadResults();
+  if (!data) return;
+  data.missing = data.missing.filter(b => b.title !== title);
+  data.found = data.total - data.missing.length;
+  saveResults(data);
+
+  const statsRow = document.getElementById('stats-row');
+  if (statsRow) statsRow.innerHTML = `
+    <span>Total on list: <strong>${data.total}</strong></span>
+    <span>Already in DB: <strong style="color:#4ade80">${data.found}</strong></span>
+    <span>Missing: <strong style="color:#f87171">${data.missing.length}</strong></span>
+  `;
+}
+
+document.getElementById('clear-btn')?.addEventListener('click', () => {
+  localStorage.removeItem(RESULTS_KEY);
+  window.name = '';
+  renderResults(null);
+});
+
+// Copy button
+const scriptOutput = document.getElementById('script-output');
+if (scriptOutput) scriptOutput.value = CONSOLE_SCRIPT;
+
+document.getElementById('copy-btn')?.addEventListener('click', function() {
+  navigator.clipboard.writeText(CONSOLE_SCRIPT).then(() => {
+    this.textContent = 'Copied!';
+    setTimeout(() => { this.textContent = 'Copy'; }, 2000);
+  });
+});
+
+// On load: raw data takes priority (just came back from Goodreads), else show saved results
+if (loadRaw()) {
+  checkRawAndCrossRef();
+} else {
+  renderResults(loadResults());
+}
+</script>
+
+</body>
+</html>
