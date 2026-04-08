@@ -31,17 +31,18 @@ export default function BookSearch() {
   };
 
   const q = query.trim().toLowerCase();
+  const tokens = q.split(/\s+/).filter((t) => t.length > 0);
   const results =
     q.length < 2
       ? []
       : allBooks
           .filter((b) => {
-            const titleMatch = b.title.toLowerCase().includes(q);
-            const authorMatch = b.authors?.some((a) =>
-              a.toLowerCase().includes(q),
-            );
-            const seriesMatch = b.series?.toLowerCase().includes(q);
-            return titleMatch || authorMatch || seriesMatch;
+            const fields = [
+              b.title.toLowerCase(),
+              ...(b.authors?.map((a) => a.toLowerCase()) ?? []),
+              b.series?.toLowerCase() ?? '',
+            ];
+            return tokens.every((t) => fields.some((f) => f.includes(t)));
           })
           .slice(0, 12);
 
@@ -70,7 +71,7 @@ export default function BookSearch() {
           ref={inputRef}
           type="text"
           value={query}
-          placeholder="Search books by title or author…"
+          placeholder="Search by title, author, series…"
           onFocus={ensureLoaded}
           onChange={(e) => {
             setQuery(e.target.value);

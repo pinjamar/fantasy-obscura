@@ -70,9 +70,25 @@ export const POST: APIRoute = async ({ request, locals }) => {
   if (!googleKey) return json({ error: 'GOOGLE_BOOKS_API_KEY not configured' }, 503);
 
   const body = await request.json().catch(() => null);
-  const title: string = body?.title?.trim();
+  const rawTitle: string = body?.title?.trim();
   const author: string = body?.author?.trim() ?? '';
-  if (!title) return json({ error: 'title required' }, 400);
+  if (!rawTitle) return json({ error: 'title required' }, 400);
+
+  // Strip Goodreads-style parenthetical: "The Hourglass Throne (The Tarot Sequence, #3)"
+  // → title: "The Hourglass Throne", series: "The Tarot Sequence", series_number: 3
+  let title = rawTitle;
+  let parsedSeries: string | null = null;
+  let parsedSeriesNumber: number | null = null;
+  const parenMatch = rawTitle.match(/^(.+?)\s+\(([^)]+),?\s*#([\d.]+)\)\s*$/);
+  if (parenMatch) {
+    title = parenMatch[1].trim();
+    parsedSeries = parenMatch[2].trim().replace(/,+$/, '');
+    parsedSeriesNumber = parseFloat(parenMatch[3]);
+  } else {
+    // No number — just strip the parenthetical entirely e.g. "(A Novel)"
+    const parenOnly = rawTitle.match(/^(.+?)\s+\([^)]+\)\s*$/);
+    if (parenOnly) title = parenOnly[1].trim();
+  }
 
   const supabase = createClient(
     import.meta.env.PUBLIC_SUPABASE_URL,
@@ -99,8 +115,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
     synopsis: gb?.synopsis ?? null,
     publication_year: ol?.publication_year ?? gb?.publication_year ?? null,
     page_count: gb?.page_count ?? ol?.page_count ?? null,
-    series: null,
-    series_number: null,
+    series: parsedSeries,
+    series_number: parsedSeriesNumber,
     darkness_level: null,
     heat_level: null,
   };

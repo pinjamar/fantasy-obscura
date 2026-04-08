@@ -137,18 +137,56 @@ const cleanBio = profile?.bio
   .join('\n')
   .trim() || null;
 
-// Similar authors: query authors table for those sharing genres, sorted by book count
+// Similar authors: scored by genre (×3) + trope (×2) + tone (×1) overlap
 type SimilarAuthorRow = { name: string; slug: string; photo_url: string | null; book_count: number | null };
-const { data: simData } = topGenres.length > 0
-  ? await (supabaseClient
-      .from('authors')
-      .select('name, slug, photo_url, book_count')
-      .overlaps('top_genres', topGenres)
-      .neq('slug', slug)
-      .order('book_count', { ascending: false, nullsFirst: false })
-      .limit(5) as unknown as Promise<{ data: SimilarAuthorRow[] | null }>)
-  : { data: [] as SimilarAuthorRow[] };
-const similarAuthors = simData ?? [];
+
+function overlapCount(a: string[], b: string[]): number {
+  const set = new Set(b);
+  return a.filter((v) => set.has(v)).length;
+}
+
+const scores = new Map<string, number>();
+const bump = (name: string, n: number) => scores.set(name, (scores.get(name) ?? 0) + n);
+
+const { data: genrePoolData } = topGenres.length
+  ? await supabaseClient.from('authors').select('name, top_genres').overlaps('top_genres', topGenres).neq('slug', slug).gte('book_count', 3).limit(100)
+  : { data: [] };
+
+const genrePoolNames = new Set<string>();
+for (const a of (genrePoolData ?? []) as any[]) {
+  genrePoolNames.add(a.name);
+  bump(a.name, overlapCount(a.top_genres ?? [], topGenres) * 3);
+}
+
+if (genrePoolNames.size > 0) {
+  const [tropeBooks, toneBooks] = await Promise.all([
+    topTropes.length
+      ? supabaseClient.from('books').select('authors, tropes').overlaps('tropes', topTropes).limit(200)
+      : { data: [] },
+    topTones.length
+      ? supabaseClient.from('books').select('authors, tone').overlaps('tone', topTones).limit(200)
+      : { data: [] },
+  ]);
+
+  for (const b of (tropeBooks.data ?? []) as any[])
+    for (const name of b.authors ?? [])
+      if (genrePoolNames.has(name)) bump(name, overlapCount(b.tropes ?? [], topTropes) * 2);
+  for (const b of (toneBooks.data ?? []) as any[])
+    for (const name of b.authors ?? [])
+      if (genrePoolNames.has(name)) bump(name, overlapCount(b.tone ?? [], topTones) * 1);
+}
+
+const topNames = [...scores.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 10)
+  .map(([name]) => name);
+
+const { data: simData } = topNames.length
+  ? await supabaseClient.from('authors').select('name, slug, photo_url, book_count').in('name', topNames).gte('book_count', 3)
+  : { data: [] };
+
+const simMeta = new Map(((simData ?? []) as SimilarAuthorRow[]).map((a) => [a.name, a]));
+const similarAuthors = topNames.map((n) => simMeta.get(n)).filter((a): a is SimilarAuthorRow => !!a).slice(0, 5);
 
 const metaDescription = cleanBio
   ? cleanBio.slice(0, 160)

@@ -14,7 +14,7 @@ export const GET: APIRoute = async ({ request }) => {
     .from('authors')
     .select('name, slug, photo_url, book_count, top_genres, avg_rating')
     .ilike('name', `%${search}%`)
-    .order('name')
+    .order('book_count', { ascending: false, nullsFirst: false })
     .limit(60);
 
   if (error) return jsonOk({ items: [] });
