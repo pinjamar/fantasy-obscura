@@ -36,6 +36,19 @@ const HEADERS = { 'User-Agent': 'FantasyObscura/1.0 (contact@fantasyobscura.com)
 
 function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
 
+/** "Björn Petersen" → "Bjorn Petersen" */
+function stripDiacritics(str) {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+/**
+ * "A.J. Simpson" → "A J Simpson" (expand dots for broader search compatibility)
+ * Also handles "J.R.R. Tolkien" → "J R R Tolkien"
+ */
+function expandInitials(name) {
+  return name.replace(/\b([A-Z])\.([A-Z])/g, '$1 $2').replace(/\b([A-Z])\./g, '$1').trim();
+}
+
 async function apiFetch(url) {
   try {
     const res = await fetch(url, { headers: HEADERS });
@@ -230,43 +243,54 @@ async function main() {
     let photo = null;
     let source = null;
 
-    // Build name variants to try across sources: full name + pen-name without initials
-    const lastName = name.trim().split(/\s+/).at(-1);
-    const nameVariants = [...new Set([name, lastName])];
+    // Build name variants to try across sources
+    const lastName    = name.trim().split(/\s+/).at(-1);
+    const stripped    = stripDiacritics(name);           // "Björn X" → "Bjorn X"
+    const expanded    = expandInitials(name);             // "A.J. X"  → "A J X"
+    const strExpanded = stripDiacritics(expanded);        // both transforms
+    const nameVariants = [...new Set([name, stripped, expanded, strExpanded, lastName])];
 
-    // 1. Open Library
+    // 1. Open Library — try all variants
     for (const variant of nameVariants) {
       photo = await fromOpenLibrary(variant);
       if (photo) { source = 'OL'; break; }
       await sleep(DELAY_MS);
     }
 
-    // 2. Wikipedia (search API)
+    // 2. Wikipedia — try name then stripped/expanded fallbacks
     if (!photo) {
-      photo = await fromWikipedia(name);
-      if (photo) { source = 'Wiki'; }
-      await sleep(DELAY_MS);
+      for (const variant of [...new Set([name, stripped, expanded, strExpanded])]) {
+        photo = await fromWikipedia(variant);
+        if (photo) { source = 'Wiki'; break; }
+        await sleep(DELAY_MS);
+      }
     }
 
-    // 3. Wikidata
+    // 3. Wikidata — try name then stripped fallback
     if (!photo) {
-      photo = await fromWikidata(name);
-      if (photo) { source = 'Wikidata'; }
-      await sleep(DELAY_MS);
+      for (const variant of [...new Set([name, stripped, expanded])]) {
+        photo = await fromWikidata(variant);
+        if (photo) { source = 'Wikidata'; break; }
+        await sleep(DELAY_MS);
+      }
     }
 
-    // 4. Google Knowledge Graph
+    // 4. Google Knowledge Graph — try name then stripped fallback
     if (!photo) {
-      photo = await fromGoogleKG(name);
-      if (photo) { source = 'KG'; }
-      await sleep(DELAY_MS);
+      for (const variant of [...new Set([name, stripped])]) {
+        photo = await fromGoogleKG(variant);
+        if (photo) { source = 'KG'; break; }
+        await sleep(DELAY_MS);
+      }
     }
 
-    // 5. Hardcover
+    // 5. Hardcover — try name then stripped fallback
     if (!photo) {
-      photo = await fromHardcover(name);
-      if (photo) { source = 'HC'; }
-      await sleep(DELAY_MS);
+      for (const variant of [...new Set([name, stripped])]) {
+        photo = await fromHardcover(variant);
+        if (photo) { source = 'HC'; break; }
+        await sleep(DELAY_MS);
+      }
     }
 
     if (!photo) {
