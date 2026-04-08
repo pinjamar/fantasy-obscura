@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { createClient } from '@supabase/supabase-js';
+import { supabaseClient as supabase } from '../../../lib/supabaseClient';
 
 function topN(arrays: (string[] | null)[], n: number): string[] {
   const freq = new Map<string, number>();
@@ -15,11 +15,6 @@ function overlapCount(a: string[], b: string[]): number {
 export const GET: APIRoute = async ({ url }) => {
   const slug = url.searchParams.get('slug')?.trim();
   if (!slug) return json({ error: 'slug required' }, 400);
-
-  const supabase = createClient(
-    import.meta.env.PUBLIC_SUPABASE_URL,
-    import.meta.env.SUPABASE_SERVICE_ROLE_KEY,
-  );
 
   // 1. Get source author name + genres
   const { data: author } = await supabase
