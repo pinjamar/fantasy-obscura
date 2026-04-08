@@ -6,9 +6,11 @@
  *
  * Sources tried in order:
  *   1. Open Library
- *   2. Wikipedia
- *   3. Google Knowledge Graph (requires GOOGLE_KG_API_KEY)
- *   4. Hardcover
+ *   2. Wikipedia (search API — handles initials & disambiguation)
+ *   3. Wikidata (SPARQL image query)
+ *   4. Google Books (author image from book search)
+ *   5. Google Knowledge Graph (requires GOOGLE_KG_API_KEY)
+ *   6. Hardcover
  *
  * Usage:
  *   node scripts/backfill-author-photos.mjs
@@ -67,22 +69,56 @@ async function fromOpenLibrary(name) {
   return photoId ? `https://covers.openlibrary.org/a/id/${photoId}-L.jpg` : null;
 }
 
-// ── Wikipedia ─────────────────────────────────────────────────────────────────
+// ── Wikipedia (search API — handles initials & disambiguation) ────────────────
 
 async function fromWikipedia(name) {
+  // Step 1: search for the page title rather than guessing the URL
+  const search = await apiFetch(
+    `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(name + ' author')}&srlimit=3&format=json`,
+  );
+  const hit = search?.query?.search?.[0];
+  if (!hit) return null;
+
+  await sleep(DELAY_MS);
+
+  // Step 2: fetch summary for the top result
   const d = await apiFetch(
-    `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name.replace(/ /g, '_'))}`,
+    `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(hit.title.replace(/ /g, '_'))}`,
   );
   if (!d || d.type === 'disambiguation' || !d.extract) return null;
 
   const lower = d.extract.toLowerCase();
   const isAuthor =
     lower.includes('author') || lower.includes('writer') || lower.includes('novelist') ||
-    lower.includes('novel') || lower.includes('fantasy') || lower.includes('fiction');
+    lower.includes('novel') || lower.includes('fantasy') || lower.includes('fiction') ||
+    lower.includes('science fiction') || lower.includes('manga') || lower.includes('comics');
   if (!isAuthor) return null;
 
-  return d.thumbnail?.source ?? null;
+  // Prefer original_image (higher res) over thumbnail
+  return d.originalimage?.source ?? d.thumbnail?.source ?? null;
 }
+
+// ── Wikidata ──────────────────────────────────────────────────────────────────
+
+async function fromWikidata(name) {
+  // Search for the entity
+  const search = await apiFetch(
+    `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(name)}&language=en&type=item&limit=3&format=json`,
+  );
+  const entity = search?.search?.[0];
+  if (!entity) return null;
+
+  await sleep(DELAY_MS);
+
+  // SPARQL query for image (P18)
+  const sparql = `SELECT ?image WHERE { wd:${entity.id} wdt:P18 ?image } LIMIT 1`;
+  const sparqlRes = await apiFetch(
+    `https://query.wikidata.org/sparql?query=${encodeURIComponent(sparql)}&format=json`,
+  );
+  const imageUrl = sparqlRes?.results?.bindings?.[0]?.image?.value ?? null;
+  return imageUrl;
+}
+
 
 // ── Google Knowledge Graph ────────────────────────────────────────────────────
 
@@ -152,16 +188,37 @@ async function fromHardcover(name) {
 async function main() {
   console.log(`📸 Fantasy Obscura — Backfill Author Photos${DRY_RUN ? ' [DRY RUN]' : ''}\n`);
 
-  // Fetch authors with no photo
-  const { data: authors, error } = await supabase
-    .from('authors')
-    .select('id, name')
-    .is('photo_url', null)
-    .order('name');
+  // Fetch authors with no photo — paginate to bypass PostgREST's 1000-row cap
+  const PAGE = 1000;
+  const authors = [];
 
-  if (error) { console.error('DB error:', error.message); process.exit(1); }
+  if (LIMIT) {
+    const { data, error } = await supabase
+      .from('authors')
+      .select('id, name')
+      .is('photo_url', null)
+      .order('name')
+      .limit(LIMIT);
+    if (error) { console.error('DB error:', error.message); process.exit(1); }
+    authors.push(...(data ?? []));
+  } else {
+    let offset = 0;
+    while (true) {
+      const { data, error } = await supabase
+        .from('authors')
+        .select('id, name')
+        .is('photo_url', null)
+        .order('name')
+        .range(offset, offset + PAGE - 1);
+      if (error) { console.error('DB error:', error.message); process.exit(1); }
+      if (!data?.length) break;
+      authors.push(...data);
+      if (data.length < PAGE) break;
+      offset += PAGE;
+    }
+  }
 
-  const targets = LIMIT ? authors.slice(0, LIMIT) : authors;
+  const targets = authors;
   console.log(`${targets.length} authors without a photo${LIMIT ? ` (capped at ${LIMIT})` : ''}\n`);
 
   let found = 0, notFound = 0;
@@ -173,21 +230,39 @@ async function main() {
     let photo = null;
     let source = null;
 
-    photo = await fromOpenLibrary(name);
-    if (photo) { source = 'OL'; } else { await sleep(DELAY_MS); }
+    // Build name variants to try across sources: full name + pen-name without initials
+    const lastName = name.trim().split(/\s+/).at(-1);
+    const nameVariants = [...new Set([name, lastName])];
 
+    // 1. Open Library
+    for (const variant of nameVariants) {
+      photo = await fromOpenLibrary(variant);
+      if (photo) { source = 'OL'; break; }
+      await sleep(DELAY_MS);
+    }
+
+    // 2. Wikipedia (search API)
     if (!photo) {
       photo = await fromWikipedia(name);
       if (photo) { source = 'Wiki'; }
       await sleep(DELAY_MS);
     }
 
+    // 3. Wikidata
+    if (!photo) {
+      photo = await fromWikidata(name);
+      if (photo) { source = 'Wikidata'; }
+      await sleep(DELAY_MS);
+    }
+
+    // 4. Google Knowledge Graph
     if (!photo) {
       photo = await fromGoogleKG(name);
       if (photo) { source = 'KG'; }
       await sleep(DELAY_MS);
     }
 
+    // 5. Hardcover
     if (!photo) {
       photo = await fromHardcover(name);
       if (photo) { source = 'HC'; }

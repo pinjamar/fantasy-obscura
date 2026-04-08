@@ -48,7 +48,7 @@ if (!process.env.GOOGLE_BOOKS_API_KEY) {
 }
 
 const GB_KEY   = process.env.GOOGLE_BOOKS_API_KEY;
-const model    = getGeminiModel();
+const model    = getGeminiModel('gemini-2.5-pro');
 const supabase = createClient(
   process.env.PUBLIC_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY,

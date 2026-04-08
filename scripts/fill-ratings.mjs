@@ -33,7 +33,7 @@ if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) 
   process.exit(1);
 }
 
-const model   = getGeminiModel();
+const model   = getGeminiModel('gemini-2.5-pro');
 const supabase = createClient(
   process.env.PUBLIC_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY,
@@ -75,16 +75,36 @@ Rules:
 async function main() {
   console.log(`\n⭐ Rating Fetcher — Gemini/Goodreads${DRY_RUN ? ' [DRY RUN]' : ''}${ALL ? ' [ALL]' : ''}\n`);
 
-  let query = supabase
-    .from('books')
-    .select('id, title, authors, publication_year, avg_rating')
-    .order('title');
-
-  if (!ALL) query = query.is('avg_rating', null);
-  if (LIMIT) query = query.limit(LIMIT);
-
-  const { data: books, error } = await query;
-  if (error) { console.error('Supabase error:', error.message); process.exit(1); }
+  // Paginate to bypass PostgREST's 1000-row default cap
+  const PAGE = 1000;
+  const books = [];
+  if (LIMIT) {
+    let q = supabase
+      .from('books')
+      .select('id, title, authors, publication_year, avg_rating')
+      .order('title')
+      .limit(LIMIT);
+    if (!ALL) q = q.is('avg_rating', null);
+    const { data, error } = await q;
+    if (error) { console.error('Supabase error:', error.message); process.exit(1); }
+    books.push(...(data ?? []));
+  } else {
+    let offset = 0;
+    while (true) {
+      let q = supabase
+        .from('books')
+        .select('id, title, authors, publication_year, avg_rating')
+        .order('title')
+        .range(offset, offset + PAGE - 1);
+      if (!ALL) q = q.is('avg_rating', null);
+      const { data, error } = await q;
+      if (error) { console.error('Supabase error:', error.message); process.exit(1); }
+      if (!data?.length) break;
+      books.push(...data);
+      if (data.length < PAGE) break;
+      offset += PAGE;
+    }
+  }
 
   if (!books.length) {
     console.log('✅ All books already have ratings — nothing to do.');
@@ -193,7 +213,7 @@ async function main() {
       }
     }
 
-    if (i + BATCH_SIZE < books.length) await sleep(DELAY_MS);
+    if (i + BATCH_SIZE < geminiInput.length) await sleep(DELAY_MS);
   }
 
   console.log(`\n──────────────────────────────`);

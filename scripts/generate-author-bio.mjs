@@ -41,7 +41,7 @@ if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) 
   process.exit(1);
 }
 
-const model = getGeminiModel();
+const model = getGeminiModel('gemini-2.5-pro');
 const supabase = createClient(
   process.env.PUBLIC_SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY,
