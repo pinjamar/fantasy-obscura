@@ -146,9 +146,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
     generationConfig: { thinkingConfig: { thinkingBudget: 0 } } as any,
   });
 
+  const inputAuthors = [...new Set(books.map((b) => b.author))];
   const excludeClause = exclude.length
     ? `\nDo NOT recommend any of these books the user has already seen:\n${exclude.map((t) => `- "${t}"`).join('\n')}\n`
     : '';
+  const excludeAuthorsClause = `\nDo NOT recommend books by any of these authors (already in the user's input):\n${inputAuthors.map((a) => `- ${a}`).join('\n')}\n`;
 
   const prompt = `You are a fantasy book expert. Based on these books the user loves:
 
@@ -156,7 +158,7 @@ ${bookList}
 
 Recommend exactly 4 fantasy books they would likely enjoy. Focus on what these books share — themes, tone, magic, world-building style, pacing — and find books that match those qualities.
 
-Do NOT recommend any of the books already listed.${excludeClause}
+Do NOT recommend any of the books already listed.${excludeClause}${excludeAuthorsClause}
 
 Respond ONLY with valid JSON in this exact format, no extra text:
 {

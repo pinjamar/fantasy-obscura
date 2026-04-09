@@ -16,14 +16,14 @@ export const GET: APIRoute = async ({ url }) => {
       .select('id, title, authors, slug, cover_url, series, series_number')
       .or(`title.ilike.%${q}%,series.ilike.%${q}%`)
       .order('title')
-      .limit(6),
+      .limit(12),
     supabaseClient
       .from('books')
       .select('id, title, authors, slug, cover_url, series, series_number')
       .ilike('authors_search', `%${q.toLowerCase()}%`)
       .not('title', 'ilike', `%${q}%`)
       .order('title')
-      .limit(4),
+      .limit(12),
   ]);
 
   if (titleRes.error && authorRes.error) {
@@ -38,7 +38,7 @@ export const GET: APIRoute = async ({ url }) => {
     if (seen.has(b.id)) return false;
     seen.add(b.id);
     return true;
-  }).slice(0, 8);
+  }).slice(0, 12);
 
   return new Response(JSON.stringify({ books: merged }), {
     status: 200,
