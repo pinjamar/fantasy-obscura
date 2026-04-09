@@ -1,6 +1,75 @@
 import type { APIRoute } from 'astro';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { createClient } from '@supabase/supabase-js';
 import { supabaseClient } from '../../lib/supabaseClient';
+
+const toSlugStr = (s: string) =>
+  s.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+async function fetchGoogleBook(title: string, author: string, googleKey: string) {
+  try {
+    const q = `intitle:${encodeURIComponent(title)}+inauthor:${encodeURIComponent(author.split(' ').pop() ?? author)}`;
+    const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${q}&maxResults=1&key=${googleKey}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const item = data.items?.[0];
+    if (!item) return null;
+    const info = item.volumeInfo;
+    const thumb = info?.imageLinks?.thumbnail ?? info?.imageLinks?.smallThumbnail ?? null;
+    let cover_url: string | null = null;
+    if (thumb?.includes('books.google.com/books/content')) {
+      const m = thumb.match(/[?&]id=([^&]+)/);
+      if (m) cover_url = `https://books.google.com/books/publisher/content/images/frontcover/${m[1]}?fife=w400-h600`;
+    } else if (thumb?.includes('books.google.com/books/publisher/content')) {
+      cover_url = thumb;
+    }
+    return {
+      title: info?.title ?? title,
+      authors: (info?.authors as string[] | undefined) ?? [author],
+      cover_url,
+      synopsis: info?.description ?? null,
+      publication_year: info?.publishedDate ? parseInt(info.publishedDate) : null,
+      isbn: info?.industryIdentifiers?.find((x: any) => x.type === 'ISBN_13')?.identifier ?? null,
+    };
+  } catch {
+    return null;
+  }
+}
+
+async function autoAddBook(
+  title: string,
+  author: string,
+  series: string | null,
+  series_number: number | null,
+  googleKey: string,
+  serviceRoleKey: string,
+  supabaseUrl: string,
+): Promise<{ slug: string; cover_url: string | null } | null> {
+  const slug = toSlugStr(title);
+  const adminClient = createClient(supabaseUrl, serviceRoleKey);
+
+  // Check slug not taken
+  const { data: existing } = await adminClient.from('books').select('slug, cover_url').eq('slug', slug).maybeSingle();
+  if (existing) return { slug: existing.slug, cover_url: existing.cover_url };
+
+  const gbook = await fetchGoogleBook(title, author, googleKey);
+
+  const row: Record<string, any> = {
+    slug,
+    title: gbook?.title ?? title,
+    authors: gbook?.authors ?? [author],
+    cover_url: gbook?.cover_url ?? null,
+    synopsis: gbook?.synopsis ?? null,
+    publication_year: gbook?.publication_year ?? null,
+    isbn: gbook?.isbn ?? null,
+    series: series ?? null,
+    series_number: series_number ?? null,
+  };
+
+  const { data: inserted, error } = await adminClient.from('books').insert(row).select('slug, cover_url').single();
+  if (error) { console.error('auto-add error:', error.message); return null; }
+  return { slug: inserted.slug, cover_url: inserted.cover_url };
+}
 
 const LIMIT_ANON = 3;
 const LIMIT_AUTH = 10;
@@ -184,6 +253,28 @@ Respond ONLY with valid JSON in this exact format, no extra text:
       ...(match ?? {}),
     };
   });
+
+  // Auto-add recommendations not found in DB
+  const googleKey = (locals.runtime?.env?.GOOGLE_BOOKS_API_KEY as string | undefined) ?? import.meta.env.GOOGLE_BOOKS_API_KEY;
+  const serviceRoleKey = (locals.runtime?.env?.SUPABASE_SERVICE_ROLE_KEY as string | undefined) ?? import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
+  const supabaseUrl = (locals.runtime?.env?.PUBLIC_SUPABASE_URL as string | undefined) ?? import.meta.env.PUBLIC_SUPABASE_URL;
+
+  if (googleKey && serviceRoleKey && supabaseUrl) {
+    const missing = enriched.filter((r) => !r.slug);
+    if (missing.length) {
+      const added = await Promise.all(
+        missing.map((r) => autoAddBook(r.title, r.author, r.series ?? null, r.series_number ?? null, googleKey, serviceRoleKey, supabaseUrl))
+      );
+      added.forEach((result, i) => {
+        if (!result) return;
+        const rec = missing[i];
+        const idx = enriched.findIndex((r) => r.title === rec.title && r.author === rec.author);
+        if (idx !== -1) {
+          enriched[idx] = { ...enriched[idx], slug: result.slug, cover_url: result.cover_url ?? enriched[idx].cover_url };
+        }
+      });
+    }
+  }
 
   return new Response(JSON.stringify({ recommendations: enriched, remaining }), {
     status: 200,

@@ -79,14 +79,6 @@ export default function BooksLikeMe() {
     setRecs([]);
   }
 
-  function addManual() {
-    const trimmed = query.trim();
-    if (!trimmed || likedBooks.length >= MAX_BOOKS) return;
-    const [title, ...rest] = trimmed.split(' by ');
-    const author = rest.join(' by ').trim() || 'Unknown';
-    addBook({ title: title.trim(), author });
-  }
-
   function removeBook(index: number) {
     setLikedBooks((prev) => prev.filter((_, i) => i !== index));
     setRecs([]);
@@ -142,7 +134,7 @@ export default function BooksLikeMe() {
               type="text"
               value={query}
               onChange={handleQueryChange}
-              onKeyDown={(e) => e.key === 'Enter' && !showDrop && addManual()}
+              onKeyDown={(e) => e.key === 'Enter' && showDrop && suggestions.length > 0 && addBook(suggestions[0])}
               placeholder={
                 likedBooks.length >= MAX_BOOKS
                   ? 'Maximum 4 books reached'
@@ -156,14 +148,6 @@ export default function BooksLikeMe() {
               🔍
             </span>
           </div>
-          {query.trim() && !showDrop && likedBooks.length < MAX_BOOKS && (
-            <button
-              onClick={addManual}
-              className="shrink-0 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-600 hover:bg-zinc-50 transition-colors"
-            >
-              Add
-            </button>
-          )}
         </div>
 
         {/* Suggestions dropdown */}
