@@ -84,7 +84,7 @@
 64. Books like Babel
 65. Books like Jade City
 66. Books like She Who Became the Sun
-67. Books like The Jasmine Throne
+67. ✅ Books like The Jasmine Throne
 68. Books like The Traitor Baru Cormorant
 69. Books like The Book Eaters
 70. Books like Mexican Gothic
@@ -115,7 +115,7 @@
 91. Books like Thornhedge
 92. Books like Nettle and Bone
 93. Books like Sorcery of Thorns
-94. Books like The Midnight Library
+94. ✅ Books like The Midnight Library
 95. Books like The Invisible Library
 96. Books like Bookshops and Bonedust
 97. Books like The Undertaking of Hart and Mercy
@@ -126,7 +126,7 @@
 ### Urban & Contemporary Fantasy (9)
 101. Books like Neverwhere
 102. Books like Anansi Boys
-103. Books like Jonathan Strange and Mr Norrell
+103. ✅ Books like Jonathan Strange and Mr Norrell
 104. Books like The Magicians
 105. ✅ Books like The Dresden Files
 106. Books like Rivers of London
@@ -191,7 +191,7 @@
 157. Books like Mistborn Era 2 / Alloy of Law
 
 ### Dark Fantasy & Horror-Adjacent (10)
-158. Books like The Bear and the Nightingale
+158. ✅ Books like The Bear and the Nightingale
 159. Books like The Rage of Dragons
 160. Books like Red Sister
 161. Books like The Shadow of the Gods
