@@ -1571,7 +1571,13 @@ const bookOfWeekPools: Record<string, BookOfWeekEntry[]> = {
   ],
 };
 
-const getWeekNumber = () => Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
+const getWeekNumber = () => {
+  const now = new Date();
+  // Anchor to Monday: shift so Monday=0 … Sunday=6, then floor to week
+  const dayOfWeek = (now.getUTCDay() + 6) % 7; // Mon=0 … Sun=6
+  const monday = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - dayOfWeek));
+  return Math.floor(monday.getTime() / (7 * 24 * 60 * 60 * 1000));
+};
 
 const booksLike: Array<{ slug: string; title: string; dbTitle?: string }> = [
   { slug: 'circe', title: 'Circe' },
