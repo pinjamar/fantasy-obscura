@@ -2737,7 +2737,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       darkness_level: 1,
       heat_level: 'Sweet Romance',
       series: 'Legends & Lattes',
-      series_number: 2,
+      series_number: 1,
       tropes: [
         'Cozy Fantasy',
         'Slice of Life',
