@@ -69,15 +69,27 @@ const dbHeatMap = new Map<string, string>(
       <section class="mt-10">
         <h2 class="text-sm font-semibold text-zinc-400 uppercase tracking-widest mb-4">Available Guides for Book Likes</h2>
 
-        <div class="relative mb-5">
-          <input
-            id="books-like-search"
-            type="text"
-            placeholder="Search by title, author or trope..."
-            class="w-full rounded-xl border border-zinc-300 px-4 py-2.5 pr-10 text-sm focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200"
-            autocomplete="off"
-          />
-          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none">🔍</span>
+        <div class="flex flex-col sm:flex-row gap-2 mb-5">
+          <div class="relative flex-1">
+            <input
+              id="books-like-search"
+              type="text"
+              placeholder="Search by title, author or trope..."
+              class="w-full rounded-xl border border-zinc-300 px-4 py-2.5 pr-10 text-sm focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200"
+              autocomplete="off"
+            />
+            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none">🔍</span>
+          </div>
+          <div class="flex items-center gap-0.5 shrink-0 bg-zinc-100 rounded-xl px-2 py-1.5">
+            {[1,2,3,4,5].map((n) => (
+              <button
+                data-darkness-btn={n}
+                title={['Lighthearted','Mild','Serious','Dark','Brutal'][n-1]}
+                class="text-base transition-opacity leading-none opacity-20"
+              >🕯️</button>
+            ))}
+            <button id="bl-darkness-clear" class="hidden text-xs text-zinc-400 hover:text-zinc-600 ml-2 w-6 h-6">✕</button>
+          </div>
         </div>
         <p id="books-like-empty" class="hidden text-sm text-zinc-400 mb-4">No guides match your search.</p>
 
@@ -91,6 +103,7 @@ const dbHeatMap = new Map<string, string>(
             <a
               href={`/books-like/${entry.slug}/`}
               data-search={`${entry.source.title} ${entry.source.author} ${entry.source.series ?? ''} ${tropes.join(' ')}`.toLowerCase()}
+              data-darkness={dbDarknessMap.get(getSourceSlug(entry)) ?? entry.source.darkness_level}
               data-index={i}
               class="flex items-center gap-4 p-4 rounded-2xl border border-zinc-200 bg-white hover:border-zinc-300 hover:bg-zinc-50 transition-colors group"
             >
@@ -170,9 +183,24 @@ const dbHeatMap = new Map<string, string>(
       var prevBtn    = document.getElementById('bl-prev');
       var nextBtn    = document.getElementById('bl-next');
       var pageNums   = document.getElementById('bl-page-numbers');
-      var allCards   = Array.from(document.querySelectorAll('#books-like-list a[data-search]'));
-      var currentPage = 1;
+      var clearBtn      = document.getElementById('bl-darkness-clear');
+      var candleBtns    = Array.from(document.querySelectorAll('[data-darkness-btn]'));
+      var allCards      = Array.from(document.querySelectorAll('#books-like-list a[data-search]'));
+      var currentPage   = 1;
       var filteredCards = allCards.slice();
+      var selectedDarkness = null;
+      var hoveredDarkness  = null;
+
+      function applyFilters() {
+        var q = input ? input.value.toLowerCase().trim() : '';
+        filteredCards = allCards.filter(function (c) {
+          var matchSearch = !q || (c.getAttribute('data-search') || '').includes(q);
+          var matchDarkness = selectedDarkness === null || parseInt(c.getAttribute('data-darkness') || '0') === selectedDarkness;
+          return matchSearch && matchDarkness;
+        });
+        currentPage = 1;
+        render();
+      }
 
       function buildPageNums(current, total) {
         if (total <= 7) return Array.from({ length: total }, function(_, i) { return i + 1; });
@@ -191,10 +219,19 @@ const dbHeatMap = new Map<string, string>(
         allCards.forEach(function (c) { c.style.display = 'none'; });
         filteredCards.slice(start, start + PER_PAGE).forEach(function (c) { c.style.display = ''; });
 
-        if (empty) empty.classList.toggle('hidden', filteredCards.length > 0 || !input.value.trim());
+        var hasFilters = (input && input.value.trim()) || selectedDarkness !== null;
+        if (empty) empty.classList.toggle('hidden', filteredCards.length > 0 || !hasFilters);
         if (pagination) pagination.style.display = filteredCards.length <= PER_PAGE ? 'none' : 'flex';
         if (prevBtn) prevBtn.disabled = currentPage === 1;
         if (nextBtn) nextBtn.disabled = currentPage === totalPages;
+
+        // Update candle button active states
+        var activeLevel = hoveredDarkness !== null ? hoveredDarkness : (selectedDarkness !== null ? selectedDarkness : 0);
+        candleBtns.forEach(function (btn) {
+          var n = parseInt(btn.getAttribute('data-darkness-btn'));
+          btn.style.opacity = n <= activeLevel ? '1' : '0.2';
+        });
+        if (clearBtn) clearBtn.classList.toggle('hidden', selectedDarkness === null);
 
         if (pageNums) {
           pageNums.innerHTML = '';
@@ -218,13 +255,23 @@ const dbHeatMap = new Map<string, string>(
       }
 
       if (input) {
-        input.addEventListener('input', function () {
-          var q = input.value.toLowerCase().trim();
-          filteredCards = q
-            ? allCards.filter(function (c) { return (c.getAttribute('data-search') || '').includes(q); })
-            : allCards.slice();
-          currentPage = 1;
-          render();
+        input.addEventListener('input', applyFilters);
+      }
+
+      candleBtns.forEach(function (btn) {
+        var n = parseInt(btn.getAttribute('data-darkness-btn'));
+        btn.addEventListener('mouseenter', function () { hoveredDarkness = n; render(); });
+        btn.addEventListener('mouseleave', function () { hoveredDarkness = null; render(); });
+        btn.addEventListener('click', function () {
+          selectedDarkness = selectedDarkness === n ? null : n;
+          applyFilters();
+        });
+      });
+
+      if (clearBtn) {
+        clearBtn.addEventListener('click', function () {
+          selectedDarkness = null;
+          applyFilters();
         });
       }
 

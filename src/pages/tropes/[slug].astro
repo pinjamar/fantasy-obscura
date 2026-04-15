@@ -336,7 +336,7 @@ const booksJson = JSON.stringify(
 
 <script is:inline define:vars={{ booksJson }}>
   const DARKNESS_LABEL = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
-  const PAGE_SIZE = 5;
+  const PAGE_SIZE = 15;
 
   const allBooks = JSON.parse(booksJson);
   let filtered = allBooks;
@@ -433,7 +433,7 @@ const booksJson = JSON.stringify(
       : '';
     const cover = b.cover_url
       ? `<img src="${b.cover_url}" alt="${b.title}" class="h-28 w-20 object-cover rounded-md shrink-0 shadow-sm" loading="lazy" />`
-      : '';
+      : `<img src="/grimplaceholder.png" alt="${b.title}" class="h-28 w-20 object-cover rounded-md shrink-0 shadow-sm" loading="lazy" />`;
     const series = b.series
       ? `<div class="text-xs text-indigo-500 mb-0.5">${b.series}${b.series_number != null ? ` #${b.series_number}` : ''}</div>`
       : '';

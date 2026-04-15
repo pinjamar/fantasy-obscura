@@ -33,6 +33,8 @@ export const TIER_1 = [
   // massive mainstream / TV-driven search volume
   'the-midnight-library', 'the-three-body-problem', 'outlander',
   'interview-with-the-vampire', 'the-hunger-games',
+  // His Dark Materials (HBO show, huge search volume)
+  'the-golden-compass',
 ];
 
 export const TIER_2 = [
@@ -70,6 +72,30 @@ export const TIER_2 = [
   'somewhere-beyond-the-sea', 'the-familiar',
   'the-mercy-of-gods', 'sunrise-on-the-reaping',
   'the-maze-runner', 'divergent',
+  // Kingkiller Chronicle sequel (massively searched)
+  'the-wise-mans-fear',
+  // Blood & Ash / JLA — huge romantasy search volume, in CURATED_SLUGS
+  'born-of-blood-and-ash', 'the-ashes-and-the-star-cursed-king',
+  // Crave series — popular YA romantasy, in CURATED_SLUGS
+  'crave',
+  // Red Queen — huge YA series
+  'red-queen',
+  // Witcher novels proper
+  'blood-of-elves',
+  // Assistant to the Villain — cozy romantasy, in books-like guides
+  'assistant-to-the-villain',
+  // Andy Weir standalones — massive search volume
+  'project-hail-mary',
+  // VE Schwab new series — high search
+  'the-fragile-threads-of-power',
+  // TJ Klune standalone — very searched, was in books-like coming-soon
+  'under-the-whispering-door',
+  // Kushiel's Dart — classic literary fantasy, steady search
+  'kushiels-dart',
+  // Feist classic entry point
+  'magician-apprentice',
+  // GoT sequels — very searched alongside A Game of Thrones
+  'a-clash-of-kings', 'a-storm-of-swords',
 ];
 
 export const TIER_3 = [
@@ -87,11 +113,22 @@ export const TIER_3 = [
   'tress-of-the-emerald-sea', 'the-sunlit-man', 'yumi-and-the-nightmare-painter',
   'the-rithmatist', 'alcatraz-versus-the-evil-librarians',
   'starsight', 'cytonic', 'defiant',
+  // Mistborn Era 2
+  'the-alloy-of-law', 'shadows-of-self', 'the-bands-of-mourning', 'the-lost-metal',
+  // Cosmere novellas
+  'the-emperors-soul', 'dawnshard', 'edgedancer',
+
+  // ── Throne of Glass sequels (SJM) ────────────────────────────────────────
+  'crown-of-midnight', 'queen-of-shadows', 'empire-of-storms', 'kingdom-of-ash',
+  'the-assassins-blade',
 
   // ── Grishaverse (Bardugo) ─────────────────────────────────────────────────
   'crooked-kingdom',
   'siege-and-storm', 'ruin-and-rising', 'king-of-scars', 'rule-of-wolves',
   'the-gilded-wolves', 'the-silvered-serpents', 'the-midnight-lie',
+
+  // ── Red Rising sequels (Pierce Brown) ────────────────────────────────────
+  'golden-son', 'morning-star', 'iron-gold', 'dark-age', 'light-bringer',
 
   // ── First Law World (Abercrombie) ─────────────────────────────────────────
   'before-they-are-hanged', 'last-argument-of-kings',
@@ -156,6 +193,34 @@ export const TIER_3 = [
   'the-undertaking-of-hart-and-mercy',
   'in-other-lands',
 
+  // ── Dresden Files depth (Jim Butcher) ────────────────────────────────────
+  'fool-moon', 'grave-peril', 'summer-knight', 'death-masks',
+  'blood-rites', 'dead-beat', 'proven-guilty', 'white-night',
+  'small-favor', 'turn-coat', 'ghost-story', 'cold-days', 'skin-game',
+  'peace-talks', 'battle-ground',
+
+  // ── Lightbringer sequels (Brent Weeks) ───────────────────────────────────
+  'the-blinding-knife', 'the-broken-eye', 'the-blood-mirror', 'the-burning-white',
+
+  // ── A Song of Ice and Fire sequels ───────────────────────────────────────
+  'a-clash-of-kings', 'a-storm-of-swords', 'a-feast-for-crows', 'a-dance-with-dragons',
+
+  // ── Discworld standalones worth individual editorial ──────────────────────
+  'small-gods', 'night-watch', 'going-postal', 'the-wee-free-men',
+  'reaper-man', 'hogfather', 'mort',
+
+  // ── Kushiel's Legacy (Jacqueline Carey) ──────────────────────────────────
+  'kushiels-dart', 'kushiels-chosen', 'kushiels-avatar',
+
+  // ── Riftwar Saga (Feist) ──────────────────────────────────────────────────
+  'magician-apprentice', 'magician-master',
+
+  // ── VE Schwab series additions ────────────────────────────────────────────
+  'the-fragile-threads-of-power', 'vengeful',
+
+  // ── TJ Klune standalones ──────────────────────────────────────────────────
+  'under-the-whispering-door', 'wolfsong',
+
   // ── Urban / Gaiman-adjacent ───────────────────────────────────────────────
   'anansi-boys', 'coraline', 'norse-mythology',
   'the-magician-king', 'the-magicians-land',
@@ -182,8 +247,17 @@ export const TIER_3 = [
   'hyperion', 'the-fall-of-hyperion',
   'ready-player-one',
 
+  // ── Dungeon Crawler Carl sequels ─────────────────────────────────────────
+  'carls-doomsday-scenario', 'the-dungeon-anarchists-cookbook',
+  'the-gate-of-the-feral-gods', 'the-butchers-masquerade',
+  'the-eye-of-the-bedlam-bride', 'this-inevitable-ruin',
+
+  // ── Cradle sequels (Will Wight) ───────────────────────────────────────────
+  'skysworn', 'underlord', 'uncrowned', 'wintersteel', 'bloodline',
+  'reaper', 'dreadgod', 'waybound',
+
   // ── LitRPG / Progression Fantasy ─────────────────────────────────────────
-  'soulsmith', 'blackflame', 'ghostwater', 'underlord', 'wintersteel', 'waybound',
+  'soulsmith', 'blackflame', 'ghostwater',
   'the-beginning-after-the-end', 'shadow-slave', 'mother-of-learning',
   'old-mans-war',
 
@@ -195,6 +269,24 @@ export const TIER_3 = [
   // ── Broken Earth / NK Jemisin sequels ────────────────────────────────────
   'the-obelisk-gate', 'the-stone-sky',
   'the-kingdom-of-gods',
+
+  // ── LotR sequels (constantly searched alongside Fellowship) ──────────────
+  'the-two-towers', 'the-return-of-the-king',
+
+  // ── Flesh & Fire / JLA prequels ───────────────────────────────────────────
+  'a-shadow-in-the-ember', 'a-light-in-the-flame', 'a-fire-in-the-flesh',
+
+  // ── Red Queen sequels ─────────────────────────────────────────────────────
+  'glass-sword', 'kings-cage', 'war-storm',
+
+  // ── Kingdom of the Wicked sequel ─────────────────────────────────────────
+  'kingdom-of-the-cursed',
+
+  // ── Historical / literary romantasy ──────────────────────────────────────
+  'the-wrath-and-the-dawn', 'the-rose-and-the-dagger',
+
+  // ── Vampire Academy ───────────────────────────────────────────────────────
+  'vampire-academy',
 
   // ── Misc high-search standalones ─────────────────────────────────────────
   'the-saint-of-bright-doors', 'the-city-we-became',
