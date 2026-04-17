@@ -728,7 +728,7 @@ const dbSeoProse = !isCurated && seriesMeta
 
     <!-- Books Like cross-link -->
     {matchingBooksLike && (
-      <div class="border-t pt-8">
+      <div class="border-t py-8 flex flex-col justify-center sm:items-start items-center sm:text-left text-center">
         <p class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Looking for similar books?</p>
         <a
           href={`/books-like/${matchingBooksLike.slug}/`}
