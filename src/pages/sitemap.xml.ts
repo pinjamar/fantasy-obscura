@@ -3,6 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 import { BOOKS_LIKE } from '../data/books-like';
 import { READING_ORDERS } from '../data/reading-orders';
 import { CATEGORIES_META } from '../data/categories-meta';
+import { CURATED_SLUGS } from '../lib/curated-slugs';
 
 const CATEGORY_SLUGS = Object.keys(CATEGORIES_META);
 const CATEGORY_LIST_TYPES = ['all-time-greats', 'start-with', 'hidden-gems'] as const;
@@ -40,21 +41,8 @@ export const GET: APIRoute = async ({ locals }) => {
     import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
   );
 
-  // Fetch all book slugs
-  const PAGE = 1000;
-  const bookSlugs: string[] = [];
-  let from = 0;
-  while (true) {
-    const { data } = await supabase
-      .from('books')
-      .select('slug')
-      .not('slug', 'is', null)
-      .range(from, from + PAGE - 1);
-    if (!data?.length) break;
-    for (const b of data) if (b.slug) bookSlugs.push(b.slug);
-    if (data.length < PAGE) break;
-    from += PAGE;
-  }
+  // Only include curated book slugs in the sitemap — non-curated books are noindexed
+  const bookSlugs = [...CURATED_SLUGS];
 
   // Fetch all author slugs
   const { data: authorRows } = await supabase.from('authors').select('slug').not('slug', 'is', null);
@@ -72,6 +60,7 @@ export const GET: APIRoute = async ({ locals }) => {
   )];
 
   // Fetch DB-driven reading order slugs (series not in curated list) — paginated to bypass 1000-row cap
+  const PAGE = 1000;
   const curatedSet = new Set(CURATED_READING_ORDER_SLUGS);
   const allSeriesNames = new Set<string>();
   let seriesFrom = 0;
@@ -91,26 +80,26 @@ export const GET: APIRoute = async ({ locals }) => {
   )].filter((s) => !curatedSet.has(s));
 
   const entries: string[] = [
-    // Static
-    ...STATIC_ROUTES.map((p) => urlEntry(p, p === '/' ? '1.0' : '0.7', 'daily')),
-    // Books
-    ...bookSlugs.map((s) => urlEntry(`/books/${s}/`, '0.8', 'weekly')),
+    // Static high-priority pages
+    ...STATIC_ROUTES.map((p) => urlEntry(p, p === '/' ? '1.0' : '0.8', 'daily')),
+    // Books Like guides — highest priority editorial content
+    ...BOOKS_LIKE_SLUGS.map((s) => urlEntry(`/books-like/${s}/`, '0.9', 'weekly')),
+    // Reading orders — curated
+    ...CURATED_READING_ORDER_SLUGS.map((s) => urlEntry(`/reading-orders/${s}/`, '0.9', 'weekly')),
+    // Reading orders — DB-driven
+    ...dbSeriesSlugs.map((s) => urlEntry(`/reading-orders/${s}/`, '0.6', 'monthly')),
+    // Fantasy category pages
+    ...CATEGORY_SLUGS.map((s) => urlEntry(`/fantasy/${s}/`, '0.7', 'weekly')),
+    // Fantasy category sub-pages
+    ...CATEGORY_SLUGS.flatMap((s) =>
+      CATEGORY_LIST_TYPES.map((t) => urlEntry(`/fantasy/${s}/${t}/`, '0.6', 'monthly'))
+    ),
     // Authors
     ...authorSlugs.map((s) => urlEntry(`/authors/${s}/`, '0.6', 'monthly')),
     // Tropes
     ...tropeSlugs.map((s) => urlEntry(`/tropes/${s}/`, '0.5', 'monthly')),
-    // Fantasy category pages
-    ...CATEGORY_SLUGS.map((s) => urlEntry(`/fantasy/${s}/`, '0.7', 'weekly')),
-    // Fantasy category sub-pages (all-time-greats, start-with, hidden-gems)
-    ...CATEGORY_SLUGS.flatMap((s) =>
-      CATEGORY_LIST_TYPES.map((t) => urlEntry(`/fantasy/${s}/${t}/`, '0.6', 'monthly'))
-    ),
-    // Books Like
-    ...BOOKS_LIKE_SLUGS.map((s) => urlEntry(`/books-like/${s}/`, '0.7', 'monthly')),
-    // Reading orders — curated
-    ...CURATED_READING_ORDER_SLUGS.map((s) => urlEntry(`/reading-orders/${s}/`, '0.7', 'monthly')),
-    // Reading orders — DB-driven
-    ...dbSeriesSlugs.map((s) => urlEntry(`/reading-orders/${s}/`, '0.5', 'monthly')),
+    // Curated book pages only (non-curated books are noindexed — excluded from sitemap)
+    ...bookSlugs.map((s) => urlEntry(`/books/${s}/`, '0.5', 'monthly')),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

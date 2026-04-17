@@ -2,6 +2,7 @@
 import Layout from '../../components/Layout.astro';
 import { getBookBySlug, authorToSlug } from '../../lib/db/books';
 import { READING_ORDERS } from '../../data/reading-orders';
+import { CURATED_SLUGS } from '../../lib/curated-slugs';
 import { getApprovedTags } from '../../lib/db/tags';
 import { supabaseClient } from '../../lib/supabaseClient';
 import AddToShelf from '../../components/AddToShelf';
@@ -12,6 +13,7 @@ import BookFAQ from '../../components/BookFAQ.astro';
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect('/books');
 
+const isIndexed = CURATED_SLUGS.has(slug);
 const book = await getBookBySlug(slug);
 if (!book) return new Response(null, { status: 404, statusText: 'Not Found' });
 
@@ -129,6 +131,7 @@ function upgradeCoverUrl(url: string | null | undefined): string {
   description={metaDescription}
   image={upgradeCoverUrl(book.cover_url) || undefined}
   ogType="book"
+  noindex={!isIndexed}
 >
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
