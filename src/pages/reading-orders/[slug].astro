@@ -36,6 +36,7 @@ type MergedBook = {
   title: string; slug: string; status: string; note: string;
   page_count: number; publication_year: number;
   cover_url: string | null; darkness_level: number | null;
+  heat_level: string | null;
   avg_rating: number | null; series_label: string | null;
   position?: number | null;
   seriesLabel?: string | null;
@@ -61,7 +62,7 @@ if (entry) {
 
   const { data: dbRows } = await supabaseClient
     .from('books')
-    .select('slug, cover_url, isbn, darkness_level, avg_rating, series, series_number')
+    .select('slug, cover_url, isbn, darkness_level, heat_level, avg_rating, series, series_number')
     .in('slug', bookSlugs);
   const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
 
@@ -71,6 +72,7 @@ if (entry) {
       ...b,
       cover_url: upgradeCoverUrl(db?.cover_url) || (db?.isbn ? `https://covers.openlibrary.org/b/isbn/${db.isbn}-L.jpg?default=false` : null),
       darkness_level: db?.darkness_level ?? null,
+      heat_level: db?.heat_level ?? null,
       avg_rating: db?.avg_rating ?? null,
       series_label: db?.series && db?.series_number != null ? `${db.series} #${db.series_number}` : null,
       position: b.position ?? null,
@@ -223,14 +225,36 @@ const dbAvgDarkness = dbDarknessLevels.length
 const CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
 const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
 
-const dbHeatLevels = [...new Set(
-  dbBooks.map(b => (b as any).heat_level).filter(Boolean) as string[]
-)];
-const dbHeatDisplay = dbHeatLevels.length === 1
-  ? dbHeatLevels[0]
-  : dbHeatLevels.length > 1
-    ? dbHeatLevels.join(' / ')
-    : null;
+// Curated series: compute darkness + heat from DB values of the core books
+const HEAT_ORDER = ['Closed Door', 'Sweet Romance', 'Open Door', 'Explicit', 'Fiery'];
+const HEAT_FLAMES = ['', '🔥', '🔥🔥', '🔥🔥🔥', '🔥🔥🔥🔥', '🔥🔥🔥🔥🔥'];
+const curatedCoreBooks = mergedBooks?.filter(b => b.status === 'essential' || b.status === 'core') ?? [];
+const curatedDarknessLevels = curatedCoreBooks.map(b => b.darkness_level).filter(Boolean) as number[];
+const curatedAvgDarkness = curatedDarknessLevels.length
+  ? Math.round(curatedDarknessLevels.reduce((s, d) => s + d, 0) / curatedDarknessLevels.length)
+  : null;
+const curatedHeatValues = curatedCoreBooks.map(b => b.heat_level).filter(Boolean) as string[];
+const curatedMaxHeat = curatedHeatValues.length
+  ? curatedHeatValues.reduce((max, h) => HEAT_ORDER.indexOf(h) > HEAT_ORDER.indexOf(max) ? h : max, curatedHeatValues[0])
+  : null;
+const curatedDarknessDisplay = (() => {
+  const parts: string[] = [];
+  if (curatedAvgDarkness) parts.push(`${CANDLES[curatedAvgDarkness]} ${DARKNESS_LABELS[curatedAvgDarkness]}`);
+  if (curatedMaxHeat) {
+    const hi = HEAT_ORDER.indexOf(curatedMaxHeat) + 1;
+    parts.push(`${HEAT_FLAMES[hi]} ${curatedMaxHeat}`);
+  }
+  return parts.join(' · ') || curatedEntry?.darknessDisplay || '';
+})();
+
+const dbHeatValues = dbBooks.map(b => (b as any).heat_level).filter(Boolean) as string[];
+const dbMaxHeat = dbHeatValues.length
+  ? dbHeatValues.reduce((max, h) => HEAT_ORDER.indexOf(h) > HEAT_ORDER.indexOf(max) ? h : max, dbHeatValues[0])
+  : null;
+const dbMaxHeatDisplay = dbMaxHeat ? (() => {
+  const hi = HEAT_ORDER.indexOf(dbMaxHeat) + 1;
+  return `${HEAT_FLAMES[hi]} ${dbMaxHeat}`;
+})() : null;
 
 // Card color classes
 const cardColors: Record<string, { border: string; bg: string; title: string; body: string }> = {
@@ -423,7 +447,7 @@ const dbSeoProse = !isCurated && seriesMeta
         {totalHoursCurated > 0 && (
           <span class="flex items-center gap-1.5"><span class="text-zinc-400">⏱</span> ~{totalHoursCurated} hours reading time</span>
         )}
-        <span class="flex items-center gap-1.5">{curatedEntry.darknessDisplay}</span>
+        <span class="flex items-center gap-1.5">{curatedDarknessDisplay}</span>
       </div>
 
       <p class="mt-5 text-base text-zinc-700 leading-relaxed">{curatedEntry.description}</p>
@@ -612,9 +636,9 @@ const dbSeoProse = !isCurated && seriesMeta
             {CANDLES[dbAvgDarkness]} {DARKNESS_LABELS[dbAvgDarkness]}
           </span>
         )}
-        {dbHeatDisplay && (
+        {dbMaxHeatDisplay && (
           <span class="flex items-center gap-1.5">
-            <span class="text-rose-400">🔥</span> {dbHeatDisplay}
+            {dbMaxHeatDisplay}
           </span>
         )}
       </div>

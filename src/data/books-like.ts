@@ -2008,32 +2008,6 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             bookshop_url:
               'https://bookshop.org/search?keywords=Jonathan+Strange+Mr+Norrell&affiliate=122720',
           },
-          {
-            title: 'Ninth House',
-            author: 'Leigh Bardugo',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9781250313102-L.jpg',
-            darkness_level: 4,
-            heat_level: null,
-            standalone: false,
-            series: 'Alex Stern',
-            series_number: 1,
-            series_label: 'Series (2 books so far)',
-            audiobook: true,
-            note: 'Yale secret societies as real magic schools — and the book does not romanticise it. Alex Stern is a scholarship student from a violent background recruited to police the secret magical societies of Yale, and the story is about what it costs the powerless to maintain a system that was never built for them. Dark, explicitly so — content warnings for assault and trauma — but the premise scratches the exact itch of "what if the magical elite were genuinely sinister." Bardugo at her most grown-up.',
-            tags: [
-              'Magic School',
-              'Dark Academia',
-              'Secret Societies',
-              'Ghosts',
-              'Adult Fantasy',
-            ],
-            warning: 'Graphic depictions of assault and trauma',
-            amazon_url:
-              'https://www.amazon.com/s?k=Ninth+House+Leigh+Bardugo&tag=librariancura-20',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=Ninth+House+Leigh+Bardugo&affiliate=122720',
-          },
         ],
       },
       {
@@ -3962,25 +3936,6 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'https://www.amazon.com/s?k=Magnus+Chase+Gods+Asgard+Riordan&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Magnus+Chase+Gods+Asgard&affiliate=122720',
-          },
-          {
-            title: 'The Inheritance Games',
-            author: 'Jennifer Lynn Barnes',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9781368052405-L.jpg',
-            darkness_level: 2,
-            heat_level: null,
-            standalone: false,
-            series: 'The Inheritance Games',
-            series_number: 1,
-            series_label: 'Trilogy',
-            audiobook: true,
-            note: 'Not mythology — but if what you loved about Percy Jackson was the puzzle-solving, the conspiracy layered under everyday life, and the fast-paced plot that keeps you reading past your bedtime, this delivers all of it in a contemporary YA setting. Avery Grambs is left a billion dollars by a dead billionaire she never met, and has to live in his mansion with his four grandsons to claim it. Fun, addictive, difficult to put down — the same brain-chemistry Percy Jackson triggers.',
-            tags: ['Mystery', 'Puzzle', 'Contemporary', 'Fast-Paced', 'YA'],
-            amazon_url:
-              'https://www.amazon.com/s?k=The+Inheritance+Games+Jennifer+Lynn+Barnes&tag=librariancura-20',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=The+Inheritance+Games+Barnes&affiliate=122720',
           },
         ],
       },
@@ -6831,6 +6786,167 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
     ],
   },
 
+  // ── A Psalm for the Wild-Built ──────────────────────────────────────────────
+  {
+    slug: 'a-psalm-for-the-wild-built',
+    source: {
+      title: 'A Psalm for the Wild-Built',
+      author: 'Becky Chambers',
+      db_slug: 'a-psalm-for-the-wild-built',
+      cover_url:
+        'https://books.google.com/books/publisher/content/images/frontcover/XgT6DwAAQBAJ?fife=w400-h600',
+      darkness_level: 1,
+      heat_level: 'Closed Door',
+      series: 'Monk & Robot',
+      series_number: 1,
+      tropes: ['Found Family', 'Quest', 'Cozy Fantasy', 'Slice of Life'],
+      why_people_love:
+        "It's a novella that asks one question — what do you need? — and takes its time actually answering it. Dex is a tea monk who has everything and feels hollow anyway, so they walk away from civilization into the wild and find a robot named Mosscap who has spent a century wondering the same thing about humans. The book is almost entirely conversation, and those conversations are genuinely lovely: unhurried, kind, and oddly comforting in the way that only fiction that refuses to manufacture drama can be. Becky Chambers built a solarpunk world where humanity chose nature over endless growth, and Psalm feels like the reward for that choice — a short, warm exhale at the end of a long day.",
+      angle: 'Cozy Solarpunk Novella About Purpose and Rest',
+      answer_line:
+        'If you loved Psalm for the gentle philosophical warmth and the total absence of urgency, start with The House in the Cerulean Sea and Under the Whispering Door.',
+    },
+    aspects: [
+      {
+        heading: 'If you loved the cozy, low-stakes warmth and kind world…',
+        recs: [
+          {
+            title: 'The House in the Cerulean Sea',
+            slug: 'the-house-in-the-cerulean-sea',
+            author: 'TJ Klune',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/LyV8zQEACAAJ?fife=w400-h600',
+            darkness_level: 1,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note:
+              'A caseworker for magical beings is sent to inspect an orphanage housing the six most dangerous magical children in the world, and slowly falls in love with both the children and their caretaker. The same unhurried kindness as Psalm — no villain ever feels truly threatening — and the same underlying question about what it means to build a life that actually fits you. Klune writes warmth the way Chambers does: earnestly, without apology.',
+            tags: ['Cozy Fantasy', 'Found Family', 'LGBTQ+', 'Wholesome'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+          {
+            title: 'Legends & Lattes',
+            slug: 'legends-and-lattes',
+            author: 'Travis Baldree',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/ttfmzgEACAAJ?fife=w400-h600',
+            darkness_level: 1,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Legends & Lattes',
+            series_number: 1,
+            audiobook: true,
+            note:
+              "An orc barbarian retires from adventuring and opens the city's first coffee shop. Like Psalm, it's about choosing a quieter life over the heroic one everyone expects of you, and finding community in small daily rituals. The stakes never truly threaten the warmth, and that is entirely the point. Slightly more plot than Psalm but the same fundamental energy.",
+            tags: ['Cozy Fantasy', 'Slice of Life', 'Found Family', 'Low Stakes'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+          {
+            title: 'The Very Secret Society of Irregular Witches',
+            slug: 'the-very-secret-society-of-irregular-witches',
+            author: 'Sangu Mandanna',
+            cover_url:
+              'https://covers.openlibrary.org/b/id/14656782-L.jpg',
+            darkness_level: 1,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note:
+              "A witch who has always lived in isolation is invited to secretly teach three young witches hidden in a countryside house full of eccentric humans. The same themes as Psalm — solitude as habit versus solitude as choice, the unexpected comfort of belonging — wrapped in an autumnal, tea-and-books atmosphere. More romance than Psalm, but the warmth is identical.",
+            tags: ['Cozy Fantasy', 'Found Family', 'Witches', 'Romance'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+        ],
+      },
+      {
+        heading: 'If you loved the philosophical conversations about meaning and purpose…',
+        recs: [
+          {
+            title: 'Piranesi',
+            slug: 'piranesi',
+            author: 'Susanna Clarke',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/pPa0DwAAQBAJ?fife=w400-h600',
+            darkness_level: 2,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note:
+              "A man lives alone in an infinite house of endless halls and tidal statues, cataloguing its beauty and slowly uncovering what he is. Like Psalm, most of the text is a single narrator sitting quietly with large questions — about identity, memory, and what it means to truly know a place. The tone is completely different (stranger, more melancholic) but the contemplative intimacy is the same.",
+            tags: ['Philosophical', 'Mystery', 'Unique World', 'Literary Fantasy'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+          {
+            title: 'Under the Whispering Door',
+            slug: 'under-the-whispering-door',
+            author: 'TJ Klune',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/w8vdDwAAQBAJ?fife=w400-h600',
+            darkness_level: 1,
+            heat_level: 'Open Door',
+            standalone: true,
+            audiobook: true,
+            note:
+              "A recently-dead man is brought to a tea shop that serves as a waystation between life and what comes next, and has to reckon with who he was versus who he might have been. The conversation Mosscap has with Dex — what do you need, what makes a life good — is essentially what this book asks in longer form, through grief and gentle romance. TJ Klune again, but a completely different emotional register than Cerulean Sea.",
+            tags: ['Cozy Fantasy', 'Death & Grief', 'Philosophical', 'LGBTQ+'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+        ],
+      },
+      {
+        heading: 'If you loved Becky Chambers\' voice and want more of her worlds…',
+        recs: [
+          {
+            title: 'A Long Way to a Small, Angry Planet',
+            slug: 'a-long-way-to-a-small-angry-planet',
+            author: 'Becky Chambers',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/rukCrgEACAAJ?fife=w400-h600',
+            darkness_level: 2,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Wayfarers',
+            series_number: 1,
+            audiobook: true,
+            note:
+              "Chambers' debut — a crew of misfits on a tunneling ship travel to the far edge of the galaxy on a long job. The same found-family warmth and the same refusal to build plot around conflict, but longer and with a larger cast. The Wayfarers series is less philosophical and more episodic than Monk & Robot, but if Psalm made you want to live in Chambers' version of a kinder universe, this is the door in.",
+            tags: ['Found Family', 'Cozy Sci-Fi', 'Slice of Life', 'Character-Driven'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+          {
+            title: 'This Is How You Lose the Time War',
+            slug: 'this-is-how-you-lose-the-time-war',
+            author: 'Amal El-Mohtar & Max Gladstone',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/21_RDwAAQBAJ?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note:
+              "Two enemy agents on opposite sides of a time war begin leaving secret letters for each other across history, and slowly fall in love. Another novella built entirely on voice and prose — no action to speak of — and the same satisfaction of watching two minds in genuine conversation. Darker than Psalm and more romantic, but the same literary intimacy. The co-authors alternate chapters and the result feels like a single, beautiful thing.",
+            tags: ['Literary Fantasy', 'Epistolary', 'Romance', 'Time Travel'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like Legends & Lattes', slug: 'legends-and-lattes' },
+      { title: 'Books Like The House in the Cerulean Sea', slug: 'the-house-in-the-cerulean-sea' },
+      { title: 'Books Like Piranesi', slug: 'piranesi' },
+    ],
+  },
+
   // ── American Gods ───────────────────────────────────────────────────────────
   {
     slug: 'american-gods',
@@ -7189,6 +7305,195 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         title: 'Books Like The Name of the Wind',
         slug: 'the-name-of-the-wind',
       },
+    ],
+  },
+
+  // ── Dungeon Crawler Carl ─────────────────────────────────────────────────────
+  {
+    slug: 'dungeon-crawler-carl',
+    source: {
+      title: 'Dungeon Crawler Carl',
+      author: 'Matt Dinniman',
+      db_slug: 'dungeon-crawler-carl',
+      cover_url:
+        'https://books.google.com/books/publisher/content/images/frontcover/ty1fEQAAQBAJ?fife=w400-h600',
+      darkness_level: 4,
+      heat_level: 'Closed Door',
+      series: 'Dungeon Crawler Carl',
+      series_number: 1,
+      tropes: ['LitRPG', 'Dark Humor', 'Survival', 'Underdog Hero', 'Found Family'],
+      why_people_love:
+        "The appeal isn't the stats or the loot — it's Carl's voice. An ordinary guy dropped into a nightmarish alien game show, watching the world die around him, and still making the most perfectly timed sarcastic observations. Matt Dinniman uses the LitRPG framework as a delivery system for sharp social satire: the Syndicate broadcasts human extinction as prime-time entertainment, the dungeon is sponsored, and the audience has parasocial opinions about the contestants' fashion choices. It's brutal, it's hilarious, and Princess Morfin the cat is more competent than most fantasy protagonists.",
+      angle: 'Brutal LitRPG Dungeon-Crawler with Dark Humor',
+      answer_line:
+        'If you loved Carl for the addictive progression and the voice, start with He Who Fights With Monsters and Red Rising.',
+    },
+    aspects: [
+      {
+        heading: 'If you loved the LitRPG game mechanics and progression…',
+        recs: [
+          {
+            title: 'He Who Fights With Monsters',
+            slug: 'he-who-fights-with-monsters',
+            author: 'Jason Cheyne',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/oHGtzgEACAAJ?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'He Who Fights With Monsters',
+            series_number: 1,
+            audiobook: true,
+            note:
+              'The closest spiritual sibling to DCC — isekai protagonist, game-world abilities, relentless humour, and a supporting cast that earns its page time. Jason is more overpowered than Carl and the tone is lighter, but the addictive "one more chapter" pull is identical. Less social commentary, more pure wish-fulfilment fun.',
+            tags: ['LitRPG', 'Isekai', 'Dark Humor', 'Progression Fantasy'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+          {
+            title: 'Unsouled',
+            slug: 'unsouled',
+            author: 'Will Wight',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/tyRQ0AEACAAJ?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Cradle',
+            series_number: 1,
+            audiobook: true,
+            note:
+              'No game stats, but the same core loop: underdog starts at the bottom of a brutal hierarchy and claws upward through cleverness and grit. Cradle is leaner and more serious than DCC — the humor is absent and the pacing is relentless — but the progression escalation hits the same dopamine receptors. The series gets significantly darker and more epic as it goes.',
+            tags: ['Progression Fantasy', 'Cultivation', 'Underdog Hero'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+        ],
+      },
+      {
+        heading: 'If you loved the dark humor, absurdist voice, and chaos…',
+        recs: [
+          {
+            title: "The Hitchhiker's Guide to the Galaxy",
+            slug: 'the-hitchhiker-s-guide-to-the-galaxy',
+            author: 'Douglas Adams',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/DmUr6q1EDYMC?fife=w400-h600',
+            darkness_level: 1,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: "The Hitchhiker's Guide to the Galaxy",
+            series_number: 1,
+            audiobook: true,
+            note:
+              "The original 'apocalypse as absurdist comedy' — Earth is demolished to make way for a hyperspace bypass and the protagonist has forty seconds of warning. Adams invented the genre DCC operates in: catastrophe narrated with bone-dry wit and a complete refusal to take the stakes seriously. The humor lands differently (British vs American) but the DNA is identical.",
+            tags: ['Dark Humor', 'Absurdist', 'Sci-Fi', 'End of the World'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+          {
+            title: 'Good Omens',
+            slug: 'good-omens',
+            author: 'Terry Pratchett & Neil Gaiman',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/G_iNEAAAQBAJ?fife=w400-h600',
+            darkness_level: 1,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note:
+              'Two cosmic beings trying to prevent the apocalypse because they quite like Earth — the same energy as Carl refusing to die because he refuses to let the Syndicate win. The humor is gentler and there is no dungeon, but the combination of genuine stakes with gleeful irreverence is spot on. Perfect if you want the wit without the graphic violence.',
+            tags: ['Dark Humor', 'Absurdist', 'Apocalypse', 'Found Family'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+          {
+            title: 'Red Rising',
+            slug: 'red-rising',
+            author: 'Pierce Brown',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/qakBAgAAQBAJ?fife=w400-h600',
+            darkness_level: 4,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Red Rising',
+            series_number: 1,
+            audiobook: true,
+            note:
+              "Brutal survival in a system designed to grind you down, narrated with a relentlessly sharp voice. Darrow isn't funny like Carl — he's furious — but the social commentary is just as pointed and the underdog-against-the-machine energy is identical. The Institute sequence in book one is essentially a death-game with factions, alliances, and calculated betrayals.",
+            tags: ['Underdog Hero', 'Social Commentary', 'Survival', 'Dark', 'Sci-Fi Fantasy'],
+            warning: 'Contains graphic violence and character deaths.',
+            amazon_url: '',
+            bookshop_url: '',
+          },
+        ],
+      },
+      {
+        heading: 'If you loved the survival-as-spectacle and the deadly stakes…',
+        recs: [
+          {
+            title: 'The Hunger Games',
+            slug: 'the-hunger-games',
+            author: 'Suzanne Collins',
+            cover_url:
+              'https://images-na.ssl-images-amazon.com/images/P/0439023483.01.L.jpg',
+            darkness_level: 4,
+            heat_level: 'Sweet Romance',
+            standalone: false,
+            series: 'The Hunger Games',
+            series_number: 1,
+            audiobook: true,
+            note:
+              "The foundational 'human beings as entertainment for the ruling class' text. DCC takes the Hunger Games premise and turns the dial to eleven — the dungeon is bigger, the humor is darker, and the audience is alien — but if you want to understand where DCC's DNA comes from, this is it. Much younger in tone and considerably less gory.",
+            tags: ['Survival', 'Dystopian', 'Spectacle', 'Underdog Hero', 'YA'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+          {
+            title: 'Gideon the Ninth',
+            slug: 'gideon-the-ninth',
+            author: 'Tamsyn Muir',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/HHJwDwAAQBAJ?fife=w400-h600',
+            darkness_level: 4,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'The Locked Tomb',
+            series_number: 1,
+            audiobook: true,
+            note:
+              "Necromancers and their swordfighters compete in a deadly trial inside a haunted mansion — a different kind of lethal game with increasingly horrific reveals. Gideon Nav has the same sarcastic, pop-culture-saturated voice as Carl and the same habit of narrating catastrophe with inappropriate humor. The genre is completely different (lesbian necromancers in space), but the vibe is uncannily similar.",
+            tags: ['Dark Humor', 'Deadly Competition', 'Found Family', 'Necromancy'],
+            amazon_url: '',
+            bookshop_url: '',
+          },
+          {
+            title: 'The Poppy War',
+            slug: 'the-poppy-war',
+            author: 'R.F. Kuang',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/Vg89DwAAQBAJ?fife=w400-h600',
+            darkness_level: 5,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'The Poppy War',
+            series_number: 1,
+            audiobook: true,
+            note:
+              'An underdog claws their way through a brutal military academy system and then watches that system reveal its true horror. No humor here — The Poppy War is relentlessly dark — but the social machinery grinding ordinary people into weapons resonates with DCC\'s Syndicate satire. Kuang\'s world is meticulous and devastating. Caveat: the violence escalates to genuinely harrowing levels by book two.',
+            tags: ['Underdog Hero', 'Social Commentary', 'War', 'Dark', 'Grimdark'],
+            warning: 'Extremely graphic violence including depictions of genocide.',
+            amazon_url: '',
+            bookshop_url: '',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like Red Rising', slug: 'red-rising' },
+      { title: 'Books Like The Hunger Games', slug: 'the-hunger-games' },
+      { title: 'Books Like Cradle (Unsouled)', slug: 'cradle' },
     ],
   },
 
@@ -14137,31 +14442,6 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             bookshop_url:
               'https://bookshop.org/search?keywords=The+Witch%27s+Heart+Gornichec',
           },
-          {
-            title: 'The Cruel Prince',
-            author: 'Holly Black',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9780316310314-L.jpg',
-            darkness_level: 3,
-            heat_level: 'Closed Door',
-            standalone: false,
-            series: 'The Folk of the Air',
-            series_number: 1,
-            series_label: 'Series (3 books)',
-            audiobook: true,
-            note: "Black's fae courts are drawn from the same well of European folklore as Fawcett's Hidden Folk — amoral, beautiful, bound by rules they did not choose, and fundamentally indifferent to human feelings. The tone is sharper and more political than Emily Wilde, and the romance is adversarial rather than warm. But if the specific quality of Fawcett's faeries — the way they are charming and lethal in the same breath — was the hook, Black's Elfhame delivers that with more teeth. Caveat: Jude is nothing like Emily; the book is angrier, faster, and more interested in power than scholarship.",
-            tags: [
-              'Fae Courts',
-              'Morally Complex Fae',
-              'Political Intrigue',
-              'Enemies to Lovers',
-              'European Folklore',
-            ],
-            amazon_url:
-              'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=The+Cruel+Prince+Holly+Black&affiliate=122720',
-          },
         ],
       },
     ],
@@ -14258,32 +14538,6 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'https://www.amazon.com/s?k=Sabriel+Garth+Nix&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=Sabriel+Garth+Nix&affiliate=122720',
-          },
-          {
-            title: 'The Magicians',
-            author: 'Lev Grossman',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9780670020553-L.jpg',
-            darkness_level: 4,
-            heat_level: 'Open Door',
-            standalone: false,
-            series: 'The Magicians',
-            series_number: 1,
-            series_label: 'Series (3 books)',
-            audiobook: true,
-            note: "The most direct engagement with the Earthsea question of what it costs a gifted person to actually get what they want. Grossman's Quentin is brilliant, unhappy, and convinced that magic will fix the unhappiness — and the novel methodically shows why that belief is wrong. Where Le Guin's prose has the clarity of myth, Grossman's is sharp and novelistic and sometimes deliberately unpleasant. The magic school sections are consciously indebted to both Earthsea and Narnia. Readers who found Earthsea too clean and spare may prefer this; readers who found Earthsea exactly right may find this too cynical. Worth reading either way for how seriously it takes the problem.",
-            tags: [
-              'Magic Academy',
-              'Subverted Fantasy Tropes',
-              'Gifted Protagonist',
-              'Psychological',
-              'Coming of Age',
-            ],
-            warning: 'Explicit content, depression, violence',
-            amazon_url:
-              'https://www.amazon.com/s?k=The+Magicians+Lev+Grossman&tag=librariancura-20',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=The+Magicians+Lev+Grossman&affiliate=122720',
           },
         ],
       },
