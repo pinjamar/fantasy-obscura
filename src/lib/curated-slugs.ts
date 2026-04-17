@@ -11,6 +11,7 @@
 
 import { BOOKS_LIKE } from '../data/books-like';
 import { READING_ORDERS } from '../data/reading-orders';
+import { ALL_PRIORITY } from '../../scripts/priority-slugs.mjs';
 
 function toDbSlug(title: string): string {
   return title
@@ -57,6 +58,11 @@ export const CURATED_SLUGS: ReadonlySet<string> = (() => {
         }
       }
     }
+  }
+
+  // ── All priority-tier books (TIER_1 + TIER_2 + TIER_3) ────────────────────
+  for (const slug of ALL_PRIORITY) {
+    s.add(slug);
   }
 
   return s;
