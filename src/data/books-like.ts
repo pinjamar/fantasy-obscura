@@ -5656,6 +5656,29 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
             bookshop_url:
               'https://bookshop.org/search?keywords=Mistborn+Final+Empire&affiliate=122720',
           },
+          {
+            title: 'Blood Song',
+            author: 'Anthony Ryan',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780425268285-L.jpg',
+            darkness_level: 3,
+            standalone: false,
+            series: "Raven's Shadow",
+            series_number: 1,
+            series_label: 'Series (3 books, complete)',
+            audiobook: true,
+            note: "The closest structural match to Kaladin's arc in the genre. Vaelin Al Sorna is taken from his family at a young age and placed in a brutal military order, rises through exceptional ability and force of character, and builds a found-family unit of brothers who would die for him. The pacing mirrors Stormlight's slow build — the early academy chapters are deliberately unhurried — before the scope explodes into war, politics, and a magic system with genuine costs. Tone is hopeful despite the violence, and Ryan earns his emotional payoffs.",
+            tags: [
+              'Military Academy',
+              'Underdog Soldier',
+              'Found Family',
+              'Earned Magic',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Blood+Song+Anthony+Ryan&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Blood+Song+Anthony+Ryan&affiliate=122720',
+          },
         ],
       },
       {
@@ -5709,6 +5732,28 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
               'https://www.amazon.com/s?k=A+Game+of+Thrones+George+Martin&tag=librariancura-20',
             bookshop_url:
               'https://bookshop.org/search?keywords=A+Game+of+Thrones+Martin&affiliate=122720',
+          },
+          {
+            title: 'The Priory of the Orange Tree',
+            author: 'Samantha Shannon',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9781635570304-L.jpg',
+            darkness_level: 3,
+            standalone: true,
+            series_label: 'Standalone (800 pages)',
+            audiobook: true,
+            note: "A standalone epic with the same commitment to scale as Stormlight: three continents, centuries of lore, four major POV characters who each carry a different strand of the same world-shaping conflict. Shannon builds her world the way Sanderson builds Roshar — languages, religions, and histories that feel genuinely inhabited — and she writes dragons better than almost anyone. The multi-POV structure means you understand the world from multiple ideological positions, and the scope expands steadily without ever losing the personal stakes. Big advantage over Martin and Jordan: it's complete in one book.",
+            tags: [
+              'Multi-POV',
+              'Standalone Epic',
+              'Dragons',
+              'Female-Led',
+              'Complete',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Priory+of+the+Orange+Tree+Samantha+Shannon&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Priory+Orange+Tree+Shannon&affiliate=122720',
           },
         ],
       },
@@ -6944,6 +6989,371 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       { title: 'Books Like Legends & Lattes', slug: 'legends-and-lattes' },
       { title: 'Books Like The House in the Cerulean Sea', slug: 'the-house-in-the-cerulean-sea' },
       { title: 'Books Like Piranesi', slug: 'piranesi' },
+    ],
+  },
+
+  // ── The Very Secret Society of Irregular Witches ────────────────────────────
+  {
+    slug: 'the-very-secret-society-of-irregular-witches',
+    source: {
+      title: 'The Very Secret Society of Irregular Witches',
+      author: 'Sangu Mandanna',
+      db_slug: 'the-very-secret-society-of-irregular-witches',
+      cover_url: 'https://covers.openlibrary.org/b/id/14656782-L.jpg',
+      darkness_level: 1,
+      heat_level: 'Closed Door',
+      series: null,
+      series_number: null,
+      tropes: [
+        'Found Family',
+        'Slow-Burn Romance',
+        'Hidden Magical Community',
+        'Cozy Magic',
+        'Reluctant Belonging',
+        'Eccentric Household',
+        'Outsider Finds Home',
+      ],
+      angle: 'Cozy Witchcraft Found-Family Romance',
+      answer_line:
+        'If you loved The Very Secret Society of Irregular Witches for the autumnal cozy warmth, the eccentric found family, and the slow-burn romance between a lone witch and a librarian, start with The House in the Cerulean Sea, Legends & Lattes, and Practical Magic.',
+      why_people_love:
+        "The Very Secret Society of Irregular Witches is the book people describe as 'comfort read of the year' — the one they recommend to anyone who needs to feel held. Mika Moon has grown up told that witches must never gather, so she has spent her whole life performing normalcy and keeping her distance from anyone who might matter. When she's hired to secretly tutor three young witches hidden in a rambling countryside house full of opinionated staff, she doesn't expect to find the family she never knew she needed. What makes it work is the household: the grumpy librarian with his dry wit, the older women with their decades of history, the children who are chaos in human form. Mandanna builds warmth slowly and then delivers it all at once. The magic is gentle and present throughout — never world-ending, always personal. The romance is the second thing; the found family is the first. Fair caveat: the plot is low-stakes almost by design. If you need a villain or a ticking clock, this book will frustrate you. If you need to feel like you're being handed a hot drink and told everything will be fine, this is exactly right.",
+    },
+    aspects: [
+      {
+        heading:
+          'If you loved the eccentric found family in a magical house…',
+        recs: [
+          {
+            title: 'The House in the Cerulean Sea',
+            slug: 'the-house-in-the-cerulean-sea',
+            author: 'TJ Klune',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/LyV8zQEACAAJ?fife=w400-h600',
+            darkness_level: 1,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "A bureaucrat is sent to inspect an orphanage housing the six most dangerous magical children in the world and slowly falls in love with the children, their caretaker, and the life he never imagined wanting. The structural match is nearly exact: an outsider arrives at an unusual magical household, finds an eccentric found family waiting for them, and has to choose between the rules they were given and the home they've found. Klune writes warmth with the same earnestness as Mandanna and the same refusal to let plot darken what should be cozy. The slowest-burn romance you'll find in the genre.",
+            tags: ['Found Family', 'LGBTQ+', 'Cozy Magic', 'Wholesome', 'Slow Burn'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=House+Cerulean+Sea+Klune&affiliate=122720',
+          },
+          {
+            title: 'Under the Whispering Door',
+            slug: 'under-the-whispering-door',
+            author: 'TJ Klune',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/w8vdDwAAQBAJ?fife=w400-h600',
+            darkness_level: 1,
+            heat_level: 'Open Door',
+            standalone: true,
+            audiobook: true,
+            note: "A recently-dead man arrives at a tea shop that serves as a waystation between life and what comes next, run by a ferryman and his eccentric household. Again the central question is the same: can someone who has always been closed-off learn to let a place — and a person — matter to them? The context is the afterlife rather than witchcraft, but the emotional architecture is identical. The household is warm, the romance is slow-burning and earned, and the book is fundamentally about the moment you stop running from the people who see you.",
+            tags: ['Found Family', 'LGBTQ+', 'Cozy Magic', 'Death & Grief', 'Slow Burn'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Under+the+Whispering+Door+TJ+Klune&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Under+Whispering+Door+Klune&affiliate=122720',
+          },
+          {
+            title: 'Legends & Lattes',
+            slug: 'legends-and-lattes',
+            author: 'Travis Baldree',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/ttfmzgEACAAJ?fife=w400-h600',
+            darkness_level: 1,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Legends & Lattes',
+            series_number: 1,
+            audiobook: true,
+            note: "An orc barbarian retires from adventuring and opens the city's first coffee shop, slowly gathering a crew of misfits who become family. The lowest-stakes fantasy novel you'll find — no world-ending threat, no chosen one, just a woman trying to build something quiet with people who show up for her. If TVSSIW worked because of the household warmth and the cozy atmosphere more than the witchcraft specifically, Legends & Lattes delivers the same core feeling in a different wrapper. The romance is similar: slow, based on mutual respect, and deeply satisfying.",
+            tags: ['Cozy Fantasy', 'Found Family', 'Low Stakes', 'Slow Burn'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Legends+and+Lattes+Travis+Baldree&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Legends+Lattes+Baldree&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved Mika being a lone witch who finally finds her coven…',
+        recs: [
+          {
+            title: 'Practical Magic',
+            author: 'Alice Hoffman',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780425163023-L.jpg',
+            darkness_level: 2,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "Two witch sisters grow up cursed and isolated in a small town that fears them, and spend the novel learning that the family they were born into — and the women who came before them — are the magic, not a burden to it. The warmth takes longer to arrive than in TVSSIW and the tone is more literary and melancholic, but the core is the same: a woman who has always been alone discovering that belonging was possible all along. Hoffman's prose is beautiful in a way Mandanna's isn't — more lyrical, more elliptical — but both books leave the same feeling behind.",
+            tags: ['Witches', 'Female Friendship', 'Found Family', 'Literary Fantasy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Practical+Magic+Alice+Hoffman&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Practical+Magic+Hoffman&affiliate=122720',
+          },
+          {
+            title: 'The Once and Future Witches',
+            author: 'Alix E. Harrow',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780316498579-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "Three estranged sisters reunite in 1893 to bring back witchcraft — which the world has spent centuries erasing — and find that the old magic survived in the stories and songs women passed down in secret. Where TVSSIW is gentle and autumnal, this is angrier and more political (suffrage movement, institutional oppression), but the heart is identical: women who were told to hide their power finding each other and choosing to be visible together. Harrow's prose is stunning. Caveat: the darkness level is meaningfully higher — there are real villains and real consequences here.",
+            tags: ['Witches', 'Sisterhood', 'Historical Fantasy', 'Women Reclaiming Power'],
+            warning: 'Violence, period-accurate misogyny and oppression',
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Once+and+Future+Witches+Alix+Harrow&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Once+Future+Witches+Harrow&affiliate=122720',
+          },
+          {
+            title: 'Good Omens',
+            author: 'Terry Pratchett & Neil Gaiman',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780060853983-L.jpg',
+            darkness_level: 2,
+            heat_level: null,
+            standalone: true,
+            audiobook: true,
+            note: "An angel and a demon who have been on Earth since the beginning of time have quietly gone native — they like humans, they like their arrangement, and they have absolutely no interest in the apocalypse their respective sides are demanding. The 'secret society of magical beings who decided the rules were stupid and built something better in spite of them' energy is the same as TVSSIW's title premise. The wit is sharper and the comedy more overt, but the fundamental warmth — beings who chose each other over the world that shaped them — is the same. The romance is entirely in subtext (and decades of fandom), but the relationship between Aziraphale and Crowley is one of the great slow burns in the genre.",
+            tags: ['Hidden Magical Community', 'Witty Banter', 'Found Family', 'Comedy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Good+Omens+Pratchett+Gaiman&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Good+Omens+Pratchett+Gaiman&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the slow-burn romance and the cozy, unhurried warmth…',
+        recs: [
+          {
+            title: 'A Psalm for the Wild-Built',
+            slug: 'a-psalm-for-the-wild-built',
+            author: 'Becky Chambers',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/XgT6DwAAQBAJ?fife=w400-h600',
+            darkness_level: 1,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Monk & Robot',
+            series_number: 1,
+            audiobook: true,
+            note: "A monk who has everything they need leaves their comfortable life to travel the wilderness and ends up in conversation with a robot who has never met a human before. Like TVSSIW, the entire point is the conversation — the slow accumulation of trust between two people who weren't supposed to meet — and the book's answer to 'what do you need?' is essentially the same as Mika's arc. No romance here (it's a philosophical friendship), but the emotional texture is almost identical: warm, quiet, and quietly devastating when it lands.",
+            tags: ['Cozy Fantasy', 'Found Family', 'Low Stakes', 'Philosophical'],
+            amazon_url:
+              'https://www.amazon.com/s?k=A+Psalm+for+the+Wild-Built+Becky+Chambers&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Psalm+Wild-Built+Chambers&affiliate=122720',
+          },
+          {
+            title: 'Witch of Wild Things',
+            author: 'Raquel Vasquez Gilliland',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780593549827-L.jpg',
+            darkness_level: 1,
+            heat_level: 'Open Door',
+            standalone: true,
+            audiobook: true,
+            note: "A witch with plant magic is forced to work alongside her nemesis on a project and the enemies-to-lovers slow burn that follows is the most direct comp to Mika and Jamie's dynamic in the genre. The magic is everyday and personal — her plants grow uncontrollably when she's emotional, his clouds follow his mood — and the romance is the entire point. Slightly spicier than TVSSIW (the heat is Open Door rather than Closed), but the cozy contemporary-fantasy register, the witty banter, and the warm-hearted resolution are essentially the same book in a different setting.",
+            tags: ['Slow Burn', 'Enemies to Lovers', 'Contemporary Fantasy', 'Witch Protagonist'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Witch+of+Wild+Things+Raquel+Vasquez+Gilliland&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Witch+Wild+Things+Gilliland&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like The House in the Cerulean Sea', slug: 'the-house-in-the-cerulean-sea' },
+      { title: 'Books Like Legends & Lattes', slug: 'legends-and-lattes' },
+      { title: 'Books Like A Psalm for the Wild-Built', slug: 'a-psalm-for-the-wild-built' },
+    ],
+  },
+
+  // ── Thornhedge ──────────────────────────────────────────────────────────────
+  {
+    slug: 'thornhedge',
+    source: {
+      title: 'Thornhedge',
+      author: 'T. Kingfisher',
+      db_slug: 'thornhedge',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9781250244093-L.jpg',
+      darkness_level: 3,
+      heat_level: null,
+      series: null,
+      series_number: null,
+      tropes: [
+        'Fairy Tale Retelling',
+        'Villain POV',
+        'Sympathetic Monster',
+        'Dark Forest',
+        'Sleeping Beauty Subversion',
+        'Tragic Sacrifice',
+        'Folk Horror',
+      ],
+      angle: 'Subversive Dark Fairy Tale Novella',
+      answer_line:
+        'If you loved Thornhedge for the subverted Sleeping Beauty retelling, the sympathetic monster protagonist, and the quiet dread wrapped in folk horror, start with Uprooted, The Bear and the Nightingale, and Piranesi.',
+      why_people_love:
+        "Thornhedge is a Sleeping Beauty retelling told from the wrong side of the hedge. Toadling is a toad-person who has spent centuries keeping the sleeping princess locked inside because the princess is not what the fairy tales promise — she is something terrible, and letting her wake would be catastrophic. The knight who arrives to break the curse is kind and reasonable and completely wrong about everything, and Toadling has to decide how much of the truth she can tell him. What makes it work is Kingfisher's restraint: the horror is never explicit, always felt. The tragedy accumulates slowly. Toadling is one of the most genuinely sympathetic protagonists in recent fantasy, and the book earns its ending in about 120 pages flat. It's a book about what happens when you've been doing the right thing alone for so long that you can barely remember what it cost you.",
+    },
+    aspects: [
+      {
+        heading:
+          'If you loved the subverted fairy tale — the supposed monster who was protecting everyone all along…',
+        recs: [
+          {
+            title: 'Uprooted',
+            slug: 'uprooted',
+            author: 'Naomi Novik',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780804179034-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "A village girl is taken by the Dragon — the cold, terrifying wizard who protects the valley from the corrupted Wood — and discovers that the Dragon, the Wood, and the old fairy tales about both are nothing like what everyone believes. The match with Thornhedge is structural: a protagonist who has to function within a system of belief they know is wrong, a monster that isn't monstrous, and a threat that the rest of the world refuses to understand. Novik's prose is warmer than Kingfisher's and the book is longer, but the fundamental fairy tale logic — what is really being protected, and at what cost — is the same.",
+            tags: ['Fairy Tale Retelling', 'Slavic Folklore', 'Dark Forest', 'Hidden Truth'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Uprooted+Novik&affiliate=122720',
+          },
+          {
+            title: 'Spinning Silver',
+            slug: 'spinning-silver',
+            author: 'Naomi Novik',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780399180996-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "A Rumpelstiltskin retelling told from multiple women's perspectives, each of whom has been handed a terrible bargain by powers that expected her to fail. Like Thornhedge, the real enemy is not the fairy tale villain — the Staryk king who demands the impossible is not the worst thing in the book — and the women who survive do so by understanding things the legends got wrong. Slightly warmer than Thornhedge in its resolution, but the same subversive relationship with fairy tale logic: the story everyone knows is not the story that actually happened.",
+            tags: ['Fairy Tale Retelling', 'Slavic Folklore', 'Subverted Villain', 'Multiple POVs'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Spinning+Silver+Novik&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the dark folkloric atmosphere and the quiet, pervasive dread…',
+        recs: [
+          {
+            title: 'The Bear and the Nightingale',
+            slug: 'the-bear-and-the-nightingale',
+            author: 'Katherine Arden',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781101885956-L.jpg',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'Winternight Trilogy',
+            series_number: 1,
+            series_label: 'Trilogy (3 books, complete)',
+            audiobook: true,
+            note: "A girl in medieval Russia can see the spirits that protect her village — the ones her priest has declared demonic — and has to choose between the old magic and the new world that is destroying it. The atmosphere is the closest comparison to Thornhedge: snow, darkness, something watching from the forest, the deep unsettling feeling that the world is older and stranger than any human institution wants to admit. Both books are about women who see things clearly in a world that has decided not to. Arden's pacing is slower and her world larger, but the cold, quiet dread is identical.",
+            tags: ['Slavic Folklore', 'Dark Atmosphere', 'Girl Who Sees Clearly', 'Folk Horror'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Bear+Nightingale+Arden&affiliate=122720',
+          },
+          {
+            title: 'Deathless',
+            author: 'Catherynne M. Valente',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780765326300-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: false,
+            note: "Koschei the Deathless — the Slavic folklore monster who cannot be killed because his death is hidden inside nested objects — comes to claim a girl in Stalinist Leningrad, and she follows him willingly into his kingdom. Valente's prose is incantatory and dense, unlike Kingfisher's clean efficiency, but both books are fundamentally about someone who has been doing a terrible job for reasons that were once noble, and about what love looks like in a context without hope. The darkest rec on this list by some margin — Valente does not flinch — but for readers who want the full fairy tale nihilism that Thornhedge gestures at, this delivers.",
+            tags: ['Slavic Folklore', 'Dark Fairy Tale', 'Monster Love Story', 'Literary Fantasy'],
+            warning: 'Dark throughout; violence, oppression, bleak ending',
+            amazon_url:
+              'https://www.amazon.com/s?k=Deathless+Catherynne+Valente&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Deathless+Valente&affiliate=122720',
+          },
+          {
+            title: 'The Hazel Wood',
+            author: 'Melissa Albert',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781250307071-L.jpg',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Hazel Wood',
+            series_number: 1,
+            series_label: 'Duology (2 books)',
+            audiobook: true,
+            note: "A girl discovers that the dark fairy tales her grandmother wrote are real — and that she herself is one of the stories, not a reader of them. The sinister logic of fairy tales, the horror of being a character rather than a person, the world that exists just behind the one you can see — all present. Where Thornhedge subverts a specific story from the inside, The Hazel Wood subverts fairy tale genre logic from the outside, but both are about what happens when the story that was told about you is wrong, and what it costs to rewrite it.",
+            tags: ['Dark Fairy Tales', 'Sinister Atmosphere', 'Subverted Expectations', 'YA-Crossover'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Hazel+Wood+Melissa+Albert&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Hazel+Wood+Albert&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the compact novella form — unsettling, precise, and complete…',
+        recs: [
+          {
+            title: 'Piranesi',
+            slug: 'piranesi',
+            author: 'Susanna Clarke',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/pPa0DwAAQBAJ?fife=w400-h600',
+            darkness_level: 2,
+            heat_level: null,
+            standalone: true,
+            audiobook: true,
+            note: "A man lives alone in an infinite house of endless halls and tidal statues, cataloguing its wonders while slowly piecing together what he actually is. Like Thornhedge, the horror is entirely atmospheric — there is no monster with teeth, just the growing understanding that something is very wrong with the world you have been living in. Both are novellas built around a single unreliable perspective, and both derive their power from what the protagonist doesn't know rather than what they do. The ending is melancholic in the same register as Thornhedge's: not tragedy, not triumph, but something true.",
+            tags: ['Mystery', 'Unreliable Narrator', 'Atmospheric Horror', 'Novella'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Piranesi+Clarke&affiliate=122720',
+          },
+          {
+            title: 'What Moves the Dead',
+            author: 'T. Kingfisher',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781250850690-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: true,
+            audiobook: true,
+            note: "Kingfisher's retelling of Poe's Fall of the House of Usher — a soldier visits old friends in a decaying house and something is deeply wrong with the lake, the fungi, and the twins who live there. The same author, the same efficient prose, the same technique: horror through accumulating wrongness rather than jump scares, a narrator trying to hold their sanity in a situation that doesn't permit it. Darker and more explicitly horrifying than Thornhedge (this is full horror, not fairy tale dread), but the most direct continuation of Kingfisher's voice. If Thornhedge worked because of how she wrote rather than what she wrote about, start here.",
+            tags: ['Horror', 'Gothic', 'Same Author', 'Novella', 'Body Horror'],
+            warning: 'Graphic body horror, fungi, themes of decay and infection',
+            amazon_url:
+              'https://www.amazon.com/s?k=What+Moves+the+Dead+T+Kingfisher&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=What+Moves+Dead+Kingfisher&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like Uprooted', slug: 'uprooted' },
+      { title: 'Books Like Piranesi', slug: 'piranesi' },
+      { title: 'Books Like The Bear and the Nightingale', slug: 'the-bear-and-the-nightingale' },
     ],
   },
 

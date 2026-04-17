@@ -228,7 +228,7 @@ const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'
 // Curated series: compute darkness + heat from DB values of the core books
 const HEAT_ORDER = ['Closed Door', 'Sweet Romance', 'Open Door', 'Explicit', 'Fiery'];
 const HEAT_FLAMES = ['', '🔥', '🔥🔥', '🔥🔥🔥', '🔥🔥🔥🔥', '🔥🔥🔥🔥🔥'];
-const curatedCoreBooks = mergedBooks?.filter(b => b.status === 'essential' || b.status === 'core') ?? [];
+const curatedCoreBooks = (mergedBooks ?? allBooksCurated).filter(b => b.status === 'essential' || b.status === 'core' || b.status === 'mandatory');
 const curatedDarknessLevels = curatedCoreBooks.map(b => b.darkness_level).filter(Boolean) as number[];
 const curatedAvgDarkness = curatedDarknessLevels.length
   ? Math.round(curatedDarknessLevels.reduce((s, d) => s + d, 0) / curatedDarknessLevels.length)

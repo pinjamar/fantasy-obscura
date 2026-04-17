@@ -1548,7 +1548,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     seriesStatusLabel: '⏳ Ongoing Series',
     description:
       'Military fantasy academy meets dragon-rider romance — fast-paced, explicitly romantic, and increasingly dark as the series progresses. Fourth Wing reads like romantasy; by Onyx Storm it\'s leaning hard into epic fantasy. If you\'re here for the romance and action combo, all three books deliver. If explicit content isn\'t for you, this series isn\'t for you. Fourth Wing is where to start — no prior reading required. The Empyrean reading order is: Fourth Wing → Iron Flame → Onyx Storm, with more books planned.',
-    darknessDisplay: '🕯️🕯️🕯️🕯️ Dark · 🔥🔥🔥🔥🔥 Fiery',
+    darknessDisplay: '🕯️🕯️🕯️🕯️ Dark · 🔥🔥🔥🔥 Explicit',
     groups: [
       {
         label: 'Published',
