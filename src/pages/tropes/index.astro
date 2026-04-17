@@ -10,6 +10,13 @@ const CATEGORY_META = {
   'world-magic':{ label: 'World & Magic Tropes',emoji: '✨', desc: 'The worlds, locations, and magic systems that define the story\'s rules and atmosphere.' },
 } as const;
 
+const tropesPageJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Fantasy Tropes',
+  description: 'Browse fantasy tropes by category — character, relationship, plot, and world & magic.',
+  url: 'https://thegrimoire.co/tropes/',
+});
 ---
 
 <Layout
@@ -17,13 +24,7 @@ const CATEGORY_META = {
   description="Browse fantasy tropes by category — character, relationship, plot, and world &amp; magic. Find books by the story structures you love most."
 >
   <Fragment slot="head">
-    <script is:inline type="application/ld+json">{JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'Fantasy Tropes',
-      description: 'Browse fantasy tropes by category — character, relationship, plot, and world & magic.',
-      url: 'https://thegrimoire.co/tropes/',
-    })}</script>
+    <script is:inline type="application/ld+json" set:html={tropesPageJsonLd} />
   </Fragment>
   <!-- Banner -->
   <div class="relative rounded-2xl overflow-hidden mb-8 border border-zinc-200">

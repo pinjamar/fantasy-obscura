@@ -717,6 +717,10 @@ const faqLd = {
     }] : []),
   ],
 };
+
+const breadcrumbLdJson = JSON.stringify(breadcrumbLd);
+const itemListLdJson = itemListLd ? JSON.stringify(itemListLd) : null;
+const faqLdJson = JSON.stringify(faqLd);
 ---
 
 <Layout
@@ -724,9 +728,9 @@ const faqLd = {
   description={`${cat.description}. The best ${cat.name} books — curated reading lists, hidden gems, and where to start.`}
 >
   <Fragment slot="head">
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
-    {itemListLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(itemListLd)} />}
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+    <script is:inline type="application/ld+json" set:html={breadcrumbLdJson} />
+    {itemListLdJson && <script is:inline type="application/ld+json" set:html={itemListLdJson} />}
+    <script is:inline type="application/ld+json" set:html={faqLdJson} />
   </Fragment>
 
   <!-- Hidden SEO paragraph -->

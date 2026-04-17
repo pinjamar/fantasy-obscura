@@ -133,6 +133,23 @@ const booksJson = JSON.stringify(
     series_number: b.series_number,
   }))
 );
+const tropeFaqJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+});
+const tropeBreadcrumbJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Tropes', item: 'https://thegrimoire.co/tropes/' },
+    { '@type': 'ListItem', position: 2, name: trope.name, item: `https://thegrimoire.co/tropes/${slug}/` },
+  ],
+});
 ---
 
 <Layout
@@ -141,23 +158,8 @@ const booksJson = JSON.stringify(
 >
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={jsonLd} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqItems.map(({ q, a }) => ({
-        '@type': 'Question',
-        name: q,
-        acceptedAnswer: { '@type': 'Answer', text: a },
-      })),
-    })} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Tropes', item: 'https://thegrimoire.co/tropes/' },
-        { '@type': 'ListItem', position: 2, name: trope.name, item: `https://thegrimoire.co/tropes/${slug}/` },
-      ],
-    })} />
+    <script is:inline type="application/ld+json" set:html={tropeFaqJsonLd} />
+    <script is:inline type="application/ld+json" set:html={tropeBreadcrumbJsonLd} />
   </Fragment>
   <div class="max-w-2xl mx-auto">
 

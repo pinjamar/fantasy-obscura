@@ -26,6 +26,13 @@ const dbDarknessMap = new Map<string, number>(
 const dbHeatMap = new Map<string, string>(
   (dbBooks ?? []).filter((b: any) => b.heat_level).map((b: any) => [b.slug, b.heat_level])
 )
+const booksLikePageJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Books Like... Fantasy Recommendations',
+  description: "Curated 'Books Like X' guides for fantasy readers. Darkness ratings, honest caveats, and picks that actually match.",
+  url: 'https://thegrimoire.co/books-like/',
+});
 ---
 
 <Layout
@@ -33,13 +40,7 @@ const dbHeatMap = new Map<string, string>(
   description="Curated 'Books Like X' guides for fantasy readers. Darkness ratings, honest caveats, and 5–8 picks that actually match — not algorithm results."
 >
   <Fragment slot="head">
-    <script is:inline type="application/ld+json">{JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'Books Like... Fantasy Recommendations',
-      description: "Curated 'Books Like X' guides for fantasy readers. Darkness ratings, honest caveats, and picks that actually match.",
-      url: 'https://thegrimoire.co/books-like/',
-    })}</script>
+    <script is:inline type="application/ld+json" set:html={booksLikePageJsonLd} />
   </Fragment>
   <!-- Banner -->
   <div class="relative rounded-2xl overflow-hidden mb-8 border border-zinc-200">

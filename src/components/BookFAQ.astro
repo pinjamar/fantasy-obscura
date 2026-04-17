@@ -10,6 +10,15 @@ interface Props {
 }
 
 const { faqs, bookTitle } = Astro.props;
+const faqPageJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+});
 ---
 
 <section class="mb-12">
@@ -31,15 +40,4 @@ const { faqs, bookTitle } = Astro.props;
   </div>
 </section>
 
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map((faq) => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer,
-    },
-  })),
-})} />
+<script is:inline type="application/ld+json" set:html={faqPageJsonLd} />

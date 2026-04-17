@@ -389,19 +389,21 @@ const dbFaqJsonLd = !isCurated && seriesMeta ? JSON.stringify({
 const dbSeoProse = !isCurated && seriesMeta
   ? `Looking for the complete ${seriesMeta.name} reading order?${authorNames.length ? ` This guide lists all ${seriesMeta.bookCount} ${authorNames[0]} books in ${seriesMeta.name} in order` : ` This guide lists all ${seriesMeta.bookCount} books in ${seriesMeta.name} in order`} — with covers, ratings, and page counts for every entry.${totalPagesDb > 0 ? ` The full series spans approximately ${totalPagesDb.toLocaleString()} pages.` : ''}`
   : null;
+
+const readingOrderBreadcrumbJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Reading Orders', item: `${SITE}/reading-orders/` },
+    { '@type': 'ListItem', position: 2, name: seriesName, item: `${SITE}/reading-orders/${slug}/` },
+  ],
+});
 ---
 
 <Layout title={pageTitle} description={pageDesc} image={heroImageUrl || undefined}>
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={readingOrderJsonLd} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Reading Orders', item: `${SITE}/reading-orders/` },
-        { '@type': 'ListItem', position: 2, name: seriesName, item: `${SITE}/reading-orders/${slug}/` },
-      ],
-    })} />
+    <script is:inline type="application/ld+json" set:html={readingOrderBreadcrumbJsonLd} />
     {itemListJsonLd && <script is:inline type="application/ld+json" set:html={itemListJsonLd} />}
     {faqJsonLd && <script is:inline type="application/ld+json" set:html={faqJsonLd} />}
     {dbItemListJsonLd && <script is:inline type="application/ld+json" set:html={dbItemListJsonLd} />}

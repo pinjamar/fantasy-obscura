@@ -15,6 +15,18 @@ const avatarInitials = (displayName || user?.email || '').slice(0, 2).toUpperCas
 const SITE = 'https://thegrimoire.co';
 const canonicalUrl = new URL(Astro.url.pathname, SITE).toString();
 const ogImage = image || `${SITE}/og-default.png`;
+const websiteJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'The Grimoire',
+  url: 'https://thegrimoire.co',
+  description: 'Fantasy book guides with darkness ratings, trope tags, and reading orders.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: { '@type': 'EntryPoint', urlTemplate: 'https://thegrimoire.co/books/?q={search_term_string}' },
+    'query-input': 'required name=search_term_string',
+  },
+});
 ---
 
 <html lang="en">
@@ -56,18 +68,7 @@ const ogImage = image || `${SITE}/og-default.png`;
       gtag('config', 'G-LJJ4D2V54L');
     </script>
     <slot name="head" />
-    <script is:inline type="application/ld+json">{JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "The Grimoire",
-      "url": "https://thegrimoire.co",
-      "description": "Fantasy book guides with darkness ratings, trope tags, and reading orders.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": { "@type": "EntryPoint", "urlTemplate": "https://thegrimoire.co/books/?q={search_term_string}" },
-        "query-input": "required name=search_term_string"
-      }
-    })}</script>
+    <script is:inline type="application/ld+json" set:html={websiteJsonLd} />
   </head>
 
   <body class="min-h-screen bg-white text-zinc-900">

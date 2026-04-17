@@ -206,19 +206,20 @@ const authorJsonLd = JSON.stringify({
     profile?.goodreads ?? null,
   ].filter(Boolean),
 });
+const authorBreadcrumbJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Authors', item: `${SITE}/authors/` },
+    { '@type': 'ListItem', position: 2, name: authorName, item: `${SITE}/authors/${slug}/` },
+  ],
+});
 ---
 
 <Layout title={`${authorName} — Fantasy Books & Series | The Grimoire`} description={metaDescription} image={profile?.photo_url || undefined}>
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={authorJsonLd} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Authors', item: `${SITE}/authors/` },
-        { '@type': 'ListItem', position: 2, name: authorName, item: `${SITE}/authors/${slug}/` },
-      ],
-    })} />
+    <script is:inline type="application/ld+json" set:html={authorBreadcrumbJsonLd} />
   </Fragment>
   <!-- Breadcrumb -->
   <nav class="text-sm text-zinc-500 mb-6">

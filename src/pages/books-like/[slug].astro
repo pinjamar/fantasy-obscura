@@ -110,6 +110,14 @@ const booksLikeJsonLd = JSON.stringify({
     },
   })),
 });
+const breadcrumbJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Books Like...', item: `${SITE}/books-like/` },
+    { '@type': 'ListItem', position: 2, name: source.title, item: `${SITE}/books-like/${entry.slug}/` },
+  ],
+});
 ---
 
 <Layout
@@ -119,14 +127,7 @@ const booksLikeJsonLd = JSON.stringify({
 >
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={booksLikeJsonLd} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Books Like...', item: `${SITE}/books-like/` },
-        { '@type': 'ListItem', position: 2, name: source.title, item: `${SITE}/books-like/${entry.slug}/` },
-      ],
-    })} />
+    <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />
   </Fragment>
 
   <!-- Breadcrumb -->
