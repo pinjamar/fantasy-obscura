@@ -33,6 +33,7 @@ export function dedupeBooks<T extends BookRow>(
   maxBooks = 20,
 ): T[] {
   const seenSeries = new Set<string>();
+  const seenTitles = new Set<string>();
   const result: T[] = [];
 
   for (const book of sorted) {
@@ -40,6 +41,11 @@ export function dedupeBooks<T extends BookRow>(
 
     // Cross-list exclusion by title
     if (excludeTitles.has(book.title.toLowerCase().trim())) continue;
+
+    // Within-list title dedup (handles multiple DB rows with same title)
+    const titleKey = book.title.toLowerCase().trim();
+    if (seenTitles.has(titleKey)) continue;
+    seenTitles.add(titleKey);
 
     // Within-list series dedup
     if (book.series) {

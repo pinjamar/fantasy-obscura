@@ -18,7 +18,11 @@ const { data: allMatches } = await (supabaseClient as any)
 
 const titleIndex = new Map(curatedTitles.map((t: string, i: number) => [t, i]));
 const sorted: any[] = ((allMatches as any[]) ?? [])
-  .sort((a: any, b: any) => (titleIndex.get(a.title) ?? 999) - (titleIndex.get(b.title) ?? 999));
+  .sort((a: any, b: any) => {
+    const diff = (titleIndex.get(a.title) ?? 999) - (titleIndex.get(b.title) ?? 999);
+    if (diff !== 0) return diff;
+    return (a.series_number ?? 999) - (b.series_number ?? 999);
+  });
 
 // allTimeGreats has no higher-priority list to exclude — just dedupe within
 const books: any[] = dedupeBooks(sorted, new Set(), 20);
