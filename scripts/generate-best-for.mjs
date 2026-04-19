@@ -23,7 +23,7 @@
 import { getGeminiModel } from './lib/gemini.mjs';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
-import { TIER_1, TIER_2, TIER_3, ALL_PRIORITY } from './priority-slugs.mjs';
+import { TIER_1, TIER_2, TIER_3, TIER_4, ALL_PRIORITY } from './priority-slugs.mjs';
 
 config();
 
@@ -32,13 +32,16 @@ const ALL        = process.argv.includes('--all');
 const TIER1_ONLY = process.argv.includes('--tier1');
 const TIER2_ONLY = process.argv.includes('--tier2');
 const TIER3_ONLY = process.argv.includes('--tier3');
+const TIER4_ONLY = process.argv.includes('--tier4');
 const LIMIT_ARG  = process.argv.indexOf('--limit');
 const LIMIT      = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
 const SLUG_ARG   = process.argv.indexOf('--slug');
 const SLUG       = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
+const SLUGS_ARG  = process.argv.indexOf('--slugs');
+const SLUGS      = SLUGS_ARG !== -1 ? process.argv[SLUGS_ARG + 1].split(',').map(s => s.trim()) : null;
 const DELAY_MS   = 800;
 
-const TARGET_SLUGS = TIER1_ONLY ? TIER_1 : TIER2_ONLY ? TIER_2 : TIER3_ONLY ? TIER_3 : ALL_PRIORITY;
+const TARGET_SLUGS = TIER1_ONLY ? TIER_1 : TIER2_ONLY ? TIER_2 : TIER3_ONLY ? TIER_3 : TIER4_ONLY ? TIER_4 : ALL_PRIORITY;
 
 if (!process.env.PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
   console.error('Missing Supabase env vars in .env');
@@ -102,6 +105,9 @@ async function main() {
 
   if (SLUG) {
     query = query.eq('slug', SLUG);
+  } else if (SLUGS) {
+    query = query.in('slug', SLUGS);
+    if (!ALL) query = query.is('best_for', null);
   } else {
     query = query.in('slug', TARGET_SLUGS);
     if (!ALL) query = query.is('best_for', null);

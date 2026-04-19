@@ -292,5 +292,120 @@ export const TIER_3 = [
   'the-saint-of-bright-doors', 'the-city-we-became',
 ];
 
+export const TIER_4 = [
+  // ── Crowns of Nyaxia (Carissa Broadbent) — massive BookTok ───────────────
+  'the-serpent-the-wings-of-night', 'the-songbird-and-the-heart-of-stone',
+
+  // ── Quicksilver (Callie Hart) — BookTok phenomenon ───────────────────────
+  'quicksilver', 'blood-and-steel',
+
+  // ── Lightlark duology (Alex Aster) — massive BookTok ─────────────────────
+  'lightlark', 'nightbane',
+
+  // ── Divine Rivals duology (Rebecca Ross) — BookTok phenomenon ────────────
+  'divine-rivals', 'ruthless-vows',
+
+  // ── Powerless series (Lauren Roberts) ────────────────────────────────────
+  'powerless', 'reckless',
+
+  // ── These Violent Delights (Chloe Gong) — Shanghai romantasy ─────────────
+  'these-violent-delights', 'our-violent-ends',
+  'foul-lady-fortune', 'foul-heart-huntsman',
+
+  // ── For the Wolf / Foxglove King (Hannah Whitten) ────────────────────────
+  'for-the-wolf', 'for-the-throne',
+  'the-foxglove-king', 'the-midnight-kingdom',
+
+  // ── Hades x Persephone (Scarlett St. Clair) ──────────────────────────────
+  'a-touch-of-darkness', 'a-touch-of-ruin', 'a-touch-of-malice', 'a-touch-of-chaos',
+
+  // ── Stalking Jack the Ripper series (Kerri Maniscalco) ───────────────────
+  'stalking-jack-the-ripper', 'hunting-prince-dracula',
+  'escaping-from-hades', 'capturing-the-devil',
+  'kingdom-of-the-feared',
+
+  // ── Crave series sequels (Tracy Wolff) ───────────────────────────────────
+  'crush', 'covet', 'court',
+
+  // ── Bridge Kingdom (Danielle L. Jensen) ──────────────────────────────────
+  'the-bridge-kingdom', 'the-traitor-queen',
+
+  // ── A Marvellous Light trilogy (Freya Marske) — queer romantasy ──────────
+  'a-marvellous-light', 'a-restless-truth', 'a-power-unbound',
+
+  // ── The Year of the Witching (Alexis Henderson) ──────────────────────────
+  'the-year-of-the-witching',
+
+  // ── House of Beating Wings (Olivia Wildenstein) ──────────────────────────
+  'house-of-beating-wings', 'house-of-pounding-hearts',
+
+  // ── Wren in the Holly Library (Aya Omori) — BookTok cozy fantasy ─────────
+  'the-wren-in-the-holly-library',
+
+  // ── Violet Made of Thorns (Gina Chen) ────────────────────────────────────
+  'violet-made-of-thorns',
+
+  // ── Girl Who Fell Beneath the Sea (Axie Oh) ──────────────────────────────
+  'the-girl-who-fell-beneath-the-sea',
+
+  // ── Blood Heir (Amélie Wen Zhao) ──────────────────────────────────────────
+  'blood-heir', 'red-tigress', 'white-falls',
+
+  // ── Bookstagram romantasy standalones ────────────────────────────────────
+  'the-dead-and-the-dark',
+  'a-botanists-guide-to-parties-and-poisons',
+  'the-witch-and-the-tsar',
+  'the-midnight-bargain',
+  'immortal-longings',
+
+  // ── booklike.txt source books missing from tiers 1-3 ─────────────────────
+  // Raven Kennedy (The Plated Prisoner) — tier 1 booklike
+  'gild',
+
+  // Twilight + Dark Tower — tier 1 booklike, massive search volume
+  'twilight',
+  'the-gunslinger',
+
+  // Scalzi — tier 2 booklike sci-fi (Starter Villain, Kaiju)
+  'starter-villain',
+  'the-kaiju-preservation-society',
+
+  // Classic fantasy pillars — tier 2 booklike
+  'pawn-of-prophecy',
+  'wizards-first-rule',
+  'the-lion-the-witch-and-the-wardrobe',
+
+  // Urban fantasy source books — tier 2 booklike
+  'magic-bites',
+
+  // Bridgerton — tier 2 booklike romantasy
+  'the-duke-and-i',
+
+  // House of Salt and Sorrows — tier 2 booklike
+  'house-of-salt-and-sorrows',
+
+  // Gods of Jade and Shadow (Silvia Moreno-Garcia) — tier 2 booklike
+  'gods-of-jade-and-shadow',
+
+  // Cozy: The Invisible Library (Genevieve Cogman) — tier 2 booklike
+  'the-invisible-library',
+
+  // BookTok romantasy tier 2 (booklike.txt entries 130-139) ─────────────────
+  'throne-of-secrets',
+  'bloodguard',
+  'a-deal-with-the-elf-king',
+  'burn-of-the-everflame',
+  'zodiac-academy',
+  'one-dark-window',
+  'heartless-hunter',
+  'a-study-in-drowning',
+  'phantasma',
+
+  // ── Piers Anthony — steady classic fantasy search volume ──────────────────
+  'split-infinity',       // Apprentice Adept #1
+  'on-a-pale-horse',      // Incarnations of Immortality #1
+  'a-spell-for-chameleon', // Xanth #1
+];
+
 // Combined: all books worth full editorial treatment
-export const ALL_PRIORITY = [...TIER_1, ...TIER_2, ...TIER_3];
+export const ALL_PRIORITY = [...TIER_1, ...TIER_2, ...TIER_3, ...TIER_4];

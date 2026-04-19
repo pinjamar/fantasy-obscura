@@ -1,3 +1,8 @@
+export interface CategoryEditorial {
+  intro: string;
+  howToUse: string;
+}
+
 export interface CategoryMeta {
   name: string;
   genre: string | string[];
@@ -9,6 +14,11 @@ export interface CategoryMeta {
     allTimeGreats: string[];  // exactly 30 — display first 20 found in DB
     startWith: string[];      // exactly 30 — display first 20 found in DB
     hiddenGems: string[];     // exactly 30 — display first 20 found in DB
+  };
+  editorial?: {
+    allTimeGreats?: CategoryEditorial;
+    startWith?: CategoryEditorial;
+    hiddenGems?: CategoryEditorial;
   };
 }
 
@@ -24,8 +34,8 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
       allTimeGreats: [
         'The Way of Kings',
         'The Name of the Wind',
-        'The Lord of the Rings',
-        'Mistborn: The Final Empire',
+        'The Fellowship of the Ring',
+        'The Final Empire',
         'Gardens of the Moon',
         'The Eye of the World',
         'The Lies of Locke Lamora',
@@ -43,14 +53,14 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'Best Served Cold',
         'Red Sister',
         'Oathbringer',
-        'The First Law',
+        'Prince of Thorns',
         'Memories of Ice',
         'The Lions of Al-Rassan',
         'A Little Hatred',
-        'The Deed of Paksenarrion',
+        'The Poppy War',
         'A Wizard of Earthsea',
-        'The Broken Empire',
-        'The Stormlight Archive',
+        'The Traitor Baru Cormorant',
+        'The Black Prism',
         'Rhythm of War',
       ],
       startWith: [
@@ -86,37 +96,42 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'The Riyria Revelations',
       ],
       hiddenGems: [
-        'The Books of Babel',
-        'The Chronicles of the Unhewn Throne',
-        'The Traitor Baru Cormorant',
-        'We Ride the Storm',
-        'The Wolf of Oren-Yaro',
         'The Tainted Cup',
-        "The Tiger's Daughter",
-        'The Red Knight',
+        'Senlin Ascends',
         'The Gutter Prayer',
-        'The Painted Man',
-        'The Vagrant',
-        'The Ember Blade',
-        'A City of Brass',
-        'The Bone Shard Daughter',
-        'The Mask of Mirrors',
-        'Empire of Sand',
-        'The Traitor Son Cycle',
-        "The Emperor's Blades",
+        'The Emperor\'s Blades',
         'The Court of Broken Knives',
-        'The Dragon Republic',
-        'The Crimson Queen',
-        'Beyond Redemption',
-        'A Tournament of Shadows',
-        'The Long Price Quartet',
-        'The Bone Ships',
-        'The Tiger and the Wolf',
-        'The Raven Tower',
         'A Memory Called Empire',
-        'The Poppy War',
-        'The Daevabad Trilogy',
+        'The City of Brass',
+        'Empire of Sand',
+        'The Bone Shard Daughter',
+        'The Red Knight',
+        'Beyond Redemption',
+        'The Ember Blade',
+        'The Warded Man',
+        'The Tiger and the Wolf',
+        'The Curse of Chalion',
+        'The Darkness That Comes Before',
+        'The Steel Remains',
+        'Lord of Light',
+        'The Book of the New Sun',
+        'A Shadow in Summer',
+        'The Stormcaller',
       ],
+    },
+    editorial: {
+      allTimeGreats: {
+        intro: `This is not a popularity contest. The Grimoire's All-Time Greats are the foundational works of modern epic fantasy—the books that either established the genre's conventions or broke them with such force they created new ones. Selection is based on significance and influence, not fleeting internet hype, resulting in a canon that can be demanding but is always essential. To ensure a reader knows what they're getting into, every entry includes our signature darkness (🕯️ 1-5) and heat (🔥) ratings.`,
+        howToUse: `For those seeking immense scale and who aren't afraid of a ten-book commitment, start with the intricate war and magic of *The Way of Kings*. Readers who prefer elegant prose and a singular, character-focused story should begin with *The Name of the Wind*, while anyone wanting a standalone heist with sharp wit and a darker edge (🕯️4) will find it in *The Lies of Locke Lamora*.`,
+      },
+      startWith: {
+        intro: `Epic fantasy's reputation for immense tomes and sprawling casts can be daunting for the uninitiated. This is not a 'greatest hits' compilation; it is a carefully constructed on-ramp to the genre. The Grimoire selects books for their accessible structure and contained initial stakes—stories that demonstrate the appeal of grand-scale fantasy without requiring a ten-book commitment upfront. To ensure a clear understanding of tone, every entry comes with a darkness rating (🕯️ 1-5) and a heat rating (🔥).`,
+        howToUse: `Readers seeking a traditional quest narrative with minimal darkness (🕯️1-2) should begin with the standalone adventures. Those who prefer political intrigue and character-focused courts over large-scale battles will find their entry point among the lower-magic, more contained fantasies. For anyone ready for a longer commitment and a focus on action, the military fantasy selections provide a direct path into what makes modern epic fantasy so propulsive.`,
+      },
+      hiddenGems: {
+        intro: `The titans of epic fantasy cast long shadows, obscuring excellent books with smaller marketing budgets or more peculiar ideas. This list champions those titles: the ambitious, the challenging, and the overlooked works that serious readers adore. These are not undiscovered classics, but books whose lower Goodreads scores often reflect a narrow, dedicated audience rather than a lack of quality. For total transparency, every entry includes The Grimoire's darkness (🕯️) and heat (🔥) ratings.`,
+        howToUse: `Readers who prefer sharp political critiques and economic theory should start with *The Traitor Baru Cormorant*. For those seeking a truly strange world built on biology and bone, *The Bone Ships* is the obvious entry point. If a contained, gothic-tinged fantasy mystery sounds more appealing, look to *The Tainted Cup*.`,
+      },
     },
   },
   romantasy: {
@@ -224,6 +239,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'An Ember in the Ashes',
       ],
     },
+    editorial: {
+      allTimeGreats: {
+        intro: `These are the books that built Romantasy as it exists today. The Grimoire's list of all-time greats is not a popularity contest; it's a curated canon of the foundational texts and modern titans that shifted the genre's center of gravity. These are the books every other author is in conversation with. To ensure readers know what they are getting into, every entry comes with a Grimoire-assigned darkness rating (🕯️ 1-5) and heat rating (🔥).`,
+        howToUse: `Readers who want high-stakes action and a fast-paced romance should start with the dragon rider and romantasy-suspense titles. For those who prefer intricate political maneuvering and a slow-burn that builds over several books, the epic high fantasy and Fae court series are the correct entry point. Pay close attention to the heat ratings (🔥) to find the right level of steam.`,
+      },
+      startWith: {
+        intro: `The Romantasy landscape is vast, often dominated by decade-spanning series that demand serious commitment. The Grimoire's starter list cuts through the noise, prioritizing books with clean narrative structures and immediate romantic hooks over sheer epic scale. These are not necessarily the genre's titans, but its most welcoming ambassadors, chosen to ease readers into high-stakes love stories without the burden of a ten-book backstory. Our signature darkness (🕯️) and heat (🔥) ratings provide a clear guide, so no one walks into a brutal political fantasy expecting a lighthearted fae romance.`,
+        howToUse: `For a direct hit of classic enemies-to-lovers in a high-stakes setting, begin with An Ember in the Ashes. Readers looking for a lower-darkness (🕯️) rivals romance with beautiful prose should start with Divine Rivals. Those who prefer a more traditional fantasy structure with a slow-burn romance as a core subplot will find a perfect entry point in Shadow and Bone.`,
+      },
+      hiddenGems: {
+        intro: `The Romantasy algorithm has its favorites, but this list looks past them. These Hidden Gems are the books that fly under the radar: standalone oddities, series with devoted but smaller fandoms, and stories that don't fit neatly into trending tropes. They aren't the bestsellers; they're the books passed between friends with a whispered recommendation. To ensure readers find the right fit, each book is tagged with a darkness rating (🕯️ 1-5) and a heat rating (🔥).`,
+        howToUse: `Readers searching for historical manners mixed with magical intrigue should begin with a book like A Marvellous Light. For those who prefer a darker, contained story without a series commitment, a standalone like The Shadows Between Us offers that sharp-edged satisfaction. Anyone seeking a high-concept world with more plot than spice will find their next read with titles like The Midnight Bargain.`,
+      },
+    },
   },
   swords: {
     name: 'Sword & Sorcery',
@@ -329,6 +358,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'The Witness for the Dead',
         'Piranesi',
       ],
+    },
+    editorial: {
+      allTimeGreats: {
+        intro: `These are the pillars of Sword & Sorcery. This list bypasses fleeting trends to honor the books that either defined the genre's cynical heart or radically reinvented it for a new generation. Inclusion here is based on influence and innovation, not sales figures or algorithm-driven popularity. Each selection comes with a darkness rating (🕯️ 1-5) and a heat rating (🔥) so readers can gauge the shadows and the passion before they begin.`,
+        howToUse: `Readers seeking the origins of the cynical anti-hero should start with the genre’s foundational texts, where the sword is sharp and the morality is blunt. Those who prefer their adventure filtered through black comedy and character-driven despair will find their next obsession among the grimdark standard-bearers. For a taste of military fantasy with an unforgiving edge, the selections that follow a company of soldiers through a long, bloody campaign are the correct entry point.`,
+      },
+      startWith: {
+        intro: `Sword & Sorcery has a reputation for being brutal and unforgiving, a high barrier for the uninitiated. This is not a list of the genre's densest epics but a curated set of entry points—books chosen for their clean narrative structures and manageable moral ambiguity. They distill the genre's action-driven core and rare, dangerous magic into a potent, accessible form. Every Grimoire selection includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) so readers know precisely what kind of fight they are walking into.`,
+        howToUse: `Readers seeking a more traditional heroic arc, even one coated in grime, should start with a story focused on a school or military academy. Those who prefer cynical humor and a clever, roguish protagonist will find their footing with the thief-centric adventures. For a faster, more contained story that still delivers the genre's signature grit, the standalone novels offer a complete experience without a long-term series commitment.`,
+      },
+      hiddenGems: {
+        intro: `This is not another list of Howard and Abercrombie imitators. The Grimoire’s Hidden Gems are the strange, brutal, and ambitious works that fly under the radar of mainstream fantasy recommendations. Qualification isn't about sales figures but about a singular vision, often from smaller presses doing something new with the genre's bones. Every book includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) so a reader knows precisely what kind of bleakness or romance to expect.`,
+        howToUse: `Readers who prefer desperate, street-level stories set in god-haunted cities should begin with The Gutter Prayer. Those drawn to the brutal logistics of a mercenary company will find it in The Court of Broken Knives, while anyone searching for a bleak, almost mythic quest should turn to The Vagrant.`,
+      },
     },
   },
   dark: {
@@ -436,6 +479,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'The Court of Broken Knives',
       ],
     },
+    editorial: {
+      allTimeGreats: {
+        intro: `The Grimoire's list of Dark Fantasy's All-Time Greats is not a popularity contest. These are the foundational texts, the award-winners, and the genre-shapers that cast the longest shadows, from gothic horror to modern grimdark. Inclusion is earned through influence, not just sales figures, resulting in a canon that explores moral ambiguity and existential dread with unflinching honesty. To help readers navigate these often demanding books, every entry includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) for romantic or sexual content.`,
+        howToUse: `Readers seeking a modern, military-fantasy inflection point should begin with The Poppy War. For those who prefer their fantasy nihilistic and focused on a singular, morally bankrupt protagonist, Prince of Thorns is the obvious entry point, while those searching for dense, world-shattering epics can find a challenge in Gardens of the Moon.`,
+      },
+      startWith: {
+        intro: `Dark Fantasy is a broad, often punishing genre. This is not a list of its most brutal titans, but a curated entry point for those new to the shadows. These books offer a potent dose of the category's core elements—dread, moral ambiguity, and consequence—without the overwhelming bleakness or structural complexity that can alienate newcomers. Every selection includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) so readers can choose their own poison.`,
+        howToUse: `Readers seeking creeping dread and historical atmosphere should begin with the gothic entries. For those who prefer their darkness steeped in ancient woods and treacherous bargains, the folk horror selections are the ideal starting point. Anyone prioritizing a lower darkness rating (🕯️ 1-2) or a definitive standalone experience should look to the fairytale retellings or philosophical fantasies first.`,
+      },
+      hiddenGems: {
+        intro: `The Grimoire's Hidden Gems list bypasses the usual suspects crowding the dark fantasy bestseller charts. Instead, this selection elevates the underrated, the overlooked, and the brilliantly niche titles that have earned a cult following among dedicated readers. These are stories with a distinct and often challenging point of view, which is why their smaller audience is a feature, not a flaw. Every entry includes our proprietary darkness (🕯️ 1-5) and heat (🔥) ratings so readers know exactly what they are getting into.`,
+        howToUse: `Readers seeking gothic atmosphere and intellectual puzzles should start with a contained mystery like The Tainted Cup. For those who prefer a more visceral, nihilistic experience with a high darkness rating (🕯️ 4-5), the philosophical brutality of Beyond Redemption is the place to begin. Anyone wanting a classic quest narrative filtered through a grim, atmospheric lens should look to The Ember Blade for a familiar structure with an unforgiving tone.`,
+      },
+    },
   },
   urban: {
     name: 'Urban / Contemporary Fantasy',
@@ -541,6 +598,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'What We Found in the Corn',
         'The Midnight Bargain',
       ],
+    },
+    editorial: {
+      allTimeGreats: {
+        intro: `The Grimoire’s All-Time Greats are not chosen by algorithm or popularity contest. These are the foundational texts of Urban and Contemporary Fantasy — books that broke new ground, won major awards, or fundamentally shaped the genre’s direction. A book earns its place here through influence, not just sales figures, representing a singular vision whose DNA can be found in countless works that followed. To aid navigation through these cornerstones, every entry includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) to clarify its tone and content.`,
+        howToUse: `Those who prefer their magic with a side of noir and wisecracking detectives should begin with the long-running series that defined the modern urban fantasy procedural. Readers seeking grand, mythic ideas over monster-of-the-week plots will find their footing with the weighty, standalone epics that interrogate belief itself. For a lower darkness rating (🕯️) and a focus on atmosphere over action, the genre’s more whimsical, self-contained fables offer an ideal entry point.`,
+      },
+      startWith: {
+        intro: `Urban Fantasy is a sprawling genre, often buried under intimidating, decades-long series. The Grimoire's starter list bypasses that noise, focusing on standalone novels and series-starters with clean narrative arcs and manageable stakes. These are not the absolute 'best' books, but the best entry points—chosen for their power to convert skeptics, not to reward genre veterans. Every selection includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) so a reader can enter the hidden world on their own terms.`,
+        howToUse: `For readers seeking wonder without the horror, the modern portal fantasies like *Neverwhere* or the architectural strangeness of *Piranesi* are the ideal beginning. Those who prefer their magic with a sharp, historical edge and a touch more melancholy (🕯️ 2-3) should look to *The Invisible Life of Addie LaRue*. If the goal is a story that is genuinely unsettling but still accessible, *Coraline* provides a perfect, chilling introduction.`,
+      },
+      hiddenGems: {
+        intro: `This isn't another list rehashing the usual suspects. The Grimoire’s Hidden Gems are the strange, overlooked, and genuinely niche titles that define the fringes of Urban & Contemporary Fantasy. These books earn their place not through massive sales, but through cult followings and the kind of audacious ideas mainstream publishing often avoids. Every entry includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) to signal its specific flavor of magic and mayhem.`,
+        howToUse: `For a straight shot of pulpy, hell-raising noir, start with Richard Kadrey's Sandman Slim. Readers who prefer their magic system-focused and tied to the written word should begin with Libriomancer. Anyone craving truly bizarre, reality-bending concepts can jump to The Library at Mount Char, but should note its high darkness rating before entering.`,
+      },
     },
   },
   grimdark: {
@@ -648,6 +719,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'The Court of Broken Knives',
       ],
     },
+    editorial: {
+      allTimeGreats: {
+        intro: `Forget popularity contests; this list is about influence. The Grimoire’s Grimdark All-Time Greats are the foundational texts and genre-redefining works that writers are still imitating. These are the brutal, cynical, and often hopeless stories that earned their place through sheer narrative force and thematic weight, not just sales figures. Every entry includes a clear darkness rating (🕯️ 1-5) and heat rating (🔥), because proceeding without caution is a fool’s errand in this category.`,
+        howToUse: `To navigate this bleak landscape, start with a preference. Readers who want the origins of the cynical, soldier-for-hire subgenre should begin with The Black Company. For those seeking sharp, character-focused prose over grand battles, The Blade Itself remains the benchmark, while The Poppy War offers a modern, brutal take on military fantasy inspired by history.`,
+      },
+      startWith: {
+        intro: `Grimdark can be a punishing genre, and a bad first impression will turn readers away for good. The Grimoire's list of starting points isn't a collection of the absolute bleakest or most popular books, but a curated on-ramp to a difficult category. These titles earn their dark moments with cleaner narrative structures and a focus that hooks readers without overwhelming them. As always, our darkness (🕯️) and heat (🔥) ratings are provided so everyone knows exactly what they are getting into.`,
+        howToUse: `Readers looking for a classic revenge plot distilled into a single, brutal volume should start with Joe Abercrombie's Best Served Cold (🕯️4). For a story focused on military academy pressure and a sharp descent into darkness, begin with The Poppy War (🕯️4), but for a shot of black humor with a lower darkness rating, the clear choice is Kings of the Wyld (🕯️3).`,
+      },
+      hiddenGems: {
+        intro: `Most 'best of grimdark' lists recycle the same five names. This is not that list. The Grimoire’s Hidden Gems are the overlooked, the underrated, and the genuinely strange titles that earned a cult following without the benefit of a massive marketing push. These books prove a lower Goodreads score often just means a smaller, more dedicated audience. Every entry includes our signature Darkness (🕯️ 1-5) and Heat (🔥) ratings, so readers know precisely what kind of abyss they are stepping into.`,
+        howToUse: `Readers who prefer their nihilism filtered through military maneuvers and brutal statecraft should start with *The Court of Broken Knives*. For a classic epic fantasy quest that has been dragged through the muck and left for dead, pick up *The Ember Blade*. Anyone seeking the absolute bleakest psychological territory, where the horror is internal and sanity is a currency, will find it in *Beyond Redemption*.`,
+      },
+    },
   },
   historical: {
     name: 'Historical Fantasy',
@@ -753,6 +838,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'The Grief of Stones',
         "The Assassin's Curse",
       ],
+    },
+    editorial: {
+      allTimeGreats: {
+        intro: `This is not a list of the most popular historical fantasies; it is a list of the most significant. These are the books that either defined a subgenre, won a major award, or fundamentally altered the conversation about what historical fantasy could be. The Grimoire's canon is built on impact, not just accessibility. To that end, each book features a darkness rating (🕯️ 1-5) and a heat rating (🔥) to clarify its contents before a reader commits.`,
+        howToUse: `Readers looking for dense, literary epics that reimagine a specific historical period should begin with Jonathan Strange & Mr Norrell. For those who prefer folklore and a stark, atmospheric setting, The Bear and the Nightingale is the correct entry point. If a poignant, character-focused retelling of ancient myth is the goal, start with Circe or The Song of Achilles.`,
+      },
+      startWith: {
+        intro: `Starting with Historical Fantasy shouldn't require a textbook. This list bypasses the sprawling, multi-volume epics for more focused, accessible entry points into worlds where history and magic collide. The Grimoire selects these books for their clean prose and self-contained stories, offering a potent introduction without the punishing density of the genre's heavier hitters. Since accessibility means knowing what to expect, every book has a clear darkness rating (🕯️ 1-5) and heat rating (🔥).`,
+        howToUse: `Readers looking for reimagined folklore with a low darkness score (🕯️) should begin with the Eastern European-inspired standalones like Uprooted or Spinning Silver. For those who prefer direct retellings of foundational myths over fictionalized folklore, the accessible prose of Norse Mythology is the ideal starting point. If a more literary, character-driven approach to myth sounds appealing, Circe provides a complete, single-volume story with a slightly higher darkness rating.`,
+      },
+      hiddenGems: {
+        intro: `The most popular historical fantasies are repeated ad nauseam, creating a feedback loop that buries weirder, more specific work. This list is the alternative: overlooked books for the discerning reader who has moved beyond the bestseller charts. A lower Goodreads score here is often a sign of a focused, niche appeal, not a lack of quality. To ensure a good fit, every book is marked with a darkness rating (🕯️ 1-5) and a heat rating (🔥) to clarify its tone and content.`,
+        howToUse: `Readers who want mannered magic and social intrigue should start with the Regency and Victorian-era selections. Those seeking grittier tales of folklore and mythology retold, or crime-solving in alternate histories, can filter for higher darkness ratings (🕯️ 3+) and standalone titles. If a long-term commitment is the goal, the series starters offer deeper worlds; otherwise, the one-offs provide a complete, contained experience.`,
+      },
     },
   },
   academy: {
@@ -860,6 +959,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'The Bone Season',
       ],
     },
+    editorial: {
+      allTimeGreats: {
+        intro: `These are the foundational texts of the modern academy fantasy genre. A book earns its place here not through fleeting popularity, but by defining a trope, winning a major award, or fundamentally shaping the books that followed. The Grimoire’s canon is a critical assessment of the genre’s cornerstones, not a generic 'best of' list. To that end, each entry is marked with a darkness rating (🕯️ 1-5) and a heat rating (🔥) so readers know precisely what they're walking into.`,
+        howToUse: `Readers seeking a classical, lyrical education in magic and legend should begin with The Name of the Wind. For those who prefer a brutal war college and enemies-to-lovers dynamics, start with Fourth Wing or, for an even darker turn, the assassin school of Nevernight. If the entire premise of a 'chosen one' feels tired, the cynical, deconstructive approach of A Deadly Education is the correct starting point.`,
+      },
+      startWith: {
+        intro: `The Grimoire’s “Best to Start With” list for Academy Fantasy is not a popularity contest. These are foundational texts, selected for their clean structure and immediate hook, making them ideal entry points for the subgenre. We skip the sprawling epics and punishingly dense lore in favor of stories that deliver the core experience of magical education without overwhelming a new reader. Every title includes our signature darkness rating (🕯️ 1-5) and heat rating (🔥), so there are no unpleasant surprises.`,
+        howToUse: `Readers seeking a classic epic fantasy structure with a training arc should begin with Eragon. For a more cynical and deconstructive take on the magic school trope, start with the sharp-edged A Deadly Education. Anyone whose preference is for a high-stakes, slow-burn romance set against a backdrop of brutal military trials will find their footing with An Ember in the Ashes.`,
+      },
+      hiddenGems: {
+        intro: `Beyond the blockbuster school stories lies a tier of academy fiction that is weirder, darker, and often more experimental. The Grimoire's Hidden Gems bypass the obvious bestsellers to spotlight books with a distinct point of view or a clever subversion of established tropes. These are the titles passed between serious fans, the ones that build devoted followings without ever hitting the charts. To aid in discovery, every entry includes a darkness rating (🕯️ 1-5) and a heat rating (🔥), clarifying the tone before the first page is turned.`,
+        howToUse: `Readers chasing the dark academia aesthetic with legitimate danger should start with titles rated 🕯️4 or higher. Those who prefer a sharp deconstruction of Chosen One narratives and low-stakes character studies will find their entry point with a book like In Other Lands. For a sprawling, high-stakes series focused on historical magic and secret societies, The Last Magician is the place to begin.`,
+      },
+    },
   },
   mythology: {
     name: 'Mythic & Folklore Fantasy',
@@ -965,6 +1078,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'Empire of Sand',
         'Daughter of the Forest',
       ],
+    },
+    editorial: {
+      allTimeGreats: {
+        intro: `This is not a list of the most popular mythic retellings; it is a record of the canonical. These are the foundational texts—the award-winners, the genre-shapers, and the books that directly engage with folklore in a way that changed the conversation. Some are accessible; others are decidedly not. The Grimoire's selections are chosen for their lasting impact, and every entry includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) so readers know precisely what they are getting into.`,
+        howToUse: `For elegant prose and character-driven tragedy, start with the modern Greek retellings. Readers who prefer a sprawling, cynical road trip with forgotten deities have a clear, singular starting point. Those seeking bleak, atmospheric folk horror should simply look for the highest darkness ratings (🕯️), as many of these foundational texts are not for the faint of heart.`,
+      },
+      startWith: {
+        intro: `These are not simply the 'best' mythic fantasies, but the best first ones. Starting here means avoiding the sprawling epics and academically dense retellings that can alienate a newcomer. The Grimoire prioritizes accessible structure and lower-to-midrange darkness for this list, ensuring a hook rather than a headache. Every title includes a clear darkness rating (🕯️ 1-5) and heat rating (🔥) to prevent any unwelcome surprises.`,
+        howToUse: `For a direct, scholarly-but-readable primer on a pantheon, Neil Gaiman’s Norse Mythology is the obvious choice. Readers who prefer their gods walking among mortals in a contemporary setting, complete with a sharp sense of humor, should start with Anansi Boys. If a focused, revisionist take on a well-known epic is more appealing, Margaret Atwood’s The Penelopiad is the place to begin.`,
+      },
+      hiddenGems: {
+        intro: `Forget the bestsellers; this list is for the deep cuts. These are the mythic retellings and folkloric fantasies that get passed between serious readers—books with lower ratings not because of quality, but because their uncompromising vision isn't for everyone. The Grimoire's editors value intellectual rigor and emotional honesty over broad appeal, which is what earns a book a place here. Every title is rated for darkness (🕯️ 1-5) and heat (🔥) so readers can find the exact level of intensity they want.`,
+        howToUse: `For a historically grounded, elegiac story that re-centers women and sidelines the typical heroes, start with The Silence of the Girls or Lavinia. Readers looking for a more visceral, almost brutal interpretation of legend with high-stakes action should look toward The King Must Die. Those who prefer character-focused intimacy and a touch of folk horror will find it in The Witch's Heart.`,
+      },
     },
   },
   cozy: {
@@ -1072,6 +1199,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'The Dead and the Dark',
       ],
     },
+    editorial: {
+      allTimeGreats: {
+        intro: `More than a simple popularity contest, the All-Time Greats list identifies the foundational texts of cozy fantasy. These are the books that defined the subgenre's focus on found family and warm atmospheres, often winning major awards in the process. The Grimoire's selections are not always the most accessible entry points, but they are the most significant. Every entry includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) to clarify its tone and content.`,
+        howToUse: `Readers seeking the genre's classic, fairytale-like roots should begin with Diana Wynne Jones's *Howl's Moving Castle*. For a quintessential example of the modern, slice-of-life trend, the obvious choice is *Legends & Lattes*. Those who prefer their low-stakes stories with a side of introspective science fiction will find their footing with *A Psalm for the Wild-Built*.`,
+      },
+      startWith: {
+        intro: `The Grimoire's entry points into cozy fantasy are not a popularity contest; they are selected for structural clarity and immediate appeal. These books represent a pure expression of the genre's core—low stakes, warm atmosphere—without the narrative baggage or sprawling series that can overwhelm a new reader. Every book on the site has a darkness rating (🕯️ 1-5) and a heat rating (🔥), allowing readers to find a story that meets their exact comfort level before they even open the cover.`,
+        howToUse: `For readers seeking the absolute lowest stakes and a story of gentle connection, start with the solarpunk novellas. Those who prefer a bit of political maneuvering mixed with their found family should look to the standalone court fantasies. If a more melancholic, strange, and structurally inventive story sounds appealing, the literary-leaning titles offer a perfect starting point.`,
+      },
+      hiddenGems: {
+        intro: `Beyond the bestsellers lies the heart of cozy fantasy. This list bypasses the usual suspects to spotlight the niche, the strange, and the quietly wonderful books that dedicated readers pass around like secrets. These are not algorithm-pleasers; their smaller audiences can mean lower average ratings, which says nothing about their quality. Every Grimoire pick includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) so a reader’s expectations are always met.`,
+        howToUse: `Readers seeking pure, low-conflict comfort should start with the titles marked 🕯️1, which frequently feature slice-of-life stories in bakeries or magical shops. For something with more emotional weight that still avoids true peril, the 🕯️2 books centered on found family offer a perfect entry point. Standalones are clearly marked for anyone hesitant to begin a longer series.`,
+      },
+    },
   },
   litrpg: {
     name: 'LitRPG / Progression Fantasy',
@@ -1178,6 +1319,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'Mage Errant',
       ],
     },
+    editorial: {
+      allTimeGreats: {
+        intro: `This is not a popularity contest. The Grimoire’s All-Time Greats for LitRPG and Progression Fantasy identifies the foundational works that either established the genre's core mechanics or executed them with such precision they became the new standard. These are the pillars of the subgenre, the books all the others are measured against for their structure, world-building, or sheer originality. Every selection includes a Grimoire darkness rating (🕯️ 1-5) and heat rating (🔥) so readers know exactly what to expect from these influential series.`,
+        howToUse: `A preference for bleak humor and brutal, game-like dungeon crawls points directly to the high-darkness chaos of Dungeon Crawler Carl. For those who favor snarky protagonists and intricate, system-heavy isekai worlds, the standard-bearer is He Who Fights with Monsters. Anyone looking for a more pure progression fantasy focused on Eastern-inspired cultivation, largely free of explicit system screens, should start with the epic scale of Cradle.`,
+      },
+      startWith: {
+        intro: `This is not another algorithm-generated 'best of' list. The Grimoire's editors selected these specific LitRPG and Progression Fantasy titles as ideal entry points for their clean narrative structures and lower barriers to entry. These books hook readers on the satisfaction of progression without the punishing complexity or grimdark tones found deeper in the genre. To ensure readers know what they are getting into, every book is evaluated with a clear darkness rating (🕯️ 1-5) and heat rating (🔥).`,
+        howToUse: `Readers who want a pure distillation of the training and power-up loop should start with Cradle. Those who prefer their progression served with a heavy dose of sardonic, gallows humor can look no further than Dungeon Crawler Carl. For a complete inversion of genre expectations that prioritizes character and comfort over combat, Beware of Chicken is the definitive starting point.`,
+      },
+      hiddenGems: {
+        intro: `The LitRPG landscape is littered with recommendations for the same five series, but the genre's real innovation happens in the margins. This Hidden Gems list bypasses the obvious bestsellers to highlight the strange, niche, and experimental titles that serious readers pass around like secrets. These are not low-quality books; they are simply books with smaller, more specific audiences, which is reflected in their review counts. To ensure readers find the right fit, each book is tagged with a darkness rating (🕯️ 1-5) and a heat rating (🔥).`,
+        howToUse: `Those who prefer methodical, almost meditative progression with lower stakes should begin with a crafting-centric title like *All the Skills*. If the goal is to find something bleakly weird with a high darkness rating (🕯️ 4+), then *The Legend of Randidly Ghosthound* offers a uniquely punishing system. Conversely, for a commitment to classic Eastern-inspired cultivation and social maneuvering, *Forge of Destiny* is the clear starting point.`,
+      },
+    },
   },
   'science-fantasy': {
     name: 'Science Fantasy',
@@ -1283,6 +1438,20 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
         'Sixth of the Dusk',
         'Snapshot',
       ],
+    },
+    editorial: {
+      allTimeGreats: {
+        intro: `These are the titans of Science Fantasy. The Grimoire's All-Time Greats list is not a popularity contest; it's a canon of works that defined the genre's strange borders or fundamentally reshaped them. Inclusion is based on influence, critical acclaim, and enduring originality—the kind of books that cast a long shadow on everything that followed. Every entry includes a darkness rating (🕯️ 1-5) and a heat rating (🔥) to clearly signal its content and tone.`,
+        howToUse: `Readers seeking grand-scale space opera with military-SF brutality should start with Pierce Brown's Red Rising. For those who prefer their science fantasy dense, philosophical, and linguistically complex, Gene Wolfe's The Book of the New Sun offers a significant challenge. Anyone looking for sharp-edged characters and a lower darkness tolerance (🕯️ 2-3) can find a starting point with the necromantic irreverence of Gideon the Ninth.`,
+      },
+      startWith: {
+        intro: `The Grimoire's 'Best to Start With' for Science Fantasy is not a simple popularity contest; it is a collection of curated entry points. Each book here was chosen for a clean structure and propulsive plot, designed to hook a reader on the genre's strange blend of space opera and myth without the punishing density of its deeper cuts. Every selection includes a Grimoire darkness rating (🕯️ 1-5) and heat rating (🔥), providing a clear map of the territory ahead. This is where an addiction to far-future sorcery begins.`,
+        howToUse: `Readers seeking relentless momentum and brutal social hierarchies should begin with Red Rising. For those who prefer their science hard and their protagonists witty but isolated, Project Hail Mary or the more cynical All Systems Red are the superior choices. Anyone ready for the foundational text of the genre, with its intricate politics and low darkness (🕯️2), can begin directly with Dune.`,
+      },
+      hiddenGems: {
+        intro: `Beyond the bestsellers lies the true core of science fantasy. This is not a popularity contest; The Grimoire's Hidden Gems list bypasses consensus to spotlight the books that shaped the subgenre or push its boundaries in genuinely strange ways. These are the niche, often divisive titles that reward dedicated readers, and their lower profiles do not reflect their quality. Every book is assessed with a darkness (🕯️ 1-5) and heat (🔥) rating, providing a clear map of its tone and content.`,
+        howToUse: `Readers seeking foundational dying-earth prose and impossibly baroque worlds should begin with Vance's The Dying Earth. For a dense, linguistic puzzle box that demands total commitment, Gene Wolfe's The Book of the New Sun is the inevitable starting point. Those who prefer a standalone story with raw, high-stakes revenge plotting can go directly to Alfred Bester's classic, The Stars My Destination.`,
+      },
     },
   },
 };

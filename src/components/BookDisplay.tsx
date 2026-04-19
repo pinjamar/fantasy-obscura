@@ -74,7 +74,10 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience: audienceProp
     return 'rating-desc';
   });
   const [currentPage, setCurrentPage]   = useState(1);
-  const [searchQuery, setSearchQuery]   = useState('');
+  const [searchQuery, setSearchQuery]   = useState<string>(() => {
+    if (typeof window !== 'undefined') return new URLSearchParams(window.location.search).get('q') ?? '';
+    return '';
+  });
   const [darknessFilter, setDarknessFilter] = useState<number | null>(null);
   const [heatFilter, setHeatFilter]         = useState<number | null>(null);
   const [darknessHover, setDarknessHover]   = useState<number | null>(null);

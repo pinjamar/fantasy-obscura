@@ -29,19 +29,32 @@ const vertexAI = new VertexAI({
 });
 
 /**
- * Returns an object with the same generateContent() / response.text()
- * interface as @google/generative-ai, so all existing scripts work unchanged.
+ * Returns an object with generateContent() / response.text() interface.
  *
- * @param {string} modelId — defaults to 'gemini-2.5-flash'
+ * @param {string}  modelId  — defaults to 'gemini-2.5-flash'
+ * @param {boolean} thinking — enable extended thinking mode (Pro only)
  */
-export function getGeminiModel(modelId = 'gemini-2.5-flash') {
-  const inner = vertexAI.getGenerativeModel({ model: modelId });
+export function getGeminiModel(modelId = 'gemini-2.5-flash', thinking = false) {
+  const generationConfig = thinking
+    ? { thinkingConfig: { thinkingBudget: -1 } }  // -1 = dynamic (model decides)
+    : undefined;
+
+  const inner = vertexAI.getGenerativeModel({
+    model: modelId,
+    ...(generationConfig ? { generationConfig } : {}),
+  });
 
   return {
     async generateContent(promptOrRequest) {
       const result = await inner.generateContent(promptOrRequest);
-      const text =
-        result.response?.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+      const parts = result.response?.candidates?.[0]?.content?.parts ?? [];
+
+      // With thinking enabled the response has thought parts (thought: true)
+      // followed by the actual answer. We only want the non-thought parts.
+      const answerParts = parts.filter((p) => !p.thought);
+      const text = answerParts.map((p) => p.text ?? '').join('') ||
+        parts.map((p) => p.text ?? '').join(''); // fallback: use all parts
+
       return {
         response: {
           text: () => text,

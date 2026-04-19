@@ -2,6 +2,8 @@
 import Layout from '../../../components/Layout.astro';
 import { CATEGORIES_META } from '../../../data/categories-meta';
 import { supabaseClient } from '../../../lib/supabaseClient';
+import { buildExcludeSet, dedupeBooks } from '../../../lib/category-dedup';
+import { renderEditorial } from '../../../lib/render-editorial';
 
 const { slug } = Astro.params;
 if (!slug || !(slug in CATEGORIES_META)) return Astro.redirect('/books/');
@@ -9,17 +11,29 @@ if (!slug || !(slug in CATEGORIES_META)) return Astro.redirect('/books/');
 const cat = CATEGORIES_META[slug as keyof typeof CATEGORIES_META];
 const curatedTitles = cat.lists.hiddenGems;
 
-const { data: allMatches } = await supabaseClient
+const { data: allMatches } = await (supabaseClient as any)
   .from('books')
-  .select('id, title, slug, authors, cover_url, avg_rating, darkness_level, series, series_number, synopsis, tropes')
+  .select('id, title, slug, authors, cover_url, avg_rating, darkness_level, heat_level, series, series_number, synopsis, best_for')
   .in('title', curatedTitles);
 
-const titleIndex = new Map(curatedTitles.map((t, i) => [t, i]));
-const books = (allMatches ?? [])
-  .sort((a, b) => (titleIndex.get(a.title) ?? 999) - (titleIndex.get(b.title) ?? 999))
-  .slice(0, 20);
+const titleIndex = new Map(curatedTitles.map((t: string, i: number) => [t, i]));
+const sorted: any[] = ((allMatches as any[]) ?? [])
+  .sort((a: any, b: any) => (titleIndex.get(a.title) ?? 999) - (titleIndex.get(b.title) ?? 999));
+
+// Exclude books already in allTimeGreats or startWith (higher priority)
+const excludeTitles = buildExcludeSet(cat.lists.allTimeGreats, cat.lists.startWith);
+const books: any[] = dedupeBooks(sorted, excludeTitles, 20);
+
+const editorial = cat.editorial?.hiddenGems;
 
 const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
+const HEAT: Record<string, { flames: string; label: string }> = {
+  'Sweet Romance': { flames: '🔥',         label: 'Sweet Romance' },
+  'Closed Door':   { flames: '🔥🔥',       label: 'Closed Door' },
+  'Open Door':     { flames: '🔥🔥🔥',     label: 'Open Door' },
+  'Explicit':      { flames: '🔥🔥🔥🔥',   label: 'Explicit' },
+  'Fiery':         { flames: '🔥🔥🔥🔥🔥', label: 'Fiery' },
+};
 
 function starPct(r: number) { return ((r / 5) * 100).toFixed(2) + '%'; }
 
@@ -37,7 +51,7 @@ const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: `${cat.name} Hidden Gems`,
-  description: `20 underrated ${cat.name} books that deserve more attention — great reads with less hype.`,
+  description: editorial?.intro ?? `Underrated ${cat.name} books that deserve more readers — deep cuts and overlooked masterpieces.`,
   numberOfItems: books.length,
   itemListElement: books.map((b, i) => ({
     '@type': 'ListItem',
@@ -54,14 +68,13 @@ const jsonLd = JSON.stringify({
 
 <Layout
   title={`${cat.name} Hidden Gems — 20 Underrated Books | The Grimoire`}
-  description={`Discover 20 underrated ${cat.name} books that deserve more attention — great ratings, less hype.`}
+  description={editorial?.intro ?? `Underrated ${cat.name} books that deserve more readers — deep cuts and overlooked picks.`}
 >
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={breadcrumbLd} />
     <script is:inline type="application/ld+json" set:html={jsonLd} />
   </Fragment>
   <div class="max-w-2xl mx-auto">
-    <p class="hidden">Discover the best underrated {cat.name} books — hidden gems with great ratings and less hype. These {cat.name} novels deserve far more attention than they get.</p>
     <nav class="text-sm text-zinc-400 mb-6 flex items-center gap-2">
       <a href="/books/" class="hover:text-zinc-700 transition-colors">Start Here</a>
       <span>›</span>
@@ -70,11 +83,27 @@ const jsonLd = JSON.stringify({
       <span class="text-zinc-700 font-medium">Hidden Gems</span>
     </nav>
 
-    <div class="flex items-center gap-2.5 mb-1">
-      <span class="text-2xl">{cat.icon}</span>
+    <div class="flex items-center gap-2.5 mb-3">
+      <span class="text-2xl">💎</span>
       <h1 class="text-2xl font-bold tracking-tight">{cat.name} Hidden Gems</h1>
     </div>
-    <div class="grid grid-cols-2 gap-3 mt-3 mb-6">
+
+    {editorial ? (
+      <div class="mb-6 space-y-3">
+        <p class="text-zinc-600 text-sm leading-relaxed" set:html={renderEditorial(editorial.intro)} />
+        <div class="bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3">
+          <div class="flex items-center gap-1.5 mb-1.5">
+            <span class="text-sm">🧭</span>
+            <p class="text-xs font-semibold text-zinc-500 uppercase tracking-wide">How to use this list</p>
+          </div>
+          <p class="text-zinc-600 text-sm leading-relaxed" set:html={renderEditorial(editorial.howToUse)} />
+        </div>
+      </div>
+    ) : (
+      <p class="text-zinc-500 text-sm mb-6">Underrated {cat.name} books that deserve more readers — deep cuts and overlooked picks.</p>
+    )}
+
+    <div class="grid grid-cols-2 gap-3 mb-8">
       <a href={`/fantasy/${slug}/all-time-greats/`} class="flex items-center gap-2.5 rounded-xl border border-zinc-200 px-4 py-3 hover:border-purple-300 hover:bg-purple-50/40 transition-colors group">
         <span class="text-xl">⭐</span>
         <div>
@@ -90,8 +119,6 @@ const jsonLd = JSON.stringify({
         </div>
       </a>
     </div>
-
-    <p class="text-zinc-500 text-sm mb-8">Solid, well-rated {cat.name} books that fly under the radar — less hype, more discovery.</p>
 
     {books && books.length > 0 ? (
       <ol class="flex flex-col gap-3">
@@ -115,7 +142,7 @@ const jsonLd = JSON.stringify({
                 {book.authors?.length > 0 && (
                   <div class="text-xs text-zinc-500 mb-1">{book.authors.join(', ')}</div>
                 )}
-                <div class="flex flex-wrap items-center gap-1 mb-1">
+                <div class="flex flex-wrap items-center gap-2 mb-1.5">
                   {book.avg_rating && (
                     <span class="text-xs text-zinc-600 inline-flex items-center gap-1">
                       <span class="relative inline-block" style="letter-spacing:0.05em;line-height:1;vertical-align:middle">
@@ -126,19 +153,17 @@ const jsonLd = JSON.stringify({
                     </span>
                   )}
                   {book.darkness_level >= 1 && book.darkness_level <= 5 && (
-                    <span class="text-xs text-zinc-400"> · {'🕯️'.repeat(book.darkness_level)} {DARKNESS_LABELS[book.darkness_level]}</span>
+                    <span class="text-xs text-zinc-400">{'🕯️'.repeat(book.darkness_level)} {DARKNESS_LABELS[book.darkness_level]}</span>
+                  )}
+                  {book.heat_level && HEAT[book.heat_level] && (
+                    <span class="text-xs text-zinc-400">{HEAT[book.heat_level].flames} {HEAT[book.heat_level].label}</span>
                   )}
                 </div>
-                {book.synopsis && (
-                  <p class="text-xs text-zinc-500 leading-relaxed line-clamp-2 mt-1">{book.synopsis}</p>
-                )}
-                {(book as any).tropes?.length > 0 && (
-                  <div class="flex flex-wrap gap-1 mt-2">
-                    {((book as any).tropes as string[]).slice(0, 3).map((t: string) => (
-                      <span class="text-xs bg-purple-50 text-purple-600 rounded-full px-2 py-0.5 border border-purple-100">{t}</span>
-                    ))}
-                  </div>
-                )}
+                {book.best_for ? (
+                  <p class="text-xs text-zinc-500 leading-relaxed italic">{book.best_for}</p>
+                ) : book.synopsis ? (
+                  <p class="text-xs text-zinc-500 leading-relaxed line-clamp-2">{book.synopsis}</p>
+                ) : null}
               </div>
             </a>
           </li>

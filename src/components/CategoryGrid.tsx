@@ -1818,7 +1818,7 @@ export default function CategoryGrid({
             <h3 className="font-semibold text-amber-900">
               {selectedCat ? categoryName : 'Fantasy'} Book of the Week
             </h3>
-            <span className="ml-auto text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">
+            <span className="ml-auto text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full hidden sm:inline">
               Changes every Monday
             </span>
           </div>
