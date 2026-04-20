@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { normalizeCoverUrl } from '../lib/covers';
 import { READING_ORDER_IMAGE_SLUG } from '../data/image-map';
+import BooksLikeMe from './BooksLikeMe';
 
 interface Category {
   slug: string;
@@ -1809,6 +1810,8 @@ export default function CategoryGrid({
           )}
         </div>
       </div>
+
+      <BooksLikeMe />
 
       <div className="mt-6 flex flex-col gap-6">
         {/* Book of the Week */}

@@ -2,7 +2,6 @@
 import Layout from "../components/Layout.astro";
 import CategoryGrid from "../components/CategoryGrid";
 import BookSearch from "../components/BookSearch";
-import BooksLikeMe from "../components/BooksLikeMe";
 import { supabaseClient } from '../lib/supabaseClient';
 
 // Fetch covers only for the curated slugs used in CategoryGrid — avoids serializing 8000+ books
@@ -73,8 +72,6 @@ const initialBooks: { title: string; slug: string | null; cover_url: string | nu
   </div>
 
   <BookSearch client:load />
-
-  <BooksLikeMe client:load />
 
   <CategoryGrid client:load initialBooks={initialBooks} coverMap={coverMap} />
 

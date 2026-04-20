@@ -11,6 +11,12 @@ export type PublicTrope = {
   category: TropeCategory;
   description: string;
   intro?: string;
+  /** Up to 6 book slugs that are the definitive examples of this trope */
+  bestExamples?: string[];
+  /** Slugs of books-like guides relevant to this trope */
+  booksLikeGuides?: string[];
+  /** Editorial FAQs shown in the visible FAQ section */
+  editorialFaqs?: { q: string; a: string }[];
 };
 
 export const PUBLIC_TROPES: PublicTrope[] = [
@@ -20,6 +26,12 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "anti-hero", name: "Anti-Hero", category: "character",
     description: "A morally complex or flawed main character.",
     intro: "Anti-heroes pursue their goals through questionable means — lying, manipulating, and sometimes killing — while the reader roots for them anyway. Unlike traditional heroes, they force us to question what we'd do in their place. Fantasy's sprawling epics give this trope room to develop across thousands of pages of moral erosion.",
+    bestExamples: ["the-blade-itself", "the-lies-of-locke-lamora", "nevernight", "red-rising", "best-served-cold", "the-poppy-war", "prince-of-thorns"],
+    booksLikeGuides: ["the-blade-itself", "the-lies-of-locke-lamora", "red-rising"],
+    editorialFaqs: [
+      { q: "What separates an anti-hero from a villain protagonist?", a: "Anti-heroes are protagonists readers root for despite their methods — they have goals we're broadly aligned with, even if their means are reprehensible. Villain protagonists make us root for someone whose goals themselves are wrong or destructive. The distinction is the reader's alignment: an anti-hero is someone you follow; a villain protagonist is someone you watch with uncomfortable fascination." },
+      { q: "Which anti-hero fantasy books are best for grimdark newcomers?", a: "The Blade Itself by Joe Abercrombie is the standard recommendation — Logen Ninefingers and Glokta are two of the most compelling anti-heroes in modern fantasy, and the first book delivers the genre's core satisfaction without the bleakness of later entries. The Lies of Locke Lamora is a softer entry point: the protagonist is a con artist rather than a killer, and the tone is warmer." },
+    ],
   },
   {
     slug: "assassin-protagonist", name: "Assassin Protagonist", category: "character",
@@ -30,6 +42,12 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "chosen-one", name: "Chosen One", category: "character",
     description: "A protagonist marked by destiny or prophecy.",
     intro: "The Chosen One is singled out by fate to face a challenge no one else can meet — a premise that works best when the story interrogates the idea of destiny itself. The most compelling versions feature protagonists who push back, fail, or turn the prophecy inside out. Fantasy has produced both the purest examples and the sharpest deconstructions of this trope.",
+    bestExamples: ["the-name-of-the-wind", "the-final-empire", "the-way-of-kings", "a-deadly-education", "the-eye-of-the-world", "shadow-and-bone", "red-rising"],
+    booksLikeGuides: ["the-name-of-the-wind", "the-final-empire", "the-way-of-kings"],
+    editorialFaqs: [
+      { q: "Is the Chosen One trope overused in fantasy?", a: "It's everywhere, but overuse is a symptom, not a flaw. Chosen One stories fail when destiny substitutes for character development — the protagonist is special because the plot says so. They succeed when the protagonist earns the role through failure and choice, or when the story actively interrogates whether 'chosen' means anything at all. A Deadly Education is the most incisive recent deconstruction; Mistborn probably the most satisfying fulfilment." },
+      { q: "What's the best Chosen One fantasy for readers who are tired of the trope?", a: "A Deadly Education by Naomi Novik is the most anti-Chosen-One Chosen One story in modern fantasy — the protagonist is supposed to be the darkest sorceress alive and refuses the heroic narrative at every turn. Brandon Sanderson's Mistborn trilogy treats prophecy as a puzzle to be solved rather than a destiny to be embraced." },
+    ],
   },
   {
     slug: "cursed-character", name: "Cursed Character", category: "character",
@@ -70,6 +88,13 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "morally-grey-hero", name: "Morally Grey Hero", category: "character",
     description: "A hero operating outside clear moral lines.",
     intro: "Morally grey heroes make hard choices that conventional heroes aren't supposed to make — and force both readers and supporting characters to decide what \"good\" actually means. They're not villains, but they're not clean either; they do what works and live with the residue. Fantasy's high stakes make every grey choice feel consequential in a way that contemporary fiction rarely allows.",
+    bestExamples: ["the-blade-itself", "the-lies-of-locke-lamora", "red-rising", "best-served-cold", "the-poppy-war", "nevernight", "prince-of-thorns"],
+    booksLikeGuides: ["the-blade-itself", "red-rising", "prince-of-thorns", "the-lies-of-locke-lamora"],
+    editorialFaqs: [
+      { q: "What separates a morally grey hero from a villain protagonist?", a: "The distinction is usually motivation and self-awareness. A morally grey hero does terrible things but retains some moral compass — they know what they're doing is wrong, or they're trying to serve something larger than themselves. A villain protagonist often lacks that tension; the horror is in how little they register the cost. Logen Ninefingers in The Blade Itself sits right on the line — the whole point is that the line keeps moving." },
+      { q: "Which morally grey hero has the best character arc in fantasy?", a: "Dalinar Kholin (The Stormlight Archive) is the most thorough treatment of a morally grey past being fully reckoned with — his arc spans four books and earns its resolution. For a single-book arc, Monza Murcatto in Best Served Cold starts as a revenge machine and ends somewhere complicated. Rin in The Poppy War is the best descent arc: she starts sympathetic and the reader watches every step of the transformation." },
+      { q: "Are morally grey heroes always in grimdark fantasy?", a: "They dominate grimdark but they're not exclusive to it. Kaz Brekker in Six of Crows is morally grey within a heist thriller. Locke Lamora in The Lies of Locke Lamora is a con artist operating in morally grey space with a lighter tone than most grimdark. The difference is that grimdark rarely redeems its grey heroes — the grey is the point, not a phase they pass through." },
+    ],
   },
   {
     slug: "outcast-hero", name: "Outcast Hero", category: "character",
@@ -112,16 +137,36 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "enemies-to-lovers", name: "Enemies to Lovers", category: "relationship",
     description: "Rivals develop romantic feelings.",
     intro: "The slow shift from hatred to something else is one of fiction's most satisfying arcs — because readers watch two people actively resist what's happening to them. Fantasy's high-conflict settings give enemies genuine reasons to hate each other, which makes the eventual turn more credible and more earned. The genre's long page counts allow the tension to build across hundreds of pages of friction before anything breaks.",
+    bestExamples: ["the-cruel-prince", "a-court-of-thorns-and-roses", "six-of-crows", "from-blood-and-ash", "divine-rivals", "serpent-dove", "the-bridge-kingdom"],
+    booksLikeGuides: ["the-cruel-prince", "from-blood-and-ash", "a-court-of-thorns-and-roses", "six-of-crows", "divine-rivals"],
+    editorialFaqs: [
+      { q: "What makes enemies to lovers work in fantasy specifically?", a: "Fantasy gives enemies genuine, high-stakes reasons to hate each other — rival kingdoms, opposing magic systems, someone who killed your family — rather than a misunderstanding. That means the eventual shift carries real weight: overcoming years of trained enmity, not just a bad first impression." },
+      { q: "Which enemies to lovers fantasy has the slowest, most satisfying burn?", a: "For the most agonizing slow burn, The Cruel Prince by Holly Black is the standard recommendation — the antagonism is relentless and the pivot is earned over multiple books. From Blood and Ash by Jennifer L. Armentrout takes longer to deliver on the romantic tension but compensates with constant heat. For something darker and more literary, Nevernight makes the reader wait an entire book before anything resolves." },
+      { q: "Are there enemies to lovers books without explicit content?", a: "Yes — enemies to lovers spans every heat level. The Cruel Prince (closed door), Nevernight (open door), and most Sarah J. Maas titles (explicit) all feature the trope at different intensities. Check heat ratings before starting a new series if that matters to you." },
+    ],
   },
   {
     slug: "fated-mates", name: "Fated Mates", category: "relationship",
     description: "Two characters bound by destiny.",
     intro: "Fated mates stories live in the tension between fate and agency — what it means to be drawn toward someone by forces outside your control. Fantasy literalizes that pull through magic, prophecy, or supernatural bonds that the characters must decide whether to accept or fight. The best examples treat the fating as a complication, not a shortcut.",
+    bestExamples: ["a-court-of-thorns-and-roses", "from-blood-and-ash", "fourth-wing", "a-court-of-mist-and-fury", "iron-flame", "the-cruel-prince", "serpent-dove"],
+    booksLikeGuides: ["a-court-of-thorns-and-roses", "from-blood-and-ash", "fourth-wing"],
+    editorialFaqs: [
+      { q: "What is fated mates in fantasy?", a: "Fated mates is a romantic fantasy trope where two characters share a supernatural bond — often a soul-mate connection dictated by magic, prophecy, or biological compulsion. Unlike enemies to lovers, the attraction isn't built through conflict; it's imposed from outside. The story tension comes from whether the characters accept, resist, or find a way to rewrite their fate." },
+      { q: "Which fated mates fantasy books are most popular?", a: "A Court of Thorns and Roses by Sarah J. Maas established the modern template, with the mating bond introduced fully in A Court of Mist and Fury. From Blood and Ash and Fourth Wing are the other two dominant series in the space, both with fated connections that complicate existing relationships rather than creating them from scratch." },
+      { q: "Is fated mates the same as soul mates?", a: "They're related but distinct. Soul mates in fantasy implies destiny and emotional compatibility. Fated mates typically involves a physical, magical bond that affects both characters' behavior — often involuntarily. Fated mates carry higher stakes and more resistance than the soul mate trope, making them better suited to longer, higher-tension narratives." },
+    ],
   },
   {
     slug: "forbidden-romance", name: "Forbidden Romance", category: "relationship",
     description: "A romance forbidden by society or duty.",
     intro: "The prohibition gives forbidden romances their charge: every stolen moment is dangerous, every choice to continue is a declaration. Fantasy heightens the stakes by making the consequences literal — banishment, war, death, or something worse. The best forbidden romance stories make the thing doing the forbidding genuinely compelling, not just an obstacle.",
+    bestExamples: ["the-cruel-prince", "a-court-of-thorns-and-roses", "the-jasmine-throne", "from-blood-and-ash", "divine-rivals", "nevernight", "kingdom-of-the-wicked"],
+    booksLikeGuides: ["the-cruel-prince", "a-court-of-thorns-and-roses", "the-jasmine-throne", "from-blood-and-ash"],
+    editorialFaqs: [
+      { q: "What kinds of forbidden romance appear most often in fantasy?", a: "Fantasy's forbidden romance usually falls into three types: political (two people from enemy factions or kingdoms), class-based (royalty and commoner, or master and servant), and supernatural (fae and human, god and mortal). Political forbidden romance tends to carry the highest stakes since the consequences extend beyond the individuals." },
+      { q: "Which forbidden romance fantasy books are worth reading beyond ACOTAR?", a: "The Jasmine Throne by Tasha Suri offers a sapphic forbidden romance in a South Asian-inspired setting — the prohibition comes from caste and circumstance rather than supernatural law. Divine Rivals by Rebecca Ross is a lighter option with the romance forbidden by professional rivalry rather than political danger." },
+    ],
   },
   {
     slug: "forced-proximity", name: "Forced Proximity", category: "relationship",
@@ -132,6 +177,13 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "found-family", name: "Found Family", category: "relationship",
     description: "Unrelated characters form deep familial bonds.",
     intro: "Found family is fantasy's most beloved emotional core: the team that becomes something more, the strangers who learn to be home for each other through shared danger and choice. Unlike blood family, found family is earned — and that's exactly why it hits so hard when the bonds are tested. The genre's ensemble casts and long series format give these relationships room to genuinely develop.",
+    bestExamples: ["six-of-crows", "the-final-empire", "kings-of-the-wyld", "the-poppy-war", "the-lies-of-locke-lamora", "the-way-of-kings", "red-rising"],
+    booksLikeGuides: ["six-of-crows", "the-final-empire", "the-lies-of-locke-lamora", "the-way-of-kings"],
+    editorialFaqs: [
+      { q: "Why is found family so central to fantasy?", a: "Fantasy protagonists are frequently exiles, orphans, or outcasts — people separated from blood family by circumstance or choice. The genre's ensemble quests and shared dangers compress relationship development in ways that ordinary life can't. When you've survived something together, the bond means more." },
+      { q: "Which found family fantasy books hit hardest emotionally?", a: "Six of Crows by Leigh Bardugo is the standard recommendation — the crew dynamic is the entire point, and Bardugo writes each member with enough distinct texture that losing any of them would genuinely hurt. Kings of the Wyld by Nicholas Eames takes the found family of aging mercenaries and puts that bond under maximum pressure in a single volume." },
+      { q: "Does found family always mean a heist or ensemble crew?", a: "No — found family takes many forms. It can be a lone mentor and protégé (Name of the Wind), a war-forged unit (The Poppy War), a court of rivals who become something more (Way of Kings), or a heist crew (Six of Crows). What defines it isn't structure but emotional stakes: these people choose each other." },
+    ],
   },
   {
     slug: "grumpy-sunshine", name: "Grumpy x Sunshine", category: "relationship",
@@ -142,6 +194,13 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "love-triangle", name: "Love Triangle", category: "relationship",
     description: "Three characters entangled romantically.",
     intro: "Love triangles work when both options represent real and incompatible futures — not just preferences, but paths that change who the protagonist becomes. Fantasy raises the stakes by tying the romantic choice to the fate of kingdoms, alliances, or magic systems. The best examples give readers genuine investment in both possibilities, making the resolution both satisfying and costly.",
+    bestExamples: ["shadow-and-bone", "a-court-of-mist-and-fury", "an-ember-in-the-ashes", "throne-of-glass", "fourth-wing", "from-blood-and-ash", "the-cruel-prince"],
+    booksLikeGuides: ["shadow-and-bone", "an-ember-in-the-ashes", "throne-of-glass", "from-blood-and-ash"],
+    editorialFaqs: [
+      { q: "Do love triangles always get resolved by the end of a series?", a: "In romantasy and YA fantasy, almost always — leaving two options genuinely open tends to frustrate readers enough that authors close it. The question is usually when and how. Shadow and Bone takes three books to fully resolve its triangle, and the resolution divided the fandom sharply. Throne of Glass adds and removes options across six books before settling." },
+      { q: "Which fantasy love triangle has the most reader debate?", a: "The Darkling vs Mal debate in Shadow and Bone is the most sustained fandom argument in recent fantasy — years after the series ended, readers still disagree whether Leigh Bardugo made the right narrative choice. Team Darkling argued his arc deserved a different resolution; Team Mal argued the point was always there. An Ember in the Ashes runs a close second, with the Elias/Laia/Keenan dynamic generating genuine uncertainty across four books." },
+      { q: "Are there love triangles where the protagonist doesn't end up with either option?", a: "Rare in fantasy, but they exist. Some series resolve the triangle by removing one option through death or betrayal rather than a clean romantic choice — which tends to read as the author dodging the question. The more interesting version is when the protagonist's relationship with herself changes enough that neither original option fits anymore. That's harder to execute but avoids the triangle feeling like a simple either/or." },
+    ],
   },
   {
     slug: "mentor-student", name: "Mentor and Student", category: "relationship",
@@ -157,6 +216,13 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "redemption-arc", name: "Redemption Arc", category: "relationship",
     description: "A character seeks redemption for past sins.",
     intro: "Redemption arcs are about proof: the character cannot simply say they've changed, they must demonstrate it in circumstances that cost them something real. Fantasy's long series format gives this time to breathe — the arc can span thousands of pages, letting the change feel earned rather than convenient. The best examples don't guarantee the character succeeds.",
+    bestExamples: ["the-way-of-kings", "the-blade-itself", "six-of-crows", "the-cruel-prince", "a-court-of-mist-and-fury", "a-little-hatred", "red-rising"],
+    booksLikeGuides: ["the-blade-itself", "six-of-crows", "the-cruel-prince", "red-rising"],
+    editorialFaqs: [
+      { q: "Does a redemption arc require the character to succeed?", a: "No — and the best ones often don't. The arc is about the attempt, not the outcome. Logen Ninefingers across The First Law trilogy is explicitly a test of whether a person can escape what they are. Sanderson's Dalinar (The Stormlight Archive) is the counterexample: one of fantasy's few arcs where the redemption is fully earned and unambiguous. Both are correct; the question is what the story is actually about." },
+      { q: "What is the most celebrated redemption arc in fantasy?", a: "Dalinar Kholin in The Stormlight Archive is the most frequently cited. His arc starts with Oathbringer's brutal flashback revelations and pays off across Words of Radiance and beyond — it works because Sanderson makes the reader genuinely uncertain whether redemption is possible before delivering it. Cardan in The Cruel Prince is the most popular romantasy example, though it operates on a much shorter timescale." },
+      { q: "Can a villain get a convincing redemption arc in a single book?", a: "It's very hard to do well in isolation — the change needs to feel earned, not convenient, which usually requires substantial page time for the before and after. Cardan in The Cruel Prince manages it across three books. In a single volume, the more common approach is a partial redemption: the character makes one genuinely costly choice that signals change without resolving everything. Full single-book villain redemptions tend to feel rushed unless the book is very long." },
+    ],
   },
   {
     slug: "rivals-to-allies", name: "Rivals to Allies", category: "relationship",
@@ -172,6 +238,13 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "slow-burn", name: "Slow Burn", category: "relationship",
     description: "Romantic or emotional tension develops gradually.",
     intro: "Slow burn readers aren't waiting for the payoff — they're addicted to the tension itself, the ache of two characters circling each other across hundreds of pages of near-misses and charged silences. Fantasy's extended page counts are built for exactly this kind of prolonged, exquisite delay. The genre's life-or-death stakes make every moment of near-connection more desperate.",
+    bestExamples: ["from-blood-and-ash", "divine-rivals", "the-cruel-prince", "a-court-of-thorns-and-roses", "shadow-and-bone", "iron-flame", "the-jasmine-throne"],
+    booksLikeGuides: ["from-blood-and-ash", "divine-rivals", "a-court-of-thorns-and-roses", "the-cruel-prince"],
+    editorialFaqs: [
+      { q: "What makes a slow burn different from just a delayed romance?", a: "A slow burn is about sustained tension — not just postponing the resolution but making every interaction charged with meaning. Readers track micro-signals: a held gaze, an unclenched fist, a deliberate choice not to touch. The delay is the experience, not an obstacle to it." },
+      { q: "Which slow burn fantasy series takes the longest to deliver?", a: "From Blood and Ash by Jennifer L. Armentrout is notorious for stringing the tension across multiple books. A Court of Thorns and Roses resolves its first arc but introduces a second slow burn in the sequel that many readers consider the best part of the series. Divine Rivals delivers a complete arc in a single volume — shorter commitment, same ache." },
+      { q: "Are there slow burn fantasy books that don't have explicit content?", a: "Yes. The heat level and the slow burn intensity are independent variables. The Cruel Prince (closed door) and Divine Rivals (mostly closed door) both deliver extended romantic tension without explicit scenes. Shadow and Bone is one of the cleanest slow burns in fantasy — the tension spans three books with minimal heat." },
+    ],
   },
 
   // ── PLOT (21) ─────────────────────────────────────────────────────────────
@@ -184,6 +257,12 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "coming-of-age", name: "Coming of Age", category: "plot",
     description: "A young protagonist matures through trials, mistakes, and growth.",
     intro: "Coming-of-age in fantasy works differently than in realism because the stakes are literal: the growth that transforms a teenager into an adult might also determine whether the world survives. Mistakes here have real consequences, and the trials are genuinely dangerous rather than metaphorically so. The genre has produced some of the form's defining examples, from school stories to war narratives to quiet personal reckonings.",
+    bestExamples: ["the-name-of-the-wind", "the-poppy-war", "nevernight", "shadow-and-bone", "a-deadly-education", "the-final-empire", "six-of-crows"],
+    booksLikeGuides: ["the-name-of-the-wind", "the-poppy-war"],
+    editorialFaqs: [
+      { q: "How does coming-of-age work differently in fantasy than in other genres?", a: "In realistic fiction, coming-of-age is metaphorical — the protagonist's inner growth is the story. In fantasy, the growth is literal and consequential. If the protagonist doesn't master the magic, understand the world, or make the right alliances, people die. The failure isn't just embarrassing; it can be catastrophic. That raises the stakes of every mistake." },
+      { q: "Which coming-of-age fantasy is best for adult readers?", a: "The Name of the Wind by Patrick Rothfuss is the most celebrated adult coming-of-age in recent fantasy — Kvothe's training at the University is compulsively readable despite its length. The Poppy War by R.F. Kuang starts as school fantasy and becomes something much darker: the coming-of-age is brutal and the protagonist pays for it across the full trilogy." },
+    ],
   },
   {
     slug: "end-of-the-world", name: "End of the World Stakes", category: "plot",
@@ -214,6 +293,12 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "political-intrigue", name: "Political Intrigue", category: "plot",
     description: "Schemes, court politics, and power plays.",
     intro: "Political intrigue in fantasy works because the stakes are civilizational — what happens in the throne room shapes the entire world. Information is the most dangerous weapon, alliances shift faster than armies, and the sharpest mind in the room rarely holds the most power. The best examples give readers the satisfying click of watching a scheme assemble or unravel.",
+    bestExamples: ["the-lies-of-locke-lamora", "the-way-of-kings", "red-rising", "the-cruel-prince", "a-memory-called-empire", "the-blade-itself", "gardens-of-the-moon"],
+    booksLikeGuides: ["the-lies-of-locke-lamora", "the-way-of-kings", "red-rising", "the-cruel-prince"],
+    editorialFaqs: [
+      { q: "What makes political intrigue in fantasy different from regular thriller plotting?", a: "Fantasy politics operate on different rules: magic systems create new power imbalances, non-human political actors have alien motivations, and the consequences of a wrong move can extend for centuries. The best political fantasy isn't just complex plotting — it's a lens for examining how power actually works, using invented societies to defamiliarize real dynamics." },
+      { q: "Which political intrigue fantasy books are best for readers new to the subgenre?", a: "The Lies of Locke Lamora is the clearest entry point — it's a heist novel at its core, so the schemes have an immediate momentum that pure court intrigue can lack. The Cruel Prince by Holly Black delivers Fae court politics in a much shorter, more propulsive package. For something more epic in scale, Red Rising uses political stratification as the engine for a complete trilogy." },
+    ],
   },
   {
     slug: "portal-fantasy", name: "Portal Fantasy", category: "plot",
@@ -239,6 +324,12 @@ export const PUBLIC_TROPES: PublicTrope[] = [
     slug: "quest", name: "Quest", category: "plot",
     description: "A journey to achieve a specific goal.",
     intro: "The quest is fantasy's oldest and most elastic structure — it can carry any tone, any theme, any cast of characters across any imaginable world. What matters is not the destination but what the journey costs and changes. The genre has taken the template from Tolkien's mythic proportions down to intimate single-volume character studies and back again.",
+    bestExamples: ["the-way-of-kings", "the-final-empire", "the-eye-of-the-world", "red-rising", "gardens-of-the-moon", "the-name-of-the-wind", "the-lies-of-locke-lamora"],
+    booksLikeGuides: ["the-way-of-kings", "the-final-empire", "red-rising", "the-eye-of-the-world"],
+    editorialFaqs: [
+      { q: "Do all quest fantasy books follow the same structure?", a: "No — the quest is a container that holds almost anything. Some are linear pilgrimages (Lord of the Rings). Others are multi-layered investigations where the protagonist doesn't know what they're actually seeking until they find it (Name of the Wind). Some quests are military campaigns with a tactical objective; others are personal journeys with no defined destination. The structure is the goal, not the path." },
+      { q: "Which quest fantasy is best for readers who want the whole arc in one book?", a: "Red Rising by Pierce Brown is one of the most self-contained quest narratives in recent fantasy — the objective is clear from page one and the story delivers a complete arc in a single volume, even if the trilogy continues it. Kings of the Wyld by Nicholas Eames is another standout single-volume quest: retired mercenaries, one last job, completely satisfying on its own." },
+    ],
   },
   {
     slug: "rebellion", name: "Rebellion", category: "plot",

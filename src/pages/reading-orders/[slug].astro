@@ -338,7 +338,7 @@ const seoProseText = curatedEntry
   : null;
 
 // ── Non-curated SEO additions ─────────────────────────────────────────────────
-const dbShouldNoIndex = !isCurated && (seriesMeta?.bookCount ?? 0) < 3;
+const dbShouldNoIndex = !isCurated;
 
 const dbItemListJsonLd = !isCurated && seriesMeta ? JSON.stringify({
   '@context': 'https://schema.org',

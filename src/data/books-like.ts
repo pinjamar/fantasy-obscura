@@ -341,6 +341,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
     source: {
       title: 'A Court of Thorns and Roses (ACOTAR)',
       author: 'Sarah J. Maas',
+      db_slug: 'a-court-of-thorns-and-roses',
       cover_url: 'https://covers.openlibrary.org/b/isbn/9781619634459-L.jpg',
       darkness_level: 3,
       heat_level: 'Open Door',
