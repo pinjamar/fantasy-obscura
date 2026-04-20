@@ -68,7 +68,7 @@ const recSlugs = aspects.flatMap((a) => a.recs.map((r) => (r as any).slug ?? toS
 const allCheckSlugs = [...new Set([sourceBookSlug, ...recSlugs])]
 const { data: dbRecCovers } = await supabaseClient
   .from('books')
-  .select('slug, cover_url, content_warnings, audiobook_audible_url, protagonist_gender')
+  .select('slug, cover_url, content_warnings, audiobook_audible_url, protagonist_gender, darkness_level, heat_level')
   .in('slug', allCheckSlugs)
 const dbSlugSet = new Set((dbRecCovers ?? []).map((b) => b.slug))
 const dbRecCoverMap = new Map<string, string>(
@@ -82,6 +82,12 @@ const dbAudibleMap = new Map<string, string>(
 )
 const dbProtagonistMap = new Map<string, string>(
   (dbRecCovers ?? []).filter((b: any) => b.protagonist_gender).map((b: any) => [b.slug, b.protagonist_gender])
+)
+const dbDarknessMap = new Map<string, number>(
+  (dbRecCovers ?? []).filter((b: any) => b.darkness_level != null).map((b: any) => [b.slug, b.darkness_level])
+)
+const dbHeatMap = new Map<string, string>(
+  (dbRecCovers ?? []).filter((b: any) => b.heat_level).map((b: any) => [b.slug, b.heat_level])
 )
 
 const SITE = 'https://thegrimoire.co';
@@ -270,8 +276,10 @@ const breadcrumbJsonLd = JSON.stringify({
           <h3 class="text-base font-bold text-zinc-800 mb-4 pb-2 border-b border-zinc-200">{aspect.heading}</h3>
           <div class="space-y-4">
             {aspect.recs.map((r) => {
-              const h = getHeat(r.heat_level)
               const recSlug = (r as any).slug ?? toSlug(r.title)
+              const recDarkness = dbDarknessMap.get(recSlug) ?? r.darkness_level
+              const recHeat = dbHeatMap.get(recSlug) ?? r.heat_level
+              const h = getHeat(recHeat)
               const recCover = dbRecCoverMap.get(recSlug) ?? (r.cover_url?.includes('archive.org') ? '' : r.cover_url)
               return (
                 <div class="rounded-xl border border-violet-200 bg-violet-50 p-4 grid grid-cols-[auto_1fr] gap-x-5 gap-y-3">
@@ -310,7 +318,7 @@ const breadcrumbJsonLd = JSON.stringify({
                       {r.author_note && <span class="text-zinc-400"> ({r.author_note})</span>}
                     </p>
                     <div class="flex items-center gap-2 text-sm mt-0.5">
-                      <span title={`Darkness ${r.darkness_level}/5`}>{darknessCandles(r.darkness_level)}</span>
+                      <span title={`Darkness ${recDarkness}/5`}>{darknessCandles(recDarkness)}</span>
                       {h && <span title={`Heat — ${h.label}`}>{h.flames}</span>}
                     </div>
 
