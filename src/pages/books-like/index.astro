@@ -91,6 +91,16 @@ const booksLikePageJsonLd = JSON.stringify({
             ))}
             <button id="bl-darkness-clear" class="hidden text-xs text-zinc-400 hover:text-zinc-600 ml-2 w-6 h-6">✕</button>
           </div>
+          <div class="hidden sm:flex items-center gap-0.5 shrink-0 bg-zinc-100 rounded-xl px-2 py-1.5">
+            {[1,2,3,4,5].map((n) => (
+              <button
+                data-heat-btn={n}
+                title={['Sweet Romance','Closed Door','Open Door','Explicit','Fiery'][n-1]}
+                class="text-base transition-opacity leading-none opacity-20"
+              >🔥</button>
+            ))}
+            <button id="bl-heat-clear" class="hidden text-xs text-zinc-400 hover:text-zinc-600 ml-2 w-6 h-6">✕</button>
+          </div>
         </div>
         <p id="books-like-empty" class="hidden text-sm text-zinc-400 mb-4">No guides match your search.</p>
 
@@ -105,6 +115,7 @@ const booksLikePageJsonLd = JSON.stringify({
               href={`/books-like/${entry.slug}/`}
               data-search={`${entry.source.title} ${entry.source.author} ${entry.source.series ?? ''} ${tropes.join(' ')}`.toLowerCase()}
               data-darkness={dbDarknessMap.get(getSourceSlug(entry)) ?? entry.source.darkness_level}
+              data-heat={(() => { const hl = dbHeatMap.get(getSourceSlug(entry)) ?? entry.source.heat_level; const map: Record<string,number> = {'Sweet Romance':1,'Closed Door':2,'Open Door':3,'Explicit':4,'Fiery':5}; return hl ? (map[hl] ?? 0) : 0 })()}
               data-index={i}
               class="flex items-center gap-4 p-4 rounded-2xl border border-zinc-200 bg-white hover:border-zinc-300 hover:bg-zinc-50 transition-colors group"
             >
@@ -185,19 +196,24 @@ const booksLikePageJsonLd = JSON.stringify({
       var nextBtn    = document.getElementById('bl-next');
       var pageNums   = document.getElementById('bl-page-numbers');
       var clearBtn      = document.getElementById('bl-darkness-clear');
+      var heatClearBtn  = document.getElementById('bl-heat-clear');
       var candleBtns    = Array.from(document.querySelectorAll('[data-darkness-btn]'));
+      var heatBtns      = Array.from(document.querySelectorAll('[data-heat-btn]'));
       var allCards      = Array.from(document.querySelectorAll('#books-like-list a[data-search]'));
       var currentPage   = 1;
       var filteredCards = allCards.slice();
       var selectedDarkness = null;
       var hoveredDarkness  = null;
+      var selectedHeat  = null;
+      var hoveredHeat   = null;
 
       function applyFilters() {
         var q = input ? input.value.toLowerCase().trim() : '';
         filteredCards = allCards.filter(function (c) {
           var matchSearch = !q || (c.getAttribute('data-search') || '').includes(q);
           var matchDarkness = selectedDarkness === null || parseInt(c.getAttribute('data-darkness') || '0') === selectedDarkness;
-          return matchSearch && matchDarkness;
+          var matchHeat = selectedHeat === null || parseInt(c.getAttribute('data-heat') || '0') === selectedHeat;
+          return matchSearch && matchDarkness && matchHeat;
         });
         currentPage = 1;
         render();
@@ -220,7 +236,7 @@ const booksLikePageJsonLd = JSON.stringify({
         allCards.forEach(function (c) { c.style.display = 'none'; });
         filteredCards.slice(start, start + PER_PAGE).forEach(function (c) { c.style.display = ''; });
 
-        var hasFilters = (input && input.value.trim()) || selectedDarkness !== null;
+        var hasFilters = (input && input.value.trim()) || selectedDarkness !== null || selectedHeat !== null;
         if (empty) empty.classList.toggle('hidden', filteredCards.length > 0 || !hasFilters);
         if (pagination) pagination.style.display = filteredCards.length <= PER_PAGE ? 'none' : 'flex';
         if (prevBtn) prevBtn.disabled = currentPage === 1;
@@ -233,6 +249,14 @@ const booksLikePageJsonLd = JSON.stringify({
           btn.style.opacity = n <= activeLevel ? '1' : '0.2';
         });
         if (clearBtn) clearBtn.classList.toggle('hidden', selectedDarkness === null);
+
+        // Update heat button active states
+        var activeHeat = hoveredHeat !== null ? hoveredHeat : (selectedHeat !== null ? selectedHeat : 0);
+        heatBtns.forEach(function (btn) {
+          var n = parseInt(btn.getAttribute('data-heat-btn'));
+          btn.style.opacity = n <= activeHeat ? '1' : '0.2';
+        });
+        if (heatClearBtn) heatClearBtn.classList.toggle('hidden', selectedHeat === null);
 
         if (pageNums) {
           pageNums.innerHTML = '';
@@ -272,6 +296,23 @@ const booksLikePageJsonLd = JSON.stringify({
       if (clearBtn) {
         clearBtn.addEventListener('click', function () {
           selectedDarkness = null;
+          applyFilters();
+        });
+      }
+
+      heatBtns.forEach(function (btn) {
+        var n = parseInt(btn.getAttribute('data-heat-btn'));
+        btn.addEventListener('mouseenter', function () { hoveredHeat = n; render(); });
+        btn.addEventListener('mouseleave', function () { hoveredHeat = null; render(); });
+        btn.addEventListener('click', function () {
+          selectedHeat = selectedHeat === n ? null : n;
+          applyFilters();
+        });
+      });
+
+      if (heatClearBtn) {
+        heatClearBtn.addEventListener('click', function () {
+          selectedHeat = null;
           applyFilters();
         });
       }

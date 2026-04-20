@@ -2,7 +2,7 @@ export interface BooksLikeRec {
   title: string;
   slug?: string; // override when DB slug differs from title-based slug
   author: string;
-  cover_url: string;
+  cover_url?: string;
   darkness_level: number; // 1-5
   heat_level?: string | null; // e.g. 'Open Door', 'Explicit', 'Fiery' — omit for non-romance
   tags: string[]; // similarity elements e.g. ['Enemies to Lovers', 'Fae Courts']
@@ -18,7 +18,7 @@ export interface BooksLikeAspectRec {
   slug?: string; // override when DB slug differs from title-based slug
   author: string;
   author_note?: string; // e.g. "(yes, more Sanderson — unavoidable)"
-  cover_url: string;
+  cover_url?: string;
   darkness_level: number;
   heat_level?: string | null;
   standalone: boolean;
@@ -44,7 +44,7 @@ export interface BooksLikeEntry {
     title: string;
     author: string;
     db_slug?: string; // override when DB slug differs from title-based slug
-    cover_url: string;
+    cover_url?: string;
     darkness_level: number;
     heat_level?: string | null;
     series?: string | null;
@@ -18528,8 +18528,8 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       author: 'Tasha Suri',
       db_slug: 'the-jasmine-throne',
       cover_url: 'https://covers.openlibrary.org/b/isbn/9780316538312-L.jpg',
-      darkness_level: 4,
-      heat_level: 'Open Door',
+      darkness_level: 3,
+      heat_level: 'Fiery',
       series: 'Burning Kingdoms',
       series_number: 1,
       tropes: [
@@ -19555,6 +19555,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
     source: {
       title: 'Babel: Or the Necessity of Violence',
       author: 'R.F. Kuang',
+      db_slug: 'babel',
       cover_url: 'https://books.google.com/books/publisher/content/images/frontcover/YMpQEAAAQBAJ?fife=w400-h600',
       darkness_level: 4,
       heat_level: null,

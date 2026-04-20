@@ -48,7 +48,7 @@ const initialBooks: { title: string; slug: string | null; cover_url: string | nu
       <source type="image/webp" srcset="/images/banners/homepage-hero-400.webp 400w, /images/banners/homepage-hero-800.webp 800w" sizes="(min-width: 1024px) 800px, 100vw" />
       <img src="/images/banners/homepage-hero-800.webp" alt="" width="800" height="400" loading="eager" decoding="async" class="w-full aspect-3/1 object-cover" />
     </picture>
-    <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+    <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/10" />
     <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
       <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Find Your Next Fantasy Book</h1>
       <p class="hidden sm:block mt-2 max-w-2xl text-white/80 text-sm leading-relaxed">
@@ -58,12 +58,18 @@ const initialBooks: { title: string; slug: string | null; cover_url: string | nu
     </div>
   </div>
 
-  <div class="mt-3 flex flex-wrap justify-center sm:justify-start items-center gap-x-3 gap-y-1 text-xs sm:text-sm text-zinc-500">
-    <span>🕯️ Lighthearted</span>
-    <span>🕯️🕯️ Mild</span>
-    <span>🕯️🕯️🕯️ Serious</span>
-    <span>🕯️🕯️🕯️🕯️ Dark</span>
-    <span>🕯️🕯️🕯️🕯️🕯️ Brutal</span>
+  <div class="mt-4 flex flex-wrap justify-center sm:justify-start items-center gap-2">
+    {[
+      { candles: '🕯️',             label: 'Lighthearted', color: 'bg-sky-50 text-sky-700 border-sky-200' },
+      { candles: '🕯️🕯️',          label: 'Mild',         color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+      { candles: '🕯️🕯️🕯️',       label: 'Serious',      color: 'bg-yellow-50 text-yellow-700 border-yellow-200' },
+      { candles: '🕯️🕯️🕯️🕯️',    label: 'Dark',         color: 'bg-orange-50 text-orange-700 border-orange-200' },
+      { candles: '🕯️🕯️🕯️🕯️🕯️', label: 'Brutal',       color: 'bg-red-50 text-red-700 border-red-200' },
+    ].map(({ candles, label, color }) => (
+      <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-medium ${color}`}>
+        {candles} {label}
+      </span>
+    ))}
   </div>
 
   <BookSearch client:load />
@@ -73,8 +79,8 @@ const initialBooks: { title: string; slug: string | null; cover_url: string | nu
   <CategoryGrid client:load initialBooks={initialBooks} coverMap={coverMap} />
 
   <!-- Static prose: SEO content, word count, h2 bridge -->
-  <section class="hidden sm:grid mt-16 border-t pt-10 grid-cols-2 gap-10 text-sm text-zinc-600 leading-relaxed">
-    <div>
+  <section class="hidden sm:grid mt-16 border-t pt-10 grid-cols-2 gap-6 text-sm text-zinc-600 leading-relaxed">
+    <div class="rounded-2xl bg-linear-to-br from-violet-50 via-white to-indigo-50 border border-violet-100 p-6 shadow-sm">
       <h2 class="text-lg font-semibold text-zinc-900 mb-3">What is The Grimoire?</h2>
       <p class="mb-3">
         The Grimoire is a fantasy book database built for readers who want to know exactly what they're getting into before they start a new series. Every book comes with a <strong>darkness rating</strong> on a five-point candle scale - from lighthearted cozy fantasy all the way up to brutal grimdark - so you can match the book to your mood rather than being blindsided by content you weren't ready for.
@@ -86,7 +92,7 @@ const initialBooks: { title: string; slug: string | null; cover_url: string | nu
         Use the <a href="/book-finder/" class="text-purple-700 hover:underline">Book Finder</a> to filter by any combination of these tags, or browse <a href="/tropes/" class="text-purple-700 hover:underline">by trope</a> if you know exactly what kind of story you're in the mood for.
       </p>
     </div>
-    <div>
+    <div class="rounded-2xl bg-linear-to-br from-amber-50 via-white to-orange-50 border border-amber-100 p-6 shadow-sm">
       <h2 class="text-lg font-semibold text-zinc-900 mb-3">Reading Orders & Series Guides</h2>
       <p class="mb-3">
         Long fantasy series can be intimidating. The Grimoire has step-by-step <a href="/reading-orders/" class="text-purple-700 hover:underline">reading orders</a> for all the major series - from Brandon Sanderson's sprawling Cosmere to the Wheel of Time, the First Law, Malazan, and dozens more. Each guide tells you which books are essential, which are standalone side stories and the best entry point if you're new to the series.

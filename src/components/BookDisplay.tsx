@@ -385,7 +385,7 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience: audienceProp
                   />
                 </div>
                 <div className="p-3 flex-1 min-w-0 flex flex-col gap-1">
-                  <h3 className="font-semibold text-sm leading-tight line-clamp-2">{book.title}</h3>
+                  <h3 className="font-semibold text-sm leading-tight line-clamp-2 group-hover:text-purple-700 transition-colors">{book.title}</h3>
                   {book.series && (
                     <p className="text-xs text-indigo-600 font-medium truncate">
                       {book.series}{book.series_number != null ? ` #${book.series_number}` : ''}
@@ -431,11 +431,11 @@ const BookDisplay: React.FC<BookDisplayProps> = ({ genre, audience: audienceProp
             );
 
             return href ? (
-              <a key={book.id} href={href} className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all flex min-h-[160px]">
+              <a key={book.id} href={href} className="border border-zinc-200 rounded-xl overflow-hidden bg-white hover:border-purple-300 hover:shadow-[0_0_20px_rgba(147,51,234,0.1)] hover:-translate-y-0.5 transition-all flex min-h-[160px] group">
                 {CardContent}
               </a>
             ) : (
-              <div key={book.id} className="border rounded-xl overflow-hidden bg-white hover:shadow-md hover:border-zinc-300 transition-all flex min-h-[160px]">
+              <div key={book.id} className="border border-zinc-200 rounded-xl overflow-hidden bg-white hover:border-purple-300 hover:shadow-[0_0_20px_rgba(147,51,234,0.1)] transition-all flex min-h-[160px] group">
                 {CardContent}
               </div>
             );

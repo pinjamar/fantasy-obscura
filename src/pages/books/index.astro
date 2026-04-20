@@ -12,12 +12,14 @@ import BookDisplay from '../../components/BookDisplay';
       <source type="image/webp" srcset="/images/banners/all-books-400.webp 400w, /images/banners/all-books-800.webp 800w" sizes="(min-width: 1024px) 800px, 100vw" />
       <img src="/images/banners/all-books-800.webp" alt="" width="800" height="400" loading="eager" decoding="async" class="w-full aspect-2/1 sm:aspect-3/1 object-cover" />
     </picture>
-    <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+    <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/10" />
     <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
       <div class="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 class="text-3xl font-semibold tracking-tight text-white">All Fantasy Books</h1>
-          <p class="mt-1 text-white/70 text-sm">The complete collection</p>
+          <p class="hidden sm:block mt-2 max-w-2xl text-white/80 text-sm leading-relaxed">
+            Browse our hand-curated database of fantasy books — from <strong class="text-white">epic high fantasy</strong> and <strong class="text-white">grimdark</strong> to <strong class="text-white">romantasy</strong> and <strong class="text-white">cozy reads</strong>. Every entry includes a darkness rating, heat level, tropes, and content warnings so you know exactly what you're picking up.
+          </p>
         </div>
         <select
           onchange="if(this.value) window.location.href=this.value"
