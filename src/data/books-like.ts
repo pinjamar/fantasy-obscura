@@ -20855,7 +20855,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       title: 'Sorcery of Thorns',
       author: 'Margaret Rogerson',
       db_slug: 'sorcery-of-thorns',
-      darkness_level: 2,
+      darkness_level: 3,
       heat_level: 'Closed Door',
       tropes: [
         'Enemies to Lovers',
@@ -20991,7 +20991,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       title: 'Witch of Wild Things',
       author: 'Raquel Vasquez Gilliland',
       db_slug: 'witch-of-wild-things',
-      darkness_level: 1,
+      darkness_level: 2,
       heat_level: 'Open Door',
       tropes: [
         'Enemies to Lovers',
