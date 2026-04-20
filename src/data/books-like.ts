@@ -409,27 +409,8 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         ],
       },
       {
-        heading: 'If you loved the Fae courts and political intrigue...',
+        heading: 'If you loved the Fae courts and morally grey love interests...',
         recs: [
-          {
-            title: 'Kingdom of the Wicked',
-            author: 'Kerri Maniscalco',
-            cover_url:
-              'https://covers.openlibrary.org/b/isbn/9780316428354-L.jpg',
-            darkness_level: 3,
-            heat_level: 'Open Door',
-            standalone: false,
-            series: 'Kingdom of the Wicked',
-            series_number: 1,
-            series_label: 'Series (trilogy)',
-            audiobook: true,
-            note: "Victorian Sicily meets demon mythology. Emilia and Wrath have sharp banter and the enemies-to-lovers dynamic has somewhere to go — a murder mystery gives the tension structure. The atmosphere is vivid and the morally questionable love interest is handled with the same knowing craft as ACOTAR's Rhysand. Caveat: the mystery itself is thin. You're really here for the banter and the setting.",
-            tags: ['Demons', 'Historical Setting', 'Dark Romance'],
-            amazon_url:
-              'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco&tag=librariancura-20',
-            bookshop_url:
-              'https://bookshop.org/search?keywords=Kingdom+of+the+Wicked&affiliate=122720',
-          },
           {
             title: 'The Cruel Prince',
             author: 'Holly Black',
@@ -476,23 +457,69 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
         ],
       },
       {
-        heading: 'If you want something darker and less romance-forward...',
+        heading: 'The Rhysand effect — dangerous men with hidden depths...',
         recs: [
           {
-            title: 'The Priory of the Orange Tree',
-            author: 'Samantha Shannon',
+            title: 'Kingdom of the Wicked',
+            author: 'Kerri Maniscalco',
             cover_url:
-              'https://covers.openlibrary.org/b/isbn/9781635570298-L.jpg',
+              'https://covers.openlibrary.org/b/isbn/9780316428354-L.jpg',
             darkness_level: 3,
-            heat_level: 'Closed Door',
-            standalone: true,
+            heat_level: 'Open Door',
+            standalone: false,
+            series: 'Kingdom of the Wicked',
+            series_number: 1,
+            series_label: 'Series (trilogy)',
             audiobook: true,
-            note: 'The antidote to series commitment: an 848-page standalone epic with dragons, political intrigue across three continents, and a slow-burn romance that earns its payoff. The worldbuilding is dense and original, the female characters are fully realised. Caveat: this is first and foremost epic fantasy with romantic threads — not romantasy. The ratio of plot to romance is inverted compared to ACOTAR.',
-            tags: ['Dragons', 'Epic Fantasy', 'Sapphic Romance', 'Standalone'],
+            note: "Victorian Sicily meets demon mythology. Wrath plays the same game Rhysand does — dangerous, morally questionable, and impossible to look away from. The murder mystery gives the tension structure; the banter is sharp. Caveat: the mystery itself is thin. You're here for the enemies-to-lovers dynamic and the atmosphere, not the plot.",
+            tags: ['Demons', 'Historical Setting', 'Enemies to Lovers', 'Dark Romance'],
             amazon_url:
-              'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Samantha+Shannon&tag=librariancura-20',
+              'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco&tag=librariancura-20',
             bookshop_url:
-              'https://bookshop.org/search?keywords=The+Priory+of+the+Orange+Tree&affiliate=122720',
+              'https://bookshop.org/search?keywords=Kingdom+of+the+Wicked&affiliate=122720',
+          },
+          {
+            title: 'Fourth Wing',
+            author: 'Rebecca Yarros',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9781649374042-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Explicit',
+            standalone: false,
+            series: 'The Empyrean',
+            series_number: 1,
+            series_label: 'Series (5 books)',
+            audiobook: true,
+            note: "The closest structural equivalent in the current genre wave — a female protagonist in a lethal academy, a morally grey love interest who keeps his distance for reasons he won't explain, and a slow burn that earns its payoff. Yarros and Maas are working from the same template. Caveat: less lush Fae atmosphere, more military academy tension. The spice arrives faster than in ACOTAR book one.",
+            tags: ['Dragon Riders', 'Academy', 'Enemies to Lovers', 'Morally Grey LI'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Fourth+Wing+Rebecca+Yarros&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading: 'If you want more Sarah J. Maas...',
+        recs: [
+          {
+            title: 'Throne of Glass',
+            author: 'Sarah J. Maas',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9781619630345-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Open Door',
+            standalone: false,
+            series: 'Throne of Glass',
+            series_number: 1,
+            series_label: 'Series (8 books)',
+            audiobook: true,
+            note: "The same author at her most action-forward. Celaena is a more independent protagonist than Feyre in book one, and the series escalates in scope in ways ACOTAR fans will recognise — slow reveals, a world that keeps expanding, a romance that shifts across books. Caveat: the first book is the weakest, same as ACOTAR. Push through to Crown of Midnight. Less spice, more plot.",
+            tags: ['Same Author', 'Assassin Protagonist', 'Slow Burn', 'Found Family'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Throne+of+Glass+Sarah+J+Maas&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Throne+of+Glass+Sarah+J+Maas&affiliate=122720',
           },
         ],
       },
