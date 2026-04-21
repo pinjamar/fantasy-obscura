@@ -3,6 +3,7 @@ import Layout from '../../components/Layout.astro';
 import { PUBLIC_TROPES } from '../../data/tropes';
 import { BOOKS_LIKE } from '../../data/books-like';
 import { supabaseClient } from '../../lib/supabaseClient';
+import { normalizeCoverUrl } from '../../lib/covers';
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect('/tropes');
@@ -233,7 +234,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
           {bestExampleBooks.map((b) => (
             <a href={`/books/${b.slug}/`} title={b.title} class="flex-none w-21 rounded-md overflow-hidden border border-zinc-200 hover:border-purple-300 transition-colors shadow-sm hover:shadow-[0_0_12px_rgba(147,51,234,0.1)]">
               {b.cover_url
-                ? <img src={b.cover_url} alt={b.title} class="w-full aspect-2/3 object-cover" loading="lazy" />
+                ? <img src={normalizeCoverUrl(b.cover_url) ?? '/grimplaceholder.png'} alt={b.title} class="w-full aspect-2/3 object-cover" onerror="this.onerror=null;this.src='/grimplaceholder.png';"  loading="lazy" />
                 : <div class="w-full aspect-2/3 bg-zinc-100 flex items-center justify-center"><span class="text-lg">📖</span></div>
               }
             </a>
@@ -424,6 +425,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
 </Layout>
 
 <script is:inline define:vars={{ booksJson }}>
+  function _normCover(u){if(!u)return'/grimplaceholder.png';if(u.includes('books.google.com/books/content')){var m=u.match(/[?&]id=([^&]+)/);if(m)return'https://books.google.com/books/publisher/content/images/frontcover/'+m[1]+'?fife=w400-h600';}return u;}
   const DARKNESS_LABEL = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
   const PAGE_SIZE = 15;
 
@@ -521,7 +523,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
       ? `<p class="text-xs text-zinc-500 leading-relaxed line-clamp-2 mt-1">${b.synopsis}</p>`
       : '';
     const cover = b.cover_url
-      ? `<img src="${b.cover_url}" alt="${b.title}" class="h-28 w-20 object-cover rounded-md shrink-0 shadow-sm" loading="lazy" />`
+      ? `<img src="${_normCover(b.cover_url)}" alt="${b.title}" class="h-28 w-20 object-cover rounded-md shrink-0 shadow-sm" loading="lazy" onerror="this.onerror=null;this.src='/grimplaceholder.png';" />`
       : `<img src="/grimplaceholder.png" alt="${b.title}" class="h-28 w-20 object-cover rounded-md shrink-0 shadow-sm" loading="lazy" />`;
     const series = b.series
       ? `<div class="text-xs text-indigo-500 mb-0.5">${b.series}${b.series_number != null ? ` #${b.series_number}` : ''}</div>`

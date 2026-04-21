@@ -4,6 +4,7 @@ import { CATEGORIES_META } from '../../../data/categories-meta';
 import { supabaseClient } from '../../../lib/supabaseClient';
 import { dedupeBooks } from '../../../lib/category-dedup';
 import { renderEditorial } from '../../../lib/render-editorial';
+import { normalizeCoverUrl } from '../../../lib/covers';
 
 const { slug } = Astro.params;
 if (!slug || !(slug in CATEGORIES_META)) return Astro.redirect('/books/');
@@ -134,7 +135,7 @@ const jsonLd = JSON.stringify({
             >
               <span class="text-zinc-400 font-semibold text-sm w-6 shrink-0">{i + 1}</span>
               {book.cover_url ? (
-                <img src={book.cover_url} alt={book.title} class="h-28 w-20 object-cover rounded-md shrink-0 shadow-sm" loading="lazy" />
+                <img src={normalizeCoverUrl(book.cover_url) ?? '/grimplaceholder.png'} alt={book.title} class="h-28 w-20 object-cover rounded-md shrink-0 shadow-sm" loading="lazy" onerror="this.onerror=null;this.src='/grimplaceholder.png';" />
               ) : (
                 <div class="h-28 w-20 rounded-md bg-purple-100 shrink-0" />
               )}
