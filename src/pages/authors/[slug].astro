@@ -33,7 +33,7 @@ function topN(arr: string[], n: number): string[] {
   return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, n).map(([v]) => v);
 }
 
-const topGenres = topN(allSubgenres, 6);
+const topGenres = topN(allSubgenres, 3);
 const topTropes = topN(allTropes, 6);
 const topTones  = topN(allTones, 4);
 
@@ -100,7 +100,10 @@ const READING_ORDER_MAP: Record<string, string> = {
   // Blood and Ash
   'Blood and Ash':               'blood-and-ash',
   'From Blood and Ash':          'blood-and-ash',
-
+  // Malazan prequels
+  'Path to Ascendancy':          'malazan',
+  'The Path to Ascendancy':      'malazan',
+  'Novels of the Malazan Empire': 'malazan',
 };
 
 const seriesMap = new Map<string, number>();
@@ -138,6 +141,7 @@ const cleanBio = profile?.bio
   .trim() || null;
 
 // Similar authors: scored by genre (×3) + trope (×2) + tone (×1) overlap
+// + darkness proximity penalty + popularity weight; min 8 books + avg_rating ≥ 3.8
 type SimilarAuthorRow = { name: string; slug: string; photo_url: string | null; book_count: number | null };
 
 function overlapCount(a: string[], b: string[]): number {
@@ -149,13 +153,15 @@ const scores = new Map<string, number>();
 const bump = (name: string, n: number) => scores.set(name, (scores.get(name) ?? 0) + n);
 
 const { data: genrePoolData } = topGenres.length
-  ? await supabaseClient.from('authors').select('name, top_genres').overlaps('top_genres', topGenres).neq('slug', slug).gte('book_count', 3).limit(100)
+  ? await supabaseClient.from('authors').select('name, top_genres, book_count').overlaps('top_genres', topGenres).neq('slug', slug).gte('book_count', 8).limit(100)
   : { data: [] };
 
 const genrePoolNames = new Set<string>();
 for (const a of (genrePoolData ?? []) as any[]) {
+  const genreOverlap = overlapCount(a.top_genres ?? [], topGenres);
+  if (genreOverlap < 2) continue;
   genrePoolNames.add(a.name);
-  bump(a.name, overlapCount(a.top_genres ?? [], topGenres) * 3);
+  bump(a.name, genreOverlap * 3);
 }
 
 if (genrePoolNames.size > 0) {
@@ -182,15 +188,83 @@ const topNames = [...scores.entries()]
   .map(([name]) => name);
 
 const { data: simData } = topNames.length
-  ? await supabaseClient.from('authors').select('name, slug, photo_url, book_count').in('name', topNames).gte('book_count', 3)
+  ? await supabaseClient.from('authors').select('name, slug, photo_url, book_count').in('name', topNames).gte('book_count', 8)
   : { data: [] };
 
-const simMeta = new Map(((simData ?? []) as SimilarAuthorRow[]).map((a) => [a.name, a]));
-const similarAuthors = topNames.map((n) => simMeta.get(n)).filter((a): a is SimilarAuthorRow => !!a).slice(0, 5);
+// Apply popularity weight: multiply raw score by log(book_count) so prolific authors rank higher
+const simMeta = new Map(((simData ?? []) as unknown as SimilarAuthorRow[]).map((a) => [a.name, a]));
+const weightedTopNames = topNames
+  .map((n) => {
+    const meta = simMeta.get(n);
+    if (!meta) return null;
+    const rawScore = scores.get(n) ?? 0;
+    const popularityBonus = Math.log(Math.max(meta.book_count ?? 1, 1)) * 0.5;
+    return { meta, score: rawScore + popularityBonus };
+  })
+  .filter((x): x is { meta: SimilarAuthorRow; score: number } => !!x)
+  .sort((a, b) => b.score - a.score);
 
-const metaDescription = cleanBio
+const similarAuthors = weightedTopNames.map((x) => x.meta).slice(0, 5);
+
+// Resolve *Book Title* patterns in best_starting_point to internal links
+let bestStartingPointHtml: string | null = null;
+if (profile?.best_starting_point) {
+  const raw = profile.best_starting_point;
+  const italicTitles = [...raw.matchAll(/\*([^*]+)\*/g)].map(m => m[1]);
+  const uniqueTitles = [...new Set(italicTitles)];
+  const slugMap = new Map<string, string>();
+  if (uniqueTitles.length) {
+    const { data: titleData } = await supabaseClient
+      .from('books')
+      .select('title, slug')
+      .in('title', uniqueTitles);
+    for (const b of titleData ?? []) if (b.slug) slugMap.set(b.title, b.slug);
+  }
+  bestStartingPointHtml = raw.replace(/\*([^*]+)\*/g, (_match, title) => {
+    const bookSlug = slugMap.get(title);
+    if (bookSlug) return `<a href="/books/${bookSlug}/" class="text-purple-700 hover:underline font-medium">${title}</a>`;
+    const roSlug = READING_ORDER_MAP[title];
+    if (roSlug) return `<a href="/reading-orders/${roSlug}/" class="text-purple-700 hover:underline font-medium">${title}</a>`;
+    return `<em>${title}</em>`;
+  });
+}
+
+const metaDescription = profile?.writing_style
+  ? profile.writing_style.slice(0, 160)
+  : cleanBio
   ? cleanBio.slice(0, 160)
   : `Explore all ${books.length} fantasy books by ${authorName} on The Grimoire — genres, tropes, and darkness ratings.`;
+
+// Fun stats
+const topRatedBook = sortedBooks[0] ?? null;
+const darkestBook = [...books]
+  .filter(b => b.darkness_level != null && (b.series == null || b.series !== topRatedBook?.series))
+  .sort((a, b) => (b.darkness_level ?? 0) - (a.darkness_level ?? 0) || (b.avg_rating ?? 0) - (a.avg_rating ?? 0))[0] ?? null;
+const longestSeries = seriesList[0] ?? null;
+
+// Hero reading order: first series that has a curated guide
+const heroReadingOrder = seriesList.find(s => s.readingOrderSlug) ?? null;
+
+const GENRE_SLUG_MAP: Record<string, string> = {
+  'Epic Fantasy': 'epic', 'High Fantasy': 'epic',
+  'Dark Fantasy': 'dark', 'Horror Fantasy': 'dark',
+  'Urban Fantasy': 'urban', 'Contemporary Fantasy': 'urban',
+  'Grimdark': 'grimdark', 'War Fantasy': 'grimdark',
+  'Mythic Fantasy': 'mythology', 'Folklore Fantasy': 'mythology', 'Mythology': 'mythology',
+  'Cozy Fantasy': 'cozy', 'Humorous Fantasy': 'cozy',
+  'LitRPG': 'litrpg', 'Progression Fantasy': 'litrpg',
+  'Science Fantasy': 'science-fantasy', 'Steampunk Fantasy': 'science-fantasy',
+  'Romantasy': 'romantasy', 'Romantic Fantasy': 'romantasy',
+  'Sword & Sorcery': 'swords', 'Swords & Sorcery': 'swords',
+  'Historical Fantasy': 'historical',
+  'Academy Fantasy': 'academy', 'School Fantasy': 'academy',
+};
+
+const TONE_SLUG_MAP: Record<string, string> = {
+  'Grimdark': 'grimdark',
+  'Humorous': 'cozy',
+  'Humorous Fantasy': 'cozy',
+};
 
 const SITE = 'https://thegrimoire.co';
 const authorJsonLd = JSON.stringify({
@@ -198,7 +272,7 @@ const authorJsonLd = JSON.stringify({
   '@type': 'Person',
   name: authorName,
   url: `${SITE}/authors/${slug}/`,
-  ...(cleanBio ? { description: cleanBio.slice(0, 300) } : {}),
+  ...((profile?.writing_style ?? cleanBio) ? { description: (profile?.writing_style ?? cleanBio)!.slice(0, 300) } : {}),
   ...(profile?.photo_url ? { image: profile.photo_url } : {}),
   sameAs: [
     profile?.website ?? null,
@@ -266,46 +340,102 @@ const authorBreadcrumbJsonLd = JSON.stringify({
         )}
       </div>
 
-      {(profile?.website || profile?.twitter || profile?.goodreads) && (
-        <div class="mt-3 flex flex-wrap gap-3 text-sm">
-          {profile.website && (
-            <a href={profile.website} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
-              🌐 Website
-            </a>
-          )}
-          {profile.twitter && (
-            <a href={`https://twitter.com/${profile.twitter}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
-              𝕏 @{profile.twitter}
-            </a>
-          )}
-          {profile.goodreads && (
-            <a href={profile.goodreads} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
-              📚 Goodreads
-            </a>
-          )}
-        </div>
-      )}
+      <div class="mt-3 flex flex-wrap gap-3 text-sm">
+        {heroReadingOrder && (
+          <a href={`/reading-orders/${heroReadingOrder.readingOrderSlug}/`} class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors text-xs">
+            📖 Reading Order
+          </a>
+        )}
+        {profile?.website && (
+          <a href={profile.website} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
+            🌐 Website
+          </a>
+        )}
+        {profile?.twitter && (
+          <a href={`https://twitter.com/${profile.twitter}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
+            𝕏 @{profile.twitter}
+          </a>
+        )}
+        {profile?.goodreads && (
+          <a href={profile.goodreads} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
+            📚 Goodreads
+          </a>
+        )}
+      </div>
 
     </div>
   </div>
 
   {(topGenres.length > 0 || topTropes.length > 0 || topTones.length > 0) && (
     <div class="mb-6 flex flex-wrap gap-2">
-      {topGenres.map((g) => (
-        <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">{g}</span>
-      ))}
-      {topTropes.map((t) => (
-        <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-xs sm:text-sm">{t}</span>
-      ))}
-      {topTones.map((t) => (
-        <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-zinc-100 text-zinc-700 rounded-full text-xs sm:text-sm">{t}</span>
-      ))}
+      {topGenres.map((g) => {
+        const gSlug = GENRE_SLUG_MAP[g];
+        return gSlug ? (
+          <a href={`/fantasy/${gSlug}/`} class="px-2 py-0.5 sm:px-3 sm:py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium hover:bg-purple-200 transition-colors">{g}</a>
+        ) : (
+          <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">{g}</span>
+        );
+      })}
+      {topTropes.map((t) => {
+        const tSlug = t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/, '');
+        return (
+          <a href={`/tropes/${tSlug}/`} class="px-2 py-0.5 sm:px-3 sm:py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-xs sm:text-sm hover:bg-indigo-100 transition-colors">{t}</a>
+        );
+      })}
+      {topTones.map((t) => {
+        const toneSlug = TONE_SLUG_MAP[t];
+        return toneSlug ? (
+          <a href={`/fantasy/${toneSlug}/`} class="px-2 py-0.5 sm:px-3 sm:py-1 bg-zinc-100 text-zinc-700 rounded-full text-xs sm:text-sm hover:bg-zinc-200 transition-colors">{t}</a>
+        ) : (
+          <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-zinc-100 text-zinc-700 rounded-full text-xs sm:text-sm">{t}</span>
+        );
+      })}
+    </div>
+  )}
+
+  {(darkestBook || longestSeries || topRatedBook) && (
+    <div class="mb-6 flex flex-wrap gap-3">
+      {topRatedBook?.avg_rating != null && topRatedBook.slug && (
+        <a href={`/books/${topRatedBook.slug}/`} class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-800 hover:bg-amber-100 transition-colors">
+          <span class="text-amber-500">★</span> Top rated: <span class="font-medium">{topRatedBook.title}</span> ({topRatedBook.avg_rating.toFixed(2)})
+        </a>
+      )}
+      {darkestBook?.slug && (
+        <a href={`/books/${darkestBook.slug}/`} class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 border border-zinc-300 text-xs text-zinc-700 hover:bg-zinc-200 transition-colors">
+          {DARKNESS_CANDLES[darkestBook.darkness_level ?? 1]} Darkest: <span class="font-medium">{darkestBook.title}</span>
+        </a>
+      )}
+      {longestSeries && longestSeries.bookCount > 2 && (
+        longestSeries.readingOrderSlug ? (
+          <a href={`/reading-orders/${longestSeries.readingOrderSlug}/`} class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50 border border-indigo-200 text-xs text-indigo-800 hover:bg-indigo-100 transition-colors">
+            📚 Longest series: <span class="font-medium">{longestSeries.name}</span> ({longestSeries.bookCount} books)
+          </a>
+        ) : (
+          <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50 border border-indigo-200 text-xs text-indigo-800">
+            📚 Longest series: <span class="font-medium">{longestSeries.name}</span> ({longestSeries.bookCount} books)
+          </span>
+        )
+      )}
     </div>
   )}
 
   {cleanBio && (
-    <div class="mb-10 max-w-3xl">
+    <div class="mb-6 max-w-3xl">
       <p class="text-zinc-600 leading-relaxed">{cleanBio}</p>
+    </div>
+  )}
+
+  {profile?.writing_style && (
+    <div class="mb-6 max-w-3xl">
+      <h2 class="text-base font-semibold text-zinc-900 mb-2">Why Read {authorName}</h2>
+      <p class="text-zinc-600 leading-relaxed">{profile.writing_style}</p>
+    </div>
+  )}
+
+  {bestStartingPointHtml && (
+    <div class="mb-10 max-w-3xl rounded-xl border border-purple-200 bg-purple-50/40 px-5 py-4">
+      <p class="text-xs font-semibold text-purple-600 uppercase tracking-wide mb-1">Where to Start</p>
+      <p class="text-sm text-zinc-700 leading-relaxed" set:html={bestStartingPointHtml} />
     </div>
   )}
 
@@ -394,7 +524,7 @@ const authorBreadcrumbJsonLd = JSON.stringify({
 
   <!-- Similar Authors -->
   {similarAuthors.length > 0 && (
-    <div class="hidden sm:block mb-10">
+    <div class="mb-10">
       <h2 class="text-xl font-semibold mb-4">Similar Authors</h2>
       <div class="grid gap-3 grid-cols-5">
         {similarAuthors.map((a) => {
@@ -405,7 +535,7 @@ const authorBreadcrumbJsonLd = JSON.stringify({
           return (
             <a
               href={`/authors/${a.slug}/`}
-              class="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white px-3 py-2.5 hover:border-purple-300 hover:shadow-[0_0_16px_rgba(147,51,234,0.1)] hover:-translate-y-0.5 transition-all group"
+              class="flex flex-col sm:flex-row items-center gap-1 sm:gap-3 rounded-xl border border-zinc-200 bg-white p-2 sm:px-3 sm:py-2.5 hover:border-purple-300 hover:shadow-[0_0_16px_rgba(147,51,234,0.1)] hover:-translate-y-0.5 transition-all group"
             >
               {photo ? (
                 <>
@@ -424,9 +554,9 @@ const authorBreadcrumbJsonLd = JSON.stringify({
                   {a.name[0].toUpperCase()}
                 </div>
               )}
-              <div class="min-w-0">
-                <p class="font-medium text-sm text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug line-clamp-2">{a.name}</p>
-                <p class="text-xs text-zinc-400 mt-0.5">{a.book_count ?? 0} {(a.book_count ?? 0) === 1 ? 'book' : 'books'}</p>
+              <div class="min-w-0 text-center sm:text-left">
+                <p class="font-medium text-xs sm:text-sm text-zinc-900 group-hover:text-purple-700 transition-colors leading-snug line-clamp-2">{a.name}</p>
+                <p class="hidden sm:block text-xs text-zinc-400 mt-0.5">{a.book_count ?? 0} {(a.book_count ?? 0) === 1 ? 'book' : 'books'}</p>
               </div>
             </a>
           );

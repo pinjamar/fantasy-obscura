@@ -5,6 +5,8 @@ export type AuthorProfile = {
   name: string;
   slug: string;
   bio: string | null;
+  writing_style: string | null;
+  best_starting_point: string | null;
   photo_url: string | null;
   website: string | null;
   twitter: string | null;
