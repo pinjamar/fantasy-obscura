@@ -21119,6 +21119,492 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       { title: 'Books Like Legends & Lattes', slug: 'legends-and-lattes' },
     ],
   },
+  {
+    slug: 'the-black-company',
+    source: {
+      title: 'The Black Company',
+      author: 'Glen Cook',
+      db_slug: 'the-black-company',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9780812521351-L.jpg',
+      darkness_level: 4,
+      heat_level: null,
+      series: 'Chronicles of the Black Company',
+      series_number: 1,
+      tropes: [
+        'Mercenary Company',
+        'Moral Ambiguity',
+        'Military Fantasy',
+        'Found Family',
+        'Cynical Narrator',
+        'Dark Lord Employer',
+        'No Chosen One',
+      ],
+      angle: 'Grimdark Military Fantasy',
+      answer_line:
+        'If you loved The Black Company for the mercenary brotherhood, the moral ambiguity of soldiers who work for monsters, and the terse ground-level prose that treats war as a job rather than an adventure, start with The Blade Itself, Blood Song, and Gardens of the Moon.',
+      why_people_love:
+        "The Black Company earns its reputation by refusing nearly every convention fantasy had established by 1984. The Company works for the Lady — who is unambiguously a dark lord — and Cook never lets you forget that or softens it. Croaker's narration is clipped and deliberate: the annalist records events, doesn't interpret them, and the prose has the efficiency of a military dispatch rather than an adventure story. The brotherhood of the Company is built from pragmatism rather than sentiment — these men hold together because they are each other's only option, and the loyalty is real precisely because it was never sentimental. The worldbuilding is dense and delivered sparingly; you piece together how dark the world actually is over time, and what you eventually understand is worse than what you initially suspected. No chosen ones. The villains are on the payroll. This is the template for most of what came after it in the grimdark tradition.",
+    },
+    aspects: [
+      {
+        heading:
+          'If you loved the moral ambiguity — soldiers doing genuinely terrible things for genuinely terrible employers, and not pretending otherwise...',
+        recs: [
+          {
+            title: 'The Blade Itself',
+            author: 'Joe Abercrombie',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780575077836-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The First Law',
+            series_number: 1,
+            series_label: 'Trilogy',
+            audiobook: true,
+            note: "The most direct inheritor of Cook's tradition. Abercrombie cites The Black Company as a formative influence, and the debt is clear: an Inquisitor who does torture, a barbarian who is no noble savage, a crippled mage who is manipulating everyone. The First Law trilogy is what happens when the fantasy subgenre Cook seeded grows up and gets more explicitly aware of what it's doing. The prose is sharper and more character-driven than Cook's, the dark comedy more pronounced. Caveat: The Blade Itself is a setup novel — the First Law trilogy needs to be read as a unit to pay off.",
+            tags: [
+              'Grimdark',
+              'Morally Grey',
+              'Military Fantasy',
+              'Subverted Tropes',
+              'Dark Comedy',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie&affiliate=122720',
+          },
+          {
+            title: 'Best Served Cold',
+            author: 'Joe Abercrombie',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780316044981-L.jpg',
+            darkness_level: 5,
+            heat_level: null,
+            standalone: true,
+            audiobook: true,
+            note: "If The Black Company's appeal was specifically the hired-killers-with-no-redemption-arc dynamic, Best Served Cold is the closest match in tone. A female mercenary betrayed by her employer assembles a crew to murder seven people — the book is entirely honest about what that requires. The ensemble cast has the same mercenary-band feel as the Company, the POV is ground-level, and Abercrombie never reaches for moral comfort. Caveat: darker and more brutal than The Black Company, and the standalone structure means there's no multi-book brotherhood arc — the crew forms and fractures within one book.",
+            tags: [
+              'Mercenary Crew',
+              'Revenge Arc',
+              'Dark',
+              'No Redemption',
+              'Ensemble Cast',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Best+Served+Cold+Joe+Abercrombie&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Best+Served+Cold+Abercrombie&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the mercenary brotherhood — soldiers bound to each other by shared history and nothing higher...',
+        recs: [
+          {
+            title: 'Blood Song',
+            author: 'Anthony Ryan',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780425268230-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: "Raven's Shadow",
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "Vaelin Al Sorna is trained from childhood in a military brotherhood order — the same institutional loyalty as the Company, the same understanding that these are the only people you have. Ryan writes combat and military camaraderie with the same no-nonsense economy as Cook, and the brotherhood forged in the Order has the same earned quality as the Company's. More character-driven than The Black Company, somewhat more hopeful in tone. Caveat: book two shifts structure significantly and loses some of what makes book one work — go in knowing book one is the peak.",
+            tags: [
+              'Military Brotherhood',
+              'Training Arc',
+              'Dark World',
+              'Terse Prose',
+              'Loyalty Over Everything',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Blood+Song+Anthony+Ryan&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Blood+Song+Anthony+Ryan&affiliate=122720',
+          },
+          {
+            title: 'Kings of the Wyld',
+            author: 'Nicholas Eames',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780316489270-L.jpg',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Band',
+            series_number: 1,
+            series_label: 'Series (2 books)',
+            audiobook: true,
+            note: "A middle-aged mercenary band coming out of retirement for one last job — structurally the same premise as The Black Company, treated with a lighter touch and explicit affection for the fantasy genre rather than cynicism about it. The brotherhood and the loyalty feel real, the combat is well-paced, and Eames' humour is genuinely funny without undermining the emotional stakes. The darkness level is lower than Cook's, but the found-family-of-soldiers dynamic is arguably the best modern version of that specific pleasure. Caveat: this is affectionate genre fun, not grimdark — if Cook's nihilism was the point, this won't scratch the same itch.",
+            tags: [
+              'Mercenary Band',
+              'Found Family',
+              'Road Fantasy',
+              'Dark Humour',
+              'Brotherhood',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Kings+of+the+Wyld+Nicholas+Eames&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Kings+of+the+Wyld+Eames&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the ground-level military scope — war narrated by the people doing the fighting, never from a throne...',
+        recs: [
+          {
+            title: 'Gardens of the Moon',
+            author: 'Steven Erikson',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780765348784-L.jpg',
+            darkness_level: 5,
+            heat_level: null,
+            standalone: false,
+            series: 'Malazan Book of the Fallen',
+            series_number: 1,
+            series_label: 'Series (10 books)',
+            audiobook: true,
+            note: "Erikson explicitly names The Black Company as a founding influence, and it shows: the Malazan world is built from the soldier's-eye-view upward, the moral ambiguity is structural, and the scale of violence is treated with the same grim matter-of-factness as Cook. Gardens of the Moon is the largest and most ambitious version of what The Black Company started. Caveat: Erikson throws you in with no orientation — the first 200 pages are deliberately disorienting and require patience. If you bounced off it, try Deadhouse Gates (book two) as an alternative entry point.",
+            tags: [
+              'Military Fantasy',
+              'Massive Scope',
+              'Ground-Level POV',
+              'Dark World',
+              'Morally Complex',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Gardens+of+the+Moon+Steven+Erikson&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Gardens+of+the+Moon+Erikson&affiliate=122720',
+          },
+          {
+            title: 'Promise of Blood',
+            author: 'Brian McClellan',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780316219037-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'Powder Mage',
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "A military general who has just led a coup, a world built around guns and magic, and a prose style that moves with the same functional efficiency as Cook's. McClellan is a Sanderson-trained author but Promise of Blood feels more like Cook than Sanderson: the politics are brutal, the magic has hard costs, and the protagonists are people who have already done terrible things before the book begins. The flintlock-fantasy setting differentiates it cleanly from Abercrombie's medieval template while hitting the same grimdark military nerve. Caveat: magic system is more prominent than in The Black Company — if you loved Cook's restrained, ominous approach to magic, McClellan's is more explicit and systematised.",
+            tags: [
+              'Military Fantasy',
+              'Flintlock',
+              'Grimdark',
+              'Coup Plot',
+              'Hard Magic System',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Promise+of+Blood+Brian+McClellan&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Promise+of+Blood+McClellan&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like The Blade Itself', slug: 'the-blade-itself' },
+      { title: 'Books Like Best Served Cold', slug: 'best-served-cold' },
+      { title: 'Books Like Blood Song', slug: 'blood-song' },
+    ],
+  },
+  {
+    slug: 'the-serpent-and-the-wings-of-night',
+    source: {
+      title: 'The Serpent & the Wings of Night',
+      author: 'Carissa Broadbent',
+      db_slug: 'the-serpent-the-wings-of-night',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9780316392426-L.jpg',
+      darkness_level: 4,
+      heat_level: 'Explicit',
+      series: 'Crowns of Nyaxia',
+      series_number: 1,
+      tropes: [
+        'Enemies to Lovers',
+        'Forced Alliance',
+        'Death Tournament',
+        'Vampire World',
+        'Human Among Monsters',
+        'Morally Grey Love Interest',
+        'Forbidden Romance',
+        'Slow Burn',
+      ],
+      angle: 'Dark Vampire Romantasy with a Death Tournament',
+      answer_line:
+        'If you loved The Serpent & the Wings of Night for the wary forced-alliance romance, brutal tournament stakes, and explicit heat built on 400 pages of earned tension, start with From Blood and Ash, A Touch of Darkness, and Nevernight.',
+      why_people_love:
+        "What Broadbent does that most vampire romantasy doesn't: she makes the power imbalance structural rather than decorative. Oraya is the only human in a death tournament designed by a vampire god, and the book never lets you forget how precarious that is. The forced alliance with Raihn works because both of them are operating from genuine self-interest — there's no manufactured reason to trust each other, and the book leans into that entirely. The darkness here isn't aesthetic; people die badly in ways that matter to the plot. The explicit romance is built on hundreds of pages of accumulated tension rather than dropped in at intervals. The worldbuilding (the Houses of Night and Dawn, the Nyaxia religion, the vampire hierarchy) rewards attention without front-loading exposition. Readers who come for the spice get it — but what tends to stick is how much it earns.",
+    },
+    aspects: [
+      {
+        heading:
+          'If you loved the forced alliance between Oraya and Raihn — two people with every reason not to trust each other, stuck together anyway...',
+        recs: [
+          {
+            title: 'From Blood and Ash',
+            author: 'Jennifer L. Armentrout',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781952457760-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Explicit',
+            standalone: false,
+            series: 'Blood and Ash',
+            series_number: 1,
+            series_label: 'Series (6 books)',
+            audiobook: true,
+            note: "The closest structural match to the Oraya/Raihn dynamic in the wider romantasy space: a heroine kept sheltered and watched, a protector who clearly feels more than he should, and a romance built entirely on charged tension neither of them will admit to. Hawke carries his own layers of secrets, and the lore reveals in book one are legitimately surprising. The explicit heat is equivalent; the sense of a heroine who is underestimated and shouldn't be is the same. Caveat: the writing is more functional than literary — you're here for the dynamic and the plot twists, not prose craftsmanship.",
+            tags: [
+              'Forbidden Romance',
+              'Forced Proximity',
+              'Explicit',
+              'Morally Grey Hero',
+              'Hidden Identity',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=From+Blood+and+Ash&affiliate=122720',
+          },
+          {
+            title: 'The Bridge Kingdom',
+            author: 'Danielle L. Jensen',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781733090032-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Explicit',
+            standalone: false,
+            series: 'Bridge Kingdom',
+            series_number: 1,
+            series_label: 'Series (4 books)',
+            audiobook: true,
+            note: "A princess sent to spy on a king she's been told is a monster — except the monster keeps being right about things. Jensen builds the alliance romance with the same structural patience as Broadbent: two people with completely opposing agendas who are forced to function as a unit, and the trust that develops despite every reason it shouldn't. Lower darkness and no vampire mythology, but the \"I came here as your enemy and now I don't know what I am\" energy is the same. Caveat: lower heat than Serpent until mid-series.",
+            tags: [
+              'Forced Alliance',
+              'Political Enemies',
+              'Slow Burn',
+              'Enemies to Lovers',
+              'Spy Romance',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Bridge+Kingdom+Danielle+Jensen&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Bridge+Kingdom+Jensen&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the Kejari — the kill-or-be-killed tournament where survival requires compromising everything you came in with...',
+        recs: [
+          {
+            title: 'Nevernight',
+            author: 'Jay Kristoff',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781250301550-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Open Door',
+            standalone: false,
+            series: 'The Nevernight Chronicle',
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "An assassination school where trainees kill each other during the selection process — the same tournament-as-institution energy as the Kejari, with a similar willingness to kill characters you've started caring about. Mia is the closest thing to an Oraya equivalent: a girl who should not be here, operating in a world built to destroy her, making morally complex choices to stay alive. The prose style is maximalist and footnoted, which either works brilliantly or exhausts you. Caveat: the explicit romance is lower-heat than Serpent, and the ending of book one is divisive.",
+            tags: [
+              'Death Tournament',
+              'Assassination School',
+              'Morally Grey Heroine',
+              'Dark World',
+              'Vengeance Arc',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Nevernight+Kristoff&affiliate=122720',
+          },
+          {
+            title: 'An Ember in the Ashes',
+            author: 'Sabaa Tahir',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Sweet Romance',
+            standalone: false,
+            series: 'An Ember in the Ashes',
+            series_number: 1,
+            series_label: 'Series (4 books)',
+            audiobook: true,
+            note: "The brutal military trials in An Ember in the Ashes hit the same nerve as the Kejari: a designed-to-kill institution where forming attachments is the most dangerous thing you can do. Laia starts as someone who shouldn't survive the first week and refuses to stop surviving. The dual-POV structure gives you the oppressor's side as well as the resistance's, which gives the world a weight that single-POV tournament books often miss. Caveat: far lower heat than Serpent — this is emotional intensity without the explicit romance.",
+            tags: [
+              'Death Trials',
+              'Dual POV',
+              'Military Fantasy',
+              'Underdog Protagonist',
+              'Slow Burn',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved Raihn — a love interest who is genuinely dangerous, keeps real secrets, and earns the trust he gets over hundreds of pages...',
+        recs: [
+          {
+            title: 'A Touch of Darkness',
+            author: 'Scarlett St. Clair',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781728243375-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Explicit',
+            standalone: false,
+            series: 'Hades & Persephone',
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "Hades is the same archetype as Raihn: an entity of genuine power operating in a world that should terrify the heroine, presenting as one thing and being another. The enemies-to-lovers arc is structurally similar — two people whose first interaction is hostile and whose dynamic evolves through forced proximity in a high-stakes world. The explicit heat is present from early on, the Greek mythology is lushly rendered, and the tension is built on genuine uncertainty about Hades' motivations. Caveat: the prose is more commercial than Broadbent's — lighter on the emotional interiority.",
+            tags: [
+              'Enemies to Lovers',
+              'Morally Grey Love Interest',
+              'Explicit',
+              'Greek Mythology',
+              'Powerful Hero',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=A+Touch+of+Darkness+Scarlett+St+Clair&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=A+Touch+of+Darkness+St+Clair&affiliate=122720',
+          },
+          {
+            title: 'Kingdom of the Wicked',
+            author: 'Kerri Maniscalco',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780316428354-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Kingdom of the Wicked',
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "Wrath — the demon lord Emilia makes a deal with — has the same quality as Raihn: clearly operating from a separate agenda, withholding information that would change everything, and doing it with enough charm and menace that you can't decide whether to trust him. The Victorian Sicily setting is opulent and atmospheric, the deal-with-a-demon structure puts the heroine in a similar position of needing her antagonist to survive, and the slow-burn tension is well-maintained across the trilogy. Caveat: much lower heat than Serpent — the tension is there but the door stays closed.",
+            tags: [
+              'Deal with a Demon',
+              'Morally Grey Love Interest',
+              'Dark Atmosphere',
+              'Enemies to Lovers',
+              'Historical Setting',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Kingdom+of+the+Wicked+Kerri+Maniscalco&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Kingdom+of+the+Wicked+Maniscalco&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the vampire world itself — the Houses, the Nyaxia religion, and the sense that the entire setting is built on beautiful, deliberate violence...',
+        recs: [
+          {
+            title: 'The Beautiful',
+            author: 'Renée Ahdieh',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781984836038-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'The Beautiful',
+            series_number: 1,
+            series_label: 'Series (4 books)',
+            audiobook: true,
+            note: "The vampire world-building in The Beautiful has the same lush deliberateness as Nyaxia — New Orleans 1872 setting, a vampire court that operates on beauty as currency, and a heroine who enters it without understanding the rules. Ahdieh's prose is some of the most atmospheric in the vampire fantasy space, and the horror underneath the elegance feels genuinely threatening. Caveat: much lower heat than Serpent, and the romance builds slowly — this is for readers who loved the worldbuilding and atmosphere of Broadbent's setting more than the explicit romance.",
+            tags: [
+              'Vampire World',
+              'Atmospheric Setting',
+              'Lush Prose',
+              'Hidden Danger',
+              'Historical Fantasy',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Beautiful+Renee+Ahdieh&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Beautiful+Ahdieh&affiliate=122720',
+          },
+          {
+            title: 'A Court of Silver Flames',
+            author: 'Sarah J. Maas',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781635575613-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Fiery',
+            standalone: false,
+            series: 'A Court of Thorns and Roses',
+            series_number: 4,
+            series_label: 'Series (5 books)',
+            audiobook: true,
+            note: "If the explicit heat and the enemies-to-lovers warrior dynamic in Serpent were the primary draw, ACOSF is the natural companion read — same heat level, same core structure of two people who are both too proud and too damaged to admit what's happening. Nesta and Cassian aren't vampires, but the Illyrian warrior culture has the same violent elegance as the Nyaxia world. Caveat: this is book four of ACOTAR — requires series context. If you haven't read the earlier books, start with ACOTAR or ACOSF won't hit the same way.",
+            tags: [
+              'Enemies to Lovers',
+              'Warrior Culture',
+              'Explicit',
+              'Training Arc',
+              'Found Family',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=A+Court+of+Silver+Flames+Sarah+J+Maas&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=A+Court+of+Silver+Flames&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [
+      {
+        title: 'Fourth Wing',
+        author: 'Rebecca Yarros',
+        cover_url: 'https://books.google.com/books/publisher/content/images/frontcover/2BKGEAAAQBAJ?fife=w400-h600',
+        darkness_level: 4,
+        heat_level: 'Explicit',
+        standalone: false,
+        tags: ['Death Academy', 'Enemies to Lovers', 'Explicit', 'Dragon Riders', 'Slow Burn'],
+        why: "Dragon riders at a war college where the training is designed to kill you — the closest parallel to the Kejari's organised violence in the wider romantasy space. Xaden has the same \"dangerously competent and keeping something from her\" energy as Raihn. The explicit heat is equivalent, the slow-burn builds over a full book, and the world-building has real depth. Caveat: if you loved Serpent's vampire mythology specifically, Fourth Wing's dragon lore is different in tone — less elegantly sinister, more militaristic adrenaline.",
+        audiobook: true,
+        amazon_url: 'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros&tag=librariancura-20',
+        bookshop_url: 'https://bookshop.org/search?keywords=Fourth+Wing+Yarros&affiliate=122720',
+      },
+      {
+        title: 'The Ashes & the Star-Cursed King',
+        author: 'Carissa Broadbent',
+        cover_url: 'https://covers.openlibrary.org/b/isbn/9780316392457-L.jpg',
+        darkness_level: 4,
+        heat_level: 'Explicit',
+        standalone: false,
+        tags: ['Same Author', 'Series Continuation', 'Explicit', 'Enemies to Lovers', 'Vampire World'],
+        why: "Book two of Crowns of Nyaxia, picking up directly from the end of Serpent. Broadbent doesn't reset the relationship or manufacture new obstacles — the story earns where it takes the characters, and the darkness escalates in ways that feel inevitable rather than gratuitous. This is the rare sequel that delivers on the promises of book one. Caveat: read Serpent first — Ashes has no meaningful standalone entry point.",
+        audiobook: true,
+        amazon_url: 'https://www.amazon.com/s?k=The+Ashes+Star-Cursed+King+Broadbent&tag=librariancura-20',
+        bookshop_url: 'https://bookshop.org/search?keywords=Ashes+Star-Cursed+King+Broadbent&affiliate=122720',
+      },
+      {
+        title: 'Iron Flame',
+        author: 'Rebecca Yarros',
+        cover_url: 'https://covers.openlibrary.org/b/isbn/9781649374172-L.jpg',
+        darkness_level: 4,
+        heat_level: 'Explicit',
+        standalone: false,
+        tags: ['Series Continuation', 'Explicit', 'Dark Secrets Revealed', 'Dragon Riders'],
+        why: "If Fourth Wing worked for you, Iron Flame raises the stakes and the darkness significantly — similar to how Ashes & the Star-Cursed King relates to Serpent. The explicit heat continues, the secrets kept in book one start paying off, and the world-building expands into something more genuinely threatening. Caveat: requires reading Fourth Wing first; the impact depends entirely on book-one investment.",
+        audiobook: true,
+        amazon_url: 'https://www.amazon.com/s?k=Iron+Flame+Rebecca+Yarros&tag=librariancura-20',
+        bookshop_url: 'https://bookshop.org/search?keywords=Iron+Flame+Yarros&affiliate=122720',
+      },
+    ],
+    related: [
+      { title: 'Books Like From Blood and Ash', slug: 'from-blood-and-ash' },
+      { title: 'Books Like A Court of Silver Flames', slug: 'a-court-of-silver-flames' },
+      { title: 'Books Like Fourth Wing', slug: 'fourth-wing' },
+    ],
+  },
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
