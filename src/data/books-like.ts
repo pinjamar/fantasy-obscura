@@ -21120,6 +21120,391 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
     ],
   },
   {
+    slug: 'house-of-salt-and-sorrows',
+    source: {
+      title: 'House of Salt and Sorrows',
+      author: 'Erin A. Craig',
+      db_slug: 'house-of-salt-and-sorrows',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9780593109991-L.jpg',
+      darkness_level: 3,
+      heat_level: 'Closed Door',
+      series: null,
+      series_number: null,
+      tropes: [
+        'Dark Fairy Tale Retelling',
+        'Gothic Atmosphere',
+        'Mystery Deaths',
+        'Sisterhood',
+        'Unreliable Reality',
+        'Coastal Setting',
+        'Secret Underground World',
+        'Slow Burn Romance',
+      ],
+      angle: 'Gothic Dark Fairy Tale Retelling',
+      answer_line:
+        'If you loved House of Salt and Sorrows for the creeping gothic dread, the Twelve Dancing Princesses retelling structure, and the sense that something impossibly beautiful is also killing everyone around the heroine, start with Caraval, House of Hollow, and The Hazel Wood.',
+      why_people_love:
+        "House of Salt and Sorrows works because Craig commits fully to the atmosphere — the salt-eaten estate, the sea that never stops taking, and the beautiful horror of the secret underground balls. The Twelve Dancing Princesses structure gives the mystery a built-in dread: you know from page one that the dancing is wrong, and watching Annaleigh piece together why while simultaneously being drawn into it herself is the engine that drives the book. The sisterhood is the emotional core — twelve daughters being picked off one by one, and the grief underneath the horror is real. The romance is present but never the point. This is for readers who want the fairy tale gothic experience: lush setting, creeping dread, a mystery that turns out to be worse than you suspected, and a heroine who has to trust her own perception against a world that keeps telling her she's imagining things.",
+    },
+    aspects: [
+      {
+        heading:
+          'If you loved the dark fairy tale structure — the secret world beneath the surface, the dangerous beauty, and the sense that the magic is the threat...',
+        recs: [
+          {
+            title: 'Caraval',
+            author: 'Stephanie Garber',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781250095268-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: false,
+            series: 'Caraval',
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "The closest tonal match to House of Salt and Sorrows: sisters, a magical experience that is also a trap, and a heroine who can't be certain what's real. Garber's Caraval is a game that might be killing people, hosted in a world so lush and sensory it makes the danger feel seductive rather than obvious. The prose style is similarly atmospheric and the mystery structure is nearly identical — you're trying to solve what's real at the same time the protagonist is. Caveat: Caraval leans more into the romance than Craig does, and the tone is slightly more whimsical. If House of Salt and Sorrows' horror elements were the main draw, Caraval is lighter.",
+            tags: [
+              'Magical Game',
+              'Sisters',
+              'Mystery',
+              'Dangerous Beauty',
+              'Atmospheric',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Caraval+Stephanie+Garber&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Caraval+Stephanie+Garber&affiliate=122720',
+          },
+          {
+            title: 'The Hazel Wood',
+            author: 'Melissa Albert',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781250307255-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The Hazel Wood',
+            series_number: 1,
+            series_label: 'Series (2 books)',
+            audiobook: true,
+            note: "A girl who has spent her whole life running from the dark fairy tales in her grandmother's famous book, until the stories start coming for her directly. Albert writes fairy tale horror with the same commitment to atmosphere as Craig — the Hinterland stories are genuinely unsettling, and the sense of a beautiful world that operates by rules designed to hurt you is the same engine. The darkness is a notch higher than House of Salt and Sorrows and the romance is nearly absent. Caveat: more horror-adjacent and less mystery-driven than Craig — the dread here is more existential, less whodunit.",
+            tags: [
+              'Fairy Tale Horror',
+              'Dark Atmosphere',
+              'Cursed Family',
+              'Unreliable World',
+              'Literary',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Hazel+Wood+Melissa+Albert&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Hazel+Wood+Albert&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the gothic horror core — the decaying estate, the mysterious deaths, and the heroine who can\'t trust what she\'s seeing...',
+        recs: [
+          {
+            title: 'House of Hollow',
+            author: 'Krystal Sutherland',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780593302217-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: true,
+            audiobook: true,
+            note: "Three sisters who disappeared as children and came back changed, and now one of them is missing again. House of Hollow is the most direct structural companion to House of Salt and Sorrows in the market: sisters, mysterious disappearances, a horror that is beautiful before it is terrible, and a protagonist piecing together what actually happened to her family. The darkness is higher than Craig's — Sutherland is writing literary horror rather than gothic fairy tale — and the atmosphere is similarly consuming. Caveat: standalone with no romance arc; readers who came to Craig for the slow-burn relationship will find less of that here.",
+            tags: [
+              'Missing Sisters',
+              'Gothic Horror',
+              'Family Mystery',
+              'Beautiful Dread',
+              'Unreliable Memory',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=House+of+Hollow+Krystal+Sutherland&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=House+of+Hollow+Sutherland&affiliate=122720',
+          },
+          {
+            title: "Miss Peregrine's Home for Peculiar Children",
+            slug: 'miss-peregrines-home-for-peculiar-children',
+            author: 'Ransom Riggs',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781594746031-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Sweet Romance',
+            standalone: false,
+            series: 'Miss Peregrine',
+            series_number: 1,
+            series_label: 'Series (3 books)',
+            audiobook: true,
+            note: "A decaying island estate, children with abilities that are also curses, a mystery about what happened to the previous inhabitants, and a protagonist who slowly realises the world is stranger and darker than anyone told him. The gothic atmosphere and the sense of a beautiful-but-wrong setting are the same register as Craig. The darkness is comparable — death is present but never gratuitous — and the mystery structure rewards the same patient attention. Caveat: the protagonist is male and the romance is lower-heat; readers who came to Craig specifically for the female-perspective sisterhood story will find a different emotional centre here.",
+            tags: [
+              'Gothic Mystery',
+              'Peculiar Children',
+              'Island Setting',
+              'Dark Secrets',
+              'Time Loop',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Miss+Peregrine+Home+Peculiar+Children+Riggs&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Miss+Peregrine+Peculiar+Children&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the fairy tale darkness and the female-centred story — a world built from folklore that turns its horror inward...',
+        recs: [
+          {
+            title: 'Spinning Silver',
+            author: 'Naomi Novik',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780399180996-L.jpg',
+            darkness_level: 3,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "Novik's Rumpelstiltskin retelling and Craig's Twelve Dancing Princesses share the same DNA: fairy tale structures used to explore female agency in worlds that want to consume women, lush atmospheric prose, and a romance built on mutual suspicion rather than immediate attraction. Spinning Silver is more grounded in Slavic folklore and more politically complex than House of Salt and Sorrows, but the emotional register — a young woman navigating a beautiful and dangerous supernatural world by being smarter than the things trying to trap her — is nearly identical. Caveat: less horror, more fairy tale wisdom — the dread here is cold rather than creeping.",
+            tags: [
+              'Fairy Tale Retelling',
+              'Female Agency',
+              'Folklore',
+              'Atmospheric',
+              'Slow Burn',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Spinning+Silver+Naomi+Novik&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Spinning+Silver+Novik&affiliate=122720',
+          },
+          {
+            title: 'Mexican Gothic',
+            author: 'Silvia Moreno-Garcia',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9781250301970-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "A glamorous socialite arrives at a decaying estate in 1950s Mexico to investigate her cousin's strange behaviour, and discovers the house itself is wrong. Mexican Gothic hits exactly the same notes as House of Salt and Sorrows: a beautiful, rotting setting; a protagonist whose perception is gradually undermined; deaths that don't make sense; and an atmosphere of elegant horror that builds rather than announces itself. The prose is sharper and the horror more visceral than Craig's, and the gothic tradition it draws from is more literary. Caveat: adult horror rather than YA fantasy — no magic system, no fairy tale structure, and the darkness at the end is genuinely disturbing.",
+            tags: [
+              'Gothic Horror',
+              'Decaying Estate',
+              'Unreliable Reality',
+              'Female Protagonist',
+              'Atmospheric Dread',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Mexican+Gothic+Silvia+Moreno-Garcia&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Mexican+Gothic+Moreno-Garcia&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like A Court of Thorns and Roses', slug: 'acotar' },
+      { title: 'Books Like The Night Circus', slug: 'the-night-circus' },
+      { title: 'Books Like Uprooted', slug: 'uprooted' },
+    ],
+  },
+  {
+    slug: 'the-darkness-that-comes-before',
+    source: {
+      title: 'The Darkness That Comes Before',
+      author: 'R. Scott Bakker',
+      db_slug: 'the-darkness-that-comes-before',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9781585677757-L.jpg',
+      darkness_level: 5,
+      heat_level: null,
+      series: 'The Prince of Nothing',
+      series_number: 1,
+      tropes: [
+        'Manipulative Genius Protagonist',
+        'Holy War',
+        'Ancient Evil',
+        'Philosophical Fantasy',
+        'Unreliable Narrator',
+        'Grimdark',
+        'Hidden History',
+        'Sorcery at a Cost',
+      ],
+      angle: 'Philosophical Grimdark Epic Fantasy',
+      answer_line:
+        'If you loved The Darkness That Comes Before for Kellhus as an utterly alien intellect moving through ordinary people, the Crusades-inspired Holy War, and the philosophical density that treats ideas as seriously as violence, start with Gardens of the Moon, Dune, and The Lions of Al-Rassan.',
+      why_people_love:
+        "The Darkness That Comes Before is built around a question most fantasy ignores: can you have free will if someone understands you well enough to predict every choice you make? Kellhus is trained from birth in a monastery of philosopher-warriors to read and model human behaviour — and when he descends into the world, he moves through ordinary people the way a chess grandmaster moves through beginners. Watching him is fascinating and deeply unsettling, and the book is honest about both. Achamian — the sorcerer-scholar who teaches Kellhus what he needs and slowly realises what he's teaching — is one of the most tragic characters in modern epic fantasy. The Crusades-inspired Holy War is rendered with genuine historical density, the sorcery is visually stunning and conceptually terrifying, and the world-building goes back ten thousand years without front-loading any of it. This is demanding prose that rewards rereading. The book contains sexual violence and does not soften its darkness. For readers who want fantasy that takes philosophy seriously as subject matter, it has no real equivalent.",
+    },
+    aspects: [
+      {
+        heading:
+          'If you loved Kellhus — a protagonist operating on a completely different plane from everyone around him, reading and manipulating every room he walks into...',
+        recs: [
+          {
+            title: 'Dune',
+            author: 'Frank Herbert',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'Dune',
+            series_number: 1,
+            series_label: 'Series (6 books + sequels)',
+            audiobook: true,
+            note: "Paul Atreides is the closest analogue to Kellhus in scope and structure: a figure with trained-beyond-normal-human perception arriving in a setting of religious and political complexity and being read by almost no one around him as what he actually is. Herbert is interested in the same questions Bakker is — about prescience, manipulation, and whether a superior intellect represents liberation or a new kind of trap. The prose is equally dense and the world-building equally withholding. Caveat: Dune is more restrained in its violence and less philosophically hostile than Bakker — Herbert offers more hope about his messianic figure, at least in book one.",
+            tags: [
+              'Superhuman Protagonist',
+              'Religious Politics',
+              'Dense World-Building',
+              'Philosophical Depth',
+              'Messianic Arc',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Dune+Frank+Herbert&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Dune+Frank+Herbert&affiliate=122720',
+          },
+          {
+            title: 'The Book of the New Sun',
+            author: 'Gene Wolfe',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780671831370-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The Book of the New Sun',
+            series_number: 1,
+            series_label: 'Series (4 books)',
+            audiobook: true,
+            note: "The most philosophically demanding fantasy novel ever written, narrated by a torturer who is unreliable in ways that only become clear on rereading. Wolfe and Bakker are the two authors in the genre most interested in consciousness, perception, and the gap between what a narrator knows and what they tell you. The prose is dense, the world withholds its explanations, and the darkness is real. If The Darkness That Comes Before is asking what free will means when someone can perfectly model you, The Book of the New Sun is asking what truth means when the narrator can't be trusted. Caveat: Wolfe is harder and more elliptical than Bakker — some readers require a companion guide for book one.",
+            tags: [
+              'Unreliable Narrator',
+              'Dense Prose',
+              'Philosophical Horror',
+              'Far Future',
+              'Demanding Read',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Shadow+of+the+Torturer+Gene+Wolfe&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Shadow+Torturer+Gene+Wolfe&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the Holy War setting — religious fervour as political engine, faith weaponised by people who understand it perfectly...',
+        recs: [
+          {
+            title: 'The Lions of Al-Rassan',
+            author: 'Guy Gavriel Kay',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780060733469-L.jpg',
+            darkness_level: 4,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "The most directly Crusades-adjacent fantasy novel, set in an analogue of medieval Iberia at the moment when the three-faith equilibrium collapses into holy war. Kay is interested in the same things Bakker is — what religion does to people when it becomes a tool of power, how individuals get destroyed by historical forces larger than themselves — but he writes with extraordinary emotional warmth rather than philosophical coldness. The characters are among the most fully realised in genre fantasy. Caveat: Kay's darkness serves beauty rather than philosophy — this is not nihilistic, and readers who came specifically for Bakker's bleakness will find Kay kinder and more elegiac.",
+            tags: [
+              'Holy War',
+              'Three Cultures',
+              'Historical Fantasy',
+              'Political Tragedy',
+              'Beautiful Prose',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Lions+of+Al-Rassan+Guy+Gavriel+Kay&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Lions+Al-Rassan+Kay&affiliate=122720',
+          },
+          {
+            title: 'A Game of Thrones',
+            author: 'George R.R. Martin',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780553588486-L.jpg',
+            darkness_level: 5,
+            heat_level: 'Open Door',
+            standalone: false,
+            series: 'A Song of Ice and Fire',
+            series_number: 1,
+            series_label: 'Series (5 books, ongoing)',
+            audiobook: true,
+            note: "The overlap between ASOIAF and Bakker's readership is nearly complete: both are epic fantasy that treat political manipulation as the core engine of the plot, both refuse to protect characters the reader has invested in, and both use religion as a force that genuinely shapes historical events rather than decorating them. Martin is less philosophically dense and more immediately propulsive than Bakker — the chapters are shorter, the hooks are harder. Caveat: the series is unfinished with no confirmed completion date; Bakker's main trilogy ends on its own terms.",
+            tags: [
+              'Political Manipulation',
+              'No Safe Characters',
+              'Grimdark',
+              'Multiple POVs',
+              'Epic Scope',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=A+Game+of+Thrones+George+Martin&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Game+of+Thrones+Martin&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the vast hidden history and the sense that the worst thing imaginable happened before the book begins and is happening again...',
+        recs: [
+          {
+            title: 'Gardens of the Moon',
+            author: 'Steven Erikson',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780765348784-L.jpg',
+            darkness_level: 5,
+            heat_level: null,
+            standalone: false,
+            series: 'Malazan Book of the Fallen',
+            series_number: 1,
+            series_label: 'Series (10 books)',
+            audiobook: true,
+            note: "Bakker and Erikson are the two most demanding authors working in epic fantasy, and they are in direct conversation with each other — both are interested in civilisational collapse, both build worlds with histories far older than the story being told, and both refuse to explain themselves to readers who want an easier ride. Erikson's world is wider; Bakker's prose is more controlled. Gardens of the Moon drops you into a war already in progress with no orientation, exactly as Bakker drops you into a Holy War mid-march. Caveat: the first 200 pages of Gardens of the Moon are notoriously disorienting — it opens with far less narrative grip than Bakker's book.",
+            tags: [
+              'Ancient Evil',
+              'Vast Hidden History',
+              'Military Fantasy',
+              'Demanding Prose',
+              'Civilisational Stakes',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=Gardens+of+the+Moon+Steven+Erikson&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Gardens+of+the+Moon+Erikson&affiliate=122720',
+          },
+          {
+            title: 'The Blade Itself',
+            author: 'Joe Abercrombie',
+            cover_url: 'https://covers.openlibrary.org/b/isbn/9780575077836-L.jpg',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The First Law',
+            series_number: 1,
+            series_label: 'Trilogy',
+            audiobook: true,
+            note: "The most accessible of Bakker's natural companions: Abercrombie takes the philosophical scepticism implicit in Bakker's world and makes it explicit through characters who are self-aware about their own moral failures. The First Law doesn't have Bakker's density or philosophical ambition, but it shares the refusal to offer heroism as a real option and the understanding that history is shaped by manipulation rather than virtue. A good entry point for readers who found The Darkness That Comes Before too demanding and want to stay in the same moral register at a more manageable pace. Caveat: significantly less philosophically dense — for readers who came specifically for Bakker's ideas, Abercrombie will feel like the commercial adaptation.",
+            tags: [
+              'Grimdark',
+              'Morally Grey',
+              'Subverted Heroism',
+              'Political Manipulation',
+              'Dark Comedy',
+            ],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [],
+    related: [
+      { title: 'Books Like A Game of Thrones', slug: 'a-game-of-thrones' },
+      { title: 'Books Like The Blade Itself', slug: 'the-blade-itself' },
+      { title: 'Books Like The Name of the Wind', slug: 'the-name-of-the-wind' },
+    ],
+  },
+  {
     slug: 'the-black-company',
     source: {
       title: 'The Black Company',
