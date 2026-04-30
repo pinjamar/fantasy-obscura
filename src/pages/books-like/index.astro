@@ -230,6 +230,7 @@ const booksLikePageJsonLd = JSON.stringify({
       }
 
       function render() {
+        history.replaceState(null, '', location.pathname + (currentPage > 1 ? '#page=' + currentPage : ''));
         var totalPages = Math.ceil(filteredCards.length / PER_PAGE) || 1;
         var start = (currentPage - 1) * PER_PAGE;
 
@@ -322,6 +323,9 @@ const booksLikePageJsonLd = JSON.stringify({
         var totalPages = Math.ceil(filteredCards.length / PER_PAGE);
         if (currentPage < totalPages) { currentPage++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
       });
+
+      var pageMatch = location.hash.match(/page=(\d+)/);
+      if (pageMatch) currentPage = Math.max(1, parseInt(pageMatch[1]) || 1);
 
       render();
     });
