@@ -162,6 +162,16 @@ export default function ReadingOrder({ books, groups, description, showLegend = 
               </div>
             )}
 
+            {/* Group note */}
+            {group.note && group.noteType && (
+              <div className={`mb-4 rounded-lg border ${noteStyle[group.noteType].border} ${noteStyle[group.noteType].bg} px-4 py-3`}>
+                <p className={`text-sm ${noteStyle[group.noteType].text}`}>
+                  <span className="mr-1.5">{noteStyle[group.noteType].emoji}</span>
+                  {group.note}
+                </p>
+              </div>
+            )}
+
             {/* Books row */}
             <div className="relative">
               <div className="flex flex-wrap gap-2 sm:gap-4 pb-2">
@@ -170,16 +180,6 @@ export default function ReadingOrder({ books, groups, description, showLegend = 
                 ))}
               </div>
             </div>
-
-            {/* Group note */}
-            {group.note && group.noteType && (
-              <div className={`mt-4 rounded-lg border ${noteStyle[group.noteType].border} ${noteStyle[group.noteType].bg} px-4 py-3`}>
-                <p className={`text-sm ${noteStyle[group.noteType].text}`}>
-                  <span className="mr-1.5">{noteStyle[group.noteType].emoji}</span>
-                  {group.note}
-                </p>
-              </div>
-            )}
           </div>
         ))}
       </div>
