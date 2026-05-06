@@ -338,7 +338,14 @@ const seoProseText = curatedEntry
   : null;
 
 // ── Non-curated SEO additions ─────────────────────────────────────────────────
-const dbShouldNoIndex = !isCurated;
+// DB pages listed here are ranking well and explicitly allowed to be indexed.
+const indexedDbSlugs = [
+  'he-who-fights-with-monsters',
+  'caraval',
+  'hell-bent',
+  'river-of-time'
+];
+const dbShouldNoIndex = !isCurated && !indexedDbSlugs.includes(slug);
 
 const dbItemListJsonLd = !isCurated && seriesMeta ? JSON.stringify({
   '@context': 'https://schema.org',

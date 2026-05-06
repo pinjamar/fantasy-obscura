@@ -61,7 +61,8 @@ export type ReadingOrderImageSlug =
   | 'valdemar'
   | 'earthsea'
   | 'mark-lawrence'
-  | 'sarah-j-maas';
+  | 'sarah-j-maas'
+  | 'dune';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -106,6 +107,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'earthsea':             'earthsea',
   'mark-lawrence':        'mark-lawrence',
   'sarah-j-maas':         'sarah-j-maas',
+  'dune':                 'dune',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────
