@@ -495,7 +495,7 @@ Slug: /reading-orders/inheritance-cycle
 
 LitRPG & Progression (2 pages)
 
-34 Cradle Reading Order (Will Wight)
+34 Will Wight (Cradle) Reading Order
 
 All 12 books in order
 Slug: /reading-orders/cradle
@@ -602,6 +602,126 @@ Every major series with total page count, estimated reading time
 Sorted: quick reads (trilogies) → mid-length (5-7 books) → epic commitment (10+)
 Helps readers decide what to start based on available time
 Slug: /reading-orders/fantasy-series-by-length
+
+
+49 The Horus Heresy Reading Order (Dan Abnett & others — Warhammer 40K)
+
+54-book multi-author series — the civil war that shaped the Warhammer 40,000 universe
+Slug: /reading-orders/horus-heresy
+
+
+50 Tolkien Reading Order (J.R.R. Tolkien — Middle-earth)
+
+The Hobbit, Lord of the Rings, Silmarillion, Unfinished Tales, Children of Húrin
+Slug: /reading-orders/tolkien
+
+
+51 Rick Riordan Reading Order (Rick Riordan — Percy Jackson & mythology)
+
+Percy Jackson, Heroes of Olympus, Magnus Chase, Kane Chronicles, Apollo trials
+Slug: /reading-orders/rick-riordan
+
+
+52 Gentleman Bastard Reading Order (Scott Lynch)
+
+Lies of Locke Lamora + sequels — heist fantasy set in Venice-like Camorr
+Slug: /reading-orders/gentleman-bastard
+
+
+53 Lightbringer Reading Order (Brent Weeks)
+
+5-book series — color-based magic system, political intrigue, Chromeria
+Slug: /reading-orders/lightbringer
+
+
+54 Sun Eater Reading Order (Christopher Ruocchio)
+
+Hadrian Marlowe saga — far-future science fantasy, feudal space empire, ancient alien war
+Slug: /reading-orders/sun-eater
+
+
+55 Xanth Reading Order (Piers Anthony)
+
+40+ book comedic fantasy series — every character has a unique magical talent
+Slug: /reading-orders/xanth
+
+
+56 The Shadowhunter Chronicles Reading Order (Cassandra Clare)
+
+Mortal Instruments, Infernal Devices, Dark Artifices + more — nephilim urban fantasy
+Slug: /reading-orders/shadowhunter-chronicles
+
+
+57 The Elric Saga Reading Order (Michael Moorcock)
+
+Albino emperor, soul-drinking sword Stormbringer — foundational grimdark fantasy
+Slug: /reading-orders/elric-saga
+
+
+58 Shadows of the Apt Reading Order (Adrian Tchaikovsky)
+
+10-book insect-kinden steampunk fantasy — Wasp Empire vs city-states
+Slug: /reading-orders/shadows-of-the-apt
+
+
+59 Artemis Fowl Reading Order (Eoin Colfer)
+
+8-book series — genius boy villain meets underground fairy civilization
+Slug: /reading-orders/artemis-fowl
+
+
+60 The Saga of Recluce Reading Order (L.E. Modesitt Jr.)
+
+22+ books — order vs chaos magic, one of the longest-running fantasy series
+Slug: /reading-orders/saga-of-recluce
+
+
+61 The Chronicles of Thomas Covenant Reading Order (Stephen R. Donaldson)
+
+6-book portal fantasy — leper transported to a vivid magical Land, white gold ring
+Slug: /reading-orders/thomas-covenant
+
+
+62 Vlad Taltos Reading Order (Steven Brust)
+
+20+ books — human assassin in a Dragaeran empire, witty noir fantasy
+Slug: /reading-orders/vlad-taltos
+
+
+63 The Licanius Trilogy Reading Order (James Islington)
+
+3-book epic fantasy — time manipulation, Augur magic, the Boundary
+Slug: /reading-orders/james-islington
+
+
+64 John Gwynne Reading Order (John Gwynne)
+
+The Faithful and the Fallen + Of Blood and Bone + Bloodsworn — Norse grimdark
+Slug: /reading-orders/john-gwynne
+
+
+65 Brent Weeks Reading Order (Brent Weeks — Night Angel & Lightbringer)
+
+Full author overview — Night Angel assassin trilogy + Lightbringer 5-book series
+Slug: /reading-orders/brent-weeks
+
+
+66 The Riftwar Cycle Reading Order (Raymond E. Feist)
+
+30+ books — Magician, Empire trilogy, Krondor, Serpentwar + more
+Slug: /reading-orders/riftwar-cycle
+
+
+67 Red Rising Reading Order (Pierce Brown)
+
+6-book sci-fi dystopian saga — Gold/Red caste society, Roman mythology, revolution
+Slug: /reading-orders/red-rising
+
+
+68 Caraval Reading Order (Stephanie Garber)
+
+Caraval trilogy + Once Upon a Broken Heart spinoff series
+Slug: /reading-orders/caraval
 ---
 
 ## Notes for Claude Code
@@ -659,133 +779,168 @@ earthsea, mark-lawrence, sarah-j-maas
 
 ---
 
-**folk-of-the-air** (Holly Black — The Cruel Prince)
-Slug: /reading-orders/folk-of-the-air
+**tolkien** (J.R.R. Tolkien — Middle-earth)
+Slug: /reading-orders/tolkien
 Prompt:
-A twilight faerie court deep in an ancient thorn-forest. Twisted silver trees arch overhead like cathedral vaults, their bark pale as bone. Bioluminescent flowers in cold white and violet blue dot the undergrowth. A stone throne in the middle distance is empty but lit by ethereal moonlight filtering through the canopy. Fallen rose petals — deep crimson — cover the mossy ground. The atmosphere is seductive and dangerous, beautiful and cold. Photorealistic digital fantasy art, cinematic lighting, no characters, no text.
+Dawn over the Shire — rolling green hills dotted with round-doored hobbit holes, smoke curling from chimneys, a winding road leading east toward the Misty Mountains, their jagged peaks catching the first pale light. The foreground is warm, domestic, and golden. The horizon grows colder and more vast as the road disappears into mist. The mood captures Tolkien's central tension: home and the long road away from it. Photorealistic cinematic landscape art, golden-hour Shire light, epic mountain horizon, no text, no characters.
 
 ---
 
-**old-kingdom** (Garth Nix — Sabriel)
-Slug: /reading-orders/old-kingdom
+**rick-riordan** (Rick Riordan — Percy Jackson & mythology)
+Slug: /reading-orders/rick-riordan
 Prompt:
-A massive ancient stone wall stretches across a bleak northern landscape at dusk, dividing a frost-dusted world in two. On one side: a grey living world of snow-covered pines and pale sky. On the other: darkness, mist, and the suggestion of the dead — faint glowing wisps rising from black soil. Seven bells hang from a weathered iron hook mounted in the wall, each casting a faint golden glow. The Wall is crumbling in places, and something cold seeps through the gaps. Photorealistic cinematic fantasy art, dramatic lighting divide, no text, no legible characters.
+A hilltop on Long Island at dusk — Greek-style cabins and the half-blood pine visible, the magical border of Camp Half-Blood shimmering. In the distance the Empire State Building glows on the New York skyline, its summit wreathed in storm clouds and lightning — Mount Olympus hidden above it. In the sky, a Norse longship sails past a crescent moon, and Egyptian hieroglyphs glow faintly in a separate cloud bank — all three mythologies coexisting in one sky. The mood is adventure-filled and mythologically layered. Photorealistic cinematic fantasy art, golden-hour camp light, multi-mythology sky, no text, no close faces.
 
 ---
 
-**locked-tomb** (Tamsyn Muir — Gideon the Ninth)
-Slug: /reading-orders/locked-tomb
+**gentleman-bastard** (Scott Lynch — Gentleman Bastard)
+Slug: /reading-orders/gentleman-bastard
 Prompt:
-A gothic cathedral floating in the void of space. The exterior is ancient stone covered in carved skeletal motifs and necromantic runes that pulse with dim golden light. Through massive stained-glass windows: the cold blue glow of magic. Distant stars and a gas nebula in deep purple and orange frame the structure. Bones and fragments of armor drift in the vacuum around the cathedral. The scene is simultaneously magnificent and horrifying. Photorealistic sci-fi dark fantasy digital art, cinematic void lighting, no text, no visible faces.
+A canal city at night, modeled on Venice — narrow waterways reflecting torchlight, crumbling stone palazzi, iron bridges. Rising from the city center: the Elderglass towers — five ancient structures of alien glass glowing faintly from within with pale bluish-green light, impossibly smooth, predating the civilization around them. On a rooftop, silhouetted figures observe the city below. The mood is heist thriller meets ancient mystery: glamour, danger, and something the current civilization does not fully understand. Photorealistic cinematic dark fantasy digital art, canal city torchlight, alien glass tower glow, no text, silhouettes only.
 
 ---
 
-**green-bone-saga** (Fonda Lee — Jade City)
-Slug: /reading-orders/green-bone-saga
+**lightbringer** (Brent Weeks — Lightbringer series)
+Slug: /reading-orders/lightbringer
 Prompt:
-A rain-slicked street in a neon-lit Asian city at night. Glowing green jade light radiates from lanterns and carved totems mounted on the walls of clan buildings. A narrow alley stretches back into foggy darkness, the wet cobblestones reflecting streaks of green and gold neon. Cherry blossom petals blow through the scene despite the rain. The architecture blends traditional curved rooftops with mid-century concrete. The mood is tense and cinematic — organized crime meets martial-arts power. Photorealistic atmospheric digital art, rain and neon lighting, no text, no faces.
+A Prism stands at the apex of the Chromeria — a towering lighthouse structure on a small island — arms raised as white sunlight pours through their body and splits into every color of the spectrum. Each color crystallizes mid-air into solid luxin: red flame, blue ice, green vines, yellow glass, sub-red heat shimmer, superviolet. The surrounding sea catches the refracted light in rainbow streaks. The atmosphere is of immense controlled power. Photorealistic cinematic fantasy digital art, prism light-split spectrum, crystallized magic material formation, sea reflections, no text.
 
 ---
 
-**dune** (Frank Herbert)
-Slug: /reading-orders/dune
+**sun-eater** (Christopher Ruocchio — Sun Eater)
+Slug: /reading-orders/sun-eater
 Prompt:
-An endless orange-gold desert under a vast alien sky with two moons. Massive sculpted sandstone formations rise in the distance, casting long blue shadows across rippling dunes. At the center of the foreground, the curved back of a colossal sandworm breaches the sand — its segmented hide the size of a mountain range. The horizon glows deep amber from twin suns. The scale is overwhelming, the silence total. Photorealistic cinematic sci-fi fantasy digital art, golden-hour desert lighting, no text, no human figures visible.
+A colossal starship in orbit above a reddening sun — vast as a city, carved with Gothic arches and imperial banners, fusing medieval feudal aesthetics with deep-space scale. Beyond it, an alien vessel — the Cielcin — organic, white, and terrifyingly vast, its surface covered in unknowable geometry. Between the two ships: cold light and debris. The dying sun at the edge of frame casts everything in amber and deep shadow. The mood is tragedy at civilizational scale — humanity and its ancient enemy circling each other across centuries. Photorealistic cinematic science fantasy digital art, Gothic starship, dying red sun, alien horror vessel, no text.
 
 ---
 
-**dark-tower** (Stephen King — The Dark Tower)
-Slug: /reading-orders/dark-tower
+**xanth** (Piers Anthony — Xanth)
+Slug: /reading-orders/xanth
 Prompt:
-A lone obsidian tower rises impossibly tall from a cracked desert plain under a blood-red sky. The land around it is broken and dead — scorched earth, bleached bones, the ruins of collapsed civilization half-buried in dust. Roses — brilliant red, incongruous — bloom in a perfect circle at the tower's base. The sky is crossed by streaks of strange light, as if the world's fabric is tearing. The mood is desolate, mythic, inexorable. Photorealistic dark fantasy digital art, red-sky dramatic lighting, vast scale, no text, no visible characters.
+A bright, impossibly colorful magical landscape — lush jungle paths, talking trees with faces, a centaur cantering along a road beside a young human traveler. In a clearing: a dragon the size of a house, cartoonishly cheerful rather than threatening. Puns made physical: a pun-tree with groan-shaped fruit, a bridge made of bridging thoughts. The sky is technicolor — sunlit blue fading to candy-pink at the horizon. Everything is slightly absurd but warmly rendered. Photorealistic whimsical fantasy art, bright Floridian jungle, centaur and dragon, comedic magical flora, no text.
 
 ---
 
-**narnia** (C.S. Lewis — The Chronicles of Narnia)
-Slug: /reading-orders/narnia
+**shadowhunter-chronicles** (Cassandra Clare — Shadowhunter Chronicles)
+Slug: /reading-orders/shadowhunter-chronicles
 Prompt:
-A snow-covered forest at night, lit by a single iron lamppost glowing warm amber in the cold dark. The lamppost stands at a crossroads of ancient trees whose branches are thick with snow and draped with icicles. Through the trees: the distant golden glow of a castle's towers. The air shimmers with faint magic — snowflakes frozen mid-fall, a lion's paw-print in the snow. The mood is wondrous and slightly uncanny, a child's imagination made real. Photorealistic cinematic fantasy digital art, lamppost warm light against cold blue snow, no text, no visible characters.
+New York City at night — Brooklyn Bridge visible in the background. In the foreground: a Gothic stone church repurposed as the New York Institute, its stained-glass windows glowing with angelic light. On the steps, nephilim warriors with glowing black runes traced on their skin hold steles. Demons dissolve into ichor in the surrounding shadows. Above the church, the Angel Raziel hovers in a beam of white light, holding the Mortal Cup. The mood is YA urban fantasy elevated to mythological scale. Photorealistic cinematic digital art, NYC nighttime skyline, Gothic church, angel light and rune glow, no text.
 
 ---
 
-**expanse** (James S.A. Corey — The Expanse)
-Slug: /reading-orders/expanse
+**elric-saga** (Michael Moorcock — Elric of Melniboné)
+Slug: /reading-orders/elric-saga
 Prompt:
-A massive orbital space station hangs in the black, its ring-structure slowly rotating. The asteroid belt stretches across the background — millions of rocks in a golden band of reflected sunlight. A fleet of ships — ranging from tiny shuttles to kilometer-long warships — drift in loose formation around the station. On the station's hull, lights blink in patterns. Far below, the curve of a pale blue planet is just visible. The protomolecule glows faint blue-green in the asteroid closest to the viewer. Photorealistic hard sci-fi digital art, deep space cinematic lighting, no text, no visible faces.
+A dying empire at the edge of the world — the Dragon Isle of Melniboné, ancient and crumbling, its black towers lit by the glow of captive dragons chained in caverns below. On the highest tower: a lone figure, white-haired and pale as bone, dark robes, holding a runesword that pulses with black light and seems to drink the air around it. The sky above is bruised purple and crimson, two moons visible. The sea below is deep green. The mood is elegiac and gothic: the last emperor of a dying age. Photorealistic dark fantasy cinematic art, crumbling black empire, twin moons, soul-drinker sword glow, no text, distant figure only.
 
 ---
 
-**outlander** (Diana Gabaldon — Outlander)
-Slug: /reading-orders/outlander
+**shadows-of-the-apt** (Adrian Tchaikovsky — Shadows of the Apt)
+Slug: /reading-orders/shadows-of-the-apt
 Prompt:
-A circle of massive ancient standing stones on a misty Scottish highland at dawn. The stones are weathered granite, etched with carved spirals and Celtic knotwork. A thin crack of golden light appears between two of the tallest stones — a doorway between times. The moorland stretches away in all directions, heather just visible through the ground-hugging mist. The sky transitions from deep indigo overhead to pale gold at the horizon. The mood is mystical, ancient, suspended between worlds. Photorealistic atmospheric fantasy art, dawn mist lighting, no text, no human figures.
+An aerial view of a vast steampunk-fantasy city — a Beetle-kinden metropolis of stone workshops, turning gear-mechanisms, early airships docked at tower-top platforms, and crossbow-armed guards on the walls. In the distance: the Wasp Empire's army approaching, black and gold, with orthopter aircraft circling like a swarm. The sky is industrial amber from forge smoke. On the city walls, insect-kinden soldiers with forms subtly suggesting their insects — mantis grace, ant precision, beetle sturdiness. The mood is epic military fantasy crossed with steampunk war. Photorealistic cinematic digital art, steampunk fantasy city, approaching insect-empire army, no text.
 
 ---
 
-**cradle** (Will Wight — Cradle series)
-Slug: /reading-orders/cradle
+**artemis-fowl** (Eoin Colfer — Artemis Fowl)
+Slug: /reading-orders/artemis-fowl
 Prompt:
-A lone figure silhouetted against an impossibly vast sky, ascending a staircase of crystallized madra energy that spirals upward into the clouds. Below: a valley kingdom of ancient pagodas and glowing sacred arts forges. The energy around the figure crackles in gold and white — the visual language of advancement through sacred arts stages. Heaven-realm clouds part above, revealing a light so intense it is almost unbearable to look at. The scale and ambition of the image mirror the progression fantasy genre. Photorealistic cinematic fantasy digital art, ascending light, cultivation energy, no text, figure silhouette only.
+A cross-section view: above ground, the grey-green Irish countryside and the Gothic towers of Fowl Manor at dusk, expensive and forbidding. Below ground: Haven City gleaming with neon and bioscience technology — hover vehicles, bioluminescent architecture, LEPrecon officers in armored suits. Between the two worlds, a tunnel shaft with golden time-stop light spilling from it. A small fairy with acorn-shaped helmet and a young human in a suit face each other at the threshold. The mood is clever and adventure-driven. Photorealistic cinematic fantasy-tech digital art, Irish manor above, underground city below, time-stop portal light, no text.
 
 ---
 
-**dungeon-crawler-carl** (Jason Cheyne — Dungeon Crawler Carl)
-Slug: /reading-orders/dungeon-crawler-carl
+**saga-of-recluce** (L.E. Modesitt Jr. — Saga of Recluce)
+Slug: /reading-orders/saga-of-recluce
 Prompt:
-A massive glowing dungeon portal in the fractured floor of a collapsed city, looking down into a descending labyrinth of glowing neon runes and ancient traps. The dungeon below teems with monster shadows and the faint glimmer of treasure. Around the portal's edge, holographic UI elements float in the air — damage numbers, loot indicators, minimap fragments — giving it a video-game-meets-reality feel. The surface above is ruined cityscape, ash and debris. One tabby cat sits at the portal's edge. Photorealistic dark fantasy sci-fi digital art, neon dungeon lighting, cinematic composition, no text, cat visible.
+A quiet island at dawn — black stone cliffs, orderly fishing villages, a single imposing tower of perfectly dressed black stone radiating a faint deep order-magic glow. Across the water on the mainland, a storm of white chaos-magic builds: lightning and disordered energy, a city of white marble crumbling at its edges. The sea between them is calm and grey. The mood is philosophical duality rather than action: absolute order and absolute chaos, each producing its own form of destruction. Photorealistic cinematic fantasy landscape, black order-island, white chaos-storm mainland, dawn sea, no text, no close figures.
 
 ---
 
-**rf-kuang** (R.F. Kuang)
-Slug: /reading-orders/rf-kuang
+**thomas-covenant** (Stephen R. Donaldson — Chronicles of Thomas Covenant)
+Slug: /reading-orders/thomas-covenant
 Prompt:
-A neoclassical stone university library at night, viewed from outside through tall arched windows. Inside, warm candlelight and glowing lanterns illuminate stacks of ancient texts, maps of fictional Asian empires, and shelves of opium tins. The building's facade is carved with academic motifs, but the stone is scorched — as if there was a fire here once. Falling cherry blossoms mix with ash in the cold air outside. The mood is intellectual, beautiful, and haunted by violence. Photorealistic cinematic dark academia digital art, warm-interior cold-exterior contrast, no text, no faces.
+A man stands at a threshold — on the left: a grey clinical American suburb, concrete and isolation, his left hand bandaged. On the right: the Land — impossibly vivid, hyper-saturated greens and golds, ancient stone Keep of Revelstone rising on a cliff. The white gold ring on his finger glows at the boundary between worlds. The Sunbane casts a reddish filter over the horizon. The mood is alienation meeting wonder — one of the most morally complex portal-fantasy thresholds in the genre. Photorealistic split-scene digital art, grey suburb left, vivid fantasy world right, white gold ring glow, no text.
 
 ---
 
-**guy-gavriel-kay**
-Slug: /reading-orders/guy-gavriel-kay
+**vlad-taltos** (Steven Brust — Vlad Taltos)
+Slug: /reading-orders/vlad-taltos
 Prompt:
-A sun-drenched Mediterranean city at golden hour — white marble columns, terracotta rooftops, and the glittering blue sea beyond. In the foreground, a Byzantine mosaic floor reflects the sunset. On the mosaic: a pattern of a ship and a crescent moon. The architecture blends Greco-Roman, Byzantine, and Arab influences. The light is warm gold and amber. In the far distance, soldiers on horseback are visible as silhouettes on a hilltop road. The mood is elegiac — beauty and history both glorious and fragile. Photorealistic cinematic historical fantasy art, golden-hour Mediterranean light, no text, no close character faces.
+A narrow lamplit street in the Dragaeran city of Adrilankha at night — architecture tall and alien, proportions slightly off for a human. A young human man in an assassin's coat leans in a doorway, a small winged reptile (jhereg) perched on his shoulder, its eyes faintly glowing. Around him, tall elegant Dragaerans move through the street, barely registering his presence. The mood is fantasy noir: a small human in a world built for someone else, surviving by wit and steel. Photorealistic cinematic fantasy noir digital art, lamplit alien city street, human assassin and familiar, no text, no close faces.
 
 ---
 
-**jennifer-armentrout** (Jennifer L. Armentrout — Complete Reading Order)
-Slug: /reading-orders/jennifer-armentrout
+**james-islington** (James Islington — Licanius Trilogy)
+Slug: /reading-orders/james-islington
 Prompt:
-A glowing obsidian portal ringed with stone carvings of gods and ancient runes, standing in an overgrown ancient forest at twilight. Through the portal: a world of shimmering divine light and impossible beauty — a pantheon city of white spires. The forest around it is dark and old, roots cracking through the stone courtyard before the gate. Fireflies drift through the misty air. The mood is paranormal romance meets mythological epic — beautiful, charged, otherworldly. Photorealistic cinematic dark fantasy digital art, portal glow, twilight forest, no text, no visible faces.
+A vast magical barrier — the Boundary — stretches across a northern landscape, a wall of shimmering black-and-silver energy splitting the sky like a scar. On one side: green fields, a walled city in the distance. On the other: darkness and the suggestion of ancient imprisoned things. Near the Boundary, a lone figure with glowing Augur marks on their skin — geometric sigils in pale gold — raises one hand toward the barrier, time visibly bending around them: a bird frozen mid-flight, leaves suspended in a spiral. Photorealistic cinematic fantasy digital art, magical boundary wall, time-bending distortion, Augur glow marks, no text.
 
 ---
 
-**chronicles-of-amber** (Roger Zelazny — The Chronicles of Amber)
-Slug: /reading-orders/chronicles-of-amber
+**john-gwynne** (John Gwynne — The Faithful and the Fallen / Bloodsworn)
+Slug: /reading-orders/john-gwynne
 Prompt:
-An infinite staircase descending through countless shadowed reflections of the same city — each version subtly different, each a shadow of the one above. At the top: a golden city of perfect spires (Amber). At the bottom: darkness (the Courts of Chaos). Tarot cards float in the space between the levels — their painted faces each showing a different royal figure. The geometry is Escher-like but photorealistic. The mood is philosophical and regal, a multiverse held together by will. Photorealistic surreal fantasy digital art, infinite-staircase perspective, dramatic golden-to-dark lighting, no text.
+A Norse-inspired battlefield at the edge of a dark fjord — longships beached on grey shore, a shield wall forming in the mist. Ravens circle overhead. A warrior in iron mail stands in the foreground, a great grey wolf at their side. Behind them: the clash of two shield walls, torches and axes, the mountains and pine forests of a cold northern land surrounding the battle. The sky is dawn grey and battle-gold. The mood is brutal, intimate, and heroic: the grim reality of dark-age warfare elevated by loyalty and courage. Photorealistic cinematic grimdark fantasy art, shield-wall battle, Norse fjord, wolf companion, no text, distant figures.
 
 ---
 
-**rivers-of-london** (Ben Aaronovitch — Rivers of London)
-Slug: /reading-orders/rivers-of-london
+**brent-weeks** (Brent Weeks — Night Angel & Lightbringer)
+Slug: /reading-orders/brent-weeks
 Prompt:
-London at night, seen from the Thames. The river reflects the glow of street lamps and the blurred lights of the city. On the north bank, Folly House — a Georgian townhouse — glows with magic: subtle runes visible in the windows, a shimmer of spell-light around the doorframe. A ghost flickers on the bridge, barely visible, translucent. The Houses of Parliament and Big Ben are visible in the distance. The mood is British, procedural, and magically charged. Photorealistic cinematic urban fantasy art, nighttime London Thames lighting, no text, ghost silhouette only.
+A city split by a single composition: on the left, night — grimy canals and shadow-cloaked rooftops, a wetboy assassin moving between lamplit alleys, black as shadow, daggers drawn. On the right, dawn — the Chromeria's towers rising from a coastal island, white light splitting through a Prism into every color of the spectrum. The dividing line between the two halves glows: pure darkness on one side, light breaking into color on the other. The mood captures both series: shadow and sacrifice in Night Angel, light and power in Lightbringer. Photorealistic cinematic fantasy digital art, dark city left / chromatic light right, split-panel composition, no text.
 
 ---
 
-**powder-mage** (Brian McClellan — Powder Mage trilogy)
-Slug: /reading-orders/powder-mage
+**riftwar-cycle** (Raymond E. Feist — Riftwar Cycle)
+Slug: /reading-orders/riftwar-cycle
 Prompt:
-A Napoleonic-era battlefield at dusk, lit by the flash of muskets and the glow of powder-fire. In the foreground, hundreds of musket balls hang suspended in midair — controlled by invisible will — tracing arcing paths toward enemy lines. Smoke fills the air in dramatic columns. Cannons and siege equipment flank an ornate stone city under assault in the background. The sky is dark amber and grey. The atmosphere fuses epic military fantasy with 18th-century warfare aesthetics. Photorealistic cinematic flintlock fantasy digital art, battlefield smoke and gunpowder glow, no text, no visible faces close-up.
+A shimmering rift tears open in mid-air between two worlds — on the left: the medieval forests and stone castles of Midkemia, a young boy in apprentice robes standing before it. On the right: the alien desert landscape of Kelewan, Tsurani warriors in lacquered armor and jade-inlaid weapons marching through. Through the rift both worlds are visible simultaneously, the seam between them crackling with silver energy. An ancient sorcerer stands at the center, holding the rift open. The mood is classic epic fantasy: wonder, war, and the collision of civilizations. Photorealistic cinematic fantasy digital art, inter-world rift portal, medieval-meets-alien-feudal aesthetic, silver rift energy, no text.
 
 ---
 
-**crescent-city** (Sarah J. Maas — Crescent City)
-Slug: /reading-orders/crescent-city
+**memory-sorrow-thorn** (Tad Williams — Memory, Sorrow and Thorn + Last King of Osten Ard)
+Slug: /reading-orders/memory-sorrow-thorn
 Prompt:
-A futuristic fantasy city at night — gleaming glass towers and ancient stone temples side by side, streets lit by hovering orbs and neon signage. Above the skyline, a massive crescent moon dominates the sky, and through a rift in the clouds: a stormlight-green portal tears open, revealing another world beyond. Angels with dark wings circle the tallest towers. The streets below glow with city life — magic and technology intertwined. The mood is epic urban fantasy, glamorous and dangerous. Photorealistic cinematic digital art, nighttime city glow, moon-portal light, no text, no close faces.
+A vast medieval castle — the Hayholt — rising from a cliff above a winter sea, its towers wreathed in storm clouds and the first snow of a long winter. In the foreground: a young kitchen boy looks up at the battlements, small against the scale of the fortress. From the castle's highest tower, a faint green light pulses — the Storm King's magic beginning to stir. In the far distance, the outline of Sithi riders can be seen moving through a forest, their forms otherworldly and graceful. The mood is classic epic fantasy at its most atmospheric: coming-of-age, winter dread, and ancient powers returning. Photorealistic cinematic fantasy landscape, winter castle, grey sea cliffs, distant elf-riders, no text, small figure foreground.
 
 ---
 
-**sanderson-start-here** (Brandon Sanderson — Where to Start)
-Slug: /reading-orders/sanderson-start-here
+**which-epic-fantasy-series** (Special Feature — Series Comparison)
+Slug: /reading-orders/which-epic-fantasy-series
 Prompt:
-A vast underground library carved into a cavern, its walls lined floor-to-ceiling with glowing tomes. Each shelf radiates a different color of magic: gold (allomancy), white-blue (stormlight), red (aons), violet (breath). At the center, a reading table is lit by a single overhead light — four open books arranged in a circle, each glowing with its respective magic system's color. The ceiling of the cavern is a natural dome of black stone. The mood is wonder and choice — a gateway into many worlds. Photorealistic cinematic fantasy digital art, multi-colored magic light, library cavern, no text, no visible characters.
+A circular reading room with five arched doorways, each portal glowing with a different light and opening onto a different world: golden desert stormlight (Sanderson), misty green farmland leading to a dark tower (Jordan), a grey fog-of-war battlefield (Erikson), a grimy medieval city at dusk (Abercrombie), a bleak northern coast with a ruined castle (Martin). At the center of the room: a single wooden table with an open book and a quill — the reader's starting point. The mood is choice and wonder. Photorealistic cinematic fantasy digital art, circular portal library, five distinct world-vistas, warm reading-room center light, no text, no characters.
+
+---
+
+**unfinished-series** (Special Feature — Unfinished Series Tracker)
+Slug: /reading-orders/unfinished-series
+Prompt:
+A writing desk in a dark study — parchment covered in dense handwriting, a quill resting mid-sentence, an inkwell half-empty. On the desk: an hourglass with sand almost run out. Through the window: the world outside is frozen mid-moment — birds suspended in flight, leaves arrested in falling, a clock face with no hands. Stacked beside the desk: towering manuscript piles representing unfinished sagas. A single candle burns low. The mood is anticipation and the weight of waiting — the ache of a story not yet complete. Photorealistic cinematic fantasy still-life art, frozen-time window, low candlelight, manuscript stacks, no text.
+
+---
+
+**fantasy-standalones** (Special Feature — Standalone Fantasy)
+Slug: /reading-orders/fantasy-standalones
+Prompt:
+A single glowing book floats in a vast dark library, perfectly lit from within, its pages open to a luminous two-page spread. Around it: shelves recede to infinity in all directions — but all those books are closed and dark. The single open book is the only source of light, its glow warm gold, casting soft illumination on the nearest shelves. The mood is the completeness and quiet confidence of a story that needs nothing else — beginning, middle, and end contained in one volume. Photorealistic cinematic fantasy digital art, single glowing open book, infinite dark library surround, no text, no characters.
+
+---
+
+**horus-heresy** (Dan Abnett & others — The Horus Heresy)
+Slug: /reading-orders/horus-heresy
+Prompt:
+A planetary siege at the edge of the solar system — the golden towers of a Gothic mega-city burning beneath a sky choked with warship debris and traitor drop-pods. In the foreground: two Space Marines in ornate power armor face each other across a rubble field, one in imperial gold and white, one in corrupted black and bronze, the Eye of Horus carved into his pauldron. Between them: a No Man's Land of collapsed cathedrals and shattered statuary. In the sky, a vast battle-barge breaks apart in low orbit, its reactor blossoming into silent fire. The mood is civilizational tragedy — brother against brother, the greatest empire in history tearing itself apart. Photorealistic cinematic grimdark science fantasy art, Gothic mega-city siege, two opposing marines, orbital wreckage sky, no text.
+
+---
+
+**red-rising** (Pierce Brown — Red Rising Saga)
+Slug: /reading-orders/red-rising
+Prompt:
+A vast terraformed Martian landscape at dawn — red dust plains stretching to distant mountains, the sky a bruised amber above. In the foreground: a young man in a miner's worn suit stands at the lip of a massive underground drilling shaft, looking upward for the first time at open sky. Above on the clifftop: Gold-caste soldiers in gleaming Roman-influenced armor watch from the ridge. Between them: the entire vertical distance of a society — bottom of the shaft to the top of the cliff — visible in one frame. The mood is revolution waiting to ignite: poverty below, power above, and one man at the threshold. Photorealistic cinematic sci-fi digital art, Martian dawn light, Roman-aesthetic armor silhouettes, vertical class divide composition, no text.
+
+---
+
+**caraval** (Stephanie Garber — Caraval)
+Slug: /reading-orders/caraval
+Prompt:
+A magical performance arena at night — an impossible island venue built from black stone and crimson silk, lit by thousands of floating candles and enchanted lanterns in deep jewel tones: crimson, violet, gold. At the center: a circular stage where the boundary between illusion and reality has dissolved — playing cards float upward into a starless sky, a clock face shows thirteen hours, a carousel of black horses frozen mid-gallop. Archways lead deeper into the game, each one promising something different: treasure, truth, a door that shouldn't exist. In the foreground, two young women stand at the entrance, one pulling the other forward. The mood is intoxicating and dangerous — a world designed to seduce you into forgetting what is real. Photorealistic cinematic dark fantasy art, jewel-tone candlelight, impossible carnival architecture, floating card and clock motifs, no text.

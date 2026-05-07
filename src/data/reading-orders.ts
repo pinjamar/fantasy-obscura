@@ -67,6 +67,8 @@ export interface ReadingOrderEntry {
   categoryHref: string;
   categoryLabel: string;
   related: string[];
+  /** Short display name override for use in "More reading orders" related links */
+  shortName?: string;
   /** Slug for a matching /books-like/ guide, if one exists */
   booksLikeSlug?: string;
 }
@@ -193,10 +195,10 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       },
     ],
     finishedLabel: 'Finished the series?',
-    categoryHref: '/fantasy/romance-fantasy',
-    categoryLabel: 'Browse Romance Fantasy',
+    categoryHref: '/fantasy/romantasy',
+    categoryLabel: 'Browse Romantasy',
     booksLikeSlug: 'acotar',
-    related: ['throne-of-glass', 'empyrean'],
+    related: ['throne-of-glass', 'empyrean', 'blood-and-ash', 'grishaverse', 'kate-daniels', 'sarah-j-maas'],
   },
 
   // ─── The Cosmere ───────────────────────────────────────────────────────────
@@ -2427,7 +2429,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     finishedLabel: 'Want more like Discworld?',
     categoryHref: '/fantasy/cozy',
     categoryLabel: 'Browse Cozy Fantasy',
-    related: ['kingkiller', 'first-law'],
+    booksLikeSlug: 'discworld',
+    related: ['kingkiller', 'first-law', 'earthsea', 'robin-hobb', 'witcher', 'malazan'],
   },
 
   // ─── A Song of Ice and Fire ────────────────────────────────────────────────
@@ -2571,7 +2574,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
     categoryHref: '/fantasy/epic',
     categoryLabel: 'Browse Epic Fantasy',
     booksLikeSlug: 'a-game-of-thrones',
-    related: ['first-law', 'malazan', 'wheel-of-time'],
+    related: ['first-law', 'malazan', 'wheel-of-time', 'mark-lawrence', 'black-company', 'witcher'],
   },
 
   // ─── Realm of the Elderlings (Robin Hobb) ──────────────────────────────────
@@ -3461,10 +3464,11 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         desc: 'Bleak and relentless — survival on a freezing world with high stakes',
       },
     ],
+    booksLikeSlug: 'prince-of-thorns',
     finishedLabel: 'Finished the Lawrence universe?',
     categoryHref: '/fantasy/grimdark',
     categoryLabel: 'Browse Grimdark',
-    related: ['first-law', 'black-company', 'malazan'],
+    related: ['first-law', 'black-company', 'malazan', 'asoiaf', 'witcher', 'robin-hobb'],
   },
 
   // ─── Blood and Ash ─────────────────────────────────────────────────────────
@@ -5363,10 +5367,12 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
         desc: 'Brutally honest about cost - no heroism left, only endurance',
       },
     ],
+    shortName: 'Black Company',
+    booksLikeSlug: 'the-black-company',
     finishedLabel: 'Finished the Annals?',
     categoryHref: '/fantasy/grimdark',
     categoryLabel: 'Browse Grimdark Fantasy',
-    related: ['first-law', 'malazan'],
+    related: ['first-law', 'malazan', 'mark-lawrence', 'asoiaf', 'witcher', 'robin-hobb'],
   },
 
   // ─── Dragonriders of Pern ──────────────────────────────────────────────────
@@ -7234,6 +7240,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
       { label: 'God Emperor onwards', level: 4, desc: 'Dark ideas rather than dark events — existential and slow' },
       { label: 'Brian Herbert books', level: 3, desc: 'More action-adventure, less philosophical weight' },
     ],
+    booksLikeSlug: 'dune',
     finishedLabel: 'Finished Dune?',
     categoryHref: '/fantasy/sci-fi',
     categoryLabel: 'Browse Sci-Fi Fantasy',
