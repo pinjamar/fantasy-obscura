@@ -779,20 +779,6 @@ earthsea, mark-lawrence, sarah-j-maas
 
 ---
 
-**tolkien** (J.R.R. Tolkien — Middle-earth)
-Slug: /reading-orders/tolkien
-Prompt:
-Dawn over the Shire — rolling green hills dotted with round-doored hobbit holes, smoke curling from chimneys, a winding road leading east toward the Misty Mountains, their jagged peaks catching the first pale light. The foreground is warm, domestic, and golden. The horizon grows colder and more vast as the road disappears into mist. The mood captures Tolkien's central tension: home and the long road away from it. Photorealistic cinematic landscape art, golden-hour Shire light, epic mountain horizon, no text, no characters.
-
----
-
-**rick-riordan** (Rick Riordan — Percy Jackson & mythology)
-Slug: /reading-orders/rick-riordan
-Prompt:
-A hilltop on Long Island at dusk — Greek-style cabins and the half-blood pine visible, the magical border of Camp Half-Blood shimmering. In the distance the Empire State Building glows on the New York skyline, its summit wreathed in storm clouds and lightning — Mount Olympus hidden above it. In the sky, a Norse longship sails past a crescent moon, and Egyptian hieroglyphs glow faintly in a separate cloud bank — all three mythologies coexisting in one sky. The mood is adventure-filled and mythologically layered. Photorealistic cinematic fantasy art, golden-hour camp light, multi-mythology sky, no text, no close faces.
-
----
-
 **gentleman-bastard** (Scott Lynch — Gentleman Bastard)
 Slug: /reading-orders/gentleman-bastard
 Prompt:
@@ -807,24 +793,10 @@ A Prism stands at the apex of the Chromeria — a towering lighthouse structure 
 
 ---
 
-**sun-eater** (Christopher Ruocchio — Sun Eater)
-Slug: /reading-orders/sun-eater
-Prompt:
-A colossal starship in orbit above a reddening sun — vast as a city, carved with Gothic arches and imperial banners, fusing medieval feudal aesthetics with deep-space scale. Beyond it, an alien vessel — the Cielcin — organic, white, and terrifyingly vast, its surface covered in unknowable geometry. Between the two ships: cold light and debris. The dying sun at the edge of frame casts everything in amber and deep shadow. The mood is tragedy at civilizational scale — humanity and its ancient enemy circling each other across centuries. Photorealistic cinematic science fantasy digital art, Gothic starship, dying red sun, alien horror vessel, no text.
-
----
-
 **xanth** (Piers Anthony — Xanth)
 Slug: /reading-orders/xanth
 Prompt:
 A bright, impossibly colorful magical landscape — lush jungle paths, talking trees with faces, a centaur cantering along a road beside a young human traveler. In a clearing: a dragon the size of a house, cartoonishly cheerful rather than threatening. Puns made physical: a pun-tree with groan-shaped fruit, a bridge made of bridging thoughts. The sky is technicolor — sunlit blue fading to candy-pink at the horizon. Everything is slightly absurd but warmly rendered. Photorealistic whimsical fantasy art, bright Floridian jungle, centaur and dragon, comedic magical flora, no text.
-
----
-
-**shadowhunter-chronicles** (Cassandra Clare — Shadowhunter Chronicles)
-Slug: /reading-orders/shadowhunter-chronicles
-Prompt:
-New York City at night — Brooklyn Bridge visible in the background. In the foreground: a Gothic stone church repurposed as the New York Institute, its stained-glass windows glowing with angelic light. On the steps, nephilim warriors with glowing black runes traced on their skin hold steles. Demons dissolve into ichor in the surrounding shadows. Above the church, the Angel Raziel hovers in a beam of white light, holding the Mortal Cup. The mood is YA urban fantasy elevated to mythological scale. Photorealistic cinematic digital art, NYC nighttime skyline, Gothic church, angel light and rune glow, no text.
 
 ---
 
@@ -898,38 +870,10 @@ A shimmering rift tears open in mid-air between two worlds — on the left: the 
 
 ---
 
-**memory-sorrow-thorn** (Tad Williams — Memory, Sorrow and Thorn + Last King of Osten Ard)
-Slug: /reading-orders/memory-sorrow-thorn
-Prompt:
-A vast medieval castle — the Hayholt — rising from a cliff above a winter sea, its towers wreathed in storm clouds and the first snow of a long winter. In the foreground: a young kitchen boy looks up at the battlements, small against the scale of the fortress. From the castle's highest tower, a faint green light pulses — the Storm King's magic beginning to stir. In the far distance, the outline of Sithi riders can be seen moving through a forest, their forms otherworldly and graceful. The mood is classic epic fantasy at its most atmospheric: coming-of-age, winter dread, and ancient powers returning. Photorealistic cinematic fantasy landscape, winter castle, grey sea cliffs, distant elf-riders, no text, small figure foreground.
-
----
-
-**which-epic-fantasy-series** (Special Feature — Series Comparison)
-Slug: /reading-orders/which-epic-fantasy-series
-Prompt:
-A circular reading room with five arched doorways, each portal glowing with a different light and opening onto a different world: golden desert stormlight (Sanderson), misty green farmland leading to a dark tower (Jordan), a grey fog-of-war battlefield (Erikson), a grimy medieval city at dusk (Abercrombie), a bleak northern coast with a ruined castle (Martin). At the center of the room: a single wooden table with an open book and a quill — the reader's starting point. The mood is choice and wonder. Photorealistic cinematic fantasy digital art, circular portal library, five distinct world-vistas, warm reading-room center light, no text, no characters.
-
----
-
 **unfinished-series** (Special Feature — Unfinished Series Tracker)
 Slug: /reading-orders/unfinished-series
 Prompt:
 A writing desk in a dark study — parchment covered in dense handwriting, a quill resting mid-sentence, an inkwell half-empty. On the desk: an hourglass with sand almost run out. Through the window: the world outside is frozen mid-moment — birds suspended in flight, leaves arrested in falling, a clock face with no hands. Stacked beside the desk: towering manuscript piles representing unfinished sagas. A single candle burns low. The mood is anticipation and the weight of waiting — the ache of a story not yet complete. Photorealistic cinematic fantasy still-life art, frozen-time window, low candlelight, manuscript stacks, no text.
-
----
-
-**fantasy-standalones** (Special Feature — Standalone Fantasy)
-Slug: /reading-orders/fantasy-standalones
-Prompt:
-A single glowing book floats in a vast dark library, perfectly lit from within, its pages open to a luminous two-page spread. Around it: shelves recede to infinity in all directions — but all those books are closed and dark. The single open book is the only source of light, its glow warm gold, casting soft illumination on the nearest shelves. The mood is the completeness and quiet confidence of a story that needs nothing else — beginning, middle, and end contained in one volume. Photorealistic cinematic fantasy digital art, single glowing open book, infinite dark library surround, no text, no characters.
-
----
-
-**horus-heresy** (Dan Abnett & others — The Horus Heresy)
-Slug: /reading-orders/horus-heresy
-Prompt:
-A planetary siege at the edge of the solar system — the golden towers of a Gothic mega-city burning beneath a sky choked with warship debris and traitor drop-pods. In the foreground: two Space Marines in ornate power armor face each other across a rubble field, one in imperial gold and white, one in corrupted black and bronze, the Eye of Horus carved into his pauldron. Between them: a No Man's Land of collapsed cathedrals and shattered statuary. In the sky, a vast battle-barge breaks apart in low orbit, its reactor blossoming into silent fire. The mood is civilizational tragedy — brother against brother, the greatest empire in history tearing itself apart. Photorealistic cinematic grimdark science fantasy art, Gothic mega-city siege, two opposing marines, orbital wreckage sky, no text.
 
 ---
 
