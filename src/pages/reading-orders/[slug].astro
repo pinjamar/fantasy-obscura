@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import Layout from '../../components/Layout.astro';
 import ReadingOrder from '../../components/ReadingOrder';
 import { getReadingOrderEntry, READING_ORDERS } from '../../data/reading-orders';
@@ -8,8 +10,11 @@ import { supabaseClient } from '../../lib/supabaseClient';
 import { READING_ORDER_IMAGE_SLUG, readingOrderSrcset, readingOrderFallback } from '../../data/image-map';
 import { BOOKS_LIKE } from '../../data/books-like';
 
+export function getStaticPaths() {
+  return READING_ORDERS.map((entry) => ({ params: { slug: entry.slug } }));
+}
+
 const { slug } = Astro.params;
-if (!slug) return Astro.redirect('/reading-orders/');
 
 function upgradeCoverUrl(url: string | null | undefined): string {
   if (!url) return '';
@@ -34,7 +39,7 @@ if (!entry) {
 }
 
 type MergedBook = {
-  title: string; slug: string; status: string; note: string;
+  title: string; slug: string | null; status: string; note: string;
   page_count: number; publication_year: number;
   cover_url: string | null; darkness_level: number | null;
   heat_level: string | null;
@@ -68,7 +73,7 @@ if (entry) {
   const dbMap = new Map<string, any>((dbRows ?? []).map((r: any) => [r.slug, r]));
 
   function mergeBook(b: typeof rawBooks[number]): MergedBook {
-    const db = dbMap.get(b.slug);
+    const db = dbMap.get(b.slug ?? '');
     return {
       ...b,
       cover_url: upgradeCoverUrl(db?.cover_url) || (db?.isbn ? `https://covers.openlibrary.org/b/isbn/${db.isbn}-L.jpg?default=false` : null),

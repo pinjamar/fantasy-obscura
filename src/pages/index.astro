@@ -3,6 +3,7 @@ import Layout from "../components/Layout.astro";
 import CategoryGrid from "../components/CategoryGrid";
 import BookSearch from "../components/BookSearch";
 import { supabaseClient } from '../lib/supabaseClient';
+import { READING_ORDERS } from '../data/reading-orders';
 
 // Fetch covers only for the curated slugs used in CategoryGrid — avoids serializing 8000+ books
 const CURATED_SLUGS = ["the-way-of-kings","the-name-of-the-wind","the-final-empire","the-lies-of-locke-lamora","a-court-of-thorns-and-roses","six-of-crows","the-blade-itself","red-rising","the-poppy-war","gardens-of-the-moon","piranesi","dungeon-crawler-carl","the-eye-of-the-world","the-fifth-season","the-priory-of-the-orange-tree","the-rage-of-dragons","a-memory-called-empire","words-of-radiance","a-court-of-mist-and-fury","fourth-wing","from-blood-and-ash","the-cruel-prince","kingdom-of-the-wicked","divine-rivals","serpent-dove","kingdom-of-ash","shadow-and-bone","heir-of-fire","best-served-cold","prince-of-thorns","the-black-company","the-gutter-prayer","king-of-thorns","the-heroes","a-little-hatred","red-country","crooked-kingdom","nevernight","ninth-house","storm-front","american-gods","rivers-of-london","neverwhere","good-omens","house-of-earth-and-blood","changes","battle-ground","the-eye-of-the-bedlam-bride","jonathan-strange-and-mr-norrell","circe","the-bear-and-the-nightingale","spinning-silver","uprooted","the-song-of-achilles","the-invisible-life-of-addie-larue","daughter-of-the-moon-goddess","babel","mexican-gothic","the-once-and-future-witches","a-deadly-education","an-ember-in-the-ashes","the-magicians","mark-of-the-fool","iron-flame","ariadne","the-witchs-heart","legends-and-lattes","the-house-in-the-cerulean-sea","somewhere-beyond-the-sea","the-goblin-emperor","bookshops-bonedust","emily-wildes-encyclopaedia-of-faeries","tress-of-the-emerald-sea","waybound","wintersteel","underlord","dreadgod","uncrowned","ghostwater","he-who-fights-with-monsters","unsouled","soulsmith","blackflame","kings-of-the-wyld","the-riyria-revelations","elric-of-melnibone","the-tainted-cup","conan-the-victorious","dune","gideon-the-ninth","morning-star","a-wizard-of-earthsea","the-shadow-of-the-torturer","golden-son","defiant","wind-and-truth","onyx-storm","the-strength-of-the-few","house-of-flame-and-shadow","the-fury-of-the-gods","the-warm-hands-of-ghosts","empire-of-the-damned","the-trials-of-empire","witch-queen-of-redwinter","the-book-that-broke-the-world","the-doors-of-midnight","the-ashes-and-the-star-cursed-king","forsaken-relic","ravaged-souls","advent","he-who-fights-with-monsters-11","mark-of-the-fool-7","shadowborn-sorceress","burn-for-me","the-black-bird-oracle","an-inheritance-of-magic","skandar-and-the-chaos-trials","emily-wildes-compendium-of-lost-tales","butter-cookies-and-demon-claws","breaking-hel","a-sword-of-gold-and-ruin","a-day-of-fallen-night","immortalis","born-of-blood-and-ash","faebound","the-ragpicker-king","the-primal-of-blood-and-bone","gore","the-dark-feather","the-scour","days-of-shattered-faith","sanctuary-of-the-shadow","soul-of-a-witch","her-soul-to-take","archangels-lineage","cast-in-atonement","an-instruction-in-shadow","rift-in-the-soul","sundered-soul","installment-immortality","faery-moon","the-familiar","the-adventures-of-amina-al-sirafi","the-kingston-cycle","all-the-dead-shall-weep","disturbing-the-dead","broken-wishes","written-on-the-dark","the-atlas-complex","the-incident-at-serebro-academy","avalon-tower","sweet-nightmare","alumni","feathers-of-ash-and-hope","crave","elementals","the-city-in-glass","hera","tales-of-the-celestial-kingdom","a-touch-of-chaos","katabasis","the-last-song-of-penelope","emily-wildes-map-of-the-otherlands","beasts-and-baking","a-pub-in-the-underworld","campaigns-and-curses","the-baker-and-the-bard","the-bartender-between-worlds","boy-of-chaotic-making","shadow-play","distilled-magic","beware-of-chicken-2","beware-of-chicken-3","die-respawn-repeat","he-who-fights-with-monsters-12","mark-of-the-fool-8","chain-of-feathers","a-farm-in-the-afterlife","quicksilver","crossroads-of-ravens","andrzej-sapkowskis-the-witcher-the-witcher","a-knight-of-the-seven-kingdoms","lords-of-uncreation","alien-clay","the-book-of-elsewhere","navigational-entanglements","death-of-the-author","evolution","outlaw-planet","the-regicide-report"];
@@ -36,6 +37,13 @@ const initialBooks: { title: string; slug: string | null; cover_url: string | nu
     if (data.length < PAGE) break;
     from += PAGE;
   }
+}
+
+const readingOrderCounts: Record<string, number> = {};
+for (const e of READING_ORDERS) {
+  readingOrderCounts[e.slug] = e.groups
+    ? e.groups.reduce((sum, g) => sum + g.books.length, 0)
+    : (e.books?.length ?? 0);
 }
 ---
 
@@ -72,7 +80,7 @@ const initialBooks: { title: string; slug: string | null; cover_url: string | nu
 
   <BookSearch client:load />
 
-  <CategoryGrid client:load initialBooks={initialBooks} coverMap={coverMap} />
+  <CategoryGrid client:load initialBooks={initialBooks} coverMap={coverMap} readingOrderCounts={readingOrderCounts} />
 
   <!-- Static prose: SEO content, word count, h2 bridge -->
   <section class="hidden sm:grid mt-16 border-t pt-10 grid-cols-2 gap-6 text-sm text-zinc-600 leading-relaxed">

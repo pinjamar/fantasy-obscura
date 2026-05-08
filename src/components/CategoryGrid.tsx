@@ -1626,9 +1626,11 @@ const categorySubgenreMap: Record<string, string[]> = {
 export default function CategoryGrid({
   initialBooks,
   coverMap,
+  readingOrderCounts,
 }: {
   initialBooks?: BookItem[];
   coverMap?: Record<string, string>;
+  readingOrderCounts?: Record<string, number>;
 }) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [showAllCats, setShowAllCats] = useState(false);
@@ -2064,7 +2066,7 @@ export default function CategoryGrid({
                       {s.name}
                     </p>
                     <p className="mt-0.5 text-[10px] text-white/70">
-                      {s.bookCount} books
+                      {readingOrderCounts?.[s.slug] ?? s.bookCount} books
                     </p>
                   </div>
                 </a>

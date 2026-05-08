@@ -1,26 +1,17 @@
 ---
+export const prerender = true;
+
 import Layout from '../../components/Layout.astro';
-import { getAllSeries } from '../../lib/db/books';
-import { supabaseClient } from '../../lib/supabaseClient';
 import { READING_ORDERS } from '../../data/reading-orders';
 import { READING_ORDER_IMAGE_SLUG, readingOrderFallback } from '../../data/image-map';
 
-const [dbSeries, booksRes] = await Promise.all([
-  getAllSeries(),
-  supabaseClient.from('books').select('title, authors, series').not('series', 'is', null),
-]);
-
-// Build a map: series name → searchable text (all book titles + all author names)
-type BooksRow = { title: string; authors: string[] | null; series: string | null };
+// Build search map from static data — book titles make each series searchable by title
 const seriesSearchMap = new Map<string, string>();
-for (const b of (booksRes.data ?? []) as BooksRow[]) {
-  if (!b.series) continue;
-  const existing = seriesSearchMap.get(b.series) ?? '';
-  const authors = (b.authors ?? []).join(' ');
-  seriesSearchMap.set(b.series, `${existing} ${b.title} ${authors}`.toLowerCase());
+for (const e of READING_ORDERS) {
+  const allBooks = e.groups ? e.groups.flatMap(g => g.books) : (e.books ?? []);
+  seriesSearchMap.set(e.name, allBooks.map(b => b.title).join(' ').toLowerCase());
 }
 
-// Derive curated series list from data file, sorted alphabetically (ignoring leading articles)
 function sortKey(name: string) {
   return name.replace(/^the\s+/i, '').toLowerCase();
 }
@@ -33,18 +24,7 @@ const curatedSeries = READING_ORDERS.map((e) => ({
     : (e.books?.length ?? 0),
 })).sort((a, b) => sortKey(a.name).localeCompare(sortKey(b.name)));
 
-// Merge: curated series take priority; add DB-only series after
-// DB slugs are generated from series names, which differ from our curated slugs
-// (e.g. "The First Law" → "the-first-law" vs curated slug "first-law")
-// So we exclude by both the curated slug AND the DB-generated slug from the name.
-function dbSlugify(name: string) {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-const curatedSlugs = new Set([
-  ...curatedSeries.map((s) => s.slug),
-  ...curatedSeries.map((s) => dbSlugify(s.name)),
-]);
-const dbOnly = dbSeries.filter((s) => !curatedSlugs.has(s.slug));
+const dbOnly: { name: string; slug: string; bookCount: number }[] = [];
 
 const readingOrdersPageJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
