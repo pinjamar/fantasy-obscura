@@ -6118,6 +6118,631 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   },
 
   {
+    slug: 'dragonflight',
+    source: {
+      title: 'Dragonflight',
+      author: 'Anne McCaffrey',
+      db_slug: 'dragonflight',
+      darkness_level: 2,
+      heat_level: null,
+      series: 'Dragonriders of Pern',
+      series_number: 1,
+      tropes: [
+        'Dragon Bond',
+        'Telepathic Animal Companion',
+        'Impression',
+        'Found Family',
+        'Chosen by Destiny',
+        'Coming of Age',
+        'Female Protagonist',
+        'Science Fantasy',
+      ],
+      angle: 'The Original Dragon Bond — Fantasy Heart, Science Fiction Soul',
+      answer_line:
+        'If you loved Dragonriders of Pern for the Impression, the dragon bond, and the warmth of the Weyr — start with His Majesty\'s Dragon, Arrows of the Queen, and Eragon.',
+      why_people_love:
+        "Dragonriders of Pern works because the dragon bond is the most emotionally satisfying relationship in science fiction, disguised as fantasy. When a dragon hatches and chooses its rider — that moment of Impression, of recognition, of two minds finding each other across a crowd — McCaffrey invented something that has never been matched for pure wish-fulfilment with genuine emotional weight. The bond is telepathic and lifelong and total: the dragon knows everything about the rider, and when a dragon dies, the rider rarely survives. That cost is what gives the warmth its credibility. The Weyrs are the best version of the found-family structure in the genre: a community built around a shared purpose that outsiders don't fully understand, with its own hierarchy, rituals, and the specific intimacy of people who live with creatures most of the world has never seen up close. Lessa is among the first great female protagonists in genre fantasy — fierce, calculating, willing to make terrible decisions for the right reasons. The later books' revelation that Pern is science fiction — a colony world whose dragons were genetically engineered — is one of the great slow reveals in the genre, and reading the series knowing the secret changes everything.",
+    },
+    aspects: [
+      {
+        heading:
+          'If you loved the Impression — the moment a dragon hatches and chooses you, and both your lives change completely and permanently...',
+        recs: [
+          {
+            title: "His Majesty's Dragon",
+            slug: 'his-majestys-dragon',
+            author: 'Naomi Novik',
+            cover_url:
+              'https://books.google.com/books/content?id=OOFZAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'Temeraire',
+            series_number: 1,
+            series_label: 'Series (9 books)',
+            audiobook: true,
+            note: "The closest living relative of Pern in the entire genre. Captain Laurence is a naval officer who captures a French ship carrying a dragon egg — the egg hatches early, the dragon chooses him, and his entire life pivots in a single moment. Novik transposes the Pern premise into the Napoleonic Wars: dragons as air corps, the bond between rider and dragon as the emotional center of the series, and a world-building project that takes the what-if seriously in every direction. Temeraire is the Pern dragon for readers who've grown up — more historically grounded, more politically complex, and with the same absolute clarity about what the bond costs and what it gives. If you loved the Impression above all else, this series was written for you.",
+            tags: ['Dragon Bond', 'Historical Fantasy', 'Napoleonic Wars', 'Military', 'Telepathic Dragon'],
+            amazon_url:
+              "https://www.amazon.com/s?k=His+Majesty's+Dragon+Naomi+Novik&tag=librariancura-20",
+            bookshop_url:
+              "https://bookshop.org/search?keywords=His+Majesty's+Dragon+Novik&affiliate=122720",
+          },
+          {
+            title: 'Arrows of the Queen',
+            slug: 'arrows-of-the-queen',
+            author: 'Mercedes Lackey',
+            cover_url:
+              'https://books.google.com/books/content?id=7e2kzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 2,
+            heat_level: null,
+            standalone: false,
+            series: 'Heralds of Valdemar',
+            series_number: 1,
+            series_label: 'Series (ongoing)',
+            audiobook: true,
+            note: "The other series built around the same emotional architecture as Pern. A Companion — a magical white horse — Chooses Talia, a young girl from a restrictive society, pulling her into a new life as a Herald of Valdemar. The Choosing maps directly onto the Impression: a creature of rare intelligence and power selects a specific person, the bond is telepathic and lifelong, and the rider is taken to a school where others like them are trained. Lackey and McCaffrey were close friends and the structural similarities are not coincidental. Arrows of the Queen has the same warmth, the same coming-of-age scaffolding, and the same understanding that belonging to something — a creature, a community, a purpose — is its own form of salvation.",
+            tags: ['Telepathic Animal Bond', 'Coming of Age', 'Found Family', 'Female Protagonist', 'Classic Fantasy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Arrows+of+the+Queen+Mercedes+Lackey&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Arrows+of+the+Queen+Lackey&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the Weyr — a tight community built around a shared purpose, with its own hierarchy and the found family of people who understand what you are...',
+        recs: [
+          {
+            title: 'The Way of Kings',
+            slug: 'the-way-of-kings',
+            author: 'Brandon Sanderson',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/QVn8vV6if68C?fife=w400-h600',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The Stormlight Archive',
+            series_number: 1,
+            series_label: 'Series (5 books planned)',
+            audiobook: true,
+            note: "Sanderson's Radiants bond with spren — elemental spirits — in a relationship that has the same psychic depth and permanent weight as the Pern dragon bond. The Windrunners, Lightweavers, and other orders of Knights Radiant are structured exactly like Weyrs: communities defined by their bond, with shared purpose, shared training, and the specific intimacy of people who carry something the rest of the world doesn't fully understand. The Way of Kings is considerably darker and longer than Dragonflight, but the emotional experience of belonging to an order built around a sacred partnership is identical — and Sanderson's world-building matches McCaffrey's scope.",
+            tags: ['Bonded Companions', 'Found Family', 'Epic Scale', 'Multiple POV', 'Hard Magic System'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson&affiliate=122720',
+          },
+          {
+            title: "Assassin's Apprentice",
+            slug: 'assassins-apprentice',
+            author: 'Robin Hobb',
+            cover_url:
+              'https://books.google.com/books/content?id=zyFPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'Farseer Trilogy',
+            series_number: 1,
+            series_label: 'Trilogy',
+            audiobook: true,
+            note: "Hobb's Wit magic — a telepathic bond with animals so deep that the human begins to lose themselves in the animal's consciousness — is the darkest version of the same thing McCaffrey built. FitzChivalry's bond with his wolf Nighteyes is the most emotionally devastating animal-partnership in the genre: total, mutual, irreversible, and costly in ways Pern never quite acknowledges. If the dragon bond is why you love Pern, Robin Hobb will give you that bond taken to its logical conclusion — the full weight of what it means to share a mind with another creature across a lifetime. Considerably darker than McCaffrey, but essential.",
+            tags: ['Telepathic Animal Bond', 'Coming of Age', 'Dark Fantasy', 'Character Study', 'Emotional Depth'],
+            amazon_url:
+              "https://www.amazon.com/s?k=Assassin's+Apprentice+Robin+Hobb&tag=librariancura-20",
+            bookshop_url:
+              "https://bookshop.org/search?keywords=Assassin's+Apprentice+Robin+Hobb&affiliate=122720",
+          },
+          {
+            title: 'A Wizard of Earthsea',
+            slug: 'a-wizard-of-earthsea',
+            author: 'Ursula K. Le Guin',
+            cover_url:
+              'https://books.google.com/books/content?id=SWa6vHZlk_4C&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 2,
+            heat_level: null,
+            standalone: false,
+            series: 'Earthsea',
+            series_number: 1,
+            series_label: 'Series (6 books)',
+            audiobook: true,
+            note: "Written just before Dragonflight and sharing the same DNA: a young person with an unusual gift is taken from their home to a school on an island where others like them are trained. Roke School is a Weyr by another name — a community built entirely around a shared purpose, with its own hierarchy, rituals, and the found family of people who carry something the rest of the world doesn't fully understand. Le Guin and McCaffrey were building the same kind of fantasy at the same historical moment, and reading them together reveals how much the warm, community-centred coming-of-age template owes to both of them equally.",
+            tags: ['Coming of Age', 'Magic School', 'Found Community', 'Foundational Fantasy', 'Literary'],
+            amazon_url:
+              'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Le+Guin&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=A+Wizard+of+Earthsea+Le+Guin&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the dragons themselves — vast, intelligent, fire-breathing, and capable of a relationship with their rider that redefines both their lives...',
+        recs: [
+          {
+            title: 'Eragon',
+            slug: 'eragon',
+            author: 'Christopher Paolini',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/hmPLN5VTNBQC?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Inheritance Cycle',
+            series_number: 1,
+            series_label: 'Series (4 books)',
+            audiobook: true,
+            note: "The most direct descendant of Pern's dragon-rider premise in YA fantasy — a farm boy finds a dragon egg, it hatches for him, and his entire life is restructured around the bond. Paolini's debt to McCaffrey is explicit: Saphira is telepathic, the bond is permanent, and the emotional center of the series is always the relationship between Eragon and his dragon rather than the external plot. Less sophisticated than the Temeraire books but more faithful to Pern's original tone: wonder, youth, and a dragon who is as much personality as power.",
+            tags: ['Dragon Bond', 'Coming of Age', 'YA Fantasy', 'Farm Boy Hero', 'Telepathic Dragon'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Eragon+Christopher+Paolini&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Eragon+Paolini&affiliate=122720',
+          },
+          {
+            title: 'The Priory of the Orange Tree',
+            slug: 'the-priory-of-the-orange-tree',
+            author: 'Samantha Shannon',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/3k5uDwAAQBAJ?fife=w400-h600',
+            darkness_level: 4,
+            heat_level: 'Closed Door',
+            standalone: true,
+            audiobook: true,
+            note: "Shannon's standalone epic is built around a matriarchal society of female dragon-riders and the political stakes of a world where dragons are both weapons and partners. The Eastern dragon-riders share the telepathic bond and the intimacy of Pern; the Western wyverns are something closer to weapons. Shannon gives serious thought to what a world genuinely structured around dragon partnerships would look like politically, economically, and culturally — it's the most intellectually rigorous dragon-world since Pern. An excellent choice for readers who want more female protagonists and more explicit politics alongside the bond.",
+            tags: ['Female Protagonists', 'Dragon Riders', 'Epic Fantasy', 'Political Intrigue', 'Standalone'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Shannon&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Priory+of+the+Orange+Tree+Shannon&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [
+      {
+        title: "His Majesty's Dragon",
+        slug: 'his-majestys-dragon',
+        author: 'Naomi Novik',
+        cover_url:
+          'https://books.google.com/books/content?id=OOFZAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Dragon Bond', 'Historical Fantasy', 'Napoleonic Wars', 'Telepathic Dragon'],
+        why: "The closest living relative of Pern in the genre. Novik transposes the Impression into the Napoleonic Wars — a naval captain whose life pivots the moment a dragon hatches and chooses him — and takes every implication of the premise seriously: the military structure, the social disruption, the political complications of a world where dragons are partners rather than beasts. Temeraire is what Pern looks like for adult readers, and it was built by someone who loves McCaffrey's work.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          "https://www.amazon.com/s?k=His+Majesty's+Dragon+Novik&tag=librariancura-20",
+        bookshop_url:
+          "https://bookshop.org/search?keywords=His+Majesty's+Dragon+Novik&affiliate=122720",
+      },
+      {
+        title: 'Arrows of the Queen',
+        slug: 'arrows-of-the-queen',
+        author: 'Mercedes Lackey',
+        cover_url:
+          'https://books.google.com/books/content?id=7e2kzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 2,
+        heat_level: null,
+        tags: ['Telepathic Animal Bond', 'Coming of Age', 'Found Family', 'Female Protagonist'],
+        why: "Built on the same emotional architecture as Pern. A Companion Chooses Talia — the bond is telepathic and lifelong, the chosen girl is taken to a school where others like her are trained, and the found family of the Heralds maps directly onto the Weyr community. Lackey and McCaffrey were friends and the structural parallels are intentional. Same warmth, same coming-of-age scaffolding, same understanding that belonging to a creature and a community is its own form of rescue.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=Arrows+of+the+Queen+Mercedes+Lackey&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=Arrows+of+the+Queen+Lackey&affiliate=122720',
+      },
+      {
+        title: 'Eragon',
+        slug: 'eragon',
+        author: 'Christopher Paolini',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/hmPLN5VTNBQC?fife=w400-h600',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Dragon Bond', 'Coming of Age', 'YA Fantasy', 'Telepathic Dragon'],
+        why: "The most direct YA descendant of the Pern premise — a farm boy, a hatching egg, a telepathic bond, and a life restructured around the dragon. Saphira is personality first and power second, the bond is permanent and costs both of them, and the emotional center of the series is always the relationship rather than the plot. More straightforwardly heroic than Pern but built on the same foundation.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=Eragon+Christopher+Paolini&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=Eragon+Paolini&affiliate=122720',
+      },
+      {
+        title: "Assassin's Apprentice",
+        slug: 'assassins-apprentice',
+        author: 'Robin Hobb',
+        cover_url:
+          'https://books.google.com/books/content?id=zyFPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Telepathic Animal Bond', 'Coming of Age', 'Dark Fantasy', 'Emotional Depth'],
+        why: "For readers who want the dragon bond taken to its darkest and most honest conclusion. Hobb's Wit magic — a telepathic bond with animals so deep the human begins to lose themselves in the animal's mind — is the most emotionally devastating version of what McCaffrey built. FitzChivalry and his wolf Nighteyes share everything: joy, grief, consciousness, and eventually much more. Considerably darker than Pern, but the most serious literary treatment of the telepathic animal bond in the genre.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          "https://www.amazon.com/s?k=Assassin's+Apprentice+Robin+Hobb&tag=librariancura-20",
+        bookshop_url:
+          "https://bookshop.org/search?keywords=Assassin's+Apprentice+Robin+Hobb&affiliate=122720",
+      },
+      {
+        title: 'The Priory of the Orange Tree',
+        slug: 'the-priory-of-the-orange-tree',
+        author: 'Samantha Shannon',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/3k5uDwAAQBAJ?fife=w400-h600',
+        darkness_level: 4,
+        heat_level: 'Closed Door',
+        tags: ['Female Dragon Riders', 'Epic Fantasy', 'Political Intrigue', 'Standalone'],
+        why: "The most intellectually rigorous dragon-world since Pern — a matriarchal society of female dragon-riders, and serious thought given to what a civilization genuinely structured around dragon partnerships would look like. Shannon gives her dragons distinct personalities and her riders genuine bonds, and the political stakes of the world are inseparable from the question of who the dragons choose. Essential for Pern readers who want more female protagonists and more explicit politics.",
+        standalone: true,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Priory+of+the+Orange+Tree+Shannon&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=Priory+of+the+Orange+Tree+Shannon&affiliate=122720',
+      },
+      {
+        title: 'The Way of Kings',
+        slug: 'the-way-of-kings',
+        author: 'Brandon Sanderson',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/QVn8vV6if68C?fife=w400-h600',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Bonded Companions', 'Found Family', 'Epic Scale', 'Hard Magic System'],
+        why: "The Radiants bond with spren in a relationship with the same psychic depth and permanent weight as the Pern dragon bond — and the orders of Knights Radiant are structured like Weyrs: communities defined by their bond, with shared purpose and the intimacy of people carrying something the rest of the world doesn't understand. Darker and longer than Dragonflight, but the emotional experience of belonging to an order built around a sacred partnership is identical.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson&affiliate=122720',
+      },
+      {
+        title: 'A Wizard of Earthsea',
+        slug: 'a-wizard-of-earthsea',
+        author: 'Ursula K. Le Guin',
+        cover_url:
+          'https://books.google.com/books/content?id=SWa6vHZlk_4C&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 2,
+        heat_level: null,
+        tags: ['Coming of Age', 'Foundational Fantasy', 'Magic Academy', 'Short & Complete'],
+        why: "Written just before Dragonflight and sharing the same DNA: a young person with an unusual gift is taken from their home to a school where others like them are trained, and must learn that power without wisdom is the most dangerous thing in the world. Le Guin and McCaffrey were building the same kind of fantasy at the same moment — warm, character-driven, concerned with responsibility and belonging — and reading them together is one of the great experiences in the genre.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=A+Wizard+of+Earthsea+Le+Guin&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=A+Wizard+of+Earthsea+Le+Guin&affiliate=122720',
+      },
+    ],
+    related: [
+      { title: "Books Like His Majesty's Dragon", slug: 'his-majestys-dragon' },
+      { title: 'Books Like Eragon', slug: 'eragon' },
+      { title: "Books Like Assassin's Apprentice", slug: 'assassins-apprentice' },
+    ],
+  },
+
+  {
+    slug: 'legend-of-drizzt',
+    source: {
+      title: 'Homeland',
+      author: 'R.A. Salvatore',
+      db_slug: 'homeland',
+      darkness_level: 3,
+      heat_level: null,
+      series: 'The Legend of Drizzt',
+      series_number: 1,
+      tropes: [
+        'Outsider Hero',
+        'Found Family',
+        'Redemption Arc',
+        'Identity vs Heritage',
+        'Kinetic Combat',
+        'Rival Foil',
+        'D&D Party',
+        'Magical Animal Companion',
+      ],
+      angle: 'The Definitive D&D Hero — 30 Books of Kinetic Combat and Chosen Loyalty',
+      answer_line:
+        "If you loved Drizzt for his outsider identity, the Companions of the Hall, and Salvatore's combat writing — start with The Way of Kings, Blood Song, and The Lies of Locke Lamora.",
+      why_people_love:
+        "Drizzt Do'Urden endures because Salvatore built him around the right question: what does it cost to be good in a world that has already decided what you are? Drizzt is a dark elf who left the spider-goddess city of Menzoberranzan because he refused to be what his society required — not because he was special in any cosmic sense, but because something in him simply wouldn't accept it. That stubbornness, and the decades of wandering alone that follow, is the emotional engine of the whole series. The Companions of the Hall — Bruenor, Catti-brie, Wulfgar, Regis — are not just a party. They are the family Drizzt chose after being cast out of the one he was born into, and their loyalty to each other across thirty books is one of the great found-family arcs in genre fiction. Salvatore is also simply the best action writer in commercial fantasy: his combat sequences are choreographed like films, each character's fighting style an extension of their personality, the stakes always personal. Artemis Entreri — the assassin who is everything Drizzt might have become if circumstances had been slightly different — is one of the great rival relationships in the genre, and their parallel arcs across decades of publishing are as satisfying as any conventional narrative.",
+    },
+    aspects: [
+      {
+        heading:
+          "If you loved Drizzt himself — the exile who builds an identity through deed rather than birth, judged for what he looks like rather than who he is...",
+        recs: [
+          {
+            title: 'The Name of the Wind',
+            slug: 'the-name-of-the-wind',
+            author: 'Patrick Rothfuss',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/0FmGkgAACAAJ?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Kingkiller Chronicle',
+            series_number: 1,
+            series_label: 'Trilogy (unfinished)',
+            audiobook: true,
+            note: "Kvothe and Drizzt are built on the same foundation: both are paragons in their field (scimitars vs sympathy magic), both are exiles from the world they were born into, both narrate their own myths in ways that are simultaneously too much and precisely right, and both carry a loneliness that their exceptional ability never quite fills. Rothfuss writes the psychology of the gifted outsider — the way genius isolates, the way reputation precedes you and distorts everything — with the same conviction Salvatore brings to Drizzt's philosophical interiority. Less action-focused, more literary, but the emotional structure is identical: an exceptional person choosing to be good in a world that keeps testing whether that choice is sustainable.",
+            tags: ['Gifted Outsider', 'Identity', 'Reluctant Legend', 'Literary Fantasy', 'Tragedy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss&affiliate=122720',
+          },
+          {
+            title: 'Blood Song',
+            slug: 'blood-song',
+            author: 'Anthony Ryan',
+            cover_url:
+              'https://books.google.com/books/content?id=m5MMBQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: "Raven's Shadow",
+            series_number: 1,
+            series_label: 'Trilogy',
+            audiobook: true,
+            note: "Vaelin Al Sorna is Drizzt transposed into a military training school: a boy taken from everything he knows, forged into the finest warrior of his order, and then sent into a world that uses his abilities without ever fully understanding him. Ryan writes combat with the same kinetic precision as Salvatore — every fight feels grounded in the specific body doing the fighting — and Vaelin's relationships with his brothers in the Sixth Order carry the same emotional weight as the Companions of the Hall. If Salvatore's action sequences are what you love most about Drizzt, Blood Song is the book most likely to produce the same response.",
+            tags: ['Kinetic Combat', 'Military Training', 'Brotherhood', 'Outsider Warrior', 'Epic Fantasy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Blood+Song+Anthony+Ryan&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Blood+Song+Anthony+Ryan&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the Companions of the Hall — the found family forged on the road, loyal to each other long after the quest has ended...',
+        recs: [
+          {
+            title: 'The Lies of Locke Lamora',
+            slug: 'the-lies-of-locke-lamora',
+            author: 'Scott Lynch',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/r2mUkgAACAAJ?fife=w400-h600',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'Gentleman Bastard',
+            series_number: 1,
+            series_label: 'Series (ongoing)',
+            audiobook: true,
+            note: "The Gentleman Bastards are the Companions of the Hall reconfigured as a heist crew: a found family with a shared history deeper than the current adventure, bound by loyalty that has been tested enough times to be trusted. Lynch writes male friendship with the same unironic emotional investment Salvatore brings to Drizzt and Bruenor — the banter, the specific ways each person knows the others' limits, the grief when the group is threatened. Less D&D action, more Venice-canal intrigue, but the emotional architecture of a crew that chooses each other over and over is identical.",
+            tags: ['Found Family', 'Heist', 'Male Friendship', 'Dark Fantasy', 'Witty Banter'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora+Lynch&affiliate=122720',
+          },
+          {
+            title: 'The Final Empire',
+            slug: 'the-final-empire',
+            author: 'Brandon Sanderson',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/RFBsAQAAQBAJ?fife=w400-h600',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'Mistborn',
+            series_number: 1,
+            series_label: 'Trilogy',
+            audiobook: true,
+            note: "Kelsier's crew maps directly onto the Companions of the Hall: distinct abilities, distinct personalities, and relationships between members that matter as much as the mission. Sanderson is also one of the few writers who matches Salvatore's commitment to action sequences — Allomantic combat is as choreographed and visually precise as Drizzt's scimitar work, each character's powers expressing their character. The outsider-finding-belonging arc is Vin's entire story. If you love both the crew dynamics and the kinetic action of Drizzt, Mistborn delivers both.",
+            tags: ['Ensemble Cast', 'Found Family', 'Kinetic Magic Combat', 'Outsider Protagonist', 'Revolution'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Mistborn+The+Final+Empire+Sanderson&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Mistborn+Final+Empire+Sanderson&affiliate=122720',
+          },
+          {
+            title: 'The Black Company',
+            slug: 'the-black-company',
+            author: 'Glen Cook',
+            cover_url:
+              'https://books.google.com/books/content?id=1HFZAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The Chronicles of the Black Company',
+            series_number: 1,
+            series_label: 'Series (10 books)',
+            audiobook: true,
+            note: "The mercenary company as found family — Cook's Annals is built around the same premise as the Companions of the Hall but from the other end of the moral spectrum. The Black Company is one of Salvatore's acknowledged influences, and the intimacy of Cook's group portrait — the nicknames, the shared history that predates the current mission, the loyalty that persists through atrocity — is exactly what Salvatore found in D&D and put on the page. Darker and grimmer than Drizzt but the bond between the soldiers is the same emotional engine.",
+            tags: ['Military Found Family', 'Morally Grey', 'Grimdark', 'Classic Fantasy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Black+Company+Glen+Cook&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          "If you loved Salvatore's combat — the most kinetic, choreographed action sequences in the genre, every fight an extension of the fighter's character...",
+        recs: [
+          {
+            title: 'The Way of Kings',
+            slug: 'the-way-of-kings',
+            author: 'Brandon Sanderson',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/QVn8vV6if68C?fife=w400-h600',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The Stormlight Archive',
+            series_number: 1,
+            series_label: 'Series (5 books planned)',
+            audiobook: true,
+            note: "Kaladin Stormblessed in combat is the closest any modern fantasy gets to the quality of a Drizzt fight: a warrior whose abilities are so far beyond the norm that watching him move is its own kind of reading experience, every move expressing something specific about his character and psychology. Sanderson also shares Salvatore's commitment to the found-family structure — Bridge Four is the Companions of the Hall in a military setting, built through shared suffering rather than shared adventure. The Way of Kings is significantly longer and more philosophically dense than a Drizzt novel, but the core pleasures — exceptional combat writing, deep character loyalty, a hero who fights for people rather than victory — are identical.",
+            tags: ['Exceptional Combat', 'Found Family', 'Military Brotherhood', 'Epic Scale', 'Outsider Hero'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson&affiliate=122720',
+          },
+          {
+            title: 'The Blade Itself',
+            slug: 'the-blade-itself',
+            author: 'Joe Abercrombie',
+            cover_url:
+              'https://books.google.com/books/content?id=KxAfAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The First Law',
+            series_number: 1,
+            series_label: 'Trilogy + standalones',
+            audiobook: true,
+            note: "Logen Ninefingers is what Drizzt looks like from the other side of the moral ledger: a fighter of legendary skill who cannot escape the violence his reputation requires. Abercrombie writes combat with the same physical specificity as Salvatore — you always know exactly who is standing where, what they can do, and what it costs them — but strips away the heroism to show what that level of violence does to a person over time. The First Law is the anti-Drizzt in the best possible sense: it uses the same genre DNA to ask what a career of exceptional killing actually means. Essential reading for any Drizzt fan ready to have the genre examined.",
+            tags: ['Kinetic Combat', 'Morally Grey', 'Grimdark', 'Rival Dynamics', 'Subverts Fantasy Tropes'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [
+      {
+        title: 'The Way of Kings',
+        slug: 'the-way-of-kings',
+        author: 'Brandon Sanderson',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/QVn8vV6if68C?fife=w400-h600',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Exceptional Combat', 'Found Family', 'Military Brotherhood', 'Epic Scale'],
+        why: "Kaladin in combat is the closest modern fantasy gets to the quality of a Drizzt fight — a warrior so far beyond the norm that watching him move is its own reading experience. Sanderson also shares Salvatore's commitment to found family: Bridge Four is the Companions of the Hall in a military setting, built through shared suffering. Longer and more philosophically dense than a Drizzt novel, but the core pleasures are identical.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson&affiliate=122720',
+      },
+      {
+        title: 'Blood Song',
+        slug: 'blood-song',
+        author: 'Anthony Ryan',
+        cover_url:
+          'https://books.google.com/books/content?id=m5MMBQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Kinetic Combat', 'Military Brotherhood', 'Outsider Warrior', 'Epic Fantasy'],
+        why: "Vaelin Al Sorna is Drizzt in a military training school — the finest warrior of his order, carrying loyalty to a found family of brothers, written by someone who understands that combat sequences should express character rather than just describe movement. Ryan's action writing matches Salvatore's physical specificity. If Salvatore's fights are what you love most, this is the book to read next.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=Blood+Song+Anthony+Ryan&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=Blood+Song+Anthony+Ryan&affiliate=122720',
+      },
+      {
+        title: 'The Name of the Wind',
+        slug: 'the-name-of-the-wind',
+        author: 'Patrick Rothfuss',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/0FmGkgAACAAJ?fife=w400-h600',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Gifted Outsider', 'Identity', 'Reluctant Legend', 'Literary Fantasy'],
+        why: "For readers who loved Drizzt's philosophical interiority — the loneliness of being exceptional in a world that has already decided what you are. Kvothe is built on the same foundation: exile, extraordinary ability, and the exhausting work of choosing to be good when nothing requires it. Less action, more literary, but the emotional structure is the same.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss&affiliate=122720',
+      },
+      {
+        title: 'The Lies of Locke Lamora',
+        slug: 'the-lies-of-locke-lamora',
+        author: 'Scott Lynch',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/r2mUkgAACAAJ?fife=w400-h600',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Found Family', 'Heist', 'Male Friendship', 'Dark Fantasy'],
+        why: "The Gentleman Bastards are the Companions of the Hall as a heist crew — a found family with a shared history deeper than the current adventure, bound by loyalty that has been tested enough times to be trusted. Lynch writes male friendship with the same unironic emotional investment Salvatore brings to Drizzt and Bruenor. Different setting and tone, same emotional core.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Lies+of+Locke+Lamora+Lynch&affiliate=122720',
+      },
+      {
+        title: 'The Final Empire',
+        slug: 'the-final-empire',
+        author: 'Brandon Sanderson',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/RFBsAQAAQBAJ?fife=w400-h600',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Ensemble Cast', 'Found Family', 'Kinetic Magic Combat', 'Outsider Protagonist'],
+        why: "Kelsier's crew maps onto the Companions of the Hall — distinct abilities, bonds that matter as much as the mission. Sanderson's Allomantic combat is as choreographed as Drizzt's scimitar work. Vin's outsider-finding-belonging arc is Drizzt's arc compressed into a single trilogy. Delivers both the crew dynamics and the kinetic action.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=Mistborn+The+Final+Empire+Sanderson&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=Mistborn+Final+Empire+Sanderson&affiliate=122720',
+      },
+      {
+        title: 'The Blade Itself',
+        slug: 'the-blade-itself',
+        author: 'Joe Abercrombie',
+        cover_url:
+          'https://books.google.com/books/content?id=KxAfAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Kinetic Combat', 'Morally Grey', 'Grimdark', 'Subverts Fantasy Tropes'],
+        why: "The anti-Drizzt in the best possible sense. Logen Ninefingers is a fighter of legendary skill who cannot escape what his reputation requires — Abercrombie uses the same genre DNA as Salvatore to ask what a career of exceptional violence actually does to a person over time. Same physical combat precision, opposite moral framing. Essential for any Drizzt fan ready to have the genre examined.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie&affiliate=122720',
+      },
+      {
+        title: 'The Black Company',
+        slug: 'the-black-company',
+        author: 'Glen Cook',
+        cover_url:
+          'https://books.google.com/books/content?id=1HFZAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Military Found Family', 'Morally Grey', 'Grimdark', 'Classic Fantasy'],
+        why: "The mercenary company as found family — Cook's Annals is built around the same premise as the Companions of the Hall but from the other end of the moral spectrum: soldiers who don't ask who they're fighting for as long as the company survives. The Black Company is one of Salvatore's acknowledged influences, and the intimacy of Cook's group portrait — the nicknames, the shared history, the loyalty that persists through atrocity — is exactly what Salvatore found in D&D and put on the page.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Black+Company+Glen+Cook&affiliate=122720',
+      },
+    ],
+    related: [
+      { title: 'Books Like The Way of Kings', slug: 'the-way-of-kings' },
+      { title: 'Books Like Mistborn', slug: 'mistborn-the-final-empire' },
+      { title: 'Books Like The Name of the Wind', slug: 'the-name-of-the-wind' },
+    ],
+  },
+
+  {
     slug: 'the-wheel-of-time',
     source: {
       title: 'Wheel of Time: The Eye of the World',
@@ -23806,6 +24431,632 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
       { title: 'Books Like The Lies of Locke Lamora', slug: 'the-lies-of-locke-lamora' },
       { title: 'Books Like The Blade Itself', slug: 'the-blade-itself' },
       { title: 'Books Like Gideon the Ninth', slug: 'gideon-the-ninth' },
+    ],
+  },
+  {
+    slug: 'memory-sorrow-thorn',
+    source: {
+      title: 'The Dragonbone Chair',
+      author: 'Tad Williams',
+      db_slug: 'the-dragonbone-chair',
+      darkness_level: 3,
+      heat_level: null,
+      series: 'Memory, Sorrow and Thorn',
+      series_number: 1,
+      tropes: [
+        'Coming-of-Age',
+        'Kitchen Boy Hero',
+        'Political Intrigue',
+        'Ancient Evil',
+        'Slow Burn',
+        'Court Drama',
+        'Epic World-Building',
+        "Hero's Journey",
+      ],
+      angle: 'The Book That Taught GRRM Everything — Slow-Burn Epic Fantasy Built to Last',
+      answer_line:
+        "If you loved Memory, Sorrow and Thorn for Simon's long road from kitchen scullion to hero, the weight of history baked into the world, and the political web of the Hayholt — read A Game of Thrones, Assassin's Apprentice, and The Eye of the World.",
+      why_people_love:
+        "Tad Williams wrote Memory, Sorrow and Thorn in the late 1980s and George R.R. Martin has said in interviews that it changed what he thought epic fantasy could be. That's the clearest summary of what this series does: it took the Tolkien template and made it human. Simon begins as a kitchen scullion in the Hayholt — a boy of no particular importance, invisible to the court he serves — and Williams spends a thousand pages doing the slow, patient work of carrying him into the center of history. The world is built through lived experience rather than exposition. The politics are genuinely complicated, driven by real ambitions and real grievances rather than convenient villainy. The ancient evil has roots in an actual history of the world, not just a dark force that needs to be stopped. What readers come back for is the total immersion — the feeling that Osten Ard existed before page one and will continue after the last page, that you are inhabiting it rather than consuming it. Williams has contempt for shortcuts, and the trilogy rewards that patience with one of the most complete and emotionally satisfying conclusions in the genre.",
+    },
+    aspects: [
+      {
+        heading:
+          "If you loved Simon's arc — the kitchen boy who grows from invisible to essential, carrying the weight of history on a road he never chose...",
+        recs: [
+          {
+            title: "Assassin's Apprentice",
+            slug: 'assassins-apprentice',
+            author: 'Robin Hobb',
+            cover_url:
+              'https://books.google.com/books/content?id=zyFPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'Farseer Trilogy',
+            series_number: 1,
+            series_label: 'Trilogy',
+            audiobook: true,
+            note: "FitzChivalry Farseer is Simon transposed into a dynasty that doesn't know what to do with him: a royal bastard raised in the stables, given a role no one speaks aloud, loyal to a court that cannot acknowledge what it asks of him. Hobb writes the psychological interiority of an underdog with the same depth Williams brings to Simon — the shame, the longing, the slow accumulation of capability that never quite translates into belonging. Both are coming-of-age stories about boys who grow into the weight they're asked to carry without ever being sure they're equal to it.",
+            tags: ['Coming-of-Age', 'Underdog Hero', 'Court Intrigue', 'Psychological Depth', 'Slow Burn'],
+            amazon_url:
+              "https://www.amazon.com/s?k=Assassin's+Apprentice+Robin+Hobb&tag=librariancura-20",
+            bookshop_url:
+              "https://bookshop.org/search?keywords=Assassin's+Apprentice+Robin+Hobb&affiliate=122720",
+          },
+          {
+            title: 'The Eye of the World',
+            slug: 'the-eye-of-the-world',
+            author: 'Robert Jordan',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/FqVlvgAACAAJ?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Wheel of Time',
+            series_number: 1,
+            series_label: 'Series (14 books)',
+            audiobook: true,
+            note: "Jordan and Williams were doing the same thing at the same time: writing the epic fantasy that would follow Tolkien rather than simply repeat him. Rand al'Thor begins as a farmboy in a village so remote it barely knows there's a wider world — the same deliberate removal from the center that Williams uses with Simon. Both series earn their scope by starting small: one ordinary person, one ordinary life, before the world intrudes and refuses to let them be ordinary anymore. If MST's patient world-building and long road from nobody to chosen resonated, Jordan is the natural companion read.",
+            tags: ['Farmboy Hero', 'Epic Scope', 'Slow Burn', 'Coming-of-Age', 'Classic Epic Fantasy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Eye+of+the+World+Robert+Jordan&affiliate=122720',
+          },
+          {
+            title: 'The Name of the Wind',
+            slug: 'the-name-of-the-wind',
+            author: 'Patrick Rothfuss',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/0FmGkgAACAAJ?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Kingkiller Chronicle',
+            series_number: 1,
+            series_label: 'Trilogy (unfinished)',
+            audiobook: true,
+            note: "The literary soul of what Williams was doing — a story about how an ordinary person becomes extraordinary, told by a writer who cares as much about prose as plot. Kvothe moves from poverty through the University at the same patient pace Williams uses for Simon's journey through Osten Ard: the world accumulates around him, the stakes rise through lived experience rather than imposed destiny. Rothfuss is more concerned with voice and less with scope than Williams, but the immersive quality — the sense that you're inhabiting a real place with a real history — is identical.",
+            tags: ['Gifted Underdog', 'Literary Fantasy', 'Slow Burn', 'Immersive World', 'Coming-of-Age'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the political depth — the dying king, the warring court factions, the sense that the real conflict is fought in corridors long before it reaches a battlefield...',
+        recs: [
+          {
+            title: 'A Game of Thrones',
+            slug: 'a-game-of-thrones',
+            author: 'George R.R. Martin',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780553381689-L.jpg',
+            darkness_level: 5,
+            heat_level: 'Explicit',
+            standalone: false,
+            series: 'A Song of Ice and Fire',
+            series_number: 1,
+            series_label: 'Series (unfinished)',
+            audiobook: true,
+            note: "Martin has said in interviews that Memory, Sorrow and Thorn is one of the books that changed how he thought about epic fantasy — and A Game of Thrones is the direct descendant. The same elements are present: a dying king and a succession crisis that fractures an entire civilization, a court where loyalty is the most dangerous currency, political machination as the true engine of events. Martin turned up the darkness, multiplied the POVs, and removed the safety net of a destined hero, but the political grammar of Westeros was built on the foundation Williams laid in Osten Ard. Reading them together is like reading the original and the variation.",
+            tags: ['Political Intrigue', 'Succession Crisis', 'Multi-POV', 'Dark', 'Classic Epic Fantasy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=A+Game+of+Thrones+George+RR+Martin&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=A+Game+of+Thrones+Martin&affiliate=122720',
+          },
+          {
+            title: 'The Blade Itself',
+            slug: 'the-blade-itself',
+            author: 'Joe Abercrombie',
+            cover_url:
+              'https://books.google.com/books/content?id=KxAfAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The First Law',
+            series_number: 1,
+            series_label: 'Trilogy + standalones',
+            audiobook: true,
+            note: "Abercrombie is the grandchild of what Williams started — The First Law inherits the political density of MST and the moral complexity of GRRM and then interrogates both. The Union is a court as dysfunctional as the Hayholt, the political factions as entrenched, the logic of power as brutal, but Abercrombie strips the narrative of anything that looks like a destined hero or a meaningful victory. Essential reading for anyone who loved the political machinery of MST and wants to see that machinery examined rather than celebrated.",
+            tags: ['Political Intrigue', 'Morally Grey', 'Court Drama', 'Grimdark', 'Subverts Fantasy Tropes'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved the world-building — the sense of inhabiting a complete civilization with a deep history, where the past is not backdrop but the engine of everything that happens...',
+        recs: [
+          {
+            title: 'The Fellowship of the Ring',
+            slug: 'the-fellowship-of-the-ring',
+            author: 'J.R.R. Tolkien',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/aWZzLPhY4o0C?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Lord of the Rings',
+            series_number: 1,
+            series_label: 'Trilogy',
+            audiobook: true,
+            note: "Williams wrote MST as a conscious reckoning with Tolkien — not a rejection but an expansion, a question about what epic fantasy could do if it built on the same foundation of deep history and complete civilization but refused the comfort of a clear moral divide. Reading The Lord of the Rings after MST (or alongside it) shows exactly what Williams took and what he transformed: the patient world-building, the sense that the land itself has a history, the weight of myth pressing down on ordinary people. Tolkien is where the grammar came from; Williams is what happened when someone decided to rewrite the grammar with the same materials.",
+            tags: ['Foundational Fantasy', 'Epic World-Building', 'Deep History', 'Classic', 'Slow Burn'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Fellowship+of+the+Ring+Tolkien&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Fellowship+of+the+Ring+Tolkien&affiliate=122720',
+          },
+          {
+            title: 'The Way of Kings',
+            slug: 'the-way-of-kings',
+            author: 'Brandon Sanderson',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/QVn8vV6if68C?fife=w400-h600',
+            darkness_level: 4,
+            heat_level: null,
+            standalone: false,
+            series: 'The Stormlight Archive',
+            series_number: 1,
+            series_label: 'Series (5 books planned)',
+            audiobook: true,
+            note: "The Stormlight Archive is the contemporary descendant of what Williams built: a world so completely realized that the history, the ecology, and the politics all feel like they were always there before you arrived. Sanderson is more systematic than Williams — the magic system is harder, the structure more architecturally precise — but the ambition is the same: a world that earns its scope by building it from the foundations up rather than drawing on existing mythology. Both series reward readers who will slow down and inhabit a world rather than race through a plot.",
+            tags: ['Epic World-Building', 'Deep History', 'Slow Burn', 'Epic Scale', 'Complete Civilization'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [
+      {
+        title: "Assassin's Apprentice",
+        slug: 'assassins-apprentice',
+        author: 'Robin Hobb',
+        cover_url:
+          'https://books.google.com/books/content?id=zyFPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Coming-of-Age', 'Underdog Hero', 'Court Intrigue', 'Psychological Depth'],
+        why: "FitzChivalry is Simon in a dynasty that doesn't know what to do with him — a royal bastard raised to serve, loyal to a court that cannot acknowledge what it asks of him. Hobb writes the psychology of the underdog with the same depth Williams brings to Simon: the shame, the longing, the slow accumulation of capability that never quite translates into belonging.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          "https://www.amazon.com/s?k=Assassin's+Apprentice+Robin+Hobb&tag=librariancura-20",
+        bookshop_url:
+          "https://bookshop.org/search?keywords=Assassin's+Apprentice+Robin+Hobb&affiliate=122720",
+      },
+      {
+        title: 'A Game of Thrones',
+        slug: 'a-game-of-thrones',
+        author: 'George R.R. Martin',
+        cover_url:
+          'https://covers.openlibrary.org/b/isbn/9780553381689-L.jpg',
+        darkness_level: 5,
+        heat_level: 'Explicit',
+        tags: ['Political Intrigue', 'Succession Crisis', 'Multi-POV', 'Dark'],
+        why: "Martin has said MST changed how he thought about epic fantasy — A Game of Thrones is the direct descendant. Same elements: dying king, succession crisis, court where loyalty is the most dangerous currency. Martin multiplied the darkness and removed the safety net of a destined hero, but the political grammar of Westeros was built on the foundation Williams laid.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=A+Game+of+Thrones+George+RR+Martin&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=A+Game+of+Thrones+Martin&affiliate=122720',
+      },
+      {
+        title: 'The Eye of the World',
+        slug: 'the-eye-of-the-world',
+        author: 'Robert Jordan',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/FqVlvgAACAAJ?fife=w400-h600',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Farmboy Hero', 'Epic Scope', 'Classic Epic Fantasy', 'Slow Burn'],
+        why: "Jordan and Williams were doing the same thing simultaneously: writing the epic fantasy that would follow Tolkien. Both start small — one ordinary person, one remote village — and earn their scope by the long road from nobody to chosen. If MST's patient world-building resonated, Jordan is the natural companion read.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Eye+of+the+World+Robert+Jordan&affiliate=122720',
+      },
+      {
+        title: 'The Name of the Wind',
+        slug: 'the-name-of-the-wind',
+        author: 'Patrick Rothfuss',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/0FmGkgAACAAJ?fife=w400-h600',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Gifted Underdog', 'Literary Fantasy', 'Slow Burn', 'Immersive World'],
+        why: "The literary soul of what Williams was doing — a story about how an ordinary person becomes extraordinary, told by someone who cares as much about prose as plot. The immersive quality is identical: you're inhabiting a real place with a real history, following a person who becomes important through lived experience rather than imposed destiny.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss&affiliate=122720',
+      },
+      {
+        title: 'The Blade Itself',
+        slug: 'the-blade-itself',
+        author: 'Joe Abercrombie',
+        cover_url:
+          'https://books.google.com/books/content?id=KxAfAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Political Intrigue', 'Morally Grey', 'Court Drama', 'Grimdark'],
+        why: "Abercrombie is the grandchild of what Williams started — The First Law inherits MST's political density, GRRM's moral complexity, and then interrogates both. The dysfunctional court, the entrenched factions, the brutal logic of power — all present. But Abercrombie strips the narrative of anything that looks like a destined hero or a meaningful victory.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie&affiliate=122720',
+      },
+      {
+        title: 'The Fellowship of the Ring',
+        slug: 'the-fellowship-of-the-ring',
+        author: 'J.R.R. Tolkien',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/aWZzLPhY4o0C?fife=w400-h600',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Foundational Fantasy', 'Epic World-Building', 'Deep History', 'Classic'],
+        why: "Williams wrote MST as a conscious reckoning with Tolkien — not a rejection but an expansion. Reading The Lord of the Rings alongside MST shows exactly what Williams took and transformed: the patient world-building, the weight of myth pressing down on ordinary people. Tolkien is where the grammar came from; Williams is what happened when someone rewrote that grammar with the same materials.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Fellowship+of+the+Ring+Tolkien&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Fellowship+of+the+Ring+Tolkien&affiliate=122720',
+      },
+      {
+        title: 'The Way of Kings',
+        slug: 'the-way-of-kings',
+        author: 'Brandon Sanderson',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/QVn8vV6if68C?fife=w400-h600',
+        darkness_level: 4,
+        heat_level: null,
+        tags: ['Epic World-Building', 'Deep History', 'Slow Burn', 'Epic Scale'],
+        why: "The contemporary descendant of what Williams built — a world so completely realized that the history, ecology, and politics feel like they were always there before you arrived. Sanderson is more systematic (harder magic, more architecturally precise) but the ambition is the same: a world that earns its scope by building from the foundations up.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Way+of+Kings+Sanderson&affiliate=122720',
+      },
+    ],
+    related: [
+      { title: 'Books Like Lord of the Rings', slug: 'lord-of-the-rings' },
+      { title: 'Books Like A Game of Thrones', slug: 'a-game-of-thrones' },
+      { title: "Books Like Assassin's Apprentice", slug: 'assassins-apprentice' },
+    ],
+  },
+  {
+    slug: 'shannara',
+    source: {
+      title: 'The Sword of Shannara',
+      author: 'Terry Brooks',
+      db_slug: 'the-sword-of-shannara',
+      darkness_level: 2,
+      heat_level: null,
+      series: 'The Original Shannara Trilogy',
+      series_number: 1,
+      tropes: [
+        'Chosen Bloodline',
+        'Dark Lord',
+        'Quest for Artifact',
+        'Fellowship',
+        'Druid Guide',
+        'Half-Elven Hero',
+        'Classic Epic Fantasy',
+        'Ancient Evil',
+      ],
+      angle: 'The Book That Launched Del Rey Fantasy — Classic Quest Adventure at Its Most Pure',
+      answer_line:
+        "If you loved Shannara for the pure quest fantasy — the chosen bloodline, the ancient artifact, the druid guide, the world worth saving — start with The Fellowship of the Ring, The Eye of the World, and Eragon.",
+      why_people_love:
+        "The Sword of Shannara was published in 1977 as the first fantasy novel to debut on the New York Times bestseller list, and it launched Del Rey's entire fantasy publishing line. Yes, it wears its Tolkien debt openly — Shea Ohmsford and Flick are as close to Frodo and Sam as you can get without being derivative, and Allanon is unmistakably Gandalf in a darker coat. But that criticism misses what Brooks was doing: he was translating the emotional grammar of Tolkien into a template that could run indefinitely, a world with enough room for generations of heroes and decades of stories. The Ohmsford bloodline becomes the emotional engine — a family that carries responsibility it never asked for, across trilogy after trilogy, in a world that keeps darkening and keeps needing saving. The Elfstones of Shannara, the second book, is where Brooks stepped fully out of Tolkien's shadow and wrote something genuinely his own: the Ellcrys, the Forbidding, Wil and Amberle, and an ending that earns its grief. Shannara readers come back for the combination of scope and safety — a world that is genuinely epic but whose moral framework is clear enough that you can invest without bracing yourself for everyone you love to die.",
+    },
+    aspects: [
+      {
+        heading:
+          'If you loved the classic quest — the chosen bloodline, the dark lord, the artifact that has to be found before the world ends...',
+        recs: [
+          {
+            title: 'The Fellowship of the Ring',
+            slug: 'the-fellowship-of-the-ring',
+            author: 'J.R.R. Tolkien',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/aWZzLPhY4o0C?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Lord of the Rings',
+            series_number: 1,
+            series_label: 'Trilogy',
+            audiobook: true,
+            note: "The Sword of Shannara is so close to The Fellowship of the Ring that reading both is like reading the original and its most faithful translation. Brooks took the chosen hero from humble origins, the dark lord who cannot be defeated by force alone, the wise guide who carries secrets, the fellowship of unlikely companions, and the ancient artifact quest — and built a world that could hold that structure indefinitely. Reading Tolkien after Shannara (or before) shows exactly where Brooks's emotional DNA comes from, and how much the original does with economy that Shannara achieves with scope. Essential pairing.",
+            tags: ['Foundational Fantasy', 'Dark Lord', 'Quest', 'Fellowship', 'Classic'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Fellowship+of+the+Ring+Tolkien&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Fellowship+of+the+Ring+Tolkien&affiliate=122720',
+          },
+          {
+            title: 'The Eye of the World',
+            slug: 'the-eye-of-the-world',
+            author: 'Robert Jordan',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/FqVlvgAACAAJ?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Wheel of Time',
+            series_number: 1,
+            series_label: 'Series (14 books)',
+            audiobook: true,
+            note: "Jordan did for the 1990s what Brooks did for the 1970s: took the Tolkien template and expanded it into a system that could run for decades. The opening of The Eye of the World is almost identical to The Sword of Shannara — rural village, dark riders, young men with hidden destinies who have to leave everything behind — but Jordan then uses that familiar launching pad to build one of the most complex political and magical worlds in genre history. If Shannara made you want more epic quest fantasy with massive scope, Wheel of Time is the natural next step.",
+            tags: ['Chosen Hero', 'Dark Lord', 'Epic Scope', 'Long Series', 'Classic Epic Fantasy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Eye+of+the+World+Robert+Jordan&affiliate=122720',
+          },
+          {
+            title: 'Eragon',
+            slug: 'eragon',
+            author: 'Christopher Paolini',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/hmPLN5VTNBQC?fife=w400-h600',
+            darkness_level: 2,
+            heat_level: null,
+            standalone: false,
+            series: 'The Inheritance Cycle',
+            series_number: 1,
+            series_label: 'Tetralogy',
+            audiobook: true,
+            note: "Eragon got the same criticism as Shannara — too derivative, too close to its sources — and for the same reason: Paolini, like Brooks, was a writer who loved the genre so completely that his first book is a synthesis of its greatest hits rather than an original departure from them. Farm boy with hidden destiny, mentor figure who dies too soon, dragon bond as the central relationship, dark empire to overthrow. If Shannara was your entry into epic fantasy and you found the Tolkien-adjacent structure welcoming rather than limiting, Eragon is the closest contemporary match.",
+            tags: ['Farm Boy Hero', 'Dragon Bond', 'Dark Empire', 'Coming-of-Age', 'Classic Quest'],
+            amazon_url:
+              'https://www.amazon.com/s?k=Eragon+Christopher+Paolini&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=Eragon+Christopher+Paolini&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          "If you loved that Shannara doesn't punish you for caring — epic stakes without grimdark nihilism, a world where heroism still means something...",
+        recs: [
+          {
+            title: 'The Hobbit',
+            slug: 'the-hobbit',
+            author: 'J.R.R. Tolkien',
+            cover_url:
+              'https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg',
+            darkness_level: 2,
+            heat_level: null,
+            standalone: true,
+            series: null,
+            series_number: null,
+            series_label: null,
+            audiobook: true,
+            note: "The Hobbit is the purest form of what Shannara is reaching for: an adventure story told with warmth and humor, where the stakes are genuinely high but the narrative voice never loses its fundamental optimism about whether small people can do large things. Brooks owes as much to The Hobbit as to The Lord of the Rings — the accessibility, the domesticity of the hero's starting point, the sense that going on an adventure is something that happens to people who mostly just wanted a quiet life. If you love Shannara for its spirit rather than its structure, The Hobbit is the purest expression of that spirit.",
+            tags: ['Classic Adventure', 'Accessible', 'Warmhearted', 'Quest', 'Foundational Fantasy'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Hobbit+Tolkien&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Hobbit+Tolkien&affiliate=122720',
+          },
+          {
+            title: 'The Dragonbone Chair',
+            slug: 'the-dragonbone-chair',
+            author: 'Tad Williams',
+            cover_url:
+              'https://books.google.com/books/content?id=qU6TEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'Memory, Sorrow and Thorn',
+            series_number: 1,
+            series_label: 'Trilogy',
+            audiobook: true,
+            note: "Williams was doing in the late 1980s what Brooks had done a decade earlier: building a Tolkien-inflected epic that could stand independently, with its own world and its own emotional logic. The Dragonbone Chair is darker and more patient than Shannara — Simon is a kitchen scullion where Shea is a half-Elven hero of destiny, and Williams is more interested in the political machinery of the court than in clean quest structure — but the sense of a fully inhabited world with a deep history is the same. For Shannara readers ready to take the next step in complexity without abandoning the classic epic fantasy tradition, this is the right book.",
+            tags: ['Classic Epic Fantasy', 'Coming-of-Age', 'Deep World', 'Political Intrigue', 'Slow Burn'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Dragonbone+Chair+Tad+Williams&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Dragonbone+Chair+Tad+Williams&affiliate=122720',
+          },
+        ],
+      },
+      {
+        heading:
+          'If you loved losing yourself in the Shannara world across trilogies — the same world deepening with each new generation of heroes...',
+        recs: [
+          {
+            title: "Assassin's Apprentice",
+            slug: 'assassins-apprentice',
+            author: 'Robin Hobb',
+            cover_url:
+              'https://books.google.com/books/content?id=zyFPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'Farseer Trilogy',
+            series_number: 1,
+            series_label: 'Trilogy (entry to larger world)',
+            audiobook: true,
+            note: "The Realm of the Elderlings is what the Shannara world becomes when a writer decides to follow the emotional logic of a recurring family bloodline all the way down. FitzChivalry is the first of Hobb's heroes to inherit a burden he didn't choose in a world whose history keeps pressing forward into the present — the same structure as the Ohmsfords across Brooks's many trilogies. Hobb is considerably darker and more psychologically demanding than Brooks, and the Realm of the Elderlings becomes one of the deepest, most interconnected fantasy worlds in the genre. For Shannara readers ready for a series that rewards long investment with a world that keeps growing.",
+            tags: ['Generational Saga', 'Inherited Burden', 'Deep World', 'Coming-of-Age', 'Long Series'],
+            amazon_url:
+              "https://www.amazon.com/s?k=Assassin's+Apprentice+Robin+Hobb&tag=librariancura-20",
+            bookshop_url:
+              "https://bookshop.org/search?keywords=Assassin's+Apprentice+Robin+Hobb&affiliate=122720",
+          },
+          {
+            title: 'The Name of the Wind',
+            slug: 'the-name-of-the-wind',
+            author: 'Patrick Rothfuss',
+            cover_url:
+              'https://books.google.com/books/publisher/content/images/frontcover/0FmGkgAACAAJ?fife=w400-h600',
+            darkness_level: 3,
+            heat_level: null,
+            standalone: false,
+            series: 'The Kingkiller Chronicle',
+            series_number: 1,
+            series_label: 'Trilogy (unfinished)',
+            audiobook: true,
+            note: "Rothfuss shares with Brooks a commitment to immersion over deconstruction — The Name of the Wind is a book that wants you to love the world and love Kvothe, not examine the genre's assumptions. The University, the Fae, the Aturan Empire all feel like places that have been inhabited for centuries before the story begins, which is the same quality that makes the Four Lands feel real across Brooks's many volumes. Where Shannara gives you breadth across trilogies, Rothfuss gives you depth within a single story — but the underlying pleasure, the feeling of being inside a world that is larger than any single narrative, is identical.",
+            tags: ['Immersive World', 'Literary Fantasy', 'Gifted Hero', 'Coming-of-Age', 'Slow Burn'],
+            amazon_url:
+              'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
+            bookshop_url:
+              'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss&affiliate=122720',
+          },
+        ],
+      },
+    ],
+    recommendations: [
+      {
+        title: 'The Fellowship of the Ring',
+        slug: 'the-fellowship-of-the-ring',
+        author: 'J.R.R. Tolkien',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/aWZzLPhY4o0C?fife=w400-h600',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Foundational Fantasy', 'Dark Lord', 'Quest', 'Fellowship', 'Classic'],
+        why: "Shannara is so close to LotR that reading both is like reading the original and its most faithful translation. Brooks took the chosen hero, the dark lord, the wise guide, the fellowship, the artifact quest — and built a world that could hold that structure indefinitely. Essential pairing.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Fellowship+of+the+Ring+Tolkien&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Fellowship+of+the+Ring+Tolkien&affiliate=122720',
+      },
+      {
+        title: 'The Eye of the World',
+        slug: 'the-eye-of-the-world',
+        author: 'Robert Jordan',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/FqVlvgAACAAJ?fife=w400-h600',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Chosen Hero', 'Dark Lord', 'Epic Scope', 'Long Series', 'Classic Epic Fantasy'],
+        why: "Jordan did for the 1990s what Brooks did for the 1970s. The opening is almost identical to Sword of Shannara — rural village, dark riders, young men with hidden destinies — but Jordan uses that familiar launching pad to build one of the most complex worlds in genre history. The natural next step after Shannara.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Eye+of+the+World+Robert+Jordan&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Eye+of+the+World+Robert+Jordan&affiliate=122720',
+      },
+      {
+        title: 'Eragon',
+        slug: 'eragon',
+        author: 'Christopher Paolini',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/hmPLN5VTNBQC?fife=w400-h600',
+        darkness_level: 2,
+        heat_level: null,
+        tags: ['Farm Boy Hero', 'Dragon Bond', 'Dark Empire', 'Classic Quest'],
+        why: "Eragon got the same criticism as Shannara — too derivative — and for the same reason: Paolini loved the genre so completely that his first book is a synthesis of its greatest hits. Farm boy with hidden destiny, mentor who dies too soon, dragon bond, dark empire to overthrow. If Shannara's welcoming structure was your entry into epic fantasy, Eragon is the closest contemporary match.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=Eragon+Christopher+Paolini&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=Eragon+Christopher+Paolini&affiliate=122720',
+      },
+      {
+        title: 'The Hobbit',
+        slug: 'the-hobbit',
+        author: 'J.R.R. Tolkien',
+        cover_url:
+          'https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg',
+        darkness_level: 2,
+        heat_level: null,
+        tags: ['Classic Adventure', 'Accessible', 'Warmhearted', 'Quest', 'Foundational Fantasy'],
+        why: "The purest form of what Shannara is reaching for: an adventure story with genuine stakes but fundamental optimism about whether small people can do large things. Brooks owes as much to The Hobbit as to The Lord of the Rings — the accessibility, the domesticity of the starting point, the sense that going on an adventure happens to people who mostly wanted a quiet life.",
+        standalone: true,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Hobbit+Tolkien&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Hobbit+Tolkien&affiliate=122720',
+      },
+      {
+        title: 'The Dragonbone Chair',
+        slug: 'the-dragonbone-chair',
+        author: 'Tad Williams',
+        cover_url:
+          'https://books.google.com/books/content?id=qU6TEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Classic Epic Fantasy', 'Coming-of-Age', 'Deep World', 'Political Intrigue'],
+        why: "Williams was doing in the late 1980s what Brooks had done a decade earlier: building a Tolkien-inflected epic that could stand independently. Darker and more patient than Shannara — Williams is more interested in political machinery than clean quest structure — but the same fully inhabited world with a deep history. For Shannara readers ready for the next step in complexity without abandoning the classic tradition.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Dragonbone+Chair+Tad+Williams&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Dragonbone+Chair+Tad+Williams&affiliate=122720',
+      },
+      {
+        title: "Assassin's Apprentice",
+        slug: 'assassins-apprentice',
+        author: 'Robin Hobb',
+        cover_url:
+          'https://books.google.com/books/content?id=zyFPEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Generational Saga', 'Inherited Burden', 'Deep World', 'Long Series'],
+        why: "The Realm of the Elderlings is what the Shannara world becomes when a writer follows the emotional logic of a recurring family bloodline all the way down. FitzChivalry inherits a burden he didn't choose in a world whose history keeps pressing into the present — the same structure as the Ohmsfords across Brooks's trilogies. Considerably darker, but rewards the same long investment.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          "https://www.amazon.com/s?k=Assassin's+Apprentice+Robin+Hobb&tag=librariancura-20",
+        bookshop_url:
+          "https://bookshop.org/search?keywords=Assassin's+Apprentice+Robin+Hobb&affiliate=122720",
+      },
+      {
+        title: 'The Name of the Wind',
+        slug: 'the-name-of-the-wind',
+        author: 'Patrick Rothfuss',
+        cover_url:
+          'https://books.google.com/books/publisher/content/images/frontcover/0FmGkgAACAAJ?fife=w400-h600',
+        darkness_level: 3,
+        heat_level: null,
+        tags: ['Immersive World', 'Literary Fantasy', 'Gifted Hero', 'Slow Burn'],
+        why: "Rothfuss shares with Brooks a commitment to immersion over deconstruction — a world that wants you to love it, not examine it. Where Shannara gives you breadth across trilogies, Rothfuss gives you depth within a single story. The underlying pleasure is identical: being inside a world that is larger than any single narrative.",
+        standalone: false,
+        audiobook: true,
+        amazon_url:
+          'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
+        bookshop_url:
+          'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Rothfuss&affiliate=122720',
+      },
+    ],
+    related: [
+      { title: 'Books Like Lord of the Rings', slug: 'lord-of-the-rings' },
+      { title: 'Books Like Eragon', slug: 'eragon' },
+      { title: 'Books Like The Dragonbone Chair', slug: 'memory-sorrow-thorn' },
     ],
   },
 ];
