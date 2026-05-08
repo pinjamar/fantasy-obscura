@@ -1,6 +1,4 @@
 ---
-export const prerender = true;
-
 import Layout from '../../components/Layout.astro';
 import ReadingOrder from '../../components/ReadingOrder';
 import { getReadingOrderEntry, READING_ORDERS } from '../../data/reading-orders';
@@ -9,10 +7,6 @@ import { getAllSeries, getBooksBySeries, authorToSlug } from '../../lib/db/books
 import { supabaseClient } from '../../lib/supabaseClient';
 import { READING_ORDER_IMAGE_SLUG, readingOrderSrcset, readingOrderFallback } from '../../data/image-map';
 import { BOOKS_LIKE } from '../../data/books-like';
-
-export function getStaticPaths() {
-  return READING_ORDERS.map((entry) => ({ params: { slug: entry.slug } }));
-}
 
 const { slug } = Astro.params;
 
