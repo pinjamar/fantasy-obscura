@@ -1,4 +1,4 @@
-export type BookStatus = 'mandatory' | 'optional' | 'supplementary' | 'upcoming' | 'incomplete';
+export type BookStatus = 'mandatory' | 'optional' | 'supplementary' | 'upcoming';
 export type SeriesStatus = 'complete' | 'ongoing' | 'incomplete';
 export type CardColor = 'blue' | 'green' | 'amber' | 'red' | 'purple' | 'zinc';
 

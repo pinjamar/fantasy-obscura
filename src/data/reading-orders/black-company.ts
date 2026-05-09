@@ -5,7 +5,7 @@ export const blackCompany: ReadingOrderEntry = {
   name: 'Chronicles of the Black Company',
   author: 'Glen Cook',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '📖 Ongoing - new book expected 2026',
+  seriesStatusLabel: '📖 Ongoing - A Pitiless Rain in progress',
   description:
     "One of the founding texts of grimdark fantasy. It has been written years before the term existed. The Black Company is a mercenary band that has served under a succession of employers for centuries, keeping its Annals as it goes. The books are narrated by the Company's physician and historian, Croaker, in a clipped and unsentimental military voice unlike anything else in the genre. No chosen ones. No prophecy. Just soldiers doing terrible things in service of worse masters and somehow finding loyalty worth dying for. The Black Company is where to start. It's short, dense and immediately distinctive. Glen Cook's influence on modern grimdark is enormous; Abercrombie, Erikson and Martin have all cited this series. Read the first four books in order for the complete core story.",
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
@@ -96,7 +96,7 @@ export const blackCompany: ReadingOrderEntry = {
           slug: 'bleak-seasons',
           status: 'mandatory',
           seriesLabel: 'The Black Company #6',
-          note: "Non-linear narrative - Murgen's fractured memories. Disorienting by design. The Company is trapped and things are very bad.",
+          note: "Non-linear narrative - Murgen's fractured memories. Disorienting by design. Readers sometimes find it hard to follow. The Company is trapped and things are very bad.",
           page_count: 304,
           publication_year: 1996,
         },
@@ -127,6 +127,23 @@ export const blackCompany: ReadingOrderEntry = {
           page_count: 448,
           publication_year: 2000,
         },
+      ],
+    },
+    {
+      label: 'A Pitiless Rain',
+      sublabel: 'the new trilogy - in progress',
+      note: 'Lies Weeping arrives 25 years after Soldiers Live. A real gap that shows in the pacing. Croaker is no longer the central narrator; Arkana carries more of the story. Soldiers Live was written as a conclusion and reads like one. Go in knowing Cook is opening a new chapter, not closing the old one.',
+      noteType: 'warning',
+      books: [
+        {
+          title: 'Lies Weeping',
+          slug: 'lies-weeping',
+          status: 'mandatory',
+          seriesLabel: 'The Black Company #10',
+          note: 'The Company returns to Hsien, Arkana takes a central role, and Cook opens a new arc without softening the voice. The prose is unmistakably his. Continue here if you want to go past the original nine.',
+          page_count: 400,
+          publication_year: 2025,
+        },
         {
           title: 'They Cry',
           slug: 'they-cry',
@@ -140,7 +157,7 @@ export const blackCompany: ReadingOrderEntry = {
     },
   ],
   orderNote:
-    'Read The Chronicles first (books 1-3). They stand alone and are the best entry point. Many readers stop here and feel satisfied. Port of Shadows is an optional interquel between books 1 and 2. The Books of the South and Glittering Stone follow directly. The Silver Spike sits before Shadow Games in chronological order.',
+    'Read The Chronicles first (books 1-3). They stand alone and are the best entry point. Many readers stop here and feel satisfied. Port of Shadows is an optional interquel between books 1 and 2. The Books of the South and Glittering Stone follow directly. The Silver Spike sits before Shadow Games in chronological order. The A Pitiless Rain trilogy begins with Lies Weeping (2025) and continues after Soldiers Live. It is a separate arc and a valid stopping point exists before it.',
   cardsPosition: 'above',
   cards: [
     {
@@ -155,8 +172,13 @@ export const blackCompany: ReadingOrderEntry = {
     },
     {
       title: '🏁 Soldiers Live Is Worth It',
-      body: 'The Glittering Stone arc is slower and stranger than the North trilogy, but Soldiers Live delivers one of the most honest endings in fantasy. No triumphalism, just soldiers and what it cost.',
+      body: 'The Glittering Stone arc is slower and stranger than the North trilogy, but Soldiers Live delivers one of the most honest endings in fantasy. No triumphalism, just soldiers and what it cost. It closes the original nine-book run. The series continues with A Pitiless Rain.',
       color: 'purple',
+    },
+    {
+      title: '📖 The Series Continues',
+      body: 'Written 25 years after the original 9 books, A Pitiless Rain is a new trilogy that picks up after Soldiers Live. Lies Weeping (2025) is the first entry with the same voice and Company, Arkana now central. Many readers treat Soldiers Live as the natural stopping point but this trilogy continues directly after.',
+      color: 'zinc',
     },
   ],
   sections: [
@@ -194,5 +216,12 @@ export const blackCompany: ReadingOrderEntry = {
   finishedLabel: 'Finished the Annals?',
   categoryHref: '/fantasy/grimdark',
   categoryLabel: 'Browse Grimdark Fantasy',
-  related: ['first-law', 'malazan', 'mark-lawrence', 'asoiaf', 'witcher', 'robin-hobb'],
+  related: [
+    'first-law',
+    'malazan',
+    'mark-lawrence',
+    'asoiaf',
+    'witcher',
+    'robin-hobb',
+  ],
 };

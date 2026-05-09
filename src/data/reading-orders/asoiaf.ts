@@ -53,7 +53,7 @@ export const asoiaf: ReadingOrderEntry = {
     {
       title: 'The Winds of Winter',
       slug: null,
-      status: 'incomplete',
+      status: 'upcoming',
       note: 'In progress since 2011. No confirmed release date.',
       page_count: null,
       publication_year: null,
@@ -61,7 +61,7 @@ export const asoiaf: ReadingOrderEntry = {
     {
       title: 'A Dream of Spring',
       slug: null,
-      status: 'incomplete',
+      status: 'upcoming',
       note: 'Final book in the series. Unwritten.',
       page_count: null,
       publication_year: null,

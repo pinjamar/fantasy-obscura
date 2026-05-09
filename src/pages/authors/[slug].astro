@@ -49,6 +49,7 @@ type SeriesEntry = {
   name: string;
   bookCount: number;
   readingOrderSlug: string | null;
+  firstBookSlug: string | null;
 };
 
 // Map: series name → curated reading order slug
@@ -113,7 +114,94 @@ const READING_ORDER_MAP: Record<string, string> = {
   'Path to Ascendancy':          'malazan',
   'The Path to Ascendancy':      'malazan',
   'Novels of the Malazan Empire': 'malazan',
+  // Black Company
+  'The Chronicles of the Black Company': 'black-company',
+  'Chronicles of the Black Company':     'black-company',
+  'The Black Company':                   'black-company',
+  'Black Company':                       'black-company',
+  // Crescent City (fix: no standalone guide, points to SJM universe guide)
+  'Crescent City':                       'sarah-j-maas',
+  // Divergent
+  'Divergent':                           'divergent',
+  'Divergent Series':                    'divergent',
+  // Dragonlance
+  'Dragonlance':                         'dragonlance',
+  'Dragonlance Chronicles':              'dragonlance',
+  'Dragonlance Legends':                 'dragonlance',
+  'Tales of the Lance':                  'dragonlance',
+  // Legend of Drizzt
+  'The Legend of Drizzt':               'drizzt',
+  'Legend of Drizzt':                    'drizzt',
+  'The Dark Elf Trilogy':               'drizzt',
+  'Icewind Dale Trilogy':               'drizzt',
+  'Legacy of the Drow':                 'drizzt',
+  'Paths of Darkness':                  'drizzt',
+  'The Hunter\'s Blades Trilogy':       'drizzt',
+  'Transitions':                        'drizzt',
+  // Earthsea
+  'Earthsea Cycle':                      'earthsea',
+  'The Earthsea Cycle':                  'earthsea',
+  'Earthsea':                            'earthsea',
+  // Grishaverse
+  'Shadow and Bone':                     'grishaverse',
+  'King of Scars':                       'grishaverse',
+  'The Grishaverse':                     'grishaverse',
+  'Grisha':                              'grishaverse',
+  // Inheritance Cycle
+  'The Inheritance Cycle':               'inheritance-cycle',
+  'Inheritance Cycle':                   'inheritance-cycle',
+  'The Inheritance Saga':                'inheritance-cycle',
+  // Kate Daniels
+  'Kate Daniels':                        'kate-daniels',
+  'World of Kate Daniels':               'kate-daniels',
+  // Mark Lawrence (multi-series guide)
+  'The Broken Empire':                   'mark-lawrence',
+  'Broken Empire':                       'mark-lawrence',
+  'The Red Queen\'s War':               'mark-lawrence',
+  'Red Queen\'s War':                   'mark-lawrence',
+  'Book of the Ancestor':               'mark-lawrence',
+  // Memory, Sorrow and Thorn / Last King of Osten Ard
+  'Memory, Sorrow and Thorn':           'memory-sorrow-thorn',
+  'The Last King of Osten Ard':         'memory-sorrow-thorn',
+  'Last King of Osten Ard':             'memory-sorrow-thorn',
+  // Dragonriders of Pern
+  'Dragonriders of Pern':               'pern',
+  'Pern':                               'pern',
+  // Shannara
+  'Shannara':                            'shannara',
+  'The Shannara Chronicles':             'shannara',
+  'The Original Shannara Trilogy':       'shannara',
+  'Heritage of Shannara':               'shannara',
+  'Voyage of the Jerle Shannara':       'shannara',
+  'High Druid of Shannara':             'shannara',
+  'The Genesis of Shannara':            'shannara',
+  'The Defenders of Shannara':          'shannara',
+  'The Fall of Shannara':               'shannara',
+  // Valdemar
+  'Valdemar':                            'valdemar',
+  'The World of Valdemar':              'valdemar',
+  'Heralds of Valdemar':                'valdemar',
+  'Mage Winds':                          'valdemar',
+  'Mage Storms':                         'valdemar',
+  'Vows and Honor':                      'valdemar',
+  'The Collegium Chronicles':           'valdemar',
+  'The Herald Spy':                      'valdemar',
+  'Family Spies':                        'valdemar',
 };
+
+const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
+  'sarah-j-maas':      { slug: 'sarah-j-maas',        label: 'Sarah J. Maas Universe Guide' },
+  'brandon-sanderson': { slug: 'cosmere',              label: 'The Cosmere Reading Order' },
+  'mark-lawrence':     { slug: 'mark-lawrence',        label: 'Mark Lawrence Universe Guide' },
+  'robin-hobb':        { slug: 'robin-hobb',           label: 'Realm of the Elderlings Guide' },
+  'ra-salvatore':      { slug: 'drizzt',               label: 'Legend of Drizzt Complete Guide' },
+  'mercedes-lackey':   { slug: 'valdemar',             label: 'World of Valdemar Guide' },
+  'terry-brooks':      { slug: 'shannara',             label: 'Shannara Complete Guide' },
+  'tad-williams':      { slug: 'memory-sorrow-thorn',  label: 'Tad Williams Universe Guide' },
+  'ilona-andrews':     { slug: 'kate-daniels',         label: 'World of Kate Daniels Guide' },
+};
+
+const universeGuide = AUTHOR_UNIVERSE_MAP[slug ?? ''] ?? null;
 
 const seriesMap = new Map<string, number>();
 for (const book of books) {
@@ -124,11 +212,17 @@ for (const book of books) {
 
 const seriesList: SeriesEntry[] = [...seriesMap.entries()]
   .sort((a, b) => b[1] - a[1]) // most books first
-  .map(([name, bookCount]) => ({
-    name,
-    bookCount,
-    readingOrderSlug: READING_ORDER_MAP[name] ?? null,
-  }));
+  .map(([name, bookCount]) => {
+    const firstBook = books
+      .filter(b => b.series === name && b.slug)
+      .sort((a, b) => (a.series_number ?? 999) - (b.series_number ?? 999))[0] ?? null;
+    return {
+      name,
+      bookCount,
+      readingOrderSlug: READING_ORDER_MAP[name] ?? null,
+      firstBookSlug: firstBook?.slug ?? null,
+    };
+  });
 
 // Avatar colour — deterministic from name
 const palette = [
@@ -247,8 +341,8 @@ const metaDescription = profile?.writing_style
 // Fun stats
 const topRatedBook = sortedBooks[0] ?? null;
 const darkestBook = [...books]
-  .filter(b => b.darkness_level != null && (b.series == null || b.series !== topRatedBook?.series))
-  .sort((a, b) => (b.darkness_level ?? 0) - (a.darkness_level ?? 0) || (b.avg_rating ?? 0) - (a.avg_rating ?? 0))[0] ?? null;
+  .filter(b => b.darkness_level != null)
+  .sort((a, b) => (b.darkness_level ?? 0) - (a.darkness_level ?? 0) || (a.series_number ?? 999) - (b.series_number ?? 999))[0] ?? null;
 const longestSeries = seriesList[0] ?? null;
 
 // Hero reading order: first series that has a curated guide
@@ -350,9 +444,9 @@ const authorBreadcrumbJsonLd = JSON.stringify({
       </div>
 
       <div class="mt-3 hidden sm:flex flex-wrap gap-3 text-sm">
-        {heroReadingOrder && (
-          <a href={`/reading-orders/${heroReadingOrder.readingOrderSlug}/`} class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors text-xs">
-            📖 Reading Order
+        {(universeGuide || heroReadingOrder) && (
+          <a href={`/reading-orders/${universeGuide ? universeGuide.slug : heroReadingOrder!.readingOrderSlug}/`} class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors text-xs">
+            📖 {universeGuide ? 'Universe Guide' : 'Reading Order'}
           </a>
         )}
         {profile?.website && (
@@ -419,6 +513,10 @@ const authorBreadcrumbJsonLd = JSON.stringify({
           <a href={`/reading-orders/${longestSeries.readingOrderSlug}/`} class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50 border border-indigo-200 text-xs text-indigo-800 hover:bg-indigo-100 transition-colors">
             📚 Longest series: <span class="font-medium">{longestSeries.name}</span> ({longestSeries.bookCount} books)
           </a>
+        ) : longestSeries.firstBookSlug ? (
+          <a href={`/books/${longestSeries.firstBookSlug}/`} class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50 border border-indigo-200 text-xs text-indigo-800 hover:bg-indigo-100 transition-colors">
+            📚 Longest series: <span class="font-medium">{longestSeries.name}</span> ({longestSeries.bookCount} books)
+          </a>
         ) : (
           <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50 border border-indigo-200 text-xs text-indigo-800">
             📚 Longest series: <span class="font-medium">{longestSeries.name}</span> ({longestSeries.bookCount} books)
@@ -430,7 +528,7 @@ const authorBreadcrumbJsonLd = JSON.stringify({
 
   {cleanBio && (
     <div class="mb-6 max-w-3xl">
-      <p class="text-zinc-600 leading-relaxed">{cleanBio}</p>
+      <p class="text-zinc-600 leading-relaxed" set:html={cleanBio} />
     </div>
   )}
 

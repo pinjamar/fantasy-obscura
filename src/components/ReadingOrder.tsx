@@ -4,7 +4,7 @@ interface Book {
   cover_url?: string | null;
   publication_year?: number | null;
   page_count?: number | null;
-  status: 'mandatory' | 'optional' | 'supplementary' | 'incomplete' | 'upcoming';
+  status: 'mandatory' | 'optional' | 'supplementary' | 'upcoming';
   note?: string;
   darkness_level?: number | null;
   avg_rating?: number | null;
@@ -32,8 +32,7 @@ const statusConfig = {
   mandatory:     { pill: 'bg-blue-100 text-blue-800 border-blue-200',    dot: 'bg-blue-500',    label: 'Core' },
   optional:      { pill: 'bg-green-100 text-green-800 border-green-200', dot: 'bg-green-500',   label: 'Optional' },
   supplementary: { pill: 'bg-amber-100 text-amber-800 border-amber-200', dot: 'bg-amber-500',   label: 'Extra' },
-  incomplete:    { pill: 'bg-red-100 text-red-800 border-red-200',       dot: 'bg-red-400',     label: 'Incomplete' },
-  upcoming:      { pill: 'bg-zinc-100 text-zinc-500 border-zinc-200',    dot: 'bg-zinc-400',    label: 'Coming Soon' },
+  upcoming:      { pill: 'bg-red-100 text-red-700 border-red-200',       dot: 'bg-red-400',     label: 'Upcoming' },
 };
 
 const noteStyle = {
@@ -193,10 +192,10 @@ export default function ReadingOrder({ books, groups, description, showLegend = 
                 {cfg.label}
               </span>
               <span className="text-zinc-500">
-                {key === 'mandatory'     ? 'Essential to the main story'
-                 : key === 'optional'   ? 'Adds depth, not required'
-                 : key === 'incomplete' ? 'Not yet released or unfinished'
-                 :                       'Side stories & novellas'}
+                {key === 'mandatory'       ? 'Essential to the main story'
+                 : key === 'optional'     ? 'Adds depth, not required'
+                 : key === 'upcoming'     ? 'Not yet published'
+                 :                         'Side stories & novellas'}
               </span>
             </div>
           ))}

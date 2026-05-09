@@ -38,7 +38,7 @@ export const kingkiller: ReadingOrderEntry = {
     {
       title: 'The Doors of Stone',
       slug: null,
-      status: 'incomplete',
+      status: 'upcoming',
       note: 'Book 3 and the trilogy finale. No release date announced as of 2026 — in development since 2011.',
       page_count: null,
       publication_year: null,
