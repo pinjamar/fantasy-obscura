@@ -581,12 +581,13 @@ Decision matrix based on what you want
 Slug: /reading-orders/which-epic-fantasy-series
 
 
-46 Unfinished Fantasy Series Tracker ← moved up
+46 Ender's Game
 
-Winds of Winter, Doors of Stone, Stormlight 6, Gentleman Bastard 4
-Last update dates, author statements, honest outlook
-Updated regularly — this page should feel alive
-Slug: /reading-orders/unfinished-series
+Orson Scott Card's Ender's Game and the Ender's Game universe reading order
+Ender's Game, Speaker for the Dead, Ender's Shadow — what to read and in what order
+Slug: /reading-orders/enders-game
+
+Image prompt: A vast zero-gravity battle room inside a deep space military station — a young boy in a grey training suit floats at the center, arms at his sides, watching a formation of other children maneuver through the air around him in colored light. The room is a perfect dark sphere, the walls studded with tiny lights like a planetarium. On the far wall: a glowing gate — the enemy's goal. The mood is isolation inside a machine built to manufacture genius: cold, clinical, and vast. The boy is small in the frame but the only still point in the chaos around him. Photorealistic cinematic sci-fi digital art, zero-gravity floating figures, deep space station interior, cold blue-white lighting, 3:2 aspect ratio, no text, no logos.
 
 
 47 Fantasy Standalones — No Reading Order Needed ← moved up
@@ -722,6 +723,27 @@ Slug: /reading-orders/red-rising
 
 Caraval trilogy + Once Upon a Broken Heart spinoff series
 Slug: /reading-orders/caraval
+
+
+69 Gene Wolfe / Book of the New Sun Reading Order (Gene Wolfe)
+
+The Book of the New Sun (4 books) + Urth of the New Sun coda
+The Book of the Long Sun (4 books) + The Book of the Short Sun (3 books) — direct sequel series in the same universe
+Which to read first (New Sun), which are optional (Urth), how Long Sun and Short Sun connect
+The unreliable narrator problem: Severian claims perfect memory — he's lying
+Far-future Earth disguised as dying fantasy world — what new readers miss
+Slug: /reading-orders/gene-wolfe
+
+
+70 The Broken Earth Reading Order (N.K. Jemisin)
+
+The Fifth Season → The Obelisk Gate → The Stone Sky — 3 books, publication order
+The second-person POV is intentional — stick with it, it pays off
+Three timelines running in parallel — they converge, don't worry
+Does it connect to Jemisin's other series? (No — Inheritance Trilogy and Killing Moon are separate worlds)
+Historic: first author to win Hugo for Best Novel three consecutive years
+Slug: /reading-orders/broken-earth
+
 ---
 
 ## Notes for Claude Code
@@ -779,13 +801,6 @@ earthsea, mark-lawrence, sarah-j-maas
 
 ---
 
-**gentleman-bastard** (Scott Lynch — Gentleman Bastard)
-Slug: /reading-orders/gentleman-bastard
-Prompt:
-A canal city at night, modeled on Venice — narrow waterways reflecting torchlight, crumbling stone palazzi, iron bridges. Rising from the city center: the Elderglass towers — five ancient structures of alien glass glowing faintly from within with pale bluish-green light, impossibly smooth, predating the civilization around them. On a rooftop, silhouetted figures observe the city below. The mood is heist thriller meets ancient mystery: glamour, danger, and something the current civilization does not fully understand. Photorealistic cinematic dark fantasy digital art, canal city torchlight, alien glass tower glow, no text, silhouettes only.
-
----
-
 **lightbringer** (Brent Weeks — Lightbringer series)
 Slug: /reading-orders/lightbringer
 Prompt:
@@ -804,13 +819,6 @@ A bright, impossibly colorful magical landscape — lush jungle paths, talking t
 Slug: /reading-orders/elric-saga
 Prompt:
 A dying empire at the edge of the world — the Dragon Isle of Melniboné, ancient and crumbling, its black towers lit by the glow of captive dragons chained in caverns below. On the highest tower: a lone figure, white-haired and pale as bone, dark robes, holding a runesword that pulses with black light and seems to drink the air around it. The sky above is bruised purple and crimson, two moons visible. The sea below is deep green. The mood is elegiac and gothic: the last emperor of a dying age. Photorealistic dark fantasy cinematic art, crumbling black empire, twin moons, soul-drinker sword glow, no text, distant figure only.
-
----
-
-**shadows-of-the-apt** (Adrian Tchaikovsky — Shadows of the Apt)
-Slug: /reading-orders/shadows-of-the-apt
-Prompt:
-An aerial view of a vast steampunk-fantasy city — a Beetle-kinden metropolis of stone workshops, turning gear-mechanisms, early airships docked at tower-top platforms, and crossbow-armed guards on the walls. In the distance: the Wasp Empire's army approaching, black and gold, with orthopter aircraft circling like a swarm. The sky is industrial amber from forge smoke. On the city walls, insect-kinden soldiers with forms subtly suggesting their insects — mantis grace, ant precision, beetle sturdiness. The mood is epic military fantasy crossed with steampunk war. Photorealistic cinematic digital art, steampunk fantasy city, approaching insect-empire army, no text.
 
 ---
 
@@ -863,24 +871,11 @@ A city split by a single composition: on the left, night — grimy canals and sh
 
 ---
 
-**riftwar-cycle** (Raymond E. Feist — Riftwar Cycle)
-Slug: /reading-orders/riftwar-cycle
-Prompt:
-A shimmering rift tears open in mid-air between two worlds — on the left: the medieval forests and stone castles of Midkemia, a young boy in apprentice robes standing before it. On the right: the alien desert landscape of Kelewan, Tsurani warriors in lacquered armor and jade-inlaid weapons marching through. Through the rift both worlds are visible simultaneously, the seam between them crackling with silver energy. An ancient sorcerer stands at the center, holding the rift open. The mood is classic epic fantasy: wonder, war, and the collision of civilizations. Photorealistic cinematic fantasy digital art, inter-world rift portal, medieval-meets-alien-feudal aesthetic, silver rift energy, no text.
-
----
-
-**unfinished-series** (Special Feature — Unfinished Series Tracker)
-Slug: /reading-orders/unfinished-series
-Prompt:
-A writing desk in a dark study — parchment covered in dense handwriting, a quill resting mid-sentence, an inkwell half-empty. On the desk: an hourglass with sand almost run out. Through the window: the world outside is frozen mid-moment — birds suspended in flight, leaves arrested in falling, a clock face with no hands. Stacked beside the desk: towering manuscript piles representing unfinished sagas. A single candle burns low. The mood is anticipation and the weight of waiting — the ache of a story not yet complete. Photorealistic cinematic fantasy still-life art, frozen-time window, low candlelight, manuscript stacks, no text.
-
----
-
 **red-rising** (Pierce Brown — Red Rising Saga)
 Slug: /reading-orders/red-rising
 Prompt:
-A vast terraformed Martian landscape at dawn — red dust plains stretching to distant mountains, the sky a bruised amber above. In the foreground: a young man in a miner's worn suit stands at the lip of a massive underground drilling shaft, looking upward for the first time at open sky. Above on the clifftop: Gold-caste soldiers in gleaming Roman-influenced armor watch from the ridge. Between them: the entire vertical distance of a society — bottom of the shaft to the top of the cliff — visible in one frame. The mood is revolution waiting to ignite: poverty below, power above, and one man at the threshold. Photorealistic cinematic sci-fi digital art, Martian dawn light, Roman-aesthetic armor silhouettes, vertical class divide composition, no text.
+A young Red Caste miner in a worn dusty mining suit stands left of center, helmet off, face turned rightward across a vast Martian canyon — expression of quiet defiance, lit by Martian dawn. To the right, on a high cliff ridge above the canyon, a line of Gold-caste soldiers in gleaming Roman-influenced armor stand silhouetted — spears raised, watching from above. Between them the canyon drops sharply, industrial mining scaffolding clinging to the rock face. Background: sweeping Martian plains, distant mountains, bruised amber sunrise sky. Horizontal composition — poverty left, power right, the chasm between them center-frame. The miner and soldiers occupy the middle vertical strip so the image reads correctly when cropped to a wide banner. Photorealistic cinematic sci-fi digital art, 3:2 aspect ratio, warm red-amber Martian palette, no text, no logos.
+A vast terraformed Martian landscape at dawn — red dust plains stretching to distant mountains, the sky a bruised amber above. In the foreground on the left: a young man in a miner's worn suit stands at the edge of a massive open mining pit, looking across the chasm for the first time. On the far ridge to the right: Gold-caste soldiers in gleaming Roman-influenced armor watch from the clifftop. Between them: the entire horizontal distance of a society — the pit floor far below, the two figures separated by the void of the chasm. The mood is revolution waiting to ignite: poverty on one side, power on the other, and one man at the threshold. Photorealistic cinematic sci-fi digital art, Martian dawn light, Roman-aesthetic armor silhouettes, horizontal class divide composition, 3:2 aspect ratio, no text, no logos.
 
 ---
 
@@ -888,3 +883,17 @@ A vast terraformed Martian landscape at dawn — red dust plains stretching to d
 Slug: /reading-orders/caraval
 Prompt:
 A magical performance arena at night — an impossible island venue built from black stone and crimson silk, lit by thousands of floating candles and enchanted lanterns in deep jewel tones: crimson, violet, gold. At the center: a circular stage where the boundary between illusion and reality has dissolved — playing cards float upward into a starless sky, a clock face shows thirteen hours, a carousel of black horses frozen mid-gallop. Archways lead deeper into the game, each one promising something different: treasure, truth, a door that shouldn't exist. In the foreground, two young women stand at the entrance, one pulling the other forward. The mood is intoxicating and dangerous — a world designed to seduce you into forgetting what is real. Photorealistic cinematic dark fantasy art, jewel-tone candlelight, impossible carnival architecture, floating card and clock motifs, no text.
+
+---
+
+**gene-wolfe** (Gene Wolfe — The Book of the New Sun)
+Slug: /reading-orders/gene-wolfe
+Prompt:
+A vast ruined city swallowed by jungle at the end of time — crumbling towers of ancient stone draped in vines and moss, their scale dwarfing everything beneath them. A solitary figure moves along a broken road through the city: a young man in a black executioner's cloak, a great sword strapped to his back, its blade inscribed with faint silver runes. The sky above is rust-red and amber — the sun is bloated, swollen, visibly dying, casting long copper shadows across the ruins. Somewhere in the distance a forest has reclaimed what were once streets. The mood is melancholic and vast: a world running down, ancient beyond memory, its purpose long forgotten. Photorealistic cinematic dark fantasy digital art, dying red sun, jungle-consumed ruins, lone figure in black cloak, copper-amber palette, 3:2 aspect ratio, no text, no logos.
+
+---
+
+**broken-earth** (N.K. Jemisin — The Broken Earth Trilogy)
+Slug: /reading-orders/broken-earth
+Prompt:
+A vast ashfall plain stretching to a shattered horizon — the sky choked with grey volcanic ash lit from beneath by a distant seismic rift glowing deep amber and orange. In the middle distance: a massive stone obelisk, ancient beyond reckoning, floats impossibly in the grey sky above the plain, its surface etched with crystalline geometric patterns that pulse with faint cold light. In the foreground, a lone woman stands at the edge of the rift, her back to us, arms slightly raised — the ground around her feet is cracking in perfect geometric fractures radiating outward, orogeny made visible. The mood is apocalyptic and intimate: the end of the world framed as something that has already happened before, and will happen again. Photorealistic cinematic dark fantasy digital art, volcanic ashfall atmosphere, floating stone obelisk, seismic rift amber glow, grey-ash-and-ember palette, 3:2 aspect ratio, no text, no logos.

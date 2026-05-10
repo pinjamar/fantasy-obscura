@@ -49,6 +49,9 @@ let mergedBooks: MergedBook[] | null = null;
 let totalPagesCurated = 0;
 let totalHoursCurated = 0;
 let coreCount = 0;
+let optionalCount = 0;
+let supplementaryCount = 0;
+let upcomingCount = 0;
 let allBooksCurated: MergedBook[] = [];
 
 if (entry) {
@@ -91,6 +94,9 @@ if (entry) {
   totalPagesCurated = allBooksCurated.reduce((s, b) => s + (b.page_count ?? 0), 0);
   totalHoursCurated = Math.round(totalPagesCurated / 30);
   coreCount = allBooksCurated.filter((b) => b.status === 'mandatory').length;
+  optionalCount = allBooksCurated.filter((b) => b.status === 'optional').length;
+  supplementaryCount = allBooksCurated.filter((b) => b.status === 'supplementary').length;
+  upcomingCount = allBooksCurated.filter((b) => b.status === 'upcoming').length;
 }
 
 // ── DB-driven fallback ────────────────────────────────────────────────────────
@@ -269,8 +275,16 @@ const pageTitle = curatedEntry
   ? `${curatedEntry.name} Reading Order: All ${curatedEntry.author} Books in Order | The Grimoire`
   : `${seriesMeta?.name} Series Reading Order${authorNames.length ? `: All ${authorNames[0]} Books in Order` : ''} | The Grimoire`;
 const pageDesc = curatedEntry
-  ? `Complete reading order for ${curatedEntry.name} by ${curatedEntry.author} — ${allBooksCurated.length} books, ${coreCount} core${allBooksCurated.length - coreCount > 0 ? ` + ${allBooksCurated.length - coreCount} optional` : ''}. What to read first, what's skippable.`
-  : `Complete reading order for ${seriesMeta?.name}${authorNames.length ? ` by ${authorNames.slice(0, 2).join(' & ')}` : ''}. All ${seriesMeta?.bookCount ?? dbBooks.length} books in order — what to read first and what comes next.`;
+  ? (() => {
+      const publishedCount = allBooksCurated.length - upcomingCount;
+      const extras = [
+        optionalCount > 0 ? `${optionalCount} skippable` : '',
+        supplementaryCount > 0 ? `${supplementaryCount} extra` : '',
+        upcomingCount > 0 ? `${upcomingCount} upcoming` : '',
+      ].filter(Boolean).join(' + ');
+      return `Complete spoiler-free reading order for ${curatedEntry!.name} by ${curatedEntry!.author} — ${publishedCount} books, ${coreCount} essential${extras ? ` + ${extras}` : ''}.`;
+    })()
+  : `Complete spoiler-free reading order for ${seriesMeta?.name}${authorNames.length ? ` by ${authorNames.slice(0, 2).join(' & ')}` : ''}. All ${seriesMeta?.bookCount ?? dbBooks.length} books in order — what to read first and what comes next.`;
 
 const SITE = 'https://thegrimoire.co';
 const imgSlug = READING_ORDER_IMAGE_SLUG[slug!];
@@ -332,9 +346,6 @@ const faqJsonLd = faqItems.length > 0 ? JSON.stringify({
   })),
 }) : null;
 
-const seoProseText = curatedEntry
-  ? `Looking for the complete ${curatedEntry.name} reading order? This guide covers all ${allBooksCurated.filter(b => b.status !== 'upcoming').length} ${curatedEntry.author} books in ${curatedEntry.name} in order — including which are essential, which are optional, and the best place to start. Whether you're reading ${curatedEntry.name} for the first time or catching up before the next release, this is the order we recommend.`
-  : null;
 
 // ── Non-curated SEO additions ─────────────────────────────────────────────────
 // DB pages listed here are ranking well and explicitly allowed to be indexed.
@@ -395,9 +406,6 @@ const dbFaqJsonLd = !isCurated && seriesMeta ? JSON.stringify({
   ],
 }) : null;
 
-const dbSeoProse = !isCurated && seriesMeta
-  ? `Looking for the complete ${seriesMeta.name} reading order?${authorNames.length ? ` This guide lists all ${seriesMeta.bookCount} ${authorNames[0]} books in ${seriesMeta.name} in order` : ` This guide lists all ${seriesMeta.bookCount} books in ${seriesMeta.name} in order`} — with covers, ratings, and page counts for every entry.${totalPagesDb > 0 ? ` The full series spans approximately ${totalPagesDb.toLocaleString()} pages.` : ''}`
-  : null;
 
 const readingOrderBreadcrumbJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
@@ -460,7 +468,7 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
       </div>
 
       <div class="mt-5 flex flex-wrap gap-6 text-sm text-zinc-600 border-y border-zinc-100 py-4">
-        <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {allBooksCurated.length} books ({coreCount} essential{allBooksCurated.filter((b: any) => b.status === 'upcoming').length > 0 ? `, ${allBooksCurated.filter((b: any) => b.status === 'upcoming').length} upcoming` : ''})</span>
+        <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {allBooksCurated.length - upcomingCount} books ({coreCount} essential{supplementaryCount > 0 ? ` · ${supplementaryCount} extra` : ''}{optionalCount > 0 ? ` · ${optionalCount} optional` : ''}{upcomingCount > 0 ? ` · ${upcomingCount} upcoming` : ''})</span>
         {totalPagesCurated > 0 && (
           <span class="flex items-center gap-1.5"><span class="text-zinc-400">📄</span> ~{totalPagesCurated.toLocaleString()} pages</span>
         )}
@@ -471,9 +479,6 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
       </div>
 
       <p class="mt-5 text-base text-zinc-700 leading-relaxed">{curatedEntry.description}</p>
-      {seoProseText && (
-        <p class="hidden mt-3 text-sm text-zinc-400 leading-relaxed">{seoProseText}</p>
-      )}
     </div>
 
     <!-- Warning block -->
@@ -672,7 +677,6 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
           ))}
         </div>
       )}
-      {dbSeoProse && <p class="hidden mt-4 text-sm text-zinc-400 leading-relaxed max-w-2xl">{dbSeoProse}</p>}
     </div>
 
     <!-- Books — vertical list -->
