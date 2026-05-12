@@ -16,7 +16,15 @@ if (!slug) return Astro.redirect('/books');
 
 const isIndexed = CURATED_SLUGS.has(slug);
 const book = await getBookBySlug(slug);
-if (!book) return new Response(null, { status: 404, statusText: 'Not Found' });
+if (!book) {
+  for (const order of READING_ORDERS) {
+    const allBooks = order.groups ? order.groups.flatMap(g => g.books) : (order.books ?? []);
+    if (allBooks.some(b => b.slug === slug && b.status === 'upcoming')) {
+      return Astro.redirect(`/reading-orders/${order.slug}/`, 302);
+    }
+  }
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
 
 const approvedTags = await getApprovedTags(book.id);
 const seriesSlug = book.series

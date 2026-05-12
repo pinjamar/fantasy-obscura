@@ -65,6 +65,8 @@ function BookCard({ book, index }: { book: Book; index: number }) {
               (e.target as HTMLImageElement).src = '/grimplaceholder.png';
             }}
           />
+        ) : book.status === 'upcoming' ? (
+          <img src="/grimplaceholder.png" alt={book.title} className="w-full h-full object-cover" />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-zinc-400 text-2xl">📖</div>
         )}

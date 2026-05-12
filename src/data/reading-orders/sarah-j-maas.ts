@@ -2,7 +2,7 @@
 
 export const sarahJMaas: ReadingOrderEntry = {
   slug: 'sarah-j-maas',
-  name: 'Complete Sarah J. Maas',
+  name: 'Sarah J. Maas Universe',
   author: 'Sarah J. Maas',
   seriesStatus: 'ongoing',
   seriesStatusLabel: '📖 TOG complete · ACOTAR & CC ongoing',
