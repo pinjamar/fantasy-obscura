@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const sarahJMaas: ReadingOrderEntry = {
   slug: 'sarah-j-maas',
@@ -236,6 +236,8 @@ export const sarahJMaas: ReadingOrderEntry = {
       desc: 'Most mature — explicit, violent, high stakes throughout',
     },
   ],
+  lastUpdated: '2026-05-12',
+  shortName: 'Sarah J. Maas',
   finishedLabel: 'Finished the SJM universe?',
   categoryHref: '/fantasy/romantasy',
   categoryLabel: 'Browse Romantasy',

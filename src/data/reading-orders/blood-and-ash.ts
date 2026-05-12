@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const bloodAndAsh: ReadingOrderEntry = {
   slug: 'blood-and-ash',
@@ -182,6 +182,7 @@ export const bloodAndAsh: ReadingOrderEntry = {
       desc: 'Dark — gods, fate, and sacrifice; comparable tone to books 3–4',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: "Finished what's published?",
   categoryHref: '/fantasy/romantasy',
   categoryLabel: 'Browse Romantasy',

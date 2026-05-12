@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const firstLaw: ReadingOrderEntry = {
   slug: 'first-law',
@@ -171,6 +171,8 @@ export const firstLaw: ReadingOrderEntry = {
       desc: 'Brutal — revolution, mass violence, no clean hands',
     },
   ],
+  lastUpdated: '2026-05-12',
+  shortName: 'First Law',
   finishedLabel: 'Finished the series?',
   categoryHref: '/fantasy/grimdark',
   categoryLabel: 'Browse more Grimdark',

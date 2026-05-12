@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const dune: ReadingOrderEntry = {
   slug: 'dune',
@@ -283,6 +283,7 @@ export const dune: ReadingOrderEntry = {
     { label: 'Brian Herbert books', level: 3, desc: 'More action-adventure, less philosophical weight' },
   ],
   booksLikeSlug: 'dune',
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished Dune?',
   categoryHref: '/fantasy/sci-fi',
   categoryLabel: 'Browse Sci-Fi Fantasy',

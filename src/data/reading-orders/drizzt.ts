@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const drizzt: ReadingOrderEntry = {
   slug: 'drizzt',
@@ -576,6 +576,7 @@ export const drizzt: ReadingOrderEntry = {
       desc: 'Moderate — large-scale conflict, series conclusion',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the core arcs?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

@@ -71,6 +71,8 @@ export interface ReadingOrderEntry {
   shortName?: string;
   /** Slug for a matching /books-like/ guide, if one exists */
   booksLikeSlug?: string;
+  /** ISO date (YYYY-MM-DD) of last meaningful content update — feeds dateModified in JSON-LD */
+  lastUpdated?: string;
 }
 
 import { acotar } from './reading-orders/acotar';

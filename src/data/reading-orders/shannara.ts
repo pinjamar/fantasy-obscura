@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const shannara: ReadingOrderEntry = {
   slug: 'shannara',
@@ -463,6 +463,7 @@ export const shannara: ReadingOrderEntry = {
       desc: 'Varies by arc — generally consistent with the original tone',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the Four Lands?',
   categoryHref: '/fantasy/epic/',
   categoryLabel: 'Browse Epic Fantasy',

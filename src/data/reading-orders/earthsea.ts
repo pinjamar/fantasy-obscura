@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const earthsea: ReadingOrderEntry = {
   slug: 'earthsea',
@@ -138,6 +138,7 @@ export const earthsea: ReadingOrderEntry = {
     { label: 'Books 1–3', level: 2, desc: 'Adventure and consequence — death present but not dwelt upon' },
     { label: 'Books 4–6', level: 3, desc: 'More interior — trauma, loss, and questions without easy answers' },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished Earthsea?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

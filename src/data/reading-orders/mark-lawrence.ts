@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const markLawrence: ReadingOrderEntry = {
   slug: 'mark-lawrence',
@@ -222,6 +222,7 @@ export const markLawrence: ReadingOrderEntry = {
     },
   ],
   booksLikeSlug: 'prince-of-thorns',
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the Lawrence universe?',
   categoryHref: '/fantasy/grimdark',
   categoryLabel: 'Browse Grimdark',

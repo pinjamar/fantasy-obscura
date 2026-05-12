@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const witcher: ReadingOrderEntry = {
   slug: 'witcher',
@@ -161,6 +161,7 @@ export const witcher: ReadingOrderEntry = {
       desc: 'War, genocide, betrayal, child soldiers',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the saga?',
   categoryHref: '/fantasy/dark',
   categoryLabel: 'Browse Dark Fantasy',

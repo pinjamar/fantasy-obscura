@@ -103,6 +103,7 @@ export const acotar: ReadingOrderEntry = {
     { label: 'ACFAS', level: 2, desc: 'Recovery and aftermath, the lightest entry' },
     { label: 'ACSF', level: 3, desc: "Nesta's arc is darker and more intense than the trilogy" },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the series?',
   categoryHref: '/fantasy/romantasy',
   categoryLabel: 'Browse Romantasy',

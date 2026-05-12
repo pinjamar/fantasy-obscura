@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const malazan: ReadingOrderEntry = {
   slug: 'malazan',
@@ -179,6 +179,8 @@ export const malazan: ReadingOrderEntry = {
         'Consistently 🕯️🕯️🕯️🕯️🕯️ (Brutal) throughout. Mass death, genocide, torture, moral ambiguity, and compassion in equal measure. Erikson is not gratuitous — the darkness is purposeful — but this is not a comfortable read.',
     },
   ],
+  lastUpdated: '2026-05-12',
+  shortName: 'Malazan',
   finishedLabel: 'Finished Malazan?',
   categoryHref: '/fantasy/grimdark',
   categoryLabel: 'Browse Grimdark',

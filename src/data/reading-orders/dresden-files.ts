@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const dresdenFiles: ReadingOrderEntry = {
   slug: 'dresden-files',
@@ -248,6 +248,7 @@ export const dresdenFiles: ReadingOrderEntry = {
       desc: 'Brutal — major deaths, catastrophic stakes, no safety net',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: "Finished what's published?",
   categoryHref: '/fantasy/urban-fantasy',
   categoryLabel: 'Browse Urban Fantasy',

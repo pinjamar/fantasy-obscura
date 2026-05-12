@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const dragonlance: ReadingOrderEntry = {
   slug: 'dragonlance',
@@ -151,6 +151,7 @@ export const dragonlance: ReadingOrderEntry = {
       desc: 'Moderate — moral complexity, darker ambition, sacrifice',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished Weis & Hickman?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

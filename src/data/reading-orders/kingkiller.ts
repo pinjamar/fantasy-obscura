@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const kingkiller: ReadingOrderEntry = {
   slug: 'kingkiller',
@@ -95,6 +95,7 @@ export const kingkiller: ReadingOrderEntry = {
       desc: 'War, assassins, fae — darker and more complex',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Want more literary fantasy?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const wheelOfTime: ReadingOrderEntry = {
   slug: 'wheel-of-time',
@@ -189,6 +189,7 @@ export const wheelOfTime: ReadingOrderEntry = {
       desc: "Rand's mental collapse, apocalypse approaching, mass casualties",
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the series?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

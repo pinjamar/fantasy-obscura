@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { normalizeCoverUrl } from '../lib/covers';
 import { READING_ORDER_IMAGE_SLUG } from '../data/image-map';
 import BooksLikeMe from './BooksLikeMe';
@@ -142,7 +142,7 @@ const CURATED_FAVORITES: Record<string, CuratedEntry[]> = {
       slug: 'the-once-and-future-witches',
     },
   ],
-  academy: [
+  academia: [
     { title: 'The Name of the Wind', slug: 'the-name-of-the-wind' },
     { title: 'A Deadly Education', slug: 'a-deadly-education' },
     { title: 'Nevernight', slug: 'nevernight' },
@@ -374,7 +374,7 @@ const CURATED_NEW_RELEASES: Record<string, CuratedEntry[]> = {
     { title: 'Broken Wishes', slug: 'broken-wishes' },
     { title: 'Written on the Dark', slug: 'written-on-the-dark' },
   ],
-  academy: [
+  academia: [
     { title: 'Onyx Storm', slug: 'onyx-storm' },
     {
       title: 'The Book That Broke the World',
@@ -541,8 +541,8 @@ const categories: Category[] = [
     gradient: 'from-amber-50 to-orange-50',
   },
   {
-    slug: 'academy',
-    name: 'Academy Fantasy',
+    slug: 'academia',
+    name: 'Academia Fantasy',
     description: 'Stories set in magical or specialized schools',
     gradient: 'from-red-50 to-rose-50',
   },
@@ -1174,7 +1174,7 @@ const bookOfWeekPools: Record<string, BookOfWeekEntry[]> = {
         'Polish folklore with a heroine who does magic completely wrong and saves everyone doing it.',
     },
   ],
-  academy: [
+  academia: [
     {
       title: 'The Name of the Wind',
       author: 'Patrick Rothfuss',
@@ -1616,7 +1616,7 @@ const categorySubgenreMap: Record<string, string[]> = {
   urban: ['Urban Fantasy', 'Contemporary Fantasy'],
   grimdark: ['Grimdark'],
   historical: ['Historical Fantasy'],
-  academy: ['Academy Fantasy'],
+  academia: ['Academy Fantasy'],
   mythology: ['Mythic Fantasy', 'Mythology', 'Folklore Fantasy'],
   swords: ['Sword & Sorcery'],
   cozy: ['Cozy Fantasy'],

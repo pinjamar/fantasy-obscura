@@ -240,15 +240,19 @@ const curatedAvgDarkness = curatedDarknessLevels.length
   ? Math.round(curatedDarknessLevels.reduce((s, d) => s + d, 0) / curatedDarknessLevels.length)
   : null;
 const curatedHeatValues = curatedCoreBooks.map(b => b.heat_level).filter(Boolean) as string[];
-const curatedMaxHeat = curatedHeatValues.length
-  ? curatedHeatValues.reduce((max, h) => HEAT_ORDER.indexOf(h) > HEAT_ORDER.indexOf(max) ? h : max, curatedHeatValues[0])
+const curatedAvgHeat = curatedHeatValues.length
+  ? (() => {
+      const indices = curatedHeatValues.map(h => HEAT_ORDER.indexOf(h)).filter(i => i >= 0);
+      const avg = Math.round(indices.reduce((s, i) => s + i, 0) / indices.length);
+      return HEAT_ORDER[avg] ?? null;
+    })()
   : null;
 const curatedDarknessDisplay = (() => {
   const parts: string[] = [];
   if (curatedAvgDarkness) parts.push(`${CANDLES[curatedAvgDarkness]} ${DARKNESS_LABELS[curatedAvgDarkness]}`);
-  if (curatedMaxHeat) {
-    const hi = HEAT_ORDER.indexOf(curatedMaxHeat) + 1;
-    parts.push(`${HEAT_FLAMES[hi]} ${curatedMaxHeat}`);
+  const heatIndex = curatedAvgHeat ? HEAT_ORDER.indexOf(curatedAvgHeat) : -1;
+  if (curatedAvgHeat && heatIndex >= HEAT_ORDER.indexOf('Open Door')) {
+    parts.push(`${HEAT_FLAMES[heatIndex + 1]} ${curatedAvgHeat}`);
   }
   return parts.join(' · ') || curatedEntry?.darknessDisplay || '';
 })();
@@ -306,6 +310,7 @@ const readingOrderJsonLd = JSON.stringify({
   name: seriesName,
   url: `${SITE}/reading-orders/${slug}/`,
   description: pageDesc,
+  ...(curatedEntry?.lastUpdated ? { dateModified: curatedEntry.lastUpdated } : {}),
   ...(seriesAuthor ? { author: { '@type': 'Person', name: seriesAuthor } } : {}),
   ...(heroImageUrl ? { image: heroImageUrl } : {}),
   hasPart: seriesBookList.map((b, i) => ({
@@ -468,7 +473,7 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
       </div>
 
       <div class="mt-5 flex flex-wrap gap-6 text-sm text-zinc-600 border-y border-zinc-100 py-4">
-        <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {allBooksCurated.length - upcomingCount} books ({coreCount} essential{supplementaryCount > 0 ? ` · ${supplementaryCount} extra` : ''}{optionalCount > 0 ? ` · ${optionalCount} optional` : ''}{upcomingCount > 0 ? ` · ${upcomingCount} upcoming` : ''})</span>
+        <span class="flex items-center gap-1.5"><span class="text-zinc-400">📚</span> {allBooksCurated.length - upcomingCount} books ({coreCount} essential{optionalCount > 0 ? ` · ${optionalCount} optional` : ''}{supplementaryCount > 0 ? ` · ${supplementaryCount} extra` : ''}{upcomingCount > 0 ? ` · ${upcomingCount} upcoming` : ''})</span>
         {totalPagesCurated > 0 && (
           <span class="flex items-center gap-1.5"><span class="text-zinc-400">📄</span> ~{totalPagesCurated.toLocaleString()} pages</span>
         )}
@@ -505,7 +510,7 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
 
     <!-- Reading Order -->
     <div class="mb-12">
-      <h2 class="text-xl font-semibold mb-1">Reading Order</h2>
+      <h2 class="text-xl font-semibold mb-1">Complete {curatedEntry.shortName ?? curatedEntry.name} Reading Order</h2>
       {curatedEntry.orderNote && (
         <p class="text-sm text-zinc-500 mb-6">{curatedEntry.orderNote}</p>
       )}

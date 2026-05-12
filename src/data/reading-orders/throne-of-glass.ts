@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const throneOfGlass: ReadingOrderEntry = {
   slug: 'throne-of-glass',
@@ -147,6 +147,7 @@ export const throneOfGlass: ReadingOrderEntry = {
       desc: 'Full-scale war, sacrifice, world-ending stakes',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the series?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

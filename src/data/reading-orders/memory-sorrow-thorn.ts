@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const memorySorrowThorn: ReadingOrderEntry = {
   slug: 'memory-sorrow-thorn',
@@ -181,6 +181,7 @@ export const memorySorrowThorn: ReadingOrderEntry = {
       desc: 'Hard-won resolution — difficult but not nihilistic',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the trilogy?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

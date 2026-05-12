@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const kateDaniels: ReadingOrderEntry = {
   slug: 'kate-daniels',
@@ -272,6 +272,8 @@ export const kateDaniels: ReadingOrderEntry = {
       desc: 'War-level stakes — deaths, sacrifice, series-wide consequences',
     },
   ],
+  lastUpdated: '2026-05-12',
+  shortName: 'Kate Daniels',
   finishedLabel: 'Finished Kate Daniels?',
   categoryHref: '/fantasy/urban',
   categoryLabel: 'Browse Urban Fantasy',

@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const cosmere: ReadingOrderEntry = {
   slug: 'cosmere',
@@ -311,6 +311,8 @@ export const cosmere: ReadingOrderEntry = {
     { label: 'Mistborn Era 2', level: 2, desc: 'Mild — lighter tone, detective/western flavour' },
     { label: 'Secret Projects', level: 2, desc: 'Mild — generally lighter and more whimsical than the main series' },
   ],
+  lastUpdated: '2026-05-12',
+  shortName: 'Cosmere',
   finishedLabel: 'Finished a Cosmere series?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

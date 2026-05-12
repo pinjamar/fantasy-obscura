@@ -1,4 +1,4 @@
-export interface CategoryEditorial {
+﻿export interface CategoryEditorial {
   intro: string;
   howToUse: string;
 }
@@ -799,9 +799,9 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
       },
     },
   },
-  academy: {
-    name: 'Academy Fantasy',
-    genre: 'Academy Fantasy',
+  academia: {
+    name: 'Academia Fantasy',
+    genre: 'Academia Fantasy',
     gradient: 'from-red-50 to-rose-50',
     border: 'border-red-200',
     accent: 'text-red-700',
@@ -893,15 +893,15 @@ export const CATEGORIES_META: Record<string, CategoryMeta> = {
     },
     editorial: {
       allTimeGreats: {
-        intro: `Academy fantasy is the subgenre that proved fantasy’s reach — Harry Potter alone brought millions of readers into the category, and the books that followed had to earn attention alongside that gravitational pull. The average rating across our academy catalogue sits at 4.19★, the second-highest of any category on this site. These all-time greats are the books where what you learn is less interesting than what it costs.`,
+        intro: `Academia fantasy is the subgenre that proved fantasy’s reach — Harry Potter alone brought millions of readers into the category, and the books that followed had to earn attention alongside that gravitational pull. The average rating across our academia catalogue sits at 4.19★, the second-highest of any category on this site. These all-time greats are the books where what you learn is less interesting than what it costs.`,
         howToUse: `*Harry Potter and the Philosopher’s Stone* is the foundational anchor — the book that proved the academy premise to a mainstream audience and still earns the top position. For the genre’s literary peak — lyrical, obsessive, craft-obsessed — move to *The Name of the Wind*. Readers who want brutal training with real stakes and an enemies-to-lovers arc should go to *Nevernight* or *Fourth Wing*. For the most cynical, self-aware version of the “chosen student” premise, *A Deadly Education* deconstructs the trope while fully delivering on it. *Carry On* (Rainbow Rowell) is the list’s most knowing entry — a Harry Potter homage that turns into something genuinely moving. *The Magicians* is the adult pick — Brakebills College is Hogwarts if Hogwarts had graduate students and existential dread.`,
       },
       startWith: {
-        intro: `Academy fantasy is arguably the most accessible entry point into fantasy full stop — structured around a setting most readers already understand, with stakes that escalate at a reader-controlled pace. The 4.19★ average across this category doesn’t lie: it contains some of the most reliable reading experiences in modern fantasy. These starting points were chosen for clean arcs and immediate character hooks. Darkness (🕯️) and heat (🔥) ratings show the range.`,
+        intro: `Academia fantasy is arguably the most accessible entry point into fantasy full stop — structured around a setting most readers already understand, with stakes that escalate at a reader-controlled pace. The 4.19★ average across this category doesn’t lie: it contains some of the most reliable reading experiences in modern fantasy. These starting points were chosen for clean arcs and immediate character hooks. Darkness (🕯️) and heat (🔥) ratings show the range.`,
         howToUse: `*The House in the Cerulean Sea* is the lowest-stakes entry on the list — warm, gentle, and genuinely cozy at 🕯️1. *Howl's Moving Castle* is the classic pick for charm and wit over urgency. For competitive-training energy with broad appeal, *Throne of Glass* and *Divergent* are the most structurally accessible routes in. *House of Earth and Blood* is the adult pick — urban fantasy set in a college-era city, 🕯️3. *The Cruel Prince* (Holly Black) is the fae-court pick for readers who want morally complex protagonists and immersive world-building. *Miss Peregrine's Home for Peculiar Children* is the mystery-heavy boarding school option. *Graceling* and *Raybearer* are the strongest picks for readers who want non-European settings with strong female leads.`,
       },
       hiddenGems: {
-        intro: `The academy fantasy category is one of the most algorithm-dense in fantasy — the same titles appear everywhere, amplified by their initial popularity. Below that tier are books doing more specific, stranger things with the school setting: dark magic colleges, hidden conspiracy academies, training grounds that don’t look like schools at all. Lower ratings here often reflect a narrower audience, not a quality problem.`,
+        intro: `The Academia fantasy category is one of the most algorithm-dense in fantasy — the same titles appear everywhere, amplified by their initial popularity. Below that tier are books doing more specific, stranger things with the school setting: dark magic colleges, hidden conspiracy academies, training grounds that don’t look like schools at all. Lower ratings here often reflect a narrower audience, not a quality problem.`,
         howToUse: `*Clockwork Angel* is the Victorian magic-training pick — Clare's best-crafted world-building and a strong entry into the Shadowhunter universe. *City of Bones* is the more culturally embedded starting point if you want the full Mortal Instruments arc. *Kingdom of the Wicked* is the darkest entry — Italian mythology, murder mystery, 🕯️4. *The Novice* is the purest academy pick on the list: a magic school in the traditional sense, fast-paced and propulsive. *In Other Lands* is the sharpest deconstruction — a portal fantasy that subverts the chosen-hero structure with quiet wit. *A Curse So Dark and Lonely* and *House of Salt and Sorrows* are the most accessible YA-adjacent options for readers bridging from romantasy into darker academy territory.`,
       },
     },

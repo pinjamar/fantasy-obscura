@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const mistborn: ReadingOrderEntry = {
   slug: 'mistborn',
@@ -187,6 +187,7 @@ export const mistborn: ReadingOrderEntry = {
       desc: 'Expected to match Era 2 — spy thriller tone with moral complexity',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished Scadrial?',
   categoryHref: '/fantasy/epic/',
   categoryLabel: 'Browse Epic Fantasy',

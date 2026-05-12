@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const divergent: ReadingOrderEntry = {
   slug: 'divergent',
@@ -172,8 +172,9 @@ export const divergent: ReadingOrderEntry = {
       desc: 'Dark — significant sacrifice, controversial conclusion',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the trilogy?',
-  categoryHref: '/fantasy/academy',
+  categoryHref: '/fantasy/academia',
   categoryLabel: 'Browse Academy Fantasy',
   related: ['throne-of-glass', 'empyrean'],
 };

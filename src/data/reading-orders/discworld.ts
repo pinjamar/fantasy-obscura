@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const discworld: ReadingOrderEntry = {
   slug: 'discworld',
@@ -509,6 +509,7 @@ export const discworld: ReadingOrderEntry = {
       desc: "Bittersweet — Pratchett's farewell, tinged with grief",
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Want more like Discworld?',
   categoryHref: '/fantasy/cozy',
   categoryLabel: 'Browse Cozy Fantasy',

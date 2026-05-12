@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const robinHobb: ReadingOrderEntry = {
   slug: 'robin-hobb',
@@ -261,6 +261,8 @@ export const robinHobb: ReadingOrderEntry = {
       desc: 'Dark — loss compounding over 22 years, no easy resolutions',
     },
   ],
+  lastUpdated: '2026-05-12',
+  shortName: 'Robin Hobb',
   finishedLabel: 'Finished the Elderlings?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

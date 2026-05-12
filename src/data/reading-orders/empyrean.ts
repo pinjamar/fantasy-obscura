@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const empyrean: ReadingOrderEntry = {
   slug: 'empyrean',
@@ -124,6 +124,7 @@ export const empyrean: ReadingOrderEntry = {
       desc: 'Dark — higher stakes, more brutal consequences',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: "Finished what's published?",
   categoryHref: '/fantasy/romantasy',
   categoryLabel: 'Browse Romantasy',

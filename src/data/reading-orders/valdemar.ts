@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const valdemar: ReadingOrderEntry = {
   slug: 'valdemar',
@@ -250,6 +250,8 @@ export const valdemar: ReadingOrderEntry = {
       desc: 'Political violence and war — lighter than the Vanyel books',
     },
   ],
+  lastUpdated: '2026-05-12',
+  shortName: 'Valdemar',
   finishedLabel: 'Finished Valdemar?',
   categoryHref: '/fantasy/epic/',
   categoryLabel: 'Browse Epic Fantasy',

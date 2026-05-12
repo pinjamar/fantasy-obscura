@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const asoiaf: ReadingOrderEntry = {
   slug: 'asoiaf',
@@ -136,6 +136,7 @@ export const asoiaf: ReadingOrderEntry = {
       desc: 'Dark — isolation, survival, and hard choices',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the published books?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

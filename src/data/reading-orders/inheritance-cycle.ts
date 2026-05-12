@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const inheritanceCycle: ReadingOrderEntry = {
   slug: 'inheritance-cycle',
@@ -122,6 +122,7 @@ export const inheritanceCycle: ReadingOrderEntry = {
       desc: 'War atrocities, psychological cost, the ending carries real weight',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished Alagaësia?',
   categoryHref: '/fantasy/epic/',
   categoryLabel: 'Browse Epic Fantasy',

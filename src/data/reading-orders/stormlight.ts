@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const stormlight: ReadingOrderEntry = {
   slug: 'stormlight',
@@ -124,6 +124,7 @@ export const stormlight: ReadingOrderEntry = {
     { label: 'Books 3–4', level: 3, desc: 'Genocide, addiction, occupation' },
     { label: 'Wind and Truth', level: 4, desc: 'The stakes have never been higher' },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the arc?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

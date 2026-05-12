@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const grishaverse: ReadingOrderEntry = {
   slug: 'grishaverse',
@@ -180,6 +180,7 @@ export const grishaverse: ReadingOrderEntry = {
       desc: 'War and political violence — sits between the two earlier series in tone',
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the Grishaverse?',
   categoryHref: '/fantasy/romantasy/',
   categoryLabel: 'Browse Romantasy',

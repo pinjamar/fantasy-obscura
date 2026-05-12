@@ -1,4 +1,4 @@
-import type { ReadingOrderEntry } from '../reading-orders';
+﻿import type { ReadingOrderEntry } from '../reading-orders';
 
 export const pern: ReadingOrderEntry = {
   slug: 'pern',
@@ -338,6 +338,7 @@ export const pern: ReadingOrderEntry = {
       desc: "Lighter tone overall — dragon plague storylines but less emotional weight than Anne's best work",
     },
   ],
+  lastUpdated: '2026-05-12',
   finishedLabel: 'Finished Pern?',
   categoryHref: '/fantasy/epic/',
   categoryLabel: 'Browse Epic Fantasy',
