@@ -210,7 +210,7 @@ const breadcrumbJsonLd = JSON.stringify({
               <div class="inline-flex items-center gap-3 rounded-2xl border-2 border-orange-200 bg-orange-50 px-4 py-3">
                 <span class="text-xl leading-none">{d.candles}</span>
                 <div>
-                  <div class="font-bold text-orange-700 text-sm">Darkness {srcDarkness}/5 — {d.label}</div>
+                  <div class="font-bold text-orange-700 text-sm">Darkness {srcDarkness}/5 - {d.label}</div>
                   <div class="text-xs text-zinc-500 mt-0.5">{d.desc}</div>
                 </div>
               </div>
@@ -219,7 +219,7 @@ const breadcrumbJsonLd = JSON.stringify({
               <div class="inline-flex items-center gap-3 rounded-2xl border-2 border-pink-200 bg-pink-50 px-4 py-3">
                 <span class="text-xl leading-none">{h.flames}</span>
                 <div>
-                  <div class="font-bold text-pink-700 text-sm">Heat — {h.label}</div>
+                  <div class="font-bold text-pink-700 text-sm">Heat - {h.label}</div>
                   <div class="text-xs text-zinc-500 mt-0.5">{h.desc}</div>
                 </div>
               </div>
@@ -393,7 +393,7 @@ const breadcrumbJsonLd = JSON.stringify({
           href={`/reading-orders/${readingOrderSlug}/`}
           class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-200 bg-indigo-50 text-sm text-indigo-700 hover:border-indigo-400 hover:bg-indigo-100 transition-colors"
         >
-          📖 {source.series} — full reading order →
+          📖 {source.series} - full reading order →
         </a>
       </div>
     )}

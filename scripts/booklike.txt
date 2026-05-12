@@ -744,6 +744,9 @@ Does it connect to Jemisin's other series? (No — Inheritance Trilogy and Killi
 Historic: first author to win Hugo for Best Novel three consecutive years
 Slug: /reading-orders/broken-earth
 
+71 Peter V. Brett (Demon Cycle)
+
+72 Foundation (Isaac Asimov)
 ---
 
 ## Notes for Claude Code
