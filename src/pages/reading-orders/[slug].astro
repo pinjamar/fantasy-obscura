@@ -280,6 +280,7 @@ const pageTitle = curatedEntry
   : `${seriesMeta?.name} Series Reading Order${authorNames.length ? `: All ${authorNames[0]} Books in Order` : ''} | The Grimoire`;
 const pageDesc = curatedEntry
   ? (() => {
+      if (curatedEntry.metaDescription) return curatedEntry.metaDescription;
       const publishedCount = allBooksCurated.length - upcomingCount;
       const extras = [
         optionalCount > 0 ? `${optionalCount} skippable` : '',

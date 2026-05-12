@@ -7,7 +7,7 @@ export interface ReadingOrderBook {
   slug: string | null;
   status: BookStatus;
   note: string;
-  page_count: number | null;
+  page_count?: number | null;
   publication_year: number | null;
   /** Overall position in the parent series (e.g. Discworld #8). Shown below title. */
   position?: number;
@@ -73,6 +73,8 @@ export interface ReadingOrderEntry {
   booksLikeSlug?: string;
   /** ISO date (YYYY-MM-DD) of last meaningful content update — feeds dateModified in JSON-LD */
   lastUpdated?: string;
+  /** Custom meta description override — keep under 155 chars. Falls back to auto-generated if omitted. */
+  metaDescription?: string;
 }
 
 import { acotar } from './reading-orders/acotar';

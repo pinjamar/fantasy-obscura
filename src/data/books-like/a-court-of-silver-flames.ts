@@ -10,7 +10,7 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
     darkness_level: 3,
     heat_level: 'Fiery',
     series: 'A Court of Thorns and Roses',
-    series_number: 4,
+    series_number: 5,
     tropes: [
       'Enemies to Lovers',
       'Fae Courts',

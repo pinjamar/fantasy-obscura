@@ -183,6 +183,16 @@ export const blackCompany: ReadingOrderEntry = {
   ],
   sections: [
     {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        'Darkness is moral and structural - the Company serves genuinely evil employers and the books treat that complicity seriously. Violence is matter-of-fact and military, not gratuitous or gory.',
+        'No romance. Lady is a significant character but the series is not a romance - relationships are functional and dark.',
+        'No explicit sexual content.',
+        'Right for: readers who want morally complex protagonists with no clear heroism. Not right for: readers who need a hero/villain line or a redemption arc.',
+      ],
+    },
+    {
       heading: 'Why it matters',
       type: 'bullets',
       bullets: [

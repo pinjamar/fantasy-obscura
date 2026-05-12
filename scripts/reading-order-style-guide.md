@@ -59,23 +59,31 @@ Quick-orientation facts a new reader needs before they start. Use for:
 
 Cards are not summaries — they're the things you'd say to a friend who just picked up book 1.
 
-### 4. Sections (required: "Where to start" + "Content notes")
+### 4. Sections
 
-**Where to start** — mandatory on every guide.
-Bullet format. Covers: first-time readers, readers who've read related series, re-entry points.
-Answer "which book first?" directly. Don't make them infer it from the reading order list.
+**Rule 0: check for duplication before writing any section.**
+`description`, `orderNote`, book notes, group sublabels, and cards already cover a lot. A section only adds value when it contains something genuinely new. If the description already ends with a clear entry point and the orderNote explains the arc — "Where to start" is already answered. Don't repeat it in a section.
 
-**Content notes** — mandatory on every guide.
-Darkness level, heat level, specific content warnings per arc.
-Helps wrong-fit readers self-select out early (good for bounce rate, good for readers).
+**The formula (in order, max 4 sections):**
 
-**Facts / influence** — required where the series has cultural significance.
-3–5 bullets of concrete, specific facts: publication year, who it influenced, records it holds, awards.
-Not vague praise. "Joe Abercrombie has cited this as a direct influence" beats "hugely influential."
+**"Where to start"** — add only if description/orderNote don't already answer it.
+Bullet format. Useful when there are multiple entry points, reader profiles (newcomer / adaptation fan / prior reader), or a non-obvious first book. Skip if the answer is already in the description or orderNote — adding a section that just repeats them is noise.
 
-**Series-specific sections** — add where there's a genuine reader question to answer.
-Examples: "The crossover moments explained," "Publication vs chronological order," "Which arc to stop at."
-Don't add sections just to add them. Every section should answer something a reader will search for.
+**[Series-specific]** — keep only if it targets a real search query. Remove or rename vague ones.
+Keep: "Publication vs chronological order" (Malazan, First Law, WoT — very commonly Googled), "If you know the games or show" (Witcher), "The crossover moments explained" (SJM).
+Cut or fold in: generic "What to know" catch-alls, "What makes it special" non-answers — move the substance into a card or one of the other three sections.
+
+**"Content notes"** — add to every guide that's missing it. This never duplicates other page elements.
+The darkness meter shows level per arc but never covers: romance/heat level, whether explicit content exists, what *type* of dark it is (moral ambiguity vs. graphic violence vs. sexual content), or reader fit framing. Cover all four:
+- Darkness type (moral, violent, sexual — not just the level)
+- Romance/heat level (none, minimal, present, explicit)
+- Explicit content (yes/no — people Google this directly)
+- Reader fit: "Right for X. Not right for Y." One line each.
+
+**"Why it matters"** — add for established series with real genre influence. Skip for newer series.
+3–5 concrete bullets: publication year, who it influenced by name, what it invented or popularized, records or awards. Not vague praise — "Joe Abercrombie cited this as a direct influence" beats "hugely influential."
+Skip for: Blood and Ash, Empyrean, Divergent, ACOTAR — no established legacy yet.
+Use for: Black Company, Earthsea, Malazan, WoT, Witcher, First Law, Dune, Discworld.
 
 ### 5. `darkness` array
 
@@ -104,27 +112,17 @@ Best placement: add `(Spoiler-Free)` to the end of the `orderNote`, or note it i
 - H2 "Reading Order" above the book list — rendered in `[slug].astro`. Should be "[Series] Reading Order" not just "Reading Order" (keyword reinforcement). **This is a template fix, not a per-guide fix.**
 - Section headings (`section.heading`) render as H2 — keep them as natural questions or clear topic labels, not generic "About the Series" style
 
-### Visible FAQ block
+### FAQ JSON-LD schema
 
-Every curated guide should have 3–4 FAQ items that answer the top People Also Ask queries.
-These render as visible text on the page AND populate the `FAQPage` JSON-LD schema.
-**Do not put FAQ content in hidden elements — Google ignores CSS-hidden text.**
+`[slug].astro` auto-generates a `FAQPage` JSON-LD block from any `sections` entries that have `prose` or `bullets`. No extra work needed — every section with a heading and content automatically becomes a schema FAQ item. This means well-written sections (good heading, substantive content) double as structured data for Google's People Also Ask boxes without any separate FAQ block.
 
-Standard FAQ questions (adapt wording per series):
+### "Last updated" — dateModified in JSON-LD
 
-1. How many books are in [Series]?
-2. What order should I read [Series]? _(answer: exactly what orderNote says, compressed)_
-3. How long does it take to read [Series]? _(total pages ÷ 30 min/page = hours — auto-calculated)_
-4. One series-specific question — e.g., "Do I need to read Port of Shadows?" / "Can I start with Crescent City?"
+Every curated guide has a `lastUpdated: 'YYYY-MM-DD'` field that feeds into `dateModified` in the `BookSeries` JSON-LD schema. This is the canonical Google freshness signal — more reliable than visible text dates.
 
-FAQ items go in the `sections` array with a consistent type (do not use `type: 'warning'` for FAQ items).
-The `faqJsonLd` in `[slug].astro` auto-generates schema from all sections with `prose` or `bullets`.
+**Update `lastUpdated` whenever you change guide content:** new book added, notes revised, section rewritten, book status changed. Do NOT update it for template or structural changes that don't affect what the reader sees.
 
-### "Last updated" for ongoing series
-
-Ongoing series (seriesStatus: 'ongoing') should include the most recent book and date somewhere visible.
-Best place: `seriesStatusLabel` (already exists). Format: `"📖 Ongoing — Lies Weeping (2025)"`
-Helps with freshness signals for recrawl and tells readers the guide is current.
+For ongoing series, also update `seriesStatusLabel` to reflect the current state — e.g. `"📖 Ongoing — They Cry due Nov 2026"`. This is reader-facing info, not a freshness signal.
 
 ### Do not use hidden text
 
@@ -196,43 +194,13 @@ in the book's `note` field rather than building a separate section.
 - [ ] `description` leads with what makes the series distinctive, ends with clear entry point
 - [ ] `orderNote` answers the reading order question directly in one paragraph
 - [ ] 2–4 cards present, `cardsPosition: 'above'`
-- [ ] "Where to start" section present with bullet answers
-- [ ] "Content notes" section present (darkness, heat, warnings per arc)
+- [ ] "Where to start" section present — OR confirmed it's already answered in description/orderNote (don't duplicate)
+- [ ] "Content notes" section present: darkness type, romance level, explicit content (yes/no), reader fit
+- [ ] Series-specific section present if there's a real search query it answers (pub vs chronological, adaptation context, etc.)
+- [ ] "Why it matters" section present for established series; skipped for newer series without legacy
 - [ ] `darkness` array filled per arc with `desc` for each entry
-- [ ] FAQ: at least 3 questions answerable from series data, in `sections` array
 - [ ] `seriesStatusLabel` includes most recent book + year for ongoing series
 - [ ] `booksLikeSlug` filled if a Books Like page exists for this series
 - [ ] `related` has 4–6 slugs of genuinely similar series
 - [ ] No hidden text used anywhere
 - [ ] All book slugs verified to exist in DB (`node scripts/check-reading-order-books.mjs`)
-
-3. No visible FAQ section — the JSON-LD FAQ is orphaned
-   The FAQPage schema is generated from the sections array, but sections render as bullet lists — not visually as Q&A. Google expects visible Q&A content that matches the schema. A visible FAQ block at the bottom (3–4 questions) would:
-
-Qualify for People Also Ask boxes
-Make the JSON-LD valid
-Answer the most common searches directly
-Standard questions for every guide:
-
-How many books are in [Series]?
-What order should I read [Series]?
-How long does it take to read [Series]?
-One series-specific question (e.g., Do I need to read Port of Shadows?) 4. Sections are not standardized — this is the main SJM vs Black Company gap
-SJM has "Where to start," "Crossover moments explained," "Content notes."
-Black Company has only "Why it matters."
-Every guide should have at minimum:
-
-Where to start (most-searched intent — every new reader asks this)
-Content notes (darkness, heat, warnings — reduces bounce from wrong-fit readers)
-Facts/influence (authority signals — Black Company has this, SJM doesn't)
-This is the standardization work that would make all guides consistent.
-
-5. H2 "Reading Order" is a keyword miss
-   The <h2> above the book list (line 503) just says "Reading Order." Google weighs heading text. It should be "[Series Name] Reading Order" or "Complete [Series Name] Reading Order" — matches the H1 target keyword.
-
-6. "Last updated" for ongoing series
-   Black Company just got Lies Weeping (2025) and They Cry is upcoming. No freshness signal anywhere on the page. A small note — "Updated May 2025 — Lies Weeping added" — helps with recrawl priority and tells readers the guide is current. Especially important for ongoing series.
-
-7. 📚
-   12 books (10 essential · 1 extra · 1 optional · 1 upcoming)~4.569 pages~152 hours reading time
-   🕯️🕯️🕯️🕯️🕯️ Brutal · 🔥🔥 Sweet Romance - potentiall put optional before extra and remove heat level?
