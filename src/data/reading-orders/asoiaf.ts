@@ -7,14 +7,14 @@ export const asoiaf: ReadingOrderEntry = {
   seriesStatus: 'hiatus',
   seriesStatusLabel: '⚠️ Unfinished — Winds of Winter still unannounced',
   description:
-    'Five books of political chess played with human lives. Every major house in Westeros wants the throne; nobody is safe; no storyline is guaranteed resolution. Martin writes through named POV chapters — one character per chapter, no omniscient narrator — which means you only know what your character knows, and what you don\'t know is frequently what kills them. The reading order is linear. The Winds of Winter has no release date. Start with A Game of Thrones.',
+    "Five books of political chess played with human lives. Every major house in Westeros wants the throne; nobody is safe; no storyline is guaranteed resolution. Martin writes through named POV chapters (one character per chapter, no omniscient narrator), which means you only know what your character knows, and what you don't know is frequently what kills them. The reading order is linear. The Winds of Winter has no release date. Start with A Game of Thrones.",
   darknessDisplay: '🕯️🕯️🕯️🕯️–🕯️🕯️🕯️🕯️🕯️ Dark to Brutal',
   groups: [
     {
       label: 'A Song of Ice and Fire',
       sublabel: 'books 1–5 — read in order',
       noteType: 'required',
-      note: 'Publication order is the only order. Do not skip ahead or look anything up — this series is best experienced blind.',
+      note: 'Publication order is the only order. Do not skip ahead or look anything up, this series is best experienced blind.',
       books: [
         {
           title: 'A Game of Thrones',
@@ -44,7 +44,7 @@ export const asoiaf: ReadingOrderEntry = {
           title: 'A Feast for Crows',
           slug: 'a-feast-for-crows',
           status: 'mandatory',
-          note: 'Slower, more political. Many fan-favourite characters are absent — Martin split books 4 and 5 by POV, not timeline.',
+          note: 'Slower, more political. Many fan-favourite characters are absent. Martin split books 4 and 5 by POV, not timeline.',
           page_count: 753,
           publication_year: 2005,
         },
@@ -52,7 +52,7 @@ export const asoiaf: ReadingOrderEntry = {
           title: 'A Dance with Dragons',
           slug: 'a-dance-with-dragons',
           status: 'mandatory',
-          note: 'Runs parallel to Feast for the first half, then moves forward. The series ends here for now — book 6 has no release date.',
+          note: 'Runs parallel to Feast for the first half, then moves forward. The series ends here for now - book 6 has no release date.',
           page_count: 1016,
           publication_year: 2011,
         },
@@ -88,7 +88,7 @@ export const asoiaf: ReadingOrderEntry = {
           title: 'The Sworn Sword',
           slug: 'the-sworn-sword',
           status: 'optional',
-          note: 'Dunk and Egg hired on at a small estate. A water dispute escalates — Martin writes the political stakes smaller but no less real.',
+          note: 'Dunk and Egg hired on at a small estate. A water dispute escalates. Martin writes the political stakes smaller but no less real.',
           page_count: 137,
           publication_year: 2008,
         },
@@ -96,7 +96,7 @@ export const asoiaf: ReadingOrderEntry = {
           title: 'The Mystery Knight',
           slug: 'the-mystery-knight',
           status: 'optional',
-          note: 'Another tourney, another disaster. The deepest lore of the three — connects directly to later ASOIAF history. The best ending point the series has.',
+          note: 'Another tourney, another disaster. The deepest lore of the three. Connects directly to later ASOIAF history. The best ending point the series has.',
           page_count: 160,
           publication_year: 2010,
         },
@@ -112,13 +112,13 @@ export const asoiaf: ReadingOrderEntry = {
       label: 'Fire & Blood',
       sublabel: 'Targaryen history — read after the main series',
       noteType: 'optional',
-      note: 'The history of House Targaryen from Aegon the Conqueror through the Dance of Dragons. Written as an in-world history rather than a novel — dense and encyclopedic in style. Best read after the main ASOIAF books for maximum context, or alongside watching HotD. Source material for the HBO series House of the Dragon.',
+      note: 'The history of House Targaryen from Aegon the Conqueror through the Dance of Dragons. Written as an in-world history rather than a novel. Dense and encyclopedic in style. Best read after the main ASOIAF books for maximum context, or alongside watching HotD. Source material for the HBO series House of the Dragon.',
       books: [
         {
           title: 'Fire & Blood',
           slug: 'fire-and-blood',
           status: 'optional',
-          note: 'Covers the Targaryen dynasty from the Conquest to Aegon III. The Dance of Dragons — the Targaryen civil war at its centre — is the basis for House of the Dragon. Reads as lore history rather than novel. Rewarding for world-building obsessives.',
+          note: 'Covers the Targaryen dynasty from the Conquest to Aegon III. The Dance of Dragons (the Targaryen civil war at its centre) is the basis for House of the Dragon. Reads as lore history rather than novel. Rewarding for world-building obsessives.',
           page_count: 736,
           publication_year: 2018,
         },
@@ -132,17 +132,17 @@ export const asoiaf: ReadingOrderEntry = {
     },
   ],
   orderNote:
-    'The five main books read in publication order — no exceptions. The Dunk & Egg novellas (A Knight of the Seven Kingdoms) and Fire & Blood are optional companion reading, both best saved for after the main series. Neither is required to follow the main plot.',
+    'The five main books read in publication order - no exceptions. The Dunk & Egg novellas (A Knight of the Seven Kingdoms) and Fire & Blood are optional companion reading, both best saved for after the main series. Neither is required to follow the main plot.',
   cardsPosition: 'above',
   cards: [
     {
       title: '⚡ The Peak',
-      body: 'A Storm of Swords is the series at its best — dense, brutal, and with some of the most discussed chapters in modern fantasy. Do not look anything up before reading it.',
+      body: 'A Storm of Swords is the series at its best. Dense, brutal and with some of the most discussed chapters in modern fantasy. Do not look anything up before reading it.',
       color: 'blue',
     },
     {
       title: '📖 Books 4 & 5',
-      body: 'Martin split the story by POV character across two books covering the same timeline. A Feast for Crows and A Dance with Dragons are best read back-to-back. Feast is slower — it rewards patience.',
+      body: 'Martin split the story by POV character across two books covering the same timeline. A Feast for Crows and A Dance with Dragons are best read back-to-back. Feast is slower and it rewards patience.',
       color: 'amber',
     },
     {
@@ -152,17 +152,17 @@ export const asoiaf: ReadingOrderEntry = {
     },
     {
       title: '📺 Books vs Show',
-      body: "The show follows the books closely through season 4. From season 5 onward it diverges significantly — major characters, plotlines, and endings differ. The books are substantially richer throughout. Watching the show first does not spoil the books; it's a different story from the same starting point.",
+      body: "The show follows the books closely through season 4. From season 5 onward it diverges significantly; major characters, plotlines, and endings differ. The books are substantially richer throughout. Watching the show first does not spoil the books; it's a different story from the same starting point.",
       color: 'purple',
     },
     {
       title: '🐉 House of the Dragon',
-      body: 'House of the Dragon is based on Fire & Blood — the Targaryen history book at the bottom of this guide. Reading Fire & Blood before watching HotD gives context; reading it after gives depth. Neither is required to enjoy the other.',
+      body: 'House of the Dragon is based on Fire & Blood. The Targaryen history book at the bottom of this guide. Reading Fire & Blood before watching HotD gives context; reading it after gives depth. Neither is required to enjoy the other.',
       color: 'green',
     },
     {
-      title: '📝 How It\'s Written',
-      body: 'Every chapter is told through one character\'s eyes — named POV chapters, no omniscient narrator. You only know what that character knows. Martin uses this to create dramatic irony: two characters can witness the same event and give you completely different pictures of what happened. It\'s also why losing a POV character hits the way it does.',
+      title: "📝 How It's Written",
+      body: "Every chapter is told through one character's eyes (named POV chapters, no omniscient narrator). You only know what that character knows. Martin uses this to create dramatic irony: two characters can witness the same event and give you completely different pictures of what happened. It's also why losing a POV character hits the way it does.",
       color: 'zinc',
     },
   ],
@@ -171,9 +171,9 @@ export const asoiaf: ReadingOrderEntry = {
       heading: 'Where to start',
       type: 'bullets',
       bullets: [
-        'Start with A Game of Thrones — there is no other entry point. The series requires sequential reading.',
+        'Start with A Game of Thrones; there is no other entry point. The series requires sequential reading.',
         'Watched the show? Still start from book one. The books diverge significantly from season 5 onwards and are substantially richer throughout.',
-        'The Dunk & Egg novellas and Fire & Blood are optional — best saved for after the five main books.',
+        'The Dunk & Egg novellas and Fire & Blood are optional and best saved for after the five main books.',
       ],
     },
     {
@@ -181,7 +181,7 @@ export const asoiaf: ReadingOrderEntry = {
       type: 'bullets',
       bullets: [
         'Darkness is structural: no protagonist is safe, no storyline is guaranteed resolution, and major characters die without warning.',
-        'Sexual violence is present throughout — including assault, in contexts that are not always critically framed. This is the most significant content warning for the series.',
+        'Sexual violence is present throughout (including assault), in contexts that are not always critically framed. This is the most significant content warning for the series.',
         'Violence is graphic and frequent: war, torture, political executions, child deaths.',
         'Right for: readers who want morally complex political fantasy with no plot armour and enormous world-building. Not right for: readers who need characters to be safe or storylines to resolve cleanly.',
       ],
@@ -193,7 +193,7 @@ export const asoiaf: ReadingOrderEntry = {
         'Published in 1996 — it arrived before the Lord of the Rings films and Harry Potter and redefined what adult fantasy could be.',
         "Ned Stark's death in book 1 changed the genre's relationship with protagonist safety. No serious epic fantasy writer since has ignored it.",
         'The HBO adaptation became one of the most-watched series in history and brought a generation of new readers to fantasy.',
-        'Martin\'s influence on grimdark is direct — Abercrombie, Lawrence, and Erikson have all cited him. Modern dark fantasy exists in his shadow.',
+        "Martin's influence on grimdark is direct. Abercrombie, Lawrence, and Erikson have all cited him. Modern dark fantasy exists in his shadow.",
         'At five books and unfinished, it remains the most ambitious and most debated series in contemporary epic fantasy.',
       ],
     },
@@ -203,24 +203,60 @@ export const asoiaf: ReadingOrderEntry = {
       bullets: [
         'Do not look anything up. Avoid the wiki, fan forums, and Reddit. This series is uniquely rewarding to read blind.',
         'The first 100 pages of A Game of Thrones are slow world-building — the series earns its reputation from chapter 6 onwards.',
-        'A Feast for Crows is the most divisive book — slower pace, unfamiliar POVs. Push through; A Dance with Dragons rewards it.',
+        'A Feast for Crows is the most divisive book; slower pace, unfamiliar POVs. Push through; A Dance with Dragons rewards it.',
       ],
     },
   ],
   darkness: [
-    { label: 'A Game of Thrones', level: 5, desc: 'Brutal from the start — political violence, executions, moral ambiguity' },
-    { label: 'A Clash of Kings',  level: 4, desc: 'Dark — war begins in earnest, atrocities multiply' },
-    { label: 'A Storm of Swords', level: 5, desc: "Brutal — the series' most devastating events back to back" },
-    { label: 'A Feast for Crows', level: 4, desc: 'Dark — aftermath, political decay, diminishing hope' },
-    { label: 'A Dance with Dragons', level: 4, desc: 'Dark — isolation, survival, and hard choices' },
-    { label: 'Dunk & Egg',        level: 3, desc: 'Lighter — adventure-driven, still Westerosi but less brutal' },
-    { label: 'Fire & Blood',      level: 4, desc: 'Dark history — the Dance of Dragons is a brutal civil war' },
+    {
+      label: 'A Game of Thrones',
+      level: 5,
+      desc: 'Brutal from the start - political violence, executions, moral ambiguity',
+    },
+    {
+      label: 'A Clash of Kings',
+      level: 4,
+      desc: 'Dark - war begins in earnest, atrocities multiply',
+    },
+    {
+      label: 'A Storm of Swords',
+      level: 5,
+      desc: "Brutal - the series' most devastating events back to back",
+    },
+    {
+      label: 'A Feast for Crows',
+      level: 4,
+      desc: 'Dark - aftermath, political decay, diminishing hope',
+    },
+    {
+      label: 'A Dance with Dragons',
+      level: 4,
+      desc: 'Dark - isolation, survival, and hard choices',
+    },
+    {
+      label: 'Dunk & Egg',
+      level: 3,
+      desc: 'Lighter - adventure-driven, still Westerosi but less brutal',
+    },
+    {
+      label: 'Fire & Blood',
+      level: 4,
+      desc: 'Dark history — the Dance of Dragons is a brutal civil war',
+    },
   ],
-  metaDescription: 'A Song of Ice and Fire reading order: all 5 ASOIAF books, Dunk & Egg novellas, Fire & Blood, and where House of the Dragon fits.',
+  metaDescription:
+    'A Song of Ice and Fire reading order: all 5 ASOIAF books, Dunk & Egg novellas, Fire & Blood, and where House of the Dragon fits.',
   lastUpdated: '2026-05-13',
   finishedLabel: 'Finished the published books?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',
   booksLikeSlug: 'a-game-of-thrones',
-  related: ['first-law', 'malazan', 'wheel-of-time', 'mark-lawrence', 'black-company', 'witcher'],
+  related: [
+    'first-law',
+    'malazan',
+    'wheel-of-time',
+    'mark-lawrence',
+    'black-company',
+    'witcher',
+  ],
 };

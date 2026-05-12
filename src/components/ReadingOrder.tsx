@@ -144,7 +144,7 @@ export default function ReadingOrder({ books, groups, description, showLegend = 
         <p className="mb-8 text-zinc-600 leading-relaxed">{description}</p>
       )}
 
-      <div className="space-y-10">
+      <div className="space-y-5">
         {groupsWithIndex.map((group, gi) => (
           <div key={gi}>
             {/* Group header */}

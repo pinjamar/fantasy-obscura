@@ -172,8 +172,18 @@ export const blackCompany: ReadingOrderEntry = {
     },
     {
       title: '🏁 Soldiers Live Is Worth It',
-      body: 'The Glittering Stone arc is slower and stranger than the North trilogy, but Soldiers Live delivers one of the most honest endings in fantasy. No triumphalism, just soldiers and what it cost. It closes the original nine-book run. The series continues with A Pitiless Rain.',
+      body: 'The Glittering Stone arc is slower and stranger than the North trilogy, but Soldiers Live delivers one of the most honest endings in fantasy. No triumphalism, just soldiers and what it cost. It closes the original nine-book run.',
       color: 'purple',
+    },
+    {
+      title: '👑 The Lady',
+      body: "The Company's employer for much of the series is the Lady. She is an ancient, immensely powerful sorceress who is genuinely evil and written as genuinely complex. Not a villain who softens into an ally, not a love interest who exists to humanise the hero. She is one of the most distinctive characters in grimdark and the reason many readers cite the series as more than just military fantasy.",
+      color: 'red',
+    },
+    {
+      title: '⚖️ Moral Complicity',
+      body: 'The Company serves genuinely evil employers and the books treat that complicity seriously. The characters are not reluctant heroes working from the inside, they take the coin and do the job. The darkness is structural, not decorative. This is the question the series is actually asking: what does loyalty cost when the cause is indefensible?',
+      color: 'amber',
     },
     {
       title: '📖 The Series Continues',
@@ -186,10 +196,11 @@ export const blackCompany: ReadingOrderEntry = {
       heading: 'Content notes',
       type: 'bullets',
       bullets: [
-        'Darkness is moral and structural - the Company serves genuinely evil employers and the books treat that complicity seriously. Violence is matter-of-fact and military, not gratuitous or gory.',
+        'Violence is matter-of-fact and military, not gratuitous or gory. No gore for its own sake.',
         'No romance. Lady is a significant character but the series is not a romance - relationships are functional and dark.',
         'No explicit sexual content.',
-        'Right for: readers who want morally complex protagonists with no clear heroism. Not right for: readers who need a hero/villain line or a redemption arc.',
+        'Right for: readers who want morally complex protagonists with no clear heroism.',
+        'Not right for: readers who need a hero/villain line or a redemption arc.',
       ],
     },
     {

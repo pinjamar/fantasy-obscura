@@ -447,11 +447,13 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
             <img src={readingOrderFallback(imgSlug)} alt="" width="800" height="400" loading="eager" decoding="async" class="w-full aspect-3/1 object-cover" />
           </picture>
           <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
-          <a href="/reading-orders/" class="absolute top-4 left-4 z-10 text-sm font-semibold text-white/90 hover:text-white transition-colors [text-shadow:0_1px_4px_rgba(0,0,0,0.7)]">← Reading Orders</a>
           <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
             <p class="text-xs font-semibold uppercase tracking-widest text-white/60 mb-1">Reading Order</p>
             <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">{curatedEntry.name}</h1>
-            <p class="mt-1 text-sm text-white/75">by {curatedEntry.author}</p>
+            <div class="mt-1 flex items-center justify-between">
+              <p class="text-sm text-white/75">by {curatedEntry.author}</p>
+              <a href="/reading-orders/" class="text-sm font-semibold text-white/90 hover:text-white transition-colors bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1">← Reading Orders</a>
+            </div>
           </div>
         </div>
       ) : null;
@@ -548,6 +550,23 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
               </ul>
             )}
           </>
+        ) : section.type === 'spoiler' ? (
+          <details class="group">
+            <summary class="cursor-pointer list-none flex items-center justify-between gap-3">
+              <h2 class="font-semibold text-zinc-900">{section.heading}</h2>
+              <span class="shrink-0 text-xs font-semibold text-red-600 border border-red-200 bg-red-50 rounded-full px-2 py-0.5">⚠️ Spoilers</span>
+            </summary>
+            <div class="mt-4">
+              {section.prose && <p class="text-sm text-zinc-700 leading-relaxed">{section.prose}</p>}
+              {section.bullets && (
+                <ul class="space-y-2 text-sm text-zinc-700">
+                  {section.bullets.map((b) => (
+                    <li class="flex gap-2"><span class="text-zinc-400">→</span> <span set:html={b} /></li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </details>
         ) : (
           <>
             <h2 class="font-semibold text-zinc-900 mb-3">{section.heading}</h2>

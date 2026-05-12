@@ -31,7 +31,7 @@ export interface DarknessRow {
 
 export interface InfoSection {
   heading: string;
-  type?: 'bullets' | 'prose' | 'warning';
+  type?: 'bullets' | 'prose' | 'warning' | 'spoiler';
   bullets?: string[];
   prose?: string;
 }
