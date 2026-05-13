@@ -5,7 +5,7 @@ export const blackCompany: ReadingOrderEntry = {
   name: 'Chronicles of the Black Company',
   author: 'Glen Cook',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '📖 Ongoing — They Cry due Nov 2026',
+  seriesStatusLabel: '📖 Ongoing - They Cry due Nov 2026',
   description:
     "One of the founding texts of grimdark fantasy. It has been written years before the term existed. The Black Company is a mercenary band that has served under a succession of employers for centuries, keeping its Annals as it goes. The books are narrated by the Company's physician and historian, Croaker, in a clipped and unsentimental military voice unlike anything else in the genre. No chosen ones. No prophecy. Just soldiers doing terrible things in service of worse masters and somehow finding loyalty worth dying for. The Black Company is where to start. It's short, dense and immediately distinctive. Glen Cook's influence on modern grimdark is enormous; Abercrombie, Erikson and Martin have all cited this series. Read the first four books in order for the complete core story.",
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',

@@ -5,14 +5,12 @@ export const mistborn: ReadingOrderEntry = {
   name: 'Mistborn',
   author: 'Brandon Sanderson',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '📖 Ongoing — Era 3 in progress',
+  seriesStatusLabel: '⏳ Ongoing — Ghostbloods 1 expected Dec 2028',
   description:
-    "Brandon Sanderson's Mistborn is one of the most ingeniously constructed fantasy series ever written — set on a world where the prophesied hero failed a thousand years ago and a dark lord has ruled ever since. The original trilogy is a complete story of revolution, consequence, and cosmic revelation. Era 2 jumps 300 years forward into a Western-flavoured world of guns, trains, and new Allomancers. Era 3 — currently in progress — will advance to a near-modern spy-thriller setting. Each era can be read largely standalone, but the rewards for reading all of them in order are enormous. The Final Empire is where to start — one of the best heist novels in fantasy and a complete story in its own right. If you're new to Sanderson, the Mistborn reading order is the most recommended entry point before tackling the broader Cosmere.",
+    "Brandon Sanderson's Mistborn is one of the most ingeniously constructed fantasy series ever written — set on a world where the prophesied hero failed a thousand years ago and a dark lord has ruled ever since. The original trilogy is a complete story of revolution, consequence, and cosmic revelation. Era 2 jumps 300 years forward into a Western-flavoured world of guns, trains, and new Allomancers. Era 3 — currently in progress — will advance to a near-modern spy-thriller setting. Each era can be read largely standalone, but the rewards for reading all of them in order are enormous. The Final Empire is where to start. Mistborn is also part of the broader Cosmere universe — Era 2's The Lost Metal in particular has significant crossover with Stormlight and Warbreaker. The Cosmere guide covers how all the series interleave.",
   darknessDisplay: '🕯️🕯️🕯️ Serious',
   orderNote:
     'Extras are placed where they should actually be read, not just by series number. Secret History is #3.5 but positioned after Bands of Mourning — its note explains why. Era 3 (The Ghostbloods) is in progress — first book expected December 2028.',
-  warning:
-    "Mistborn is part of the wider Cosmere universe. Era 2's The Lost Metal contains significant Cosmere crossover content. Reading the Cosmere guide alongside this one is recommended for the full experience.",
   groups: [
     {
       label: 'Era 1 — The Original Trilogy',
@@ -121,76 +119,161 @@ export const mistborn: ReadingOrderEntry = {
       sublabel: 'coming 2028–2030 — not yet published',
       note: 'Officially titled The Ghostbloods. Era 3 advances Scadrial to a near-modern spy-thriller setting — cars, electricity, Cold War-era politics. Sanderson began writing after finishing Wind and Truth (2024) and gave the first public reading in late 2025. Three books planned; first expected December 2028.',
       noteType: 'optional',
-      books: [],
+      books: [
+        {
+          title: 'Ghostbloods 1',
+          slug: 'ghostbloods-1',
+          status: 'upcoming',
+          seriesLabel: 'Mistborn #8',
+          note: 'Upcoming December 2028. First novel of the Ghostbloods trilogy.',
+          page_count: null,
+          publication_year: 2028,
+        },
+        {
+          title: 'Ghostbloods 2',
+          slug: 'ghostbloods-2',
+          status: 'upcoming',
+          seriesLabel: 'Mistborn #9',
+          note: 'Upcoming 2029. Second novel of the Ghostbloods trilogy.',
+          page_count: null,
+          publication_year: 2029,
+        },
+        {
+          title: 'Ghostbloods 3',
+          slug: 'ghostbloods-3',
+          status: 'upcoming',
+          seriesLabel: 'Mistborn #10',
+          note: 'Upcoming December 2030. Final novel of the Ghostbloods trilogy.',
+          page_count: null,
+          publication_year: 2030,
+        },
+      ],
     },
   ],
+  cardsPosition: 'above',
   cards: [
     {
-      title: '⚗️ Era 1 (3)',
-      body: 'The complete original trilogy. The best entry point and one of the finest fantasy trilogies ever written. Read all three before moving on.',
+      title: '🌑 The Dark Lord Won',
+      body: "A thousand years ago, the prophesied hero failed. Ash falls from the sky, mists come at night, and the Lord Ruler — a god-emperor who claims to have saved the world — has ruled unopposed ever since. Mistborn opens not with a chosen hero arriving to fix things, but with a world that already lost and a crew of thieves who've decided to rob it anyway.",
+      color: 'zinc',
+    },
+    {
+      title: '🎭 Kelsier',
+      body: "The driving force of Era 1 is not the obvious protagonist. Kelsier is a Mistborn who survived the Lord Ruler's death camps and came back brilliant, charismatic, and comfortable with violence. He shapes every character around him and his presence is felt across the entire trilogy — even when he is not on the page. He is one of the most compelling characters Sanderson has written.",
+      color: 'red',
+    },
+    {
+      title: '⚗️ Allomancy',
+      body: "Mistborn's defining magic: swallow a metal and burn it to gain a power. Iron pulls metal toward you; steel pushes it away; tin sharpens your senses; pewter enhances your body. There are 16 metals — each does something different. Mistborn can burn all of them; Mistings burn only one. The system has discoverable rules and real costs. Understanding how it works is part of the pleasure of reading Era 1.",
+      color: 'purple',
+    },
+    {
+      title: '🔫 Era 2 Is a Different Beast',
+      body: "Era 2 books average 380 pages — less than half the length of Era 1. The tone shifts to a Western-flavoured adventure serial: guns, trains, a lawman protagonist, faster plotting. Readers who find Era 1 too heavy often discover Era 2 is their favourite. The Alloy of Law was deliberately written as a palate cleanser — it's worth pushing to.",
       color: 'blue',
     },
     {
-      title: '🔫 Era 2 (4)',
-      body: 'Wax and Wayne — Western-flavoured Mistborn set 300 years later. Faster and lighter than Era 1. The Lost Metal is the best Cosmere payoff yet published.',
-      color: 'blue',
-    },
-    {
-      title: '🕵️ Era 3 (3)',
-      body: 'Officially titled The Ghostbloods. Spy-thriller Scadrial in a Cold War-era setting. Sanderson started writing in 2025 — first book expected December 2028.',
+      title: '🌌 The Lost Metal',
+      body: 'The Lost Metal (Era 2 finale) is the most Cosmere-dense book Sanderson has published. Characters, forces, and plot threads from Stormlight and Warbreaker converge on Scadrial. If you are reading the full Cosmere and not just Mistborn, read it after Rhythm of War — the payoff is significantly larger with that context.',
       color: 'amber',
     },
     {
-      title: '📄 Extras (3)',
-      body: "The Eleventh Metal (#1.5), Allomancer Jak (#5.5), Secret History (#3.5 novella). Placed in series number order — see each book's note for the ideal read point.",
+      title: '📍 Secret History',
+      body: 'Secret History is numbered #3.5 but placed in this guide after The Bands of Mourning (#6). This is intentional — it is set during Era 1 events but contains spoilers for Era 2 plot points and lands significantly harder with Era 2 context. Its note explains the placement in full.',
       color: 'green',
     },
   ],
   sections: [
     {
+      heading: 'Where to start',
+      type: 'bullets',
+      bullets: [
+        'Start with The Final Empire. Era 1 is the only entry point — not The Alloy of Law, not Secret History. The series is sequential.',
+        'Worried about the length? The Final Empire is 541 pages — shorter than a Stormlight book and faster. Most readers finish it in under two weeks.',
+        'Era 2 begins with The Alloy of Law — start it directly after The Hero of Ages, or interleaved with Stormlight if following the full Cosmere guide.',
+      ],
+    },
+    {
       heading: 'The magic system',
       type: 'bullets',
       bullets: [
-        'Allomancy: swallowing and burning metals to gain powers — each of the 16 metals does something different. Mistborn can burn all metals; Mistings only one.',
+        'Allomancy: swallowing and burning metals to gain powers. Each of the 16 metals does something different. Mistborn can burn all metals; Mistings only one.',
         'Feruchemy: storing attributes (strength, speed, memory, health) in metal minds for later use. Feruchemists are rarer than Allomancers.',
-        'Hemalurgy: a darker third magic system introduced gradually — steals powers and attributes by driving metal spikes through living things at precise moments.',
-        "Era 2 introduces new alloys and hybrid powers as Scadrial's technology advances — the magic system evolves alongside the world.",
+        'Hemalurgy: a darker third magic system introduced gradually. It steals powers and attributes by driving metal spikes through living things at precise moments.',
+        "Era 2 introduces new alloys and hybrid powers as Scadrial's technology advances. The magic system evolves alongside the world.",
       ],
     },
     {
       heading: 'Era 1 vs Era 2',
       type: 'prose',
       prose:
-        "Era 1 is epic fantasy — long books, cosmic stakes, slow-burn revelation. Era 2 is closer to a Western-flavoured adventure serial — faster pacing, lighter tone, shorter books. Some readers prefer Era 2 for this reason. Both are set on the same world with the same magic, but the feel is genuinely different. If you bounced off Era 1's length, try The Alloy of Law — it was written as a palate cleanser and shows a very different side of Sanderson's range.",
+        'Era 1 and Era 2 are set on the same world with the same magic, but 300 years apart. Scadrial is transformed. A changed new world with trains, electricity and firearms. Allomancy has diversified: new metals, hybrid Twinborn (Allomancer and Feruchemist in one), and new social structures built around powers that were once underground. The political stakes shift from revolution to urban crime and political corruption. The scope is smaller; the mysteries run deeper.',
+    },
+    {
+      heading: 'What changed between Era 1 and Era 2',
+      type: 'spoiler',
+      bullets: [
+        "The ash falls and mists that defined Era 1's world are gone by Era 2. Scadrial has blue skies and restored ecology. It is a direct result of the events of The Hero of Ages.",
+        "The resolution of the Lord Ruler's 'saving the world' claim (the central mystery of Era 1) is answered in book 3 and reshapes everything about what came before.",
+      ],
     },
     {
       heading: 'Cosmere placement',
       type: 'prose',
       prose:
-        "Mistborn is the most important series in the Cosmere after Stormlight. Era 1 can be read in isolation with no Cosmere knowledge. Era 2 starts dropping Cosmere threads. The Lost Metal (Era 2 finale) has the most explicit Cosmere crossover in any Sanderson novel to date — it assumes familiarity with Stormlight and Warbreaker. If you're reading the Cosmere in full, read The Lost Metal after Rhythm of War.",
+        'Era 1 can be read in complete isolation, no prior Cosmere knowledge needed. Era 2 begins introducing threads. If you are reading the full Cosmere, slot Era 2 between Stormlight books 3 and 4 — the guide explains why. Era 3 (The Ghostbloods) assumes familiarity with both Mistborn eras and Stormlight.',
+    },
+    {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        'Violence throughout (revolution, executions and war). They are purposeful and not gratuitous.',
+        'Era 1 deals seriously with oppression, slavery, and genocide as systemic forces, not just backdrop.',
+        'No explicit sexual content across any era.',
+        'Right for: readers who want a magic system they can reason through, a heist premise, and reveals that reframe everything.',
+        'Not right for: readers who need moral clarity from the start. The politics of resistance and complicity are genuinely complicated.',
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "The Final Empire's mid-book twist is one of the most discussed moments in contemporary epic fantasy. It reframes everything you've read up to that point.",
+        "Sanderson's concept of hard magic (magic with internal rules and costs) is now standard vocabulary in fantasy discourse. Mistborn is its clearest demonstration.",
+        'The Cosmere (of which Mistborn is the recommended on-ramp) is the most ambitious shared-universe project in the history of the genre.',
+      ],
     },
   ],
   darkness: [
     {
       label: 'Era 1',
       level: 3,
-      desc: 'Revolution, genocide, and cosmic horror — the darkness is purposeful and earns its weight',
+      desc: 'Revolution, genocide, and cosmic horror - the darkness is purposeful and earns its weight',
     },
     {
       label: 'Era 2',
       level: 2,
-      desc: 'Lighter tone overall — violence and personal loss but less cosmically heavy than Era 1',
+      desc: 'Lighter tone overall - violence and personal loss but less cosmically heavy than Era 1',
     },
     {
       label: 'Era 3',
       level: 3,
-      desc: 'Expected to match Era 2 — spy thriller tone with moral complexity',
+      desc: 'Expected to match Era 2 - spy thriller tone with moral complexity',
     },
   ],
+  metaDescription:
+    'Mistborn reading order: all three eras in sequence - Era 1 original trilogy, Era 2 Wax and Wayne and Era 3 The Ghostbloods by Brandon Sanderson.',
   lastUpdated: '2026-05-12',
   finishedLabel: 'Finished Scadrial?',
   categoryHref: '/fantasy/epic/',
   categoryLabel: 'Browse Epic Fantasy',
-  related: ['cosmere', 'stormlight', 'kingkiller'],
+  related: [
+    'cosmere',
+    'stormlight',
+    'wheel-of-time',
+    'malazan',
+    'kingkiller',
+    'first-law',
+  ],
   booksLikeSlug: 'mistborn-the-final-empire',
 };

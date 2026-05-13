@@ -1,13 +1,13 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const stormlight: ReadingOrderEntry = {
   slug: 'stormlight',
   name: 'The Stormlight Archive',
   author: 'Brandon Sanderson',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '✓ First Arc Complete (5 books)',
+  seriesStatusLabel: '⏳ Ongoing — Arc 1 complete (5 books), Arc 2 unwritten',
   description:
-    'The most ambitious epic fantasy currently being written. A world of perpetual storms, ancient knights, and a cosmology that rewards every re-read. Each book raises the stakes. The payoff across the arc is extraordinary. The Way of Kings is where to start — and while Warbreaker is optional, reading it before Words of Radiance enriches book two considerably. This is the Stormlight Archive reading order most readers recommend.',
+    "The Stormlight Archive is the most ambitious epic fantasy currently being written — a ten-book series set on Roshar, a world of perpetual highstorms where ancient stone cities are built to withstand the weather and where something older than civilization stirs beneath every ruin. The first five-book arc is complete. Each book is between 1,000 and 1,330 pages. The commitment is real — and so is the payoff. Three storylines run in parallel from the first chapter: Kaladin, a soldier-turned-slave trying to survive and protect those around him; Shallan, a scholar's ward concealing a desperate secret; and Dalinar, a highprince haunted by visions of the world's ancient past. Each has their own arc, their own magic, and their own reason the series works. The Way of Kings is where to start — and while Warbreaker (a standalone Cosmere novel, free on Sanderson's site) is optional, reading it before Oathbringer adds a meaningful payoff in book 3.",
   darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
   books: [
     {
@@ -67,6 +67,14 @@ export const stormlight: ReadingOrderEntry = {
       publication_year: 2020,
     },
     {
+      title: 'Horneater',
+      slug: 'horneater',
+      status: 'upcoming',
+      note: 'Upcoming novella following Rock. Set in the Horneater Peaks. No confirmed release date.',
+      page_count: null,
+      publication_year: null,
+    },
+    {
       title: 'Wind and Truth',
       slug: 'wind-and-truth',
       status: 'mandatory',
@@ -74,9 +82,18 @@ export const stormlight: ReadingOrderEntry = {
       page_count: 1330,
       publication_year: 2024,
     },
+    {
+      title: 'Stormlight Archive Book 6',
+      slug: 'stormlight-6',
+      status: 'upcoming',
+      note: 'First book of Arc 2. Expected around 2031.',
+      page_count: null,
+      publication_year: 2031,
+    },
   ],
   orderNote:
     "Read in publication order. Position the novellas as listed — they're short but add meaningful context.",
+  cardsPosition: 'above',
   cards: [
     {
       title: '📏 The Commitment',
@@ -85,49 +102,112 @@ export const stormlight: ReadingOrderEntry = {
     },
     {
       title: '💙 Kaladin',
-      body: 'Kaladin Stormblessed is one of the finest protagonists in modern fantasy. His arc is about depression, hopelessness, and finding a reason to protect people when you have every reason not to. Sanderson handles it with unusual care and honesty. His chapters are why most readers keep going.',
+      body: 'Kaladin Stormblessed is one of the finest protagonists in modern fantasy. His arc is about depression, hopelessness, and finding a reason to protect people when you have every reason not to. Sanderson handles it with unusual care and honesty. His chapters are why most readers keep going through the slower stretches.',
       color: 'purple',
     },
     {
-      title: '🌌 The Cosmere',
-      body: "Stormlight is part of Sanderson's Cosmere — a shared universe across multiple series. Each book stands alone, but connections accumulate. Warbreaker (a standalone Cosmere novel, free on Sanderson's site) is positioned before Oathbringer in this guide — a character from it appears in book 3 and the payoff is significant.",
+      title: '🎭 Shallan',
+      body: "Shallan Davar is the series' other essential POV — a scholar, spy, and Lightweaver whose arc runs parallel to Kaladin's across all five books. Her chapters are more cerebral, more playful, and deal more with identity and self-deception than survival. The contrast between the two is one of the series' greatest structural strengths.",
+      color: 'red',
+    },
+    {
+      title: '⚔️ Dalinar',
+      body: 'Dalinar Kholin begins the series as a war-hardened highprince haunted by visions he cannot explain. He is the slowest of the three major arcs to build — but Oathbringer (book 3) is his book, and by the end of the first arc he is carrying the weight of everything the series has been building toward.',
+      color: 'amber',
+    },
+    {
+      title: '🌩️ Roshar',
+      body: 'The world of Roshar is one of the most originally conceived settings in the genre. Highstorms — catastrophic storms that cross the continent regularly — have shaped every aspect of life, ecology, and architecture. The Shattered Plains, the crab-like wildlife, the polyp-growing stone, and the ruins of the Knights Radiant are part of a fully realised world, not backdrop.',
       color: 'green',
     },
+    {
+      title: '🌌 The Cosmere',
+      body: "Stormlight is part of Sanderson's Cosmere — a shared universe across multiple series. The books stand alone, but connections accumulate. Warbreaker (a standalone Cosmere novel, free on Sanderson's site) is positioned before Oathbringer in this guide — a character from it appears in book 3 and the payoff is significant.",
+      color: 'zinc',
+    },
   ],
-  cardsPosition: 'above',
-  warning:
-    'Rhythm of War (book 4) is the most divisive entry — slower, more focused on politics and mental health, with less of the kinetic action that defines the earlier books. It is also essential. The setup it creates is the foundation for Wind and Truth. Push through even if it feels like a detour.',
   sections: [
     {
       heading: 'Before you start',
       type: 'bullets',
       bullets: [
-        'Each book is 1,000–1,330 pages. Prepare for the long game.',
-        'Reading Warbreaker (a standalone Cosmere novel) before book 3 adds a significant reward. Not required.',
-        'Part of the broader Cosmere universe — connections become clearer as you read more Sanderson.',
-        'The Way of Kings has a slow opening (~200 pages of setup). The payoff begins in part 3.',
+        'Each book is 1,000–1,330 pages. Most readers take 2–4 years to finish the arc. Prepare for the long game.',
+        'Part of the broader Cosmere universe — connections deepen as you read more Sanderson, but each book stands alone.',
+        'Rhythm of War (book 4) is the most divisive entry — slower and more focused on politics and mental health. It is also essential. Push through even if it feels like a detour.',
+        'Arc 2 (books 6–10) is planned but has not been written. You will finish this and wait.',
       ],
     },
     {
-      heading: 'Spoiler-free notes',
+      heading: 'The magic system',
       type: 'bullets',
       bullets: [
-        "Kaladin's arc is about depression and finding a reason to live. Handled with unusual care for genre fiction.",
-        'Each main book focuses on a different primary POV while continuing all storylines.',
-        'Rhythm of War is the most divisive book — the setup it creates is essential for Wind and Truth.',
-        'Wind and Truth closes the first arc. A second arc of five books is planned but unwritten.',
+        'Stormlight: raw magical energy harvested from highstorms. It heals wounds, enhances strength, and fuels the powers of the Knights Radiant.',
+        "Surgebinding: the Knights Radiant's magic — 10 orders, each bonded to a spren and capable of manipulating two natural Surges (forces like gravity, adhesion, and transformation). The system has discoverable rules.",
+        'Shardblades and Shardplate: massive ancient weapons and armour of unknown origin, coveted by every army on Roshar. Every king wants one.',
+        'Fabrials: mechanical devices powered by trapped spren — magical technology that Sanderson uses to build out an industrial revolution by book 4.',
+        'Spren: sentient manifestations of ideas and natural forces — winds, fire, emotions, concepts. The magic is inseparable from them.',
+      ],
+    },
+    {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        "Depression and suicidal ideation, Kaladin's arc deals directly with this. Handled with unusual care for the genre.",
+        'War, slavery and genocide are present throughout, they purposeful and not gratuitous.',
+        'Addiction — a significant subplot in Rhythm of War.',
+        'Political occupation and ethnic tension, primarily in books 3-4.',
+        'No explicit sexual content across the series.',
+        'Right for: readers who want a fully realised world, characters with real psychological depth, and a magic system they can reason through.',
+        'Not right for: readers who need momentum from page one — the opening requires patience.',
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "Kaladin's depression arc is the most discussed mental health portrayal in contemporary epic fantasy.",
+        'The Words of Radiance climax is widely considered one of the finest action sequences in the genre.',
+        "Oathbringer is the most emotionally complex book in the series — the full weight of Dalinar's arc lands in a way that reframes everything before it.",
+        'Roshar is one of the most fully realised secondary worlds in the genre — ecology, linguistics, history, and cosmology all present and internally consistent.',
+        'Wind and Truth closes an arc that took 14 years to write. Few living authors have sustained a project at this scale.',
+      ],
+    },
+    {
+      heading: 'What you find out',
+      type: 'spoiler',
+      bullets: [
+        'Shardblades (the most coveted weapons on Roshar) are the remnants of broken bonds between Knights Radiant and their spren. They are the corpses of dead spren and living Radiants can hear them scream. This is revealed gradually across books 1–3 and reframes every prior scene involving them.',
+        "Dalinar's visions connect to a history the world has deliberately forgotten. His personal past (what he did during the Rift) is revealed in Oathbringer and changes how you read his entire arc from the beginning.",
+        'Wind and Truth closes the arc with consequences that extend beyond Roshar into the wider Cosmere. Readers following the full Cosmere will find the final chapters hit harder with context from Mistborn Era 2.',
       ],
     },
   ],
   darkness: [
-    { label: 'Books 1–2', level: 3, desc: 'War, loss, slavery — fundamentally hopeful' },
-    { label: 'Books 3–4', level: 3, desc: 'Genocide, addiction, occupation' },
-    { label: 'Wind and Truth', level: 4, desc: 'The stakes have never been higher' },
+    {
+      label: 'Books 1-2',
+      level: 3,
+      desc: 'War, loss, slavery - fundamentally hopeful',
+    },
+    { label: 'Books 3-4', level: 3, desc: 'Genocide, addiction, occupation' },
+    {
+      label: 'Wind and Truth',
+      level: 4,
+      desc: 'The stakes have never been higher',
+    },
   ],
+  metaDescription:
+    'The Stormlight Archive reading order: all 5 books plus novellas in sequence - Warbreaker, Edgedancer and Dawnshard positioned where they belong.',
   lastUpdated: '2026-05-12',
   finishedLabel: 'Finished the arc?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',
   booksLikeSlug: 'the-way-of-kings',
-  related: ['cosmere', 'wheel-of-time'],
+  related: [
+    'cosmere',
+    'mistborn',
+    'wheel-of-time',
+    'malazan',
+    'kingkiller',
+    'first-law',
+  ],
 };

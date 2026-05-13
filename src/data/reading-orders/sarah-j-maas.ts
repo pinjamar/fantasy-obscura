@@ -26,20 +26,20 @@ export const sarahJMaas: ReadingOrderEntry = {
           publication_year: 2012,
         },
         {
-          title: "The Assassin's Blade",
-          slug: 'the-assassins-blade',
-          status: 'optional',
-          note: 'Five prequel novellas collected in one volume. Read after book 1 or skip - adds emotional depth, not plot.',
-          page_count: 432,
-          publication_year: 2014,
-        },
-        {
           title: 'Crown of Midnight',
           slug: 'crown-of-midnight',
           status: 'mandatory',
           note: 'The series finds its footing. Darker and faster, with a reveal that reframes everything.',
           page_count: 418,
           publication_year: 2013,
+        },
+        {
+          title: "The Assassin's Blade",
+          slug: 'the-assassins-blade',
+          status: 'optional',
+          note: 'Five prequel novellas in one volume. Read here — after Crown of Midnight. The reveal in book 2 makes the novella events land significantly harder. Skip if you want to stay on the main thread.',
+          page_count: 432,
+          publication_year: 2014,
         },
         {
           title: 'Heir of Fire',
@@ -249,16 +249,16 @@ export const sarahJMaas: ReadingOrderEntry = {
   ],
   darkness: [
     {
-      label: 'TOG books 1–2',
+      label: 'TOG books 1-2',
       level: 2,
       desc: 'Competition, intrigue — relatively contained',
     },
     {
-      label: 'TOG books 3–7',
+      label: 'TOG books 3-7',
       level: 4,
       desc: 'Full-scale war, sacrifice, world-ending stakes',
     },
-    { label: 'ACOTAR 1–3', level: 3, desc: 'Dark fairy tale, trauma, war' },
+    { label: 'ACOTAR 1-3', level: 3, desc: 'Dark fairy tale, trauma, war' },
     { label: 'ACSF', level: 3, desc: 'Intense recovery arc, darker tone' },
     {
       label: 'Crescent City',

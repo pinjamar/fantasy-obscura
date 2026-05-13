@@ -449,7 +449,7 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
           <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
           <div class="absolute inset-0 px-6 py-6 flex flex-col justify-end">
             <p class="text-xs font-semibold uppercase tracking-widest text-white/60 mb-1">Reading Order</p>
-            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">{curatedEntry.name}</h1>
+            <p class="text-2xl sm:text-3xl font-bold tracking-tight text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">{curatedEntry.shortName ?? curatedEntry.name}</p>
             <div class="mt-1 flex items-center justify-between">
               <p class="text-sm text-white/75">by {curatedEntry.author}</p>
               <a href="/reading-orders/" class="text-sm font-semibold text-white/90 hover:text-white transition-colors bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1">← Reading Orders</a>
