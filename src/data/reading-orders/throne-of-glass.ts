@@ -5,14 +5,14 @@ export const throneOfGlass: ReadingOrderEntry = {
   name: 'Throne of Glass',
   author: 'Sarah J. Maas',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✓ Complete — 7 books + prequel novella collection',
+  seriesStatusLabel: '✓ Complete - 7 books + prequel novella collection',
   description:
     'An assassin forced to compete for her freedom becomes the fulcrum of a war against an immortal darkness. Throne of Glass starts as a YA competition novel and grows (across seven books) into full-scale epic fantasy with Fae, ancient magic, a multidimensional antagonist and world-ending stakes. The protagonist begins as Celaena Sardothien and becomes someone else entirely. That evolution is the series. The first book is the weakest entry; Crown of Midnight is where it finds its voice. If you plan to read both Throne of Glass and ACOTAR, start here. The two series share a universe and reading ToG first pays off considerably in ACOTAR.',
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
   groups: [
     {
       label: 'The Main Series',
-      sublabel: 'books 1–5 + optional prequel',
+      sublabel: 'books 1-5 + optional prequel',
       noteType: 'required',
       note: "All main books are essential and must be read in order. The Assassin's Blade (prequel) is optional - read it after Crown of Midnight, not after book 1. The series takes off at Crown of Midnight.",
       books: [
@@ -60,7 +60,7 @@ export const throneOfGlass: ReadingOrderEntry = {
           title: 'Empire of Storms',
           slug: 'empire-of-storms',
           status: 'mandatory',
-          note: 'The war begins in earnest. Covers the same timeline as Tower of Dawn — read EoS first, then ToD.',
+          note: 'The war begins in earnest. Covers the same timeline as Tower of Dawn - read EoS first, then ToD.',
           page_count: 689,
           publication_year: 2016,
         },
