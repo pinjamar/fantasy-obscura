@@ -27,7 +27,7 @@
 18. ✅ Books like Outlander
 
 ### Epic Fantasy Pillars (13)
-19. ✅ Books like Mistborn / The Final Empire
+19. ✅✅ Books like Mistborn / The Final Empire
 20. ✅✅ Books like The Way of Kings
 21. ✅ Books like The Name of the Wind
 22. ✅ Books like The Lord of the Rings
@@ -818,13 +818,6 @@ A bright, impossibly colorful magical landscape — lush jungle paths, talking t
 
 ---
 
-**elric-saga** (Michael Moorcock — Elric of Melniboné)
-Slug: /reading-orders/elric-saga
-Prompt:
-A dying empire at the edge of the world — the Dragon Isle of Melniboné, ancient and crumbling, its black towers lit by the glow of captive dragons chained in caverns below. On the highest tower: a lone figure, white-haired and pale as bone, dark robes, holding a runesword that pulses with black light and seems to drink the air around it. The sky above is bruised purple and crimson, two moons visible. The sea below is deep green. The mood is elegiac and gothic: the last emperor of a dying age. Photorealistic dark fantasy cinematic art, crumbling black empire, twin moons, soul-drinker sword glow, no text, distant figure only.
-
----
-
 **artemis-fowl** (Eoin Colfer — Artemis Fowl)
 Slug: /reading-orders/artemis-fowl
 Prompt:
@@ -850,13 +843,6 @@ A man stands at a threshold — on the left: a grey clinical American suburb, co
 Slug: /reading-orders/vlad-taltos
 Prompt:
 A narrow lamplit street in the Dragaeran city of Adrilankha at night — architecture tall and alien, proportions slightly off for a human. A young human man in an assassin's coat leans in a doorway, a small winged reptile (jhereg) perched on his shoulder, its eyes faintly glowing. Around him, tall elegant Dragaerans move through the street, barely registering his presence. The mood is fantasy noir: a small human in a world built for someone else, surviving by wit and steel. Photorealistic cinematic fantasy noir digital art, lamplit alien city street, human assassin and familiar, no text, no close faces.
-
----
-
-**james-islington** (James Islington — Licanius Trilogy)
-Slug: /reading-orders/james-islington
-Prompt:
-A vast magical barrier — the Boundary — stretches across a northern landscape, a wall of shimmering black-and-silver energy splitting the sky like a scar. On one side: green fields, a walled city in the distance. On the other: darkness and the suggestion of ancient imprisoned things. Near the Boundary, a lone figure with glowing Augur marks on their skin — geometric sigils in pale gold — raises one hand toward the barrier, time visibly bending around them: a bird frozen mid-flight, leaves suspended in a spiral. Photorealistic cinematic fantasy digital art, magical boundary wall, time-bending distortion, Augur glow marks, no text.
 
 ---
 

@@ -4,15 +4,15 @@ export const asoiaf: ReadingOrderEntry = {
   slug: 'asoiaf',
   name: 'A Song of Ice and Fire',
   author: 'George R.R. Martin',
-  seriesStatus: 'hiatus',
-  seriesStatusLabel: '⚠️ Unfinished — Winds of Winter still unannounced',
+  seriesStatus: 'incomplete',
+  seriesStatusLabel: '⚠️ Incomplete - Winds of Winter still unannounced',
   description:
     "Five books of political chess played with human lives. Every major house in Westeros wants the throne; nobody is safe; no storyline is guaranteed resolution. Martin writes through named POV chapters (one character per chapter, no omniscient narrator), which means you only know what your character knows, and what you don't know is frequently what kills them. The reading order is linear. The Winds of Winter has no release date. Start with A Game of Thrones.",
   darknessDisplay: '🕯️🕯️🕯️🕯️–🕯️🕯️🕯️🕯️🕯️ Dark to Brutal',
   groups: [
     {
       label: 'A Song of Ice and Fire',
-      sublabel: 'books 1–5 — read in order',
+      sublabel: 'books 1-5 - read in order',
       noteType: 'required',
       note: 'Publication order is the only order. Do not skip ahead or look anything up, this series is best experienced blind.',
       books: [
@@ -76,7 +76,7 @@ export const asoiaf: ReadingOrderEntry = {
       label: 'Tales of Dunk and Egg',
       sublabel: 'read after the main series',
       noteType: 'optional',
-      note: 'Three novellas set 90 years before the main series, following hedge knight Ser Duncan the Tall and his squire Egg (later King Aegon V). All three are collected in the volume A Knight of the Seven Kingdoms. Lighter and more adventure-driven than ASOIAF — closer to classic fantasy. Non-essential but rewarding for readers who want more time in Westeros. Source material for the HBO series A Knight of the Seven Kingdoms.',
+      note: 'Three novellas set 90 years before the main series, following hedge knight Ser Duncan the Tall and his squire Egg (later King Aegon V). All three are collected in the volume A Knight of the Seven Kingdoms. Lighter and more adventure-driven than ASOIAF (closer to classic fantasy). Non-essential but rewarding for readers who want more time in Westeros. Source material for the HBO series A Knight of the Seven Kingdoms.',
       books: [
         {
           title: 'The Hedge Knight',
@@ -113,7 +113,7 @@ export const asoiaf: ReadingOrderEntry = {
     },
     {
       label: 'Fire & Blood',
-      sublabel: 'Targaryen history — read after the main series',
+      sublabel: 'Targaryen history - read after the main series',
       noteType: 'optional',
       note: 'The history of House Targaryen from Aegon the Conqueror through the Dance of Dragons. Written as an in-world history rather than a novel. Dense and encyclopedic in style. Best read after the main ASOIAF books for maximum context, or alongside watching HotD. Source material for the HBO series House of the Dragon.',
       books: [
@@ -184,7 +184,7 @@ export const asoiaf: ReadingOrderEntry = {
       heading: 'Content notes',
       type: 'bullets',
       bullets: [
-        'Darkness is structural: no protagonist is safe, no storyline is guaranteed resolution, and major characters die without warning.',
+        'Darkness is structural: no protagonist is safe, no storyline is guaranteed resolution and major characters die without warning.',
         'Sexual violence is present throughout (including assault), in contexts that are not always critically framed. This is the most significant content warning for the series.',
         'Violence is graphic and frequent: war, torture, political executions and child deaths.',
         'Right for: readers who want morally complex political fantasy with no plot armour and enormous world-building. Not right for: readers who need characters to be safe or storylines to resolve cleanly.',
@@ -194,10 +194,10 @@ export const asoiaf: ReadingOrderEntry = {
       heading: 'Why it matters',
       type: 'bullets',
       bullets: [
-        'Published in 1996 — it arrived before the Lord of the Rings films and Harry Potter and redefined what adult fantasy could be.',
+        'Published in 1996, it arrived before the Lord of the Rings films and Harry Potter and redefined what adult fantasy could be.',
         "Ned Stark's death in book 1 changed the genre's relationship with protagonist safety. No serious epic fantasy writer since has ignored it.",
         'The HBO adaptation became one of the most-watched series in history and brought a generation of new readers to fantasy.',
-        "Martin's influence on grimdark is direct. Abercrombie, Lawrence, and Erikson have all cited him. Modern dark fantasy exists in his shadow.",
+        "Martin's influence on grimdark is direct. Abercrombie, Lawrence and Erikson have all cited him. Modern dark fantasy exists in his shadow.",
         'At five books and unfinished, it remains the most ambitious and most debated series in contemporary epic fantasy.',
       ],
     },
@@ -245,11 +245,11 @@ export const asoiaf: ReadingOrderEntry = {
     {
       label: 'Fire & Blood',
       level: 4,
-      desc: 'Dark history — the Dance of Dragons is a brutal civil war',
+      desc: 'Dark history - the Dance of Dragons is a brutal civil war',
     },
   ],
   metaDescription:
-    'A Song of Ice and Fire reading order: all 5 ASOIAF books, Dunk & Egg novellas, Fire & Blood, and where House of the Dragon fits.',
+    'A Song of Ice and Fire reading order: all 5 ASOIAF books, Dunk & Egg novellas, Fire & Blood and where House of the Dragon fits.',
   lastUpdated: '2026-05-13',
   finishedLabel: 'Finished the published books?',
   categoryHref: '/fantasy/epic',
