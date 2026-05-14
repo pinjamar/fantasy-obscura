@@ -1,0 +1,250 @@
+import type { BooksLikeEntry } from '../books-like';
+
+export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
+  slug: 'the-serpent-and-the-wings-of-night',
+  source: {
+    title: 'The Serpent & the Wings of Night',
+    author: 'Carissa Broadbent',
+    db_slug: 'the-serpent-the-wings-of-night',
+    cover_url: 'https://covers.openlibrary.org/b/isbn/9780316392426-L.jpg',
+    darkness_level: 4,
+    heat_level: 'Explicit',
+    series: 'Crowns of Nyaxia',
+    series_number: 1,
+    tropes: [
+      'Enemies to Lovers',
+      'Forced Alliance',
+      'Death Tournament',
+      'Vampire World',
+      'Human Among Monsters',
+      'Morally Grey Love Interest',
+      'Forbidden Romance',
+      'Slow Burn',
+    ],
+    angle: 'Dark Vampire Romantasy with a Death Tournament',
+    answer_line:
+      'If you loved The Serpent & the Wings of Night for the wary forced-alliance romance, brutal tournament stakes, and explicit heat built on 400 pages of earned tension, start with From Blood and Ash, A Touch of Darkness, and Nevernight.',
+    why_people_love:
+      "What Broadbent does that most vampire romantasy doesn't: she makes the power imbalance structural rather than decorative. Oraya is the only human in a death tournament designed by a vampire god, and the book never lets you forget how precarious that is. The forced alliance with Raihn works because both of them are operating from genuine self-interest — there's no manufactured reason to trust each other, and the book leans into that entirely. The darkness here isn't aesthetic; people die badly in ways that matter to the plot. The explicit romance is built on hundreds of pages of accumulated tension rather than dropped in at intervals. The worldbuilding (the Houses of Night and Dawn, the Nyaxia religion, the vampire hierarchy) rewards attention without front-loading exposition. Readers who come for the spice get it — but what tends to stick is how much it earns.",
+  },
+  aspects: [
+    {
+      heading:
+        'If you loved the forced alliance between Oraya and Raihn — two people with every reason not to trust each other, stuck together anyway...',
+      recs: [
+        {
+          title: 'From Blood and Ash',
+          author: 'Jennifer L. Armentrout',
+          cover_url:
+            'https://covers.openlibrary.org/b/isbn/9781952457760-L.jpg',
+          darkness_level: 3,
+          heat_level: 'Explicit',
+          standalone: false,
+          series: 'Blood and Ash',
+          series_number: 1,
+          series_label: 'Series (6 books)',
+          audiobook: true,
+          note: "The closest structural match to the Oraya/Raihn dynamic in the wider romantasy space: a heroine kept sheltered and watched, a protector who clearly feels more than he should, and a romance built entirely on charged tension neither of them will admit to. Hawke carries his own layers of secrets, and the lore reveals in book one are legitimately surprising. The explicit heat is equivalent; the sense of a heroine who is underestimated and shouldn't be is the same. Caveat: the writing is more functional than literary — you're here for the dynamic and the plot twists, not prose craftsmanship.",
+          tags: [
+            'Forbidden Romance',
+            'Forced Proximity',
+            'Explicit',
+            'Morally Grey Hero',
+            'Hidden Identity',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=From+Blood+and+Ash+Jennifer+Armentrout&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=From+Blood+and+Ash&affiliate=122720',
+        },
+        {
+          title: 'The Bridge Kingdom',
+          author: 'Danielle L. Jensen',
+          cover_url:
+            'https://covers.openlibrary.org/b/isbn/9781733090032-L.jpg',
+          darkness_level: 3,
+          heat_level: 'Explicit',
+          standalone: false,
+          series: 'Bridge Kingdom',
+          series_number: 1,
+          series_label: 'Series (4 books)',
+          audiobook: true,
+          note: "A princess sent to spy on a king she's been told is a monster — except the monster keeps being right about things. Jensen builds the alliance romance with the same structural patience as Broadbent: two people with completely opposing agendas who are forced to function as a unit, and the trust that develops despite every reason it shouldn't. Lower darkness and no vampire mythology, but the \"I came here as your enemy and now I don't know what I am\" energy is the same. Caveat: lower heat than Serpent until mid-series.",
+          tags: [
+            'Forced Alliance',
+            'Political Enemies',
+            'Slow Burn',
+            'Enemies to Lovers',
+            'Spy Romance',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=The+Bridge+Kingdom+Danielle+Jensen&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=The+Bridge+Kingdom+Jensen&affiliate=122720',
+        },
+      ],
+    },
+    {
+      heading:
+        'If you loved the Kejari — the kill-or-be-killed tournament where survival requires compromising everything you came in with...',
+      recs: [
+        {
+          title: 'Nevernight',
+          author: 'Jay Kristoff',
+          cover_url:
+            'https://covers.openlibrary.org/b/isbn/9781250301550-L.jpg',
+          darkness_level: 4,
+          heat_level: 'Open Door',
+          standalone: false,
+          series: 'The Nevernight Chronicle',
+          series_number: 1,
+          series_label: 'Series (3 books)',
+          audiobook: true,
+          note: "An assassination school where trainees kill each other during the selection process — the same tournament-as-institution energy as the Kejari, with a similar willingness to kill characters you've started caring about. Mia is the closest thing to an Oraya equivalent: a girl who should not be here, operating in a world built to destroy her, making morally complex choices to stay alive. The prose style is maximalist and footnoted, which either works brilliantly or exhausts you. Caveat: the explicit romance is lower-heat than Serpent, and the ending of book one is divisive.",
+          tags: [
+            'Death Tournament',
+            'Assassination School',
+            'Morally Grey Heroine',
+            'Dark World',
+            'Vengeance Arc',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=Nevernight+Kristoff&affiliate=122720',
+        },
+        {
+          title: 'Powerless',
+          author: 'Lauren Roberts',
+          cover_url:
+            'https://covers.openlibrary.org/b/isbn/9781665954310-L.jpg',
+          darkness_level: 3,
+          heat_level: 'Closed Door',
+          standalone: false,
+          series: 'The Powerless Trilogy',
+          series_number: 1,
+          series_label: 'Series (3 books)',
+          audiobook: true,
+          note: 'A girl with no power in a world where the powerless are killed, forced into a deadly trial she has no right to survive. Roberts builds the same tournament logic as the Kejari — the institution is designed to eliminate people like the heroine, and the only way through is an uneasy alliance with someone who has every reason not to help her. The forced proximity with Kai and the building tension from mutual suspicion to something else is the direct structural match. Caveat: lower heat than Serpent — Roberts writes tension rather than explicit scenes — and the YA tone is lighter. But the same readers who loved the Kejari dynamic tend to find Powerless immediately.',
+          tags: [
+            'Death Trials',
+            'Forced Proximity',
+            'Powerless Heroine',
+            'Morally Grey Hero',
+            'Same Audience',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=Powerless+Lauren+Roberts&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=Powerless+Lauren+Roberts&affiliate=122720',
+        },
+      ],
+    },
+    {
+      heading:
+        'If you loved Raihn — a love interest who is genuinely dangerous, keeps real secrets, and earns the trust he gets over hundreds of pages...',
+      recs: [
+        {
+          title: 'A Touch of Darkness',
+          author: 'Scarlett St. Clair',
+          cover_url:
+            'https://covers.openlibrary.org/b/isbn/9781728243375-L.jpg',
+          darkness_level: 3,
+          heat_level: 'Explicit',
+          standalone: false,
+          series: 'Hades & Persephone',
+          series_number: 1,
+          series_label: 'Series (3 books)',
+          audiobook: true,
+          note: "Hades is the same archetype as Raihn: an entity of genuine power operating in a world that should terrify the heroine, presenting as one thing and being another. The enemies-to-lovers arc is structurally similar — two people whose first interaction is hostile and whose dynamic evolves through forced proximity in a high-stakes world. The explicit heat is present from early on, the Greek mythology is lushly rendered, and the tension is built on genuine uncertainty about Hades' motivations. Caveat: the prose is more commercial than Broadbent's — lighter on the emotional interiority.",
+          tags: [
+            'Enemies to Lovers',
+            'Morally Grey Love Interest',
+            'Explicit',
+            'Greek Mythology',
+            'Powerful Hero',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=A+Touch+of+Darkness+Scarlett+St+Clair&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=A+Touch+of+Darkness+St+Clair&affiliate=122720',
+        },
+        {
+          title: 'Bride',
+          author: 'Ali Hazelwood',
+          cover_url:
+            'https://covers.openlibrary.org/b/isbn/9780593641224-L.jpg',
+          darkness_level: 3,
+          heat_level: 'Explicit',
+          standalone: true,
+          audiobook: true,
+          note: "A vampire woman given to the Alpha of a rival supernatural faction as a political arrangement — she didn't choose him, he didn't choose her, and neither of them trusts the other. Lowe keeps real secrets throughout, is genuinely dangerous in ways that complicate the attraction, and the explicit heat develops from genuine mutual suspicion rather than immediate chemistry. The forced-arrangement-to-something-real structure maps directly onto Oraya and Raihn's dynamic, and the vampire world gives it the same supernatural-hierarchy backdrop as Nyaxia. Caveat: Hazelwood writes with more humour and lightness than Broadbent — the darkness level is lower and the tone is warmer. This is the same dynamic with the volume turned down.",
+          tags: [
+            'Vampire Romance',
+            'Forced Arrangement',
+            'Morally Grey Hero',
+            'Explicit',
+            'Supernatural World',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=Bride+Ali+Hazelwood&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=Bride+Ali+Hazelwood&affiliate=122720',
+        },
+      ],
+    },
+  ],
+  recommendations: [
+    {
+      title: 'Fourth Wing',
+      author: 'Rebecca Yarros',
+      cover_url:
+        'https://books.google.com/books/publisher/content/images/frontcover/2BKGEAAAQBAJ?fife=w400-h600',
+      darkness_level: 4,
+      heat_level: 'Explicit',
+      standalone: false,
+      tags: [
+        'Death Academy',
+        'Enemies to Lovers',
+        'Explicit',
+        'Dragon Riders',
+        'Slow Burn',
+      ],
+      why: "Dragon riders at a war college where the training is designed to kill you — the closest parallel to the Kejari's organised violence in the wider romantasy space. Xaden has the same \"dangerously competent and keeping something from her\" energy as Raihn. The explicit heat is equivalent, the slow-burn builds over a full book, and the world-building has real depth. Caveat: if you loved Serpent's vampire mythology specifically, Fourth Wing's dragon lore is different in tone — less elegantly sinister, more militaristic adrenaline.",
+      audiobook: true,
+      amazon_url:
+        'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros&tag=librariancura-20',
+      bookshop_url:
+        'https://bookshop.org/search?keywords=Fourth+Wing+Yarros&affiliate=122720',
+    },
+    {
+      title: 'The Ashes & the Star-Cursed King',
+      author: 'Carissa Broadbent',
+      cover_url: 'https://covers.openlibrary.org/b/isbn/9780316392457-L.jpg',
+      darkness_level: 4,
+      heat_level: 'Explicit',
+      standalone: false,
+      tags: [
+        'Same Author',
+        'Series Continuation',
+        'Explicit',
+        'Enemies to Lovers',
+        'Vampire World',
+      ],
+      why: "Book two of Crowns of Nyaxia, picking up directly from the end of Serpent. Broadbent doesn't reset the relationship or manufacture new obstacles — the story earns where it takes the characters, and the darkness escalates in ways that feel inevitable rather than gratuitous. This is the rare sequel that delivers on the promises of book one. Caveat: read Serpent first — Ashes has no meaningful standalone entry point.",
+      audiobook: true,
+      amazon_url:
+        'https://www.amazon.com/s?k=The+Ashes+Star-Cursed+King+Broadbent&tag=librariancura-20',
+      bookshop_url:
+        'https://bookshop.org/search?keywords=Ashes+Star-Cursed+King+Broadbent&affiliate=122720',
+    },
+  ],
+  related: [
+    { title: 'Books Like From Blood and Ash', slug: 'from-blood-and-ash' },
+    {
+      title: 'Books Like A Court of Silver Flames',
+      slug: 'a-court-of-silver-flames',
+    },
+    { title: 'Books Like Fourth Wing', slug: 'fourth-wing' },
+  ],
+};

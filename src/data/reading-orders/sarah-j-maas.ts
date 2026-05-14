@@ -147,7 +147,7 @@ export const sarahJMaas: ReadingOrderEntry = {
     },
     {
       label: 'Crescent City',
-      sublabel: 'books 1–3 — read last',
+      sublabel: 'books 1–4 — read last',
       noteType: 'warning',
       note: 'Do not start here. House of Sky and Breath and House of Flame and Shadow contain major ACOTAR crossover content — reading CC first spoils both series. Finish all of ACOTAR including A Court of Silver Flames before opening this group.',
       books: [
@@ -174,6 +174,13 @@ export const sarahJMaas: ReadingOrderEntry = {
           note: '~1/3 of this book is set in Prythian with Nesta and Azriel. Requires ACOTAR to be fully read. The multiverse payoff is here.',
           page_count: 896,
           publication_year: 2024,
+        },
+        {
+          title: 'Crescent City: Book 4',
+          slug: 'crescent-city-book-4',
+          status: 'upcoming',
+          note: 'Title and release date not yet announced.',
+          publication_year: null,
         },
       ],
     },
