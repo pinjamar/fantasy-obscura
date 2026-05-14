@@ -229,63 +229,6 @@ TIER 1 — Build First (18 pages)
 Highest search volume, most reader confusion, drives majority of reading order traffic
 Brandon Sanderson (4 pages)
 
-1✅ Sanderson's Cosmere — Complete Guide
-
-All Cosmere works in recommended reading order
-Three paths: newcomer / Mistborn-first / Stormlight-first
-Novellas placement (Edgedancer, Dawnshard, Tress, Yumi, Sunlit Man, Isles of the Emberdark)
-Crossover connections explained spoiler-free
-Update annually — Sanderson publishes fast
-Slug: /reading-orders/cosmere
-
-
-2✅ Mistborn Reading Order
-
-Era 1 (original trilogy) → Era 2 (Wax & Wayne) → Era 3 (future)
-Where Secret History fits
-Short stories placement
-Slug: /reading-orders/mistborn
-
-
-3✅ Stormlight Archive Reading Order
-
-Books 1-5 + novellas (Edgedancer, Dawnshard)
-When to read Warbreaker (before book 2)
-Wind and Truth placement
-Slug: /reading-orders/stormlight-archive
-
-
-4✅ Where to Start with Sanderson
-
-Decision guide: Mistborn vs Stormlight vs Elantris vs Warbreaker
-For new-to-fantasy vs experienced readers
-Slug: /reading-orders/sanderson-start-here
-
-
-
-Sarah J. Maas (3 pages)
-
-5✅ Complete SJM Reading Order
-
-All three series + optimal reading order across them
-Crescent City / ACOTAR / Throne of Glass crossover points
-Slug: /reading-orders/sarah-j-maas
-
-
-6✅ ACOTAR Reading Order
-
-Books 1-5 + A Court of Frost and Starlight placement
-Companion novellas
-Slug: /reading-orders/acotar
-
-
-7✅ Throne of Glass Reading Order
-
-8 books + novellas (The Assassin's Blade — read first or after book 1?)
-Slug: /reading-orders/throne-of-glass
-
-
-
 Major Series (11 pages)
 
 8✅ Wheel of Time Reading Order
@@ -302,14 +245,6 @@ Original trilogy → standalones → Age of Madness
 Sharp Ends placement
 Why standalones must come before Age of Madness
 Slug: /reading-orders/first-law
-
-
-10✅ A Song of Ice and Fire Reading Order
-
-5 main books + Fire & Blood + The World of Ice and Fire
-Where the show diverges from books
-Winds of Winter honest status update
-Slug: /reading-orders/asoiaf
 
 
 11✅ Malazan Book of the Fallen Reading Order
@@ -336,12 +271,6 @@ Can you skip Liveship Traders? (No, and here's why)
 Slug: /reading-orders/realm-of-the-elderlings
 
 
-14✅ Empyrean / Fourth Wing Reading Order (Rebecca Yarros)
-
-Fourth Wing → Iron Flame → Onyx Storm + future books
-Slug: /reading-orders/empyrean
-
-
 15✅ The Witcher Reading Order ← NEW
 
 Short story collections (The Last Wish, Sword of Destiny) BEFORE the novels
@@ -360,23 +289,6 @@ Show vs book differences
 Slug: /reading-orders/grishaverse
 
 
-17✅ Kingkiller Chronicle Reading Order (Patrick Rothfuss) ← moved up from Tier 2
-
-Name of the Wind → Wise Man's Fear → Slow Regard (optional)
-Honest update on book 3 status
-Should you start an unfinished series?
-Slug: /reading-orders/kingkiller-chronicle
-
-
-18✅ Crescent City Reading Order (Sarah J. Maas)
-
-3 books + ACOTAR crossover point (book 3)
-Read ACOTAR first or not?
-Slug: /reading-orders/crescent-city
-
-
-
-
 TIER 2 — Within 3 Months (20 pages)
 Strong search volume, genuine reading order complexity
 Fantasy Series (12 pages)
@@ -386,13 +298,6 @@ Fantasy Series (12 pages)
 Blood and Ash series (6 books) + Flesh and Fire prequel series
 Which series first?
 Slug: /reading-orders/blood-and-ash
-
-
-20✅ Broken Empire / Mark Lawrence Reading Order
-
-Broken Empire → Red Queen's War → Book of the Ancestor → Book of the Ice
-Do the trilogies connect?
-Slug: /reading-orders/mark-lawrence
 
 
 21✅ Shannara Reading Order (Terry Brooks)
@@ -485,14 +390,6 @@ Can you skip Lord John? Short stories placement
 Slug: /reading-orders/outlander
 
 
-33✅ Inheritance Cycle / Eragon Reading Order ← NEW
-
-4 main books + Murtagh + Fork Witch Worm
-New books still coming — reading order for completists
-Slug: /reading-orders/inheritance-cycle
-
-
-
 LitRPG & Progression (2 pages)
 
 34 Will Wight (Cradle) Reading Order
@@ -532,8 +429,6 @@ All series and how they connect
 Slug: /reading-orders/jennifer-armentrout
 
 
-
-
 TIER 3 — Long Term (10 pages)
 Lower volume but builds authority and captures niche audiences
 Deep Cut Series (6 pages)
@@ -570,7 +465,6 @@ Original trilogy + Gods of Blood and Powder
 Slug: /reading-orders/powder-mage
 
 
-
 Special Feature Pages (4 pages)
 
 45 Which Epic Fantasy Series Should You Start? ← moved up
@@ -587,7 +481,6 @@ Orson Scott Card's Ender's Game and the Ender's Game universe reading order
 Ender's Game, Speaker for the Dead, Ender's Shadow — what to read and in what order
 Slug: /reading-orders/enders-game
 
-Image prompt: A vast zero-gravity battle room inside a deep space military station — a young boy in a grey training suit floats at the center, arms at his sides, watching a formation of other children maneuver through the air around him in colored light. The room is a perfect dark sphere, the walls studded with tiny lights like a planetarium. On the far wall: a glowing gate — the enemy's goal. The mood is isolation inside a machine built to manufacture genius: cold, clinical, and vast. The boy is small in the frame but the only still point in the chaos around him. Photorealistic cinematic sci-fi digital art, zero-gravity floating figures, deep space station interior, cold blue-white lighting, 3:2 aspect ratio, no text, no logos.
 
 
 47 Fantasy Standalones — No Reading Order Needed ← moved up
@@ -804,20 +697,6 @@ earthsea, mark-lawrence, sarah-j-maas
 
 ---
 
-**lightbringer** (Brent Weeks — Lightbringer series)
-Slug: /reading-orders/lightbringer
-Prompt:
-A Prism stands at the apex of the Chromeria — a towering lighthouse structure on a small island — arms raised as white sunlight pours through their body and splits into every color of the spectrum. Each color crystallizes mid-air into solid luxin: red flame, blue ice, green vines, yellow glass, sub-red heat shimmer, superviolet. The surrounding sea catches the refracted light in rainbow streaks. The atmosphere is of immense controlled power. Photorealistic cinematic fantasy digital art, prism light-split spectrum, crystallized magic material formation, sea reflections, no text.
-
----
-
-**xanth** (Piers Anthony — Xanth)
-Slug: /reading-orders/xanth
-Prompt:
-A bright, impossibly colorful magical landscape — lush jungle paths, talking trees with faces, a centaur cantering along a road beside a young human traveler. In a clearing: a dragon the size of a house, cartoonishly cheerful rather than threatening. Puns made physical: a pun-tree with groan-shaped fruit, a bridge made of bridging thoughts. The sky is technicolor — sunlit blue fading to candy-pink at the horizon. Everything is slightly absurd but warmly rendered. Photorealistic whimsical fantasy art, bright Floridian jungle, centaur and dragon, comedic magical flora, no text.
-
----
-
 **artemis-fowl** (Eoin Colfer — Artemis Fowl)
 Slug: /reading-orders/artemis-fowl
 Prompt:
@@ -825,38 +704,11 @@ A cross-section view: above ground, the grey-green Irish countryside and the Got
 
 ---
 
-**saga-of-recluce** (L.E. Modesitt Jr. — Saga of Recluce)
-Slug: /reading-orders/saga-of-recluce
-Prompt:
-A quiet island at dawn — black stone cliffs, orderly fishing villages, a single imposing tower of perfectly dressed black stone radiating a faint deep order-magic glow. Across the water on the mainland, a storm of white chaos-magic builds: lightning and disordered energy, a city of white marble crumbling at its edges. The sea between them is calm and grey. The mood is philosophical duality rather than action: absolute order and absolute chaos, each producing its own form of destruction. Photorealistic cinematic fantasy landscape, black order-island, white chaos-storm mainland, dawn sea, no text, no close figures.
-
----
-
-**thomas-covenant** (Stephen R. Donaldson — Chronicles of Thomas Covenant)
-Slug: /reading-orders/thomas-covenant
-Prompt:
-A man stands at a threshold — on the left: a grey clinical American suburb, concrete and isolation, his left hand bandaged. On the right: the Land — impossibly vivid, hyper-saturated greens and golds, ancient stone Keep of Revelstone rising on a cliff. The white gold ring on his finger glows at the boundary between worlds. The Sunbane casts a reddish filter over the horizon. The mood is alienation meeting wonder — one of the most morally complex portal-fantasy thresholds in the genre. Photorealistic split-scene digital art, grey suburb left, vivid fantasy world right, white gold ring glow, no text.
-
----
-
-**vlad-taltos** (Steven Brust — Vlad Taltos)
-Slug: /reading-orders/vlad-taltos
-Prompt:
-A narrow lamplit street in the Dragaeran city of Adrilankha at night — architecture tall and alien, proportions slightly off for a human. A young human man in an assassin's coat leans in a doorway, a small winged reptile (jhereg) perched on his shoulder, its eyes faintly glowing. Around him, tall elegant Dragaerans move through the street, barely registering his presence. The mood is fantasy noir: a small human in a world built for someone else, surviving by wit and steel. Photorealistic cinematic fantasy noir digital art, lamplit alien city street, human assassin and familiar, no text, no close faces.
-
----
-
-**john-gwynne** (John Gwynne — The Faithful and the Fallen / Bloodsworn)
-Slug: /reading-orders/john-gwynne
-Prompt:
-A Norse-inspired battlefield at the edge of a dark fjord — longships beached on grey shore, a shield wall forming in the mist. Ravens circle overhead. A warrior in iron mail stands in the foreground, a great grey wolf at their side. Behind them: the clash of two shield walls, torches and axes, the mountains and pine forests of a cold northern land surrounding the battle. The sky is dawn grey and battle-gold. The mood is brutal, intimate, and heroic: the grim reality of dark-age warfare elevated by loyalty and courage. Photorealistic cinematic grimdark fantasy art, shield-wall battle, Norse fjord, wolf companion, no text, distant figures.
-
----
-
 **brent-weeks** (Brent Weeks — Night Angel & Lightbringer)
 Slug: /reading-orders/brent-weeks
 Prompt:
 A city split by a single composition: on the left, night — grimy canals and shadow-cloaked rooftops, a wetboy assassin moving between lamplit alleys, black as shadow, daggers drawn. On the right, dawn — the Chromeria's towers rising from a coastal island, white light splitting through a Prism into every color of the spectrum. The dividing line between the two halves glows: pure darkness on one side, light breaking into color on the other. The mood captures both series: shadow and sacrifice in Night Angel, light and power in Lightbringer. Photorealistic cinematic fantasy digital art, dark city left / chromatic light right, split-panel composition, no text.
+A Prism stands at the apex of the Chromeria — a towering lighthouse structure on a small island — arms raised as white sunlight pours through their body and splits into every color of the spectrum. Each color crystallizes mid-air into solid luxin: red flame, blue ice, green vines, yellow glass, sub-red heat shimmer, superviolet. The surrounding sea catches the refracted light in rainbow streaks. The atmosphere is of immense controlled power. Photorealistic cinematic fantasy digital art, prism light-split spectrum, crystallized magic material formation, sea reflections, no text.
 
 ---
 
@@ -875,14 +727,11 @@ A magical performance arena at night — an impossible island venue built from b
 
 ---
 
-**gene-wolfe** (Gene Wolfe — The Book of the New Sun)
-Slug: /reading-orders/gene-wolfe
-Prompt:
-A vast ruined city swallowed by jungle at the end of time — crumbling towers of ancient stone draped in vines and moss, their scale dwarfing everything beneath them. A solitary figure moves along a broken road through the city: a young man in a black executioner's cloak, a great sword strapped to his back, its blade inscribed with faint silver runes. The sky above is rust-red and amber — the sun is bloated, swollen, visibly dying, casting long copper shadows across the ruins. Somewhere in the distance a forest has reclaimed what were once streets. The mood is melancholic and vast: a world running down, ancient beyond memory, its purpose long forgotten. Photorealistic cinematic dark fantasy digital art, dying red sun, jungle-consumed ruins, lone figure in black cloak, copper-amber palette, 3:2 aspect ratio, no text, no logos.
-
----
-
 **broken-earth** (N.K. Jemisin — The Broken Earth Trilogy)
 Slug: /reading-orders/broken-earth
 Prompt:
 A vast ashfall plain stretching to a shattered horizon — the sky choked with grey volcanic ash lit from beneath by a distant seismic rift glowing deep amber and orange. In the middle distance: a massive stone obelisk, ancient beyond reckoning, floats impossibly in the grey sky above the plain, its surface etched with crystalline geometric patterns that pulse with faint cold light. In the foreground, a lone woman stands at the edge of the rift, her back to us, arms slightly raised — the ground around her feet is cracking in perfect geometric fractures radiating outward, orogeny made visible. The mood is apocalyptic and intimate: the end of the world framed as something that has already happened before, and will happen again. Photorealistic cinematic dark fantasy digital art, volcanic ashfall atmosphere, floating stone obelisk, seismic rift amber glow, grey-ash-and-ember palette, 3:2 aspect ratio, no text, no logos.
+
+---
+Enders Game Image prompt: 
+A vast zero-gravity battle room inside a deep space military station — a young boy in a grey training suit floats at the center, arms at his sides, watching a formation of other children maneuver through the air around him in colored light. The room is a perfect dark sphere, the walls studded with tiny lights like a planetarium. On the far wall: a glowing gate — the enemy's goal. The mood is isolation inside a machine built to manufacture genius: cold, clinical, and vast. The boy is small in the frame but the only still point in the chaos around him. Photorealistic cinematic sci-fi digital art, zero-gravity floating figures, deep space station interior, cold blue-white lighting, 3:2 aspect ratio, no text, no logos.
