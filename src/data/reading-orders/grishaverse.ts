@@ -4,15 +4,13 @@ export const grishaverse: ReadingOrderEntry = {
   slug: 'grishaverse',
   name: 'The Grishaverse',
   author: 'Leigh Bardugo',
-  seriesStatus: 'complete',
-  seriesStatusLabel: '✓ Completed Series',
+  seriesStatus: 'ongoing',
+  seriesStatusLabel: '📖 SOB & King of Scars complete · Six of Crows ongoing',
   description:
     "Leigh Bardugo's Grishaverse is one of the most successful fantasy universes of the last decade — a Russian-inspired world of Grisha magic users, criminal heist crews, and morally complex power politics. The series spans three sub-series, but Six of Crows is the peak: a tight heist novel with one of the best ensemble casts in modern fantasy. Start with Shadow and Bone to understand the world, then Six of Crows to fall in love with it. This guide covers the full Grishaverse reading order across the Shadow and Bone trilogy, Six of Crows duology, and King of Scars duology.",
   darknessDisplay: '🕯️🕯️🕯️ Serious',
   orderNote:
     'Read the Shadow and Bone trilogy first — it establishes the world, the Grisha, and the Fold. Six of Crows is set in the same world but with a new cast, and assumes you understand the setting. King of Scars picks up threads from both trilogies.',
-  warning:
-    'Six of Crows is widely considered the stronger entry point for adult readers, but it spoils major Shadow and Bone trilogy events. Read Shadow and Bone first if you want the full experience unspoiled.',
   groups: [
     {
       label: 'Shadow and Bone Trilogy',
@@ -48,7 +46,7 @@ export const grishaverse: ReadingOrderEntry = {
       ],
     },
     {
-      label: 'Six of Crows Duology',
+      label: 'Six of Crows Series',
       sublabel: 'the best of the Grishaverse — read after Shadow and Bone',
       books: [
         {
@@ -65,9 +63,18 @@ export const grishaverse: ReadingOrderEntry = {
           slug: 'crooked-kingdom',
           status: 'mandatory',
           seriesLabel: 'Six of Crows #2',
-          note: 'The heist becomes a war for survival in Ketterdam. The crew gets their revenge. Character payoffs are deeply satisfying — this duology is one of the better-concluded two-book series in fantasy.',
+          note: 'The heist becomes a war for survival in Ketterdam. The crew gets their revenge. Character payoffs are deeply satisfying.',
           page_count: 536,
           publication_year: 2016,
+        },
+        {
+          title: 'A Darker Shore: Letters from Ketterdam',
+          slug: 'a-darker-shore',
+          status: 'upcoming',
+          seriesLabel: 'Six of Crows #3',
+          note: 'Upcoming June 30, 2026. Returns to Ketterdam and the Six of Crows cast.',
+          page_count: null,
+          publication_year: 2026,
         },
       ],
     },
@@ -125,24 +132,34 @@ export const grishaverse: ReadingOrderEntry = {
   cardsPosition: 'above',
   cards: [
     {
-      title: '🌑 Shadow and Bone (3 books)',
-      body: 'The foundation trilogy. Introduces Ravka, Grisha magic, and the Fold. Required reading before anything else — establishes the world every other series depends on.',
+      title: '🗝️ The Two Entry Points',
+      body: 'Shadow and Bone builds the world. Six of Crows is the better book. Reading in order gives you the full experience — but Six of Crows references Shadow and Bone events as background, so starting there means encountering spoilers for the first trilogy as casual context. Start with Shadow and Bone for the complete experience. Start with Six of Crows if you want the best of the series first and can handle filling in backstory as you go.',
+      color: 'amber',
+    },
+    {
+      title: '🌑 The Darkling',
+      body: 'The central antagonist of Shadow and Bone and one of the most debated characters in contemporary fantasy. He begins as a mentor figure and his true nature emerges slowly. Charismatic, ancient, and morally complex in ways the first book is careful to reveal gradually. He is not a simple villain. The fandom has argued about him since 2012. Let the arc unfold.',
       color: 'blue',
     },
     {
-      title: '🃏 Six of Crows (2 books)',
-      body: 'The best of the Grishaverse — a heist duology with one of the finest ensemble casts in modern fantasy. The reason most people stay.',
+      title: '🃏 Kaz Brekker',
+      body: 'Kaz is the reason Six of Crows works. A criminal strategist who plans impossible heists three moves ahead and never shows his hand. His emotional arc is handled with unusual restraint for the genre — trauma acknowledged, not wallowed in. The ensemble around him (Inej, Jesper, Wylan, Nina, Matthias) is equally fully realised. One of the best casts in modern fantasy.',
       color: 'purple',
     },
     {
-      title: '👑 King of Scars (2 books)',
-      body: "Nikolai's duology. Optional but rewarding — draws characters from both previous series and gives the world a proper conclusion.",
+      title: '🏙️ Ketterdam',
+      body: "Six of Crows is set not in Ravka but in Ketterdam — a Dutch East India Company analogue built on gang politics, financial crime, and the trade in a magic-enhancing drug. The shift from Shadow and Bone's Russian-inspired court politics to Ketterdam's street-level heist is jarring at first and then exactly right. One of the most fully realised fantasy cities of the last decade.",
       color: 'green',
     },
     {
-      title: '📖 Companion works (2 books)',
-      body: 'The Language of Thorns and The Lives of Saints. World-building extras — beautiful but not essential to the main story.',
-      color: 'amber',
+      title: '✨ Grisha Magic',
+      body: 'Grisha are magic users who manipulate matter at the molecular level — dividing, combining, shaping it. They are divided into Orders: Corporalki (healers and Heartrenders), Etherealki (Summoners), and Materialki (craftsmen). The system is consistent but not rigidly quantified. The series explores what it means to be born with power that others fear and want to control.',
+      color: 'zinc',
+    },
+    {
+      title: '📺 The Netflix Adaptation',
+      body: 'Shadow and Bone was adapted by Netflix (2 seasons, 2021–2023, cancelled before season 3). The show merged the Shadow and Bone and Six of Crows timelines — running them simultaneously, which differs from the books where Six of Crows happens later. A Six of Crows spinoff was in development but cancelled at the same time. If you are coming from the show, the books diverge in timeline and some character details.',
+      color: 'red',
     },
   ],
   sections: [
@@ -153,13 +170,13 @@ export const grishaverse: ReadingOrderEntry = {
         "Many readers and online guides recommend starting with Six of Crows because it's the stronger book and works as a standalone. The problem: it casually spoils major Shadow and Bone trilogy events as background context. If you don't mind spoilers, Six of Crows first is a legitimate choice. If you want the full experience in order, start with Shadow and Bone — the trilogy is shorter and faster than it looks.",
     },
     {
-      heading: 'What makes it work',
+      heading: 'Content notes',
       type: 'bullets',
       bullets: [
-        'The Grisha system — magic users who manipulate matter at the molecular level, divided into Orders — is one of the better-constructed soft magic systems in YA fantasy.',
-        'Ketterdam, the setting of Six of Crows, is one of the most fully realised fantasy cities of the last decade: a Dutch East India Company analogue built on gang politics and financial crime.',
-        'Kaz Brekker is one of the most written-about characters in modern fantasy fandom for a reason: he is a strategist, not a fighter, and his emotional arc is handled with unusual restraint.',
-        'Shadow and Bone was adapted by Netflix (2 seasons, cancelled 2023). A Six of Crows spinoff was in development but scrapped at the same time. The TV series combines the Shadow and Bone and Six of Crows timelines.',
+        'Shadow and Bone trilogy is YA-adjacent — threat, loss, and moral complexity, but relatively accessible in tone.',
+        'Six of Crows is meaningfully darker: trauma, slavery, addiction, and gang violence handled directly.',
+        'Right for: readers who want ensemble fantasy with heist elements, morally complex characters, and a well-constructed setting.',
+        'Not right for: readers who want hard magic systems or traditional epic fantasy scope.',
       ],
     },
   ],
@@ -180,9 +197,13 @@ export const grishaverse: ReadingOrderEntry = {
       desc: 'War and political violence — sits between the two earlier series in tone',
     },
   ],
-  lastUpdated: '2026-05-12',
+  metaDescription:
+    'The Grishaverse reading order: Shadow and Bone trilogy, Six of Crows duology, and King of Scars duology — with guidance on whether to start with Shadow and Bone or Six of Crows first.',
+  lastUpdated: '2026-05-15',
+  shortName: 'Grishaverse',
   finishedLabel: 'Finished the Grishaverse?',
+  booksLikeSlug: 'six-of-crows',
   categoryHref: '/fantasy/romantasy/',
   categoryLabel: 'Browse Romantasy',
-  related: ['acotar', 'throne-of-glass', 'empyrean'],
+  related: ['acotar', 'sarah-j-maas', 'empyrean', 'blood-and-ash', 'mistborn', 'throne-of-glass'],
 };

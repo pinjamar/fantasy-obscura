@@ -5,7 +5,7 @@ export const earthsea: ReadingOrderEntry = {
   name: 'Earthsea Cycle',
   author: 'Ursula K. Le Guin',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✓ Completed Series',
+  seriesStatusLabel: '✅ Complete Series',
   description:
     'Six books set across an archipelago world where magic is rooted in the true names of things, and power always comes with a cost. Le Guin wrote the original trilogy between 1968 and 1972, then returned to Earthsea eighteen years later with a fundamentally different perspective — the second half of the series is quieter, more philosophical, and concerned with questions the first half never thought to ask. A Wizard of Earthsea is where to start: it is short, perfect, and one of the best entry points in all of fantasy. Read the Earthsea books in publication order.',
   darknessDisplay: '🕯️🕯️ Mild to Moderate',
@@ -85,6 +85,7 @@ export const earthsea: ReadingOrderEntry = {
   ],
   orderNote:
     'Publication order is the right order. Le Guin designed the books to be read sequentially. Tales from Earthsea is best read between Tehanu and The Other Wind — the story "Dragonfly" bridges them directly.',
+  cardsPosition: 'above',
   cards: [
     {
       title: '📚 Short Books',
@@ -93,13 +94,28 @@ export const earthsea: ReadingOrderEntry = {
     },
     {
       title: '🌊 Two Different Tones',
-      body: 'Books 1–3 are adventure-focused and accessible. Books 4–6 are slower, more philosophical, and concerned with age, power, and what the first trilogy left unexamined.',
+      body: 'Books 1–3 are adventure-focused and accessible. Books 4–6 are slower, more philosophical, and concerned with age, power, and what the first trilogy left unexamined. The shift between them is deliberate — and significant.',
       color: 'amber',
     },
     {
       title: '🐉 The Dragon Lore',
-      body: 'Dragons in Earthsea are not creatures — they are something closer to truth itself. They cannot lie (they speak only in the Old Speech). Their role deepens significantly in the second trilogy.',
+      body: 'Dragons in Earthsea are not creatures — they are something closer to truth itself. They speak only the Old Speech and cannot lie. Their role deepens significantly in the second trilogy, culminating in The Other Wind.',
       color: 'purple',
+    },
+    {
+      title: '🧙 Ged',
+      body: "Ged is the protagonist of three of the six books — an orphan from a minor island who discovers exceptional power and nearly destroys himself with it. His arc across the original trilogy is one of the most complete character studies in fantasy. What Tehanu does to that arc is what the second trilogy is fundamentally about. Let it arrive without forewarning.",
+      color: 'red',
+    },
+    {
+      title: '✨ True Names',
+      body: 'The magic of Earthsea is built on a single principle: everything has a true name in the Old Speech, the language of the Making. Knowing the true name of a person, creature, or thing gives you power over it. One of the most elegant magic systems in fantasy — minimal rules with enormous philosophical implications. The entire series is, in a sense, a meditation on what it means to truly know something.',
+      color: 'green',
+    },
+    {
+      title: '📖 Le Guin',
+      body: "Le Guin was one of the finest prose stylists in any genre. Earthsea reads with a restraint and precision that makes most fantasy feel cluttered by comparison. She was also a political thinker — the series grows quieter and more feminist as it goes, not because she lost interest in adventure, but because she had harder questions to ask. The second trilogy is as much a reckoning with the first as it is a continuation.",
+      color: 'zinc',
     },
   ],
   sections: [
@@ -109,8 +125,9 @@ export const earthsea: ReadingOrderEntry = {
       bullets: [
         "The original trilogy (1968–72) is foundational fantasy — elegant, swift, and deceptively simple. Perfect for readers who want the genre's roots.",
         'The second trilogy (1990–2001) is different in register — slower, introverted, and feminist. Le Guin was in her 60s when she wrote Tehanu and was asking different questions than she was at 39.',
-        'The magic system is built around true names: every person, place, and thing has a true name in the Old Speech, and knowing it gives you power over it. Simple premise with enormous implications.',
-        'The world is an archipelago of islands. There is no continent, no map-sprawl — just sea, islands, and the spaces between.',
+        'The world is an archipelago of islands. There is no continent, no map-sprawl — just sea, islands, and the spaces between. The scale feels intimate rather than epic.',
+        'Right for: readers who want literary fantasy, elegant prose, and a series short enough to finish in a week but rich enough to reward rereading.',
+        'Not right for: readers who need high-action pacing or large-scale war and politics.',
       ],
     },
     {
@@ -130,7 +147,6 @@ export const earthsea: ReadingOrderEntry = {
         'Earthsea (1968) was one of the first fantasy series to centre characters of colour as the default — Ged is brown-skinned, most Earthsea islanders are dark-complexioned. Le Guin did this four years after the Civil Rights Act.',
         'A Wizard of Earthsea predates Hogwarts by almost 30 years — it established the wizard school template.',
         'Le Guin influenced N.K. Jemisin, Brandon Sanderson, Patrick Rothfuss, and China Miéville, among many others.',
-        'The series is short enough to read in a week but dense enough to reward re-reading for decades.',
       ],
     },
   ],
@@ -138,9 +154,13 @@ export const earthsea: ReadingOrderEntry = {
     { label: 'Books 1–3', level: 2, desc: 'Adventure and consequence — death present but not dwelt upon' },
     { label: 'Books 4–6', level: 3, desc: 'More interior — trauma, loss, and questions without easy answers' },
   ],
-  lastUpdated: '2026-05-12',
+  metaDescription:
+    'The Earthsea reading order: all six books across the original trilogy and second trilogy, plus Tales from Earthsea — in the order Le Guin intended.',
+  lastUpdated: '2026-05-15',
+  shortName: 'Earthsea',
   finishedLabel: 'Finished Earthsea?',
+  booksLikeSlug: 'a-wizard-of-earthsea',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',
-  related: ['wheel-of-time', 'kingkiller', 'malazan'],
+  related: ['kingkiller', 'robin-hobb', 'memory-sorrow-thorn', 'discworld', 'wheel-of-time', 'witcher'],
 };

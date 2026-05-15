@@ -7,7 +7,7 @@ export const robinHobb: ReadingOrderEntry = {
   seriesStatus: 'complete',
   seriesStatusLabel: '✅ Complete Series',
   description:
-    "Sixteen books across five interconnected series, all set in the same world, all building toward a conclusion that has been in progress since 1995. Robin Hobb writes character-driven fantasy with a particular genius for emotional devastation — her protagonists make choices that hurt, and she never lets them off easily. This is the most complete emotional journey in epic fantasy. Assassin's Apprentice is where to start — one of the finest fantasy debuts ever written. Follow the Robin Hobb reading order exactly: the reveals across series depend on it.",
+    "Sixteen books across five interconnected series, all set in the same world, all building toward a conclusion that has been in progress since 1995. Robin Hobb writes character-driven fantasy with a particular genius for emotional devastation — her protagonists make choices that hurt, and she never lets them off easily. This is the most complete emotional journey in epic fantasy. Assassin's Apprentice is where to start — one of the finest fantasy debuts ever written. The Fool — Fitz's closest companion across all three of his trilogies — is one of the most original and beloved characters in the genre, and the Fitz/Fool relationship is the emotional spine of the entire sequence. Follow the Robin Hobb reading order exactly: the reveals across series depend on it.",
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
   groups: [
     {
@@ -84,7 +84,7 @@ export const robinHobb: ReadingOrderEntry = {
           title: 'The Wilful Princess and the Piebald Prince',
           slug: 'the-wilful-princess-and-the-piebald-prince',
           status: 'supplementary',
-          note: "Novella (~64 pages) telling the history of how the Wit became a persecuted magic in the Six Duchies — the backstory the Tawny Man trilogy references but never fully explains. Read between Tawny Man and Fitz & the Fool, or before Fool's Errand.",
+          note: "Novella (~64 pages) telling the history of how the Wit became a persecuted magic in the Six Duchies — the backstory the Tawny Man trilogy references but never fully explains. Best read before Fool's Errand.",
           page_count: 64,
           publication_year: 2013,
         },
@@ -208,6 +208,16 @@ export const robinHobb: ReadingOrderEntry = {
       body: 'Optional but enriching. Set in the same world with new characters — damaged dragons and the lost Elderling cities. Best read between Tawny Man and Fitz & the Fool. Skip it if you want to stay with Fitz; read it if you want the full world.',
       color: 'amber',
     },
+    {
+      title: '🎭 The Fool',
+      body: "The Fool is Fitz's closest companion across all three of his trilogies — a prophet, a mystery, and the character most readers struggle to leave behind. Their relationship is unlike anything else in epic fantasy: built across decades, across loss, across enormous distance. His identity and what he truly wants from Fitz are revealed gradually. Do not look anything up. Let it unfold.",
+      color: 'purple',
+    },
+    {
+      title: '⚡ Wit and Skill',
+      body: "Fitz uses two magic systems. The Skill is a telepathic royal magic — coveted, formally trained, and dangerous to use alone. The Wit is a deep bond with animals — powerful, intimate, and culturally despised as bestial. Both shape his identity. The tension between one legitimised magic and one persecuted one runs through all nine of his books. Neither is simply a tool — both carry cost.",
+      color: 'zinc',
+    },
   ],
   cardsPosition: 'above',
   orderNote:
@@ -218,8 +228,7 @@ export const robinHobb: ReadingOrderEntry = {
       type: 'bullets',
       bullets: [
         "New to Robin Hobb? Start with Assassin's Apprentice. It is the only entry point. The world and character foundations must be laid here.",
-        "Can you skip the Liveship Traders? Technically yes — Fitz & the Fool works without them. But the world of the Elderlings will feel incomplete, and some revelations in Assassin's Fate hit harder with Liveship context.",
-        'Can you skip the Rain Wild Chronicles? Yes, without losing the main thread. Read them if you want the full world — best between Tawny Man and Fitz & the Fool.',
+        "The reading order matters more here than in most series. The reveals across series depend on it — follow the order in this guide exactly.",
       ],
     },
     {
@@ -228,7 +237,6 @@ export const robinHobb: ReadingOrderEntry = {
       bullets: [
         "Hobb's pacing is slow and deliberate. These are character-first novels — if you need constant plot momentum, recalibrate.",
         'Fitz is a frustrating protagonist on purpose. His self-sabotage and passivity are features, not flaws. Hobb is doing something specific with it.',
-        "The Fool is one of fantasy's most original and moving secondary characters. The Fitz/Fool relationship is the emotional spine of the entire sequence.",
         'Emotional content: grief, trauma, self-sacrifice, loneliness, and chosen family done with unusual honesty. Not a comfortable read. Deeply rewarding.',
         "Assassin's Fate is 944 pages and earns every one of them. It is the conclusion to a 22-year story and should be read last.",
       ],
@@ -261,10 +269,13 @@ export const robinHobb: ReadingOrderEntry = {
       desc: 'Dark — loss compounding over 22 years, no easy resolutions',
     },
   ],
-  lastUpdated: '2026-05-12',
+  metaDescription:
+    "The Robin Hobb reading order: all 16 books across five series in the Realm of the Elderlings — from Assassin's Apprentice to Assassin's Fate — with guidance on what to read and what to skip.",
+  lastUpdated: '2026-05-14',
   shortName: 'Robin Hobb',
   finishedLabel: 'Finished the Elderlings?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',
-  related: ['first-law', 'wheel-of-time', 'asoiaf'],
+  booksLikeSlug: 'assassins-apprentice',
+  related: ['first-law', 'wheel-of-time', 'asoiaf', 'kingkiller', 'malazan', 'earthsea'],
 };

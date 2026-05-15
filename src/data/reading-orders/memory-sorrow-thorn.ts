@@ -5,7 +5,7 @@ export const memorySorrowThorn: ReadingOrderEntry = {
   name: 'Memory, Sorrow and Thorn',
   author: 'Tad Williams',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✓ Series Complete',
+  seriesStatusLabel: '✅ Complete Series',
   description:
     'The epic fantasy series that shaped a generation of writers — George R.R. Martin and Patrick Rothfuss have both cited it as a direct influence. A young kitchen scullion is pulled into an ancient war between human kingdoms and the immortal Sithi as a long-buried prophecy stirs. Williams writes with rare patience and emotional depth — this is the series that proved epic fantasy could be literature. The Dragonbone Chair is where to start. In 2024, Williams completed the sequel tetralogy The Last King of Osten Ard, making the entire Osten Ard saga now fully finished — nine novels and two novellas, all rewarding readers who go in order.',
   darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
@@ -13,15 +13,9 @@ export const memorySorrowThorn: ReadingOrderEntry = {
     {
       label: 'The Main Trilogy',
       sublabel: 'read in order',
+      noteType: 'warning',
+      note: 'To Green Angel Tower was published as a single ~1080-page hardcover but split into two paperback volumes in most markets — Storm (Part 1) and Siege (Part 2). Both contain the same text. Either edition is fine, just make sure you have both parts before you begin the conclusion.',
       books: [
-        {
-          title: 'Brothers of the Wind',
-          slug: 'brothers-of-the-wind',
-          status: 'supplementary',
-          note: 'Prequel novella (~256 pages) set long before the trilogy, during the original war with the Norns. Deep lore for Sithi fans — read before the trilogy or save it for after.',
-          page_count: 256,
-          publication_year: 2021,
-        },
         {
           title: 'The Dragonbone Chair',
           slug: 'the-dragonbone-chair',
@@ -45,6 +39,14 @@ export const memorySorrowThorn: ReadingOrderEntry = {
           note: 'The conclusion. Originally published as a single ~1080-page hardcover; most paperback editions split it into two volumes (Storm and Siege). One of the most satisfying endings in epic fantasy.',
           page_count: 1083,
           publication_year: 1993,
+        },
+        {
+          title: 'Brothers of the Wind',
+          slug: 'brothers-of-the-wind',
+          status: 'supplementary',
+          note: 'Prequel novella (~256 pages) set during the original war with the Norns, long before the trilogy. Best read here — after the main trilogy, the Sithi lore lands harder with that context behind you. Read before The Heart of What Was Lost.',
+          page_count: 256,
+          publication_year: 2021,
         },
         {
           title: 'The Heart of What Was Lost',
@@ -105,8 +107,8 @@ export const memorySorrowThorn: ReadingOrderEntry = {
   ],
   cards: [
     {
-      title: '📖 The Original Trilogy',
-      body: 'The Dragonbone Chair → Stone of Farewell → To Green Angel Tower. One of the most complete and emotionally satisfying arcs in epic fantasy. The direct ancestor of A Song of Ice and Fire.',
+      title: '📖 The Trilogy and Its Legacy',
+      body: "The Dragonbone Chair → Stone of Farewell → To Green Angel Tower is one of the most complete emotional arcs in epic fantasy — and one of the most influential. George R.R. Martin has said it showed him the genre could handle real human complexity. Rothfuss cites it as essential. This is the series that proved epic fantasy could be literature.",
       color: 'blue',
     },
     {
@@ -115,33 +117,49 @@ export const memorySorrowThorn: ReadingOrderEntry = {
       color: 'green',
     },
     {
-      title: '📚 The Hidden Influence',
-      body: 'George R.R. Martin has said MST showed him that epic fantasy could be about real human complexity. Patrick Rothfuss cites it as essential reading. Required context for any serious fantasy reader.',
+      title: '⚔️ Memory, Sorrow and Thorn',
+      body: "Three great swords give the trilogy its name — Minneyar (Memory), Sorrow, and Thorn. Each is ancient, each carries power, and the quest to recover them drives the central plot. What the swords mean and what the prophecy surrounding them actually demands is what the trilogy is really about. Let the answer come to you.",
+      color: 'red',
+    },
+    {
+      title: '👦 Simon Snowlock',
+      body: "Simon starts the trilogy as a kitchen scullion — unglamorous, naive, and not obviously heroic. Williams makes you earn his development slowly and honestly. By To Green Angel Tower, he is one of the genre's most satisfying coming-of-age protagonists. His arc only works because Williams never shortcuts the hard parts.",
+      color: 'amber',
+    },
+    {
+      title: '🌙 The Sithi',
+      body: 'The Sithi are the immortal people of Osten Ard — and they are nothing like Tolkien elves. Ancient, alien, morally ambiguous, and nursing grievances against humanity that span millennia. The mystery of their history and their war with the Norns is the deep mythology the trilogy slowly uncovers. Williams lets it unfold gradually. Worth the patience.',
       color: 'purple',
+    },
+    {
+      title: '⏳ Pacing and Patience',
+      body: 'The Dragonbone Chair opens slowly. This is intentional — Williams is building a world and a character, not rushing to the action. The first 150 pages reward patience in ways that only become clear much later. Readers who abandon the opening miss the book. Give it 200 pages before deciding.',
+      color: 'zinc',
     },
   ],
   cardsPosition: 'above',
   orderNote:
-    'Start with the main trilogy. To Green Angel Tower may arrive as one hardcover or two paperback volumes (Storm and Siege) — both contain the same text. The Heart of What Was Lost is the ideal bridge before the tetralogy.',
-  warning:
-    'To Green Angel Tower was published as a single ~1080-page hardcover but split into two paperback volumes in most markets. Make sure you have both parts (Storm and Siege) before you begin the conclusion.',
+    'Start with the main trilogy. The Heart of What Was Lost is the ideal bridge before the tetralogy.',
   sections: [
     {
-      heading: 'Why it matters',
+      heading: 'Where to start',
       type: 'bullets',
       bullets: [
-        'Published 1988–1993, it predates A Song of Ice and Fire and is a direct influence on Martin — the political complexity, the grey morality, the willingness to let characters suffer.',
-        'Rothfuss has described it as one of the works that made him want to write fantasy.',
-        "Williams' Sithi are among the most alien and convincing immortal races in fantasy — not Tolkien elves, but something stranger.",
-        "Simon Snowlock is one of the genre's great coming-of-age protagonists — he starts as a foolish boy and earns every inch of his growth.",
-        'The pacing is deliberately novelistic — this is not a plot-delivery machine. Give it space.',
+        'Start with The Dragonbone Chair — it is the only entry point. There is no alternate order.',
+        'The original trilogy stands completely alone. The Last King of Osten Ard tetralogy is a separate commitment set 30 years later — worth it, but not required to feel the trilogy is complete.',
+        'If you continue to the tetralogy: read The Heart of What Was Lost first. It bridges the 30-year gap and follows the Norns immediately after the trilogy ends.',
       ],
     },
     {
-      heading: 'One book or two?',
-      type: 'prose',
-      prose:
-        'To Green Angel Tower was written as a single novel. The hardcover is one volume (~1080 pages). Most paperback editions split it into Storm (Part 1) and Siege (Part 2) — both contain the same text. Either edition is fine, just make sure you have both halves before you begin the conclusion.',
+      heading: 'What to expect',
+      type: 'bullets',
+      bullets: [
+        'Character-driven and novelistic in pace — Williams builds the world and the people before delivering the plot. The opening is an investment, and it pays off.',
+        'Emotional content is high: grief, sacrifice, and hard-won resolution are not softened. The ending of To Green Angel Tower earns everything it asks of you.',
+        'Right for: readers who want literary epic fantasy, a protagonist who grows through genuine hardship, and a world that rewards exploration.',
+        'Not right for: readers who need fast plot momentum or prefer action-driven fantasy.',
+        'The sequel tetralogy is slower and more political than the original — treat it as a separate commitment after finishing the trilogy.',
+      ],
     },
   ],
   darkness: [
@@ -181,9 +199,13 @@ export const memorySorrowThorn: ReadingOrderEntry = {
       desc: 'Hard-won resolution — difficult but not nihilistic',
     },
   ],
-  lastUpdated: '2026-05-12',
-  finishedLabel: 'Finished the trilogy?',
+  metaDescription:
+    'The Memory, Sorrow and Thorn reading order: all nine novels and novellas across the Osten Ard saga — the original trilogy, the Last King of Osten Ard tetralogy, and where to fit Brothers of the Wind.',
+  lastUpdated: '2026-05-15',
+  shortName: 'Osten Ard Saga',
+  finishedLabel: 'Finished Osten Ard?',
+  booksLikeSlug: 'the-dragonbone-chair',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',
-  related: ['wheel-of-time', 'malazan', 'robin-hobb'],
+  related: ['asoiaf', 'wheel-of-time', 'robin-hobb', 'malazan', 'kingkiller', 'first-law'],
 };

@@ -5,9 +5,9 @@ export const firstLaw: ReadingOrderEntry = {
   name: 'The First Law World',
   author: 'Joe Abercrombie',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✓ Completed Series',
+  seriesStatusLabel: '✅ Complete Series',
   description:
-    "A grimdark masterclass where the heroes are as broken as the villains — and the world keeps punishing both. Abercrombie dismantles every fantasy trope with wit, cruelty, and genuine craft. Start with The Blade Itself — the three standalones and the Age of Madness trilogy all share the same world and reward reading in publication order. If you're new to Joe Abercrombie, this is the First Law reading order most fans recommend.",
+    "A grimdark masterclass where the heroes are as broken as the villains — and the world keeps punishing both. Abercrombie dismantles every fantasy trope with wit, cruelty, and genuine craft — and he is genuinely funny while doing it. Sand dan Glokta, the crippled torturer who narrates much of the original trilogy, is one of the great characters in modern fantasy: bitter, sharp, and unexpectedly principled in a world that rewards none of those things. Nine books span forty years of the same connected world, and what begins as a fantasy trilogy quietly becomes something much larger. Start with The Blade Itself — the three standalones and the Age of Madness trilogy all share the same world and reward reading in publication order.",
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark → Brutal',
   groups: [
     {
@@ -117,16 +117,37 @@ export const firstLaw: ReadingOrderEntry = {
   ],
   orderNote:
     'Publication order = best reading order. Do not skip the standalones before Age of Madness.',
+  cardsPosition: 'above',
   cards: [
     {
-      title: '⚡ Essential reads (9 books)',
-      body: 'The Blade Itself → Last Argument of Kings → Best Served Cold → The Heroes → Red Country → Age of Madness trilogy. Skip none of these.',
+      title: '👥 The Original Cast',
+      body: "Three POVs carry the original trilogy: Logen Ninefingers, a Northern barbarian trying to escape his legend; Jezal dan Luthar, a vain officer about to have his assumptions stripped away; and Sand dan Glokta — a torturer who is the most compelling character in the series. Glokta is crippled, bitter, and unexpectedly principled. Abercrombie makes you root for a torturer, and that tells you everything about what this series is doing.",
       color: 'blue',
     },
     {
-      title: '📖 Optional (1 book)',
-      body: "Sharp Ends — short story collection. Adds flavour and backstory but nothing you'll miss if you skip it. Read after Red Country.",
+      title: '🗡️ Bayaz',
+      body: "Bayaz is the First of the Magi — the wise old wizard archetype. He arrives exactly where you expect him and does exactly what you expect, and then Abercrombie takes that expectation apart slowly and methodically. He is one of the great subversions in fantasy. The less you know going in, the better. Do not look him up.",
+      color: 'purple',
+    },
+    {
+      title: '⚔️ The Standalones',
+      body: 'Best Served Cold is a revenge thriller. The Heroes is a war novel told from every side of a single three-day battle. Red Country is a western frontier fantasy. None of them are filler — events in each directly shape the Age of Madness world and returning characters carry weight that only lands if you read the trilogy first. Read all three before starting Age of Madness.',
+      color: 'amber',
+    },
+    {
+      title: '🏭 Age of Madness',
+      body: 'The sequel trilogy is set 40 years later during an industrial revolution. A new generation faces the same rotten world — with factories, unions, and rebellion alongside familiar magic and politics. It is darker than the original trilogy. Characters you know from the standalones have aged and changed. The payoff lands on everything that came before it.',
+      color: 'red',
+    },
+    {
+      title: '😂 The Wit',
+      body: "Abercrombie is very funny. First Law is grimdark, but it is also satirical — the tropes it dismantles are executed with visible delight. Glokta's internal monologue is some of the sharpest prose in the genre. The darkness is purposeful and the cruelty is never gratuitous. There is always a point being made, and the point is usually about power.",
       color: 'green',
+    },
+    {
+      title: '🔄 The Connected World',
+      body: 'The First Law World is a single setting where everything compounds. Events in the original trilogy shape the standalones, which shape Age of Madness. Characters recur across all nine books. The Union, the North, Styria, and the Far Country each get their own arc. Publication order is the only way to feel the full weight of what Abercrombie built.',
+      color: 'zinc',
     },
   ],
   sections: [
@@ -171,10 +192,13 @@ export const firstLaw: ReadingOrderEntry = {
       desc: 'Brutal — revolution, mass violence, no clean hands',
     },
   ],
-  lastUpdated: '2026-05-12',
+  metaDescription:
+    'The First Law reading order: the original trilogy, three standalones, and the Age of Madness sequel trilogy — all in Joe Abercrombie\'s grimdark world, in the order that makes them hit hardest.',
+  lastUpdated: '2026-05-15',
   shortName: 'First Law',
   finishedLabel: 'Finished the series?',
+  booksLikeSlug: 'the-blade-itself',
   categoryHref: '/fantasy/grimdark',
   categoryLabel: 'Browse more Grimdark',
-  related: ['malazan', 'kingkiller'],
+  related: ['malazan', 'asoiaf', 'robin-hobb', 'kingkiller', 'black-company'],
 };

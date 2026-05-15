@@ -5,7 +5,7 @@ export const bloodAndAsh: ReadingOrderEntry = {
   name: 'From Blood and Ash',
   author: 'Jennifer L. Armentrout',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '⏳ Ongoing Series',
+  seriesStatusLabel: '📖 Ongoing · Final book upcoming 2026',
   description:
     "Romantasy with slow-burn enemies-to-lovers at its core — From Blood and Ash starts as a sheltered Maiden meets her mysterious guard and spirals into a full-scale fantasy epic. The first book reads like pure romantasy; by book three it's a proper political fantasy with war, gods, and a sprawling world. Explicit throughout. From Blood and Ash is where to start — it works as a standalone entry and the series is best read in publication order. If you're new to Jennifer L. Armentrout's fantasy work, this is the series most readers recommend first.",
   darknessDisplay: '🕯️🕯️🕯️ Serious · 🔥🔥🔥 Explicit',
@@ -129,17 +129,32 @@ export const bloodAndAsh: ReadingOrderEntry = {
   cards: [
     {
       title: '💘 The Hook',
-      body: 'From Blood and Ash is slow-burn enemies-to-lovers with a sharp plot twist at the end. The tension between Poppy and Hawke carries the whole first book — and then the reveal reframes everything.',
+      body: 'From Blood and Ash is slow-burn enemies-to-lovers with a sharp plot twist at the end. The tension between Poppy and Hawke carries the whole first book — and then the reveal reframes everything you thought you understood. Go in without spoilers.',
       color: 'blue',
     },
     {
+      title: '🐺 Hawke',
+      body: "Hawke — later known as Casteel — is one of the most discussed love interests in romantasy. He is dangerous, funny, and deliberately withholding. The tension of not knowing who he really is or what he wants from Poppy carries book 1 entirely. The reveal at the end reframes every scene that came before it. Do not look anything up before you get there.",
+      color: 'red',
+    },
+    {
       title: '⚔️ The Shift',
-      body: 'By The Crown of Gilded Bones the romance takes a back seat to world-building and war. Books 3 onward are significantly more plot-heavy and darker than the first two.',
+      body: 'From Blood and Ash reads like pure romantasy. By The Crown of Gilded Bones the balance tips — romance takes a back seat to world-building, politics, and war. Books 3 onward are significantly more plot-heavy and darker. Know this going in if romance is the main draw.',
       color: 'amber',
     },
     {
+      title: '🌍 The Mythology',
+      body: "Underneath the slow-burn romance is a constructed mythology of gods, Primals, and the origins of the world. What feels like a simple fantasy setting in book 1 gradually becomes something much larger. By book 3, the gods whose history underpins everything are front and centre. The Flesh and Fire companion series tells their story directly — it earns its place in the reading order.",
+      color: 'zinc',
+    },
+    {
+      title: '📖 Flesh and Fire',
+      body: 'The companion series follows Nyktos, the God of Death, and Sera — a mortal woman fated to him. It is set in the same world in an earlier era and reads as a parallel mythology. The two storylines converge by the end of Born of Blood and Ash. Read it after book 4 of the main series — the connections only land once you know the main story.',
+      color: 'green',
+    },
+    {
       title: '🔥 Content Note',
-      body: 'All books contain explicit sexual content. The series also includes war violence, torture, and character death. Not suitable for younger readers.',
+      body: 'All books contain explicit sexual content throughout. The series also includes war violence, torture, and character death — escalating from book 3 onward. Not suitable for younger readers.',
       color: 'purple',
     },
   ],
@@ -158,10 +173,10 @@ export const bloodAndAsh: ReadingOrderEntry = {
       type: 'bullets',
       bullets: [
         'The first book ends on a major twist that reframes everything. Go in without spoilers.',
-        'Books 1–2 are romance-heavy; books 3–4 shift toward epic fantasy. If you came for the romance, know the balance changes.',
-        "The world-building is gradually revealed — there's a lot of lore underneath the romance that only becomes clear in book 2 and 3.",
-        'Armentrout publishes quickly — books 1–4 released in under two years, and the companion trilogy followed closely.',
-        'The Flesh and Fire companion series is set in the same universe but an earlier era — it follows the gods whose story underpins everything in Blood and Ash. Read it after book 4.',
+        'Books 1–2 are romance-heavy; books 3 onward shift toward epic fantasy. If you came for the romance, know the balance changes significantly.',
+        "The world-building is gradually revealed — there's a lot of lore underneath the romance that only becomes clear by book 2 and 3.",
+        'Right for: readers who want slow-burn romantasy that grows into a full fantasy epic with war, gods, and high stakes.',
+        'Not right for: readers who want fantasy without explicit content, or who prefer the romance to remain the focus throughout.',
       ],
     },
   ],
@@ -182,9 +197,13 @@ export const bloodAndAsh: ReadingOrderEntry = {
       desc: 'Dark — gods, fate, and sacrifice; comparable tone to books 3–4',
     },
   ],
-  lastUpdated: '2026-05-12',
+  metaDescription:
+    'The From Blood and Ash reading order: all books in the Blood and Ash series and the Flesh and Fire companion series — in the right order, with guidance on when to read each.',
+  lastUpdated: '2026-05-15',
+  shortName: 'Blood and Ash',
   finishedLabel: "Finished what's published?",
+  booksLikeSlug: 'from-blood-and-ash',
   categoryHref: '/fantasy/romantasy',
   categoryLabel: 'Browse Romantasy',
-  related: ['empyrean', 'acotar'],
+  related: ['empyrean', 'acotar', 'grishaverse', 'sarah-j-maas', 'throne-of-glass'],
 };

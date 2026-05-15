@@ -7,7 +7,7 @@ export const kingkiller: ReadingOrderEntry = {
   seriesStatus: 'incomplete',
   seriesStatusLabel: '⚠️ Incomplete — 2 of 3 books published',
   description:
-    'A legendary hero sits in a country inn and tells a scribe his life story over three days. The Kingkiller Chronicle is built around a structural tension: the Kvothe narrating is broken and hiding, while the Kvothe in the story is brilliant and rising. Rothfuss writes with more craft and precision than almost anyone working in the genre — The Name of the Wind remains one of the most technically accomplished debuts in modern fantasy. Be aware before you begin: book 3 has been in development since 2011 with no confirmed release date. The two published books end on open threads.',
+    'A legendary hero sits in a country inn and tells a scribe his life story over three days. The Kingkiller Chronicle is built around a structural tension: the Kvothe in the story is brilliant, rising, and apparently unstoppable — the Kvothe doing the telling is broken, hiding under a false name, and refuses to explain why. Rothfuss writes with more precision and beauty than almost anyone working in the genre. The Name of the Wind is the most technically accomplished debut in modern fantasy; the prose alone is reason enough to read it. Two books are published. A third has been in development since 2011 with no confirmed release date. Go in knowing the series ends mid-story — many readers choose to wait until The Doors of Stone is announced before starting, and that is a completely valid choice. The two novellas (The Slow Regard of Silent Things and The Narrow Road Between Desires) are supplementary; Rothfuss himself warns in the foreword of Silent Things that it is not for everyone. Skip both unless those specific characters pulled you in — you will miss nothing essential to the main story.',
   darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
   cardsPosition: 'above',
   books: [
@@ -55,23 +55,8 @@ export const kingkiller: ReadingOrderEntry = {
   orderNote: 'Start with The Name of the Wind. No other order is possible.',
   cards: [
     {
-      title: '✍️ The Prose',
-      body: 'Rothfuss writes with more precision and beauty than almost anyone in the genre. The Name of the Wind is the most technically accomplished debut in modern fantasy. The prose alone is reason enough to read it.',
-      color: 'blue',
-    },
-    {
-      title: '⏳ The Wait',
-      body: 'Book 3 has had no release date since 2011. Go in knowing the series ends mid-story and may wait years more. Many readers choose to wait until The Doors of Stone is announced before starting. Neither choice is wrong.',
-      color: 'amber',
-    },
-    {
-      title: '📖 The Novella',
-      body: 'The Slow Regard of Silent Things is optional. Rothfuss himself warns in the foreword that it is not for everyone. It follows Auri with almost no plot. Skip it unless you found her fascinating. You will miss nothing essential.',
-      color: 'zinc',
-    },
-    {
       title: '🎭 The Frame Narrative',
-      body: 'The series opens with an older, quieter Kvothe running a roadside inn under a false name. He is a living legend who has chosen to disappear. The story he tells to the Chronicler is his own past. It is told by someone who already knows how it all ends. That structural irony runs through every page.',
+      body: 'The series opens with an older, quieter Kvothe running a roadside inn under a false name. He is a living legend who has chosen to disappear. The story he tells to the Chronicler is his own past. It is told by someone who already knows how it all ends. That structural irony runs through every page. He is also telling his own legend — take the heroics with appropriate scepticism.',
       color: 'purple',
     },
     {
