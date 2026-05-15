@@ -5,12 +5,10 @@ export const divergent: ReadingOrderEntry = {
   name: 'Divergent',
   author: 'Veronica Roth',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✓ Series Complete',
+  seriesStatusLabel: '✅ Complete Series',
   description:
-    "A YA dystopian trilogy set in a future Chicago divided into five factions — Dauntless, Erudite, Abnegation, Candor, Amity — each representing a single virtue taken to extremes. Sixteen-year-old Tris Prior chooses to leave her family's faction and discovers she is Divergent, a threat to the system. Fast-paced and addictive, with one of YA's most debated endings. Divergent is where to start — the series is read in order: Divergent → Insurgent → Allegiant, with no required side reads. Go in knowing that Allegiant's ending is one of the most controversial in YA fiction.",
+    "A YA dystopian trilogy set in a future Chicago divided into five factions — Dauntless, Erudite, Abnegation, Candor, Amity — each built around a single virtue taken to its extreme. At sixteen, you choose your faction. You leave your family. You become someone new. Sixteen-year-old Tris Prior chooses Dauntless and discovers she is Divergent — someone who doesn't fit the system, and a threat to everyone who controls it. Fast-paced and immediately addictive, read in order: Divergent → Insurgent → Allegiant. No required side reads.",
   darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
-  warning:
-    'Allegiant (book 3) has a controversial ending that divided the fanbase strongly. Go in prepared.',
   groups: [
     {
       label: 'The Main Trilogy',
@@ -52,7 +50,7 @@ export const divergent: ReadingOrderEntry = {
         {
           title: 'Free Four',
           slug: 'free-four',
-          status: 'supplementary',
+          status: 'optional',
           note: "Short story (~30 pages). Four's POV during the aptitude test and Choosing Ceremony. A good teaser for his perspective.",
           page_count: 36,
           publication_year: 2012,
@@ -60,7 +58,7 @@ export const divergent: ReadingOrderEntry = {
         {
           title: 'The Transfer',
           slug: 'the-transfer',
-          status: 'supplementary',
+          status: 'optional',
           note: "Four's Choosing Day and first weeks in Dauntless. His origin — why he left Abnegation.",
           page_count: 68,
           publication_year: 2013,
@@ -68,7 +66,7 @@ export const divergent: ReadingOrderEntry = {
         {
           title: 'The Initiate',
           slug: 'the-initiate',
-          status: 'supplementary',
+          status: 'optional',
           note: "Four's second year as a Dauntless initiate. Covers events before Divergent begins.",
           page_count: 58,
           publication_year: 2014,
@@ -76,7 +74,7 @@ export const divergent: ReadingOrderEntry = {
         {
           title: 'The Son',
           slug: 'the-son',
-          status: 'supplementary',
+          status: 'optional',
           note: 'Four confronts his father Marcus. Short and dark — the most emotionally intense of the four novellas.',
           page_count: 51,
           publication_year: 2014,
@@ -84,7 +82,7 @@ export const divergent: ReadingOrderEntry = {
         {
           title: 'The Traitor',
           slug: 'the-traitor',
-          status: 'supplementary',
+          status: 'optional',
           note: "Four's POV during the events of Divergent. Fills in what he was doing while Tris was in initiation.",
           page_count: 61,
           publication_year: 2014,
@@ -94,6 +92,8 @@ export const divergent: ReadingOrderEntry = {
     {
       label: 'After the Trilogy',
       sublabel: 'Epilogue & companion',
+      note: "We Can Be Mended is a short epilogue Roth released free online in 2018 — written for readers who needed closure after Allegiant. The World of Divergent is a behind-the-scenes companion with faction manifestos, author notes, and a reader quiz.",
+      noteType: 'optional',
       books: [
         {
           title: 'We Can Be Mended',
@@ -119,19 +119,34 @@ export const divergent: ReadingOrderEntry = {
   cardsPosition: 'above',
   cards: [
     {
-      title: '⚡ The Hook',
-      body: 'The faction system is an instantly compelling premise — which virtue would you choose? The initiation sequences in Dauntless are some of the most gripping in YA dystopian fiction.',
+      title: '🏙️ The Factions',
+      body: "Future Chicago is split into five factions — Dauntless (brave), Erudite (intelligent), Abnegation (selfless), Candor (honest), Amity (peaceful). At sixteen you choose which faction to join, possibly leaving your family forever. The system is elegant, instantly seductive, and built to crack. Tris is Divergent — her aptitude fits more than one faction, which makes her dangerous to everyone who runs the city.",
       color: 'blue',
     },
     {
+      title: '⚡ The Hook',
+      body: "The initiation sequences in Dauntless are some of the most gripping in YA dystopian fiction — fear simulations, physical trials, social warfare, and the constant threat of being cut and left factionless. Roth builds worldbuilding through experience rather than exposition. By the time the larger conspiracy emerges, you're already committed.",
+      color: 'green',
+    },
+    {
       title: '💔 The Ending',
-      body: "Allegiant's ending is one of the most discussed in YA fiction. It is intentional and consistent with Tris's character. Prepare yourself — then decide for yourself if it works.",
+      body: "Allegiant's ending is one of the most debated in YA fiction. It is intentional, consistent with Tris's character arc from book one, and has never been changed despite significant fan pressure. Go in prepared. Whether it works is something readers disagree on — but it is not a mistake.",
       color: 'amber',
     },
     {
-      title: '🎬 The Adaptations',
-      body: 'The film series (2014–2016) covers Divergent and Insurgent well. Allegiant was split into two films and the second was never made — the story is unresolved on screen. Read the books.',
+      title: '📖 The Four Novellas',
+      body: "Five short stories (collected as Four: A Divergent Collection, 2014) told from Tobias 'Four' Eaton's POV — his Choosing Day, initiation, confrontation with his father Marcus, and the events of Divergent from his side. Best read after the trilogy, so the reframing has something to work with. The Transfer and The Son are the strongest.",
       color: 'purple',
+    },
+    {
+      title: '🎬 The Adaptations',
+      body: 'The film series (2014–2016) covers Divergent and Insurgent reasonably well. Allegiant was split into two films — Allegiant (2016) and Ascendant — but Ascendant was never made after poor box office performance. The story is unresolved on screen. Read the books for the actual ending.',
+      color: 'red',
+    },
+    {
+      title: '✍️ Veronica Roth',
+      body: "Roth wrote Divergent as a creative writing student at Northwestern University and sold it before she graduated. The series was one of the defining YA dystopian trilogies of the early 2010s alongside The Hunger Games and The Maze Runner. She has since moved into adult science fiction — Chosen Ones (2020) and The Frilled Shark (2025).",
+      color: 'zinc',
     },
   ],
   sections: [
@@ -139,20 +154,27 @@ export const divergent: ReadingOrderEntry = {
       heading: 'Where to start',
       type: 'bullets',
       bullets: [
-        "Start with Divergent — no prior reading needed. The world is explained through Tris's eyes.",
-        'Read all three back-to-back if possible — the story benefits from momentum and the wait between Insurgent and Allegiant is brutal.',
-        'The Four novellas and We Can Be Mended are optional — best after Allegiant. We Can Be Mended is free online and worth reading if the ending hit hard.',
+        "Start with Divergent — no prior reading needed. The world is explained through Tris's eyes from the first chapter.",
+        'Read all three back-to-back if possible — the story benefits from momentum and the cliffhangers between books are intentionally brutal.',
+        'Save the Four novellas for after Allegiant — reading them first spoils key reveals in the main series. We Can Be Mended is free online and worth reading if the ending hit hard.',
       ],
     },
     {
       heading: 'What to know',
       type: 'bullets',
       bullets: [
-        'The series gets progressively darker. Divergent is action-focused; Allegiant deals with loss, identity, and sacrifice.',
-        'Allegiant uses dual POV (Tris and Four alternating chapters) — a change from the first two books.',
-        'The faction concept is intentionally reductive — the books are aware of this and deconstruct it over the trilogy.',
-        "The film adaptations cover books 1 and 2 well. Allegiant's film split the story and was never finished.",
+        'The series escalates in scope and darkness across three books. Divergent is action-focused with clear immediate stakes; Allegiant opens the world up and deals with loss, identity, and systemic power on a much larger scale.',
+        'Allegiant switches to dual POV — Tris and Four chapters alternate. This is a deliberate structural shift and not everyone welcomes it at first. Stay with it.',
+        'The faction system is intentionally reductive. The series deconstructs this as it progresses — the point is that reducing people to one virtue is a form of control, not a solution.',
+        "Allegiant's ending is permanent and has never been revised. It is consistent with everything the series builds toward. Prepare for it before you start book three.",
+        'Right for: readers who enjoy fast-paced YA dystopian fiction with a strong female lead, sharp political ideas, and escalating stakes.',
+        'Not right for: readers who need a traditional redemptive arc or an unambiguously hopeful ending.',
       ],
+    },
+    {
+      heading: 'A note on Allegiant',
+      type: 'warning',
+      prose: "Allegiant's ending is one of the most controversial in YA fiction. It is permanent, intentional, and has never been changed despite significant fan pressure. Go in prepared.",
     },
   ],
   darkness: [
@@ -172,9 +194,13 @@ export const divergent: ReadingOrderEntry = {
       desc: 'Dark — significant sacrifice, controversial conclusion',
     },
   ],
-  lastUpdated: '2026-05-12',
+  booksLikeSlug: 'divergent',
+  metaDescription:
+    'The Divergent reading order: Divergent → Insurgent → Allegiant, plus the Four novellas and epilogue — in the right sequence.',
+  shortName: 'Divergent',
+  lastUpdated: '2026-05-15',
   finishedLabel: 'Finished the trilogy?',
   categoryHref: '/fantasy/academia',
   categoryLabel: 'Browse Academy Fantasy',
-  related: ['throne-of-glass', 'empyrean'],
+  related: ['throne-of-glass', 'empyrean', 'grishaverse', 'acotar', 'blood-and-ash', 'inheritance-cycle'],
 };

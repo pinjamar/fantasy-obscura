@@ -5,12 +5,10 @@ export const drizzt: ReadingOrderEntry = {
   name: 'Legend of Drizzt',
   author: 'R.A. Salvatore',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '⏳ Ongoing Series',
+  seriesStatusLabel: "📖 Ongoing · Drizzt's Daughter series",
   description:
-    "Over 40 novels. One dark elf who refused to be what his world made him. Drizzt Do'Urden abandoned the Underdark's brutal drow society and built a life on the surface through sheer will, friendship, and twin scimitars — and R.A. Salvatore has been telling that story since 1988. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are among the most beloved found families in fantasy. This guide covers the full Drizzt saga across 14 arcs in recommended reading order — from the Underdark origin story through the Way of the Drow trilogy, and into the ongoing Drizzt's Daughter series that follows.",
+    "Over 40 novels. One dark elf who refused to be what his world made him. Drizzt Do'Urden abandoned the Underdark's brutal drow society and built a life on the surface through sheer will, friendship, and twin scimitars — and R.A. Salvatore has been telling that story since 1988. The novels are set in the Forgotten Realms — the flagship D&D campaign setting, a shared fantasy world written by dozens of authors across hundreds of books. Drizzt is its most famous literary character, and no prior D&D knowledge is needed to follow the story. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are among the most beloved found families in fantasy. This guide covers the full Drizzt saga across 14 arcs in recommended reading order — from the Underdark origin story through the Way of the Drow trilogy, and into the ongoing Drizzt's Daughter series that follows.",
   darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
-  warning:
-    "The series spans 40+ novels across 14 arcs and is still ongoing with the Drizzt's Daughter series. The first four arcs are the heart of the series. Later arcs vary in quality but remain popular with fans of the characters.",
   groups: [
     {
       label: 'The Dark Elf Trilogy',
@@ -235,7 +233,7 @@ export const drizzt: ReadingOrderEntry = {
           title: 'The Ghost King',
           slug: 'the-ghost-king',
           status: 'supplementary',
-          note: 'The Spellplague reshapes the Forgotten Realms. Major cast changes — the end of an era.',
+          note: 'The Spellplague reshapes the Forgotten Realms. A major turning point — some fans consider this the end of the classic era.',
           page_count: 352,
           publication_year: 2009,
         },
@@ -527,20 +525,17 @@ export const drizzt: ReadingOrderEntry = {
       heading: 'Where to start',
       type: 'bullets',
       bullets: [
-        'New reader: Start with The Crystal Shard (Icewind Dale #1) — shorter, faster-paced, and introduces the full cast immediately.',
-        "Want the full origin: Start with Homeland (Dark Elf Trilogy #1) for Drizzt's backstory in the Underdark.",
-        'Just want the best arc: Read the Dark Elf Trilogy, then jump to Legacy of the Drow — the emotional peak of the series.',
-        'D&D fan: All books are set in the Forgotten Realms. No prior D&D knowledge required, but it adds flavour.',
+        'Just want the best arc: Read the Dark Elf Trilogy then go straight to Legacy of the Drow — the emotional peak of the series.',
+        'Shorter commitment: The first three arcs — Dark Elf Trilogy, Icewind Dale Trilogy, Legacy of the Drow — are ten books at the series\' peak and work as a near-complete story.',
       ],
     },
     {
       heading: 'What to know',
       type: 'bullets',
       bullets: [
-        'The early books (1988–1996) are the strongest. Quality becomes more variable after Paths of Darkness.',
-        "Artemis Entreri — Drizzt's rival assassin — grows into a surprisingly complex character; The Sellswords Trilogy is his best showcase.",
+        'The first four arcs are the core of the series — quality becomes more variable from Paths of Darkness onward, though later books remain popular with fans of the characters.',
         'The Ghost King (Transitions #3) ends an era — some fans stop here and consider it a satisfying close before the Spellplague reboot.',
-        'All books are fast reads — 300–400 pages, action-focused, with short chapters. The later arcs are longer on average than the early ones.',
+        'All books are fast reads — 300–400 pages, action-focused, short chapters. The later arcs run slightly longer on average.',
       ],
     },
   ],
@@ -576,9 +571,13 @@ export const drizzt: ReadingOrderEntry = {
       desc: 'Moderate — large-scale conflict, series conclusion',
     },
   ],
-  lastUpdated: '2026-05-12',
+  metaDescription:
+    "The Legend of Drizzt reading order: all 40+ novels across 14 arcs from the Dark Elf Trilogy to Drizzt's Daughter — where to start, what to read, and what to skip.",
+  lastUpdated: '2026-05-15',
+  shortName: 'Legend of Drizzt',
   finishedLabel: 'Finished the core arcs?',
+  booksLikeSlug: 'the-crystal-shard',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',
-  related: ['cosmere', 'wheel-of-time', 'dragonlance'],
+  related: ['dragonlance', 'wheel-of-time', 'cosmere', 'witcher', 'shannara', 'malazan'],
 };

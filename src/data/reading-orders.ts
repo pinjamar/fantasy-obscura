@@ -108,6 +108,7 @@ import { shannara } from './reading-orders/shannara';
 import { mistborn } from './reading-orders/mistborn';
 import { valdemar } from './reading-orders/valdemar';
 import { dune } from './reading-orders/dune';
+import { middleEarth } from './reading-orders/middle-earth';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -141,6 +142,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   mistborn,
   valdemar,
   dune,
+  middleEarth,
 ];
 
 
