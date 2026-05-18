@@ -328,15 +328,56 @@ Slug: /reading-orders/expanse
 
 8 Folk of the Air / Cruel Prince Reading Order (Holly Black)
 
-The Cruel Prince → Wicked King → Queen of Nothing
-How the World of Faerie connects to other Holly Black works
+Main trilogy (3 books, complete): The Cruel Prince → The Wicked King → The Queen of Nothing — Jude Duarte, a mortal girl raised in Faerie after her parents' murder, navigates court politics, assassination plots, and a dangerous dynamic with the arrogant fae prince Cardan
+Read in publication order — The Wicked King ends on a hard cliffhanger; The Queen of Nothing resolves it directly; do not read out of order
+The hook is the power dynamic: Jude has no magic in a world where magic equals power — her intelligence, ambition, and willingness to out-manoeuvre everyone are the only tools she has; Cardan holds the power she lacks; the dynamic inverts, reverses, and inverts again across three books
+One of the fastest-reading trilogies in current YA romantasy — most readers finish all three in a week
+
+Extended universe — read after the main trilogy:
+How the King of Elfhame Learned to Hate Stories (illustrated novella, 2020): Cardan's backstory and perspective; best read between The Wicked King and The Queen of Nothing, or after the trilogy; not required but significantly recontextualizes Cardan's behaviour in book 1
+The Lost Sisters (short story, 2018): Taryn's (Jude's twin sister) perspective on the events of The Cruel Prince — optional companion piece; best read after book 1
+The Stolen Heir (2023) + The Prisoner's Throne (2024): a sequel duology following Oak (a character from the main trilogy) in a new story; self-contained, readable without re-reading the trilogy, but assumes familiarity with how it ends; Jude and Cardan appear
+
+Holly Black's other Faerie work:
+Modern Faerie Tales trilogy (Tithe → Valiant → Ironside, 2002–2007): set in the same Faerie world, earlier works — different cast, loosely connected; Kaye from Tithe and Roiben appear in brief crossover moments with Folk of the Air characters; written for a younger audience and visibly less polished than the later work; read as a companion, not a prerequisite
+The Darkest Part of the Forest (2015): standalone YA set in a small town bordering Faerie — same mythological rules, entirely separate story; best read after Folk of the Air
+
+Content notes: The Cruel Prince opens with the murder of Jude's parents; the court scenes involve deliberate cruelty targeting Jude's mortality; not graphic but not sanitised; The Wicked King and The Queen of Nothing contain moral complexity and manipulation on all sides — Jude is not a passive protagonist
+The Cruel Prince is frequently described as enemies-to-lovers, which is accurate but undersells how the enemies dynamic is structural rather than cosmetic — the characters are genuinely dangerous to each other for reasons that persist throughout the trilogy
 Slug: /reading-orders/folk-of-the-air
 
 
 9 Locked Tomb Reading Order (Tamsyn Muir)
 
-Gideon → Harrow → Nona → Alecto
-The re-read question (Harrow hits differently on re-read)
+4 books, complete: Gideon the Ninth (2019) → Harrow the Ninth (2020) → Nona the Ninth (2022) → Alecto the Ninth (2024)
+Read in publication order — the series is structurally cumulative; Harrow the Ninth is deliberately disorienting on first read and resolves only in retrospect; do not skip ahead
+The genre is genuinely difficult to categorize: science fantasy, gothic horror, queer romance, necromancy in space, comedy — "lesbian necromancers in space" is the widely used one-sentence description and it is not wrong
+Entry point: Gideon the Ninth, no exceptions — the series opens with Gideon's voice and that voice is the reason the series works; if the first chapter does not land, the series is not for you
+
+The premise: the Nine Houses of a dying solar system send their necromancers and their cavaliers (sword-arm bodyguards) to a haunted palace to unlock the secret of Lyctorhood — a form of godhood — under the watch of the Emperor, who created all of them thousands of years ago
+Necromancer/cavalier bond: necromancers provide the magic, cavaliers provide sword work and, ultimately, sacrifice; the bond is consuming and asymmetric in ways the series explores across all four books
+The nine Houses each have a distinct magical speciality (bone magic, flesh magic, shadow magic) and a number — the world has the texture of a dying empire that once spanned stars and has since collapsed into ritual and mythology
+
+Harrow the Ninth:
+Written in second person — the "you" narrator is deliberate, not an affectation; the disorientation is structural
+On first read: certain events seem impossible, contradictory, or simply absent — this is intentional; the narrator cannot tell you what she cannot see
+On re-read after Nona: the entire book resolves into clarity; Muir constructed the narration so that the same text functions as both reliable and unreliable depending on what the reader knows; re-reading Harrow after book 3 is qualitatively different from re-reading it after book 2
+Re-reading Harrow is not required but is widely done — many readers go back immediately after finishing Nona
+
+Nona the Ninth:
+Was originally the first half of Alecto the Ninth before the book outgrew its container
+Follows a protagonist named Nona, whose identity is the central mystery of the book
+Shifts register significantly — grounded in a specific city, everyday life, a found-family group of survivors; the contrast with the palace horror of book 1 is intentional and disorienting in its own way
+The events of Nona change what Harrow means — each book retroactively rewrites the ones before it
+
+Alecto the Ninth:
+The conclusion — answers every question the series has been building since page one of Gideon
+The most structurally complex book; the narrative frame established across three books resolves here
+Some readers find the ending divisive; it earns its strangeness
+
+Queer representation: the central relationship is between two women; this is not subtext and requires no reading between lines; multiple other major characters are also queer; the series does not treat any of this as notable
+The magic is atmospheric and mechanical rather than rule-based — there is no defined magic system in the traditional sense; readers who need structured system logic will find the necromancy deliberately opaque
+The anachronistic voice: Gideon's narration is full of contemporary slang and pop culture references in a far-future setting — this is a choice, not an error; it is either immediately funny or an immediate barrier
 Slug: /reading-orders/locked-tomb
 
 
@@ -406,10 +447,34 @@ Caves of Steel is a standalone detective story in the same universe — safe to 
 Slug: /reading-orders/foundation
 
 
-14 Ender's Game Reading Order
+14 Ender's Game Reading Order (Orson Scott Card)
 
-Orson Scott Card's Ender's Game and the Ender's Game universe reading order
-Ender's Game, Speaker for the Dead, Ender's Shadow — what to read and in what order
+The Ender's Game universe spans four interconnected series covering 3,000+ years of human history — but only the first two or three books are widely essential; the rest are for committed fans
+
+Main Ender sequence (4 books): Ender's Game (1985) → Speaker for the Dead (1986) → Xenocide (1991) → Children of the Mind (1996)
+Ender's Game: Andrew "Ender" Wiggin, a child genius, is recruited into a military training program for a war against an alien insectoid species (the Formics); set entirely in Battle School and Command School; the novel has one of the most famous twist endings in all of science fiction — avoid plot summaries before reading
+Speaker for the Dead: set 3,000 years after Ender's Game — Ender is now an adult philosopher-historian arriving on a human colony world where a new alien species has been discovered; a completely different register from book 1: slower, morally philosophical, and adult in a way that consistently surprises readers expecting a direct sequel; widely considered Card's best novel
+Xenocide and Children of the Mind: Ender's story concludes; the philosophical register intensifies and the plotting becomes more abstract; less recommended — most readers who love books 1–2 stop at Speaker or read Xenocide and consider it optional
+
+Shadow sequence — parallel to book 1, then sequel (6 books): Ender's Shadow → Shadow of the Hegemon → Shadow Puppets → Shadow of the Giant → Shadows in Flight → The Shadow Alive
+Ender's Shadow (1999): retells the events of Ender's Game from the perspective of Bean — a street child from Rotterdam recruited alongside Ender who may be smarter than him, and who has a biological secret that distinguishes him; designed to be read alongside or immediately after Ender's Game; complements book 1 rather than replacing it
+Shadow of the Hegemon onward: follows Bean and the other Battle School graduates into Earth's immediate aftermath — political maneuvering, the Hegemon's consolidation of power, continental war; where the Ender sequence jumps 3,000 years, the Shadow sequence stays on Earth and plays out in real time
+Shadow of the Hegemon and Shadow Puppets are the most recommended entries after Ender's Game and Ender's Shadow; the series weakens from Shadows in Flight onward
+
+Prequel trilogies — written decades after the originals, with co-author Aaron Johnston:
+First Formic War (Earth Unaware → Earth Afire → Earth Awakens, 2012–2014): the original Formic invasion of Earth, set before Ender's birth
+Second Formic War (The Swarm → The Hive → The Queens, 2016–2021): the war between the first trilogy and Ender's Game
+Read these last, not first — they are written for readers who already know the universe; reading them before Ender's Game significantly diminishes the mystery of the Formics and the weight of the original story
+
+Recommended reading path:
+For most readers: Ender's Game → Ender's Shadow (same events, Bean's POV) → Shadow of the Hegemon (Earth aftermath)
+For readers who loved the philosophical side of Ender's Game: Ender's Game → Speaker for the Dead
+For completionists: read publication order within each sequence; prequels last
+
+First Meetings (short story collection, 2002): contains four stories including "The Polish Boy" (young Ender's father) and "Investment Counselor" (set between Ender's Game and Speaker); optional enrichment for fans of the main series
+
+The twist: Ender's Game has a major reveal in its final act — it is one of the most discussed twists in science fiction; going in without foreknowledge is strongly recommended; this is a book worth reading without googling first
+Author note: Orson Scott Card has made widely publicized statements opposing same-sex marriage; readers should be aware of this before engaging with his work; the novels themselves do not reflect these views explicitly
 Slug: /reading-orders/enders-game
 
 
@@ -764,13 +829,6 @@ Style guide for all banners:
 - No clearly visible character faces (implied presence, silhouettes, or backs only)
 - Square crop (1:1), approximately 800×800px output
 - Mood-first: each image should feel like the series before you know what it is
-
-### Already have banners
-cosmere, stormlight, first-law, malazan, wheel-of-time, asoiaf, witcher, discworld,
-kingkiller, robin-hobb, black-company, kate-daniels, acotar, throne-of-glass,
-blood-and-ash, empyrean, drizzt, dragonlance, divergent, memory-sorrow-thorn,
-dresden-files, pern, grishaverse, inheritance-cycle, mistborn, shannara, valdemar,
-earthsea, mark-lawrence, sarah-j-maas
 
 ### Need banners — prompts below
 

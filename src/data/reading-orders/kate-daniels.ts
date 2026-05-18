@@ -1,11 +1,11 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const kateDaniels: ReadingOrderEntry = {
   slug: 'kate-daniels',
   name: 'World of Kate Daniels',
   author: 'Ilona Andrews',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✓ Series Complete',
+  seriesStatusLabel: '✅ Complete Series',
   description:
     "Post-apocalyptic Atlanta where magic and technology take turns failing. When magic is up, cars stop and spells work. When technology is up, guns fire and WiFi returns. Kate Daniels is a mercenary hiding a dangerous bloodline, navigating a city full of shapeshifters, vampires, and ancient gods. Fast, funny, and brutally efficient — one of urban fantasy's best series, and one that gets dramatically better as it goes. Magic Bites is where to start — it reads as a self-contained mystery. The Kate Daniels reading order is strictly linear: each book builds on the last and the arc rewards readers who go in sequence.",
   darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
@@ -13,6 +13,7 @@ export const kateDaniels: ReadingOrderEntry = {
     {
       label: 'The Main Series',
       sublabel: 'novellas interleaved at the point they should be read',
+      noteType: 'required',
       books: [
         {
           title: 'A Questionable Client',
@@ -155,6 +156,7 @@ export const kateDaniels: ReadingOrderEntry = {
     {
       label: 'Spinoffs & World Expansion',
       sublabel: 'set in the same world — read after the main series',
+      noteType: 'optional',
       books: [
         {
           title: 'Gunmetal Magic',
@@ -225,33 +227,43 @@ export const kateDaniels: ReadingOrderEntry = {
       body: "The central romance between Kate and Curran (the Beast Lord — a werelion) is one of urban fantasy's best slow burns. It's action-first, romance second — present from book 1 but never dominating. Magic Bleeds (book 4) is where the relationship resolves and the payoff is fully earned. The later books then deal with what comes after the chase, which is rare.",
       color: 'purple',
     },
+    {
+      title: '🐺 The Pack',
+      body: "The Pack is the largest shapeshifter organisation in the country — thousands of members across every beast kind, governed by a strict meritocracy where strength earns rank and challenges are settled in the Pit. It is one of the most fully realised faction-building exercises in urban fantasy. Curran's position as Beast Lord and what it costs him is as important to the series as Kate's own arc.",
+      color: 'green',
+    },
+    {
+      title: '🩸 Roland',
+      body: "The series' central antagonist is introduced gradually — first as a rumour, then as a threat, then as something far more complicated and personal. His power level, his history, and his connection to Kate are revealed across the back half of the series. The slow build makes Magic Breaks and Magic Binds hit significantly harder than they would if Roland had appeared in book 1.",
+      color: 'amber',
+    },
+    {
+      title: '✍️ Ilona Andrews',
+      body: 'Ilona Andrews is the pen name for married couple Gordon and Ilona Andrews. They have been writing together since Magic Bites in 2007 and continue publishing in the Kate Daniels world through the Wilmington Years novellas and spinoffs. They also write the Hidden Legacy series (Burn for Me) and the Innkeeper Chronicles — both set in separate universes.',
+      color: 'blue',
+    },
   ],
   cardsPosition: 'above',
   sections: [
     {
-      heading: 'The magic/tech alternation',
-      type: 'prose',
-      prose:
-        "The world runs on a Shift — waves of magic and technology alternate unpredictably. When magic is up, cars won't start, guns sometimes misfire, and spells work. When technology is up, the magic fades and the modern world briefly reasserts itself. This mechanic drives both plot and character — the Pack, vampires, and gods all operate on magic; the mercenary guild and Order of Knights run on tech and politics. It's one of urban fantasy's most original world-building conceits.",
-    },
-    {
-      heading: 'The romance',
+      heading: 'Is Kate Daniels right for you?',
       type: 'bullets',
       bullets: [
-        "Kate and Curran (the Beast Lord, a werelion) have one of urban fantasy's best slow-burn central romances.",
-        "It is present from book 1 but doesn't dominate — this is action-first, romance second.",
-        'Magic Bleeds (book 4) is where the relationship resolves. The payoff is earned.',
-        'Later books explore what happens after the romance is established — refreshingly rare in the genre.',
+        'Read it if: you want urban fantasy that prioritises action and forward momentum. Kate Daniels moves fast — every book has a case, a villain, and a resolution. The world-building deepens around the momentum, not despite it.',
+        'Read it if: you like a competent female protagonist who still faces real costs. Kate gets hurt, makes mistakes, and the stakes accumulate across 10 books. She is formidable from page one but never invincible.',
+        "Read it if: you want a romance that earns its payoff and stays earned. The Kate/Curran relationship is present from book 1 but never dominates — and when it resolves, it stays resolved rather than manufactured back into conflict.",
+        "May not be for you if: you need immediately polished prose. Books 1–2 are short and noticeably rougher than what the series becomes. If Magic Strikes (#3) hasn't caught you, the series probably won't.",
+        'May not be for you if: you want standalone urban fantasy. The 10-book arc is continuous and cumulative — this is not a series you can dip in and out of.',
       ],
     },
     {
-      heading: 'Why the first books feel different',
+      heading: 'What to know before you start',
       type: 'bullets',
       bullets: [
-        "Magic Bites and Magic Burns were written early in Ilona Andrews' career and are noticeably shorter (~260 pages) and rougher.",
-        'The prose tightens, the humour sharpens, and the world deepens from book 3 onward.',
-        "Many readers consider Magic Strikes (#3) the true starting point for the series' quality.",
-        'The opening books are still worth reading for context — they are just not representative of what the series becomes.',
+        'The novellas listed between main books are supplementary — none are essential, but Magic Stars (Derek) and Gunmetal Magic (Andrea) are the most worth reading for fans who want more time in the world.',
+        'All spinoff novels (Gunmetal Magic, Iron and Magic, Blood Heir) require finishing the main series first — they spoil major main-series events and their emotional weight depends on knowing the full arc.',
+        'Pay attention to the Shift mechanics, Pack hierarchy, and the Order of Knights of Merciful Aid in the early books — these systems drive the entire series and are established in books 1–2 without lengthy explanation.',
+        'The Wilmington Years novellas (Magic Tides onward) are set after the main series finale and continue expanding the world; they are ongoing and can be read in publication order after Magic Triumphs.',
       ],
     },
   ],
@@ -272,10 +284,13 @@ export const kateDaniels: ReadingOrderEntry = {
       desc: 'War-level stakes — deaths, sacrifice, series-wide consequences',
     },
   ],
-  lastUpdated: '2026-05-12',
+  metaDescription:
+    'The complete Kate Daniels reading order: all 10 Ilona Andrews novels, novellas placed correctly, and the spinoffs in sequence — plus what order to read the Wilmington Years.',
+  lastUpdated: '2026-05-18',
   shortName: 'Kate Daniels',
   finishedLabel: 'Finished Kate Daniels?',
   categoryHref: '/fantasy/urban',
   categoryLabel: 'Browse Urban Fantasy',
-  related: ['dresden-files', 'witcher'],
+  booksLikeSlug: 'kate-daniels',
+  related: ['dresden-files', 'witcher', 'first-law', 'mark-lawrence', 'black-company', 'robin-hobb'],
 };

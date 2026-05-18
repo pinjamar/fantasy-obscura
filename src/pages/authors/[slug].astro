@@ -70,6 +70,8 @@ const READING_ORDER_MAP: Record<string, string> = {
   'The First Law':               'first-law',
   'First Law':                   'first-law',
   'First Law World':             'first-law',
+  'The Age of Madness':          'first-law',
+  'Age of Madness':              'first-law',
   // Discworld
   'Discworld':                   'discworld',
   // Malazan
@@ -224,6 +226,17 @@ const READING_ORDER_MAP: Record<string, string> = {
   'The Genesis of Shannara':            'shannara',
   'The Defenders of Shannara':          'shannara',
   'The Fall of Shannara':               'shannara',
+  // Rick Riordan
+  'Percy Jackson & The Olympians':       'rick-riordan',
+  'Heroes of Olympus':                   'rick-riordan',
+  'The Heroes of Olympus':               'rick-riordan',
+  'The Trials of Apollo':                'rick-riordan',
+  'Trials of Apollo':                    'rick-riordan',
+  'The Kane Chronicles':                 'rick-riordan',
+  'Kane Chronicles':                     'rick-riordan',
+  'Magnus Chase and the Gods of Asgard': 'rick-riordan',
+  'The Senior Year Adventures':          'rick-riordan',
+  'Senior Year Adventures':              'rick-riordan',
   // Valdemar
   'Valdemar':                            'valdemar',
   'The World of Valdemar':              'valdemar',
@@ -246,6 +259,7 @@ const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
   'terry-brooks':      { slug: 'shannara',             label: 'Shannara Complete Guide' },
   'tad-williams':      { slug: 'memory-sorrow-thorn',  label: 'Tad Williams Universe Guide' },
   'ilona-andrews':     { slug: 'kate-daniels',         label: 'World of Kate Daniels Guide' },
+  'rick-riordan':      { slug: 'rick-riordan',         label: 'Rick Riordan Mythology Universe Guide' },
 };
 
 const universeGuide = AUTHOR_UNIVERSE_MAP[slug ?? ''] ?? null;

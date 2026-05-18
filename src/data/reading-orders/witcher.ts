@@ -1,14 +1,16 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const witcher: ReadingOrderEntry = {
   slug: 'witcher',
   name: 'The Witcher',
   author: 'Andrzej Sapkowski',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✓ Completed Series',
+  seriesStatusLabel: '✅ Complete Series',
   description:
     'A monster hunter in a morally grey world who is far more interesting than the monsters. Sapkowski takes fairy tales apart and rebuilds them as tragedy. The books behind the games, the show, and a generation of dark fantasy. Start with The Last Wish — a short story collection that introduces Geralt and reads as a standalone. The Witcher reading order matters: both story collections come before the five-novel saga.',
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
+  orderNote:
+    'Short story collections first — they are essential, not optional. The saga follows in publication order. Season of Storms and Crossroads of Ravens last.',
   groups: [
     {
       label: 'The Short Story Collections',
@@ -38,7 +40,7 @@ export const witcher: ReadingOrderEntry = {
       label: 'The Witcher Saga',
       sublabel: '5 novels — read in order',
       noteType: 'required',
-      note: 'A continuous war story told across five novels. Ciri, not Geralt, is the true protagonist of the saga — she is what everyone is hunting, protecting, or using. The tone shifts from the short stories into full-scale political and military darkness.',
+      note: 'A continuous war story told across five novels. Ciri, not Geralt, is the true protagonist of the saga — she is what everyone is hunting, protecting, or using. The tone shifts sharply from the short stories into full-scale political and military darkness.',
       books: [
         {
           title: 'Blood of Elves',
@@ -60,7 +62,7 @@ export const witcher: ReadingOrderEntry = {
           title: 'Baptism of Fire',
           slug: 'baptism-of-fire',
           status: 'mandatory',
-          note: "Geralt's journey through a devastated continent at war. Slower than the others — more concerned with the human cost. The Hansa (his companions) are the heart of this book.",
+          note: "Geralt's journey through a devastated continent at war. Slower than the others — more concerned with the human cost. The Hansa companions are the heart of this book.",
           page_count: 352,
           publication_year: 1996,
         },
@@ -100,15 +102,13 @@ export const witcher: ReadingOrderEntry = {
           title: 'Crossroads of Ravens',
           slug: 'crossroads-of-ravens',
           status: 'optional',
-          note: 'Geralt as a young, newly made Witcher — the origin before the legend. Set chronologically first but written and published last. Sapkowski returns to the character stripped of everything that came after. Read it knowing who Geralt becomes.',
+          note: 'Geralt as a young, newly made Witcher — the origin before the legend. Set chronologically first but written and published last. Read it knowing who Geralt becomes.',
           page_count: 304,
           publication_year: 2025,
         },
       ],
     },
   ],
-  orderNote:
-    'Short story collections first — they are essential, not optional. The saga follows in publication order. Season of Storms and Crossroads of Ravens last.',
   cards: [
     {
       title: '🧚 The Fairy Tales',
@@ -121,31 +121,46 @@ export const witcher: ReadingOrderEntry = {
       color: 'purple',
     },
     {
+      title: '📖 Short Stories vs Saga',
+      body: 'The Last Wish and Sword of Destiny are self-contained, darkly funny, episodic monster-hunting stories. The saga (Blood of Elves onward) is a continuous five-novel war narrative — grimmer, more political, and slower. Readers who fall in love with the short story format should know the saga is a different register.',
+      color: 'amber',
+    },
+    {
       title: '🎮 Games & Show',
       body: 'The Witcher games are sequels to the books, not adaptations — they assume the book endings and continue from there. The Netflix show takes major liberties with the timeline and characters. The books are darker, more morally complex, and significantly better than either.',
       color: 'green',
     },
     {
       title: '📚 The Hussite Trilogy',
-      body: 'Sapkowski also wrote a separate historical fantasy trilogy — Narrenturm, Boże Bojownicy, and Lux Perpetua — set in 15th century Bohemia during the Hussite Wars. It has no connection to the Witcher universe and is not part of this reading order. A separate series for readers who want more Sapkowski.',
-      color: 'zinc',
+      body: 'Sapkowski also wrote a separate historical fantasy trilogy — Narrenturm, Boże Bojownicy, and Lux Perpetua — set in 15th century Bohemia during the Hussite Wars. No connection to the Witcher universe. A separate series for readers who want more Sapkowski after finishing the saga.',
+      color: 'blue',
     },
     {
-      title: '🖼️ Graphic Novel Adaptations',
-      body: 'Dark Horse Comics has published graphic novel adaptations of individual short stories from The Last Wish — A Grain of Truth, The Lesser Evil, The Edge of the World, The Witcher, and A Question of Price. They adapt stories you will already have read. Recommended for fans who want to revisit the world in a different format, not as a replacement for the prose.',
+      title: '🖼️ Graphic Novels',
+      body: 'Dark Horse Comics has adapted individual short stories from The Last Wish — A Grain of Truth, The Lesser Evil, The Edge of the World, and others. They adapt stories you will already have read. For fans who want to revisit the world visually, not as a replacement for the prose.',
       color: 'amber',
     },
   ],
   cardsPosition: 'above',
   sections: [
     {
+      heading: 'Is Witcher right for you?',
+      type: 'bullets',
+      bullets: [
+        'Read Witcher if: you want fantasy that treats fairy tales as moral frameworks rather than adventure backdrops. Sapkowski strips them to their original cruelty and asks what the happy ending actually cost.',
+        "Read Witcher if: you like morally grey protagonists with a consistent philosophy. Geralt is not a hero — he is a professional who chose the lesser evil so many times he's stopped believing in good. The world reflects that logic back at him.",
+        'Witcher may not be for you if: you want a hero\'s journey or satisfying victories. The saga is unsparing — Sapkowski\'s world does not reward the just, and "lesser evil" is as good as it usually gets.',
+        "Witcher may not be for you if: the short story register doesn't engage you. The Last Wish and Sword of Destiny are the strongest Witcher content by consensus. If those don't click, the saga probably won't either.",
+      ],
+    },
+    {
       heading: 'If you know the games or show',
       type: 'bullets',
       bullets: [
-        'The books are darker and more morally complex than either adaptation.',
-        "The games are set after the books — they're sequels, not adaptations. They assume the book endings.",
-        'The Netflix show takes significant liberties with the story and timeline.',
-        'Geralt in the books is more cynical, more tired, and more interesting than either adaptation.',
+        "Books Geralt is deliberately unheroic — more cynical, more tired, more existentially weary than either the game or show version. He is a working professional in a world that barely tolerates him, not a silver-haired action hero.",
+        "The Netflix show is most faithful in season 1, which adapts stories from The Last Wish and Sword of Destiny. Seasons 2–3 diverge significantly. Henry Cavill left after season 3; season 4 recast the role.",
+        "Playing the games after finishing the books gives them a completely different weight — the games directly continue the book ending and reference specific events. They work as sequels, not standalone adventures.",
+        "CD Projekt Red's The Witcher 4 (Polaris) is in development — a new story in the same universe, not a sequel to the saga.",
       ],
     },
   ],
@@ -161,9 +176,13 @@ export const witcher: ReadingOrderEntry = {
       desc: 'War, genocide, betrayal, child soldiers',
     },
   ],
-  lastUpdated: '2026-05-12',
+  booksLikeSlug: 'the-witcher',
+  metaDescription:
+    "The complete Witcher reading order: Sapkowski's short story collections, the five-novel saga, and the standalone extras — in the right sequence.",
+  shortName: 'The Witcher',
+  lastUpdated: '2026-05-18',
   finishedLabel: 'Finished the saga?',
   categoryHref: '/fantasy/dark',
   categoryLabel: 'Browse Dark Fantasy',
-  related: ['first-law', 'kingkiller'],
+  related: ['first-law', 'kingkiller', 'robin-hobb', 'malazan', 'mark-lawrence', 'black-company'],
 };

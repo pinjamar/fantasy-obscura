@@ -1,4 +1,4 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const valdemar: ReadingOrderEntry = {
   slug: 'valdemar',
@@ -11,8 +11,6 @@ export const valdemar: ReadingOrderEntry = {
   darknessDisplay: '🕯️🕯️ Mild',
   orderNote:
     "Two equally valid entry points: Arrows of the Queen (publication order, Talia's story) or Magic's Pawn (Vanyel's story, set 500 years earlier). Most readers start with Arrows. The Mage Wars and Founding of Valdemar prequels work best after you already love the world.",
-  warning:
-    "Magic's Pawn deals directly with homophobia, emotional abuse, and grief. It is not as light as the Talia books. The ending will hurt. This is by design.",
   groups: [
     {
       label: 'Heralds of Valdemar',
@@ -52,8 +50,8 @@ export const valdemar: ReadingOrderEntry = {
     {
       label: 'The Last Herald-Mage',
       sublabel: "set 500 years before Talia — Vanyel's story",
-      note: "One of fantasy's first and most important LGBTQ+ storylines. Devastating and beautiful. Read after the Heralds trilogy or as a standalone entry point.",
       noteType: 'optional',
+      note: "One of fantasy's first and most important LGBTQ+ storylines. Devastating and beautiful. Read after the Heralds trilogy or as a standalone entry point — but read the warning section below first.",
       books: [
         {
           title: "Magic's Pawn",
@@ -140,7 +138,7 @@ export const valdemar: ReadingOrderEntry = {
           slug: 'storm-breaking',
           status: 'mandatory',
           seriesLabel: 'Mage Storms #3',
-          note: 'Conclusion of the Mage Storms arc and effectively the conclusion of the original Valdemar saga. A satisfying endpoint for readers who want a natural stopping place.',
+          note: 'Conclusion of the Mage Storms arc and effectively the conclusion of the original Valdemar saga. A satisfying endpoint for readers who want a natural stopping place — nothing after this is required.',
           page_count: 403,
           publication_year: 1996,
         },
@@ -149,6 +147,8 @@ export const valdemar: ReadingOrderEntry = {
     {
       label: 'Prequels & Further Series',
       sublabel: 'for committed Valdemar fans',
+      noteType: 'optional',
+      note: 'Everything here expands the world rather than continuing the main story. Read in any order after Storm Breaking — or dip into individual entries based on what interests you. None are required.',
       books: [
         {
           title: 'By the Sword',
@@ -164,7 +164,7 @@ export const valdemar: ReadingOrderEntry = {
           slug: 'the-black-gryphon',
           status: 'optional',
           seriesLabel: 'Mage Wars #1',
-          note: "Set 3,000 years before Arrows of the Queen, during the Mage Wars that shaped Valdemar's world. Gryphons as POV characters. Best read after the main two arcs.",
+          note: "Set 3,000 years before Arrows of the Queen, during the Mage Wars that shaped Valdemar's world. Gryphons as POV characters. Followed by The White Gryphon and The Silver Gryphon.",
           page_count: 400,
           publication_year: 1994,
         },
@@ -182,7 +182,7 @@ export const valdemar: ReadingOrderEntry = {
           slug: 'foundation-valdemar',
           status: 'optional',
           seriesLabel: 'Collegium Chronicles #1',
-          note: 'Mags — a mine slave discovered to be a Herald-trainee. Written as a new entry point to Valdemar. More deliberate pacing than the original trilogy. Good for younger readers.',
+          note: 'Mags — a mine slave discovered to be a Herald-trainee. Written as a new entry point to Valdemar. A 5-book series; more deliberate pacing than the original trilogy.',
           page_count: 337,
           publication_year: 2008,
         },
@@ -191,9 +191,18 @@ export const valdemar: ReadingOrderEntry = {
           slug: 'beyond',
           status: 'supplementary',
           seriesLabel: 'Founding of Valdemar #1',
-          note: 'The newest sub-series — how Valdemar was founded. Best read after you know and love the kingdom. Works backwards from the world you already know.',
+          note: "The newest sub-series — how Valdemar was founded, set 3,000+ years before Arrows. A multi-book arc; Into the West (2022) follows. Best read after you know and love the kingdom.",
           page_count: 352,
           publication_year: 2021,
+        },
+        {
+          title: 'Into the West',
+          slug: 'into-the-west',
+          status: 'supplementary',
+          seriesLabel: 'Founding of Valdemar #2',
+          note: 'Continues the founding arc — the long journey west to what will become Valdemar. Read after Beyond.',
+          page_count: 336,
+          publication_year: 2022,
         },
       ],
     },
@@ -215,21 +224,48 @@ export const valdemar: ReadingOrderEntry = {
       color: 'purple',
     },
     {
+      title: '🩹 Trauma Done Right',
+      body: "Lackey's Valdemar takes childhood abuse, grief, and emotional damage more seriously than almost any other fantasy series from this era. Talia was raised in a fundamentalist commune that treated her as property. Vanyel was mocked and emotionally starved by his own father. The books do not treat these as backstory — recovery, flinching back from old wounds, and learning to accept care are part of what the stories are actually about. The warmth in Valdemar is earned, not assumed.",
+      color: 'amber',
+    },
+    {
       title: '📖 How Large Is This?',
-      body: 'Lackey has been writing Valdemar since 1987 and the world spans 40+ novels across 12+ sub-series. Storm Breaking (1996) is a natural stopping place — the original saga concludes there and nothing after it is required. Everything beyond is expansion. You do not need to read all of it to feel like you got the full story.',
-      color: 'zinc',
+      body: 'Lackey has been writing Valdemar since 1987 and the world spans 40+ novels across 12+ sub-series covering 3,000 years of in-world history. Storm Breaking (1996) is a natural stopping place — the original saga concludes there and nothing after it is required. Everything beyond is expansion. You do not need to read all of it to feel like you got the full story.',
+      color: 'amber',
+    },
+    {
+      title: '✍️ Mercedes Lackey',
+      body: 'Lackey has published more than 100 novels and continues writing into her eighties. Valdemar is her primary world but she has also written the SERRAted Edge series (urban fantasy with elves and racecar drivers), Bardic Voices, and the Five Hundred Kingdoms fairy tale retellings. Many Valdemar books are co-authored with collaborators including her husband Larry Dixon and others.',
+      color: 'blue',
     },
   ],
   cardsPosition: 'above',
   sections: [
     {
-      heading: 'Why it matters',
+      heading: "Before you read Magic's Pawn",
+      type: 'warning',
+      prose:
+        "Magic's Pawn deals directly with homophobia, emotional abuse, and grief. It opens with Vanyel being tormented and rejected by his father, includes the death of someone he loves deeply, and ends in a way that does not soften the blow. It is not as light as the Talia books. This is by design — and it is why the trilogy hits as hard as it does. Read the Heralds trilogy first if you want to ease into the world. Go straight to Magic's Pawn only if you are prepared for something genuinely painful.",
+    },
+    {
+      heading: 'Is Valdemar right for you?',
       type: 'bullets',
       bullets: [
-        'The Last Herald-Mage trilogy (1989–1991) was one of the first mainstream fantasy series to feature a gay protagonist whose sexuality was treated as normal and central to his story — not a subplot, not a tragedy to be fixed.',
-        "Lackey's Valdemar takes trauma seriously. Talia, Vanyel, and many others carry histories of abuse and neglect — and the books deal with recovery, not just survival.",
-        'The series is still being written. Lackey published the first Founding of Valdemar book in 2021 and continues to expand the world at the rate of roughly one book a year.',
-        'Storm Breaking (1996) is a natural endpoint if you want a complete arc — the original saga concludes there. Everything after is expansion rather than continuation.',
+        'Read Valdemar if: you want warm fantasy that takes the darkness seriously. This is not grimdark — the series has hope at its core — but Lackey does not protect her characters from grief, trauma, or real loss.',
+        'Read Valdemar if: you want a world that grows the more you explore it. Each sub-series reveals a different era, a different cast, and a different angle on what Valdemar means. Fifteen books in, the world is still expanding.',
+        "Read Valdemar if: LGBTQ+ representation in fantasy matters to you and you haven't read the Vanyel trilogy. It was doing this in 1989 with more honesty and emotional weight than most contemporary fantasy manages.",
+        "Valdemar may not be for you if: you need fast-paced, plot-driven fantasy. These books are character-first — the emotional interiority of the Heralds matters more than external events. Readers who bounce off Talia's introspection rarely connect with the series.",
+        "Valdemar may not be for you if: you want a single complete story. The world does not end — Lackey keeps writing it. Storm Breaking is a satisfying endpoint, but it is not the last book and never will be.",
+      ],
+    },
+    {
+      heading: 'What to know',
+      type: 'bullets',
+      bullets: [
+        "The sub-series are set across 3,000 years of in-world history — the Mage Wars trilogy (starting with The Black Gryphon) is set 3,000 years before Arrows of the Queen. Each sub-series has a self-contained cast; you do not need to read everything.",
+        "Storm Breaking (1996) is the natural endpoint for new readers — the original saga concludes there. The Collegium Chronicles, Mage Wars, and Founding of Valdemar books are all expansion rather than continuation.",
+        "Many Valdemar books include co-authors. Lackey's husband Larry Dixon co-wrote the Mage Wars trilogy. The Founding of Valdemar books are solo Lackey. Quality is consistent regardless of whether a book is co-authored.",
+        'The world has extensive short fiction in anthology collections (Sword of Ice, Sun in Glory, others) featuring Valdemar and new Heralds — for dedicated fans who want more between novels.',
       ],
     },
   ],
@@ -250,10 +286,13 @@ export const valdemar: ReadingOrderEntry = {
       desc: 'Political violence and war — lighter than the Vanyel books',
     },
   ],
-  lastUpdated: '2026-05-12',
+  metaDescription:
+    "The complete Valdemar reading order: Mercedes Lackey's Heralds trilogy, the Vanyel arc, Mage Winds and Mage Storms, and all the prequels — where to start and how far to go.",
+  lastUpdated: '2026-05-18',
   shortName: 'Valdemar',
   finishedLabel: 'Finished Valdemar?',
   categoryHref: '/fantasy/epic/',
   categoryLabel: 'Browse Epic Fantasy',
-  related: ['pern', 'wheel-of-time', 'memory-sorrow-thorn'],
+  booksLikeSlug: 'valdemar',
+  related: ['pern', 'wheel-of-time', 'memory-sorrow-thorn', 'earthsea', 'dragonlance', 'robin-hobb'],
 };
