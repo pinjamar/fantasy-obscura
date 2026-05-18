@@ -1,18 +1,16 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const shannara: ReadingOrderEntry = {
   slug: 'shannara',
   name: 'The Shannara Chronicles',
   author: 'Terry Brooks',
-  seriesStatus: 'complete',
-  seriesStatusLabel: '✅ Complete — 30+ novels across 10 story arcs',
+  seriesStatus: 'ongoing',
+  seriesStatusLabel: '📖 Ongoing — main saga complete, First Druids arc in progress',
   description:
-    "One of the longest-running fantasy series ever written — Terry Brooks began publishing Shannara in 1977 and concluded the main arc in 2020. The world's best-kept secret: Shannara is set on a post-apocalyptic Earth, thousands of years after civilisation collapsed and magic returned. The series spans multiple interconnected trilogies across thousands of years of in-world history. The Sword of Shannara is famously derivative of Tolkien, but Elfstones of Shannara — the second book — is where Brooks found his own voice, and it is genuinely excellent. Start there. This guide covers the complete Shannara reading order and tells you what to read, what to skip, and where the series peaks.",
+    "One of the longest-running fantasy series ever written — Terry Brooks began publishing Shannara in 1977 and concluded the main saga in 2020. A new prequel sub-series, The First Druids of Shannara, began in 2025. The world's best-kept secret: Shannara is set on a post-apocalyptic Earth, thousands of years after civilisation collapsed and magic returned. The series spans multiple interconnected trilogies across thousands of years of in-world history. The Sword of Shannara is famously derivative of Tolkien, but Elfstones of Shannara — the second book — is where Brooks found his own voice, and it is genuinely excellent. Start there. This guide covers the complete Shannara reading order and tells you what to read, what to skip, and where the series peaks.",
   darknessDisplay: '🕯️🕯️ Mild',
   orderNote:
     'Do not start with The Sword of Shannara. Start with The Elfstones of Shannara — it is a better book, works as a standalone entry point, and will tell you if the series is for you. The Sword can be read after if curiosity strikes.',
-  warning:
-    "The Sword of Shannara (1977) is a close structural retelling of The Lord of the Rings. Many first-time readers bounce off it. Skip it or save it for after Elfstones — you won't miss any essential context.",
   groups: [
     {
       label: 'The Original Shannara Trilogy',
@@ -90,32 +88,6 @@ export const shannara: ReadingOrderEntry = {
           note: 'All threads converge. Par, Walker, and Wren each reach their destinations. A satisfying multi-arc conclusion — the best of early Shannara.',
           page_count: 453,
           publication_year: 1993,
-        },
-      ],
-    },
-    {
-      label: 'Prequels',
-      sublabel: 'read after Elfstones — not before',
-      noteType: 'optional',
-      note: 'Both are set before the original trilogy but reward readers who already know the world. Reading them first spoils the mythology that the original trilogy slowly reveals.',
-      books: [
-        {
-          title: 'Galaphile',
-          slug: 'galaphile',
-          status: 'optional',
-          seriesLabel: 'Prequel #1',
-          note: 'The earliest story in the Shannara timeline — the founding of the first Druid order by Galaphile himself, thousands of years before the original trilogy. Published 2023. Best read after getting into the series.',
-          page_count: 416,
-          publication_year: 2023,
-        },
-        {
-          title: 'First King of Shannara',
-          slug: 'first-king-of-shannara',
-          status: 'optional',
-          seriesLabel: 'Prequel #2',
-          note: 'Set hundreds of years before The Sword of Shannara — the Second War of the Races and the forging of the Sword itself. The Druid Bremen is the central character. Best read after Elfstones, when you already know what the Sword means.',
-          page_count: 350,
-          publication_year: 1996,
         },
       ],
     },
@@ -399,6 +371,41 @@ export const shannara: ReadingOrderEntry = {
         },
       ],
     },
+    {
+      label: 'The First Druids of Shannara',
+      sublabel: 'new prequel arc — ongoing from 2025',
+      noteType: 'optional',
+      note: "A new sub-series set at the founding of the Druid order, thousands of years before the original trilogy. Terry Brooks announced a semi-retirement from writing in 2025; Brona (August 2026) is co-authored with Delilah S. Dawson, who will continue the series going forward. Best read after Elfstones — these books reward readers who already know the world. First King of Shannara (1996) covers a different but related era: the Second War of the Races, just before the original trilogy.",
+      books: [
+        {
+          title: 'First King of Shannara',
+          slug: 'first-king-of-shannara',
+          status: 'optional',
+          seriesLabel: 'Prequel',
+          note: 'Set hundreds of years before The Sword of Shannara — the Second War of the Races and the forging of the Sword itself. The Druid Bremen is the central character. Best read after Elfstones, when you already know what the Sword means.',
+          page_count: 350,
+          publication_year: 1996,
+        },
+        {
+          title: 'Galaphile',
+          slug: 'galaphile',
+          status: 'optional',
+          seriesLabel: 'First Druids #1',
+          note: 'The earliest story in the Shannara timeline — the founding of the first Druid order by Galaphile himself, thousands of years before the original trilogy. Published March 2025.',
+          page_count: 416,
+          publication_year: 2025,
+        },
+        {
+          title: 'Brona',
+          slug: 'brona',
+          status: 'upcoming',
+          seriesLabel: 'First Druids #2',
+          note: 'Continues the founding era of the Druid order. Co-authored by Terry Brooks and Delilah S. Dawson — the first Shannara novel with a co-author. Expected August 2026.',
+          page_count: null,
+          publication_year: 2026,
+        },
+      ],
+    },
   ],
   cards: [
     {
@@ -408,36 +415,50 @@ export const shannara: ReadingOrderEntry = {
     },
     {
       title: '📖 Start with Elfstones',
-      body: "The Sword of Shannara (1977) was the first fantasy novel published by a major publisher after Tolkien — Del Rey bet its entire genre list on it. It sold over a million copies.",
-      color: 'green',
+      body: "The Sword of Shannara mirrors The Lord of the Rings structurally — same journey, same beats, a dark lord and a fellowship. Skip it or save it for later. Elfstones is where Brooks found his own voice: original stakes, real emotional weight, and an ending that genuinely lands.",
+      color: 'amber',
     },
     {
       title: '🌿 Where It Peaks',
-      body: "Elfstones is excellent. Heritage of Shannara (1990–1993) is the consensus favourite — three simultaneous quests across the Four Lands, converging in one of Brooks's most satisfying conclusions. Word & Void is a completely different register. Everything after Heritage is for committed fans who want to stay in the world.",
+      body: "Elfstones is excellent. Heritage of Shannara (1990–1993) is the consensus favourite — three simultaneous quests across the Four Lands, converging in one of Brooks's most satisfying conclusions. Word & Void is a completely different register. Everything after Heritage is for committed fans.",
       color: 'purple',
     },
     {
       title: '🛑 Natural Stopping Points',
-      body: 'You do not need to read all 33 books. Natural stopping places: Elfstones alone (best standalone), Heritage of Shannara (best complete arc), or the Fall of Shannara tetralogy (full saga conclusion, 2017–2020). Word & Void can be read independently at any point. Nothing after Heritage is essential.',
-      color: 'zinc',
+      body: 'You do not need to read all 30+ books. Natural stopping places: Elfstones alone (best standalone), Heritage of Shannara (best complete arc), or The Fall of Shannara (full saga conclusion, 2017–2020). Word & Void can be read independently at any point.',
+      color: 'green',
+    },
+    {
+      title: '📺 The TV Adaptation',
+      body: 'MTV adapted the series as The Shannara Chronicles (2016–2017). Season 1 covers Elfstones of Shannara directly; Season 2 draws from Heritage material. Cancelled after two seasons. A decent entry point to the world — the books are significantly better.',
+      color: 'blue',
+    },
+    {
+      title: '✍️ A New Chapter',
+      body: "Terry Brooks announced a semi-retirement from writing in 2025. The First Druids of Shannara — a prequel sub-series beginning with Galaphile (2025) — continues with Brona (August 2026), co-authored by Delilah S. Dawson. The world of the Four Lands is not quite finished.",
+      color: 'amber',
     },
   ],
   cardsPosition: 'above',
   sections: [
     {
-      heading: 'The secret of Shannara',
-      type: 'prose',
-      prose:
-        'Shannara is set on Earth. This is revealed gradually — the ruins of skyscrapers are ancient rubble, the races of Elves and Gnomes and Trolls evolved from humans after civilisation collapsed thousands of years ago. The Word & Void trilogy, set in our present day, shows the beginning of the cataclysm. Brooks treats this as mythology rather than science fiction — but knowing it going in changes how you read the world-building.',
-    },
-    {
-      heading: 'Where the series stands',
+      heading: 'Is Shannara right for you?',
       type: 'bullets',
       bullets: [
-        'The Sword of Shannara (1977) was the first fantasy novel published by a major publisher after Tolkien — Del Rey bet its entire genre list on it. It sold over a million copies.',
-        'Elfstones of Shannara was adapted as The Shannara Chronicles on MTV (2016–2017). The show is set during the Heritage era and uses Elfstones as its source material.',
-        'The Fall of Shannara (2017–2020) concludes the main saga after 43 years of publication — one of the longest continuous fantasy series ever completed by a single author.',
-        'The Heritage of Shannara is the consensus favourite arc among long-term fans — four books, three simultaneous quests, and a world that has genuinely evolved from the original trilogy.',
+        'Read Shannara if: you like classic quest fantasy in the Tolkien tradition — chosen heroes, ancient evil, a world rich with history. Elfstones is one of the finest books of its kind from the 1980s and still holds up.',
+        'Read Shannara if: you want a long series you can live in, with multiple distinct eras and protagonists. You do not need to read everything — the guide marks what is essential and what is optional.',
+        "Shannara may not be for you if: you bounced off The Sword of Shannara. Start with Elfstones instead — they are completely different books. If Elfstones doesn't click, the series probably isn't for you.",
+        'Shannara may not be for you if: you need consistently high literary quality across a long series. Some arcs are excellent (Elfstones, Heritage); others are more mechanical. Word & Void is the most literary of the lot.',
+      ],
+    },
+    {
+      heading: 'What to know',
+      type: 'bullets',
+      bullets: [
+        'The Sword of Shannara (1977) was the first fantasy novel published by a major publisher after Tolkien — Del Rey bet its entire genre list on it. It sold over a million copies despite the Tolkien comparisons. Brooks has acknowledged the derivation openly.',
+        'Word & Void can be read entirely independently — it is urban fantasy set in modern-day America and does not require any prior Shannara knowledge. It connects to the larger mythology only in Genesis of Shannara.',
+        'The Fall of Shannara (2017–2020) concluded the main saga after 43 years — one of the longest continuous fantasy series ever completed by a single author.',
+        'Terry Brooks announced a semi-retirement in 2025. Brona (August 2026), co-authored with Delilah S. Dawson, is the first Shannara novel with a co-author and continues the new First Druids arc.',
       ],
     },
   ],
@@ -463,9 +484,13 @@ export const shannara: ReadingOrderEntry = {
       desc: 'Varies by arc — generally consistent with the original tone',
     },
   ],
-  lastUpdated: '2026-05-12',
+  booksLikeSlug: 'shannara',
+  metaDescription:
+    'The complete Shannara reading order: Terry Brooks\'s original trilogy, Heritage of Shannara, Word & Void, and all ten arcs — with the new First Druids series included.',
+  shortName: 'Shannara',
+  lastUpdated: '2026-05-18',
   finishedLabel: 'Finished the Four Lands?',
-  categoryHref: '/fantasy/epic/',
+  categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',
-  related: ['wheel-of-time', 'dragonlance', 'memory-sorrow-thorn'],
+  related: ['wheel-of-time', 'dragonlance', 'memory-sorrow-thorn', 'valdemar', 'earthsea', 'inheritance-cycle'],
 };

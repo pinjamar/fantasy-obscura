@@ -1,4 +1,4 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const dresdenFiles: ReadingOrderEntry = {
   slug: 'dresden-files',
@@ -6,9 +6,9 @@ export const dresdenFiles: ReadingOrderEntry = {
   author: 'Jim Butcher',
   cardsPosition: 'above',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '⏳ Ongoing Series',
+  seriesStatusLabel: '📖 Ongoing — Book 18 out now, #19 expected 2027',
   description:
-    "Urban fantasy noir — Harry Dresden is Chicago's only professional wizard, listed in the Yellow Pages. What starts as hardboiled detective fiction with magic escalates across 17 books into a cosmic war with genuine consequences. The first two books are the weakest; by book four the series is exceptional. Storm Front is where to start. The Dresden Files reading order is strictly linear — each book builds on the last, and the payoff of the later entries depends entirely on everything that came before.",
+    "Urban fantasy noir — Harry Dresden is Chicago's only professional wizard, listed in the Yellow Pages. What starts as hardboiled detective fiction with magic escalates across 18 books into a cosmic war with genuine consequences. The first two books are the weakest; by book four the series is exceptional. Storm Front is where to start, and the reading order is strictly linear — each book builds on the last. The payoff of the later entries depends entirely on everything that came before.",
   darknessDisplay: '🕯️🕯️🕯️ → 🕯️🕯️🕯️🕯️🕯️ Serious → Brutal',
   groups: [
     {
@@ -117,7 +117,7 @@ export const dresdenFiles: ReadingOrderEntry = {
           title: 'Side Jobs',
           slug: 'side-jobs',
           status: 'optional',
-          note: 'Anthology of 11 short stories and novellas set during books 1–11 — including "Restoration of Faith", "Backup" (Thomas POV), "The Warrior", and "Last Call". The final story "Aftermath" bridges directly into Ghost Story — save it for right after Changes.',
+          note: 'Anthology of 11 short stories set during books 1–11 — including "Restoration of Faith", "Backup" (Thomas POV), "The Warrior", and "Last Call". The final story "Aftermath" bridges directly into Ghost Story — save that one for right after Changes.',
           page_count: 416,
           publication_year: 2011,
         },
@@ -149,7 +149,7 @@ export const dresdenFiles: ReadingOrderEntry = {
           title: 'Cold Days',
           slug: 'cold-days',
           status: 'mandatory',
-          note: "Harry's new position explained. The scope of the overarching plot reveals itself. Outstanding.",
+          note: 'Where Harry ends up after Ghost Story and what it means. The scope of the overarching plot reveals itself fully. Outstanding.',
           page_count: 516,
           publication_year: 2012,
         },
@@ -165,7 +165,7 @@ export const dresdenFiles: ReadingOrderEntry = {
           title: 'Brief Cases',
           slug: 'brief-cases',
           status: 'optional',
-          note: 'Anthology of 12 stories set around books 10–17 — including the novella "Ghoul Goblin", "Even Hand" (Marcone POV), "Bombshells" (Andi POV), "Cold Case" (Molly POV), and "Jury Duty" (post-Skin Game). Read before Peace Talks.',
+          note: 'Anthology of 12 stories set around books 10–17 — including the novella "Ghoul Goblin", "Even Hand" (Marcone POV), "Cold Case" (Molly POV), and "Jury Duty" (post-Skin Game). Read before Peace Talks.',
           page_count: 512,
           publication_year: 2018,
         },
@@ -193,13 +193,35 @@ export const dresdenFiles: ReadingOrderEntry = {
           page_count: 364,
           publication_year: 2020,
         },
+      ],
+    },
+    {
+      label: 'The Road Ahead',
+      sublabel: 'books 18–19 — where the series is now',
+      books: [
         {
           title: 'Twelve Months',
           slug: 'twelve-months',
-          status: 'upcoming',
-          note: 'Book 18. Expected 2026. Butcher has confirmed it picks up in the aftermath of Battle Ground.',
+          status: 'mandatory',
+          note: 'Dresden picking up the pieces after Battle Ground — personal, professional, and supernatural. The first full-length novel in six years. Published January 2026.',
+          page_count: 463,
+          publication_year: 2026,
+        },
+        {
+          title: 'Out Law',
+          slug: 'out-law',
+          status: 'supplementary',
+          note: 'Short story set after Twelve Months. Published 2026.',
           page_count: null,
           publication_year: 2026,
+        },
+        {
+          title: 'Mirror Mirror',
+          slug: 'mirror-mirror',
+          status: 'upcoming',
+          note: 'Book 19. Expected 2027. First draft in progress as of early 2026.',
+          page_count: null,
+          publication_year: 2027,
         },
       ],
     },
@@ -208,19 +230,34 @@ export const dresdenFiles: ReadingOrderEntry = {
     'Strictly publication order — the series is sequential and almost every book builds on the last.',
   cards: [
     {
-      title: '⚡ The best entry point',
-      body: 'Start with Storm Front — no exceptions. The series is deeply sequential and spoilers compound fast. The slow start (books 1–2) is worth it.',
+      title: '⚡ Start with Storm Front',
+      body: "No exceptions — the series is deeply sequential and spoilers compound fast. Storm Front is short and brisk. If books 1–2 feel slow, push to Grave Peril. That's where it clicks.",
       color: 'blue',
     },
     {
       title: '⚠️ The Changes problem',
-      body: "Changes (book 12) is where the series permanently shifts gear. If you're struggling with the early books, know that the series becomes something different — and much darker — after this point.",
+      body: "Changes (book 12) is where the series permanently shifts gear — darker, higher stakes, major deaths with no safety net. If you're struggling with the early books, know that something very different is coming.",
       color: 'amber',
     },
     {
+      title: '🎧 The audiobooks',
+      body: "James Marsters narrates the entire series and is widely considered one of the best audiobook narrators in the genre. If the opening chapters feel slow on the page, try the audio first — Marsters' Harry is a distinct experience.",
+      color: 'green',
+    },
+    {
       title: '📖 Short stories',
-      body: 'Side Jobs and Brief Cases are best read scattered alongside the series, not all at once. Each story notes which main book it follows.',
+      body: 'Side Jobs and Brief Cases are best read in between main novels at the points noted in each entry — not all at once. The "Aftermath" story in Side Jobs bridges directly from Changes to Ghost Story and should be saved for that moment.',
       color: 'purple',
+    },
+    {
+      title: '🎭 The long game',
+      body: "Butcher has planned the Dresden Files as a 23-book series — 20 main novels plus a capstone trilogy. Every character, faction, and magic rule introduced early matters later. The patience investment is real, and so is the payoff.",
+      color: 'blue',
+    },
+    {
+      title: '📅 Where the series stands',
+      body: "Twelve Months (book 18) published January 2026. Mirror Mirror (#19) is expected in 2027. Butcher is writing toward the Big Apocalyptic Trilogy — the planned endgame of the entire series.",
+      color: 'amber',
     },
   ],
   sections: [
@@ -228,11 +265,20 @@ export const dresdenFiles: ReadingOrderEntry = {
       heading: 'What to know before you start',
       type: 'bullets',
       bullets: [
-        "Storm Front and Fool Moon are the weakest books. Butcher has said he'd rewrite them given the chance. Push through.",
-        'The series rewards patience — payoffs from book 3 appear in book 15. There is a long game being played.',
-        'The audiobooks narrated by James Marsters are widely considered among the best in the genre.',
-        'Peace Talks and Battle Ground were written as one book — buy both before starting Peace Talks.',
-        'Twelve Months (book 18) is expected in 2026. Mirror Mirror and a capstone trilogy are planned to follow.',
+        "Storm Front and Fool Moon are the weakest books. Butcher has said he'd rewrite them given the chance. Push through — Grave Peril is where the series becomes something special.",
+        'Buy both Peace Talks and Battle Ground before starting Peace Talks — they were written as one novel and split at publication. Peace Talks ends mid-story.',
+        'Avoid spoilers from book 12 onward. Changes is a turning point that hits hardest cold. Keep away from subreddits and fan wikis until you reach it.',
+        'The series is best read in order. There is no good entry point mid-series — every book assumes the ones before it.',
+      ],
+    },
+    {
+      heading: 'Is Dresden right for you?',
+      type: 'bullets',
+      bullets: [
+        'Read Dresden if: you like fast-paced noir with genuine wit, or want an urban fantasy series where the mythology deepens into something genuinely epic. The fun of book 1 and the scope of book 12 are the same series.',
+        'Read Dresden if: you liked Sanderson or Rothfuss — series where the magic system has rules and the world-building rewards attention. Dresden is noir-flavoured but the structural DNA is similar.',
+        "Dresden may not be for you if: you need emotional safety. The series kills characters you love, permanently. Battle Ground in particular is a sustained gut-punch with no relief.",
+        "Dresden may not be for you if: the early books feel too pulpy or light. If Storm Front and Fool Moon haven't clicked by book 3, the series probably isn't for you.",
       ],
     },
   ],
@@ -243,14 +289,18 @@ export const dresdenFiles: ReadingOrderEntry = {
       desc: 'Serious — noir tone, violence, war and loss, but always a thread of hope',
     },
     {
-      label: 'Books 12–17',
+      label: 'Books 12+',
       level: 5,
       desc: 'Brutal — major deaths, catastrophic stakes, no safety net',
     },
   ],
-  lastUpdated: '2026-05-12',
+  booksLikeSlug: 'storm-front',
+  metaDescription:
+    "The complete Dresden Files reading order: all 18 Jim Butcher novels, the short story collections in the right sequence, and where Mirror Mirror fits.",
+  shortName: 'Dresden Files',
+  lastUpdated: '2026-05-18',
   finishedLabel: "Finished what's published?",
   categoryHref: '/fantasy/urban-fantasy',
   categoryLabel: 'Browse Urban Fantasy',
-  related: ['kingkiller', 'first-law'],
+  related: ['kingkiller', 'first-law', 'kate-daniels', 'witcher', 'black-company', 'mark-lawrence'],
 };
