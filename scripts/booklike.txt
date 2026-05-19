@@ -259,17 +259,6 @@ Slug: /reading-orders/dark-tower
 
 4 Rick Riordan Reading Order (Rick Riordan — Percy Jackson & mythology)
 
-Five interconnected series all set in a modern world where mythologies are real:
-Percy Jackson and the Olympians (5 books, complete): The Lightning Thief → Sea of Monsters → The Titan's Curse → The Battle of the Labyrinth → The Last Olympian — Greek mythology, Camp Half-Blood; start here
-The Heroes of Olympus (5 books, complete): The Lost Hero → The Son of Neptune → The Mark of Athena → The House of Hades → The Blood of Olympus — direct sequel series, new cast plus Percy; read after PJO
-The Kane Chronicles (3 books, complete): The Red Pyramid → The Throne of Fire → The Serpent's Shadow — Egyptian mythology, separate protagonists; crossover novellas connect this to PJO
-Magnus Chase and the Gods of Asgard (3 books, complete): The Sword of Summer → The Hammer of Thor → The Ship of the Dead — Norse mythology; Annabeth (from PJO) appears, so read after at least PJO
-The Trials of Apollo (5 books, complete): The Hidden Oracle → The Dark Prophecy → The Burning Maze → The Tyrant's Tomb → The Tower of Nero — Apollo turned human; requires Heroes of Olympus as context
-Reading order: PJO (books 1–5) → Heroes of Olympus → Trials of Apollo is the main Greek arc; Kane Chronicles and Magnus Chase can run in parallel after PJO
-Each mythological series (Egyptian, Norse) works as a standalone entry if readers aren't invested in Greek mythology
-Slug: /reading-orders/rick-riordan
-
-
 5 Shadowhunter Chronicles Reading Order (Cassandra Clare)
 
 Massive expanded universe — 6+ series, all interconnected, all set in the same world of Shadowhunters (Nephilim) hunting demons alongside warlocks, vampires, faeries, and werewolves
@@ -497,15 +486,8 @@ Strong search volume, genuine reading order complexity
 
 16 Green Bone Saga Reading Order (Fonda Lee)
 
-Jade City → Jade War → Jade Legacy
-Slug: /reading-orders/green-bone-saga
-
 
 17 Old Kingdom / Sabriel Reading Order (Garth Nix)
-
-Sabriel → Lirael → Abhorsen → Clariel → Goldenhand
-Clariel is a prequel — read in publication or chronological?
-Slug: /reading-orders/old-kingdom
 
 
 18 Gentleman Bastard Reading Order (Scott Lynch)
@@ -545,17 +527,7 @@ Gwynne is known for visceral, tactically detailed battle scenes and found-family
 Slug: /reading-orders/john-gwynne
 
 
-21 Warhammer 40K - Horus Heresy Reading Order (Dan Abnett)
-
-54-book multi-author series set 10,000 years before the main Warhammer 40,000 timeline — the civil war that made the current setting possible
-Horus, the Emperor's most trusted son and Warmaster, turns to Chaos; half the Space Marine Legions follow him, half stay loyal to the Emperor
-The series ends at the Siege of Terra — the Emperor fights Horus aboard his flagship, both are mortally/critically wounded; the Emperor is interred on the Golden Throne in the state all 40K players know
-Entry point: Horus Rising (book 1) by Dan Abnett — the gold standard opening, widely considered the best single book in the series
-The series is notorious for variable quality and pacing: essential reads exist alongside pure filler; a "must-read" shortlist is how most fans approach it
-Core must-reads: Horus Rising + False Gods + Galaxy in Flames (the opening trilogy), then selectively — Legion, A Thousand Sons, Prospero Burns, The First Heretic, Know No Fear are commonly cited highlights
-The Primarchs novellas: standalone character studies of individual Space Marine leaders — accessible without reading the full series
-Not required to enjoy main Warhammer 40K fiction — this is a prequel series, not an entry point to 40K in general
-Slug: /reading-orders/warhammer-horus-heresy
+21 Horus Heresy Reading Order (Dan Abnett)
 
 
 22 Licanius Trilogy Reading Order (James Islington)
@@ -831,19 +803,3 @@ Style guide for all banners:
 - Mood-first: each image should feel like the series before you know what it is
 
 ### Need banners — prompts below
-
----
-
-**brent-weeks** (Brent Weeks — Night Angel & Lightbringer)
-Slug: /reading-orders/brent-weeks
-Prompt:
-A city split by a single composition: on the left, night — grimy canals and shadow-cloaked rooftops, a wetboy assassin moving between lamplit alleys, black as shadow, daggers drawn. On the right, dawn — the Chromeria's towers rising from a coastal island, white light splitting through a Prism into every color of the spectrum. The dividing line between the two halves glows: pure darkness on one side, light breaking into color on the other. The mood captures both series: shadow and sacrifice in Night Angel, light and power in Lightbringer. Photorealistic cinematic fantasy digital art, dark city left / chromatic light right, split-panel composition, no text.
-A Prism stands at the apex of the Chromeria — a towering lighthouse structure on a small island — arms raised as white sunlight pours through their body and splits into every color of the spectrum. Each color crystallizes mid-air into solid luxin: red flame, blue ice, green vines, yellow glass, sub-red heat shimmer, superviolet. The surrounding sea catches the refracted light in rainbow streaks. The atmosphere is of immense controlled power. Photorealistic cinematic fantasy digital art, prism light-split spectrum, crystallized magic material formation, sea reflections, no text.
-
----
-
-**red-rising** (Pierce Brown — Red Rising Saga)
-Slug: /reading-orders/red-rising
-Prompt:
-A young Red Caste miner in a worn dusty mining suit stands left of center, helmet off, face turned rightward across a vast Martian canyon — expression of quiet defiance, lit by Martian dawn. To the right, on a high cliff ridge above the canyon, a line of Gold-caste soldiers in gleaming Roman-influenced armor stand silhouetted — spears raised, watching from above. Between them the canyon drops sharply, industrial mining scaffolding clinging to the rock face. Background: sweeping Martian plains, distant mountains, bruised amber sunrise sky. Horizontal composition — poverty left, power right, the chasm between them center-frame. The miner and soldiers occupy the middle vertical strip so the image reads correctly when cropped to a wide banner. Photorealistic cinematic sci-fi digital art, 3:2 aspect ratio, warm red-amber Martian palette, no text, no logos.
-A vast terraformed Martian landscape at dawn — red dust plains stretching to distant mountains, the sky a bruised amber above. In the foreground on the left: a young man in a miner's worn suit stands at the edge of a massive open mining pit, looking across the chasm for the first time. On the far ridge to the right: Gold-caste soldiers in gleaming Roman-influenced armor watch from the clifftop. Between them: the entire horizontal distance of a society — the pit floor far below, the two figures separated by the void of the chasm. The mood is revolution waiting to ignite: poverty on one side, power on the other, and one man at the threshold. Photorealistic cinematic sci-fi digital art, Martian dawn light, Roman-aesthetic armor silhouettes, horizontal class divide composition, 3:2 aspect ratio, no text, no logos.
