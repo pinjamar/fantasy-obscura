@@ -714,7 +714,7 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
               {book.cover_url ? (
                 <img src={book.cover_url} alt={book.title} class="w-full h-full object-cover" onerror="this.onerror=null;this.src='/grimplaceholder.png';" />
               ) : (
-                <div class="w-full h-full flex items-center justify-center text-zinc-300">📖</div>
+                <img src="/grimplaceholder.png" alt={book.title} class="w-full h-full object-cover" />
               )}
             </div>
             <div class="flex-1 min-w-0">

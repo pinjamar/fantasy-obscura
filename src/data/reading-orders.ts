@@ -110,6 +110,9 @@ import { valdemar } from './reading-orders/valdemar';
 import { dune } from './reading-orders/dune';
 import { middleEarth } from './reading-orders/middle-earth';
 import { rickRiordan } from './reading-orders/rick-riordan';
+import { greenBoneSaga } from './reading-orders/green-bone-saga';
+import { oldKingdom } from './reading-orders/old-kingdom';
+import { horusHeresy } from './reading-orders/horus-heresy';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -145,6 +148,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   dune,
   middleEarth,
   rickRiordan,
+  greenBoneSaga,
+  oldKingdom,
+  horusHeresy,
 ];
 
 

@@ -64,7 +64,10 @@ export type ReadingOrderImageSlug =
   | 'sarah-j-maas'
   | 'dune'
   | 'middle-earth'
-  | 'riordanverse';
+  | 'riordanverse'
+  | 'old-kingdom'
+  | 'green-bone-saga'
+  | 'horus-heresy';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -112,6 +115,9 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'dune':                 'dune',
   'middle-earth':         'middle-earth',
   'rick-riordan':         'riordanverse',
+  'old-kingdom':          'old-kingdom',
+  'green-bone-saga':      'green-bone-saga',
+  'horus-heresy':         'horus-heresy',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

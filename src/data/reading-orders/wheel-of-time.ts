@@ -3,7 +3,7 @@ import type { ReadingOrderEntry } from '../reading-orders';
 export const wheelOfTime: ReadingOrderEntry = {
   slug: 'wheel-of-time',
   name: 'The Wheel of Time',
-  author: 'Robert Jordan & Brandon Sanderson',
+  author: 'Robert Jordan',
   seriesStatus: 'complete',
   seriesStatusLabel: '✅ Complete Series',
   description:
