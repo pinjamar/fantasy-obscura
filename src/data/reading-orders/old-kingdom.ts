@@ -7,10 +7,10 @@ export const oldKingdom: ReadingOrderEntry = {
   seriesStatus: 'complete',
   seriesStatusLabel: '✅ Complete Series',
   description:
-    "One of the great fantasies of the 1990s and still one of the best — a world split by a Wall, beyond which magic and death work by entirely different rules. Sabriel, the first book, is close to perfect: a female protagonist navigating a dying kingdom, a magic system built around seven bells and the precincts of Death, and a plot that moves without wasting a page. The trilogy that follows (Sabriel → Lirael → Abhorsen) is the essential read. Clariel and Goldenhand extend it; Terciel & Elinor fills in the history. Start with Sabriel and trust the world — it earns the investment quickly.",
+    "One of the great fantasies of the 1990s and still one of the best — a world split by a Wall, beyond which magic and death work by entirely different rules. Sabriel, the first book, is close to perfect: a female protagonist navigating a dying kingdom, a magic system built around seven bells and the precincts of Death, and a plot that moves without wasting a page. The trilogy that follows (Sabriel → Lirael → Abhorsen) is the essential read. Beyond it: Goldenhand and The Creature in the Case extend Lirael's arc; Clariel is a prequel about a trilogy villain; Terciel & Elinor fills in the history of Sabriel's parents; To Hold the Bridge collects companion short fiction. Start with Sabriel and trust the world — it earns the investment quickly.",
   darknessDisplay: '🕯️🕯️🕯️ Moderate',
   orderNote:
-    'Read the main trilogy first (Sabriel → Lirael → Abhorsen). Goldenhand follows directly from Abhorsen. Clariel is a prequel best read after Abhorsen — its main character appears as a villain in the trilogy, and reading in publication order makes that payoff land correctly.',
+    'Read the main trilogy first (Sabriel → Lirael → Abhorsen). After that: The Creature in the Case bridges to Goldenhand — read them in that order. Clariel is a prequel best read after Abhorsen, not before — its protagonist becomes a trilogy villain and that irony only lands once you know the outcome.',
   groups: [
     {
       label: 'The Main Trilogy',
@@ -46,10 +46,18 @@ export const oldKingdom: ReadingOrderEntry = {
     },
     {
       label: 'Beyond the Trilogy',
-      sublabel: 'sequels and prequels — all optional, all worthwhile',
+      sublabel: 'sequels, prequels, and companion fiction — all optional',
       noteType: 'optional',
-      note: 'Goldenhand is a direct sequel to Abhorsen and the most essential addition. Clariel is a prequel set 600 years before Sabriel — best read after Abhorsen, since its protagonist becomes a villain in the trilogy and the reversal lands harder once you know the outcome. Terciel & Elinor tells the story of Sabriel\'s parents and can be read any time after Sabriel.',
+      note: "Goldenhand is the most essential addition — a direct sequel to Abhorsen. The Creature in the Case is a short bridge novella best read just before it. Clariel is a prequel set 600 years before Sabriel, best read after Abhorsen since its protagonist becomes a trilogy villain. Terciel & Elinor and To Hold the Bridge round out the world for dedicated fans.",
       books: [
+        {
+          title: 'The Creature in the Case',
+          slug: 'the-creature-in-the-case-an-old-kingdom-novella',
+          status: 'supplementary',
+          note: "A short novella featuring Nicholas Sayre — a character from Lirael and Abhorsen — in a story set just after the trilogy. Bridges Abhorsen and Goldenhand; read before Goldenhand for best effect.",
+          page_count: null,
+          publication_year: 2006,
+        },
         {
           title: 'Goldenhand',
           slug: 'goldenhand',
@@ -73,6 +81,14 @@ export const oldKingdom: ReadingOrderEntry = {
           note: "The story of Sabriel's parents — Terciel, the Abhorsen, and Elinor, a girl from south of the Wall drawn into the Old Kingdom. Read any time after Sabriel. Fills in the backstory but not required.",
           page_count: null,
           publication_year: 2021,
+        },
+        {
+          title: 'To Hold the Bridge',
+          slug: 'to-hold-the-bridge',
+          status: 'supplementary',
+          note: "A short story anthology collecting Old Kingdom stories alongside other Garth Nix fiction. The title story is an Old Kingdom prequel. For completionists — read after finishing the main series.",
+          page_count: null,
+          publication_year: 2015,
         },
       ],
     },
@@ -128,8 +144,10 @@ export const oldKingdom: ReadingOrderEntry = {
       bullets: [
         "Sabriel (1995) → Lirael (2001) → Abhorsen (2003) is the essential path. Read Lirael and Abhorsen together — stopping between them is difficult and they function as a single story.",
         "Clariel (2014) is best read after Abhorsen. It is a prequel chronologically, but it contains a character the trilogy uses as a villain — that dramatic irony only works if you already know the outcome.",
+        "The Creature in the Case (2006) is a short novella featuring Nicholas Sayre set just after Abhorsen — read it before Goldenhand for best effect.",
         "Goldenhand (2016) follows directly from Abhorsen. If you want more after the trilogy, this is the natural next read.",
-        "Terciel & Elinor (2021) is the most optional entry — a prequel about Sabriel's parents that fleshes out the mythology but does not affect the main story. Read after Sabriel or save it for last.",
+        "Terciel & Elinor (2021) is a prequel about Sabriel's parents that fleshes out the mythology but does not affect the main story. Read after Sabriel or save it for last.",
+        "To Hold the Bridge (2015) is a mixed anthology — some Old Kingdom stories, some not. For completionists only; read after finishing the main series.",
       ],
     },
   ],
@@ -140,7 +158,8 @@ export const oldKingdom: ReadingOrderEntry = {
     { label: 'Goldenhand', level: 3, desc: 'Comparable to the main trilogy in tone' },
   ],
   metaDescription:
-    'The complete Old Kingdom reading order: Sabriel, Lirael, Abhorsen, Goldenhand, Clariel, and Terciel & Elinor by Garth Nix — where to start and where Clariel fits.',
+    'The complete Old Kingdom reading order: Sabriel, Lirael, Abhorsen, Goldenhand, Clariel, Terciel & Elinor, and all companion fiction by Garth Nix — where to start and where Clariel fits.',
+  booksLikeSlug: 'sabriel',
   shortName: 'Old Kingdom',
   lastUpdated: '2026-05-19',
   finishedLabel: 'Finished the trilogy?',

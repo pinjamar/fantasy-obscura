@@ -7,9 +7,10 @@ export const greenBoneSaga: ReadingOrderEntry = {
   seriesStatus: 'complete',
   seriesStatusLabel: '✅ Complete Series',
   description:
-    "A crime epic in fantasy clothing — The Godfather transplanted to a fictional Pacific island where jade grants martial arts powers and rival clans fight for control of everything. Three books, one family, thirty years of history. Fonda Lee builds Kekon with the same care Jordan gave the Wheel of Time world, but the story moves at a crime thriller's pace: political, intimate, and unsparing. The violence is real, the losses are permanent, and the ending earns every page that precedes it. One of the most decorated fantasy trilogies of the last decade.",
+    "A crime epic in fantasy clothing — The Godfather transplanted to a fictional Pacific island where jade grants martial arts powers and rival clans fight for control of everything. Three novels, one family, thirty years of history. Fonda Lee builds Kekon with the same care Jordan gave the Wheel of Time world, but the story moves at a crime thriller's pace: political, intimate, and unsparing. The violence is real, the losses are permanent, and the ending earns every page that precedes it. One of the most decorated fantasy trilogies of the last decade.",
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
-  orderNote: 'Three books, read in order. Strictly linear — no spinoffs or side content to worry about.',
+  orderNote:
+    'Three novels, read in order. The short stories at the end are best read after the full trilogy — they are prequels in setting, but the emotional payoff depends on knowing who these characters become.',
   books: [
     {
       title: 'Jade City',
@@ -34,6 +35,22 @@ export const greenBoneSaga: ReadingOrderEntry = {
       note: "The full arc closes across thirty years. Time jumps, succession, and the question the whole trilogy has been building toward: what does it cost to run an empire through violence, and was it worth it? A remarkable ending.",
       page_count: 688,
       publication_year: 2021,
+    },
+    {
+      title: 'The Jade Setter of Janloon',
+      slug: 'the-jade-setter-of-janloon',
+      status: 'supplementary',
+      note: "A standalone short story exploring life in Kekon outside the main clan leadership — the craftspeople who implant jade into Green Bone warriors, and the world they inhabit in the clans' shadow. Published in Uncanny Magazine (2022). Read after the trilogy.",
+      page_count: null,
+      publication_year: 2022,
+    },
+    {
+      title: 'Jade Shards',
+      slug: 'jade-shards',
+      status: 'supplementary',
+      note: "Four prequel short stories on the Kaul and Ayt families before Jade City: Ayt Mada's youth, Kaul Lan challenging his grandfather, Hilo and Maik Wen's early relationship, and Kaul Shae as a foreign informer. Read after the full trilogy — these are prequels in setting but sequels in emotional impact.",
+      page_count: null,
+      publication_year: 2023,
     },
   ],
   cardsPosition: 'above',
@@ -75,7 +92,7 @@ export const greenBoneSaga: ReadingOrderEntry = {
       type: 'bullets',
       bullets: [
         "Read it if: you want political fantasy where the families feel as real as the magic. The Kaul siblings carry the whole story — plot is subordinate to character and consequence.",
-        "Read it if: you want a complete, self-contained trilogy with a definitive ending. Three books, no padding, no spinoffs. It ends.",
+        "Read it if: you want a complete, self-contained trilogy with a definitive ending. Three books, no padding. It ends.",
         "Read it if: you want fantasy outside the European medieval template. Kekon is original — not 'Asian aesthetics' as decoration but as cultural depth embedded in every system the world runs on.",
         "It may not be for you if: you need a fundamentally heroic protagonist. This is morally grey fiction throughout. Clan leaders do terrible things for reasons the series asks you to understand without endorsing.",
         "It may not be for you if: you want fast-paced action as the dominant mode. The books move well, but the engine is political drama and family tragedy. The action scenes are excellent — they are not the point.",
@@ -98,8 +115,9 @@ export const greenBoneSaga: ReadingOrderEntry = {
     { label: 'Jade Legacy', level: 4, desc: 'Grief, succession, and an emotionally demanding close' },
   ],
   metaDescription:
-    'The complete Green Bone Saga reading order: Jade City, Jade War, and Jade Legacy by Fonda Lee — all three books in order.',
+    'The complete Green Bone Saga reading order: Jade City, Jade War, Jade Legacy, and all companion fiction by Fonda Lee.',
   shortName: 'Green Bone Saga',
+  booksLikeSlug: 'jade-city',
   lastUpdated: '2026-05-19',
   finishedLabel: 'Finished the trilogy?',
   categoryHref: '/fantasy/grimdark',
