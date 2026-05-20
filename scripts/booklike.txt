@@ -372,24 +372,6 @@ Slug: /reading-orders/locked-tomb
 
 10 Dungeon Crawler Carl Reading Order (Matt Dinniman)
 
-7 books published (ongoing): Dungeon Crawler Carl → Carl's Doomsday Scenario → The Dungeon Anarchist's Cookbook → The Gate of the Fool → The Butcher's Masquerade → The Eye of the Bedlam Bride → The Resurrection Machine → (continuing)
-The premise: aliens have destroyed Earth's surface and trapped its population inside a massive dungeon — a real-time TV show broadcast across the galaxy for alien audiences; Carl and his ex-girlfriend's cat Princess Donut become contestants; survival requires leveling up, navigating a brutal game show structure, and finding a way out
-Read in publication order — each book ends in a cliffhanger and the story is continuous; no standalone entry points within the series
-The series started as a free web serial on Royal Road before being picked up by Podium Publishing; early chapters are still available free online
-
-Audiobook vs text:
-The Jeff Hays narration (Soundbooth Theater) is widely considered the definitive format — one of the most praised audiobook productions in genre fiction; full cast, sound effects, and music give it a radio drama quality that changes how the humor and pacing land
-Many readers who bounced off the text found the audiobook immediately compelling; if book 1 doesn't grip you in text, try the audio before abandoning it
-The Kindle/print editions are the edited published versions; the Royal Road originals differ in minor ways but the core story is the same
-New readers should pick one format and commit — switching mid-series is jarring due to the distinct voice Jeff Hays establishes for each character
-
-Key series elements:
-LitRPG structure: stat boxes, class selections, level-ups, skill acquisitions are plot mechanics, not just flavor — the system is gamed and exploited by characters in ways that matter narratively
-Political satire: the dungeon's TV show format is used to mock streaming culture, corporate exploitation, and media spectacle; the humor is dark and specific
-Princess Donut (the cat) is a co-protagonist in every meaningful sense — she levels up, develops her own class, and drives significant plot; don't let the premise mislead you
-The tone escalates: book 1 is chaotic comedy; by books 5–7 the emotional stakes and world-building complexity are substantial
-Slug: /reading-orders/dungeon-crawler-carl
-
 
 11 Cradle Reading Order (Will Wight)
 
@@ -492,16 +474,6 @@ Strong search volume, genuine reading order complexity
 
 18 Gentleman Bastard Reading Order (Scott Lynch)
 
-7-book planned series — 3 published (ongoing, very slow release): The Lies of Locke Lamora → Red Seas Under Red Skies → The Republic of Thieves → (The Thorn of Emberlain — long delayed, still unannounced)
-Locke Lamora and Jean Tannen: a con artist and his partner running elaborate heists inside Camorr, a city built on top of ancient alien glass ruins whose builders vanished without explanation
-Each book relocates to a new city — the world expands without retreading the same setting
-The Bondsmagi: rare, enormously powerful sorcerers who operate as politically neutral mercenaries; a single one changes every power calculation in any scene they enter
-The Lies of Locke Lamora is largely self-contained — ends in a satisfying place; the heist structure pays off fully in book 1 even if the series stalls
-The Republic of Thieves (book 3) finally introduces Sabetha — Locke's long-referenced love interest — and fleshes out the Bondsmagi's internal politics
-The series is on indefinite hiatus — Scott Lynch has faced well-documented personal struggles; readers should enter knowing book 4 has no release date
-The city of Camorr draws heavily on Venice: canals, criminal guilds, a brutal class divide, elegant architecture above and rot below
-Slug: /reading-orders/gentleman-bastard
-
 
 19 Brent Weeks Reading Order (Brent Weeks — Night Angel & Lightbringer)
 
@@ -516,15 +488,6 @@ Slug: /reading-orders/brent-weeks
 
 
 20 John Gwynne Reading Order (John Gwynne)
-
-Three separate series — two share a world, one is entirely standalone:
-The Faithful and the Fallen (4 books, complete): Malice → Valor → Ruin → Wrath — traditional epic fantasy, good vs evil war, multiple POVs, high death toll
-Of Blood and Bone (3 books, complete): A Time of Dread → A Time of Blood → A Time of Courage — set 130 years after TFatF in the same world; references TFatF events but can technically stand alone
-Bloodsworn Saga (ongoing, separate world): The Shadow of the Gods → The Hunger of the Gods → The Storm of the Dead → (continuing) — Norse mythology, gods and dragonkin, Odin-inspired oath-bound warriors
-Best entry for new readers: The Shadow of the Gods (Bloodsworn #1) for Norse fans; Malice (TFatF #1) for traditional epic fantasy fans
-TFatF and Of Blood and Bone do not need to be read in sequence — Of Blood and Bone is a soft continuation, not a direct sequel
-Gwynne is known for visceral, tactically detailed battle scenes and found-family ensemble casts
-Slug: /reading-orders/john-gwynne
 
 
 21 Horus Heresy Reading Order (Dan Abnett)
@@ -756,6 +719,133 @@ Sorted: quick reads (trilogies) → mid-length (5-7 books) → epic commitment (
 Helps readers decide what to start based on available time
 Slug: /reading-orders/fantasy-series-by-length
 
+65 Drenai Saga Reading Order (David Gemmell)
+
+12 books, complete series (Gemmell died 2006). Not a sequential epic — more a collection of interconnected standalone novels set in the same world across different eras, sharing recurring characters, bloodlines, and the fortress of Dros Delnoch.
+Entry point: Legend (1984) — the series masterpiece and the correct place to start. All other books can be read in publication order or by sub-series after this.
+Sub-series within Drenai:
+Druss the Legend (3 books): Legend → The First Chronicles of Druss the Legend → The Legend of Deathwalker — the iconic aging warrior across his full arc; Legend shows him old, The First Chronicles shows him young; read Legend first regardless
+Waylander (3 books): Waylander → Waylander II: In the Realm of the Wolf → Hero in the Dark — an assassin seeking redemption; a darker, more personal arc than Druss; publication order
+Skilgannon the Damned (2 books): White Wolf → The Swords of Night and Day — a warrior from a later Drenai era; connected to the Druss mythology; read after Legend
+Standalone Drenai: The King Beyond the Gate, Quest for Lost Heroes, Winter Warriors, Morningstar — each largely self-contained; any order after Legend
+
+The premise of Legend: the fortress of Dros Delnoch — six walls across a mountain pass — is the last defence between the Nadir horde and the Drenai homeland. It is undermanned, crumbling, and going to fall. Druss the Legend, the greatest warrior of the age, is sixty years old and has come out of retirement to die there. The book is not about whether the fortress can be held but about what it means to hold it anyway.
+Gemmell's origin: he wrote Legend while awaiting biopsy results he was certain would confirm terminal cancer; he imagined himself as the defenders of the fort. The cancer was a misdiagnosis. The book was already done.
+
+Core themes across the series: what makes a hero is not victory but the willingness to stand; courage is not the absence of fear; the aging warrior who still shows up; sacrifice as the only honest answer to impossible odds. These themes run every book without variation — this is not a weakness but the whole point.
+Book length: short by modern standards — most run 200–350 pages; the series is an easy, fast read and designed for re-reading.
+The Nadir: the recurring antagonist civilization, a steppe people led periodically by great warlords; not portrayed as a monolithic evil — individual Nadir characters are developed with complexity across multiple books.
+
+Gemmell's other work (not Drenai):
+Jon Shannow trilogy (Wolf in Shadow → The Last Guardian → Bloodstone): post-apocalyptic Western fantasy — Earth after geological catastrophe; a gunslinger-like protagonist in a world that has half-forgotten its own history; a cult series, unconnected to Drenai
+Rigante series (4 books, complete): Celtic-inspired historical fantasy — Rome vs. a Highland people; closer to historical fiction than sword-and-sorcery
+Troy trilogy (Lord of the Silver Bow → Shield of Thunder → Fall of Kings, the last co-written by his wife after his death): myth-deflated retelling of the Trojan War; Helikaon (Aeneas) as protagonist; excellent standalone historical fantasy
+These can be read any time — no Drenai knowledge required.
+
+Slug: /reading-orders/drenai-saga
+
+
+66 Deverry Cycle Reading Order (Katharine Kerr)
+
+15 books, complete series. Welsh-Celtic inspired fantasy built around a reincarnation engine: the same souls are reborn across centuries, carrying unresolved wyrd (fate/debt) from life to life, with each book moving simultaneously through a present-day storyline and past-life flashbacks that explain how the current situation came to be.
+Read in strict publication order — there is no shortcut. The structure is cumulative; the past-life sequences only make sense in the order they are revealed.
+
+Entry: Daggerspell (1986) — introduces Nevyn, an 11th-century mage who swore a reckless oath ("I'll never take a wife until I set this wrong right, and may the gods witness it — never, if it takes a thousand years") that bound him and three other souls into an endless cycle of reincarnation. What Nevyn thinks will take a decade takes centuries. The series follows him across those centuries.
+
+Sub-series (all part of one continuous story — not standalone):
+The Deverry quartet (books 1–4): Daggerspell → Darkspell → The Bristling Wood → The Dragon Revenant — Nevyn's core arc; the reincarnation structure is established; the past-life sequences become the emotional engine of the present-day plot
+The Westlands sequence (books 5–9): A Time of Exile → A Time of Omens → Days of Blood and Fire → Days of Air and Darkness → The Red Wyvern — the world expands significantly; the Westlands and the elven peoples become central; tone darkens
+The Dragon Mage arc (books 9–12): The Red Wyvern → The Black Raven → The Fire Dragon (overlaps with and expands the end of the Westlands arc) — dragons enter the story as characters, not backdrop
+The Silver Wyrm sequence (books 12–15): The Gold Falcon → The Spirit Stone → The Shadow Isle → The Silver Mage — the full resolution of every soul-debt established in book one; Kerr wrote the conclusion to close the cycle completely
+
+The reincarnation structure: past-life chapters are set in different centuries and follow different characters who share the same souls. These are not flashbacks in a conventional sense — they are parallel narratives set hundreds of years apart that only gradually reveal their connection to the present. On first read, the past-life sections can feel like interruptions; by book two or three, they are what readers most want to return to. The structure is Kerr's primary achievement and unlike anything else in the genre.
+Dweomer: the magic system — Welsh-derived, intuitive rather than mechanical; based on the concept of wyrd (a word covering fate, debt, and the consequences that follow unresolved actions across lifetimes); practitioners are called dweomerworkers; magic is earned through spiritual development rather than raw power
+
+Welsh influence: the world of Deverry is directly modelled on early medieval Wales — the political structure (a tanist system of succession), the language (Deverrian reads like Old Welsh), the place names, the social codes. Readers with knowledge of Welsh history will recognise the bones of it immediately; others will absorb it through context.
+Investment required: this is a 15-book cycle with a complex structure that rewards readers who commit. Readers who finish it consistently cite it as one of the most emotionally satisfying long fantasy series in existence. The first book is the slowest — the payoff scales across the full cycle.
+
+Slug: /reading-orders/deverry
+
+
+67 Riyria Revelations Reading Order (Michael J. Sullivan)
+
+Core series: 6 books, complete — but most commonly sold and read as 3 omnibus editions: Theft of Swords (books 1–2) → Rise of Empire (books 3–4) → Heir of Novron (books 5–6). Either format is fine; the omnibus editions are the intended experience.
+Entry: Theft of Swords / The Crown Conspiracy (book 1) — two thieves-for-hire, Royce and Hadrian, are framed for a murder they didn't commit; the tone is lighter than most epic fantasy, comedic at times, with a buddy-duo dynamic that carries the series.
+
+The Riyria universe (read in this order):
+Riyria Revelations (6 books, core): the main story — read first, no exceptions; the prequels spoil backstory and character reveals that land best as surprises
+Riyria Chronicles (prequels, 4+ books ongoing): The Crown Tower → The Rose and the Thorn → The Death of Dulgath → The Disappearance of Winter's Daughter — origin stories for Royce and Hadrian; read after finishing the Revelations; ongoing, Sullivan adds to this series
+Legends of the First Empire (6 books, complete, separate era): Age of Myth → Age of Swords → Age of War → Age of Legend → Age of Death → Age of Empyre — set thousands of years before the Revelations in the same world; a full epic fantasy arc with a different cast; read after both Riyria series or as a separate entry point for readers who prefer larger-scale epic fantasy
+
+The key reading order mistake: readers who discover the Chronicles first and read them as prequels before the Revelations lose significant dramatic payoff from the main series. Publication order (Revelations first) is the correct order regardless of internal chronology.
+
+Royce and Hadrian: the duo dynamic is the series' engine. Royce is a cynical, darkly skilled thief; Hadrian is a former soldier with a conscience and a moral code Royce finds inconvenient. The banter is the point — this is comfort epic fantasy built on a partnership.
+Tone: lighter than most of this list — accessible, fast-paced, not grimdark; readers who bounce off brutal epic fantasy often find this an easier entry into the genre; readers who want moral complexity and darkness may find it too clean
+The twist architecture: Sullivan plants information across the Revelations that only resolves in book 6; re-reading after finishing the series is notably rewarding
+
+Slug: /reading-orders/riyria
+
+
+68 The Sword of Truth Reading Order (Terry Goodkind)
+
+Core series: 11 books — Wizard's First Rule → Stone of Tears → Blood of the Fold → Temple of the Winds → Soul of the Fire → Faith of the Fallen → Pillars of Creation → Naked Empire → Debt of Bones → Chainfire → Phantom → Confessor
+Extended universe: Children of D'Hara (5 novellas, sequel), The Nicci Chronicles (4 books, ongoing spinoff following Nicci), Heart of Black Ice / The Children of D'Hara omnibus — the expanded universe is for committed fans of the main series only
+Read the 11 core books in publication order — the story is continuous and each book builds directly on the last.
+
+The honest series summary: Wizard's First Rule is one of the most gripping opening novels in epic fantasy — a fully self-contained adventure with a clean ending that works as a standalone. The series extends across 10 more books of variable quality. Faith of the Fallen (book 6) is widely cited as the series peak — a prison-break / utopia-collapse story with the sharpest writing Goodkind ever produced. The Chainfire trilogy (books 9–11) concludes the arc but is considered the most difficult stretch. Many readers recommend stopping at Confessor and treating the Children of D'Hara content as optional.
+
+Richard Cypher / Richard Rahl: a woods guide who discovers he is the Seeker of Truth — a role with specific magical and political weight in the Midlands; the character's arc from ordinary man to world-shaping figure runs all 11 books
+Kahlan Amnell: the Mother Confessor, one of a line of women whose touch compels absolute devotion; her power makes intimacy impossible with ordinary men and defines the central romance
+The Confessors: a female order who function as a combination of judge and law enforcement; their touch destroys a person's identity and replaces it with total devotion; the ethical and political implications are developed across the series
+The villain: Darken Rahl, then Emperor Jagang — the series rotates antagonists but the underlying conflict is always tyranny vs. individual will; Goodkind is explicit about the Objectivist philosophy running through the later books, which readers either find galvanising or exhausting
+Debt of Bones: a prequel novella set before book 1 — read after book 2 or at the end of the series; not required
+
+Quality note worth including in the guide: the series is considered to peak around books 1 and 6 and decline in the later Chainfire arc; readers should know this going in rather than discovering it at book 9.
+
+Slug: /reading-orders/sword-of-truth
+
+
+69 The Belgariad Reading Order (David Eddings)
+
+Two complete quintet series plus two companion novels — all 12 books written by David and Leigh Eddings:
+The Belgariad (5 books): Pawn of Prophecy → Queen of Sorcery → Magician's Gambit → Castle of Wizardry → Enchanter's End Game
+The Malloreon (5 books, direct sequel): Guardians of the West → King of the Murgos → Demon Lord of Karanda → Sorceress of Darshiva → The Seeress of Kell
+Companion novels: Belgarath the Sorcerer → Polgara the Sorceress — backstory for the two most beloved supporting characters; read after finishing both quintet series, not before
+
+Read The Belgariad first, then The Malloreon — the second series follows directly from the end of the first with the same cast. The companion novels are rewards for readers who have already committed; they spoil the outcomes of both quintet series.
+
+The premise: Garion, a farm boy raised by his aunt Pol, discovers his lineage is at the centre of a prophecy that has been building for seven thousand years. The Belgariad is the archetypal chosen-one epic fantasy — mythic scale, a long journey through interconnected kingdoms, a mentor figure (Belgarath, the world's oldest sorcerer), and a final confrontation that the world itself has been moving toward.
+Why it holds up: Eddings wrote both series with his wife Leigh (credited only posthumously on later editions); the characterisation of the ensemble — particularly Belgarath and Polgara — is warm, witty, and unusually good for 1980s epic fantasy; the banter is the series' real achievement
+The structure: each book is short by modern standards (250–300 pages); the Belgariad reads as one continuous story across five volumes; pacing is brisk, never padded
+The Malloreon: wider cast, some new nations introduced, the same tone; considered slightly weaker than the Belgariad by most readers but a satisfying conclusion; do not read it before finishing the Belgariad
+
+Related Eddings work (same world, different era):
+The Elenium (3 books): The Diamond Throne → The Ruby Knight → The Sapphire Rose — a Crusades-inflected chivalric fantasy, older protagonist (Sparhawk, a knight rather than a farm boy), darker tone; standalone and unconnected to the Belgariad world but same authorial voice; read after the Belgariad/Malloreon or as a separate entry point
+The Tamuli (3 books): direct sequel to the Elenium — same relationship as Malloreon to Belgariad
+
+Slug: /reading-orders/belgariad
+
+
+70 The World of the Five Gods Reading Order (Lois McMaster Bujold)
+
+Unusual structure: three full novels (each featuring a different protagonist) that can be read in any order, plus eleven Penric and Desdemona novellas with their own internal chronology. The novels share a world and a theology but not a cast.
+
+The three novels (read in any order — each is standalone):
+The Curse of Chalion (2001): a retired soldier takes a position in a royal household and becomes entangled in a curse that has corrupted the ruling family across generations; the most grounded and politically dense of the three; widely considered the best entry point
+Paladin of Souls (2003): sequel to Chalion in the sense of sharing the same world and some characters, but follows a different protagonist — a middle-aged widow who undertakes a religious pilgrimage and discovers it is nothing like she planned; Bujold's most character-focused novel
+The Hallowed Hunt (2005): set in an earlier era of the same world; a murder mystery with a theological dimension; the most self-contained of the three
+
+The Five Gods theology: the world has five gods (Father, Mother, Son, Daughter, Bastard) who compete for souls and intervene indirectly in mortal affairs through their saints. The theology is deeply embedded in the plot of each book — characters' relationships with the gods are not backdrop but active narrative elements. Bujold uses it with unusual rigour and sympathy.
+
+The Penric and Desdemona novellas (11 as of 2025, ongoing):
+Penric's Demon → Penric and the Shaman → Penric's Mission → Mira's Last Dance → The Prisoner of Limnos → Penric's Fox → The Orphans of Raspay → The Physicians of Vilnoc → Masquerade in Lodi → The Assassins of Thasalon → Knot of Shadows
+Read in publication order — each builds on the last; Desdemona (a chaos demon inhabiting Penric's body) develops across the series; they are novellas (100–150 pages each) and read quickly
+Set in the same world as the three novels but in a different region (Peninsular nations rather than Chalion) and a different era — no required reading before starting Penric; either the novels or the novellas can come first
+
+Entry question: start with The Curse of Chalion for the richest introduction to the world's theology and politics; start with Penric's Demon for a lighter, faster entry; the three novels and the Penric novellas function as two distinct but connected reading tracks
+
+Slug: /reading-orders/world-of-the-five-gods
+
 ---
 
 ## Notes for Claude Code
@@ -803,3 +893,21 @@ Style guide for all banners:
 - Mood-first: each image should feel like the series before you know what it is
 
 ### Need banners — prompts below
+
+**Drenai Saga**
+A lone armoured warrior stands on the highest rampart of a crumbling stone fortress at first light, back to the viewer, twin-headed war-axe resting across his shoulders, silhouetted against a vast darkened plain where an enemy army stretches to the horizon under a blood-red sky. The fortress walls step down in tiers behind him, torches burning on each level. Smoke rises in the distance. Heroic last-stand mood, epic scale, ancient stone, the weight of impossible odds. Photorealistic cinematic fantasy digital art, dramatic atmospheric lighting, no text, no visible faces.
+
+**Deverry Cycle**
+A misty Celtic hillside at twilight — ancient standing stones in the foreground emit a faint silver-blue dweomer glow, ravens circling overhead. The landscape layers multiple eras simultaneously: a medieval walled town in the middle distance, older stone ruins beyond it, and further still a suggestion of even older forest as if different centuries exist at the same time. The light is cool and liminal, somewhere between dusk and something older. Welsh-Celtic mythological atmosphere, reincarnation and time as mood. Photorealistic cinematic fantasy digital art, no text, no visible faces.
+
+**Riyria Revelations**
+Two cloaked figures stand back-to-back on a rain-slicked cobblestone street at night in a medieval city, one lean and hooded in dark leather, one broader-shouldered in a worn travel cloak, both facing outward into surrounding darkness. Lantern light from above catches the wet stone and the edge of a drawn blade. The mood is roguish and conspiratorial — a city of secrets, two men who know its back alleys. Photorealistic cinematic fantasy digital art, dramatic contrast between lamplight and deep shadow, no text, no visible faces.
+
+**Sword of Truth**
+A lone figure stands at the edge of a vast ruined fortress at golden hour, a great sword drawn and held at rest, robes and cloak catching in a wind that bends the surrounding grassland. Beyond the walls, a dark empire's banners are barely visible in the far distance. The light is dramatic and epic — freedom vs. tyranny rendered in landscape. Ancient carved stone around the figure, sky half gold and half storm. Photorealistic cinematic fantasy digital art, no text, no visible faces.
+
+**The Belgariad**
+A group of silhouetted travellers on horseback crests a hill at dusk, a vast continent of different kingdoms visible in the distance — a walled city on the left, forested hills to the right, a distant mountain range under a purple sky. The mood is warm and classic — an epic journey just beginning, a world full of places to go. Gentle golden light from behind the travellers. The feeling of a great adventure unfolding. Photorealistic cinematic fantasy digital art, no text, no visible faces.
+
+**World of the Five Gods**
+A candlelit chapel interior at twilight — five alcoves line the curved stone walls, each holding a carved symbol of one of the five gods, soft light emanating from each in a different warm tone (gold, rose, amber, pale blue, and a cooler silver for the Bastard). A single figure kneels in silhouette at the centre, head bowed. The architecture is Romanesque and intimate, not grand — a god who answers prayers rather than demands them. Sacred, quiet, genuinely theological mood. Photorealistic cinematic fantasy digital art, no text, no visible faces.

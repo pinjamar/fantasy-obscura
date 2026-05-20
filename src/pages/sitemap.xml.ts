@@ -59,25 +59,17 @@ export const GET: APIRoute = async ({ locals }) => {
       .map((t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
   )];
 
-  // Fetch DB-driven reading order slugs (series not in curated list) — paginated to bypass 1000-row cap
-  const PAGE = 1000;
-  const curatedSet = new Set(CURATED_READING_ORDER_SLUGS);
-  const allSeriesNames = new Set<string>();
-  let seriesFrom = 0;
-  while (true) {
-    const { data: seriesRows } = await supabase
-      .from('books')
-      .select('series')
-      .not('series', 'is', null)
-      .range(seriesFrom, seriesFrom + PAGE - 1);
-    if (!seriesRows?.length) break;
-    for (const b of seriesRows) if (b.series) allSeriesNames.add(b.series as string);
-    if (seriesRows.length < PAGE) break;
-    seriesFrom += PAGE;
-  }
-  const dbSeriesSlugs = [...new Set(
-    [...allSeriesNames].map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
-  )].filter((s) => !curatedSet.has(s));
+  // Only the small set of non-curated reading order pages explicitly allowed to be indexed.
+  // All other DB-driven reading order pages are noindexed — excluding them from the sitemap
+  // avoids wasting crawl budget on pages Google will immediately mark noindex.
+  const dbSeriesSlugs = [
+    'he-who-fights-with-monsters',
+    'caraval',
+    'hell-bent',
+    'river-of-time',
+    'riverside',
+    'crescent-city',
+  ];
 
   const entries: string[] = [
     // Static high-priority pages

@@ -5,6 +5,29 @@ Covers prose voice, required sections, SEO structure, and the data shape.
 
 ---
 
+## ⚠️ Before Writing Any Guide — DB First
+
+**Never write book titles, slugs, or page counts from memory. Always query the DB first.**
+
+```bash
+node --input-type=module << 'EOF'
+import { config } from 'dotenv'; config();
+import { createClient } from '@supabase/supabase-js';
+const sb = createClient(process.env.PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const {data} = await sb.from('books').select('slug,title,series,series_number,page_count,publication_year,cover_url')
+  .or('series.ilike.%SERIES NAME%,title.ilike.%BOOK TITLE%').order('series').order('series_number');
+data.forEach(b => console.log(`${b.series_number} | ${b.slug} | ${b.title} | ${b.series} | pg:${b.page_count} yr:${b.publication_year} cover:${!!b.cover_url}`));
+EOF
+```
+
+- Book slugs in the guide **must exactly match** DB slugs — this is what pulls cover images
+- Book titles must match DB titles exactly (e.g. "Valour" not "Valor", "The Fury of the Gods" not "The Storm of the Dead")
+- Page counts must come from DB, not guessed
+- If a book is missing from DB, add it with `node scripts/add-books.mjs "Title" "Author"` before writing the guide
+- After writing, run `node scripts/check-reading-order-books.mjs` to verify all slugs exist
+
+---
+
 ## The Voice
 
 Reading order pages are written by a reader who has finished the series, not a publisher blurb writer.

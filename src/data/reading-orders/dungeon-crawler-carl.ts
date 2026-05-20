@@ -1,0 +1,178 @@
+import type { ReadingOrderEntry } from '../reading-orders';
+
+export const dungeonCrawlerCarl: ReadingOrderEntry = {
+  slug: 'dungeon-crawler-carl',
+  name: 'Dungeon Crawler Carl',
+  author: 'Matt Dinniman',
+  seriesStatus: 'ongoing',
+  seriesStatusLabel: '📖 Ongoing — 8 books published, more coming',
+  description:
+    "Aliens have destroyed Earth's surface and trapped the surviving population inside a massive dungeon — a real-time TV show broadcast across the galaxy for alien audiences. Carl and his ex-girlfriend's cat, Princess Donut, become contestants. Survival requires leveling up, navigating a brutal game show structure, and finding a way out. What starts as chaotic comedy — stat boxes, absurdist alien producers, Carl's unhinged cat as a co-protagonist — gradually becomes something more: a dark satire of corporate exploitation and streaming culture, and eventually a story with genuine emotional weight and an expanding world. The Jeff Hays audiobook (Soundbooth Theater) is widely considered the definitive format — one of the most praised audiobook productions in genre fiction. If text doesn't immediately hook you, try the audio.",
+  darknessDisplay: '🕯️🕯️🕯️🕯️ Dark — escalates significantly',
+  orderNote:
+    'Read in publication order. Each book ends on a cliffhanger and the story is strictly continuous — there are no standalone entry points within the series. Start with book 1 and commit.',
+  books: [
+    {
+      title: 'Dungeon Crawler Carl',
+      slug: 'dungeon-crawler-carl',
+      status: 'mandatory',
+      note: "Start here. Carl's apartment building collapses into the dungeon on Descent Day. He and Princess Donut enter the crawl. The tone is comedic chaos — the LitRPG mechanics are introduced as absurdist satire, the alien TV producers are a running joke, and Donut immediately establishes herself as a force of nature. One of the most immediately distinctive openers in the genre.",
+      page_count: 488,
+      publication_year: 2020,
+    },
+    {
+      title: "Carl's Doomsday Scenario",
+      slug: 'carls-doomsday-scenario',
+      status: 'mandatory',
+      note: "The dungeon expands. Carl and Donut push deeper, the system exploitation intensifies, and the stakes begin to shift from survival comedy toward something with real consequences. The alien audience dynamic becomes more central to the plot.",
+      page_count: 362,
+      publication_year: 2021,
+    },
+    {
+      title: "The Dungeon Anarchist's Cookbook",
+      slug: 'the-dungeon-anarchists-cookbook',
+      status: 'mandatory',
+      note: "The crafting and system-gaming elements come into full focus. Carl's approach to the dungeon — treating it as something to break rather than play — becomes the series' central engine. The humor remains but the world-building begins to deepen.",
+      page_count: 532,
+      publication_year: 2021,
+    },
+    {
+      title: 'The Gate of the Feral Gods',
+      slug: 'the-gate-of-the-feral-gods',
+      status: 'mandatory',
+      note: "The political satire sharpens. The dungeon's TV show structure and the alien producers behind it are examined with more intent — the comedy is darker and the stakes are more clearly defined. The scale of what Carl is actually inside begins to emerge.",
+      page_count: null,
+      publication_year: 2021,
+    },
+    {
+      title: "The Butcher's Masquerade",
+      slug: 'the-butchers-masquerade',
+      status: 'mandatory',
+      note: "The series' tonal shift becomes pronounced here. The emotional stakes are real — losses carry weight, alliances matter, and the world beyond the immediate dungeon level is now a factor. Still funny, but the comedy is doing heavier lifting.",
+      page_count: 721,
+      publication_year: 2022,
+    },
+    {
+      title: 'The Eye of the Bedlam Bride',
+      slug: 'the-eye-of-the-bedlam-bride',
+      status: 'mandatory',
+      note: "The longest and most ambitious entry to this point. The world-building complexity that has been accumulating since book 3 pays off substantially. Readers who stayed for the comedy find themselves invested in something considerably larger.",
+      page_count: 833,
+      publication_year: 2023,
+    },
+    {
+      title: 'This Inevitable Ruin',
+      slug: 'this-inevitable-ruin',
+      status: 'mandatory',
+      note: "The series' reach extends further — the dungeon's true nature and the political structure around it are in full focus. For readers who have made it this far, the payoff on setups from earlier books begins in earnest.",
+      page_count: null,
+      publication_year: 2024,
+    },
+    {
+      title: 'A Parade of Horribles',
+      slug: 'a-parade-of-horribles',
+      status: 'mandatory',
+      note: "The eighth entry continues the crawl.",
+      page_count: 705,
+      publication_year: 2026,
+    },
+    {
+      title: 'Book 9',
+      slug: null,
+      status: 'upcoming',
+      note: 'Title and release date unannounced.',
+      page_count: null,
+      publication_year: null,
+    },
+    {
+      title: 'Book 10',
+      slug: null,
+      status: 'upcoming',
+      note: 'Title and release date unannounced.',
+      page_count: null,
+      publication_year: null,
+    },
+  ],
+  cardsPosition: 'above',
+  cards: [
+    {
+      title: '🎙️ The Audiobook Is the Format',
+      body: "The Jeff Hays narration (Soundbooth Theater) is widely considered the definitive way to experience this series — full cast, sound effects, and music give it a radio drama quality that changes how the humor and pacing land. Many readers who bounced off the text found the audiobook immediately compelling. If book 1 doesn't grip you in text, try the audio before abandoning the series.",
+      color: 'blue',
+    },
+    {
+      title: '🐱 Princess Donut Is a Co-Protagonist',
+      body: "Do not let the premise mislead you. Princess Donut — Carl's ex-girlfriend's cat — levels up, develops her own class, drives significant plot, and is a full character in every meaningful sense. She is not comic relief. She is Carl's partner. The series does not work without her.",
+      color: 'green',
+    },
+    {
+      title: '🎮 The LitRPG Is the Plot',
+      body: "Stat boxes, class selections, level-ups, and skill acquisitions are not just flavour — they are plot mechanics. Carl and Donut actively game and exploit the system in ways that matter narratively. If you have avoided LitRPG because the mechanics felt decorative, Dinniman uses them differently: the rules of the dungeon are the laws of the story.",
+      color: 'purple',
+    },
+    {
+      title: '📺 The Satire',
+      body: "The dungeon is a real-time TV show broadcast to alien audiences. The alien producers, the sponsor deals, the viewer ratings — all of it is used to mock streaming culture, corporate exploitation, and media spectacle with specific and dark humour. The satire is not subtle and it gets sharper as the series progresses.",
+      color: 'amber',
+    },
+    {
+      title: '📈 The Tone Escalates',
+      body: "Book 1 is chaotic comedy. By books 5–7 the emotional stakes and world-building complexity are substantial — losses are real, alliances matter, and the story Carl and Donut are inside turns out to be much larger than it first appeared. Readers who come for the comedy stay for something else by the midpoint.",
+      color: 'red',
+    },
+    {
+      title: '🌐 Royal Road Origins',
+      body: "The series started as a free web serial on Royal Road before being picked up by Podium Publishing. Early chapters are still available free online. The Kindle and print editions are the edited published versions — minor differences from the originals, same core story. New readers should pick one format and commit: switching mid-series is jarring given how strongly Jeff Hays defines each character's voice.",
+      color: 'zinc',
+    },
+  ],
+  sections: [
+    {
+      heading: 'Is Dungeon Crawler Carl right for you?',
+      type: 'bullets',
+      bullets: [
+        "Read it if: you want an ongoing series that starts as pure comedy and earns genuine emotional weight without losing its voice. The tonal escalation is one of the most successful in genre fiction.",
+        "Read it if: you want LitRPG where the mechanics are narrative tools. The system is actively gamed and exploited — the rules of the dungeon are the laws of the plot, not decoration.",
+        "Read it if: you want dark satire with real teeth. The alien TV show format is used to mock streaming culture, corporate greed, and media exploitation — and it gets sharper as the series progresses.",
+        "It may not be for you if: you need a complete story. Eight books in, the series is ongoing with no announced end. Starting means committing to a series that will keep going.",
+        "It may not be for you if: you find LitRPG stat boxes and level-up mechanics off-putting at the sentence level. The mechanics are used meaningfully here, but they are present on every page.",
+      ],
+    },
+    {
+      heading: 'Format — text or audio?',
+      type: 'bullets',
+      bullets: [
+        "The Jeff Hays audiobook (Soundbooth Theater) is the format most fans recommend as the ideal first experience. Full cast, sound effects, and original music give it a radio drama quality that amplifies the comedy and the character voices considerably.",
+        "The text editions (Kindle and print) are the edited Podium Publishing versions — polished and complete, but missing the audio production layer that defines how many readers experience the series.",
+        "The Royal Road originals are free online and functionally the same story with minor differences. Good for sampling before committing to the published editions.",
+        "Pick one format and stick with it. Jeff Hays establishes distinct voices for every character — switching to text mid-series after internalising his interpretations is a jarring shift.",
+      ],
+    },
+  ],
+  darkness: [
+    {
+      label: 'Books 1–3',
+      level: 3,
+      desc: 'Dark comedy — violence and death, played as absurdist humour',
+    },
+    {
+      label: 'Books 4–6',
+      level: 4,
+      desc: 'Stakes escalate — real losses, earned grief beneath the comedy',
+    },
+    {
+      label: 'Books 7–8',
+      level: 4,
+      desc: 'The humour remains but the world is genuinely brutal in places',
+    },
+  ],
+  metaDescription:
+    'The complete Dungeon Crawler Carl reading order: all 8 books by Matt Dinniman in order, plus audiobook vs text guidance and what to expect from the LitRPG format.',
+  shortName: 'Dungeon Crawler Carl',
+  booksLikeSlug: 'dungeon-crawler-carl',
+  lastUpdated: '2026-05-19',
+  finishedLabel: 'Caught up on the series?',
+  categoryHref: '/fantasy/litrpg',
+  categoryLabel: 'Browse LitRPG',
+  related: ['dresden-files', 'discworld', 'first-law', 'mistborn', 'empyrean', 'mark-lawrence'],
+};

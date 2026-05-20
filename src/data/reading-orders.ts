@@ -113,6 +113,9 @@ import { rickRiordan } from './reading-orders/rick-riordan';
 import { greenBoneSaga } from './reading-orders/green-bone-saga';
 import { oldKingdom } from './reading-orders/old-kingdom';
 import { horusHeresy } from './reading-orders/horus-heresy';
+import { dungeonCrawlerCarl } from './reading-orders/dungeon-crawler-carl';
+import { gentlemanBastard } from './reading-orders/gentleman-bastard';
+import { johnGwynne } from './reading-orders/john-gwynne';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -151,6 +154,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   greenBoneSaga,
   oldKingdom,
   horusHeresy,
+  dungeonCrawlerCarl,
+  gentlemanBastard,
+  johnGwynne,
 ];
 
 

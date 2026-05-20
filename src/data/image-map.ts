@@ -67,7 +67,10 @@ export type ReadingOrderImageSlug =
   | 'riordanverse'
   | 'old-kingdom'
   | 'green-bone-saga'
-  | 'horus-heresy';
+  | 'horus-heresy'
+  | 'dungeon-crawler-carl'
+  | 'gentleman-bastard'
+  | 'john-gwynne';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -118,6 +121,9 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'old-kingdom':          'old-kingdom',
   'green-bone-saga':      'green-bone-saga',
   'horus-heresy':         'horus-heresy',
+  'dungeon-crawler-carl': 'dungeon-crawler-carl',
+  'gentleman-bastard':    'gentleman-bastard',
+  'john-gwynne':          'john-gwynne',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────
