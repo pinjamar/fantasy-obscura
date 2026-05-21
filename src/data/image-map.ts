@@ -70,7 +70,10 @@ export type ReadingOrderImageSlug =
   | 'horus-heresy'
   | 'dungeon-crawler-carl'
   | 'gentleman-bastard'
-  | 'john-gwynne';
+  | 'john-gwynne'
+  | 'caraval'
+  | 'cradle'
+  | 'locked-tomb';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -124,6 +127,9 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'dungeon-crawler-carl': 'dungeon-crawler-carl',
   'gentleman-bastard':    'gentleman-bastard',
   'john-gwynne':          'john-gwynne',
+  'caraval':              'caraval',
+  'cradle':               'cradle',
+  'locked-tomb':          'locked-tomb',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

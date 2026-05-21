@@ -120,6 +120,9 @@ import { horusHeresy } from './reading-orders/horus-heresy';
 import { dungeonCrawlerCarl } from './reading-orders/dungeon-crawler-carl';
 import { gentlemanBastard } from './reading-orders/gentleman-bastard';
 import { johnGwynne } from './reading-orders/john-gwynne';
+import { caraval } from './reading-orders/caraval';
+import { cradle } from './reading-orders/cradle';
+import { lockedTomb } from './reading-orders/locked-tomb';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -161,6 +164,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   dungeonCrawlerCarl,
   gentlemanBastard,
   johnGwynne,
+  caraval,
+  cradle,
+  lockedTomb,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
