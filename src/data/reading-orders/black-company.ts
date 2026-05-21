@@ -183,7 +183,7 @@ export const blackCompany: ReadingOrderEntry = {
     {
       title: '⚖️ Moral Complicity',
       body: 'The Company serves genuinely evil employers and the books treat that complicity seriously. The characters are not reluctant heroes working from the inside, they take the coin and do the job. The darkness is structural, not decorative. This is the question the series is actually asking: what does loyalty cost when the cause is indefensible?',
-      color: 'amber',
+      color: 'blue',
     },
     {
       title: '📖 The Series Continues',

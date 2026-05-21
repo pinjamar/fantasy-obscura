@@ -468,12 +468,9 @@ Strong search volume, genuine reading order complexity
 
 16 Green Bone Saga Reading Order (Fonda Lee)
 
-
 17 Old Kingdom / Sabriel Reading Order (Garth Nix)
 
-
 18 Gentleman Bastard Reading Order (Scott Lynch)
-
 
 19 Brent Weeks Reading Order (Brent Weeks — Night Angel & Lightbringer)
 
@@ -486,12 +483,9 @@ Lightbringer is more ambitious in scope with one of the most praised hard magic 
 Drafting costs the drafter their sanity and lifespan — the stakes of magic use are built into the system
 Slug: /reading-orders/brent-weeks
 
-
 20 John Gwynne Reading Order (John Gwynne)
 
-
 21 Horus Heresy Reading Order (Dan Abnett)
-
 
 22 Licanius Trilogy Reading Order (James Islington)
 
@@ -508,8 +502,62 @@ Slug: /reading-orders/james-islington
 
 23 R.F. Kuang Reading Order
 
-Poppy War trilogy → Babel → Yellowface
-Do they connect? (No — different worlds, same themes)
+Five works across three genre registers — one trilogy, two standalone novels, one novella. No shared universe, no reading order dependencies. Every book is set in a different world. The only through-line is Kuang herself: her argument (what institutions do to the people they absorb and exploit), her structural intelligence, and her willingness to follow the logic of her premise without softening it. Readers who try one Kuang and bounce should try another before writing her off — the range is genuine and intentional.
+
+Works in recommended reading order:
+
+THE POPPY WAR TRILOGY (2018–2020) — start here for most readers
+Military fantasy inspired directly by 20th-century Chinese history: the Second Sino-Japanese War, the Nanjing Massacre, Republican-era warlord politics. Not fantasy-as-escapism. Kuang has described the trilogy as a deliberate act — she wanted a fantasy that forced Western readers to sit with Chinese history they had been permitted to ignore.
+
+1. The Poppy War (2018)
+Rin is a war orphan from the rural south who cheats her way into Sinegard, the Empire of Nikan's elite military academy, on raw intelligence and brutal self-discipline. The first third reads like dark academia: the entrance exam, the academy hierarchy, the older students who resent her. Then the war starts and the register shifts completely and permanently. The shift is intentional — do not go in with spoilers. Start here, no exceptions within the trilogy.
+Magic: Rin discovers she can call on gods by burning opium and emptying herself as a vessel. Dangerous, addictive, expensive. The series is honest about all three.
+Content warning: graphic wartime violence, genocide and mass atrocity depicted with historical specificity, child soldiers, addiction, sexual violence. These are not decorative — they are the point.
+Page count: 544. Darkness level: 5.
+
+2. The Dragon Republic (2019)
+The war has fractured into civil conflict. Rin is a soldier of fortune trying to find a political faction worth fighting for. The scope widens — more factions, more ideological betrayal, more colonial politics. The shamanic magic's relationship to power and empire becomes central. The most politically complex book in the trilogy and for some readers the hardest; it is also where the series' argument about revolution becomes explicit.
+Page count: 544. Darkness level: 5.
+
+3. The Burning God (2020)
+The conclusion. Every ideological question the trilogy has been building — who gets to be the liberator, what does revolution do to the revolutionary, when does resistance become the thing it resisted — is answered without flinching. One of the bleaker endings in modern fantasy and one of the most intellectually honest. The final chapter is among the most discussed in recent fantasy writing. Does not offer an easy out.
+Page count: 656. Darkness level: 5.
+
+BABEL, OR THE NECESSITY OF VIOLENCE: AN ARCANE HISTORY OF THE OXFORD TRANSLATORS' REVOLUTION (2022)
+Dark academia set in an alternate 1830s Oxford. Standalone — no connection to The Poppy War.
+The magic system — silverworking — is built around the untranslatability of language: silver bars engraved with a word and its foreign-language equivalent generate power from the semantic gap between them. The wider the gap (i.e., the more meaning is lost in translation), the more power the bar produces. The British Empire's magical-industrial economy therefore runs on colonial languages — Hindi, Cantonese, Arabic, Yoruba — because the gap between those words and their English equivalents is large and irreducible. The empire needs the colonised precisely as translators, and it needs them to remain second-class.
+Robin Swift is taken from Canton to Oxford as a child by a professor who grooms him for exactly this role. He grows up inside Babel — the Royal Institute of Translation — learning to love it before understanding what he is feeding.
+The first half is deliberately seductive: Oxford architecture, Latin tutorials, brilliant friends, the intoxication of learning. Kuang wants the reader to love it before the cost arrives. The second half is about what the students do when they can no longer pretend not to know.
+Comparable to Jonathan Strange & Mr Norrell in its use of Regency England and its interest in the politics of magic — but Babel is angrier and has no patience for nostalgia. Also comparable to The Secret History in its dark-academia structure and the question of what brilliant people do when an institution stops protecting them.
+Content warning: colonial violence, period racism depicted with accuracy and without softening, graphic violence in the final section.
+Page count: 545. Darkness level: 4.
+
+YELLOWFACE (2023)
+Not fantasy. Psychological satire of the publishing industry. Standalone.
+June Hayward is a mediocre white author who steals the unpublished manuscript of her brilliant Chinese-American friend Athena Liu after Athena dies in a freak accident, publishes it under a slightly ethnically ambiguous pen name, and becomes a bestseller. The novel follows June's increasingly unhinged self-justifications as the internet closes in.
+First-person narration that makes the reader complicit in June's logic — the technique is deliberate and uncomfortable. Kuang had worked in publishing; the industry details are precise enough that the novel caused significant discussion in publishing circles on release. June is not a villain in her own narration; she is always just about to be right. That is the horror.
+No magic. The darkness is entirely social and psychological. Recommend in the guide for readers who have already read the fantasy, but flag clearly as a genre departure — readers expecting The Poppy War will be disoriented.
+Page count: 320. Darkness level: 3.
+
+VERBAL (2024)
+Novella. A competitive debater at Oxford discovers words can be literally weaponised. A formal experiment rather than a fully realised world — slighter than the major works. Note in the guide as an existing work but give it minimal space. Completionists only.
+
+Reading order for the guide's "where to start" section:
+Start with The Poppy War if: the reader is prepared for the content and wants Kuang at her most ambitious and historically grounded. The trilogy is the defining work.
+Start with Babel if: the reader wants dark academia with colonial politics at its centre, or is wary of the military-fantasy register. The first half is pleasurable in a way that eases the reader in. Better entry point for readers who come from literary fiction.
+Start with Yellowface if: the reader wants Kuang's voice and intelligence with none of the fantasy or violence — a reader who is sceptical about genre, or who wants to test the water before committing to the trilogy. Frame it as: "the easiest entry, but read the trilogy after."
+Do not start with Verbal.
+
+Content notes for the guide's content section (essential — do not omit):
+The Poppy War trilogy: wartime atrocity, genocide, addiction, sexual violence — level 5. Not gratuitous but relentless.
+Babel: colonial violence, period racism, graphic violence in the final act — level 4.
+Yellowface: psychological horror, no physical violence — level 3.
+Romance/heat level: absent across all works. Kuang is not a romance writer. Relationships exist but are not the emotional centre of any book.
+Explicit content: none.
+
+The through-line for the guide's description (what unifies all the works):
+Every Kuang book is about what institutions do to the brilliant outsiders they admit — the military academy, the shamanic war machine, the empire's translation bureau, the publishing industry. The protagonist is always talented, always admitted on unequal terms, always brought to understand that the institution's offer is also a trap. The reader is positioned to understand both the seduction and the cost before the cost arrives. This is the correct frame for the description — not "dark fantasy writer" but a writer with a single consistent argument deployed across different genres and centuries.
+
 Slug: /reading-orders/rf-kuang
 
 
@@ -527,15 +575,119 @@ Slug: /reading-orders/riftwar-cycle
 
 25 Guy Gavriel Kay Reading Order
 
-Fionavar Tapestry → standalone novels → Sarantine Mosaic
-Which are connected vs standalone
-Best entry point for new readers
+Roughly 14 novels plus short fiction. No shared universe — every book is set in a different secondary world, and none require prior Kay reading. The through-line is structural, not narrative: Kay writes historical fantasy in which a real historical civilisation (Byzantium, Moorish Spain, Tang Dynasty China, medieval Provence, Viking-era Scandinavia, Song Dynasty China) is transposed into a secondary world with the names changed and a small but real element of the fantastic added. He calls this "one-quarter turn to the fantastic." The fantasy content is deliberately minimal — it is present but never the point. The point is always the human drama, consequence, and what history does to individuals.
+
+No book requires any other. The guide's primary job is to show which civilisation each book is drawn from so readers can navigate by historical interest, then give a clear entry point recommendation.
+
+The works in recommended reading order for the guide:
+
+THE FIONAVAR TAPESTRY (1984–1986) — earliest work, least representative
+A Summer Tree → The Wandering Fire → The Darkest Road
+Kay's first published fiction, co-written in his head while serving as Christopher Tolkien's assistant on The Silmarillion. Five Canadian university students are summoned to Fionavar, the "first of all worlds," which draws from multiple mythologies (Arthurian, Norse, Celtic). High fantasy in the traditional secondary-world mode — this is the one Kay book that is not historical fantasy. The prose is less controlled than his later work; the mythological borrowings (Lancelot and Guinevere appear directly) are more overt. Complete trilogy, internally dependent — read in order.
+Recommend for the guide: start here if the reader wants high fantasy with mythological sweep; flag clearly that it does not represent what the rest of Kay's work is. Most readers who come specifically for Kay's historical fantasy should start elsewhere.
+
+THE SARANTINE MOSAIC (1998–2000) — Byzantium
+Sailing to Sarantium → Lord of Emperors
+A mosaic artist is summoned from the Rhodian provinces to the gleaming capital of Sarantium to work on the great Sanctuary. Based on 6th-century Byzantium — Valerius II is Justinian, Alixana is Theodora, the city is Constantinople, the Sanctuary is Hagia Sophia. The closest Kay comes to pure historical fiction; the fantastic element is subtle and interwoven with the politics. A two-book duology, internally dependent — read in order.
+Often cited as Kay's masterpiece alongside The Lions of Al-Rassan. The guide should describe it as: a novel about art, empire, ambition, and what endures — told through a craftsman who becomes caught in the politics of an imperial court.
+
+LIONS OF AL-RASSAN (1995) — Moorish Spain
+Standalone. Three main characters — a Kindath (Jewish) physician, an Asharite (Moorish) soldier, and a Jaddite (Christian) knight — who love each other across the religious fault lines of a world modelled on 11th-century Iberia at the end of the Convivencia. The Reconquista is coming; everybody knows it; nobody can stop it. One of the most emotionally devastating books in the genre. Contains some of Kay's best prose and one of his most discussed endings.
+Best entry point for most readers. Tell the guide-writer: lead with the three-character dynamic and the historical basis (the physician is modelled on Maimonides; the soldier on El Cid). Do not spoil the ending. Darkness level: 3 with a crushing emotional climax.
+
+A SONG FOR ARBONNE (1992) — medieval Provence / troubadour culture
+Standalone. A world modelled on 12th-century Provence — the courts of love, the troubadour tradition, the conflict between a goddess-worshipping southern culture and a more warlike patriarchal north. A mercenary soldier from the north finds himself drawn into the south's conflict. Kay's most romantic novel in the classical sense — not romantasy, but a book saturated with the culture of courtly love and what it meant. Slightly less devastating than Lions; warmer in register.
+
+THE LAST LIGHT OF THE SUN (2004) — Viking-era Britain
+Standalone. A world modelled on 9th-century Britain — the Anglo-Saxons (Anglcyn), the Erlings (Vikings), the Cyngael (Welsh). A raid, a king (modelled on Alfred the Great), and the question of what holds a civilisation together when it is being destroyed from outside. The fantastic element involves the fae of the forest — more present here than in most Kay. Quieter and more elegiac than Lions or Sarantine.
+
+TIGANA (1990) — Renaissance Italian city-states
+Standalone. A conquered province has had its very name removed from human memory by a sorcerer-king — no one outside the province can hear, speak, or remember the word "Tigana." The survivors are fighting not just for political freedom but to have their home exist again in the world's memory. Widely considered alongside Lions and Sarantine as Kay's top tier. The premise is among the most inventive in the genre.
+Kay's most politically complex standalone and the one most concerned with the cost of resistance. Darkness level: 4. Often recommended as the second read after Lions.
+
+THE UNDER HEAVEN / RIVER OF STARS / A BRIGHTNESS LONG AGO duology/standalone (Tang/Song Dynasty China and Renaissance Italy):
+Under Heaven (2010) — Tang Dynasty China (An Lushan Rebellion period). A man returns from two years burying the dead at a remote mountain pass and is given 250 Sardian horses by a Kitan princess — a gift so valuable it immediately becomes a political weapon. Slower opening than most Kay; the world is the most fully realised of his career.
+River of Stars (2013) — same world as Under Heaven, 400 years later (Song Dynasty period). Standalone — no shared characters, no prior reading required. A woman who would have been a warrior in an earlier era and a poet-official navigate a declining empire.
+A Brightness Long Ago (2019) — a world modelled on 15th-century Italy. A man near the end of his life recounts his youth and the two larger-than-life figures — a mercenary commander and a courtesan — who shaped it. The most structurally experimental of Kay's recent work; the narrator knows how the story ends and tells the reader so, which changes what the reading is.
+Children of Earth and Sky (2016) — same world as Sarantine Mosaic, ~200 years later. Can be read without the duology but rewards prior familiarity.
+
+ALL THE SEAS OF THE WORLD (2022) — same world as Lions of Al-Rassan and Children of Earth and Sky
+Two characters hired to assassinate a religious leader find themselves caught in the political and spiritual consequences of what they do. Set in the same world as Lions but 100+ years later — no overlapping characters. Can be read standalone; Lions readers will recognise the world's history.
+
+Connections between books (critical for the guide):
+Independent worlds: Fionavar, Lions of Al-Rassan/Song for Arbonne/Last Light (these three share a world loosely), Tigana, Sarantine Mosaic/Children of Earth and Sky/All the Seas of the World (these share a world), Under Heaven/River of Stars, A Brightness Long Ago.
+The "Peninsular World" (Lions, Song for Arbonne, Last Light, All the Seas): these share the same secondary world — the Al-Rassan peninsula, Arbonne, the northern kingdoms, the Sarantine Empire — and events in one affect the history referenced in others. However none require prior reading. Guide should note the shared world without making it sound like a required read order.
+The "Sarantium World" (Sarantine Mosaic, Children of Earth and Sky, All the Seas of the World): share the same world across different eras. Reading the Sarantine Mosaic first adds depth to the later books but is not required.
+
+Entry point recommendation for the guide:
+Best first read: Lions of Al-Rassan — the most emotionally immediate, the historical basis (Reconquista/Convivencia) is widely known enough to give context without research, and the three-character dynamic is the best introduction to how Kay structures his novels.
+Second read: Tigana or The Sarantine Mosaic, depending on whether the reader wants standalone or duology.
+Fionavar last — or skip if the reader is not interested in mythological high fantasy. It will read as a lesser version of what Kay later became.
+
+Kay's register — what to tell the reader in the description:
+His prose is formal, measured, and emotional without being sentimental. He writes about historical tragedy from a position of deep sympathy — these are books about people in the path of forces larger than themselves, and Kay gives them dignity without pretending they can win. The fantasy element is always small: a dream, a ghost, a moment of second sight. It is there to remind the reader that this is not historical fiction — that the people feel more rather than less because the world has a little more strangeness in it than ours. The darkness is primarily emotional, not violent. Kay readers come back for the endings, which are consistently among the most affecting in the genre.
+
+Darkness level: 3–4 across all works. No explicit content. Minimal romance heat (present but not the focus). Violence is present but not graphic. The weight is always emotional.
+
 Slug: /reading-orders/guy-gavriel-kay
 
 
 26 Jennifer L. Armentrout Complete Reading Order
 
-All series and how they connect
+Large, interconnected body of work — 50+ novels across multiple series, with significant crossover between them. The core challenge of this guide is that Armentrout's universes overlap: characters from one series appear in others, events reference each other, and reading order within and across series matters more than for most authors. The guide's primary job is to sort this clearly and honestly for a reader standing in front of her backlist for the first time.
+
+Armentrout writes primarily romantasy and paranormal romance — the emotional engine is always the romantic relationship, the genre wrapping varies (fae, demons, aliens, Greek mythology, dark academia). She also writes under the pen name J. Lynn for her contemporary romances, which share no universe with the fantasy works.
+
+THE MAJOR UNIVERSES — list these as separate groups in the guide:
+
+LUX UNIVERSE (2011–ongoing) — the entry point for most readers
+Paranormal/sci-fi romance. Daemon Black is an alien (Luxen — beings of light) living in a small West Virginia town, posing as human. Katy Swartz moves next door. The romance is the genre's beloved enemies-to-lovers slow burn; the alien mythology is more developed than most paranormal romance.
+Reading order within the Lux universe:
+Core Lux series (must read in order): Obsidian → Onyx → Opal → Origin → Opposition
+Lux novellas (read between the books they correspond to): Shadows (before Obsidian — Dawson/Beth), Oblivion (Obsidian from Daemon's POV — optional but popular), Outtakes from the Lux series (after Opposition)
+Covenant series (same universe, different mythology — Greek gods): Half-Blood → Pure → Deity → Apollyon → Sentinel
+The Covenant series is set in the same world but predates Lux in internal chronology. Characters cross over — Alex Andros appears in Lux books; Daemon references events from Covenant. For new readers: start with either; Lux is more accessible. For completionists: Covenant first, then Lux.
+Origin series (Lux spinoff): The Problem with Forever, Frigid, Scorched — lighter contemporary/paranormal; connected but standalone.
+
+FROM BLOOD AND ASH UNIVERSE (2020–ongoing) — current primary readership driver
+Dark romantasy. Poppy is a Maiden (a sacred vessel, chosen by the gods, forbidden from touch or emotional attachment) in a kingdom that worships the Ascended (vampiric nobles). Hawke is her guard. The world is more fully built than Armentrout's earlier work; the mythology is more complex; the series is longer.
+This is Armentrout's biggest current series and the one most readers encounter first via BookTok.
+Reading order (strict — heavy internal dependencies):
+From Blood and Ash (FBaA) → A Kingdom of the Wicked → A War of Two Worlds → A Shadow in the Ember → A Light in the Flame → A Fire in the Flesh → A Soul of Ash and Blood → A Fate Carved in Starlight (novella) → A Dream of Gods and Monsters (upcoming)
+Note: A Shadow in the Ember begins the Prequel/Nyktos arc — set earlier in the timeline, different protagonists (Seraphena and Nyktos), but essential context for events in the main Poppy arc from book 4 onward. The guide must explain this clearly: books 1–3 are Poppy/Hawke; books 4 onward in the prequel arc run parallel to the main series. Most readers recommend reading the prequel arc as published (i.e., after FBaA book 3, before FBaA book 4+) rather than in strict internal chronology.
+
+DARK ELEMENTS SERIES (2013–2014) — paranormal romance
+Gargoyles and demons. Layla is half-demon, trained by gargoyles to hunt her own kind. Four books: Bitter Sweet Love (novella) → Stone Cold Touch → Every Last Breath → Till Death. Standalone universe, no crossover with Lux or FBaA.
+
+WAIT FOR YOU UNIVERSE (2013–ongoing) — contemporary romance (J. Lynn pen name)
+Not fantasy. Contemporary new adult romance. Avery Morgansten transfers to college trying to escape her past; Cam Hamilton is her neighbour. Eight novels in the Wait for You universe, all loosely connected with character crossovers. Include in the guide but flag clearly as contemporary romance, no fantasy elements.
+
+WICKED UNIVERSE / THE WICKED TRILOGY (2014–2016)
+Urban fantasy romance. Ivy Morgan is a member of the Order — a secret organisation hunting the Fae. Set in New Orleans. Three books: Wicked → Torn → Brave. Standalone universe.
+
+DARK ELEMENTS / HARBINGER / OTHER STANDALONES:
+Several additional series (Harbinger, the Titan series as a Covenant spinoff, the Flesh and Fire series as FBaA world expansion) that the guide should list with brief descriptions and connection notes.
+
+Titan series (Covenant universe spinoff): Set after the Covenant series; follows Seth. Seth → The Return → The Power → The Struggle → The Prophecy. Requires Covenant series first.
+
+ARMENTROUT'S READING ORDER COMPLEXITY — what the guide must address directly:
+The FBaA universe is the most complex: the prequel arc (Shadow/Light/Fire series) is set before FBaA but was published after, and reading it in internal chronological order rather than publication order spoils major reveals from the main series. Publication order is strongly recommended — the guide should state this plainly.
+The Lux/Covenant crossover: characters appear in each other's series. Not reading both leaves gaps; but either works as a standalone entry.
+The J. Lynn contemporary novels share no universe with the fantasy work — some readers don't realise this.
+
+Entry point recommendations:
+New to Armentrout, wants romantasy: From Blood and Ash — the current flagship, the most developed world, the biggest community.
+New to Armentrout, wants lighter paranormal romance: Obsidian (Lux #1) — fast, fun, iconic enemies-to-lovers; the book that built her original fanbase.
+Already read FBaA, wants more: A Shadow in the Ember (the prequel arc) or Wicked (different world, different register — urban fantasy).
+Not sure about fantasy: Wait for You (contemporary) — test her voice and pacing without the mythology.
+
+Content notes (essential for this guide — her readership specifically looks for this):
+FBaA universe: explicit sexual content (Explicit/Spicy tier), graphic violence, dark themes including captivity and non-consensual elements in early books; darkness level 4. The "dark romantasy" label is accurate.
+Lux/Covenant: Open Door to Explicit sexual content; moderate violence; darkness level 3.
+Wicked series: Open Door sexual content; urban fantasy violence; darkness level 3.
+Wait for You: Closed Door to Open Door; contemporary romance content notes vary by book; darkness level 2.
+Romance heat level is the primary reader decision point — the guide's content section must be specific about this across each universe.
+
 Slug: /reading-orders/jennifer-armentrout
 
 
@@ -567,11 +719,85 @@ Slug: /reading-orders/demon-cycle
 
 29 Powder Mage Reading Order (Brian McClellan)
 
-Original trilogy + Gods of Blood and Powder
+Two complete trilogies set in the same world, plus short fiction. Written by Brian McClellan, who was Brandon Sanderson's student and later his writing assistant — the Sanderson influence is visible in the magic system design and the military plotting, but McClellan is his own writer with his own preoccupations. The world is gunpowder-era fantasy: flintlock muskets, cannon, professional armies, and a magic system built directly around gunpowder.
+
+The magic system — the defining element of the series, lead with it in the guide:
+Powder Mages can control gunpowder with their minds. Specifically: they can ignite powder at a distance, accelerate bullets mid-flight to sniper-range accuracy, or detonate powder reserves to devastating effect. They are military weapons. The Privileged (traditional finger-wiggling sorcerers drawing on an elemental force called the Else) are the old aristocratic magic; Powder Mages are the new democratic one — they tend to come from the lower classes, they work by skill and instinct rather than inherited training, and the aristocracy fears them.
+A third type — the Knacked — have minor passive abilities (never needing sleep, perfect memory, reading emotions) that are not combative but affect the political texture of the world.
+
+THE POWDER MAGE TRILOGY (2013–2015) — read first, always
+Promise of Blood → The Crimson Campaign → The Autumn Republic
+
+Promise of Blood (2013):
+Field Marshal Tamas has led a coup against the king of Adro, executed the nobility, and freed his country from aristocratic rule — in the first chapter. The book opens in the aftermath of the revolution, not during it. Three POVs: Tamas himself managing the coup's consequences; his son Taniel, a legendary powder mage and veteran, trying to find his feet in a post-war world; and Adamat, a retired police inspector with a perfect memory hired to investigate what the dying king whispered as he was executed ("You can't break Kresimir's Promise"). The mystery thread and the political thread and the military thread run simultaneously. Strong opening novel — the world is established fast and the magic system is demonstrated through action, not explained. Darkness level: 4.
+
+The Crimson Campaign (2014):
+The coup has destabilised the region and a foreign empire is invading. Tamas is separated from the city and fighting a desperate rearguard action with no supply lines; Taniel is on a mountain with a powder mage marksman mission that becomes something much stranger; Adamat is pursuing his investigation into the gods while his family is in danger. The middle book of a military fantasy trilogy — scope expands, stakes escalate. McClellan is better than most at keeping all three threads urgent simultaneously. Darkness level: 4.
+
+The Autumn Republic (2015):
+The conclusion. The military, political, and divine threads converge. The "gods" element — introduced slowly — becomes central in the final book. McClellan pays off the promise of the opening chapter. One of the cleaner trilogy conclusions in military fantasy. Darkness level: 4.
+
+Short fiction within the Powder Mage world (published between trilogy books):
+The short story collection "Promise of Blood" (Tor.com stories) — "The Girl of Hats and Needles," "The Powder Mage," "Forsworn," "Servants of the Crown," etc. These expand side characters and background. Not essential for the trilogy but add texture. The guide should note they exist without making them sound required.
+
+GODS OF BLOOD AND POWDER TRILOGY (2017–2019) — read after the original trilogy
+Sins of Empire → Wrath of Empire → Blood of Empire
+Set ten years after the original trilogy, in a different country (the Dynize Empire has invaded the Dynize colony of Landfall). Mostly new cast; Ben Styke — a legendary cavalry officer who was imprisoned, tortured, and left for dead by the old government — is the breakout character and the series' emotional engine. Michel Bravis is an intelligence agent working inside the occupation. Lady Flint (a character from the original trilogy) appears as a major POV.
+
+Ben Styke is why readers cite this trilogy as equal to or better than the original. He is a one-man army whose personal reputation as "Mad Ben Styke" has taken on a life of its own — enemies flee at his name, allies are afraid of him, and he is entirely aware of both. McClellan uses him to ask what violence does to a person across a lifetime of it. Darker and more character-focused than the original trilogy.
+Cannot be fully appreciated without the first trilogy — events, factions, and character histories from the original trilogy are referenced extensively. Read in order.
+
+Connections and reading order for the guide:
+Read the original trilogy first (Promise of Blood → Crimson Campaign → Autumn Republic).
+Short fiction can be read any time alongside the trilogy — flag where each story is set relative to the main books.
+Gods of Blood and Powder after the original trilogy — the guide should note these are widely considered at minimum equal to the originals, and that Ben Styke is many readers' favourite McClellan character.
+
+What to flag in the description:
+McClellan writes military fantasy with genuine tactical intelligence — the battles are planned, the logistics matter, the professional soldiers think like professionals. This is closer to Bernard Cornwell than to Tolkien. The magic is combat-oriented and spectacular without being physics-defying — gunpowder manipulation is physically grounded and the rules are clear. The political intrigue is real: the coup in book one is not a backdrop, it's a sustained question about what revolutions cost and who pays.
+
+Comparable series to mention: Mistborn (Sanderson — shared sensibility around magic system design, similar political complexity, McClellan acknowledges the influence); The Black Company (Cook — military unit perspective, similar unglamorous view of war); The Blade Itself (Abercrombie — morally complex soldiers, similar darkness level).
+
+Darkness level: 4 across both trilogies. No romance heat. Violence is sustained and tactically detailed. No explicit content.
+
 Slug: /reading-orders/powder-mage
 
 
 30 Chronicles of Amber Reading Order (Roger Zelazny)
+
+Ten novels in two five-book cycles, published 1970–1991. Complete, standalone from all other Zelazny work. No prior reading required, no sequels planned or possible (Zelazny died in 1995).
+
+The premise — lead with this in the guide's description because it is the hook:
+Amber is the one true world; all other worlds, including Earth, are Shadows — imperfect reflections of Amber cast by those with the ability to walk between realities. The royal family of Amber can walk through Shadow, shifting reality around them as they move, until they reach any world they can imagine. This means every genre, every history, every mythology is potentially accessible to them. The series uses this to move through radically different registers — high fantasy, spy thriller, noir, metaphysical philosophy — across its ten books.
+
+The structure:
+THE CORWIN CYCLE (Books 1–5, 1970–1978) — read first, in order
+Nine Princes in Amber → The Guns of Avalon → Sign of the Unicorn → The Hand of Oberon → The Courts of Chaos
+
+Nine Princes in Amber (1970):
+Corwin wakes in a private hospital on Earth with amnesia. Someone has been suppressing his memory. He is, it gradually emerges, one of the princes of Amber — immortal, with the ability to walk Shadow — and his brothers and sisters have been fighting a succession war for the throne of Amber while their father Oberon has been missing. Corwin reassembles his identity and enters the conflict. The amnesia opening is a deliberate technique: it gives the reader the world-building in the order Corwin recovers it, which is faster and less disorienting than it sounds. One of the most propulsive opening novels in fantasy — lean, fast, noir-inflected, no scene-setting. Around 200 pages.
+The series is written entirely in first-person; Corwin's voice is the texture of everything. Ironic, precise, slightly world-weary — he is thousands of years old and has done most things before.
+
+Books 2–5 continue Corwin's story through escalating stakes — the nature of Amber, the Pattern (the design at the heart of reality that gives the royal family their powers), the Courts of Chaos (the opposing metaphysical extreme to Amber), and the identity of the enemy are all progressively revealed. Do not summarise individual books extensively in the guide — just note that the five books form one complete story and must be read in order.
+
+THE MERLIN CYCLE (Books 6–10, 1985–1991) — read after, in order
+Trumps of Doom → Blood of Amber → Sign of Chaos → Knight of Swords → Prince of Chaos
+
+Follows Merlin, Corwin's son — half Amber, half Courts of Chaos — working as a computer programmer in San Francisco (this is the early 1980s) while surviving repeated assassination attempts. The Merlin Cycle is more science-fiction adjacent, more metafictional, and more structurally complex than the Corwin Cycle. Widely considered weaker than the first five books — the plot is more convoluted, the resolution less satisfying, and Zelazny was ill during the writing of the final book, which shows. The guide should note this honestly without dismissing the cycle: it expands the cosmology significantly and Merlin is an interesting character.
+Cannot be read without the Corwin Cycle — it directly continues events and characters. Read in order.
+
+Standalone short fiction (not essential for the guide but note they exist):
+Zelazny wrote several Amber short stories collected in "The Collected Stories of Roger Zelazny" — these are completionist material. No impact on the main reading order.
+
+A note on format — important for the guide:
+The Corwin Cycle books are short by modern standards: Nine Princes runs ~175 pages, the others 200–250 pages. The entire ten-book series is shorter than a single Sanderson novel. Frame this as an asset: the series is fast and can be read in a week. Readers who bounce off 800-page epics often become devoted Zelazny readers because he trusts the reader to keep up without hand-holding.
+
+What to say in the description:
+Zelazny is a prose stylist in a genre that often isn't — he came up through science fiction's New Wave in the 1960s and brought a literary compression to fantasy that was unusual at the time and remains unusual. Corwin's narration is laconic and precise; the world-building is delivered through action and inference rather than exposition; the cosmological ideas (Shadow, the Pattern, the Courts of Chaos, the nature of identity across infinite realities) are genuinely philosophical without ever stopping the story to explain themselves. Chronicles of Amber is the foundational text for the "multiverse as setting" strand of fantasy and science fiction — Michael Moorcock's Eternal Champion is the other pole, but Zelazny's approach is more intimate.
+Comparable series: The Long Earth (Terry Pratchett/Stephen Baxter — Shadow-walking as a concept, though different in register); The Dark Tower (King — the Tower/Amber as the axis of all worlds is a direct parallel and King has cited Zelazny); Moorcock's Elric/Eternal Champion (the other great 1970s multiverse fantasy).
+
+Darkness level: 3 across both cycles — violence is present but not graphic; the register is adventure-fantasy with philosophical depth rather than grimdark. No explicit content. No romance heat. The darkness is cosmic and existential rather than visceral.
+
+Flag in the guide: the Merlin Cycle's relative weakness compared to Corwin. Most readers consider books 1–5 among the great works of the genre and books 6–10 interesting but flawed. The guide should manage expectations honestly so readers who love the Corwin Cycle aren't blindsided by the shift.
 
 Slug: /reading-orders/chronicles-of-amber
 
@@ -693,6 +919,60 @@ Slug: /reading-orders/thomas-covenant
 
 
 61 Rivers of London Reading Order (Ben Aaronovitch)
+
+9 main-series novels (ongoing), plus a substantial body of novellas and short fiction. Urban fantasy set in contemporary London — specifically the Metropolitan Police Service. PC Peter Grant is a probationary constable who witnesses a ghost giving a witness statement at a murder scene, which gets him seconded to the Folly: the one-man department (plus one apprentice) responsible for policing magic in the UK. His boss is Detective Chief Inspector Thomas Nightingale, the last registered wizard in England, who has been doing this since the 1930s and is very tired.
+
+The series is first-person, narrated by Peter — mixed-race (Sierra Leonean mother, jazz musician father), curious, sarcastic, deeply interested in the architecture of London and the engineering of magic. His voice is the entire texture of the books. If it doesn't click by chapter two of book one, it probably won't.
+
+Series structure:
+Main novels (read in publication order — each builds on the last):
+1. Rivers of London (UK) / Midnight Riot (US) — 2011
+   Peter witnesses a ghost, gets drafted to the Folly, meets Nightingale and Molly (the Folly's housekeeper, who is something else entirely), and is introduced to the rivers of London — the river gods and their families, who are London's genius loci and have opinions about their territory. The first case involves a possessing spirit splitting between two warring personalities in 18th-century London. The case structure is procedural; the worldbuilding density is high and introduced without pause. Start here, no exceptions.
+
+2. Moon Over Soho — 2011
+   Peter investigates jazz musicians dying of a mysterious condition while Nightingale recovers from injuries sustained in book one. Introduces the concept of vestigia (the magical residue objects and places absorb from significant events). The series finds its second gear here — the worldbuilding deepens and the supporting cast expands.
+
+3. Whispers Under Ground — 2012
+   An FBI agent joins the investigation into a murder in the London Underground tunnel network. First appearance of the Faceless Man — the series' primary antagonist, a rogue wizard operating well outside Folly oversight. The underground London element (rivers, tunnels, secret stations) is central.
+
+4. Broken Homes — 2013
+   Centres on a Brutalist housing estate in South London. The Faceless Man storyline escalates significantly. Ends with a development that genuinely changes the series' stakes — do not read spoilers. Widely cited as the moment the series becomes something larger.
+
+5. Foxglove Summer — 2014
+   Peter is sent out of London — to rural Herefordshire — to investigate missing children. A deliberate change of register: quieter, weirder, more fairy-tale adjacent. The Folly lore expands in new directions. Some readers find it slower; others consider it the best book in the series for atmosphere.
+
+6. The Hanging Tree — 2016
+   Lady Ty (the River Thames's daughter, a recurring presence since book one) calls in a favour. Peter navigates Folly politics, old-money London magic families, and the continuing Faceless Man arc. The worldbuilding of the wider magical community — the Pale Lady, the Chestnut Man — expands.
+
+7. Lies Sleeping — 2018
+   The Faceless Man arc reaches its conclusion. The book pays off threads running since book three. Do not start here.
+
+8. False Value — 2020
+   Peter has left the Met and is working undercover at a tech company. A deliberately different setup that widens the series' scope beyond London. The Folly continues operating in the background.
+
+9. Amongst Our Weapons — 2022
+   Peter investigates a mysterious killer connected to the English Civil War and the history of witchfinder culture. Returns to the main London procedural register.
+
+Novellas and short fiction — where they fit:
+The novellas are set in the same world and some expand significant side characters. The most important:
+- The October Man (2019): standalone novella set in Germany, following a German equivalent of Peter working for the Bundeskriminalamt's magic division. Can be read any time after book 4. Introduces the wider European magical enforcement world.
+- Amongst Our Weapons companion novellas: several shorter pieces set during the main series; completionists only; read as published.
+- The short story collections (various): Aaronovitch has published short fiction across multiple anthologies; not essential.
+The novellas are clearly labelled as Folly-adjacent rather than main series — the reading order guide should distinguish main novels from novellas without making the novellas sound skippable entirely (The October Man in particular has genuine standalone merit).
+
+The Faceless Man arc: the overarching mystery of who is operating outside the Folly's oversight, building something using old magic and new money. Runs books 1–7, resolved in Lies Sleeping. The books from 8 onward are a new phase rather than a continuation of that arc — flag this in the guide so readers who bounce off the first few books understand that the early series has a defined shape.
+
+The London element: Aaronovitch is a Londoner and the books function partly as a guided tour of London's geography, history, and mythology — the rivers (Fleet, Tyburn, Effra, Lea) as actual divine entities with personalities shaped by their catchment areas; the architecture as a record of magic; the social geography (South London vs North London, the river families' territories) as a plot element. Readers who know London get additional texture; readers who don't will still find it rich.
+
+The magic system: Peter approaches magic like an engineer — he tries to understand the physics of it, runs experiments, takes notes. Aaronovitch describes the system in terms of Newtonian mechanics applied to vestigia and forma (the shapes wizards impose on magic). It is internally consistent and gets more complex as Peter's training progresses. The formal magic system is slow to appear in book one — Peter spends most of the early books learning to do a single light spell.
+
+Nightingale: the other pole of the series. A 1930s public school wizard who fought in WWII, survived things that killed everyone around him, and has been running the Folly alone for decades. His backstory is revealed gradually — Aaronovitch does not dump it. He is one of urban fantasy's best supporting characters precisely because the reader always senses there is more than he's saying.
+
+Tone: procedural police novel + London mythology + nerdy engineering magic + dark undercurrent. The comedy is dry and built into Peter's narration — it is not a comedy, but it reads funnier than most books that are trying to be funny. The darkness is real: the Faceless Man arc goes to genuinely dark places, the war history is heavy, and Aaronovitch does not always protect his characters.
+
+Comparable series to name in the guide for reader orientation: The Dresden Files (urban fantasy detective, but tonal opposite — Peter is drier, more grounded, less mythology-shaped); Felix Castor (Mike Carey — London-set supernatural investigator, closer in register); Laundry Files (Charles Stross — British government supernatural bureaucracy, similar dry institutional humour).
+
+Darkness level: 3 overall, 4 during the Faceless Man arc's later books. No explicit content. Violence is present and occasionally significant.
 
 Slug: /reading-orders/rivers-of-london
 
@@ -893,15 +1173,6 @@ Style guide for all banners:
 - Mood-first: each image should feel like the series before you know what it is
 
 ### Need banners — prompts below
-
-**Drenai Saga**
-A lone armoured warrior stands on the highest rampart of a crumbling stone fortress at first light, back to the viewer, twin-headed war-axe resting across his shoulders, silhouetted against a vast darkened plain where an enemy army stretches to the horizon under a blood-red sky. The fortress walls step down in tiers behind him, torches burning on each level. Smoke rises in the distance. Heroic last-stand mood, epic scale, ancient stone, the weight of impossible odds. Photorealistic cinematic fantasy digital art, dramatic atmospheric lighting, no text, no visible faces.
-
-**Deverry Cycle**
-A misty Celtic hillside at twilight — ancient standing stones in the foreground emit a faint silver-blue dweomer glow, ravens circling overhead. The landscape layers multiple eras simultaneously: a medieval walled town in the middle distance, older stone ruins beyond it, and further still a suggestion of even older forest as if different centuries exist at the same time. The light is cool and liminal, somewhere between dusk and something older. Welsh-Celtic mythological atmosphere, reincarnation and time as mood. Photorealistic cinematic fantasy digital art, no text, no visible faces.
-
-**Riyria Revelations**
-Two cloaked figures stand back-to-back on a rain-slicked cobblestone street at night in a medieval city, one lean and hooded in dark leather, one broader-shouldered in a worn travel cloak, both facing outward into surrounding darkness. Lantern light from above catches the wet stone and the edge of a drawn blade. The mood is roguish and conspiratorial — a city of secrets, two men who know its back alleys. Photorealistic cinematic fantasy digital art, dramatic contrast between lamplight and deep shadow, no text, no visible faces.
 
 **Sword of Truth**
 A lone figure stands at the edge of a vast ruined fortress at golden hour, a great sword drawn and held at rest, robes and cloak catching in a wind that bends the surrounding grassland. Beyond the walls, a dark empire's banners are barely visible in the far distance. The light is dramatic and epic — freedom vs. tyranny rendered in landscape. Ancient carved stone around the figure, sky half gold and half storm. Photorealistic cinematic fantasy digital art, no text, no visible faces.

@@ -304,7 +304,10 @@ const CURATED_NEW_RELEASES: Record<string, CuratedEntry[]> = {
     { title: 'Born of Blood and Ash', slug: 'born-of-blood-and-ash' },
     { title: 'Faebound', slug: 'faebound' },
     { title: 'The Ragpicker King', slug: 'the-ragpicker-king' },
-    { title: 'The Primal of Blood and Bone', slug: 'the-primal-of-blood-and-bone' },
+    {
+      title: 'The Primal of Blood and Bone',
+      slug: 'the-primal-of-blood-and-bone',
+    },
   ],
   grimdark: [
     { title: 'The Tainted Cup', slug: 'the-tainted-cup' },
@@ -409,7 +412,10 @@ const CURATED_NEW_RELEASES: Record<string, CuratedEntry[]> = {
     { title: 'A Sword of Gold and Ruin', slug: 'a-sword-of-gold-and-ruin' },
     { title: 'The City in Glass', slug: 'the-city-in-glass' },
     { title: 'Hera', slug: 'hera' },
-    { title: 'Tales of the Celestial Kingdom', slug: 'tales-of-the-celestial-kingdom' },
+    {
+      title: 'Tales of the Celestial Kingdom',
+      slug: 'tales-of-the-celestial-kingdom',
+    },
     { title: 'A Touch of Chaos', slug: 'a-touch-of-chaos' },
     { title: 'Katabasis', slug: 'katabasis' },
     { title: 'The Last Song of Penelope', slug: 'the-last-song-of-penelope' },
@@ -432,7 +438,10 @@ const CURATED_NEW_RELEASES: Record<string, CuratedEntry[]> = {
     { title: 'A Pub in the Underworld', slug: 'a-pub-in-the-underworld' },
     { title: 'Campaigns and Curses', slug: 'campaigns-and-curses' },
     { title: 'The Baker and the Bard', slug: 'the-baker-and-the-bard' },
-    { title: 'The Bartender Between Worlds', slug: 'the-bartender-between-worlds' },
+    {
+      title: 'The Bartender Between Worlds',
+      slug: 'the-bartender-between-worlds',
+    },
     { title: 'Boy of Chaotic Making', slug: 'boy-of-chaotic-making' },
     { title: 'Shadow Play', slug: 'shadow-play' },
     { title: 'Distilled Magic', slug: 'distilled-magic' },
@@ -469,7 +478,7 @@ const CURATED_NEW_RELEASES: Record<string, CuratedEntry[]> = {
     { title: 'Quicksilver', slug: 'quicksilver' },
     { title: 'Crossroads of Ravens', slug: 'crossroads-of-ravens' },
     {
-      title: "The Witcher: The Witcher",
+      title: 'The Witcher: The Witcher',
       slug: 'andrzej-sapkowskis-the-witcher-the-witcher',
     },
     {
@@ -581,18 +590,11 @@ const readingOrders = [
     text: 'text-violet-800',
   },
   {
-    slug: 'stormlight',
-    name: 'The Stormlight Archive',
-    bookCount: 5,
-    color: 'from-blue-100 to-indigo-100',
-    text: 'text-blue-800',
-  },
-  {
-    slug: 'first-law',
-    name: 'The First Law',
-    bookCount: 10,
-    color: 'from-zinc-100 to-slate-200',
-    text: 'text-zinc-800',
+    slug: 'discworld',
+    name: 'Discworld',
+    bookCount: 41,
+    color: 'from-lime-100 to-green-100',
+    text: 'text-lime-800',
   },
   {
     slug: 'malazan',
@@ -609,6 +611,27 @@ const readingOrders = [
     text: 'text-gray-800',
   },
   {
+    slug: 'acotar',
+    name: 'A Court of Thorns and Roses',
+    bookCount: 5,
+    color: 'from-rose-100 to-pink-100',
+    text: 'text-rose-800',
+  },
+  {
+    slug: 'robin-hobb',
+    name: 'Realm of the Elderlings',
+    bookCount: 16,
+    color: 'from-emerald-100 to-teal-100',
+    text: 'text-emerald-800',
+  },
+  {
+    slug: 'first-law',
+    name: 'The First Law',
+    bookCount: 10,
+    color: 'from-zinc-100 to-slate-200',
+    text: 'text-zinc-800',
+  },
+  {
     slug: 'wheel-of-time',
     name: 'The Wheel of Time',
     bookCount: 14,
@@ -616,11 +639,11 @@ const readingOrders = [
     text: 'text-amber-800',
   },
   {
-    slug: 'acotar',
-    name: 'A Court of Thorns and Roses',
+    slug: 'stormlight',
+    name: 'The Stormlight Archive',
     bookCount: 5,
-    color: 'from-rose-100 to-pink-100',
-    text: 'text-rose-800',
+    color: 'from-blue-100 to-indigo-100',
+    text: 'text-blue-800',
   },
   {
     slug: 'empyrean',
@@ -644,25 +667,11 @@ const readingOrders = [
     text: 'text-teal-800',
   },
   {
-    slug: 'discworld',
-    name: 'Discworld',
-    bookCount: 41,
-    color: 'from-lime-100 to-green-100',
-    text: 'text-lime-800',
-  },
-  {
     slug: 'dresden-files',
     name: 'The Dresden Files',
     bookCount: 17,
     color: 'from-orange-100 to-amber-100',
     text: 'text-orange-800',
-  },
-  {
-    slug: 'robin-hobb',
-    name: 'Realm of the Elderlings',
-    bookCount: 16,
-    color: 'from-emerald-100 to-teal-100',
-    text: 'text-emerald-800',
   },
   {
     slug: 'throne-of-glass',
@@ -1576,7 +1585,13 @@ const getWeekNumber = () => {
   const now = new Date();
   // Anchor to Monday: shift so Monday=0 … Sunday=6, then floor to week
   const dayOfWeek = (now.getUTCDay() + 6) % 7; // Mon=0 … Sun=6
-  const monday = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - dayOfWeek));
+  const monday = new Date(
+    Date.UTC(
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate() - dayOfWeek,
+    ),
+  );
   return Math.floor(monday.getTime() / (7 * 24 * 60 * 60 * 1000));
 };
 
@@ -1850,7 +1865,11 @@ export default function CategoryGrid({
                   </div>
                   <button
                     type="button"
-                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(amazonUrl, '_blank', 'noopener,noreferrer'); }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.open(amazonUrl, '_blank', 'noopener,noreferrer');
+                    }}
                     className="w-full text-center text-[11px] font-medium bg-amber-300/70 hover:bg-amber-400/80 text-amber-900 px-2 py-0.5 rounded-full transition-colors"
                   >
                     Amazon

@@ -1,4 +1,8 @@
-export type BookStatus = 'mandatory' | 'optional' | 'supplementary' | 'upcoming';
+export type BookStatus =
+  | 'mandatory'
+  | 'optional'
+  | 'supplementary'
+  | 'upcoming';
 export type SeriesStatus = 'complete' | 'ongoing' | 'incomplete';
 export type CardColor = 'blue' | 'green' | 'amber' | 'red' | 'purple' | 'zinc';
 
@@ -158,7 +162,6 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   gentlemanBastard,
   johnGwynne,
 ];
-
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
   READING_ORDERS.find((e) => e.slug === slug) ?? null;

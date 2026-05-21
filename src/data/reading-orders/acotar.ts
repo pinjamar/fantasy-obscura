@@ -5,7 +5,7 @@ export const acotar: ReadingOrderEntry = {
   name: 'A Court of Thorns and Roses',
   author: 'Sarah J. Maas',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '📖 Ongoing — Books 6 & 7 due 2026–2027',
+  seriesStatusLabel: '📖 Ongoing - Books 6 & 7 due 2026-2027',
   description:
     "A dark fairy tale retelling that becomes a full epic fantasy by book two. Feyre is pulled into a world of immortal fae, political power and war. All that comes with romance woven through every layer. ACMAF is the breakout book that defines the series. The reading order matters here, simply read by order of publication. Each book builds directly on the last and the world expands a lot between books one and two. If you're new to Sarah J. Maas, this is the series most readers recommend starting with. Explicit content begins from A Court of Mist and Fury onward. ACOTAR itself is significantly milder.",
   darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
@@ -149,7 +149,8 @@ export const acotar: ReadingOrderEntry = {
       desc: "Nesta's arc is darker and more intense than the trilogy",
     },
   ],
-  metaDescription: "ACOTAR reading order: all 7 books in order, what's mandatory, where explicit content begins, and release dates for books 6 (Oct 2026) & 7 (Jan 2027).",
+  metaDescription:
+    "ACOTAR reading order: all 7 books in order, what's mandatory, where explicit content begins, and release dates for books 6 (Oct 2026) & 7 (Jan 2027).",
   lastUpdated: '2026-05-13',
   finishedLabel: 'Finished the series?',
   categoryHref: '/fantasy/romantasy',
