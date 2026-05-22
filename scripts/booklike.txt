@@ -1234,12 +1234,3 @@ Style guide for all banners:
 
 ### Need banners — prompts below
 
-**zodiac-academy** (`/images/reading-orders/zodiac-academy`)
-A vast Gothic academy at night — dark stone towers and spires rising against a sky impossibly full of stars. A zodiac wheel rendered in gold constellation lines glows faintly across the sky, its twelve signs visible as star-traced shapes. In the courtyard below, four tall figures (silhouettes, backs turned, no faces) stand in a loose formation facing the gates — an implied sense of absolute authority and threat. On the far side of the gate, two smaller silhouettes approach. The mood is arrival into something dangerous. Palette: deep midnight blue sky, cold silver starlight, warm gold constellation lines, black stone. No text.
-
-**tortall** (`/images/reading-orders/tortall`)
-A lone armoured figure — back to camera, clearly female — stands at the edge of a forest clearing at dawn, one hand resting on a sword hilt. The trees beyond the clearing are ancient and massive; shafts of gold morning light cut through fog and leaf canopy. Ahead of her, just inside the treeline, several large animals (wolves, a horse, an eagle) are barely visible as dark shapes watching from the shadows. The mood is quiet courage — a girl on the edge of a world that is not yet sure it wants her. Palette: deep forest greens, gold dawn light, muted earth tones. No text.
-
-**red-queen** (`/images/reading-orders/red-queen`)
-A cavernous throne room carved from dark stone. A single ornate throne at the far end, empty, lit from above by a column of cold silver-white light. In the foreground, a figure (silhouette only, facing away) stands in the middle of the room; from their outstretched hands, tendrils of red-gold lightning arc downward to the stone floor — Red blood power burning Silver-bright. The contrast is sharp: deep shadow on all sides, the throne's silver glow above, the defiant red lightning below. Mood: power discovered in the wrong place. Palette: black stone, cold silver, burning red-gold electricity. No text.
-
