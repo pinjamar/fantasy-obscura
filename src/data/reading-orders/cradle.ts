@@ -4,8 +4,8 @@ export const cradle: ReadingOrderEntry = {
   slug: 'cradle',
   name: 'Cradle',
   author: 'Will Wight',
-  seriesStatus: 'complete',
-  seriesStatusLabel: '✅ Complete — 12 books',
+  seriesStatus: 'ongoing',
+  seriesStatusLabel: '📖 Ongoing — Cradle complete (12 books); Last Horizon ongoing',
   description:
     "Will Wight's Cradle is the defining progression fantasy series — twelve books following Wei Shi Lindon from the absolute bottom of a cultivation hierarchy (born Unsouled, without any sacred arts ability, the lowest caste in his society) to the very top of a world-spanning power system. The series is built around sacred arts: a hybrid of martial arts and magic where cultivators absorb madra (spiritual energy) to refine their bodies and power, advancing through nine distinct stages that genuinely change what characters can do and what threats they face. The power progression is cumulative and continuous — the twelve books are one story. Book one (Unsouled) is available free on Will Wight's website and is novella-length by design — it is an extended sample. The series hits full stride around books three to five and never slows down. Notably, Wight self-published the entire series independently — Cradle is one of the most commercially successful self-published fantasy series ever written.",
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark — stakes and death toll escalate sharply across the series',

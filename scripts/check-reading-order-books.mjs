@@ -377,10 +377,4 @@ if (missing.length > 0) {
     console.log(`${b.title} | ${b.author}`);
   }
 
-  // Write to a file for batch processing
-  const lines = missing.map((b) => `${b.title} | ${b.author}`).join('\n');
-  import('fs').then(({ writeFileSync }) => {
-    writeFileSync('scripts/missing-books.txt', lines);
-    console.log('\nAlso written to scripts/missing-books.txt');
-  });
 }

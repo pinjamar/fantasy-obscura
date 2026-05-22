@@ -1109,6 +1109,83 @@ Entry question: start with The Curse of Chalion for the richest introduction to 
 
 Slug: /reading-orders/world-of-the-five-gods
 
+
+71 Tortall Universe Reading Order (Tamora Pierce)
+
+Six distinct sub-series set in the same medieval-esque kingdom of Tortall, each following a different protagonist. Every main series follows a woman or girl breaking into a role that was previously closed to her — knight, wildmage, lady knight, spy. The sub-series are independent enough that multiple entry points work, but they reference each other's characters and events.
+
+The sub-series, in approximate in-world chronological order:
+Beka Cooper Trilogy (prequel, ~200 years before the main Tortall timeline): Terrier → Bloodhound → Mastiff — Beka is an ancestor of Alanna, working as a city-guard trainee in Corus; grittier and more street-level than the later series; written last (2006–2011) but set earliest; start here only if you prefer in-world chronological order
+Song of the Lioness (publication 1983–1988): Alanna: The First Adventure → In the Hand of the Goddess → The Woman Who Rides Like a Man → Lioness Rampant — Alanna disguises herself as a boy to train as a knight; Pierce's debut; the writing is simpler and more compressed than her later work (each book is ~180 pages); widely beloved but shows its age compared to later series
+The Immortals (publication 1992–1996): Wild Magic → Wolf-Speaker → Emperor Mage → The Realms of the Gods — Daine, a girl with wildmage powers (she can communicate with and shape-shift into animals), arrives in Tortall; longer and more polished than Song of the Lioness; overlaps in timeline with the latter half of Lioness; many readers consider Wild Magic the stronger entry point to the universe
+Protector of the Small (publication 1999–2002): First Test → Page → Squire → Lady Knight — Kel, the first girl to openly train as a page (no disguise), faces institutional resistance and builds a reputation through skill rather than magic; more grounded and slower-burning than Daine's series; widely considered Pierce's best Tortall work
+Daughter of the Lioness (publication 2003–2006): Trickster's Choice → Trickster's Queen — Aly, Alanna's daughter, is captured and sold as a slave on the Copper Isles and becomes entangled in a revolution; espionage focus rather than knight-training; requires at least passing familiarity with Alanna to appreciate the character
+Numair Chronicles (publication 2017–ongoing): Tempests and Slaughter → (series incomplete) — follows Numair (Daine's companion in The Immortals) as a young student mage; the only main-cast male protagonist; set before the Immortals and shows his background; the series is unfinished
+
+Reading order guidance: start with either Wild Magic (The Immortals book 1) or First Test (Protector of the Small book 1). Wild Magic is the more polished entry to the world; Protector of the Small is the richest series in the universe. Song of the Lioness is the publishing beginning but its shorter page counts and 1983 YA prose are a harder sell for new readers. The Beka Cooper trilogy is best saved for readers who already love the world. Do not start with the Numair Chronicles.
+
+Key world details:
+Tortall: a medieval-style monarchy in a world where magic is widespread and varied (divine gifts, beast-magic, mage training, immortal creatures). The gods are present and occasionally intervene. The tone is YA adventure but the series does not shy from war, death, and political corruption — it simply frames them through the lens of young women finding their agency.
+Female protagonist through-line: every main series (except Numair) follows a woman or girl in a role previously closed to her. The series is not preachy about this — it is simply the problem each protagonist solves through the course of the books.
+Each series stands alone: characters from earlier series appear in later ones (Alanna appears in Protector of the Small; Daine appears in Daughter of the Lioness), but no sub-series requires you to have read another to follow the plot.
+
+Darkness level: light to moderate YA — war, combat deaths, some abuse of power; no explicit content; suitable for age 12+.
+
+Slug: /reading-orders/tortall
+
+
+72 Red Queen Reading Order (Victoria Aveyard)
+
+A complete four-book series plus prequel novellas and a bridge collection, all set in a world stratified by blood colour: Silvers (aristocracy, superhuman abilities) and Reds (commoners, no powers). The premise inverts when a Red girl is discovered with Silver powers.
+
+Main series (read in order):
+Red Queen (2015) — Mare Barrow, a Red thief, is accidentally revealed to have Silver-level lightning powers and is thrust into the Silver court as a cover-up; the central hook is the betrayal at the end of book 1; go in knowing nothing beyond the premise
+Glass Sword (2016) — Mare leads a search for other Red-and-Silver anomalies; the pacing is slower and more repetitive than book 1; considered the weakest book by most readers, but necessary for context
+King's Cage (2017) — Mare is imprisoned; the perspective widens to include other POVs; darker and more politically dense than the first two
+War Storm (2018) — the concluding volume; multiple POVs; the war comes to a head
+
+Prequels — best read after Red Queen, not before:
+Queen Song: follows Cal's mother, Queen Coriane, before the events of Red Queen; published in the Cruel Crown collection (2016)
+Steel Scars: follows Farley, leader of the rebellion, in the period just before Red Queen begins; also in Cruel Crown
+Both novellas are short (~80 pages each) and reward readers who already know the characters rather than serving as cold introductions; read Cruel Crown between Red Queen and Glass Sword, or after War Storm
+
+Bridge content:
+Broken Throne (2019): a collection of novellas, short stories, and bonus material set during and after the main series; read after War Storm; completionist material rather than essential narrative
+
+The hook that makes book 1 work: the tagline "anyone can betray anyone" is not marketing copy — it is the book's actual mechanism. The betrayal in Red Queen is what readers remember years later. Avoid spoilers entirely; do not look up character fates before finishing book 1.
+Maven Calore: the standout villain of the series; the relationship between Mare and Maven is what drives books 1 and 2 emotionally; the writing around this dynamic is stronger than the worldbuilding or the battle sequences
+The series' structural arc: book 1 is the strongest; the series broadens and slows in books 2–3 before pulling together in War Storm; readers who loved book 1 should know the pacing changes rather than discovering it mid-Glass Sword
+Tone: YA fantasy with dystopian elements — more Divergent than Throne of Glass in its class-revolution politics; moderate darkness (war, executions, imprisonment, psychological manipulation); no explicit content
+
+Slug: /reading-orders/red-queen
+
+
+73 Zodiac Academy / Solaria Universe Reading Order (Caroline Peckham & Susanne Valenti)
+
+A complete eight-book adult romantasy series set in Solaria — a Fae world where magic is determined by your zodiac star sign and your Order (the creature form you shift into). Originally self-published by two authors writing together; one of the largest BookTok-driven series to break through to mainstream awareness. Very long, very spicy, deeply addictive once the hook lands.
+
+The world:
+Solaria is a Fae realm run by powerful old Houses. Every Fae has two magical identifiers — their star sign (which sets their elemental magic: fire, water, earth, air) and their Order (Dragon, Vampire, Wolf, Siren, Manticore, Pegasus, Griffin, and others). The combination determines their power tier. Above everyone are the Celestial Heirs: four students from the four most powerful Fae families, who together effectively rule Zodiac Academy and, by extension, Solaria.
+The throne of Solaria has been empty since the Vega royals disappeared. The Celestial Heirs have quietly claimed that power. The series begins when the lost Vega twins — Darcy and Tory, raised in human foster care with no knowledge of Fae — are discovered alive and brought to the academy, threatening everything the Heirs have built.
+
+Main series — Zodiac Academy (8 books, read in order):
+The Awakening → The Ruthless Fae → The Reckoning → The Shadow → The Cursed Fates → The Broken Heir → Heartless Sky → The Awakening as One
+Plus: Sorrow and Starlight — an epilogue novella, read immediately after book 8
+The series is one continuous story; all eight books are mandatory and must be read in order. Books grow longer as the series progresses (later entries are 700–900 pages).
+
+The dual structure: Darcy and Tory are dual protagonists with separate love interests and largely separate plotlines running in parallel. Darcy's story and Tory's story are both complete within the main series; neither is a side character in the other's arc.
+Love interests: Tory / Darius Acrux (Dragon Order, Libra — the most powerful of the four Heirs and the one most hostile to the Vega twins early on); Darcy / Gabriel Orion (a professor — the relationship begins as forbidden and the power imbalance is part of the tension; readers who dislike teacher/student dynamics should know this going in)
+The Heirs as antagonists: the four Celestial Heirs (Darius, Caleb Altair, Seth Capella, Max Rigel) are introduced as the series' bullies — powerful, entitled, and actively trying to break the twins. The enemies-to-lovers arc is central to the series; how long it takes to get there is part of what the early books are about. Do not skip the early cruelty; the payoff is built on it.
+
+Extended Solaria universe — read after completing the main series:
+Companion series (same timeline, Heirs' perspective): the events of the main series retold from the four Heirs' POV — recommended for readers who want the inside view of the antagonists' heads; best started after the main series rather than interspersed, so that both readings have full context
+Darkmore Penitentiary (spin-off, 3 books): follows different characters in a Fae maximum-security prison; darker in register than the main series; standalone enough to approach after finishing Zodiac Academy but benefits from knowing the world and its politics
+
+Content note: this is adult fantasy with explicit sexual content throughout, not YA. The academy setting is misleading — tone and content are firmly adult. Early books contain sustained bully dynamics and power imbalance; later books escalate darkness significantly (deaths, war, high stakes). Readers sensitive to bully romance should know books 1–3 lean into it before the dynamic shifts.
+
+Reading pace note: the first book (The Awakening) is the shortest; many readers describe the hook as slow to catch and the reading experience as suddenly compulsive around book 2 or 3. The series has a strong reputation for becoming unputdownable once you are in — accounts of "I read five books in a week" are common. The slow start in book 1 is load-bearing rather than a sign of the series' quality.
+
+Slug: /reading-orders/zodiac-academy
 ---
 
 ## Notes for Claude Code
@@ -1157,11 +1234,12 @@ Style guide for all banners:
 
 ### Need banners — prompts below
 
-**Sword of Truth**
-A lone figure stands at the edge of a vast ruined fortress at golden hour, a great sword drawn and held at rest, robes and cloak catching in a wind that bends the surrounding grassland. Beyond the walls, a dark empire's banners are barely visible in the far distance. The light is dramatic and epic — freedom vs. tyranny rendered in landscape. Ancient carved stone around the figure, sky half gold and half storm. Photorealistic cinematic fantasy digital art, no text, no visible faces.
+**zodiac-academy** (`/images/reading-orders/zodiac-academy`)
+A vast Gothic academy at night — dark stone towers and spires rising against a sky impossibly full of stars. A zodiac wheel rendered in gold constellation lines glows faintly across the sky, its twelve signs visible as star-traced shapes. In the courtyard below, four tall figures (silhouettes, backs turned, no faces) stand in a loose formation facing the gates — an implied sense of absolute authority and threat. On the far side of the gate, two smaller silhouettes approach. The mood is arrival into something dangerous. Palette: deep midnight blue sky, cold silver starlight, warm gold constellation lines, black stone. No text.
 
-**The Belgariad**
-A group of silhouetted travellers on horseback crests a hill at dusk, a vast continent of different kingdoms visible in the distance — a walled city on the left, forested hills to the right, a distant mountain range under a purple sky. The mood is warm and classic — an epic journey just beginning, a world full of places to go. Gentle golden light from behind the travellers. The feeling of a great adventure unfolding. Photorealistic cinematic fantasy digital art, no text, no visible faces.
+**tortall** (`/images/reading-orders/tortall`)
+A lone armoured figure — back to camera, clearly female — stands at the edge of a forest clearing at dawn, one hand resting on a sword hilt. The trees beyond the clearing are ancient and massive; shafts of gold morning light cut through fog and leaf canopy. Ahead of her, just inside the treeline, several large animals (wolves, a horse, an eagle) are barely visible as dark shapes watching from the shadows. The mood is quiet courage — a girl on the edge of a world that is not yet sure it wants her. Palette: deep forest greens, gold dawn light, muted earth tones. No text.
 
-**World of the Five Gods**
-A candlelit chapel interior at twilight — five alcoves line the curved stone walls, each holding a carved symbol of one of the five gods, soft light emanating from each in a different warm tone (gold, rose, amber, pale blue, and a cooler silver for the Bastard). A single figure kneels in silhouette at the centre, head bowed. The architecture is Romanesque and intimate, not grand — a god who answers prayers rather than demands them. Sacred, quiet, genuinely theological mood. Photorealistic cinematic fantasy digital art, no text, no visible faces.
+**red-queen** (`/images/reading-orders/red-queen`)
+A cavernous throne room carved from dark stone. A single ornate throne at the far end, empty, lit from above by a column of cold silver-white light. In the foreground, a figure (silhouette only, facing away) stands in the middle of the room; from their outstretched hands, tendrils of red-gold lightning arc downward to the stone floor — Red blood power burning Silver-bright. The contrast is sharp: deep shadow on all sides, the throne's silver glow above, the defiant red lightning below. Mood: power discovered in the wrong place. Palette: black stone, cold silver, burning red-gold electricity. No text.
+

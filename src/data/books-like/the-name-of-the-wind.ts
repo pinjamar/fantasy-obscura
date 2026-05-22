@@ -21,7 +21,7 @@ export const theNameOfTheWind: BooksLikeEntry = {
     ],
     angle: 'Lyrical Epic Fantasy',
     answer_line:
-      'If you loved The Name of the Wind for the lyrical prose, gifted outsider lead, university arc, and storytelling-within-story atmosphere, start with Jonathan Strange & Mr Norrell, The Lies of Locke Lamora and The Magicians.',
+      'If you loved The Name of the Wind for the lyrical prose, gifted outsider lead, university arc, and storytelling-within-story atmosphere, start with The Will of the Many, The Lies of Locke Lamora, and Jonathan Strange & Mr Norrell.',
     why_people_love:
       "The Name of the Wind earns its reputation through one thing that almost no other fantasy novel manages: prose that is genuinely, consistently beautiful. Rothfuss writes sentences you stop and reread. The frame narrative — an innkeeper who was once the most famous man in the world, now telling his own story — creates a melancholy that runs under everything, because you know the legend didn't end well. Kvothe is arrogant and brilliant and often wrong in ways that cost him, which makes him one of the more human protagonists in epic fantasy. The magic system feels like chemistry and music rather than physics, and the university sections have a grounded, lived-in quality that's rare in the genre. Fair warning: this is the first book of a trilogy that has been unfinished since 2011, with no confirmed publication date for book three. Read it knowing this.",
   },
@@ -32,8 +32,6 @@ export const theNameOfTheWind: BooksLikeEntry = {
         {
           title: 'Jonathan Strange & Mr Norrell',
           author: 'Susanna Clarke',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781582344164-L.jpg',
           darkness_level: 3,
           heat_level: null,
           standalone: true,
@@ -54,8 +52,6 @@ export const theNameOfTheWind: BooksLikeEntry = {
         {
           title: 'The Lies of Locke Lamora',
           author: 'Scott Lynch',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780553588941-L.jpg',
           darkness_level: 4,
           heat_level: null,
           standalone: false,
@@ -85,8 +81,6 @@ export const theNameOfTheWind: BooksLikeEntry = {
         {
           title: 'The Magicians',
           author: 'Lev Grossman',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780670020553-L.jpg',
           darkness_level: 4,
           heat_level: 'Open Door',
           standalone: false,
@@ -110,29 +104,27 @@ export const theNameOfTheWind: BooksLikeEntry = {
             'https://bookshop.org/search?keywords=The+Magicians+Lev+Grossman&affiliate=122720',
         },
         {
-          title: 'A Deadly Education',
-          author: 'Naomi Novik',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780593128480-L.jpg',
-          darkness_level: 3,
-          heat_level: 'Closed Door',
+          title: 'The Will of the Many',
+          author: 'James Islington',
+          darkness_level: 4,
+          heat_level: null,
           standalone: false,
-          series: 'The Scholomance',
+          series: 'The Hierarchy',
           series_number: 1,
-          series_label: 'Series (trilogy)',
+          series_label: 'Series (ongoing)',
           audiobook: true,
-          note: "A magic school that actively tries to kill you, a prickly female Kvothe who's been told she's destined for destruction, and a magic system built around rules, costs, and consequences. The voice is the draw — El is acerbic and funny and precisely observant in a way that makes the pages disappear. Lighter in tone than Rothfuss but similarly driven by a single compelling protagonist's interiority. Caveat: lighter stakes, more YA energy despite the dark premise.",
+          note: "The most structurally similar book to Name of the Wind published in the last decade. Vis Telimus is hiding who he really is inside an elite Roman-inspired academy, supernaturally gifted at its core skill, and the whole book is layered over a frame mystery you sense but can't yet name. Where Kvothe's genius is in sympathy and music, Vis's is in a hierarchy-based will system — and Islington writes the rules with the same rigour Rothfuss brings to Sympathy. The unreliable-narrator undertones are as close as anyone has come to replicating what Rothfuss does structurally. Unlike Kingkiller, the series is actively being written.",
           tags: [
-            'Magic School',
-            'Sardonic Voice',
-            'Hard Magic',
-            'Survival',
-            'Slow Burn',
+            'Hidden Identity',
+            'Academy Setting',
+            'Underdog Genius',
+            'Political Intrigue',
+            'Frame Mystery',
           ],
           amazon_url:
-            'https://www.amazon.com/s?k=A+Deadly+Education+Naomi+Novik&tag=librariancura-20',
+            'https://www.amazon.com/s?k=The+Will+of+the+Many+James+Islington&tag=librariancura-20',
           bookshop_url:
-            'https://bookshop.org/search?keywords=A+Deadly+Education+Novik&affiliate=122720',
+            'https://bookshop.org/search?keywords=The+Will+of+the+Many+Islington&affiliate=122720',
         },
       ],
     },
@@ -165,33 +157,58 @@ export const theNameOfTheWind: BooksLikeEntry = {
           bookshop_url:
             'https://bookshop.org/search?keywords=Mistborn+Final+Empire+Sanderson&affiliate=122720',
         },
+        {
+          title: 'A Deadly Education',
+          author: 'Naomi Novik',
+          darkness_level: 3,
+          heat_level: 'Closed Door',
+          standalone: false,
+          series: 'The Scholomance',
+          series_number: 1,
+          series_label: 'Series (trilogy)',
+          audiobook: true,
+          note: "Magic here works like Sympathy — classified, costed, and never charitable. Every spell has an affinity, a difficulty tier, and a consequence if you push past what your power allows. The Scholomance treats magic as an engineering discipline rather than an art, and El approaches it with the same precise, exhausted expertise Kvothe brings to his Sympathy work. Lighter in register but the systematic rigour is real. Caveat: more YA in energy, lower stakes.",
+          tags: [
+            'Hard Magic System',
+            'Magic School',
+            'Sardonic Voice',
+            'Survival',
+            'Complete Trilogy',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=A+Deadly+Education+Naomi+Novik&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=A+Deadly+Education+Novik&affiliate=122720',
+        },
       ],
     },
     {
       heading:
-        'If you want something complete while you wait for book three...',
+        'If you loved the literary prose and character interiority...',
       recs: [
         {
-          title: 'Uprooted',
-          author: 'Naomi Novik',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780804179058-L.jpg',
-          darkness_level: 3,
-          heat_level: 'Closed Door',
-          standalone: true,
+          title: "Assassin's Apprentice",
+          slug: 'assassins-apprentice',
+          author: 'Robin Hobb',
+          darkness_level: 4,
+          heat_level: null,
+          standalone: false,
+          series: 'The Farseer Trilogy',
+          series_number: 1,
+          series_label: 'Series (trilogy)',
           audiobook: true,
-          note: 'A standalone fairy-tale fantasy with prose that has the same lyrical quality as Rothfuss, a magic system that feels organic rather than mechanical, and a slow-burn tension between protagonists that earns its resolution — all in one volume. If waiting indefinitely for Doors of Stone has you burned, this is the palate cleanser: beautiful, complete, deeply satisfying. Caveat: lower stakes than Kingkiller, more fairy tale than epic. The ambition is different.',
+          note: "Robin Hobb writes the kind of prose Rothfuss readers recognise: deeply interior, character-first, willing to sit in a moment rather than push plot forward. Fitz is as gifted as Kvothe — trained in assassination and a magic called Skill — as isolated, and as interesting in his failures as his successes. The trilogy is complete and delivers a full emotional arc. Caveat: Hobb is more emotionally punishing than Rothfuss — she commits to consequences in ways Rothfuss defers. Don't start this if you need victories.",
           tags: [
-            'Standalone',
-            'Lyrical Prose',
-            'Slow Burn',
-            'Fairy-Tale Vibes',
-            'Female Power',
+            'Literary Prose',
+            'Complete Trilogy',
+            'Coming of Age',
+            'Court Intrigue',
+            'Gifted Outsider',
           ],
           amazon_url:
-            'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
+            "https://www.amazon.com/s?k=Assassin%27s+Apprentice+Robin+Hobb&tag=librariancura-20",
           bookshop_url:
-            'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik&affiliate=122720',
+            "https://bookshop.org/search?keywords=Assassin%27s+Apprentice+Robin+Hobb&affiliate=122720",
         },
       ],
     },
@@ -199,8 +216,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
   recommendations: [
     {
       title: "The Wise Man's Fear",
+      slug: 'the-wise-mans-fear',
       author: 'Patrick Rothfuss',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780756404734-L.jpg',
       darkness_level: 3,
       heat_level: 'Open Door',
       tags: [
@@ -221,7 +238,6 @@ export const theNameOfTheWind: BooksLikeEntry = {
     {
       title: 'The Lies of Locke Lamora',
       author: 'Scott Lynch',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780553588941-L.jpg',
       darkness_level: 4,
       heat_level: null,
       tags: [
@@ -242,7 +258,6 @@ export const theNameOfTheWind: BooksLikeEntry = {
     {
       title: 'Jonathan Strange & Mr Norrell',
       author: 'Susanna Clarke',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9781582344164-L.jpg',
       darkness_level: 3,
       heat_level: null,
       tags: [
@@ -262,8 +277,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
     },
     {
       title: 'Mistborn: The Final Empire',
+      slug: 'the-final-empire',
       author: 'Brandon Sanderson',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg',
       darkness_level: 3,
       heat_level: null,
       tags: [
@@ -284,7 +299,6 @@ export const theNameOfTheWind: BooksLikeEntry = {
     {
       title: 'The Magicians',
       author: 'Lev Grossman',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780670020553-L.jpg',
       darkness_level: 4,
       heat_level: 'Open Door',
       tags: [
@@ -305,7 +319,6 @@ export const theNameOfTheWind: BooksLikeEntry = {
     {
       title: 'Uprooted',
       author: 'Naomi Novik',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780804179058-L.jpg',
       darkness_level: 3,
       heat_level: 'Closed Door',
       tags: [
@@ -322,6 +335,46 @@ export const theNameOfTheWind: BooksLikeEntry = {
         'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
       bookshop_url:
         'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik&affiliate=122720',
+    },
+    {
+      title: 'The Will of the Many',
+      author: 'James Islington',
+      darkness_level: 4,
+      heat_level: null,
+      tags: [
+        'Hidden Identity',
+        'Academy Setting',
+        'Underdog Genius',
+        'Political Intrigue',
+        'Frame Mystery',
+      ],
+      why: "The strongest structural match for Name of the Wind published in the last decade. Hidden identity, elite academy, gifted outsider operating well above what anyone expects, and a frame mystery running under everything you sense before you can name it. The magic system (will-based power hierarchy) has the same rigour as Sympathy, and Islington uses it with the same discipline. Darker in tone, more tightly plotted — and unlike Kingkiller, actively finishing its series.",
+      standalone: false,
+      audiobook: true,
+      amazon_url:
+        'https://www.amazon.com/s?k=The+Will+of+the+Many+James+Islington&tag=librariancura-20',
+      bookshop_url:
+        'https://bookshop.org/search?keywords=The+Will+of+the+Many+Islington&affiliate=122720',
+    },
+    {
+      title: "Assassin's Apprentice",
+      author: 'Robin Hobb',
+      darkness_level: 4,
+      heat_level: null,
+      tags: [
+        'Literary Prose',
+        'Gifted Outsider',
+        'Court Intrigue',
+        'Complete Trilogy',
+        'Coming of Age',
+      ],
+      why: "The closest prose equivalent to Rothfuss in terms of literary quality and character interiority. Hobb writes Fitz with the same detailed, inside-the-head intelligence Rothfuss brings to Kvothe — both protagonists are gifted, isolated, and more interesting in their failures than their successes. Where Kingkiller floats on beautiful sentences, Farseer grounds everything in consequence. Emotionally heavier, but it delivers a complete arc across three books.",
+      standalone: false,
+      audiobook: true,
+      amazon_url:
+        "https://www.amazon.com/s?k=Assassin%27s+Apprentice+Robin+Hobb&tag=librariancura-20",
+      bookshop_url:
+        "https://bookshop.org/search?keywords=Assassin%27s+Apprentice+Robin+Hobb&affiliate=122720",
     },
   ],
   related: [
