@@ -171,7 +171,7 @@ export const thePoppyWar: BooksLikeEntry = {
             'https://covers.openlibrary.org/b/isbn/9780345539786-L.jpg',
           darkness_level: 4,
           standalone: false,
-          series: 'Red Rising Saga',
+          series: 'Red Rising',
           series_number: 1,
           series_label: 'Series (6 books, ongoing)',
           audiobook: true,

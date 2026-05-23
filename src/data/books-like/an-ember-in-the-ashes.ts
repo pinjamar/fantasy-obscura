@@ -97,7 +97,7 @@ export const anEmberInTheAshes: BooksLikeEntry = {
           darkness_level: 5,
           heat_level: 'Closed Door',
           standalone: false,
-          series: 'Red Rising Saga',
+          series: 'Red Rising',
           series_number: 1,
           series_label: 'Saga (6 books)',
           audiobook: true,

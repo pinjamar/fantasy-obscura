@@ -181,7 +181,7 @@ export const nevernight: BooksLikeEntry = {
           darkness_level: 4,
           heat_level: null,
           standalone: false,
-          series: 'Red Rising Saga',
+          series: 'Red Rising',
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,

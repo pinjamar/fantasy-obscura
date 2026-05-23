@@ -115,6 +115,7 @@ import { kateDaniels } from './books-like/kate-daniels';
 import { sabriel } from './books-like/sabriel';
 import { horusHeresy } from './books-like/horus-heresy';
 import { theShadowOfTheGods } from './books-like/the-shadow-of-the-gods';
+import { theChroniclesOfNarnia } from './books-like/the-chronicles-of-narnia';
 
 export interface BooksLikeRec {
   title: string;
@@ -366,6 +367,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   sabriel,
   horusHeresy,
   theShadowOfTheGods,
+  theChroniclesOfNarnia,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
