@@ -5,6 +5,7 @@ export const aLittleHatred: BooksLikeEntry = {
   source: {
     title: 'A Little Hatred',
     author: 'Joe Abercrombie',
+    reading_order_slug: 'first-law',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9780316187190-L.jpg',
     darkness_level: 5,
     heat_level: null,

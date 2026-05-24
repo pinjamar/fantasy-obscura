@@ -5,6 +5,7 @@ export const redCountry: BooksLikeEntry = {
   source: {
     title: 'Red Country',
     author: 'Joe Abercrombie',
+    reading_order_slug: 'first-law',
     db_slug: 'red-country',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9780316187213-L.jpg',
     darkness_level: 4,

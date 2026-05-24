@@ -2,7 +2,7 @@ import type { ReadingOrderEntry } from '../reading-orders';
 
 export const valdemar: ReadingOrderEntry = {
   slug: 'valdemar',
-  name: 'The World of Valdemar',
+  name: 'Valdemar',
   author: 'Mercedes Lackey',
   seriesStatus: 'ongoing',
   seriesStatusLabel: '📖 Ongoing — 40+ novels across 13 sub-series since 1987',

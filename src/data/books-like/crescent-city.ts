@@ -5,6 +5,7 @@ export const crescentCity: BooksLikeEntry = {
   source: {
     title: 'Crescent City (House of Earth and Blood)',
     author: 'Sarah J. Maas',
+    reading_order_slug: 'sarah-j-maas',
     db_slug: 'house-of-earth-and-blood',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9781635574043-L.jpg',
     darkness_level: 4,

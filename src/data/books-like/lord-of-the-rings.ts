@@ -5,6 +5,7 @@ export const lordOfTheRings: BooksLikeEntry = {
   source: {
     title: 'The Lord of the Rings: The Fellowship of the Ring',
     author: 'J.R.R. Tolkien',
+    reading_order_slug: 'middle-earth',
     db_slug: 'the-fellowship-of-the-ring',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9780547928210-L.jpg',
     darkness_level: 2,

@@ -5,6 +5,7 @@ export const legendOfDrizzt: BooksLikeEntry = {
   source: {
     title: 'Homeland',
     author: 'R.A. Salvatore',
+    reading_order_slug: 'drizzt',
     db_slug: 'homeland',
     darkness_level: 3,
     heat_level: null,

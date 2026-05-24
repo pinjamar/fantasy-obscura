@@ -5,6 +5,7 @@ export const theHobbit: BooksLikeEntry = {
   source: {
     title: 'The Hobbit',
     author: 'J.R.R. Tolkien',
+    reading_order_slug: 'middle-earth',
     db_slug: 'the-hobbit',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg',
     darkness_level: 2,

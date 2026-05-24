@@ -6,6 +6,7 @@ export const assassinsApprentice: BooksLikeEntry = {
     title: "Assassin's Apprentice",
     author: 'Robin Hobb',
     db_slug: 'assassins-apprentice',
+    reading_order_slug: 'robin-hobb',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9780553573398-L.jpg',
     darkness_level: 4,
     heat_level: null,

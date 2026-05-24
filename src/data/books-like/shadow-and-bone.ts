@@ -5,6 +5,7 @@ export const shadowAndBone: BooksLikeEntry = {
   source: {
     title: 'Shadow and Bone',
     author: 'Leigh Bardugo',
+    reading_order_slug: 'grishaverse',
     db_slug: 'shadow-and-bone',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9780805094596-L.jpg',
     darkness_level: 3,

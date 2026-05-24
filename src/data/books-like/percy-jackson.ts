@@ -5,6 +5,7 @@ export const percyJackson: BooksLikeEntry = {
   source: {
     title: 'The Lightning Thief',
     author: 'Rick Riordan',
+    reading_order_slug: 'rick-riordan',
     db_slug: 'percy-jackson-and-the-lightning-thief',
     cover_url:
       'https://images-na.ssl-images-amazon.com/images/P/0786856297.01._SCLZZZZZZZ_.jpg',

@@ -5,6 +5,7 @@ export const dragonlance: BooksLikeEntry = {
   source: {
     title: 'Dragonlance Chronicles',
     author: 'Margaret Weis & Tracy Hickman',
+    reading_order_slug: 'dragonlance',
     db_slug: 'dragons-of-autumn-twilight',
     darkness_level: 3,
     heat_level: null,

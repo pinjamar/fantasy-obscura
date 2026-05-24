@@ -163,6 +163,7 @@ export interface BooksLikeEntry {
     title: string;
     author: string;
     db_slug?: string; // override when DB slug differs from title-based slug
+    reading_order_slug?: string; // override when reading order slug differs from series-based slug
     cover_url?: string;
     darkness_level: number;
     heat_level?: string | null;

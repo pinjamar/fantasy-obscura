@@ -5,6 +5,7 @@ export const sixOfCrows: BooksLikeEntry = {
   source: {
     title: 'Six of Crows',
     author: 'Leigh Bardugo',
+    reading_order_slug: 'grishaverse',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9781627792127-L.jpg',
     darkness_level: 3,
     heat_level: 'Closed Door',

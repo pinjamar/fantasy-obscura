@@ -5,6 +5,7 @@ export const valdemar: BooksLikeEntry = {
   source: {
     title: 'Arrows of the Queen',
     author: 'Mercedes Lackey',
+    reading_order_slug: 'valdemar',
     db_slug: 'arrows-of-the-queen',
     darkness_level: 2,
     heat_level: null,

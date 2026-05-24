@@ -5,6 +5,7 @@ export const theHeroes: BooksLikeEntry = {
   source: {
     title: 'The Heroes',
     author: 'Joe Abercrombie',
+    reading_order_slug: 'first-law',
     db_slug: 'the-heroes',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9780316044981-L.jpg',
     darkness_level: 5,

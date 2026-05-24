@@ -5,6 +5,7 @@ export const theBladeitself: BooksLikeEntry = {
   source: {
     title: 'The Blade Itself',
     author: 'Joe Abercrombie',
+    reading_order_slug: 'first-law',
     db_slug: 'the-blade-itself',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9780575077881-L.jpg',
     darkness_level: 4,

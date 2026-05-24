@@ -5,6 +5,7 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
   source: {
     title: 'Mistborn: The Final Empire',
     author: 'Brandon Sanderson',
+    reading_order_slug: 'mistborn',
     db_slug: 'the-final-empire',
     cover_url:
       'https://books.google.com/books/publisher/content/images/frontcover/dlfOfxkm1PoC?fife=w400-h600',

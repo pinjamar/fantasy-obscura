@@ -5,6 +5,7 @@ export const houseOfFlameAndShadow: BooksLikeEntry = {
   source: {
     title: 'House of Flame and Shadow',
     author: 'Sarah J. Maas',
+    reading_order_slug: 'sarah-j-maas',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9781639731220-L.jpg',
     darkness_level: 4,
     heat_level: 'Explicit',
