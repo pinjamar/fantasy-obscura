@@ -197,6 +197,104 @@ export const mySeriesEntry: ReadingOrderEntry = {
 
 ---
 
+## Adding a New Guide — Full Checklist
+
+### 1. Write the data file
+Create `src/data/reading-orders/[slug].ts`. Query the DB first (see above).
+
+### 2. Register it
+In `src/data/reading-orders.ts`:
+```ts
+import { myGuide } from './reading-orders/my-guide';
+// add to READING_ORDERS array
+```
+
+### 3. Add the hero banner
+Every guide needs a banner image or the hero renders blank.
+
+1. Drop a source PNG into `assets/raw/reading-orders/[slug].png`
+2. Run `npm run images:optimize` — generates WebP/AVIF at 400w and 800w
+3. Add the slug to the `ReadingOrderImageSlug` union type in `src/data/image-map.ts`
+4. Add an entry to `READING_ORDER_IMAGE_SLUG` in the same file:
+   ```ts
+   'my-series': 'my-series',
+   ```
+
+Without step 4 the banner silently doesn't render even if the image files exist.
+
+---
+
+## Book List — Order and Labels
+
+### Always list books in recommended reading order
+
+The guide IS the reading order. List books in the order readers should read them.
+Do **not** label the group sublabel as "publication order — recommended" — the guide is a reading guide, not a publication history. Use `sublabel: 'read in this order'` or omit the sublabel entirely.
+
+### Don't add seriesLabel overrides unless necessary
+
+The DB handles series numbering automatically. Only override `seriesLabel` when:
+- The book belongs to a sub-series (e.g. `'Harper Hall #1'`)
+- The book has no DB series_number and needs a descriptive label (e.g. `'Short Stories'`)
+- The DB numbering would be misleading (e.g. after renumbering when books are removed from the sequence)
+
+**Never** add `seriesLabel` entries like `'Pub #1 · Chrono #2'` to show two orderings simultaneously — handle the debate in cards and sections instead.
+
+### When publication ≠ recommended reading order
+
+List books in the recommended reading order. Explain the debate entirely in cards and sections.
+Do not try to encode both orders in the book list at the same time — it creates confusion, not clarity.
+
+---
+
+## Cards — Ordering Principle
+
+Cards sit above the book list and orient a first-time reader. Order them so they answer questions in the sequence a reader actually has them:
+
+1. **Author** — who wrote this, when, what else they wrote
+2. **What to expect** — tone, allegory, content, what makes this series unusual
+3. **The key decision** — reading order debate, entry point choice, series structure
+4. **The answer** — why one option is recommended
+5. **Background/context** — interesting facts, relationships to other authors, legacy
+6. **The finale** — a note on the last book, especially if divisive
+
+The author card is always first for classic/older series where context matters. For new/ongoing series it can move later. The finale card is always last.
+
+---
+
+## Section Types — Full List
+
+```ts
+type?: 'bullets' | 'prose' | 'warning' | 'spoiler'
+```
+
+- `'bullets'` — bullet list, generates FAQ schema (default, most common)
+- `'prose'` — single paragraph, generates FAQ schema
+- `'warning'` — amber styling with ⚠️ prefix, generates FAQ schema. Use for content issues a reader needs to know before starting (dated attitudes, dark content, narrative problems)
+- `'spoiler'` — hidden behind a reveal toggle. Use for plot revelations from late in the series (character deaths, ending controversies, major twists). **Do not put end-of-series revelations in a `'warning'` section** — that renders them in plain view
+
+The top-level `warning:` string field (separate from sections) renders as an amber banner directly below the description, before everything else. Use it for critical reading guidance that must be seen immediately — e.g., "most copies in print have the wrong book #1."
+
+---
+
+## Interludes and Interquels
+
+**Always place an interlude where it falls in the reading timeline — not at the end of the book list.**
+
+If a book is set between two other books in the series, it belongs between those two books in the guide, regardless of when it was published. Use `seriesLabel` to signal its position:
+```ts
+seriesLabel: 'Interlude — between #4 and #5'
+```
+Set `status: 'supplementary'` if it is not essential to the main plot, but still list it in position.
+
+Do not add a note saying "most readers read it after the main series" or "either works" — pick the correct position and list it there. If the author or series defines a canonical placement, use it.
+
+Examples:
+- **The Wind Through the Keyhole** (Dark Tower) — set between books 4 and 5; listed between books 4 and 5
+- **Port of Shadows** (Black Company) — written in 2018 but set between books 1 and 2; note the placement in the book's `note` field if it is a minor addition, or list it in position if it is substantial
+
+---
+
 ## Publication Order Strip
 
 Only add when publication order significantly differs from recommended reading order AND readers
@@ -207,8 +305,6 @@ commonly debate which to follow. Current cases where this matters:
 - **Dune** — Herbert originals vs Brian Herbert continuations fork
 
 For most series the book list already is publication order — a second strip adds nothing.
-For series with an interquel (e.g., Black Company's Port of Shadows, written in 2018): note it
-in the book's `note` field rather than building a separate section.
 
 ---
 

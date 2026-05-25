@@ -73,7 +73,10 @@ export type ReadingOrderImageSlug =
   | 'john-gwynne'
   | 'caraval'
   | 'cradle'
-  | 'locked-tomb';
+  | 'locked-tomb'
+  | 'narnia'
+  | 'dark-tower'
+  | 'red-rising';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -130,6 +133,9 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'caraval':              'caraval',
   'cradle':               'cradle',
   'locked-tomb':          'locked-tomb',
+  'narnia':               'narnia',
+  'dark-tower':           'dark-tower',
+  'red-rising':           'red-rising',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

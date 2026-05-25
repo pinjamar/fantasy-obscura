@@ -123,6 +123,9 @@ import { johnGwynne } from './reading-orders/john-gwynne';
 import { caraval } from './reading-orders/caraval';
 import { cradle } from './reading-orders/cradle';
 import { lockedTomb } from './reading-orders/locked-tomb';
+import { narnia } from './reading-orders/narnia';
+import { darkTower } from './reading-orders/dark-tower';
+import { redRising } from './reading-orders/red-rising';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -167,6 +170,9 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   caraval,
   cradle,
   lockedTomb,
+  narnia,
+  darkTower,
+  redRising,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
