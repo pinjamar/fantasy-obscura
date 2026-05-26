@@ -465,7 +465,9 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div>
           <h1 class="text-4xl font-bold tracking-tight text-zinc-900">{curatedEntry.name} Reading Order</h1>
-          <p class="mt-1 text-lg text-zinc-500">by <a href={`/authors/${authorToSlug(curatedEntry.author)}/`} class="font-semibold text-purple-700 hover:text-purple-900 transition-colors">{curatedEntry.author}</a></p>
+          <p class="mt-1 text-lg text-zinc-500">by {curatedEntry.author.split(' & ').map((name, i, arr) => (
+            <><a href={`/authors/${authorToSlug(name)}/`} class="font-semibold text-purple-700 hover:text-purple-900 transition-colors">{name}</a>{i < arr.length - 1 ? ' & ' : ''}</>
+          ))}</p>
         </div>
         <span class="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-medium">
           {curatedEntry.seriesStatusLabel}

@@ -82,25 +82,12 @@ type SimilarBookRow = {
   subgenres: string[] | null; tropes: string[] | null;
   series: string | null; series_number: number | null;
 };
-const bookSubgenres = new Set(book.subgenres ?? []);
-const bookTropes = new Set(book.tropes ?? []);
-
-const { data: candidateBooks } = await supabaseClient
-  .from('books')
-  .select('id, title, slug, authors, cover_url, avg_rating, subgenres, tropes, series, series_number')
-  .not('subgenres', 'is', null)
-  .neq('id', book.id)
-  .limit(1000) as { data: SimilarBookRow[] | null };
-
-const similarBooks = (candidateBooks ?? [])
-  .map((b) => {
-    const subgenreOverlap = (b.subgenres ?? []).filter((s) => bookSubgenres.has(s)).length;
-    const tropeOverlap    = (b.tropes ?? []).filter((t) => bookTropes.has(t)).length;
-    return { ...b, score: subgenreOverlap * 2 + tropeOverlap };
-  })
-  .filter((b) => b.score > 0)
-  .sort((a, b) => b.score - a.score || (b.avg_rating ?? 0) - (a.avg_rating ?? 0))
-  .slice(0, 20);
+const { data: similarBooks } = await supabaseClient.rpc('get_similar_books', {
+  p_book_id:   book.id,
+  p_subgenres: book.subgenres ?? [],
+  p_tropes:    book.tropes ?? [],
+  p_series:    book.series ?? null,
+}) as { data: SimilarBookRow[] | null };
 
 // Normalise authors: some DB entries have both names merged into one string
 // e.g. ["Mo Xiang Tong Xiu, Andrea Kriz"] → ["Mo Xiang Tong Xiu", "Andrea Kriz"]

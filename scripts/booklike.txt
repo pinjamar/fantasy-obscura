@@ -13,7 +13,7 @@
 4. ✅ Books like Iron Flame
 5. ✅ Books like A Court of Silver Flames
 6. ✅ Books like Throne of Glass
-7. ✅ Books like Kingdom of the Wicked
+7. ✅✅ Books like Kingdom of the Wicked
 8. ✅ Books like Crescent City
 9. ✅ Books like Onyx Storm
 10. ✅✅ Books like The Cruel Prince
@@ -29,7 +29,7 @@
 ### Epic Fantasy Pillars (13)
 19. ✅✅ Books like Mistborn / The Final Empire
 20. ✅✅ Books like The Way of Kings
-21. ✅ Books like The Name of the Wind
+21. ✅✅Books like The Name of the Wind
 22. ✅ Books like The Lord of the Rings
 23. ✅ Books like A Game of Thrones
 24. ✅ Books like The Wheel of Time
@@ -104,8 +104,8 @@
 82. ✅ Books like Daughter of the Moon Goddess
 83. Books like Legendborn
 84. Books like Skyward (Sanderson)
-85. Books like The Chronicles of Narnia
-86. Books like Sabriel / Old Kingdom (Garth Nix)
+85. ✅ Books like The Chronicles of Narnia
+86. ✅ Books like Sabriel / Old Kingdom (Garth Nix)
 
 ### Cozy Fantasy & Heartwarming (14)
 87. ✅ Books like A Psalm for the Wild-Built
@@ -230,32 +230,7 @@ Highest search volume, most reader confusion, strongest return on time invested
 
 2 Narnia Reading Order (C.S. Lewis)
 
-7 books complete — publication order and chronological order differ; one of the most searched reading order debates in all of fiction
-Publication order: The Lion, the Witch and the Wardrobe → Prince Caspian → The Voyage of the Dawn Treader → The Silver Chair → The Horse and His Boy → The Magician’s Nephew → The Last Battle
-Chronological order: The Magician’s Nephew → The Lion, the Witch and the Wardrobe → The Horse and His Boy → Prince Caspian → The Voyage of the Dawn Treader → The Silver Chair → The Last Battle
-Publication order is strongly recommended — The Lion, the Witch and the Wardrobe is the perfect entry; it hooks immediately and establishes Narnia before any backstory is revealed
-The Magician’s Nephew (chronological first) is the origin story — it works as a prequel once you already love Narnia; the emotional weight of watching Narnia’s creation and the wardrobe’s origin lands much harder if you know the world first
-C.S. Lewis’s 1957 letter: Lewis replied to a young reader suggesting chronological order might be fine — publishers used this to resequence the books; most Lewis scholars consider it a polite reply, not a strong editorial stance
-The Horse and His Boy is set during the events of LWW — works as a mid-series detour in either reading order
-The Last Battle is the series finale — divisive but requires the full series for full emotional impact
-The series is Christian allegory — intentional and pervasive throughout; readers may want to know this upfront
-Slug: /reading-orders/narnia
-
-
 3 Dark Tower Reading Order (Stephen King)
-
-8 books (7 main + 1 interlude): The Gunslinger → The Drawing of the Three → The Waste Lands → Wizard and Glass → Wolves of the Calla → Song of Susannah → The Dark Tower → The Wind Through the Keyhole
-The Wind Through the Keyhole (published 2012): a standalone interlude set between books 4 and 5 in the timeline — read it after finishing the main 7 or slot it between books 4 and 5; either works
-Roland Deschain is the last Gunslinger, pursuing the Man in Black (Walter/Randall Flagg) and the Dark Tower — the linchpin holding all realities together; the series is Western + fantasy + sci-fi + horror fused
-The Gunslinger (book 1) was written when King was 19–20 — shorter, more literary, more ambiguous than the later books; new readers sometimes bounce off it; push to The Drawing of the Three where modern characters are introduced and the series opens up
-The ka-tet (Roland’s companions): gathered gradually across books 1–3 — Eddie, Susannah, Jake, Oy the billy-bumbler; their dynamics are the emotional core of the series
-Connected King universe — almost every Stephen King novel touches the Dark Tower in some way:
-  Essential connections: Salem’s Lot (appears in book 1), The Stand (Randall Flagg is Walter), Insomnia (directly tied to DT plot), Black House (direct companion to book 5)
-  Broader web: It, The Shining, Firestarter, Pet Sematary all share the same universe — prior reading adds resonance but is not required
-King was hit by a van in 1999 during the writing of the series — there is a noticeable shift in tone and pacing in books 6–7; he also appears as a character
-The ending is deliberately divisive — King adds a warning before the final chapter; read it anyway
-Slug: /reading-orders/dark-tower
-
 
 4 Rick Riordan Reading Order (Rick Riordan — Percy Jackson & mythology)
 
@@ -346,16 +321,6 @@ Slug: /reading-orders/folk-of-the-air
 
 
 12 Red Rising Reading Order (Pierce Brown)
-
-7-book (ongoing) sci-fi saga across the solar system — color caste society with Golds at the apex, Reds at the bottom
-Original trilogy (3 books, complete): Red Rising → Golden Son → Morning Star — Darrow, a Red miner, infiltrates Gold society to spark revolution; self-contained arc with a full ending
-Sequel series (ongoing): Iron Gold → Dark Age → Light Bringer → Red God — wider cast of POVs, higher body count, significantly darker tone
-The original trilogy can be read as a standalone — many readers stop at Morning Star and are satisfied
-Iron Gold begins the sequel era: multiple POVs (not just Darrow), more political complexity, darker outcomes
-Dark Age is the longest and most brutal book in the series — widely divisive but praised for scale
-Roman mythology aesthetic runs throughout: Golds take names from Roman gods and mythology, gladiatorial combat, legions, class hierarchy
-Set across the entire solar system: Mars, Luna, Earth, the outer planets — the scope expands with each book
-Slug: /reading-orders/red-rising
 
 
 13 Foundation Reading Order (Isaac Asimov)

@@ -126,6 +126,8 @@ import { lockedTomb } from './reading-orders/locked-tomb';
 import { narnia } from './reading-orders/narnia';
 import { darkTower } from './reading-orders/dark-tower';
 import { redRising } from './reading-orders/red-rising';
+import { geneWolfe } from './reading-orders/gene-wolfe';
+import { shadowsOfTheApt } from './reading-orders/shadows-of-the-apt';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -173,6 +175,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   narnia,
   darkTower,
   redRising,
+  geneWolfe,
+  shadowsOfTheApt,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
