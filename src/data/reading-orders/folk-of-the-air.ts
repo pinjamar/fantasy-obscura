@@ -1,0 +1,230 @@
+import type { ReadingOrderEntry } from '../reading-orders';
+
+export const folkOfTheAir: ReadingOrderEntry = {
+  slug: 'folk-of-the-air',
+  name: 'The Folk of the Air',
+  author: 'Holly Black',
+  seriesStatus: 'complete',
+  seriesStatusLabel: '✅ Main trilogy complete — Stolen Heir duology complete',
+  description:
+    'Jude Duarte is mortal in a world where magic equals power — raised in Faerie after her parents were murdered, surrounded by fae who see her as lesser by nature. The Folk of the Air is about what she does with that. The enemies-to-lovers dynamic is structural, not cosmetic: Jude and Cardan are genuinely dangerous to each other throughout all three books. One of the fastest-reading YA trilogies in current fantasy — most readers finish all three in a week. Start with The Cruel Prince.',
+  darknessDisplay: '🕯️🕯️ Mild to Moderate',
+  groups: [
+    {
+      label: 'The Folk of the Air',
+      sublabel: 'main trilogy — read in publication order',
+      note: 'Three books, complete. Do not read out of order — The Wicked King ends on a hard cliffhanger and The Queen of Nothing resolves it directly.',
+      noteType: 'required',
+      books: [
+        {
+          title: 'The Cruel Prince',
+          slug: 'the-cruel-prince',
+          status: 'mandatory',
+          note: 'Start here. Jude navigates Faerie court politics with no magic and considerable ambition. Faster and sharper than the opening suggests.',
+          page_count: 370,
+          publication_year: 2018,
+        },
+        {
+          title: 'The Wicked King',
+          slug: 'the-wicked-king',
+          status: 'mandatory',
+          note: 'The best book in the trilogy by most accounts — higher stakes, more complex maneuvering. Ends on a hard cliffhanger.',
+          page_count: 308,
+          publication_year: 2019,
+        },
+        {
+          title: 'The Queen of Nothing',
+          slug: 'the-queen-of-nothing',
+          status: 'mandatory',
+          note: 'Resolves the cliffhanger directly. Read immediately after The Wicked King.',
+          page_count: 336,
+          publication_year: 2019,
+        },
+      ],
+    },
+    {
+      label: 'Companion Novellas',
+      sublabel: 'optional — short companion pieces for the main trilogy',
+      note: 'Both are brief and optional. The Lost Sisters is best read after book 1. How the King of Elfhame is best read between books 2 and 3, or after the trilogy — it significantly recontextualizes Cardan.',
+      noteType: 'optional',
+      books: [
+        {
+          title: 'The Lost Sisters',
+          slug: 'the-lost-sisters',
+          status: 'supplementary',
+          note: "Taryn's (Jude's twin) perspective on the events of The Cruel Prince. Very short. Best read after book 1.",
+          page_count: 52,
+          publication_year: 2018,
+        },
+        {
+          title: 'How the King of Elfhame Learned to Hate Stories',
+          slug: 'how-the-king-of-elfhame-learned-to-hate-stories',
+          status: 'supplementary',
+          note: "Cardan's backstory and perspective — illustrated novella. Recontextualizes his behaviour in book 1 significantly. Best read between books 2 and 3 or after the trilogy.",
+          page_count: 200,
+          publication_year: 2020,
+        },
+      ],
+    },
+    {
+      label: 'The Stolen Heir Duology',
+      sublabel: "sequel series — Oak's story, set after the main trilogy",
+      note: 'Follows Oak — a character from the main trilogy — in a self-contained new story. Assumes familiarity with how the main trilogy ends. Jude and Cardan appear.',
+      noteType: 'optional',
+      books: [
+        {
+          title: 'The Stolen Heir',
+          slug: 'the-stolen-heir',
+          status: 'optional',
+          note: 'Oak travels north into a land of exiled fae. New protagonist POV, self-contained story.',
+          page_count: 292,
+          publication_year: 2023,
+        },
+        {
+          title: "The Prisoner's Throne",
+          slug: 'the-prisoners-throne',
+          status: 'optional',
+          note: 'Concludes the duology. Read directly after The Stolen Heir.',
+          page_count: 359,
+          publication_year: 2024,
+        },
+      ],
+    },
+    {
+      label: "Holly Black's Other Faerie World",
+      sublabel: 'companion works — same world, different casts',
+      note: 'Set in the same Faerie mythology with different characters. Not prerequisites — read as companions after the main trilogy if you want more of the world.',
+      noteType: 'optional',
+      books: [
+        {
+          title: 'Tithe',
+          slug: 'tithe',
+          status: 'supplementary',
+          note: "First of the Modern Faerie Tales trilogy. Written for a younger audience — less polished than Folk of the Air, but the same mythology. Kaye and Roiben have brief crossover moments with Jude's world.",
+          page_count: 267,
+          publication_year: 2002,
+        },
+        {
+          title: 'Valiant',
+          slug: 'valiant',
+          status: 'supplementary',
+          note: 'Second of the Modern Faerie Tales. Standalone — different protagonist, set in New York.',
+          page_count: 256,
+          publication_year: 2005,
+        },
+        {
+          title: 'Ironside',
+          slug: 'ironside',
+          status: 'supplementary',
+          note: 'Concludes the Modern Faerie Tales trilogy. Returns to Kaye and Roiben.',
+          page_count: 323,
+          publication_year: 2007,
+        },
+        {
+          title: 'The Darkest Part of the Forest',
+          slug: 'the-darkest-part-of-the-forest',
+          status: 'supplementary',
+          note: 'Standalone YA set in a small town bordering Faerie — same mythological rules, entirely separate story. Best read after the main trilogy.',
+          page_count: 287,
+          publication_year: 2015,
+        },
+      ],
+    },
+  ],
+  orderNote:
+    'Read the main trilogy in publication order. The Wicked King ends on a hard cliffhanger — have The Queen of Nothing ready before you start book 2. Everything else is optional.',
+  cardsPosition: 'above',
+  cards: [
+    {
+      title: '⚔️ The Power Dynamic',
+      body: 'The Cruel Prince is frequently described as enemies-to-lovers, which is accurate but undersells it. Jude and Cardan are genuinely dangerous to each other — the threat is structural, not cosmetic. Jude has no magic in a world where magic equals power; her intelligence, ambition, and willingness to out-manoeuvre everyone are her only tools. The power balance inverts, reverses, and inverts again across three books. The tension holds because neither character is safe from the other.',
+      color: 'purple',
+    },
+    {
+      title: '👑 Cardan',
+      body: "Cardan is introduced as a villain and remains genuinely unpleasant for most of book 1. The shift in how he's written — and what the reader learns about why — is one of the series' central pleasures. People who love this trilogy tend to name him as the reason. Going in knowing he's the love interest doesn't spoil anything; how the series earns it is the point.",
+      color: 'zinc',
+    },
+    {
+      title: '🗡️ Jude',
+      body: "Jude is mortal in a world of immortal fae who consider her lesser by nature. She does not accept this. The series is driven by her refusal to be powerless — through intelligence, political maneuvering, and a willingness to do things the fae won't. She is not a passive protagonist. The court politics work because she plays them better than people who have centuries of experience.",
+      color: 'amber',
+    },
+    {
+      title: '⚡ Read All Three First',
+      body: 'Folk of the Air is one of the fastest-reading YA trilogies in current fantasy. The books are short (270–370 pages), the pacing is relentless, and The Wicked King ends on a cliffhanger that makes stopping physically difficult. Most readers finish all three in a week. Buy all three before you start — you will not want to wait.',
+      color: 'blue',
+    },
+    {
+      title: '📚 YA, But',
+      body: 'Folk of the Air is published as YA and reads fast and clean — no explicit content, no graphic violence. But the themes are not soft: manipulation, power, identity, and moral compromise run through all three books. Jude is not a typical YA heroine and Cardan is not a typical YA love interest. Readers who normally avoid YA regularly cite this series as the exception.',
+      color: 'green',
+    },
+    {
+      title: "🌿 Holly Black's Faerie",
+      body: 'Holly Black has been building the same Faerie mythology since 2002. Folk of the Air, the Modern Faerie Tales trilogy (Tithe, Valiant, Ironside), and The Darkest Part of the Forest all share the same world — same courts, same rules, occasional overlapping characters. Folk of the Air is the most refined version. The earlier books are written for a younger audience; read them as companions after, not prerequisites before.',
+      color: 'red',
+    },
+  ],
+  sections: [
+    {
+      heading: 'Reading order notes',
+      type: 'bullets',
+      bullets: [
+        "The Lost Sisters (short story, 52 pages) is Taryn's perspective on The Cruel Prince — slot it after book 1 if you read it at all.",
+        'How the King of Elfhame Learned to Hate Stories slots best between The Wicked King and The Queen of Nothing, or after the trilogy — either works.',
+        'The Stolen Heir duology is self-contained but assumes you know how the main trilogy ends — read it after.',
+        'Modern Faerie Tales and The Darkest Part of the Forest share the same mythology but have entirely different casts — companions, not prerequisites.',
+      ],
+    },
+    {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        'The Cruel Prince opens with the murder of two adults in front of children — not graphic, but sets the tone immediately.',
+        'Court scenes involve deliberate cruelty targeting Jude throughout the series. The violence is social and psychological more than physical.',
+        'No explicit content — this is YA. Romance is central but heat level is low throughout the trilogy.',
+        'Moral complexity on all sides: Jude manipulates, deceives, and plays dangerous games. She is not always right.',
+        'Right for: readers who want sharp YA fantasy with a morally complex protagonist and a slow-burn enemies dynamic.',
+        'Not right for: readers who need clearly heroic protagonists, or who want explicit romance content.',
+      ],
+    },
+  ],
+  darkness: [
+    {
+      label: 'The Cruel Prince',
+      level: 2,
+      desc: 'Murder in the opening pages. Court cruelty and social violence throughout — psychological more than physical.',
+    },
+    {
+      label: 'The Wicked King',
+      level: 3,
+      desc: 'Higher stakes, genuine danger, political manipulation. The darkest entry in the trilogy.',
+    },
+    {
+      label: 'The Queen of Nothing',
+      level: 2,
+      desc: 'Resolution-focused. Less tense than book 2.',
+    },
+    {
+      label: 'The Stolen Heir Duology',
+      level: 3,
+      desc: 'Harsher setting — exiled fae in a dangerous northern land. Slightly darker in tone than the main trilogy.',
+    },
+  ],
+  metaDescription:
+    "The Folk of the Air reading order: main trilogy, companion novellas, the Stolen Heir duology, and Holly Black's other Faerie books.",
+  lastUpdated: '2026-05-26',
+  finishedLabel: 'Finished the trilogy?',
+  booksLikeSlug: 'the-cruel-prince',
+  categoryHref: '/fantasy/romantasy',
+  categoryLabel: 'Browse Romantasy',
+  related: [
+    'acotar',
+    'throne-of-glass',
+    'grishaverse',
+    'caraval',
+    'blood-and-ash',
+    'empyrean',
+  ],
+};

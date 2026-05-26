@@ -78,7 +78,8 @@ export type ReadingOrderImageSlug =
   | 'dark-tower'
   | 'red-rising'
   | 'book-of-the-new-sun'
-  | 'shadows-of-the-apt';
+  | 'shadows-of-the-apt'
+  | 'folk-of-the-air';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -140,6 +141,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'red-rising':           'red-rising',
   'gene-wolfe':           'book-of-the-new-sun',
   'shadows-of-the-apt':  'shadows-of-the-apt',
+  'folk-of-the-air':     'folk-of-the-air',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

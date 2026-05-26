@@ -71,8 +71,7 @@ const thriftBooksUrl  = `https://www.thriftbooks.com/browse/?b.search=${q}`;
 const waterstonesUrl  = `https://www.waterstones.com/books/search/term/${q}`;
 const worderyUrl      = `https://wordery.com/search?term=${qTitle}`;
 
-// ~250 words/page ÷ 250 wpm = 1 min/page → pages ÷ 60 = hours
-const readHours = book.page_count ? Math.round(book.page_count / 60) : null;
+const readHours = book.page_count ? Math.round(book.page_count / 48) : null;
 
 
 // Similar books — score by subgenre overlap (×2) + trope overlap, tiebreak by rating

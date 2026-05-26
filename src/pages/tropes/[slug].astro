@@ -16,7 +16,7 @@ const { data: books } = await supabaseClient
   .select('id, title, slug, authors, cover_url, synopsis, avg_rating, subgenres, darkness_level, series, series_number')
   .contains('tropes', [trope.name])
   .order('avg_rating', { ascending: false, nullsFirst: false })
-  .limit(500);
+  .limit(1000);
 
 // ── Curated best examples ────────────────────────────────────────────────────
 let bestExampleBooks: { title: string; slug: string; cover_url: string | null; avg_rating: number | null; authors: string[] | null; darkness_level: number | null }[] = [];

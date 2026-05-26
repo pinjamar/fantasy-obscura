@@ -23,6 +23,10 @@ EOF
 - Book slugs in the guide **must exactly match** DB slugs — this is what pulls cover images
 - Book titles must match DB titles exactly (e.g. "Valour" not "Valor", "The Fury of the Gods" not "The Storm of the Dead")
 - Page counts must come from DB, not guessed
+- **Publication years must be cross-checked against Goodreads or the publisher** — the DB sometimes has wrong years. If you find an earlier correct year, update the guide AND patch the DB:
+  ```js
+  await sb.from('books').update({ publication_year: CORRECT_YEAR }).eq('slug', 'the-book-slug');
+  ```
 - If a book is missing from DB, add it with `node scripts/add-books.mjs "Title" "Author"` before writing the guide
 - After writing, run `node scripts/check-reading-order-books.mjs` to verify all slugs exist
 
@@ -71,7 +75,7 @@ The one paragraph that answers the actual reading order question before the read
 Include: can you read sub-series in any order? what's the mandatory core? what's optional?
 This is the most-read text on the page. Keep it tight.
 
-### 3. Cards (2–4 cards, `cardsPosition: 'above'`)
+### 3. Cards (6 cards, `cardsPosition: 'above'`)
 
 Quick-orientation facts a new reader needs before they start. Use for:
 
@@ -168,7 +172,7 @@ export const mySeriesEntry: ReadingOrderEntry = {
   warning: '...',               // optional amber warning block at top
   orderNote: '...',             // reading order summary before book list
   cardsPosition: 'above',       // 'above' | 'below' — above is almost always better
-  cards: [...],                 // 2–4 cards
+  cards: [...],                 // 6 cards
   groups: [...],                // use when series has named arcs
   books: [...],                 // use for flat reading lists without arc grouping
   sections: [...],              // FAQ, facts, content notes, etc.
@@ -312,7 +316,7 @@ For most series the book list already is publication order — a second strip ad
 
 - [ ] `description` leads with what makes the series distinctive, ends with clear entry point
 - [ ] `orderNote` answers the reading order question directly in one paragraph
-- [ ] 2–4 cards present, `cardsPosition: 'above'`
+- [ ] 6 cards present, `cardsPosition: 'above'`
 - [ ] "Where to start" section present — OR confirmed it's already answered in description/orderNote (don't duplicate)
 - [ ] "Content notes" section present: darkness type, romance level, explicit content (yes/no), reader fit
 - [ ] Series-specific section present if there's a real search query it answers (pub vs chronological, adaptation context, etc.)

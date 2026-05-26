@@ -92,7 +92,7 @@ if (entry) {
   }
 
   totalPagesCurated = allBooksCurated.reduce((s, b) => s + (b.page_count ?? 0), 0);
-  totalHoursCurated = Math.round(totalPagesCurated / 30);
+  totalHoursCurated = Math.round(totalPagesCurated / 48);
   coreCount = allBooksCurated.filter((b) => b.status === 'mandatory').length;
   optionalCount = allBooksCurated.filter((b) => b.status === 'optional').length;
   supplementaryCount = allBooksCurated.filter((b) => b.status === 'supplementary').length;
