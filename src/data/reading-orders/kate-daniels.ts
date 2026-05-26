@@ -2,7 +2,7 @@ import type { ReadingOrderEntry } from '../reading-orders';
 
 export const kateDaniels: ReadingOrderEntry = {
   slug: 'kate-daniels',
-  name: 'World of Kate Daniels',
+  name: 'Kate Daniels',
   author: 'Ilona Andrews',
   seriesStatus: 'complete',
   seriesStatusLabel: '✅ Complete Series',

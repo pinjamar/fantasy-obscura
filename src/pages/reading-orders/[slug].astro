@@ -139,7 +139,7 @@ if (!isCurated) {
   if (dbBooks.length <= 1) {
     const authors: string[] = dbBooks[0]?.authors ?? [];
     if (authors.length > 0) {
-      return Astro.redirect(`/authors/${authorToSlug(authors[0])}/`, 302);
+      return Astro.redirect(`/authors/${authorToSlug(authors[0])}/`, 301);
     }
     return new Response(null, { status: 404, statusText: 'Not Found' });
   }

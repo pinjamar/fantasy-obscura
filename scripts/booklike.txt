@@ -292,24 +292,6 @@ Slug: /reading-orders/expanse
 
 8 Folk of the Air / Cruel Prince Reading Order (Holly Black)
 
-Main trilogy (3 books, complete): The Cruel Prince → The Wicked King → The Queen of Nothing — Jude Duarte, a mortal girl raised in Faerie after her parents' murder, navigates court politics, assassination plots, and a dangerous dynamic with the arrogant fae prince Cardan
-Read in publication order — The Wicked King ends on a hard cliffhanger; The Queen of Nothing resolves it directly; do not read out of order
-The hook is the power dynamic: Jude has no magic in a world where magic equals power — her intelligence, ambition, and willingness to out-manoeuvre everyone are the only tools she has; Cardan holds the power she lacks; the dynamic inverts, reverses, and inverts again across three books
-One of the fastest-reading trilogies in current YA romantasy — most readers finish all three in a week
-
-Extended universe — read after the main trilogy:
-How the King of Elfhame Learned to Hate Stories (illustrated novella, 2020): Cardan's backstory and perspective; best read between The Wicked King and The Queen of Nothing, or after the trilogy; not required but significantly recontextualizes Cardan's behaviour in book 1
-The Lost Sisters (short story, 2018): Taryn's (Jude's twin sister) perspective on the events of The Cruel Prince — optional companion piece; best read after book 1
-The Stolen Heir (2023) + The Prisoner's Throne (2024): a sequel duology following Oak (a character from the main trilogy) in a new story; self-contained, readable without re-reading the trilogy, but assumes familiarity with how it ends; Jude and Cardan appear
-
-Holly Black's other Faerie work:
-Modern Faerie Tales trilogy (Tithe → Valiant → Ironside, 2002–2007): set in the same Faerie world, earlier works — different cast, loosely connected; Kaye from Tithe and Roiben appear in brief crossover moments with Folk of the Air characters; written for a younger audience and visibly less polished than the later work; read as a companion, not a prerequisite
-The Darkest Part of the Forest (2015): standalone YA set in a small town bordering Faerie — same mythological rules, entirely separate story; best read after Folk of the Air
-
-Content notes: The Cruel Prince opens with the murder of Jude's parents; the court scenes involve deliberate cruelty targeting Jude's mortality; not graphic but not sanitised; The Wicked King and The Queen of Nothing contain moral complexity and manipulation on all sides — Jude is not a passive protagonist
-The Cruel Prince is frequently described as enemies-to-lovers, which is accurate but undersells how the enemies dynamic is structural rather than cosmetic — the characters are genuinely dangerous to each other for reasons that persist throughout the trilogy
-Slug: /reading-orders/folk-of-the-air
-
 
 9 Locked Tomb Reading Order (Tamsyn Muir)
 
@@ -792,26 +774,7 @@ Slug: /reading-orders/elric-saga
 
 55 Shadows of the Apt Reading Order (Adrian Tchaikovsky)
 
-10-book complete series: Empire in Black and Gold → Dragonfly Falling → Blood of the Mantis → Salute the Dark → The Scarab Path → The Sea Watch → Heirs of the Blade → The Air War → War Master's Gate → Seal of the Worm
-Unique world concept: all sentient races are "kinden" — each bonded to an insect species, inheriting both physical abilities and cultural temperament from that insect
-Two types of kinden: Apt (can understand and use technology) and Inapt (cannot use machines at all, but can access magic that Apt cannot perceive)
-The central conflict: the industrial Wasp Empire (Apt, expansionist, Roman-analogue) conquering the older magical city-states (Inapt) — the Apt/Inapt divide mirrors the real-world tension between industrial modernity and older ways of knowing
-Steampunk elements: crossbows, flying machines, siege engines, early firearms — the world is mid-industrial revolution while magic fades from relevance
-The series begins as a spy thriller (Stenwold Maker and Che) and expands into full-scale war fantasy by the midpoint
-Book 1 (Empire in Black and Gold) is the correct entry — if the kinden concept doesn't engage you by book 2, the series isn't for you
-Tchaikovsky readers from Children of Time often find Shadows of the Apt next — different genre but the same gift for non-human cognition
-Slug: /reading-orders/shadows-of-the-apt
-
-
 56 Gene Wolfe / Book of the New Sun Reading Order (Gene Wolfe)
-
-The Book of the New Sun (4 books) + Urth of the New Sun coda
-The Book of the Long Sun (4 books) + The Book of the Short Sun (3 books) — direct sequel series in the same universe
-Which to read first (New Sun), which are optional (Urth), how Long Sun and Short Sun connect
-The unreliable narrator problem: Severian claims perfect memory — he's lying
-Far-future Earth disguised as dying fantasy world — what new readers miss
-Slug: /reading-orders/gene-wolfe
-
 
 57 Artemis Fowl Reading Order (Eoin Colfer)
 
