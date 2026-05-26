@@ -59,7 +59,7 @@ export const kingsOfTheWyld: BooksLikeEntry = {
         },
         {
           title: 'A Knight of the Seven Kingdoms',
-          slug: 'a-knight-of-the-seven-kingdoms',
+
           author: 'George R.R. Martin',
           cover_url:
             'https://covers.openlibrary.org/b/isbn/9780345533487-L.jpg',

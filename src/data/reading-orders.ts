@@ -129,6 +129,8 @@ import { redRising } from './reading-orders/red-rising';
 import { geneWolfe } from './reading-orders/gene-wolfe';
 import { shadowsOfTheApt } from './reading-orders/shadows-of-the-apt';
 import { folkOfTheAir } from './reading-orders/folk-of-the-air';
+import { jamesIslington } from './reading-orders/james-islington';
+import { brokenEarth } from './reading-orders/broken-earth';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -179,6 +181,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   geneWolfe,
   shadowsOfTheApt,
   folkOfTheAir,
+  jamesIslington,
+  brokenEarth,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

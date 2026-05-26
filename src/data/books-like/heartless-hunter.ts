@@ -201,7 +201,7 @@ export const heartlessHunter: BooksLikeEntry = {
   ],
   recommendations: [],
   related: [
-    { title: 'Books Like Serpent & Dove', slug: 'serpent-and-dove' },
+    { title: 'Books Like From Blood and Ash', slug: 'from-blood-and-ash' },
     { title: 'Books Like Shadow and Bone', slug: 'shadow-and-bone' },
     { title: 'Books Like The Cruel Prince', slug: 'the-cruel-prince' },
   ],

@@ -44,9 +44,23 @@ export const GET: APIRoute = async ({ locals }) => {
   // Only include curated book slugs in the sitemap — non-curated books are noindexed
   const bookSlugs = [...CURATED_SLUGS];
 
-  // Fetch all author slugs
-  const { data: authorRows } = await supabase.from('authors').select('slug').not('slug', 'is', null);
-  const authorSlugs = (authorRows ?? []).map((a) => a.slug as string);
+  // Enriched authors: bio + writing_style + best_starting_point filled in — substantive editorial content.
+  const { data: enrichedAuthorRows } = await supabase
+    .from('authors').select('slug')
+    .gte('book_count', 3)
+    .not('slug', 'is', null)
+    .not('writing_style', 'is', null)
+    .not('best_starting_point', 'is', null);
+  const enrichedAuthorSlugs = (enrichedAuthorRows ?? []).map((a) => a.slug as string);
+
+  // Plain authors: >= 3 books but no enriched content — include at lower priority.
+  // Excludes authors with < 3 books (noindexed on the actual page).
+  const { data: plainAuthorRows } = await supabase
+    .from('authors').select('slug')
+    .gte('book_count', 3)
+    .not('slug', 'is', null)
+    .is('writing_style', null);
+  const plainAuthorSlugs = (plainAuthorRows ?? []).map((a) => a.slug as string);
 
   // Fetch all trope slugs
   const { data: tropeRows } = await supabase
@@ -74,24 +88,26 @@ export const GET: APIRoute = async ({ locals }) => {
   const entries: string[] = [
     // Static high-priority pages
     ...STATIC_ROUTES.map((p) => urlEntry(p, p === '/' ? '1.0' : '0.8', 'daily')),
-    // Books Like guides — highest priority editorial content
-    ...BOOKS_LIKE_SLUGS.map((s) => urlEntry(`/books-like/${s}/`, '0.9', 'weekly')),
     // Reading orders — curated
     ...CURATED_READING_ORDER_SLUGS.map((s) => urlEntry(`/reading-orders/${s}/`, '0.9', 'weekly')),
+    // Books Like guides
+    ...BOOKS_LIKE_SLUGS.map((s) => urlEntry(`/books-like/${s}/`, '0.8', 'weekly')),
     // Reading orders — DB-driven
     ...dbSeriesSlugs.map((s) => urlEntry(`/reading-orders/${s}/`, '0.6', 'monthly')),
-    // Fantasy category pages
+    // Fantasy category pages (12 total)
     ...CATEGORY_SLUGS.map((s) => urlEntry(`/fantasy/${s}/`, '0.7', 'weekly')),
-    // Fantasy category sub-pages
+    // Fantasy category sub-pages (12 × 3 = 36 total)
     ...CATEGORY_SLUGS.flatMap((s) =>
-      CATEGORY_LIST_TYPES.map((t) => urlEntry(`/fantasy/${s}/${t}/`, '0.6', 'monthly'))
+      CATEGORY_LIST_TYPES.map((t) => urlEntry(`/fantasy/${s}/${t}/`, '0.7', 'monthly'))
     ),
-    // Authors
-    ...authorSlugs.map((s) => urlEntry(`/authors/${s}/`, '0.6', 'monthly')),
+    // Authors — enriched profiles (bio + writing_style + best_starting_point)
+    ...enrichedAuthorSlugs.map((s) => urlEntry(`/authors/${s}/`, '0.6', 'monthly')),
     // Tropes
     ...tropeSlugs.map((s) => urlEntry(`/tropes/${s}/`, '0.5', 'monthly')),
     // Curated book pages only (non-curated books are noindexed — excluded from sitemap)
     ...bookSlugs.map((s) => urlEntry(`/books/${s}/`, '0.5', 'monthly')),
+    // Authors — plain profiles (book list only, no editorial content)
+    ...plainAuthorSlugs.map((s) => urlEntry(`/authors/${s}/`, '0.4', 'monthly')),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
