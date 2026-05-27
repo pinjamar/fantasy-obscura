@@ -5,15 +5,16 @@ export const malazan: ReadingOrderEntry = {
   name: 'Malazan Book of the Fallen',
   author: 'Steven Erikson & Ian C. Esslemont',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '✅ Main series complete — expanded universe ongoing',
+  seriesStatusLabel: '✅ Main series complete - expanded universe ongoing',
   description:
-    "The most vast and uncompromising epic fantasy ever written. No other series trusts its readers this completely — or rewards them as deeply. You will be lost. Then you will be changed. The ten-book main series is self-contained and complete; everything beyond it is more world to explore. Gardens of the Moon is where to start — it does not hold your hand, and that is intentional.",
+    'The most vast and uncompromising epic fantasy ever written. No other series trusts its readers this completely (or rewards them as deeply). You’re gonna be lost for a while. That’s the point. Then somewhere along the way, it all clicks, and you come out the other side changed.The ten-book main series is completely self-contained. It has a beginning, a middle, and a very satisfying end. Everything else (Esslemont’s books, the prequels, the novellas) is just extra treasure to explore later if you fall in love with the world. No pressure. Start with Gardens of the Moon. It does not hold your hand, and that is 100% intentional. Erikson throws you straight into the fire and dares you to keep up. Push through those early chapters and you’ll understand why so many of us are ride-or-die for this series.',
   darknessDisplay: '🕯️🕯️🕯️🕯️🕯️ Brutal',
   groups: [
     {
       label: 'The Main Sequence',
-      sublabel: 'Malazan Book of the Fallen + Novels of the Malazan Empire — start here',
-      note: 'Start here. All 10 Erikson novels are mandatory. The 6 Esslemont companions [ICE] are optional but deepen the world — each is slotted where it reads best.',
+      sublabel:
+        'Malazan Book of the Fallen + Novels of the Malazan Empire - start here',
+      note: 'Start here. All 10 Erikson novels are mandatory. The 6 Esslemont companions [ICE] are optional but deepen the world.',
       noteType: 'required',
       books: [
         {
@@ -76,7 +77,7 @@ export const malazan: ReadingOrderEntry = {
           title: 'Return of the Crimson Guard',
           slug: 'return-of-the-crimson-guard',
           status: 'optional',
-          note: '[ICE] The Crimson Guard — a mercenary company sworn to oppose the Empire — finally returns.',
+          note: '[ICE] The Crimson Guard - a mercenary company sworn to oppose the Empire - finally returns.',
           page_count: 768,
           publication_year: 2008,
         },
@@ -108,7 +109,7 @@ export const malazan: ReadingOrderEntry = {
           title: 'Orb Sceptre Throne',
           slug: 'orb-sceptre-throne',
           status: 'optional',
-          note: '[ICE] Returns to Darujhistan — familiar characters, aftermath of events in the main series.',
+          note: '[ICE] Returns to Darujhistan - familiar characters, aftermath of events in the main series.',
           page_count: 704,
           publication_year: 2012,
         },
@@ -116,7 +117,7 @@ export const malazan: ReadingOrderEntry = {
           title: 'Dust of Dreams',
           slug: 'dust-of-dreams',
           status: 'mandatory',
-          note: 'First half of the finale. Published alongside The Crippled God — read back-to-back.',
+          note: 'First half of the finale. Published alongside The Crippled God - read back-to-back.',
           page_count: 912,
           publication_year: 2009,
         },
@@ -132,7 +133,7 @@ export const malazan: ReadingOrderEntry = {
           title: 'Blood and Bone',
           slug: 'icse-blood-and-bone',
           status: 'optional',
-          note: '[ICE] The continent of Jacuruku — one of the last unexplored corners of the world.',
+          note: '[ICE] The continent of Jacuruku - one of the last unexplored corners of the world.',
           page_count: 608,
           publication_year: 2012,
         },
@@ -140,7 +141,7 @@ export const malazan: ReadingOrderEntry = {
           title: 'Assail',
           slug: 'assail',
           status: 'optional',
-          note: '[ICE] The mystery of Assail — a land no army has ever conquered — finally answered. Concludes the Novels of the Malazan Empire.',
+          note: '[ICE] The mystery of Assail - a land no army has ever conquered - finally answered. Concludes the Novels of the Malazan Empire.',
           page_count: 640,
           publication_year: 2015,
         },
@@ -149,7 +150,7 @@ export const malazan: ReadingOrderEntry = {
     {
       label: "Erikson's The Witness Trilogy",
       sublabel: 'direct sequel — Karsa Orlong fulfils his oath',
-      note: 'Set after the events of the main series. Follows Karsa Orlong — the towering Teblor warrior from House of Chains — as he wages his promised war against the gods. Legacies of Betrayal (book 3) is forthcoming.',
+      note: 'Set after the events of the main series. Follows Karsa Orlong - the towering Teblor warrior from House of Chains - as he wages his promised war against the gods. Legacies of Betrayal (book 3) is forthcoming.',
       noteType: 'optional',
       books: [
         {
@@ -165,7 +166,7 @@ export const malazan: ReadingOrderEntry = {
           slug: 'no-life-forsaken',
           status: 'optional',
           note: "Karsa's campaign against the gods escalates.",
-          page_count: null,
+          page_count: 432,
           publication_year: 2025,
         },
         {
@@ -180,8 +181,8 @@ export const malazan: ReadingOrderEntry = {
     },
     {
       label: "Esslemont's Path to Ascendancy",
-      sublabel: 'prequel series — the founding of the Malazan Empire',
-      note: "Read after completing the main sequence. Kellanved and Dancer's true identities are one of the world's great slow reveals — knowing them beforehand significantly weakens the main series.",
+      sublabel: 'prequel series - the founding of the Malazan Empire',
+      note: "Read after completing the main sequence. Kellanved and Dancer's true identities are one of the world's great slow reveals. Knowing them beforehand significantly weakens the main series.",
       noteType: 'optional',
       books: [
         {
@@ -236,7 +237,7 @@ export const malazan: ReadingOrderEntry = {
     },
     {
       label: 'Bauchelain and Korbal Broach',
-      sublabel: 'dark comedy novellas — read any time after House of Chains',
+      sublabel: 'dark comedy novellas - read any time after House of Chains',
       note: 'Short standalone novellas following two necromancer antiheroes and their hapless manservant Emancipor Reese through a series of increasingly catastrophic misadventures. Satirical, macabre, completely optional.',
       noteType: 'optional',
       books: [
@@ -258,10 +259,10 @@ export const malazan: ReadingOrderEntry = {
         },
         {
           title: "The Lees of Laughter's End",
-          slug: null,
+          slug: 'the-lees-of-laughters-end',
           status: 'supplementary',
           note: 'The trio sail into chaos. Horror and dark comedy at sea.',
-          page_count: 104,
+          page_count: 120,
           publication_year: 2007,
         },
         {
@@ -284,8 +285,8 @@ export const malazan: ReadingOrderEntry = {
           title: 'The Fiends of Nightmaria',
           slug: 'the-fiends-of-nightmaria',
           status: 'supplementary',
-          note: 'Bauchelain and Korbal Broach arrive in the city of Nightmaria — and the city will never recover.',
-          page_count: null,
+          note: 'Bauchelain and Korbal Broach arrive in the city of Nightmaria - and the city will never recover.',
+          page_count: 99,
           publication_year: 2016,
         },
         {
@@ -316,8 +317,9 @@ export const malazan: ReadingOrderEntry = {
     },
     {
       label: "Erikson's Kharkanas Trilogy",
-      sublabel: 'ancient prequel — set hundreds of thousands of years before the main series',
-      note: 'Read after completing all 10 main Erikson novels. Demands deep familiarity with the Tiste Andii and Kurald Galain — without it, the trilogy loses most of its weight. Walk in Shadow (book 3) is expected in 2027.',
+      sublabel:
+        'ancient prequel — set hundreds of thousands of years before the main series',
+      note: 'Read after completing all 10 main Erikson novels. Demands deep familiarity with the Tiste Andii and Kurald Galain - without it, the trilogy loses most of its weight. Walk in Shadow (book 3) is expected in 2027.',
       noteType: 'optional',
       books: [
         {
@@ -350,57 +352,58 @@ export const malazan: ReadingOrderEntry = {
   cards: [
     {
       title: '📚 The Scale',
-      body: "10 Erikson novels, 6 Esslemont companion novels, two prequel series, a direct sequel trilogy, and a run of dark comedy novellas — over 25 books in the Malazan world. The main series alone runs to roughly 11,000 pages and hundreds of named characters across multiple continents. The full expanded universe is one of the most extensively built fictional worlds in existence. Start with the main series. Everything else is more world to explore when you're done.",
+      body: 'Let’s be real: Malazan is a huge commitment. We’re talking Steven Erikson’s 10 main books plus Ian Esslemont’s extras, prequels and random novellas. Over 30 books if you go full degenerate. The core series alone is like 11,000 pages of pure density. Hundreds of characters. Multiple continents. Ancient empires. Ascensions. It’s unhinged. If you’re new, just do the main 10 first. Trust me. Diving into the side stuff early is how people burn out and start hating the series for no reason.',
       color: 'blue',
     },
     {
       title: '🌊 The First 200 Pages',
-      body: "Gardens of the Moon opens in the middle of a war. Characters appear with no introduction, terms are used before they're explained, and factions clash before you know who they are. This is deliberate — Erikson trusts you to catch up. Push through the first 200 pages. What feels chaotic becomes clear, and the chaos you survived makes the world feel earned.",
+      body: 'Gardens of the Moon throws you into the deep end while someone’s actively trying to drown you. No gentle intro, no hand-holding, no “previously on Malazan.” Erikson just starts slinging names, empires and weird magic terms like you already took the prerequisite courses. The first 200 pages are famously rough. A lot of people bounce off right here. But if you push through that initial “what the fuck is going on” fog, something magical happens - it just clicks. And when it does, it feels so much better than if he’d hand-held you.',
       color: 'amber',
     },
     {
       title: '🧠 What It Is Really About',
-      body: "Erikson is an anthropologist. Beneath the battles and gods, Malazan is a sustained examination of compassion — what empires cost the people inside them, and how soldiers find meaning in pointless suffering. The Malazan Empire is not evil and its enemies are not simple. The series asks what it means to be human at enormous scale, and arrives at answers that are more moving than most literary fiction. The brutality is the weight that makes the compassion devastating.",
+      body: 'Under all the epic battles and exploding gods, this series is actually about compassion in a cruel world. Erikson was an anthropologist and archaeologist, and it shows hard. The Malazan Empire isn’t some cartoon evil overlord faction. Everybody’s got blood on their hands. The real meat is how regular-ass people (especially soldiers) try to hold onto their humanity while the gears of empire chew them up. The dark moments are brutal, but that’s exactly why the tiny glimpses of kindness and loyalty hit like a truck to the chest.',
       color: 'zinc',
     },
     {
       title: '🌍 The Gods',
-      body: 'In Malazan, gods are not distant forces — they are active players with their own agendas, rivalries, and fear of death. They walk among mortals. They can be killed. The distinction between god, ascendant, and mortal is fluid and contested. The theology of Malazan is one of the most original constructions in fantasy, and it underpins everything.',
+      body: 'The gods in Malazan are absolute messy bitches. They’re not distant cosmic beings - they’re down here in the dirt playing power games, holding grudges and getting killed sometimes. The whole mortal/ascendant/god ladder is blurry as hell and constantly shifting. It’s probably the most interesting take on divinity I’ve seen in fantasy. These aren’t your grandpa’s pristine deities. They’re flawed, petty and terrifying.',
       color: 'purple',
     },
     {
       title: '📖 Two Authors, One World',
-      body: "The Malazan world was co-created by Steven Erikson and Ian C. Esslemont. Esslemont's Novels of the Malazan Empire run alongside the main series, covering events that happen off-page in Erikson's books. His Path to Ascendancy series is a prequel about the Empire's founding — save it until after the main series, since Kellanved and Dancer's true identities are one of the world's great slow reveals.",
+      body: 'Important thing: this universe was co-created by Erikson and his buddy Ian C. Esslemont. Erikson writes the main saga, Esslemont fills in the gaps with parallel stories. Esslemont also did the Path to Ascendancy prequels about how the empire got started. Pro tip: Do not read the prequels first. One of the best slow-burn identity reveals in the main series will be completely ruined. Save that shit for after.',
       color: 'green',
     },
     {
       title: '⚔️ The Soldiers',
-      body: 'The emotional heart of Malazan is its soldiers. The Bridgeburners and Bonehunters are not heroes — they are exhausted, cynical, grieving people who keep going anyway. Erikson writes military life and brotherhood with unusual honesty. The series is brutal because it takes seriously what war costs. The compassion is what makes the darkness land.',
+      body: 'At the heart of this whole insane epic are the grunts. The Bridgeburners. The Bonehunters. These aren’t shiny chosen-one heroes. They’re tired, sarcastic, half-broken bastards who’ve seen way too much shit. The dark humor, the gallows banter, the way they’d die for the guy next to them even while complaining the whole time… Erikson absolutely nails military brotherhood. That’s what keeps you invested when the plot gets completely batshit.',
       color: 'red',
     },
   ],
   cardsPosition: 'above',
-  orderNote: 'Start with the Main Sequence. Everything else is optional expanded universe, best read after the ten main books.',
+  orderNote:
+    'Start with the Main Sequence. Everything else is optional expanded universe, best read after the ten main books.',
   sections: [
     {
       heading: 'Parallel timelines and reading order',
       type: 'bullets',
       bullets: [
-        'Deadhouse Gates (book 2) and Memories of Ice (book 3) are concurrent — different continents, same moment in time. Either order works; publication order is the standard.',
-        'Midnight Tides (book 5) runs concurrently with books 2–3 on yet another continent. It is published fifth but set earlier — trust the placement.',
+        'Deadhouse Gates (book 2) and Memories of Ice (book 3) are concurrent - different continents, same moment in time. Either order works; publication order is the standard.',
+        'Midnight Tides (book 5) runs concurrently with books 2-3 on yet another continent. It is published fifth but set earlier — trust the placement.',
         'Dust of Dreams (book 9) and The Crippled God (book 10) are one novel split in two. Read them back-to-back.',
-        'The six Esslemont companions slot in alongside specific Erikson books — each can be skipped without losing the main narrative.',
-        'Despite the parallel timelines, publication order is the recommended path — Erikson withholds context deliberately, and reading out of sequence undermines that.',
+        'The six Esslemont companions slot in alongside specific Erikson books - each can be skipped without losing the main narrative.',
+        'Despite the parallel timelines, publication order is the recommended path - Erikson withholds context deliberately, and reading out of sequence undermines that.',
       ],
     },
     {
       heading: 'Where to go after the main series',
       type: 'bullets',
       bullets: [
-        "Path to Ascendancy (Esslemont) covers how Kellanved and Dancer founded the Empire — revelations that land much harder after you've read all ten main books. Don't read it first.",
-        'The Kharkanas Trilogy (Erikson) is set hundreds of thousands of years in the past — the civil war among the Tiste Andii. Requires deep familiarity with Tiste lore from the main series.',
-        'The Witness Trilogy (Erikson) is a direct sequel following Karsa Orlong after the events of The Crippled God — the closest thing to a traditional continuation of the main story.',
-        'The Bauchelain and Korbal Broach novellas are entirely standalone and can be picked up any time after House of Chains — dark comedy with no bearing on the main plot.',
+        "Path to Ascendancy (Esslemont) covers how Kellanved and Dancer founded the Empire - revelations that land much harder after you've read all ten main books. Don't read it first.",
+        'The Kharkanas Trilogy (Erikson) is set hundreds of thousands of years in the past - the civil war among the Tiste Andii. Requires deep familiarity with Tiste lore from the main series.',
+        'The Witness Trilogy (Erikson) is a direct sequel following Karsa Orlong after the events of The Crippled God - the closest thing to a traditional continuation of the main story.',
+        'The Bauchelain and Korbal Broach novellas are entirely standalone and can be picked up any time after House of Chains - dark comedy with no bearing on the main plot.',
       ],
     },
     {
@@ -408,10 +411,10 @@ export const malazan: ReadingOrderEntry = {
       type: 'bullets',
       bullets: [
         'Books 1 and 4 are the hardest. Books 2, 3, 5, and 8 are where most people fall in love with the series.',
-        "Midnight Tides (book 5) switches to an entirely new cast — don't panic. It is one of the best books in the series.",
-        'Dust of Dreams and The Crippled God are one novel split in two — read them back-to-back.',
+        "Midnight Tides (book 5) switches to an entirely new cast - don't panic. It is one of the best books in the series.",
+        'Dust of Dreams and The Crippled God are one novel split in two - read them back-to-back.',
         'The series does not have a villain. It has consequences.',
-        'Mass death, genocide, torture, and moral ambiguity throughout — but Erikson is not gratuitous. The darkness is purposeful, and compassion runs through it in equal measure.',
+        'Mass death, genocide, torture, and moral ambiguity throughout - but Erikson is not gratuitous. The darkness is purposeful, and compassion runs through it in equal measure.',
       ],
     },
   ],
@@ -423,5 +426,12 @@ export const malazan: ReadingOrderEntry = {
   booksLikeSlug: 'gardens-of-the-moon',
   categoryHref: '/fantasy/grimdark',
   categoryLabel: 'Browse Grimdark',
-  related: ['first-law', 'asoiaf', 'robin-hobb', 'wheel-of-time', 'black-company', 'memory-sorrow-thorn'],
+  related: [
+    'first-law',
+    'asoiaf',
+    'robin-hobb',
+    'wheel-of-time',
+    'black-company',
+    'memory-sorrow-thorn',
+  ],
 };

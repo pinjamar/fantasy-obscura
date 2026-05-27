@@ -7,14 +7,14 @@ export const acotar: ReadingOrderEntry = {
   seriesStatus: 'ongoing',
   seriesStatusLabel: '📖 Ongoing - Books 6 & 7 due 2026-2027',
   description:
-    "A dark fairy tale retelling that becomes a full epic fantasy by book two. Feyre is pulled into a world of immortal fae, political power and war. All that comes with romance woven through every layer. ACMAF is the breakout book that defines the series. The reading order matters here, simply read by order of publication. Each book builds directly on the last and the world expands a lot between books one and two. If you're new to Sarah J. Maas, this is the series most readers recommend starting with. Explicit content begins from A Court of Mist and Fury onward. ACOTAR itself is significantly milder.",
+    "ACOTAR starts off feeling like a dark, twisted fairy tale and then just mutates into a massive epic fantasy by the second book. Feyre's a hunter girl who gets yanked into the fae world full of immortal assholes, deadly court politics, old magic, and wars that could wipe out continents. And yeah, romance is threaded through every single layer of it. A Court of Mist and Fury is the one that flips the switch for most people - that's when the series actually becomes itself. If you're jumping in fresh to Sarah J. Maas, this is the one everyone points to as the gateway drug. Just read them in order. The world and stakes balloon like crazy after book one, so skipping around is a bad idea.",
   darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
   groups: [
     {
       label: 'A Court of Thorns and Roses',
       sublabel: 'read in order',
       noteType: 'required',
-      note: 'All five books, just read them in order. ACFAS is a short bridge novella (~230 pages); read it before A Court of Silver Flames. ACMAF is frequently cited as one of the best romance-fantasy novels of the decade.',
+      note: 'All five books, just read them in order. ACFAS is a short bridge novella (~260 pages); read it before A Court of Silver Flames. ACMAF is frequently cited as one of the best romance-fantasy novels of the decade.',
       books: [
         {
           title: 'A Court of Thorns and Roses',
@@ -29,23 +29,23 @@ export const acotar: ReadingOrderEntry = {
           slug: 'a-court-of-mist-and-fury',
           status: 'mandatory',
           note: 'The best book in the series by consensus. Everything opens up; the world, the stakes, the romance.',
-          page_count: 624,
+          page_count: 640,
           publication_year: 2016,
         },
         {
           title: 'A Court of Wings and Ruin',
           slug: 'a-court-of-wings-and-ruin',
           status: 'mandatory',
-          note: 'War arrives. The trilogy concludes — scope and stakes are at their highest.',
-          page_count: 699,
+          note: 'War arrives. The trilogy concludes - scope and stakes are at their highest.',
+          page_count: 720,
           publication_year: 2017,
         },
         {
           title: 'A Court of Frost and Starlight',
           slug: 'a-court-of-frost-and-starlight',
           status: 'supplementary',
-          note: 'Short bridge novella (~230 pages). Aftermath of the war. Sets up the companion novels. Read before ACSF.',
-          page_count: 232,
+          note: 'Short bridge novella (~260 pages). Aftermath of the war. Sets up the companion novels. Read before ACSF.',
+          page_count: 262,
           publication_year: 2018,
         },
         {
@@ -53,7 +53,7 @@ export const acotar: ReadingOrderEntry = {
           slug: 'a-court-of-silver-flames',
           status: 'mandatory',
           note: "Nesta and Cassian's book. Divisive but beloved. Read it as its own thing. It's not a direct sequel to the trilogy.",
-          page_count: 757,
+          page_count: 768,
           publication_year: 2021,
         },
         {
@@ -74,23 +74,38 @@ export const acotar: ReadingOrderEntry = {
     },
   ],
   orderNote:
-    "Read the main trilogy in order: ACOTAR → ACMAF → ACWAR. A Court of Frost and Starlight is a short bridge novella (~230 pages) - read it before A Court of Silver Flames. All five books follow publication order with no exceptions. ACSF focuses on Nesta and Cassian rather than Feyre and works best if you're invested in the full cast after the trilogy.",
+    "Read the main trilogy in order: ACOTAR → ACMAF → ACWAR. A Court of Frost and Starlight is a short bridge novella (~260 pages) - read it before A Court of Silver Flames. All five books follow publication order with no exceptions. ACSF focuses on Nesta and Cassian rather than Feyre and works best if you're invested in the full cast after the trilogy.",
   cardsPosition: 'above',
   cards: [
     {
-      title: '⏩ Book 1 Is the Prologue',
-      body: 'ACOTAR is the weakest book in the series by consensus - slower pacing, contained stakes, a more passive protagonist. The series\' real identity begins in ACMAF. "Does it get better after book 1?" is one of the most questions about this series. The answer is yes, significantly. Treat book 1 as setup.',
+      title: '⏩ Book 1 Is Kinda the Tutorial Level',
+      body: "Okay, real talk - pretty much everyone agrees ACOTAR is the weakest link. It's slower, the stakes feel smaller, Feyre's still figuring her shit out and comes off kinda passive. It's basically prologue/setup for what the series wants to be. That question you see spammed everywhere online? \"Does it get better after book one?\" Yeah. Holy shit, yes. Push through it. The series wakes up big time in book two.",
       color: 'blue',
     },
     {
-      title: '📚 Not YA',
-      body: 'ACOTAR opens like YA - young heroine, fairy tale framing, understated romance. A Court of Mist and Fury is firmly adult; explicit content, trauma, war, moral complexity. The shift is intentional and significant. Readers who go in expecting YA are often caught off guard by book 2. Know before you start.',
+      title: '📚 The YA-to-Adult Whiplash',
+      body: 'It eases you in with heavy YA energy - young heroine, enchanted curses, that classic fairy tale wrapper. Then A Court of Mist and Fury just kicks the door down and goes full adult. Explicit scenes, deep trauma, brutal war stuff, characters making messy moral choices. The shift is deliberate as hell, but it catches a ton of people off guard if they walked in thinking it\'d stay "safe." Heads up on that one.',
       color: 'amber',
     },
     {
-      title: '🖤 Rhysand',
-      body: "The Night Court's High Lord is the most divisive character in book 1 and the most beloved in book 2. The shift in how he's written (and how Feyre sees him) is the engine of ACMAF. A lot of readers who love this series name him as the reason why.",
+      title: '🖤 Rhysand, the Character That Breaks Brains',
+      body: "Book one? A lot of readers are side-eyeing the Night Court guy hard. By the end of book two? He's their Roman Empire. The way his whole deal flips (and how Feyre starts seeing him) is what carries ACOMAF for so many people. He's the reason a ridiculous number of fans got completely hooked.",
       color: 'purple',
+    },
+    {
+      title: '🔥 Heat & Spice Warning',
+      body: "First book keeps the romance pretty tame - tension, longing, fairy-tale vibes. Book two? It turns the heat way up and stays there through the rest of the series. If you're not into explicit content, you can chill with just ACOTAR and call it a day. But committing to the full thing means accepting it's proper adult romantasy from then on.",
+      color: 'red',
+    },
+    {
+      title: '🌙 All Those Damn Courts',
+      body: "Prythian's split into seven courts - Spring, Summer, Autumn, Winter, Dawn, Day, Night - each run by a High Lord with their own flavor of drama and culture. The backstabbing politics and rivalries between them become the main engine in books two and three. The Night Court crew especially turns into the heart of everything. Paying even a little attention to who hates who in book one makes the later payoffs way more satisfying.",
+      color: 'green',
+    },
+    {
+      title: '📅 Still Waiting on the End',
+      body: "We've got two more books coming. Book 6 hits October 27, 2026, and book 7 lands January 12, 2027. If you start binging now, the wait for the finale won't be too brutal - they're dropping fairly close together.",
+      color: 'zinc',
     },
   ],
   sections: [
@@ -151,7 +166,7 @@ export const acotar: ReadingOrderEntry = {
   ],
   metaDescription:
     "ACOTAR reading order: all 7 books in order, what's mandatory, where explicit content begins, and release dates for books 6 (Oct 2026) & 7 (Jan 2027).",
-  lastUpdated: '2026-05-13',
+  lastUpdated: '2026-05-27',
   finishedLabel: 'Finished the series?',
   categoryHref: '/fantasy/romantasy',
   categoryLabel: 'Browse Romantasy',
