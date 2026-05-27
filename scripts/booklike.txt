@@ -381,55 +381,6 @@ Slug: /reading-orders/brent-weeks
 
 22 James Islington Reading Order
 
-Two complete/ongoing series in entirely separate worlds — no connection between them. The guide should cover both and give clear entry point guidance, because Islington now has two distinct readerships that don't always know the other series exists.
-
-THE LICANIUS TRILOGY (2016–2019) — 3 books, complete
-The Shadow of What Was Lost → An Echo of Things to Come → The Light of All That Falls
-
-The world: recovering from a war against the Augurs — magic-users who can see and manipulate the flow of time and fate. The Boundary is a massive barrier in the north that contains something ancient; its true nature is one of the trilogy's central mysteries and should not be spoiled in the guide's book notes.
-
-Two magic systems:
-Gifted: draw from a personal Reserve of energy; more common, legal, institutionally managed
-Augurs: manipulate time itself — they can see fate, alter outcomes, plant consequences in the past; outlawed and hunted after the war
-
-The time mechanic — the most important thing to explain to potential readers:
-Actions in the present have consequences that already happened in the past. The causal loop is tight and intentional — events that seem like worldbuilding details in book one are revealed to be consequences of choices the characters haven't made yet. The plotting is among the most structurally complex in recent epic fantasy; re-reading book one after finishing the trilogy is a different experience. This is the hook: not just "magic and prophecy" but a story where the architecture of time is the actual puzzle.
-
-Book notes:
-The Shadow of What Was Lost (2016): Three young students at a school for the Gifted — Davian, Wirr, and Asha — find themselves at the centre of events much larger than the school's politics suggest. The WoT influence is present (chosen one, ancient evil, prophecy, ensemble of young protagonists) but the first book is tighter and less prone to padding than Jordan's opening. The time mechanic is introduced carefully; some readers find the early pacing slow but the structural payoff is significant.
-An Echo of Things to Come (2017): The scope widens dramatically. The Boundary's nature begins to emerge. The plotting becomes more complex and the stakes escalate. Widely considered the strongest book in the trilogy — the middle volume that delivers rather than delays.
-The Light of All That Falls (2019): The conclusion. The causal loops close. The ending recontextualizes the entire trilogy — events from book one that seemed like background are revealed as products of book three's choices. Do not read reviews. One of the more discussed trilogy endings in recent fantasy for how cleanly it completes the structure.
-
-What to flag in the description: WoT-adjacent in scope (chosen one, ancient evil, prophecy, large ensemble) but more controlled in length — the trilogy runs ~2,500 pages total vs WoT's ~11,000. No filler. Each book is darker and more complex than the last. Most readers recommend reading all three consecutively rather than pausing between books — the plot density rewards forward momentum.
-
-THE HIERARCHY SERIES (2023–ongoing) — separate world, Roman-inspired
-The Will of the Many (book 1, 2023) → The Strength of the Few (book 2, 2025) → [book 3, title/date TBA]
-
-Entirely separate from the Licanius Trilogy — different world, different magic, different everything. The Hierarchy series has become Islington's larger commercial success: The Will of the Many was a massive BookTok/reader hit and introduced his work to a substantially wider audience than the Licanius Trilogy reached.
-
-The world: the Hierarchy is a Roman-inspired empire that has conquered most of the known world. Its power rests on a magic system called Will — energy flows from the many to the few, from low-ranked citizens to high-ranked ones. The higher your rank in the Hierarchy, the more Will you can access — drawn from the people below you in the social structure. The system is explicitly metaphorical: the empire runs on the literal energy of its subjects.
-
-Protagonist: Vis (Callidus) is a young man with a falsified identity enrolled in the Hierarchy's elite academy for future leaders — a place where students compete brutally for rank and the power that comes with it. He is hiding something significant about his past and his actual abilities. Dark academia structure with a Roman-flavoured social hierarchy and a magic system that is both a hard system and a political argument.
-
-The Will of the Many (2023): Vis enters the Catenan Republic's most prestigious academy, navigating its brutal ranking system while hiding his true identity and trying to understand what the Hierarchy is actually doing with the power it accumulates. The dark academy register is fully realised — think The Name of the Wind's academia chapters crossed with a Roman political thriller. Fast, propulsive, mystery-forward. The magic system's rules are established clearly and the political implications are present from the first chapter. One of the most acclaimed fantasy debuts of 2023 despite Islington not being a debut author — his existing Licanius readership drove early attention but The Will of the Many reached a much broader audience.
-
-The Strength of the Few (2025): The second book deepens the conspiracy around the Hierarchy's true nature and Vis's role in it. The scope widens beyond the academy as the world's political structure comes under more direct scrutiny. Vis's past and the history he's been hiding become central. Book 2 of a planned trilogy.
-
-Connections between the two series:
-None. The worlds are entirely separate, the magic systems share no logic, and no characters or history cross over. A reader can start with either. Many readers encounter The Will of the Many first (via BookTok) and discover the Licanius Trilogy afterwards; others go in the other direction.
-
-Entry point recommendation for the guide:
-Start with The Will of the Many if: the reader wants dark academia, a Roman-flavoured world, a single tight POV, and a mystery-forward plot. Faster opening, more accessible register, current community enthusiasm.
-Start with The Shadow of What Was Lost if: the reader wants traditional epic fantasy with ensemble POVs, complex time-mechanics plotting, and a complete trilogy they can read straight through. Heavier investment, bigger structural payoff.
-
-Darkness levels:
-Licanius Trilogy: level 3 rising to 4 by book 3. Violence present, no explicit content, increasingly dark thematic territory.
-Hierarchy series: level 3–4. The academy setting involves brutality and lethal competition; the political violence of the Hierarchy becomes more explicit in book 2.
-Romance/heat: minimal across both series. Present but not the emotional engine. No explicit content.
-
-Slug: /reading-orders/james-islington
-
-
 23 R.F. Kuang Reading Order
 
 Five works across three genre registers — one trilogy, two standalone novels, one novella. No shared universe, no reading order dependencies. Every book is set in a different world. The only through-line is Kuang herself: her argument (what institutions do to the people they absorb and exploit), her structural intelligence, and her willingness to follow the logic of her premise without softening it. Readers who try one Kuang and bounce should try another before writing her off — the range is genuine and intentional.
@@ -751,13 +702,6 @@ Slug: /reading-orders/sun-eater
 
 
 53 Broken Earth Reading Order (N.K. Jemisin)
-
-The Fifth Season → The Obelisk Gate → The Stone Sky — 3 books, publication order
-The second-person POV is intentional — stick with it, it pays off
-Three timelines running in parallel — they converge, don't worry
-Does it connect to Jemisin's other series? (No — Inheritance Trilogy and Killing Moon are separate worlds)
-Historic: first author to win Hugo for Best Novel three consecutive years
-Slug: /reading-orders/broken-earth
 
 
 54 Elric Saga Reading Order (Michael Moorcock)

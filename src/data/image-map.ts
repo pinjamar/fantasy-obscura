@@ -81,7 +81,8 @@ export type ReadingOrderImageSlug =
   | 'shadows-of-the-apt'
   | 'folk-of-the-air'
   | 'james-islington'
-  | 'broken-earth';
+  | 'broken-earth'
+  | 'rf-kuang';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -146,6 +147,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'folk-of-the-air':     'folk-of-the-air',
   'james-islington':     'james-islington',
   'broken-earth':        'broken-earth',
+  'rf-kuang':            'rf-kuang',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

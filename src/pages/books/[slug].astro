@@ -31,6 +31,7 @@ const seriesSlug = book.series
   ? (READING_ORDERS.find((e) => e.name === book.series)?.slug
     ?? book.series.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
   : null;
+
 const userEmail = Astro.locals.user?.email ?? null;
 
 const DARKNESS = [

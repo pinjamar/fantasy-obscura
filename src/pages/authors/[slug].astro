@@ -265,6 +265,54 @@ const READING_ORDER_MAP: Record<string, string> = {
   'The Collegium Chronicles':           'valdemar',
   'The Herald Spy':                      'valdemar',
   'Family Spies':                        'valdemar',
+  // Broken Earth (N.K. Jemisin)
+  'The Broken Earth':                    'broken-earth',
+  'Broken Earth':                        'broken-earth',
+  'The Inheritance Trilogy':             'broken-earth',
+  'Inheritance Trilogy':                 'broken-earth',
+  'The Dreamblood':                      'broken-earth',
+  'Dreamblood':                          'broken-earth',
+  'The Great Cities':                    'broken-earth',
+  'Great Cities':                        'broken-earth',
+  // Dark Tower
+  'The Dark Tower':                      'dark-tower',
+  'Dark Tower':                          'dark-tower',
+  // Folk of the Air (Holly Black)
+  'The Folk of the Air':                 'folk-of-the-air',
+  'Folk of the Air':                     'folk-of-the-air',
+  'The Stolen Heir':                     'folk-of-the-air',
+  'Stolen Heir':                         'folk-of-the-air',
+  // Locked Tomb (Tamsyn Muir)
+  'The Locked Tomb':                     'locked-tomb',
+  'Locked Tomb':                         'locked-tomb',
+  // James Islington
+  'The Licanius Trilogy':                'james-islington',
+  'Licanius Trilogy':                    'james-islington',
+  'The Hierarchy':                       'james-islington',
+  'Hierarchy':                           'james-islington',
+  'The Hierarchy Series':                'james-islington',
+  // Old Kingdom (Garth Nix)
+  'Old Kingdom':                         'old-kingdom',
+  'The Old Kingdom':                     'old-kingdom',
+  'Old Kingdom Chronicles':              'old-kingdom',
+  // Red Rising (Pierce Brown)
+  'Red Rising':                          'red-rising',
+  'Red Rising Saga':                     'red-rising',
+  // Shadows of the Apt (Adrian Tchaikovsky)
+  'Shadows of the Apt':                  'shadows-of-the-apt',
+  'The Shadows of the Apt':             'shadows-of-the-apt',
+  // Gene Wolfe (Solar Cycle)
+  'The Book of the New Sun':             'gene-wolfe',
+  'Book of the New Sun':                 'gene-wolfe',
+  'The Book of the Long Sun':            'gene-wolfe',
+  'Book of the Long Sun':                'gene-wolfe',
+  'The Book of the Short Sun':           'gene-wolfe',
+  'Book of the Short Sun':               'gene-wolfe',
+  'The Solar Cycle':                     'gene-wolfe',
+  'Solar Cycle':                         'gene-wolfe',
+  // R.F. Kuang
+  'The Poppy War':                       'rf-kuang',
+  'Poppy War':                           'rf-kuang',
 };
 
 const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
@@ -278,6 +326,12 @@ const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
   'tad-williams':      { slug: 'memory-sorrow-thorn',  label: 'Tad Williams Universe Guide' },
   'ilona-andrews':     { slug: 'kate-daniels',         label: 'World of Kate Daniels Guide' },
   'rick-riordan':      { slug: 'rick-riordan',         label: 'Rick Riordan Mythology Universe Guide' },
+  'gene-wolfe':        { slug: 'gene-wolfe',           label: 'Gene Wolfe Reading Guide' },
+  'nk-jemisin':        { slug: 'broken-earth',         label: 'N.K. Jemisin Universe Guide' },
+  'n-k-jemisin':       { slug: 'broken-earth',         label: 'N.K. Jemisin Universe Guide' },
+  'james-islington':   { slug: 'james-islington',      label: 'James Islington Universe Guide' },
+  'rf-kuang':          { slug: 'rf-kuang',             label: 'R.F. Kuang Reading Guide' },
+  'r-f-kuang':         { slug: 'rf-kuang',             label: 'R.F. Kuang Reading Guide' },
 };
 
 const universeGuide = AUTHOR_UNIVERSE_MAP[slug ?? ''] ?? null;
