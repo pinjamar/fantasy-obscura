@@ -7,7 +7,7 @@ export const asoiaf: ReadingOrderEntry = {
   seriesStatus: 'incomplete',
   seriesStatusLabel: '⚠️ Incomplete - Winds of Winter still unannounced',
   description:
-    "Five books of political chess played with human lives. Every major house in Westeros wants the throne; nobody is safe; no storyline is guaranteed resolution. Martin writes through named POV chapters (one character per chapter, no omniscient narrator), which means you only know what your character knows, and what you don't know is frequently what kills them. The reading order is linear. The Winds of Winter has no release date. Start with A Game of Thrones.",
+    "Five massive books of brutal political chess where human lives are just pawns on the board. Every major house in Westeros is scheming, backstabbing, and murdering their way toward the Iron Throne, and nobody (literally nobody) is safe. No plot armor, no guaranteed happy endings, no storylines that are promised to resolve. George R.R. Martin writes through tight named POV chapters (one character per chapter, no god's-eye view), so you only know what that character knows at any given moment. What you don't know is usually what gets people killed in the most shocking ways. Reading order is dead simple: just go linear. Start with A Game of Thrones. And yeah, The Winds of Winter still doesn't have a release date. Welcome to the long wait club. This series is a commitment, but one that rewards you with some of the most memorable characters and gut-punch moments in fantasy.",
   darknessDisplay: '🕯️🕯️🕯️🕯️–🕯️🕯️🕯️🕯️🕯️ Dark to Brutal',
   groups: [
     {
@@ -141,32 +141,32 @@ export const asoiaf: ReadingOrderEntry = {
   cards: [
     {
       title: '⚡ The Peak',
-      body: 'A Storm of Swords is the series at its best. Dense, brutal and with some of the most discussed chapters in modern fantasy. Do not look anything up before reading it.',
+      body: "A Storm of Swords is the series firing on all cylinders. Dense, ruthless and packed with some of the most talked-about, jaw-dropping chapters in modern fantasy. The Red Wedding, the Purple Wedding, Tyrion's trial, all the insane battles and betrayals… it's peak Martin. Do yourself a massive favor and don't look up a single thing before reading it. Go in completely blind. The shock and emotional damage are part of what makes it legendary.",
       color: 'blue',
     },
     {
       title: '📖 Books 4 & 5',
-      body: 'Martin split the story by POV character across two books covering the same timeline. A Feast for Crows and A Dance with Dragons are best read back-to-back. Feast is slower and it rewards patience.',
+      body: "Martin split the story geographically and by POV characters across two books that cover roughly the same timeline. A Feast for Crows and A Dance with Dragons are best read pretty much back-to-back. Feast catches a lot of flak for being slower and more focused on politics, scheming, and the aftermath of war in the south and west, but it rewards the hell out of you if you're patient — some of the strongest character work happens here. Dance brings back the bigger fireworks, dragons, and northern madness. Together they're way stronger than reading them separately.",
       color: 'amber',
     },
     {
       title: '⚠️ The Wait',
-      body: 'The Winds of Winter has been in progress since 2011 with no confirmed release date. Read the published books knowing the story does not conclude here.',
+      body: "The Winds of Winter has been 'in progress' since 2011 with no confirmed release date in sight. As of right now, we're all still sitting here refreshing the internet like addicts. Read the five published books knowing the story doesn't actually conclude here. It's a hell of a ride with incredible depth, but the ending is still somewhere out there in the wind. Some people find that frustrating, others treat the published books as their own complete (if unfinished) experience.",
       color: 'red',
     },
     {
       title: '📺 Books vs Show',
-      body: "The show follows the books closely through season 4. From season 5 onward it diverges significantly; major characters, plotlines, and endings differ. The books are substantially richer throughout. Watching the show first does not spoil the books; it's a different story from the same starting point.",
+      body: "The HBO show sticks pretty close to the books through season 4. After that it starts diverging hard. Major character arcs get changed or cut short, plotlines go in completely different directions, and the endings don't match. The books are substantially richer, denser, and way more layered throughout, with tons of extra lore, side characters, and political nuance that the show had to trim. Watching the show first doesn't really 'spoil' the books; they feel like two separate (but related) beasts branching off from the same starting point.",
       color: 'purple',
     },
     {
       title: '🐉 House of the Dragon',
-      body: 'House of the Dragon is based on Fire & Blood. The Targaryen history book at the bottom of this guide. Reading Fire & Blood before watching HotD gives context; reading it after gives depth. Neither is required to enjoy the other.',
+      body: "House of the Dragon is based on Fire & Blood, Martin's Targaryen history book written like a historical chronicle. You can read Fire & Blood before watching HotD for extra context and 'oh I know how this ends' dread, or read it after for more depth and 'holy shit that makes so much more sense now' moments. Neither is required — both stand on their own — but the book adds a ton of delicious Targaryen civil war madness, dragon battles, and family dysfunction if you're into that.",
       color: 'green',
     },
     {
       title: "📝 How It's Written",
-      body: "Every chapter is told through one character's eyes (named POV chapters, no omniscient narrator). You only know what that character knows. Martin uses this to create dramatic irony: two characters can witness the same event and give you completely different pictures of what happened. It's also why losing a POV character hits the way it does.",
+      body: "Every chapter is locked into one character's head. No omniscient narrator, no cheating. You're stuck with their limited view, their biases, their blind spots, and their incomplete understanding of what's really happening. Martin uses this to create insane dramatic irony — two different POVs can witness the same event and give you completely opposite pictures of what went down. It's also exactly why it hurts so much when a POV character dies. You lose their eyes on the world forever. Brutal, but absolutely brilliant.",
       color: 'zinc',
     },
   ],
@@ -250,7 +250,7 @@ export const asoiaf: ReadingOrderEntry = {
   ],
   metaDescription:
     'A Song of Ice and Fire reading order: all 5 ASOIAF books, Dunk & Egg novellas, Fire & Blood and where House of the Dragon fits.',
-  lastUpdated: '2026-05-13',
+  lastUpdated: '2026-05-28',
   finishedLabel: 'Finished the published books?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

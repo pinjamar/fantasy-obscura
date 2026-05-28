@@ -5,22 +5,23 @@ export const brokenEarth: ReadingOrderEntry = {
   name: 'The Broken Earth',
   author: 'N.K. Jemisin',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✅ Complete — 3 books (2015–2017), all Hugo Award winners',
+  seriesStatusLabel:
+    '✅ Complete - 3 books (2015-2017), all Hugo Award winners',
   description:
-    "Three books. All three won the Hugo Award for Best Novel in consecutive years — the only author to achieve this. The Broken Earth is set on a supercontinent called the Stillness, where catastrophic geological events periodically end civilisation. Orogenes — people who can manipulate seismic forces — are feared, enslaved, and hunted by the societies that depend on them. The series opens with a fifth season already underway and a narrator addressing you in second person. That's deliberate. Start with The Fifth Season.",
+    "Three books. That's it. Short, brutal, and absolutely devastating. All three won the Hugo Award for Best Novel in consecutive years. She is the only author who's ever pulled that off. N.K. Jemisin's The Broken Earth trilogy is set on a supercontinent called the Stillness, a place where massive geological apocalypses (called Fifth Seasons) regularly wipe out civilization. Orogenes (people who can control seismic forces) are both feared and exploited by the societies that desperately need them. The series kicks off with a Fifth Season already in full swing, and it uses second-person narration right from the start. That's not a gimmick. It's deliberate. Start with The Fifth Season.",
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
   groups: [
     {
       label: 'The Broken Earth',
       sublabel: 'read in publication order',
-      note: 'Three books, complete. Read consecutively — the structure builds across all three and the conclusion only works if you reach it without gaps.',
+      note: 'Three books, complete. Read consecutively. The structure builds across all three and the conclusion only works if you reach it without gaps.',
       noteType: 'required',
       books: [
         {
           title: 'The Fifth Season',
           slug: 'the-fifth-season',
           status: 'mandatory',
-          note: "The world ends. Narrated in second person — 'you' are Essun, an orogene searching for her daughter during an extinction-level catastrophe. Multiple timelines run in parallel. The second-person narration is intentional and the structure is deliberate; both become clear.",
+          note: "The world ends. Narrated in second person - 'you' are Essun, an orogene searching for her daughter during an extinction-level catastrophe. Multiple timelines run in parallel. The second-person narration is intentional and the structure is deliberate; both become clear.",
           page_count: 468,
           publication_year: 2015,
         },
@@ -28,7 +29,7 @@ export const brokenEarth: ReadingOrderEntry = {
           title: 'The Obelisk Gate',
           slug: 'the-obelisk-gate',
           status: 'mandatory',
-          note: 'The scope of the catastrophe — and what caused it — begins to emerge. Widely considered the strongest book in the trilogy. Won the 2017 Hugo Award for Best Novel.',
+          note: 'The scope of the catastrophe (and what caused it) begins to emerge. Widely considered the strongest book in the trilogy. Won the 2017 Hugo Award for Best Novel.',
           page_count: 410,
           publication_year: 2016,
         },
@@ -36,7 +37,7 @@ export const brokenEarth: ReadingOrderEntry = {
           title: 'The Stone Sky',
           slug: 'the-stone-sky',
           status: 'mandatory',
-          note: 'The conclusion. Do not read reviews before finishing — the ending is widely discussed. Won the 2018 Hugo Award.',
+          note: 'The conclusion. Do not read reviews before finishing - the ending is widely discussed. Won the 2018 Hugo Award.',
           page_count: 416,
           publication_year: 2017,
         },
@@ -44,15 +45,15 @@ export const brokenEarth: ReadingOrderEntry = {
     },
     {
       label: 'Inheritance Trilogy',
-      sublabel: "separate world — Jemisin's debut series",
-      note: 'No connection to the Broken Earth — different world, different magic, different everything. A secondary world where gods are enslaved and their children rule an empire. Read in order. Jemisin has described this as the series that taught her to write; it is more conventional in structure than Broken Earth but shares the same interest in power and oppression.',
+      sublabel: "separate world - Jemisin's debut series",
+      note: 'No connection to the Broken Earth - different world, different magic, different everything. A secondary world where gods are enslaved and their children rule an empire. Read in order. Jemisin has described this as the series that taught her to write; it is more conventional in structure than Broken Earth but shares the same interest in power and oppression.',
       noteType: 'optional',
       books: [
         {
           title: 'The Hundred Thousand Kingdoms',
           slug: 'the-hundred-thousand-kingdoms',
           status: 'supplementary',
-          note: 'A young woman from a conquered people is summoned to the palace of the ruling family and named heir — entangled with enslaved gods. Strong debut, complete story.',
+          note: 'A young woman from a conquered people is summoned to the palace of the ruling family and named heir - entangled with enslaved gods. Strong debut, complete story.',
           page_count: 427,
           publication_year: 2010,
         },
@@ -68,7 +69,7 @@ export const brokenEarth: ReadingOrderEntry = {
           title: 'The Kingdom of Gods',
           slug: 'the-kingdom-of-gods',
           status: 'supplementary',
-          note: "Narrated by Sieh, the god of childhood — the trilogy's most ambitious and structurally unusual entry.",
+          note: "Narrated by Sieh, the god of childhood - the trilogy's most ambitious and structurally unusual entry.",
           page_count: 397,
           publication_year: 2011,
         },
@@ -76,7 +77,7 @@ export const brokenEarth: ReadingOrderEntry = {
     },
     {
       label: 'The Dreamblood Duology',
-      sublabel: 'separate world — Egyptian-inspired fantasy',
+      sublabel: 'separate world - Egyptian-inspired fantasy',
       note: 'No connection to the Broken Earth or the Inheritance Trilogy. Set in an ancient Egyptian-inspired city where priests harvest the dreams of the dying. Complete two-book story.',
       noteType: 'optional',
       books: [
@@ -92,7 +93,7 @@ export const brokenEarth: ReadingOrderEntry = {
           title: 'The Shadowed Sun',
           slug: 'the-shadowed-sun',
           status: 'supplementary',
-          note: "Set ten years after The Killing Moon. Can be read after book one or as a standalone. Jemisin's most overlooked series.",
+          note: "Set ten years after The Killing Moon. Can be read after book one or as a standalone. Quieter and more atmospheric than the trilogy — worth seeking out.",
           page_count: 353,
           publication_year: 2012,
         },
@@ -108,7 +109,7 @@ export const brokenEarth: ReadingOrderEntry = {
           title: 'The City We Became',
           slug: 'the-city-we-became',
           status: 'supplementary',
-          note: "New York City is being born as a living entity — six boroughs, six avatars, under attack from a cosmic force. Faster and more accessible than Broken Earth. Good entry point into Jemisin's work for readers who want contemporary settings.",
+          note: "New York City is being born as a living entity — six boroughs, six avatars, under attack from a cosmic force. Faster and more accessible than Broken Earth. Contemporary setting, lower darkness level, still unmistakably Jemisin.",
           page_count: 437,
           publication_year: 2021,
         },
@@ -129,32 +130,32 @@ export const brokenEarth: ReadingOrderEntry = {
   cards: [
     {
       title: "👁️ The 'You'",
-      body: "The Fifth Season is narrated in second person — 'you do this, you feel that.' Most readers find it disorienting for the first chapter and then stop noticing it entirely. It is intentional, it is structural, and by the end of the trilogy the reason for it is one of the most discussed elements of the series. Do not let the unusual POV put you off in the opening pages.",
+      body: "Yeah, The Fifth Season is written in second person - 'you do this, you feel that, you watch your world fall apart.' A lot of readers get thrown off by the first chapter or two. It feels weird as hell at first. But most people stop noticing it pretty quickly, and by the end of the trilogy that choice becomes one of the most powerful and discussed things in the whole series. Don't let the unusual POV scare you off in the opening pages. Push through it. It pays off.",
       color: 'purple',
     },
     {
       title: '🌀 Three Timelines',
-      body: "The Fifth Season runs three narrative threads in parallel, set at different points in the same character's life. Readers who go in knowing this find the structure immediately readable. The timelines converge — that's not a spoiler, it's reassurance. The structure is a puzzle Jemisin has already solved; your job is to follow it.",
+      body: "The first book runs three different narrative threads in parallel, all from different points in the same character's life. If you go in knowing that, the structure clicks much faster. They do converge, and the way Jemisin weaves them together is masterful. It's a puzzle she's already solved — your job is just to hang on and follow the threads. The payoff when things start lining up is insane.",
       color: 'blue',
     },
     {
       title: '🏆 Three Hugo Awards',
-      body: "N.K. Jemisin won the Hugo Award for Best Novel three consecutive years — one for each book in the trilogy (2016, 2017, 2018). No author had done this before. The Broken Earth is the only trilogy in which every book individually won the field's top prize. This is not marketing copy; it is an accurate description of the series' standing in contemporary science fiction and fantasy.",
+      body: "Straight facts: N.K. Jemisin won the Hugo for Best Novel three years in a row (2016, 2017, 2018), one for each book in this trilogy. No one had ever done that before. This is the only trilogy where every single book individually took home the biggest prize in the genre. That's not hype — it's a legit reflection of how much this series shook up modern sci-fi/fantasy.",
       color: 'amber',
     },
     {
       title: '🌍 The World',
-      body: "The Stillness is a single supercontinent on a geologically unstable world, shaped by repeated catastrophes called fifth seasons. Orogenes — people with the ability to sense and control geological energy — are vital to civilisation and violently oppressed by it. The world is post-apocalyptic but also cyclically apocalyptic: the Stillness has ended and rebuilt civilisation many times. The magic system is physical, biological, and deeply political.",
+      body: "The Stillness is a single massive supercontinent on a geologically unstable planet that gets regularly wrecked by apocalyptic 'seasons.' Civilization keeps getting knocked back to the Stone Age and rebuilding. Orogenes (folks who can sense and manipulate geological energy) are essential for survival but treated like monsters. They get enslaved, hunted, and abused by the very people who depend on them. The world feels post-apocalyptic and cyclically apocalyptic at the same time. The magic system is raw, physical, biological, and deeply tied to politics and oppression. It's brilliant.",
       color: 'green',
     },
     {
       title: '📚 What to Read Next',
-      body: "Jemisin has three other series, all listed below — none connected to the Broken Earth. The City We Became (Great Cities) is the most accessible entry if you want contemporary urban fantasy. The Hundred Thousand Kingdoms (Inheritance Trilogy) is her debut — more conventional in structure but shares the same preoccupation with power and oppression. The Dreamblood Duology is her most overlooked work: Egyptian-inspired, quieter, and very good.",
+      body: 'Jemisin has three other main series, none connected to Broken Earth. The City We Became (Great Cities trilogy) is probably the most accessible if you want modern urban fantasy with attitude. The Hundred Thousand Kingdoms (Inheritance Trilogy) was her debut - more traditional structure but still obsessed with power and oppression. The Dreamblood Duology is her most slept-on work: Egyptian-inspired, quieter, atmospheric, and really damn good.',
       color: 'zinc',
     },
     {
       title: '🔥 How Dark Is It?',
-      body: 'The Broken Earth does not soften its subject matter. The series deals directly with slavery, genocide, racial oppression, and parental violence. The Fifth Season opens with the death of a child. These elements are thematically central — the series is in part a sustained meditation on what structural oppression does to people across generations. Readers who need emotionally safe fantasy should not start here. Readers who want fantasy that treats serious themes seriously should.',
+      body: "This series does not hold back. At all. It deals head-on with slavery, genocide, systemic racial oppression, parental trauma, and violence. The Fifth Season literally opens with the death of a child. These aren't just edgy shock elements - they're central to what the books are about: a raw meditation on what generational oppression does to people and societies. If you need emotionally safe or comforting fantasy, this probably isn't the place to start. But if you want fantasy that tackles heavy shit with intelligence and zero sugarcoating, this one hits like a seismic event.",
       color: 'red',
     },
   ],
@@ -163,9 +164,9 @@ export const brokenEarth: ReadingOrderEntry = {
       heading: 'Reading order notes',
       type: 'bullets',
       bullets: [
-        'Publication order is the only order — The Fifth Season → The Obelisk Gate → The Stone Sky.',
-        'Three timelines run in parallel through book one. The structure requires no effort to follow — just read forward.',
-        "Avoid reviews of The Stone Sky before finishing — the ending is widely discussed and the series' resolution is a significant part of what people respond to.",
+        'Read all three consecutively if you can — the series rewards forward momentum and the conclusion only lands if the trilogy is still fresh.',
+        "The second-person narration feels strange for the first chapter or two. Push through it — most readers stop noticing within 20 pages and it pays off significantly by the end.",
+        "Avoid reviews of The Stone Sky before finishing — the ending is widely discussed and the resolution is a significant part of what makes the series memorable.",
       ],
     },
     {
@@ -197,10 +198,17 @@ export const brokenEarth: ReadingOrderEntry = {
   ],
   metaDescription:
     'The Broken Earth reading order: all three N.K. Jemisin books in sequence — the only trilogy where every book won the Hugo Award for Best Novel.',
-  lastUpdated: '2026-05-26',
+  lastUpdated: '2026-05-28',
   finishedLabel: 'Finished the trilogy?',
   booksLikeSlug: 'the-fifth-season',
   categoryHref: '/fantasy/dark',
   categoryLabel: 'Browse Dark Fantasy',
-  related: ['locked-tomb', 'earthsea', 'malazan', 'robin-hobb', 'gene-wolfe', 'asoiaf'],
+  related: [
+    'locked-tomb',
+    'earthsea',
+    'malazan',
+    'robin-hobb',
+    'gene-wolfe',
+    'asoiaf',
+  ],
 };
