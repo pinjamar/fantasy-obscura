@@ -383,65 +383,6 @@ Slug: /reading-orders/brent-weeks
 
 23 R.F. Kuang Reading Order
 
-Five works across three genre registers — one trilogy, two standalone novels, one novella. No shared universe, no reading order dependencies. Every book is set in a different world. The only through-line is Kuang herself: her argument (what institutions do to the people they absorb and exploit), her structural intelligence, and her willingness to follow the logic of her premise without softening it. Readers who try one Kuang and bounce should try another before writing her off — the range is genuine and intentional.
-
-Works in recommended reading order:
-
-THE POPPY WAR TRILOGY (2018–2020) — start here for most readers
-Military fantasy inspired directly by 20th-century Chinese history: the Second Sino-Japanese War, the Nanjing Massacre, Republican-era warlord politics. Not fantasy-as-escapism. Kuang has described the trilogy as a deliberate act — she wanted a fantasy that forced Western readers to sit with Chinese history they had been permitted to ignore.
-
-1. The Poppy War (2018)
-Rin is a war orphan from the rural south who cheats her way into Sinegard, the Empire of Nikan's elite military academy, on raw intelligence and brutal self-discipline. The first third reads like dark academia: the entrance exam, the academy hierarchy, the older students who resent her. Then the war starts and the register shifts completely and permanently. The shift is intentional — do not go in with spoilers. Start here, no exceptions within the trilogy.
-Magic: Rin discovers she can call on gods by burning opium and emptying herself as a vessel. Dangerous, addictive, expensive. The series is honest about all three.
-Content warning: graphic wartime violence, genocide and mass atrocity depicted with historical specificity, child soldiers, addiction, sexual violence. These are not decorative — they are the point.
-Page count: 544. Darkness level: 5.
-
-2. The Dragon Republic (2019)
-The war has fractured into civil conflict. Rin is a soldier of fortune trying to find a political faction worth fighting for. The scope widens — more factions, more ideological betrayal, more colonial politics. The shamanic magic's relationship to power and empire becomes central. The most politically complex book in the trilogy and for some readers the hardest; it is also where the series' argument about revolution becomes explicit.
-Page count: 544. Darkness level: 5.
-
-3. The Burning God (2020)
-The conclusion. Every ideological question the trilogy has been building — who gets to be the liberator, what does revolution do to the revolutionary, when does resistance become the thing it resisted — is answered without flinching. One of the bleaker endings in modern fantasy and one of the most intellectually honest. The final chapter is among the most discussed in recent fantasy writing. Does not offer an easy out.
-Page count: 656. Darkness level: 5.
-
-BABEL, OR THE NECESSITY OF VIOLENCE: AN ARCANE HISTORY OF THE OXFORD TRANSLATORS' REVOLUTION (2022)
-Dark academia set in an alternate 1830s Oxford. Standalone — no connection to The Poppy War.
-The magic system — silverworking — is built around the untranslatability of language: silver bars engraved with a word and its foreign-language equivalent generate power from the semantic gap between them. The wider the gap (i.e., the more meaning is lost in translation), the more power the bar produces. The British Empire's magical-industrial economy therefore runs on colonial languages — Hindi, Cantonese, Arabic, Yoruba — because the gap between those words and their English equivalents is large and irreducible. The empire needs the colonised precisely as translators, and it needs them to remain second-class.
-Robin Swift is taken from Canton to Oxford as a child by a professor who grooms him for exactly this role. He grows up inside Babel — the Royal Institute of Translation — learning to love it before understanding what he is feeding.
-The first half is deliberately seductive: Oxford architecture, Latin tutorials, brilliant friends, the intoxication of learning. Kuang wants the reader to love it before the cost arrives. The second half is about what the students do when they can no longer pretend not to know.
-Comparable to Jonathan Strange & Mr Norrell in its use of Regency England and its interest in the politics of magic — but Babel is angrier and has no patience for nostalgia. Also comparable to The Secret History in its dark-academia structure and the question of what brilliant people do when an institution stops protecting them.
-Content warning: colonial violence, period racism depicted with accuracy and without softening, graphic violence in the final section.
-Page count: 545. Darkness level: 4.
-
-YELLOWFACE (2023)
-Not fantasy. Psychological satire of the publishing industry. Standalone.
-June Hayward is a mediocre white author who steals the unpublished manuscript of her brilliant Chinese-American friend Athena Liu after Athena dies in a freak accident, publishes it under a slightly ethnically ambiguous pen name, and becomes a bestseller. The novel follows June's increasingly unhinged self-justifications as the internet closes in.
-First-person narration that makes the reader complicit in June's logic — the technique is deliberate and uncomfortable. Kuang had worked in publishing; the industry details are precise enough that the novel caused significant discussion in publishing circles on release. June is not a villain in her own narration; she is always just about to be right. That is the horror.
-No magic. The darkness is entirely social and psychological. Recommend in the guide for readers who have already read the fantasy, but flag clearly as a genre departure — readers expecting The Poppy War will be disoriented.
-Page count: 320. Darkness level: 3.
-
-VERBAL (2024)
-Novella. A competitive debater at Oxford discovers words can be literally weaponised. A formal experiment rather than a fully realised world — slighter than the major works. Note in the guide as an existing work but give it minimal space. Completionists only.
-
-Reading order for the guide's "where to start" section:
-Start with The Poppy War if: the reader is prepared for the content and wants Kuang at her most ambitious and historically grounded. The trilogy is the defining work.
-Start with Babel if: the reader wants dark academia with colonial politics at its centre, or is wary of the military-fantasy register. The first half is pleasurable in a way that eases the reader in. Better entry point for readers who come from literary fiction.
-Start with Yellowface if: the reader wants Kuang's voice and intelligence with none of the fantasy or violence — a reader who is sceptical about genre, or who wants to test the water before committing to the trilogy. Frame it as: "the easiest entry, but read the trilogy after."
-Do not start with Verbal.
-
-Content notes for the guide's content section (essential — do not omit):
-The Poppy War trilogy: wartime atrocity, genocide, addiction, sexual violence — level 5. Not gratuitous but relentless.
-Babel: colonial violence, period racism, graphic violence in the final act — level 4.
-Yellowface: psychological horror, no physical violence — level 3.
-Romance/heat level: absent across all works. Kuang is not a romance writer. Relationships exist but are not the emotional centre of any book.
-Explicit content: none.
-
-The through-line for the guide's description (what unifies all the works):
-Every Kuang book is about what institutions do to the brilliant outsiders they admit — the military academy, the shamanic war machine, the empire's translation bureau, the publishing industry. The protagonist is always talented, always admitted on unequal terms, always brought to understand that the institution's offer is also a trap. The reader is positioned to understand both the seduction and the cost before the cost arrives. This is the correct frame for the description — not "dark fantasy writer" but a writer with a single consistent argument deployed across different genres and centuries.
-
-Slug: /reading-orders/rf-kuang
-
-
 24 Riftwar Cycle Reading Order (Raymond E. Feist)
 
 30 novels published 1982–2013 — one of the longest-running fantasy series; the essential entry is always Magician
