@@ -118,6 +118,8 @@ import { theShadowOfTheGods } from './books-like/the-shadow-of-the-gods';
 import { theChroniclesOfNarnia } from './books-like/the-chronicles-of-narnia';
 import { theShadowOfTheTorturer } from './books-like/the-shadow-of-the-torturer';
 import { childrenOfTime } from './books-like/children-of-time';
+import { theWayOfShadows } from './books-like/the-way-of-shadows';
+import { theWardedMan } from './books-like/the-warded-man';
 
 export interface BooksLikeRec {
   title: string;
@@ -373,6 +375,8 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   theChroniclesOfNarnia,
   theShadowOfTheTorturer,
   childrenOfTime,
+  theWayOfShadows,
+  theWardedMan,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
