@@ -122,6 +122,9 @@ import { theWayOfShadows } from './books-like/the-way-of-shadows';
 import { theWardedMan } from './books-like/the-warded-man';
 import { leviathanWakes } from './books-like/leviathan-wakes';
 import { endersGame } from './books-like/enders-game';
+import { cityOfBones } from './books-like/city-of-bones';
+import { foundation } from './books-like/foundation';
+import { tigana } from './books-like/tigana';
 
 export interface BooksLikeRec {
   title: string;
@@ -381,6 +384,9 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   theWardedMan,
   leviathanWakes,
   endersGame,
+  cityOfBones,
+  foundation,
+  tigana,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
