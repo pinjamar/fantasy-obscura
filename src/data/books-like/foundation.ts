@@ -190,141 +190,65 @@ export const foundation: BooksLikeEntry = {
         },
       ],
     },
-  ],
-  recommendations: [
     {
-      title: 'Second Foundation',
-      slug: 'second-foundation',
-      author: 'Isaac Asimov',
-      darkness_level: 3,
-      heat_level: null,
-      tags: [
-        'Direct Sequel',
-        'Grand Plan',
-        'Political Intrigue',
-        'Hidden Organisation',
-        'Classic Sci-Fi',
+      heading:
+        'If you loved that individual people barely matter — civilisation as protagonist, the Plan working through characters who are instruments rather than heroes...',
+      recs: [
+        {
+          title: 'Hyperion',
+          slug: 'hyperion',
+          author: 'Dan Simmons',
+          darkness_level: 4,
+          heat_level: null,
+          standalone: false,
+          series: 'Hyperion Cantos',
+          series_number: 1,
+          series_label: 'Series (4 books)',
+          audiobook: true,
+          note: "Simmons structures Hyperion as seven pilgrims each telling their own story in a different genre — soldier, priest, poet, scholar, detective — all converging on the same civilisational crisis. Like Foundation, no single character carries continuity across the structure; only the crisis does. Simmons brings literary craft Asimov never attempted, and the anthology structure produces the same pleasure as the Seldon Crises: each story illuminates a different facet of the same collapse. Hyperion ends on a deliberate cliffhanger; The Fall of Hyperion resolves it immediately. Caveat: the series weakens sharply after the first two books.",
+          tags: [
+            'Civilisational Scale',
+            'Anthology Structure',
+            'Far Future',
+            'Literary Sci-Fi',
+            'Space Opera',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=Hyperion+Dan+Simmons&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=Hyperion+Dan+Simmons&affiliate=122720',
+        },
+        {
+          title: "Ender's Game",
+          slug: 'enders-game',
+          author: 'Orson Scott Card',
+          darkness_level: 3,
+          heat_level: null,
+          standalone: false,
+          series: "Ender's Game",
+          series_number: 1,
+          series_label: 'Series (4 books)',
+          audiobook: true,
+          note: "The military school around Ender is designed to shape him into a weapon without his knowledge — which is exactly the structure of Foundation's Seldon Crises: a plan that works through people who think they are acting freely. Ender's Game is faster and emotionally warmer than Foundation, but the central argument — civilisational survival requires strategic intelligence applied at the species level, through individuals who don't know the full scope of what they're doing — is the same. One of the genre's most famous twists; the ending stands up to knowing it in advance.",
+          tags: [
+            'Strategic Intelligence',
+            'Civilisational Stakes',
+            'Game within a Game',
+            'Military SF',
+            'Classic',
+          ],
+          amazon_url:
+            "https://www.amazon.com/s?k=Ender's+Game+Orson+Scott+Card&tag=librariancura-20",
+          bookshop_url:
+            "https://bookshop.org/search?keywords=Ender's+Game+Orson+Scott+Card&affiliate=122720",
+        },
       ],
-      why: "The third book of the original trilogy — and Asimov's most cleverly constructed. The Mule, a mutant with the power to alter emotions, has broken the Seldon Plan; now both the First Foundation and the Second Foundation are searching for each other, each for different reasons. Asimov reverses the detective structure: the reader knows things the characters don't, and the mystery is about who knows what rather than what happened. It is the darkest and most psychologically complex of the original three books, and the ending is one of SF's great reveals. Read Foundation and Foundation and Empire first.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Second+Foundation+Isaac+Asimov&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Second+Foundation+Isaac+Asimov&affiliate=122720',
-    },
-    {
-      title: 'Hyperion',
-      slug: 'hyperion',
-      author: 'Dan Simmons',
-      darkness_level: 4,
-      heat_level: null,
-      tags: [
-        'Space Opera',
-        'Multi-POV',
-        'Literary Sci-Fi',
-        'Alien Threat',
-        'Far Future',
-      ],
-      why: "Simmons assembles seven pilgrims on a journey to a creature that kills everyone who reaches it, each telling their own story in a different genre — soldier, priest, poet, scholar, detective. It has Foundation's ambition and scope but delivered with literary craftsmanship Asimov never attempted: the prose is genuinely beautiful, the ideas equally dense, and the structural sophistication of seven interlocking narratives bearing on the same crisis is something Foundation doesn't have. Hyperion ends on a deliberate cliffhanger; The Fall of Hyperion resolves it immediately. The series weakens significantly after the first two books.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Hyperion+Dan+Simmons&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Hyperion+Dan+Simmons&affiliate=122720',
-    },
-    {
-      title: 'Ancillary Justice',
-      slug: 'ancillary-justice',
-      author: 'Ann Leckie',
-      darkness_level: 3,
-      heat_level: null,
-      tags: [
-        'Empire',
-        'Political Intrigue',
-        'AI Consciousness',
-        'Literary Sci-Fi',
-        'Revenge',
-      ],
-      why: "A soldier who is also a starship seeks revenge against the ruler of a galaxy-spanning empire — told from two timelines converging on the same moment. Leckie uses her unusual narrator to ask the same questions Foundation does about empire and loyalty: what does an institution do to the people inside it, and what happens when those people begin to think for themselves? The Imperial Radch trilogy has Foundation's interest in civilisational politics, Le Guin's literary seriousness, and a distinctive structural experiment that rewards close reading. Won every major SF award. The trilogy is complete.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Ancillary+Justice+Ann+Leckie&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Ancillary+Justice+Ann+Leckie&affiliate=122720',
-    },
-    {
-      title: 'Children of Time',
-      slug: 'children-of-time',
-      author: 'Adrian Tchaikovsky',
-      darkness_level: 3,
-      heat_level: null,
-      tags: [
-        'Civilisational Scale',
-        'First Contact',
-        'Hard Sci-Fi',
-        'Ideas-First',
-        'Far Future',
-      ],
-      why: "Tchaikovsky follows two civilisations across thousands of years — humanity's remnant fleeing a dying Earth and spiders evolving toward intelligence on a terraformed world — and their eventual collision is the plot. Children of Time operates on Foundation's timescale and with Foundation's interest in how civilisations develop and what they owe each other, but with actual biology and evolution as the political forces rather than Asimov's economics. The most satisfying ideas-first sci-fi published in the last decade.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Children+of+Time+Adrian+Tchaikovsky&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Children+of+Time+Adrian+Tchaikovsky&affiliate=122720',
-    },
-    {
-      title: "Ender's Game",
-      slug: 'enders-game',
-      author: 'Orson Scott Card',
-      darkness_level: 3,
-      heat_level: null,
-      tags: [
-        'Strategic Intelligence',
-        'Saving Humanity',
-        'Military SF',
-        'Game within a Game',
-        'Standalone',
-      ],
-      why: "Ender Wiggin is recruited into a military school to become the intelligence that will save humanity from an alien threat — and the entire system around him is designed to shape him into a specific kind of weapon without his knowledge. The 'plan operating through a person who doesn't know they're inside it' structure is exactly what the Seldon Crises do: the protagonist of each crisis is both free agent and instrument of a larger design. Ender's Game is faster, more accessible, and emotionally warmer than Foundation, but the central argument — that civilisational survival requires strategic intelligence applied at the species level — is the same.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        "https://www.amazon.com/s?k=Ender's+Game+Orson+Scott+Card&tag=librariancura-20",
-      bookshop_url:
-        "https://bookshop.org/search?keywords=Ender's+Game+Orson+Scott+Card&affiliate=122720",
-    },
-    {
-      title: 'Leviathan Wakes',
-      slug: 'leviathan-wakes',
-      author: 'James S.A. Corey',
-      darkness_level: 4,
-      heat_level: null,
-      tags: [
-        'Political Sci-Fi',
-        'Three-Faction Conflict',
-        'Hard Sci-Fi',
-        'Space Opera',
-        'Thriller',
-      ],
-      why: "The Expanse is Foundation's contemporary descendant: a colonised solar system where Earth, Mars, and the Belt are in a three-way political standoff that any one crisis could turn into a war nobody can win. Corey doesn't write Asimov's chess-game plotting — The Expanse has protagonists you follow and care about personally — but the underlying political intelligence is the same: resources create conflict, conflict creates politics, and politics create the world everyone else has to live in. For Foundation readers who want the civilisational stakes in a faster, more character-driven package. The Amazon Prime TV adaptation is one of the best SF shows ever made.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Leviathan+Wakes+James+Corey&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Leviathan+Wakes+James+Corey&affiliate=122720',
     },
   ],
+  recommendations: [],
   related: [
     { title: 'Books Like Dune', slug: 'dune' },
-    { title: 'Books Like A Memory Called Empire', slug: 'a-memory-called-empire' },
     { title: 'Books Like Children of Time', slug: 'children-of-time' },
     { title: 'Books Like Leviathan Wakes', slug: 'leviathan-wakes' },
-    { title: "Books Like Ender's Game", slug: 'enders-game' },
-    { title: 'Books Like Project Hail Mary', slug: 'project-hail-mary' },
   ],
 };

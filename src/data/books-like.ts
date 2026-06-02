@@ -125,6 +125,9 @@ import { endersGame } from './books-like/enders-game';
 import { cityOfBones } from './books-like/city-of-bones';
 import { foundation } from './books-like/foundation';
 import { tigana } from './books-like/tigana';
+import { ninePrincesInAmber } from './books-like/nine-princes-in-amber';
+import { promiseOfBlood } from './books-like/promise-of-blood';
+import { magicianApprentice } from './books-like/magician-apprentice';
 
 export interface BooksLikeRec {
   title: string;
@@ -387,6 +390,9 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   cityOfBones,
   foundation,
   tigana,
+  ninePrincesInAmber,
+  promiseOfBlood,
+  magicianApprentice,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"

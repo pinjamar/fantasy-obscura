@@ -180,136 +180,35 @@ export const tigana: BooksLikeEntry = {
         },
       ],
     },
-  ],
-  recommendations: [
     {
-      title: 'A Song for Arbonne',
-      slug: 'a-song-for-arbonne',
-      author: 'Guy Gavriel Kay',
-      darkness_level: 3,
-      heat_level: 'Closed Door',
-      tags: [
-        'Historical Fantasy',
-        'Troubadour Culture',
-        'Resistance',
-        'Literary Fantasy',
-        'Standalone',
+      heading:
+        "If you loved Kay's world and want to stay in it — the same secondary world, the same elegiac register, the same sense of history destroying things that deserved to exist...",
+      recs: [
+        {
+          title: 'A Song for Arbonne',
+          slug: 'a-song-for-arbonne',
+          author: 'Guy Gavriel Kay',
+          darkness_level: 3,
+          heat_level: 'Closed Door',
+          standalone: true,
+          audiobook: true,
+          note: "Set in the same secondary world as Tigana — Kay's Provence-inspired south — A Song for Arbonne follows a mercenary soldier from the patriarchal north who finds himself defending a troubadour culture against conquest from a lord who despises everything it represents. The same formal prose, the same elegiac register, the same sense of an irreversible historical tide. Where Tigana is about cultural erasure from inside, Arbonne is about cultural destruction from outside, and the stakes feel equally irreversible. The most direct companion read to Tigana; readers who loved one almost universally love the other. Standalone.",
+          tags: [
+            'Historical Fantasy',
+            'Troubadour Culture',
+            'Literary Fantasy',
+            'Elegiac',
+            'Standalone',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=A+Song+for+Arbonne+Guy+Gavriel+Kay&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=A+Song+for+Arbonne+Guy+Gavriel+Kay&affiliate=122720',
+        },
       ],
-      why: "Set in the same secondary world as Tigana — Kay's Renaissance peninsula — A Song for Arbonne follows a mercenary soldier from the patriarchal north who finds himself defending the troubadour culture of the south against conquest. The same elegiac register, the same formal prose, the same devastating emotional climax. Where Tigana is about cultural erasure from the inside, Arbonne is about cultural destruction from the outside, and the stakes feel similarly irreversible. For readers who want more Kay in the same world and the same emotional register — this is the companion read. Standalone.",
-      standalone: true,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=A+Song+for+Arbonne+Guy+Gavriel+Kay&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=A+Song+for+Arbonne+Guy+Gavriel+Kay&affiliate=122720',
-    },
-    {
-      title: 'The Poppy War',
-      slug: 'the-poppy-war',
-      author: 'R.F. Kuang',
-      darkness_level: 5,
-      heat_level: null,
-      tags: [
-        'Cultural Genocide',
-        'Resistance',
-        'War Fantasy',
-        'Chosen One Subversion',
-        'Military Fantasy',
-      ],
-      warning: 'graphic wartime atrocities, genocide, sexual violence',
-      why: "The most direct parallel to Tigana in terms of what it is actually about — a conquered people, a war of cultural survival, the cost of fighting for something the rest of the world refuses to acknowledge — but with the register turned from elegiac to brutal. Rin discovers her power during a war clearly modelled on the Sino-Japanese conflict, and Kuang gives the atrocities a historical weight that fantasy violence usually avoids. Where Kay writes about cultural erasure with grief and formal distance, Kuang writes about it with fury and specificity. Significantly darker than Tigana in every dimension; the trilogy does not pull its punches. Read with full knowledge of the content warning.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=The+Poppy+War+Kuang&affiliate=122720',
-    },
-    {
-      title: 'The Fifth Season',
-      slug: 'the-fifth-season',
-      author: 'N.K. Jemisin',
-      darkness_level: 4,
-      heat_level: 'Closed Door',
-      tags: [
-        'Memory and Identity',
-        'Systemic Oppression',
-        'Unreliable Narrator',
-        'Literary SF',
-        'World Ending',
-      ],
-      why: "Jemisin writes cultural destruction as geology: periodic apocalypses called Fifth Seasons have shaped a society that survives by consuming and discarding the people it fears most. Like Tigana, The Fifth Season is fundamentally about what gets erased — history, identity, the right to be a person — and about people who carry memory of that erasure in their bodies. The structural and prose ambition is comparable to Kay's; the second-person narration in particular is doing something as formally deliberate as Kay's elegiac distance. Darker and more demanding than Tigana; the trilogy is complete and won three consecutive Hugo Awards.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=The+Fifth+Season+NK+Jemisin&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=The+Fifth+Season+N.K.+Jemisin&affiliate=122720',
-    },
-    {
-      title: 'Jade City',
-      slug: 'jade-city',
-      author: 'Fonda Lee',
-      darkness_level: 3,
-      heat_level: 'Closed Door',
-      tags: [
-        'Clan Resistance',
-        'Political Intrigue',
-        'Found Family',
-        'Ensemble Cast',
-        'Asian-Inspired',
-      ],
-      why: "The No Peak clan fights to hold their territory against a rival family and the encroaching influence of an outside power that wants to control the island's jade supply — and the trilogy is about what a family owes each other and what a culture owes itself when both are under simultaneous threat. Lee writes ensemble political fantasy with the same moral complexity Kay brings to Tigana's resistance: nobody is simply right, everybody pays a price, and the victories are as costly as the defeats. More propulsive in pacing than Kay, less elegiac in register, but the underlying emotional argument about loyalty and sacrifice is the same. The trilogy is complete.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Jade+City+Fonda+Lee&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Jade+City+Fonda+Lee&affiliate=122720',
-    },
-    {
-      title: "Assassin's Apprentice",
-      slug: 'assassins-apprentice',
-      author: 'Robin Hobb',
-      darkness_level: 4,
-      heat_level: 'Sweet Romance',
-      tags: [
-        'Political Intrigue',
-        'Emotional Devastation',
-        'Identity',
-        'Loyalty and Sacrifice',
-        'Coming of Age',
-      ],
-      why: "Fitz is the royal bastard raised by the king's assassin and slowly shaped into a tool of the crown — a process that costs him everything he might have been. Hobb writes political fantasy with the same emotional precision as Kay: the damage is slow, cumulative, and inflicted by characters who are not simply villains. Readers who loved Tigana for the way it takes political machination and makes it feel like tragedy will find the same quality here. The Farseer trilogy is complete; the world continues in multiple additional trilogies. Caveat: Fitz's passivity frustrates some readers across the later books.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        "https://www.amazon.com/s?k=Assassin's+Apprentice+Robin+Hobb&tag=librariancura-20",
-      bookshop_url:
-        "https://bookshop.org/search?keywords=Assassin's+Apprentice+Robin+Hobb&affiliate=122720",
-    },
-    {
-      title: 'Blood Song',
-      slug: 'blood-song',
-      author: 'Anthony Ryan',
-      darkness_level: 3,
-      heat_level: 'Closed Door',
-      tags: [
-        'Reluctant Hero',
-        'Military Fantasy',
-        'Political Intrigue',
-        'Brotherhood',
-        'Unreliable Narrator',
-      ],
-      why: "Vaelin Al Sorna is raised in a martial order and trained to be a weapon for a faith he is uncertain he believes in — and the book follows what happens when duty, loyalty, and conscience point in different directions. Ryan shares Kay's interest in the cost of service to a cause, the moral weight of political violence, and the question of what a person owes to the institution that shaped them. Blood Song is more propulsive and less literary than Tigana, but the emotional core — one person trying to remain decent inside a system that demands he not be — is the same. Caveat: the sequels do not maintain the quality of the first book; many readers stop at Blood Song.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Blood+Song+Anthony+Ryan&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Blood+Song+Anthony+Ryan&affiliate=122720',
     },
   ],
+  recommendations: [],
   related: [
     { title: 'Books Like Babel', slug: 'babel' },
     { title: 'Books Like A Memory Called Empire', slug: 'a-memory-called-empire' },
