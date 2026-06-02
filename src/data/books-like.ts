@@ -120,6 +120,8 @@ import { theShadowOfTheTorturer } from './books-like/the-shadow-of-the-torturer'
 import { childrenOfTime } from './books-like/children-of-time';
 import { theWayOfShadows } from './books-like/the-way-of-shadows';
 import { theWardedMan } from './books-like/the-warded-man';
+import { leviathanWakes } from './books-like/leviathan-wakes';
+import { endersGame } from './books-like/enders-game';
 
 export interface BooksLikeRec {
   title: string;
@@ -377,6 +379,8 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   childrenOfTime,
   theWayOfShadows,
   theWardedMan,
+  leviathanWakes,
+  endersGame,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
