@@ -30,7 +30,7 @@
 19. ✅✅ Books like Mistborn / The Final Empire
 20. ✅✅ Books like The Way of Kings
 21. ✅✅Books like The Name of the Wind
-22. ✅ Books like The Lord of the Rings
+22. ✅✅Books like The Lord of the Rings
 23. ✅ Books like A Game of Thrones
 24. ✅ Books like The Wheel of Time
 25. ✅ Books like The Hobbit
@@ -80,7 +80,7 @@
 60. ✅ Books like The Black Company
 61. ✅ Books like The Darkness That Comes Before
 62. ✅ Books like Blood Song
-63. Books like The Dragon Republic
+63. ✅ Books like The Dragon Republic
 64. ✅ Books like Babel
 65. ✅ Books like Jade City
 66. Books like She Who Became the Sun
@@ -135,8 +135,8 @@
 109. Books like Dead Witch Walking / The Hollows
 
 ### Sci-Fi Fantasy Crossover (6)
-110. Books like Ender's Game
-111. Books like Leviathan Wakes / The Expanse
+110. ✅ Books like Ender's Game
+111. ✅ Books like Leviathan Wakes / The Expanse
 112. Books like Old Man's War
 113. Books like Starter Villain
 114. Books like The Kaiju Preservation Society
@@ -147,8 +147,8 @@
 117. Books like The Belgariad (David Eddings)
 118. Books like The Sword of Truth (Terry Goodkind)
 119. Books like The Once and Future King
-120. Books like Nine Princes in Amber
-121. Books like Tigana
+120. ✅ Books like Nine Princes in Amber
+121. ✅ Books like Tigana
 122. Books like The Lions of Al-Rassan
 123. Books like The Silmarillion
 124. Books like The Crystal Cave
@@ -181,13 +181,13 @@
 147. Books like All Systems Red / Murderbot Diaries
 148. Books like Ship of Magic / Liveship Traders
 149. Books like Foundryside / Robert Jackson Bennett
-150. Books like Promise of Blood / Powder Mage
+150. ✅ Books like Promise of Blood / Powder Mage
 151. ✅ Books like Empire of the Vampire
 152. ✅ Books like Kings of the Wyld
 153. Books like Senlin Ascends
 154. Books like The Justice of Kings
 155. Books like The Tainted Cup
-156. Books like The Black Prism / Lightbringer
+156. ✅ Books like The Black Prism / Lightbringer
 157. Books like Mistborn Era 2 / Alloy of Law
 
 ### Dark Fantasy & Horror-Adjacent (10)
@@ -197,7 +197,7 @@
 161. Books like The Shadow of the Gods
 162. Books like The Bone Ships
 163. Books like The Ember Blade
-164. Books like Malice (John Gwynne)
+164. ✅ Books like Malice (John Gwynne)
 165. Books like The Spear Cuts Through Water
 166. Books like Gods of Jade and Shadow
 167. Books like Kindred (Octavia Butler)
@@ -366,15 +366,6 @@ Strong search volume, genuine reading order complexity
 
 19 Brent Weeks Reading Order (Brent Weeks — Night Angel & Lightbringer)
 
-Two complete series in entirely separate worlds — no connection between them:
-Night Angel Trilogy (3 books, complete): The Way of Shadows → Shadow's Edge → Beyond the Shadows — grimdark assassin story, Kylar trains under wetboy Durzo Blint, ka'kari shadow-absorption magic
-Lightbringer (5 books, complete): The Black Prism → The Blinding Knife → The Broken Eye → The Blood Mirror → The Burning White — color-based magic system, drafters use chromaturgy (solidified light), each color has different properties and psychological effects
-A Prism can draft all colors — there is one per generation; the political and religious consequences drive the entire Lightbringer plot
-Night Angel is shorter, darker, and more character-driven — better entry if you want grimdark
-Lightbringer is more ambitious in scope with one of the most praised hard magic systems in the genre — better entry if you want intricate world-building
-Drafting costs the drafter their sanity and lifespan — the stakes of magic use are built into the system
-Slug: /reading-orders/brent-weeks
-
 20 John Gwynne Reading Order (John Gwynne)
 
 21 Horus Heresy Reading Order (Dan Abnett)
@@ -513,7 +504,7 @@ Romance heat level is the primary reader decision point — the guide's content 
 Slug: /reading-orders/jennifer-armentrout
 
 
-27 Vlad Taltos Reading Order (Steven Brust)
+27 Vlad Taltos / Dragaera Universe Reading Order (Steven Brust)
 
 20+ books (ongoing since 1983) — human assassin Vlad Taltos navigating a society built by and for Dragaerans, a near-immortal species who consider humans second-class
 Publication order strongly recommended — do not read chronologically (Taltos the novel is set early in Vlad's life but was written 5th and assumes prior knowledge)
@@ -528,16 +519,6 @@ Slug: /reading-orders/vlad-taltos
 
 
 28 Demon Cycle Reading Order (Peter V. Brett)
-
-5-book grimdark fantasy — humanity besieged by demons (corelings) that rise from the ground every night, destroyed only by combat wards
-The Warded Man → The Desert Spear → The Daylight War → The Skull Throne → The Core
-Three concurrent POV storylines converge across the series: Arlen (the tattooed fighter), Leesha (the healer), Rojer (the musician)
-The Desert Spear introduces Jardir — the same events as book 1 retold from the antagonist's POV; readers need to know this before picking it up
-Novellas: Brayan's Gold and Messenger's Legacy flesh out Arlen's backstory — best read between books 1 and 2
-The UK title for book 1 is The Painted Man (same book, different cover/title)
-Series quality peaks in books 1–3; books 4–5 are widely considered a step down in focus and pacing
-Slug: /reading-orders/demon-cycle
-
 
 29 Powder Mage Reading Order (Brian McClellan)
 
@@ -586,43 +567,6 @@ Slug: /reading-orders/powder-mage
 
 30 Chronicles of Amber Reading Order (Roger Zelazny)
 
-Ten novels in two five-book cycles, published 1970–1991. Complete, standalone from all other Zelazny work. No prior reading required, no sequels planned or possible (Zelazny died in 1995).
-
-The premise — lead with this in the guide's description because it is the hook:
-Amber is the one true world; all other worlds, including Earth, are Shadows — imperfect reflections of Amber cast by those with the ability to walk between realities. The royal family of Amber can walk through Shadow, shifting reality around them as they move, until they reach any world they can imagine. This means every genre, every history, every mythology is potentially accessible to them. The series uses this to move through radically different registers — high fantasy, spy thriller, noir, metaphysical philosophy — across its ten books.
-
-The structure:
-THE CORWIN CYCLE (Books 1–5, 1970–1978) — read first, in order
-Nine Princes in Amber → The Guns of Avalon → Sign of the Unicorn → The Hand of Oberon → The Courts of Chaos
-
-Nine Princes in Amber (1970):
-Corwin wakes in a private hospital on Earth with amnesia. Someone has been suppressing his memory. He is, it gradually emerges, one of the princes of Amber — immortal, with the ability to walk Shadow — and his brothers and sisters have been fighting a succession war for the throne of Amber while their father Oberon has been missing. Corwin reassembles his identity and enters the conflict. The amnesia opening is a deliberate technique: it gives the reader the world-building in the order Corwin recovers it, which is faster and less disorienting than it sounds. One of the most propulsive opening novels in fantasy — lean, fast, noir-inflected, no scene-setting. Around 200 pages.
-The series is written entirely in first-person; Corwin's voice is the texture of everything. Ironic, precise, slightly world-weary — he is thousands of years old and has done most things before.
-
-Books 2–5 continue Corwin's story through escalating stakes — the nature of Amber, the Pattern (the design at the heart of reality that gives the royal family their powers), the Courts of Chaos (the opposing metaphysical extreme to Amber), and the identity of the enemy are all progressively revealed. Do not summarise individual books extensively in the guide — just note that the five books form one complete story and must be read in order.
-
-THE MERLIN CYCLE (Books 6–10, 1985–1991) — read after, in order
-Trumps of Doom → Blood of Amber → Sign of Chaos → Knight of Swords → Prince of Chaos
-
-Follows Merlin, Corwin's son — half Amber, half Courts of Chaos — working as a computer programmer in San Francisco (this is the early 1980s) while surviving repeated assassination attempts. The Merlin Cycle is more science-fiction adjacent, more metafictional, and more structurally complex than the Corwin Cycle. Widely considered weaker than the first five books — the plot is more convoluted, the resolution less satisfying, and Zelazny was ill during the writing of the final book, which shows. The guide should note this honestly without dismissing the cycle: it expands the cosmology significantly and Merlin is an interesting character.
-Cannot be read without the Corwin Cycle — it directly continues events and characters. Read in order.
-
-Standalone short fiction (not essential for the guide but note they exist):
-Zelazny wrote several Amber short stories collected in "The Collected Stories of Roger Zelazny" — these are completionist material. No impact on the main reading order.
-
-A note on format — important for the guide:
-The Corwin Cycle books are short by modern standards: Nine Princes runs ~175 pages, the others 200–250 pages. The entire ten-book series is shorter than a single Sanderson novel. Frame this as an asset: the series is fast and can be read in a week. Readers who bounce off 800-page epics often become devoted Zelazny readers because he trusts the reader to keep up without hand-holding.
-
-What to say in the description:
-Zelazny is a prose stylist in a genre that often isn't — he came up through science fiction's New Wave in the 1960s and brought a literary compression to fantasy that was unusual at the time and remains unusual. Corwin's narration is laconic and precise; the world-building is delivered through action and inference rather than exposition; the cosmological ideas (Shadow, the Pattern, the Courts of Chaos, the nature of identity across infinite realities) are genuinely philosophical without ever stopping the story to explain themselves. Chronicles of Amber is the foundational text for the "multiverse as setting" strand of fantasy and science fiction — Michael Moorcock's Eternal Champion is the other pole, but Zelazny's approach is more intimate.
-Comparable series: The Long Earth (Terry Pratchett/Stephen Baxter — Shadow-walking as a concept, though different in register); The Dark Tower (King — the Tower/Amber as the axis of all worlds is a direct parallel and King has cited Zelazny); Moorcock's Elric/Eternal Champion (the other great 1970s multiverse fantasy).
-
-Darkness level: 3 across both cycles — violence is present but not graphic; the register is adventure-fantasy with philosophical depth rather than grimdark. No explicit content. No romance heat. The darkness is cosmic and existential rather than visceral.
-
-Flag in the guide: the Merlin Cycle's relative weakness compared to Corwin. Most readers consider books 1–5 among the great works of the genre and books 6–10 interesting but flawed. The guide should manage expectations honestly so readers who love the Corwin Cycle aren't blindsided by the shift.
-
-Slug: /reading-orders/chronicles-of-amber
-
 
 ---
 
@@ -645,7 +589,7 @@ Slug: /reading-orders/sun-eater
 53 Broken Earth Reading Order (N.K. Jemisin)
 
 
-54 Elric Saga Reading Order (Michael Moorcock)
+54 Elric Saga Reading Order (Michael Moorcock) - also analyze The Eternal Champion Multiverse (Michael Moorcock)
 
 8 books (plus additional stories) — one of fantasy's foundational anti-hero series; Elric of Melniboné is an albino emperor kept alive by drugs and the soul-drinking black sword Stormbringer
 Stormbringer is the series' central artifact: a cursed weapon that feeds on the souls of those it kills, including people Elric loves; the sword gradually corrupts and destroys its wielder

@@ -84,7 +84,8 @@ export type ReadingOrderImageSlug =
   | 'broken-earth'
   | 'rf-kuang'
   | 'brent-weeks'
-  | 'demon-cycle';
+  | 'demon-cycle'
+  | 'chronicles-of-amber';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -152,6 +153,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'rf-kuang':            'rf-kuang',
   'brent-weeks':         'brent-weeks',
   'demon-cycle':         'demon-cycle',
+  'chronicles-of-amber': 'chronicles-of-amber',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

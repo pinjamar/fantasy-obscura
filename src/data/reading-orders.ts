@@ -134,6 +134,7 @@ import { brokenEarth } from './reading-orders/broken-earth';
 import { rfKuang } from './reading-orders/rf-kuang';
 import { brentWeeks } from './reading-orders/brent-weeks';
 import { demonCycle } from './reading-orders/demon-cycle';
+import { chroniclesOfAmber } from './reading-orders/chronicles-of-amber';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -189,6 +190,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   rfKuang,
   brentWeeks,
   demonCycle,
+  chroniclesOfAmber,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
