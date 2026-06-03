@@ -375,7 +375,7 @@ export const cradle: ReadingOrderEntry = {
   shortName: 'Willverse',
   lastUpdated: '2026-06-01',
   finishedLabel: 'Finished Cradle?',
-  categoryHref: '/fantasy/progression',
+  categoryHref: '/fantasy/litrpg',
   categoryLabel: 'Browse Progression Fantasy',
   related: [
     'dungeon-crawler-carl',

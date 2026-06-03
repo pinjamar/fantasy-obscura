@@ -213,7 +213,24 @@ import { myGuide } from './reading-orders/my-guide';
 // add to READING_ORDERS array
 ```
 
-### 3. Add the hero banner
+### 3. Wire up the author page
+The author page (`src/pages/authors/[slug].astro`) has two hardcoded maps that need updating for every new guide:
+
+**`READING_ORDER_MAP`** — maps series names (as stored in the DB) to reading order slugs. This adds a "Reading Order" button to the series card on the author page. Add every series name variant the DB might contain:
+```ts
+'The Expanse':  'expanse',
+'Expanse':      'expanse',
+```
+
+**`AUTHOR_UNIVERSE_MAP`** — maps the author's URL slug to a featured guide. This adds a prominent hero link at the top of the author page, matching what Jim Butcher or Brandon Sanderson get. Add only when the guide covers the author's primary or only major universe:
+```ts
+'james-s-a-corey': { slug: 'expanse', label: 'The Expanse Reading Order' },
+```
+
+To find the author's URL slug: `authorToSlug(name)` lowercases and replaces non-alphanumeric runs with dashes (e.g. "James S.A. Corey" → `james-s-a-corey`).
+To find the exact series name: query the DB — `series` column must match exactly.
+
+### 4. Add the hero banner
 Every guide needs a banner image or the hero renders blank.
 
 1. Drop a source PNG into `assets/raw/reading-orders/[slug].png`

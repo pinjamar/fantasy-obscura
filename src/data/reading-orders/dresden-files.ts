@@ -300,7 +300,7 @@ export const dresdenFiles: ReadingOrderEntry = {
   shortName: 'Dresden Files',
   lastUpdated: '2026-05-18',
   finishedLabel: "Finished what's published?",
-  categoryHref: '/fantasy/urban-fantasy',
+  categoryHref: '/fantasy/urban',
   categoryLabel: 'Browse Urban Fantasy',
   related: ['kingkiller', 'first-law', 'kate-daniels', 'witcher', 'black-company', 'mark-lawrence'],
 };

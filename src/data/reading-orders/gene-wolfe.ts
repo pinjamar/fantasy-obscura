@@ -233,7 +233,7 @@ export const geneWolfe: ReadingOrderEntry = {
   booksLikeSlug: 'the-shadow-of-the-torturer',
   shortName: 'The Solar Cycle',
   finishedLabel: 'Finished the Solar Cycle?',
-  categoryHref: '/fantasy/science',
+  categoryHref: '/fantasy/science-fantasy',
   categoryLabel: 'Browse Science Fantasy',
   related: ['malazan', 'dark-tower', 'earthsea', 'black-company', 'dune', 'middle-earth'],
   lastUpdated: '2026-05-25',

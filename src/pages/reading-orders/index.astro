@@ -166,7 +166,7 @@ const readingOrdersPageJsonLd = JSON.stringify({
 </Layout>
 
 <script>
-  const PER_PAGE = 27;
+  const PER_PAGE = 30;
   const input = document.getElementById('series-search') as HTMLInputElement;
   const allCards = Array.from(document.querySelectorAll<HTMLElement>('.series-card'));
   const curatedCards = allCards.filter(c => c.dataset.dbonly !== 'true');
