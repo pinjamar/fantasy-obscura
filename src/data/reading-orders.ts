@@ -1,4 +1,4 @@
-export type BookStatus =
+﻿export type BookStatus =
   | 'mandatory'
   | 'optional'
   | 'supplementary'
@@ -29,7 +29,7 @@ export interface ReadingOrderGroup {
 
 export interface DarknessRow {
   label: string;
-  level: number; // 1–5
+  level: number; // 1â€“5
   desc: string;
 }
 
@@ -54,9 +54,9 @@ export interface ReadingOrderEntry {
   seriesStatusLabel: string;
   description: string;
   darknessDisplay: string;
-  /** Flat book list — used when there are no named groups */
+  /** Flat book list â€” used when there are no named groups */
   books?: ReadingOrderBook[];
-  /** Named arc groups — takes priority over `books` */
+  /** Named arc groups â€” takes priority over `books` */
   groups?: ReadingOrderGroup[];
   /** Subtitle below the "Reading Order" heading */
   orderNote?: string;
@@ -75,9 +75,9 @@ export interface ReadingOrderEntry {
   shortName?: string;
   /** Slug for a matching /books-like/ guide, if one exists */
   booksLikeSlug?: string;
-  /** ISO date (YYYY-MM-DD) of last meaningful content update — feeds dateModified in JSON-LD */
+  /** ISO date (YYYY-MM-DD) of last meaningful content update â€” feeds dateModified in JSON-LD */
   lastUpdated?: string;
-  /** Custom meta description override — keep under 155 chars. Falls back to auto-generated if omitted. */
+  /** Custom meta description override â€” keep under 155 chars. Falls back to auto-generated if omitted. */
   metaDescription?: string;
 }
 
@@ -136,6 +136,7 @@ import { brentWeeks } from './reading-orders/brent-weeks';
 import { demonCycle } from './reading-orders/demon-cycle';
 import { chroniclesOfAmber } from './reading-orders/chronicles-of-amber';
 import { expanse } from './reading-orders/expanse';
+import { outlander } from './reading-orders/outlander';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -193,7 +194,10 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   demonCycle,
   chroniclesOfAmber,
   expanse,
+  outlander,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
   READING_ORDERS.find((e) => e.slug === slug) ?? null;
+
+

@@ -320,6 +320,9 @@ const READING_ORDER_MAP: Record<string, string> = {
   'The Chronicles of Amber':             'chronicles-of-amber',
   'Chronicles of Amber':                 'chronicles-of-amber',
   'The Dawn of Amber':                   'chronicles-of-amber',
+  // Outlander (Diana Gabaldon)
+  'Outlander':                           'outlander',
+  'Lord John Grey':                      'outlander',
 };
 
 const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
@@ -341,6 +344,7 @@ const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
   'r-f-kuang':         { slug: 'rf-kuang',             label: 'R.F. Kuang Reading Guide' },
   'james-s-a-corey':   { slug: 'expanse',              label: 'The Expanse Reading Order' },
   'roger-zelazny':     { slug: 'chronicles-of-amber',  label: 'Chronicles of Amber Reading Order' },
+  'diana-gabaldon':    { slug: 'outlander',             label: 'Outlander Reading Order' },
 };
 
 const universeGuide = AUTHOR_UNIVERSE_MAP[slug ?? ''] ?? null;

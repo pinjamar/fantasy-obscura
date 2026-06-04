@@ -188,10 +188,18 @@ export const mySeriesEntry: ReadingOrderEntry = {
 
 ### Book statuses
 
-- `mandatory` — must read, core story
-- `supplementary` — adds depth but story works without it
-- `optional` — skippable without losing the plot
-- `upcoming` — not yet published, shown greyed out
+The UI renders three visible tiers plus upcoming. Get these right — they mean different things:
+
+| Status | UI label | Use for |
+|---|---|---|
+| `mandatory` | **Core** | Main series books — must read |
+| `optional` | **Optional** | Full companion novels that add real depth (e.g. Lord John full novels) |
+| `supplementary` | **Extra** | Short stories, novellas, side content — clearly skippable |
+| `upcoming` | greyed out | Not yet published |
+
+**Rule:** novellas and short stories are almost always `supplementary` (Extra). Full-length companion novels are `optional`. Only main series books are `mandatory`.
+
+**Do not guess** at in-universe chronological placement for novellas/short stories. Always check the official series numbering on Goodreads first. The Goodreads series page shows decimal book numbers (e.g. #0.5, #2.5, #7.5) which are the canonical placement points. Use those, not guessed in-universe dates.
 
 ### Section types
 

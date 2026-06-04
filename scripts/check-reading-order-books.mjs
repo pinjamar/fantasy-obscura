@@ -96,7 +96,6 @@ const ALL_BOOKS = [
   { slug: 'a-soul-of-ash-and-blood', title: 'A Soul of Ash and Blood', author: 'Jennifer L. Armentrout' },
   { slug: 'a-light-in-the-flame', title: 'A Light in the Flame', author: 'Jennifer L. Armentrout' },
   { slug: 'a-fire-in-the-flesh', title: 'A Fire in the Flesh', author: 'Jennifer L. Armentrout' },
-  { slug: 'a-veil-of-gods-and-skin', title: 'A Veil of Gods and Skin', author: 'Jennifer L. Armentrout' },
   // Empyrean
   { slug: 'fourth-wing', title: 'Fourth Wing', author: 'Rebecca Yarros' },
   { slug: 'iron-flame', title: 'Iron Flame', author: 'Rebecca Yarros' },
@@ -138,7 +137,7 @@ const ALL_BOOKS = [
   { slug: 'the-son', title: 'The Son', author: 'Veronica Roth' },
   { slug: 'the-traitor', title: 'The Traitor', author: 'Veronica Roth' },
   { slug: 'we-can-be-mended', title: 'We Can Be Mended', author: 'Veronica Roth' },
-  { slug: 'the-world-of-divergent', title: 'The World of Divergent', author: 'Veronica Roth' },
+  { slug: 'the-world-of-divergent-the-path-to-allegiant', title: 'The World of Divergent', author: 'Veronica Roth' },
   // Memory, Sorrow, and Thorn
   { slug: 'brothers-of-the-wind', title: 'Brothers of the Wind', author: 'Tad Williams' },
   { slug: 'the-dragonbone-chair', title: 'The Dragonbone Chair', author: 'Tad Williams' },
@@ -173,7 +172,7 @@ const ALL_BOOKS = [
   { slug: 'blood-of-elves', title: 'Blood of Elves', author: 'Andrzej Sapkowski' },
   { slug: 'time-of-contempt', title: 'Time of Contempt', author: 'Andrzej Sapkowski' },
   { slug: 'baptism-of-fire', title: 'Baptism of Fire', author: 'Andrzej Sapkowski' },
-  { slug: 'the-tower-of-swallows', title: 'The Tower of Swallows', author: 'Andrzej Sapkowski' },
+  { slug: 'the-tower-of-the-swallow', title: 'The Tower of Swallows', author: 'Andrzej Sapkowski' },
   { slug: 'lady-of-the-lake', title: 'Lady of the Lake', author: 'Andrzej Sapkowski' },
   { slug: 'season-of-storms', title: 'Season of Storms', author: 'Andrzej Sapkowski' },
   // Dresden Files
@@ -252,7 +251,7 @@ const ALL_BOOKS = [
   { slug: 'the-mad-ship', title: 'The Mad Ship', author: 'Robin Hobb' },
   { slug: 'ship-of-destiny', title: 'Ship of Destiny', author: 'Robin Hobb' },
   { slug: 'fools-errand', title: "Fool's Errand", author: 'Robin Hobb' },
-  { slug: 'the-golden-fool', title: 'The Golden Fool', author: 'Robin Hobb' },
+  { slug: 'golden-fool', title: 'The Golden Fool', author: 'Robin Hobb' },
   { slug: 'fools-fate', title: "Fool's Fate", author: 'Robin Hobb' },
   { slug: 'dragon-keeper', title: 'Dragon Keeper', author: 'Robin Hobb' },
   { slug: 'dragon-haven', title: 'Dragon Haven', author: 'Robin Hobb' },
@@ -304,7 +303,7 @@ const ALL_BOOKS = [
   { slug: 'the-white-dragon', title: 'The White Dragon', author: 'Anne McCaffrey' },
   { slug: 'dragonsong', title: 'Dragonsong', author: 'Anne McCaffrey' },
   { slug: 'dragonsinger', title: 'Dragonsinger', author: 'Anne McCaffrey' },
-  { slug: 'dragondrums', title: 'Dragondrums', author: 'Anne McCaffrey' },
+  { slug: 'dragon-drums', title: 'Dragondrums', author: 'Anne McCaffrey' },
   { slug: 'dragonsdawn', title: 'Dragonsdawn', author: 'Anne McCaffrey' },
   { slug: 'moreta-dragonlady-of-pern', title: 'Moreta: Dragonlady of Pern', author: 'Anne McCaffrey' },
   { slug: 'nerilkas-story', title: "Nerilka's Story", author: 'Anne McCaffrey' },
