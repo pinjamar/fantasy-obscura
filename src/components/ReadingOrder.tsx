@@ -206,10 +206,9 @@ export default function ReadingOrder({
       {description && (
         <p className="mb-8 text-zinc-600 leading-relaxed">{description}</p>
       )}
-
       <div className="space-y-5">
-        {groupsWithIndex.map((group, gi) => (
-          <div key={gi}>
+        {groupsWithIndex.map((group) => (
+          <div key={group.label || 'group'}>
             {/* Group header */}
             {group.label && (
               <div className="flex items-center gap-3 mb-6">
@@ -227,7 +226,6 @@ export default function ReadingOrder({
                 <div className="h-px flex-1 bg-zinc-200" />
               </div>
             )}
-
             {/* Group note */}
             {group.note && group.noteType && (
               <div
@@ -241,13 +239,12 @@ export default function ReadingOrder({
                 </p>
               </div>
             )}
-
             {/* Books row */}
             <div className="relative">
               <div className="flex flex-wrap gap-2 sm:gap-4 pb-2">
                 {group.books.map((book, bi) => (
                   <BookCard
-                    key={bi}
+                    key={book.slug ?? book.title}
                     book={book}
                     index={group.startIndex + bi}
                   />
@@ -257,7 +254,6 @@ export default function ReadingOrder({
           </div>
         ))}
       </div>
-
       {/* Legend — curated guides only */}
       {showLegend && (
         <div className="mt-8 flex flex-wrap gap-5 text-sm border-t pt-6">

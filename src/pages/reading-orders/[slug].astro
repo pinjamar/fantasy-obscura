@@ -229,7 +229,7 @@ const dbAvgDarkness = dbDarknessLevels.length
   ? Math.round(dbDarknessLevels.reduce((s, d) => s + d, 0) / dbDarknessLevels.length)
   : null;
 const CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
-const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
+const DARKNESS_LABELS = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
 
 // Curated series: compute darkness + heat from DB values of the core books
 const HEAT_ORDER = ['Closed Door', 'Sweet Romance', 'Open Door', 'Explicit', 'Fiery'];

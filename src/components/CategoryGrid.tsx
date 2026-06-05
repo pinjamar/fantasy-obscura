@@ -701,7 +701,7 @@ const DARKNESS_LABELS = [
   '',
   'Lighthearted',
   'Mild',
-  'Serious',
+  'Moderate',
   'Dark',
   'Brutal',
 ];

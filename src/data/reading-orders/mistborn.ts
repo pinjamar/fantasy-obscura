@@ -8,7 +8,7 @@ export const mistborn: ReadingOrderEntry = {
   seriesStatusLabel: '⏳ Ongoing — Ghostbloods 1 expected Dec 2028',
   description:
     "Brandon Sanderson's Mistborn is one of the most ingeniously constructed fantasy series ever written — set on a world where the prophesied hero failed a thousand years ago and a dark lord has ruled ever since. The original trilogy is a complete story of revolution, consequence, and cosmic revelation. Era 2 jumps 300 years forward into a Western-flavoured world of guns, trains, and new Allomancers. Era 3 — currently in progress — will advance to a near-modern spy-thriller setting. Each era can be read largely standalone, but the rewards for reading all of them in order are enormous. The Final Empire is where to start. Mistborn is also part of the broader Cosmere universe — Era 2's The Lost Metal in particular has significant crossover with Stormlight and Warbreaker. The Cosmere guide covers how all the series interleave.",
-  darknessDisplay: '🕯️🕯️🕯️ Serious',
+  darknessDisplay: '🕯️🕯️🕯️ Moderate',
   orderNote:
     'Extras are placed where they should actually be read, not just by series number. Secret History is #3.5 but positioned after Bands of Mourning — its note explains why. Era 3 (The Ghostbloods) is in progress — first book expected December 2028.',
   groups: [

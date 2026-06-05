@@ -615,7 +615,7 @@ const DARKNESS_LEVELS = [
   {
     level: 3,
     candles: '🕯️🕯️🕯️',
-    label: 'Serious',
+    label: 'Moderate',
     desc: 'Death, violence and emotional weight are present',
     subgenres: [],
     tone: [],
@@ -946,7 +946,7 @@ export default function AlchemyTable() {
                 {currentBook.darkness_level != null && currentBook.darkness_level >= 1 && (
                   <p className="text-xs text-zinc-500 mt-0.5">
                     {'🕯️'.repeat(currentBook.darkness_level)}{' '}
-                    {['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'][currentBook.darkness_level]}
+                    {['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'][currentBook.darkness_level]}
                   </p>
                 )}
                 {currentBook.tropes && currentBook.tropes.length > 0 && (
@@ -1303,7 +1303,7 @@ export default function AlchemyTable() {
                     {currentBook.darkness_level != null && currentBook.darkness_level >= 1 && (
                       <p className="text-xs text-zinc-500 mt-0.5">
                         {'🕯️'.repeat(currentBook.darkness_level)}{' '}
-                        {['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'][currentBook.darkness_level]}
+                        {['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'][currentBook.darkness_level]}
                       </p>
                     )}
                     {currentBook.tropes && currentBook.tropes.length > 0 && (

@@ -210,7 +210,7 @@ const DARKNESS_LEVELS: Array<{
   },
   {
     candles: '🕯️🕯️🕯️',
-    label: 'Serious',
+    label: 'Moderate',
     desc: 'Death, violence and emotional weight are present',
   },
   {

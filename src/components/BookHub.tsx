@@ -466,7 +466,7 @@ const BookHub: React.FC = () => {
                 >
                   <option value="1">🕯️ Lighthearted</option>
                   <option value="2">🕯️🕯️ Mild</option>
-                  <option value="3">🕯️🕯️🕯️ Serious</option>
+                  <option value="3">🕯️🕯️🕯️ Moderate</option>
                   <option value="4">🕯️🕯️🕯️🕯️ Dark</option>
                   <option value="5">🕯️🕯️🕯️🕯️🕯️ Brutal</option>
                 </select>

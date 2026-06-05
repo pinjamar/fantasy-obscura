@@ -10,7 +10,7 @@ export const caraval: ReadingOrderEntry = {
   description:
     "Stephanie Garber's Caraval world is pure seductive chaos. Two connected trilogies set in the same universe where immortal beings called Fates make dangerous binding deals, and a legendary traveling show called Caraval blurs the line between performance and deadly reality. Glamour, magic, and bargains are everywhere, and nothing is ever quite what it seems. The original Caraval Trilogy follows sisters Scarlett and Tella as they get pulled into the high-stakes game. Win, and you get one wish granted. But good luck figuring out what's real and what's just part of the show (including the true identity of the mysterious master, Legend). Then comes the Once Upon a Broken Heart trilogy, which follows new protagonist Evangeline Fox and heavily features Jacks (the Prince of Hearts), a Fate whose actions in the first series set up a ton of what happens in the second. The two trilogies reward each other hard, so read them in order.",
   darknessDisplay:
-    '🕯️🕯️🕯️ Serious — Fate bargains with real costs, some deaths, dark romantic tension',
+    '🕯️🕯️🕯️ Moderate — Fate bargains with real costs, some deaths, dark romantic tension',
   orderNote:
     'Read the Caraval Trilogy first, then Once Upon a Broken Heart. The second series is set in the same world and references events from the original trilogy. It can technically be read independently, but Jacks is introduced in Finale and his role in the second series lands harder if you already know him (also, why would you skip the main series?). Within each trilogy, order is strict. The Mirror of Infinite Endings (book 4 of the OUABH series) is due 22 September 2026.',
   booksLikeSlug: 'caraval',

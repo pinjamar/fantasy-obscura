@@ -140,7 +140,7 @@ export const empyrean: ReadingOrderEntry = {
     {
       label: 'Fourth Wing',
       level: 3,
-      desc: 'Serious — danger and death, but romantic and exciting',
+      desc: 'Moderate — danger and death, but romantic and exciting',
     },
     {
       label: 'Iron Flame',

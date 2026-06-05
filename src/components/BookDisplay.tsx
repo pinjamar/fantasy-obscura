@@ -43,7 +43,7 @@ const SORT_OPTIONS: { key: SortKey; label: string; icon: string }[] = [
 ];
 
 const DARKNESS_CANDLES = ['', '🕯️', '🕯️🕯️', '🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️', '🕯️🕯️🕯️🕯️🕯️'];
-const DARKNESS_LABELS  = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
+const DARKNESS_LABELS  = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
 const DARKNESS_COLORS  = ['', 'text-green-700', 'text-yellow-700', 'text-orange-600', 'text-red-600', 'text-red-900'];
 const HEAT_LEVELS      = ['', 'Sweet Romance', 'Closed Door', 'Open Door', 'Explicit', 'Fiery'];
 

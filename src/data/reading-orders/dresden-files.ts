@@ -9,7 +9,7 @@ export const dresdenFiles: ReadingOrderEntry = {
   seriesStatusLabel: '📖 Ongoing — Book 18 out now, #19 expected 2027',
   description:
     "Urban fantasy noir — Harry Dresden is Chicago's only professional wizard, listed in the Yellow Pages. What starts as hardboiled detective fiction with magic escalates across 18 books into a cosmic war with genuine consequences. The first two books are the weakest; by book four the series is exceptional. Storm Front is where to start, and the reading order is strictly linear — each book builds on the last. The payoff of the later entries depends entirely on everything that came before.",
-  darknessDisplay: '🕯️🕯️🕯️ → 🕯️🕯️🕯️🕯️🕯️ Serious → Brutal',
+  darknessDisplay: '🕯️🕯️🕯️ → 🕯️🕯️🕯️🕯️🕯️ Moderate → Brutal',
   groups: [
     {
       label: 'The Early Cases',
@@ -286,7 +286,7 @@ export const dresdenFiles: ReadingOrderEntry = {
     {
       label: 'Books 1–11',
       level: 3,
-      desc: 'Serious — noir tone, violence, war and loss, but always a thread of hope',
+      desc: 'Moderate — noir tone, violence, war and loss, but always a thread of hope',
     },
     {
       label: 'Books 12+',

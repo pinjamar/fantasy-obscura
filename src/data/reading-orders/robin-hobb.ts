@@ -246,12 +246,12 @@ export const robinHobb: ReadingOrderEntry = {
     {
       label: 'The Farseer Trilogy',
       level: 3,
-      desc: 'Serious — loss, sacrifice, identity',
+      desc: 'Moderate — loss, sacrifice, identity',
     },
     {
       label: 'The Liveship Traders',
       level: 3,
-      desc: 'Serious — slavery, family collapse, survival',
+      desc: 'Moderate — slavery, family collapse, survival',
     },
     {
       label: 'The Tawny Man',

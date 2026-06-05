@@ -71,7 +71,7 @@ for (const b of books ?? []) {
     darknessCounts.set(b.darkness_level, (darknessCounts.get(b.darkness_level) ?? 0) + 1);
   }
 }
-const DARKNESS_LABELS_FULL = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
+const DARKNESS_LABELS_FULL = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
 type DarknessEntry = { candles: number; label: string; count: number };
 const darknessRange: DarknessEntry[] = [...darknessCounts.entries()]
   .sort((a, b) => b[1] - a[1])   // sort by count desc (most common first)
@@ -185,7 +185,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
 
 <Layout
   title={`Best ${trope.name} Fantasy Books — The Grimoire`}
-  description={`${books?.length ? `${books.length} fantasy books featuring the ${trope.name} trope. ` : ''}${trope.description}`}
+  description={`The best ${trope.name} fantasy books, rated by darkness level.${books?.length ? ` ${books.length} picks from cozy to grimdark.` : ''}`}
 >
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={jsonLd} />
@@ -249,7 +249,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
         <h2 class="text-xl font-bold">Best {trope.name} Books</h2>
         <div class="flex items-center gap-3 ml-auto">
           {books && books.length > 0 && (
-            <span id="book-count" class="text-sm text-zinc-400 shrink-0">
+            <span id="book-count" class="hidden sm:inline text-sm text-zinc-400 shrink-0">
               {books.length} {books.length === 1 ? 'book' : 'books'}
             </span>
           )}
@@ -280,7 +280,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
               </svg>
             </div>
-            <div id="darkness-btns" class="flex items-center gap-1 shrink-0"></div>
+            <div id="darkness-btns" class="flex items-center gap-1 shrink-0 bg-zinc-100 rounded-lg px-2 py-1.5"></div>
           </div>
 
           <!-- Rendered book list (SSR, hidden via JS after mount) -->
@@ -426,7 +426,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
 
 <script is:inline define:vars={{ booksJson }}>
   function _normCover(u){if(!u)return'/grimplaceholder.png';if(u.includes('books.google.com/books/content')){var m=u.match(/[?&]id=([^&]+)/);if(m)return'https://books.google.com/books/publisher/content/images/frontcover/'+m[1]+'?fife=w400-h600';}return u;}
-  const DARKNESS_LABEL = ['', 'Lighthearted', 'Mild', 'Serious', 'Dark', 'Brutal'];
+  const DARKNESS_LABEL = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
   const PAGE_SIZE = 15;
 
   const allBooks = JSON.parse(booksJson);

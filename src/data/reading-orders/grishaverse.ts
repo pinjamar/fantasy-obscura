@@ -8,7 +8,7 @@ export const grishaverse: ReadingOrderEntry = {
   seriesStatusLabel: '📖 SOB & King of Scars complete · Six of Crows ongoing',
   description:
     "Leigh Bardugo's Grishaverse is one of the most successful fantasy universes of the last decade — a Russian-inspired world of Grisha magic users, criminal heist crews, and morally complex power politics. The series spans three sub-series, but Six of Crows is the peak: a tight heist novel with one of the best ensemble casts in modern fantasy. Start with Shadow and Bone to understand the world, then Six of Crows to fall in love with it. This guide covers the full Grishaverse reading order across the Shadow and Bone trilogy, Six of Crows duology, and King of Scars duology.",
-  darknessDisplay: '🕯️🕯️🕯️ Serious',
+  darknessDisplay: '🕯️🕯️🕯️ Moderate',
   orderNote:
     'Read the Shadow and Bone trilogy first — it establishes the world, the Grisha, and the Fold. Six of Crows is set in the same world but with a new cast, and assumes you understand the setting. King of Scars picks up threads from both trilogies.',
   groups: [

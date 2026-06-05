@@ -8,7 +8,7 @@ export const bloodAndAsh: ReadingOrderEntry = {
   seriesStatusLabel: '📖 Ongoing · Final book upcoming 2026',
   description:
     "Romantasy with slow-burn enemies-to-lovers at its core — From Blood and Ash starts as a sheltered Maiden meets her mysterious guard and spirals into a full-scale fantasy epic. The first book reads like pure romantasy; by book three it's a proper political fantasy with war, gods, and a sprawling world. Explicit throughout. From Blood and Ash is where to start — it works as a standalone entry and the series is best read in publication order. If you're new to Jennifer L. Armentrout's fantasy work, this is the series most readers recommend first.",
-  darknessDisplay: '🕯️🕯️🕯️ Serious · 🔥🔥🔥 Explicit',
+  darknessDisplay: '🕯️🕯️🕯️ Moderate · 🔥🔥🔥 Explicit',
   groups: [
     {
       label: 'Blood and Ash',
@@ -184,7 +184,7 @@ export const bloodAndAsh: ReadingOrderEntry = {
     {
       label: 'Books 1–2',
       level: 3,
-      desc: 'Serious — romance-forward, danger present but filtered',
+      desc: 'Moderate — romance-forward, danger present but filtered',
     },
     {
       label: 'Books 3–6',

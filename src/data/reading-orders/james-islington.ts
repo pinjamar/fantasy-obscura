@@ -8,7 +8,7 @@ export const jamesIslington: ReadingOrderEntry = {
   seriesStatusLabel: '✅ Licanius Trilogy complete — 📖 The Hierarchy Series ongoing (4 books planned)',
   description:
     'James Islington has written two entirely separate fantasy series with nothing shared between them — different worlds, different magic, different casts. The Licanius Trilogy (complete, 2014–2019) is traditional epic fantasy built around a time-mechanics plot where actions in the present create consequences that already exist in the past — the architecture of that causal structure is the actual puzzle, and the plotting is among the most complex in recent epic fantasy. The Hierarchy Series (ongoing, 2023–) is dark academia fantasy set in a Roman-inspired empire where power is literally drawn from the people below you in the social hierarchy. Both series reward close reading. Which to start with depends on what you want.',
-  darknessDisplay: '🕯️🕯️🕯️ Serious',
+  darknessDisplay: '🕯️🕯️🕯️ Moderate',
   groups: [
     {
       label: 'The Licanius Trilogy',
