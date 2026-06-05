@@ -323,6 +323,11 @@ const READING_ORDER_MAP: Record<string, string> = {
   // Outlander (Diana Gabaldon)
   'Outlander':                           'outlander',
   'Lord John Grey':                      'outlander',
+  // Sword of Truth (Terry Goodkind)
+  'Sword of Truth':                      'sword-of-truth',
+  'The Sword of Truth':                  'sword-of-truth',
+  "Children of D'Hara":                  'sword-of-truth',
+  'The Nicci Chronicles':                'sword-of-truth',
 };
 
 const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
@@ -345,6 +350,7 @@ const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
   'james-s-a-corey':   { slug: 'expanse',              label: 'The Expanse Reading Order' },
   'roger-zelazny':     { slug: 'chronicles-of-amber',  label: 'Chronicles of Amber Reading Order' },
   'diana-gabaldon':    { slug: 'outlander',             label: 'Outlander Reading Order' },
+  'terry-goodkind':    { slug: 'sword-of-truth',        label: 'The Sword of Truth Reading Order' },
 };
 
 const universeGuide = AUTHOR_UNIVERSE_MAP[slug ?? ''] ?? null;

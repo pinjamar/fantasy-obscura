@@ -137,6 +137,7 @@ import { demonCycle } from './reading-orders/demon-cycle';
 import { chroniclesOfAmber } from './reading-orders/chronicles-of-amber';
 import { expanse } from './reading-orders/expanse';
 import { outlander } from './reading-orders/outlander';
+import { swordOfTruth } from './reading-orders/sword-of-truth';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -195,6 +196,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   chroniclesOfAmber,
   expanse,
   outlander,
+  swordOfTruth,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

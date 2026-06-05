@@ -145,7 +145,7 @@
 ### Classic & Foundational Fantasy (10)
 116. ✅ Books like A Wizard of Earthsea
 117. Books like The Belgariad (David Eddings)
-118. Books like The Sword of Truth (Terry Goodkind)
+118. ✅ Books like The Sword of Truth (Terry Goodkind)
 119. Books like The Once and Future King
 120. ✅ Books like Nine Princes in Amber
 121. ✅ Books like Tigana
@@ -249,45 +249,8 @@ Slug: /reading-orders/shadowhunter-chronicles
 
 6 Outlander Reading Order (Diana Gabaldon)
 
-9 main books published (series ongoing — book 10 planned but unannounced): Outlander → Dragonfly in Amber → Voyager → Drums of Autumn → The Fiery Cross → A Breath of Snow and Ashes → An Echo in the Bone → Written in My Own Heart's Blood → Go Tell the Bees That I Am Gone
-The premise: Claire Randall, a WWII combat nurse on holiday in Scotland in 1945, touches a standing stone at Craigh na Dun and is thrown back to 1743 — Jacobite Scotland, weeks before the Battle of Culloden; she encounters Jamie Fraser, a Highland warrior; the series becomes a time-crossing love story spanning 250 years of Atlantic history
-The genre is genuinely hybrid — historical fiction, romance, adventure, time travel, and war novel in proportions that shift across the series; Gabaldon describes it as "historical fiction with romantic elements and a little time-travel" — it is not primarily a romance despite BookTok positioning
-The books are long (800–1,500 pages each) and grow longer as the series progresses; The Fiery Cross (book 5) is widely considered the hardest to get through — 979 pages largely set on a single journey; readers should know this before they hit it
-Dragonfly in Amber (book 2) opens 20 years after book 1 without explanation — this is deliberate; do not skip to book 3; the structure pays off by the end of book 2
-The series spans Scotland (books 1–2), France, the Colonies/American Revolution (books 4–8), and across three centuries of history
-
-Lord John Grey series (4 novels + novellas):
-Lord John and the Private Matter (2003) → Lord John and the Brotherhood of the Blade (2007) → The Scottish Prisoner (2011) → Lord John and the Haunted Soldier
-Also: Lord John and the Hand of Devils (novella collection); "Virgins" and other short stories in Seven Stones to Stand or Fall (2017)
-Can you skip Lord John? Largely yes — the main series is self-contained; however The Scottish Prisoner contains material and backstory that appears in An Echo in the Bone (book 7); readers who love Lord John specifically should read The Scottish Prisoner before or alongside book 7
-Short stories: Seven Stones to Stand or Fall (2017) collects 7 stories and novellas including "Virgins" (a young Jamie Fraser prequel) — best read between book 1 and 2 or after the main series; they add context but are not required
-The Outlandish Companion (2 volumes): non-fiction companion books — genealogies, character guides, Gabaldon's notes; for dedicated readers only, not part of the story
-Recommended order for new readers: read the 9 main novels in order; revisit Lord John Grey novellas after you know and love the character from the main series; slot Seven Stones to Stand or Fall anywhere after book 3
-Slug: /reading-orders/outlander
-
 
 7 The Expanse Reading Order (James S.A. Corey)
-
-9 books, complete: Leviathan Wakes → Caliban's War → Abaddon's Gate → Cibola Burn → Nemesis Games → Babylon's Ashes → Persepolis Rising → Tiamat's Wrath → Leviathan Falls
-James S.A. Corey is a pen name for Daniel Abraham and Ty Franck; the series was co-written across 10 years and is complete — no further main series books planned
-The setting: a few hundred years from now, humans have colonized the solar system but have not left it; three major factions — Earth (UN, powerful but overpopulated), Mars (MCRN, disciplined military colony), and the Belt (asteroid belt miners, underpaid, marginalized, their own creole language and culture); the discovery of a protomolecule — alien technology buried on Phoebe moon — changes everything
-Book 1 (Leviathan Wakes) works as a complete standalone — a detective story and a first-contact horror story layered together; the rest of the series follows from its events
-The series escalates enormously in scope across 9 books — Leviathan Wakes is local (one station, one ship); by books 7–9 the stakes are civilizational and cosmic
-The cast is an ensemble but the central crew of the Rocinante (Holden, Naomi, Amos, Alex) carries continuity across all 9 books; POV chapters outside the crew expand in the middle books
-
-Novellas (all collected in Memory's Legion, 2022 — the definitive edition):
-Drive: very short — the invention of the Epstein Drive that makes the setting possible; optional, fun for world-building context; read before book 1
-The Butcher of Anderson Station: Fred Johnson backstory (appears prominently in book 1); read before or immediately after Leviathan Wakes; adds significant depth to his motivation
-Gods of Risk: Bobbie Draper side story set between books 2–3; optional, only essential for Bobbie fans
-The Churn: Amos Burton's backstory — his childhood on Earth before the series begins; read before Nemesis Games (book 5) where his past becomes relevant; one of the strongest novellas and worth reading even if you skip the others
-The Vital Abyss: side story between Nemesis Games and Babylon's Ashes; optional
-Strange Dogs: bridge between books 7–8; optional
-Auberon: side story set in the ring gate colony worlds; optional
-The Sins of Our Fathers: epilogue novella set after Leviathan Falls; for readers who want closure beyond the final chapter
-Essential novellas: The Butcher of Anderson Station (before or with book 1) and The Churn (before book 5) — the rest are optional enrichment
-Reading order recommendation: read books 1–9 in order; slot novellas at the points noted above or read Memory's Legion as a collected edition after finishing the main series
-The Amazon Prime TV adaptation (6 seasons, 2015–2022) covers approximately books 1–6 and was cancelled before completing the story; the books resolve everything the show leaves unfinished
-Slug: /reading-orders/expanse
 
 
 8 Folk of the Air / Cruel Prince Reading Order (Holly Black)
@@ -807,22 +770,6 @@ Slug: /reading-orders/riyria
 
 
 68 The Sword of Truth Reading Order (Terry Goodkind)
-
-Core series: 11 books — Wizard's First Rule → Stone of Tears → Blood of the Fold → Temple of the Winds → Soul of the Fire → Faith of the Fallen → Pillars of Creation → Naked Empire → Debt of Bones → Chainfire → Phantom → Confessor
-Extended universe: Children of D'Hara (5 novellas, sequel), The Nicci Chronicles (4 books, ongoing spinoff following Nicci), Heart of Black Ice / The Children of D'Hara omnibus — the expanded universe is for committed fans of the main series only
-Read the 11 core books in publication order — the story is continuous and each book builds directly on the last.
-
-The honest series summary: Wizard's First Rule is one of the most gripping opening novels in epic fantasy — a fully self-contained adventure with a clean ending that works as a standalone. The series extends across 10 more books of variable quality. Faith of the Fallen (book 6) is widely cited as the series peak — a prison-break / utopia-collapse story with the sharpest writing Goodkind ever produced. The Chainfire trilogy (books 9–11) concludes the arc but is considered the most difficult stretch. Many readers recommend stopping at Confessor and treating the Children of D'Hara content as optional.
-
-Richard Cypher / Richard Rahl: a woods guide who discovers he is the Seeker of Truth — a role with specific magical and political weight in the Midlands; the character's arc from ordinary man to world-shaping figure runs all 11 books
-Kahlan Amnell: the Mother Confessor, one of a line of women whose touch compels absolute devotion; her power makes intimacy impossible with ordinary men and defines the central romance
-The Confessors: a female order who function as a combination of judge and law enforcement; their touch destroys a person's identity and replaces it with total devotion; the ethical and political implications are developed across the series
-The villain: Darken Rahl, then Emperor Jagang — the series rotates antagonists but the underlying conflict is always tyranny vs. individual will; Goodkind is explicit about the Objectivist philosophy running through the later books, which readers either find galvanising or exhausting
-Debt of Bones: a prequel novella set before book 1 — read after book 2 or at the end of the series; not required
-
-Quality note worth including in the guide: the series is considered to peak around books 1 and 6 and decline in the later Chainfire arc; readers should know this going in rather than discovering it at book 9.
-
-Slug: /reading-orders/sword-of-truth
 
 
 69 The Belgariad Reading Order (David Eddings)
