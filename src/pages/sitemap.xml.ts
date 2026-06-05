@@ -62,16 +62,37 @@ export const GET: APIRoute = async ({ locals }) => {
     .is('writing_style', null);
   const plainAuthorSlugs = (plainAuthorRows ?? []).map((a) => a.slug as string);
 
-  // Fetch all trope slugs
+  // Fetch all trope slugs + darkness combinations in one query
   const { data: tropeRows } = await supabase
     .from('books')
-    .select('tropes')
+    .select('tropes, darkness_level')
     .not('tropes', 'is', null)
     .limit(500);
+
+  const DARKNESS_SLUG = ['', 'lighthearted', 'mild', 'moderate', 'dark', 'brutal'] as const;
+
   const tropeSlugs = [...new Set(
     (tropeRows ?? []).flatMap((b) => (b.tropes ?? []) as string[])
       .map((t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
   )];
+
+  // Count books per trope+darkness combo
+  const comboCounts = new Map<string, number>();
+  for (const row of tropeRows ?? []) {
+    const level = row.darkness_level as number | null;
+    if (!level || level < 1 || level > 5) continue;
+    for (const trope of (row.tropes ?? []) as string[]) {
+      const tropeSlug = trope.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      const key = `${tropeSlug}:${level}`;
+      comboCounts.set(key, (comboCounts.get(key) ?? 0) + 1);
+    }
+  }
+  const darknessCombos = [...comboCounts.entries()]
+    .filter(([, count]) => count >= 10)
+    .map(([key]) => {
+      const [tropeSlug, levelStr] = key.split(':');
+      return { tropeSlug, darknessSlug: DARKNESS_SLUG[parseInt(levelStr)] };
+    });
 
   // Only the small set of non-curated reading order pages explicitly allowed to be indexed.
   // All other DB-driven reading order pages are noindexed — excluding them from the sitemap
@@ -104,6 +125,8 @@ export const GET: APIRoute = async ({ locals }) => {
     ...enrichedAuthorSlugs.map((s) => urlEntry(`/authors/${s}/`, '0.6', 'monthly')),
     // Tropes
     ...tropeSlugs.map((s) => urlEntry(`/tropes/${s}/`, '0.5', 'monthly')),
+    // Trope darkness sub-pages (only combos with ≥10 books)
+    ...darknessCombos.map(({ tropeSlug, darknessSlug }) => urlEntry(`/tropes/${tropeSlug}/${darknessSlug}/`, '0.4', 'monthly')),
     // Curated book pages only (non-curated books are noindexed — excluded from sitemap)
     ...bookSlugs.map((s) => urlEntry(`/books/${s}/`, '0.5', 'monthly')),
     // Authors — plain profiles (book list only, no editorial content)

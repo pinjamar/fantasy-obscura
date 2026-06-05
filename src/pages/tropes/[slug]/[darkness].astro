@@ -1,29 +1,45 @@
 ---
-import Layout from '../../components/Layout.astro';
-import { PUBLIC_TROPES } from '../../data/tropes';
-import { BOOKS_LIKE } from '../../data/books-like';
-import { supabaseClient } from '../../lib/supabaseClient';
-import { normalizeCoverUrl } from '../../lib/covers';
+import Layout from '../../../components/Layout.astro';
+import { PUBLIC_TROPES } from '../../../data/tropes';
+import { BOOKS_LIKE } from '../../../data/books-like';
+import { supabaseClient } from '../../../lib/supabaseClient';
+import { normalizeCoverUrl } from '../../../lib/covers';
 
-const { slug } = Astro.params;
-if (!slug) return Astro.redirect('/tropes');
+const DARKNESS_MAP: Record<string, number> = {
+  lighthearted: 1, mild: 2, moderate: 3, dark: 4, brutal: 5,
+};
+const DARKNESS_LABEL_MAP: Record<string, string> = {
+  lighthearted: 'Lighthearted', mild: 'Mild', moderate: 'Moderate', dark: 'Dark', brutal: 'Brutal',
+};
+const CANDLES: Record<string, string> = {
+  lighthearted: '🕯️', mild: '🕯️🕯️', moderate: '🕯️🕯️🕯️', dark: '🕯️🕯️🕯️🕯️', brutal: '🕯️🕯️🕯️🕯️🕯️',
+};
+
+const { slug, darkness } = Astro.params;
+if (!slug || !darkness) return Astro.redirect('/tropes/');
+
+const darknessLevel = DARKNESS_MAP[darkness];
+if (!darknessLevel) return new Response(null, { status: 404, statusText: 'Not Found' });
 
 const trope = PUBLIC_TROPES.find((t) => t.slug === slug);
 if (!trope) return new Response(null, { status: 404, statusText: 'Not Found' });
+
+const darknessLabel = DARKNESS_LABEL_MAP[darkness];
 
 const { data: books } = await supabaseClient
   .from('books')
   .select('id, title, slug, authors, cover_url, synopsis, avg_rating, subgenres, darkness_level, series, series_number')
   .contains('tropes', [trope.name])
+  .eq('darkness_level', darknessLevel)
   .order('avg_rating', { ascending: false, nullsFirst: false })
   .limit(1000);
 
-// ── Curated best examples ────────────────────────────────────────────────────
-let bestExampleBooks: { title: string; slug: string; cover_url: string | null; avg_rating: number | null; authors: string[] | null; darkness_level: number | null }[] = [];
+// ── Curated best examples ─────────────────────────────────────────────────────
+let bestExampleBooks: { title: string; slug: string; cover_url: string | null }[] = [];
 if (trope.bestExamples?.length) {
   const { data: exData } = await supabaseClient
     .from('books')
-    .select('title, slug, cover_url, avg_rating, authors, darkness_level')
+    .select('title, slug, cover_url')
     .in('slug', trope.bestExamples)
     .not('cover_url', 'is', null);
   if (exData?.length) {
@@ -33,7 +49,7 @@ if (trope.bestExamples?.length) {
   }
 }
 
-// ── Books-Like guide links ───────────────────────────────────────────────────
+// ── Books-Like guide links ────────────────────────────────────────────────────
 const booksLikeEntries = (trope.booksLikeGuides ?? [])
   .map(guideSlug => {
     const entry = BOOKS_LIKE.find(e => {
@@ -45,37 +61,15 @@ const booksLikeEntries = (trope.booksLikeGuides ?? [])
   .filter(Boolean).slice(0, 4) as { slug: string; title: string }[];
 
 const CATEGORY_EMOJI: Record<string, string> = {
-  character: '🧙',
-  relationship: '🤝',
-  plot: '⚔️',
-  'world-magic': '✨',
+  character: '🧙', relationship: '🤝', plot: '⚔️', 'world-magic': '✨',
 };
-
 const emoji = CATEGORY_EMOJI[trope.category] ?? '📖';
 
 const related = [
   ...PUBLIC_TROPES.filter((t) => t.slug !== slug && t.category === trope.category),
   ...PUBLIC_TROPES.filter((t) => t.slug !== slug && t.category !== trope.category),
 ].slice(0, 4);
-
 const SLOT_EMOJIS = ['🗡️', '🌙', '🔮', '🐉'];
-
-const darknessCounts = new Map<number, number>();
-for (const b of books ?? []) {
-  if (b.darkness_level != null && b.darkness_level >= 1 && b.darkness_level <= 5) {
-    darknessCounts.set(b.darkness_level, (darknessCounts.get(b.darkness_level) ?? 0) + 1);
-  }
-}
-const DARKNESS_LABELS_FULL = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
-type DarknessEntry = { candles: number; label: string; count: number };
-const darknessRange: DarknessEntry[] = [...darknessCounts.entries()]
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 3)
-  .map(([level, count]) => ({
-    candles: level,
-    label: DARKNESS_LABELS_FULL[level],
-    count,
-  }));
 
 const authorCountMap = new Map<string, number>();
 for (const b of books ?? []) {
@@ -98,47 +92,7 @@ const topSubgenres = [...subgenreCountMap.entries()]
   .sort((a, b) => b[1] - a[1])
   .slice(0, 4);
 
-const top3Books = (books ?? []).slice(0, 3).map(b => b.title).join(', ');
-const topSubgenreNames = topSubgenres.slice(0, 3).map(([s]) => s).join(', ');
-const dataFaqItems = [
-  {
-    q: `What is the ${trope.name} trope in fantasy?`,
-    a: trope.intro ?? trope.description,
-  },
-  {
-    q: `How many fantasy books feature the ${trope.name} trope?`,
-    a: `Our catalogue currently includes ${(books ?? []).length} fantasy books featuring the ${trope.name} trope${topSubgenreNames ? `, spanning subgenres like ${topSubgenreNames}` : ''}. The list is sorted by reader rating.`,
-  },
-  ...(top3Books ? [{
-    q: `What are the best ${trope.name} fantasy books?`,
-    a: `Some of the highest-rated ${trope.name} fantasy books include ${top3Books}. You can filter the full list by subgenre or search by title and author above.`,
-  }] : []),
-  ...(topSubgenreNames ? [{
-    q: `What subgenres feature the ${trope.name} trope most?`,
-    a: `The ${trope.name} trope appears most frequently in ${topSubgenreNames}${topAuthors.length > 0 ? `. Authors like ${topAuthors.slice(0, 3).map(a => a.name).join(', ')} are particularly associated with this trope` : ''}.`,
-  }] : []),
-];
 const editorialFaqItems = trope.editorialFaqs ?? [];
-const faqItems = [...dataFaqItems, ...editorialFaqItems];
-
-const topBooks = (books ?? []).slice(0, 10);
-const jsonLd = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: `Best ${trope.name} Fantasy Books`,
-  description: trope.description,
-  numberOfItems: topBooks.length,
-  itemListElement: topBooks.map((b, i) => ({
-    '@type': 'ListItem',
-    position: i + 1,
-    item: {
-      '@type': 'Book',
-      name: b.title,
-      author: (b.authors ?? []).map((a: string) => ({ '@type': 'Person', name: a })),
-      url: `https://thegrimoire.co/books/${b.slug}/`,
-    },
-  })),
-});
 
 const booksJson = JSON.stringify(
   (books ?? []).map((b) => ({
@@ -154,62 +108,41 @@ const booksJson = JSON.stringify(
     series_number: b.series_number,
   }))
 );
-const tropeFaqJsonLd = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqItems.map(({ q, a }) => ({
-    '@type': 'Question',
-    name: q,
-    acceptedAnswer: { '@type': 'Answer', text: a },
-  })),
-});
-const tropeBreadcrumbJsonLd = JSON.stringify({
+
+const breadcrumbJsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Tropes', item: 'https://thegrimoire.co/tropes/' },
     { '@type': 'ListItem', position: 2, name: trope.name, item: `https://thegrimoire.co/tropes/${slug}/` },
+    { '@type': 'ListItem', position: 3, name: darknessLabel, item: `https://thegrimoire.co/tropes/${slug}/${darkness}/` },
   ],
 });
 ---
 
 <Layout
-  title={`Best ${trope.name} Fantasy Books — The Grimoire`}
-  description={`The best ${trope.name} fantasy books, rated by darkness level.${books?.length ? ` ${books.length} picks from cozy to grimdark.` : ''}`}
+  title={`Best ${darknessLabel} ${trope.name} Fantasy Books — The Grimoire`}
+  description={`${books?.length ?? 0} ${darknessLabel.toLowerCase()} fantasy books featuring the ${trope.name} trope — sorted by reader rating.`}
 >
   <Fragment slot="head">
-    <script is:inline type="application/ld+json" set:html={jsonLd} />
-    <script is:inline type="application/ld+json" set:html={tropeFaqJsonLd} />
-    <script is:inline type="application/ld+json" set:html={tropeBreadcrumbJsonLd} />
+    <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />
+    <link rel="canonical" href={`https://thegrimoire.co/tropes/${slug}/${darkness}/`} />
   </Fragment>
   <div class="max-w-2xl mx-auto">
 
     <nav class="text-sm text-zinc-400 mb-6">
       <a href="/tropes/" class="hover:text-zinc-700">Tropes</a>
       <span class="mx-2">›</span>
-      <span class="text-zinc-700">{trope.name}</span>
+      <a href={`/tropes/${slug}/`} class="hover:text-zinc-700">{trope.name}</a>
+      <span class="mx-2">›</span>
+      <span class="text-zinc-700">{darknessLabel}</span>
     </nav>
 
-    <h1 class="text-3xl font-bold mb-1">Best {trope.name} Fantasy Books</h1>
-    <p class="text-purple-600 font-medium text-sm mb-4">{emoji} {trope.name} — Fantasy Trope Guide</p>
-
-    <p class="hidden">
-      Looking for the best {trope.name} fantasy books? This list covers every fantasy novel featuring the {trope.name} trope in our catalogue, sorted by reader rating. Whether you prefer epic fantasy, grimdark, romantasy, or YA, you'll find {trope.name} books across every subgenre here.
-    </p>
+    <h1 class="text-3xl font-bold mb-1">Best {darknessLabel} {trope.name} Fantasy Books</h1>
+    <p class="text-purple-600 font-medium text-sm mb-4">{emoji} {trope.name} — {CANDLES[darkness]} {darknessLabel}</p>
 
     <section class="prose prose-zinc max-w-none mb-10">
-      {trope.intro ? (
-        <p>{trope.intro}</p>
-      ) : (
-        <>
-          <p>{trope.description}</p>
-          <p>
-            This trope appears across many sub-genres of fantasy — from epic multi-volume series to
-            tightly-paced standalone novels. Whether you prefer dark and gritty reads or lighter,
-            character-driven stories, books featuring {trope.name} deliver a distinctive reading experience.
-          </p>
-        </>
-      )}
+      {trope.intro ? <p>{trope.intro}</p> : <p>{trope.description}</p>}
     </section>
 
     {bestExampleBooks.length > 0 && (
@@ -220,7 +153,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
           {bestExampleBooks.map((b) => (
             <a href={`/books/${b.slug}/`} title={b.title} class="flex-none w-21 rounded-md overflow-hidden border border-zinc-200 hover:border-purple-300 transition-colors shadow-sm hover:shadow-[0_0_12px_rgba(147,51,234,0.1)]">
               {b.cover_url
-                ? <img src={normalizeCoverUrl(b.cover_url) ?? '/grimplaceholder.png'} alt={b.title} class="w-full aspect-2/3 object-cover" onerror="this.onerror=null;this.src='/grimplaceholder.png';"  loading="lazy" />
+                ? <img src={normalizeCoverUrl(b.cover_url) ?? '/grimplaceholder.png'} alt={b.title} class="w-full aspect-2/3 object-cover" onerror="this.onerror=null;this.src='/grimplaceholder.png';" loading="lazy" />
                 : <div class="w-full aspect-2/3 bg-zinc-100 flex items-center justify-center"><span class="text-lg">📖</span></div>
               }
             </a>
@@ -231,7 +164,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
 
     <section class="mb-12">
       <div class="flex items-center justify-between gap-4 mb-3 flex-wrap">
-        <h2 class="text-xl font-bold">Best {trope.name} Books</h2>
+        <h2 class="text-xl font-bold">Best {darknessLabel} {trope.name} Books</h2>
         <div class="flex items-center gap-3 ml-auto">
           {books && books.length > 0 && (
             <span id="book-count" class="hidden sm:inline text-sm text-zinc-400 shrink-0">
@@ -282,7 +215,10 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
           <p id="no-results" class="hidden text-sm text-zinc-500 mt-4">No books match your search.</p>
         </>
       ) : (
-        <p class="text-zinc-500 text-sm">No books catalogued yet for this trope.</p>
+        <div class="flex items-center gap-4">
+          <p class="text-zinc-500 text-sm">No books catalogued yet for this combination.</p>
+          <a href={`/tropes/${slug}/`} class="text-sm text-purple-600 hover:text-purple-800 transition-colors shrink-0">← All {trope.name} books</a>
+        </div>
       )}
     </section>
 
@@ -297,22 +233,6 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
             >
               📖 Books like <em>{title}</em>
             </a>
-          ))}
-        </div>
-      </section>
-    )}
-
-    {darknessRange.length > 0 && (
-      <section class="mb-10">
-        <h2 class="text-lg font-semibold mb-1 text-zinc-800">Darkness / Intensity Range</h2>
-        <p class="text-xs text-zinc-400 mb-4">Based on {(books ?? []).filter(b => b.darkness_level != null).length} classified books in this trope</p>
-        <div class="grid grid-cols-3 gap-3">
-          {darknessRange.map((d) => (
-            <div class="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-4">
-              <p class="text-base leading-none">{'🕯️'.repeat(d.candles)}</p>
-              <p class="text-sm font-semibold text-zinc-800 mt-2">{d.label}</p>
-              <p class="text-xs text-zinc-400 mt-1">{d.count} {d.count === 1 ? 'book' : 'books'}</p>
-            </div>
           ))}
         </div>
       </section>
@@ -390,16 +310,19 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
       </section>
     )}
 
-    <div class="border-t border-zinc-100 pt-6">
-      <a href="/tropes/" class="text-sm text-purple-600 hover:text-purple-800 transition-colors">
-        ← Browse all fantasy tropes
+    <div class="border-t border-zinc-100 pt-6 flex gap-4 text-sm">
+      <a href={`/tropes/${slug}/`} class="text-purple-600 hover:text-purple-800 transition-colors">
+        ← All {trope.name} books
+      </a>
+      <a href="/tropes/" class="text-zinc-400 hover:text-zinc-600 transition-colors">
+        Browse all tropes
       </a>
     </div>
 
   </div>
 </Layout>
 
-<script is:inline define:vars={{ booksJson, slug }}>
+<script is:inline define:vars={{ booksJson, slug, darknessLevel }}>
   function _normCover(u){if(!u)return'/grimplaceholder.png';if(u.includes('books.google.com/books/content')){var m=u.match(/[?&]id=([^&]+)/);if(m)return'https://books.google.com/books/publisher/content/images/frontcover/'+m[1]+'?fife=w400-h600';}return u;}
   const DARKNESS_LABEL = ['', 'Lighthearted', 'Mild', 'Moderate', 'Dark', 'Brutal'];
   const DARKNESS_SLUG  = ['', 'lighthearted', 'mild', 'moderate', 'dark', 'brutal'];
@@ -409,21 +332,21 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
   let filtered = allBooks;
   let currentPage = 0;
 
-  const listEl      = document.getElementById('book-list');
-  const pagEl       = document.getElementById('pagination');
-  const prevBtn     = document.getElementById('prev-btn');
-  const nextBtn     = document.getElementById('next-btn');
-  const pageInfo    = document.getElementById('page-info');
-  const noResults   = document.getElementById('no-results');
-  const countEl     = document.getElementById('book-count');
-  const searchEl    = document.getElementById('trope-search');
-  const genreEl     = document.getElementById('genre-filter');
+  const listEl       = document.getElementById('book-list');
+  const pagEl        = document.getElementById('pagination');
+  const prevBtn      = document.getElementById('prev-btn');
+  const nextBtn      = document.getElementById('next-btn');
+  const pageInfo     = document.getElementById('page-info');
+  const noResults    = document.getElementById('no-results');
+  const countEl      = document.getElementById('book-count');
+  const searchEl     = document.getElementById('trope-search');
+  const genreEl      = document.getElementById('genre-filter');
   const darknessBtns = document.getElementById('darkness-btns');
 
   let darknessHover = null;
 
   function updateCandles() {
-    const active = darknessHover ?? 0;
+    const active = darknessHover ?? darknessLevel;
     darknessBtns.querySelectorAll('.candle-btn').forEach((btn, i) => {
       btn.style.opacity = (i + 1) <= active ? '1' : '0.2';
     });
@@ -434,14 +357,18 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
     btn.textContent = '🕯️';
     btn.title = DARKNESS_LABEL[level];
     btn.className = 'text-base transition-opacity leading-none candle-btn';
-    btn.style.opacity = '0.2';
     btn.addEventListener('mouseenter', () => { darknessHover = level; updateCandles(); });
     btn.addEventListener('mouseleave', () => { darknessHover = null; updateCandles(); });
     btn.addEventListener('click', () => {
-      window.location.href = `/tropes/${slug}/${DARKNESS_SLUG[level]}/`;
+      if (level === darknessLevel) {
+        window.location.href = `/tropes/${slug}/`;
+      } else {
+        window.location.href = `/tropes/${slug}/${DARKNESS_SLUG[level]}/`;
+      }
     });
     darknessBtns.appendChild(btn);
   }
+  updateCandles();
 
   const GENRE_OPTIONS = [
     { value: 'epic',            label: '⚔️ Epic & High Fantasy',  subgenres: ['Epic Fantasy', 'High Fantasy'] },
@@ -474,9 +401,6 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
   }
 
   function renderBook(b) {
-    const darkness = b.darkness_level >= 1
-      ? `<span class="text-xs text-zinc-400"> · ${'🕯️'.repeat(b.darkness_level)} ${DARKNESS_LABEL[b.darkness_level]}</span>`
-      : '';
     const rating = b.avg_rating
       ? `<span class="text-xs text-zinc-600 inline-flex items-center gap-1">${renderStars(b.avg_rating)} ${b.avg_rating.toFixed(2)}</span>`
       : '';
@@ -498,7 +422,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
       <div class="min-w-0">
         <div class="font-semibold text-zinc-800 group-hover:text-purple-700 transition-colors leading-tight mb-0.5">${b.title}</div>
         ${series}${authors}
-        <div class="flex flex-wrap items-center gap-1">${rating}${darkness}</div>
+        <div class="flex flex-wrap items-center gap-1">${rating}</div>
         ${synopsis}
       </div>
     </a>`;

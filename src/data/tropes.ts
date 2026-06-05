@@ -3,91 +3,29 @@
 // The `name` field is the canonical string stored in the books.tropes text[] column.
 // The `slug` is for future URL routing and community tag endpoints.
 
-export type TropeCategory = "character" | "relationship" | "plot" | "world-magic";
+import type { TropeCategory, PublicTrope } from './trope-types';
+export type { TropeCategory, PublicTrope };
 
-export type PublicTrope = {
-  slug: string;
-  name: string;
-  category: TropeCategory;
-  description: string;
-  intro?: string;
-  /** Up to 6 book slugs that are the definitive examples of this trope */
-  bestExamples?: string[];
-  /** Slugs of books-like guides relevant to this trope */
-  booksLikeGuides?: string[];
-  /** Editorial FAQs shown in the visible FAQ section */
-  editorialFaqs?: { q: string; a: string }[];
-};
+import antiHero from './tropes/anti-hero';
+import assassinProtagonist from './tropes/assassin-protagonist';
+import chosenOne from './tropes/chosen-one';
+import cursedCharacter from './tropes/cursed-character';
+import darkLord from './tropes/dark-lord';
+import dragonRider from './tropes/dragon-rider';
+import immortalCharacter from './tropes/immortal-character';
+import lastOfTheirKind from './tropes/last-of-their-kind';
 
 export const PUBLIC_TROPES: PublicTrope[] = [
 
   // ── CHARACTER (16) ────────────────────────────────────────────────────────
-  {
-    slug: "anti-hero", name: "Anti-Hero", category: "character",
-    description: "A morally complex or flawed main character.",
-    intro: "Anti-heroes work in fantasy better than almost any other genre because the genre actually follows the consequences. A morally compromised protagonist in a thriller moves the plot; in fantasy, they have to live inside the world they're damaging for hundreds of pages, and the damage accumulates. Joe Abercrombie spent three books letting Logen Ninefingers convince himself he had no choice, then spent three more proving he was wrong. Fantasy's invented worlds strip away the institutions that absorb the fallout from bad choices — no justice system, no social contract that holds — so when an anti-hero breaks something, it stays broken. What readers who love this trope are really after is the relief of watching someone act without the limits they impose on themselves, and the uncomfortable question of what it means that they enjoyed every page of it.",
-    bestExamples: ["the-blade-itself", "the-lies-of-locke-lamora", "nevernight", "red-rising", "best-served-cold", "the-poppy-war", "prince-of-thorns"],
-    booksLikeGuides: ["the-blade-itself", "the-lies-of-locke-lamora", "red-rising", "nevernight"],
-    editorialFaqs: [
-      { q: "What separates an anti-hero from a villain protagonist?", a: "Anti-heroes are protagonists readers root for despite their methods — they have goals we're broadly aligned with, even if their means are reprehensible. Villain protagonists make us root for someone whose goals themselves are wrong or destructive. The distinction is the reader's alignment: an anti-hero is someone you follow; a villain protagonist is someone you watch with uncomfortable fascination." },
-      { q: "Which anti-hero fantasy books are best for grimdark newcomers?", a: "The Blade Itself by Joe Abercrombie is the standard recommendation — Logen Ninefingers and Glokta are two of the most compelling anti-heroes in modern fantasy, and the first book delivers the genre's core satisfaction without the bleakness of later entries. The Lies of Locke Lamora is a softer entry point: the protagonist is a con artist rather than a killer, and the tone is warmer." },
-    ],
-  },
-  {
-    slug: "assassin-protagonist", name: "Assassin Protagonist", category: "character",
-    description: "The main character is a trained killer.",
-    intro: "The assassin protagonist works in fantasy because the genre takes the job seriously. Other fiction dresses killers in glamour and moves on; fantasy tracks what systematic training for murder actually does to a person over years. Nevernight spends an entire book inside a killing school, and the reader watches the curriculum — loyalty replaced by calculation, empathy deprogrammed by design. When Jay Kristoff's Mia Corvere feels something, it breaks through that conditioning, which makes it infinitely more valuable than ordinary feeling. Readers who love assassin protagonists are drawn to the paradox: someone capable of absolute coldness choosing, repeatedly, not to be cold.",
-    bestExamples: ["nevernight", "assassins-apprentice", "throne-of-glass", "six-of-crows", "best-served-cold", "red-sister", "the-cruel-prince"],
-    booksLikeGuides: ["nevernight", "assassins-apprentice", "throne-of-glass", "six-of-crows"],
-    editorialFaqs: [
-      { q: "What makes assassin protagonist fantasy different from standard action fantasy?", a: "The distinction is craft: an assassin protagonist's violence is deliberate, trained, and premeditated — not reactive. These characters have been shaped by a system (a guild, a court, a mentor) that has methodically removed the instinctive hesitation most people feel about killing. That background creates a specific psychological tension — the reader watches someone who is genuinely capable of coldness try to remain human. Action fantasy has warriors who fight; assassin fantasy has protagonists who calculate." },
-      { q: "Which assassin fantasy has the best training arc?", a: "Nevernight by Jay Kristoff is the defining example of assassin school fiction in modern fantasy — Mia Corvere's time at the Red Church is tightly plotted, competitive, and cuts several students who don't make it. Assassin's Apprentice by Robin Hobb is the quieter, more psychological alternative: Fitz's training is intimate and morally complex, the skills learned slowly and at real cost. Throne of Glass establishes Celaena's assassin credentials in backstory rather than training — the reputation is already built when the series begins." },
-      { q: "Is there assassin fantasy without a guild or school structure?", a: "Yes. Assassin's Apprentice foregoes the guild entirely — Fitz is trained one-on-one in a specific skill set the crown needs. Best Served Cold by Joe Abercrombie turns the trope inside out: Monza Murcatto is a mercenary captain who becomes an assassin through circumstance, working through a revenge list with no institutional backing. Six of Crows features Inej as an assassin within an ensemble rather than as a solo protagonist — the structure is criminal rather than assassination-guild." },
-    ],
-  },
-  {
-    slug: "chosen-one", name: "Chosen One", category: "character",
-    description: "A protagonist marked by destiny or prophecy.",
-    intro: "The Chosen One is fantasy's most contested premise and its most durable one. It works because the genre can hold two contradictory things at once: the sincere belief that some people are called to something larger than themselves, and the relentless questioning of what 'called' actually means. Brandon Sanderson's Mistborn asks whether prophecy is information or manipulation — whether a hero chosen by an ancient text is being guided or used. A Deadly Education does something different, putting the darkest prophesied sorceress alive in a position where she has to actively fight the narrative that wants her to be a monster. What readers are actually after is the fantasy of purpose — the idea that their own particular strangeness might turn out to matter enormously.",
-    bestExamples: ["the-name-of-the-wind", "the-final-empire", "the-way-of-kings", "a-deadly-education", "the-eye-of-the-world", "shadow-and-bone", "red-rising"],
-    booksLikeGuides: ["the-name-of-the-wind", "the-final-empire", "the-way-of-kings", "shadow-and-bone"],
-    editorialFaqs: [
-      { q: "Is the Chosen One trope overused in fantasy?", a: "It's everywhere, but overuse is a symptom, not a flaw. Chosen One stories fail when destiny substitutes for character development — the protagonist is special because the plot says so. They succeed when the protagonist earns the role through failure and choice, or when the story actively interrogates whether 'chosen' means anything at all. A Deadly Education is the most incisive recent deconstruction; Mistborn probably the most satisfying fulfilment." },
-      { q: "What's the best Chosen One fantasy for readers who are tired of the trope?", a: "A Deadly Education by Naomi Novik is the most anti-Chosen-One Chosen One story in modern fantasy — the protagonist is supposed to be the darkest sorceress alive and refuses the heroic narrative at every turn. Brandon Sanderson's Mistborn trilogy treats prophecy as a puzzle to be solved rather than a destiny to be embraced." },
-    ],
-  },
-  {
-    slug: "cursed-character", name: "Cursed Character", category: "character",
-    description: "A character bound by magical curse.",
-    intro: "A curse in fantasy is different from a problem — a problem can be solved; a curse reshapes everything you're allowed to be. The character can't simply work harder or be cleverer; the constraint is built into the rules of the world, and the story is about learning to live inside it. Elantris puts its protagonist among the living dead who can't die but can't function, trapped in permanent partial sensation, and asks what kind of society two people can build from inside that horror. V.E. Schwab's The Invisible Life of Addie LaRue goes further: Addie's curse isn't pain but erasure, and the cost isn't physical but relational. Readers who love cursed characters are looking for the emotional permission to sit with something unfixable — and the hope that meaning can survive even constraints that never lift.",
-    bestExamples: ["a-court-of-thorns-and-roses", "the-invisible-life-of-addie-larue", "elantris", "circe", "spinning-silver", "gild", "the-cruel-prince"],
-    booksLikeGuides: ["a-court-of-thorns-and-roses", "elantris", "circe", "spinning-silver"],
-    editorialFaqs: [
-      { q: "What makes a cursed character different from one who just faces a magical obstacle?", a: "A curse is identity-level, not plot-level. It defines what the character cannot be, cannot have, or cannot escape — and the story forces them to live inside that constraint rather than simply solve it. In Elantris, Raoden's curse turns him into a living dead man who must build a society from within his prison. In The Invisible Life of Addie LaRue, the curse is the premise: every person Addie meets forgets her the moment she leaves. These are not problems to be solved in act two — they are the architecture the entire story is built around." },
-      { q: "Is cursed character fantasy a good entry point for romance readers?", a: "Yes, particularly ACOTAR and Gild, which use curses as engines of forced proximity and high-stakes emotional tension. The curse creates a reason why two characters cannot simply walk away from each other, which is catnip for romance pacing. ACOTAR is the most romance-forward and the most accessible. Spinning Silver is slower but the curse creates a similar trapped-together dynamic between Miryem and the Staryk king. If you want romance first and fantasy second, start with ACOTAR or Gild." },
-      { q: "Do cursed character stories always end with the curse broken?", a: "No, and the best ones interrogate whether breaking the curse is even desirable. Circe ends on her own terms, not a restoration of her original state. The Invisible Life of Addie LaRue has a resolution, but it reframes rather than simply undoes the premise. Elantris does break its curse, but the emotional cost of what the characters became during it remains. Readers who need clean resolution should read Elantris or ACOTAR; readers who want something more ambiguous should try Circe or Addie LaRue." },
-    ],
-  },
-  {
-    slug: "dark-lord", name: "Dark Lord", category: "character",
-    description: "A powerful evil ruler threatening the world.",
-    intro: "The Dark Lord works in fantasy because the genre can make evil feel like it has weight — architectural, historical, something that has been building for centuries before the protagonist was born. Tolkien's Sauron is barely a character and completely terrifying precisely because he's a presence rather than a person, a will that bends the fabric of the world toward its end. Modern fantasy has largely moved away from that archetype and toward something more unsettling: the Dark Lord whose goals are comprehensible, whose corruption has a traceable beginning, whose shadow was cast by something that made sense at the time. The Stormlight Archive gives us Odium, a god of passion and destruction who argues he's made a terrible kind of mercy. Readers drawn to Dark Lord fantasy are often interested in what power actually does to the person holding it — not the monster at the end, but the steps that led there.",
-  },
-  {
-    slug: "dragon-rider", name: "Dragon Rider", category: "character",
-    description: "A character bonded to or riding dragons.",
-    intro: "Dragon rider fantasy succeeds or fails entirely on the quality of the bond. The aerial combat and the spectacle matter, but what readers actually return to is the specific texture of a relationship between two minds that shouldn't understand each other and do. Anne McCaffrey built the template over decades of Pern novels, where the bond between rider and dragon is a telepathic connection so total that losing the dragon often means losing the will to live. Fourth Wing modernizes that setup, making the rider-dragon relationship the emotional spine of a military academy story where the dragons are dangerous, opinionated, and not remotely obligated to choose you. Readers who seek out dragon rider stories are looking for a particular kind of intimacy — partnership at a scale that human relationships can't reach.",
-  },
-  {
-    slug: "immortal-character", name: "Immortal Character", category: "character",
-    description: "A character who cannot die naturally.",
-    intro: "Immortality works in fantasy as a sustained thought experiment about what accumulated loss actually does to a person. After enough centuries, everyone the immortal loved is gone, every home they had is rubble, and they've had to develop mechanisms for surviving grief that no human lifespan ever required. V.E. Schwab's The Invisible Life of Addie LaRue compresses this into an 18th-century woman who cannot die but cannot be remembered, and the result is a portrait of loneliness so specific it feels medical. The older tradition — Tolkien's Elves, the long-lived figures of epic mythology — frames immortality as burden and beauty simultaneously; the modern tradition tends to ditch the beauty. Readers drawn to immortal characters want the perspective that only deep time can give: the view from outside the brief, urgent sprint of a mortal life.",
-  },
-  {
-    slug: "last-of-their-kind", name: "Last Of Their Kind", category: "character",
-    description: "A character who is the sole survivor of their race, people, or lineage.",
-    intro: "Being the last of your kind in fantasy means carrying your entire history in your body — language, memory, practice, grief — because when you go, it goes with you. The trope forces questions about what survival obligates: is staying alive an act of preservation or an act of selfishness, and does the distinction matter? The Fifth Season's Essun is not quite the last orogene in the world, but she lives close enough to extinction that every choice about hiding her power carries the weight of species-level risk. That pressure — the idea that this person is the only remaining proof that something existed — transforms every scene they're in. Readers who seek out this trope are often drawn to stories about the burden of being the one who remembers.",
-  },
+  antiHero,
+  assassinProtagonist,
+  chosenOne,
+  cursedCharacter,
+  darkLord,
+  dragonRider,
+  immortalCharacter,
+  lastOfTheirKind,
   {
     slug: "lost-heir", name: "Lost Heir", category: "character",
     description: "A hidden heir to a throne or power.",
