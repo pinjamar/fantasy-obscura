@@ -1,0 +1,16 @@
+import type { PublicTrope } from '../trope-types';
+
+const trope: PublicTrope = {
+  slug: "betrayal", name: "Betrayal", category: "relationship",
+  description: "A trusted ally betrays the protagonist.",
+  intro: "A great betrayal in fantasy is one the reader saw coming and chose to discount, because the alternative was too painful. The setup is everything: the more genuine the trust, the more the reader invests in hoping they're wrong, and the harder the landing when they aren't. In Mistborn: The Final Empire, the betrayal hits with mechanical precision — Sanderson has been leaving the pieces in plain sight while readers were watching something else. Betrayal in fantasy doesn't just wound the relationship it touches; it ripples outward through alliances, armies, and the entire structure of who can be trusted with what. What readers who love this trope are actually looking for is the emotional accuracy of it — the recognition that the people most capable of hurting you are the ones you handed the knife to.",
+  bestExamples: ["the-final-empire", "the-lies-of-locke-lamora", "six-of-crows", "the-blade-itself", "red-rising", "the-poppy-war", "assassins-apprentice"],
+  booksLikeGuides: ["the-final-empire", "the-lies-of-locke-lamora", "six-of-crows", "red-rising"],
+  editorialFaqs: [
+    { q: "What separates a great fantasy betrayal from a cheap twist?", a: "Setup and motivation. A great betrayal recontextualises everything you've already read — you go back and realise the signs were there, the logic was always there, you just didn't want to see it. The Final Empire does this with Kelsier: the betrayal lands harder because his philosophy almost invited it. The Lies of Locke Lamora does it structurally, with a villain who has been operating in plain sight. A cheap twist is one where the betrayer had no coherent reason, or where the story withheld information unfairly. If you're angry at the character, the betrayal worked. If you're angry at the author, it didn't." },
+    { q: "Which betrayal fantasy hits hardest emotionally?", a: "Assassin's Apprentice is the most quietly devastating — the betrayals accumulate slowly, from people who genuinely believe they're acting correctly, which makes them impossible to hate cleanly. Red Rising hits harder in a visceral, gut-punch way: the betrayal in the early section reframes the entire first act. The Poppy War is the most brutal because the betrayal is institutional, not personal — the system itself is the betrayer. Which hits hardest depends on whether you prefer intimate or structural devastation." },
+    { q: "Is betrayal fantasy too dark for readers who prefer hopeful stories?", a: "Not necessarily — betrayal is a narrative engine, not a mood. Mistborn: The Final Empire uses betrayal in service of an ultimately hopeful story about rebellion and found family. Six of Crows surrounds its betrayals with tremendous loyalty and camaraderie, so the moments of treachery make the bonds feel more real, not more bleak. The books to avoid if you want lighter fare are The Poppy War, which is genuinely harrowing, and The Blade Itself, which uses moral ambiguity as its core aesthetic. If you want betrayal with warmth, start with Six of Crows or Mistborn." },
+  ],
+};
+
+export default trope;

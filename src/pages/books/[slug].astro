@@ -15,8 +15,8 @@ const { slug } = Astro.params;
 if (!slug) return Astro.redirect('/books');
 
 const isIndexed = CURATED_SLUGS.has(slug);
-const book = await getBookBySlug(slug);
-if (!book) {
+const bookOrNull = await getBookBySlug(slug);
+if (!bookOrNull) {
   for (const order of READING_ORDERS) {
     const allBooks = order.groups ? order.groups.flatMap(g => g.books) : (order.books ?? []);
     if (allBooks.some(b => b.slug === slug && b.status === 'upcoming')) {
@@ -25,6 +25,7 @@ if (!book) {
   }
   return new Response(null, { status: 404, statusText: 'Not Found' });
 }
+const book = bookOrNull;
 
 const approvedTags = await getApprovedTags(book.id);
 const seriesSlug = book.series
@@ -82,12 +83,13 @@ type SimilarBookRow = {
   subgenres: string[] | null; tropes: string[] | null;
   series: string | null; series_number: number | null;
 };
-const { data: similarBooks } = await supabaseClient.rpc('get_similar_books', {
+const { data: similarBooksData } = await (supabaseClient as any).rpc('get_similar_books', {
   p_book_id:   book.id,
   p_subgenres: book.subgenres ?? [],
   p_tropes:    book.tropes ?? [],
   p_series:    book.series ?? null,
 }) as { data: SimilarBookRow[] | null };
+const similarBooks = similarBooksData ?? [];
 
 // Normalise authors: some DB entries have both names merged into one string
 // e.g. ["Mo Xiang Tong Xiu, Andrea Kriz"] → ["Mo Xiang Tong Xiu", "Andrea Kriz"]
@@ -106,7 +108,7 @@ const authors = splitAuthors(book.authors);
 
 const metaDescription = book.synopsis
   ? book.synopsis.slice(0, 160)
-  : `${book.title} by ${authors.join(', ')} — explore on The Grimoire.`;
+  : `${book.title} by ${authors.join(', ')} - explore on The Grimoire.`;
 
 function upgradeCoverUrl(url: string | null | undefined): string {
   if (!url) return '';
@@ -627,7 +629,7 @@ const bookSchemaJsonLd = JSON.stringify({
   )}
 
   <!-- ── Community Tags (hidden) ──────────────────────────────── -->
-  {false && <CommunityTags client:load bookId={book.id} bookSlug={slug} initialTags={approvedTags} userEmail={userEmail} />}
+  {false && <CommunityTags client:load bookId={book.id} bookSlug={slug!} initialTags={approvedTags} userEmail={userEmail} />}
 
 
 </Layout>

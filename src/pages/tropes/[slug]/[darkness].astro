@@ -147,8 +147,8 @@ const breadcrumbJsonLd = JSON.stringify({
 
     {bestExampleBooks.length > 0 && (
       <section class="mb-10">
-        <h2 class="text-lg font-semibold mb-1 text-zinc-800">Defining Examples</h2>
-        <p class="text-xs text-zinc-400 mb-4">The books most closely associated with this trope — curated picks, not just top-rated</p>
+        <h2 class="text-lg font-semibold mb-1 text-zinc-800">Where to Start</h2>
+        <p class="text-xs text-zinc-400 mb-4">If you want to read just one book for this trope, pick from these</p>
         <div class="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1">
           {bestExampleBooks.map((b) => (
             <a href={`/books/${b.slug}/`} title={b.title} class="flex-none w-21 rounded-md overflow-hidden border border-zinc-200 hover:border-purple-300 transition-colors shadow-sm hover:shadow-[0_0_12px_rgba(147,51,234,0.1)]">
