@@ -136,6 +136,7 @@ import { brentWeeks } from './reading-orders/brent-weeks';
 import { demonCycle } from './reading-orders/demon-cycle';
 import { chroniclesOfAmber } from './reading-orders/chronicles-of-amber';
 import { expanse } from './reading-orders/expanse';
+import { endersGame } from './reading-orders/enders-game';
 import { outlander } from './reading-orders/outlander';
 import { swordOfTruth } from './reading-orders/sword-of-truth';
 
@@ -197,6 +198,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   expanse,
   outlander,
   swordOfTruth,
+  endersGame,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

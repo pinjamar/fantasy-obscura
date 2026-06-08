@@ -328,6 +328,15 @@ const READING_ORDER_MAP: Record<string, string> = {
   'The Sword of Truth':                  'sword-of-truth',
   "Children of D'Hara":                  'sword-of-truth',
   'The Nicci Chronicles':                'sword-of-truth',
+  // Orson Scott Card
+  "Ender's Game":                        'enders-game',
+  "Ender's Shadow":                      'enders-game',
+  'Shadow of the Hegemon':               'enders-game',
+  'Shadow Puppets':                      'enders-game',
+  'Shadow of the Giant':                 'enders-game',
+  'Shadows in Flight':                   'enders-game',
+  'First Formic War':                    'enders-game',
+  'Second Formic War':                   'enders-game',
 };
 
 const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
@@ -351,6 +360,7 @@ const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
   'roger-zelazny':     { slug: 'chronicles-of-amber',  label: 'Chronicles of Amber Reading Order' },
   'diana-gabaldon':    { slug: 'outlander',             label: 'Outlander Reading Order' },
   'terry-goodkind':    { slug: 'sword-of-truth',        label: 'The Sword of Truth Reading Order' },
+  'orson-scott-card':  { slug: 'enders-game',           label: "Ender's Game Universe Reading Order" },
 };
 
 const universeGuide = AUTHOR_UNIVERSE_MAP[slug ?? ''] ?? null;

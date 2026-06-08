@@ -88,7 +88,8 @@ export type ReadingOrderImageSlug =
   | 'chronicles-of-amber'
   | 'expanse'
   | 'outlander'
-  | 'sword-of-truth';
+  | 'sword-of-truth'
+  | 'enders-game';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -160,6 +161,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'expanse':             'expanse',
   'outlander':           'outlander',
   'sword-of-truth':      'sword-of-truth',
+  'enders-game':         'enders-game',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────
