@@ -129,6 +129,7 @@ import { ninePrincesInAmber } from './books-like/nine-princes-in-amber';
 import { promiseOfBlood } from './books-like/promise-of-blood';
 import { magicianApprentice } from './books-like/magician-apprentice';
 import { wizardsFirstRule } from './books-like/wizards-first-rule';
+import { pawnOfProphecy } from './books-like/pawn-of-prophecy';
 
 export interface BooksLikeRec {
   title: string;
@@ -395,6 +396,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   promiseOfBlood,
   magicianApprentice,
   wizardsFirstRule,
+  pawnOfProphecy,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
