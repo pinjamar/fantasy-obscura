@@ -1,0 +1,1089 @@
+INDEXING STATUS — generated 2026-06-10
+============================================================
+
+AUTHORS — ENRICHED (indexable): 344
+------------------------------------------------------------
+Mercedes Lackey                          122 books  /authors/mercedes-lackey/
+Andre Norton                             111 books  /authors/andre-norton/
+Piers Anthony                            92 books  /authors/piers-anthony/
+L.E. Modesitt                            90 books  /authors/l-e-modesitt/
+Michael Moorcock                         87 books  /authors/michael-moorcock/
+Gena Showalter                           85 books  /authors/gena-showalter/
+Poul Anderson                            83 books  /authors/poul-anderson/
+Kelley Armstrong                         81 books  /authors/kelley-armstrong/
+Simon R. Green                           74 books  /authors/simon-r-green/
+Christopher Golden                       74 books  /authors/christopher-golden/
+Anne McCaffrey                           73 books  /authors/anne-mccaffrey/
+Lynsay Sands                             73 books  /authors/lynsay-sands/
+Sherrilyn Kenyon                         70 books  /authors/sherrilyn-kenyon/
+Stephen King                             65 books  /authors/stephen-king/
+Nalini Singh                             65 books  /authors/nalini-singh/
+Seanan McGuire                           65 books  /authors/seanan-mcguire/
+R.A. Salvatore                           63 books  /authors/r-a-salvatore/
+Jennifer L. Armentrout                   61 books  /authors/jennifer-l-armentrout/
+Terry Brooks                             59 books  /authors/terry-brooks/
+Kevin J. Anderson                        58 books  /authors/kevin-j-anderson/
+Jennifer Estep                           57 books  /authors/jennifer-estep/
+Margaret Weis                            57 books  /authors/margaret-weis/
+Dave Duncan                              55 books  /authors/dave-duncan/
+Charlaine Harris                         55 books  /authors/charlaine-harris/
+Tao Wong                                 54 books  /authors/tao-wong/
+Adrian Tchaikovsky                       52 books  /authors/adrian-tchaikovsky/
+Terry Pratchett                          52 books  /authors/terry-pratchett/
+Thomas K. Carpenter                      50 books  /authors/thomas-k-carpenter/
+Caroline Peckham                         49 books  /authors/caroline-peckham/
+Rachel Caine                             49 books  /authors/rachel-caine/
+Tracy Hickman                            49 books  /authors/tracy-hickman/
+Brandon Sanderson                        48 books  /authors/brandon-sanderson/
+Glen Cook                                48 books  /authors/glen-cook/
+Fritz Leiber                             46 books  /authors/fritz-leiber/
+Raymond E. Feist                         44 books  /authors/raymond-e-feist/
+Jack Vance                               42 books  /authors/jack-vance/
+Kate Elliott                             40 books  /authors/kate-elliott/
+Seth Ring                                40 books  /authors/seth-ring/
+Charles de Lint                          40 books  /authors/charles-de-lint/
+Charles Stross                           39 books  /authors/charles-stross/
+Faith Hunter                             37 books  /authors/faith-hunter/
+David Gemmell                            37 books  /authors/david-gemmell/
+Roger Zelazny                            37 books  /authors/roger-zelazny/
+Ilona Andrews                            37 books  /authors/ilona-andrews/
+Eoin Colfer                              37 books  /authors/eoin-colfer/
+Michael A. Stackpole                     36 books  /authors/michael-a-stackpole/
+Tamora Pierce                            36 books  /authors/tamora-pierce/
+Holly Black                              36 books  /authors/holly-black/
+David Eddings                            36 books  /authors/david-eddings/
+C.J. Cherryh                             36 books  /authors/c-j-cherryh/
+Orson Scott Card                         36 books  /authors/orson-scott-card/
+Marie Brennan                            35 books  /authors/marie-brennan/
+Ursula K. Le Guin                        35 books  /authors/ursula-k-le-guin/
+Jim Butcher                              35 books  /authors/jim-butcher/
+Shannon Hale                             35 books  /authors/shannon-hale/
+Kate Forsyth                             35 books  /authors/kate-forsyth/
+Sylvia Day                               34 books  /authors/sylvia-day/
+Terry Goodkind                           34 books  /authors/terry-goodkind/
+Cassandra Clare                          33 books  /authors/cassandra-clare/
+Kim Harrison                             33 books  /authors/kim-harrison/
+J.R.R. Tolkien                           32 books  /authors/j-r-r-tolkien/
+Tim O'rourke                             32 books  /authors/tim-orourke/
+Garth Nix                                32 books  /authors/garth-nix/
+Larry Correia                            31 books  /authors/larry-correia/
+David Dalglish                           31 books  /authors/david-dalglish/
+Ed Greenwood                             31 books  /authors/ed-greenwood/
+Michael Chatfield                        30 books  /authors/michael-chatfield/
+Juliet Marillier                         29 books  /authors/juliet-marillier/
+Dakota Krout                             29 books  /authors/dakota-krout/
+Chloe Neill                              29 books  /authors/chloe-neill/
+Martha Wells                             29 books  /authors/martha-wells/
+Katherine Kurtz                          28 books  /authors/katherine-kurtz/
+Rick Riordan                             28 books  /authors/rick-riordan/
+Scott Westerfeld                         28 books  /authors/scott-westerfeld/
+Gene Wolfe                               28 books  /authors/gene-wolfe/
+Carrie Vaughn                            27 books  /authors/carrie-vaughn/
+Brandon Mull                             27 books  /authors/brandon-mull/
+P.C. Cast                                27 books  /authors/p-c-cast/
+Tad Williams                             27 books  /authors/tad-williams/
+Jeff VanderMeer                          27 books  /authors/jeff-vandermeer/
+Thomas E. Sniegoski                      26 books  /authors/thomas-e-sniegoski/
+Peter S. Beagle                          26 books  /authors/peter-s-beagle/
+Will Wight                               26 books  /authors/will-wight/
+Thea Harrison                            26 books  /authors/thea-harrison/
+Anne Bishop                              26 books  /authors/anne-bishop/
+Patricia A. McKillip                     25 books  /authors/patricia-a-mckillip/
+Robert Jordan                            25 books  /authors/robert-jordan/
+Paul Kearney                             24 books  /authors/paul-kearney/
+Michael J. Sullivan                      24 books  /authors/michael-j-sullivan/
+Django Wexler                            24 books  /authors/django-wexler/
+Gail Carriger                            24 books  /authors/gail-carriger/
+TJ Klune                                 24 books  /authors/tj-klune/
+Mickey Zucker Reichert                   24 books  /authors/mickey-zucker-reichert/
+Elise Kova                               24 books  /authors/elise-kova/
+Sarah Beth Durst                         23 books  /authors/sarah-beth-durst/
+J. R. Ward                               23 books  /authors/j-r-ward/
+Kathryn Kaleigh                          23 books  /authors/kathryn-kaleigh/
+Neil Gaiman                              23 books  /authors/neil-gaiman/
+Mark Lawrence                            23 books  /authors/mark-lawrence/
+Steven Erikson                           23 books  /authors/steven-erikson/
+Christopher G. Nuttall                   23 books  /authors/christopher-g-nuttall/
+Fiona McIntosh                           22 books  /authors/fiona-mcintosh/
+Brian Jacques                            22 books  /authors/brian-jacques/
+Bec McMaster                             22 books  /authors/bec-mcmaster/
+James A. Hunter                          22 books  /authors/james-a-hunter/
+Irene Radford                            22 books  /authors/irene-radford/
+Veronica Roth                            21 books  /authors/veronica-roth/
+T. Kingfisher                            21 books  /authors/t-kingfisher/
+Robin Hobb                               21 books  /authors/robin-hobb/
+Harmon Cooper                            21 books  /authors/harmon-cooper/
+Steven Brust                             21 books  /authors/steven-brust/
+Daniel Abraham                           20 books  /authors/daniel-abraham/
+Charlie N. Holmberg                      20 books  /authors/charlie-n-holmberg/
+Phil Tucker                              19 books  /authors/phil-tucker/
+Ken Liu                                  19 books  /authors/ken-liu/
+James S.A. Corey                         19 books  /authors/james-s-a-corey/
+David Farland                            19 books  /authors/david-farland/
+Tanith Lee                               19 books  /authors/tanith-lee/
+Brian Herbert                            18 books  /authors/brian-herbert/
+Michelle Sagara                          18 books  /authors/michelle-sagara/
+Melanie Rawn                             18 books  /authors/melanie-rawn/
+Tim Powers                               18 books  /authors/tim-powers/
+Lara Adrian                              18 books  /authors/lara-adrian/
+Philip Pullman                           18 books  /authors/philip-pullman/
+Jessica Day George                       18 books  /authors/jessica-day-george/
+George R.R. Martin                       18 books  /authors/george-r-r-martin/
+Patti Larsen                             18 books  /authors/patti-larsen/
+Tony DiTerlizzi                          17 books  /authors/tony-diterlizzi/
+Marie Lu                                 17 books  /authors/marie-lu/
+Andrzej Sapkowski                        17 books  /authors/andrzej-sapkowski/
+Andrew Rowe                              17 books  /authors/andrew-rowe/
+Janny Wurts                              17 books  /authors/janny-wurts/
+V.E. Schwab                              17 books  /authors/v-e-schwab/
+Kevin Hearne                             17 books  /authors/kevin-hearne/
+Karen Miller                             17 books  /authors/karen-miller/
+James E. Wisher                          17 books  /authors/james-e-wisher/
+Elizabeth Haydon                         17 books  /authors/elizabeth-haydon/
+Sara Douglass                            17 books  /authors/sara-douglass/
+Guy Gavriel Kay                          17 books  /authors/guy-gavriel-kay/
+Ben Aaronovitch                          17 books  /authors/ben-aaronovitch/
+W.J. May                                 17 books  /authors/w-j-may/
+Rob J. Hayes                             17 books  /authors/rob-j-hayes/
+Jim C. Hines                             17 books  /authors/jim-c-hines/
+Naomi Novik                              16 books  /authors/naomi-novik/
+J.K. Rowling                             16 books  /authors/j-k-rowling/
+Sarah Rees Brennan                       16 books  /authors/sarah-rees-brennan/
+Jennifer Fallon                          16 books  /authors/jennifer-fallon/
+Sarah J. Maas                            16 books  /authors/sarah-j-maas/
+Tom Lloyd                                16 books  /authors/tom-lloyd/
+Diana Gabaldon                           16 books  /authors/diana-gabaldon/
+Jacqueline Carey                         16 books  /authors/jacqueline-carey/
+S. Usher Evans                           16 books  /authors/s-usher-evans/
+Miles Cameron                            15 books  /authors/miles-cameron/
+Sam Sykes                                15 books  /authors/sam-sykes/
+Matthew Ward                             15 books  /authors/matthew-ward/
+Stacia Stark                             15 books  /authors/stacia-stark/
+Beth Revis                               15 books  /authors/beth-revis/
+J.M. Clarke                              15 books  /authors/j-m-clarke/
+Trudi Canavan                            15 books  /authors/trudi-canavan/
+Susan Cooper                             15 books  /authors/susan-cooper/
+Rob Thurman                              15 books  /authors/rob-thurman/
+Maggie Stiefvater                        15 books  /authors/maggie-stiefvater/
+Molly Harper                             15 books  /authors/molly-harper/
+Rebecca Yarros                           15 books  /authors/rebecca-yarros/
+Richard Kadrey                           14 books  /authors/richard-kadrey/
+Benedict Jacka                           14 books  /authors/benedict-jacka/
+Claire North                             14 books  /authors/claire-north/
+China Mieville                           14 books  /authors/china-mieville/
+Alexandra Bracken                        14 books  /authors/alexandra-bracken/
+Darynda Jones                            14 books  /authors/darynda-jones/
+Joe Abercrombie                          14 books  /authors/joe-abercrombie/
+Jenn Lyons                               13 books  /authors/jenn-lyons/
+Peter V. Brett                           13 books  /authors/peter-v-brett/
+Terry Mancour                            13 books  /authors/terry-mancour/
+Silvia Moreno-Garcia                     13 books  /authors/silvia-moreno-garcia/
+Cinda Williams Chima                     13 books  /authors/cinda-williams-chima/
+Richard Swan                             13 books  /authors/richard-swan/
+Michael Scott                            13 books  /authors/michael-scott/
+Leigh Bardugo                            13 books  /authors/leigh-bardugo/
+Jaye Wells                               13 books  /authors/jaye-wells/
+C.S. Lewis                               13 books  /authors/c-s-lewis/
+C.C. Hunter                              13 books  /authors/c-c-hunter/
+Caitlin Kittredge                        13 books  /authors/caitlin-kittredge/
+Grace Draven                             13 books  /authors/grace-draven/
+Glenda Larke                             13 books  /authors/glenda-larke/
+Max Gladstone                            12 books  /authors/max-gladstone/
+K.M. Shea                                12 books  /authors/k-m-shea/
+Nnedi Okorafor                           12 books  /authors/nnedi-okorafor/
+M.J. Scott                               12 books  /authors/m-j-scott/
+Rae Carson                               12 books  /authors/rae-carson/
+Aliette de Bodard                        12 books  /authors/aliette-de-bodard/
+Alexandra Rowland                        12 books  /authors/alexandra-rowland/
+Lj Andrews                               12 books  /authors/lj-andrews/
+Robert Jackson Bennett                   12 books  /authors/robert-jackson-bennett/
+Edward W. Robertson                      12 books  /authors/edward-w-robertson/
+Maria V. Snyder                          12 books  /authors/maria-v-snyder/
+John Shirley                             12 books  /authors/john-shirley/
+Stephen R. Donaldson                     12 books  /authors/stephen-r-donaldson/
+Mike Carey                               12 books  /authors/mike-carey/
+Matt Dinniman                            11 books  /authors/matt-dinniman/
+Genevieve Cogman                         11 books  /authors/genevieve-cogman/
+Becky Chambers                           11 books  /authors/becky-chambers/
+Laura Greenwood                          11 books  /authors/laura-greenwood/
+Kat Richardson                           11 books  /authors/kat-richardson/
+Fonda Lee                                11 books  /authors/fonda-lee/
+Katherine Arden                          11 books  /authors/katherine-arden/
+Ellen Datlow                             11 books  /authors/ellen-datlow/
+Luke Chmilenko                           11 books  /authors/luke-chmilenko/
+Gareth Hanrahan                          11 books  /authors/gareth-hanrahan/
+Eden Hudson                              11 books  /authors/eden-hudson/
+Rainbow Rowell                           11 books  /authors/rainbow-rowell/
+Morgan Rhodes                            11 books  /authors/morgan-rhodes/
+Michael Scott Rohan                      11 books  /authors/michael-scott-rohan/
+Renee Ahdieh                             11 books  /authors/renee-ahdieh/
+Anthony Ryan                             10 books  /authors/anthony-ryan/
+Tam DeRudder Jackson                     10 books  /authors/tam-derudder-jackson/
+Katharine Kerr                           10 books  /authors/katharine-kerr/
+Delemhach                                10 books  /authors/delemhach/
+Carissa Broadbent                        10 books  /authors/carissa-broadbent/
+Suzanne Collins                          10 books  /authors/suzanne-collins/
+Sever Bronny                             10 books  /authors/sever-bronny/
+John Gwynne                              10 books  /authors/john-gwynne/
+Anna Stephens                            10 books  /authors/anna-stephens/
+Nghi Vo                                  10 books  /authors/nghi-vo/
+J. Lynn                                  10 books  /authors/j-lynn/
+Victoria Aveyard                         10 books  /authors/victoria-aveyard/
+Ian C. Esslemont                         10 books  /authors/ian-c-esslemont/
+Dan Abnett                               10 books  /authors/dan-abnett/
+Diana Wynne Jones                        10 books  /authors/diana-wynne-jones/
+Brent Weeks                              10 books  /authors/brent-weeks/
+Sara Raasch                              10 books  /authors/sara-raasch/
+Diane Duane                              10 books  /authors/diane-duane/
+Laini Taylor                             10 books  /authors/laini-taylor/
+Elizabeth Moon                           10 books  /authors/elizabeth-moon/
+Brian McClellan                          10 books  /authors/brian-mcclellan/
+Karen Marie Moning                       10 books  /authors/karen-marie-moning/
+Craig Alanson                            9 books  /authors/craig-alanson/
+Marissa Meyer                            9 books  /authors/marissa-meyer/
+Samantha Shannon                         9 books  /authors/samantha-shannon/
+Peter McLean                             9 books  /authors/peter-mclean/
+Emily McIntire                           9 books  /authors/emily-mcintire/
+Katee Robert                             9 books  /authors/katee-robert/
+Gav Thorpe                               9 books  /authors/gav-thorpe/
+Joshua Kern                              9 books  /authors/joshua-kern/
+Tara Sim                                 9 books  /authors/tara-sim/
+Peter Orullian                           9 books  /authors/peter-orullian/
+Stephanie Garber                         9 books  /authors/stephanie-garber/
+Jennifer Roberson                        9 books  /authors/jennifer-roberson/
+Jay Kristoff                             9 books  /authors/jay-kristoff/
+C Mantis                                 8 books  /authors/c-mantis/
+Chris Wraight                            8 books  /authors/chris-wraight/
+Mark Del Franco                          8 books  /authors/mark-del-franco/
+H.M. Long                                8 books  /authors/h-m-long/
+Christopher Paolini                      8 books  /authors/christopher-paolini/
+Guy Haley                                8 books  /authors/guy-haley/
+Chloe Gong                               8 books  /authors/chloe-gong/
+Sherwood Smith                           8 books  /authors/sherwood-smith/
+Aleron Kong                              8 books  /authors/aleron-kong/
+Jennifer A. Nielsen                      8 books  /authors/jennifer-a-nielsen/
+Harper L. Woods                          8 books  /authors/harper-l-woods/
+Malcolm Tent                             8 books  /authors/malcolm-tent/
+Zen Cho                                  8 books  /authors/zen-cho/
+Sue Lynn Tan                             8 books  /authors/sue-lynn-tan/
+Melissa Caruso                           8 books  /authors/melissa-caruso/
+adastra339                               8 books  /authors/adastra339/
+Christopher Ruocchio                     8 books  /authors/christopher-ruocchio/
+Wong Tao                                 8 books  /authors/wong-tao/
+Diana Rowland                            8 books  /authors/diana-rowland/
+Kalayna Price                            8 books  /authors/kalayna-price/
+Julian May                               8 books  /authors/julian-may/
+Amy Proebstel                            8 books  /authors/amy-proebstel/
+Nick Kyme                                7 books  /authors/nick-kyme/
+Travis Deverell                          7 books  /authors/travis-deverell/
+Anna Smith Spark                         7 books  /authors/anna-smith-spark/
+R. Scott Bakker                          7 books  /authors/r-scott-bakker/
+John French                              7 books  /authors/john-french/
+Ed McDonald                              7 books  /authors/ed-mcdonald/
+Stephenie Meyer                          7 books  /authors/stephenie-meyer/
+Alix E. Harrow                           7 books  /authors/alix-e-harrow/
+Isaac Asimov                             7 books  /authors/isaac-asimov/
+Hannah E. Carey                          7 books  /authors/hannah-e-carey/
+Sarah A. Parker                          7 books  /authors/sarah-a-parker/
+Olivia Atwater                           7 books  /authors/olivia-atwater/
+Deborah Harkness                         7 books  /authors/deborah-harkness/
+Sarah Biglow                             7 books  /authors/sarah-biglow/
+Anton Strout                             7 books  /authors/anton-strout/
+Alex Lidell                              7 books  /authors/alex-lidell/
+Josiah Bancroft                          7 books  /authors/josiah-bancroft/
+Kristin Cashore                          7 books  /authors/kristin-cashore/
+Graham McNeill                           7 books  /authors/graham-mcneill/
+Roshani Chokshi                          7 books  /authors/roshani-chokshi/
+Christopher Rowley                       7 books  /authors/christopher-rowley/
+Shawn Speakman                           7 books  /authors/shawn-speakman/
+Pierce Brown                             7 books  /authors/pierce-brown/
+Becca Fitzpatrick                        7 books  /authors/becca-fitzpatrick/
+Heather G. Harris                        7 books  /authors/heather-g-harris/
+Adrienne Young                           6 books  /authors/adrienne-young/
+Frank Herbert                            6 books  /authors/frank-herbert/
+Ransom Riggs                             6 books  /authors/ransom-riggs/
+Pip Ballantine                           6 books  /authors/pip-ballantine/
+Richard K. Morgan                        6 books  /authors/richard-k-morgan/
+Jason Anspach                            6 books  /authors/jason-anspach/
+Patrick Weekes                           6 books  /authors/patrick-weekes/
+Tasha Suri                               6 books  /authors/tasha-suri/
+Aurora Ascher                            6 books  /authors/aurora-ascher/
+David Annandale                          6 books  /authors/david-annandale/
+Aaron Dembski-Bowden                     6 books  /authors/aaron-dembski-bowden/
+James Islington                          6 books  /authors/james-islington/
+Zachary Chopchinski                      6 books  /authors/zachary-chopchinski/
+Jasper Fforde                            6 books  /authors/jasper-fforde/
+Christelle Dabos                         6 books  /authors/christelle-dabos/
+Adalyn Grace                             6 books  /authors/adalyn-grace/
+James Swallow                            6 books  /authors/james-swallow/
+Chris Colfer                             6 books  /authors/chris-colfer/
+Aaron Hodges                             6 books  /authors/aaron-hodges/
+Summer H Hanford                         6 books  /authors/summer-h-hanford/
+Libba Bray                               6 books  /authors/libba-bray/
+Dean Koontz                              5 books  /authors/dean-koontz/
+Sabaa Tahir                              5 books  /authors/sabaa-tahir/
+Rebecca Roanhorse                        5 books  /authors/rebecca-roanhorse/
+Tessonja Odette                          5 books  /authors/tessonja-odette/
+Casualfarmer                             5 books  /authors/casualfarmer/
+Brian Staveley                           5 books  /authors/brian-staveley/
+Annie Bellet                             5 books  /authors/annie-bellet/
+Sm Reine                                 5 books  /authors/sm-reine/
+Celine Jeanjean                          5 books  /authors/celine-jeanjean/
+Roald Dahl                               5 books  /authors/roald-dahl/
+Scarlett St. Clair                       5 books  /authors/scarlett-st-clair/
+Kiera Cass                               5 books  /authors/kiera-cass/
+Autumn M. Birt                           5 books  /authors/autumn-m-birt/
+D.N. Erikson                             5 books  /authors/d-n-erikson/
+J.D.L. Rosell                            5 books  /authors/j-d-l-rosell/
+D.N. Leo                                 5 books  /authors/d-n-leo/
+James Dashner                            5 books  /authors/james-dashner/
+Matthew Stover                           5 books  /authors/matthew-stover/
+Helen Lowe                               5 books  /authors/helen-lowe/
+Christopher Nuttall                      5 books  /authors/christopher-nuttall/
+Susan Dennard                            5 books  /authors/susan-dennard/
+Kerri Maniscalco                         5 books  /authors/kerri-maniscalco/
+Tobias George Smollett                   5 books  /authors/tobias-george-smollett/
+Shelby Mahurin                           5 books  /authors/shelby-mahurin/
+Jack Dann                                4 books  /authors/jack-dann/
+Patrick Rothfuss                         4 books  /authors/patrick-rothfuss/
+Scott Lynch                              4 books  /authors/scott-lynch/
+
+AUTHORS — NOT ENRICHED (noindexed): 395
+------------------------------------------------------------
+Susanne Valenti                          48 books  /authors/susanne-valenti/
+Lois McMaster Bujold                     39 books  /authors/lois-mcmaster-bujold/
+Laurell K. Hamilton                      39 books  /authors/laurell-k-hamilton/
+Nora Roberts                             33 books  /authors/nora-roberts/
+John Flanagan                            33 books  /authors/john-flanagan/
+Tracy Wolff                              32 books  /authors/tracy-wolff/
+Shannon Mayer                            32 books  /authors/shannon-mayer/
+Robert Lynn Asprin                       30 books  /authors/robert-lynn-asprin/
+Richelle Mead                            29 books  /authors/richelle-mead/
+Patricia Briggs                          26 books  /authors/patricia-briggs/
+Suzanne Wright                           24 books  /authors/suzanne-wright/
+Melissa Marr                             23 books  /authors/melissa-marr/
+Jonathan Stroud                          22 books  /authors/jonathan-stroud/
+Natsuki Takaya                           21 books  /authors/natsuki-takaya/
+Kresley Cole                             20 books  /authors/kresley-cole/
+Julie Kagawa                             18 books  /authors/julie-kagawa/
+Amie Kaufman                             18 books  /authors/amie-kaufman/
+Marion Zimmer Bradley                    17 books  /authors/marion-zimmer-bradley/
+Jeaniene Frost                           17 books  /authors/jeaniene-frost/
+Karen Chance                             17 books  /authors/karen-chance/
+Margaret Peterson Haddix                 16 books  /authors/margaret-peterson-haddix/
+Jen Williams                             16 books  /authors/jen-williams/
+Jo Walton                                16 books  /authors/jo-walton/
+Derek Landy                              15 books  /authors/derek-landy/
+Emily Rodda                              15 books  /authors/emily-rodda/
+Zogarth                                  15 books  /authors/zogarth/
+Gordon R. Dickson                        14 books  /authors/gordon-r-dickson/
+Barb Hendee                              14 books  /authors/barb-hendee/
+L.J. Smith                               14 books  /authors/l-j-smith/
+Joseph Delaney                           14 books  /authors/joseph-delaney/
+J.C. Hendee                              14 books  /authors/j-c-hendee/
+Kristine Kathryn Rusch                   14 books  /authors/kristine-kathryn-rusch/
+Christopher Moore                        13 books  /authors/christopher-moore/
+Shirtaloon                               13 books  /authors/shirtaloon/
+Anne Rice                                13 books  /authors/anne-rice/
+Brian Rathbone                           13 books  /authors/brian-rathbone/
+Darren Shan                              12 books  /authors/darren-shan/
+Patricia C. Wrede                        12 books  /authors/patricia-c-wrede/
+Lauren Kate                              12 books  /authors/lauren-kate/
+Lemony Snicket                           12 books  /authors/lemony-snicket/
+Erin Hunter                              12 books  /authors/erin-hunter/
+Brian K. Vaughan                         12 books  /authors/brian-k-vaughan/
+Danielle L. Jensen                       12 books  /authors/danielle-l-jensen/
+Sharon Shinn                             12 books  /authors/sharon-shinn/
+Tahereh Mafi                             12 books  /authors/tahereh-mafi/
+Eileen Wilks                             12 books  /authors/eileen-wilks/
+Alan Dean Foster                         11 books  /authors/alan-dean-foster/
+Leigh Eddings                            11 books  /authors/leigh-eddings/
+N.K. Jemisin                             11 books  /authors/n-k-jemisin/
+Soman Chainani                           10 books  /authors/soman-chainani/
+Rosemary Edghill                         10 books  /authors/rosemary-edghill/
+Shannon Messenger                        10 books  /authors/shannon-messenger/
+Clive Barker                             10 books  /authors/clive-barker/
+Lynn Flewelling                          10 books  /authors/lynn-flewelling/
+Katherine Addison                        10 books  /authors/katherine-addison/
+Kristin Cast                             10 books  /authors/kristin-cast/
+Iain M. Banks                            10 books  /authors/iain-m-banks/
+M.R. Carey                               10 books  /authors/m-r-carey/
+Marion Blackwood                         10 books  /authors/marion-blackwood/
+James Mallory                            10 books  /authors/james-mallory/
+C.E. Murphy                              9 books  /authors/c-e-murphy/
+Michael Grant                            9 books  /authors/michael-grant/
+John Bierce                              9 books  /authors/john-bierce/
+Tim Lebbon                               9 books  /authors/tim-lebbon/
+Melissa De La Cruz                       9 books  /authors/melissa-de-la-cruz/
+Anya Summers                             9 books  /authors/anya-summers/
+Michael Buckley                          9 books  /authors/michael-buckley/
+Heather Fawcett                          9 books  /authors/heather-fawcett/
+James Patterson                          9 books  /authors/james-patterson/
+Robin McKinley                           9 books  /authors/robin-mckinley/
+Hugh Howey                               9 books  /authors/hugh-howey/
+J.V. Jones                               9 books  /authors/j-v-jones/
+Amelia Atwater-Rhodes                    9 books  /authors/amelia-atwater-rhodes/
+Ella Fields                              9 books  /authors/ella-fields/
+Harry Turtledove                         9 books  /authors/harry-turtledove/
+Bethany Hall                             8 books  /authors/bethany-hall/
+Aprilynne Pike                           8 books  /authors/aprilynne-pike/
+Melissa K. Roehrich                      8 books  /authors/melissa-k-roehrich/
+Paul J Bennett                           8 books  /authors/paul-j-bennett/
+Isobelle Carmody                         8 books  /authors/isobelle-carmody/
+Tamsyn Muir                              8 books  /authors/tamsyn-muir/
+Megan Whalen Turner                      8 books  /authors/megan-whalen-turner/
+Joel Rosenberg                           8 books  /authors/joel-rosenberg/
+Peter F. Hamilton                        8 books  /authors/peter-f-hamilton/
+Jenny Nimmo                              8 books  /authors/jenny-nimmo/
+Chugong                                  8 books  /authors/chugong/
+Laura Hickman                            7 books  /authors/laura-hickman/
+Pittacus Lore                            7 books  /authors/pittacus-lore/
+Lindsay Buroker                          7 books  /authors/lindsay-buroker/
+Terri Windling                           7 books  /authors/terri-windling/
+Sarah Addison Allen                      7 books  /authors/sarah-addison-allen/
+James A. Owen                            7 books  /authors/james-a-owen/
+Nancy Holder                             7 books  /authors/nancy-holder/
+Clifford D. Simak                        7 books  /authors/clifford-d-simak/
+Morgan Rice                              7 books  /authors/morgan-rice/
+Kristen Britain                          7 books  /authors/kristen-britain/
+Larry Dixon                              7 books  /authors/larry-dixon/
+Rachel Vincent                           7 books  /authors/rachel-vincent/
+Robert V.S. Redick                       7 books  /authors/robert-v-s-redick/
+Angie Sage                               7 books  /authors/angie-sage/
+C.L. Polk                                7 books  /authors/c-l-polk/
+Steffanie Holmes                         7 books  /authors/steffanie-holmes/
+Jane Lindskold                           6 books  /authors/jane-lindskold/
+Murasaki Shikibu                         6 books  /authors/murasaki-shikibu/
+Dianna Love                              6 books  /authors/dianna-love/
+Rhaegar                                  6 books  /authors/rhaegar/
+C.S. Friedman                            6 books  /authors/c-s-friedman/
+Raven Kennedy                            6 books  /authors/raven-kennedy/
+Meagan Spooner                           6 books  /authors/meagan-spooner/
+Chris Wooding                            6 books  /authors/chris-wooding/
+M.L. Wang                                6 books  /authors/m-l-wang/
+P.L. Travers                             6 books  /authors/p-l-travers/
+Wild Cards Trust                         6 books  /authors/wild-cards-trust/
+Jodi Taylor                              6 books  /authors/jodi-taylor/
+Actus                                    6 books  /authors/actus/
+Marlon James                             6 books  /authors/marlon-james/
+Kel Kade                                 6 books  /authors/kel-kade/
+Kendare Blake                            6 books  /authors/kendare-blake/
+Kelly St. Clare                          6 books  /authors/kelly-st-clare/
+Cynthia Hand                             6 books  /authors/cynthia-hand/
+Briar Boleyn                             6 books  /authors/briar-boleyn/
+Michelle Paver                           6 books  /authors/michelle-paver/
+Robin D. Owens                           6 books  /authors/robin-d-owens/
+Yasmine Galenorn                         6 books  /authors/yasmine-galenorn/
+Sophie Jordan                            6 books  /authors/sophie-jordan/
+Alyson Noel                              6 books  /authors/alyson-noel/
+R.F. Kuang                               6 books  /authors/r-f-kuang/
+C.C. Peñaranda                           6 books  /authors/c-c-pe-aranda/
+Nick Cole                                6 books  /authors/nick-cole/
+Christopher Pike                         6 books  /authors/christopher-pike/
+Kij Johnson                              6 books  /authors/kij-johnson/
+Tee Morris                               5 books  /authors/tee-morris/
+Jennifer Saint                           5 books  /authors/jennifer-saint/
+Kristen Painter                          5 books  /authors/kristen-painter/
+Dan Simmons                              5 books  /authors/dan-simmons/
+Kami Garcia                              5 books  /authors/kami-garcia/
+James Barclay                            5 books  /authors/james-barclay/
+Rebecca Moesta                           5 books  /authors/rebecca-moesta/
+Dean Hale                                5 books  /authors/dean-hale/
+G D Penman                               5 books  /authors/g-d-penman/
+C.S. Pacat                               5 books  /authors/c-s-pacat/
+Sarah Painter                            5 books  /authors/sarah-painter/
+A.J. Lancaster                           5 books  /authors/a-j-lancaster/
+Lloyd Alexander                          5 books  /authors/lloyd-alexander/
+R.R. Virdi                               5 books  /authors/r-r-virdi/
+Tom Sniegoski                            5 books  /authors/tom-sniegoski/
+Jill Monroe                              5 books  /authors/jill-monroe/
+James Clemens                            5 books  /authors/james-clemens/
+Stacia Kane                              5 books  /authors/stacia-kane/
+Deborah Turner Harris                    5 books  /authors/deborah-turner-harris/
+Kay L. Moody                             5 books  /authors/kay-l-moody/
+Tbd                                      5 books  /authors/tbd/
+Shawn Wilson                             5 books  /authors/shawn-wilson/
+T.A. Barron                              5 books  /authors/t-a-barron/
+Kelly Barnhill                           5 books  /authors/kelly-barnhill/
+Michael Ende                             5 books  /authors/michael-ende/
+Henry H. Neff                            5 books  /authors/henry-h-neff/
+Erin Lynn                                5 books  /authors/erin-lynn/
+Douglas Adams                            5 books  /authors/douglas-adams/
+Lynne Reid Banks                         5 books  /authors/lynne-reid-banks/
+Lauren Oliver                            5 books  /authors/lauren-oliver/
+A.F. Steadman                            5 books  /authors/a-f-steadman/
+Lilith Saintcrow                         5 books  /authors/lilith-saintcrow/
+Rachel Aaron                             5 books  /authors/rachel-aaron/
+Amber V. Nicole                          5 books  /authors/amber-v-nicole/
+Cerim                                    5 books  /authors/cerim/
+Colleen Houck                            5 books  /authors/colleen-houck/
+Saara El-Arifi                           5 books  /authors/saara-el-arifi/
+Seth Dickinson                           5 books  /authors/seth-dickinson/
+Alison Croggon                           5 books  /authors/alison-croggon/
+L.J. Goulding                            5 books  /authors/l-j-goulding/
+C.L. Wilson                              5 books  /authors/c-l-wilson/
+Regina Welling                           5 books  /authors/regina-welling/
+Doug Beason                              5 books  /authors/doug-beason/
+Michael Stackpole                        4 books  /authors/michael-stackpole/
+Nisha J. Tuli                            4 books  /authors/nisha-j-tuli/
+Ben Wolf                                 4 books  /authors/ben-wolf/
+Domagoj Kurmaic                          4 books  /authors/domagoj-kurmaic/
+Tara West                                4 books  /authors/tara-west/
+Blake Crouch                             4 books  /authors/blake-crouch/
+Margaret Rogerson                        4 books  /authors/margaret-rogerson/
+Robin LaFevers                           4 books  /authors/robin-lafevers/
+Ann Leckie                               4 books  /authors/ann-leckie/
+John Gregory Betancourt                  4 books  /authors/john-gregory-betancourt/
+Meg Cabot                                4 books  /authors/meg-cabot/
+Tessa Dawn                               4 books  /authors/tessa-dawn/
+Annette Marie                            4 books  /authors/annette-marie/
+Carrie Ryan                              4 books  /authors/carrie-ryan/
+Robert Holdstock                         4 books  /authors/robert-holdstock/
+Ada Palmer                               4 books  /authors/ada-palmer/
+Penn Cole                                4 books  /authors/penn-cole/
+Lev Grossman                             4 books  /authors/lev-grossman/
+C.J. Archer                              4 books  /authors/c-j-archer/
+Robert E. Margroff                       4 books  /authors/robert-e-margroff/
+Ariana Jade                              4 books  /authors/ariana-jade/
+Hannah Whitten                           4 books  /authors/hannah-whitten/
+Ben Galley                               4 books  /authors/ben-galley/
+Kiersten White                           4 books  /authors/kiersten-white/
+Elspeth Cooper                           4 books  /authors/elspeth-cooper/
+Peter Straub                             4 books  /authors/peter-straub/
+K. Shea                                  4 books  /authors/k-shea/
+Marianne Curley                          4 books  /authors/marianne-curley/
+William D Arand                          4 books  /authors/william-d-arand/
+Roberta Gellis                           4 books  /authors/roberta-gellis/
+Brigid Kemmerer                          4 books  /authors/brigid-kemmerer/
+Marisa Noelle                            4 books  /authors/marisa-noelle/
+Karpov Kinrade                           4 books  /authors/karpov-kinrade/
+S.A. Chakraborty                         4 books  /authors/s-a-chakraborty/
+Dennis Vanderkerken                      4 books  /authors/dennis-vanderkerken/
+Alice Wilde                              4 books  /authors/alice-wilde/
+Cornman                                  4 books  /authors/cornman/
+Lynn Larsh                               4 books  /authors/lynn-larsh/
+Stephen Fry                              4 books  /authors/stephen-fry/
+Alexandria Warwick                       4 books  /authors/alexandria-warwick/
+Anna Santos                              4 books  /authors/anna-santos/
+Rochelle Wilcox                          4 books  /authors/rochelle-wilcox/
+Emily Tesh                               4 books  /authors/emily-tesh/
+Aiden Thomas                             4 books  /authors/aiden-thomas/
+Vernor Vinge                             4 books  /authors/vernor-vinge/
+Greg Keyes                               4 books  /authors/greg-keyes/
+Rachel Hawkins                           4 books  /authors/rachel-hawkins/
+Lois Lowry                               4 books  /authors/lois-lowry/
+Melissa Snark                            4 books  /authors/melissa-snark/
+Troy Denning                             4 books  /authors/troy-denning/
+K.F. Breene                              4 books  /authors/k-f-breene/
+K.D. Edwards                             4 books  /authors/k-d-edwards/
+Alice Hoffman                            4 books  /authors/alice-hoffman/
+Taylor Fenner                            4 books  /authors/taylor-fenner/
+Margaret Stohl                           4 books  /authors/margaret-stohl/
+Lily Mayne                               4 books  /authors/lily-mayne/
+Peter J. Heck                            4 books  /authors/peter-j-heck/
+Sebastien de Castell                     4 books  /authors/sebastien-de-castell/
+Omayra Vélez                             4 books  /authors/omayra-v-lez/
+Jeanne DuPrau                            4 books  /authors/jeanne-duprau/
+Rachel Hartman                           4 books  /authors/rachel-hartman/
+Mary Norton                              4 books  /authors/mary-norton/
+Lidiya Foxglove                          4 books  /authors/lidiya-foxglove/
+Peter Newman                             4 books  /authors/peter-newman/
+Anna Kashina                             4 books  /authors/anna-kashina/
+Rebecca Ross                             4 books  /authors/rebecca-ross/
+Philip K. Dick                           4 books  /authors/philip-k-dick/
+Ava Reid                                 4 books  /authors/ava-reid/
+Sean Williams                            4 books  /authors/sean-williams/
+Hannah Nicole Maehrer                    4 books  /authors/hannah-nicole-maehrer/
+Maureen Johnson                          4 books  /authors/maureen-johnson/
+Robert Krammes                           4 books  /authors/robert-krammes/
+Madeleine L'Engle                        4 books  /authors/madeleine-lengle/
+Laura Thalassa                           4 books  /authors/laura-thalassa/
+Jordan Ifueko                            4 books  /authors/jordan-ifueko/
+Lauren Palphreyman                       4 books  /authors/lauren-palphreyman/
+Meredith Ann Pierce                      4 books  /authors/meredith-ann-pierce/
+Andy Weir                                3 books  /authors/andy-weir/
+Linzi Day                                3 books  /authors/linzi-day/
+Christina Henry                          3 books  /authors/christina-henry/
+Caroline Stevermer                       3 books  /authors/caroline-stevermer/
+Caragh M. O'Brien                        3 books  /authors/caragh-m-obrien/
+Meg Xuemei X                             3 books  /authors/meg-xuemei-x/
+Shauna Lawless                           3 books  /authors/shauna-lawless/
+Amanda Hocking                           3 books  /authors/amanda-hocking/
+Moira Young                              3 books  /authors/moira-young/
+C.L. Clark                               3 books  /authors/c-l-clark/
+Michelle Hodkin                          3 books  /authors/michelle-hodkin/
+L.R.W. Lee                               3 books  /authors/l-r-w-lee/
+Wendy Higgins                            3 books  /authors/wendy-higgins/
+Bree Despain                             3 books  /authors/bree-despain/
+L.K. Latham                              3 books  /authors/l-k-latham/
+Misba                                    3 books  /authors/misba/
+Laurel Night                             3 books  /authors/laurel-night/
+B.B. Alston                              3 books  /authors/b-b-alston/
+Melissa McPhail                          3 books  /authors/melissa-mcphail/
+K.J. Parker                              3 books  /authors/k-j-parker/
+Alexandra Adornetto                      3 books  /authors/alexandra-adornetto/
+Robert E. Howard                         3 books  /authors/robert-e-howard/
+Francis Stevens                          3 books  /authors/francis-stevens/
+Joanne Wadsworth                         3 books  /authors/joanne-wadsworth/
+Sarah Hawley                             3 books  /authors/sarah-hawley/
+Jeffrey C. DiLlow                        3 books  /authors/jeffrey-c-dillow/
+Patrick Ness                             3 books  /authors/patrick-ness/
+Stuart Hill                              3 books  /authors/stuart-hill/
+Veronica Rossi                           3 books  /authors/veronica-rossi/
+Sylvia Mercedes                          3 books  /authors/sylvia-mercedes/
+Erynn Lehtonen                           3 books  /authors/erynn-lehtonen/
+Lazie Writer                             3 books  /authors/lazie-writer/
+Storm Constantine                        3 books  /authors/storm-constantine/
+A.L. Knorr                               3 books  /authors/a-l-knorr/
+Alane Adams                              3 books  /authors/alane-adams/
+Juno Heart                               3 books  /authors/juno-heart/
+Erin Sterling                            3 books  /authors/erin-sterling/
+Cixin Liu                                3 books  /authors/cixin-liu/
+Graham Joyce                             3 books  /authors/graham-joyce/
+William Nicholson                        3 books  /authors/william-nicholson/
+Susan Ee                                 3 books  /authors/susan-ee/
+Joe Haldeman                             3 books  /authors/joe-haldeman/
+Michael Anderle                          3 books  /authors/michael-anderle/
+Alma Katsu                               3 books  /authors/alma-katsu/
+Tina Glasneck                            3 books  /authors/tina-glasneck/
+Christopher Stuchl                       3 books  /authors/christopher-stuchl/
+May Sage                                 3 books  /authors/may-sage/
+Olivie Blake                             3 books  /authors/olivie-blake/
+Candace Osmond                           3 books  /authors/candace-osmond/
+Storm Song                               3 books  /authors/storm-song/
+Emma L. Adams                            3 books  /authors/emma-l-adams/
+Erik Henry Vick                          3 books  /authors/erik-henry-vick/
+Angela Wallace                           3 books  /authors/angela-wallace/
+Juliana Haygert                          3 books  /authors/juliana-haygert/
+Kate Thompson                            3 books  /authors/kate-thompson/
+Robert Blaise                            3 books  /authors/robert-blaise/
+Susan D. Kalior                          3 books  /authors/susan-d-kalior/
+Cornelia Funke                           3 books  /authors/cornelia-funke/
+Connor Whiteley                          3 books  /authors/connor-whiteley/
+Melina Marchetta                         3 books  /authors/melina-marchetta/
+Travis Baldree                           3 books  /authors/travis-baldree/
+Lyn McConchie                            3 books  /authors/lyn-mcconchie/
+K.A. Tucker                              3 books  /authors/k-a-tucker/
+Tomi Adeyemi                             3 books  /authors/tomi-adeyemi/
+Ryan Cahill                              3 books  /authors/ryan-cahill/
+Jonathan French                          3 books  /authors/jonathan-french/
+Jamie Campbell                           3 books  /authors/jamie-campbell/
+Jonathan Evan Hudson                     3 books  /authors/jonathan-evan-hudson/
+Ember Blackthorn                         3 books  /authors/ember-blackthorn/
+Lauren DeStefano                         3 books  /authors/lauren-destefano/
+Mervyn Peake                             3 books  /authors/mervyn-peake/
+Jasmine Walt                             3 books  /authors/jasmine-walt/
+Gwen Rivers                              3 books  /authors/gwen-rivers/
+RJ Barker                                3 books  /authors/rj-barker/
+Daniel T. Jackson                        3 books  /authors/daniel-t-jackson/
+Craig Hamilton                           3 books  /authors/craig-hamilton/
+Charlie Jane Anders                      3 books  /authors/charlie-jane-anders/
+Lauren Roberts                           3 books  /authors/lauren-roberts/
+Alfred Bester                            3 books  /authors/alfred-bester/
+Marie Rutkoski                           3 books  /authors/marie-rutkoski/
+H.G. Wells                               3 books  /authors/h-g-wells/
+Eve Newton                               3 books  /authors/eve-newton/
+Rachel Gillig                            3 books  /authors/rachel-gillig/
+Tracy Deonn                              3 books  /authors/tracy-deonn/
+Laurie Forest                            3 books  /authors/laurie-forest/
+Kate Golden                              3 books  /authors/kate-golden/
+Olena Nikitin                            3 books  /authors/olena-nikitin/
+William Gibson                           3 books  /authors/william-gibson/
+Harley Laroux                            3 books  /authors/harley-laroux/
+Andrea Stewart                           3 books  /authors/andrea-stewart/
+Don Perrin                               3 books  /authors/don-perrin/
+Lord Dunsany                             3 books  /authors/lord-dunsany/
+Rick Hautala                             3 books  /authors/rick-hautala/
+John Scalzi                              3 books  /authors/john-scalzi/
+Jody Lynn Nye                            3 books  /authors/jody-lynn-nye/
+Alwyn Hamilton                           3 books  /authors/alwyn-hamilton/
+John Ringo                               3 books  /authors/john-ringo/
+George MacDonald                         3 books  /authors/george-macdonald/
+C.M. Carney                              3 books  /authors/c-m-carney/
+Bryce O'Connor                           3 books  /authors/bryce-oconnor/
+Max Nowaz                                3 books  /authors/max-nowaz/
+Brodi Ashton                             3 books  /authors/brodi-ashton/
+Janet Evanovich                          3 books  /authors/janet-evanovich/
+E.C. Ambrose                             3 books  /authors/e-c-ambrose/
+Dyrk Ashton                              3 books  /authors/dyrk-ashton/
+Kristen Ciccarelli                       3 books  /authors/kristen-ciccarelli/
+Melissa F. Olson                         3 books  /authors/melissa-f-olson/
+Ardath Mayhar                            3 books  /authors/ardath-mayhar/
+Hannah Howell                            3 books  /authors/hannah-howell/
+Erika Johansen                           3 books  /authors/erika-johansen/
+Mitchell Hogan                           3 books  /authors/mitchell-hogan/
+Mary E. Pearson                          3 books  /authors/mary-e-pearson/
+Xiran Jay Zhao                           3 books  /authors/xiran-jay-zhao/
+Jessica Cluess                           3 books  /authors/jessica-cluess/
+Sasha Miller                             3 books  /authors/sasha-miller/
+Conor Kostick                            3 books  /authors/conor-kostick/
+Paul R. Wonning                          3 books  /authors/paul-r-wonning/
+Jeffrey Cranor                           3 books  /authors/jeffrey-cranor/
+Rachel Medhurst                          3 books  /authors/rachel-medhurst/
+Frank Beddor                             3 books  /authors/frank-beddor/
+Peter Gross                              3 books  /authors/peter-gross/
+Gail Carson Levine                       3 books  /authors/gail-carson-levine/
+Tammy Salyer                             3 books  /authors/tammy-salyer/
+Rick Yancey                              3 books  /authors/rick-yancey/
+Joseph Fink                              3 books  /authors/joseph-fink/
+Daniel O'Malley                          3 books  /authors/daniel-omalley/
+Ingrid Law                               3 books  /authors/ingrid-law/
+Haylock Jobson                           3 books  /authors/haylock-jobson/
+Hannah Kaner                             3 books  /authors/hannah-kaner/
+Jake Forbes                              3 books  /authors/jake-forbes/
+Emily A. Duncan                          3 books  /authors/emily-a-duncan/
+Eric Van Lustbader                       3 books  /authors/eric-van-lustbader/
+Rachel Neumeier                          3 books  /authors/rachel-neumeier/
+Mary Jo Putney                           3 books  /authors/mary-jo-putney/
+E. Nesbit                                3 books  /authors/e-nesbit/
+Kerstin Gier                             3 books  /authors/kerstin-gier/
+Nicolette Elzie                          3 books  /authors/nicolette-elzie/
+Elizabeth Lim                            3 books  /authors/elizabeth-lim/
+Kenneth Oppel                            3 books  /authors/kenneth-oppel/
+Daniel Polansky                          3 books  /authors/daniel-polansky/
+Nikola Stefan                            3 books  /authors/nikola-stefan/
+Sarah M. Cradit                          3 books  /authors/sarah-m-cradit/
+Courtney Allison Moulton                 3 books  /authors/courtney-allison-moulton/
+Monica Furlong                           3 books  /authors/monica-furlong/
+
+TROPE PAGES — INDEXABLE (≥10 books): 53
+------------------------------------------------------------
+Quest                                    359 books
+Political Intrigue                       301 books
+Coming of Age                            228 books
+End of the World Stakes                  209 books
+Hidden Society                           154 books
+War Between Kingdoms                     149 books
+Ancient Evil Awakens                     129 books
+Outcast Hero                             120 books
+Found Family                             108 books
+Rebellion                                106 books
+Survival Journey                         94 books
+Forbidden Romance                        94 books
+Anti-Hero                                92 books
+Morally Grey Hero                        91 books
+Cursed Character                         87 books
+Reluctant Hero                           84 books
+Slow Burn                                84 books
+Magical Artifacts                        82 books
+Dark Lord                                79 books
+Chosen One                               78 books
+Power at a Cost                          74 books
+Mentor and Student                       72 books
+Revenge Story                            57 books
+Secret Identity                          54 books
+Succession Crisis                        53 books
+Dying Empire                             51 books
+Forbidden Magic                          50 books
+Portal Fantasy                           48 books
+Prophecy                                 48 books
+Divine Magic                             45 books
+Assassin Protagonist                     45 books
+Mentor Figure                            44 books
+Immortal Character                       44 books
+Lost Heir                                38 books
+Fae Court Drama                          34 books
+Curse Breaking                           34 books
+Fated Mates                              31 books
+Enemies to Lovers                        30 books
+Prophecy Child                           26 books
+Betrayal                                 26 books
+Last Of Their Kind                       24 books
+Redemption Arc                           24 books
+Magical Plague                           20 books
+Dragon Rider                             19 books
+Forced Proximity                         19 books
+Necromancy                               18 books
+Elemental Magic                          18 books
+Gothic Castle                            17 books
+Secret Royalty                           17 books
+Political Marriage                       13 books
+Desert Kingdom                           12 books
+Villain Protagonist                      11 books
+Second Chance Romance                    10 books
+
+TROPE PAGES — NOINDEXED (<10 books): 17
+------------------------------------------------------------
+Love Triangle                            9 books
+Grumpy x Sunshine                        9 books
+Heist                                    9 books
+Tournament Arc                           8 books
+Viking-Inspired World                    8 books
+Floating Islands                         7 books
+Pyrrhic Victory                          7 books
+Pirate Fantasy                           7 books
+Trial by Combat                          6 books
+Underground City                         6 books
+Hero Becomes Villain                     6 books
+Blood Magic                              6 books
+Bodyguard Romance                        5 books
+Rivals to Allies                         5 books
+Magic Tournament                         5 books
+Frozen Wasteland                         5 books
+Sentient Weapon                          4 books
+
+DARKNESS SUB-PAGES — INDEXABLE (≥10 books): 103
+------------------------------------------------------------
+Quest                               moderate       199 books
+Political Intrigue                  moderate       177 books
+Coming of Age                       moderate       118 books
+End of the World Stakes             moderate       103 books
+Political Intrigue                  dark           86 books
+Quest                               dark           83 books
+End of the World Stakes             dark           80 books
+War Between Kingdoms                moderate       80 books
+Hidden Society                      moderate       78 books
+Outcast Hero                        moderate       66 books
+Ancient Evil Awakens                moderate       64 books
+Found Family                        moderate       63 books
+Quest                               mild           58 books
+Rebellion                           moderate       56 books
+Coming of Age                       mild           55 books
+War Between Kingdoms                dark           53 books
+Chosen One                          moderate       52 books
+Anti-Hero                           dark           51 books
+Magical Artifacts                   moderate       49 books
+Reluctant Hero                      moderate       47 books
+Ancient Evil Awakens                dark           45 books
+Dark Lord                           moderate       44 books
+Forbidden Romance                   moderate       44 books
+Coming of Age                       dark           43 books
+Mentor and Student                  moderate       42 books
+Morally Grey Hero                   moderate       42 books
+Power at a Cost                     moderate       42 books
+Morally Grey Hero                   dark           42 books
+Survival Journey                    dark           41 books
+Cursed Character                    moderate       41 books
+Hidden Society                      mild           39 books
+Slow Burn                           moderate       39 books
+Rebellion                           dark           39 books
+Survival Journey                    moderate       38 books
+Hidden Society                      dark           35 books
+Outcast Hero                        dark           34 books
+Secret Identity                     moderate       33 books
+Cursed Character                    dark           32 books
+Succession Crisis                   moderate       30 books
+Anti-Hero                           moderate       28 books
+Dark Lord                           dark           27 books
+Lost Heir                           moderate       26 books
+Divine Magic                        moderate       26 books
+Political Intrigue                  mild           26 books
+Revenge Story                       moderate       25 books
+Forbidden Romance                   dark           25 books
+Revenge Story                       dark           25 books
+Forbidden Magic                     moderate       25 books
+Power at a Cost                     dark           25 books
+Dying Empire                        dark           25 books
+Slow Burn                           mild           25 books
+Prophecy                            moderate       23 books
+Assassin Protagonist                dark           23 books
+Found Family                        mild           22 books
+Mentor Figure                       moderate       21 books
+Forbidden Romance                   mild           21 books
+Forbidden Magic                     dark           21 books
+Found Family                        dark           21 books
+Portal Fantasy                      moderate       20 books
+Assassin Protagonist                moderate       20 books
+Reluctant Hero                      dark           20 books
+Fae Court Drama                     moderate       19 books
+Immortal Character                  dark           19 books
+Dying Empire                        moderate       19 books
+Prophecy Child                      moderate       18 books
+Enemies to Lovers                   moderate       18 books
+Curse Breaking                      moderate       18 books
+Portal Fantasy                      mild           17 books
+Mentor and Student                  dark           16 books
+Prophecy                            dark           16 books
+Magical Artifacts                   dark           16 books
+Secret Identity                     dark           16 books
+Slow Burn                           dark           15 books
+Succession Crisis                   dark           15 books
+Immortal Character                  moderate       15 books
+Outcast Hero                        mild           14 books
+Chosen One                          dark           14 books
+Fated Mates                         moderate       14 books
+Magical Artifacts                   mild           14 books
+Elemental Magic                     moderate       14 books
+Forced Proximity                    moderate       13 books
+Ancient Evil Awakens                mild           13 books
+Mentor and Student                  mild           13 books
+Dragon Rider                        moderate       13 books
+Betrayal                            moderate       13 books
+Divine Magic                        dark           13 books
+End of the World Stakes             mild           13 books
+Reluctant Hero                      mild           13 books
+Redemption Arc                      dark           12 books
+Fated Mates                         mild           11 books
+Chosen One                          mild           11 books
+Mentor Figure                       dark           11 books
+Cursed Character                    mild           11 books
+Magical Plague                      dark           11 books
+Portal Fantasy                      dark           10 books
+Gothic Castle                       dark           10 books
+Last Of Their Kind                  moderate       10 books
+Mentor Figure                       mild           10 books
+Coming of Age                       lighthearted   10 books
+Quest                               lighthearted   10 books
+Last Of Their Kind                  dark           10 books
+Immortal Character                  mild           10 books
+War Between Kingdoms                brutal         10 books
+
+DARKNESS SUB-PAGES — NOINDEXED (<10 books): 157
+------------------------------------------------------------
+Survival Journey                    mild           9 books
+Curse Breaking                      mild           9 books
+Necromancy                          moderate       9 books
+Redemption Arc                      moderate       9 books
+Fae Court Drama                     dark           9 books
+Quest                               brutal         9 books
+Political Intrigue                  brutal         9 books
+End of the World Stakes             brutal         9 books
+Betrayal                            dark           9 books
+Secret Royalty                      moderate       8 books
+Necromancy                          dark           8 books
+Political Marriage                  moderate       8 books
+Magical Plague                      moderate       7 books
+Rebellion                           mild           7 books
+Anti-Hero                           mild           7 books
+Curse Breaking                      dark           7 books
+Ancient Evil Awakens                brutal         7 books
+Secret Royalty                      mild           6 books
+Desert Kingdom                      moderate       6 books
+Dark Lord                           mild           6 books
+Anti-Hero                           brutal         6 books
+Dying Empire                        brutal         6 books
+Gothic Castle                       moderate       6 books
+Villain Protagonist                 dark           6 books
+Lost Heir                           dark           6 books
+Survival Journey                    brutal         6 books
+Enemies to Lovers                   dark           6 books
+War Between Kingdoms                mild           6 books
+Love Triangle                       moderate       6 books
+Prophecy                            mild           6 books
+Power at a Cost                     mild           5 books
+Outcast Hero                        lighthearted   5 books
+Fated Mates                         dark           5 books
+Enemies to Lovers                   mild           5 books
+Second Chance Romance               moderate       5 books
+Slow Burn                           lighthearted   5 books
+Fae Court Drama                     mild           5 books
+Viking-Inspired World               moderate       5 books
+Dragon Rider                        dark           4 books
+Forbidden Romance                   lighthearted   4 books
+Tournament Arc                      mild           4 books
+Prophecy Child                      mild           4 books
+Succession Crisis                   mild           4 books
+Trial by Combat                     moderate       4 books
+Lost Heir                           mild           4 books
+Morally Grey Hero                   mild           4 books
+Revenge Story                       mild           4 books
+End of the World Stakes             lighthearted   4 books
+Reluctant Hero                      lighthearted   4 books
+Forced Proximity                    dark           4 books
+Hero Becomes Villain                moderate       4 books
+Blood Magic                         moderate       4 books
+Succession Crisis                   brutal         4 books
+Heist                               moderate       4 books
+Secret Identity                     mild           4 books
+Bodyguard Romance                   moderate       4 books
+Second Chance Romance               dark           4 books
+Rivals to Allies                    moderate       4 books
+Desert Kingdom                      dark           4 books
+Grumpy x Sunshine                   mild           4 books
+Floating Islands                    moderate       4 books
+Divine Magic                        mild           4 books
+Political Intrigue                  lighthearted   3 books
+Tournament Arc                      moderate       3 books
+Underground City                    dark           3 books
+Cursed Character                    brutal         3 books
+Forbidden Magic                     mild           3 books
+Morally Grey Hero                   brutal         3 books
+Heist                               mild           3 books
+Floating Islands                    mild           3 books
+Pyrrhic Victory                     moderate       3 books
+Pyrrhic Victory                     dark           3 books
+Redemption Arc                      mild           3 books
+Secret Royalty                      dark           3 books
+Political Marriage                  dark           3 books
+Frozen Wasteland                    dark           3 books
+Last Of Their Kind                  mild           3 books
+Pirate Fantasy                      moderate       3 books
+Elemental Magic                     dark           3 books
+Sentient Weapon                     dark           3 books
+Magic Tournament                    moderate       3 books
+Trial by Combat                     dark           2 books
+Grumpy x Sunshine                   lighthearted   2 books
+Betrayal                            mild           2 books
+Assassin Protagonist                mild           2 books
+Underground City                    moderate       2 books
+Power at a Cost                     brutal         2 books
+Rebellion                           lighthearted   2 books
+Grumpy x Sunshine                   moderate       2 books
+Mentor Figure                       lighthearted   2 books
+Lost Heir                           brutal         2 books
+Prophecy                            brutal         2 books
+Dragon Rider                        mild           2 books
+Magical Artifacts                   brutal         2 books
+Found Family                        lighthearted   2 books
+Blood Magic                         dark           2 books
+Coming of Age                       brutal         2 books
+Betrayal                            brutal         2 books
+Forced Proximity                    mild           2 books
+Hidden Society                      lighthearted   2 books
+Rebellion                           brutal         2 books
+Villain Protagonist                 moderate       2 books
+Revenge Story                       brutal         2 books
+Divine Magic                        brutal         2 books
+Viking-Inspired World               dark           2 books
+Pirate Fantasy                      dark           2 books
+Prophecy Child                      dark           2 books
+Heist                               dark           2 books
+Political Marriage                  mild           2 books
+Gothic Castle                       mild           1 books
+Fae Court Drama                     lighthearted   1 books
+Love Triangle                       lighthearted   1 books
+Enemies to Lovers                   lighthearted   1 books
+Sentient Weapon                     brutal         1 books
+Last Of Their Kind                  brutal         1 books
+Prophecy                            lighthearted   1 books
+Prophecy Child                      lighthearted   1 books
+Chosen One                          brutal         1 books
+Prophecy Child                      brutal         1 books
+Forbidden Magic                     brutal         1 books
+Magic Tournament                    lighthearted   1 books
+Portal Fantasy                      lighthearted   1 books
+Villain Protagonist                 mild           1 books
+Necromancy                          mild           1 books
+Revenge Story                       lighthearted   1 books
+Mentor and Student                  lighthearted   1 books
+Grumpy x Sunshine                   dark           1 books
+Desert Kingdom                      mild           1 books
+Bodyguard Romance                   mild           1 books
+Frozen Wasteland                    mild           1 books
+Pirate Fantasy                      brutal         1 books
+Outcast Hero                        brutal         1 books
+Magic Tournament                    mild           1 books
+Dark Lord                           lighthearted   1 books
+Hero Becomes Villain                lighthearted   1 books
+Villain Protagonist                 lighthearted   1 books
+Dark Lord                           brutal         1 books
+Frozen Wasteland                    brutal         1 books
+Villain Protagonist                 brutal         1 books
+Rivals to Allies                    mild           1 books
+Magical Plague                      mild           1 books
+Second Chance Romance               mild           1 books
+Tournament Arc                      dark           1 books
+Magical Plague                      brutal         1 books
+Love Triangle                       dark           1 books
+Dying Empire                        mild           1 books
+Underground City                    mild           1 books
+Desert Kingdom                      brutal         1 books
+Fated Mates                         lighthearted   1 books
+Elemental Magic                     mild           1 books
+Magical Artifacts                   lighthearted   1 books
+Hero Becomes Villain                dark           1 books
+Pirate Fantasy                      mild           1 books
+Pyrrhic Victory                     brutal         1 books
+Love Triangle                       mild           1 books
+Secret Identity                     lighthearted   1 books
+Viking-Inspired World               mild           1 books

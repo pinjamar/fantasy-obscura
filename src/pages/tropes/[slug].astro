@@ -181,6 +181,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
     <script is:inline type="application/ld+json" set:html={jsonLd} />
     <script is:inline type="application/ld+json" set:html={tropeFaqJsonLd} />
     <script is:inline type="application/ld+json" set:html={tropeBreadcrumbJsonLd} />
+    {(books?.length ?? 0) < 10 && <meta name="robots" content="noindex, follow" />}
   </Fragment>
   <div class="max-w-2xl mx-auto">
 

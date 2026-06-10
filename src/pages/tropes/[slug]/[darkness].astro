@@ -127,6 +127,7 @@ const breadcrumbJsonLd = JSON.stringify({
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />
     <link rel="canonical" href={`https://thegrimoire.co/tropes/${slug}/${darkness}/`} />
+    {(books?.length ?? 0) < 10 && <meta name="robots" content="noindex, follow" />}
   </Fragment>
   <div class="max-w-2xl mx-auto">
 

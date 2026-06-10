@@ -506,7 +506,7 @@ const metaDescription = profile?.writing_style
   ? profile.writing_style.slice(0, 160)
   : cleanBio
   ? cleanBio.slice(0, 160)
-  : `Explore all ${books.length} fantasy books by ${authorName} on The Grimoire — genres, tropes, and darkness ratings.`;
+  : `Explore all ${books.length} fantasy books by ${authorName} on The Grimoire - genres, tropes and darkness ratings.`;
 
 // Fun stats
 const topRatedBook = sortedBooks[0] ?? null;
@@ -563,7 +563,7 @@ const authorBreadcrumbJsonLd = JSON.stringify({
 });
 ---
 
-<Layout title={`${authorName} — Fantasy Books & Series | The Grimoire`} description={metaDescription} image={profile?.photo_url || undefined} noindex={books.length < 3}>
+<Layout title={`${authorName} | Fantasy Books & Series | The Grimoire`} description={metaDescription} image={profile?.photo_url || undefined} noindex={books.length < 3 || !profile?.writing_style}>
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={authorJsonLd} />
     <script is:inline type="application/ld+json" set:html={authorBreadcrumbJsonLd} />

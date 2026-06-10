@@ -53,15 +53,6 @@ export const GET: APIRoute = async ({ locals }) => {
     .not('best_starting_point', 'is', null);
   const enrichedAuthorSlugs = (enrichedAuthorRows ?? []).map((a) => a.slug as string);
 
-  // Plain authors: >= 3 books but no enriched content — include at lower priority.
-  // Excludes authors with < 3 books (noindexed on the actual page).
-  const { data: plainAuthorRows } = await supabase
-    .from('authors').select('slug')
-    .gte('book_count', 3)
-    .not('slug', 'is', null)
-    .is('writing_style', null);
-  const plainAuthorSlugs = (plainAuthorRows ?? []).map((a) => a.slug as string);
-
   // Fetch all trope slugs + darkness combinations in one query
   const { data: tropeRows } = await supabase
     .from('books')
@@ -129,8 +120,6 @@ export const GET: APIRoute = async ({ locals }) => {
     ...darknessCombos.map(({ tropeSlug, darknessSlug }) => urlEntry(`/tropes/${tropeSlug}/${darknessSlug}/`, '0.4', 'monthly')),
     // Curated book pages only (non-curated books are noindexed — excluded from sitemap)
     ...bookSlugs.map((s) => urlEntry(`/books/${s}/`, '0.5', 'monthly')),
-    // Authors — plain profiles (book list only, no editorial content)
-    ...plainAuthorSlugs.map((s) => urlEntry(`/authors/${s}/`, '0.4', 'monthly')),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
