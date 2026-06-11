@@ -140,6 +140,7 @@ import { endersGame } from './reading-orders/enders-game';
 import { outlander } from './reading-orders/outlander';
 import { swordOfTruth } from './reading-orders/sword-of-truth';
 import { shadowhunterChronicles } from './reading-orders/shadowhunter-chronicles';
+import { riftwarCycle } from './reading-orders/riftwar-cycle';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -201,6 +202,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   swordOfTruth,
   endersGame,
   shadowhunterChronicles,
+  riftwarCycle,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
