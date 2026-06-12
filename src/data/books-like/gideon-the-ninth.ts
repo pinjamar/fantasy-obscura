@@ -26,6 +26,25 @@ export const gideonTheNinth: BooksLikeEntry = {
       "If you loved Gideon the Ninth for its genre-defying strangeness, Gideon's irreverent voice, and the Harrow relationship, start with Piranesi, The Lies of Locke Lamora, and Six of Crows.",
     why_people_love:
       "Gideon the Ninth resists every attempt to describe it cleanly, which is most of why people love it. Elevator pitch: nine necromancers and their sword-wielding cavaliers go to a haunted house on a dying planet to solve ancient puzzles, become immortal god-servants, and murder each other. What that description can't convey is the voice — Gideon Nav narrates in a register that is completely anachronistic to her gothic sci-fi setting, full of irreverence and pop energy, a person who has spent her whole life being told she is expendable and has decided to respond with sarcasm. The Harrow relationship — enemies, co-dependents, rivals, something else — is the book's actual subject, and Muir builds it in negative space: what Gideon will not admit, what Harrow will not say, the entire emotional content delivered through what neither character does. The body horror is real. The mystery is fair-play solvable. The sequel Harrow the Ninth is a completely different book that requires Gideon to understand. Hugo finalist.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Gideon the Ninth resists every attempt to describe it cleanly, which is most of why people love it. Elevator pitch: nine necromancers and their sword-wielding cavaliers go to a haunted house on a dying planet to solve ancient puzzles and murder each other. What that description can't convey is the voice.",
+      },
+      {
+        type: 'labeled',
+        label: "Gideon's Voice:",
+        text: "Completely anachronistic to her gothic sci-fi setting, full of irreverence and pop energy. A person who has spent her whole life being told she is expendable and has decided to respond with sarcasm. This narrator is the reason the book works.",
+      },
+      {
+        type: 'paragraph',
+        text: "The Harrow relationship — enemies, co-dependents, rivals, something else — is the book's actual subject, and Muir builds it in negative space: what Gideon will not admit, what Harrow will not say, the entire emotional content delivered through what neither character does.",
+      },
+      {
+        type: 'warning',
+        text: "The body horror is real. The sequel Harrow the Ninth is a completely different book that requires Gideon to understand, and the series grows stranger with each volume. Nothing else is quite like this.",
+      },
+    ],
   },
   aspects: [
     {

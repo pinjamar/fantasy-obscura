@@ -25,6 +25,25 @@ export const endersGame: BooksLikeEntry = {
       "If you loved Ender's Game for Battle School, the tactical brilliance, or the moral weight of being used, start with Red Rising, Old Man's War, and The Hunger Games.",
     why_people_love:
       "Battle School is one of the most purely satisfying training environments in fiction. A zero-gravity room where children fight mock battles — and Ender is relentlessly brilliant at them. But the book is not really about the games. It is about what it costs to be the best when the people who need you to be the best are also isolating you by design, stripping away every support system so that the weapon they are building has nowhere to lean except inward. Ender is genuinely extraordinary. He is also genuinely alone. And Orson Scott Card is careful to let you feel both things simultaneously — the pleasure of watching a prodigy operate at full capacity, and the unease of understanding what that capacity is actually being shaped for. The tactical sequences are thrilling in the way that chess is thrilling: you can follow exactly what Ender sees, why it works, and why his opponents cannot catch up. The ending lands with full force. Speaker for the Dead — the direct sequel — is a completely different kind of book and rewards finishing the first with full knowledge of what happened.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Battle School is one of the most purely satisfying training environments in fiction. A zero-gravity room where children fight mock battles — and Ender is relentlessly brilliant at them. But the book is not really about the games.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Isolation:',
+        text: "Ender is isolated by design — stripped of every support system so that the weapon being built has nowhere to lean except inward. He is genuinely extraordinary. He is also genuinely alone. Card makes you feel both things simultaneously.",
+      },
+      {
+        type: 'paragraph',
+        text: "The pleasure of watching a prodigy operate at full capacity, and the unease of understanding what that capacity is actually being shaped for. The tactical sequences are thrilling in the way that chess is thrilling: you can follow exactly what Ender sees, why it works, and why his opponents cannot catch up.",
+      },
+      {
+        type: 'warning',
+        text: "The ending lands with full force and benefits from going in as cold as possible. Speaker for the Dead — the direct sequel — is a completely different kind of book: slower, more philosophical, and one of the rare sequels that recontextualizes rather than diminishes the original.",
+      },
+    ],
   },
   aspects: [
     {

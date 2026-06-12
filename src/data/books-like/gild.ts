@@ -27,6 +27,25 @@ export const gild: BooksLikeEntry = {
       'If you loved Gild for its lush fairy-tale atmosphere, its King Midas mythology retelling, and its story of a woman slowly understanding that protection and possession are not the same thing, start with Spinning Silver, Caraval, and A Court of Thorns and Roses.',
     why_people_love:
       "Gild works on a deceptively simple premise: Auren is the favored of King Midas, literally gilded by his touch, kept in a luxurious cage she has never questioned because she was taught to call it safety. Kennedy's great move is making the reader understand Midas's appeal before dismantling it — Auren is not naive so much as shaped, her gratitude entirely genuine because she has no frame of reference for what she has given up. The fairy-tale atmosphere is immersive: the perpetual winter of the Sixth Kingdom, the gold ribbons Auren can extend from her back, the Midas court's cold glamour. Commander Rip arrives — covered in black spiked armor, rumored to be a demon — and is the first person to look at Auren as if she might be something other than a beautiful object. Kennedy is patient with the slow burn: the romance is almost entirely anticipation in this first volume. The pleasure is in watching Auren's certainties loosen one by one.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Gild works on a deceptively simple premise: Auren is the favored of King Midas, literally gilded by his touch, kept in a luxurious cage she has never questioned because she was taught to call it safety. Kennedy's great move is making the reader understand Midas's appeal before dismantling it.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Gold Ribbons:',
+        text: "The physical manifestation of Auren's power and her captivity simultaneously. She can extend them from her back; they are beautiful and they are tethers. Kennedy uses the magic as metaphor without ever letting it become only metaphor.",
+      },
+      {
+        type: 'paragraph',
+        text: "Commander Rip arrives — covered in black spiked armor, rumored to be a demon — and is the first person to look at Auren as if she might be something other than a beautiful object. Kennedy is patient with the slow burn: the romance is almost entirely anticipation in this first volume. The pleasure is in watching Auren's certainties loosen one by one.",
+      },
+      {
+        type: 'warning',
+        text: "This is a slow-burn setup book — the payoff is earned across multiple volumes, not in the first. Readers expecting the tension to resolve or the heat to escalate in book one should know the series deepens considerably in books two and three.",
+      },
+    ],
   },
   aspects: [
     {

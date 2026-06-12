@@ -24,6 +24,25 @@ export const fourthWing: BooksLikeEntry = {
       'If you loved Fourth Wing for the dragon bond, war-college pressure, enemies-to-lovers heat, and the mix of action and romantic tension, start with Eragon, From Blood and Ash and An Ember in the Ashes.',
     why_people_love:
       "Fourth Wing works because Yarros understood what she was building: a romantasy with a dragon rider skin stretched over it, and she leaned into both completely. Xaden and Violet's dynamic is the engine — the power imbalance, the secrets, the tension that keeps not resolving — but the dragon bond genuinely earns its place. Tairn isn't an accessory; the connection matters to the plot and to Violet's sense of identity. The war college setting gives the romance structure and stakes that pure romantasy often lacks. Fair warning: the prose is functional rather than literary, and if you're coming for the fantasy worldbuilding depth, manage expectations. You're here for the characters and the heat. Both deliver.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Fourth Wing works because Yarros understood what she was building: a romantasy with a dragon rider skin stretched over it, and she leaned into both completely. Xaden and Violet's dynamic is the engine — the power imbalance, the secrets, the tension that keeps not resolving.",
+      },
+      {
+        type: 'labeled',
+        label: 'Tairn:',
+        text: "Not an accessory; the dragon bond genuinely earns its place. The connection matters to the plot and to Violet's sense of identity in a way that most fantasy dragons don't bother to establish.",
+      },
+      {
+        type: 'paragraph',
+        text: "The war college setting gives the romance structure and stakes that pure romantasy often lacks. Every scene has a clock running underneath it.",
+      },
+      {
+        type: 'warning',
+        text: "The prose is functional rather than literary, and if you're coming for the fantasy world-building depth, manage expectations. You're here for the characters and the heat. Both deliver.",
+      },
+    ],
   },
   aspects: [
     {
@@ -38,7 +57,8 @@ export const fourthWing: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "The best adult fantasy written around female dragon riders. Shannon builds a world where the bond between rider and dragon is a matter of identity and destiny — it chooses you, it changes you, it costs you something. Three female POVs, dense world-building across multiple continents, a slow-burn romance that earns its resolution. If Tairn and Violet's bond was your hook, this is the essential read. Caveat: 848 pages, no heat, and the ratio of fantasy to romance is inverted compared to Fourth Wing. The dragon lore is the reward.",
+          note: "The best adult fantasy written around female dragon riders. Shannon builds a world where the bond between rider and dragon is a matter of identity and destiny — it chooses you, it changes you, it costs you something. Three female POVs, dense world-building across multiple continents, a slow-burn romance that earns its resolution. If Tairn and Violet's bond was your hook, this is the essential read.",
+          caveat: "848 pages, no heat, and the ratio of fantasy to romance is inverted compared to Fourth Wing. The dragon lore is the reward.",
           tags: [
             'Dragon Bond',
             'Female Dragon Riders',
@@ -67,7 +87,8 @@ export const fourthWing: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "The closest structural match to Fourth Wing in the romantasy space. Guard-and-ward forbidden romance, a hero with secrets he's not sharing, a heroine who's been told she's special her whole life and is only now finding out why. The heat level is equivalent, the tension is well-executed, and Hawke has the same controlled-dangerous energy as Xaden. Caveat: the lore reveals arrive slowly and some readers find the middle books repetitive. The first two are the high point.",
+          note: "The closest structural match to Fourth Wing in the romantasy space. Guard-and-ward forbidden romance, a hero with secrets he's not sharing, a heroine who's been told she's special her whole life and is only now finding out why. The heat level is equivalent, the tension is well-executed, and Hawke has the same controlled-dangerous energy as Xaden.",
+          caveat: "the lore reveals arrive slowly and some readers find the middle books repetitive. The first two are the high point.",
           tags: [
             'Enemies to Lovers',
             'Forbidden Romance',
@@ -92,7 +113,8 @@ export const fourthWing: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (5 books)',
           audiobook: true,
-          note: 'If you read Fourth Wing for the romantasy DNA — the morally grey love interest, the slow burn that eventually breaks open — ACOTAR is the natural companion read. Maas and Yarros are working in the same tradition: female protagonist discovering power, a dangerous man with reasons to keep his distance, a world that keeps raising the stakes. Caveat: ACOTAR book one is the weakest. ACOMAF is where the series genuinely earns its reputation.',
+          note: 'If you read Fourth Wing for the romantasy DNA — the morally grey love interest, the slow burn that eventually breaks open — ACOTAR is the natural companion read. Maas and Yarros are working in the same tradition: female protagonist discovering power, a dangerous man with reasons to keep his distance, a world that keeps raising the stakes.',
+          caveat: "ACOTAR book one is the weakest. ACOMAF is where the series genuinely earns its reputation.",
           tags: [
             'Fae Courts',
             'Enemies to Lovers',
@@ -122,7 +144,8 @@ export const fourthWing: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy)',
           audiobook: true,
-          note: "A school where you can die at any moment, a protagonist with a hidden power so destructive she's spent her whole life suppressing it, and an enemies-to-lovers dynamic with the most annoyingly heroic boy in the building. The Scholomance has the same pressure-cooker energy as the Riders Quadrant without the military structure. El's voice is sharp and funny in a way Violet's isn't. Caveat: no dragons, no heat. You're here for the academy survival tension and the slow-burn.",
+          note: "A school where you can die at any moment, a protagonist with a hidden power so destructive she's spent her whole life suppressing it, and an enemies-to-lovers dynamic with the most annoyingly heroic boy in the building. The Scholomance has the same pressure-cooker energy as the Riders Quadrant without the military structure. El's voice is sharp and funny in a way Violet's isn't.",
+          caveat: "no dragons, no heat. You're here for the academy survival tension and the slow-burn.",
           tags: [
             'Deadly Academy',
             'Hidden Powers',
@@ -176,7 +199,8 @@ export const fourthWing: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy)',
           audiobook: true,
-          note: "The 'I have power I didn't know about and the wrong people want to control it' arc maps directly onto Violet's. Alina is a military mapmaker who turns out to be the one person with power over the Fold — a darkness consuming her country. The Darkling is the definitive morally grey love interest who weaponises his charm, and the series lets him be genuinely dangerous. Caveat: first book is the weakest in the Grishaverse. Six of Crows — set in the same world — is where Bardugo peaks. Less heat than Fourth Wing.",
+          note: "The 'I have power I didn't know about and the wrong people want to control it' arc maps directly onto Violet's. Alina is a military mapmaker who turns out to be the one person with power over the Fold — a darkness consuming her country. The Darkling is the definitive morally grey love interest who weaponises his charm, and the series lets him be genuinely dangerous.",
+          caveat: "first book is the weakest in the Grishaverse. Six of Crows — set in the same world — is where Bardugo peaks. Less heat than Fourth Wing.",
           tags: [
             'Hidden Powers',
             'Morally Grey LI',
@@ -200,7 +224,8 @@ export const fourthWing: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (8 books)',
           audiobook: true,
-          note: "The same author as ACOTAR — Maas is the closest structural influence on Yarros. Celaena is an assassin whose real heritage and power are hidden from her across the series, and the reveals escalate in ways Fourth Wing fans will recognise. Caveat: book one is the weakest; push to Crown of Midnight. Less heat than Fourth Wing, more political intrigue. Eight books is a commitment — but the series earns it by book three.",
+          note: "The same author as ACOTAR — Maas is the closest structural influence on Yarros. Celaena is an assassin whose real heritage and power are hidden from her across the series, and the reveals escalate in ways Fourth Wing fans will recognise.",
+          caveat: "book one is the weakest; push to Crown of Midnight. Less heat than Fourth Wing, more political intrigue. Eight books is a commitment — but the series earns it by book three.",
           tags: [
             'Same Author as ACOTAR',
             'Hidden Heritage',

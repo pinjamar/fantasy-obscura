@@ -25,6 +25,25 @@ export const emilyWilde: BooksLikeEntry = {
       'If you loved Emily Wilde for the cozy scholarly atmosphere, the achingly slow romance with Wendell, and the depth of European faerie lore, start with Jonathan Strange & Mr Norrell, Piranesi, and Uprooted.',
     why_people_love:
       'Emily Wilde works because its protagonist is genuinely difficult — not in a performative way, but in the honest way of someone who has organised her entire life around her work and sees social niceties as an inefficient use of time. The romance with Wendell is built on proximity and grudging respect that neither of them acknowledges, which makes every small moment carry more weight than an entire chapter of explicit yearning in a louder book. Fawcett grounds the faerie lore in real Northern European folklore traditions — the Hidden Folk feel genuinely alien and dangerous beneath the cozy surface — and the journal format keeps the voice intimate without being precious. It is a quiet book that trusts readers to find the tension themselves, which is exactly what makes it so satisfying.',
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Emily Wilde works because its protagonist is genuinely difficult — not in a performative way, but in the honest way of someone who has organised her entire life around her work and sees social niceties as an inefficient use of time.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Romance:',
+        text: "Built on proximity and grudging respect that neither of them acknowledges, which makes every small moment carry more weight than an entire chapter of explicit yearning in a louder book. Wendell is charming and mysterious; Emily refuses to be charmed.",
+      },
+      {
+        type: 'paragraph',
+        text: "Fawcett grounds the faerie lore in real Northern European folklore traditions — the Hidden Folk feel genuinely alien and dangerous beneath the cozy surface — and the journal format keeps the voice intimate without being precious.",
+      },
+      {
+        type: 'warning',
+        text: "It is a quiet book that trusts readers to find the tension themselves. If you are reading for kinetic faerie action or fast-building romance, recalibrate. The pleasure is cumulative and the payoff comes slowly.",
+      },
+    ],
   },
   aspects: [
     {
@@ -134,7 +153,8 @@ export const emilyWilde: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "A moneylender's daughter makes a bargain with a cold fae-like king and spends the novel outmanoeuvring him through intelligence rather than power. The Staryk feel genuinely alien — beautiful, merciless, and operating by rules that do not bend for human sentiment — which maps closely to Fawcett's Hidden Folk. The romance is a slow thaw rather than a burn, which is actually closer to Emily Wilde's register than most slow-burn recommendations. The winter atmosphere is gorgeous. Caveat: multiple POVs and a more plot-heavy structure than Emily Wilde.",
+          note: "A moneylender's daughter makes a bargain with a cold fae-like king and spends the novel outmanoeuvring him through intelligence rather than power. The Staryk feel genuinely alien — beautiful, merciless, and operating by rules that do not bend for human sentiment — which maps closely to Fawcett's Hidden Folk. The romance is a slow thaw rather than a burn, which is actually closer to Emily Wilde's register than most slow-burn recommendations. The winter atmosphere is gorgeous.",
+          caveat: 'multiple POVs and a more plot-heavy structure than Emily Wilde.',
           tags: [
             'Slow-Burn Romance',
             'Fae King',

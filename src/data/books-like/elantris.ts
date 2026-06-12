@@ -26,6 +26,25 @@ export const elantris: BooksLikeEntry = {
       'If you loved Elantris for the mystery of the broken magic, the three-way political chess game, and a protagonist who refuses to give in to despair, start with Piranesi, The Lions of Al-Rassan, and The Goblin Emperor.',
     why_people_love:
       "Elantris works because Sanderson gives you a mystery where the world itself is the puzzle — not who did it, but why the magic broke, what the Aons mean, and whether a city of suffering undead-like people can be saved at all. Raoden's arc is rare in fantasy: a protagonist whose weapon is hope rather than power, who builds something human in a place designed to strip humanity away. The three competing POVs — Raoden surviving inside Elantris, Sarene playing court politics outside, Hrathen engineering religious conquest — move independently until they collide, and the plotting is tight enough that the climax earns every piece it spent the book setting up. For a first novel, the ambition is remarkable. The rough edges — thinner prose, less psychological depth than later Sanderson — are real but they don't undermine what the book does well.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Elantris works because Sanderson gives you a mystery where the world itself is the puzzle — not who did it, but why the magic broke, what the Aons mean, and whether a city of suffering undead-like people can be saved at all.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Three POVs:',
+        text: "Raoden surviving inside Elantris, Sarene playing court politics outside, Hrathen engineering religious conquest — each with its own logic, its own blind spots. They move independently until they collide, and the plotting is tight enough that the climax earns every piece it spent the book setting up.",
+      },
+      {
+        type: 'paragraph',
+        text: "Raoden's arc is rare in fantasy: a protagonist whose weapon is hope rather than power, who builds something human in a place designed to strip humanity away. This is what Sanderson does well: structures built to produce a specific emotional satisfaction.",
+      },
+      {
+        type: 'warning',
+        text: "For a first novel, the ambition is remarkable. The rough edges — thinner prose, less psychological depth than later Sanderson — are real but they don't undermine what the book does well. Readers coming from Mistborn or The Way of Kings should calibrate expectations.",
+      },
+    ],
   },
   aspects: [
     {
@@ -61,7 +80,8 @@ export const elantris: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy)',
           audiobook: true,
-          note: "A world that ends regularly, a magic system directly tied to the catastrophe that keeps breaking it, and a structure built around slowly revealing what actually happened to cause the current state of things. Jemisin and Sanderson are working the same theme — magic as something once whole that was shattered by a specific historical event — but Jemisin's execution is more brutal, more personal, and more structurally experimental. Darker than Elantris by several orders of magnitude, and the prose is deliberately challenging. The payoff across all three books is extraordinary. Caveat: not hopeful in the way Elantris is; Jemisin earns her hope expensively.",
+          note: "A world that ends regularly, a magic system directly tied to the catastrophe that keeps breaking it, and a structure built around slowly revealing what actually happened to cause the current state of things. Jemisin and Sanderson are working the same theme — magic as something once whole that was shattered by a specific historical event — but Jemisin's execution is more brutal, more personal, and more structurally experimental. Darker than Elantris by several orders of magnitude, and the prose is deliberately challenging. The payoff across all three books is extraordinary.",
+          caveat: 'not hopeful in the way Elantris is; Jemisin earns her hope expensively.',
           warning: 'Child death, slavery, genocide, systemic oppression. Intense and unrelenting.',
           tags: ['Broken Magic', 'World Mystery', 'Tragedy', 'Multiple POV', 'Literary Fantasy'],
           amazon_url:
@@ -104,7 +124,8 @@ export const elantris: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (unfinished — 2 of 3 books out)',
           audiobook: true,
-          note: "The political and academic intrigue at the University has the same quality as Elantris's court politics — people with competing agendas manoeuvring around each other while the protagonist tries to learn something the establishment doesn't want known. Rothfuss is the better prose stylist and Kvothe is a more fully realised character than Raoden, but the shared DNA is the puzzle-box structure: the sense that there is a hidden logic to this world and you are slowly being given the pieces. Caveat: book three has been unfinished for fifteen years. Read knowing this.",
+          note: "The political and academic intrigue at the University has the same quality as Elantris's court politics — people with competing agendas manoeuvring around each other while the protagonist tries to learn something the establishment doesn't want known. Rothfuss is the better prose stylist and Kvothe is a more fully realised character than Raoden, but the shared DNA is the puzzle-box structure: the sense that there is a hidden logic to this world and you are slowly being given the pieces.",
+          caveat: 'book three has been unfinished for fifteen years. Read knowing this.',
           tags: ['Academic Fantasy', 'Magic System', 'Mystery', 'Slow Build', 'Unreliable Narrator'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',

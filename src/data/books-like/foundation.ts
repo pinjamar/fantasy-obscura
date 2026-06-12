@@ -26,6 +26,25 @@ export const foundation: BooksLikeEntry = {
       'If you loved Foundation for the dying empire, the chess-game politics, or the ideas-as-plot structure, start with Dune, A Memory Called Empire, and The Three-Body Problem.',
     why_people_love:
       "Foundation does something almost no other novel attempts: it makes the rise and fall of civilisations the plot. There are no consistent protagonists — the book spans 150 years through a series of linked stories, each generation facing a crisis that Hari Seldon's mathematics predicted centuries earlier. The drama is never 'will our hero survive' but 'will humanity find the correct path.' Seldon invented psychohistory — the mathematical science of predicting the behaviour of large populations — and his Grand Plan is the engine the entire series runs on. Every generation thinks they are acting freely; the reader understands they are being guided by invisible historical forces. That gap is where Foundation lives. The satisfaction is intellectual rather than emotional: watching the Plan unfold, seeing each crisis solved through economics or politics or the strategic use of religion rather than through combat or heroism. Asimov invented the dying empire template in science fiction with this book, established 'ideas as plot' as a viable aesthetic, and created the basic grammar that a century of space opera has spoken since. The Apple TV+ adaptation takes major liberties — the books are worth reading entirely on their own terms.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Foundation does something almost no other novel attempts: it makes the rise and fall of civilisations the plot. There are no consistent protagonists — the book spans 150 years through a series of linked stories, each generation facing a crisis that Hari Seldon's mathematics predicted centuries earlier.",
+      },
+      {
+        type: 'labeled',
+        label: 'Psychohistory:',
+        text: "The mathematical science of predicting the behaviour of large populations. Every generation thinks they are acting freely; the reader understands they are being guided by invisible historical forces. That gap is where Foundation lives.",
+      },
+      {
+        type: 'paragraph',
+        text: "The satisfaction is intellectual rather than emotional: watching the Plan unfold, seeing each crisis solved through economics or politics or the strategic use of religion rather than through combat or heroism. Asimov invented the dying empire template in science fiction with this book.",
+      },
+      {
+        type: 'warning',
+        text: "Foundation is a book of ideas rather than characters — no single person carries the story from beginning to end. If you read primarily for protagonist investment and emotional throughline, adjust expectations. This is history as drama, not biography.",
+      },
+    ],
   },
   aspects: [
     {
@@ -43,7 +62,8 @@ export const foundation: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books, complete)',
           audiobook: true,
-          note: "The Bene Gesserit's Missionaria Protectiva — a millennia-long breeding program and the deliberate seeding of religious prophecy across planets — is the closest analogue in SF to Seldon's Plan: a secret architecture designed to guide humanity through a specific crisis, using belief and culture as the mechanism rather than mathematics. Herbert's answer is sharper than Asimov's. The plan works, and what it produces is Paul Atreides, who becomes something the plan never intended. If Foundation is the story of a scheme that succeeds as designed, Dune is the story of one that succeeds and destroys everything anyway. Darker than Foundation, denser in ecological and religious texture, and the first book is one of the genre's defining works. Caveat: the sequels grow philosophically stranger and more demanding with each volume. Dune alone reads as a complete, self-contained experience.",
+          note: "The Bene Gesserit's Missionaria Protectiva — a millennia-long breeding program and the deliberate seeding of religious prophecy across planets — is the closest analogue in SF to Seldon's Plan: a secret architecture designed to guide humanity through a specific crisis, using belief and culture as the mechanism rather than mathematics. Herbert's answer is sharper than Asimov's. The plan works, and what it produces is Paul Atreides, who becomes something the plan never intended. If Foundation is the story of a scheme that succeeds as designed, Dune is the story of one that succeeds and destroys everything anyway. Darker than Foundation, denser in ecological and religious texture, and the first book is one of the genre's defining works.",
+          caveat: "the sequels grow philosophically stranger and more demanding with each volume. Dune alone reads as a complete, self-contained experience.",
           tags: [
             'Dying Empire',
             'Political Intrigue',
@@ -151,7 +171,8 @@ export const foundation: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "Liu Cixin is doing what Asimov does — using physics and history as the drama rather than individual human stakes — but with contemporary scientific ideas and a scope that eventually dwarfs Foundation's. The three-body problem becomes a civilisation-ending threat, and the trilogy's answer to Seldon's psychohistory is a series of ideas about deterrence, civilisational game theory, and the dark logic of a universe where every civilisation is a potential threat to every other. Foundation starts at the fall of one empire; this trilogy ends at the heat death of the universe. Caveat: the first book is the least action-driven; readers who find the early Cultural Revolution chapters slow should know the scope expands enormously from the second book onward.",
+          note: "Liu Cixin is doing what Asimov does — using physics and history as the drama rather than individual human stakes — but with contemporary scientific ideas and a scope that eventually dwarfs Foundation's. The three-body problem becomes a civilisation-ending threat, and the trilogy's answer to Seldon's psychohistory is a series of ideas about deterrence, civilisational game theory, and the dark logic of a universe where every civilisation is a potential threat to every other. Foundation starts at the fall of one empire; this trilogy ends at the heat death of the universe.",
+          caveat: "the first book is the least action-driven; readers who find the early Cultural Revolution chapters slow should know the scope expands enormously from the second book onward.",
           tags: [
             'Hard Sci-Fi',
             'Civilisational Stakes',
@@ -205,7 +226,8 @@ export const foundation: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "Simmons structures Hyperion as seven pilgrims each telling their own story in a different genre — soldier, priest, poet, scholar, detective — all converging on the same civilisational crisis. Like Foundation, no single character carries continuity across the structure; only the crisis does. Simmons brings literary craft Asimov never attempted, and the anthology structure produces the same pleasure as the Seldon Crises: each story illuminates a different facet of the same collapse. Hyperion ends on a deliberate cliffhanger; The Fall of Hyperion resolves it immediately. Caveat: the series weakens sharply after the first two books.",
+          note: "Simmons structures Hyperion as seven pilgrims each telling their own story in a different genre — soldier, priest, poet, scholar, detective — all converging on the same civilisational crisis. Like Foundation, no single character carries continuity across the structure; only the crisis does. Simmons brings literary craft Asimov never attempted, and the anthology structure produces the same pleasure as the Seldon Crises: each story illuminates a different facet of the same collapse. Hyperion ends on a deliberate cliffhanger; The Fall of Hyperion resolves it immediately.",
+          caveat: "the series weakens sharply after the first two books.",
           tags: [
             'Civilisational Scale',
             'Anthology Structure',
