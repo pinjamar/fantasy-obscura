@@ -23,7 +23,26 @@ export const childrenOfBloodAndBone: BooksLikeEntry = {
     answer_line:
       'If you loved Children of Blood and Bone for its West African mythology, the oppression-and-resistance spine, and the fierce protagonists fighting a system built to erase them, start with An Ember in the Ashes, The Gilded Ones, and Akata Witch.',
     why_people_love:
-      "Children of Blood and Bone works because the stakes are personal before they are political. Zélie isn't trying to save the world in the abstract — she watched her mother die, she knows what the oppression costs, and the magic system is inseparable from identity and culture in a way that most YA fantasy never attempts. Adeyemi draws on Yoruba mythology and gives the maji a history rooted in loss rather than destiny. The dual POV adds the complexity that a single narrator would flatten — Amari's arc is its own story about complicity and inherited guilt, and the two protagonists push against each other in ways that keep the politics from becoming simple. The pacing is relentless. Caveat: the romance is present but secondary; readers coming for slow-burn heat will find this lighter than most YA romantasy.",
+      "Children of Blood and Bone works because the stakes are personal before they are political. Zélie isn't trying to save the world in the abstract — she watched her mother die, she knows what the oppression costs, and the magic system is inseparable from identity and culture in a way that most YA fantasy never attempts. Adeyemi draws on Yoruba mythology and gives the maji a history rooted in loss rather than destiny. The dual POV adds the complexity that a single narrator would flatten — Amari's arc is its own story about complicity and inherited guilt, and the two protagonists push against each other in ways that keep the politics from becoming simple. The pacing is relentless.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Children of Blood and Bone works because the stakes are personal before they are political. Zélie isn't trying to save the world in the abstract — she watched her mother die, she knows what the oppression costs, and the magic system is inseparable from identity and culture in a way that most YA fantasy never attempts.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Mythology:',
+        text: "Adeyemi draws on Yoruba mythology and gives the maji a history rooted in loss rather than destiny. The magic is not a gift — it was suppressed, it cost people their lives, and reclaiming it means reclaiming identity and history simultaneously.",
+      },
+      {
+        type: 'paragraph',
+        text: "The dual POV adds the complexity that a single narrator would flatten — Amari's arc is its own story about complicity and inherited guilt, and the two protagonists push against each other in ways that keep the politics from becoming simple. The pacing is relentless.",
+      },
+      {
+        type: 'warning',
+        text: "The romance is present but secondary — readers coming for slow-burn heat will find this lighter than most YA romantasy. This is action-forward fiction about power, oppression, and identity, with the romantic arc in the background.",
+      },
+    ],
   },
   aspects: [
     {
@@ -67,7 +86,8 @@ export const childrenOfBloodAndBone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "West African-inspired world, a girl who discovers forbidden power during a ritual that was designed to exclude her, and a society built on suppressing women who bleed gold. The parallel to Children of Blood and Bone is direct: power tied to identity, a ruling class with a vested interest in erasing that power, and a protagonist radicalised by what the system does to people she loves. Considerably darker in tone — the violence is more graphic and the oppression more explicit. Caveat: the romance is present but the book's focus is squarely on the power and resistance arc.",
+          note: "West African-inspired world, a girl who discovers forbidden power during a ritual that was designed to exclude her, and a society built on suppressing women who bleed gold. The parallel to Children of Blood and Bone is direct: power tied to identity, a ruling class with a vested interest in erasing that power, and a protagonist radicalised by what the system does to people she loves. Considerably darker in tone — the violence is more graphic and the oppression more explicit.",
+          caveat: "The romance is present but the book's focus is squarely on the power and resistance arc.",
           tags: [
             'West African Inspired',
             'Oppression & Resistance',
@@ -98,7 +118,8 @@ export const childrenOfBloodAndBone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "The closest match in terms of structure and emotional register: a Scholar girl in a Roman-inspired empire that has conquered her people, driven underground by a military state, who is forced into the heart of that state to survive. Tahir's dual POV gives you both the oppressed and the soldier who enforces the system, and both characters are trapped rather than villainous. The stakes are personal before they are political, exactly as in Adeyemi. Caveat: no magic system on Zélie's scale, and the romance is slower and more restrained.",
+          note: "The closest match in terms of structure and emotional register: a Scholar girl in a Roman-inspired empire that has conquered her people, driven underground by a military state, who is forced into the heart of that state to survive. Tahir's dual POV gives you both the oppressed and the soldier who enforces the system, and both characters are trapped rather than villainous. The stakes are personal before they are political, exactly as in Adeyemi.",
+          caveat: "No magic system on Zélie's scale, and the romance is slower and more restrained.",
           tags: [
             'Oppression & Resistance',
             'Dual POV',
@@ -123,7 +144,9 @@ export const childrenOfBloodAndBone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "A girl from a despised ethnic underclass who discovers shamanic power rooted in her people's mythology and uses it to fight a war that was never meant to include her. The power-as-cultural-identity thread is the same as Adeyemi's, and Kuang takes the oppression narrative further and harder than most fantasy is willing to. This is where the similarity ends in terms of tone — The Poppy War is brutal, historically grounded, and the later books go to places Children of Blood and Bone never approaches. Caveat: significantly darker, no YA sensibility, violence is extreme.",
+          note: "A girl from a despised ethnic underclass who discovers shamanic power rooted in her people's mythology and uses it to fight a war that was never meant to include her. The power-as-cultural-identity thread is the same as Adeyemi's, and Kuang takes the oppression narrative further and harder than most fantasy is willing to. This is where the similarity ends in terms of tone — The Poppy War is brutal, historically grounded, and the later books go to places Children of Blood and Bone never approaches.",
+          caveat: 'Significantly darker, no YA sensibility, violence is extreme.',
+          warning: 'Extreme violence, genocide, war crimes. Not YA.',
           tags: [
             'Oppression & Resistance',
             'Mythology-Based Magic',
@@ -131,7 +154,6 @@ export const childrenOfBloodAndBone: BooksLikeEntry = {
             'War',
             'Power at a Cost',
           ],
-          warning: 'Extreme violence, genocide, war crimes. Not YA.',
           amazon_url:
             'https://www.amazon.com/s?k=The+Poppy+War+RF+Kuang&tag=librariancura-20',
           bookshop_url:
@@ -155,7 +177,8 @@ export const childrenOfBloodAndBone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Duology (2 books)',
           audiobook: true,
-          note: "Multi-POV ensemble of outcasts, each carrying a history of being discarded by the world that created them, executing something impossibly dangerous together. The momentum and the sense that every chapter raises the stakes are the same. Bardugo's world is different — no African mythology, more heist than quest — but the ensemble chemistry and the way the characters' outsider status fuels rather than limits them is exactly what drives Children of Blood and Bone. Caveat: darker, more cynical in tone, and the magic is secondary to the plot mechanics.",
+          note: "Multi-POV ensemble of outcasts, each carrying a history of being discarded by the world that created them, executing something impossibly dangerous together. The momentum and the sense that every chapter raises the stakes are the same. Bardugo's world is different — no African mythology, more heist than quest — but the ensemble chemistry and the way the characters' outsider status fuels rather than limits them is exactly what drives Children of Blood and Bone.",
+          caveat: 'Darker, more cynical in tone, and the magic is secondary to the plot mechanics.',
           tags: [
             'Ensemble Cast',
             'Outcasts',

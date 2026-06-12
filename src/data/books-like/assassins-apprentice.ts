@@ -25,6 +25,25 @@ export const assassinsApprentice: BooksLikeEntry = {
       "If you loved Assassin's Apprentice for Fitz's emotional depth, the suffocating court politics, and the way Robin Hobb makes sacrifice feel genuinely costly, start with Tigana, The Name of the Wind, and The Traitor Baru Cormorant.",
     why_people_love:
       "Assassin's Apprentice is one of the most emotionally precise fantasy novels ever written. Fitz is not a chosen one — he is illegitimate, overlooked, and used by everyone who claims to care about him, and Robin Hobb makes you feel every indignity in close detail. The Wit and the Skill are magic systems that cost something real. The court politics are suffocating in the best way. The reason readers return to this series is not the plot — it's that Hobb writes grief, loyalty, and belonging better than almost anyone in the genre. Fair warning: this series will hurt you. It is designed to.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Assassin's Apprentice is one of the most emotionally precise fantasy novels ever written. Fitz is not a chosen one — he is illegitimate, overlooked, and used by everyone who claims to care about him, and Hobb makes you feel every indignity in close detail. The court of the Six Duchies is as beautiful and as suffocating as any in fantasy — everyone has a role, everyone has an agenda, and Fitz never quite fits either.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Magic:',
+        text: "The Wit — a psychic bond with animals — and the Skill — a form of mental communication — are both presented as abilities that cost the user in ways the court regards as unseemly. Both mark Fitz as different, and both will be used against him by people who consider him a resource.",
+      },
+      {
+        type: 'paragraph',
+        text: "The reason readers return to this series is not the plot — it is that Hobb writes grief, loyalty, and belonging better than almost anyone in the genre. You will know exactly what Fitz should do, watch him be unable to do it, and feel his reasons completely.",
+      },
+      {
+        type: 'warning',
+        text: "This series will hurt you. It is designed to. The Farseer Trilogy is three books of escalating emotional cost, and Hobb does not protect her protagonist from consequences. Read it knowing you are signing up for a long, specific kind of pain.",
+      },
+    ],
   },
   aspects: [
     {
@@ -43,7 +62,8 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (unfinished)',
           audiobook: true,
-          note: "The closest thing in modern fantasy to Hobb's first-person intimacy. Kvothe narrates his own life with the same obsessive self-examination as Fitz — the prose is exceptional, the emotional beats hit hard, and the gap between who he is and who he claims to be is the real story. Caveat: the series is unfinished and has been for over a decade. Read knowing you may not get a conclusion.",
+          note: "The closest thing in modern fantasy to Hobb's first-person intimacy. Kvothe narrates his own life with the same obsessive self-examination as Fitz — the prose is exceptional, the emotional beats hit hard, and the gap between who he is and who he claims to be is the real story.",
+          caveat: 'The series is unfinished and has been for over a decade. Read knowing you may not get a conclusion.',
           tags: [
             'First-Person Narration',
             'Coming of Age',
@@ -64,7 +84,8 @@ export const assassinsApprentice: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: 'Maia is thrust onto a throne he never wanted, surrounded by people who either fear or resent him, and the novel is entirely about the interior life of someone trying to be good under impossible circumstances. The emotional register — outsider in a court, desperate for belonging, choosing kindness when cruelty would be easier — is the closest any standalone comes to the Farseer experience. Caveat: much lighter in tone and stakes than Hobb. No betrayal here will break you.',
+          note: 'Maia is thrust onto a throne he never wanted, surrounded by people who either fear or resent him, and the novel is entirely about the interior life of someone trying to be good under impossible circumstances. The emotional register — outsider in a court, desperate for belonging, choosing kindness when cruelty would be easier — is the closest any standalone comes to the Farseer experience.',
+          caveat: 'Much lighter in tone and stakes than Hobb. No betrayal here will break you.',
           tags: [
             'Outsider Protagonist',
             'Court Politics',
@@ -91,7 +112,8 @@ export const assassinsApprentice: BooksLikeEntry = {
           heat_level: 'Open Door',
           standalone: true,
           audiobook: true,
-          note: "Kay writes literary fantasy at the same emotional register as Hobb — every political manoeuvre has a personal cost, every betrayal lands because you understand all sides. Tigana is about a conquered people whose very name has been erased from memory, and the book handles grief, identity, and resistance with the same care Hobb brings to loyalty and belonging. Caveat: broader cast and less intimate than Fitz's first-person — but equally devastating by the end.",
+          note: "Kay writes literary fantasy at the same emotional register as Hobb — every political manoeuvre has a personal cost, every betrayal lands because you understand all sides. Tigana is about a conquered people whose very name has been erased from memory, and the book handles grief, identity, and resistance with the same care Hobb brings to loyalty and belonging.",
+          caveat: "Broader cast and less intimate than Fitz's first-person — but equally devastating by the end.",
           tags: [
             'Literary Fantasy',
             'Political Intrigue',
@@ -115,7 +137,8 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (2 books)',
           audiobook: true,
-          note: 'An ambassador from a small station arrives at the heart of a vast empire and must navigate deadly court politics while carrying the recorded memory of her murdered predecessor. The political intrigue is as layered as anything in the Farseer books, and Martine is equally interested in identity — what makes you yourself when another mind lives in yours. Caveat: more science fiction in setting; the emotional beats are pure literary fantasy.',
+          note: 'An ambassador from a small station arrives at the heart of a vast empire and must navigate deadly court politics while carrying the recorded memory of her murdered predecessor. The political intrigue is as layered as anything in the Farseer books, and Martine is equally interested in identity — what makes you yourself when another mind lives in yours.',
+          caveat: 'More science fiction in setting; the emotional beats are pure literary fantasy.',
           tags: [
             'Court Intrigue',
             'Identity',
@@ -145,7 +168,8 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "Baru Cormorant is an accountant who decides to destroy an empire from within, and the novel is ruthless about what that costs her. It shares Hobb's core obsession — loyalty, identity, and the price of survival — and like Hobb it is completely unwilling to protect its protagonist from consequences. One of the most politically sophisticated and emotionally brutal fantasy novels of the last decade. Caveat: the ending is one of the most discussed gut-punches in modern fantasy. Go in knowing it will not be kind.",
+          note: "Baru Cormorant is an accountant who decides to destroy an empire from within, and the novel is ruthless about what that costs her. It shares Hobb's core obsession — loyalty, identity, and the price of survival — and like Hobb it is completely unwilling to protect its protagonist from consequences. One of the most politically sophisticated and emotionally brutal fantasy novels of the last decade.",
+          caveat: 'The ending is one of the most discussed gut-punches in modern fantasy. Go in knowing it will not be kind.',
           tags: [
             'Political Fantasy',
             'Sacrifice',
@@ -169,7 +193,8 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books + standalones)',
           audiobook: true,
-          note: 'Where Hobb breaks your heart through intimacy, Abercrombie does it through disillusionment. The First Law systematically dismantles every fantasy hero archetype — the barbarian, the torturer, the crippled knight — and the political machinery that surrounds them is as corrupt and grinding as anything in the Six Duchies. Caveat: much drier, more ironic tone than Hobb. Less emotional warmth, more cold clarity.',
+          note: 'Where Hobb breaks your heart through intimacy, Abercrombie does it through disillusionment. The First Law systematically dismantles every fantasy hero archetype — the barbarian, the torturer, the crippled knight — and the political machinery that surrounds them is as corrupt and grinding as anything in the Six Duchies.',
+          caveat: 'Much drier, more ironic tone than Hobb. Less emotional warmth, more cold clarity.',
           tags: [
             'Grimdark',
             'Political Intrigue',

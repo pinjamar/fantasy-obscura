@@ -8,7 +8,7 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
     db_slug: 'a-court-of-silver-flames',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9781635575613-L.jpg',
     darkness_level: 3,
-    heat_level: 'Fiery',
+    heat_level: 'Explicit',
     series: 'A Court of Thorns and Roses',
     series_number: 5,
     tropes: [
@@ -25,6 +25,25 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
       'If you loved A Court of Silver Flames for the intense character healing, explicit romance, sharp-edged chemistry, and warrior-training arc, start with From Blood and Ash, Kingdom of the Wicked and Fourth Wing.',
     why_people_love:
       "ACOSF works for a different reason than the earlier ACOTAR books: Nesta is not likeable, and Maas doesn't try to make her so. She starts the book drunk, angry, and actively self-destructing — and the slow process of watching her stop performing fine is more compelling than any of Feyre's heroics. Cassian earns his love interest status by refusing to leave someone alone who is trying very hard to be left alone. The Valkyrie training arc gives the book its spine; the seething antagonism between two people who are essentially the same stubborn, prideful mess gives it its pulse. The spice level is higher than any previous ACOTAR book. If that's what you came for, it delivers. If you preferred the earlier books' adventure-forward pacing, this is slower and more internal.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "ACOSF works for a different reason than the earlier ACOTAR books: Nesta is not likeable, and Maas doesn't try to make her so. She starts the book drunk, angry, and actively self-destructing. The slow process of watching her stop performing fine is more compelling than any of Feyre's heroics.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Dynamic:',
+        text: "Cassian earns his love interest status by refusing to leave someone alone who is trying very hard to be left alone. Two people who are essentially the same stubborn, prideful mess, circling each other with weaponised hostility.",
+      },
+      {
+        type: 'paragraph',
+        text: 'The Valkyrie training arc gives the book its spine — women proving themselves in a military institution built to exclude them, the physical grind, the earned camaraderie. The seething antagonism between Nesta and Cassian gives it its pulse.',
+      },
+      {
+        type: 'warning',
+        text: "The spice level is higher than any previous ACOTAR book. If that's what you came for, it delivers without reservation. If you preferred the earlier books' adventure-forward pacing, this is slower and more internal — the plot is almost entirely Nesta's psychology.",
+      },
+    ],
   },
   aspects: [
     {
@@ -43,7 +62,8 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "The most direct structural match for ACOSF's dynamic: a heroine kept sheltered and powerless, a guard assigned to protect her who clearly feels more than he should, and a romance built entirely on charged hostility that neither of them will admit to. Hawke is essentially Cassian with a bigger secret. The heat level is equivalent, the slow build is there, and the world-building reward for sticking with the series is substantial. The heroine is softer than Nesta — some readers prefer that; others will miss the equal-sized ego clash.",
+          note: "The most direct structural match for ACOSF's dynamic: a heroine kept sheltered and powerless, a guard assigned to protect her who clearly feels more than he should, and a romance built entirely on charged hostility that neither of them will admit to. Hawke is essentially Cassian with a bigger secret. The heat level is equivalent, the slow build is there, and the world-building reward for sticking with the series is substantial.",
+          caveat: 'The heroine is softer than Nesta. Some readers prefer that; others will miss the equal-sized ego clash.',
           tags: [
             'Enemies to Lovers',
             'Guard & Ward',
@@ -68,7 +88,8 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: 'Victorian Sicily setting, a deal with a demon prince, and a heroine who meets her love interest with absolute contempt and never fully loses it. The chemistry between Emilia and Wrath is built on mutual antagonism and barely-leashed respect — the same push-pull engine that drives the Nesta/Cassian dynamic. Lower heat than ACOSF, but the tension is palpable throughout. The mythology is rich and the atmosphere is thick with sensory detail. Caveat: the mystery plot is less developed than the romance — go in for the dynamic, not the whodunit.',
+          note: 'Victorian Sicily setting, a deal with a demon prince, and a heroine who meets her love interest with absolute contempt and never fully loses it. The chemistry between Emilia and Wrath is built on mutual antagonism and barely-leashed respect — the same push-pull engine that drives the Nesta/Cassian dynamic. The mythology is rich and the atmosphere is thick with sensory detail.',
+          caveat: 'The mystery plot is less developed than the romance. Go in for the dynamic, not the whodunit.',
           tags: [
             'Enemies to Lovers',
             'Deal with a Demon',
@@ -99,7 +120,8 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "Rin's arc is the grimdark mirror of Nesta's: a young woman from nothing who discovers power she was told she shouldn't have, surrounded by institutions that underestimate her, making increasingly terrible choices because the alternative is extinction. The self-destruction is real here — Kuang doesn't soften it. No romance, no spice, and the darkness is far more brutal than ACOSF. But if Nesta's rage and refusal to perform wellness was what resonated, Rin takes that archetype to its logical extreme.",
+          note: "Rin's arc is the grimdark mirror of Nesta's: a young woman from nothing who discovers power she was told she shouldn't have, surrounded by institutions that underestimate her, making increasingly terrible choices because the alternative is extinction. If Nesta's rage and refusal to perform wellness resonated, Rin takes that archetype to its logical extreme.",
+          caveat: 'No romance, no spice, and the darkness is far more brutal than ACOSF. The self-destruction here is not metaphorical.',
           tags: [
             'Female Rage',
             'Trauma Arc',
@@ -126,7 +148,8 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: 'Two characters in impossible situations finding each other across the worst possible circumstances. Laia starts the series as someone everyone underestimates — including herself — and her arc is learning to stop apologising for taking up space. The training sequences, the military world-building, and the sense of being trapped inside an institution designed to crush you all mirror ACOSF. Much lower heat, but the emotional intensity matches. The series sustains its quality across all four books, which is rarer than it should be.',
+          note: 'Two characters in impossible situations finding each other across the worst possible circumstances. Laia starts the series as someone everyone underestimates — including herself — and her arc is learning to stop apologising for taking up space. The training sequences, the military world-building, and the sense of being trapped inside an institution designed to crush you all mirror ACOSF. The series sustains its quality across all four books, which is rarer than it should be.',
+          caveat: 'Much lower heat than ACOSF. If the spice was the main draw, this will not deliver on that front.',
           tags: [
             'Dual POV',
             'Military Fantasy',
@@ -182,7 +205,8 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books + spinoffs)',
           audiobook: true,
-          note: "The Grishaverse is the natural world-building companion to ACOTAR: military factions with specific magical abilities, a court that's gorgeous and predatory in equal measure, and a heroine who discovers power she never knew she had. Bardugo's prose is sharper and more controlled than Maas's, and the mythology draws from Russian folklore in a way ACOTAR doesn't. Lower heat, but Six of Crows — set in the same world — is where the franchise truly opens up.",
+          note: "The Grishaverse is the natural world-building companion to ACOTAR: military factions with specific magical abilities, a court that's gorgeous and predatory in equal measure, and a heroine who discovers power she never knew she had. Bardugo's prose is sharper and more controlled than Maas's, and the mythology draws from Russian folklore in a way ACOTAR doesn't.",
+          caveat: 'Lower heat than ACOSF. The world becomes far more interesting in Six of Crows — the Shadow and Bone trilogy is more YA in register than the later Grishaverse entries.',
           tags: [
             'Military Fantasy',
             'Magical Abilities',

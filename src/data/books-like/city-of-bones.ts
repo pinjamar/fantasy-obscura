@@ -23,6 +23,25 @@ export const cityOfBones: BooksLikeEntry = {
       'If you loved City of Bones for the Shadowhunter world, Jace, or the ensemble cast, start with Shadow and Bone, The Cruel Prince, and Throne of Glass.',
     why_people_love:
       "Clary Fray goes to a club and watches three teenagers kill someone who then disappears — and from that moment, the ordinary world closes behind her. City of Bones is the entry point to one of the most expansive urban fantasy universes in YA: Shadowhunters descended from angels, demons, werewolves, warlocks, and vampires all operating in the shadow of regular New York under their own laws and politics. The world-building is intricate and obsessive in the best way — Clare invented a mythology with its own language, hierarchy, and history, and the details accumulate into something genuinely immersive. Jace is the engine: sarcastic, beautiful, morally complicated, and exactly the kind of love interest that keeps readers turning pages well past midnight. But the found family is what most readers actually stay for — Jace, Alec, Isabelle, Simon, and Magnus Bane are each distinct enough to carry their own books, and Clare eventually gives them all one. The Mortal Instruments ran to six books, then expanded into companion series set in Victorian London, Los Angeles, and beyond. If the world hooks you, there is essentially no end.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Clary goes to a club and watches three teenagers kill someone who then disappears — and from that moment, the ordinary world closes behind her. City of Bones is the entry point to one of the most expansive urban fantasy universes in YA: Shadowhunters descended from angels, demons, warlocks, and vampires operating under their own laws in the shadow of regular New York.",
+      },
+      {
+        type: 'labeled',
+        label: 'Jace:',
+        text: "Sarcastic, beautiful, morally complicated, and exactly the kind of love interest that keeps readers turning pages well past midnight. The slow burn is built on the specific tension of two people who are most interesting to each other when they are arguing.",
+      },
+      {
+        type: 'paragraph',
+        text: "The found family is what most readers actually stay for. Jace, Alec, Isabelle, Simon, and Magnus Bane are each distinct enough to carry their own books — and Clare eventually gives them all one. The Mortal Instruments ran to six books, then expanded into companion series set in Victorian London, Los Angeles, and beyond. If the world hooks you, there is essentially no end.",
+      },
+      {
+        type: 'warning',
+        text: "The series has a major romantic complication mid-run that readers either accept or find difficult to move past. The world-building borrows heavily from established mythology rather than inventing its own. The companion series require significant further investment to follow all threads.",
+      },
+    ],
   },
   aspects: [
     {

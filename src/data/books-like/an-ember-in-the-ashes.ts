@@ -26,6 +26,25 @@ export const anEmberInTheAshes: BooksLikeEntry = {
       "If you loved An Ember in the Ashes for its dual POV across enemy lines, Roman-inspired empire, and impossible slow-burn romance, start with Red Rising, Children of Blood and Bone, and The Winner's Curse.",
     why_people_love:
       "An Ember in the Ashes works because Tahir gives equal weight to both sides of the divide. Laia is not a chosen one — she's a girl making a terrifying decision to save her brother and discovering she's braver than she believed; Elias is not a villain in disguise — he's a soldier who has done terrible things, knows it, and cannot stop. The Roman-inspired Martial Empire is rare in fantasy and Tahir uses it with care: the Masks, the Scholar underclass, the brutality built into the institution rather than attributed to individual cruelty. The slow-burn tension between Laia and Elias works because both of them are too occupied with surviving to act on it, and because the book has the discipline to keep survival first and romance second throughout.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "An Ember in the Ashes works because Tahir gives equal weight to both sides of the divide. Laia is not a chosen one — she is a girl making a terrifying decision to save her brother and discovering she is braver than she believed. Elias is not a villain in disguise — he is a soldier who has done terrible things, knows it, and cannot stop.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Empire:',
+        text: "The Roman-inspired Martial Empire is rare in fantasy and Tahir uses it with precision: the Masks, the Scholar underclass, the brutality built into the institution rather than attributed to individual cruelty. Oppression here is systemic — which means there are no simple villains and no clean escapes.",
+      },
+      {
+        type: 'paragraph',
+        text: "The slow-burn tension between Laia and Elias works because both are too occupied with surviving to act on it. The book has the discipline to keep survival first and romance second throughout — which is why the romance lands when it finally does.",
+      },
+      {
+        type: 'warning',
+        text: "This is dark YA with real violence and real stakes. The series runs four books and reader opinion on the later entries is divided. Book one stands alone well enough — start it knowing you can stop there and feel complete.",
+      },
+    ],
   },
   aspects: [
     {

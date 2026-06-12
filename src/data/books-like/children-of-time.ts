@@ -23,6 +23,25 @@ export const childrenOfTime: BooksLikeEntry = {
       'If you loved Children of Time for its non-human perspective and the intellectual puzzle of two civilisations meeting, start with A Deepness in the Sky, Project Hail Mary, and Embassytown.',
     why_people_love:
       "Children of Time alternates between two civilisations on a collision course: the spiders of a terraformed world, centuries into their uplifted development, and the last humans aboard the generation ship Gilgamesh, desperate for somewhere to land. Tchaikovsky's achievement is making both sides legible and sympathetic — the spider chapters are remarkable for rendering a genuinely non-human mind: a matriarchal society built around female dominance, pheromonal communication, religion based on a misunderstood deity, engineering that follows the logic of webs rather than metal. The human chapters are compelling but the spider chapters are why readers remember this book. The ending takes the premise of first contact further than most SF novels dare.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Children of Time alternates between two civilisations on a collision course: the spiders of a terraformed world, centuries into their development, and the last humans aboard the Gilgamesh, desperate for somewhere to land. Tchaikovsky's achievement is making both sides legible and sympathetic — which requires very different kinds of writing.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Spider Chapters:',
+        text: "A matriarchal society built around female dominance, pheromonal communication, religion based on a misunderstood deity, engineering that follows the logic of webs rather than metal. Tchaikovsky renders a genuinely non-human mind with patient specificity — you learn the logic before you can follow the plot.",
+      },
+      {
+        type: 'paragraph',
+        text: "The human chapters are compelling but the spider chapters are why readers remember this book. The ending takes the premise of first contact further than most SF novels dare — the final convergence pays off both civilisations' worth of patient build.",
+      },
+      {
+        type: 'warning',
+        text: "This is dense, idea-driven SF — the pleasure is intellectual before it is emotional. There is no central human relationship to carry readers through slower sections. The alternating structure means if one civilisation engages you less than the other, you will feel every chapter that belongs to it.",
+      },
+    ],
   },
   aspects: [
     {

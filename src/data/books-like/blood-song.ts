@@ -26,6 +26,25 @@ export const bloodSong: BooksLikeEntry = {
       "If you loved Blood Song for its training brotherhood, its frame narrative, or Vaelin's measured moral voice, start with The Name of the Wind, Assassin's Apprentice, and The Black Company.",
     why_people_love:
       "Vaelin Al Sorna is delivered to the Sixth Order — a military religious brotherhood — by his father at age ten, and the novel follows his training and early campaigns as a warrior-monk with an uncanny intuitive gift he calls the blood song. What made Blood Song a cult self-publishing phenomenon before it found a traditional publisher is the specific combination Anthony Ryan achieves: the full satisfying arc of a training school story (the brutal initiation, the forged brotherhood of your cohort, the progression from weakness to mastery) married to a frame narrative told by an older Vaelin in captivity to a historian, which means you're always reading against the weight of what has already happened. Vaelin is a rare grimdark-adjacent protagonist — genuinely good, not defined by trauma or cynicism, but operating in a world that will test that goodness with full seriousness. The Sixth Order's internal politics, its relationship to the Crown, and the theological questions about the faith it serves give the world a density that rewards attention. Readers who bounced off grimdark's mandatory nihilism often find Blood Song is the entry point back into dark epic fantasy.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Vaelin Al Sorna is delivered to the Sixth Order — a military religious brotherhood — by his father at age ten, and the novel follows his training and early campaigns as a warrior-monk with an intuitive gift he calls the blood song. What made Blood Song a cult phenomenon before it found a traditional publisher is the specific combination Ryan achieves: the full satisfying arc of a training-school story married to a frame narrative told by an older Vaelin in captivity.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Frame:',
+        text: "Vaelin tells his story to a historian while imprisoned — which means you are always reading against the weight of what has already happened. The gap between the earnest young man in the story and the older man telling it gives the training arc a melancholy the events themselves don't yet have.",
+      },
+      {
+        type: 'paragraph',
+        text: "Vaelin is a rare grimdark-adjacent protagonist — genuinely good, not defined by trauma or cynicism, but operating in a world that will test that goodness with full seriousness. Readers who bounced off grimdark's mandatory nihilism often find Blood Song is the entry point back into dark epic fantasy.",
+      },
+      {
+        type: 'warning',
+        text: "Book one is near-universally loved; books two and three are significantly more divisive. The series changes scope and tone after Blood Song, and many readers stop after the first volume. Start it knowing that is a legitimate place to stop.",
+      },
+    ],
   },
   aspects: [
     {

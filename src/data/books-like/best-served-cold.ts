@@ -25,6 +25,25 @@ export const bestServedCold: BooksLikeEntry = {
       "If you loved Best Served Cold for its methodical revenge plot, Shivers's deterioration arc, and grimdark mercenary world, start with Nevernight, The Lies of Locke Lamora, and The Poppy War.",
     why_people_love:
       'Best Served Cold is one of the few fantasy novels that takes revenge seriously as a subject — not as catharsis, but as a process with costs. Monza Murcatto assembles a crew of the damaged and the desperate to kill seven men, and Abercrombie documents every killing with the care of a writer who understands that each one makes her less of what she was. The book works on two levels simultaneously: as an extremely satisfying revenge narrative — the crew dynamics, the planning, the execution — and as a slow dismantling of that satisfaction, so that by the end nobody has received what they wanted, including the reader. Caul Shivers arriving in Styria to become a better man and leaving it as something worse is the most affecting character arc Abercrombie has written. Reads completely standalone; prior First Law knowledge adds texture but nothing essential.',
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Best Served Cold is one of the few fantasy novels that takes revenge seriously as a subject — not as catharsis, but as a process with costs. Monza Murcatto assembles a crew of the damaged and the desperate to kill seven men, and Abercrombie documents every killing with the care of a writer who understands that each one makes her less of what she was.",
+      },
+      {
+        type: 'labeled',
+        label: 'Caul Shivers:',
+        text: "A Northman who arrives in Styria to become a better man. His arc — watching someone choose, again and again, to do the expedient thing rather than the right one, until there is no right thing left — is the most affecting character study Abercrombie has written. He is the emotional centre of a book Monza nominally leads.",
+      },
+      {
+        type: 'paragraph',
+        text: "The book works on two levels simultaneously: as an extremely satisfying revenge narrative — crew dynamics, planning, execution — and as a slow dismantling of that satisfaction, so that by the end nobody has received what they wanted, including the reader. That double effect is the point.",
+      },
+      {
+        type: 'warning',
+        text: "Reads completely standalone — prior First Law knowledge adds texture but nothing essential. This is grimdark; the violence is real and the moral conclusions are bleak. Readers looking for revenge-as-catharsis will find the book actively working against that.",
+      },
+    ],
   },
   aspects: [
     {

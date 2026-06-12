@@ -26,6 +26,25 @@ export const assistantToTheVillain: BooksLikeEntry = {
       'If you loved Assistant to the Villain for its banter, its morally grey villain love interest, or its found family of delightful misfits, start with The Foxglove King, The Jasad Heir, and The House in the Cerulean Sea.',
     why_people_love:
       "Evie Sage desperately needs a job and accidentally ends up employed by the most feared villain in the kingdom — and discovers that the villain's lair is staffed by a surprisingly charming collection of misfits, that the work is oddly satisfying, and that her terrifying boss might not be entirely villainous. What made Maehrer's self-published debut a phenomenon is the precise calibration of its tone: the world has stakes and the villain is genuinely imposing, but the novel is primarily a comedy about office life in a fantasy evil organisation, and the banter between Evie and The Villain lands with the same timing as the best enemies-to-lovers romance. The found family of lair employees — the healer, the assassin, the monster in the dungeon — is as much the draw as the romance, and the slow burn is executed with enough restraint that the payoff feels earned. Readers who want romantasy without heavy darkness or explicit content find it here.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Evie Sage desperately needs a job and accidentally ends up employed by the most feared villain in the kingdom — and discovers that the villain's lair is staffed by a surprisingly charming collection of misfits, the work is oddly satisfying, and her terrifying boss might not be entirely villainous. What made Maehrer's self-published debut a phenomenon is the precision of its tone: the world has genuine stakes, but the novel is primarily a comedy about office life in a fantasy evil organisation.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Banter:',
+        text: "The exchanges between Evie and The Villain land with the same timing as the best enemies-to-lovers romance — funny, specific, and accumulating charge with each scene. The slow burn is executed with enough restraint that the payoff feels earned rather than manufactured.",
+      },
+      {
+        type: 'paragraph',
+        text: "The found family of lair employees — the healer, the assassin, the monster in the dungeon — is as much the draw as the romance. Readers who love the dynamic of misfits finding each other in unlikely circumstances will find it done with unusual care here.",
+      },
+      {
+        type: 'warning',
+        text: "This is cosy dark fantasy — the villain is imposing but the book is warm, the heat is closed door, and there is no grimdark brutality. Readers expecting dark romantasy in the ACOTAR register will find something considerably lighter and funnier.",
+      },
+    ],
   },
   aspects: [
     {

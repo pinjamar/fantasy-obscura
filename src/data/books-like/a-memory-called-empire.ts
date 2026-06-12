@@ -25,6 +25,25 @@ export const aMemoryCalledEmpire: BooksLikeEntry = {
       'If you loved A Memory Called Empire for its colonial ambivalence, its exquisite prose, or its meditation on memory and selfhood, start with Babel, Ancillary Justice, and Piranesi.',
     why_people_love:
       "Mahit Dzmare arrives in the Teixcalaanli Empire carrying a dead man's memories inside her skull, tasked with solving his murder and keeping her tiny mining station from annexation. What makes the novel extraordinary isn't the mystery — it's the central emotional problem: Mahit genuinely loves Teixcalaanli culture, its poetry, its beautiful bureaucratic rituals, even as she understands that this culture would prefer to absorb her people entirely rather than let them remain distinct. Arkady Martine writes with a poet's precision — the prose is dense with meaning, every named object and formal greeting doing political work — and the world-building rewards slow, attentive reading. The imago technology, carrying a predecessor's consciousness as a ghostly collaborator in your mind, is one of the most original ideas in recent SF and the sharpest tool for examining questions of selfhood and continuity. The duology is complete.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Mahit Dzmare arrives in the Teixcalaanli Empire carrying a dead man's memories inside her skull, tasked with solving his murder and keeping her tiny mining station from annexation. The mystery is well-constructed. But what makes the novel extraordinary is its central emotional problem.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Central Problem:',
+        text: "Mahit genuinely loves Teixcalaanli culture — its poetry, its beautiful bureaucratic rituals — even as she understands that this culture would prefer to absorb her people entirely rather than let them remain distinct. The ambivalence is the book.",
+      },
+      {
+        type: 'paragraph',
+        text: "Martine writes with a poet's precision — every named object and formal greeting doing political work. The imago technology, carrying a predecessor's consciousness as a ghostly collaborator in your mind, is one of the most original ideas in recent SF. The duology is complete.",
+      },
+      {
+        type: 'warning',
+        text: "This is a literary SF novel that rewards slow, attentive reading. It is not a thriller. The mystery moves at the pace of court intrigue, the world-building is dense, and the emotional payoff comes from ideas rather than action. If you want plot momentum, recalibrate expectations.",
+      },
+    ],
   },
   aspects: [
     {
@@ -42,7 +61,8 @@ export const aMemoryCalledEmpire: BooksLikeEntry = {
           standalone: true,
           audiobook: true,
           warning: 'colonial violence, racism, character death',
-          note: "A group of scholars from colonised nations attend Oxford's Royal Institute of Translation, where silver-worked magic runs on the untranslatable gap between languages — and where the Empire depends on their labour while treating them as perpetually foreign. Kuang is writing the same central problem as Martine: the specific grief of loving a culture built on your people's subjugation, the way fluency in the coloniser's language is both tool and trap. Babel is darker and more overtly political (it is, after all, subtitled 'the necessity of violence'), but the emotional texture of the two books maps directly — the ambivalence is the same, the cost is the same, and both authors refuse the comfortable resolution where love and resistance turn out to be compatible. Standalone.",
+          note: "A group of scholars from colonised nations attend Oxford's Royal Institute of Translation, where silver-worked magic runs on the untranslatable gap between languages — and where the Empire depends on their labour while treating them as perpetually foreign. Kuang is writing the same central problem as Martine: the specific grief of loving a culture built on your people's subjugation, the way fluency in the coloniser's language is both tool and trap. Both authors refuse the comfortable resolution where love and resistance turn out to be compatible. Standalone.",
+          caveat: 'Darker and more overtly political than A Memory Called Empire — subtitled "the necessity of violence" for a reason. The ending does not offer comfort.',
           tags: [
             'Colonial Themes',
             'Language as Power',
@@ -69,7 +89,8 @@ export const aMemoryCalledEmpire: BooksLikeEntry = {
           audiobook: true,
           warning:
             'systemic homophobia, graphic violence, severe psychological manipulation, devastating ending',
-          note: "Baru Cormorant watched the Empire of Masks colonise her home island as a child and decided the only way to destroy it was to excel within it — to become the most useful tool the Empire has, and then use that position to break it apart from the inside. Dickinson is writing with the same clarity as Martine about what empire does to a person who internalises its logic, and the novel's central bargain — how much of yourself can you sacrifice in service of a goal that may be impossible? — is the darkest version of what Mahit is navigating. Much harder and more brutal than A Memory Called Empire, and the ending is not safe. But if you want the colonial-ambivalence theme taken to its absolute limit, this is the book.",
+          note: "Baru Cormorant watched the Empire of Masks colonise her home island as a child and decided the only way to destroy it was to excel within it. Dickinson is writing with the same clarity as Martine about what empire does to a person who internalises its logic, and the novel's central bargain — how much of yourself can you sacrifice in service of a goal that may be impossible? — is the darkest version of what Mahit is navigating.",
+          caveat: 'Much harder and more brutal than A Memory Called Empire. The ending is not safe, and the series remains incomplete.',
           tags: [
             'Colonial Empire',
             'Political Manipulation',
@@ -100,7 +121,7 @@ export const aMemoryCalledEmpire: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "The closest parallel to A Memory Called Empire in tone, ambition, and setting. Leckie won every major SF award with this novel about Breq, a former warship's AI in a single human body, navigating the politics of a vast empire built on annexation and the meticulous maintenance of its own civilised self-image. Both novels use the formal structure of empire — the names, the ranks, the rituals, the poetry — as the primary texture of the world; both are fundamentally about what happens when someone positioned outside the imperial centre looks at it with clear eyes. Leckie's prose is cooler and more controlled; Martine's is warmer and more poetic. Both are essential reading for the same kind of reader.",
+          note: "The closest parallel to A Memory Called Empire in tone, ambition, and setting. Leckie won every major SF award with this novel about Breq, a former warship's AI in a single human body, navigating the politics of a vast empire built on annexation and the meticulous maintenance of its own civilised self-image. Both novels use the formal structure of empire — the names, the ranks, the rituals, the poetry — as the primary texture of the world. Leckie's prose is cooler and more controlled; Martine's is warmer and more poetic. Both are essential reading for the same kind of reader.",
           tags: [
             'Imperial SF',
             'Political Intrigue',
@@ -122,7 +143,8 @@ export const aMemoryCalledEmpire: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: "A half-goblin outcast becomes emperor of the elven court against all expectation and tries, desperately and sincerely, to be kind in a system designed to grind kindness out of rulers. The court politics are meticulous — ranks, titles, formal speech registers, the architecture of deference — and Addison shares Martine's interest in the way political systems encode themselves in language and etiquette. Much warmer in tone (Maia is the inverse of Mahit: not an outsider who loves the court, but an insider who was excluded from it and now must navigate it with grace), but the same granular attention to how power moves through ritual and how a genuine person survives inside it. Standalone, and one of the most comforting books in fantasy.",
+          note: "A half-goblin outcast becomes emperor of the elven court against all expectation and tries, desperately and sincerely, to be kind in a system designed to grind kindness out of rulers. The court politics are meticulous — ranks, titles, formal speech registers, the architecture of deference — and Addison shares Martine's interest in the way political systems encode themselves in language and etiquette. Standalone, and one of the most comforting books in fantasy.",
+          caveat: 'Much warmer in tone than A Memory Called Empire. Maia is not an outsider observer but an unwilling insider — the ambivalence and colonial tension are absent.',
           tags: [
             'Court Politics',
             'Unlikely Ruler',
@@ -150,7 +172,8 @@ export const aMemoryCalledEmpire: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: 'A man lives in a House of infinite halls and tides and statues, keeping careful journals of its wonders, slowly uncovering that his memory of himself is not his memory of himself. Clarke is working in a completely different register from Martine — quiet, strange, dream-logic rather than political thriller — but the central question is identical: if the past you remember was constructed by someone else, who are you? Piranesi is shorter than A Memory Called Empire and even more precise; every sentence is load-bearing. It is one of the best novels of the last decade and pairs perfectly with Martine for readers interested in the phenomenology of memory and selfhood. Standalone.',
+          note: 'A man lives in a House of infinite halls and tides and statues, keeping careful journals of its wonders, slowly uncovering that his memory of himself is not his memory of himself. Clarke is working in a completely different register from Martine — quiet, strange, dream-logic rather than political thriller — but the central question is identical: if the past you remember was constructed by someone else, who are you? Piranesi is shorter than A Memory Called Empire and even more precise; every sentence is load-bearing.',
+          caveat: 'The tone is completely different from Martine — stranger, more melancholic, dream-logic rather than political thriller. The connection is thematic rather than atmospheric.',
           tags: [
             'Memory and Identity',
             'Mystery',
@@ -175,7 +198,8 @@ export const aMemoryCalledEmpire: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Tetralogy (complete)',
           audiobook: true,
-          note: "Necromancers in space: a foul-mouthed swordswoman is paired with her lifelong enemy, a necromancer of terrifying power, to compete in a lethal house competition for a God-Emperor who may not be what he appears. The identity theme is pushed even further in book 2 (Harrow the Ninth), where questions about whose consciousness lives where and what memories can be trusted become the entire architecture of the novel. Start with Gideon: it's funny and brutal and completely unlike anything else in SF/fantasy. The tonal register — sardonic, gory, queer, surprisingly tender — is the polar opposite of A Memory Called Empire's formal elegance, which makes it the ideal companion read. The tetralogy completed in 2024.",
+          note: "Necromancers in space: a foul-mouthed swordswoman is paired with her lifelong enemy, a necromancer of terrifying power, to compete in a lethal house competition for a God-Emperor who may not be what he appears. The identity theme is pushed even further in book two, where questions about whose consciousness lives where and what memories can be trusted become the entire architecture of the novel. The tetralogy completed in 2024.",
+          caveat: "The tonal register — sardonic, gory, and relentlessly irreverent — is the polar opposite of A Memory Called Empire's formal elegance. The thematic link is real; the atmosphere is completely different.",
           tags: [
             'Necromancy',
             'Queer Characters',

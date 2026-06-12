@@ -25,6 +25,25 @@ export const dragonflight: BooksLikeEntry = {
       "If you loved Dragonriders of Pern for the Impression, the dragon bond, and the warmth of the Weyr — start with His Majesty's Dragon, Arrows of the Queen, and Eragon.",
     why_people_love:
       "Dragonriders of Pern works because the dragon bond is the most emotionally satisfying relationship in science fiction, disguised as fantasy. When a dragon hatches and chooses its rider — that moment of Impression, of recognition, of two minds finding each other across a crowd — McCaffrey invented something that has never been matched for pure wish-fulfilment with genuine emotional weight. The bond is telepathic and lifelong and total: the dragon knows everything about the rider, and when a dragon dies, the rider rarely survives. That cost is what gives the warmth its credibility. The Weyrs are the best version of the found-family structure in the genre: a community built around a shared purpose that outsiders don't fully understand, with its own hierarchy, rituals, and the specific intimacy of people who live with creatures most of the world has never seen up close. Lessa is among the first great female protagonists in genre fantasy — fierce, calculating, willing to make terrible decisions for the right reasons. The later books' revelation that Pern is science fiction — a colony world whose dragons were genetically engineered — is one of the great slow reveals in the genre, and reading the series knowing the secret changes everything.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Dragonriders of Pern works because the dragon bond is the most emotionally satisfying relationship in science fiction, disguised as fantasy. When a dragon hatches and chooses its rider — that moment of Impression, of two minds finding each other across a crowd — McCaffrey invented something that has never been matched for pure wish-fulfilment with genuine emotional weight.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Bond:',
+        text: "Telepathic and lifelong and total. The dragon knows everything about the rider, and when a dragon dies, the rider rarely survives. That cost is what gives the warmth its credibility — this is not a companion relationship, it is the most complete union in the genre.",
+      },
+      {
+        type: 'paragraph',
+        text: "Lessa is among the first great female protagonists in genre fantasy — fierce, calculating, willing to make terrible decisions for the right reasons. The later books' revelation that Pern is science fiction — a colony world whose dragons were genetically engineered — is one of the great slow reveals in the genre.",
+      },
+      {
+        type: 'warning',
+        text: "Pern is science fantasy with SF underpinnings that become increasingly explicit as the series continues. The books also reflect their 1960s–70s publication era in ways modern readers notice, particularly around gender dynamics in some of the Flight sequences. The core dragon-bond stories are largely unaffected.",
+      },
+    ],
   },
   aspects: [
     {

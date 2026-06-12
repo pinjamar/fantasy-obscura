@@ -25,6 +25,25 @@ export const aDeadlyEducation: BooksLikeEntry = {
       "If you loved A Deadly Education for El's voice, the Scholomance's brutal logic, or the enclave politics, start with Ninth House, The Magicians, and Babel.",
     why_people_love:
       "El Higgins is prophesied to cause mass death, has the power to do it, and has absolutely no intention of fulfilling any destiny. The Scholomance has no teachers and no staff — just students, monsters, and the brutal arithmetic of survival odds. Novik's masterstroke is El's voice: furious, precise, wickedly funny, and utterly self-aware about every trope she's being asked to inhabit. The trilogy uses the magic school setting to do serious work on class and privilege — the enclave families who've rigged the system versus the indie students who die at higher rates because they have no safety net. The series escalates dramatically: book 1 is tight and sharp, book 3 is world-scale. The trilogy completed in 2022.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "El Higgins is prophesied to cause mass death, has the power to do it, and has absolutely no intention of fulfilling any destiny. The Scholomance has no teachers and no staff — just students, monsters, and the brutal arithmetic of survival odds. The school is not a setting. It is the premise.",
+      },
+      {
+        type: 'labeled',
+        label: "El's Voice:",
+        text: "Furious, precise, wickedly funny, and utterly self-aware about every trope she is being asked to inhabit. Novik's masterstroke is giving the dark chosen-one prophecy to someone who finds the whole thing annoying.",
+      },
+      {
+        type: 'paragraph',
+        text: "The trilogy uses the magic school to do serious work on class and privilege — the enclave families who have rigged the system versus the indie students who die at higher rates because they have no safety net. The series escalates dramatically: book one is tight and sharp, book three is world-scale. The trilogy completed in 2022.",
+      },
+      {
+        type: 'warning',
+        text: "The first book drops you into the Scholomance with minimal explanation and trusts you to figure out the rules — the exposition is embedded in El's narration rather than delivered directly. Some readers find this disorienting at first. Push through; the system becomes clear by chapter five.",
+      },
+    ],
   },
   aspects: [
     {
@@ -45,7 +64,8 @@ export const aDeadlyEducation: BooksLikeEntry = {
           audiobook: true,
           warning:
             'sexual assault (backstory), graphic violence, substance abuse',
-          note: "Alex Stern gets into Yale on a mysterious scholarship and discovers the university's secret magical societies — the Houses of the Veil — practice real magic and have always operated above consequences. Alex has El's same energy: outsider, dark-powered, furious, refused by a system built to exclude people like her. Bardugo writes the institution as villain with the same clarity Novik brings to the Scholomance — the elite school as place where power and privilege calcify into something genuinely monstrous. Darker and more grounded than A Deadly Education, without the satirical wit, but the core premise (dangerous magic, corrupt institution, female protagonist with unusual power who survives by her own rules) lands in exactly the same space.",
+          note: "Alex Stern gets into Yale on a mysterious scholarship and discovers the university's secret magical societies — the Houses of the Veil — practice real magic and have always operated above consequences. Alex has El's same energy: outsider, dark-powered, furious, refused by a system built to exclude people like her. Bardugo writes the institution as villain with the same clarity Novik brings to the Scholomance — the elite school as place where power and privilege calcify into something genuinely monstrous.",
+          caveat: 'Darker and more grounded than A Deadly Education, without the satirical wit. The content warnings are real — this is not a book that softens its violence.',
           tags: [
             'Dark Academia',
             'Secret Societies',
@@ -73,7 +93,8 @@ export const aDeadlyEducation: BooksLikeEntry = {
           audiobook: true,
           warning:
             'war atrocities, genocide, drug addiction, extreme violence',
-          note: "Rin is a war orphan who gets into the elite Sinegard military academy by brute force and finds a school designed to confirm that people like her don't belong. Kuang is working with the same dynamic as Novik — a female protagonist from the wrong background, admitted to an institution that expected her to fail, discovering that her 'wrong' kind of power is more dangerous than anything the academy teaches. Where A Deadly Education stays sardonic, The Poppy War turns genuinely horrific in act two — it is a history of China's twentieth century rendered in fantasy, and it does not flinch. Start it knowing where it goes. The school section (roughly the first third) is a near-perfect dark academia novel by itself.",
+          note: "Rin is a war orphan who gets into the elite Sinegard military academy by brute force and finds a school designed to confirm that people like her don't belong. Kuang is working with the same dynamic as Novik — a female protagonist from the wrong background, admitted to an institution that expected her to fail, discovering that her 'wrong' kind of power is more dangerous than anything the academy teaches. The school section, roughly the first third, is a near-perfect dark academia novel by itself.",
+          caveat: "Where A Deadly Education stays sardonic throughout, The Poppy War turns genuinely horrific in act two. It is a history of China's twentieth century rendered in fantasy, and it does not flinch. Start it knowing where it goes.",
           tags: [
             'Military Academy',
             'Dark Power',
@@ -105,7 +126,8 @@ export const aDeadlyEducation: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "The Magicians is the anti-Harry Potter in the same way A Deadly Education is — a magic school story that takes the logical consequences of its premise seriously. Quentin Coldwater is El's mirror image: she refuses to be the dark chosen one; he desperately wants to be a special one and is repeatedly shown the gap between that desire and reality. Grossman's Brakebills has actual pedagogy, actual depression, actual adult consequences, and the series gets progressively darker as the Narnia-analogue (Fillory) is revealed to be exactly as dangerous as the real world. If you want El's dark wit extended into even grimmer territory with a protagonist whose arc is about disillusionment rather than refusal, this is the trilogy.",
+          note: "The Magicians is the anti-Harry Potter in the same way A Deadly Education is — a magic school story that takes the logical consequences of its premise seriously. Quentin Coldwater is El's mirror image: she refuses to be the dark chosen one; he desperately wants to be a special one and is repeatedly shown the gap between that desire and reality. Grossman's Brakebills has actual pedagogy, actual depression, actual adult consequences, and the series gets progressively darker as its Narnia-analogue is revealed to be exactly as dangerous as the real world.",
+          caveat: 'Quentin is far less likeable than El and his arc is about disillusionment rather than refusal — some readers find him genuinely difficult to root for.',
           tags: [
             'Dark Magic School',
             'Deconstructive Fantasy',
@@ -129,7 +151,8 @@ export const aDeadlyEducation: BooksLikeEntry = {
           heat_level: 'Open Door',
           standalone: true,
           audiobook: true,
-          note: "Agnieszka is a village girl taken by a powerful wizard to serve in his tower — and discovers that her magic is wild, rule-breaking, and completely unlike anything in his training. Novik is writing the same character archetype she later perfected in El: a female protagonist whose power is the 'wrong' kind, who learns by instinct rather than theory, who refuses the constraints of the magical tradition she's been handed. Uprooted is a standalone fairy tale with Eastern European folklore as its foundation; it's warmer and less sardonic than A Deadly Education but comes from the same authorial sensibility. If you loved El's approach to magic and want a self-contained story with the same DNA, start here.",
+          note: "Agnieszka is a village girl taken by a powerful wizard to serve in his tower — and discovers that her magic is wild, rule-breaking, and completely unlike anything in his training. Novik is writing the same character archetype she later perfected in El: a female protagonist whose power is the 'wrong' kind, who learns by instinct rather than theory, who refuses the constraints of the magical tradition she has been handed. Uprooted is a standalone fairy tale with Eastern European folklore as its foundation.",
+          caveat: 'Warmer and less sardonic than A Deadly Education, without the dark humour or the class politics. Closer to fairy tale than satire.',
           tags: [
             'Dark Fairy Tale',
             'Wild Magic',
@@ -160,7 +183,8 @@ export const aDeadlyEducation: BooksLikeEntry = {
           standalone: true,
           audiobook: true,
           warning: 'colonial violence, racism, character death',
-          note: "Oxford's Royal Institute of Translation runs on silver-worked magic that extracts power from untranslatable gaps between languages — and the Empire depends on scholars from colonised nations who are fluent enough to generate that power but not equal enough to benefit from it. Kuang's class commentary is even more explicit than Novik's: where the Scholomance's enclave system is a satire of meritocracy, Babel is a direct indictment of how institutions extract value from the people they exclude. The mechanism is different (colonialism rather than magical capitalism) but the emotional logic — a protagonist who is brilliant enough to succeed by the institution's rules and angry enough to understand why those rules are unjust — is identical. Standalone.",
+          note: "Oxford's Royal Institute of Translation runs on silver-worked magic that extracts power from untranslatable gaps between languages — and the Empire depends on scholars from colonised nations who are fluent enough to generate that power but not equal enough to benefit from it. The emotional logic is identical to the Scholomance's enclave system: a protagonist who is brilliant enough to succeed by the institution's rules and angry enough to understand why those rules are unjust. Standalone.",
+          caveat: 'Babel is darker and more overtly political than A Deadly Education, and ends without hope. The colonial indictment is explicit rather than satirical.',
           tags: [
             'Class Inequality',
             'Colonial Themes',
@@ -185,7 +209,7 @@ export const aDeadlyEducation: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "Jude is a mortal girl raised in the faerie court — a human among beings who are faster, stronger, and who can compel her with a word. She has no magic, no status, and no reason to be there except stubbornness and fury. Black is building the same power-structure fantasy as Novik: a protagonist who shouldn't survive the world she's in, who wins through intelligence and refusal rather than conventional power, surrounded by a social hierarchy where her position at the bottom is considered permanent and natural. The fae court politics are as meticulous as the enclave dynamics, and Cardan is a more romantically viable Orion — the sharp banter and the slow-burn enemies-to-lovers arc land with the same satisfaction.",
+          note: "Jude is a mortal girl raised in the faerie court — a human among beings who are faster, stronger, and who can compel her with a word. She has no magic, no status, and no reason to be there except stubbornness and fury. Black is building the same power-structure fantasy as Novik: a protagonist who shouldn't survive the world she is in, who wins through intelligence and refusal rather than conventional power. The fae court politics are as meticulous as the enclave dynamics, and Cardan is a more romantically viable Orion.",
           tags: [
             'Fae Court',
             'Enemies to Lovers',

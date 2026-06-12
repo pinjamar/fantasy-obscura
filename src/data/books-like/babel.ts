@@ -28,6 +28,25 @@ export const babel: BooksLikeEntry = {
       'If you loved Babel for its dark academic atmosphere, its colonial fury, or the found family it tears apart, start with The Poppy War, A Memory Called Empire, and The Atlas Six.',
     why_people_love:
       "Robin Swift is orphaned in Canton and brought to Oxford by a professor who needs his language skills to feed the silver-working magic that powers the British Empire — and spends twelve years becoming brilliant inside an institution that was built on the exploitation of people like him. Kuang's premise is elegant and devastating: the Empire's magic literally runs on the untranslatable gaps between languages, which means it needs scholars from colonised nations while ensuring those scholars remain subordinate. What makes Babel extraordinary is that Robin genuinely loves Oxford — loves the libraries, the Latin, the fellowship of scholars, the specific pleasure of getting something exactly right in translation — and Kuang refuses to let that love be simple or wrong. The found family of Robin, Ramy, Victoire, and Letty is one of the most precisely characterised in recent fantasy, and the reader's knowledge that the institution is going to demand a cost none of them can pay makes every warm scene between them ache. Kuang writes with the same combination of intellectual precision and emotional savagery that she brought to The Poppy War, and Babel is her most formally ambitious novel.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Robin Swift is orphaned in Canton and brought to Oxford by a professor who needs his language skills to feed the silver-working magic that powers the British Empire — and spends twelve years becoming brilliant inside an institution built on the exploitation of people like him. Kuang's premise is elegant and devastating: the Empire's magic runs on the untranslatable gaps between languages, which means it needs scholars from colonised nations while ensuring those scholars remain subordinate.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Found Family:',
+        text: "Robin, Ramy, Victoire, and Letty are one of the most precisely characterised groups in recent fantasy. The reader's knowledge that the institution is going to demand a cost none of them can pay makes every warm scene between them ache from the first chapter.",
+      },
+      {
+        type: 'paragraph',
+        text: "What makes Babel extraordinary is that Robin genuinely loves Oxford — the libraries, the Latin, the specific pleasure of getting something exactly right in translation — and Kuang refuses to let that love be simple or wrong. The book is as much about the seduction of institutions as their violence.",
+      },
+      {
+        type: 'warning',
+        text: "This is an angry book, and it does not offer catharsis. The ending is not redemptive. Kuang is interested in the logic of colonial violence and what resistance actually requires — if you want dark academia with a hopeful arc, this is not that book.",
+      },
+    ],
   },
   aspects: [
     {

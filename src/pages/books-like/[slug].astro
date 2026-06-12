@@ -268,7 +268,30 @@ const breadcrumbJsonLd = JSON.stringify({
   <!-- Why people love it -->
   <div class="mb-8 -mt-6 p-5 rounded-2xl bg-linear-to-br from-violet-50 via-white to-indigo-50 border border-violet-100 shadow-sm">
     <h2 class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Why people love this book</h2>
-    <p class="text-zinc-700 leading-relaxed text-[15px]">{source.why_people_love}</p>
+    {source.why_people_love_rich ? (
+      <div class="space-y-3 text-[15px] leading-relaxed">
+        {source.why_people_love_rich.map((block) => {
+          if (block.type === 'labeled') {
+            return (
+              <p class="text-zinc-700">
+                <span class="font-semibold text-zinc-900">{block.label}</span>{' '}{block.text}
+              </p>
+            );
+          }
+          if (block.type === 'warning') {
+            return (
+              <div class="flex gap-2 mt-1 p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-[14px]">
+                <span class="shrink-0">⚠️</span>
+                <p>{block.text}</p>
+              </div>
+            );
+          }
+          return <p class="text-zinc-700">{block.text}</p>;
+        })}
+      </div>
+    ) : (
+      <p class="text-zinc-700 leading-relaxed text-[15px]">{source.why_people_love}</p>
+    )}
   </div>
 
   <!-- ── WHAT YOU'RE REALLY LOOKING FOR ─────────────────────────── -->
@@ -330,9 +353,17 @@ const breadcrumbJsonLd = JSON.stringify({
                       ))}
                       {r.author_note && <span class="text-zinc-400"> ({r.author_note})</span>}
                     </p>
-                    <div class="flex items-center gap-2 text-sm mt-0.5">
-                      <span title={`Darkness ${recDarkness}/5`}>{darknessCandles(recDarkness)}</span>
-                      {h && <span title={`Heat — ${h.label}`}>{h.flames}</span>}
+                    <div class="flex items-center gap-3 text-sm mt-0.5 flex-wrap">
+                      <span class="flex items-center gap-1">
+                        <span class="text-xs text-zinc-400 font-medium">Darkness:</span>
+                        <span title={`Darkness ${recDarkness}/5`}>{darknessCandles(recDarkness)}</span>
+                      </span>
+                      {h && (
+                        <span class="flex items-center gap-1">
+                          <span class="text-xs text-zinc-400 font-medium">Heat:</span>
+                          <span title={`Heat — ${h.label}`}>{h.flames}</span>
+                        </span>
+                      )}
                     </div>
 
                     <!-- Tags: mobile only (above description, next to cover) -->
@@ -344,7 +375,12 @@ const breadcrumbJsonLd = JSON.stringify({
                   </div>
                   <!-- Description + tags + warning: full width on mobile, col 2 row 2 on sm+ -->
                   <div class="col-span-2 sm:col-span-1">
-                    <p class="text-sm text-zinc-700 leading-relaxed mb-3">{r.note}</p>
+                    <p class="text-sm text-zinc-700 leading-relaxed" class:list={[r.caveat ? 'mb-2' : 'mb-3']}>{r.note}</p>
+                    {r.caveat && (
+                      <p class="text-xs text-zinc-500 leading-relaxed border-l-2 border-zinc-300 pl-3 mb-3 italic">
+                        <span class="not-italic font-semibold text-zinc-600">Caveat:</span> {r.caveat}
+                      </p>
+                    )}
                     <!-- Tags: desktop only (below description) -->
                     <div class="hidden sm:flex flex-wrap gap-1.5 mb-3">
                       {r.tags.map((tag) => (

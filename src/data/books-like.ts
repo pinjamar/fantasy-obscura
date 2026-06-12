@@ -130,6 +130,8 @@ import { promiseOfBlood } from './books-like/promise-of-blood';
 import { magicianApprentice } from './books-like/magician-apprentice';
 import { wizardsFirstRule } from './books-like/wizards-first-rule';
 import { pawnOfProphecy } from './books-like/pawn-of-prophecy';
+import { sheWhoBecameTheSun } from './books-like/she-who-became-the-sun';
+import { redQueen } from './books-like/red-queen';
 
 export interface BooksLikeRec {
   title: string;
@@ -159,7 +161,8 @@ export interface BooksLikeAspectRec {
   series_number?: number; // e.g. 1
   series_label?: string; // e.g. "Series (10 books planned)" — overrides default "Series"
   audiobook: boolean;
-  note: string; // aspect-specific description + caveat
+  note: string;
+  caveat?: string;
   tags: string[];
   warning?: string; // content warning
   amazon_url: string;
@@ -170,6 +173,11 @@ export interface BooksLikeAspect {
   heading: string; // "If you loved the enemies-to-lovers tension..."
   recs: BooksLikeAspectRec[];
 }
+
+export type WhyPeopleLoveBlock =
+  | { type: 'paragraph'; text: string }
+  | { type: 'labeled'; label: string; text: string }
+  | { type: 'warning'; text: string };
 
 export interface BooksLikeEntry {
   slug: string;
@@ -185,6 +193,8 @@ export interface BooksLikeEntry {
     series_number?: number | null;
     tropes: string[];
     why_people_love: string; // one honest paragraph, not a plot summary
+    why_people_love_rich?: WhyPeopleLoveBlock[];
+    fit?: { perfect_for: string[]; skip_if: string[] };
     angle?: string; // short subgenre hook for title tag e.g. "Dark Romantasy with Forbidden Heat"
     answer_line?: string; // one sentence above recs e.g. "If you loved X for Y, start with A, B, and C."
   };
@@ -397,6 +407,8 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   magicianApprentice,
   wizardsFirstRule,
   pawnOfProphecy,
+  sheWhoBecameTheSun,
+  redQueen,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"

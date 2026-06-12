@@ -86,13 +86,56 @@ Never guess or speculatively add cover URLs. A missing cover is better than a br
 
 
 ---
+## why_people_love vs why_people_love_rich
+
+Every entry has `why_people_love: string` — one honest paragraph, not a plot summary. This is the fallback and is always required.
+
+For entries where the book warrants more structure, add `why_people_love_rich` as an array of blocks. When present, the page renders `why_people_love_rich` and ignores the flat string.
+
+**Block types:**
+
+```ts
+{ type: 'paragraph'; text: string }        // plain prose
+{ type: 'labeled'; label: string; text: string }  // bold label + sentence
+{ type: 'warning'; text: string }          // amber callout box (⚠️ prepended automatically)
+```
+
+**Standard structure (follow American Gods as the reference):**
+1. Opening `paragraph` — what the book is actually about, in a way that's specific and surprising. State the central idea plainly, then illustrate it with concrete examples. Not a plot summary.
+2. One `labeled` block — only for a specific element a reader would stop to check (protagonist type, narrative structure). One label max per entry. It stands out because it's the only one.
+3. A second `paragraph` — the payoff, structure, or what the reading experience builds toward.
+4. A `warning` block — covers pace AND tonal expectations together. Don't split into two warnings.
+
+**Sentence style:**
+- Prefer short, period-separated sentences over em-dash chains. Break clauses into their own sentences.
+- Wrong: `"Shadow Moon is an unusual protagonist — passive, watchful, more vessel than hero — which gives the novel the quality of a long strange dream."`
+- Right: `"Shadow Moon is an unusual protagonist. He is passive, watchful, more vessel than hero, which gives the novel the quality of a long strange dream."`
+- Wrong: `"...plot momentum — and his mythology is deliberately faded."`
+- Right: `"...plot momentum. His mythology is deliberately faded."`
+
+**Tone:**
+- Avoid book-report phrases: not "Gaiman's central idea is..." or "the author's approach to..." — write directly: "It's both funny and genuinely sad", not "the central idea is both funny and genuinely sad."
+- Don't balance lists symmetrically. Let content dictate length. A 2-item warning reads more honest than a padded 3-item one.
+
+**What NOT to add as a separate section:** "Perfect For / Skip If" lists are redundant once you have `why_people_love_rich` with a ⚠️ block. The warning already does "Skip If" better, in prose. Only add a fit section if there's genuinely distinct information that won't fit naturally in the why flow.
+
+
+---
 ## Writing Notes / Why Text
 
 **Aspect note** (~3–5 sentences):
-- Lead with the SPECIFIC thing this book shares with the source in that aspect
-- Name the mechanic, the scene type, the structural similarity — be concrete
-- End with a caveat: what is different or harder about this rec vs the source
-- Never summarise the plot
+- Lead with the SPECIFIC thing this book shares with the source in that aspect — the mechanic, the structural similarity, the tonal match. Be concrete.
+- Never summarise the plot. "X happens, then Y discovers Z" tells the reader nothing about why this book fits the aspect.
+- **No spoilers for the source book.** The reader may not have finished it. Don't reveal deaths, twists, or ending details.
+- The strongest sentence pattern: *"Where [source] is [quality], [rec] is [quality]"* — e.g. "Where American Gods is melancholy and sprawling, Anansi Boys is warmer and funnier." Use it when the rec shares DNA but differs in register.
+- Close with a direct endorsement if warranted — "The best direct follow-up for Gaiman readers" is stronger than trailing off.
+
+**Caveat field:** split the caveat out of `note` into the separate `caveat` field. The page renders it as a distinct left-bordered line below the main note. Keep it 1–2 sentences — the single sharpest reason this rec might disappoint the reader. Don't pad.
+
+```ts
+note: "Why this rec fits the aspect — concrete, specific, no plot summary, no source spoilers.",
+caveat: "The one thing that's different or harder vs the source book.",
+```
 
 **answer_line alignment rule:** the books named in `answer_line` ("start with A, B, and C")
 must be the first rec in aspects 1, 2, and 3 respectively. If the guide has a 4th aspect,
@@ -111,6 +154,12 @@ its first rec does not need to appear in the answer_line.
 | Populating `recommendations` array | Leave as `[]` — it is not rendered |
 | Aspect with a padded/weak second rec | Use 1 rec in that aspect instead |
 | `cover_url` not verified to load | Check URL before committing |
+| Burying caveat inside `note` string | Split it into the separate `caveat` field |
+| Opening note with plot summary ("X happens, Y discovers...") | Lead with the specific shared quality, not what happens |
+| Spoiling the source book in a rec note | Reader may not have finished it — no deaths, twists, or ending reveals |
+| Multiple labeled blocks in why_people_love_rich | One label max — it stands out because it's the only one |
+| Symmetrically balanced Perfect For / Skip If lists | Don't — let content dictate length; uneven is more honest |
+| Adding a fit section when why_people_love_rich has a ⚠️ block | Redundant — the warning already covers it |
 
 
 ---
@@ -129,6 +178,13 @@ source: {
   tropes: string[]          // 5–9 trope tags
   angle?: string            // short subgenre hook e.g. "Dark Romantasy with Forbidden Heat"
   answer_line?: string      // "If you loved X for Y, start with A, B, and C."
-  why_people_love: string   // one honest paragraph — not a plot summary
+  why_people_love: string   // always required — one honest paragraph, not a plot summary
+  why_people_love_rich?: WhyPeopleLoveBlock[]  // optional structured version; overrides flat string when present
 }
+```
+
+**Aspect rec fields (updated):**
+```ts
+note: string      // specific match reason — no plot summary, no caveat buried here
+caveat?: string   // separate field: 1–2 sentences on how this rec might disappoint
 ```

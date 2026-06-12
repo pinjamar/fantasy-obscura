@@ -9,6 +9,8 @@ import AddToShelf from '../../components/AddToShelf';
 import FavouriteButton from '../../components/FavouriteButton';
 import CommunityTags from '../../components/CommunityTags';
 import BookFAQ from '../../components/BookFAQ.astro';
+import { BOOKS_LIKE } from '../../data/books-like';
+import type { WhyPeopleLoveBlock } from '../../data/books-like';
 
 
 const { slug } = Astro.params;
@@ -26,6 +28,12 @@ if (!bookOrNull) {
   return new Response(null, { status: 404, statusText: 'Not Found' });
 }
 const book = bookOrNull;
+
+const booksLikeEntry = BOOKS_LIKE.find(e => e.slug === slug) ?? null;
+const readingOrderSlug =
+  (booksLikeEntry?.source as any)?.reading_order_slug
+  ?? READING_ORDERS.find(e => e.name === book.series)?.slug
+  ?? null;
 
 const approvedTags = await getApprovedTags(book.id);
 const seriesSlug = book.series
@@ -471,14 +479,28 @@ const bookSchemaJsonLd = JSON.stringify({
   <!-- ── Tropes / Tone / Awards / Content Warnings ──────────────── -->
   {(book.tropes?.length || book.tone?.length || book.awards?.length || book.content_warnings?.length) && (
     <div class="mb-12 flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
-      {book.tropes && book.tropes.length > 0 && (
-        <div class="w-full sm:w-1/2 min-w-0">
-          <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2">Tropes</h3>
-          <div class="flex flex-wrap gap-1.5">
-            {book.tropes.map((t) => (
-              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-sm hover:bg-indigo-100 hover:border-indigo-300 hover:shadow-sm transition-all cursor-default">{t}</span>
-            ))}
-          </div>
+      {(book.tropes?.length || (book as any).pov_style || (book as any).pov_count) && (
+        <div class="w-full sm:w-1/2 min-w-0 flex flex-col gap-4">
+          {book.tropes && book.tropes.length > 0 && (
+            <div>
+              <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2">Tropes</h3>
+              <div class="flex flex-wrap gap-1.5">
+                {book.tropes.map((t) => (
+                  <span class="px-3 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-sm hover:bg-indigo-100 hover:border-indigo-300 hover:shadow-sm transition-all cursor-default">{t}</span>
+                ))}
+              </div>
+            </div>
+          )}
+          {((book as any).pov_style || (book as any).pov_count) && (
+            <div>
+              <h3 class="text-[11px] font-semibold text-zinc-400 uppercase tracking-widest mb-2">POV Style & Count</h3>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-3 py-1 bg-teal-50 text-teal-700 border border-teal-200 rounded-full text-sm">
+                  {[(book as any).pov_style, (book as any).pov_count].filter(Boolean).join(' · ')}
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       )}
       {(book.tone?.length || book.awards?.length || book.content_warnings?.length) && (
@@ -530,6 +552,79 @@ const bookSchemaJsonLd = JSON.stringify({
       )}
     </div>
   )}
+
+  <!-- ── Editorial sections ───────────────────────────────────── -->
+  {booksLikeEntry ? (
+    <div class="flex flex-col gap-5 mb-12">
+
+      <!-- Option C: why_people_love from books-like entry -->
+      <div class="rounded-2xl border border-violet-100 bg-linear-to-br from-violet-50 via-white to-indigo-50 px-5 py-4 shadow-sm">
+        <h3 class="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Why people love this book</h3>
+        {booksLikeEntry.source.why_people_love_rich ? (
+          <div class="space-y-3 text-[15px] leading-relaxed">
+            {booksLikeEntry.source.why_people_love_rich.map((block: WhyPeopleLoveBlock) => {
+              if (block.type === 'labeled') return (
+                <p class="text-zinc-700">
+                  <span class="font-semibold text-zinc-900">{block.label}</span>{' '}{block.text}
+                </p>
+              );
+              if (block.type === 'warning') return (
+                <div class="flex gap-2 p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-[14px]">
+                  <span class="shrink-0">⚠️</span><p>{block.text}</p>
+                </div>
+              );
+              return <p class="text-zinc-700">{block.text}</p>;
+            })}
+          </div>
+        ) : (
+          <p class="text-zinc-700 leading-relaxed text-[15px]">{booksLikeEntry.source.why_people_love}</p>
+        )}
+        <div class="flex items-center justify-between flex-wrap gap-2 mt-5">
+          <a href={`/books-like/${booksLikeEntry.slug}/`} class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-600 text-white text-sm font-medium hover:bg-violet-700 transition-colors shadow-sm">
+            Find similar books →
+          </a>
+          {readingOrderSlug && (
+            <a href={`/reading-orders/${readingOrderSlug}/`} class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-zinc-300 bg-white text-zinc-600 text-sm font-medium hover:border-zinc-400 hover:text-zinc-800 transition-colors">
+              📖 Reading Order
+            </a>
+          )}
+        </div>
+      </div>
+
+    </div>
+  ) : (book.ideal_reader || book.reading_experience) ? (
+    <div class="flex flex-col gap-5 mb-12">
+
+      {book.reading_experience && (
+        <div class="rounded-2xl border border-amber-200 bg-linear-to-br from-amber-50 to-orange-50 px-5 py-4 shadow-sm">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-lg">📖</span>
+            <h3 class="text-xs font-semibold text-amber-600 uppercase tracking-widest">Tone & Reading Experience</h3>
+          </div>
+          <div class="flex flex-col gap-2">
+            {book.reading_experience.split(/\n\n+/).map((para: string) => (
+              <p class="text-sm text-zinc-700 leading-relaxed" set:html={para.trim().replace(/\*([^*]+)\*/g, '<em>$1</em>')} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {book.ideal_reader && (
+        <div class="rounded-2xl border border-sky-200 bg-linear-to-br from-sky-50 to-blue-50 px-5 py-4 shadow-sm">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-lg">🎯</span>
+            <h3 class="text-xs font-semibold text-sky-500 uppercase tracking-widest">Who Is This For</h3>
+          </div>
+          <div class="flex flex-col gap-2">
+            {book.ideal_reader.split(/\n\n+/).map((para: string) => (
+              <p class="text-sm text-zinc-700 leading-relaxed" set:html={para.trim().replace(/\*([^*]+)\*/g, '<em>$1</em>')} />
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  ) : null}
 
   <!-- ── Readers Also Enjoyed ─────────────────────────────────── -->
   {similarBooks.length > 0 && (
@@ -585,42 +680,6 @@ const bookSchemaJsonLd = JSON.stringify({
         })}
       </div>
     </section>
-  )}
-
-  <!-- ── Editorial sections ───────────────────────────────────── -->
-  {(book.ideal_reader || book.reading_experience) && (
-    <div class="flex flex-col gap-5 mb-12">
-
-      {book.reading_experience && (
-        <div class="rounded-2xl border border-amber-200 bg-linear-to-br from-amber-50 to-orange-50 px-5 py-4 shadow-sm">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-lg">📖</span>
-            <h3 class="text-xs font-semibold text-amber-600 uppercase tracking-widest">Tone & Reading Experience</h3>
-          </div>
-          <div class="flex flex-col gap-2">
-            {book.reading_experience.split(/\n\n+/).map((para) => (
-              <p class="text-sm text-zinc-700 leading-relaxed" set:html={para.trim().replace(/\*([^*]+)\*/g, '<em>$1</em>')} />
-            ))}
-          </div>
-        </div>
-      )}
-
-
-      {book.ideal_reader && (
-        <div class="rounded-2xl border border-sky-200 bg-linear-to-br from-sky-50 to-blue-50 px-5 py-4 shadow-sm">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-lg">🎯</span>
-            <h3 class="text-xs font-semibold text-sky-500 uppercase tracking-widest">Who Is This For</h3>
-          </div>
-          <div class="flex flex-col gap-2">
-            {book.ideal_reader.split(/\n\n+/).map((para) => (
-              <p class="text-sm text-zinc-700 leading-relaxed" set:html={para.trim().replace(/\*([^*]+)\*/g, '<em>$1</em>')} />
-            ))}
-          </div>
-        </div>
-      )}
-
-    </div>
   )}
 
   <!-- ── FAQ ──────────────────────────────────────────────────── -->

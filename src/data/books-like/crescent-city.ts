@@ -28,6 +28,25 @@ export const crescentCity: BooksLikeEntry = {
       "If you loved Crescent City for its modern supernatural city, fallen angel romance, and grief-driven mystery, start with City of Bones, Angel's Blood, and Ninth House.",
     why_people_love:
       "Crescent City works differently from Maas's other series because the modern setting does the heavy lifting — Lunathion is a city with bars, bureaucracy, and phones, except the bureaucracy is run by Fae nobles, the police include angels and wolves, and the lower classes are half-bloods with very few rights. That stratification gives the first book its engine: a murder investigation in a world where your race determines your legal standing. Bryce processes grief like someone who has actually been hit hard — by drinking, deflecting, and refusing to be careful — which is more honest than most fantasy heroines get. Hunt's arc runs underneath everything: what a being with immense power will sacrifice for the chance at not being owned. The crossover with ACOTAR characters in book three divides readers sharply; treat it as a bonus, not a promise.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Crescent City works differently from Maas's other series because the modern setting does the heavy lifting — Lunathion is a city with bars, bureaucracy, and phones, except the bureaucracy is run by Fae nobles, the police include angels and wolves, and the lower classes are half-bloods with very few rights. That stratification gives the first book its engine: a murder investigation in a world where your race determines your legal standing.",
+      },
+      {
+        type: 'labeled',
+        label: 'Bryce:',
+        text: "Processes grief the way someone actually hit hard does — by drinking, deflecting, and refusing to be careful. More honest than most fantasy heroines get. The competence comes through despite the mess, and that combination is most of why she works.",
+      },
+      {
+        type: 'paragraph',
+        text: "Hunt's arc runs underneath everything: what a being with immense power will sacrifice for the chance at not being owned. The explicit romance is built on that specific tension — not just attraction, but the question of what belonging costs each of them.",
+      },
+      {
+        type: 'warning',
+        text: "The crossover with ACOTAR characters in book three divides readers sharply — treat it as a bonus, not a promise the series is building toward. The explicit heat level is consistent throughout and the book is romance-forward, not thriller-forward despite the murder investigation framing.",
+      },
+    ],
   },
   aspects: [
     {

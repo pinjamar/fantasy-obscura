@@ -26,6 +26,25 @@ export const dragonlance: BooksLikeEntry = {
       'If you loved Dragonlance for its party of companions, for Raistlin, and for the feeling of a world genuinely at stake — start with Mistborn, The Wheel of Time, and Memory, Sorrow and Thorn.',
     why_people_love:
       'Dragonlance works because it does two things simultaneously that most fantasy only manages one of: it gives you a genuine ensemble — a party of eight people whose relationships with each other are as interesting as the quest — and it gives you Raistlin Majere, who is one of the great characters in the genre regardless of medium. Raistlin is not a villain, not quite a hero, and not a tragic figure in any simple sense. He is brilliant, physically destroyed by his own ambition, contemptuous of nearly everyone around him, and deeply tethered to a brother he cannot stop resenting and cannot let go. The Chronicles trilogy is the story of a world at war with itself, where the gods have abandoned their people, and a group of old friends discovers that the gods never left — just that humanity forgot how to listen. Weis and Hickman wrote it as a D&D campaign novelisation and it shows in the best possible way: every character has a distinct role, personality, and arc, and the group dynamics feel earned rather than convenient. The Legends trilogy — Time of the Twins, War of the Twins, Test of the Twins — is even better, and is among the most ambitious things written in commercial fantasy of its era.',
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Dragonlance does two things simultaneously that most fantasy only manages one of: it gives you a genuine ensemble — eight people whose relationships with each other are as interesting as the quest — and it gives you Raistlin Majere, who is one of the great characters in the genre regardless of medium.",
+      },
+      {
+        type: 'labeled',
+        label: 'Raistlin:',
+        text: "Not a villain, not quite a hero, not a tragic figure in any simple sense. Brilliant, physically destroyed by his own ambition, contemptuous of nearly everyone around him, and deeply tethered to a brother he cannot stop resenting and cannot let go. The Legends trilogy — Time of the Twins, War of the Twins, Test of the Twins — is even better than the Chronicles, and is among the most ambitious things written in commercial fantasy of its era.",
+      },
+      {
+        type: 'paragraph',
+        text: "Weis and Hickman wrote it as a D&D campaign novelisation and it shows in the best possible way: every character has a distinct role, personality, and arc, and the group dynamics feel earned rather than convenient.",
+      },
+      {
+        type: 'warning',
+        text: "First published in 1984 and the prose reflects its era — expect more dated writing than modern epic fantasy. The Legends trilogy requires the Chronicles first and is worth reading immediately after. Do not start with Legends; the emotional weight of Raistlin's arc depends entirely on knowing what the Chronicles established.",
+      },
+    ],
   },
   aspects: [
     {

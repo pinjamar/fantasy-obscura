@@ -27,6 +27,25 @@ export const divineRivals: BooksLikeEntry = {
       'If you loved Divine Rivals for its epistolary slow burn between rivals who fall in love without knowing it, its WWI-inspired mythology, and its ache of a love story conducted across impossible distances, start with Daughter of the Moon Goddess, Babel, and The Song of Achilles.',
     why_people_love:
       "Divine Rivals works because Ross builds the romance at two speeds simultaneously: Iris and Roman hate each other in the newsroom with the specific contempt of people who recognize each other's talent, and fall in love through letters to a soldier neither of them knows is the other. The epistolary structure gives the book its heart — the letters are where both characters say what they can't afford to say face to face, and Ross writes them with the kind of yearning that makes you grieve on the characters' behalf for what they don't yet know. The mythology is WWI-inspired but god-touched: two divine siblings have gone to war, and ordinary humans are dying in the crossfire, and the newspaper that Iris and Roman work for is the only thing telling the public the truth. The darkness is present but handled with restraint — this is a book more interested in longing than in grief, though it knows both intimately. The slow burn is genuinely agonising in the best possible way.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Divine Rivals works because Ross builds the romance at two speeds simultaneously: Iris and Roman hate each other in the newsroom with the specific contempt of people who recognise each other's talent, and fall in love through letters to a soldier neither of them knows is the other.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Letters:',
+        text: "Where both characters say what they cannot afford to say face to face. Ross writes them with the kind of yearning that makes you grieve on the characters' behalf for what they do not yet know — the hidden-identity structure is not a gimmick, it is the whole emotional engine.",
+      },
+      {
+        type: 'paragraph',
+        text: "The mythology is WWI-inspired but god-touched: two divine siblings at war, ordinary humans dying in the crossfire, and the newspaper Iris and Roman work for as the only institution telling the truth. The darkness is present but handled with restraint — this is a book more interested in longing than grief, though it knows both.",
+      },
+      {
+        type: 'warning',
+        text: "The sequel, Ruthless Vows, raises the stakes considerably and is noticeably darker. The duology is complete. Do not read the blurb for book two before finishing book one.",
+      },
+    ],
   },
   aspects: [
     {

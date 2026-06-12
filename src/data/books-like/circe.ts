@@ -26,6 +26,25 @@ export const circe: BooksLikeEntry = {
       "If you loved Circe for the mythic prose, the female perspective on stories usually told by men, and Circe's slow transformation from overlooked outcast to something extraordinary, start with The Song of Achilles, Ariadne, and The Bear and the Nightingale.",
     why_people_love:
       "Circe works because Miller takes a character who exists in the margins of the Odyssey — a convenient obstacle, a witch who turns men into pigs — and asks what her actual life looked like. The answer is a novel about a woman dismissed by gods and mortals alike, spending centuries on an island learning her own power in silence, and eventually becoming someone the world has to reckon with. The prose is the main event: measured, unhurried, and dense with the weight of mythological time. Miller doesn't modernise Circe or make her sympathetic in a contemporary way — she stays genuinely strange, occasionally cruel, and morally her own. The romance is present but secondary to the self-discovery arc. Readers return to it because the ending earns everything the novel builds toward, and because there are very few fantasy books that make solitude feel this rich.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Circe works because Miller takes a character who exists in the margins of the Odyssey — a convenient obstacle, a witch who turns men into pigs — and asks what her actual life looked like. The answer is a novel about a woman dismissed by gods and mortals alike, spending centuries on an island learning her own power in silence, and eventually becoming someone the world has to reckon with.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Prose:',
+        text: "Measured, unhurried, and dense with the weight of mythological time. Miller doesn't modernise Circe or make her sympathetic in a contemporary way — she stays genuinely strange, occasionally cruel, and morally her own. The register is myth-as-memory rather than epic.",
+      },
+      {
+        type: 'paragraph',
+        text: "The romance is present but secondary to the self-discovery arc. Readers return to it because the ending earns everything the novel builds toward — and because there are very few fantasy books that make solitude feel this rich and specific.",
+      },
+      {
+        type: 'warning',
+        text: "This is a slow, solitary book — most of it is Circe alone on her island, thinking, practising magic, encountering figures from myth. If you need plot momentum or a central relationship to stay engaged, this will test your patience. The payoff is earned but not quick.",
+      },
+    ],
   },
   aspects: [
     {
@@ -64,7 +83,8 @@ export const circe: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "Saint does for Ariadne what Miller does for Circe: takes a woman who exists in myth as a plot device — the princess who helped Theseus kill the Minotaur and was then abandoned on an island — and reconstructs her full interiority. The prose is less dense than Miller's but carries the same anger at how the canonical versions erase female agency, and the dual narrative (Ariadne and her sister Phaedra) adds a structural sophistication the myth doesn't have. Caveat: the pacing is slower in the second half, and the emotional register is more melancholic than empowering. Recommended for readers who want more female-perspective Greek retellings rather than a direct stylistic match.",
+          note: "Saint does for Ariadne what Miller does for Circe: takes a woman who exists in myth as a plot device — the princess who helped Theseus kill the Minotaur and was then abandoned on an island — and reconstructs her full interiority. The prose is less dense than Miller's but carries the same anger at how the canonical versions erase female agency, and the dual narrative (Ariadne and her sister Phaedra) adds a structural sophistication the myth doesn't have.",
+          caveat: "The pacing is slower in the second half and the emotional register is more melancholic than empowering. Better for readers who want more female-perspective Greek retellings than a direct stylistic match to Miller.",
           tags: [
             'Greek Mythology',
             'Female Perspective',

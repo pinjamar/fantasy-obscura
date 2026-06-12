@@ -27,6 +27,25 @@ export const aTouchOfDarkness: BooksLikeEntry = {
       'If you loved A Touch of Darkness for the Hades and Persephone dynamic, the modern gods world, and the push-pull tension that keeps escalating, start with A Court of Thorns and Roses, From Blood and Ash, and Kingdom of the Wicked.',
     why_people_love:
       'A Touch of Darkness works because Scarlett St. Clair makes Hades genuinely compelling — he is powerful, controlled, and dangerous in ways that feel earned rather than stated, and the tension between him and Persephone is built on a real dynamic rather than just proximity. Persephone is a Goddess of Spring who cannot grow a single living thing, which is a neat inversion: she is supposed to be the gentle goddess and she cannot even manage that, while the God of the Underworld turns out to be far more complex than his reputation. The modern setting — gods running nightclubs and law firms in a contemporary city — keeps the mythology fresh without requiring any prior knowledge of the source material. The series is romance-forward and high-heat, and it is honest about that from page one. Readers who wanted more of the Rhysand energy from ACOTAR but with Greek mythology and considerably less plot overhead will find exactly what they are looking for.',
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "A Touch of Darkness works because Scarlett St. Clair makes Hades genuinely compelling — powerful, controlled, dangerous in ways that feel earned rather than stated. Persephone is a Goddess of Spring who cannot grow a single living thing. She is supposed to be the gentle goddess and she cannot manage even that, while the God of the Underworld turns out to be far more complex than his reputation.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Setting:',
+        text: "Gods run nightclubs and law firms in a contemporary city. The modern setting keeps the mythology fresh without requiring any prior knowledge of Greek myth, and makes the immortal political games feel immediately readable.",
+      },
+      {
+        type: 'paragraph',
+        text: "The series is romance-forward and high-heat, and it is honest about that from page one. The tension between Hades and Persephone builds on a real dynamic — two characters with genuine contradictions — rather than just proximity and circumstance.",
+      },
+      {
+        type: 'warning',
+        text: "This is primarily a romance with a mythological backdrop, not a mythology book. The plot architecture is thin — if you need complex story structure outside the relationship, this will not provide it. Readers who wanted the Rhysand energy from ACOTAR but with considerably less plot overhead will find exactly what they are looking for.",
+      },
+    ],
   },
   aspects: [
     {
@@ -45,7 +64,8 @@ export const aTouchOfDarkness: BooksLikeEntry = {
           series_number: 2,
           series_label: 'Series (5 books) — start with book 1',
           audiobook: true,
-          note: "Rhysand is the direct predecessor to Hades in the romantasy canon — a powerful immortal with a fearsome reputation that conceals something more complicated, who slowly dismantles the protagonist's defences across an entire book. ACOMAF is where the ACOTAR series becomes exceptional and where Maas's version of this dynamic reaches its peak. The Night Court has the same energy as the Underworld. Caveat: start with A Court of Thorns and Roses — ACOMAF is book two and needs the setup. The first book is lighter; push through.",
+          note: "Rhysand is the direct predecessor to Hades in the romantasy canon — a powerful immortal with a fearsome reputation that conceals something more complicated, who slowly dismantles the protagonist's defences across an entire book. ACOMAF is where the ACOTAR series becomes exceptional and where Maas's version of this dynamic reaches its peak. The Night Court has the same energy as the Underworld.",
+          caveat: 'Start with A Court of Thorns and Roses — ACOMAF is book two and needs the setup. The first book is lighter; push through.',
           tags: [
             'Morally Grey Love Interest',
             'Fae Courts',
@@ -70,7 +90,8 @@ export const aTouchOfDarkness: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (5 books)',
           audiobook: true,
-          note: 'The same formula executed with similar confidence: a sheltered protagonist, a morally grey guard who is not what he appears, slow-burn tension that builds across the whole book before the heat arrives. Hawke has the same controlled, quietly menacing energy as Hades. The world is fantasy rather than mythology but the emotional beats are almost identical. Caveat: starts slowly — the first quarter is world-building heavy. The payoff is worth it.',
+          note: 'The same formula executed with similar confidence: a sheltered protagonist, a morally grey guard who is not what he appears, slow-burn tension that builds across the whole book before the heat arrives. Hawke has the same controlled, quietly menacing energy as Hades.',
+          caveat: 'Starts slowly — the first quarter is world-building heavy. The payoff is worth it.',
           tags: [
             'Morally Grey Love Interest',
             'Slow Burn',
@@ -100,7 +121,8 @@ export const aTouchOfDarkness: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: 'A Sicilian girl in 1800s Palermo who summons a demon prince to help avenge her murdered twin — Wrath is cold, powerful, and frustrating in the exact same way Hades is. The mythology is demonic rather than Greek but the structure is the same: a mortal woman navigating a world of immortal political games, with a love interest who is more than his reputation. Darker and more gothic in atmosphere, less heat but more dread. Caveat: the enemies-to-lovers is slower than St. Clair — the series earns it over three books.',
+          note: 'A Sicilian girl in 1800s Palermo who summons a demon prince to help avenge her murdered twin — Wrath is cold, powerful, and frustrating in the exact same way Hades is. The mythology is demonic rather than Greek but the structure is the same: a mortal woman navigating a world of immortal political games, with a love interest who is more than his reputation. Darker and more gothic in atmosphere, less heat but more dread.',
+          caveat: 'The enemies-to-lovers is slower than St. Clair — the series earns it over three books rather than one.',
           tags: [
             'Mythology Retelling',
             'Morally Grey Love Interest',
@@ -122,7 +144,8 @@ export const aTouchOfDarkness: BooksLikeEntry = {
           heat_level: 'Open Door',
           standalone: true,
           audiobook: true,
-          note: 'The literary end of the Greek mythology retelling spectrum — Circe is the daughter of Helios, dismissed by gods and mortals alike, who discovers her own power slowly over centuries. Where A Touch of Darkness is romance-forward, Circe is character-forward: it is about what it means to exist on the margins of the divine world, how power is discovered and what it costs, and the specific loneliness of immortality. The gods feel genuinely alien rather than romantic. Caveat: much less romance. If you want mythology explored rather than used as a backdrop for a love story, this is the better book.',
+          note: 'The literary end of the Greek mythology retelling spectrum — Circe is the daughter of Helios, dismissed by gods and mortals alike, who discovers her own power slowly over centuries. The gods feel genuinely alien rather than romantic, and Miller writes the specific loneliness of immortality with precision.',
+          caveat: 'Much less romance. If you want mythology explored rather than used as a backdrop for a love story, this is the better book — but if the romance was the main draw, this will disappoint.',
           tags: [
             'Greek Mythology',
             'Female Protagonist',
@@ -153,7 +176,8 @@ export const aTouchOfDarkness: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (5 books)',
           audiobook: true,
-          note: "Feyre is similarly underestimated — a mortal girl pulled into a world of immortals who shouldn't be able to survive, let alone matter. The arc across the series from passive participant to someone who reshapes the world is the same arc as Persephone's, stretched over more books and more thoroughly earned. The Fae courts share the same beautiful-and-dangerous atmosphere as the Underworld. Caveat: the first book is Beauty and the Beast — the series becomes significantly more ambitious from book two.",
+          note: "Feyre is similarly underestimated — a mortal girl pulled into a world of immortals who shouldn't be able to survive, let alone matter. The arc across the series from passive participant to someone who reshapes the world is the same arc as Persephone's, stretched over more books and more thoroughly earned. The Fae courts share the same beautiful-and-dangerous atmosphere as the Underworld.",
+          caveat: 'The first book is Beauty and the Beast in register — the series becomes significantly more ambitious from book two.',
           tags: [
             'Mortal in Magical World',
             'Coming Into Power',
@@ -178,7 +202,8 @@ export const aTouchOfDarkness: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (3 books)',
           audiobook: true,
-          note: "Jude is a mortal girl in a fae court, powerless by the world's definition, who refuses to accept that — she schemes, manipulates, and claws her way to a position nobody expected her to reach. The power dynamic between Jude and Cardan is the intellectual version of Persephone and Hades: two people who underestimate each other, circling a push-pull that neither fully controls. Caveat: much less heat, much more political scheming. If you want the tension without the explicit content, this is the cleaner version of the same dynamic.",
+          note: "Jude is a mortal girl in a fae court, powerless by the world's definition, who refuses to accept that — she schemes, manipulates, and claws her way to a position nobody expected her to reach. The power dynamic between Jude and Cardan is the intellectual version of Persephone and Hades: two people who underestimate each other, circling a push-pull that neither fully controls.",
+          caveat: 'Much less heat, much more political scheming. If you want the tension without the explicit content, this is the cleaner version of the same dynamic.',
           tags: [
             'Mortal in Fae World',
             'Coming Into Power',

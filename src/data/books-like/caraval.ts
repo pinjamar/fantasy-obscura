@@ -26,6 +26,25 @@ export const caraval: BooksLikeEntry = {
       'If you loved Caraval for its dreamlike atmosphere, its immersive game world, or the tension between what is real and what is performance, start with The Night Circus, Piranesi, and The Gilded Wolves.',
     why_people_love:
       'Scarlett has dreamed of attending Caraval — the legendary travelling performance where the audience participates and one lucky player wins a wish — her whole life. When tickets finally arrive, she and her sister Donatella are pulled into a game where the stakes keep escalating beyond what anyone told them, and Scarlett can no longer tell which parts of the spectacle are theatrical and which are genuinely dangerous. What made Caraval a phenomenon is the atmosphere: Garber builds the game world with the logic of a fever dream, where colours have tastes, every detail is potentially a clue, and the boundary between story and reality dissolves deliberately. The romance with the mysterious Julian is a slow burn built on distrust and banter, and the sister relationship — Scarlett protecting Donatella, Donatella refusing to be protected — carries as much weight as the love interest. Readers who want lush, sensory, morally playful fantasy with an immersive game at its centre find nothing else quite like it.',
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Scarlett has dreamed of attending Caraval — the legendary travelling performance where one lucky player wins a wish — her whole life. When tickets arrive, she and her sister Donatella are pulled into a game where the stakes keep escalating beyond what anyone told them, and Scarlett can no longer tell which parts of the spectacle are theatrical and which are genuinely dangerous.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Atmosphere:',
+        text: "Garber builds the game world with the logic of a fever dream — colours have tastes, every detail is potentially a clue, the boundary between story and reality dissolves deliberately. The immersive sensory world is the main event, and there is nothing else in fantasy quite like it.",
+      },
+      {
+        type: 'paragraph',
+        text: "The romance with the mysterious Julian is a slow burn built on distrust and banter, but the sister relationship — Scarlett protecting Donatella, Donatella refusing to be protected — carries as much weight as the love interest. Both threads feed the central question of who is playing whom.",
+      },
+      {
+        type: 'warning',
+        text: "This is atmosphere-first fantasy — the dreamlike internal logic takes precedence over plot coherence, and some readers find this intoxicating and others find it frustrating. The series has three books; the quality of the sequels is debated. Book one works on its own.",
+      },
+    ],
   },
   aspects: [
     {

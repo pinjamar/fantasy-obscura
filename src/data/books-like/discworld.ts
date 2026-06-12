@@ -26,6 +26,25 @@ export const discworld: BooksLikeEntry = {
       'If you loved Discworld for its wit, its satire, or the warmth beneath the jokes, start with Good Omens, Jonathan Strange & Mr Norrell, and The House in the Cerulean Sea.',
     why_people_love:
       "Terry Pratchett was the most widely read British author of the 20th century for a reason that takes reading him to understand: the jokes are real jokes, the satire is precise, and the compassion is genuine. Discworld starts as a parody of fantasy and grows, over 41 books, into a complete civilisation — Ankh-Morpork as a lens on every human institution from war to money to journalism to death itself. The early books are lightweight parody; by Guards! Guards! the series has found something deeper. Sam Vimes is angry in the right direction. Granny Weatherwax does what has to be done. Death is the most humane character in any fantasy series. Pratchett was writing while dying of early-onset Alzheimer's and his last books argue, with furious wit, for the value of human dignity. All 41 novels are published.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Terry Pratchett was the most widely read British author of the 20th century for a reason that takes reading him to understand: the jokes are real jokes, the satire is precise, and the compassion is genuine. Discworld starts as a parody of fantasy and grows, over 41 books, into a complete civilisation.",
+      },
+      {
+        type: 'labeled',
+        label: 'Where to Start:',
+        text: "Not The Colour of Magic — the early books are lightweight parody. Start with Guards! Guards! for the City Watch, Equal Rites for the Witches, or Mort for Death. By Guards! Guards!, the series has found what it actually is: Sam Vimes angry in the right direction, Granny Weatherwax doing what has to be done, Death as the most humane character in any fantasy series.",
+      },
+      {
+        type: 'paragraph',
+        text: "Pratchett was writing while dying of early-onset Alzheimer's and his last books argue, with furious wit, for the value of human dignity. Raising Steam, Snuff, and Unseen Academicals all carry that knowledge — reading them that way changes what they feel like.",
+      },
+      {
+        type: 'warning',
+        text: "41 novels means there is no single correct reading order and no obligation to read all of them. The sub-series — Watch, Witches, Death, Wizards, Moist — are largely independent. The early books do not represent the series at its best and starting there will give you the wrong impression.",
+      },
+    ],
   },
   aspects: [
     {

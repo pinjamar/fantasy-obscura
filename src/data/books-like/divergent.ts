@@ -28,6 +28,25 @@ export const divergent: BooksLikeEntry = {
       'If you loved Divergent for its faction system, its Dauntless initiation, and the slow-burn tension with Four — start with The Hunger Games, Red Rising, and An Ember in the Ashes.',
     why_people_love:
       'Divergent works because Roth makes the faction system feel genuinely seductive before she tears it apart. Choosing Dauntless at sixteen — choosing bravery as your entire identity, your entire social world, your entire future — is a premise that hits something real about adolescence: the desperate need to know which tribe you belong to, and the terror that the answer might be none of them. The Dauntless initiation sequences are the engine of the book: brutal, adrenaline-charged, built on the logic that not everyone gets to stay, and that the competition between teenagers is entirely sanctioned by the institution that claims to protect them. Four is central to why the book landed so hard — stern, controlled, with a private life that reframes everything about the faction system — and Roth earns the relationship by making both characters genuinely dangerous to each other before they become allies. The conspiracy underneath the perfect society is less surprising than the initiation, but Roth uses it to ask the right question: what does it cost a person to be both brave and good, when the system insists the two are incompatible?',
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Divergent works because Roth makes the faction system feel genuinely seductive before she tears it apart. Choosing Dauntless at sixteen — choosing bravery as your entire identity, your entire social world — is a premise that hits something real about adolescence: the desperate need to know which tribe you belong to, and the terror that the answer might be none of them.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Initiation:',
+        text: "Brutal, adrenaline-charged, built on the logic that not everyone gets to stay. The competition between teenagers is entirely sanctioned by the institution that claims to protect them — which is the horror underneath the excitement. These sequences are the engine of the book.",
+      },
+      {
+        type: 'paragraph',
+        text: "Four is central to why the book landed so hard — stern, controlled, with a private life that reframes everything about the faction system. Roth earns the relationship by making both characters genuinely dangerous to each other before they become allies.",
+      },
+      {
+        type: 'warning',
+        text: "The series declines after book one. Insurgent is divisive; Allegiant's ending is among the most controversial in YA dystopian fiction. Many readers love the first book specifically and are less certain about what follows. Read knowing the trilogy does not maintain the same quality.",
+      },
+    ],
   },
   aspects: [
     {
