@@ -24,6 +24,12 @@ export const promiseOfBlood: BooksLikeEntry = {
       "If you loved Promise of Blood for the post-coup political chaos, the powder mage magic system, or Abercrombie-style moral complexity, start with Mistborn: The Final Empire, The Black Prism, and The Blade Itself.",
     why_people_love:
       "Promise of Blood opens with the revolution already over. Field Marshal Tamas has staged a coup, executed the king, and sent the nobility to the guillotine — and the book's first chapter is a body count. What McClellan understood, writing as Sanderson's student and eventually his peer, is that the aftermath of a revolution is more interesting than the revolution itself: Tamas has power now and has no idea what to do with it. The Nine Nations are mobilising for war, his former allies are circling for a share, the Church wants him dead, and someone just whispered something to the dying king that his investigators cannot explain. Three POVs give you three angles on the same crisis: Tamas managing the external pressures; his estranged son Taniel, a powder mage and combat veteran, trying to function in a world that is no longer at war; and Adamat, a retired detective with a perfect memory, hired to investigate those last words. The magic is the other thing that keeps readers here: powder mages control gunpowder — igniting it at a distance, accelerating bullets to sniper accuracy, detonating entire reserves. It is specifically military magic in a specifically military era, designed the way Sanderson designs magic: rules, costs, hard limits, and then a narrative that exhausts every implication of those rules. The trilogy is complete.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Promise of Blood opens with the revolution already over. Field Marshal Tamas has staged a coup, executed the king, and sent the nobility to the guillotine — and the book's first chapter is a body count. McClellan understood, writing as Sanderson's student and eventually his peer, that the aftermath of a revolution is more interesting than the revolution itself: Tamas has power now and has no idea what to do with it." },
+      { type: 'labeled', label: 'Powder Magic:', text: "Powder mages control gunpowder — igniting it at distance, accelerating bullets to sniper accuracy, detonating entire reserves. It is specifically military magic in a specifically military era, designed the way Sanderson designs magic: rules, costs, hard limits, and then a narrative that exhausts every implication of those rules. The system is what makes the battle sequences distinct — a magic that rewrites how a battlefield works rather than simply adding a god to one side of it." },
+      { type: 'paragraph', text: "Three POVs give you three angles on the same crisis: Tamas managing the external pressures of a Nine Nations mobilising for war; his estranged son Taniel, a powder mage and combat veteran trying to function in a world no longer at war; and Adamat, a retired detective with a perfect memory, hired to investigate the dying king's last words. The ensemble structure lets McClellan explore the coup's consequences from the ground, the inside, and the political summit simultaneously." },
+      { type: 'warning', text: "The pacing is political more than propulsive — McClellan builds the world through the logistics of post-coup governance, and the first act takes time to establish its pieces. Readers who need action-first setup may take a hundred pages to find their footing. The trilogy is complete, and the powder mage magic deepens considerably across all three books." },
+    ],
   },
   aspects: [
     {
@@ -119,7 +125,8 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (10 books planned, 5 published)',
           audiobook: true,
-          note: "Stormlight Archive is Sanderson's most ambitious expression of his magic design philosophy — Stormlight powers, Fabrials, the Radiants, the entire economy of investiture built around a world of constant storms. For Promise of Blood readers, the specific pleasure is the same: a magic that operates like a technology, that armies plan around rather than just worship, that creates tactical problems the characters have to solve rather than tactical solutions they can invoke. The Stormlight Archive is larger in scope than Powder Mage in every dimension — longer books, longer series, higher stakes — but the underlying design intelligence is the direct lineage. Caveat: the series is planned for ten books and only five are published; this is a significant long-term commitment.",
+          note: "Stormlight Archive is Sanderson's most ambitious expression of his magic design philosophy — Stormlight powers, Fabrials, the Radiants, the entire economy of investiture built around a world of constant storms. For Promise of Blood readers, the specific pleasure is the same: a magic that operates like a technology, that armies plan around rather than just worship, that creates tactical problems the characters have to solve rather than tactical solutions they can invoke. The Stormlight Archive is larger in scope than Powder Mage in every dimension — longer books, longer series, higher stakes — but the underlying design intelligence is the direct lineage.",
+          caveat: "the series is planned for ten books and only five are published; this is a significant long-term commitment.",
           tags: [
             'Mechanistic Magic',
             'Military Epic',
@@ -203,7 +210,8 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: null,
           series_label: 'Standalone',
           audiobook: true,
-          note: "Monza Murcatto is a mercenary general betrayed and left for dead, and the novel follows her across Italian-peninsula politics as she kills everyone involved. Abercrombie writes political violence with the same tactical intelligence McClellan brings to powder mage combat: the plans are specific, the consequences are real, the people executing them are neither heroes nor villains. No prior First Law reading required. Caveat: the heat level is higher than Promise of Blood and the darkness is sustained.",
+          note: "Monza Murcatto is a mercenary general betrayed and left for dead, and the novel follows her across Italian-peninsula politics as she kills everyone involved. Abercrombie writes political violence with the same tactical intelligence McClellan brings to powder mage combat: the plans are specific, the consequences are real, the people executing them are neither heroes nor villains. No prior First Law reading required.",
+          caveat: "the heat level is higher than Promise of Blood and the darkness is sustained.",
           tags: [
             'Revenge',
             'Political Scheming',
@@ -227,7 +235,8 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (10 books)',
           audiobook: true,
-          note: "The Black Company follows a mercenary unit — not the generals but the rank-and-file soldiers — narrated by their physician in a laconic, unsentimental voice that refuses to make anything heroic. Cook invented the military fantasy template that Abercrombie and McClellan are both writing in; the professional-soldier intelligence that makes Promise of Blood's military scenes feel grounded comes directly from here. The first three books are the essential experience. Caveat: prose is deliberately plain; grimdark before the term existed.",
+          note: "The Black Company follows a mercenary unit — not the generals but the rank-and-file soldiers — narrated by their physician in a laconic, unsentimental voice that refuses to make anything heroic. Cook invented the military fantasy template that Abercrombie and McClellan are both writing in; the professional-soldier intelligence that makes Promise of Blood's military scenes feel grounded comes directly from here. The first three books are the essential experience.",
+          caveat: "prose is deliberately plain; grimdark before the term existed.",
           tags: [
             'Military Fantasy',
             'Grunt POV',

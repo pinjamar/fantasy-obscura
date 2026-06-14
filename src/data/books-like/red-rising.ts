@@ -25,6 +25,12 @@ export const redRising: BooksLikeEntry = {
       'If you loved Red Rising for the brutal training, underdog rebellion, class warfare, and a strategist protagonist who uses everyone as pieces — start with Blood Song, The Poppy War, and The Blade Itself.',
     why_people_love:
       "Red Rising is the book people finish at 3am and immediately text their friends about. Pierce Brown writes action with a propulsive clarity that few authors match — every chapter has a decision with real stakes, every alliance is potentially a betrayal, and Darrow's intelligence is visible on the page rather than just asserted. The Roman mythology layered onto a caste-divided future society gives it a mythic weight that pure dystopian fiction usually lacks. The first book is essentially The Hunger Games crossed with Ender's Game — a brutal training sequence that is also a political education — and the sequels escalate to full interplanetary war. Fair warning: this book commits to its premise. Characters you care about will die, and the author will not cushion the blow.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Red Rising is the book people finish at 3am and immediately text their friends about. Brown writes action with a propulsive clarity that few authors match — every chapter has a decision with real stakes, every alliance is a potential betrayal, and the colour-coded caste system gives the social stakes visceral readability: you always know exactly where everyone stands and what it will cost to change it." },
+      { type: 'labeled', label: 'The Institute:', text: "The brutal training sequence that makes up most of the first book — a war game across a constructed landscape, students as generals, nobody too safe to die — is one of the great competitive-crucible sequences in the genre. Brown structures it so the reader understands military strategy by following Darrow through it: alliance-building, resource logistics, the specific treachery of people who were friends six days ago. The Howlers are built here, and Howler loyalty is what the rest of the series runs on." },
+      { type: 'paragraph', text: "Darrow's intelligence is visible on the page rather than just asserted — you watch him calculate, watch him lose, watch him adapt. Brown gives him genuine setbacks rather than manufactured ones. The Roman mythology layered onto a colour-coded future society gives the series mythic weight that pure dystopian fiction usually lacks: this isn't just a class system, it's a civilisation that worships the wrong things and is beginning to break." },
+      { type: 'warning', text: "Red Rising commits to its premise — characters you care about will die, and Brown will not cushion the blow. The first book is the Institute sequence; the series escalates to full interplanetary war across six books. The darkness level rises considerably by Iron Gold (book 4). Read this as a complete series commitment: the first book sets everything up, and the payoff requires the full run." },
+    ],
   },
   aspects: [
     {
@@ -40,7 +46,8 @@ export const redRising: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy',
           audiobook: true,
-          note: "Vaelin Al Sorna is taken from his family as a boy and put through the Sixth Order — a brutal training regime that uses violence, starvation, and impossible standards to produce soldiers. The brotherhood he forms under those conditions maps exactly onto Darrow's Howlers: built through shared suffering, fiercely loyal, carrying the weight of what the institution made them. Ryan writes action with the same chapter-ending momentum as Pierce Brown. The scope grows epic over the trilogy. Caveat: slower-building than Red Rising, and the first book is almost entirely the school sequence — if you loved that part, this delivers it in full.",
+          note: "Vaelin Al Sorna is taken from his family as a boy and put through the Sixth Order — a brutal training regime that uses violence, starvation, and impossible standards to produce soldiers. The brotherhood he forms under those conditions maps exactly onto Darrow's Howlers: built through shared suffering, fiercely loyal, carrying the weight of what the institution made them. Ryan writes action with the same chapter-ending momentum as Pierce Brown. The scope grows epic over the trilogy.",
+          caveat: "slower-building than Red Rising, and the first book is almost entirely the school sequence — if you loved that part, this delivers it in full.",
           tags: ['Brutal Training', 'Military Brotherhood', 'Dark Fantasy', 'Epic Scale', 'Morally Complex'],
           amazon_url:
             'https://www.amazon.com/s?k=Blood+Song+Anthony+Ryan&tag=librariancura-20',
@@ -57,7 +64,8 @@ export const redRising: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "An assassin's school with lethal internal competition — students die in training and the survivors are not innocent about it. The same gladiatorial energy as Red Rising's Institute, filtered through a morally compromised heroine who is brilliant and completely committed to her goal. Kristoff writes Mia with the same dangerous intelligence Brown writes Darrow. Caveat: significantly higher heat level and more stylised prose than Red Rising. Not for readers who found the Institute's violence already at their limit.",
+          note: "An assassin's school with lethal internal competition — students die in training and the survivors are not innocent about it. The same gladiatorial energy as Red Rising's Institute, filtered through a morally compromised heroine who is brilliant and completely committed to her goal. Kristoff writes Mia with the same dangerous intelligence Brown writes Darrow.",
+          caveat: "significantly higher heat level and more stylised prose than Red Rising. Not for readers who found the Institute's violence already at their limit.",
           tags: ['Assassin School', 'Morally Grey Heroine', 'Brutal Competition', 'Revenge'],
           warning: 'Graphic violence, explicit sexual content, death of POV characters',
           amazon_url:
@@ -80,7 +88,8 @@ export const redRising: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "Rin is a war orphan from the lowest caste who scores highest on the imperial exam and earns a place at Sinegard military academy — the most structurally precise parallel to Darrow's arc in the genre. The academy section is brutal and competitive, ingenuity against inherited privilege. Then the war starts and Kuang does what Brown does in books four and five: the personal story becomes civilisation-scale catastrophe. Caveat: The Poppy War gets significantly darker than Red Rising in its second half, drawing on the Second Sino-Japanese War. The atrocities are not allegorised.",
+          note: "Rin is a war orphan from the lowest caste who scores highest on the imperial exam and earns a place at Sinegard military academy — the most structurally precise parallel to Darrow's arc in the genre. The academy section is brutal and competitive, ingenuity against inherited privilege. Then the war starts and Kuang does what Brown does in books four and five: the personal story becomes civilisation-scale catastrophe.",
+          caveat: "The Poppy War gets significantly darker than Red Rising in its second half, drawing on the Second Sino-Japanese War. The atrocities are not allegorised.",
           tags: ['Class Warfare', 'Military Academy', 'Underdog Rising', 'Brutal War', 'Dark'],
           warning: 'Graphic war violence, genocide, drug use',
           amazon_url:

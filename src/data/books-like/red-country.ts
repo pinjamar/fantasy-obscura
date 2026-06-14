@@ -26,6 +26,12 @@ export const redCountry: BooksLikeEntry = {
       'If you loved Red Country for its fantasy-western atmosphere, its brutal frontier world, and its morally ruined protagonist who keeps doing terrible things for almost-good reasons, start with Blood Meridian, The Blade Itself, and Best Served Cold.',
     why_people_love:
       "Red Country is Abercrombie's most genre-playful book: he takes the First Law world, moves it west to an explicitly frontier setting, and makes it do the work of a Spaghetti Western — the wagon train, the lawless gold-rush town, the hired guns, the man with a hidden past who is very good at killing. Shy South is one of his best protagonists, a woman who has been running from what she is long enough to believe she has become someone else, until her family is taken and she is forced to stop running. The return of Logen Ninefingers — here called Temple and travelling under a different name — is one of the series' most quietly devastating pieces of long-game storytelling. The book works as a standalone but rewards readers who know the First Law trilogy; the gap between what Logen was and what we find here is most legible if you've watched him fail to change across three books. Abercrombie's frontier is unglamorous, dangerous, and exhausting, which is exactly what it should be.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Red Country is Abercrombie's most genre-playful book: he takes the First Law world, moves it west to a frontier setting, and makes it do the work of a Spaghetti Western. Shy South is one of his best protagonists — a woman who has been running from what she is long enough to believe she has become someone else — until her children are taken and she is forced to stop running. The setup is immediate and personal before it becomes anything larger." },
+      { type: 'labeled', label: 'Logen Ninefingers:', text: "The return of the Bloody Nine — here calling himself Temple and travelling under a different name — is one of the series' most quietly devastating pieces of long-game storytelling. If you read the First Law trilogy, the gap between who Logen was and what we find here is legible in every sentence he speaks. He is trying to be something smaller than he is. Abercrombie lets you see exactly how that is going." },
+      { type: 'paragraph', text: "The frontier itself is the other thing: unglamorous, dangerous, and exhausting in the way the historical American West actually was rather than the mythologised version. The wagon train, the lawless gold-rush town, the hired guns — all the Western furniture is present, but Abercrombie is in conversation with Blood Meridian as much as with Leone, asking what the frontier actually does to the people who go there." },
+      { type: 'warning', text: "Red Country works best as a standalone but rewards readers who know the First Law trilogy — Logen's arc carries maximum weight if you've watched him fail to change across three books. The darkness level matches the original trilogy; this is not an accessible entry point to Abercrombie's work. The First Law standalone novels can be read in any order, but the trilogy first gives you everything that makes this book hurt." },
+    ],
   },
   aspects: [
     {
@@ -41,7 +47,8 @@ export const redCountry: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: "The text Red Country is most directly in conversation with. McCarthy's scalp-hunters ride through a landscape of pure, indifferent violence — no redemption arcs, no narrative justice, no moral scaffolding. Abercrombie writes against this: his characters have self-awareness McCarthy's don't, and Red Country has considerably more warmth. But the frontier as a space where the worst people thrive and meaning is difficult to locate is a direct borrowing. Blood Meridian is the darkest novel on this page — the Judge is not a villain so much as an argument — and it requires patience with its biblical prose rhythms. Caveat: no plot in the conventional sense; this is an atmosphere and a philosophy, not a story.",
+          note: "The text Red Country is most directly in conversation with. McCarthy's scalp-hunters ride through a landscape of pure, indifferent violence — no redemption arcs, no narrative justice, no moral scaffolding. Abercrombie writes against this: his characters have self-awareness McCarthy's don't, and Red Country has considerably more warmth. But the frontier as a space where the worst people thrive and meaning is difficult to locate is a direct borrowing. Blood Meridian is the darkest novel on this page — the Judge is not a villain so much as an argument — and it requires patience with its biblical prose rhythms.",
+          caveat: "no plot in the conventional sense; this is an atmosphere and a philosophy, not a story.",
           tags: [
             'Western',
             'Nihilism',
@@ -120,7 +127,8 @@ export const redCountry: BooksLikeEntry = {
           series_number: 2,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "An unexpected pairing, but the comparison holds: Tenar is a girl who has been made into a vessel for an institution's needs, who discovers who she might be outside of what she was shaped to be. Red Country asks the same question from the other direction — Shy is someone who has been many things and is trying not to be most of them. The Tombs of Atuan is quieter, more inward, and written with Le Guin's characteristic restraint. But if what you responded to in Red Country was the identity question — not the frontier, not Logen, but Shy herself — Le Guin is the right next read. Caveat: completely different tone, pacing, and darkness level.",
+          note: "An unexpected pairing, but the comparison holds: Tenar is a girl who has been made into a vessel for an institution's needs, who discovers who she might be outside of what she was shaped to be. Red Country asks the same question from the other direction — Shy is someone who has been many things and is trying not to be most of them. The Tombs of Atuan is quieter, more inward, and written with Le Guin's characteristic restraint. But if what you responded to in Red Country was the identity question — not the frontier, not Logen, but Shy herself — Le Guin is the right next read.",
+          caveat: "completely different tone, pacing, and darkness level.",
           tags: [
             'Female Protagonist',
             'Identity',

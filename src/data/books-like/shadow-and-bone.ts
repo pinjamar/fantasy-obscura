@@ -25,6 +25,12 @@ export const shadowAndBone: BooksLikeEntry = {
       "If you loved Shadow and Bone for the Darkling's magnetic menace, Alina's journey from nobody to the most powerful Grisha alive, and the Russian-inspired world — start with The Cruel Prince, An Ember in the Ashes, and The Bear and the Nightingale.",
     why_people_love:
       "Shadow and Bone works because Leigh Bardugo understood something most YA fantasy gets wrong: the villain is the most interesting person in the room, and making readers root for the hero means making the villain genuinely compelling rather than just cruel. The Darkling is one of the defining antagonists of modern YA — manipulative, ancient, and convincing enough that many readers finish the book unsure whose side they're actually on. The Grisha world is built with real cultural texture, the magic system is visually distinctive, and Alina's arc from overlooked cartographer's assistant to sun summoner has a satisfying momentum. Fair warning: the trilogy is the weakest part of the Grishaverse. Six of Crows, set in the same world, is significantly sharper. If the trilogy hooks you, the best is still ahead.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Shadow and Bone works because Leigh Bardugo understood something most YA fantasy gets wrong: the villain is the most interesting person in the room. The Grisha world is built with real cultural texture, the magic system is visually distinctive, and Alina's arc from overlooked cartographer's assistant to sun summoner has satisfying momentum. But the Darkling is the reason this trilogy has stayed in print." },
+      { type: 'labeled', label: 'The Darkling:', text: "Manipulative, ancient, and convincing enough that many readers finish the book unsure whose side they're actually on — he is one of the defining antagonists of modern YA. Bardugo writes him as genuinely compelling rather than just cruel, which means the reader goes where Alina goes and feels what Alina feels about it. The romantic tension works because the threat is real and the attraction is also real, and Bardugo doesn't let you off the hook about that." },
+      { type: 'paragraph', text: "Fair warning about the Grishaverse reading order: the trilogy is the weakest part of what Bardugo built. Six of Crows, set in the same world with a different cast, is significantly sharper in prose, structure, and character. The trilogy is worth reading as the foundation — the Grisha powers, the world's history, the Darkling's arc all pay off — but readers who want Bardugo's best work first should start with Six of Crows and come back." },
+      { type: 'warning', text: "The trilogy ends in a direction that divides readers sharply. Go in knowing the ending is deliberately uncomforting: the Darkling's arc concludes here, and Bardugo does not resolve it the way most readers expect or want. If you loved him, the ending is the price of that." },
+    ],
   },
   aspects: [
     {
@@ -43,7 +49,8 @@ export const shadowAndBone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "Cardan is the Darkling's closest equivalent in YA fantasy — cruel, charismatic, and constructed in a way that makes you understand the appeal even as he's doing awful things. The fae court scheming is sharper than anything in Shadow and Bone, Jude is a more active protagonist than Alina, and Holly Black is better at the push-pull of enemy dynamics than almost anyone in the genre. Caveat: the romance payoff takes longer — the first book is mostly setup and provocation.",
+          note: "Cardan is the Darkling's closest equivalent in YA fantasy — cruel, charismatic, and constructed in a way that makes you understand the appeal even as he's doing awful things. The fae court scheming is sharper than anything in Shadow and Bone, Jude is a more active protagonist than Alina, and Holly Black is better at the push-pull of enemy dynamics than almost anyone in the genre.",
+          caveat: "the romance payoff takes longer — the first book is mostly setup and provocation.",
           tags: ['Enemies to Lovers', 'Fae Courts', 'Morally Grey Love Interest', 'Political Intrigue'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
@@ -63,7 +70,8 @@ export const shadowAndBone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (5 books)',
           audiobook: true,
-          note: "Like Shadow and Bone, ACOTAR builds its tension around a heroine caught between a compelling but dangerous figure and her own awakening power — and like Bardugo, Maas understands that the most interesting romantic tension comes from genuine moral uncertainty. The world-building is lush, the stakes escalate sharply from book two onwards, and Rhysand occupies the same 'is he actually good?' space the Darkling does in Shadow and Bone. Caveat: the first book is the weakest of the series — the real ACOTAR experience starts with A Court of Mist and Fury.",
+          note: "Like Shadow and Bone, ACOTAR builds its tension around a heroine caught between a compelling but dangerous figure and her own awakening power — and like Bardugo, Maas understands that the most interesting romantic tension comes from genuine moral uncertainty. The world-building is lush, the stakes escalate sharply from book two onwards, and Rhysand occupies the same 'is he actually good?' space the Darkling does in Shadow and Bone.",
+          caveat: "the first book is the weakest of the series — the real ACOTAR experience starts with A Court of Mist and Fury.",
           tags: ['Enemies to Lovers', 'Fae Courts', 'Morally Grey Love Interest', 'Slow Burn'],
           amazon_url:
             'https://www.amazon.com/s?k=A+Court+of+Thorns+and+Roses+Maas&tag=librariancura-20',
@@ -87,7 +95,8 @@ export const shadowAndBone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "Two protagonists — a Scholar girl who infiltrates a brutal military academy to rescue her brother, and a Mask soldier who begins to question everything he was trained to be. An Ember in the Ashes has the same core tension as Shadow and Bone — ordinary person thrust into a world of power and violence — but Tahir's world is darker, the stakes are more immediate, and the romance is built on genuine moral conflict rather than magical destiny. Caveat: darker than Shadow and Bone in tone and content. The violence is not softened.",
+          note: "Two protagonists — a Scholar girl who infiltrates a brutal military academy to rescue her brother, and a Mask soldier who begins to question everything he was trained to be. An Ember in the Ashes has the same core tension as Shadow and Bone — ordinary person thrust into a world of power and violence — but Tahir's world is darker, the stakes are more immediate, and the romance is built on genuine moral conflict rather than magical destiny.",
+          caveat: "darker than Shadow and Bone in tone and content. The violence is not softened.",
           tags: ['Military Academy', 'Dual POV', 'Chosen One', 'Forbidden Romance'],
           amazon_url:
             'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
@@ -107,7 +116,8 @@ export const shadowAndBone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (8 books)',
           audiobook: true,
-          note: "A young assassin competes in a deadly tournament at the king's court while slowly uncovering a magic she didn't know she had. Throne of Glass shares Shadow and Bone's trajectory — the first book is the lightest and most YA, and the series transforms into something much larger across eight books. Like Alina, Celaena's arc is about accepting a power and a destiny she didn't ask for. Caveat: the series requires patience. Books three and four are where it becomes exceptional.",
+          note: "A young assassin competes in a deadly tournament at the king's court while slowly uncovering a magic she didn't know she had. Throne of Glass shares Shadow and Bone's trajectory — the first book is the lightest and most YA, and the series transforms into something much larger across eight books. Like Alina, Celaena's arc is about accepting a power and a destiny she didn't ask for.",
+          caveat: "the series requires patience. Books three and four are where it becomes exceptional.",
           tags: ['Female Assassin', 'Chosen One', 'Magic Reveal', 'Enemies to Lovers'],
           amazon_url:
             'https://www.amazon.com/s?k=Throne+of+Glass+Sarah+J+Maas&tag=librariancura-20',
@@ -132,7 +142,8 @@ export const shadowAndBone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "The most direct match for Shadow and Bone's Russian aesthetic — set in medieval Russia and drawing on actual Slavic folklore. Vasya can see the household spirits and winter demons that everyone else dismisses as superstition, and the novel is about the cost of that sight in a world that wants to extinguish it. The prose is beautiful, the cold is palpable, and the supernatural elements feel genuinely mythic rather than decorative. Caveat: slower-paced and more literary than Shadow and Bone. The romance is secondary to the folklore.",
+          note: "The most direct match for Shadow and Bone's Russian aesthetic — set in medieval Russia and drawing on actual Slavic folklore. Vasya can see the household spirits and winter demons that everyone else dismisses as superstition, and the novel is about the cost of that sight in a world that wants to extinguish it. The prose is beautiful, the cold is palpable, and the supernatural elements feel genuinely mythic rather than decorative.",
+          caveat: "slower-paced and more literary than Shadow and Bone. The romance is secondary to the folklore.",
           tags: ['Slavic Folklore', 'Russian Setting', 'Female Protagonist', 'Dark Fairy Tale'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Bear+and+the+Nightingale+Katherine+Arden&tag=librariancura-20',
@@ -149,7 +160,8 @@ export const shadowAndBone: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "A girl from a valley protected by a powerful and cold wizard discovers she has magic he didn't expect — and everything changes. Uprooted has the same Eastern European folk-magic atmosphere as Shadow and Bone, the same dynamic between an inexperienced girl and a powerful, difficult mentor-figure, and the same sense that the magic is alive and strange rather than systematised. The Dragon shares DNA with the Darkling — demanding, complicated, impossible to read. Caveat: standalone. No sequels. The story completes here.",
+          note: "A girl from a valley protected by a powerful and cold wizard discovers she has magic he didn't expect — and everything changes. Uprooted has the same Eastern European folk-magic atmosphere as Shadow and Bone, the same dynamic between an inexperienced girl and a powerful, difficult mentor-figure, and the same sense that the magic is alive and strange rather than systematised. The Dragon shares DNA with the Darkling — demanding, complicated, impossible to read.",
+          caveat: "standalone. No sequels. The story completes here.",
           tags: ['Slavic-Inspired', 'Magic Discovery', 'Morally Complex Mentor', 'Dark Fairy Tale'],
           amazon_url:
             'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
