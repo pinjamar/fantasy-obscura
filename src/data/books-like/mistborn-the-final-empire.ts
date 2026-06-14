@@ -25,6 +25,12 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
       'If you loved Mistborn for the rule-based magic, heist structure, underdog rebellion, and crew dynamic, start with The Way of Kings, Six of Crows and The Lies of Locke Lamora.',
     why_people_love:
       "Mistborn earns its devoted readership through two things it does better than almost anyone else: a magic system that feels genuinely original and fair, and a heist narrative that gives the mechanics somewhere to actually go. Kelsier is one of fantasy's great charismatic leaders — magnetic, morally complicated, and driving every scene he's in. The world of ash and eternal night has a weight to it that most secondary worlds don't manage, and the finale earns its emotional punch. Fair warning: the first hundred pages are slow as Sanderson lays the groundwork. Push through — the back half moves fast and pays off everything it's been building.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Mistborn earns its devoted readership through two things it does better than almost anyone else: a magic system that feels genuinely original and fair, and a heist narrative that gives the mechanics somewhere to go. Allomancy — burning metals to gain powers — is Sanderson's thesis statement: magic should have rules, costs, and combat choreography that expresses character rather than just resolves conflict." },
+      { type: 'labeled', label: 'Kelsier:', text: "The Survivor of Hathsin is one of fantasy's great charismatic leaders — magnetic, morally complicated, and the only person in the empire who actually believes the Lord Ruler can be killed. His relationship with Vin is the engine of the first book: a mentor who sees something in her that she cannot yet see in herself, and whose methods are more compromised than he admits." },
+      { type: 'paragraph', text: "The world of ash and eternal night has a weight that most secondary worlds don't manage — something went catastrophically wrong a thousand years ago, and the evidence is in every detail of daily life. The trilogy's last-act reveals recontextualise the whole series. Sanderson earned those revelations by laying the groundwork from page one." },
+      { type: 'warning', text: "The first hundred pages are slow as Sanderson lays the groundwork for the magic and the world. Push through — the back half moves fast and pays off everything. Fair warning for the series: the second trilogy is set 300 years later in a more modern world; the fourth is space opera. The original trilogy is complete and self-contained." },
+    ],
   },
   aspects: [
     {
@@ -44,7 +50,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (10 books planned)',
           audiobook: true,
-          note: "Stormlight Archive is Sanderson operating at full scale. The magic — Stormlight, Shardblades, Radiant powers — is even more elaborately constructed than Allomancy. Slower opening than Mistborn, but by book's end you'll understand why people call it the best epic fantasy being written today. Caveat: the first 200 pages test your patience. Push through.",
+          note: "Stormlight Archive is Sanderson operating at full scale. The magic — Stormlight, Shardblades, Radiant powers — is even more elaborately constructed than Allomancy. Slower opening than Mistborn, but by book's end you'll understand why people call it the best epic fantasy being written today.",
+          caveat: "the first 200 pages test your patience. Push through.",
           tags: ['Hard Magic', 'Epic Scale', 'Multiple POVs'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Way+of+Kings+Brandon+Sanderson&tag=librariancura-20',
@@ -63,7 +70,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (unfinished — be warned)',
           audiobook: true,
-          note: "Where Sanderson builds systems, Rothfuss builds atmosphere. The magic here — Sympathy — has its own internal logic but feels more like chemistry than physics. Kvothe is the anti-Vin: arrogant, brilliant, unreliable. The prose is genuinely beautiful in a way Sanderson's isn't. Caveat: book 3 has been unfinished for 14 years. Read knowing this.",
+          note: "Where Sanderson builds systems, Rothfuss builds atmosphere. The magic here — Sympathy — has its own internal logic but feels more like chemistry than physics. Kvothe is the anti-Vin: arrogant, brilliant, unreliable. The prose is genuinely beautiful in a way Sanderson's isn't.",
+          caveat: "book 3 has been unfinished for 14 years. Read knowing this.",
           tags: ['Hard Magic', 'Single POV', 'Slower Burn'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
@@ -87,7 +95,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (duology)',
           audiobook: true,
-          note: "The most purely fun book on this list. Six morally compromised people plan an impossible heist. The ensemble structure means you're never bored, and Bardugo's Ketterdam feels as lived-in as the Final Empire. Less hard magic, more character chemistry. Caveat: read Bardugo's Shadow and Bone trilogy first or you'll miss context.",
+          note: "The most purely fun book on this list. Six morally compromised people plan an impossible heist. The ensemble structure means you're never bored, and Bardugo's Ketterdam feels as lived-in as the Final Empire. Less hard magic, more character chemistry.",
+          caveat: "read Bardugo's Shadow and Bone trilogy first or you'll miss context.",
           tags: ['Heist', 'Found Family', 'Morally Grey Characters'],
           amazon_url:
             'https://www.amazon.com/s?k=Six+of+Crows+Leigh+Bardugo&tag=librariancura-20',
@@ -106,7 +115,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (ongoing)',
           audiobook: true,
-          note: 'If the heist planning and crew chemistry were your main draws, this is the more hardcore version. The Gentleman Bastards are con artists in a city that feels genuinely dangerous, and the schemes are elaborately satisfying. Lynch writes banter better than almost anyone. Caveat: significantly darker and more violent than Mistborn. The pacing in the middle third is uneven but the payoff is real.',
+          note: 'If the heist planning and crew chemistry were your main draws, this is the more hardcore version. The Gentleman Bastards are con artists in a city that feels genuinely dangerous, and the schemes are elaborately satisfying. Lynch writes banter better than almost anyone.',
+          caveat: "significantly darker and more violent than Mistborn. The pacing in the middle third is uneven but the payoff is real.",
           tags: ['Heist', 'Con Artists', 'Dark World'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
@@ -150,7 +160,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy + standalones)',
           audiobook: true,
-          note: "Mistborn subverts the Chosen One trope; The Blade Itself goes further, cheerfully dismantling every heroic fantasy convention it can find. The ensemble cast is morally compromised in ways that feel earned rather than edgy, and Abercrombie's ear for character voice is exceptional. Caveat: if you were drawn to Mistborn's sense of hope — the idea that the underdog can actually win — the First Law will actively antagonise that instinct. It's a deconstruction.",
+          note: "Mistborn subverts the Chosen One trope; The Blade Itself goes further, cheerfully dismantling every heroic fantasy convention it can find. The ensemble cast is morally compromised in ways that feel earned rather than edgy, and Abercrombie's ear for character voice is exceptional.",
+          caveat: "if you were drawn to Mistborn's sense of hope — the idea that the underdog can actually win — the First Law will actively antagonise that instinct. It's a deconstruction.",
           tags: [
             'Grimdark',
             'Morally Grey Characters',
@@ -202,7 +213,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
         'Dark World',
         'Clever Protagonists',
       ],
-      why: "The closest thing to Mistborn's heist energy you'll find. The Gentleman Bastards are a crew of con artists operating in a city that feels genuinely dangerous, and the schemes are elaborately satisfying in the same way Allomancy is — complex, with costs, and revealed in layers. Lynch writes banter better than almost anyone in the genre. Caveat: significantly darker and more violent than Mistborn, and the pacing in the middle third is uneven. The payoff is worth it.",
+      why: "The closest thing to Mistborn's heist energy you'll find. The Gentleman Bastards are a crew of con artists operating in a city that feels genuinely dangerous, and the schemes are elaborately satisfying in the same way Allomancy is — complex, with costs, and revealed in layers. Lynch writes banter better than almost anyone in the genre.",
+      caveat: "significantly darker and more violent than Mistborn, and the pacing in the middle third is uneven. The payoff is worth it.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -222,7 +234,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
         'Multiple POVs',
         'Morally Grey Characters',
       ],
-      why: "If Mistborn's heist structure and found family dynamic were your main draws, Six of Crows delivers both with more romance. A crew of misfit criminals planning an impossible prison break — the structure is familiar, the execution is sharp, and Kaz Brekker is one of the genre's better morally grey leads. Caveat: lighter in tone and the magic system is less central. It's Bardugo at her best, which is very good, but a different kind of book.",
+      why: "If Mistborn's heist structure and found family dynamic were your main draws, Six of Crows delivers both with more romance. A crew of misfit criminals planning an impossible prison break — the structure is familiar, the execution is sharp, and Kaz Brekker is one of the genre's better morally grey leads.",
+      caveat: "lighter in tone and the magic system is less central. It's Bardugo at her best, which is very good, but a different kind of book.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -242,7 +255,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
         'University Setting',
         'Legendary Protagonist',
       ],
-      why: "Sympathy and Naming are built with the same rigorous internal logic as Allomancy, and Kvothe's outsider-genius arc has the same propulsive quality as Vin's. The prose is a step up from Sanderson. Caveat: the series is unfinished and has been for fifteen years — book three shows no sign of arriving. If you can make peace with that, the first two books are genuinely exceptional.",
+      why: "Sympathy and Naming are built with the same rigorous internal logic as Allomancy, and Kvothe's outsider-genius arc has the same propulsive quality as Vin's. The prose is a step up from Sanderson.",
+      caveat: "the series is unfinished and has been for fifteen years — book three shows no sign of arriving. If you can make peace with that, the first two books are genuinely exceptional.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -257,7 +271,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
       darkness_level: 3,
       heat_level: null,
       tags: ['Found Family', 'Multiple POVs', 'Massive World', 'Same Author'],
-      why: "The obvious next step if you loved Mistborn and want more Sanderson at full scale. Three interconnected magic systems, multiple continents, and characters who are psychologically complex in ways Mistborn only hints at. Kaladin's arc in book one is the best thing Sanderson has written. Caveat: this is a serious commitment — book one is over 1,000 pages and the series currently stands at five volumes.",
+      why: "The obvious next step if you loved Mistborn and want more Sanderson at full scale. Three interconnected magic systems, multiple continents, and characters who are psychologically complex in ways Mistborn only hints at. Kaladin's arc in book one is the best thing Sanderson has written.",
+      caveat: "this is a serious commitment — book one is over 1,000 pages and the series currently stands at five volumes.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -278,7 +293,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
         'Political Intrigue',
         'Ensemble Cast',
       ],
-      why: "Mistborn subverts the Chosen One trope in interesting ways; The Blade Itself goes further, cheerfully dismantling every heroic fantasy convention it can find. The ensemble cast is morally compromised in ways that feel earned rather than edgy. Caveat: if you were drawn to Mistborn's sense of hope — the idea that the underdog can actually win — the First Law trilogy will actively antagonise that instinct. It's a deconstruction.",
+      why: "Mistborn subverts the Chosen One trope in interesting ways; The Blade Itself goes further, cheerfully dismantling every heroic fantasy convention it can find. The ensemble cast is morally compromised in ways that feel earned rather than edgy.",
+      caveat: "if you were drawn to Mistborn's sense of hope — the idea that the underdog can actually win — the First Law trilogy will actively antagonise that instinct. It's a deconstruction.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -299,7 +315,8 @@ export const mistbornTheFinalEmpire: BooksLikeEntry = {
         'Same Author',
         'Dual POV',
       ],
-      why: 'If you want more Sanderson before committing to a 10-book series, Elantris is the gentler on-ramp. His first published novel — the prose is rougher and the characters less developed — but the mystery of the broken magic system is compelling and it resolves completely in one volume. Caveat: lower expectations on prose and character depth, enjoy the puzzle plot.',
+      why: 'If you want more Sanderson before committing to a 10-book series, Elantris is the gentler on-ramp. His first published novel — the prose is rougher and the characters less developed — but the mystery of the broken magic system is compelling and it resolves completely in one volume.',
+      caveat: "lower expectations on prose and character depth, enjoy the puzzle plot.",
       standalone: true,
       audiobook: true,
       amazon_url:

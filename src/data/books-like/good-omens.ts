@@ -25,6 +25,25 @@ export const goodOmens: BooksLikeEntry = {
       "If you loved Good Omens for the cosmic absurdism, the central friendship between opposites, and the prose that makes you laugh and then quietly breaks your heart — start with The Hitchhiker's Guide to the Galaxy, Anansi Boys, and Piranesi.",
     why_people_love:
       "Good Omens works because Pratchett and Gaiman understood that comedy and profundity are not opposites — they're the same thing approached from different angles. The book is about an angel and a demon who've grown too fond of Earth to let it end, and that premise gives both authors room to do what they do best: Pratchett dismantles bureaucracy and religion with surgical wit, Gaiman makes mythology feel intimate and strange, and together they write a friendship so warm it functions as the novel's actual argument about what matters. The Antichrist is an eleven-year-old boy in a small English town who mostly wants to keep his dog. The Four Horsemen of the Apocalypse have day jobs. None of this is played for cheap laughs — it is played for everything.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Good Omens works because Pratchett and Gaiman understood that comedy and profundity are not opposites — they're the same thing approached from different angles. An angel and a demon who have grown too fond of Earth to let it end, and that premise gives both authors room to do what they do best.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Friendship:',
+        text: "Aziraphale and Crowley have been colleagues for six thousand years and neither of them will admit what that makes them. The relationship is built almost entirely in negative space — what they won't say, what they excuse in each other, what they'd quietly do to prevent the other from being inconvenienced by the apocalypse.",
+      },
+      {
+        type: 'paragraph',
+        text: "Pratchett dismantles bureaucracy and religion with surgical wit; Gaiman makes mythology feel intimate and strange; together they write a novel whose actual argument is that the universe is ridiculous and that's somehow fine. The Antichrist is an eleven-year-old in a small English town who mostly wants to keep his dog.",
+      },
+      {
+        type: 'warning',
+        text: "The tone is light throughout — this is not a book that earns its warmth through suffering. Readers who want their comedy to have harder edges or their stakes to feel genuinely lethal will find Good Omens less satisfying than expected.",
+      },
+    ],
   },
   aspects: [
     {

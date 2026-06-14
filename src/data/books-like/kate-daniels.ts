@@ -27,6 +27,25 @@ export const kateDaniels: BooksLikeEntry = {
       "If you loved Magic Bites for Kate's voice, the Atlanta magic-tech world, and the slow burn with Curran — this page has seven picks across all three angles.",
     why_people_love:
       "Ilona Andrews solved the core tension of urban fantasy with Kate Daniels: the protagonist has to be powerful enough to matter, vulnerable enough to be in real danger, and funny enough that you enjoy spending time in her head. Kate is all three simultaneously, delivered through a first-person voice so consistent it never wavers across ten books. The world-building hook — magic and technology alternate in unpredictable waves, with Atlanta lurching between modernity and medieval conditions — is one of the genuinely original ideas in early 2000s fantasy, giving the city a texture no other urban fantasy setting quite replicates. The Pack provides supernatural politics with a center of gravity: the shapeshifters are not the enemy but not quite the ally, a power structure Kate has to navigate rather than fight or join. What keeps readers through ten books is that Andrews paid off the slow burn with Curran properly — and then kept writing about what comes after it, which almost no one in the genre bothers to do.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Ilona Andrews solved the core tension of urban fantasy with Kate Daniels: the protagonist has to be powerful enough to matter, vulnerable enough to be in real danger, and funny enough that you enjoy spending time in her head. Kate is all three simultaneously, delivered through a first-person voice so consistent it never wavers across ten books.",
+      },
+      {
+        type: 'labeled',
+        label: 'The World:',
+        text: "Magic and technology alternate in unpredictable waves, with Atlanta lurching between modernity and medieval conditions. This is one of the genuinely original ideas in early 2000s fantasy — a city with a texture no other urban fantasy setting quite replicates, where the rules are different depending on when you're standing in it.",
+      },
+      {
+        type: 'paragraph',
+        text: "The Pack provides supernatural politics with a center of gravity: the shapeshifters are not the enemy but not quite the ally, a power structure Kate has to navigate rather than fight or join. What keeps readers through ten books is that Andrews paid off the slow burn with Curran properly — and then kept writing about what comes after it, which almost no one in the genre bothers to do.",
+      },
+      {
+        type: 'warning',
+        text: "Magic Bites, the first book, is the weakest in the series by most readers' assessment — the world and voice improve significantly by book three. Readers who find the opening installment slight should know the series deepens considerably. Commit past book one before deciding.",
+      },
+    ],
   },
   aspects: [
     {
@@ -286,7 +305,8 @@ export const kateDaniels: BooksLikeEntry = {
         'Snarky Voice',
         'Cincinnati Setting',
       ],
-      why: "Rachel Morgan is the Kate Daniels of Cincinnati: a witch who quit the supernatural law enforcement agency and now runs her own operation out of a church with a living vampire and a pixie, navigating a city where humans know the supernatural world exists. Harrison's world has the same density of factions (witches, vampires, pixies, weres) and the same pleasure of watching a competent woman operate across all of them without being quite as dangerous as any of them. The series runs to 13 books and the long-game arc rewards commitment. Caveat: the first book is the weakest — stick through book 2 before deciding.",
+      why: "Rachel Morgan is the Kate Daniels of Cincinnati: a witch who quit the supernatural law enforcement agency and now runs her own operation out of a church with a living vampire and a pixie, navigating a city where humans know the supernatural world exists. Harrison's world has the same density of factions (witches, vampires, pixies, weres) and the same pleasure of watching a competent woman operate across all of them without being quite as dangerous as any of them. The series runs to 13 books and the long-game arc rewards commitment.",
+      caveat: "the first book is the weakest — stick through book 2 before deciding.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -307,7 +327,8 @@ export const kateDaniels: BooksLikeEntry = {
         'San Francisco',
         'Long Series',
       ],
-      why: "October Daye is a half-Fae private investigator in San Francisco who handles supernatural cases the mundane world cannot see — the same job description as Kate, different mythology. McGuire's Faerie is more politically complex than Andrews's Pack, the mysteries are consistently well-constructed, and Toby has Kate's stubbornness about staying down when she's beaten. The series runs to 17+ books and the continuity investment pays off heavily in the middle books. Caveat: slower to build than Kate Daniels and the early books are the weakest — the series hits stride around book four.",
+      why: "October Daye is a half-Fae private investigator in San Francisco who handles supernatural cases the mundane world cannot see — the same job description as Kate, different mythology. McGuire's Faerie is more politically complex than Andrews's Pack, the mysteries are consistently well-constructed, and Toby has Kate's stubbornness about staying down when she's beaten. The series runs to 17+ books and the continuity investment pays off heavily in the middle books.",
+      caveat: "slower to build than Kate Daniels and the early books are the weakest — the series hits stride around book four.",
       standalone: false,
       audiobook: true,
       amazon_url:

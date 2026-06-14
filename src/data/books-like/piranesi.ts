@@ -22,6 +22,12 @@ export const piranesi: BooksLikeEntry = {
     answer_line:
       'If you loved Piranesi for the dreamlike architecture, quiet mystery, meditative tone, and slow revelation of hidden truth, start with Jonathan Strange & Mr Norrell, The Buried Giant and The Starless Sea.',
     why_people_love: `Piranesi is a book that is almost impossible to describe without diminishing it. A man lives alone in a House of infinite halls filled with tidal statues and flooding lower vestibules, cataloguing everything with meticulous care and complete contentment — and he has no memory of how he got there. Clarke withholds information in a way that never feels cruel, allowing the strangeness of the world to accumulate until it means something. The mystery unfolds slowly and the revelation, when it comes, recontextualises everything without undercutting the beauty. Readers who found it difficult to return to other fiction afterward were responding to the rarity of a book this formally perfect, this controlled, this genuinely unlike anything else. It is short (272 pages), complete in one volume, and asks nothing of you except patience.`,
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Piranesi is almost impossible to describe without diminishing it. A man lives alone in a House of infinite halls filled with tidal statues and flooding lower vestibules, cataloguing everything with meticulous care and complete contentment — and he has no memory of how he got there. Clarke withholds information in a way that never feels cruel, allowing the strangeness to accumulate until it means something." },
+      { type: 'labeled', label: 'The House:', text: "The statues, the tides, the bird colonies in the upper halls — Piranesi catalogues them with the precision of a naturalist and the devotion of someone who has found their home. The House is not a puzzle to be escaped; it is a world to be known. That relationship — a person and an impossible place, recorded with care — is the emotional engine of the book before the mystery arrives to complicate it." },
+      { type: 'paragraph', text: "The mystery unfolds slowly and the revelation, when it comes, recontextualises everything without undercutting the beauty. Readers who found it difficult to return to other fiction afterward were responding to the rarity of a book this formally perfect, this controlled, this genuinely unlike anything else. It is 272 pages, complete in one volume, and asks nothing except patience." },
+      { type: 'warning', text: "Piranesi is not a comfort read — it is a formally rigorous literary novel that happens to be short. The mystery sharpens in the second half and becomes something urgent. Readers who want pure cozy atmosphere should know there is a plot, and the plot has weight. Clarke's other novel (Jonathan Strange & Mr Norrell) is 800 pages and more explicitly fantastical; the two books share a sensibility but are otherwise entirely different." },
+    ],
   },
   aspects: [
     {
@@ -57,7 +63,8 @@ export const piranesi: BooksLikeEntry = {
           darkness_level: 3,
           standalone: true,
           audiobook: true,
-          note: "Post-Arthurian England, where a collective amnesia has erased everyone's memory of the recent past. An elderly couple set out on a journey and gradually, gently, the truth of what they have forgotten begins to surface. Ishiguro uses the fantasy setting the same way Clarke does in Piranesi — not as spectacle but as a formal mechanism for exploring what it means to know and not know. The world is strange and quiet, the atmosphere is melancholy and precise, and the central mystery reshapes the meaning of everything that came before it. Caveat: slow and literary; there is genuine fantasy here (a dragon, Arthurian knights) but it is never foregrounded.",
+          note: "Post-Arthurian England, where a collective amnesia has erased everyone's memory of the recent past. An elderly couple set out on a journey and gradually, gently, the truth of what they have forgotten begins to surface. Ishiguro uses the fantasy setting the same way Clarke does in Piranesi — not as spectacle but as a formal mechanism for exploring what it means to know and not know. The world is strange and quiet, the atmosphere is melancholy and precise, and the central mystery reshapes the meaning of everything that came before it.",
+          caveat: "slow and literary; there is genuine fantasy here (a dragon, Arthurian knights) but it is never foregrounded.",
           tags: [
             'Arthurian',
             'Literary Fantasy',
@@ -87,7 +94,8 @@ export const piranesi: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (duology, complete)',
           audiobook: true,
-          note: "A priestess raised to be sacrificed escapes her fate and spends the novel piecing together who she is outside the identity that was imposed on her. The structure of self-discovery through accumulated revelations maps onto Piranesi's experience — a protagonist whose understanding of their own situation is radically incomplete, slowly reconstructing a world that was hidden from them. The tone is darker and more action-forward than Clarke's novel, but the central formal pleasure is the same: reality is not what it appeared. Caveat: significantly more violent and plot-driven than Piranesi.",
+          note: "A priestess raised to be sacrificed escapes her fate and spends the novel piecing together who she is outside the identity that was imposed on her. The structure of self-discovery through accumulated revelations maps onto Piranesi's experience — a protagonist whose understanding of their own situation is radically incomplete, slowly reconstructing a world that was hidden from them. The tone is darker and more action-forward than Clarke's novel, but the central formal pleasure is the same: reality is not what it appeared.",
+          caveat: "significantly more violent and plot-driven than Piranesi.",
           tags: [
             'Unreliable Self',
             'Identity Mystery',
@@ -108,7 +116,8 @@ export const piranesi: BooksLikeEntry = {
           darkness_level: 2,
           standalone: true,
           audiobook: true,
-          note: "A graduate student finds a book that contains a story about himself and follows it into an underground world of endless stories and doors. Morgenstern builds environments the way Clarke does — the Starless Sea is a place whose rules must be inferred, whose beauty is its primary argument, and whose logic is narrative rather than physical. The mystery of what is happening and why accumulates slowly and is never quite fully resolved. Caveat: looser structurally than Piranesi — the plot dissolves into atmosphere more than it resolves into revelation. If Piranesi's precision was the main appeal, this is its dreamier, less controlled cousin.",
+          note: "A graduate student finds a book that contains a story about himself and follows it into an underground world of endless stories and doors. Morgenstern builds environments the way Clarke does — the Starless Sea is a place whose rules must be inferred, whose beauty is its primary argument, and whose logic is narrative rather than physical. The mystery of what is happening and why accumulates slowly and is never quite fully resolved.",
+          caveat: "looser structurally than Piranesi — the plot dissolves into atmosphere more than it resolves into revelation. If Piranesi's precision was the main appeal, this is its dreamier, less controlled cousin.",
           tags: [
             'Impossible World',
             'Stories Within Stories',
@@ -135,7 +144,8 @@ export const piranesi: BooksLikeEntry = {
           darkness_level: 3,
           standalone: true,
           audiobook: true,
-          note: 'A middle-aged man returns to the farm at the end of his childhood lane and remembers things he had entirely forgotten. Gaiman writes the same collision of the mundane and the cosmically strange that Clarke does — the pond that is an ocean, the housekeeper who is something very old, the child protagonist who understands more than he should. The prose is precise and restrained, the wonder is earned through specific detail, and the emotional core is about the weight of forgotten things. Caveat: shorter and more parable-like than Piranesi; the mystery resolves rather than opens outward.',
+          note: 'A middle-aged man returns to the farm at the end of his childhood lane and remembers things he had entirely forgotten. Gaiman writes the same collision of the mundane and the cosmically strange that Clarke does — the pond that is an ocean, the housekeeper who is something very old, the child protagonist who understands more than he should. The prose is precise and restrained, the wonder is earned through specific detail, and the emotional core is about the weight of forgotten things.',
+          caveat: "shorter and more parable-like than Piranesi; the mystery resolves rather than opens outward.",
           tags: [
             'Childhood Wonder',
             'Literary Fantasy',
@@ -156,7 +166,8 @@ export const piranesi: BooksLikeEntry = {
           darkness_level: 2,
           standalone: true,
           audiobook: true,
-          note: 'A perfectly ordinary man discovers his father was Anansi the spider god, and that he has a brother who has inherited powers he never knew existed. Gaiman writes myth with the same quality Clarke brings to the House — events feel both impossible and exactly right, the world has a logic that only becomes clear in retrospect, and the prose is unhurried and precise. The tone is warmer and funnier than Piranesi, but the sense that reality is larger and stranger than any individual can perceive is the same. Caveat: more comedic and plot-driven; the meditative quality is lower, the wit higher.',
+          note: 'A perfectly ordinary man discovers his father was Anansi the spider god, and that he has a brother who has inherited powers he never knew existed. Gaiman writes myth with the same quality Clarke brings to the House — events feel both impossible and exactly right, the world has a logic that only becomes clear in retrospect, and the prose is unhurried and precise. The tone is warmer and funnier than Piranesi, but the sense that reality is larger and stranger than any individual can perceive is the same.',
+          caveat: "more comedic and plot-driven; the meditative quality is lower, the wit higher.",
           tags: [
             'Mythology',
             'Trickster Gods',
@@ -207,7 +218,8 @@ export const piranesi: BooksLikeEntry = {
         'Mystery',
         'Atmospheric',
       ],
-      why: "A graduate student follows a story that seems to be about him through a series of impossible doors into an underground world of stories, seas, and libraries. Where Piranesi has one man cataloguing one impossible place, Starless Sea has a labyrinthine world of nested narratives that comment on each other. The reading experience is comparable: you are inside a beautiful, strange thing that you understand in pieces. Morgenstern's prose is ornate and her plot is deliberately non-linear. Caveat: the story architecture is looser than Piranesi's — this is a book to be experienced rather than solved, and some readers find it unsatisfying as a result.",
+      why: "A graduate student follows a story that seems to be about him through a series of impossible doors into an underground world of stories, seas, and libraries. Where Piranesi has one man cataloguing one impossible place, Starless Sea has a labyrinthine world of nested narratives that comment on each other. The reading experience is comparable: you are inside a beautiful, strange thing that you understand in pieces. Morgenstern's prose is ornate and her plot is deliberately non-linear.",
+      caveat: "the story architecture is looser than Piranesi's — this is a book to be experienced rather than solved, and some readers find it unsatisfying as a result.",
       standalone: true,
       audiobook: true,
       amazon_url:

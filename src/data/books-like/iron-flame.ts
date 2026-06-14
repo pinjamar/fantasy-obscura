@@ -27,6 +27,25 @@ export const ironFlame: BooksLikeEntry = {
       'If you loved Iron Flame for the fractured romance, political conspiracy, dark war stakes, and the sense that every secret makes things worse, start with An Ember in the Ashes, A Court of Mist and Fury and From Blood and Ash',
     why_people_love:
       "Iron Flame works because Yarros committed to making the sequel darker and harder than the first book. The romance between Violet and Xaden doesn't reset — it breaks under the weight of what Xaden has been hiding, and watching two people who love each other fail to trust each other is more compelling than enemies finally kissing. The war threat moves from backdrop to centrepiece, and the venin plot raises genuine stakes. If Fourth Wing was a romantasy with a war college skin, Iron Flame is a war fantasy with a romantasy core. The pacing is uneven in the middle third, and some of the dialogue still reads as fanfic-adjacent, but the emotional beats land hard when they matter. The cliffhanger ending is genuinely brutal.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Iron Flame works because Yarros committed to making the sequel darker and harder than the first book. The romance between Violet and Xaden doesn't reset — it breaks under the weight of what Xaden has been hiding, and watching two people who love each other fail to trust each other is more compelling than enemies finally kissing.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Betrayal:',
+        text: "Xaden's secret-keeping isn't calculated cruelty — he has reasons, and the book makes those reasons legible. That's what makes the fracture hurt: there is no villain here, just two people whose love runs into information asymmetry and loses.",
+      },
+      {
+        type: 'paragraph',
+        text: "The war threat moves from backdrop to centrepiece, and the venin plot raises genuine stakes. If Fourth Wing was a romantasy with a war college skin, Iron Flame is a war fantasy with a romantasy core. The cliffhanger ending is genuinely brutal.",
+      },
+      {
+        type: 'warning',
+        text: "The pacing is uneven in the middle third, and some of the dialogue still reads as fanfic-adjacent. Read Fourth Wing first — this book doesn't stand alone. The cliffhanger ending requires committing to the rest of the series.",
+      },
+    ],
   },
   aspects: [
     {

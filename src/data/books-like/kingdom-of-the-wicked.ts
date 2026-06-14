@@ -20,6 +20,12 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
     ],
     why_people_love:
       "A young Sicilian woman summons a demon prince to help her find her twin sister's killer — and Wrath, the demon she gets, is exactly as dangerous and infuriating as he should be. Kerri Maniscalco wraps an enemies-to-lovers slow burn around a genuine murder mystery in 19th-century Sicily, and the gothic atmosphere does most of the heavy lifting: gaslit streets, sulphur and shadows, a world where the seven princes of Hell walk among the living and every bargain has a price. The romance builds across all three books; the mystery is gripping from page one.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Kingdom of the Wicked works because Maniscalco commits to two things simultaneously and refuses to let either undercut the other: a gothic murder mystery with genuine stakes, and an enemies-to-lovers slow burn with a demon who is actually dangerous. Most romantasy fakes the danger. Wrath is ancient and lethal and choosing, deliberately, to help Emilia — which is more unsettling than if he had no choice." },
+      { type: 'labeled', label: 'The Atmosphere:', text: "19th-century Sicily rendered with the specificity of someone who has read the folklore: gaslit streets, sulphur and shadow, the seven princes of Hell treated not as fantasy metaphor but as the actual cosmology of the world. The setting does most of the emotional heavy lifting — the menace is in the cobblestones." },
+      { type: 'paragraph', text: "The mystery is not decorative. Emilia is investigating her twin sister's murder, and that grief is the engine of everything — it is what gives her the nerve to summon a demon prince and what stops her from simply getting swept up in the romance. Maniscalco keeps the murder plot moving even as the slow burn does its work." },
+      { type: 'warning', text: "The romance builds across all three books and is not resolved in book one — this is a series commitment. The darkness level is high for YA but relatively restrained compared to adult dark romantasy. Readers who want explicit heat will not find it here." },
+    ],
     angle: 'Gothic Historical Romantasy with a Demon Love Interest',
   },
   aspects: [

@@ -26,6 +26,12 @@ export const lordOfTheRings: BooksLikeEntry = {
     answer_line:
       'If you loved The Lord of the Rings for the epic quest, deep worldbuilding, mythic weight, and fellowship-driven journey, start with The Eye of the World, The Dragonbone Chair, and A Wizard of Earthsea.',
     why_people_love: `The Fellowship of the Ring is the reason the word "epic" exists in fantasy. Tolkien built not just a story but an entire world — with languages, histories, genealogies, and myths stretching back thousands of years before the events of the novel — and somehow made all of that feel lived-in rather than encyclopaedic. What draws readers back is not the plot mechanics but the texture: the Shire's quiet domesticity against the enormity of what's coming, the sense that every hill and river has a name and a legend, the way the Fellowship itself — a dwarf, an elf, men, hobbits, a wizard — feels like a genuine group of people rather than a convenient lineup. The central argument of the book is moral rather than strategic: the Ring cannot be used against Sauron because power corrupts the one who wields it, and the only answer is to destroy it. That idea, paired with the image of the most ordinary people in the world carrying the most dangerous object, is what makes the story feel permanent.`,
+    why_people_love_rich: [
+      { type: 'paragraph', text: "The Fellowship of the Ring is the reason the word 'epic' exists in fantasy. Tolkien built not just a story but an entire world — with languages, histories, genealogies, and myths stretching back thousands of years — and somehow made all of that feel lived-in rather than encyclopaedic. What draws readers back is not the plot mechanics but the texture: the Shire's quiet domesticity against the enormity of what's coming." },
+      { type: 'labeled', label: 'The Shire:', text: "The novel begins in a place of perfect safety and comfort, and Tolkien spends chapters establishing it before the Ring's history arrives. That patient establishment is not slowness — it is the source of all the later stakes. You understand what is being risked because you were allowed to love it first." },
+      { type: 'paragraph', text: "The central argument of the book is moral rather than strategic: the Ring cannot be used against Sauron because power corrupts the one who wields it, and the only answer is to destroy it. That idea, paired with the image of the most ordinary people in the world carrying the most dangerous object, is what makes the story feel permanent." },
+      { type: 'warning', text: "Tolkien's prose is slower and more digressive than most modern fantasy — he will spend pages on songs, genealogies, and historical context that have no immediate plot function. This is a feature, not a flaw, but readers who want pace over texture will struggle. Fellowship ends with the Fellowship broken; the resolution requires all three volumes." },
+    ],
   },
   aspects: [
     {
@@ -43,7 +49,8 @@ export const lordOfTheRings: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (14 books, complete)',
           audiobook: true,
-          note: `The most structurally faithful heir to Fellowship of the Ring. Jordan consciously modelled the opening on Tolkien — a village of ordinary young people disrupted by a dark messenger, an urgent departure, a world that turns out to be far larger and more dangerous than they knew. The group dynamic across multiple POVs, the Aes Sedai as a Gandalf-equivalent (but more ambiguous), the ancient evil who was sealed away and is stirring again — all of it is Tolkien filtered through a more modern epic sensibility. Caveat: Jordan's prose is denser and less poetic than Tolkien's, and the series expands enormously in scope before eventually converging; readers who want something finished should know the payoff is 14 books away.`,
+          note: `The most structurally faithful heir to Fellowship of the Ring. Jordan consciously modelled the opening on Tolkien — a village of ordinary young people disrupted by a dark messenger, an urgent departure, a world that turns out to be far larger and more dangerous than they knew. The group dynamic across multiple POVs, the Aes Sedai as a Gandalf-equivalent (but more ambiguous), the ancient evil who was sealed away and is stirring again — all of it is Tolkien filtered through a more modern epic sensibility.`,
+          caveat: "Jordan's prose is denser and less poetic than Tolkien's, and the series expands enormously in scope before eventually converging; readers who want something finished should know the payoff is 14 books away.",
           tags: [
             'Epic Quest',
             'Ancient Evil',
@@ -67,7 +74,8 @@ export const lordOfTheRings: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (10 books planned, 5 released)',
           audiobook: true,
-          note: `The most ambitious modern attempt at Tolkien's scale. Sanderson builds Roshar with the same density of history, culture, and cosmology — in-world documents, epigraphs, and flashback chapters that gradually reveal a world with thousands of years of buried truth. The ensemble cast is distinct and well-developed, and the threat (the Desolations returning) operates on the same ancient-evil timescale as Sauron. At 1000+ pages, The Way of Kings rewards patience with the same sense of immersion as Fellowship. Caveat: Sanderson's prose is functional rather than lyrical — if you came to Tolkien primarily for the writing, this will feel different; if you came for the world and the stakes, this delivers both.`,
+          note: `The most ambitious modern attempt at Tolkien's scale. Sanderson builds Roshar with the same density of history, culture, and cosmology — in-world documents, epigraphs, and flashback chapters that gradually reveal a world with thousands of years of buried truth. The ensemble cast is distinct and well-developed, and the threat (the Desolations returning) operates on the same ancient-evil timescale as Sauron. At 1000+ pages, The Way of Kings rewards patience with the same sense of immersion as Fellowship.`,
+          caveat: "Sanderson's prose is functional rather than lyrical — if you came to Tolkien primarily for the writing, this will feel different; if you came for the world and the stakes, this delivers both.",
           tags: [
             'Epic World-Building',
             'Ancient Threat',
@@ -97,7 +105,8 @@ export const lordOfTheRings: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: `Williams wrote Memory, Sorrow and Thorn in explicit conversation with Tolkien, and The Dragonbone Chair is the most direct successor to Fellowship of the Ring in the genre. The world is built on layers of history stretching back thousands of years — multiple mythological traditions, each partially true, each partially distorted by the passage of time. The threat is an ancient evil returning through human weakness and political fracture, and the young protagonist is a kitchen scullion who becomes involved in events far larger than his own life. George R.R. Martin has cited this trilogy as a major influence on A Song of Ice and Fire. Caveat: the first book is slow to start and ends on an open note; the payoff builds across the full trilogy.`,
+          note: `Williams wrote Memory, Sorrow and Thorn in explicit conversation with Tolkien, and The Dragonbone Chair is the most direct successor to Fellowship of the Ring in the genre. The world is built on layers of history stretching back thousands of years — multiple mythological traditions, each partially true, each partially distorted by the passage of time. The threat is an ancient evil returning through human weakness and political fracture, and the young protagonist is a kitchen scullion who becomes involved in events far larger than his own life. George R.R. Martin has cited this trilogy as a major influence on A Song of Ice and Fire.`,
+          caveat: "the first book is slow to start and ends on an open note; the payoff builds across the full trilogy.",
           tags: [
             'Deep History',
             'Ancient Evil',
@@ -169,7 +178,8 @@ export const lordOfTheRings: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: `The most direct modern parallel to Frodo's arc: a protagonist who is not supposed to be important, who did not ask for the burden placed on him, and who responds to it not with heroic self-confidence but with quiet determination and fundamental decency. Maia inherits an empire he was never prepared for and navigates it without becoming ruthless — and the novel is quietly radical for insisting this is the right response rather than naivety. The emotional argument is the same as Fellowship: that small, kind people can carry enormous weight, and that their smallness is not a weakness. Caveat: the connection is thematic rather than structural; very different in plot and setting.`,
+          note: `The most direct modern parallel to Frodo's arc: a protagonist who is not supposed to be important, who did not ask for the burden placed on him, and who responds to it not with heroic self-confidence but with quiet determination and fundamental decency. Maia inherits an empire he was never prepared for and navigates it without becoming ruthless — and the novel is quietly radical for insisting this is the right response rather than naivety. The emotional argument is the same as Fellowship: that small, kind people can carry enormous weight, and that their smallness is not a weakness.`,
+          caveat: "the connection is thematic rather than structural; very different in plot and setting.",
           tags: [
             'Kind Protagonist',
             'Unexpected Greatness',
@@ -217,7 +227,8 @@ export const lordOfTheRings: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: `White's retelling of the Arthurian legend takes the same stance as Tolkien on the relation between myth and meaning: these things happened, they mattered, and the reason we still remember them is that they were true in the only sense that counts. The young Arthur is tutored by a Merlin living backwards through time, and the novel tracks the whole arc of Camelot from idealism to inevitable failure. White and Tolkien were writing in the same English literary tradition of taking mythology seriously as a moral framework — for readers who loved that quality in Fellowship specifically, this is its closest Arthurian parallel. Caveat: the four parts vary significantly in tone; the first (The Sword in the Stone) is almost a children's book; the later parts are much heavier.`,
+          note: `White's retelling of the Arthurian legend takes the same stance as Tolkien on the relation between myth and meaning: these things happened, they mattered, and the reason we still remember them is that they were true in the only sense that counts. The young Arthur is tutored by a Merlin living backwards through time, and the novel tracks the whole arc of Camelot from idealism to inevitable failure. White and Tolkien were writing in the same English literary tradition of taking mythology seriously as a moral framework — for readers who loved that quality in Fellowship specifically, this is its closest Arthurian parallel.`,
+          caveat: "the four parts vary significantly in tone; the first (The Sword in the Stone) is almost a children's book; the later parts are much heavier.",
           tags: [
             'Arthurian Myth',
             'Moral Weight',

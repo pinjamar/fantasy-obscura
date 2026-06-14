@@ -26,6 +26,25 @@ export const houseOfSaltAndSorrows: BooksLikeEntry = {
       'If you loved House of Salt and Sorrows for the creeping gothic dread, the Twelve Dancing Princesses retelling structure, and the sense that something impossibly beautiful is also killing everyone around the heroine, start with Caraval, House of Hollow, and The Hazel Wood.',
     why_people_love:
       "House of Salt and Sorrows works because Craig commits fully to the atmosphere — the salt-eaten estate, the sea that never stops taking, and the beautiful horror of the secret underground balls. The Twelve Dancing Princesses structure gives the mystery a built-in dread: you know from page one that the dancing is wrong, and watching Annaleigh piece together why while simultaneously being drawn into it herself is the engine that drives the book. The sisterhood is the emotional core — twelve daughters being picked off one by one, and the grief underneath the horror is real. The romance is present but never the point. This is for readers who want the fairy tale gothic experience: lush setting, creeping dread, a mystery that turns out to be worse than you suspected, and a heroine who has to trust her own perception against a world that keeps telling her she's imagining things.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "House of Salt and Sorrows works because Craig commits fully to the atmosphere — the salt-eaten estate, the sea that never stops taking, and the beautiful horror of the secret underground balls. The Twelve Dancing Princesses structure gives the mystery a built-in dread: you know from page one that the dancing is wrong.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Sisterhood:',
+        text: "Twelve daughters being picked off one by one, and the grief underneath the horror is real. The emotional core isn't the mystery or the romance — it's watching Annaleigh hold her family together while suspecting that the thing killing them might be something she loves.",
+      },
+      {
+        type: 'paragraph',
+        text: "The engine of the book is Annaleigh piecing together what's happening while simultaneously being drawn into it herself — a protagonist who has to trust her own perception against a world that keeps telling her she's imagining things. The romance is present but never the point.",
+      },
+      {
+        type: 'warning',
+        text: "This is YA gothic, not adult horror. The darkness is atmospheric rather than visceral, and the resolution is tidier than the dread building toward it. Readers who want the horror turned up and the fairy-tale softened should look at the darker picks on this page.",
+      },
+    ],
   },
   aspects: [
     {
@@ -44,7 +63,9 @@ export const houseOfSaltAndSorrows: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "The closest tonal match to House of Salt and Sorrows: sisters, a magical experience that is also a trap, and a heroine who can't be certain what's real. Garber's Caraval is a game that might be killing people, hosted in a world so lush and sensory it makes the danger feel seductive rather than obvious. The prose style is similarly atmospheric and the mystery structure is nearly identical — you're trying to solve what's real at the same time the protagonist is. Caveat: Caraval leans more into the romance than Craig does, and the tone is slightly more whimsical. If House of Salt and Sorrows' horror elements were the main draw, Caraval is lighter.",
+          note: "The closest tonal match to House of Salt and Sorrows: sisters, a magical experience that is also a trap, and a heroine who can't be certain what's real. Garber's Caraval is a game that might be killing people, hosted in a world so lush and sensory it makes the danger feel seductive rather than obvious. The prose style is similarly atmospheric and the mystery structure is nearly identical — you're trying to solve what's real at the same time the protagonist is.",
+          caveat:
+            "Caraval leans more into the romance than Craig does, and the tone is slightly more whimsical. If House of Salt and Sorrows' horror elements were the main draw, Caraval is lighter.",
           tags: [
             'Magical Game',
             'Sisters',
@@ -69,7 +90,9 @@ export const houseOfSaltAndSorrows: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (2 books)',
           audiobook: true,
-          note: "A girl who has spent her whole life running from the dark fairy tales in her grandmother's famous book, until the stories start coming for her directly. Albert writes fairy tale horror with the same commitment to atmosphere as Craig — the Hinterland stories are genuinely unsettling, and the sense of a beautiful world that operates by rules designed to hurt you is the same engine. The darkness is a notch higher than House of Salt and Sorrows and the romance is nearly absent. Caveat: more horror-adjacent and less mystery-driven than Craig — the dread here is more existential, less whodunit.",
+          note: "A girl who has spent her whole life running from the dark fairy tales in her grandmother's famous book, until the stories start coming for her directly. Albert writes fairy tale horror with the same commitment to atmosphere as Craig — the Hinterland stories are genuinely unsettling, and the sense of a beautiful world that operates by rules designed to hurt you is the same engine.",
+          caveat:
+            'more horror-adjacent and less mystery-driven than Craig — the dread here is more existential, less whodunit.',
           tags: [
             'Fairy Tale Horror',
             'Dark Atmosphere',
@@ -97,7 +120,9 @@ export const houseOfSaltAndSorrows: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: "Three sisters who disappeared as children and came back changed, and now one of them is missing again. House of Hollow is the most direct structural companion to House of Salt and Sorrows in the market: sisters, mysterious disappearances, a horror that is beautiful before it is terrible, and a protagonist piecing together what actually happened to her family. The darkness is higher than Craig's — Sutherland is writing literary horror rather than gothic fairy tale — and the atmosphere is similarly consuming. Caveat: standalone with no romance arc; readers who came to Craig for the slow-burn relationship will find less of that here.",
+          note: "Three sisters who disappeared as children and came back changed, and now one of them is missing again. House of Hollow is the most direct structural companion to House of Salt and Sorrows in the market: sisters, mysterious disappearances, a horror that is beautiful before it is terrible, and a protagonist piecing together what actually happened to her family. The darkness is higher than Craig's — Sutherland is writing literary horror rather than gothic fairy tale — and the atmosphere is similarly consuming.",
+          caveat:
+            'standalone with no romance arc; readers who came to Craig for the slow-burn relationship will find less of that here.',
           tags: [
             'Missing Sisters',
             'Gothic Horror',
@@ -123,7 +148,9 @@ export const houseOfSaltAndSorrows: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: 'A decaying island estate, children with abilities that are also curses, a mystery about what happened to the previous inhabitants, and a protagonist who slowly realises the world is stranger and darker than anyone told him. The gothic atmosphere and the sense of a beautiful-but-wrong setting are the same register as Craig. The darkness is comparable — death is present but never gratuitous — and the mystery structure rewards the same patient attention. Caveat: the protagonist is male and the romance is lower-heat; readers who came to Craig specifically for the female-perspective sisterhood story will find a different emotional centre here.',
+          note: 'A decaying island estate, children with abilities that are also curses, a mystery about what happened to the previous inhabitants, and a protagonist who slowly realises the world is stranger and darker than anyone told him. The gothic atmosphere and the sense of a beautiful-but-wrong setting are the same register as Craig. The darkness is comparable — death is present but never gratuitous — and the mystery structure rewards the same patient attention.',
+          caveat:
+            'the protagonist is male and the romance is lower-heat; readers who came to Craig specifically for the female-perspective sisterhood story will find a different emotional centre here.',
           tags: [
             'Gothic Mystery',
             'Peculiar Children',
@@ -151,7 +178,9 @@ export const houseOfSaltAndSorrows: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "Novik's Rumpelstiltskin retelling and Craig's Twelve Dancing Princesses share the same DNA: fairy tale structures used to explore female agency in worlds that want to consume women, lush atmospheric prose, and a romance built on mutual suspicion rather than immediate attraction. Spinning Silver is more grounded in Slavic folklore and more politically complex than House of Salt and Sorrows, but the emotional register — a young woman navigating a beautiful and dangerous supernatural world by being smarter than the things trying to trap her — is nearly identical. Caveat: less horror, more fairy tale wisdom — the dread here is cold rather than creeping.",
+          note: "Novik's Rumpelstiltskin retelling and Craig's Twelve Dancing Princesses share the same DNA: fairy tale structures used to explore female agency in worlds that want to consume women, lush atmospheric prose, and a romance built on mutual suspicion rather than immediate attraction. Spinning Silver is more grounded in Slavic folklore and more politically complex than House of Salt and Sorrows, but the emotional register — a young woman navigating a beautiful and dangerous supernatural world by being smarter than the things trying to trap her — is nearly identical.",
+          caveat:
+            'less horror, more fairy tale wisdom — the dread here is cold rather than creeping.',
           tags: [
             'Fairy Tale Retelling',
             'Female Agency',
@@ -173,7 +202,9 @@ export const houseOfSaltAndSorrows: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "A glamorous socialite arrives at a decaying estate in 1950s Mexico to investigate her cousin's strange behaviour, and discovers the house itself is wrong. Mexican Gothic hits exactly the same notes as House of Salt and Sorrows: a beautiful, rotting setting; a protagonist whose perception is gradually undermined; deaths that don't make sense; and an atmosphere of elegant horror that builds rather than announces itself. The prose is sharper and the horror more visceral than Craig's, and the gothic tradition it draws from is more literary. Caveat: adult horror rather than YA fantasy — no magic system, no fairy tale structure, and the darkness at the end is genuinely disturbing.",
+          note: "A glamorous socialite arrives at a decaying estate in 1950s Mexico to investigate her cousin's strange behaviour, and discovers the house itself is wrong. Mexican Gothic hits exactly the same notes as House of Salt and Sorrows: a beautiful, rotting setting; a protagonist whose perception is gradually undermined; deaths that don't make sense; and an atmosphere of elegant horror that builds rather than announces itself. The prose is sharper and the horror more visceral than Craig's, and the gothic tradition it draws from is more literary.",
+          caveat:
+            'adult horror rather than YA fantasy — no magic system, no fairy tale structure, and the darkness at the end is genuinely disturbing.',
           tags: [
             'Gothic Horror',
             'Decaying Estate',

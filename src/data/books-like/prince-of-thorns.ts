@@ -20,6 +20,12 @@ export const princeOfThorns: BooksLikeEntry = {
     ],
     why_people_love:
       'Jorg Ancrath is 14 years old, a prince, a murderer, and one of the most compelling narrators in modern fantasy. Mark Lawrence does something almost impossible: he makes a genuinely evil protagonist so intelligent, so articulate, and so relentlessly honest about what he is that you cannot stop reading. The world compounds the effect — what looks like medieval fantasy is slowly revealed to be far-future Earth, where collapsed civilisation has been rewritten as myth and sorcery is forgotten technology. The prose is beautiful. The content is brutal. That contradiction is the whole point.',
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Prince of Thorns does something almost impossible: it makes a genuinely evil protagonist — fourteen years old, a murderer, a prince — so intelligent and so relentlessly honest about what he is that you cannot stop reading. Jorg Ancrath is not a misunderstood antihero. He knows exactly what he has done and why, and he tells you with the precision of someone who has thought about it carefully and found the reasoning satisfactory." },
+      { type: 'labeled', label: 'The World:', text: "What looks like medieval fantasy is slowly revealed to be far-future Earth, where collapsed civilisation has been rewritten as myth and sorcery is forgotten technology. Lawrence buries the reveals across all three books — each piece of anachronistic evidence fits the pattern — and understanding what the world actually is compounds everything you've already read. The concealed science-fiction layer is the most original element in modern grimdark." },
+      { type: 'paragraph', text: "The prose is beautiful. That contradiction — literary craft in the service of a genuinely dark protagonist — is the whole point. Lawrence writes Jorg's interiority with the uncomfortable intimacy that places you inside the logic of someone you are not sure you should be rooting for, and the writing is good enough that you keep reading anyway." },
+      { type: 'warning', text: "The darkness level is the series' defining feature and not a marketing convention — Jorg is not redeemable by most standards. The trilogy is complete and the payoff across all three books is substantial. Red Sister by the same author follows a female protagonist in a different world and is more accessible; readers who want Lawrence's prose without Jorg's interiority should start there." },
+    ],
     angle: 'Grimdark with a Hidden Post-Apocalyptic World',
   },
   aspects: [
@@ -83,7 +89,8 @@ export const princeOfThorns: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (unfinished — book 3 delayed indefinitely)',
           audiobook: true,
-          note: 'Rothfuss is the other pole of literary fantasy prose — where Lawrence is spare and brutal, Rothfuss is lyrical and expansive, but both are writers first and world-builders second. The contrast between Jorg and Kvothe is instructive: Kvothe is the legend of a hero; Jorg is the truth of a monster. Both are unreliable narrators performing a version of themselves. The Kingkiller Chronicle is lighter in darkness but heavier in craft. Caveat: book three has been unfinished since 2011.',
+          note: 'Rothfuss is the other pole of literary fantasy prose — where Lawrence is spare and brutal, Rothfuss is lyrical and expansive, but both are writers first and world-builders second. The contrast between Jorg and Kvothe is instructive: Kvothe is the legend of a hero; Jorg is the truth of a monster. Both are unreliable narrators performing a version of themselves. The Kingkiller Chronicle is lighter in darkness but heavier in craft.',
+          caveat: "book three has been unfinished since 2011.",
           tags: ['Literary Fantasy', 'Unreliable Narrator', 'Magic System', 'Lyrical Prose', 'Frame Narrative'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Name+of+the+Wind+Rothfuss&tag=librariancura-20',

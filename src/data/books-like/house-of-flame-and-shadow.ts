@@ -25,6 +25,25 @@ export const houseOfFlameAndShadow: BooksLikeEntry = {
       "If you loved House of Flame and Shadow for the crossover moment, Lidia's spy arc, or the final revelation of what the Asteri actually are, start with Empire of Storms, The Priory of the Orange Tree, and Mistborn.",
     why_people_love:
       "House of Flame and Shadow is the book where Maas finally connects all three of her universes and the result is exactly as unhinged and satisfying as her fans had hoped for years. The crossover — Bryce accidentally landing in Prythian, meeting Rhys and Nesta and Azriel while ACOTAR characters stumble into Crescent City — is earned precisely because Maas has been dropping threads since Kingdom of the Wicked, and watching them converge delivers the specific pleasure of retroactive planning paying off. The book's emotional MVP is Lidia Florentina: the Hind, the Asteri's most feared enforcer, revealed as a spy who spent years doing genuinely terrible things in service of a resistance she couldn't acknowledge, and whose reckoning with the cost of that survival is the most honest thing in any of the CC books. The Asteri themselves are finally explained in full: not just planetary overlords but cosmic parasites, farming worlds across the universe for millennia, and the scale of that revelation reframes everything from book one. Maas writes the third-act escalation with controlled momentum — you never doubt the danger because the losses are real.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "House of Flame and Shadow is the book where Maas finally connects all three of her universes and the result is exactly as unhinged and satisfying as her fans had hoped. The crossover — Bryce accidentally landing in Prythian — is earned because Maas has been dropping threads since Kingdom of the Wicked, and watching them converge delivers the specific pleasure of retroactive planning paying off.",
+      },
+      {
+        type: 'labeled',
+        label: "Lidia's Arc:",
+        text: "The Hind, the Asteri's most feared enforcer, revealed as a spy who spent years doing genuinely terrible things in service of a resistance she couldn't acknowledge. Her reckoning with the cost of that survival is the most honest thing in any of the Crescent City books.",
+      },
+      {
+        type: 'paragraph',
+        text: "The Asteri are finally explained in full: not just planetary overlords but cosmic parasites, farming worlds across the universe for millennia. That revelation reframes everything from book one. Maas writes the third-act escalation with controlled momentum — you never doubt the danger because the losses are real.",
+      },
+      {
+        type: 'warning',
+        text: "This is the third book in a series that is itself the third of three Maas series. The crossover payoff requires reading investment in at least two of those worlds. New readers who start here will be confused; this is a book for the faithful, not the curious.",
+      },
+    ],
   },
   aspects: [
     {

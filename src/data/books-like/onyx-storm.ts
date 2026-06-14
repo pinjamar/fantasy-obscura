@@ -25,6 +25,12 @@ export const onyxStorm: BooksLikeEntry = {
       'If you loved Onyx Storm for the tested fated-mate bond, the world-expanding reveals, and the romantasy that finally starts killing people you care about, try The Cruel Prince, The Serpent and the Wings of Night, and The Priory of the Orange Tree.',
     why_people_love:
       'Onyx Storm is where the Empyrean series stopped being a romantasy with fantasy seasoning and became something genuinely darker. The Violet-Xaden dynamic hits differently in book three — the trust is fractured, the secrets are load-bearing, and Yarros makes you feel the cost of loving someone who is becoming something dangerous. The world expansion beyond Navarre works because it recontextualises everything you thought you knew: the war is bigger, the institutions were lying, and the venin threat has no clean solution. For a lot of readers, this is the book where the series earned its reputation. The heat is still there. The grief is louder now.',
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Onyx Storm is where the Empyrean series stopped being a romantasy with fantasy seasoning and became something genuinely darker. By book three, Yarros has earned enough trust to break things: the Violet-Xaden dynamic hits differently when the trust is fractured and the secrets are load-bearing, and the grief that arrives in this volume is real. The world expansion beyond Navarre recontextualises everything — the war is bigger, the institutions were lying, and the venin threat has no clean solution." },
+      { type: 'labeled', label: 'The Bond:', text: "What makes the Violet-Xaden dynamic work in book three is precisely that it shouldn't. The secrets Xaden has kept are not small, and Yarros makes you feel the cost of loving someone who is becoming something dangerous. The relationship has more weight here than in the first two books because it has something real at stake: not whether they end up together, but whether they can." },
+      { type: 'paragraph', text: "The found family — Ridoc, Rhiannon, Imogen — are not just ensemble padding in this book; their choices are load-bearing. Yarros has enough readers invested in these specific people that she can use them as emotional leverage, and she does. The series also expands its cast in ways that pay off what the earlier books established." },
+      { type: 'warning', text: "Onyx Storm is book three and genuinely requires the first two — it is not an entry point. The heat is still explicit but functions differently here, as the texture of a relationship under pressure rather than pure romance. Readers who found the first two books too slow will not find this one slower, but the grief level is considerably higher." },
+    ],
   },
   aspects: [
     {
@@ -43,7 +49,8 @@ export const onyxStorm: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: 'The Jude-Cardan dynamic is the best literary parallel to Violet and Xaden: power imbalance, manipulation deployed as armour, love that neither person wants to admit because admitting it is weakness. Holly Black executes the "I cannot trust you but I cannot let you go" dynamic with more precision than almost anyone writing romantasy. The Wicked King (book 2) is where the tension pays off — go in expecting to read both. Caveat: significantly less heat than Onyx Storm, heavier on court politics.',
+          note: 'The Jude-Cardan dynamic is the best literary parallel to Violet and Xaden: power imbalance, manipulation deployed as armour, love that neither person wants to admit because admitting it is weakness. Holly Black executes the "I cannot trust you but I cannot let you go" dynamic with more precision than almost anyone writing romantasy. The Wicked King (book 2) is where the tension pays off — go in expecting to read both.',
+          caveat: "significantly less heat than Onyx Storm, heavier on court politics.",
           tags: [
             'Enemies to Lovers',
             'Power Imbalance',
@@ -96,7 +103,8 @@ export const onyxStorm: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "An 800-page standalone with three POVs, one of them a female dragon rider whose bond with her dragon is the emotional core of the book. The ruling class has been lying about the nature of the existential threat for a thousand years — which maps precisely onto Onyx Storm's revelation that Navarre's leadership understood the venin problem and buried it. Shannon's dragons are not Yarros's dragons, but the sense of a world bigger and more dangerous than the protagonists were told runs through both books. Caveat: no spice, slow start, literary in its pacing.",
+          note: "An 800-page standalone with three POVs, one of them a female dragon rider whose bond with her dragon is the emotional core of the book. The ruling class has been lying about the nature of the existential threat for a thousand years — which maps precisely onto Onyx Storm's revelation that Navarre's leadership understood the venin problem and buried it. Shannon's dragons are not Yarros's dragons, but the sense of a world bigger and more dangerous than the protagonists were told runs through both books.",
+          caveat: "no spice, slow start, literary in its pacing.",
           tags: [
             'Dragon Riders',
             'Female Protagonist',

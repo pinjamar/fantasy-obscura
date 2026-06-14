@@ -26,6 +26,25 @@ export const horusHeresy: BooksLikeEntry = {
       'If you loved Horus Rising for the tragedy of a great man made into something terrible by comprehensible steps, the military-scale warfare with real loss, and the sense of a universe in which even victory is a form of catastrophe, start with Malazan Book of the Fallen, The First Law, and The Black Company.',
     why_people_love:
       "The Horus Heresy works because it turns one of the oldest stories in fiction — the noble hero seduced by pride and dark power — into something with genuine tragic weight. Horus Lupercal at the opening of Horus Rising is the best of the Emperor's sons: brilliant, beloved, the Warmaster entrusted with completing the Great Crusade. The tragedy is not that Horus was always corrupt but that he becomes corrupt through comprehensible steps — pride exploited, a wound that changes everything, doubt introduced and then turned. Dan Abnett's Horus Rising, the first entry, is the series at its most literary: an attempt to write a 40K novel that works as fiction first and franchise content second. What follows across sixty-plus books and multiple authors of varying quality is one of the most extended tragic arcs in the genre — half the Emperor's Primarchs and their Space Marine legions turning against the Imperium, a ten-thousand-year war that the reader already knows the outcome of because the setting is the far future of Warhammer 40K. That dramatic irony — the reader knows Horus loses, that the Emperor survives on a golden throne for ten millennia — is not a flaw in the series. It is the source of its tragedy. The core trilogy (Horus Rising, False Gods, Galaxy in Flames) traces the arc from Horus's greatness to his fall and is complete enough to stand alone.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "The Horus Heresy works because it turns one of the oldest stories in fiction — the noble hero seduced by pride and dark power — into something with genuine tragic weight. Horus Lupercal at the opening of Horus Rising is the best of the Emperor's sons: brilliant, beloved, the Warmaster entrusted with completing the Great Crusade.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Tragedy:',
+        text: "Horus becomes corrupt through comprehensible steps — pride exploited, a wound that changes everything, doubt introduced and then turned. Dan Abnett's achievement in Horus Rising is making the fall feel inevitable in retrospect without ever telegraphing it as it happens.",
+      },
+      {
+        type: 'paragraph',
+        text: "The dramatic irony — the reader knows Horus loses, that the Emperor survives on a golden throne for ten millennia — is not a flaw. It is the source of the tragedy. You watch the betrayal happen already knowing the cost, and that foreknowledge gives every scene its particular weight.",
+      },
+      {
+        type: 'warning',
+        text: "The core trilogy (Horus Rising, False Gods, Galaxy in Flames) is the entry and stands alone. The larger series spans sixty-plus books across multiple authors of varying quality. Readers who want to go deeper should research recommended reading orders — not all volumes are worth the commitment.",
+      },
+    ],
   },
   aspects: [
     {

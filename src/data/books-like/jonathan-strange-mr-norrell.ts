@@ -26,6 +26,25 @@ export const jonathanStrangeMrNorrell: BooksLikeEntry = {
       "If you loved Jonathan Strange & Mr Norrell for its meticulous alternate history, its faerie menace, and Clarke's footnote-rich prose style, start with Piranesi, The Bear and the Nightingale, and The Goblin Emperor.",
     why_people_love:
       "Jonathan Strange & Mr Norrell is one of the few fantasy novels that feels genuinely written from another century. Clarke's England is the England of Wellington and Byron, except that magic was once real and has now largely been forgotten — and Mr Norrell, a reclusive Yorkshire gentleman, has quietly gathered every book of magic ever written. The novel's first half is a comedy of manners about a man who wants to revive English magic but absolutely does not want anyone else doing it; the second half is something stranger and darker, as the Gentleman with the Thistledown Hair — a fairy who has been making deals at the margins of the story since chapter one — steps forward. Clarke's footnotes are not decoration: they build an entire alternative history of English magic with the patience of a scholar writing a real historical text. The book is long, slow by design, and rewards readers who surrender to its pace completely.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Jonathan Strange & Mr Norrell is one of the few fantasy novels that feels genuinely written from another century. Clarke's England is the England of Wellington and Byron, except that magic was once real and has now largely been forgotten — and Mr Norrell, a reclusive Yorkshire gentleman, has quietly gathered every book of magic ever written.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Footnotes:',
+        text: "Not decoration — they build an entire alternative history of English magic with the patience of a scholar writing a real historical text. Each footnote is a glimpse into a deeper world that the main narrative is too polite to explain outright.",
+      },
+      {
+        type: 'paragraph',
+        text: "The novel's first half is a comedy of manners about a man who wants to revive English magic but absolutely does not want anyone else doing it. The second half is something stranger and darker, as the Gentleman with the Thistledown Hair steps forward — a fairy who has been making deals at the margins of the story since chapter one.",
+      },
+      {
+        type: 'warning',
+        text: "This book is long, slow by design, and written in the syntax of 19th-century prose. It does not build urgency in the conventional sense. Readers who surrender to its pace completely will find it unlike anything else. Readers who find it slow in the first fifty pages will find it slow throughout.",
+      },
+    ],
   },
   aspects: [
     {
@@ -63,7 +82,8 @@ export const jonathanStrangeMrNorrell: BooksLikeEntry = {
           darkness_level: 4,
           standalone: true,
           audiobook: true,
-          note: "1830s Oxford, alternate history, magic rooted in translation and etymology — and footnotes that work exactly as Clarke's do, building a shadow world of linguistic scholarship beneath the main narrative. Kuang's silver-working magic depends on the gap between a word's meaning in one language and its nearest equivalent in another, which means the academic apparatus is load-bearing rather than decorative. The tone is darker and more politically urgent than Strange & Norrell — colonialism and its costs are the explicit subject — but the scholarly register and the commitment to period detail are directly comparable. Caveat: devastating ending, not a comfort read.",
+          note: "1830s Oxford, alternate history, magic rooted in translation and etymology — and footnotes that work exactly as Clarke's do, building a shadow world of linguistic scholarship beneath the main narrative. Kuang's silver-working magic depends on the gap between a word's meaning in one language and its nearest equivalent in another, which means the academic apparatus is load-bearing rather than decorative. The tone is darker and more politically urgent than Strange & Norrell — colonialism and its costs are the explicit subject — but the scholarly register and the commitment to period detail are directly comparable.",
+          caveat: "devastating ending, not a comfort read.",
           tags: [
             'Alternate History',
             'Scholarly Voice',

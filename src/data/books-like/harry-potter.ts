@@ -26,6 +26,25 @@ export const harryPotter: BooksLikeEntry = {
       'If you loved Harry Potter for the magic school atmosphere, the found family, and a hidden world layered on top of the ordinary one — start with The Magicians, His Dark Materials, and The Name of the Wind.',
     why_people_love:
       "Harry Potter works on more levels than most people consciously notice. The world-building is dense and consistent — Diagon Alley, Quidditch, Hogwarts Express — but it never feels like an info-dump because it's delivered through a child encountering it for the first time alongside you. The school structure gives each book a natural rhythm: new year, new mystery, new Defence Against the Dark Arts teacher. But what most adults remember isn't actually the magic — it's the trio. Harry, Hermione, and Ron feel like a real friendship: unequal in ability, occasionally resentful, fiercely loyal when it counts. The series also earns its darkness. Books one and two are essentially cozy mysteries. Books four through seven are genuinely brutal. That tonal escalation — childhood adventure hardening into wartime — is harder to pull off than Rowling makes it look. And that's what most readers who 'want something like Harry Potter' are actually chasing: a world they believe in, people they'd miss, and stakes that grow into something real.",
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: "Harry Potter works on more levels than most people consciously notice. The world-building is dense and consistent — Diagon Alley, Quidditch, the Hogwarts Express — but it never feels like an info-dump because it's delivered through a child encountering it for the first time alongside you.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Trio:',
+        text: "Harry, Hermione, and Ron feel like a real friendship: unequal in ability, occasionally resentful, fiercely loyal when it counts. What most adults remember isn't actually the magic — it's these three. The relationship between them is harder to write than it looks.",
+      },
+      {
+        type: 'paragraph',
+        text: "The series earns its darkness. Books one and two are essentially cozy mysteries. Books four through seven are genuinely brutal. That tonal escalation — childhood adventure hardening into wartime — is harder to pull off than Rowling makes it look.",
+      },
+      {
+        type: 'warning',
+        text: "The series is designed for a reader who grows with it. Adults rereading from the beginning will find the early books faster and lighter than memory suggests. The depth arrives with Goblet of Fire and doesn't let go.",
+      },
+    ],
   },
   aspects: [
     {
@@ -97,7 +116,8 @@ export const harryPotter: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (book 3 unfinished)',
           audiobook: true,
-          note: "The University sections of Kvothe's story are the best magic school sequences since Hogwarts — sympathy (splitting your attention to power magic) is as internally consistent as Rowling's spell system and more intellectually interesting. Kvothe is a scholarship student surrounded by old-money peers, which gives the school dynamic genuine tension. The prose is beautiful and the first book is complete as a reading experience. Caveat: book 2 ends on a cliffhanger and book 3 has no release date. Go in knowing that.",
+          note: "The University sections of Kvothe's story are the best magic school sequences since Hogwarts — sympathy (splitting your attention to power magic) is as internally consistent as Rowling's spell system and more intellectually interesting. Kvothe is a scholarship student surrounded by old-money peers, which gives the school dynamic genuine tension. The prose is beautiful and the first book is complete as a reading experience.",
+          caveat: "book 2 ends on a cliffhanger and book 3 has no release date. Go in knowing that.",
           tags: [
             'Magic School',
             'Prodigy Hero',
@@ -291,7 +311,8 @@ export const harryPotter: BooksLikeEntry = {
         'Lore-Heavy',
         'Beautiful Prose',
       ],
-      why: 'The University chapters are the best magic school sequences since Hogwarts — a consistent, intellectually interesting magic system, a protagonist who is poor among the privileged, and a school with real factions and politics. Caveat: the trilogy is unfinished.',
+      why: 'The University chapters are the best magic school sequences since Hogwarts — a consistent, intellectually interesting magic system, a protagonist who is poor among the privileged, and a school with real factions and politics.',
+      caveat: 'the trilogy is unfinished.',
       standalone: false,
       audiobook: true,
       amazon_url:
