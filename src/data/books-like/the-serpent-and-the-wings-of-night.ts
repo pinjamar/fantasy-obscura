@@ -26,6 +26,12 @@ export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
       'If you loved The Serpent & the Wings of Night for the wary forced-alliance romance, brutal tournament stakes, and explicit heat built on 400 pages of earned tension, start with From Blood and Ash, A Touch of Darkness, and Nevernight.',
     why_people_love:
       "What Broadbent does that most vampire romantasy doesn't: she makes the power imbalance structural rather than decorative. Oraya is the only human in a death tournament designed by a vampire god, and the book never lets you forget how precarious that is. The forced alliance with Raihn works because both of them are operating from genuine self-interest — there's no manufactured reason to trust each other, and the book leans into that entirely. The darkness here isn't aesthetic; people die badly in ways that matter to the plot. The explicit romance is built on hundreds of pages of accumulated tension rather than dropped in at intervals. The worldbuilding (the Houses of Night and Dawn, the Nyaxia religion, the vampire hierarchy) rewards attention without front-loading exposition. Readers who come for the spice get it — but what tends to stick is how much it earns.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "What Broadbent does that most vampire romantasy doesn't: she makes the power imbalance structural rather than decorative. Oraya is the only human in a death tournament designed by a vampire god, and the book never lets you forget how precarious that is. The worldbuilding — the Houses of Night and Dawn, the Nyaxia religion, the vampire hierarchy — rewards attention without front-loading exposition, which is rarer than it should be in the genre." },
+      { type: 'labeled', label: 'Raihn:', text: "He is genuinely dangerous, keeps real secrets, and the trust that develops between him and Oraya is built on 400 pages of accumulated tension rather than manufactured chemistry. Broadbent commits to the structural logic of their alliance: both of them are operating from self-interest, there is no manufactured reason to trust each other, and the book leans into that entirely. The romance is explicit because the tension earning it is explicit — Broadbent does not drop heat in at intervals but lets it emerge from the dynamic." },
+      { type: 'paragraph', text: "The darkness here isn't aesthetic; people die badly in ways that matter to the plot. The tournament structure (the Kejari) is genuinely threatening because Broadbent is willing to use it. Readers who come for the spice get it — but what tends to stick is how much it earns. The second book, The Ashes & the Star-Cursed King, escalates in ways that feel inevitable rather than gratuitous." },
+      { type: 'warning', text: "The Serpent & the Wings of Night is explicit — the heat is intentional and built into the structure rather than added afterward. The darkness level is real: people the reader has invested in die, and the tournament stakes are not decoration. The book is the first of a duology; readers should expect significant unresolved threads at the end of book one. The worldbuilding is original but unfamiliar; the first 50 pages require patience with the Nyaxia terminology." },
+    ],
   },
   aspects: [
     {
@@ -44,7 +50,8 @@ export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "The closest structural match to the Oraya/Raihn dynamic in the wider romantasy space: a heroine kept sheltered and watched, a protector who clearly feels more than he should, and a romance built entirely on charged tension neither of them will admit to. Hawke carries his own layers of secrets, and the lore reveals in book one are legitimately surprising. The explicit heat is equivalent; the sense of a heroine who is underestimated and shouldn't be is the same. Caveat: the writing is more functional than literary — you're here for the dynamic and the plot twists, not prose craftsmanship.",
+          note: "The closest structural match to the Oraya/Raihn dynamic in the wider romantasy space: a heroine kept sheltered and watched, a protector who clearly feels more than he should, and a romance built entirely on charged tension neither of them will admit to. Hawke carries his own layers of secrets, and the lore reveals in book one are legitimately surprising. The explicit heat is equivalent; the sense of a heroine who is underestimated and shouldn't be is the same.",
+          caveat: "the writing is more functional than literary — you're here for the dynamic and the plot twists, not prose craftsmanship.",
           tags: [
             'Forbidden Romance',
             'Forced Proximity',
@@ -69,7 +76,8 @@ export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "A princess sent to spy on a king she's been told is a monster — except the monster keeps being right about things. Jensen builds the alliance romance with the same structural patience as Broadbent: two people with completely opposing agendas who are forced to function as a unit, and the trust that develops despite every reason it shouldn't. Lower darkness and no vampire mythology, but the \"I came here as your enemy and now I don't know what I am\" energy is the same. Caveat: lower heat than Serpent until mid-series.",
+          note: `A princess sent to spy on a king she's been told is a monster — except the monster keeps being right about things. Jensen builds the alliance romance with the same structural patience as Broadbent: two people with completely opposing agendas who are forced to function as a unit, and the trust that develops despite every reason it shouldn't. Lower darkness and no vampire mythology, but the "I came here as your enemy and now I don't know what I am" energy is the same.`,
+          caveat: "lower heat than Serpent until mid-series.",
           tags: [
             'Forced Alliance',
             'Political Enemies',
@@ -100,7 +108,8 @@ export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "An assassination school where trainees kill each other during the selection process — the same tournament-as-institution energy as the Kejari, with a similar willingness to kill characters you've started caring about. Mia is the closest thing to an Oraya equivalent: a girl who should not be here, operating in a world built to destroy her, making morally complex choices to stay alive. The prose style is maximalist and footnoted, which either works brilliantly or exhausts you. Caveat: the explicit romance is lower-heat than Serpent, and the ending of book one is divisive.",
+          note: "An assassination school where trainees kill each other during the selection process — the same tournament-as-institution energy as the Kejari, with a similar willingness to kill characters you've started caring about. Mia is the closest thing to an Oraya equivalent: a girl who should not be here, operating in a world built to destroy her, making morally complex choices to stay alive. The prose style is maximalist and footnoted, which either works brilliantly or exhausts you.",
+          caveat: "the explicit romance is lower-heat than Serpent, and the ending of book one is divisive.",
           tags: [
             'Death Tournament',
             'Assassination School',
@@ -125,7 +134,8 @@ export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: 'A girl with no power in a world where the powerless are killed, forced into a deadly trial she has no right to survive. Roberts builds the same tournament logic as the Kejari — the institution is designed to eliminate people like the heroine, and the only way through is an uneasy alliance with someone who has every reason not to help her. The forced proximity with Kai and the building tension from mutual suspicion to something else is the direct structural match. Caveat: lower heat than Serpent — Roberts writes tension rather than explicit scenes — and the YA tone is lighter. But the same readers who loved the Kejari dynamic tend to find Powerless immediately.',
+          note: 'A girl with no power in a world where the powerless are killed, forced into a deadly trial she has no right to survive. Roberts builds the same tournament logic as the Kejari — the institution is designed to eliminate people like the heroine, and the only way through is an uneasy alliance with someone who has every reason not to help her. The forced proximity with Kai and the building tension from mutual suspicion to something else is the direct structural match.',
+          caveat: "lower heat than Serpent — Roberts writes tension rather than explicit scenes — and the YA tone is lighter. But the same readers who loved the Kejari dynamic tend to find Powerless immediately.",
           tags: [
             'Death Trials',
             'Forced Proximity',
@@ -156,7 +166,8 @@ export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "Hades is the same archetype as Raihn: an entity of genuine power operating in a world that should terrify the heroine, presenting as one thing and being another. The enemies-to-lovers arc is structurally similar — two people whose first interaction is hostile and whose dynamic evolves through forced proximity in a high-stakes world. The explicit heat is present from early on, the Greek mythology is lushly rendered, and the tension is built on genuine uncertainty about Hades' motivations. Caveat: the prose is more commercial than Broadbent's — lighter on the emotional interiority.",
+          note: "Hades is the same archetype as Raihn: an entity of genuine power operating in a world that should terrify the heroine, presenting as one thing and being another. The enemies-to-lovers arc is structurally similar — two people whose first interaction is hostile and whose dynamic evolves through forced proximity in a high-stakes world. The explicit heat is present from early on, the Greek mythology is lushly rendered, and the tension is built on genuine uncertainty about Hades' motivations.",
+          caveat: "the prose is more commercial than Broadbent's — lighter on the emotional interiority.",
           tags: [
             'Enemies to Lovers',
             'Morally Grey Love Interest',
@@ -178,7 +189,8 @@ export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
           heat_level: 'Explicit',
           standalone: true,
           audiobook: true,
-          note: "A vampire woman given to the Alpha of a rival supernatural faction as a political arrangement — she didn't choose him, he didn't choose her, and neither of them trusts the other. Lowe keeps real secrets throughout, is genuinely dangerous in ways that complicate the attraction, and the explicit heat develops from genuine mutual suspicion rather than immediate chemistry. The forced-arrangement-to-something-real structure maps directly onto Oraya and Raihn's dynamic, and the vampire world gives it the same supernatural-hierarchy backdrop as Nyaxia. Caveat: Hazelwood writes with more humour and lightness than Broadbent — the darkness level is lower and the tone is warmer. This is the same dynamic with the volume turned down.",
+          note: "A vampire woman given to the Alpha of a rival supernatural faction as a political arrangement — she didn't choose him, he didn't choose her, and neither of them trusts the other. Lowe keeps real secrets throughout, is genuinely dangerous in ways that complicate the attraction, and the explicit heat develops from genuine mutual suspicion rather than immediate chemistry. The forced-arrangement-to-something-real structure maps directly onto Oraya and Raihn's dynamic, and the vampire world gives it the same supernatural-hierarchy backdrop as Nyaxia.",
+          caveat: "Hazelwood writes with more humour and lightness than Broadbent — the darkness level is lower and the tone is warmer. This is the same dynamic with the volume turned down.",
           tags: [
             'Vampire Romance',
             'Forced Arrangement',
@@ -210,7 +222,8 @@ export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
         'Dragon Riders',
         'Slow Burn',
       ],
-      why: "Dragon riders at a war college where the training is designed to kill you — the closest parallel to the Kejari's organised violence in the wider romantasy space. Xaden has the same \"dangerously competent and keeping something from her\" energy as Raihn. The explicit heat is equivalent, the slow-burn builds over a full book, and the world-building has real depth. Caveat: if you loved Serpent's vampire mythology specifically, Fourth Wing's dragon lore is different in tone — less elegantly sinister, more militaristic adrenaline.",
+      why: `Dragon riders at a war college where the training is designed to kill you — the closest parallel to the Kejari's organised violence in the wider romantasy space. Xaden has the same "dangerously competent and keeping something from her" energy as Raihn. The explicit heat is equivalent, the slow-burn builds over a full book, and the world-building has real depth.`,
+      caveat: "if you loved Serpent's vampire mythology specifically, Fourth Wing's dragon lore is different in tone — less elegantly sinister, more militaristic adrenaline.",
       audiobook: true,
       amazon_url:
         'https://www.amazon.com/s?k=Fourth+Wing+Rebecca+Yarros&tag=librariancura-20',
@@ -231,7 +244,8 @@ export const theSerpentAndTheWingsOfNight: BooksLikeEntry = {
         'Enemies to Lovers',
         'Vampire World',
       ],
-      why: "Book two of Crowns of Nyaxia, picking up directly from the end of Serpent. Broadbent doesn't reset the relationship or manufacture new obstacles — the story earns where it takes the characters, and the darkness escalates in ways that feel inevitable rather than gratuitous. This is the rare sequel that delivers on the promises of book one. Caveat: read Serpent first — Ashes has no meaningful standalone entry point.",
+      why: "Book two of Crowns of Nyaxia, picking up directly from the end of Serpent. Broadbent doesn't reset the relationship or manufacture new obstacles — the story earns where it takes the characters, and the darkness escalates in ways that feel inevitable rather than gratuitous. This is the rare sequel that delivers on the promises of book one.",
+      caveat: "read Serpent first — Ashes has no meaningful standalone entry point.",
       audiobook: true,
       amazon_url:
         'https://www.amazon.com/s?k=The+Ashes+Star-Cursed+King+Broadbent&tag=librariancura-20',

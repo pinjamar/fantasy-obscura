@@ -25,6 +25,12 @@ export const theBearAndTheNightingale: BooksLikeEntry = {
       "If you loved The Bear and the Nightingale for its Slavic folklore, winter atmosphere, and a heroine who refuses to be tamed, start with Uprooted, Spinning Silver, and The Witch's Heart.",
     why_people_love:
       "The Bear and the Nightingale works because it treats Russian folklore not as decoration but as lived reality. Vasilisa can see the household spirits — the domovoi by the hearth, the dvorovoi in the stable, the rusalka in the river — and the novel's central tension is that her stepmother's Christian piety is starving these spirits of the offerings that keep them strong, leaving the village vulnerable to something far worse. Arden's prose has the quality of cold air: clean, sharp, faintly scented with pine and woodsmoke. Vasya herself is a genuinely unusual protagonist — not rebellious in a modern way, but feral in an older sense, shaped more by the forest than by the house. And Morozko, the frost demon, is one of fantasy's great love interests precisely because the book refuses to hurry what he is. The romance barely exists in book one; the atmosphere is everything.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "The Bear and the Nightingale works because it treats Russian folklore not as decoration but as lived reality. Vasilisa can see the household spirits — the domovoi by the hearth, the dvorovoi in the stable, the rusalka in the river — and the novel's central tension is that her stepmother's Christian piety is starving these spirits of the offerings that keep them strong, leaving the village vulnerable to something far worse. Arden's prose has the quality of cold air: clean, sharp, faintly scented with pine and woodsmoke." },
+      { type: 'labeled', label: 'Morozko:', text: "The frost demon is one of fantasy's great love interests precisely because the book refuses to hurry what he is. He appears at the edges of Vasya's life before she understands what she's seeing, and the distance between those first encounters and what he becomes across the trilogy is what makes the relationship earn its weight. In book one, the romance barely exists; the atmosphere is everything. Readers who need the relationship to develop faster should know this trilogy is the slow version of that payoff." },
+      { type: 'paragraph', text: "Vasya herself is a genuinely unusual protagonist — not rebellious in a modern way, but feral in an older sense, shaped more by the forest than by the house. The opposition she faces (her stepmother, the priest, the village's new Christianity) is not constructed as villainy but as a way of living that is genuine and that is genuinely hostile to what Vasya is. Arden refuses to make anyone entirely wrong." },
+      { type: 'warning', text: "The Bear and the Nightingale is the first of a trilogy, and the romance develops very slowly across all three books — this is not a book that rushes to give you what you want. The winter atmosphere and folklore are consistent throughout; the darkness builds gradually rather than arriving immediately. Readers who found the pacing slow in book one will find the same pacing in books two and three." },
+    ],
   },
   aspects: [
     {
@@ -39,7 +45,8 @@ export const theBearAndTheNightingale: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: "The most direct companion in all of fantasy. Novik's loose Rumpelstiltskin retelling is set in a Jewish village in a medieval Russian-inspired kingdom where winter is a predator with a face and a crown. Miryem, a moneylender's daughter, catches the attention of the Staryk king — a cold, silver-haired fae lord who is essentially Morozko's cousin. The same atmosphere, the same logic of folklore-as-fact, and the same intelligence in its heroine. Caveat: three POVs, not just one — the scope is wider than Arden's intimate focus on Vasya.",
+          note: "The most direct companion in all of fantasy. Novik's loose Rumpelstiltskin retelling is set in a Jewish village in a medieval Russian-inspired kingdom where winter is a predator with a face and a crown. Miryem, a moneylender's daughter, catches the attention of the Staryk king — a cold, silver-haired fae lord who is essentially Morozko's cousin. The same atmosphere, the same logic of folklore-as-fact, and the same intelligence in its heroine.",
+          caveat: "three POVs, not just one — the scope is wider than Arden's intimate focus on Vasya.",
           tags: [
             'Slavic Folklore',
             'Winter Setting',
@@ -112,7 +119,8 @@ export const theBearAndTheNightingale: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "Norse mythology told from the perspective of Angrboda — the witch, the mother of monsters, the woman written out of the sagas. Like Vasya, she exists at the boundary between the human and the supernatural, and the novel's tension comes from a world that keeps trying to define and contain her. Gornichec writes with the same restraint as Arden: the magic is not explained, it is experienced. Darker than Bear — the Norse mythology means the ending is always Ragnarök — but the heroine's particular kind of wildness will resonate deeply with Vasya readers. Caveat: genuinely heartbreaking.",
+          note: "Norse mythology told from the perspective of Angrboda — the witch, the mother of monsters, the woman written out of the sagas. Like Vasya, she exists at the boundary between the human and the supernatural, and the novel's tension comes from a world that keeps trying to define and contain her. Gornichec writes with the same restraint as Arden: the magic is not explained, it is experienced. Darker than Bear — the Norse mythology means the ending is always Ragnarök — but the heroine's particular kind of wildness will resonate deeply with Vasya readers.",
+          caveat: "genuinely heartbreaking.",
           tags: [
             'Norse Mythology',
             'Wild Heroine',

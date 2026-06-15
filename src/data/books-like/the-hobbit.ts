@@ -26,6 +26,12 @@ export const theHobbit: BooksLikeEntry = {
       'If you loved The Hobbit for the adventure-first pacing, charming quest feel, cozy-but-dangerous tone, and classic fantasy wonder, start with The Eye of the World, The Name of the Wind and The Way of Kings.',
     why_people_love:
       "The Hobbit works because Tolkien understood that the best adventures start with someone who doesn't want one. Bilbo Baggins is not a hero — he's a homebody who likes his pantry full and his routine undisturbed — and the entire novel is powered by the tension between the comfortable life he's been pulled away from and the person the road is slowly making him become. It's the book that invented the template for cozy epic fantasy: high stakes, genuine peril, but always with a warmth underneath that tells you the world is worth saving. The dwarves are well-drawn despite being thirteen of them, the episodic structure means every chapter delivers something new, and Riddles in the Dark remains one of the most perfectly constructed scenes in fantasy. Short enough to read in a weekend, rich enough to think about for years.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "The Hobbit works because Tolkien understood that the best adventures start with someone who doesn't want one. Bilbo Baggins is not a hero — he's a homebody who likes his pantry full and his routine undisturbed — and the entire novel is powered by the tension between the comfortable life he's been pulled away from and the person the road is slowly making him become. It's the book that invented the template for cozy epic fantasy: high stakes, genuine peril, but always with a warmth underneath that tells you the world is worth saving." },
+      { type: 'labeled', label: 'Riddles in the Dark:', text: "The encounter between Bilbo and Gollum in the dark under the mountain is the most perfectly constructed scene in fantasy literature — a tense exchange of riddles between a hobbit who found a ring and a creature who lost one, each trying to win the right to eat the other. Tolkien builds it with deceptive simplicity: the riddles are genuinely fair, the stakes are clear, the darkness is real. And then Bilbo wins by accident with a question that isn't technically a riddle, and Gollum cannot call foul, and the reader understands that luck and mercy are as important to Bilbo's character as cleverness." },
+      { type: 'paragraph', text: "The episodic structure is a feature: every chapter delivers something new (trolls, eagles, elves, spiders, Beorn, barrels, Smaug), and the world expands with each stop in a way that suggests the Middle-earth around Bilbo's journey is vast and real and does not begin or end with him. Short enough to read in a weekend, rich enough to think about for years." },
+      { type: 'warning', text: "The Hobbit is a children's book, and readers coming from adult fantasy will notice the shift in tone and register. The narrator is famously present — Tolkien addresses the reader directly, explaining things in a way The Lord of the Rings never does — and some adult readers find this charming and others find it interrupting. The novel is complete on its own terms; The Lord of the Rings is tonally much darker and should not be expected to feel the same." },
+    ],
   },
   aspects: [
     {
@@ -124,7 +130,8 @@ export const theHobbit: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (unfinished — 2 books published)',
           audiobook: true,
-          note: "Where The Hobbit is a quest, The Name of the Wind is a bildungsroman told as myth — Kvothe narrating his own legend from a tavern in a small town. The episodic structure is similar, the sense of a world bigger than any map is identical, and Rothfuss has Tolkien's gift for making magic feel genuinely wondrous rather than mechanical. Caveat: the third book has not been published and may never be. Read knowing you are signing up for an unfinished journey.",
+          note: "Where The Hobbit is a quest, The Name of the Wind is a bildungsroman told as myth — Kvothe narrating his own legend from a tavern in a small town. The episodic structure is similar, the sense of a world bigger than any map is identical, and Rothfuss has Tolkien's gift for making magic feel genuinely wondrous rather than mechanical.",
+          caveat: "the third book has not been published and may never be. Read knowing you are signing up for an unfinished journey.",
           tags: [
             'Bildungsroman',
             'Magic University',

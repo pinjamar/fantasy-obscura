@@ -26,6 +26,12 @@ export const theDarknessThatComesBefore: BooksLikeEntry = {
       'If you loved The Darkness That Comes Before for Kellhus as an utterly alien intellect moving through ordinary people, the Crusades-inspired Holy War, and the philosophical density that treats ideas as seriously as violence, start with Gardens of the Moon, Dune, and The Lions of Al-Rassan.',
     why_people_love:
       "The Darkness That Comes Before is built around a question most fantasy ignores: can you have free will if someone understands you well enough to predict every choice you make? Kellhus is trained from birth in a monastery of philosopher-warriors to read and model human behaviour — and when he descends into the world, he moves through ordinary people the way a chess grandmaster moves through beginners. Watching him is fascinating and deeply unsettling, and the book is honest about both. Achamian — the sorcerer-scholar who teaches Kellhus what he needs and slowly realises what he's teaching — is one of the most tragic characters in modern epic fantasy. The Crusades-inspired Holy War is rendered with genuine historical density, the sorcery is visually stunning and conceptually terrifying, and the world-building goes back ten thousand years without front-loading any of it. This is demanding prose that rewards rereading. The book contains sexual violence and does not soften its darkness. For readers who want fantasy that takes philosophy seriously as subject matter, it has no real equivalent.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "The Darkness That Comes Before is built around a question most fantasy ignores: can you have free will if someone understands you well enough to predict every choice you make? Kellhus is trained from birth in a monastery of philosopher-warriors to read and model human behaviour — and when he descends into the world, he moves through ordinary people the way a chess grandmaster moves through beginners. Watching him is fascinating and deeply unsettling, and the book is honest about both." },
+      { type: 'labeled', label: 'Achamian:', text: "The sorcerer-scholar who teaches Kellhus what he needs and slowly realises what he's teaching — he is one of the most tragic characters in modern epic fantasy. Achamian dreams the history of a doomed sorcerer-order that was exterminated thousands of years ago, literally experiencing their genocide each night. He is the book's moral centre precisely because he has no power to act on what he understands — he sees what Kellhus is doing to the people around him, and can do nothing. His relationship with Esmenet, and what Kellhus eventually takes from him, is where Bakker makes you feel the cost of operating at Kellhus's level." },
+      { type: 'paragraph', text: "The Crusades-inspired Holy War is rendered with genuine historical density, the sorcery is visually stunning and conceptually terrifying, and the world-building goes back ten thousand years without front-loading any of it. For readers who want fantasy that takes philosophy seriously as subject matter — not as flavour, but as the actual engine of the plot — this has no real equivalent in the genre." },
+      { type: 'warning', text: "The Darkness That Comes Before contains sexual violence and does not soften its darkness; this is among the hardest content warnings on this site, and it is appropriate. The prose is dense and demanding — this rewards rereading rather than racing. The series is incomplete (Bakker has not confirmed a final volume) and ends in a place that requires sequels. Readers who want ideas rather than comfort will find it essential; readers who came from more accessible grimdark should know they are in different territory." },
+    ],
   },
   aspects: [
     {
@@ -44,7 +50,8 @@ export const theDarknessThatComesBefore: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books + sequels)',
           audiobook: true,
-          note: 'Paul Atreides is the closest analogue to Kellhus in scope and structure: a figure with trained-beyond-normal-human perception arriving in a setting of religious and political complexity and being read by almost no one around him as what he actually is. Herbert is interested in the same questions Bakker is — about prescience, manipulation, and whether a superior intellect represents liberation or a new kind of trap. The prose is equally dense and the world-building equally withholding. Caveat: Dune is more restrained in its violence and less philosophically hostile than Bakker — Herbert offers more hope about his messianic figure, at least in book one.',
+          note: 'Paul Atreides is the closest analogue to Kellhus in scope and structure: a figure with trained-beyond-normal-human perception arriving in a setting of religious and political complexity and being read by almost no one around him as what he actually is. Herbert is interested in the same questions Bakker is — about prescience, manipulation, and whether a superior intellect represents liberation or a new kind of trap. The prose is equally dense and the world-building equally withholding.',
+          caveat: "Dune is more restrained in its violence and less philosophically hostile than Bakker — Herbert offers more hope about his messianic figure, at least in book one.",
           tags: [
             'Superhuman Protagonist',
             'Religious Politics',
@@ -69,7 +76,8 @@ export const theDarknessThatComesBefore: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "The most philosophically demanding fantasy novel ever written, narrated by a torturer who is unreliable in ways that only become clear on rereading. Wolfe and Bakker are the two authors in the genre most interested in consciousness, perception, and the gap between what a narrator knows and what they tell you. The prose is dense, the world withholds its explanations, and the darkness is real. If The Darkness That Comes Before is asking what free will means when someone can perfectly model you, The Book of the New Sun is asking what truth means when the narrator can't be trusted. Caveat: Wolfe is harder and more elliptical than Bakker — some readers require a companion guide for book one.",
+          note: "The most philosophically demanding fantasy novel ever written, narrated by a torturer who is unreliable in ways that only become clear on rereading. Wolfe and Bakker are the two authors in the genre most interested in consciousness, perception, and the gap between what a narrator knows and what they tell you. The prose is dense, the world withholds its explanations, and the darkness is real. If The Darkness That Comes Before is asking what free will means when someone can perfectly model you, The Book of the New Sun is asking what truth means when the narrator can't be trusted.",
+          caveat: "Wolfe is harder and more elliptical than Bakker — some readers require a companion guide for book one.",
           tags: [
             'Unreliable Narrator',
             'Dense Prose',
@@ -97,7 +105,8 @@ export const theDarknessThatComesBefore: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "The most directly Crusades-adjacent fantasy novel, set in an analogue of medieval Iberia at the moment when the three-faith equilibrium collapses into holy war. Kay is interested in the same things Bakker is — what religion does to people when it becomes a tool of power, how individuals get destroyed by historical forces larger than themselves — but he writes with extraordinary emotional warmth rather than philosophical coldness. The characters are among the most fully realised in genre fantasy. Caveat: Kay's darkness serves beauty rather than philosophy — this is not nihilistic, and readers who came specifically for Bakker's bleakness will find Kay kinder and more elegiac.",
+          note: "The most directly Crusades-adjacent fantasy novel, set in an analogue of medieval Iberia at the moment when the three-faith equilibrium collapses into holy war. Kay is interested in the same things Bakker is — what religion does to people when it becomes a tool of power, how individuals get destroyed by historical forces larger than themselves — but he writes with extraordinary emotional warmth rather than philosophical coldness. The characters are among the most fully realised in genre fantasy.",
+          caveat: "Kay's darkness serves beauty rather than philosophy — this is not nihilistic, and readers who came specifically for Bakker's bleakness will find Kay kinder and more elegiac.",
           tags: [
             'Holy War',
             'Three Cultures',
@@ -122,7 +131,8 @@ export const theDarknessThatComesBefore: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (5 books, ongoing)',
           audiobook: true,
-          note: "The overlap between ASOIAF and Bakker's readership is nearly complete: both are epic fantasy that treat political manipulation as the core engine of the plot, both refuse to protect characters the reader has invested in, and both use religion as a force that genuinely shapes historical events rather than decorating them. Martin is less philosophically dense and more immediately propulsive than Bakker — the chapters are shorter, the hooks are harder. Caveat: the series is unfinished with no confirmed completion date; Bakker's main trilogy ends on its own terms.",
+          note: "The overlap between ASOIAF and Bakker's readership is nearly complete: both are epic fantasy that treat political manipulation as the core engine of the plot, both refuse to protect characters the reader has invested in, and both use religion as a force that genuinely shapes historical events rather than decorating them. Martin is less philosophically dense and more immediately propulsive than Bakker — the chapters are shorter, the hooks are harder.",
+          caveat: "the series is unfinished with no confirmed completion date; Bakker's main trilogy ends on its own terms.",
           tags: [
             'Political Manipulation',
             'No Safe Characters',
@@ -153,7 +163,8 @@ export const theDarknessThatComesBefore: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (10 books)',
           audiobook: true,
-          note: "Bakker and Erikson are the two most demanding authors working in epic fantasy, and they are in direct conversation with each other — both are interested in civilisational collapse, both build worlds with histories far older than the story being told, and both refuse to explain themselves to readers who want an easier ride. Erikson's world is wider; Bakker's prose is more controlled. Gardens of the Moon drops you into a war already in progress with no orientation, exactly as Bakker drops you into a Holy War mid-march. Caveat: the first 200 pages of Gardens of the Moon are notoriously disorienting — it opens with far less narrative grip than Bakker's book.",
+          note: "Bakker and Erikson are the two most demanding authors working in epic fantasy, and they are in direct conversation with each other — both are interested in civilisational collapse, both build worlds with histories far older than the story being told, and both refuse to explain themselves to readers who want an easier ride. Erikson's world is wider; Bakker's prose is more controlled. Gardens of the Moon drops you into a war already in progress with no orientation, exactly as Bakker drops you into a Holy War mid-march.",
+          caveat: "the first 200 pages of Gardens of the Moon are notoriously disorienting — it opens with far less narrative grip than Bakker's book.",
           tags: [
             'Ancient Evil',
             'Vast Hidden History',
@@ -178,7 +189,8 @@ export const theDarknessThatComesBefore: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy',
           audiobook: true,
-          note: "The most accessible of Bakker's natural companions: Abercrombie takes the philosophical scepticism implicit in Bakker's world and makes it explicit through characters who are self-aware about their own moral failures. The First Law doesn't have Bakker's density or philosophical ambition, but it shares the refusal to offer heroism as a real option and the understanding that history is shaped by manipulation rather than virtue. A good entry point for readers who found The Darkness That Comes Before too demanding and want to stay in the same moral register at a more manageable pace. Caveat: significantly less philosophically dense — for readers who came specifically for Bakker's ideas, Abercrombie will feel like the commercial adaptation.",
+          note: "The most accessible of Bakker's natural companions: Abercrombie takes the philosophical scepticism implicit in Bakker's world and makes it explicit through characters who are self-aware about their own moral failures. The First Law doesn't have Bakker's density or philosophical ambition, but it shares the refusal to offer heroism as a real option and the understanding that history is shaped by manipulation rather than virtue. A good entry point for readers who found The Darkness That Comes Before too demanding and want to stay in the same moral register at a more manageable pace.",
+          caveat: "significantly less philosophically dense — for readers who came specifically for Bakker's ideas, Abercrombie will feel like the commercial adaptation.",
           tags: [
             'Grimdark',
             'Morally Grey',

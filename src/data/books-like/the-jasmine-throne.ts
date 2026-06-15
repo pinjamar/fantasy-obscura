@@ -27,6 +27,12 @@ export const theJasmineThrone: BooksLikeEntry = {
       'If you loved The Jasmine Throne for its South Asian-inspired world, its F/F slow burn, and its empire-and-resistance politics, start with Empire of Sand, The Priory of the Orange Tree, and A Memory Called Empire.',
     why_people_love:
       "The Jasmine Throne earns its reputation on three things: a world that feels genuinely rooted in South Asian mythology and history rather than generically Eastern, a slow-burn F/F romance built on equal parts suspicion and desperate need, and politics that treat empire as a machine requiring active maintenance — soldiers, informers, executions — rather than a backdrop. Priya is a temple elder's maidservant hiding what she actually is; Malini is an imperial princess imprisoned for heresy who would burn the world down to get her throne back. Their relationship develops in the margins of a political crisis that keeps escalating. Suri doesn't let either character be simply good — Malini in particular is written with a coldness that readers either find compelling or alienating. The magic system, rooted in sacred trees and their rot, is distinctive and tied to the world's colonial history in ways that feel considered rather than decorative.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "The Jasmine Throne earns its reputation on three things: a world that feels genuinely rooted in South Asian mythology and history rather than generically Eastern, a slow-burn F/F romance built on equal parts suspicion and desperate need, and politics that treat empire as a machine requiring active maintenance — soldiers, informers, executions — rather than a backdrop. Suri builds a world where the magic is inseparable from the colonial history that tried to suppress it." },
+      { type: 'labeled', label: 'Malini:', text: "The imperial princess imprisoned for heresy who would burn the world down to get her throne back — and who is written with a coldness that readers either find compelling or alienating. Malini is not a romantic lead in the conventional sense; she is a strategist who uses every relationship including the one with Priya as a resource, and Suri refuses to soften this. What makes the F/F romance work is precisely the asymmetry: Priya wants Malini in a way Malini cannot fully reciprocate, and the question of whether that changes is the trilogy's central tension." },
+      { type: 'paragraph', text: "Priya is a temple elder's maidservant hiding what she actually is — and when the magic she was taught to deny returns, it is rooted in sacred trees and their rot, in a system of spiritual power the empire tried to erase. The magic system is distinctive and tied to the world's colonial history in ways that feel considered rather than decorative. The series escalates significantly from book one to book two." },
+      { type: 'warning', text: "The Jasmine Throne is the first of a trilogy and ends with the political situation substantially more complicated than it began. Malini's moral coldness is a deliberate and sustained feature of the narrative — readers who want a conventionally sympathetic romantic lead will find her difficult. The heat level is fiery but the romance builds slowly; the payoff is in the second book. The world-building assumes reader patience with South Asian terminology and mythological structure." },
+    ],
   },
   aspects: [
     {
@@ -101,7 +107,8 @@ export const theJasmineThrone: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "A standalone epic fantasy with a queen and her secret protector at its centre — a relationship built on proximity, withheld truths, and the specific kind of tension that comes from having everything to lose. Shannon's world draws from East Asian and European mythology simultaneously; the scale is enormous and the dragon lore is the best in contemporary fantasy. The F/F romance is less explicit and slower than Suri's but the emotional payoff is equivalent. Caveat: 800 pages, multiple POVs, deliberately epic in scope — go in expecting a full-length immersion rather than a focused duology.",
+          note: "A standalone epic fantasy with a queen and her secret protector at its centre — a relationship built on proximity, withheld truths, and the specific kind of tension that comes from having everything to lose. Shannon's world draws from East Asian and European mythology simultaneously; the scale is enormous and the dragon lore is the best in contemporary fantasy. The F/F romance is less explicit and slower than Suri's but the emotional payoff is equivalent.",
+          caveat: "800 pages, multiple POVs, deliberately epic in scope — go in expecting a full-length immersion rather than a focused duology.",
           tags: [
             'F/F Romance',
             'Epic Fantasy',
@@ -184,7 +191,8 @@ export const theJasmineThrone: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "The darkest escalation of The Jasmine Throne's colonial violence and political ruthlessness. Kuang's China-inspired world takes the same interest in how empire functions and what it does to the people inside it, but pushes both the violence and the moral degradation much further. Rin, like Priya, is a woman from the margins who discovers she has power — but where Priya uses hers to protect, Rin's arc is about what power does to someone with no other options. Recommended only if you want The Jasmine Throne's political edge sharpened into something much harder. Caveat: extreme violence, atrocity depicted in detail.",
+          note: "The darkest escalation of The Jasmine Throne's colonial violence and political ruthlessness. Kuang's China-inspired world takes the same interest in how empire functions and what it does to the people inside it, but pushes both the violence and the moral degradation much further. Rin, like Priya, is a woman from the margins who discovers she has power — but where Priya uses hers to protect, Rin's arc is about what power does to someone with no other options. Recommended only if you want The Jasmine Throne's political edge sharpened into something much harder.",
+          caveat: "extreme violence, atrocity depicted in detail.",
           tags: [
             'Chinese-Inspired Fantasy',
             'Colonial Violence',

@@ -24,6 +24,12 @@ export const theNameOfTheWind: BooksLikeEntry = {
       'If you loved The Name of the Wind for the lyrical prose, gifted outsider lead, university arc, and storytelling-within-story atmosphere, start with The Will of the Many, The Lies of Locke Lamora, and Jonathan Strange & Mr Norrell.',
     why_people_love:
       "The Name of the Wind earns its reputation through one thing that almost no other fantasy novel manages: prose that is genuinely, consistently beautiful. Rothfuss writes sentences you stop and reread. The frame narrative — an innkeeper who was once the most famous man in the world, now telling his own story — creates a melancholy that runs under everything, because you know the legend didn't end well. Kvothe is arrogant and brilliant and often wrong in ways that cost him, which makes him one of the more human protagonists in epic fantasy. The magic system feels like chemistry and music rather than physics, and the university sections have a grounded, lived-in quality that's rare in the genre. Fair warning: this is the first book of a trilogy that has been unfinished since 2011, with no confirmed publication date for book three. Read it knowing this.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "The Name of the Wind earns its reputation through one thing that almost no other fantasy novel manages: prose that is genuinely, consistently beautiful. Rothfuss writes sentences you stop and reread. The frame narrative — an innkeeper who was once the most famous man in the world, now telling his own story to a chronicler in a quiet village — creates a melancholy that runs under everything, because you know before the first chapter ends that the legend didn't finish well." },
+      { type: 'labeled', label: 'Kvothe:', text: "He is arrogant and brilliant and often wrong in ways that cost him, which makes him one of the more human protagonists in epic fantasy. The magic system — Sympathy, Naming, the Alar — feels like chemistry and music rather than physics, and the university sections have a grounded, lived-in quality that's rare in the genre. What makes him exceptional isn't that he's infallible; it's that his failures are as precisely written as his successes, and the gap between the legend the world tells about him and the man sitting in the tavern is the book's central tension." },
+      { type: 'paragraph', text: "The frame narrative is the structural gambit: Kvothe knows his own story and is choosing what to tell and what to omit, which means the reader is always aware of a layer the narrator isn't showing them. This is what separates the series from other chosen-one bildungsromans — it is aware of itself as myth-making, and Rothfuss built that self-awareness into the architecture from the first page." },
+      { type: 'warning', text: "The Name of the Wind is the first book of an unfinished trilogy. Book two (The Wise Man's Fear) was published in 2011; book three has no confirmed publication date. Many readers choose not to start the series for this reason alone, and that is a reasonable decision. The series also has structural debt — many threads opened in book one and two are unresolved — and the payoff depends entirely on a third book that may not arrive. Read knowing this." },
+    ],
   },
   aspects: [
     {
@@ -36,7 +42,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: "The only fantasy novel that can match Rothfuss for prose distinction — but they're doing entirely different things with it. Clarke writes in the style of a Victorian historian cataloguing impossible events, complete with footnotes, and the effect is hypnotic. Magic here feels genuinely strange and unknowable. If you read Name of the Wind primarily for the voice and the atmosphere, this is the closest equivalent — and it has the advantage of being complete. Caveat: extremely slow. This rewards patience in a way that Rothfuss doesn't demand.",
+          note: "The only fantasy novel that can match Rothfuss for prose distinction — but they're doing entirely different things with it. Clarke writes in the style of a Victorian historian cataloguing impossible events, complete with footnotes, and the effect is hypnotic. Magic here feels genuinely strange and unknowable. If you read Name of the Wind primarily for the voice and the atmosphere, this is the closest equivalent — and it has the advantage of being complete.",
+          caveat: "extremely slow. This rewards patience in a way that Rothfuss doesn't demand.",
           tags: [
             'Literary Prose',
             'Standalone',
@@ -59,7 +66,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (ongoing)',
           audiobook: true,
-          note: "Where Rothfuss builds atmosphere, Lynch builds momentum. The Gentleman Bastards are con artists in a city that feels as lived-in as Tarbean, and Locke has the same outsider-genius quality as Kvothe — brilliant, scrappy, too clever for his own good. The banter is exceptional and the schemes are elaborately satisfying. Caveat: darker and more violent, with much less interiority. You're in the plot rather than in a character's head.",
+          note: "Where Rothfuss builds atmosphere, Lynch builds momentum. The Gentleman Bastards are con artists in a city that feels as lived-in as Tarbean, and Locke has the same outsider-genius quality as Kvothe — brilliant, scrappy, too clever for his own good. The banter is exceptional and the schemes are elaborately satisfying.",
+          caveat: "darker and more violent, with much less interiority. You're in the plot rather than in a character's head.",
           tags: [
             'Heist',
             'Con Artists',
@@ -88,7 +96,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy)',
           audiobook: true,
-          note: "A magic university novel that takes Rothfuss's premise and deliberately darkens it. Quentin Coldwater is Kvothe without the self-assurance — equally talented, far more self-destructive — and Brakebills has the same rigorous, rules-based approach to magic as the University. The prose is sharp and the deconstruction of fantasy expectations is bracingly honest. Caveat: this is a deeply melancholy book that takes seriously what it would actually feel like to get everything you wanted. Not a comfort read.",
+          note: "A magic university novel that takes Rothfuss's premise and deliberately darkens it. Quentin Coldwater is Kvothe without the self-assurance — equally talented, far more self-destructive — and Brakebills has the same rigorous, rules-based approach to magic as the University. The prose is sharp and the deconstruction of fantasy expectations is bracingly honest.",
+          caveat: "this is a deeply melancholy book that takes seriously what it would actually feel like to get everything you wanted. Not a comfort read.",
           tags: [
             'Magic University',
             'Deconstruction',
@@ -144,7 +153,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy + sequel trilogy)',
           audiobook: true,
-          note: "The obvious contrast. Where Sympathy feels like chemistry — intuitive, physical, dangerous when you're tired — Allomancy feels like physics: each metal does one thing, you can map it, and Sanderson never cheats. If the rigour of Rothfuss's magic system was your hook, Sanderson is the natural next step. Caveat: the prose is functional rather than beautiful, which will be an adjustment. The trade-off is a complete, satisfying story with a real ending.",
+          note: "The obvious contrast. Where Sympathy feels like chemistry — intuitive, physical, dangerous when you're tired — Allomancy feels like physics: each metal does one thing, you can map it, and Sanderson never cheats. If the rigour of Rothfuss's magic system was your hook, Sanderson is the natural next step.",
+          caveat: "the prose is functional rather than beautiful, which will be an adjustment. The trade-off is a complete, satisfying story with a real ending.",
           tags: [
             'Hard Magic System',
             'Underdog Hero',
@@ -167,7 +177,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy)',
           audiobook: true,
-          note: "Magic here works like Sympathy — classified, costed, and never charitable. Every spell has an affinity, a difficulty tier, and a consequence if you push past what your power allows. The Scholomance treats magic as an engineering discipline rather than an art, and El approaches it with the same precise, exhausted expertise Kvothe brings to his Sympathy work. Lighter in register but the systematic rigour is real. Caveat: more YA in energy, lower stakes.",
+          note: "Magic here works like Sympathy — classified, costed, and never charitable. Every spell has an affinity, a difficulty tier, and a consequence if you push past what your power allows. The Scholomance treats magic as an engineering discipline rather than an art, and El approaches it with the same precise, exhausted expertise Kvothe brings to his Sympathy work. Lighter in register but the systematic rigour is real.",
+          caveat: "more YA in energy, lower stakes.",
           tags: [
             'Hard Magic System',
             'Magic School',
@@ -197,7 +208,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy)',
           audiobook: true,
-          note: "Robin Hobb writes the kind of prose Rothfuss readers recognise: deeply interior, character-first, willing to sit in a moment rather than push plot forward. Fitz is as gifted as Kvothe — trained in assassination and a magic called Skill — as isolated, and as interesting in his failures as his successes. The trilogy is complete and delivers a full emotional arc. Caveat: Hobb is more emotionally punishing than Rothfuss — she commits to consequences in ways Rothfuss defers. Don't start this if you need victories.",
+          note: "Robin Hobb writes the kind of prose Rothfuss readers recognise: deeply interior, character-first, willing to sit in a moment rather than push plot forward. Fitz is as gifted as Kvothe — trained in assassination and a magic called Skill — as isolated, and as interesting in his failures as his successes. The trilogy is complete and delivers a full emotional arc.",
+          caveat: "Hobb is more emotionally punishing than Rothfuss — she commits to consequences in ways Rothfuss defers. Don't start this if you need victories.",
           tags: [
             'Literary Prose',
             'Complete Trilogy',
@@ -227,7 +239,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
         'Magic University',
         'Legendary Hero',
       ],
-      why: "The obvious next step and arguably the better book — longer, darker, more confident, and with a section in the middle that represents Rothfuss at his absolute peak. Kvothe leaves the University and the world opens up: new continents, new magic, and the Adem warrior culture that recontextualises everything. Caveat: it ends as inconclusively as book one. You're still waiting for book three. This is the cost of entry.",
+      why: "The obvious next step and arguably the better book — longer, darker, more confident, and with a section in the middle that represents Rothfuss at his absolute peak. Kvothe leaves the University and the world opens up: new continents, new magic, and the Adem warrior culture that recontextualises everything.",
+      caveat: "it ends as inconclusively as book one. You're still waiting for book three. This is the cost of entry.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -247,7 +260,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
         'Brilliant Protagonist',
         'Dark City',
       ],
-      why: "The closest thing to Kvothe's outsider-genius energy in a completely different setting. Locke is a con artist rather than a magician, but the dynamic is the same: someone who is better at this than anyone around him, operating in a world that keeps raising the stakes. Lynch's Camorr is as vividly constructed as Rothfuss's Tarbean, and the schemes are satisfying in ways that Sympathy demonstrations are. Caveat: darker, more violent, less interior. You're in the plot rather than in a character's head.",
+      why: "The closest thing to Kvothe's outsider-genius energy in a completely different setting. Locke is a con artist rather than a magician, but the dynamic is the same: someone who is better at this than anyone around him, operating in a world that keeps raising the stakes. Lynch's Camorr is as vividly constructed as Rothfuss's Tarbean, and the schemes are satisfying in ways that Sympathy demonstrations are.",
+      caveat: "darker, more violent, less interior. You're in the plot rather than in a character's head.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -267,7 +281,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
         'Historical Setting',
         'Strange Magic',
       ],
-      why: "The only other fantasy novel with prose of comparable distinction — though operating in a completely different register. Clarke's Victorian-historian voice is as controlled and deliberate as Rothfuss's lyrical one, and her magic is genuinely strange in a way that most fantasy never manages. The book takes its time the way Rothfuss does, building atmosphere before plot. Caveat: extremely slow, and the human characters are often less interesting than the world around them. Has the advantage of being complete.",
+      why: "The only other fantasy novel with prose of comparable distinction — though operating in a completely different register. Clarke's Victorian-historian voice is as controlled and deliberate as Rothfuss's lyrical one, and her magic is genuinely strange in a way that most fantasy never manages. The book takes its time the way Rothfuss does, building atmosphere before plot.",
+      caveat: "extremely slow, and the human characters are often less interesting than the world around them. Has the advantage of being complete.",
       standalone: true,
       audiobook: true,
       amazon_url:
@@ -288,7 +303,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
         'Heist',
         'World-Building',
       ],
-      why: "The natural companion read for anyone who responded most to Sympathy's rigour. Allomancy is Sanderson's best standalone system — clean rules, high costs, and a heist narrative that gives the mechanics real purpose. Where Rothfuss never quite finished, Sanderson delivers a complete, emotionally satisfying arc. Caveat: the prose is workmanlike where Rothfuss is beautiful. The trade-off is a story that actually ends.",
+      why: "The natural companion read for anyone who responded most to Sympathy's rigour. Allomancy is Sanderson's best standalone system — clean rules, high costs, and a heist narrative that gives the mechanics real purpose. Where Rothfuss never quite finished, Sanderson delivers a complete, emotionally satisfying arc.",
+      caveat: "the prose is workmanlike where Rothfuss is beautiful. The trade-off is a story that actually ends.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -308,7 +324,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
         'Dark Tone',
         'Coming of Age',
       ],
-      why: "What happens if you take Rothfuss's magic university premise and strip away all the heroic framing? Grossman asks that question seriously. Quentin is as gifted as Kvothe and even less emotionally equipped to deal with it, and Brakebills has the same rigorous approach to magical theory. The book is sharply written and genuinely melancholy. Caveat: this is a deconstruction of fantasy wish-fulfilment, not an endorsement of it. If you read Kingkiller primarily for the adventure, recalibrate.",
+      why: "What happens if you take Rothfuss's magic university premise and strip away all the heroic framing? Grossman asks that question seriously. Quentin is as gifted as Kvothe and even less emotionally equipped to deal with it, and Brakebills has the same rigorous approach to magical theory. The book is sharply written and genuinely melancholy.",
+      caveat: "this is a deconstruction of fantasy wish-fulfilment, not an endorsement of it. If you read Kingkiller primarily for the adventure, recalibrate.",
       standalone: false,
       audiobook: true,
       amazon_url:
@@ -328,7 +345,8 @@ export const theNameOfTheWind: BooksLikeEntry = {
         'Slow Burn',
         'Fairy-Tale Vibes',
       ],
-      why: 'The best answer to the "I need something beautiful that actually finishes" problem. Novik\'s prose has a lyrical quality in the Rothfuss register, the magic feels organic and uncategorisable, and the slow-burn tension earns a genuine resolution. One book, complete, satisfying. Caveat: smaller stakes than Kingkiller, more intimate in scope. The ambition is different but the craft is real.',
+      why: `The best answer to the "I need something beautiful that actually finishes" problem. Novik's prose has a lyrical quality in the Rothfuss register, the magic feels organic and uncategorisable, and the slow-burn tension earns a genuine resolution. One book, complete, satisfying.`,
+      caveat: "smaller stakes than Kingkiller, more intimate in scope. The ambition is different but the craft is real.",
       standalone: true,
       audiobook: true,
       amazon_url:

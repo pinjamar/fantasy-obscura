@@ -23,6 +23,12 @@ export const uprooted: BooksLikeEntry = {
     answer_line:
       'If you loved Uprooted for the folklore-rooted magic, uneasy mentor dynamic, living forest menace, and fairy-tale atmosphere, start with Spinning Silver, The Bear and the Nightingale and Circe.',
     why_people_love: `Uprooted is built around two things that rarely coexist: a genuinely terrifying antagonist and a genuinely tender romance. The Wood — an ancient, malevolent forest that corrupts everything it touches — is one of the most effective threats in modern fantasy, not because of violence but because of wrongness. Against this backdrop, Agnieszka discovers that her magic is wild, instinctive, and nothing like what her aloof wizard mentor Sarkan considers proper — and the novel is partly about the clash between her chaotic power and his rigid precision, and partly about what happens when two people who irritate each other enormously start to depend on each other. Novik's prose has a fairy-tale cadence that makes even brutal scenes feel mythic. Readers return to it because it's a complete story — a standalone that actually ends, with a romance that earns its resolution and a world that feels genuinely ancient.`,
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Uprooted is built around two things that rarely coexist: a genuinely terrifying antagonist and a genuinely tender romance. The Wood — an ancient, malevolent forest that corrupts everything it touches — is one of the most effective threats in modern fantasy, not because of violence but because of wrongness: the corruption doesn't kill cleanly, it transforms, and the things it makes of people and animals are worse than death. Against this backdrop, Novik gives Agnieszka a magic that is chaotic, instinctive, and completely unlike anything her aloof wizard mentor Sarkan considers proper." },
+      { type: 'labeled', label: 'The Wood:', text: "It is the book's central achievement — an antagonist that is not a character but a force, genuinely ancient and indifferent and spreading. Novik writes it with a folk-horror specificity that makes it feel like something drawn from the original versions of fairy tales rather than the sanitised ones: the wrongness accumulates, and the reader is never quite sure what it can or cannot do. The threat shapes everything — the valley's culture, the Dragon's isolation, Agnieszka's training, the political world beyond the valley — and its ultimate nature rewards the reader who was paying attention from the first chapter." },
+      { type: 'paragraph', text: "The romance between Agnieszka and Sarkan develops through sustained irritation — he finds her messy and instinctive, she finds him cold and dismissive, and they are both correct — and Novik earns the tenderness precisely because she doesn't rush it. The prose has a fairy-tale cadence that makes even brutal scenes feel mythic, and the book is a complete story: a standalone that actually ends, with a world that feels genuinely ancient and a resolution that has been building from page one." },
+      { type: 'warning', text: "Uprooted is a standalone novel — it does not continue. The folk horror elements are genuinely disturbing in the middle section; the corruption sequences are not comfortable reading. The romance develops slowly across the full novel and is Closed Door throughout. Novik's prose is deliberately lyrical rather than spare; readers who prefer fast, efficient prose may find it slow. The magic system is intuitive and emotional rather than systematic — it is not explained the way Sanderson-style magic is explained." },
+    ],
   },
   aspects: [
     {
@@ -41,7 +47,8 @@ export const uprooted: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy, complete)',
           audiobook: true,
-          note: `The most natural companion read to Uprooted. Arden writes Slavic folklore with the same instinctive authority as Novik — the frost demons, the household spirits, and the dark forest are treated as genuinely real and genuinely dangerous. Vasya is a young woman who can see the old spirits that Christianity is slowly erasing, and the tension between her wild nature and the world's expectations mirrors Agnieszka's arc closely. The prose has the same fairy-tale weight. Caveat: the romance is far less central — this is primarily a coming-of-age story about a woman refusing to be tamed, with the romantic thread developed more in later books.`,
+          note: `The most natural companion read to Uprooted. Arden writes Slavic folklore with the same instinctive authority as Novik — the frost demons, the household spirits, and the dark forest are treated as genuinely real and genuinely dangerous. Vasya is a young woman who can see the old spirits that Christianity is slowly erasing, and the tension between her wild nature and the world's expectations mirrors Agnieszka's arc closely. The prose has the same fairy-tale weight.`,
+          caveat: "the romance is far less central — this is primarily a coming-of-age story about a woman refusing to be tamed, with the romantic thread developed more in later books.",
           tags: [
             'Slavic Folklore',
             'Dark Forest',
@@ -64,7 +71,8 @@ export const uprooted: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: `Novik's follow-up uses Ashkenazi Jewish folklore the way Uprooted uses Slavic — as foundational architecture rather than decoration. A moneylender's daughter catches the attention of the Staryk king, a cold and dangerous figure from a frozen otherworld, and has to bargain her way to survival. The fairy-tale logic is tighter here — every deal has consequences, every gift has a price — and the prose has the same lyrical weight. Caveat: Spinning Silver has multiple POV characters and a more complex plot structure than Uprooted; the romance is slower and less central but ultimately delivers the same emotional payoff.`,
+          note: `Novik's follow-up uses Ashkenazi Jewish folklore the way Uprooted uses Slavic — as foundational architecture rather than decoration. A moneylender's daughter catches the attention of the Staryk king, a cold and dangerous figure from a frozen otherworld, and has to bargain her way to survival. The fairy-tale logic is tighter here — every deal has consequences, every gift has a price — and the prose has the same lyrical weight.`,
+          caveat: "Spinning Silver has multiple POV characters and a more complex plot structure than Uprooted; the romance is slower and less central but ultimately delivers the same emotional payoff.",
           tags: [
             'Jewish Folklore',
             'Fairy Tale',
@@ -92,7 +100,8 @@ export const uprooted: BooksLikeEntry = {
           heat_level: 'Open Door',
           standalone: true,
           audiobook: true,
-          note: `An apprentice librarian discovers she has powers she shouldn't, and gets tangled up with a sorcerer who is not what he appears. Rogerson is directly in Novik's tradition — the magic has a tactile, instinctive quality, the antagonism between the two leads is well-written, and the romance earns its slow burn. The library-as-magical-archive setting gives it a distinctive atmosphere, and the pacing is tight for a standalone. Caveat: somewhat lighter in tone than Uprooted, the darkness is more adventure-thriller than psychological horror, and the romantic tension resolves earlier.`,
+          note: `An apprentice librarian discovers she has powers she shouldn't, and gets tangled up with a sorcerer who is not what he appears. Rogerson is directly in Novik's tradition — the magic has a tactile, instinctive quality, the antagonism between the two leads is well-written, and the romance earns its slow burn. The library-as-magical-archive setting gives it a distinctive atmosphere, and the pacing is tight for a standalone.`,
+          caveat: "somewhat lighter in tone than Uprooted, the darkness is more adventure-thriller than psychological horror, and the romantic tension resolves earlier.",
           tags: [
             'Hidden Magic',
             'Enemies to Lovers',
@@ -117,7 +126,8 @@ export const uprooted: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books, each standalone)',
           audiobook: true,
-          note: `The foundational text for everything Uprooted does with hidden power and unconventional magic. Ged's path from goat-boy to great wizard is told with Le Guin's characteristic economy — no wasted words, no wasted scenes — and the climax, which turns on Ged confronting what he cannot run from, is the same psychological courage Agnieszka has to find. Le Guin invented the template for "protagonist whose magic doesn't work the way the rules say it should." Caveat: short and written for a younger audience in register; no romance. Recommended as the essential ancestor, not a structural match.`,
+          note: `The foundational text for everything Uprooted does with hidden power and unconventional magic. Ged's path from goat-boy to great wizard is told with Le Guin's characteristic economy — no wasted words, no wasted scenes — and the climax, which turns on Ged confronting what he cannot run from, is the same psychological courage Agnieszka has to find. Le Guin invented the template for "protagonist whose magic doesn't work the way the rules say it should."`,
+          caveat: "short and written for a younger audience in register; no romance. Recommended as the essential ancestor, not a structural match.",
           tags: [
             'Classic Fantasy',
             'Coming of Age',
@@ -168,7 +178,8 @@ export const uprooted: BooksLikeEntry = {
           heat_level: 'Open Door',
           standalone: true,
           audiobook: true,
-          note: `The closest match to Uprooted's prose register. Miller writes with the same mythic cadence — sentences that feel like they have weight and age — and Circe's arc of discovering power that the gods dismiss, learning it in isolation, and becoming something no one anticipated mirrors Agnieszka's closely. The setting is Greek mythology rather than Slavic folklore, but the emotional core is identical: a woman who was underestimated transforming through her own effort and loss. Caveat: Circe is more internal and reflective in pace, the romance is a smaller component, and some sections are deliberately episodic.`,
+          note: `The closest match to Uprooted's prose register. Miller writes with the same mythic cadence — sentences that feel like they have weight and age — and Circe's arc of discovering power that the gods dismiss, learning it in isolation, and becoming something no one anticipated mirrors Agnieszka's closely. The setting is Greek mythology rather than Slavic folklore, but the emotional core is identical: a woman who was underestimated transforming through her own effort and loss.`,
+          caveat: "Circe is more internal and reflective in pace, the romance is a smaller component, and some sections are deliberately episodic.",
           tags: [
             'Mythological Retelling',
             'Self-Discovery',

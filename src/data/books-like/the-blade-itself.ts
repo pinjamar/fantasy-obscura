@@ -25,6 +25,12 @@ export const theBladeitself: BooksLikeEntry = {
       "If you loved The Blade Itself for Glokta's bitter interior monologue, the way Abercrombie dismantles every fantasy cliché he touches, and the mounting dread that nobody will get what they deserve — start with Prince of Thorns, Best Served Cold, and The Heroes.",
     why_people_love:
       "The Blade Itself is the book that made grimdark a genre. Abercrombie takes three stock fantasy archetypes — the noble barbarian, the broken torturer, the arrogant young swordsman — and systematically ruins them, not with cynicism but with understanding. Glokta is one of the most memorable characters in modern fantasy precisely because his cruelty and his suffering are inseparable. The world-building is tight, the politics are corrupt in entirely believable ways, and the black humour keeps it readable even when it's brutal. Fair warning: this is a series that rewards patience. The first book is largely setup — the payoff lands in books two and three, and especially in the standalone novels that follow.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "The Blade Itself is the book that made grimdark a genre. Abercrombie takes three stock fantasy archetypes — the noble barbarian, the broken torturer, the arrogant young swordsman — and systematically ruins them, not with cynicism but with understanding. The world-building is tight, the politics are corrupt in entirely believable ways, and the black humour keeps it readable even when it's brutal." },
+      { type: 'labeled', label: 'Glokta:', text: "The Inquisitor who extracts confessions for a living — and whose own broken body is itself the product of earlier torture — is one of the most memorable characters in modern fantasy precisely because his cruelty and his suffering are inseparable. His interior monologue is savage, self-aware, and deeply funny in a way that keeps the reader in a seat they might otherwise find too uncomfortable. Abercrombie understands that a character can be monstrous and still be someone you want to spend time with." },
+      { type: 'paragraph', text: "The other two POVs earn their place: Logen Ninefingers, the barbarian everyone in the north is afraid of, trying to be something better than what he's been; Jezal dan Luthar, the arrogant young swordsman who is exactly what you'd expect — for now. Abercrombie's three-POV structure ensures each character's failure mode illuminates the others, and the First Law world's political rot is viewed from the top, bottom, and middle simultaneously." },
+      { type: 'warning', text: "The Blade Itself is largely setup — the payoff lands in books two and three, and the standalone novels that follow may be better than the trilogy. Go in knowing this is a slow build. The darkness level is real and consistent: torture, war crimes, and political corruption are not handled gently. The humour is the buffer, not a sign that the book is softening anything." },
+    ],
   },
   aspects: [
     {
@@ -42,7 +48,8 @@ export const theBladeitself: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "Jorg of Ancrath is fourteen years old and already one of the most unsettling protagonists in fantasy. Lawrence writes first-person like Abercrombie — tight, sardonic, and completely unwilling to soften the character's worst impulses. Where Glokta is broken by the world, Jorg broke himself on purpose. Same cold intelligence, same dark humour, much higher body count. Caveat: darker and more nihilistic than First Law. No warmth in the early chapters.",
+          note: "Jorg of Ancrath is fourteen years old and already one of the most unsettling protagonists in fantasy. Lawrence writes first-person like Abercrombie — tight, sardonic, and completely unwilling to soften the character's worst impulses. Where Glokta is broken by the world, Jorg broke himself on purpose. Same cold intelligence, same dark humour, much higher body count.",
+          caveat: "darker and more nihilistic than First Law. No warmth in the early chapters.",
           tags: ['Anti-Hero', 'First-Person Narration', 'Dark Humour', 'Post-Apocalyptic Medieval'],
           warning: 'Violence against children, sexual violence implied',
           amazon_url:
@@ -63,7 +70,8 @@ export const theBladeitself: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books, unfinished)',
           audiobook: true,
-          note: "Where Abercrombie gives you tortured killers, Lynch gives you charming thieves — but the moral greyness is equally sharp and the world-building equally meticulous. Locke is not a good person; he's just funnier about it. The Venice-inspired setting, the elaborate cons, and the devastating mid-book gut-punch all share Abercrombie's approach to likeable characters doing terrible things. Caveat: lighter in tone, heavier on banter — the darkness arrives suddenly rather than being constant.",
+          note: "Where Abercrombie gives you tortured killers, Lynch gives you charming thieves — but the moral greyness is equally sharp and the world-building equally meticulous. Locke is not a good person; he's just funnier about it. The Venice-inspired setting, the elaborate cons, and the devastating mid-book gut-punch all share Abercrombie's approach to likeable characters doing terrible things.",
+          caveat: "lighter in tone, heavier on banter — the darkness arrives suddenly rather than being constant.",
           tags: ['Thieves Guild', 'Heist', 'Dark Comedy', 'Morally Grey Protagonist'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Lies+of+Locke+Lamora+Scott+Lynch&tag=librariancura-20',
@@ -105,7 +113,8 @@ export const theBladeitself: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (10 books)',
           audiobook: true,
-          note: "The book that Abercrombie credits as a major influence. The Black Company is a mercenary unit in service to a dark lord, narrated by their surgeon-chronicler. Cook strips war of all glamour — it's logistics, fear, and compromised loyalties — and the moral ambiguity is never resolved. Darker and less polished than First Law but foundational to everything Abercrombie built on top of it. Caveat: prose is rougher and the early chapters throw you in cold.",
+          note: "The book that Abercrombie credits as a major influence. The Black Company is a mercenary unit in service to a dark lord, narrated by their surgeon-chronicler. Cook strips war of all glamour — it's logistics, fear, and compromised loyalties — and the moral ambiguity is never resolved. Darker and less polished than First Law but foundational to everything Abercrombie built on top of it.",
+          caveat: "prose is rougher and the early chapters throw you in cold.",
           tags: ['Military Fantasy', 'Mercenaries', 'Dark Fantasy', 'War Is Hell'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Black+Company+Glen+Cook&tag=librariancura-20',
@@ -148,7 +157,8 @@ export const theBladeitself: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: 'Rin claws her way into the elite military academy on talent and rage alone, and the series uses Chinese history as its skeleton to show exactly how wars are won, who pays the price, and what power does to the people who wield it. Like Abercrombie, Kuang is interested in institutions — what the military makes of people, how ideology becomes atrocity, how the exceptional individual is both created and destroyed by the system around them. Caveat: significantly darker than First Law. The second and third books contain graphic depictions of historical genocide.',
+          note: 'Rin claws her way into the elite military academy on talent and rage alone, and the series uses Chinese history as its skeleton to show exactly how wars are won, who pays the price, and what power does to the people who wield it. Like Abercrombie, Kuang is interested in institutions — what the military makes of people, how ideology becomes atrocity, how the exceptional individual is both created and destroyed by the system around them.',
+          caveat: "significantly darker than First Law. The second and third books contain graphic depictions of historical genocide.",
           tags: ['Military Fantasy', 'War Is Hell', 'Political Corruption', 'Dark Coming of Age'],
           warning: 'Graphic wartime atrocities, genocide, sexual violence',
           amazon_url:

@@ -21,6 +21,12 @@ export const dungeonCrawlerCarl: BooksLikeEntry = {
     ],
     why_people_love:
       "The appeal isn't the stats or the loot — it's Carl's voice. An ordinary guy dropped into a nightmarish alien game show, watching the world die around him, and still making the most perfectly timed sarcastic observations. Matt Dinniman uses the LitRPG framework as a delivery system for sharp social satire: the Syndicate broadcasts human extinction as prime-time entertainment, the dungeon is sponsored, and the audience has parasocial opinions about the contestants' fashion choices. It's brutal, it's hilarious, and Princess Morfin the cat is more competent than most fantasy protagonists.",
+    why_people_love_rich: [
+      { type: 'paragraph', text: "Dungeon Crawler Carl works because of its premise and its voice, in that order. Earth is destroyed by aliens who turn the survivors into contestants in an underground dungeon-crawling game show broadcast across the galaxy. The Syndicate sells sponsorships, the audience debates the contestants' fashion choices, and commentary overlays the carnage in real time. Dinniman uses the LitRPG framework as a delivery system for sharp social satire about spectacle, surveillance, and the way entertainment industries dehumanise their subjects." },
+      { type: 'labeled', label: 'Carl:', text: "An ordinary man — recently dumped, recently unemployed, recently watching the world end — who responds to his species' extinction by being consistently, devastatingly sarcastic at exactly the right moment. The voice is the book's central achievement: Carl is funny in a way that is inseparable from how terrible the situation is, because the humor is how he holds together. He is not a hero by design; he is a competent ordinary person who refuses to accept that any of this is happening, which is funnier and more affecting than most epic fantasy's chosen heroes." },
+      { type: 'paragraph', text: "Princess Morfin the cat is present throughout, arguably more competent than Carl, and entirely unimpressed by the apocalypse. The LitRPG mechanics — stats, levels, class evolution — serve the comedy and the progression both; the system is intricate enough to satisfy genre readers and legible enough to serve the satire. The books escalate rapidly and the series rewards binge-reading." },
+      { type: 'warning', text: "Dungeon Crawler Carl is dark humor about the literal extinction of humanity — the stakes are real, the violence is graphic, and the deaths of characters you have come to care about are not softened. The LitRPG mechanics require engagement with stats, skills, and system notifications; readers who find game-mechanics prose tedious may find the format frustrating. The series was published as web serial fiction and the editing is lighter than traditional publishing." },
+    ],
     angle: 'Brutal LitRPG Dungeon-Crawler with Dark Humor',
     answer_line:
       'If you loved Carl for the addictive progression and the voice, start with He Who Fights With Monsters and Red Rising.',
@@ -169,7 +175,8 @@ export const dungeonCrawlerCarl: BooksLikeEntry = {
           series: 'The Poppy War',
           series_number: 1,
           audiobook: true,
-          note: "An underdog claws their way through a brutal military academy system and then watches that system reveal its true horror. No humor here — The Poppy War is relentlessly dark — but the social machinery grinding ordinary people into weapons resonates with DCC's Syndicate satire. Kuang's world is meticulous and devastating. Caveat: the violence escalates to genuinely harrowing levels by book two.",
+          note: "An underdog claws their way through a brutal military academy system and then watches that system reveal its true horror. No humor here — The Poppy War is relentlessly dark — but the social machinery grinding ordinary people into weapons resonates with DCC's Syndicate satire. Kuang's world is meticulous and devastating.",
+          caveat: "the violence escalates to genuinely harrowing levels by book two.",
           tags: ['Underdog Hero', 'Social Commentary', 'War', 'Dark', 'Grimdark'],
           warning: 'Extremely graphic violence including depictions of genocide.',
           amazon_url: '',

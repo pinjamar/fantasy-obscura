@@ -20,11 +20,29 @@ export const theGoblinEmperor: BooksLikeEntry = {
     ],
     angle: 'Cosy Fantasy with a Kind Protagonist',
     why_people_love: `The Goblin Emperor is the book readers recommend when someone says they are exhausted by grimdark. The half-goblin youngest son of the emperor inherits the throne after a catastrophic airship accident kills everyone ahead of him in succession, and the entire novel is about a fundamentally decent person trying to be a good ruler in a world that was not designed for decency. Maia does not become ruthless. He does not harden. He learns to navigate a court full of people who underestimate or manipulate him while remaining himself — and the book is quietly radical for insisting this is not naivety but strength. The court politics are intricate, the relationships are earned, and the emotional payoff of watching someone refuse to be corrupted is unexpectedly powerful.`,
+    why_people_love_rich: [
+      {
+        type: 'paragraph',
+        text: 'The Goblin Emperor is the book readers recommend when someone says they are exhausted by grimdark. The half-goblin youngest son of the emperor inherits the throne after a catastrophic airship accident kills everyone ahead of him in succession, and the entire novel is about a fundamentally decent person trying to be a good ruler in a world that was not designed for decency. Addison understands that decency in hostile circumstances is a choice that has to be remade at every step — not a character trait but a practice.',
+      },
+      {
+        type: 'labeled',
+        label: 'Maia:',
+        text: 'He does not become ruthless. He does not harden. He learns to navigate a court full of people who underestimate or manipulate him while remaining himself — and the book is quietly radical for insisting this is not naivety but strength. The court has real politics, real intrigue, real danger; what it does not have is a protagonist who decides that winning requires becoming what he hates. Addison earns this refusal by making it genuinely costly rather than magically easy.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The court politics are intricate, the relationships are earned, and the emotional payoff is unexpectedly powerful. The invented pronouns and formal registers for the elvish court are the most commonly noted hurdle, and they become natural faster than most readers expect. The sequel, The Witness for the Dead, follows a secondary character and is quieter in scale but equally satisfying.',
+      },
+      {
+        type: 'warning',
+        text: "The Goblin Emperor is low on external action and high on internal navigation — if you want battles, this isn't it. The invented formal language of the court (the first-person plural for rulers, the complex honorifics) requires a short adjustment period. Standalone, though the sequel follows a character introduced here. Darkness level 2: the threat is political and emotional rather than violent.",
+      },
+    ],
   },
   aspects: [
     {
-      heading:
-        'If you loved the kind protagonist navigating hostile power...',
+      heading: 'If you loved the kind protagonist navigating hostile power...',
       recs: [
         {
           title: 'Piranesi',
@@ -34,7 +52,9 @@ export const theGoblinEmperor: BooksLikeEntry = {
           darkness_level: 2,
           standalone: true,
           audiobook: true,
-          note: "A man who catalogues an impossible world with perfect contentment and genuine care for everything in it. Clarke's protagonist shares Maia's essential quality: an absolute moral clarity that the narrative treats as strength rather than innocence. The tonal register is completely different — mysterious, strange, literary — but both books centre on a protagonist whose decency is their defining characteristic and whose perspective shapes how the reader experiences the world. Caveat: no court politics, minimal interpersonal conflict, almost entirely atmosphere and mystery.",
+          note: "A man who catalogues an impossible world with perfect contentment and genuine care for everything in it. Clarke's protagonist shares Maia's essential quality: an absolute moral clarity that the narrative treats as strength rather than innocence. The tonal register is completely different — mysterious, strange, literary — but both books centre on a protagonist whose decency is their defining characteristic and whose perspective shapes how the reader experiences the world.",
+          caveat:
+            'no court politics, minimal interpersonal conflict, almost entirely atmosphere and mystery.',
           tags: ['Kind Protagonist', 'Unique World', 'Literary', 'Quiet'],
           amazon_url:
             'https://www.amazon.com/s?k=Piranesi+Susanna+Clarke&tag=librariancura-20',
@@ -103,7 +123,8 @@ export const theGoblinEmperor: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books planned, 3 released)',
           audiobook: true,
-          note: "The darkest possible escalation of Goblin Emperor's political intelligence. Where Maia learns to work within the system without being corrupted by it, Baru decides to destroy the system from within — and the book is about what that decision costs at every step. Dickinson's economics and political machinery are among the most rigorous in fantasy. Recommended only if you want something that takes the same interest in how power actually works and applies it to a protagonist making increasingly terrible choices. Caveat: deliberately devastating, not a comfort read.",
+          note: "The darkest possible escalation of Goblin Emperor's political intelligence. Where Maia learns to work within the system without being corrupted by it, Baru decides to destroy the system from within — and the book is about what that decision costs at every step. Dickinson's economics and political machinery are among the most rigorous in fantasy. Recommended only if you want something that takes the same interest in how power actually works and applies it to a protagonist making increasingly terrible choices.",
+          caveat: 'deliberately devastating, not a comfort read.',
           tags: [
             'Political Machination',
             'Empire',
@@ -206,7 +227,9 @@ export const theGoblinEmperor: BooksLikeEntry = {
         'Ensemble Cast',
         'Warmth',
       ],
-      why: 'A solitary witch is hired to teach three young witches in secret, and slowly, reluctantly, becomes part of the household. Mandanna writes found family with the same warmth and patience as Goblin Emperor — the community forms through repeated small acts of care rather than dramatic events, the protagonist resists belonging before accepting it, and the tone never strays from fundamental kindness. The romance is slow and sweet. Caveat: lower stakes and lighter in tone than Goblin Emperor — closer to Legends & Lattes in register. If you want the warmth without any political complexity, this delivers it more directly.',
+      why: 'A solitary witch is hired to teach three young witches in secret, and slowly, reluctantly, becomes part of the household. Mandanna writes found family with the same warmth and patience as Goblin Emperor — the community forms through repeated small acts of care rather than dramatic events, the protagonist resists belonging before accepting it, and the tone never strays from fundamental kindness. The romance is slow and sweet.',
+      caveat:
+        'Lower stakes and lighter in tone than Goblin Emperor - closer to Legends & Lattes in register. If you want the warmth without any political complexity, this delivers it more directly.',
       standalone: true,
       audiobook: true,
       amazon_url:
