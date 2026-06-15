@@ -1,8 +1,11 @@
 /**
  * generate-editorial-v2.mjs
  *
- * Rewrites reading_experience + unique_angle + ideal_reader for priority books.
- * All three sections generated in ONE API call per book (3× more efficient).
+ * Rewrites reading_experience + ideal_reader + faqs for priority books that
+ * do NOT have a books-like guide (books with a guide show why_people_love on
+ * the book page instead, so the DB fields are never rendered for them).
+ *
+ * All three sections generated in ONE API call per book.
  * Uses Gemini 2.5 Pro and feeds every unique field we have — tropes, heat,
  * darkness, content warnings, tone, pacing, magic system — so the output is
  * book-specific rather than generic.
@@ -14,7 +17,10 @@
  *   node scripts/generate-editorial-v2.mjs --slug six-of-crows
  *   node scripts/generate-editorial-v2.mjs --tier1 --dry-run
  *   node scripts/generate-editorial-v2.mjs --tier1 --limit 5
+ *   node scripts/generate-editorial-v2.mjs --include-bookslike   (also run for books-like source books)
  *
+ * By default skips books that have a books-like guide (their content comes
+ * from the books-like file, not the DB). Add --include-bookslike to override.
  * By default only processes books where all three fields are NULL.
  * Add --force to overwrite existing content.
  */
@@ -22,20 +28,41 @@
 import { getGeminiModel } from './lib/gemini.mjs';
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
 import { TIER_1, TIER_2, TIER_3, TIER_4 } from './priority-slugs.mjs';
+
+// Build set of books-like source slugs (these use why_people_love on the book
+// page, so ideal_reader/reading_experience in the DB are never shown for them)
+function getBooksLikeSourceSlugs() {
+  const dir = join(import.meta.dirname, '../src/data/books-like');
+  const slugs = new Set();
+  for (const file of readdirSync(dir).filter(f => f.endsWith('.ts'))) {
+    const content = readFileSync(join(dir, file), 'utf8');
+    const dbSlug = content.match(/\bdb_slug:\s*'([^']+)'/);
+    const title  = content.match(/\btitle:\s*'([^']+)'/);
+    if (dbSlug) {
+      slugs.add(dbSlug[1]);
+    } else if (title) {
+      slugs.add(title[1].replace(/\s*\([^)]*\)/g, '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
+    }
+  }
+  return slugs;
+}
 
 config();
 
-const DRY_RUN    = process.argv.includes('--dry-run');
-const FORCE      = process.argv.includes('--force');
-const TIER1_ONLY = process.argv.includes('--tier1');
-const TIER2_ONLY = process.argv.includes('--tier2');
-const TIER3_ONLY = process.argv.includes('--tier3');
-const TIER4_ONLY = process.argv.includes('--tier4');
-const LIMIT_ARG  = process.argv.indexOf('--limit');
-const LIMIT      = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
-const SLUG_ARG   = process.argv.indexOf('--slug');
-const SLUG       = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
+const DRY_RUN          = process.argv.includes('--dry-run');
+const FORCE            = process.argv.includes('--force');
+const INCLUDE_BOOKSLIKE = process.argv.includes('--include-bookslike');
+const TIER1_ONLY       = process.argv.includes('--tier1');
+const TIER2_ONLY       = process.argv.includes('--tier2');
+const TIER3_ONLY       = process.argv.includes('--tier3');
+const TIER4_ONLY       = process.argv.includes('--tier4');
+const LIMIT_ARG        = process.argv.indexOf('--limit');
+const LIMIT            = LIMIT_ARG !== -1 ? parseInt(process.argv[LIMIT_ARG + 1], 10) : null;
+const SLUG_ARG         = process.argv.indexOf('--slug');
+const SLUG             = SLUG_ARG !== -1 ? process.argv[SLUG_ARG + 1] : null;
 
 // Build target slug list from flags
 let TARGET_SLUGS;
@@ -51,6 +78,16 @@ if (SLUG) {
 } else {
   console.error('❌  Specify at least one of --tier1, --tier2, --tier3, --tier4, or --slug <slug>');
   process.exit(1);
+}
+
+// By default exclude books that have a books-like guide — those show
+// why_people_love on the book page, so ideal_reader/reading_experience
+// in the DB are never rendered for them.
+if (!INCLUDE_BOOKSLIKE && !SLUG) {
+  const blSlugs = getBooksLikeSourceSlugs();
+  const before = TARGET_SLUGS.length;
+  TARGET_SLUGS = TARGET_SLUGS.filter(s => !blSlugs.has(s));
+  console.log(`Skipping ${before - TARGET_SLUGS.length} books-like source books (pass --include-bookslike to override)`);
 }
 
 const DELAY_MS = 2000; // Vertex AI is generous but let's be polite

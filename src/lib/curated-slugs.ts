@@ -44,17 +44,17 @@ export const CURATED_SLUGS: ReadonlySet<string> = (() => {
     }
   }
 
-  // ── Reading Orders: every book with a slug ──────────────────────────────────
+  // ── Reading Orders: mandatory books only ────────────────────────────────────
   for (const entry of READING_ORDERS) {
     if (entry.books) {
       for (const book of entry.books) {
-        if (book.slug) s.add(book.slug);
+        if (book.slug && book.status === 'mandatory') s.add(book.slug);
       }
     }
     if (entry.groups) {
       for (const group of entry.groups) {
         for (const book of group.books) {
-          if (book.slug) s.add(book.slug);
+          if (book.slug && book.status === 'mandatory') s.add(book.slug);
         }
       }
     }

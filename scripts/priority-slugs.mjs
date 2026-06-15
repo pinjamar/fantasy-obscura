@@ -96,6 +96,13 @@ export const TIER_2 = [
   'magician-apprentice',
   // GoT sequels — very searched alongside A Game of Thrones
   'a-clash-of-kings', 'a-storm-of-swords',
+  // Harry Potter sequels — book 1 is TIER_1; rest have massive global search volume
+  'harry-potter-and-the-chamber-of-secrets',
+  'harry-potter-and-the-prisoner-of-azkaban',
+  'harry-potter-and-the-goblet-of-fire',
+  'harry-potter-and-the-order-of-the-phoenix',
+  'harry-potter-and-the-half-blood-prince',
+  'harry-potter-and-the-deathly-hallows',
 ];
 
 export const TIER_3 = [
@@ -259,6 +266,8 @@ export const TIER_3 = [
   // ── LitRPG / Progression Fantasy ─────────────────────────────────────────
   'soulsmith', 'blackflame', 'ghostwater',
   'the-beginning-after-the-end', 'shadow-slave', 'mother-of-learning',
+  'mother-of-learning-arc-1', // DB slug differs from series slug above
+  'mark-of-the-fool',         // popular LitRPG entry point, crossed into mainstream
   'old-mans-war',
 
   // ── Robin Hobb deep cuts ──────────────────────────────────────────────────
@@ -288,8 +297,28 @@ export const TIER_3 = [
   // ── Vampire Academy ───────────────────────────────────────────────────────
   'vampire-academy',
 
+  // ── Captive Prince trilogy — M/M fantasy romance, constant rec thread presence ──
+  'captive-prince', 'princes-gambit', 'kings-rising',
+
+  // ── Classic fantasy standalones with steady search ────────────────────────
+  'the-curse-of-chalion',   // Lois McMaster Bujold, 2001 — long-tail classic
+  'written-on-the-dark',    // Guy Gavriel Kay, 2025 — dedicated fanbase searches every release
+
+  // ── Children's / MG series entry points ──────────────────────────────────
+  'keeper-of-the-lost-cities-1', // Shannon Messenger — massive popular children's series
+  'amari-and-the-night-brothers', // B.B. Alston — popular middle grade
+
+  // ── 2025 releases from established authors ────────────────────────────────
+  'alchemy-of-secrets',     // Stephanie Garber (Caraval author) — fans will search this
+
   // ── Misc high-search standalones ─────────────────────────────────────────
   'the-saint-of-bright-doors', 'the-city-we-became',
+
+  // ── Supplementary books with decent search volume ─────────────────────────
+  'new-spring',                        // WoT prequel — searched alongside Eye of the World
+  'murtagh',                           // new Eragon book — high search from Inheritance fans
+  'the-slow-regard-of-silent-things',  // Rothfuss novella — searched by Kingkiller fans
+  'the-stolen-heir',                   // Holly Black — Folk of the Air adjacent, recent
 ];
 
 export const TIER_4 = [

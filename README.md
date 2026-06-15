@@ -435,6 +435,44 @@ node scripts/fix-synopses.mjs --slug crooked-kingdom
 
 All generate scripts target books in `scripts/priority-slugs.mjs`. Use `--tier1/--tier2/--tier3` to target a specific tier, or omit for ALL_PRIORITY (~310 books). Run DB Setup Step 6 SQL before first use.
 
+#### `generate-editorial-v2.mjs` — Recommended: all-in-one editorial generator
+
+Generates `reading_experience`, `ideal_reader`, and `faqs` in a **single Gemini 2.5 Pro call per book**. Targets priority books that do NOT have a books-like guide — those books show `why_people_love` from the TS file on the book page, so the DB fields are never rendered for them and would be wasted tokens.
+
+**Default behavior:** skips books-like source books automatically. Use `--include-bookslike` to override.
+
+```bash
+# Target a specific tier (recommended — run tier by tier)
+node scripts/generate-editorial-v2.mjs --tier1
+node scripts/generate-editorial-v2.mjs --tier2
+node scripts/generate-editorial-v2.mjs --tier3
+node scripts/generate-editorial-v2.mjs --tier4
+
+# Combine tiers
+node scripts/generate-editorial-v2.mjs --tier1 --tier2
+
+# Single book
+node scripts/generate-editorial-v2.mjs --slug the-final-empire
+
+# Preview without writing
+node scripts/generate-editorial-v2.mjs --tier1 --dry-run
+
+# Cap number of books processed
+node scripts/generate-editorial-v2.mjs --tier2 --limit 10
+
+# Overwrite books that already have content
+node scripts/generate-editorial-v2.mjs --tier1 --force
+
+# Also run for books-like source books (normally skipped)
+node scripts/generate-editorial-v2.mjs --tier1 --include-bookslike
+```
+
+The script requires `--tier1`, `--tier2`, `--tier3`, `--tier4`, or `--slug` — there is no default "all tiers" mode to prevent accidental large runs.
+
+---
+
+#### Individual field generators (legacy — prefer `generate-editorial-v2.mjs`)
+
 | Flag | Scope |
 |------|-------|
 | *(none)* | ALL_PRIORITY (~310 books) |
@@ -642,8 +680,8 @@ Key fields on every book record:
 | `darkness_level`                               | 1–5               | 1=Lighthearted → 5=Brutal                 |
 | `accessibility`                                | string            | beginner / intermediate / advanced        |
 | `stakes`                                       | string            | personal / kingdom / world                |
-| `pov_style`                                    | string            | First Person / Third Limited / Omniscient |
-| `pov_count`                                    | string            | Single / Dual / Multiple                  |
+| `pov_style`                                    | string            | First Person / Second Person / Third Person Limited / Third Person Omniscient |
+| `pov_count`                                    | string            | Single POV / Dual POV / Multiple POV      |
 | `protagonist_gender`                           | string            | Male / Female / Ensemble                  |
 | `awards`                                       | string[]          | e.g. `["hugo-winner", "nebula-nominee"]`  |
 | `series`, `series_number`, `series_status`     | string / number   | series_status: completed / ongoing        |

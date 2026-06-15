@@ -11,8 +11,8 @@
  *   - awards:             text[] — e.g. ['hugo-winner', 'nebula-nominee']
  *   - stakes:             'personal' | 'kingdom' | 'world'
  *   - series_status:      'completed' | 'ongoing'  (series books only; standalones stay NULL)
- *   - pov_style:          'First Person' | 'Third Limited' | 'Omniscient'
- *   - pov_count:          'Single' | 'Dual' | 'Multiple'
+ *   - pov_style:          'First Person' | 'Second Person' | 'Third Person Limited' | 'Third Person Omniscient'
+ *   - pov_count:          'Single POV' | 'Dual POV' | 'Multiple POV'
  *   - protagonist_gender: 'Male' | 'Female' | 'Ensemble'
  *
  * Usage:
@@ -65,8 +65,8 @@ const VALID_AWARDS        = [
 ];
 const VALID_STAKES        = ['personal', 'kingdom', 'world'];
 const VALID_SERIES_STATUS = ['completed', 'ongoing'];
-const VALID_POV_STYLE     = ['First Person', 'Third Limited', 'Omniscient'];
-const VALID_POV_COUNT     = ['Single', 'Dual', 'Multiple'];
+const VALID_POV_STYLE     = ['First Person', 'Second Person', 'Third Person Limited', 'Third Person Omniscient'];
+const VALID_POV_COUNT     = ['Single POV', 'Dual POV', 'Multiple POV'];
 const VALID_PROTAGONIST   = ['Male', 'Female', 'Ensemble'];
 
 function sleep(ms) {
@@ -178,14 +178,15 @@ series_status (series books only — always null for standalones):
   "ongoing"   — series still being written
 
 pov_style (narrative perspective):
-  "First Person"  — "I did this" narrator
-  "Third Limited" — "She/he did this" following characters closely
-  "Omniscient"    — narrator knows all characters' thoughts freely
+  "First Person"           — "I did this" narrator
+  "Second Person"          — "You did this" narrator (rare)
+  "Third Person Limited"   — "She/he did this" following one or few characters closely
+  "Third Person Omniscient" — narrator knows all characters' thoughts freely
 
 pov_count (number of POV characters):
-  "Single"   — one POV character throughout
-  "Dual"     — two alternating POV characters
-  "Multiple" — three or more POV characters
+  "Single POV"   — one POV character throughout
+  "Dual POV"     — two alternating POV characters
+  "Multiple POV" — three or more POV characters
 
 protagonist_gender (primary protagonist):
   "Male"     — single male lead or male-dominated ensemble

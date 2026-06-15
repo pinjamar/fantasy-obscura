@@ -141,7 +141,8 @@ export interface BooksLikeRec {
   darkness_level: number; // 1-5
   heat_level?: string | null; // e.g. 'Open Door', 'Explicit', 'Fiery' — omit for non-romance
   tags: string[]; // similarity elements e.g. ['Enemies to Lovers', 'Fae Courts']
-  why: string; // 3-4 sentences + caveat
+  why: string;
+  caveat?: string;
   standalone: boolean;
   audiobook: boolean;
   amazon_url: string;
