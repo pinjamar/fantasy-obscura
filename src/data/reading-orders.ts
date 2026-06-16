@@ -141,6 +141,8 @@ import { outlander } from './reading-orders/outlander';
 import { swordOfTruth } from './reading-orders/sword-of-truth';
 import { shadowhunterChronicles } from './reading-orders/shadowhunter-chronicles';
 import { riftwarCycle } from './reading-orders/riftwar-cycle';
+import { foundation } from './reading-orders/foundation';
+import { powderMage } from './reading-orders/powder-mage';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -203,6 +205,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   endersGame,
   shadowhunterChronicles,
   riftwarCycle,
+  foundation,
+  powderMage,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

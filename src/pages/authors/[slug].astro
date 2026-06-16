@@ -361,6 +361,13 @@ const READING_ORDER_MAP: Record<string, string> = {
   'Shadows in Flight':                   'enders-game',
   'First Formic War':                    'enders-game',
   'Second Formic War':                   'enders-game',
+  // Isaac Asimov
+  'Foundation':                          'foundation',
+  'Robot':                               'foundation',
+  'Galactic Empire':                     'foundation',
+  // Brian McClellan
+  'The Powder Mage Trilogy':             'powder-mage',
+  'Gods of Blood and Powder':            'powder-mage',
 };
 
 const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
@@ -387,6 +394,8 @@ const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
   'orson-scott-card':  { slug: 'enders-game',           label: "Ender's Game Universe Reading Order" },
   'cassandra-clare':   { slug: 'shadowhunter-chronicles', label: 'Shadowhunter Chronicles Reading Order' },
   'raymond-e-feist':   { slug: 'riftwar-cycle',           label: 'The Riftwar Cycle Reading Order' },
+  'isaac-asimov':      { slug: 'foundation',              label: 'Foundation Reading Order' },
+  'brian-mcclellan':   { slug: 'powder-mage',             label: 'Powder Mage Reading Order' },
 };
 
 const universeGuide = AUTHOR_UNIVERSE_MAP[slug ?? ''] ?? null;
