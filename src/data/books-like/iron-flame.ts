@@ -55,8 +55,6 @@ export const ironFlame: BooksLikeEntry = {
         {
           title: 'An Ember in the Ashes',
           author: 'Sabaa Tahir',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -64,7 +62,8 @@ export const ironFlame: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "The closest match for Iron Flame's combination of military brutality, political conspiracy, and a romance that keeps getting derailed by war. Laia and Elias are on opposite sides of a regime — one trying to survive it, one trying to escape it — and the empire is doing something terrible that most people inside it refuse to see. The heat level is much lower, but the emotional stakes and the sense of a world rigged against its characters are identical.",
+          note: "The closest match for Iron Flame's combination of military brutality, political conspiracy, and a romance that keeps getting derailed by war. Laia and Elias are on opposite sides of a regime — one trying to survive it, one trying to escape it — and the empire is doing something terrible that most people inside it refuse to see. The emotional stakes and the sense of a world rigged against its characters are identical.",
+          caveat: 'Heat level is Closed Door — considerably cooler than Yarros. The four-book series is slower to resolve and some readers find books 2 and 3 lose momentum.',
           tags: [
             'Military Fantasy',
             'Political Intrigue',
@@ -80,8 +79,6 @@ export const ironFlame: BooksLikeEntry = {
         {
           title: 'The Jasmine Throne',
           author: 'Tasha Suri',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316538718-L.jpg',
           darkness_level: 3,
           heat_level: 'Open Door',
           standalone: false,
@@ -90,6 +87,7 @@ export const ironFlame: BooksLikeEntry = {
           series_label: 'Series (3 books)',
           audiobook: true,
           note: "Political intrigue wrapped around a romance between a prisoner and her captor, set in a crumbling empire where the hidden resistance is more complicated than it looks. The pacing is patient and the world-building is rich — Indian-inspired, morally layered, and interested in how power corrupts institutions from the inside. If Iron Flame's conspiracy plot was what gripped you, this delivers that same sense of a rot at the centre of things.",
+          caveat: 'Slower and more patient than Iron Flame — Open Door heat with the romance played long across the trilogy. The sapphic romance is central; readers who need a male lead won\'t find one here.',
           tags: [
             'Political Intrigue',
             'Sapphic Romance',
@@ -111,8 +109,6 @@ export const ironFlame: BooksLikeEntry = {
         {
           title: 'A Court of Mist and Fury',
           author: 'Sarah J. Maas',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781619634671-L.jpg',
           darkness_level: 3,
           heat_level: 'Explicit',
           standalone: false,
@@ -120,7 +116,8 @@ export const ironFlame: BooksLikeEntry = {
           series_number: 2,
           series_label: 'Series (5 books)',
           audiobook: true,
-          note: "The book Iron Flame readers most consistently migrate to. ACOMAF is a second-book-darker story about a woman processing trauma, a relationship shattering under the weight of secrets kept for good reasons, and a new bond forming with someone who treats her as capable rather than fragile. The emotional arc mirrors what Yarros is doing with Violet — a heroine who has to decide whether she trusts her own instincts over what she's being told. Read ACOTAR first, but ACOMAF is the one that earns the series its reputation.",
+          note: "The book Iron Flame readers most consistently migrate to. ACOMAF is a second-book-darker story about a woman processing trauma, a relationship shattering under the weight of secrets kept for good reasons, and a new bond forming with someone who treats her as capable rather than fragile. The emotional arc mirrors what Yarros is doing with Violet — a heroine who has to decide whether she trusts her own instincts over what she's being told.",
+          caveat: 'Read A Court of Thorns and Roses first — ACOMAF does not stand alone. The first book is a lighter tone; push through for the sequel.',
           tags: [
             'Fae Courts',
             'Enemies to Lovers',
@@ -138,8 +135,6 @@ export const ironFlame: BooksLikeEntry = {
         {
           title: 'From Blood and Ash',
           author: 'Jennifer L. Armentrout',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781952457760-L.jpg',
           darkness_level: 3,
           heat_level: 'Explicit',
           standalone: false,
@@ -147,7 +142,8 @@ export const ironFlame: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "The structural twin of the Empyrean series: a heroine who's been kept in the dark about what she really is, a guard with a mission he can't reveal, and a romance built entirely on the tension between what they feel and what they know they shouldn't do. If Xaden's secret-keeping is what wrecked you in Iron Flame, Hawke's arc in this series delivers the same gut-punch across two books. The heat level is equivalent.",
+          note: "The structural twin of the Empyrean series: a heroine who's been kept in the dark about what she really is, a guard with a mission he can't reveal, and a romance built entirely on the tension between what they feel and what they know they shouldn't do. If Xaden's secret-keeping is what wrecked you in Iron Flame, Hawke's arc in this series delivers the same gut-punch across two books.",
+          caveat: 'The opening quarter is world-building heavy. Heat matches Yarros, but the reveals spread across more books — readers who need faster payoffs may lose patience with the longer series.',
           tags: [
             'Forbidden Romance',
             'Guard & Ward',
@@ -169,8 +165,6 @@ export const ironFlame: BooksLikeEntry = {
         {
           title: 'The Dragon Republic',
           author: 'R.F. Kuang',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780062662583-L.jpg',
           darkness_level: 5,
           heat_level: null,
           standalone: false,
@@ -178,7 +172,8 @@ export const ironFlame: BooksLikeEntry = {
           series_number: 2,
           series_label: 'Series (3 books)',
           audiobook: true,
-          note: "The Poppy War's darker, more politically brutal sequel — and the entry point for readers who want Iron Flame's escalating war stakes pushed to their absolute limit. Rin's power is destroying her, the alliances she trusted are fracturing, and the war has become something no one can control. Zero romance, maximum darkness. If the venin threat and Violet's fear of what her power might make her was the part that gripped you, Kuang takes that exact fear and runs it to its logical conclusion.",
+          note: "The Poppy War's darker, more politically brutal sequel — and the entry point for readers who want Iron Flame's escalating war stakes pushed to their absolute limit. Rin's power is destroying her, the alliances she trusted are fracturing, and the war has become something no one can control. If the venin threat and Violet's fear of what her power might make her was the part that gripped you, Kuang takes that exact fear and runs it to its logical conclusion.",
+          caveat: 'Zero romance, maximum darkness. Content warnings here are serious — genocide and war crimes at a level Yarros never approaches. Not a romantasy replacement; a tonal escalation for readers who want the war stakes without the heat.',
           tags: [
             'Dark Magic',
             'War Fantasy',
@@ -196,8 +191,6 @@ export const ironFlame: BooksLikeEntry = {
         {
           title: 'The Blade Itself',
           author: 'Joe Abercrombie',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780575079793-L.jpg',
           darkness_level: 4,
           heat_level: null,
           standalone: false,
@@ -205,7 +198,8 @@ export const ironFlame: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books + standalones)',
           audiobook: true,
-          note: "If the morally grey characters and the sense that the institutions Violet trusted are rotten at the core is what hooked you, Abercrombie is the natural next step. The First Law is built on the premise that the heroes and villains are determined by who's writing the history. No spice, no dragon bonds — but the same satisfying gut-punch when a character you trusted turns out to have been lying to you for very good reasons.",
+          note: "If the morally grey characters and the sense that the institutions Violet trusted are rotten at the core is what hooked you, Abercrombie is the natural next step. The First Law is built on the premise that the heroes and villains are determined by who's writing the history. The gut-punch when a character you trusted turns out to have been lying to you for very good reasons hits exactly the way Xaden's reveal does.",
+          caveat: 'No spice, no dragon bonds, no romance. A pure grimdark genre stretch — if the romantic plot was the main draw in Iron Flame, this will not deliver it. The payoff for readers who want political rot and moral grey is exceptional.',
           tags: [
             'Grimdark',
             'Morally Grey',
@@ -218,6 +212,36 @@ export const ironFlame: BooksLikeEntry = {
             'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
           bookshop_url:
             'https://bookshop.org/search?keywords=The+Blade+Itself+Abercrombie&affiliate=122720',
+        },
+      ],
+    },
+    {
+      heading:
+        "If you loved the feeling of two people losing time they could have had together...",
+      recs: [
+        {
+          title: 'Divine Rivals',
+          author: 'Rebecca Ross',
+          darkness_level: 3,
+          heat_level: 'Open Door',
+          standalone: false,
+          series: 'Letters of Enchantment',
+          series_number: 1,
+          series_label: 'Duology',
+          audiobook: true,
+          note: "Two rival journalists writing letters to an unknown pen pal — neither knowing it's the other — while a war between gods tears their world apart. Divine Rivals lives in the same emotional space as the fractured Violet/Xaden arc: two people who feel something they cannot say directly, in a world that keeps making honesty harder. Ross writes longing with restraint, and every almost-moment lands harder for it.",
+          caveat: 'Lower heat than Yarros and no magic system — this is romantic fantasy rather than romantasy. A compact duology that resolves cleanly.',
+          tags: [
+            'Rivals to Lovers',
+            'War Setting',
+            'Letters',
+            'Slow Burn',
+            'Dual POV',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=Divine+Rivals+Rebecca+Ross&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=Divine+Rivals+Rebecca+Ross&affiliate=122720',
         },
       ],
     },

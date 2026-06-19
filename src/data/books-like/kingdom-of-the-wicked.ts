@@ -44,6 +44,7 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
           series_number: 1,
           audiobook: true,
           note: "Persephone stumbles into Hades' club and makes a reckless bargain with the god of the dead — the closest structural parallel to Emilia summoning Wrath. Hades is powerful in exactly the way Wrath is: genuinely ancient, genuinely dangerous, and choosing to be restrained around the heroine rather than unable to harm her. St. Clair leans further into romance and lighter on mystery than Maniscalco, and the Greek mythology gives it a different flavour than Sicilian folklore, but the power differential and the slow softening of an immortal who has no reason to be kind are the same engine.",
+          caveat: 'Higher heat than Kingdom of the Wicked and lighter on mystery — this is romantasy with mythology as backdrop, without the gothic atmosphere Maniscalco builds. Modern setting rather than historical.',
           tags: ['Enemies to Lovers', 'God Love Interest', 'Mythology', 'Forbidden Romance', 'Slow Burn'],
           amazon_url:
             'https://www.amazon.com/s?k=A+Touch+of+Darkness+Scarlett+St+Clair&tag=librariancura-20',
@@ -54,8 +55,6 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
           title: 'From Blood and Ash',
           slug: 'from-blood-and-ash',
           author: 'Jennifer L. Armentrout',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781952457036-L.jpg',
           darkness_level: 3,
           heat_level: 'Explicit',
           standalone: false,
@@ -63,6 +62,7 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
           series_number: 1,
           audiobook: true,
           note: "The closest structural parallel — a heroine forbidden from contact with a specific man, a slow burn that builds across 600 pages before anything breaks, and a love interest who is more dangerous than he appears and keeping secrets that reframe the entire dynamic. Armentrout is more explicit than Maniscalco and her world expands into full epic fantasy by book three, but the central tension — wanting someone you absolutely should not want — is the same engine. If Wrath was the reason you stayed, Hawke will keep you reading.",
+          caveat: 'Considerably more explicit than Maniscalco, and the gothic-mystery focus is largely replaced by world-building and romance from book two onward. A different genre register despite the similar central tension.',
           tags: ['Enemies to Lovers', 'Forbidden Love', 'Slow Burn', 'Supernatural Love Interest', 'Dark Romantasy'],
           amazon_url:
             'https://www.amazon.com/s?k=From+Blood+and+Ash+Armentrout&tag=librariancura-20',
@@ -78,8 +78,6 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
         {
           title: 'The Beautiful',
           author: 'Renée Ahdieh',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781250301635-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -87,6 +85,7 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
           series_number: 1,
           audiobook: true,
           note: "1872 New Orleans, a series of brutal murders, and a vampire society operating beneath Creole society — The Beautiful is the most direct atmospheric match for Kingdom of the Wicked. Ahdieh writes setting the way Maniscalco does: as a character in itself. The gothic tension, the slow-burn romance with a dangerous supernatural man, and the murder mystery driving the plot are all present. The historical detail is richer and the romance more restrained, but the mood is almost identical.",
+          caveat: 'The romance is more restrained than Kingdom of the Wicked and slower to develop. Readers who came for the enemies-to-lovers tension will find it takes longer to surface here.',
           tags: ['Gothic Romance', 'Historical Fantasy', 'Vampires', 'Murder Mystery', 'Atmospheric'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Beautiful+Renee+Ahdieh&tag=librariancura-20',
@@ -104,6 +103,7 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
           series_number: 1,
           audiobook: true,
           note: "Twelve sisters. Four already dead, ruled accidents. Annaleigh doesn't believe it. House of Salt and Sorrows runs on the same engine as Kingdom of the Wicked — a young woman convinced someone is killing the people she loves, refusing to accept the official story, pulling at threads no one wants pulled. Craig's seaside gothic is heavier on horror than Maniscalco and the supernatural elements take longer to surface, but the atmosphere is just as suffocating and the mystery is equally propulsive. A strong pick if the investigation mattered as much as the romance.",
+          caveat: 'Heavier on horror than Kingdom of the Wicked — this leans closer to gothic horror than romantasy. The romantic subplot is secondary; the mystery and dread are the main draw.',
           tags: ['Gothic Mystery', 'Sisters', 'Horror Adjacent', 'Atmospheric', 'Murder Mystery'],
           amazon_url:
             'https://www.amazon.com/s?k=House+of+Salt+and+Sorrows+Erin+Craig&tag=librariancura-20',
@@ -127,6 +127,7 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
           series_number: 1,
           audiobook: true,
           note: "Slavic mythology, blood magic, and an enemies-to-lovers dynamic between a girl who hears gods and a boy who feeds on blood. Duncan writes darkness the way Maniscalco does — not horror, but weight: a world where the supernatural is real and costly and the gods have agendas. Nadya and Malachiasz have the same push-pull as Emilia and Wrath, with the same suspicion about who is using whom. Darker and more morally complex than Kingdom of the Wicked, with less mystery and more war, but the atmosphere and the central tension are the closest match in YA fantasy.",
+          caveat: 'The murder mystery is absent — war replaces it as the driving plot. Darker and more morally ambiguous than Maniscalco, with less certainty about whether the love interest can be trusted at all.',
           tags: ['Enemies to Lovers', 'Slavic Mythology', 'Dark Fantasy', 'Gods and Magic', 'Morally Grey'],
           amazon_url:
             'https://www.amazon.com/s?k=Wicked+Saints+Emily+Duncan&tag=librariancura-20',
@@ -144,6 +145,7 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
           series_number: 1,
           audiobook: true,
           note: "Victorian London, demons treated as a tangible and ancient threat, and a slow burn between a heroine who shouldn't be in this world and a Shadowhunter who cannot decide whether she is an asset or a liability. The Infernal Devices shares Kingdom of the Wicked's gift for using the supernatural as texture — the demons here are institutional, the mythology is layered and internally consistent, and the gothic London setting does the same work Maniscalco's Sicily does. Will Herondale's antagonism toward Tessa is the closest fae-adjacent equivalent to Wrath's initial hostility.",
+          caveat: 'More romance-forward and less mystery-focused than Kingdom of the Wicked. The Shadowhunter mythology is dense and takes time to settle into — and the wider universe is extremely long if you get pulled in.',
           tags: ['Historical Fantasy', 'Demons', 'Gothic Setting', 'Victorian', 'Slow Burn'],
           amazon_url:
             'https://www.amazon.com/s?k=Clockwork+Angel+Cassandra+Clare&tag=librariancura-20',
@@ -159,8 +161,6 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
         {
           title: 'An Ember in the Ashes',
           author: 'Sabaa Tahir',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781595148032-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -168,6 +168,7 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
           series_number: 1,
           audiobook: true,
           note: "Laia enters a brutal military academy to save her captured brother — Emilia summons a demon to avenge her murdered sister. Both heroines are driven by love for a sibling, both enter a world that should destroy them, and both form a dangerous bond with someone on the wrong side of every moral line. Tahir is darker and more violent than Maniscalco, the romance is slower to develop, and the world expands into full epic fantasy by book three. But the core drive — a woman refusing to accept her powerlessness — is identical.",
+          caveat: 'Darker and more violent than Maniscalco — this is closer to dark epic fantasy than gothic romantasy. Heat level is much lower and the romance takes a back seat to war and resistance.',
           tags: ['Grief-Driven Heroine', 'Forbidden Romance', 'Dark Fantasy', 'Dual POV', 'Found Family'],
           amazon_url:
             'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
@@ -183,6 +184,7 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
           standalone: true,
           audiobook: true,
           note: "Ora is a young pagan woman handed over to the king's huntsman — a man sent to kill her kind — and must survive the journey to Budapest to avoid execution. Reid builds her enemies-to-lovers dynamic the way Maniscalco does: slowly, through forced proximity, through discovering that the person you are supposed to fear has his own grief and his own code. The Hungarian mythology is vivid and specific, the dark fairy tale atmosphere is thick throughout, and the heroine's refusal to disappear or be quiet drives every chapter. A standalone, which is a rarity in this corner of fantasy.",
+          caveat: 'The romance develops more slowly than Kingdom of the Wicked and the focus is more on folklore and survival than mystery. No series commitment — resolves completely in one book.',
           tags: ['Enemies to Lovers', 'Mythology', 'Dark Fantasy', 'Folklore', 'Standalone'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Wolf+and+the+Woodsman+Ava+Reid&tag=librariancura-20',
@@ -194,7 +196,7 @@ export const kingdomOfTheWicked: BooksLikeEntry = {
   ],
   recommendations: [],
   related: [
-    { title: 'Books Like A Court of Thorns and Roses', slug: 'a-court-of-thorns-and-roses' },
+    { title: 'Books Like A Court of Thorns and Roses', slug: 'acotar' },
     { title: 'Books Like From Blood and Ash', slug: 'from-blood-and-ash' },
     { title: 'Books Like An Ember in the Ashes', slug: 'an-ember-in-the-ashes' },
   ],

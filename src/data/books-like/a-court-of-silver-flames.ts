@@ -53,8 +53,6 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
         {
           title: 'From Blood and Ash',
           author: 'Jennifer L. Armentrout',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781952457760-L.jpg',
           darkness_level: 3,
           heat_level: 'Explicit',
           standalone: false,
@@ -79,8 +77,6 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
         {
           title: 'Kingdom of the Wicked',
           author: 'Kerri Maniscalco',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316428354-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -111,8 +107,6 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
         {
           title: 'The Poppy War',
           author: 'R.F. Kuang',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780062662569-L.jpg',
           darkness_level: 5,
           heat_level: null,
           standalone: false,
@@ -139,8 +133,6 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
         {
           title: 'An Ember in the Ashes',
           author: 'Sabaa Tahir',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
           darkness_level: 4,
           heat_level: 'Sweet Romance',
           standalone: false,
@@ -171,8 +163,6 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
         {
           title: 'Fourth Wing',
           author: 'Rebecca Yarros',
-          cover_url:
-            'https://books.google.com/books/publisher/content/images/frontcover/2BKGEAAAQBAJ?fife=w400-h600',
           darkness_level: 4,
           heat_level: 'Explicit',
           standalone: false,
@@ -181,6 +171,7 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
           series_label: 'Series (5 books planned)',
           audiobook: true,
           note: "If the Valkyrie training — the physical grind, the military hierarchy, the sense of women proving themselves in an institution built to keep them out — was the part of ACOSF that grabbed you, Fourth Wing is the obvious next stop. Dragon riders, a war college that will kill you as easily as train you, and a romance between two people on opposite sides of a secret. The world-building is different but the energy is nearly identical: women being told they don't belong, and being unreasonably correct about their right to be there anyway.",
+          caveat: 'More plot-driven and less internally focused than ACOSF — the Empyrean series is about war and conspiracy as much as the romance. Iron Flame (book 2) is where the series really earns the ACOSF comparison.',
           tags: [
             'Dragon Riders',
             'Military Academy',
@@ -196,8 +187,6 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
         {
           title: 'Shadow and Bone',
           author: 'Leigh Bardugo',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781250027436-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -218,6 +207,36 @@ export const aCourtOfSilverFlames: BooksLikeEntry = {
             'https://www.amazon.com/s?k=Shadow+and+Bone+Leigh+Bardugo&tag=librariancura-20',
           bookshop_url:
             'https://bookshop.org/search?keywords=Shadow+and+Bone+Bardugo&affiliate=122720',
+        },
+      ],
+    },
+    {
+      heading:
+        'If you loved that Nesta and Cassian are equally matched — two people too stubborn to back down...',
+      recs: [
+        {
+          title: 'The Bridge Kingdom',
+          author: 'Danielle L. Jensen',
+          darkness_level: 3,
+          heat_level: 'Open Door',
+          standalone: false,
+          series: 'Bridge Kingdom',
+          series_number: 1,
+          series_label: 'Series (4 books)',
+          audiobook: true,
+          note: "Lara is sent to the Bridge Kingdom as a spy, married to a king she's been trained to destroy — but Aren isn't what she was told he'd be, and neither is his kingdom. The enemies-to-lovers here is built on two characters who are equally calculating, equally proud, and equally unwilling to be the first to crack. If the specific pleasure of ACOSF was watching two people with the same stubborn energy circle each other until something gives, this delivers that in a tighter, more political package.",
+          caveat: 'Open Door heat rather than Explicit — the tension is high but the scenes are less graphic than ACOSF. More plot-driven than Maas; the romance develops alongside a political conspiracy.',
+          tags: [
+            'Enemies to Lovers',
+            'Political Intrigue',
+            'Arranged Marriage',
+            'Equally Matched',
+            'Slow Burn',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=The+Bridge+Kingdom+Danielle+Jensen&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=The+Bridge+Kingdom+Jensen&affiliate=122720',
         },
       ],
     },

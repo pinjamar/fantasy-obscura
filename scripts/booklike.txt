@@ -9,9 +9,9 @@
 ### Romantasy & BookTok (18)
 1. ✅✅ Books like Fourth Wing
 2. ✅✅ Books like ACOTAR (A Court of Thorns and Roses)
-3. ✅✅Books like From Blood and Ash
-4. ✅ Books like Iron Flame
-5. ✅ Books like A Court of Silver Flames
+3. ✅✅ Books like From Blood and Ash
+4. ✅✅ Books like Iron Flame
+5. ✅✅ Books like A Court of Silver Flames
 6. ✅ Books like Throne of Glass
 7. ✅✅ Books like Kingdom of the Wicked
 8. ✅ Books like Crescent City
@@ -19,7 +19,7 @@
 10. ✅✅ Books like The Cruel Prince
 11. ✅ Books like House of Flame and Shadow
 12. ✅✅ Books like The Bridge Kingdom
-13. ✅ Books like A Touch of Darkness
+13. ✅✅Books like A Touch of Darkness
 14. ✅ Books like The Plated Prisoner (Raven Kennedy)
 15. ✅ Books like Powerless (Lauren Roberts)
 16. ✅ Books like When the Moon Hatched
@@ -83,7 +83,7 @@
 63. ✅ Books like The Dragon Republic
 64. ✅ Books like Babel
 65. ✅ Books like Jade City
-66. Books like She Who Became the Sun
+66. ✅ Books like She Who Became the Sun
 67. ✅ Books like The Jasmine Throne
 68. Books like The Traitor Baru Cormorant
 69. Books like The Book Eaters
@@ -144,7 +144,7 @@
 
 ### Classic & Foundational Fantasy (10)
 116. ✅ Books like A Wizard of Earthsea
-117. Books like The Belgariad (David Eddings)
+117. ✅ Books like The Belgariad (David Eddings)
 118. ✅ Books like The Sword of Truth (Terry Goodkind)
 119. Books like The Once and Future King
 120. ✅ Books like Nine Princes in Amber
@@ -236,58 +236,23 @@ Highest search volume, most reader confusion, strongest return on time invested
 
 5 Shadowhunter Chronicles Reading Order (Cassandra Clare)
 
-Massive expanded universe — 6+ series, all interconnected, all set in the same world of Shadowhunters (Nephilim) hunting demons alongside warlocks, vampires, faeries, and werewolves
-Entry point: City of Bones (The Mortal Instruments #1) — start here, no exceptions; everything else assumes this foundation
-The Mortal Instruments (6 books, complete): City of Bones → City of Ashes → City of Glass → City of Fallen Angels → City of Lost Souls → City of Heavenly Fire — the main series, contemporary New York
-The Infernal Devices (3 books, complete): Clockwork Angel → Clockwork Prince → Clockwork Princess — Victorian London prequel; widely considered the best series in the universe; read after TMI books 1–3
-The Dark Artifices (3 books, complete): Lady Midnight → Lord of Chaos → Queen of Air and Darkness — direct sequel to TMI, new lead cast
-The Last Hours (3 books, complete): Chain of Gold → Chain of Iron → Chain of Thorns — 1903, children of TID characters
-The Eldest Curses (3 books): Magnus Bane and Alec Lightwood storyline, crossover-heavy; for established fans of the universe
-Clary and Jace's story ends at City of Heavenly Fire; later series expand the world laterally, not linearly
-Slug: /reading-orders/shadowhunter-chronicles
-
-
 6 Outlander Reading Order (Diana Gabaldon)
-
 
 7 The Expanse Reading Order (James S.A. Corey)
 
-
 8 Folk of the Air / Cruel Prince Reading Order (Holly Black)
-
 
 9 Locked Tomb Reading Order (Tamsyn Muir)
 
-
 10 Dungeon Crawler Carl Reading Order (Matt Dinniman)
-
 
 11 Cradle Reading Order (Will Wight)
 
-
 12 Red Rising Reading Order (Pierce Brown)
-
 
 13 Foundation Reading Order (Isaac Asimov)
 
-7-book sci-fi epic — a mathematician predicts the fall of a galactic empire and engineers a plan to shorten the coming dark age from 30,000 years to 1,000
-Main trilogy: Foundation → Foundation and Empire → Second Foundation
-Later Asimov additions: Foundation's Edge → Foundation and Earth
-Prequels (written last, read after): Prelude to Foundation → Forward the Foundation
-Publication order is strongly recommended — do not start with the prequels
-The prequels were written 30+ years after the original trilogy, for readers who already know the universe; they spoil the original trilogy's biggest reveal if read first
-The three original novels are fix-ups: short stories originally published in Astounding Science Fiction (1942–1950), assembled into novels
-The Mule (Foundation and Empire, part 2) is the series' single most important wildcard — best encountered in publication order without foreknowledge
-Asimov retroactively connected his Robot novels (Caves of Steel, The Naked Sun, Robots of Dawn, Robots and Empire) and Empire novels to the Foundation universe — the Robot series functions as the far prehistory of the same galaxy
-Caves of Steel is a standalone detective story in the same universe — safe to read anytime as a light entry point into the Asimov universe
-Slug: /reading-orders/foundation
-
-Check this but dont trust blindly:
-Phase 1: The Robot Series (The Dawn of Space Travel)Set in the relatively near future, these books establish humanity's first steps into space, the creation of positronic brains, and the political divide between Earth and the hyper-advanced "Spacer" worlds.The Caves of Steel (1954)The Naked Sun (1957)The Robots of Dawn (1983)Robots and Empire (1985)(Note: I, Robot is a 1950 collection of short stories that technically precedes this era, serving as the ultimate foundation for robot history and the Three Laws).Phase 2: The Galactic Empire Series (The Middle Era)Thousands of years later, Earth is radioactive, the Spacers are gone, and humanity is rapidly colonizing the galaxy. These books chart the rise of a single, all-powerful galactic government.The Stars, Like Dust (1951)The Currents of Space (1952)Pebble in the Sky (1950)Phase 3: The Foundation Prequels (The Fall Begins)Set 12,000 years into the Galactic Empire's reign. The empire is at its absolute peak, but mathematician Hari Seldon uses psychohistory to predict its inevitable, catastrophic collapse.Prelude to Foundation (1988)Forward the Foundation (1993)Phase 4: The Original Foundation Trilogy (The Interregnum)The classic core of the universe. The Empire falls, a dark age begins, and the Seldon Crisis events guide the "Foundation" (a small colony of scientists) as they attempt to build a Second Galactic Empire.Foundation (1951)Foundation and Empire (1952)Second Foundation (1953)Phase 5: The Foundation Sequels (The Final Search)Taking place centuries after the original trilogy, these books follow humanity as they search for the mythical, forgotten birthplace of mankind—Earth—and face a choice about the ultimate evolutionary future of the galaxy.Foundation's Edge (1982)Foundation and Earth (1986)Optional Expanded Universe: The Second Foundation TrilogyIn the late 1990s, the Asimov estate authorized three massive science fiction authors (the "Killer B's") to write a trilogy of novels that fit directly between Prelude to Foundation and Forward the Foundation, filling out Hari Seldon's life:Foundation's Fear (1997) – by Gregory BenfordFoundation and Chaos (1998) – by Greg BearSecret Foundation (1999) – by David Brin (Published as "Foundation's Triumph")
-
-
 14 Ender's Game Reading Order (Orson Scott Card)
-
 
 15 Caraval Reading Order (Stephanie Garber)
 
@@ -314,19 +279,9 @@ Strong search volume, genuine reading order complexity
 
 24 Riftwar Cycle Reading Order (Raymond E. Feist)
 
-30 novels published 1982–2013 — one of the longest-running fantasy series; the essential entry is always Magician
-The setting spans two worlds connected by a magical rift: Midkemia (pseudo-medieval Europe) and Kelewan (feudal Japan-inspired)
-Core reading path: Magician → Silverthorn → A Darkness at Sethanon (the Riftwar Saga, 3 books, self-contained)
-The Empire Trilogy (co-written with Janny Wurts): Daughter of the Empire → Servant of the Empire → Mistress of the Empire — set on Kelewan, parallel timeline to Riftwar Saga, follows a noblewoman not a mage; often considered equal to or better than the main series; read after Magician
-Serpentwar Saga (4 books) and later trilogies (Conclave of Shadows, Darkwar, Demonwar, Chaoswar) continue the universe — quality considered to decline after the core books
-The essential Feist experience: Riftwar Saga (3 books) + Empire Trilogy (3 books) — everything beyond that is optional
-Magician is sometimes published split into Magician: Apprentice and Magician: Master — the same book in two volumes; either edition works
-Slug: /reading-orders/riftwar-cycle
-
-
 25 Guy Gavriel Kay Reading Order
 
-Roughly 14 novels plus short fiction. No shared universe — every book is set in a different secondary world, and none require prior Kay reading. The through-line is structural, not narrative: Kay writes historical fantasy in which a real historical civilisation (Byzantium, Moorish Spain, Tang Dynasty China, medieval Provence, Viking-era Scandinavia, Song Dynasty China) is transposed into a secondary world with the names changed and a small but real element of the fantastic added. He calls this "one-quarter turn to the fantastic." The fantasy content is deliberately minimal — it is present but never the point. The point is always the human drama, consequence, and what history does to individuals.
+~14 novels, no shared universe — each set in a different secondary world drawn from a real historical civilisation (Byzantium, Moorish Spain, Tang Dynasty China, Provence, Viking Scandinavia). He calls it "one-quarter turn to the fantastic" — fantasy content is minimal and never the point. The point is always human drama and what history does to individuals.
 
 No book requires any other. The guide's primary job is to show which civilisation each book is drawn from so readers can navigate by historical interest, then give a clear entry point recommendation.
 
@@ -334,26 +289,25 @@ The works in recommended reading order for the guide:
 
 THE FIONAVAR TAPESTRY (1984–1986) — earliest work, least representative
 A Summer Tree → The Wandering Fire → The Darkest Road
-Kay's first published fiction, co-written in his head while serving as Christopher Tolkien's assistant on The Silmarillion. Five Canadian university students are summoned to Fionavar, the "first of all worlds," which draws from multiple mythologies (Arthurian, Norse, Celtic). High fantasy in the traditional secondary-world mode — this is the one Kay book that is not historical fantasy. The prose is less controlled than his later work; the mythological borrowings (Lancelot and Guinevere appear directly) are more overt. Complete trilogy, internally dependent — read in order.
+Kay's first work, written while assisting Christopher Tolkien on The Silmarillion. Five Canadians summoned to Fionavar, "first of all worlds" — Arthurian/Norse/Celtic mythology. The one Kay book that isn't historical fantasy; prose less controlled than later work. Read in order.
 Recommend for the guide: start here if the reader wants high fantasy with mythological sweep; flag clearly that it does not represent what the rest of Kay's work is. Most readers who come specifically for Kay's historical fantasy should start elsewhere.
 
 THE SARANTINE MOSAIC (1998–2000) — Byzantium
 Sailing to Sarantium → Lord of Emperors
-A mosaic artist is summoned from the Rhodian provinces to the gleaming capital of Sarantium to work on the great Sanctuary. Based on 6th-century Byzantium — Valerius II is Justinian, Alixana is Theodora, the city is Constantinople, the Sanctuary is Hagia Sophia. The closest Kay comes to pure historical fiction; the fantastic element is subtle and interwoven with the politics. A two-book duology, internally dependent — read in order.
-Often cited as Kay's masterpiece alongside The Lions of Al-Rassan. The guide should describe it as: a novel about art, empire, ambition, and what endures — told through a craftsman who becomes caught in the politics of an imperial court.
+A mosaic artist summoned to Sarantium (6th-century Byzantium — Justinian, Theodora, Hagia Sophia). Closest Kay comes to pure historical fiction; fantastic element is minimal. Duology, read in order.
+Often cited as Kay's masterpiece. Art, empire, ambition, and what endures — told through a craftsman caught in imperial politics.
 
 LIONS OF AL-RASSAN (1995) — Moorish Spain
-Standalone. Three main characters — a Kindath (Jewish) physician, an Asharite (Moorish) soldier, and a Jaddite (Christian) knight — who love each other across the religious fault lines of a world modelled on 11th-century Iberia at the end of the Convivencia. The Reconquista is coming; everybody knows it; nobody can stop it. One of the most emotionally devastating books in the genre. Contains some of Kay's best prose and one of his most discussed endings.
-Best entry point for most readers. Tell the guide-writer: lead with the three-character dynamic and the historical basis (the physician is modelled on Maimonides; the soldier on El Cid). Do not spoil the ending. Darkness level: 3 with a crushing emotional climax.
+Standalone. Three characters — Kindath physician, Asharite soldier, Jaddite knight — across 11th-century Iberia's religious fault lines as the Reconquista approaches. One of the most emotionally devastating books in the genre. Best entry point for most readers. Darkness: 3.
 
 A SONG FOR ARBONNE (1992) — medieval Provence / troubadour culture
-Standalone. A world modelled on 12th-century Provence — the courts of love, the troubadour tradition, the conflict between a goddess-worshipping southern culture and a more warlike patriarchal north. A mercenary soldier from the north finds himself drawn into the south's conflict. Kay's most romantic novel in the classical sense — not romantasy, but a book saturated with the culture of courtly love and what it meant. Slightly less devastating than Lions; warmer in register.
+Standalone. 12th-century Provence — troubadour culture, goddess-worshipping south vs. warlike north. A northern mercenary drawn into the south's conflict. Kay's most romantic novel in the classical sense. Slightly warmer than Lions.
 
 THE LAST LIGHT OF THE SUN (2004) — Viking-era Britain
-Standalone. A world modelled on 9th-century Britain — the Anglo-Saxons (Anglcyn), the Erlings (Vikings), the Cyngael (Welsh). A raid, a king (modelled on Alfred the Great), and the question of what holds a civilisation together when it is being destroyed from outside. The fantastic element involves the fae of the forest — more present here than in most Kay. Quieter and more elegiac than Lions or Sarantine.
+Standalone. 9th-century Britain — Anglo-Saxons, Vikings, Welsh. A raid, a king based on Alfred the Great, and what holds a people together under assault. Fae more present than usual for Kay. Quieter and more elegiac than Lions.
 
 TIGANA (1990) — Renaissance Italian city-states
-Standalone. A conquered province has had its very name removed from human memory by a sorcerer-king — no one outside the province can hear, speak, or remember the word "Tigana." The survivors are fighting not just for political freedom but to have their home exist again in the world's memory. Widely considered alongside Lions and Sarantine as Kay's top tier. The premise is among the most inventive in the genre.
+Standalone. A sorcerer-king has erased the very name "Tigana" from human memory — no one outside can hear or speak it. Survivors fight to make their home exist again in the world's memory. Kay's most politically complex standalone. Darkness: 4.
 Kay's most politically complex standalone and the one most concerned with the cost of resistance. Darkness level: 4. Often recommended as the second read after Lions.
 
 THE UNDER HEAVEN / RIVER OF STARS / A BRIGHTNESS LONG AGO duology/standalone (Tang/Song Dynasty China and Renaissance Italy):
@@ -376,7 +330,8 @@ Second read: Tigana or The Sarantine Mosaic, depending on whether the reader wan
 Fionavar last — or skip if the reader is not interested in mythological high fantasy. It will read as a lesser version of what Kay later became.
 
 Kay's register — what to tell the reader in the description:
-His prose is formal, measured, and emotional without being sentimental. He writes about historical tragedy from a position of deep sympathy — these are books about people in the path of forces larger than themselves, and Kay gives them dignity without pretending they can win. The fantasy element is always small: a dream, a ghost, a moment of second sight. It is there to remind the reader that this is not historical fiction — that the people feel more rather than less because the world has a little more strangeness in it than ours. The darkness is primarily emotional, not violent. Kay readers come back for the endings, which are consistently among the most affecting in the genre.
+Prose: formal, measured, emotional without sentimentality. Books about people in the path of forces larger than themselves — Kay gives them dignity without pretending they can win. The fantasy element is always small (a dream, a ghost) — there to remind you this isn't historical fiction, not to drive plot.
+The darkness is primarily emotional, not violent. Kay readers come back for the endings, which are consistently among the most affecting in the genre
 
 Darkness level: 3–4 across all works. No explicit content. Minimal romance heat (present but not the focus). Violence is present but not graphic. The weight is always emotional.
 
@@ -385,27 +340,27 @@ Slug: /reading-orders/guy-gavriel-kay
 
 26 Jennifer L. Armentrout Complete Reading Order
 
-Large, interconnected body of work — 50+ novels across multiple series, with significant crossover between them. The core challenge of this guide is that Armentrout's universes overlap: characters from one series appear in others, events reference each other, and reading order within and across series matters more than for most authors. The guide's primary job is to sort this clearly and honestly for a reader standing in front of her backlist for the first time.
+50+ novels across multiple series with heavy crossover. The challenge: Armentrout's universes overlap — characters appear in each other's series, events cross-reference. Reading order within and across series matters more than for most authors.
 
-Armentrout writes primarily romantasy and paranormal romance — the emotional engine is always the romantic relationship, the genre wrapping varies (fae, demons, aliens, Greek mythology, dark academia). She also writes under the pen name J. Lynn for her contemporary romances, which share no universe with the fantasy works.
+Writes romantasy and paranormal romance — romantic relationship always the engine, genre wrapping varies (fae, demons, aliens, Greek myth). Pen name J. Lynn for contemporary romance — no shared universe with fantasy works.
 
 THE MAJOR UNIVERSES — list these as separate groups in the guide:
 
 LUX UNIVERSE (2011–ongoing) — the entry point for most readers
-Paranormal/sci-fi romance. Daemon Black is an alien (Luxen — beings of light) living in a small West Virginia town, posing as human. Katy Swartz moves next door. The romance is the genre's beloved enemies-to-lovers slow burn; the alien mythology is more developed than most paranormal romance.
+Sci-fi romance. Daemon Black is an alien (Luxen) living as human in West Virginia; Katy Swartz moves next door. Enemies-to-lovers slow burn; alien mythology more developed than most paranormal romance.
 Reading order within the Lux universe:
 Core Lux series (must read in order): Obsidian → Onyx → Opal → Origin → Opposition
 Lux novellas (read between the books they correspond to): Shadows (before Obsidian — Dawson/Beth), Oblivion (Obsidian from Daemon's POV — optional but popular), Outtakes from the Lux series (after Opposition)
 Covenant series (same universe, different mythology — Greek gods): Half-Blood → Pure → Deity → Apollyon → Sentinel
-The Covenant series is set in the same world but predates Lux in internal chronology. Characters cross over — Alex Andros appears in Lux books; Daemon references events from Covenant. For new readers: start with either; Lux is more accessible. For completionists: Covenant first, then Lux.
+Covenant predates Lux internally; characters cross over both ways. New readers: start with either — Lux is more accessible. Completionists: Covenant first.
 Origin series (Lux spinoff): The Problem with Forever, Frigid, Scorched — lighter contemporary/paranormal; connected but standalone.
 
 FROM BLOOD AND ASH UNIVERSE (2020–ongoing) — current primary readership driver
-Dark romantasy. Poppy is a Maiden (a sacred vessel, chosen by the gods, forbidden from touch or emotional attachment) in a kingdom that worships the Ascended (vampiric nobles). Hawke is her guard. The world is more fully built than Armentrout's earlier work; the mythology is more complex; the series is longer.
+Dark romantasy. Poppy is a sacred Maiden (forbidden from touch) in a kingdom ruled by vampiric Ascended. Hawke is her guard. More fully built world than Armentrout's earlier work; longer and more complex series.
 This is Armentrout's biggest current series and the one most readers encounter first via BookTok.
 Reading order (strict — heavy internal dependencies):
 From Blood and Ash (FBaA) → A Kingdom of the Wicked → A War of Two Worlds → A Shadow in the Ember → A Light in the Flame → A Fire in the Flesh → A Soul of Ash and Blood → A Fate Carved in Starlight (novella) → A Dream of Gods and Monsters (upcoming)
-Note: A Shadow in the Ember begins the Prequel/Nyktos arc — set earlier in the timeline, different protagonists (Seraphena and Nyktos), but essential context for events in the main Poppy arc from book 4 onward. The guide must explain this clearly: books 1–3 are Poppy/Hawke; books 4 onward in the prequel arc run parallel to the main series. Most readers recommend reading the prequel arc as published (i.e., after FBaA book 3, before FBaA book 4+) rather than in strict internal chronology.
+Note: A Shadow in the Ember starts the Prequel/Nyktos arc — earlier timeline, different protagonists (Seraphena/Nyktos), essential for FBaA book 4+. Read in publication order (after FBaA #3, before FBaA #4) not internal chronology.
 
 DARK ELEMENTS SERIES (2013–2014) — paranormal romance
 Gargoyles and demons. Layla is half-demon, trained by gargoyles to hunt her own kind. Four books: Bitter Sweet Love (novella) → Stone Cold Touch → Every Last Breath → Till Death. Standalone universe, no crossover with Lux or FBaA.
@@ -422,9 +377,9 @@ Several additional series (Harbinger, the Titan series as a Covenant spinoff, th
 Titan series (Covenant universe spinoff): Set after the Covenant series; follows Seth. Seth → The Return → The Power → The Struggle → The Prophecy. Requires Covenant series first.
 
 ARMENTROUT'S READING ORDER COMPLEXITY — what the guide must address directly:
-The FBaA universe is the most complex: the prequel arc (Shadow/Light/Fire series) is set before FBaA but was published after, and reading it in internal chronological order rather than publication order spoils major reveals from the main series. Publication order is strongly recommended — the guide should state this plainly.
-The Lux/Covenant crossover: characters appear in each other's series. Not reading both leaves gaps; but either works as a standalone entry.
-The J. Lynn contemporary novels share no universe with the fantasy work — some readers don't realise this.
+FBaA complexity: prequel arc published after but set before — internal chronological order spoils the main series. Always recommend publication order.
+Lux/Covenant crossover: either works as entry, both together is better.
+J. Lynn contemporaries share no universe with the fantasy work.
 
 Entry point recommendations:
 New to Armentrout, wants romantasy: From Blood and Ash — the current flagship, the most developed world, the biggest community.
@@ -459,49 +414,6 @@ Slug: /reading-orders/vlad-taltos
 28 Demon Cycle Reading Order (Peter V. Brett)
 
 29 Powder Mage Reading Order (Brian McClellan)
-
-Two complete trilogies set in the same world, plus short fiction. Written by Brian McClellan, who was Brandon Sanderson's student and later his writing assistant — the Sanderson influence is visible in the magic system design and the military plotting, but McClellan is his own writer with his own preoccupations. The world is gunpowder-era fantasy: flintlock muskets, cannon, professional armies, and a magic system built directly around gunpowder.
-
-The magic system — the defining element of the series, lead with it in the guide:
-Powder Mages can control gunpowder with their minds. Specifically: they can ignite powder at a distance, accelerate bullets mid-flight to sniper-range accuracy, or detonate powder reserves to devastating effect. They are military weapons. The Privileged (traditional finger-wiggling sorcerers drawing on an elemental force called the Else) are the old aristocratic magic; Powder Mages are the new democratic one — they tend to come from the lower classes, they work by skill and instinct rather than inherited training, and the aristocracy fears them.
-A third type — the Knacked — have minor passive abilities (never needing sleep, perfect memory, reading emotions) that are not combative but affect the political texture of the world.
-
-THE POWDER MAGE TRILOGY (2013–2015) — read first, always
-Promise of Blood → The Crimson Campaign → The Autumn Republic
-
-Promise of Blood (2013):
-Field Marshal Tamas has led a coup against the king of Adro, executed the nobility, and freed his country from aristocratic rule — in the first chapter. The book opens in the aftermath of the revolution, not during it. Three POVs: Tamas himself managing the coup's consequences; his son Taniel, a legendary powder mage and veteran, trying to find his feet in a post-war world; and Adamat, a retired police inspector with a perfect memory hired to investigate what the dying king whispered as he was executed ("You can't break Kresimir's Promise"). The mystery thread and the political thread and the military thread run simultaneously. Strong opening novel — the world is established fast and the magic system is demonstrated through action, not explained. Darkness level: 4.
-
-The Crimson Campaign (2014):
-The coup has destabilised the region and a foreign empire is invading. Tamas is separated from the city and fighting a desperate rearguard action with no supply lines; Taniel is on a mountain with a powder mage marksman mission that becomes something much stranger; Adamat is pursuing his investigation into the gods while his family is in danger. The middle book of a military fantasy trilogy — scope expands, stakes escalate. McClellan is better than most at keeping all three threads urgent simultaneously. Darkness level: 4.
-
-The Autumn Republic (2015):
-The conclusion. The military, political, and divine threads converge. The "gods" element — introduced slowly — becomes central in the final book. McClellan pays off the promise of the opening chapter. One of the cleaner trilogy conclusions in military fantasy. Darkness level: 4.
-
-Short fiction within the Powder Mage world (published between trilogy books):
-The short story collection "Promise of Blood" (Tor.com stories) — "The Girl of Hats and Needles," "The Powder Mage," "Forsworn," "Servants of the Crown," etc. These expand side characters and background. Not essential for the trilogy but add texture. The guide should note they exist without making them sound required.
-
-GODS OF BLOOD AND POWDER TRILOGY (2017–2019) — read after the original trilogy
-Sins of Empire → Wrath of Empire → Blood of Empire
-Set ten years after the original trilogy, in a different country (the Dynize Empire has invaded the Dynize colony of Landfall). Mostly new cast; Ben Styke — a legendary cavalry officer who was imprisoned, tortured, and left for dead by the old government — is the breakout character and the series' emotional engine. Michel Bravis is an intelligence agent working inside the occupation. Lady Flint (a character from the original trilogy) appears as a major POV.
-
-Ben Styke is why readers cite this trilogy as equal to or better than the original. He is a one-man army whose personal reputation as "Mad Ben Styke" has taken on a life of its own — enemies flee at his name, allies are afraid of him, and he is entirely aware of both. McClellan uses him to ask what violence does to a person across a lifetime of it. Darker and more character-focused than the original trilogy.
-Cannot be fully appreciated without the first trilogy — events, factions, and character histories from the original trilogy are referenced extensively. Read in order.
-
-Connections and reading order for the guide:
-Read the original trilogy first (Promise of Blood → Crimson Campaign → Autumn Republic).
-Short fiction can be read any time alongside the trilogy — flag where each story is set relative to the main books.
-Gods of Blood and Powder after the original trilogy — the guide should note these are widely considered at minimum equal to the originals, and that Ben Styke is many readers' favourite McClellan character.
-
-What to flag in the description:
-McClellan writes military fantasy with genuine tactical intelligence — the battles are planned, the logistics matter, the professional soldiers think like professionals. This is closer to Bernard Cornwell than to Tolkien. The magic is combat-oriented and spectacular without being physics-defying — gunpowder manipulation is physically grounded and the rules are clear. The political intrigue is real: the coup in book one is not a backdrop, it's a sustained question about what revolutions cost and who pays.
-
-Comparable series to mention: Mistborn (Sanderson — shared sensibility around magic system design, similar political complexity, McClellan acknowledges the influence); The Black Company (Cook — military unit perspective, similar unglamorous view of war); The Blade Itself (Abercrombie — morally complex soldiers, similar darkness level).
-
-Darkness level: 4 across both trilogies. No romance heat. Violence is sustained and tactically detailed. No explicit content.
-
-Slug: /reading-orders/powder-mage
-
 
 30 Chronicles of Amber Reading Order (Roger Zelazny)
 
@@ -538,6 +450,17 @@ The core saga is relatively short — 6–8 slim novels; the entire series can b
 The books read as episodic tragedy — each entry advances the slow destruction of Elric's world, relationships, and self; readers should expect no redemptive arc
 Slug: /reading-orders/elric-saga
 
+Eternal Champion Multiverse — 10 Realms in internal chronological order (cannot use publication dates):
+Realm 1 — Elric Saga: Dream of Earl Aubec (prequel) → Elric of Melniboné → Fortress of the Pearl → Sailor on the Seas of Fate (multiverse crossover) → Citadel of Forgotten Myths → Weird of the White Wolf → Vanishing Tower → Revenge of the Rose → Bane of the Black Sword → Stormbringer
+Realm 2 — Corum (Trilogy of Swords + Chronicles of Corum, 6 books): Knight/Queen/King of the Swords → Bull and the Spear → Oak and the Ram → Sword and the Stallion. Overlaps with Elric crossover.
+Realm 3 — Dorian Hawkmoon: History of the Runestaff (Jewel in the Skull → Mad God's Amulet → Sword of the Dawn → Runestaff) + Chronicles of Castle Brass (Count Brass → Champion of Garathorm → Quest for Tanelorn — the convergence of Elric/Hawkmoon/Corum/Erekosë)
+Realm 4 — Erekosë: only Champion who remembers all past lives — structural anchor. The Eternal Champion → Phoenix in Obsidian → The Dragon in the Sword
+Realm 5 — Von Bek (Historical Earth): German bloodline protecting the Grail. War Hound and the World's Pain (1630) → Brothel in Rosenstrasse (1848) → City in the Autumn Stars (1793) → Dragon in the Sword (1933) → Dreamthief's Daughter (1940, Elric crossover)
+Realm 6 — Kane of Old Mars: pulp sci-fi, physicist teleported to ancient Mars. Warriors/Blades/Barbarians of Mars (3 books)
+Realm 7 — Nomad of Time Streams: steampunk Edwardian soldier through alt-timelines. Warlord of the Air → Land Leviathan → Steel Tsar
+Realm 8 — Sailing to Utopia: standalone avatars of the Champion. Ice Schooner, Black Corridor, Distant Suns, Flux
+Realm 9 — Oakhaven/Elric Crossings: late-career bindings of Elric + Von Bek. Dreamthief's Daughter → Skrayling Tree → White Wolf's Son
+Realm 10 — Dancers at the End of Time: far future, immortals with godlike powers — chronological endpoint of the Multiverse. An Alien Heat → The Hollow Lands → The End of All Songs
 
 55 Shadows of the Apt Reading Order (Adrian Tchaikovsky)
 
@@ -598,14 +521,14 @@ Slug: /reading-orders/thomas-covenant
 
 61 Rivers of London Reading Order (Ben Aaronovitch)
 
-9 main-series novels (ongoing), plus a substantial body of novellas and short fiction. Urban fantasy set in contemporary London — specifically the Metropolitan Police Service. PC Peter Grant is a probationary constable who witnesses a ghost giving a witness statement at a murder scene, which gets him seconded to the Folly: the one-man department (plus one apprentice) responsible for policing magic in the UK. His boss is Detective Chief Inspector Thomas Nightingale, the last registered wizard in England, who has been doing this since the 1930s and is very tired.
+9 main-series novels (ongoing) plus novellas and short fiction. Urban fantasy set in contemporary London — the Metropolitan Police. PC Peter Grant witnesses a ghost giving a witness statement and gets seconded to the Folly, the one-man department for policing magic in the UK. His boss is DCI Nightingale, the last registered wizard in England, doing this since the 1930s.
 
 The series is first-person, narrated by Peter — mixed-race (Sierra Leonean mother, jazz musician father), curious, sarcastic, deeply interested in the architecture of London and the engineering of magic. His voice is the entire texture of the books. If it doesn't click by chapter two of book one, it probably won't.
 
 Series structure:
 Main novels (read in publication order — each builds on the last):
 1. Rivers of London (UK) / Midnight Riot (US) — 2011
-   Peter witnesses a ghost, gets drafted to the Folly, meets Nightingale and Molly (the Folly's housekeeper, who is something else entirely), and is introduced to the rivers of London — the river gods and their families, who are London's genius loci and have opinions about their territory. The first case involves a possessing spirit splitting between two warring personalities in 18th-century London. The case structure is procedural; the worldbuilding density is high and introduced without pause. Start here, no exceptions.
+   Peter joins the Folly, meets Nightingale and Molly, encounters the river gods of London. First case: a possessing spirit with split personalities. Procedural structure, high worldbuilding density from page one. Start here, no exceptions.
 
 2. Moon Over Soho — 2011
    Peter investigates jazz musicians dying of a mysterious condition while Nightingale recovers from injuries sustained in book one. Introduces the concept of vestigia (the magical residue objects and places absorb from significant events). The series finds its second gear here — the worldbuilding deepens and the supporting cast expands.
@@ -640,9 +563,9 @@ The novellas are clearly labelled as Folly-adjacent rather than main series — 
 
 The Faceless Man arc: the overarching mystery of who is operating outside the Folly's oversight, building something using old magic and new money. Runs books 1–7, resolved in Lies Sleeping. The books from 8 onward are a new phase rather than a continuation of that arc — flag this in the guide so readers who bounce off the first few books understand that the early series has a defined shape.
 
-The London element: Aaronovitch is a Londoner and the books function partly as a guided tour of London's geography, history, and mythology — the rivers (Fleet, Tyburn, Effra, Lea) as actual divine entities with personalities shaped by their catchment areas; the architecture as a record of magic; the social geography (South London vs North London, the river families' territories) as a plot element. Readers who know London get additional texture; readers who don't will still find it rich.
+The London element: rivers (Fleet, Tyburn, Effra, Lea) as divine entities shaped by their catchment areas; architecture as a record of magic; South vs North London as plot. Knowing London adds texture but isn't required.
 
-The magic system: Peter approaches magic like an engineer — he tries to understand the physics of it, runs experiments, takes notes. Aaronovitch describes the system in terms of Newtonian mechanics applied to vestigia and forma (the shapes wizards impose on magic). It is internally consistent and gets more complex as Peter's training progresses. The formal magic system is slow to appear in book one — Peter spends most of the early books learning to do a single light spell.
+Magic system: Peter treats it like an engineer — experiments, notes, Newtonian mechanics applied to vestigia and forma. Internally consistent, grows more complex as training progresses. Book one is slow to show it — Peter spends most of it learning a single light spell.
 
 Nightingale: the other pole of the series. A 1930s public school wizard who fought in WWII, survived things that killed everyone around him, and has been running the Folly alone for decades. His backstory is revealed gradually — Aaronovitch does not dump it. He is one of urban fantasy's best supporting characters precisely because the reader always senses there is more than he's saying.
 
@@ -687,7 +610,7 @@ Waylander (3 books): Waylander → Waylander II: In the Realm of the Wolf → He
 Skilgannon the Damned (2 books): White Wolf → The Swords of Night and Day — a warrior from a later Drenai era; connected to the Druss mythology; read after Legend
 Standalone Drenai: The King Beyond the Gate, Quest for Lost Heroes, Winter Warriors, Morningstar — each largely self-contained; any order after Legend
 
-The premise of Legend: the fortress of Dros Delnoch — six walls across a mountain pass — is the last defence between the Nadir horde and the Drenai homeland. It is undermanned, crumbling, and going to fall. Druss the Legend, the greatest warrior of the age, is sixty years old and has come out of retirement to die there. The book is not about whether the fortress can be held but about what it means to hold it anyway.
+Legend: Dros Delnoch — six walls, last defence against the Nadir horde — is undermanned and going to fall. Druss the Legend, sixty years old, comes out of retirement to die there. Not about whether the fortress holds but what it means to hold it anyway.
 Gemmell's origin: he wrote Legend while awaiting biopsy results he was certain would confirm terminal cancer; he imagined himself as the defenders of the fort. The cancer was a misdiagnosis. The book was already done.
 
 Core themes across the series: what makes a hero is not victory but the willingness to stand; courage is not the absence of fear; the aging warrior who still shows up; sacrifice as the only honest answer to impossible odds. These themes run every book without variation — this is not a weakness but the whole point.
@@ -716,7 +639,7 @@ The Westlands sequence (books 5–9): A Time of Exile → A Time of Omens → Da
 The Dragon Mage arc (books 9–12): The Red Wyvern → The Black Raven → The Fire Dragon (overlaps with and expands the end of the Westlands arc) — dragons enter the story as characters, not backdrop
 The Silver Wyrm sequence (books 12–15): The Gold Falcon → The Spirit Stone → The Shadow Isle → The Silver Mage — the full resolution of every soul-debt established in book one; Kerr wrote the conclusion to close the cycle completely
 
-The reincarnation structure: past-life chapters are set in different centuries and follow different characters who share the same souls. These are not flashbacks in a conventional sense — they are parallel narratives set hundreds of years apart that only gradually reveal their connection to the present. On first read, the past-life sections can feel like interruptions; by book two or three, they are what readers most want to return to. The structure is Kerr's primary achievement and unlike anything else in the genre.
+The reincarnation structure: past-life chapters follow different characters sharing the same souls, hundreds of years apart — parallel narratives, not flashbacks. On first read they feel like interruptions; by book three they're what you most want to return to. Kerr's primary achievement; unlike anything else in the genre.
 Dweomer: the magic system — Welsh-derived, intuitive rather than mechanical; based on the concept of wyrd (a word covering fate, debt, and the consequences that follow unresolved actions across lifetimes); practitioners are called dweomerworkers; magic is earned through spiritual development rather than raw power
 
 Welsh influence: the world of Deverry is directly modelled on early medieval Wales — the political structure (a tanist system of succession), the language (Deverrian reads like Old Welsh), the place names, the social codes. Readers with knowledge of Welsh history will recognise the bones of it immediately; others will absorb it through context.
@@ -756,7 +679,7 @@ Companion novels: Belgarath the Sorcerer → Polgara the Sorceress — backstory
 
 Read The Belgariad first, then The Malloreon — the second series follows directly from the end of the first with the same cast. The companion novels are rewards for readers who have already committed; they spoil the outcomes of both quintet series.
 
-The premise: Garion, a farm boy raised by his aunt Pol, discovers his lineage is at the centre of a prophecy that has been building for seven thousand years. The Belgariad is the archetypal chosen-one epic fantasy — mythic scale, a long journey through interconnected kingdoms, a mentor figure (Belgarath, the world's oldest sorcerer), and a final confrontation that the world itself has been moving toward.
+The premise: Garion, a farm boy raised by his aunt Pol, discovers his lineage is at the centre of a 7,000-year prophecy. Archetypal chosen-one epic — long journey through kingdoms, mentor figure (Belgarath, world's oldest sorcerer), final confrontation the world has been moving toward.
 Why it holds up: Eddings wrote both series with his wife Leigh (credited only posthumously on later editions); the characterisation of the ensemble — particularly Belgarath and Polgara — is warm, witty, and unusually good for 1980s epic fantasy; the banter is the series' real achievement
 The structure: each book is short by modern standards (250–300 pages); the Belgariad reads as one continuous story across five volumes; pacing is brisk, never padded
 The Malloreon: wider cast, some new nations introduced, the same tone; considered slightly weaker than the Belgariad by most readers but a satisfying conclusion; do not read it before finishing the Belgariad
@@ -796,12 +719,12 @@ Six distinct sub-series set in the same medieval-esque kingdom of Tortall, each 
 The sub-series, in approximate in-world chronological order:
 Beka Cooper Trilogy (prequel, ~200 years before the main Tortall timeline): Terrier → Bloodhound → Mastiff — Beka is an ancestor of Alanna, working as a city-guard trainee in Corus; grittier and more street-level than the later series; written last (2006–2011) but set earliest; start here only if you prefer in-world chronological order
 Song of the Lioness (publication 1983–1988): Alanna: The First Adventure → In the Hand of the Goddess → The Woman Who Rides Like a Man → Lioness Rampant — Alanna disguises herself as a boy to train as a knight; Pierce's debut; the writing is simpler and more compressed than her later work (each book is ~180 pages); widely beloved but shows its age compared to later series
-The Immortals (publication 1992–1996): Wild Magic → Wolf-Speaker → Emperor Mage → The Realms of the Gods — Daine, a girl with wildmage powers (she can communicate with and shape-shift into animals), arrives in Tortall; longer and more polished than Song of the Lioness; overlaps in timeline with the latter half of Lioness; many readers consider Wild Magic the stronger entry point to the universe
+The Immortals (1992–1996): Wild Magic → Wolf-Speaker → Emperor Mage → The Realms of the Gods — Daine, a girl with wildmage powers (communicates with and shape-shifts into animals); longer and more polished than Song of the Lioness; many readers' preferred entry point to the universe
 Protector of the Small (publication 1999–2002): First Test → Page → Squire → Lady Knight — Kel, the first girl to openly train as a page (no disguise), faces institutional resistance and builds a reputation through skill rather than magic; more grounded and slower-burning than Daine's series; widely considered Pierce's best Tortall work
 Daughter of the Lioness (publication 2003–2006): Trickster's Choice → Trickster's Queen — Aly, Alanna's daughter, is captured and sold as a slave on the Copper Isles and becomes entangled in a revolution; espionage focus rather than knight-training; requires at least passing familiarity with Alanna to appreciate the character
 Numair Chronicles (publication 2017–ongoing): Tempests and Slaughter → (series incomplete) — follows Numair (Daine's companion in The Immortals) as a young student mage; the only main-cast male protagonist; set before the Immortals and shows his background; the series is unfinished
 
-Reading order guidance: start with either Wild Magic (The Immortals book 1) or First Test (Protector of the Small book 1). Wild Magic is the more polished entry to the world; Protector of the Small is the richest series in the universe. Song of the Lioness is the publishing beginning but its shorter page counts and 1983 YA prose are a harder sell for new readers. The Beka Cooper trilogy is best saved for readers who already love the world. Do not start with the Numair Chronicles.
+Start with Wild Magic (Immortals #1) or First Test (Protector of the Small #1). Song of the Lioness is the publishing start but 1983 YA prose is a harder sell. Beka Cooper best saved for readers who already love the world. Do not start with Numair Chronicles.
 
 Key world details:
 Tortall: a medieval-style monarchy in a world where magic is widespread and varied (divine gifts, beast-magic, mage training, immortal creatures). The gods are present and occasionally intervene. The tone is YA adventure but the series does not shy from war, death, and political corruption — it simply frames them through the lens of young women finding their agency.
@@ -844,7 +767,7 @@ Slug: /reading-orders/red-queen
 A complete eight-book adult romantasy series set in Solaria — a Fae world where magic is determined by your zodiac star sign and your Order (the creature form you shift into). Originally self-published by two authors writing together; one of the largest BookTok-driven series to break through to mainstream awareness. Very long, very spicy, deeply addictive once the hook lands.
 
 The world:
-Solaria is a Fae realm run by powerful old Houses. Every Fae has two magical identifiers — their star sign (which sets their elemental magic: fire, water, earth, air) and their Order (Dragon, Vampire, Wolf, Siren, Manticore, Pegasus, Griffin, and others). The combination determines their power tier. Above everyone are the Celestial Heirs: four students from the four most powerful Fae families, who together effectively rule Zodiac Academy and, by extension, Solaria.
+Solaria: Fae realm run by old Houses. Every Fae has a star sign (elemental magic) and an Order (Dragon, Vampire, Wolf, Siren, etc.) — the combination sets power tier. At the top: the Celestial Heirs, four students from the most powerful families who effectively rule Zodiac Academy and Solaria.
 The throne of Solaria has been empty since the Vega royals disappeared. The Celestial Heirs have quietly claimed that power. The series begins when the lost Vega twins — Darcy and Tory, raised in human foster care with no knowledge of Fae — are discovered alive and brought to the academy, threatening everything the Heirs have built.
 
 Main series — Zodiac Academy (8 books, read in order):
@@ -862,7 +785,7 @@ Darkmore Penitentiary (spin-off, 3 books): follows different characters in a Fae
 
 Content note: this is adult fantasy with explicit sexual content throughout, not YA. The academy setting is misleading — tone and content are firmly adult. Early books contain sustained bully dynamics and power imbalance; later books escalate darkness significantly (deaths, war, high stakes). Readers sensitive to bully romance should know books 1–3 lean into it before the dynamic shifts.
 
-Reading pace note: the first book (The Awakening) is the shortest; many readers describe the hook as slow to catch and the reading experience as suddenly compulsive around book 2 or 3. The series has a strong reputation for becoming unputdownable once you are in — accounts of "I read five books in a week" are common. The slow start in book 1 is load-bearing rather than a sign of the series' quality.
+Pace note: book 1 is the shortest and the slowest to hook — most readers report it clicks hard around book 2 or 3. "Read five books in a week" is a common account. The slow start is load-bearing.
 
 Slug: /reading-orders/zodiac-academy
 ---

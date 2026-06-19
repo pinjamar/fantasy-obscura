@@ -42,8 +42,6 @@ export const theBridgeKingdom: BooksLikeEntry = {
         {
           title: 'An Ember in the Ashes',
           author: 'Sabaa Tahir',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -52,6 +50,7 @@ export const theBridgeKingdom: BooksLikeEntry = {
           series_label: 'Series (4 books)',
           audiobook: true,
           note: "The closest structural parallel to The Bridge Kingdom: Laia infiltrates the enemy's elite military academy as a spy to save her brother, while Elias — a soldier on the inside — begins to question everything the empire has trained him to be. Tahir runs dual POVs across the enemy divide just as Jensen does, and both books build their central tension from the question of what a person owes to the side they were born on versus the person standing in front of them. An Ember in the Ashes is darker and more brutal than The Bridge Kingdom — the empire is genuinely monstrous in ways Aren's kingdom is not — but the core emotional mechanism is the same: loyalty tested by proximity.",
+          caveat: 'Darker and more brutal than Jensen — the empire is genuinely monstrous in ways Aren\'s kingdom isn\'t. Much lower heat, and the romance is slow to resolve across four books.',
           tags: [
             'Spy Infiltration',
             'Dual POV',
@@ -67,8 +66,6 @@ export const theBridgeKingdom: BooksLikeEntry = {
         {
           title: 'The Wrath and the Dawn',
           author: 'Renée Ahdieh',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780399171611-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -77,6 +74,7 @@ export const theBridgeKingdom: BooksLikeEntry = {
           series_label: 'Duology',
           audiobook: true,
           note: "A retelling of One Thousand and One Nights in which Shahrzad enters the Caliph's household intending to avenge her murdered friend and instead finds a man whose monstrousness is more complicated than the stories suggest. The structural heartbeat is identical to The Bridge Kingdom: a woman with a secret agenda, a ruler who is not the villain he appears to be, and a romance that keeps threatening to compromise the mission. Ahdieh's prose is more lush and sensory than Jensen's, the setting more evocative; the emotional core is the same moral knot of loyalty, deception, and what a person becomes when the plan stops feeling like the point.",
+          caveat: 'Slower paced than The Bridge Kingdom and more focused on atmosphere than plot mechanics. The political intrigue is less foregrounded — the lush prose and romantic longing are the main draw.',
           tags: [
             'Arabian Nights Retelling',
             'Political Marriage',
@@ -98,8 +96,6 @@ export const theBridgeKingdom: BooksLikeEntry = {
         {
           title: 'The Cruel Prince',
           author: 'Holly Black',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316310314-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -108,6 +104,7 @@ export const theBridgeKingdom: BooksLikeEntry = {
           series_label: 'Trilogy',
           audiobook: true,
           note: 'The inverse setup: here it is Cardan who appears to be a cruel and inaccessible power, and Jude who has to outmanoeuvre him politically before she can trust him emotionally. Black gives Cardan the same quality Jensen gives Aren — a coldness that turns out to be armour rather than character, worn because the alternative is too dangerous. The Cruel Prince is sharper and more cynical than The Bridge Kingdom; the fae court is genuinely dangerous rather than misrepresented. But readers who loved the dynamic of a powerful figure choosing vulnerability in front of someone with every reason to exploit it will find the same satisfaction here.',
+          caveat: 'Cardan\'s cruelty is real before it becomes armour — unlike Aren, he is genuinely hostile early on. YA, Closed Door heat, and less spy mechanics; the pleasure here is political scheming rather than information asymmetry.',
           tags: [
             'Fae',
             'Political Scheming',
@@ -123,8 +120,6 @@ export const theBridgeKingdom: BooksLikeEntry = {
         {
           title: 'A Court of Thorns and Roses',
           author: 'Sarah J. Maas',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781619634442-L.jpg',
           darkness_level: 3,
           heat_level: 'Open Door',
           standalone: false,
@@ -133,6 +128,7 @@ export const theBridgeKingdom: BooksLikeEntry = {
           series_label: 'Series (5 books)',
           audiobook: true,
           note: "The most direct genre ancestor of The Bridge Kingdom: a mortal woman taken into a fae world that she has been taught to fear, a captor who is more dangerous to her assumptions than to her person, and an enemies-to-lovers arc built on the slow dismantling of propaganda. Maas's world is richer and her romantic stakes higher than Jensen's at this stage of the series; the second book, A Court of Mist and Fury, is where the series reaches its emotional peak and is where readers who loved the Aren-Lyriana dynamic most should head after finishing the first. The heat level rises considerably across the series.",
+          caveat: 'The first book is more Beauty and the Beast than political spy thriller — the spy letters and information asymmetry that drive The Bridge Kingdom aren\'t present here. The series becomes significantly more ambitious from book two.',
           tags: [
             'Fae',
             'Beauty and the Beast Retelling',
@@ -154,8 +150,6 @@ export const theBridgeKingdom: BooksLikeEntry = {
         {
           title: 'From Blood and Ash',
           author: 'Jennifer L. Armentrout',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781952457128-L.jpg',
           darkness_level: 3,
           heat_level: 'Explicit',
           standalone: false,
@@ -164,6 +158,7 @@ export const theBridgeKingdom: BooksLikeEntry = {
           series_label: 'Series (5 books)',
           audiobook: true,
           note: "Poppy is a Maiden chosen by the gods, forbidden from human contact, and guarded by Hawke — who is not what he appears to be. Armentrout builds the same slow-burn tension Jensen does through information asymmetry: Hawke knows things about Poppy's world that Poppy doesn't, and the reader senses the deception before the protagonist does. The romantic heat is higher than The Bridge Kingdom and the fantasy world-building more baroque; the enemies-to-lovers dynamic and the slow revelation of political conspiracy operate on the same emotional frequency. If The Bridge Kingdom felt like it ended too soon, From Blood and Ash is happy to extend the slow burn across five very long books.",
+          caveat: 'Much higher heat than The Bridge Kingdom and less focused on political geography. The world-building is expansive but the spy-thriller tension isn\'t what drives the series.',
           tags: [
             'Chosen One',
             'Guard/Ward Romance',
@@ -179,8 +174,6 @@ export const theBridgeKingdom: BooksLikeEntry = {
         {
           title: 'Dark Shores',
           author: 'Danielle L. Jensen',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765399038-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -189,6 +182,7 @@ export const theBridgeKingdom: BooksLikeEntry = {
           series_label: 'Series (3 books)',
           audiobook: true,
           note: "Jensen's other romantasy series, running parallel to the Bridge Kingdom books in publication. The same authorial fingerprints: dual POV, political stakes that give the romance real weight, morally grey protagonists on opposite sides of a conflict who are forced into alliance. Teriana is a sea captain coerced into guiding a Roman-inspired legion across a forbidden sea; Marcus is the legion commander trying to do an unethical thing as honourably as possible. The tone is slightly grittier than The Bridge Kingdom and the world-building more expansive. Best read alongside or after the Bridge Kingdom duology rather than as a replacement.",
+          caveat: 'Slightly grittier and more expansive in scope than The Bridge Kingdom. Same authorial voice but a separate world — best read after the duology rather than instead of it.',
           tags: [
             'Same Author',
             'Dual POV',
@@ -203,81 +197,41 @@ export const theBridgeKingdom: BooksLikeEntry = {
         },
       ],
     },
-  ],
-  recommendations: [
     {
-      title: 'A War of Stolen Hearts',
-      author: 'Danielle L. Jensen',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780593722169-L.jpg',
-      darkness_level: 3,
-      heat_level: 'Open Door',
-      tags: [
-        'Same Author',
-        'Same World',
-        'Enemies to Lovers',
-        'Political Marriage',
-        'Romantasy',
+      heading:
+        "If you loved that the plot kept you ahead of the protagonist — knowing things she didn't, watching the dramatic irony accumulate...",
+      recs: [
+        {
+          title: 'The Kiss of Deception',
+          author: 'Mary E. Pearson',
+          darkness_level: 3,
+          heat_level: 'Closed Door',
+          standalone: false,
+          series: 'The Remnant Chronicles',
+          series_number: 1,
+          series_label: 'Trilogy (3 books)',
+          audiobook: true,
+          note: "A princess who flees her arranged marriage, pursued by both her intended husband and an assassin sent to kill her — neither of whom she can identify. Pearson builds the same dramatic irony Jensen uses with Lyriana's letters: the reader knows things the protagonist doesn't, and that gap between what we see and what Lia knows generates tension that no amount of direct action could replace. The tone is lighter and the world less intricate, but the core pleasure — a woman learning to trust a man she has every reason not to — is exactly the same.",
+          caveat: 'Lighter in tone and less politically complex than The Bridge Kingdom. YA with Closed Door heat — the spy mechanics are similar but the execution is more straightforward.',
+          tags: [
+            'Political Marriage',
+            'Dramatic Irony',
+            'Slow Burn',
+            'Enemies to Lovers',
+            'YA Fantasy',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=The+Kiss+of+Deception+Mary+Pearson&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=The+Kiss+of+Deception+Pearson&affiliate=122720',
+        },
       ],
-      why: "The direct sequel — Lyriana and Aren's story continues, and Jensen raises both the political stakes and the emotional complexity. The same spy-thriller structure underneath a romance chassis, but with the advantage of an already-established relationship to complicate. If The Bridge Kingdom's ending left you wanting more and immediately, this is the next read.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=A+War+of+Stolen+Hearts+Danielle+Jensen&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=A+War+of+Stolen+Hearts+Jensen&affiliate=122720',
-    },
-    {
-      title: 'The Kiss of Deception',
-      author: 'Mary E. Pearson',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9781250078308-L.jpg',
-      darkness_level: 3,
-      heat_level: 'Closed Door',
-      tags: [
-        'Political Marriage',
-        'Slow Burn',
-        'Multiple POVs',
-        'Enemies to Lovers',
-        'YA Fantasy',
-      ],
-      why: "A princess who flees her arranged marriage to a kingdom she hates, pursued by both her intended husband and an assassin sent to kill her — neither of whom she can identify. Pearson builds the same slow information-release that makes The Bridge Kingdom compulsive: the reader knows things the protagonist doesn't, and the dramatic irony generates tension the romance alone cannot. The tone is lighter and the world less politically intricate, but the core pleasure — a woman learning to trust a man she has every reason not to — is exactly the same.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=The+Kiss+of+Deception+Mary+Pearson&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=The+Kiss+of+Deception+Pearson&affiliate=122720',
-    },
-    {
-      title: 'An Ember in the Ashes',
-      author: 'Sabaa Tahir',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
-      darkness_level: 4,
-      heat_level: 'Closed Door',
-      tags: [
-        'Spy Infiltration',
-        'Dual POV',
-        'Enemies to Lovers',
-        'Empire vs Resistance',
-        'YA Fantasy',
-      ],
-      why: "The political urgency and dual-POV spy structure make this the tightest parallel to The Bridge Kingdom's plot mechanics outside the romantasy genre. Tahir writes the same impossible loyalty split — here multiplied across two protagonists rather than one — and doesn't flinch from the cost of the choices both make. Darker and more brutal than Jensen's work, but readers who felt the Bridge Kingdom's political stakes were the book's best feature will find everything they wanted here, with more.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes+Tahir&affiliate=122720',
     },
   ],
+  recommendations: [],
   related: [
-    {
-      title: 'Books Like A Court of Thorns and Roses',
-      slug: 'a-court-of-thorns-and-roses',
-    },
+    { title: 'Books Like A Court of Thorns and Roses', slug: 'acotar' },
     { title: 'Books Like From Blood and Ash', slug: 'from-blood-and-ash' },
-    {
-      title: 'Books Like An Ember in the Ashes',
-      slug: 'an-ember-in-the-ashes',
-    },
+    { title: 'Books Like An Ember in the Ashes', slug: 'an-ember-in-the-ashes' },
   ],
 };

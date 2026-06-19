@@ -41,8 +41,6 @@ export const theCruelPrince: BooksLikeEntry = {
         {
           title: 'A Court of Mist and Fury',
           author: 'Sarah J. Maas',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781619634176-L.jpg',
           darkness_level: 4,
           heat_level: 'Explicit',
           standalone: false,
@@ -66,8 +64,6 @@ export const theCruelPrince: BooksLikeEntry = {
         {
           title: 'From Blood and Ash',
           author: 'Jennifer L. Armentrout',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781952457760-L.jpg',
           darkness_level: 3,
           heat_level: 'Explicit',
           standalone: false,
@@ -97,8 +93,6 @@ export const theCruelPrince: BooksLikeEntry = {
         {
           title: 'Six of Crows',
           author: 'Leigh Bardugo',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781627792127-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -123,8 +117,6 @@ export const theCruelPrince: BooksLikeEntry = {
         {
           title: 'An Ember in the Ashes',
           author: 'Sabaa Tahir',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
           darkness_level: 4,
           heat_level: 'Sweet Romance',
           standalone: false,
@@ -156,8 +148,6 @@ export const theCruelPrince: BooksLikeEntry = {
           title: 'Tithe',
           slug: 'tithe',
           author: 'Holly Black',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780689868344-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -182,8 +172,6 @@ export const theCruelPrince: BooksLikeEntry = {
           title: 'Daughter of the Forest',
           slug: 'daughter-of-the-forest',
           author: 'Juliet Marillier',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780312846176-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
