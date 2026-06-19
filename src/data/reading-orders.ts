@@ -143,6 +143,7 @@ import { shadowhunterChronicles } from './reading-orders/shadowhunter-chronicles
 import { riftwarCycle } from './reading-orders/riftwar-cycle';
 import { foundation } from './reading-orders/foundation';
 import { powderMage } from './reading-orders/powder-mage';
+import { belgariad } from './reading-orders/belgariad';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -207,6 +208,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   riftwarCycle,
   foundation,
   powderMage,
+  belgariad,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

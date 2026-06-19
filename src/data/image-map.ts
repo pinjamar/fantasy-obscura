@@ -93,7 +93,8 @@ export type ReadingOrderImageSlug =
   | 'shadowhunter-chronicles'
   | 'riftwar-cycle'
   | 'foundation'
-  | 'powder-mage';
+  | 'powder-mage'
+  | 'belgariad';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -170,6 +171,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'riftwar-cycle':            'riftwar-cycle',
   'foundation':               'foundation',
   'powder-mage':              'powder-mage',
+  'belgariad':                'belgariad',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────
