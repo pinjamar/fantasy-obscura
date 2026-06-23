@@ -7,7 +7,6 @@ export const assassinsApprentice: BooksLikeEntry = {
     author: 'Robin Hobb',
     db_slug: 'assassins-apprentice',
     reading_order_slug: 'robin-hobb',
-    cover_url: 'https://covers.openlibrary.org/b/isbn/9780553573398-L.jpg',
     darkness_level: 4,
     heat_level: null,
     series: 'The Farseer Trilogy',
@@ -53,8 +52,6 @@ export const assassinsApprentice: BooksLikeEntry = {
         {
           title: 'The Name of the Wind',
           author: 'Patrick Rothfuss',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780756404079-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -78,10 +75,8 @@ export const assassinsApprentice: BooksLikeEntry = {
         {
           title: 'The Goblin Emperor',
           author: 'Katherine Addison',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765365682-L.jpg',
           darkness_level: 2,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: true,
           audiobook: true,
           note: 'Maia is thrust onto a throne he never wanted, surrounded by people who either fear or resent him, and the novel is entirely about the interior life of someone trying to be good under impossible circumstances. The emotional register — outsider in a court, desperate for belonging, choosing kindness when cruelty would be easier — is the closest any standalone comes to the Farseer experience.',
@@ -106,10 +101,8 @@ export const assassinsApprentice: BooksLikeEntry = {
         {
           title: 'Tigana',
           author: 'Guy Gavriel Kay',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780451457769-L.jpg',
           darkness_level: 3,
-          heat_level: 'Open Door',
+          heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
           note: "Kay writes literary fantasy at the same emotional register as Hobb — every political manoeuvre has a personal cost, every betrayal lands because you understand all sides. Tigana is about a conquered people whose very name has been erased from memory, and the book handles grief, identity, and resistance with the same care Hobb brings to loyalty and belonging.",
@@ -128,8 +121,6 @@ export const assassinsApprentice: BooksLikeEntry = {
         {
           title: 'A Memory Called Empire',
           author: 'Arkady Martine',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781250186430-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -159,10 +150,8 @@ export const assassinsApprentice: BooksLikeEntry = {
         {
           title: 'The Traitor Baru Cormorant',
           author: 'Seth Dickinson',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765380722-L.jpg',
           darkness_level: 4,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The Masquerade',
           series_number: 1,
@@ -184,10 +173,8 @@ export const assassinsApprentice: BooksLikeEntry = {
         {
           title: 'The Blade Itself',
           author: 'Joe Abercrombie',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780575077881-L.jpg',
           darkness_level: 4,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The First Law',
           series_number: 1,

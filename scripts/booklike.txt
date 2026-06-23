@@ -86,10 +86,10 @@
 66. ✅ Books like She Who Became the Sun
 67. ✅ Books like The Jasmine Throne
 68. Books like The Traitor Baru Cormorant
-69. Books like The Book Eaters
+69. ✅ Books like The Book Eaters
 70. Books like Mexican Gothic
 71. ✅ Books like The Atlas Six
-72. Books like Tress of the Emerald Sea
+72. ✅ Books like Tress of the Emerald Sea
 
 ### YA Fantasy & Crossover (14)
 73. ✅ Books like Harry Potter
@@ -671,22 +671,6 @@ Slug: /reading-orders/riyria
 
 
 69 The Belgariad Reading Order (David Eddings)
-
-Two complete quintet series plus two companion novels — all 12 books written by David and Leigh Eddings:
-The Belgariad (5 books): Pawn of Prophecy → Queen of Sorcery → Magician's Gambit → Castle of Wizardry → Enchanter's End Game
-The Malloreon (5 books, direct sequel): Guardians of the West → King of the Murgos → Demon Lord of Karanda → Sorceress of Darshiva → The Seeress of Kell
-Companion novels: Belgarath the Sorcerer → Polgara the Sorceress — backstory for the two most beloved supporting characters; read after finishing both quintet series, not before
-
-Read The Belgariad first, then The Malloreon — the second series follows directly from the end of the first with the same cast. The companion novels are rewards for readers who have already committed; they spoil the outcomes of both quintet series.
-
-The premise: Garion, a farm boy raised by his aunt Pol, discovers his lineage is at the centre of a 7,000-year prophecy. Archetypal chosen-one epic — long journey through kingdoms, mentor figure (Belgarath, world's oldest sorcerer), final confrontation the world has been moving toward.
-Why it holds up: Eddings wrote both series with his wife Leigh (credited only posthumously on later editions); the characterisation of the ensemble — particularly Belgarath and Polgara — is warm, witty, and unusually good for 1980s epic fantasy; the banter is the series' real achievement
-The structure: each book is short by modern standards (250–300 pages); the Belgariad reads as one continuous story across five volumes; pacing is brisk, never padded
-The Malloreon: wider cast, some new nations introduced, the same tone; considered slightly weaker than the Belgariad by most readers but a satisfying conclusion; do not read it before finishing the Belgariad
-
-Related Eddings work (same world, different era):
-The Elenium (3 books): The Diamond Throne → The Ruby Knight → The Sapphire Rose — a Crusades-inflected chivalric fantasy, older protagonist (Sparhawk, a knight rather than a farm boy), darker tone; standalone and unconnected to the Belgariad world but same authorial voice; read after the Belgariad/Malloreon or as a separate entry point
-The Tamuli (3 books): direct sequel to the Elenium — same relationship as Malloreon to Belgariad
 
 Slug: /reading-orders/belgariad
 

@@ -5,8 +5,6 @@ export const americanGods: BooksLikeEntry = {
   source: {
     title: 'American Gods',
     author: 'Neil Gaiman',
-    db_slug: 'american-gods',
-    cover_url: 'https://covers.openlibrary.org/b/isbn/9780380973651-L.jpg',
     darkness_level: 3,
     heat_level: null,
     series: null,
@@ -64,8 +62,6 @@ export const americanGods: BooksLikeEntry = {
         {
           title: 'Anansi Boys',
           author: 'Neil Gaiman',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780060515195-L.jpg',
           darkness_level: 2,
           heat_level: null,
           standalone: true,
@@ -82,8 +78,6 @@ export const americanGods: BooksLikeEntry = {
         {
           title: 'Circe',
           author: 'Madeline Miller',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg',
           darkness_level: 3,
           heat_level: 'Open Door',
           standalone: true,
@@ -137,8 +131,6 @@ export const americanGods: BooksLikeEntry = {
         {
           title: 'Neverwhere',
           author: 'Neil Gaiman',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780380973636-L.jpg',
           darkness_level: 3,
           heat_level: null,
           standalone: true,
@@ -166,8 +158,6 @@ export const americanGods: BooksLikeEntry = {
         {
           title: 'Piranesi',
           author: 'Susanna Clarke',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781635575637-L.jpg',
           darkness_level: 2,
           heat_level: null,
           standalone: true,
@@ -184,8 +174,6 @@ export const americanGods: BooksLikeEntry = {
         {
           title: 'Jonathan Strange & Mr Norrell',
           author: 'Susanna Clarke',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781582344164-L.jpg',
           darkness_level: 3,
           heat_level: null,
           standalone: true,

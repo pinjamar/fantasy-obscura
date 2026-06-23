@@ -3,69 +3,69 @@ INDEXING STATUS — generated 2026-06-10
 
 AUTHORS — ENRICHED (indexable): 344
 ------------------------------------------------------------
-Mercedes Lackey                          122 books  /authors/mercedes-lackey/
-Andre Norton                             111 books  /authors/andre-norton/
-Piers Anthony                            92 books  /authors/piers-anthony/
-L.E. Modesitt                            90 books  /authors/l-e-modesitt/
-Michael Moorcock                         87 books  /authors/michael-moorcock/
-Gena Showalter                           85 books  /authors/gena-showalter/
-Poul Anderson                            83 books  /authors/poul-anderson/
-Kelley Armstrong                         81 books  /authors/kelley-armstrong/
+✅Mercedes Lackey                          122 books  /authors/mercedes-lackey/
+✅Andre Norton                             111 books  /authors/andre-norton/
+✅Piers Anthony                            92 books  /authors/piers-anthony/
+✅L.E. Modesitt                            90 books  /authors/l-e-modesitt/
+✅Michael Moorcock                         87 books  /authors/michael-moorcock/
+✅Gena Showalter                           85 books  /authors/gena-showalter/
+✅Poul Anderson                            83 books  /authors/poul-anderson/
+✅Kelley Armstrong                         81 books  /authors/kelley-armstrong/
 Simon R. Green                           74 books  /authors/simon-r-green/
 Christopher Golden                       74 books  /authors/christopher-golden/
-Anne McCaffrey                           73 books  /authors/anne-mccaffrey/
+✅Anne McCaffrey                           73 books  /authors/anne-mccaffrey/
 Lynsay Sands                             73 books  /authors/lynsay-sands/
 Sherrilyn Kenyon                         70 books  /authors/sherrilyn-kenyon/
-Stephen King                             65 books  /authors/stephen-king/
+✅Stephen King                             65 books  /authors/stephen-king/
 Nalini Singh                             65 books  /authors/nalini-singh/
 Seanan McGuire                           65 books  /authors/seanan-mcguire/
-R.A. Salvatore                           63 books  /authors/r-a-salvatore/
+✅R.A. Salvatore                           63 books  /authors/r-a-salvatore/
 Jennifer L. Armentrout                   61 books  /authors/jennifer-l-armentrout/
-Terry Brooks                             59 books  /authors/terry-brooks/
+✅Terry Brooks                             59 books  /authors/terry-brooks/
 Kevin J. Anderson                        58 books  /authors/kevin-j-anderson/
 Jennifer Estep                           57 books  /authors/jennifer-estep/
 Margaret Weis                            57 books  /authors/margaret-weis/
 Dave Duncan                              55 books  /authors/dave-duncan/
 Charlaine Harris                         55 books  /authors/charlaine-harris/
 Tao Wong                                 54 books  /authors/tao-wong/
-Adrian Tchaikovsky                       52 books  /authors/adrian-tchaikovsky/
-Terry Pratchett                          52 books  /authors/terry-pratchett/
+✅Adrian Tchaikovsky                       52 books  /authors/adrian-tchaikovsky/
+✅Terry Pratchett                          52 books  /authors/terry-pratchett/
 Thomas K. Carpenter                      50 books  /authors/thomas-k-carpenter/
 Caroline Peckham                         49 books  /authors/caroline-peckham/
 Rachel Caine                             49 books  /authors/rachel-caine/
 Tracy Hickman                            49 books  /authors/tracy-hickman/
-Brandon Sanderson                        48 books  /authors/brandon-sanderson/
-Glen Cook                                48 books  /authors/glen-cook/
+✅Brandon Sanderson                        48 books  /authors/brandon-sanderson/
+✅Glen Cook                                48 books  /authors/glen-cook/
 Fritz Leiber                             46 books  /authors/fritz-leiber/
-Raymond E. Feist                         44 books  /authors/raymond-e-feist/
+✅Raymond E. Feist                         44 books  /authors/raymond-e-feist/
 Jack Vance                               42 books  /authors/jack-vance/
 Kate Elliott                             40 books  /authors/kate-elliott/
-Seth Ring                                40 books  /authors/seth-ring/
+✅Seth Ring                                40 books  /authors/seth-ring/
 Charles de Lint                          40 books  /authors/charles-de-lint/
 Charles Stross                           39 books  /authors/charles-stross/
 Faith Hunter                             37 books  /authors/faith-hunter/
 David Gemmell                            37 books  /authors/david-gemmell/
-Roger Zelazny                            37 books  /authors/roger-zelazny/
+✅Roger Zelazny                            37 books  /authors/roger-zelazny/
 Ilona Andrews                            37 books  /authors/ilona-andrews/
 Eoin Colfer                              37 books  /authors/eoin-colfer/
 Michael A. Stackpole                     36 books  /authors/michael-a-stackpole/
 Tamora Pierce                            36 books  /authors/tamora-pierce/
 Holly Black                              36 books  /authors/holly-black/
-David Eddings                            36 books  /authors/david-eddings/
+✅David Eddings                            36 books  /authors/david-eddings/
 C.J. Cherryh                             36 books  /authors/c-j-cherryh/
-Orson Scott Card                         36 books  /authors/orson-scott-card/
+✅Orson Scott Card                         36 books  /authors/orson-scott-card/
 Marie Brennan                            35 books  /authors/marie-brennan/
-Ursula K. Le Guin                        35 books  /authors/ursula-k-le-guin/
-Jim Butcher                              35 books  /authors/jim-butcher/
+✅Ursula K. Le Guin                        35 books  /authors/ursula-k-le-guin/
+✅Jim Butcher                              35 books  /authors/jim-butcher/
 Shannon Hale                             35 books  /authors/shannon-hale/
 Kate Forsyth                             35 books  /authors/kate-forsyth/
 Sylvia Day                               34 books  /authors/sylvia-day/
-Terry Goodkind                           34 books  /authors/terry-goodkind/
+✅Terry Goodkind                           34 books  /authors/terry-goodkind/
 Cassandra Clare                          33 books  /authors/cassandra-clare/
 Kim Harrison                             33 books  /authors/kim-harrison/
-J.R.R. Tolkien                           32 books  /authors/j-r-r-tolkien/
+✅J.R.R. Tolkien                           32 books  /authors/j-r-r-tolkien/
 Tim O'rourke                             32 books  /authors/tim-orourke/
-Garth Nix                                32 books  /authors/garth-nix/
+✅Garth Nix                                32 books  /authors/garth-nix/
 Larry Correia                            31 books  /authors/larry-correia/
 David Dalglish                           31 books  /authors/david-dalglish/
 Ed Greenwood                             31 books  /authors/ed-greenwood/
@@ -75,21 +75,21 @@ Dakota Krout                             29 books  /authors/dakota-krout/
 Chloe Neill                              29 books  /authors/chloe-neill/
 Martha Wells                             29 books  /authors/martha-wells/
 Katherine Kurtz                          28 books  /authors/katherine-kurtz/
-Rick Riordan                             28 books  /authors/rick-riordan/
+✅Rick Riordan                             28 books  /authors/rick-riordan/
 Scott Westerfeld                         28 books  /authors/scott-westerfeld/
-Gene Wolfe                               28 books  /authors/gene-wolfe/
+✅Gene Wolfe                               28 books  /authors/gene-wolfe/
 Carrie Vaughn                            27 books  /authors/carrie-vaughn/
 Brandon Mull                             27 books  /authors/brandon-mull/
 P.C. Cast                                27 books  /authors/p-c-cast/
-Tad Williams                             27 books  /authors/tad-williams/
+✅Tad Williams                             27 books  /authors/tad-williams/
 Jeff VanderMeer                          27 books  /authors/jeff-vandermeer/
 Thomas E. Sniegoski                      26 books  /authors/thomas-e-sniegoski/
 Peter S. Beagle                          26 books  /authors/peter-s-beagle/
-Will Wight                               26 books  /authors/will-wight/
+✅Will Wight                               26 books  /authors/will-wight/
 Thea Harrison                            26 books  /authors/thea-harrison/
 Anne Bishop                              26 books  /authors/anne-bishop/
 Patricia A. McKillip                     25 books  /authors/patricia-a-mckillip/
-Robert Jordan                            25 books  /authors/robert-jordan/
+✅Robert Jordan                            25 books  /authors/robert-jordan/
 Paul Kearney                             24 books  /authors/paul-kearney/
 Michael J. Sullivan                      24 books  /authors/michael-j-sullivan/
 Django Wexler                            24 books  /authors/django-wexler/
@@ -100,9 +100,9 @@ Elise Kova                               24 books  /authors/elise-kova/
 Sarah Beth Durst                         23 books  /authors/sarah-beth-durst/
 J. R. Ward                               23 books  /authors/j-r-ward/
 Kathryn Kaleigh                          23 books  /authors/kathryn-kaleigh/
-Neil Gaiman                              23 books  /authors/neil-gaiman/
-Mark Lawrence                            23 books  /authors/mark-lawrence/
-Steven Erikson                           23 books  /authors/steven-erikson/
+✅Neil Gaiman                              23 books  /authors/neil-gaiman/
+✅Mark Lawrence                            23 books  /authors/mark-lawrence/
+✅Steven Erikson                           23 books  /authors/steven-erikson/
 Christopher G. Nuttall                   23 books  /authors/christopher-g-nuttall/
 Fiona McIntosh                           22 books  /authors/fiona-mcintosh/
 Brian Jacques                            22 books  /authors/brian-jacques/
@@ -111,14 +111,14 @@ James A. Hunter                          22 books  /authors/james-a-hunter/
 Irene Radford                            22 books  /authors/irene-radford/
 Veronica Roth                            21 books  /authors/veronica-roth/
 T. Kingfisher                            21 books  /authors/t-kingfisher/
-Robin Hobb                               21 books  /authors/robin-hobb/
+✅Robin Hobb                               21 books  /authors/robin-hobb/
 Harmon Cooper                            21 books  /authors/harmon-cooper/
 Steven Brust                             21 books  /authors/steven-brust/
 Daniel Abraham                           20 books  /authors/daniel-abraham/
 Charlie N. Holmberg                      20 books  /authors/charlie-n-holmberg/
 Phil Tucker                              19 books  /authors/phil-tucker/
 Ken Liu                                  19 books  /authors/ken-liu/
-James S.A. Corey                         19 books  /authors/james-s-a-corey/
+✅James S.A. Corey                         19 books  /authors/james-s-a-corey/
 David Farland                            19 books  /authors/david-farland/
 Tanith Lee                               19 books  /authors/tanith-lee/
 Brian Herbert                            18 books  /authors/brian-herbert/
@@ -126,13 +126,13 @@ Michelle Sagara                          18 books  /authors/michelle-sagara/
 Melanie Rawn                             18 books  /authors/melanie-rawn/
 Tim Powers                               18 books  /authors/tim-powers/
 Lara Adrian                              18 books  /authors/lara-adrian/
-Philip Pullman                           18 books  /authors/philip-pullman/
+✅Philip Pullman                           18 books  /authors/philip-pullman/
 Jessica Day George                       18 books  /authors/jessica-day-george/
-George R.R. Martin                       18 books  /authors/george-r-r-martin/
+✅George R.R. Martin                       18 books  /authors/george-r-r-martin/
 Patti Larsen                             18 books  /authors/patti-larsen/
 Tony DiTerlizzi                          17 books  /authors/tony-diterlizzi/
 Marie Lu                                 17 books  /authors/marie-lu/
-Andrzej Sapkowski                        17 books  /authors/andrzej-sapkowski/
+✅Andrzej Sapkowski                        17 books  /authors/andrzej-sapkowski/
 Andrew Rowe                              17 books  /authors/andrew-rowe/
 Janny Wurts                              17 books  /authors/janny-wurts/
 V.E. Schwab                              17 books  /authors/v-e-schwab/
@@ -147,10 +147,10 @@ W.J. May                                 17 books  /authors/w-j-may/
 Rob J. Hayes                             17 books  /authors/rob-j-hayes/
 Jim C. Hines                             17 books  /authors/jim-c-hines/
 Naomi Novik                              16 books  /authors/naomi-novik/
-J.K. Rowling                             16 books  /authors/j-k-rowling/
+✅J.K. Rowling                             16 books  /authors/j-k-rowling/
 Sarah Rees Brennan                       16 books  /authors/sarah-rees-brennan/
 Jennifer Fallon                          16 books  /authors/jennifer-fallon/
-Sarah J. Maas                            16 books  /authors/sarah-j-maas/
+✅Sarah J. Maas                            16 books  /authors/sarah-j-maas/
 Tom Lloyd                                16 books  /authors/tom-lloyd/
 Diana Gabaldon                           16 books  /authors/diana-gabaldon/
 Jacqueline Carey                         16 books  /authors/jacqueline-carey/
@@ -173,15 +173,15 @@ Claire North                             14 books  /authors/claire-north/
 China Mieville                           14 books  /authors/china-mieville/
 Alexandra Bracken                        14 books  /authors/alexandra-bracken/
 Darynda Jones                            14 books  /authors/darynda-jones/
-Joe Abercrombie                          14 books  /authors/joe-abercrombie/
+✅Joe Abercrombie                          14 books  /authors/joe-abercrombie/
 Jenn Lyons                               13 books  /authors/jenn-lyons/
-Peter V. Brett                           13 books  /authors/peter-v-brett/
+✅Peter V. Brett                           13 books  /authors/peter-v-brett/
 Terry Mancour                            13 books  /authors/terry-mancour/
 Silvia Moreno-Garcia                     13 books  /authors/silvia-moreno-garcia/
 Cinda Williams Chima                     13 books  /authors/cinda-williams-chima/
 Richard Swan                             13 books  /authors/richard-swan/
 Michael Scott                            13 books  /authors/michael-scott/
-Leigh Bardugo                            13 books  /authors/leigh-bardugo/
+✅Leigh Bardugo                            13 books  /authors/leigh-bardugo/
 Jaye Wells                               13 books  /authors/jaye-wells/
 C.S. Lewis                               13 books  /authors/c-s-lewis/
 C.C. Hunter                              13 books  /authors/c-c-hunter/
@@ -224,20 +224,20 @@ Delemhach                                10 books  /authors/delemhach/
 Carissa Broadbent                        10 books  /authors/carissa-broadbent/
 Suzanne Collins                          10 books  /authors/suzanne-collins/
 Sever Bronny                             10 books  /authors/sever-bronny/
-John Gwynne                              10 books  /authors/john-gwynne/
+✅John Gwynne                              10 books  /authors/john-gwynne/
 Anna Stephens                            10 books  /authors/anna-stephens/
 Nghi Vo                                  10 books  /authors/nghi-vo/
 J. Lynn                                  10 books  /authors/j-lynn/
 Victoria Aveyard                         10 books  /authors/victoria-aveyard/
-Ian C. Esslemont                         10 books  /authors/ian-c-esslemont/
+✅Ian C. Esslemont                         10 books  /authors/ian-c-esslemont/
 Dan Abnett                               10 books  /authors/dan-abnett/
 Diana Wynne Jones                        10 books  /authors/diana-wynne-jones/
-Brent Weeks                              10 books  /authors/brent-weeks/
+✅Brent Weeks                              10 books  /authors/brent-weeks/
 Sara Raasch                              10 books  /authors/sara-raasch/
 Diane Duane                              10 books  /authors/diane-duane/
 Laini Taylor                             10 books  /authors/laini-taylor/
 Elizabeth Moon                           10 books  /authors/elizabeth-moon/
-Brian McClellan                          10 books  /authors/brian-mcclellan/
+✅Brian McClellan                          10 books  /authors/brian-mcclellan/
 Karen Marie Moning                       10 books  /authors/karen-marie-moning/
 Craig Alanson                            9 books  /authors/craig-alanson/
 Marissa Meyer                            9 books  /authors/marissa-meyer/
