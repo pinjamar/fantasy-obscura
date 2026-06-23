@@ -30,7 +30,7 @@ const autoRelated = BOOKS_LIKE
   .slice(0, Math.max(0, RELATED_TARGET - related.length))
 const allRelated = [...related, ...autoRelated]
 const sourceAuthors = source.author.split(/\s*&\s*/)
-const authorSlug = toSlug(sourceAuthors[0])
+const authorSlug = (source as any).author_slug ?? toSlug(sourceAuthors[0])
 const seriesSlug = source.series ? toSlug(source.series) : null
 const sourceBookSlug = source.db_slug ?? toSlug(source.title.replace(/\s*\([^)]*\)/g, '').trim())
 
@@ -198,7 +198,7 @@ const breadcrumbJsonLd = JSON.stringify({
         </a>
       )}
       <p class="mt-2 text-xl text-zinc-500">by {sourceAuthors.map((a, i) => (
-        <><a href={`/authors/${toSlug(a)}/`} class="hover:text-purple-700 transition-colors">{a}</a>{i < sourceAuthors.length - 1 ? ' & ' : ''}</>
+        <><a href={`/authors/${i === 0 ? authorSlug : toSlug(a)}/`} class="hover:text-purple-700 transition-colors">{a}</a>{i < sourceAuthors.length - 1 ? ' & ' : ''}</>
       ))}</p>
 
       <!-- Darkness + Heat badges -->

@@ -132,6 +132,8 @@ import { wizardsFirstRule } from './books-like/wizards-first-rule';
 import { pawnOfProphecy } from './books-like/pawn-of-prophecy';
 import { sheWhoBecameTheSun } from './books-like/she-who-became-the-sun';
 import { redQueen } from './books-like/red-queen';
+import { aSpellForChameleon } from './books-like/a-spell-for-chameleon';
+import { theMagicOfRecluce } from './books-like/the-magic-of-recluce';
 
 export interface BooksLikeRec {
   title: string;
@@ -186,6 +188,7 @@ export interface BooksLikeEntry {
     title: string;
     author: string;
     db_slug?: string; // override when DB slug differs from title-based slug
+    author_slug?: string; // override when author page slug differs from name-based slug (e.g. "Jr." suffix)
     reading_order_slug?: string; // override when reading order slug differs from series-based slug
     cover_url?: string;
     darkness_level: number;
@@ -410,6 +413,8 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   pawnOfProphecy,
   sheWhoBecameTheSun,
   redQueen,
+  aSpellForChameleon,
+  theMagicOfRecluce,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
