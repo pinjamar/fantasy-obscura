@@ -239,19 +239,27 @@ function parseInput() {
       .filter((l) => l && !l.startsWith('#'))
       .map((l) => {
         const [title, author] = l.split('|').map((s) => s.trim());
-        return { title, author: author ?? null };
+        return { title, author: author ?? null, slugOverride: null };
       });
   }
 
   // Single book from CLI args
-  const title = args[0];
-  const author = args[1] ?? null;
+  // Supports optional --slug override-slug flag
+  const slugIdx = args.indexOf('--slug');
+  const slugOverride = slugIdx !== -1 ? args[slugIdx + 1] : null;
+  const cleanArgs = slugIdx !== -1
+    ? args.filter((a, i) => a !== '--slug' && i !== slugIdx + 1)
+    : args;
+
+  const title = cleanArgs[0];
+  const author = cleanArgs[1] ?? null;
   if (!title) {
     console.error('Usage: node scripts/add-books.mjs "Title" "Author"');
+    console.error('       node scripts/add-books.mjs "Title" "Author" --slug custom-slug');
     console.error('       node scripts/add-books.mjs --file books.txt');
     process.exit(1);
   }
-  return [{ title, author }];
+  return [{ title, author, slugOverride }];
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
@@ -284,12 +292,13 @@ async function main() {
   let skipped  = 0;
   let failed   = 0;
 
-  for (const { title, author } of books) {
-    const slug = slugify(title);
-    process.stdout.write(`  "${title}"${author ? ` — ${author}` : ''} … `);
+  for (const { title, author, slugOverride } of books) {
+    const slug = slugOverride ?? slugify(title);
+    process.stdout.write(`  "${title}"${author ? ` — ${author}` : ''}${slugOverride ? ` [slug: ${slug}]` : ''} … `);
 
-    // Dedup check
-    if (existingSlugs.has(slug) || existingTitles.has(title.toLowerCase().trim())) {
+    // Dedup check — when a slug override is given, only block on slug collision (allow same title)
+    const titleMatch = !slugOverride && existingTitles.has(title.toLowerCase().trim());
+    if (existingSlugs.has(slug) || titleMatch) {
       console.log('⏭  already in DB');
       skipped++;
       continue;

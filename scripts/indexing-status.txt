@@ -11,10 +11,10 @@ AUTHORS — ENRICHED (indexable): 344
 ✅Gena Showalter                           85 books  /authors/gena-showalter/
 ✅Poul Anderson                            83 books  /authors/poul-anderson/
 ✅Kelley Armstrong                         81 books  /authors/kelley-armstrong/
-Simon R. Green                           74 books  /authors/simon-r-green/
-Christopher Golden                       74 books  /authors/christopher-golden/
+✅Simon R. Green                           74 books  /authors/simon-r-green/
+✅Christopher Golden                       74 books  /authors/christopher-golden/
 ✅Anne McCaffrey                           73 books  /authors/anne-mccaffrey/
-Lynsay Sands                             73 books  /authors/lynsay-sands/
+✅Lynsay Sands                             73 books  /authors/lynsay-sands/
 Sherrilyn Kenyon                         70 books  /authors/sherrilyn-kenyon/
 ✅Stephen King                             65 books  /authors/stephen-king/
 Nalini Singh                             65 books  /authors/nalini-singh/

@@ -6,7 +6,6 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
     title: 'The Awakening',
     author: 'Caroline Peckham & Susanne Valenti',
     db_slug: 'zodiac-academy-1-the-awakening',
-    cover_url: 'https://covers.openlibrary.org/b/isbn/9781912986224-L.jpg',
     darkness_level: 3,
     heat_level: 'Explicit',
     series: 'Zodiac Academy',
@@ -25,7 +24,7 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
     ],
     angle: 'Dark Fae Academy Bully Romance with Royal Twin Heroines',
     answer_line:
-      "If you loved The Awakening for the Heirs making the Vega twins' lives hell, the zodiac-powered fae academy setting, and the slow-burn enemies who are impossible to look away from, start with Corrupt, A Deadly Education, and From Blood and Ash.",
+      "If you loved The Awakening for the Heirs making the Vega twins' lives hell, the zodiac-powered fae academy setting, and the slow-burn enemies who are impossible to look away from, start with Fourth Wing, From Blood and Ash, and Rhapsodic.",
     why_people_love:
       "What Zodiac Academy runs on is a very specific kind of tension: antagonists who are genuinely terrible to the protagonists, in ways that are compelling rather than just unpleasant, and a reader who knows long before the characters do that this is going somewhere. The Heirs — Darius, Orion, Caleb, Seth, Max — are the kind of love interests who earn the enemies half of enemies-to-lovers by actually being enemies first. Peckham and Valenti build the Solarian world with real lore (the zodiac magic system, the Fae hierarchy, the political stakes of two lost royal heirs showing up to claim the throne) so the bullying isn't random cruelty but structured power protection. Having twin heroines matters: Tory and Darcy experience the same world differently, their relationships with the Heirs develop on separate tracks, and the reader gets twice the emotional investment. The series is long — nine books — and the explicit content escalates alongside the stakes. Readers who committed to book one typically finish all nine.",
     why_people_love_rich: [
@@ -43,8 +42,6 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
         {
           title: 'Rhapsodic',
           author: 'Laura Thalassa',
-          cover_url:
-            'https://books.google.com/books/publisher/content/images/frontcover/7y4qMQAACAAJ?fife=w400-h600',
           darkness_level: 4,
           heat_level: 'Explicit',
           standalone: false,
@@ -69,8 +66,6 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
         {
           title: 'A Court of Mist and Fury',
           author: 'Sarah J. Maas',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781619634497-L.jpg',
           darkness_level: 4,
           heat_level: 'Explicit',
           standalone: false,
@@ -99,36 +94,24 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
         'If you loved Zodiac Academy itself — a magical institution with a built-in hierarchy that makes it structurally dangerous to be at the bottom of...',
       recs: [
         {
-          title: 'A Deadly Education',
-          author: 'Naomi Novik',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780593128480-L.jpg',
-          darkness_level: 3,
-          heat_level: null,
+          title: 'Nevernight',
+          author: 'Jay Kristoff',
+          darkness_level: 5,
+          heat_level: 'Explicit',
           standalone: false,
-          series: 'The Scholomance',
+          series: 'The Nevernight Chronicle',
           series_number: 1,
           series_label: 'Trilogy',
           audiobook: true,
-          note: "A school that actively tries to kill its students — the monsters eat the ones without allies or social capital, so the hierarchy is literal survival. Novik builds the same logic as Zodiac Academy: power at this school is structural, and the students at the bottom of it die. El's voice is one of the most distinctive in fantasy — acerbic, self-aware, hiding real vulnerability — and her relationship with Orion (the golden boy who keeps saving people including her) has the same charged antagonism as the Vegas with the Heirs.",
-          caveat: "no explicit content and the romance is slow and secondary; this is academic survival first. But ZA readers who love the school-as-hostile-institution concept find it immediately.",
-          tags: [
-            'Deadly Academy',
-            'Power Hierarchy',
-            'Enemies to Friends',
-            'Survival',
-            'Witty Heroine',
-          ],
-          amazon_url:
-            'https://www.amazon.com/s?k=A+Deadly+Education+Naomi+Novik&tag=librariancura-20',
-          bookshop_url:
-            'https://bookshop.org/search?keywords=A+Deadly+Education+Naomi+Novik&affiliate=122720',
+          note: "An assassin school called the Red Church where teachers are as likely to kill you as train you, and the hierarchy is enforced by your willingness to do things the people above you already have. Mia Corvere enters the Church on a mission that has nothing to do with what the Church thinks it is — the same hidden-agenda-inside-the-institution energy as the Vega twins arriving at Zodiac Academy. The morally complex instructor dynamic has the same charged forbidden tension as the Vegas with Orion. The explicit content and darkness level match what ZA readers want; the prose is considerably more literary.",
+          caveat: "Significantly darker than ZA — this is a 5/5 darkness book with graphic violence and a body count. No bully romance; the antagonism comes from institutional survival rather than love interests making your life miserable.",
+          tags: ['Deadly Academy', 'Dark Hierarchy', 'Morally Grey LI', 'Explicit', 'Revenge Plot'],
+          amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
+          bookshop_url: 'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff&affiliate=122720',
         },
         {
           title: 'Fourth Wing',
           author: 'Rebecca Yarros',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781649374042-L.jpg',
           darkness_level: 4,
           heat_level: 'Explicit',
           standalone: false,
@@ -159,8 +142,6 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
         {
           title: 'Throne of Glass',
           author: 'Sarah J. Maas',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781599906959-L.jpg',
           darkness_level: 3,
           heat_level: 'Open Door',
           standalone: false,
@@ -185,8 +166,6 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
         {
           title: 'From Blood and Ash',
           author: 'Jennifer L. Armentrout',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781952457760-L.jpg',
           darkness_level: 3,
           heat_level: 'Explicit',
           standalone: false,
