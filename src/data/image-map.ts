@@ -94,7 +94,8 @@ export type ReadingOrderImageSlug =
   | 'riftwar-cycle'
   | 'foundation'
   | 'powder-mage'
-  | 'belgariad';
+  | 'belgariad'
+  | 'guy-gavriel-kay';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -172,6 +173,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'foundation':               'foundation',
   'powder-mage':              'powder-mage',
   'belgariad':                'belgariad',
+  'guy-gavriel-kay':          'guy-gavriel-kay',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

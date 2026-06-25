@@ -586,6 +586,38 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
       </div>
     ))}
 
+    <!-- Key characters (expandable pills) -->
+    {curatedEntry.characters && curatedEntry.characters.length > 0 && (
+      <div class="mb-10">
+        <h2 class="font-semibold text-zinc-900 mb-3">Key characters</h2>
+        <div class="flex flex-wrap gap-2 items-start">
+          {curatedEntry.characters.map((char: any) => {
+            const pc = cardColors[char.color] ?? cardColors.zinc;
+            return (
+              <details class="group open:w-full">
+                <summary class="list-none cursor-pointer select-none">
+                  <div class={`inline-flex items-center gap-2 px-4 py-2 rounded-full border ${pc.border} ${pc.bg} hover:brightness-95 transition-all text-sm`}>
+                    <span class={`font-semibold ${pc.title}`}>{char.name}</span>
+                    {char.book && (
+                      <>
+                        <span class="text-zinc-300">·</span>
+                        <span class={`text-xs font-medium ${pc.body}`}>{char.book}</span>
+                      </>
+                    )}
+                    <span class={`${pc.body} opacity-60 ml-0.5 group-open:rotate-180 transition-transform inline-block leading-none`}>↓</span>
+                  </div>
+                </summary>
+                <div class={`mt-2 mb-1 ml-4 pl-3 border-l-2 ${pc.border}`}>
+                  <p class="text-xs text-zinc-500 mb-0.5">{char.role}{char.faction ? ` · ${char.faction}` : ''}</p>
+                  <p class="text-sm text-zinc-600 leading-relaxed">{char.why_they_work}</p>
+                </div>
+              </details>
+            );
+          })}
+        </div>
+      </div>
+    )}
+
     <!-- Darkness table -->
     {curatedEntry.darkness && curatedEntry.darkness.length > 0 && (
       <div class="hidden sm:block mb-10 rounded-xl border bg-zinc-50 p-6">
@@ -594,7 +626,7 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
           {curatedEntry.darkness.map((row) => (
             <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
               <span class="font-medium text-zinc-700 sm:w-44 shrink-0">{row.label}</span>
-              <span class="text-zinc-400">{DARKNESS_CANDLES[row.level] ?? ''}</span>
+              <span class="text-zinc-400 whitespace-nowrap shrink-0">{DARKNESS_CANDLES[row.level] ?? ''}</span>
               <span class="text-zinc-500">{row.desc}</span>
             </div>
           ))}

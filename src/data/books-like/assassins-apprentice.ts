@@ -23,11 +23,11 @@ export const assassinsApprentice: BooksLikeEntry = {
     answer_line:
       "If you loved Assassin's Apprentice for Fitz's emotional depth, the suffocating court politics, and the way Robin Hobb makes sacrifice feel genuinely costly, start with Tigana, The Name of the Wind, and The Traitor Baru Cormorant.",
     why_people_love:
-      "Assassin's Apprentice is one of the most emotionally precise fantasy novels ever written. Fitz is not a chosen one — he is illegitimate, overlooked, and used by everyone who claims to care about him, and Robin Hobb makes you feel every indignity in close detail. The Wit and the Skill are magic systems that cost something real. The court politics are suffocating in the best way. The reason readers return to this series is not the plot — it's that Hobb writes grief, loyalty, and belonging better than almost anyone in the genre. Fair warning: this series will hurt you. It is designed to.",
+      "Robin Hobb builds Fitz's story with a precision that makes every indignity feel specific and earned. Fitz is not a chosen one — he is illegitimate, overlooked, and used by everyone who claims to care about him, and Hobb makes you feel every part of that in close detail. The Wit and the Skill are magic systems with real costs. The court politics are suffocating in the best way. The reason readers return to this series is not the plot — it is that Hobb pins down the exact experience of being loyal to people who regard you as a resource. Fair warning: this series will hurt you. It is designed to.",
     why_people_love_rich: [
       {
         type: 'paragraph',
-        text: "Assassin's Apprentice is one of the most emotionally precise fantasy novels ever written. Fitz is not a chosen one — he is illegitimate, overlooked, and used by everyone who claims to care about him, and Hobb makes you feel every indignity in close detail. The court of the Six Duchies is as beautiful and as suffocating as any in fantasy — everyone has a role, everyone has an agenda, and Fitz never quite fits either.",
+        text: "Fitz is not a chosen one — he is illegitimate, overlooked, and used by everyone who claims to care about him, and Hobb builds his story with a precision that makes every indignity feel specific rather than abstract. The court of the Six Duchies is a dense, functioning system: everyone has a role, everyone has an agenda, Fitz has neither, and the novel's particular cruelty is that the court uses him anyway.",
       },
       {
         type: 'labeled',
@@ -36,7 +36,7 @@ export const assassinsApprentice: BooksLikeEntry = {
       },
       {
         type: 'paragraph',
-        text: "The reason readers return to this series is not the plot — it is that Hobb writes grief, loyalty, and belonging better than almost anyone in the genre. You will know exactly what Fitz should do, watch him be unable to do it, and feel his reasons completely.",
+        text: "The reason readers return to this series is not the plot — it is that Hobb pins down the exact experience of being loyal to people who regard you as a resource, and of wanting belonging so badly that you accept conditions that should disqualify it. You will know exactly what Fitz should do, watch him be unable to do it, and feel his reasons completely.",
       },
       {
         type: 'warning',
@@ -59,7 +59,7 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (unfinished)',
           audiobook: true,
-          note: "The closest thing in modern fantasy to Hobb's first-person intimacy. Kvothe narrates his own life with the same obsessive self-examination as Fitz — the prose is exceptional, the emotional beats hit hard, and the gap between who he is and who he claims to be is the real story.",
+          note: "The closest thing in modern fantasy to Hobb's first-person intimacy. Kvothe narrates his own life with the same obsessive self-examination as Fitz — both protagonists are unreliable not because they lie outright but because they cannot see themselves clearly, and the gap between who they believe they are and what they actually do is where the novel lives.",
           caveat: 'The series is unfinished and has been for over a decade. Read knowing you may not get a conclusion.',
           tags: [
             'First-Person Narration',
@@ -105,7 +105,7 @@ export const assassinsApprentice: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "Kay writes literary fantasy at the same emotional register as Hobb — every political manoeuvre has a personal cost, every betrayal lands because you understand all sides. Tigana is about a conquered people whose very name has been erased from memory, and the book handles grief, identity, and resistance with the same care Hobb brings to loyalty and belonging.",
+          note: "Kay writes literary fantasy at the same emotional register as Hobb — every political manoeuvre has a personal cost, every betrayal lands because you understand all sides. Tigana is about a conquered people whose very name has been erased from memory, and the book handles what it costs a people to have their history erased — politically, personally, generationally — with the same care Hobb brings to what it costs Fitz to give himself to a court that won't acknowledge him.",
           caveat: "Broader cast and less intimate than Fitz's first-person — but equally devastating by the end.",
           tags: [
             'Literary Fantasy',
@@ -157,7 +157,7 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "Baru Cormorant is an accountant who decides to destroy an empire from within, and the novel is ruthless about what that costs her. It shares Hobb's core obsession — loyalty, identity, and the price of survival — and like Hobb it is completely unwilling to protect its protagonist from consequences. One of the most politically sophisticated and emotionally brutal fantasy novels of the last decade.",
+          note: "Baru Cormorant is an accountant who decides to destroy an empire from within, and the novel is ruthless about what that costs her. It shares Hobb's core question — what does a person become when they use loyalty as a tool — and like Hobb it is completely unwilling to protect its protagonist from the answer. The political machinery is as intricate as anything in the Six Duchies, and Dickinson is equally specific about what decisions cost.",
           caveat: 'The ending is one of the most discussed gut-punches in modern fantasy. Go in knowing it will not be kind.',
           tags: [
             'Political Fantasy',

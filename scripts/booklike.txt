@@ -281,63 +281,6 @@ Strong search volume, genuine reading order complexity
 
 25 Guy Gavriel Kay Reading Order
 
-~14 novels, no shared universe — each set in a different secondary world drawn from a real historical civilisation (Byzantium, Moorish Spain, Tang Dynasty China, Provence, Viking Scandinavia). He calls it "one-quarter turn to the fantastic" — fantasy content is minimal and never the point. The point is always human drama and what history does to individuals.
-
-No book requires any other. The guide's primary job is to show which civilisation each book is drawn from so readers can navigate by historical interest, then give a clear entry point recommendation.
-
-The works in recommended reading order for the guide:
-
-THE FIONAVAR TAPESTRY (1984–1986) — earliest work, least representative
-A Summer Tree → The Wandering Fire → The Darkest Road
-Kay's first work, written while assisting Christopher Tolkien on The Silmarillion. Five Canadians summoned to Fionavar, "first of all worlds" — Arthurian/Norse/Celtic mythology. The one Kay book that isn't historical fantasy; prose less controlled than later work. Read in order.
-Recommend for the guide: start here if the reader wants high fantasy with mythological sweep; flag clearly that it does not represent what the rest of Kay's work is. Most readers who come specifically for Kay's historical fantasy should start elsewhere.
-
-THE SARANTINE MOSAIC (1998–2000) — Byzantium
-Sailing to Sarantium → Lord of Emperors
-A mosaic artist summoned to Sarantium (6th-century Byzantium — Justinian, Theodora, Hagia Sophia). Closest Kay comes to pure historical fiction; fantastic element is minimal. Duology, read in order.
-Often cited as Kay's masterpiece. Art, empire, ambition, and what endures — told through a craftsman caught in imperial politics.
-
-LIONS OF AL-RASSAN (1995) — Moorish Spain
-Standalone. Three characters — Kindath physician, Asharite soldier, Jaddite knight — across 11th-century Iberia's religious fault lines as the Reconquista approaches. One of the most emotionally devastating books in the genre. Best entry point for most readers. Darkness: 3.
-
-A SONG FOR ARBONNE (1992) — medieval Provence / troubadour culture
-Standalone. 12th-century Provence — troubadour culture, goddess-worshipping south vs. warlike north. A northern mercenary drawn into the south's conflict. Kay's most romantic novel in the classical sense. Slightly warmer than Lions.
-
-THE LAST LIGHT OF THE SUN (2004) — Viking-era Britain
-Standalone. 9th-century Britain — Anglo-Saxons, Vikings, Welsh. A raid, a king based on Alfred the Great, and what holds a people together under assault. Fae more present than usual for Kay. Quieter and more elegiac than Lions.
-
-TIGANA (1990) — Renaissance Italian city-states
-Standalone. A sorcerer-king has erased the very name "Tigana" from human memory — no one outside can hear or speak it. Survivors fight to make their home exist again in the world's memory. Kay's most politically complex standalone. Darkness: 4.
-Kay's most politically complex standalone and the one most concerned with the cost of resistance. Darkness level: 4. Often recommended as the second read after Lions.
-
-THE UNDER HEAVEN / RIVER OF STARS / A BRIGHTNESS LONG AGO duology/standalone (Tang/Song Dynasty China and Renaissance Italy):
-Under Heaven (2010) — Tang Dynasty China (An Lushan Rebellion period). A man returns from two years burying the dead at a remote mountain pass and is given 250 Sardian horses by a Kitan princess — a gift so valuable it immediately becomes a political weapon. Slower opening than most Kay; the world is the most fully realised of his career.
-River of Stars (2013) — same world as Under Heaven, 400 years later (Song Dynasty period). Standalone — no shared characters, no prior reading required. A woman who would have been a warrior in an earlier era and a poet-official navigate a declining empire.
-A Brightness Long Ago (2019) — a world modelled on 15th-century Italy. A man near the end of his life recounts his youth and the two larger-than-life figures — a mercenary commander and a courtesan — who shaped it. The most structurally experimental of Kay's recent work; the narrator knows how the story ends and tells the reader so, which changes what the reading is.
-Children of Earth and Sky (2016) — same world as Sarantine Mosaic, ~200 years later. Can be read without the duology but rewards prior familiarity.
-
-ALL THE SEAS OF THE WORLD (2022) — same world as Lions of Al-Rassan and Children of Earth and Sky
-Two characters hired to assassinate a religious leader find themselves caught in the political and spiritual consequences of what they do. Set in the same world as Lions but 100+ years later — no overlapping characters. Can be read standalone; Lions readers will recognise the world's history.
-
-Connections between books (critical for the guide):
-Independent worlds: Fionavar, Lions of Al-Rassan/Song for Arbonne/Last Light (these three share a world loosely), Tigana, Sarantine Mosaic/Children of Earth and Sky/All the Seas of the World (these share a world), Under Heaven/River of Stars, A Brightness Long Ago.
-The "Peninsular World" (Lions, Song for Arbonne, Last Light, All the Seas): these share the same secondary world — the Al-Rassan peninsula, Arbonne, the northern kingdoms, the Sarantine Empire — and events in one affect the history referenced in others. However none require prior reading. Guide should note the shared world without making it sound like a required read order.
-The "Sarantium World" (Sarantine Mosaic, Children of Earth and Sky, All the Seas of the World): share the same world across different eras. Reading the Sarantine Mosaic first adds depth to the later books but is not required.
-
-Entry point recommendation for the guide:
-Best first read: Lions of Al-Rassan — the most emotionally immediate, the historical basis (Reconquista/Convivencia) is widely known enough to give context without research, and the three-character dynamic is the best introduction to how Kay structures his novels.
-Second read: Tigana or The Sarantine Mosaic, depending on whether the reader wants standalone or duology.
-Fionavar last — or skip if the reader is not interested in mythological high fantasy. It will read as a lesser version of what Kay later became.
-
-Kay's register — what to tell the reader in the description:
-Prose: formal, measured, emotional without sentimentality. Books about people in the path of forces larger than themselves — Kay gives them dignity without pretending they can win. The fantasy element is always small (a dream, a ghost) — there to remind you this isn't historical fiction, not to drive plot.
-The darkness is primarily emotional, not violent. Kay readers come back for the endings, which are consistently among the most affecting in the genre
-
-Darkness level: 3–4 across all works. No explicit content. Minimal romance heat (present but not the focus). Violence is present but not graphic. The weight is always emotional.
-
-Slug: /reading-orders/guy-gavriel-kay
-
-
 26 Jennifer L. Armentrout Complete Reading Order
 
 50+ novels across multiple series with heavy crossover. The challenge: Armentrout's universes overlap — characters appear in each other's series, events cross-reference. Reading order within and across series matters more than for most authors.
@@ -772,6 +715,84 @@ Content note: this is adult fantasy with explicit sexual content throughout, not
 Pace note: book 1 is the shortest and the slowest to hook — most readers report it clicks hard around book 2 or 3. "Read five books in a week" is a common account. The slow start is load-bearing.
 
 Slug: /reading-orders/zodiac-academy
+
+
+74 Witch World Reading Order (Andre Norton)
+
+One of fantasy's foundational portal-fantasy universes, begun in 1963 and one of the first fantasy settings to develop genuine internal history across its run. Simon Tregarth — a soldier on the run — pays a sorcerer to send him through a dimensional gate and arrives in Estcarp, a matriarchal society where the Old Race women hold power through ancient witch magic, and where an invasion of coldly technological enemies called the Kolder is underway. Norton wrote the core books across two decades; she later edited anthology volumes with other contributors. Quality is uneven across the wider universe; the guide should focus on the Norton-authored core.
+
+Sub-series structure:
+The Estcarp Cycle (Norton, 1963–1965): Witch World → Web of the Witch World → Three Against the Witch World — the original trilogy; Simon Tregarth, the witches of Estcarp, and the Kolder. Foundation of the universe; read first and in order. Fast (each book runs 150–200 pages).
+The Tregarth Children (Norton, 1967–1982): Warlock of the Witch World → Sorceress of the Witch World — follow Simon's three children, each manifesting different and unusual powers. Read after the original trilogy.
+Year of the Unicorn (1965): set in the High Hallack continent rather than Estcarp, different protagonist, different tone — darker, more folkloric, with a Beauty-and-the-Beast-adjacent premise. Often cited as the series' emotional peak. Can be read after the Estcarp trilogy or earlier as an introduction to the High Hallack cycle.
+The anthology volumes (various): Lore of the Witch World, Tales of the Witch World — short fiction set across the universe; some Norton-authored, some by invited contributors. Completionist reading.
+
+Magic system: the witches of Estcarp draw on the Old Power — female-held and celibacy-bound. A witch who sleeps with a man or marries loses her power permanently, which is the series' central tension given that Simon Tregarth arrives and the witch Jaelithe chooses him. The Kolder are the interesting inversion: they are not magical at all — they are technology-users in a pre-industrial world, which is the series' science-fantasy dimension that never became a genre convention but reads as genuinely clever even now.
+
+Entry: Witch World (1963) — the correct and only entry. Reads in 2–3 hours. Then Web of the Witch World immediately after (direct sequel). After that, either continue the Estcarp sequence or read Year of the Unicorn, which stands somewhat apart in tone.
+
+Tone: classic pulp adventure fantasy — fast, inventive, slightly archaic prose by modern standards (Norton's style is compressed and formal). Not grimdark; not gritty; the strangeness of the world feels imaginative rather than threatening. Darkness level: 2–3. No explicit content; light romance; violence present but not graphic.
+
+The gender dynamics of the magic system — female power bound to celibacy — read as complex from a modern lens given when this was written. The guide should note this without over-explaining: Norton was writing against a genre that barely acknowledged women existed; the witch power structure was progressive in 1963 context even if it reads differently now.
+
+Best for: readers interested in classic portal fantasy, foundational female-protagonist fantasy, science-fantasy crossover, or the history of the genre. Not a starting point for readers new to fantasy — it rewards readers who have enough genre context to recognise what Norton was doing.
+
+Slug: /reading-orders/witch-world
+
+
+75 Crown of Stars Reading Order (Kate Elliott)
+
+7 books, complete (1997–2006): King's Dragon → Prince of Dogs → The Burning Stone → Child of Flame → The Gathering Storm → In the Ruins → Crown of Stars
+
+One of epic fantasy's most underrated long series. Set in a richly imagined alternative medieval Europe — primarily modelled on 10th-century Ottonian Germany and Carolingian Francia — where dynastic succession, church politics, and the return of an ancient non-human people converge simultaneously. This is serious epic fantasy in the Tolkien/Jordan tradition with more historical rigour and more interest in institutional power than either.
+
+The Aoi: an ancient non-human people driven from the world by a cataclysm long ago. They are returning. They do not experience time the way humans do — this is not a metaphor but a plot mechanism that affects the series' structure. They are not clearly good or evil but alien in their values and their relationship to history. The series' eventual revelation of what the Aoi want and what the ancient cataclysm actually was is the payoff of the full 7-book arc.
+
+POV structure: multiple third-person POVs; the three primary threads are:
+Alain: an orphaned boy with a deep, wordless connection to two spirit hounds and an Aoi destiny he cannot understand. His arc is the most mythological and the slowest to resolve — it asks for the most patience but pays off fully in the later books.
+Liath: a young woman who can work aetherical magic (reading and manipulating starlight) and who is the most persecuted character in the cast — women with power are suspect; mathematici (astral mages) are burned as heretics by the church. Her arc requires the reader to watch her be constrained and hunted before she finds the space to understand what she is.
+Sanglant: the king's illegitimate son, half-Aoi, a gifted military commander who cannot be killed by ordinary means. His arc is political and physical rather than magical — the clearest structural protagonist of the series' middle and late books.
+
+What the guide must address:
+Read in publication order — there is no alternative. The series accumulates over all seven books; events from books 1–3 pay off in books 5–7 in ways that cannot be spoiled without destroying them.
+The series is long and slow-building: book 1 is 550+ pages and establishes the world more than it delivers action. The payoff for the series arrives in books 6 and 7.
+The middle books (The Gathering Storm especially) are widely cited as the series' most demanding in pacing — the guide should acknowledge this so readers don't abandon at the hardest point.
+Total commitment is Wheel of Time adjacent — 7 books averaging 550–700 pages each. Not a casual read.
+
+Entry: King's Dragon — the only entry. No shortcuts. The challenge is earning the reader's patience across the early books.
+
+Content: darkness level 3–4. War, religious persecution, institutionalised violence, political cruelty. Some sexuality (open door at most — not explicit). Violence is present and occasionally graphic. The darkness is historical and structural rather than gratuitous.
+
+Best for: readers who finished Wheel of Time or A Song of Ice and Fire and want serious epic fantasy with genuine historical texture and patience for slow build. Not for readers who want fast pacing or deconstruction.
+
+Slug: /reading-orders/crown-of-stars
+
+
+76 The Bound and the Broken Reading Order (Ryan Cahill)
+
+4 books published (series ongoing as of 2024): Of Blood and Fire (2020) → Of Darkness and Light (2021) → The Fall (2022) → The Order of the Fabric (2023)
+
+Originally self-published Irish author; the series has become one of the strongest examples of self-published epic fantasy executing the classic Jordan/Tolkien tradition with genuine craft. Cahill commits fully to the foundational template — farm boy protagonist, ancient prophecy, dragon rider bond, world-threatening dark power — and executes it sincerely rather than ironically. The world is built with care, the pacing is faster than Jordan, and the series has grown a substantial and dedicated readership in the self-published epic fantasy community.
+
+Protagonist: Calen Bryer — a young man from the village of Millhaven drawn into a conflict spanning continents when his home is attacked. He discovers he is Draleid — a dragonrider bonded to an egg that hatches into Valerys. His arc is the classic chosen-hero pattern executed sincerely. The bond with Valerys is one of the series' genuine strengths: dragon POV scenes are a standout, and the bond develops rather than being decorative.
+
+World — Epheria:
+The magic system (The Spark) is elemental — Fire, Air, Water, Earth, Spirit — wielded by Mages; internally consistent with specified costs and limits. The Draleid bond (dragonrider power) is a separate and older system. The Dragonguard are the primary institutional antagonist early in the series: soldiers who hunt and kill surviving dragons and their riders on behalf of the empire. The history of Epheria — a world that has already fallen from a higher age — is the engine driving the backstory.
+
+Series structure: the books grow longer as the series progresses. Of Blood and Fire is the fastest and most accessible entry; the world expands significantly by book 3. The series is ongoing; the guide will need updating as books publish.
+
+What the guide must be clear about:
+This is not deconstructive or subversive epic fantasy. Readers expecting something like Abercrombie, Malazan, or the Poppy War will be wrong-footed. This is sincere, craft-executed traditional epic fantasy.
+The clear audience: readers who finished Wheel of Time, Stormlight, or Cradle and want the next series to commit to in the same register. The series is the strongest current recommendation for that reader.
+Self-published origin: the books were professionally edited and produced; there is no quality drop associated with the format. Worth noting for readers unfamiliar with the quality ceiling of modern self-published fantasy.
+
+Entry: Of Blood and Fire. The opening is intentionally classic-feeling. Readers who want a subverted chosen-one template will be disappointed before they finish chapter one.
+
+Tone: earnest epic fantasy — the darkness is genuine (deaths, war, sacrifice, loss) but not gratuitous. Darkness level: 3. No explicit content. Violence present and occasionally significant but not torture-focused. Closest comparables in tone: Wheel of Time books 1–4, early Stormlight, early Cradle.
+
+Slug: /reading-orders/the-bound-and-the-broken
+
+
 ---
 
 ## Notes for Claude Code
@@ -815,8 +836,17 @@ Style guide for all banners:
 - Dramatic atmospheric lighting, strong contrast between dark shadows and vibrant focal light
 - No text, no legible writing anywhere in image
 - No clearly visible character faces (implied presence, silhouettes, or backs only)
-- Square crop (1:1), approximately 800×800px output
+- 1536×1024px, landscape (3:2)
 - Mood-first: each image should feel like the series before you know what it is
 
 ### Need banners — prompts below
+
+**Witch World (Andre Norton)**
+Photorealistic cinematic dark fantasy digital art. A narrow granite arch on a windswept peat moorland at the last moment of twilight — the stone worn smooth and carved with runes that no longer mean anything to anyone living. Through the arch, the sky is wrong: one blood-red moon and one pale silver moon hanging at impossible angles above star clusters that form no earthly constellation. On this side, a hooded woman stands with her back to the viewer, one hand extended palm-out toward the arch, silver-green witch fire trailing from her fingers along the carved channels in the stone, pulsing cold and slow. The dark grass around her bends in a direction the wind is not blowing. Shallow peat pools on the moorland reflect the gate's light back upward. No face visible. No text. 1536×1024px, landscape. Mood: threshold and irreversibility, old power leaking between worlds.
+
+**Crown of Stars (Kate Elliott)**
+Photorealistic cinematic epic fantasy digital art. A great walled city on a high limestone promontory at night — soot-darkened walls, a basilica dome catching cold starlight, watchtower torches burning amber-orange against darkness. Above it, the sky holds stars arranged in deliberate geometric figures — triangles, crosses, overlapping circles — as if the heavens were a diagram, not a sky. On the ancient stone bridge below the gates, a column of iron cavalry moves by torchlight — chain hauberks, one banner pole dipping in wind, the river below reflecting jagged orange flame. Across the far horizon, a line of burning villages stretches left to right: a smear of orange and black smoke that means an army has already passed through. No faces. No text. 1536×1024px, landscape. Mood: something enormous ending and something unknown beginning; grandeur under its own collapse.
+
+**The Bound and the Broken (Ryan Cahill)**
+Photorealistic cinematic epic fantasy digital art. A vast dragon seen from behind and slightly above — scales black-green with iridescent edges, wings fully spread and catching firelight from below. The dragon descends through ragged storm clouds lit underneath in orange and deep red, shafts of ember light breaking through the gaps. Below, the ruins of a burning town stretch across a valley floor — rooftops collapsed into orange columns of smoke, ember sparks rising. The dragon's wingspan casts a shadow across the burning ground that is larger than the town. A single rider grips a dorsal ridge near the neck, leaning forward into the wind, silhouetted black against the churning sky. No face visible. No text. 1536×1024px, landscape. Mood: the last dragonrider above a world that had forgotten what dragons were — power reclaimed, not wielded for the first time.
 

@@ -377,6 +377,12 @@ const READING_ORDER_MAP: Record<string, string> = {
   'Elenium':                             'belgariad',
   'The Tamuli':                          'belgariad',
   'Tamuli':                              'belgariad',
+  // Guy Gavriel Kay
+  'The Fionavar Tapestry':             'guy-gavriel-kay',
+  'Fionavar Tapestry':                 'guy-gavriel-kay',
+  'The Sarantine Mosaic':              'guy-gavriel-kay',
+  'Sarantine Mosaic':                  'guy-gavriel-kay',
+  'Under Heaven':                      'guy-gavriel-kay',
 };
 
 const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
@@ -406,6 +412,7 @@ const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
   'isaac-asimov':      { slug: 'foundation',              label: 'Foundation Reading Order' },
   'brian-mcclellan':   { slug: 'powder-mage',             label: 'Powder Mage Reading Order' },
   'david-eddings':     { slug: 'belgariad',               label: 'The Belgariad Reading Order' },
+  'guy-gavriel-kay':  { slug: 'guy-gavriel-kay',         label: 'Guy Gavriel Kay Complete Reading Guide' },
 };
 
 const universeGuide = AUTHOR_UNIVERSE_MAP[slug ?? ''] ?? null;

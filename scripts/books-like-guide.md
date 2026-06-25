@@ -143,6 +143,53 @@ its first rec does not need to appear in the answer_line.
 
 
 ---
+## AI Slop Patterns — Never Write These
+
+Run this check on every note, caveat, why_people_love, and why_people_love_rich block before publishing.
+
+**The test:** could this sentence appear in a rec note for any book in the genre? If yes, rewrite it with something specific to this book and this source.
+
+### Banned patterns
+
+**Aphorisms** — sentences that sound meaningful but contain no specific information:
+❌ "the truth is stranger than the story"
+❌ "a climax that reframes everything that came before"
+❌ "the quality of a long strange dream"
+❌ "different expressions of the same literary instinct"
+✅ Fix: name what specifically the book does. "Both writers believe the supernatural should feel old and heavy rather than exciting."
+
+**Abstract virtue lists** — three nouns strung together that could describe anything:
+❌ "displacement, faded power, and what you carry from your old world into the new one"
+❌ "identity stripped of its usual context"
+❌ "love, loss, and the weight of the past"
+✅ Fix: make the claim concrete. "Both ask what an ancient being loses when it has to live in the modern world, and what it costs to pass as ordinary."
+
+**Consensus hedges** — avoiding a direct opinion:
+❌ "widely considered one of the best"
+❌ "many readers find this the most rewarding entry point"
+❌ "some readers feel the pacing is slow"
+✅ Fix: say it directly. "The pacing is slow." "Start here."
+
+**Reader-response formulas** — framing opinions through hypothetical readers:
+❌ "Readers who loved X for Y will find this..."
+❌ "If you enjoyed the mythology, this will satisfy."
+✅ Fix: state what the book does. "It shares the same faded-god melancholy. The scale is smaller."
+
+**Financial metaphors** — prose, patience, payoff:
+❌ "rewards patient readers"
+❌ "the payoff is worth the investment"
+❌ "earns its slow burn"
+✅ Fix: say what actually happens late in the book that justifies the pacing.
+
+### After writing — checklist
+- [ ] Generic sentence test applied to every note and why_people_love block
+- [ ] No aphorisms — every sentence contains specific information
+- [ ] No abstract virtue lists
+- [ ] No consensus hedges — opinions stated directly
+- [ ] No reader-response formulas
+- [ ] No financial metaphors for prose or pacing
+
+---
 ## Common Mistakes
 
 | Mistake | Fix |

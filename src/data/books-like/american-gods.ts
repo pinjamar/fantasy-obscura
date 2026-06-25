@@ -21,7 +21,7 @@ export const americanGods: BooksLikeEntry = {
     answer_line:
       "If you loved American Gods for the faded gods living unnoticed in diner booths and roadside motels, Gaiman's melancholy prose, and the sense that America's mythology is stranger and older than it looks — start with Anansi Boys, Circe, and The Golem and the Djinni.",
     why_people_love:
-      "American Gods is a novel about what happens to a god when people stop believing in them — and the answer is that they take demeaning jobs in small American towns and remember what it felt like to be worshipped. Gaiman's central idea is both funny and genuinely sad: Anansi running a funeral parlour, Czernobog working in a slaughterhouse, Odin running a con. Shadow Moon is an unusual protagonist — passive, watchful, more vessel than hero — which gives the novel the quality of a long strange dream. The road trip structure, the heartland atmosphere, and the gathering tension of a war between old and new gods build toward a climax that reframes everything that came before. Fair warning: this is a slow book by design. Gaiman is more interested in atmosphere and mythology than plot momentum. Readers who need things to happen quickly will struggle.",
+      "American Gods is a novel about what happens to a god when people stop believing in them — and the answer is that they take demeaning jobs in small American towns and remember what it felt like to be worshipped. It's both funny and genuinely sad: Anansi running a funeral parlour, Czernobog working in a slaughterhouse, Odin running a con. Shadow Moon is an unusual protagonist. He is passive, watchful, more vessel than hero. He follows Wednesday across America without fully understanding why, and the novel never fully explains it either. The road trip structure, the heartland atmosphere, and the gathering tension of a war between old and new gods build toward a conclusion that answers what Shadow's role in all of this actually is. Fair warning: this is a slow book by design. Gaiman is more interested in atmosphere and mythology than plot momentum. Readers who need things to happen quickly will struggle.",
     fit: {
       perfect_for: [
         'Mythology nerds who love seeing folklore dragged into the grimy modern world.',
@@ -42,11 +42,11 @@ export const americanGods: BooksLikeEntry = {
       {
         type: 'labeled',
         label: 'The Protagonist:',
-        text: 'Shadow Moon is an unusual protagonist. He is passive, watchful, more vessel than hero, which gives the novel the quality of a long strange dream.',
+        text: 'Shadow Moon is an unusual protagonist. He is passive, watchful, more vessel than hero. He follows Wednesday across America without fully understanding why, and the novel never fully explains it either.',
       },
       {
         type: 'paragraph',
-        text: 'The road trip structure, the heartland atmosphere, and the gathering tension of a war between old and new gods build toward a climax that reframes everything that came before.',
+        text: 'The road trip structure, the heartland atmosphere, and the gathering tension of a war between old and new gods build toward a conclusion that answers what Shadow\'s role in all of this actually is.',
       },
       {
         type: 'warning',
@@ -82,7 +82,7 @@ export const americanGods: BooksLikeEntry = {
           heat_level: 'Open Door',
           standalone: true,
           audiobook: true,
-          note: "Gaiman and Miller share the same approach to mythology: both write gods and heroes not as untouchable archetypes but as complicated beings worn down by long lives and poor decisions. Circe is the witch from The Odyssey — dismissed by the Olympians, exiled, slowly discovering the power she was always told she didn't have. Miller's prose has the same lyrical precision as Gaiman's, the same sense that the old myths are true and the truth is stranger than the story.",
+          note: "Gaiman and Miller share the same approach to mythology: both write gods and heroes not as untouchable archetypes but as complicated beings worn down by long lives and poor decisions. Circe is the witch from The Odyssey — dismissed by the Olympians, exiled, slowly discovering the power she was always told she didn't have. Miller's prose has the same lyrical precision as Gaiman's, the same conviction that the old myths encode something real — the way they explain why power isolates and why exile changes people.",
           caveat:
             'More intimate in scale than American Gods — one character, one island, rather than a continent-spanning road trip.',
           tags: [
@@ -114,7 +114,7 @@ export const americanGods: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (2 books)',
           audiobook: true,
-          note: "A golem from Jewish folklore and a djinni from Arabic mythology both arrive in 1899 New York, living unnoticed among immigrant communities in Lower Manhattan. Wecker shares Gaiman's core fascination — what does a creature from an ancient mythology do in the modern world, and how does the modern world change them? The historical immigrant setting gives the mythology the same weight as American Gods' heartland America. Both novels are about displacement, faded power, and what you carry from your old world into the new one.",
+          note: "A golem from Jewish folklore and a djinni from Arabic mythology both arrive in 1899 New York, living unnoticed among immigrant communities in Lower Manhattan. Wecker shares Gaiman's core fascination — what does a creature from an ancient mythology do in the modern world, and how does the modern world change them? The historical immigrant setting gives the mythology the same weight as American Gods' heartland America. Both ask what an ancient being loses when it has to live in the modern world, and what it costs to pass as ordinary.",
           caveat:
             'More character-driven and less plot-driven than American Gods. The mystery elements are gentler.',
           tags: [
@@ -162,7 +162,7 @@ export const americanGods: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: "Piranesi shares American Gods' most distinctive quality: the prose creates a mood so specific and strange that you feel displaced from your own world while reading it. The narrator — a man cataloguing endless halls, tidal statues, and skeletons — doesn't understand what he is or how he got there. Both novels are about identity stripped of its usual context. Clarke's restraint and Gaiman's melancholy are different expressions of the same literary instinct.",
+          note: "Piranesi shares American Gods' most distinctive quality: the prose creates a mood so specific and strange that you feel displaced from your own world while reading it. The narrator — a man cataloguing endless halls, tidal statues, and skeletons — doesn't understand what he is or how he got there. Both protagonists don't know who they are — not as a metaphor, but as a literal condition the novel uses as its central engine. Both writers believe the supernatural should feel old and heavy rather than exciting.",
           caveat:
             'Almost no plot by conventional standards. Entirely atmosphere and mystery.',
           tags: ['Literary Fantasy', 'Mystery', 'Strange Worlds', 'Identity'],

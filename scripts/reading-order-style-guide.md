@@ -27,31 +27,171 @@ EOF
   ```js
   await sb.from('books').update({ publication_year: CORRECT_YEAR }).eq('slug', 'the-book-slug');
   ```
-- If a book is missing from DB, add it with `node scripts/add-books.mjs "Title" "Author"` before writing the guide
+- If a book is missing from DB, add it using the add-books script — see workflow below
 - After writing, run `node scripts/check-reading-order-books.mjs` to verify all slugs exist
+
+### Adding missing books (PowerShell)
+
+```powershell
+cd "c:\Users\Ivan\Desktop\fantasy-obscura"
+node scripts/add-books.mjs "Book Title" "Author Name"
+```
+
+**After adding, always verify and fix the new row:**
+
+```js
+// 1. Confirm slug and check data quality
+const { data } = await sb.from('books').select('slug,title,page_count,publication_year,series').ilike('title', '%Title%');
+console.log(data);
+
+// 2. Common bad data from Google Books API:
+//    - page_count: 0, 26, 29, 45 → clearly wrong for a full novel. Fix it.
+//    - publication_year: may be a reprint year, not the first edition. Cross-check Goodreads.
+//    - series: may be the string "null" instead of SQL NULL. Clear it.
+
+// 3. Fix bad values:
+await sb.from('books').update({ page_count: CORRECT }).eq('slug', 'the-slug');
+await sb.from('books').update({ publication_year: CORRECT }).eq('slug', 'the-slug');
+await sb.from('books').update({ series: null }).eq('slug', 'the-slug'); // clears "null" string
+
+// 4. If add-books created a duplicate (e.g. "a-summer-tree" when "the-summer-tree" exists):
+//    Use the existing slug in the guide and delete the duplicate.
+await sb.from('books').delete().eq('id', 'THE-DUPLICATE-UUID');
+```
+
+**Slug convention:** the script lowercases the title and replaces non-alphanumeric runs with `-`. Articles ("A ", "The ") at the start stay — so "The Summer Tree" → `the-summer-tree`. Always check the generated slug matches before writing it into the guide.
+
+---
+
+## No-Duplicate Rule — Read This Before Writing Anything
+
+**Every fact belongs in exactly one field. Do not copy-paste across fields. Do not paraphrase the same point in two places.**
+
+These are the specific patterns that keep appearing. Each is a hard violation:
+
+### 1. "Start with X" lives in `orderNote` only
+Never end `description` with "Start with [Book]." Never open a "Where to start" section with it. The `description` ends with what makes the series distinctive. The `orderNote` handles reading order. If both end with the same sentence, delete it from `description`.
+
+### 2. "Where to start" section — only if non-obvious
+Do not add a "Where to start" section when the answer is already covered by mandatory badges on the groups + the `orderNote`. If there's one clear entry point and it's already stated, this section is noise. Only add it when there are **multiple genuinely different entry profiles** (e.g., adaptation reader vs. newcomer vs. returning reader) that require their own explanation. The card "Where to Start / Entry Points" counts as covering this — do not have both a card and a section saying the same thing.
+
+### 3. Reading order instructions — state once
+If you write "read X before Y" in `orderNote`, do not also write it in the group `sublabel` AND the book `note`. Pick the most useful location:
+- `orderNote` — for the macro reading order (whole series or sub-series)
+- group `sublabel` — for within-group order
+- book `note` — only for a genuinely non-obvious individual placement; not to repeat what `sublabel` already says
+
+"Do not read before book 1" in the book note is redundant when the group sublabel already says "read in order."
+
+### 4. Cards vs. sections — never duplicate
+If a card covers a point, that point does not appear in sections. If a section covers a point, it does not appear in a card. Before writing any section bullet, check every card body. Before writing any card body, check every section. This is the most common violation.
+
+Common duplicates to watch for:
+- Card says "The standalones are not filler." → section bullet says "The standalones are not filler." → pick one, delete the other
+- Card says "X is a frustrating protagonist by design." → section says "X's passivity is intentional." → same point, different words, same violation
+- Card says "Age of Madness is darker." → content notes bullet says "Age of Madness is darker." → delete from one
+
+### 5. Cards vs. `description` — no restating
+The `description` introduces the author/series. Cards elaborate on specific aspects. If the `description` already names a specific character, the card about that character should add new information — not restate what `description` just said. If `description` says "Glokta is bitter, sharp, and unexpectedly principled," the card does not also say "Glokta is bitter and unexpectedly principled."
+
+### 6. Influence/legacy claims — `description` or "Why it matters" section, not both
+"Joe Abercrombie, Erikson, and Martin have all cited this as a direct influence" appears in `description` or in a "Why it matters" section bullet. Not both. If the influence list is in the description, the "Why it matters" section adds dates, titles, specific quotes — not the same names again.
+
+### 7. Darkness `desc` — no label prefix
+The `label` field already names the book or arc. The `desc` field explains what the darkness is. Never start `desc` with the series or arc name the `label` already states.
+
+❌ `label: 'Under Heaven / River of Stars'`, `desc: 'Kitai Duology — imperial politics...'`
+✅ `label: 'Under Heaven / River of Stars'`, `desc: 'Imperial politics and personal cost...'`
+
+### 8. Edition notes, release dates, specific facts — one field only
+If you write a "split into two volumes" note at the group level, do not also add it to the individual book's `note`. If an upcoming book's release date appears in `orderNote`, it does not also appear in `description` and the card and the book `note`. One field, most relevant location.
 
 ---
 
 ## The Voice
 
-Reading order pages are written by a reader who has finished the series, not a publisher blurb writer.
-The tone is honest, opinionated, and brief. Every sentence should either orient the reader or warn them.
+Write like a book critic who has finished the series — not a publisher, not an AI summarising reviews. Every sentence takes a position. No hedging, no aphorisms, no abstract praise.
 
 **Do:**
 
 - Make the call. "Start here." "Skip this." "Read before book 3 or you'll be lost."
-- Say what the series actually is in plain language. "Military fantasy narrated by a soldier-historian. No chosen ones."
+- Be specific. Name the chapter, the character, the plot mechanic. "Rodrigo's choice in chapter 30" beats "the protagonist's defining moment."
+- State opinions directly. "This is his masterpiece." Not "widely considered his masterpiece" or "often cited as."
 - Flag problems honestly. "The first 50 pages are deliberately disorienting — stick with it."
-- Name the best book. Readers always want to know which one to look forward to.
-- Compare to something familiar if it helps. "Reads more like a soldier's after-action report than a novel."
+- Compare to something concrete. "Reads more like a soldier's after-action report than a novel."
 
 **Don't:**
 
 - Use publisher language. "A breathtaking saga of..." — no.
-- Summarize plot. The synopsis on the book page does that. This page answers: what order, why, what to expect.
+- Summarize plot. The synopsis on the book page does that.
 - Write neutral. Every note should have a point of view.
 - Pad. Short notes for straightforward books. Length only where there's a genuine decision to explain.
-- Add AI disclaimers, "some readers feel," "many fans believe" hedges.
+
+---
+
+## AI Slop Patterns — Never Write These
+
+Google's helpful content system penalises content that sounds generated. These are the specific patterns that trigger it. Every one of these has appeared in guides and needed to be removed.
+
+### 1. Aphorisms that sound profound but say nothing
+These are the worst offender. AI generates compressed wisdom-nuggets that feel quotable but contain no specific information.
+
+❌ "The book earns what it costs you."
+❌ "What endures is what we build, not what we win."
+❌ "It is worth reading as a record of where he started. It is not a guide to what he is."
+❌ "None require prior reading, but each rewards it."
+
+**The test:** could this sentence appear in a review of any literary novel? If yes, cut it or replace it with something specific to this book.
+
+✅ Instead: name what specifically happens in the ending, what the book costs the reader emotionally, what specific idea the book is about.
+
+### 2. Consensus hedges
+AI avoids taking positions by hiding behind implied consensus.
+
+❌ "widely considered his masterpiece"
+❌ "often cited as the best entry point"
+❌ "many readers finish X and realise Y"
+❌ "some readers find the opening slow"
+❌ "readers who want X will find this frustrating"
+
+**The fix:** just say it. "This is his masterpiece." "Start here." "The opening is slow — push through it."
+
+### 3. Reader-response formulas
+AI frames everything through hypothetical readers instead of stating a view.
+
+❌ "If you find her frustrating, the book is working."
+❌ "Readers who want a morally clear protagonist will be disappointed."
+❌ "Those coming from grimdark will find this lighter than expected."
+
+**The fix:** drop the hypothetical reader and state what the book actually does. "She refuses every clean choice the novel offers her. That's the point."
+
+### 4. Financial metaphors for prose quality
+This is one of AI's most recognisable patterns.
+
+❌ "prose that earns its weight slowly and pays it all back at once"
+❌ "a book that rewards patience"
+❌ "the payoff is worth the investment"
+
+**The fix:** say what the prose actually does. "The sentences are long and formal. They slow you down on purpose. By the final chapter that slowness has become weight."
+
+### 5. Abstract virtue lists
+AI pads sentences with lists of abstract nouns that could describe anything.
+
+❌ "themes of love, loyalty, sacrifice, and the cost of resistance"
+❌ "the drama is always human: love, loyalty, the cost of resistance"
+❌ "a story about honour, duty, and what it means to belong"
+
+**The fix:** pick one and say something specific about it. "The central question is whether loyalty to a people is the same thing as loyalty to the idea of that people. Kay says no, and the last hundred pages prove it."
+
+### 6. The gap/space abstraction
+AI loves to locate meaning in "the gap between X and Y" or "the space where X meets Y."
+
+❌ "the gap between those two things is where the most interesting scenes happen"
+❌ "it's in the tension between X and Y that the novel comes alive"
+
+**The fix:** describe the specific scene or moment, not the abstract gap it occupies.
+
+---
 
 **Note length benchmark:**
 
@@ -118,6 +258,48 @@ Always fill this per arc/book-group, not for the whole series as one entry.
 Use honest labels. Don't round up to look edgy or down to avoid scaring readers.
 Include a one-line `desc` that says specifically what the darkness is, not just the level.
 
+### 6. `characters` array
+
+Add a Key Characters section to every guide. The template renders each character as an **expandable pill** — clicking reveals the `why_they_work` text. The pill shows name + role inline; faction appears as a small label inside the expanded panel.
+
+The template supports exactly 6 colors: `blue`, `green`, `amber`, `red`, `purple`, `zinc`. If a guide has more than 6 characters, characters beyond the sixth share a color — that is fine. Do not add new colors to the `cardColors` map.
+
+Scale the character count to the series:
+- Simple trilogy or single standalone: 2–3 main characters
+- Mid-size series (4–10 books, one world): 4–5
+- Multi-novel author guide spanning multiple worlds/series (Kay, Hobb, Wolfe): 6–7, picking 1–2 per major sub-world rather than exhaustively covering all books
+- Large ensemble in a single world (Malazan, WoT, ASOIAF): as many as a newcomer genuinely needs to orient themselves — don't list everyone, list the ones whose absence would disorient a first-time reader
+
+**Skip it only if** the description and book notes already name and contextualise every character a newcomer needs — which is rare.
+
+**Data shape:**
+```ts
+characters: [
+  {
+    name: 'Character Name',
+    role: 'Protagonist / POV narrator / Primary antagonist / etc.',
+    faction: 'The Black Company',  // omit if the series has no faction structure
+    why_they_work: '...',
+  }
+]
+```
+
+**Rendered order:** characters appear BEFORE the darkness progression table.
+
+**Rule for `why_they_work`:** Do NOT restate what `role` or `faction` already say. Choose exactly one of:
+
+- Name the trope this character represents and give a verdict on whether it's executed well or subverted here
+- Compare them to a character from another book the reader likely knows
+- State plainly what type of reader will love or be frustrated by them
+- Point out something non-obvious — a structural function, a common misread, a change across the series that newcomers won't see coming
+
+If none of those apply: write `"no strong take"`. A blank honest field beats a sentence that just restates the role.
+
+**Bad:** `"Croaker is the company's narrator and historian, recording events as they unfold."`  
+(That's the Role field with different words.)
+
+**Good:** `"Classic unreliable-narrator soldier. Readers who want a morally clear protagonist will find Croaker maddening — he admires people he shouldn't and records atrocities without editorialising."` (reader fit + non-obvious structural point)
+
 ---
 
 ## SEO Requirements
@@ -177,6 +359,7 @@ export const mySeriesEntry: ReadingOrderEntry = {
   books: [...],                 // use for flat reading lists without arc grouping
   sections: [...],              // FAQ, facts, content notes, etc.
   darkness: [...],              // per-arc darkness with desc
+  characters: [...],           // optional — see Section 6 for rules and data shape
   booksLikeSlug: '...',         // slug for Books Like cross-link
   finishedLabel: 'Finished?',
   categoryHref: '/fantasy/grimdark',
@@ -269,6 +452,12 @@ The DB handles series numbering automatically. Only override `seriesLabel` when:
 
 **Never** add `seriesLabel` entries like `'Pub #1 · Chrono #2'` to show two orderings simultaneously — handle the debate in cards and sections instead.
 
+**Never put historical setting context in `seriesLabel`** — e.g. `'Standalone — Renaissance Italy'` or `'Kitai Duology #1 — Tang Dynasty'`. The seriesLabel renders as a small, barely readable tag. Historical/setting context belongs in the book's `note` field, where it is actually read.
+
+Rules:
+- Pure standalones (no series): omit `seriesLabel` entirely; put setting info in the first sentence of `note`
+- Series books: use only the series numbering, e.g. `'The Sarantine Mosaic #1'`, `'Kitai Duology #1'`, `'Renaissance quartet #1'` — never append `— Setting Name` or `— century`
+
 ### When publication ≠ recommended reading order
 
 List books in the recommended reading order. Explain the debate entirely in cards and sections.
@@ -339,16 +528,37 @@ For most series the book list already is publication order — a second strip ad
 
 ## Audit Checklist (use before publishing a new guide)
 
-- [ ] `description` leads with what makes the series distinctive, ends with clear entry point
-- [ ] `orderNote` answers the reading order question directly in one paragraph
+### Content
+- [ ] `description` leads with what makes the series distinctive — does NOT end with "Start with X"
+- [ ] `orderNote` answers the reading order question in one paragraph; "Start with X" lives here, not in `description`
 - [ ] 6 cards present, `cardsPosition: 'above'`
-- [ ] "Where to start" section present — OR confirmed it's already answered in description/orderNote (don't duplicate)
 - [ ] "Content notes" section present: darkness type, romance level, explicit content (yes/no), reader fit
-- [ ] Series-specific section present if there's a real search query it answers (pub vs chronological, adaptation context, etc.)
+- [ ] Series-specific section present only if it answers a real search query not covered elsewhere
 - [ ] "Why it matters" section present for established series; skipped for newer series without legacy
 - [ ] `darkness` array filled per arc with `desc` for each entry
+- [ ] `characters` array present with correct count for series size; every `why_they_work` follows the four-option rule (not restating Role/Faction)
 - [ ] `seriesStatusLabel` includes most recent book + year for ongoing series
 - [ ] `booksLikeSlug` filled if a Books Like page exists for this series
-- [ ] `related` has 4–6 slugs of genuinely similar series
-- [ ] No hidden text used anywhere
+- [ ] `related` has exactly 6 slugs of genuinely similar series
 - [ ] All book slugs verified to exist in DB (`node scripts/check-reading-order-books.mjs`)
+
+### AI Slop Check — run this AFTER writing the full guide, not during
+Read every card body, every `why_they_work`, every book note, and every section bullet in sequence and apply the test to each sentence before considering the guide done.
+
+- [ ] No aphorisms — every sentence contains specific information, not compressed wisdom
+- [ ] No consensus hedges ("widely considered," "many readers," "often cited") — state opinions directly
+- [ ] No reader-response formulas ("if you find X, the book is working," "readers who want Y will be disappointed")
+- [ ] No financial metaphors for prose ("earns its weight," "rewards patience," "pays off," "paid forward")
+- [ ] No abstract virtue lists ("love, loyalty, sacrifice, the cost of resistance")
+- [ ] Generic sentence test applied to every card body and `why_they_work`: could this sentence describe any book in the genre? If yes, rewrite it with something specific to this series
+- [ ] Generic sentence test applied to every darkness `desc`: could this describe any dark fantasy? If yes, name what specifically makes this series or arc dark
+
+### No-Duplicate Check (run through every guide before publishing)
+- [ ] `description` does not end with "Start with X" — that sentence is in `orderNote` only
+- [ ] No "Where to start" section if the entry point is already clear from mandatory badges + `orderNote`. If a "Where to start" card exists, there is no "Where to start" section
+- [ ] Every card body checked against every section bullet — no point appears in both
+- [ ] Every card body checked against `description` — no fact restated from description into a card
+- [ ] Reading order instruction ("read A before B") stated in one place only — not in `orderNote` + group `sublabel` + book `note` all at once
+- [ ] Darkness `desc` fields do not start with the series/arc name already in `label`
+- [ ] Influence/legacy author names appear in `description` OR "Why it matters" bullets — not both
+- [ ] Edition notes and release dates appear in one field only

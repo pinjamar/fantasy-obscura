@@ -24,20 +24,20 @@ export const assistantToTheVillain: BooksLikeEntry = {
     answer_line:
       'If you loved Assistant to the Villain for its banter, its morally grey villain love interest, or its found family of delightful misfits, start with The Foxglove King, The Jasad Heir, and The House in the Cerulean Sea.',
     why_people_love:
-      "Evie Sage desperately needs a job and accidentally ends up employed by the most feared villain in the kingdom — and discovers that the villain's lair is staffed by a surprisingly charming collection of misfits, that the work is oddly satisfying, and that her terrifying boss might not be entirely villainous. What made Maehrer's self-published debut a phenomenon is the precise calibration of its tone: the world has stakes and the villain is genuinely imposing, but the novel is primarily a comedy about office life in a fantasy evil organisation, and the banter between Evie and The Villain lands with the same timing as the best enemies-to-lovers romance. The found family of lair employees — the healer, the assassin, the monster in the dungeon — is as much the draw as the romance, and the slow burn is executed with enough restraint that the payoff feels earned. Readers who want romantasy without heavy darkness or explicit content find it here.",
+      "Evie Sage desperately needs a job and accidentally ends up employed by the most feared villain in the kingdom — and discovers that the villain's lair is staffed by a surprisingly charming collection of misfits, that the work is oddly satisfying, and that her terrifying boss might not be entirely villainous. What makes this work is the control of tone: the world has genuine stakes and the villain is genuinely imposing, but the novel is primarily a comedy about office life in a fantasy evil organisation, and Maehrer holds that balance without letting either side swallow the other. The found family of lair employees — the healer, the assassin, the monster in the dungeon — is as much the draw as the romance, and the slow burn is paced so that when the tension finally breaks it doesn't feel contrived. The heat stays closed door; the darkness stays in the background.",
     why_people_love_rich: [
       {
         type: 'paragraph',
-        text: "Evie Sage desperately needs a job and accidentally ends up employed by the most feared villain in the kingdom — and discovers that the villain's lair is staffed by a surprisingly charming collection of misfits, the work is oddly satisfying, and her terrifying boss might not be entirely villainous. What made Maehrer's self-published debut a phenomenon is the precision of its tone: the world has genuine stakes, but the novel is primarily a comedy about office life in a fantasy evil organisation.",
+        text: "Evie Sage desperately needs a job and accidentally ends up employed by the most feared villain in the kingdom — and discovers that the villain's lair is staffed by a surprisingly charming collection of misfits, the work is oddly satisfying, and her terrifying boss might not be entirely villainous. What makes this work is the control of tone: the world has genuine stakes and the villain is genuinely imposing, but the novel is primarily a comedy about office life in a fantasy evil organisation — and Maehrer holds that balance without letting either side swallow the other.",
       },
       {
         type: 'labeled',
         label: 'The Banter:',
-        text: "The exchanges between Evie and The Villain land with the same timing as the best enemies-to-lovers romance — funny, specific, and accumulating charge with each scene. The slow burn is executed with enough restraint that the payoff feels earned rather than manufactured.",
+        text: "The exchanges between Evie and The Villain land with the same timing as the best enemies-to-lovers romance — funny, specific, and accumulating charge with each scene. The slow burn is paced so that when the tension finally breaks it doesn't feel contrived — each scene has done the work.",
       },
       {
         type: 'paragraph',
-        text: "The found family of lair employees — the healer, the assassin, the monster in the dungeon — is as much the draw as the romance. Readers who love the dynamic of misfits finding each other in unlikely circumstances will find it done with unusual care here.",
+        text: "The found family of lair employees — the healer, the assassin, the monster in the dungeon — is as much the draw as the romance. Each of them is specific enough to be funny on their own; together they give the lair the feel of an actual workplace where people have been stuck with each other long enough to become something like family.",
       },
       {
         type: 'warning',
@@ -60,7 +60,7 @@ export const assistantToTheVillain: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (ongoing)',
           audiobook: true,
-          note: 'Lore is a death-magic smuggler pressed into service at the glittering, corrupt court of a Sun Prince who is maybe a god and definitely not trustworthy, alongside a cold, scarred monk who is equally dangerous and considerably more interesting. Whitten writes the villain-adjacent love interest with the same touch as Maehrer: a man defined by institutional power and personal severity who is privately, specifically soft toward the protagonist. The setting is more gothic and the stakes are higher than Assistant to the Villain, but the core dynamic — capable woman navigating a world of dangerous men, finding unexpected allies in the most dangerous ones — is the same.',
+          note: 'Lore is a death-magic smuggler pressed into service at the glittering, corrupt court of a Sun Prince who is maybe a god and definitely not trustworthy, alongside a cold, scarred monk who is equally dangerous and considerably more interesting. Whitten writes the villain-adjacent love interest with the same touch as Maehrer: a man defined by institutional power and personal severity who is privately, specifically soft toward the protagonist. The setting is more gothic and the stakes are higher than Assistant to the Villain, but the structure is the same: a woman without institutional power navigating a room full of men who have it, and finding that the most dangerous one is the one most worth understanding.',
           caveat: 'Darker and more gothic than Assistant to the Villain, and the heat is higher (Open Door vs. Closed Door). Less workplace comedy, more court intrigue and religious corruption.',
           tags: [
             'Morally Grey Love Interest',
@@ -116,7 +116,7 @@ export const assistantToTheVillain: BooksLikeEntry = {
           series_label: 'Series (2 books)',
           audiobook: true,
           note: "A caseworker for magical children is sent to investigate a peculiar orphanage where the most dangerous magical children in the world are kept — and discovers that dangerous and evil are not the same thing. Klune is doing what Maehrer does with the villain's lair: a found family of beings who are classified as threats by polite society, who are in fact just unusual and in need of protection, gathered around an authority figure who takes their welfare seriously. The romance is an extremely slow burn between the caseworker and the orphanage's caretaker, and the emotional warmth is consistent from first page to last.",
-          caveat: 'Lower stakes and higher comfort than Assistant to the Villain — there is no genuine villainy, just bureaucracy and prejudice. The romance develops very slowly. For readers who want the found-family warmth without any of the danger.',
+          caveat: 'Lower stakes and higher comfort than Assistant to the Villain — there is no genuine villainy, just bureaucracy and prejudice. The romance develops very slowly. The danger is bureaucratic rather than physical, and the darkness never arrives.',
           tags: [
             'Found Family',
             'Cosy Fantasy',
@@ -168,7 +168,7 @@ export const assistantToTheVillain: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "A rebel soldier is captured by the Night Empire's most feared commander — the Lightweaver, terrifying war god and enemy of everything she believes in — and the two are forced into a political marriage neither wanted. Guanzon writes enemies-to-lovers with the same banter-forward energy as Maehrer: Talasyn and Alaric snipe at each other constantly, the power imbalance is real, and the comedy of two people who despise each other being forced into proximity is mined expertly. The Philippine mythology underpinning the world gives the romance a different texture from most Western romantasy, and the series is complete.",
+          note: "A rebel soldier is captured by the Night Empire's most feared commander — the Lightweaver, terrifying war god and enemy of everything she believes in — and the two are forced into a political marriage neither wanted. Guanzon writes enemies-to-lovers with the same banter-forward energy as Maehrer: Talasyn and Alaric snipe at each other constantly, the power imbalance is real, and the comedy of two people who despise each other being forced into proximity is handled with real control — the friction stays funny rather than exhausting. The Philippine mythology underpinning the world gives the romance a different texture from most Western romantasy, and the series is complete.",
           caveat: 'Higher heat (Open Door) and much higher stakes than Assistant to the Villain — this is enemies-to-lovers in a war setting, not a workplace comedy. The banter energy is similar; the darkness underneath is not.',
           tags: [
             'Enemies to Lovers',
@@ -189,7 +189,7 @@ export const assistantToTheVillain: BooksLikeEntry = {
           heat_level: 'Sweet Romance',
           standalone: true,
           audiobook: true,
-          note: "A librarian flees a revolution with an armful of stolen spell books and sets up an illegal magic shop in a quiet island village, with the help of a grumpy, overly literal magical creature who has never understood people. Durst is writing what Maehrer writes in miniature: the comedy of a competent, warm protagonist navigating a situation she's technically not supposed to be in, alongside a companion who is technically threatening but practically very funny. The romance is gentle and slow, the magic is inventive, and the whole thing radiates the same cosy-but-stakes energy as the villain's lair scenes.",
+          note: "A librarian flees a revolution with an armful of stolen spell books and sets up an illegal magic shop in a quiet island village, with the help of a grumpy, overly literal magical creature who has never understood people. Durst is writing what Maehrer writes in miniature: the comedy of a competent, warm protagonist navigating a situation she's technically not supposed to be in, alongside a companion who is technically threatening but practically very funny. The romance is gentle and slow, the magic is inventive, and the dynamic — competent protagonist, technically-dangerous-but-actually-funny companion, situation she's not supposed to be in — maps cleanly onto what works in the villain's lair.",
           caveat: 'The villain dynamic is completely absent — this is a woman and a magical creature solving problems together, not enemies-to-lovers. The heat is Sweet Romance rather than Closed Door. Very low conflict overall.',
           tags: [
             'Cosy Fantasy',

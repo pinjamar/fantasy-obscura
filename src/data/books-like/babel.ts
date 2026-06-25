@@ -25,7 +25,7 @@ export const babel: BooksLikeEntry = {
     answer_line:
       'If you loved Babel for its dark academic atmosphere, its colonial fury, or the found family it tears apart, start with The Poppy War, A Memory Called Empire, and The Atlas Six.',
     why_people_love:
-      "Robin Swift is orphaned in Canton and brought to Oxford by a professor who needs his language skills to feed the silver-working magic that powers the British Empire — and spends twelve years becoming brilliant inside an institution that was built on the exploitation of people like him. Kuang's premise is elegant and devastating: the Empire's magic literally runs on the untranslatable gaps between languages, which means it needs scholars from colonised nations while ensuring those scholars remain subordinate. What makes Babel extraordinary is that Robin genuinely loves Oxford — loves the libraries, the Latin, the fellowship of scholars, the specific pleasure of getting something exactly right in translation — and Kuang refuses to let that love be simple or wrong. The found family of Robin, Ramy, Victoire, and Letty is one of the most precisely characterised in recent fantasy, and the reader's knowledge that the institution is going to demand a cost none of them can pay makes every warm scene between them ache. Kuang writes with the same combination of intellectual precision and emotional savagery that she brought to The Poppy War, and Babel is her most formally ambitious novel.",
+      "Robin Swift is orphaned in Canton and brought to Oxford by a professor who needs his language skills to feed the silver-working magic that powers the British Empire — and spends twelve years becoming brilliant inside an institution that was built on the exploitation of people like him. Kuang's premise is elegant and devastating: the Empire's magic literally runs on the untranslatable gaps between languages, which means it needs scholars from colonised nations while ensuring those scholars remain subordinate. What makes Babel extraordinary is that Robin genuinely loves Oxford — loves the libraries, the Latin, the fellowship of scholars, the specific pleasure of getting something exactly right in translation — and Kuang refuses to let that love be simple or wrong. Robin, Ramy, Victoire, and Letty are characterised with enough specificity that the reader can predict how each of them will respond when the institution turns against them — and still be shocked by it. Kuang writes with the same combination of intellectual precision and emotional savagery that she brought to The Poppy War — Babel is the more formally controlled novel, but it hits in the same place.",
     why_people_love_rich: [
       {
         type: 'paragraph',
@@ -34,7 +34,7 @@ export const babel: BooksLikeEntry = {
       {
         type: 'labeled',
         label: 'The Found Family:',
-        text: "Robin, Ramy, Victoire, and Letty are one of the most precisely characterised groups in recent fantasy. The reader's knowledge that the institution is going to demand a cost none of them can pay makes every warm scene between them ache from the first chapter.",
+        text: "Robin, Ramy, Victoire, and Letty are characterised with enough specificity that the reader can predict how each will respond when the institution turns against them — and still be shocked by it. The reader's knowledge that the institution is going to demand a cost none of them can pay makes every warm scene between them ache from the first chapter.",
       },
       {
         type: 'paragraph',
@@ -168,7 +168,7 @@ export const babel: BooksLikeEntry = {
           heat_level: 'Open Door',
           standalone: true,
           audiobook: true,
-          note: "Miller's retelling of the Iliad from Patroclus's perspective is structurally the closest thing in literary fantasy to Babel's emotional logic: a love story (in Babel's case, a found family) whose power is proportional to the reader's knowledge that it ends in grief, told by a narrator who looks back with full awareness of the catastrophe ahead. Both books are about the cost of loyalty to people caught inside systems that will break them, and both writers understand that the way to make tragedy land is to make you love the characters first. If Babel destroyed you emotionally, The Song of Achilles will do it again from a different angle.",
+          note: "Miller's retelling of the Iliad from Patroclus's perspective is structurally the closest thing in literary fantasy to Babel's emotional logic: a love story (in Babel's case, a found family) whose power is proportional to the reader's knowledge that it ends in grief, told by a narrator who looks back with full awareness of the catastrophe ahead. Both books are about the cost of loyalty to people caught inside systems that will break them. Miller builds the Patroclus/Achilles relationship the same way Kuang builds the Babel found family — slowly and specifically enough that the reader has no defences left when the ending comes.",
           caveat: "No institutional critique and no colonial dimension — this is emotional devastation rather than political devastation. Readers who came to Babel primarily for the ideas rather than the grief may find the tonal register a mismatch.",
           tags: [
             'Doomed Romance',
@@ -192,8 +192,8 @@ export const babel: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (ongoing)',
           audiobook: true,
-          note: "Baru Cormorant watches the Empire that colonised her home install a new school, a new accounting system, and new laws about what kinds of love are permitted — and decides the only way to destroy it is to become its most useful accountant. Dickinson is doing what Kuang does but without the anger on the surface: the same colonial logic, the same protagonist who earns institutional power at personal cost, the same terrible question of whether succeeding inside the system is the same as serving it. Baru's situation is darker and more politically complex than Robin's, and the series makes no concessions to comfort, but readers who want Babel's ideological seriousness at maximum intensity will find it here.",
-          caveat: "The ending of book one is one of the most devastating gut-punches in recent fantasy — go in knowing that Dickinson makes no concessions to comfort whatsoever. The series is ongoing and grows considerably denser with each instalment.",
+          note: "Baru Cormorant watches the Empire that colonised her home install a new school, a new accounting system, and new laws about what kinds of love are permitted — and decides the only way to destroy it is to become its most useful accountant. Dickinson is doing what Kuang does but without the anger on the surface: the same colonial logic, the same protagonist who earns institutional power at personal cost, the same terrible question of whether succeeding inside the system is the same as serving it. The colonial logic is as rigorous as Kuang's, and Dickinson presses harder on the question Babel leaves open: what does it actually mean to be useful to a system you want to destroy?",
+          caveat: "The ending of book one is a specific and structural betrayal — Dickinson has built it from page one and you still won't see it coming. The series is ongoing and grows considerably denser with each instalment.",
           tags: [
             'Colonial Themes',
             'Institutional Betrayal',

@@ -46,6 +46,15 @@ export interface QuickCard {
   color: CardColor;
 }
 
+export interface CharacterProfile {
+  name: string;
+  role: string;
+  book?: string;
+  faction?: string;
+  color?: string;
+  why_they_work: string;
+}
+
 export interface ReadingOrderEntry {
   slug: string;
   name: string;
@@ -67,6 +76,7 @@ export interface ReadingOrderEntry {
   cardsPosition?: 'above' | 'below';
   sections?: InfoSection[];
   darkness?: DarknessRow[];
+  characters?: CharacterProfile[];
   finishedLabel: string;
   categoryHref: string;
   categoryLabel: string;
@@ -144,6 +154,7 @@ import { riftwarCycle } from './reading-orders/riftwar-cycle';
 import { foundation } from './reading-orders/foundation';
 import { powderMage } from './reading-orders/powder-mage';
 import { belgariad } from './reading-orders/belgariad';
+import { guyGavrielKay } from './reading-orders/guy-gavriel-kay';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -209,6 +220,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   foundation,
   powderMage,
   belgariad,
+  guyGavrielKay,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
