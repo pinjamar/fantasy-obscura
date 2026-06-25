@@ -126,22 +126,48 @@ If you write a "split into two volumes" note at the group level, do not also add
 
 ## The Voice
 
-Write like a book critic who has finished the series — not a publisher, not an AI summarising reviews. Every sentence takes a position. No hedging, no aphorisms, no abstract praise.
+Voice rules are split by section. Different parts of a guide serve different readers at different moments — the intro and cards are where someone decides whether to commit to a series; book notes are where they navigate it. The register should match.
+
+---
+
+### `description` and Cards — Warm, opinionated, human
+
+This is the voice of a knowledgeable friend who has finished the series and is telling you whether it's worth your time. Direct, specific, honest about weaknesses, with personality. The reader is deciding whether to start — give them a real take, not a summary.
 
 **Do:**
-
-- Make the call. "Start here." "Skip this." "Read before book 3 or you'll be lost."
-- Be specific. Name the chapter, the character, the plot mechanic. "Rodrigo's choice in chapter 30" beats "the protagonist's defining moment."
-- State opinions directly. "This is his masterpiece." Not "widely considered his masterpiece" or "often cited as."
-- Flag problems honestly. "The first 50 pages are deliberately disorienting — stick with it."
-- Compare to something concrete. "Reads more like a soldier's after-action report than a novel."
+- Have opinions and state them plainly. "Book 3 is the weakest. Read it anyway — book 4 needs it."
+- Flag real weaknesses. "The romance subplot in books 5–7 is not good. It gets dropped."
+- Use short punchy sentences as landing pads after longer ones. Rhythm matters more than word count.
+- Compare to something the reader likely knows. "If Sanderson is comfort food, Erikson is the meal you have to earn."
+- Say what kind of reader this is NOT for, not just who it is for.
+- Be specific — name the character, the mechanic, the scene. "Glokta's interrogation scenes" beats "the morally complex protagonist."
 
 **Don't:**
-
 - Use publisher language. "A breathtaking saga of..." — no.
-- Summarize plot. The synopsis on the book page does that.
-- Write neutral. Every note should have a point of view.
-- Pad. Short notes for straightforward books. Length only where there's a genuine decision to explain.
+- Summarise plot. The synopsis on the book page already does that.
+- Write neutral. If every sentence could apply to any fantasy series, rewrite it.
+- Perform casualness with slang ("holy shit", "real talk") — personality comes from specificity and honest takes, not vocabulary.
+- Pad. A card that says one true thing is better than a card that says three vague ones.
+
+**Examples of the register:**
+
+❌ "The series rewards patient readers with a rich, immersive world and unforgettable characters."
+✅ "The first 200 pages are deliberately disorienting. Erikson throws you in cold with no orientation. Push through — it clicks, and when it does, nothing else feels as big."
+
+❌ "Abercrombie is known for his morally complex characters and dark, subversive take on fantasy tropes."
+✅ "Abercrombie writes characters who are trying to be good and failing in interesting ways. The First Law is funny and brutal and ends in a way that will annoy you, which is the point."
+
+---
+
+### `orderNote` — Direct and tight, still opinionated
+
+One paragraph answering the actual reading order question. No personality needed here — just the clearest possible answer. But still opinionated: say "skip the prequel" not "the prequel is optional."
+
+---
+
+### Book notes — Factual and brief, no personality
+
+Placement guidance and any non-obvious context. Not the place for takes. "Read before book 3 or you'll be lost" is a complete book note. Length only where there's a genuine decision to explain (interquels, parallel timelines, divisive entries).
 
 ---
 

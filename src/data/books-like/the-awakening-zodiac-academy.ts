@@ -24,20 +24,33 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
     ],
     angle: 'Dark Fae Academy Bully Romance with Royal Twin Heroines',
     answer_line:
-      "If you loved The Awakening for the Heirs making the Vega twins' lives hell, the zodiac-powered fae academy setting, and the slow-burn enemies who are impossible to look away from, start with Fourth Wing, From Blood and Ash, and Rhapsodic.",
+      "Books that hit the same notes as Zodiac Academy: Fourth Wing for the dangerous academy and cold antagonist love interest, From Blood and Ash for the hidden-identity power reveal with explicit heat, Rhapsodic for the dark fae power-imbalance dynamic.",
     why_people_love:
-      "What Zodiac Academy runs on is a very specific kind of tension: antagonists who are genuinely terrible to the protagonists, in ways that are compelling rather than just unpleasant, and a reader who knows long before the characters do that this is going somewhere. The Heirs — Darius, Orion, Caleb, Seth, Max — are the kind of love interests who earn the enemies half of enemies-to-lovers by actually being enemies first. Peckham and Valenti build the Solarian world with real lore (the zodiac magic system, the Fae hierarchy, the political stakes of two lost royal heirs showing up to claim the throne) so the bullying isn't random cruelty but structured power protection. Having twin heroines matters: Tory and Darcy experience the same world differently, their relationships with the Heirs develop on separate tracks, and the reader gets twice the emotional investment. The series is long — nine books — and the explicit content escalates alongside the stakes. Readers who committed to book one typically finish all nine.",
+      "What Zodiac Academy runs on is a very specific kind of tension: antagonists who are genuinely terrible to the protagonists, in ways that are compelling rather than just unpleasant, and a reader who knows long before the characters do that this is going somewhere. The Heirs (Darius, Orion, Caleb, Seth, Max) are the kind of love interests who earn the enemies half of enemies-to-lovers by actually being enemies first. Peckham and Valenti build the Solarian world with real lore (the zodiac magic system, the Fae hierarchy, the political stakes of two lost royal heirs showing up to claim the throne) so the bullying is not random cruelty but structured power protection. Having twin heroines matters: Tory and Darcy experience the same world differently, their relationships with the Heirs develop on separate tracks, and the reader gets twice the emotional investment. The series is nine books long and the explicit content escalates alongside the stakes. Readers who committed to book one typically finish all nine.",
     why_people_love_rich: [
-      { type: 'paragraph', text: "What Zodiac Academy runs on is a very specific kind of tension: antagonists who are genuinely terrible to the protagonists, in ways that are compelling rather than just unpleasant, and a reader who knows long before the characters do that this is going somewhere. The Heirs — Darius, Orion, Caleb, Seth, Max — are the kind of love interests who earn the enemies half of enemies-to-lovers by actually being enemies first." },
-      { type: 'labeled', label: 'The Heirs:', text: "The bullying isn't random cruelty but structured power protection: the Heirs have real reasons to prevent the Vega twins from claiming the Solarian throne, and the zodiac magic system gives those reasons institutional weight. Peckham and Valenti build the lore (the Fae hierarchy, the political stakes of two lost royal heirs, the zodiac powers) so that the antagonism has consequences beyond the personal — the Vegas aren't just being bullied, they're being blocked from something they're owed." },
-      { type: 'paragraph', text: "Having twin heroines matters: Tory and Darcy experience the same world differently, their relationships with the Heirs develop on separate tracks, and the reader gets twice the emotional investment. The Solarian world is built with real lore and the explicit content escalates alongside the stakes. Readers who committed to book one typically finish all nine — the series has a hold that is specific to it." },
-      { type: 'warning', text: "Zodiac Academy is nine books long and the explicit content escalates significantly from the first book. The bully dynamic is real — early books are not comfortable reads — and the antagonists do things that are not immediately redeemable. The enemies do not warm quickly; the tension holds across the series rather than resolving in book one. Nine books is a real commitment — go in knowing what you're signing up for." },
+      {
+        type: 'paragraph',
+        text: "What Zodiac Academy runs on is a very specific kind of tension: antagonists who are genuinely terrible to the protagonists, in ways that are compelling rather than just unpleasant, and a reader who knows long before the characters do that this is going somewhere. The Heirs (Darius, Orion, Caleb, Seth, Max) are the kind of love interests who earn the enemies half of enemies-to-lovers by actually being enemies first.",
+      },
+      {
+        type: 'labeled',
+        label: 'The Heirs:',
+        text: "The bullying is not random cruelty but structured power protection: the Heirs have real reasons to prevent the Vega twins from claiming the Solarian throne, and the zodiac magic system gives those reasons institutional weight. Peckham and Valenti build the lore (the Fae hierarchy, the political stakes of two lost royal heirs, the zodiac powers) so that the antagonism has consequences beyond the personal. The Vegas are not just being bullied; they are being blocked from something they are owed.",
+      },
+      {
+        type: 'paragraph',
+        text: "Having twin heroines matters: Tory and Darcy experience the same world differently, their relationships with the Heirs develop on separate tracks, and the reader gets twice the emotional investment. The Solarian world is built with real lore and the explicit content escalates alongside the stakes. Readers who committed to book one typically finish all nine: the series has a hold that is specific to it.",
+      },
+      {
+        type: 'warning',
+        text: "Zodiac Academy is nine books long and the explicit content escalates significantly from the first book. The bully dynamic is real; early books are not comfortable reads and the antagonists do things that are not immediately redeemable. The enemies do not warm quickly: the tension holds across the series rather than resolving in book one. Nine books is a real commitment.",
+      },
     ],
   },
   aspects: [
     {
       heading:
-        "If you loved the Heirs — antagonists who make the Vega twins' lives miserable in ways that become increasingly difficult to process as anything simple...",
+        "If you loved the Heirs (antagonists who make the Vega twins' lives miserable in ways that become increasingly difficult to process as anything simple)...",
       recs: [
         {
           title: 'Rhapsodic',
@@ -49,8 +62,8 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: 'Callypso made a bargain with the Bargainer — a notoriously dangerous fae — at seventeen, and now he\'s come to collect. The dynamic maps directly onto the Heirs: a powerful, morally grey fae who has legitimate structural power over the heroine and uses it in ways that are awful and complicated and impossible to stop thinking about. Thalassa builds the same slow-burn of "I shouldn\'t feel anything and I feel everything" that makes the Vegas/Heirs dynamic work, and the dark fae world with its own hierarchy and rules gives it the same high-stakes institutional backdrop as Yvelia.',
-          caveat: "the Bargainer has power over Callie rather than purely hostile intent — this is power-imbalance dark romance more than pure bully romance, but the emotional register is the same.",
+          note: "Callypso made a bargain with the Bargainer (a notoriously dangerous fae) at seventeen, and now he's come to collect. The dynamic maps directly onto the Heirs: a powerful, morally grey fae who has legitimate structural power over the heroine and uses it in ways that are awful and complicated and impossible to stop thinking about. Thalassa builds the same slow-burn of \"I shouldn't feel anything and I feel everything\" that makes the Vegas/Heirs dynamic work, and the dark fae world with its own hierarchy gives it the same high-stakes institutional backdrop as Solaria.",
+          caveat: "The Bargainer has power over Callie rather than purely hostile intent. This is power-imbalance dark romance more than pure bully romance, but the emotional register is the same.",
           tags: [
             'Dark Fae',
             'Power Imbalance',
@@ -73,8 +86,8 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
           series_number: 2,
           series_label: 'Series (5 books)',
           audiobook: true,
-          note: "Rhysand spent all of book one being the antagonist — cruel, threatening, using Feyre in ways that looked unforgivable — and ACOMAF is the book where you get the full picture of what was actually happening. That arc is the ZA template in miniature: the person who was terrible to you turning out to have been operating under constraints you didn't know about, which doesn't erase the behaviour but reframes it completely. The explicit heat in ACOMAF is the highest in the ACOTAR series, the Night Court found family — Mor, Cassian, Azriel, Amren — gives the book its emotional centre, and the ending is genuinely devastating.",
-          caveat: "read ACOTAR first — ACOMAF has no entry point without it.",
+          note: "Rhysand spent all of book one being the antagonist (cruel, threatening, using Feyre in ways that looked unforgivable) and ACOMAF is the book where you get the full picture of what was actually happening. That arc is the ZA template in miniature: the person who was terrible to you turning out to have been operating under constraints you did not know about, which does not erase the behaviour but reframes it completely. The explicit heat in ACOMAF is the highest in the ACOTAR series, the Night Court found family (Mor, Cassian, Azriel, Amren) gives the book its emotional centre, and the ending is genuinely devastating.",
+          caveat: "Read ACOTAR first. ACOMAF has no entry point without it.",
           tags: [
             'Enemies to Lovers',
             'Antagonist Turned LI',
@@ -91,7 +104,7 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved Zodiac Academy itself — a magical institution with a built-in hierarchy that makes it structurally dangerous to be at the bottom of...',
+        'If you loved Zodiac Academy itself (a magical institution with a built-in hierarchy that makes it structurally dangerous to be at the bottom of)...',
       recs: [
         {
           title: 'Nevernight',
@@ -103,8 +116,8 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy',
           audiobook: true,
-          note: "An assassin school called the Red Church where teachers are as likely to kill you as train you, and the hierarchy is enforced by your willingness to do things the people above you already have. Mia Corvere enters the Church on a mission that has nothing to do with what the Church thinks it is — the same hidden-agenda-inside-the-institution energy as the Vega twins arriving at Zodiac Academy. The morally complex instructor dynamic has the same charged forbidden tension as the Vegas with Orion. The explicit content and darkness level match what ZA readers want; the prose is considerably more literary.",
-          caveat: "Significantly darker than ZA — this is a 5/5 darkness book with graphic violence and a body count. No bully romance; the antagonism comes from institutional survival rather than love interests making your life miserable.",
+          note: "An assassin school called the Red Church where teachers are as likely to kill you as train you, and the hierarchy is enforced by your willingness to do things the people above you already have. Mia Corvere enters the Church on a mission that has nothing to do with what the Church thinks it is: the same hidden-agenda-inside-the-institution energy as the Vega twins arriving at Zodiac Academy. The morally complex instructor dynamic has the same charged forbidden tension as the Vegas with Orion. The explicit content and darkness level match what ZA readers want; the prose is considerably more literary.",
+          caveat: "Significantly darker than ZA. This is a 5/5 darkness book with graphic violence and a real body count. No bully romance; the antagonism comes from institutional survival rather than love interests making your life miserable.",
           tags: ['Deadly Academy', 'Dark Hierarchy', 'Morally Grey LI', 'Explicit', 'Revenge Plot'],
           amazon_url: 'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
           bookshop_url: 'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff&affiliate=122720',
@@ -119,8 +132,8 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (ongoing)',
           audiobook: true,
-          note: "A war college where the training is designed to eliminate the physically weak, and Violet Sorrengail — the commander's daughter who had no business being here — has to survive despite everyone expecting her to die. Xaden Riorson has the same structural role as Darius in early ZA: the most powerful person in the building, antagonistic in ways that aren't fully explained yet, and impossible to dismiss. The explicit heat is equivalent, the academy setting is directly comparable, and the series is structured the same way ZA is — each book raises the stakes rather than resolving them, which is why the same kind of reader tends to commit to both.",
-          caveat: "slightly less dark in the bully dynamic — Xaden is cold and obstructive rather than actively cruel.",
+          note: "A war college where the training is designed to eliminate the physically weak, and Violet Sorrengail (the commander's daughter who had no business being here) has to survive despite everyone expecting her to die. Xaden Riorson has the same structural role as Darius in early ZA: the most powerful person in the building, antagonistic in ways that are not fully explained yet, and impossible to dismiss. The explicit heat is equivalent, the academy setting is directly comparable, and the series is structured the same way ZA is: each book raises the stakes rather than resolving them, which is why the same kind of reader tends to commit to both.",
+          caveat: "Slightly less dark in the bully dynamic. Xaden is cold and obstructive rather than actively cruel.",
           tags: [
             'Academy Setting',
             'Enemies to Lovers',
@@ -137,7 +150,7 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the Vega twins slowly coming into their power — lost royals finding out what they actually are in a world that spent years trying to prevent it...',
+        'If you loved the Vega twins slowly coming into their power (lost royals finding out what they actually are in a world that spent years trying to prevent it)...',
       recs: [
         {
           title: 'Throne of Glass',
@@ -149,8 +162,8 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (8 books)',
           audiobook: true,
-          note: "A heroine hiding what she truly is inside an institution that would kill her if it knew — the same structure Peckham and Valenti build for the Vegas. Celaena's arc across eight books is the slow claim of identity and power she's been prevented from exercising, and the antagonistic relationships of early books become something else across the series in exactly the way Zodiac Academy's do. Multiple love interests across the series gives it the same multi-strand romantic tension as ZA.",
-          caveat: "book one is significantly weaker than books two through eight — most readers who ended up loving the series considered quitting it early. Commit through book three before deciding.",
+          note: "A heroine hiding what she truly is inside an institution that would kill her if it knew: the same structure Peckham and Valenti build for the Vegas. Celaena's arc across eight books is the slow claim of identity and power she has been prevented from exercising, and the antagonistic relationships of early books become something else across the series in exactly the way Zodiac Academy's do. Multiple love interests across the series gives it the same multi-strand romantic tension as ZA.",
+          caveat: "Book one is significantly weaker than books two through eight. Most readers who ended up loving the series considered quitting it early. Commit through book three before deciding.",
           tags: [
             'Hidden Identity',
             'Power Reveal',
@@ -173,8 +186,8 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "A heroine kept from understanding her own nature by the institution that's supposed to protect her, and a love interest who knows exactly what she is and isn't telling her. The explicit heat is equivalent to ZA's later books, the power-reveal structure maps directly onto Tory and Darcy's arc, and Armentrout's series has the same long-series commitment energy — readers who start it tend to finish all six.",
-          caveat: "the world-building is heavier and more mythological than Zodiac Academy's zodiac-fae system; the lore expands significantly across the series.",
+          note: "A heroine kept from understanding her own nature by the institution that is supposed to protect her, and a love interest who knows exactly what she is and is not telling her. The explicit heat is equivalent to ZA's later books, the power-reveal structure maps directly onto Tory and Darcy's arc, and Armentrout's series has the same long-series commitment energy: readers who start it tend to finish all six.",
+          caveat: "The world-building is heavier and more mythological than Zodiac Academy's zodiac-fae system; the lore expands significantly across the series.",
           tags: [
             'Hidden Identity',
             'Power Reveal',
@@ -193,10 +206,10 @@ export const theAwakeningZodiacAcademy: BooksLikeEntry = {
   recommendations: [],
   related: [
     { title: 'Books Like Fourth Wing', slug: 'fourth-wing' },
-    {
-      title: 'Books Like A Court of Thorns and Roses',
-      slug: 'a-court-of-thorns-and-roses',
-    },
+    { title: 'Books Like A Court of Thorns and Roses', slug: 'a-court-of-thorns-and-roses' },
     { title: 'Books Like From Blood and Ash', slug: 'from-blood-and-ash' },
+    { title: 'Books Like The Cruel Prince', slug: 'the-cruel-prince' },
+    { title: 'Books Like Throne of Glass', slug: 'throne-of-glass' },
+    { title: 'Books Like Nevernight', slug: 'nevernight' },
   ],
 };

@@ -21,22 +21,22 @@ export const assassinsApprentice: BooksLikeEntry = {
     ],
     angle: 'Literary Character-Driven Fantasy',
     answer_line:
-      "If you loved Assassin's Apprentice for Fitz's emotional depth, the suffocating court politics, and the way Robin Hobb makes sacrifice feel genuinely costly, start with Tigana, The Name of the Wind, and The Traitor Baru Cormorant.",
+      "The books that hit like Assassin's Apprentice do: Tigana for the same literary weight and political cost, The Name of the Wind for first-person intimacy, The Traitor Baru Cormorant if you want the ending to destroy you in a similar way.",
     why_people_love:
-      "Robin Hobb builds Fitz's story with a precision that makes every indignity feel specific and earned. Fitz is not a chosen one — he is illegitimate, overlooked, and used by everyone who claims to care about him, and Hobb makes you feel every part of that in close detail. The Wit and the Skill are magic systems with real costs. The court politics are suffocating in the best way. The reason readers return to this series is not the plot — it is that Hobb pins down the exact experience of being loyal to people who regard you as a resource. Fair warning: this series will hurt you. It is designed to.",
+      "Fitz is not a chosen one. He is illegitimate, overlooked, and used by everyone who claims to care about him, and Hobb builds his story with a precision that makes every indignity feel specific. The Wit and the Skill are magic systems with real costs. The court politics are suffocating in the best way. The reason readers return is not the plot: it is that Hobb pins down the exact experience of being loyal to people who regard you as a resource. Fair warning: this series will hurt you. It is designed to.",
     why_people_love_rich: [
       {
         type: 'paragraph',
-        text: "Fitz is not a chosen one — he is illegitimate, overlooked, and used by everyone who claims to care about him, and Hobb builds his story with a precision that makes every indignity feel specific rather than abstract. The court of the Six Duchies is a dense, functioning system: everyone has a role, everyone has an agenda, Fitz has neither, and the novel's particular cruelty is that the court uses him anyway.",
+        text: "Fitz is not a chosen one. He is illegitimate, overlooked, and used by everyone who claims to care about him, and Hobb builds his story with a precision that makes every indignity feel specific rather than abstract. The court of the Six Duchies is a dense, functioning system: everyone has a role, everyone has an agenda, Fitz has neither, and the novel's particular cruelty is that the court uses him anyway.",
       },
       {
         type: 'labeled',
         label: 'The Magic:',
-        text: "The Wit — a psychic bond with animals — and the Skill — a form of mental communication — are both presented as abilities that cost the user in ways the court regards as unseemly. Both mark Fitz as different, and both will be used against him by people who consider him a resource.",
+        text: "The Wit (a psychic bond with animals) and the Skill (a form of mental communication) are both abilities that cost the user in ways the court regards as unseemly. Both mark Fitz as different, and both will be used against him by people who consider him a resource.",
       },
       {
         type: 'paragraph',
-        text: "The reason readers return to this series is not the plot — it is that Hobb pins down the exact experience of being loyal to people who regard you as a resource, and of wanting belonging so badly that you accept conditions that should disqualify it. You will know exactly what Fitz should do, watch him be unable to do it, and feel his reasons completely.",
+        text: "The reason readers return to this series is not the plot. It is that Hobb pins down the exact experience of being loyal to people who regard you as a resource, and of wanting belonging so badly that you accept conditions that should disqualify it. You will know exactly what Fitz should do, watch him be unable to do it, and feel his reasons completely.",
       },
       {
         type: 'warning',
@@ -59,7 +59,7 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (unfinished)',
           audiobook: true,
-          note: "The closest thing in modern fantasy to Hobb's first-person intimacy. Kvothe narrates his own life with the same obsessive self-examination as Fitz — both protagonists are unreliable not because they lie outright but because they cannot see themselves clearly, and the gap between who they believe they are and what they actually do is where the novel lives.",
+          note: "The closest thing in modern fantasy to Hobb's first-person intimacy. Kvothe narrates his own life with the same obsessive self-examination as Fitz. Both protagonists are unreliable not because they lie outright but because they cannot see themselves clearly, and the gap between who they believe they are and what they actually do is where the novel lives.",
           caveat: 'The series is unfinished and has been for over a decade. Read knowing you may not get a conclusion.',
           tags: [
             'First-Person Narration',
@@ -79,7 +79,7 @@ export const assassinsApprentice: BooksLikeEntry = {
           heat_level: 'Sweet Romance',
           standalone: true,
           audiobook: true,
-          note: 'Maia is thrust onto a throne he never wanted, surrounded by people who either fear or resent him, and the novel is entirely about the interior life of someone trying to be good under impossible circumstances. The emotional register — outsider in a court, desperate for belonging, choosing kindness when cruelty would be easier — is the closest any standalone comes to the Farseer experience.',
+          note: 'Maia is thrust onto a throne he never wanted, surrounded by people who either fear or resent him, and the novel is entirely about the interior life of someone trying to be good under impossible circumstances. The emotional register (outsider in a court, desperate for belonging, choosing kindness when cruelty would be easier) is the closest any standalone comes to the Farseer experience.',
           caveat: 'Much lighter in tone and stakes than Hobb. No betrayal here will break you.',
           tags: [
             'Outsider Protagonist',
@@ -105,8 +105,8 @@ export const assassinsApprentice: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "Kay writes literary fantasy at the same emotional register as Hobb — every political manoeuvre has a personal cost, every betrayal lands because you understand all sides. Tigana is about a conquered people whose very name has been erased from memory, and the book handles what it costs a people to have their history erased — politically, personally, generationally — with the same care Hobb brings to what it costs Fitz to give himself to a court that won't acknowledge him.",
-          caveat: "Broader cast and less intimate than Fitz's first-person — but equally devastating by the end.",
+          note: "Kay writes literary fantasy at the same emotional register as Hobb: every political manoeuvre has a personal cost, every betrayal lands because you understand all sides. Tigana is about a conquered people whose very name has been erased from memory, and the book handles what it costs a people to have their history erased (politically, personally, generationally) with the same care Hobb brings to what it costs Fitz to give himself to a court that won't acknowledge him.",
+          caveat: "Broader cast and less intimate than Fitz's first-person, but equally devastating by the end.",
           tags: [
             'Literary Fantasy',
             'Political Intrigue',
@@ -128,7 +128,7 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (2 books)',
           audiobook: true,
-          note: 'An ambassador from a small station arrives at the heart of a vast empire and must navigate deadly court politics while carrying the recorded memory of her murdered predecessor. The political intrigue is as layered as anything in the Farseer books, and Martine is equally interested in identity — what makes you yourself when another mind lives in yours.',
+          note: 'An ambassador from a small station arrives at the heart of a vast empire and must navigate deadly court politics while carrying the recorded memory of her murdered predecessor. The political intrigue is as layered as anything in the Farseer books, and Martine is equally interested in identity: what makes you yourself when another mind lives in yours.',
           caveat: 'More science fiction in setting; the emotional beats are pure literary fantasy.',
           tags: [
             'Court Intrigue',
@@ -157,7 +157,7 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "Baru Cormorant is an accountant who decides to destroy an empire from within, and the novel is ruthless about what that costs her. It shares Hobb's core question — what does a person become when they use loyalty as a tool — and like Hobb it is completely unwilling to protect its protagonist from the answer. The political machinery is as intricate as anything in the Six Duchies, and Dickinson is equally specific about what decisions cost.",
+          note: "Baru Cormorant is an accountant who decides to destroy an empire from within, and the novel is ruthless about what that costs her. It shares Hobb's core question (what does a person become when they use loyalty as a tool) and like Hobb it is completely unwilling to protect its protagonist from the answer. The political machinery is as intricate as anything in the Six Duchies, and Dickinson is equally specific about what decisions cost.",
           caveat: 'The ending is one of the most discussed gut-punches in modern fantasy. Go in knowing it will not be kind.',
           tags: [
             'Political Fantasy',
@@ -180,7 +180,7 @@ export const assassinsApprentice: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (3 books + standalones)',
           audiobook: true,
-          note: 'Where Hobb breaks your heart through intimacy, Abercrombie does it through disillusionment. The First Law systematically dismantles every fantasy hero archetype — the barbarian, the torturer, the crippled knight — and the political machinery that surrounds them is as corrupt and grinding as anything in the Six Duchies.',
+          note: 'Where Hobb breaks your heart through intimacy, Abercrombie does it through disillusionment. The First Law systematically dismantles every fantasy hero archetype (the barbarian, the torturer, the crippled knight) and the political machinery that surrounds them is as corrupt and grinding as anything in the Six Duchies.',
           caveat: 'Much drier, more ironic tone than Hobb. Less emotional warmth, more cold clarity.',
           tags: [
             'Grimdark',
@@ -199,10 +199,10 @@ export const assassinsApprentice: BooksLikeEntry = {
   recommendations: [],
   related: [
     { title: 'Books Like Tigana', slug: 'tigana' },
-    {
-      title: 'Books Like The Name of the Wind',
-      slug: 'the-name-of-the-wind',
-    },
+    { title: 'Books Like The Name of the Wind', slug: 'the-name-of-the-wind' },
     { title: 'Books Like The Blade Itself', slug: 'the-blade-itself' },
+    { title: 'Books Like The Goblin Emperor', slug: 'the-goblin-emperor' },
+    { title: 'Books Like A Memory Called Empire', slug: 'a-memory-called-empire' },
+    { title: 'Books Like The Poppy War', slug: 'the-poppy-war' },
   ],
 };

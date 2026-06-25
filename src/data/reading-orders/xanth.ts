@@ -7,40 +7,40 @@ export const xanth: ReadingOrderEntry = {
   seriesStatus: 'ongoing',
   seriesStatusLabel: '📖 Ongoing · 49 published + 4 forthcoming (1977–present)',
   description:
-    'Piers Anthony has been writing Xanth since 1977. There are now forty-nine novels in the series, and he is still publishing. The premise is consistent: Xanth is a magical land shaped exactly like the state of Florida, where every human is born with exactly one unique magical talent: ranging from world-destroying power to the ability to make a small dot appear on a wall. The humour is relentlessly pun-based. The tone is light comedy that never takes itself seriously. The first three books follow Bink and form a complete arc; they are the series at its most coherent and focused. From book 4 onward, each novel follows a new protagonist through a new quest in the same world. The faces change; the formula does not.',
+    'Xanth commits completely to being light comedy built on puns. Not "light with some puns": puns as the entire register, every page, every book, for nearly fifty years. If that sounds appealing, there are 49 novels and counting. If it sounds exhausting, read the first three and stop: they tell a complete story, they are the best the series ever is, and you can walk away satisfied. The premise is simple and has never changed. Xanth is a magical land shaped exactly like Florida, every human is born with exactly one unique magical talent (ranging from reshaping continents to producing a small dot on a wall), and everything is named after a pun. The first three books follow Bink and build to a genuine payoff. From book 4 onward the protagonists rotate and each novel is largely self-contained. The formula does not evolve. It does not deepen. That is not a flaw. It is the whole point.',
   darknessDisplay: '🕯️ Very mild - comedy fantasy with no violence or dark content',
   orderNote:
     'The first three books follow Bink and should be read in order. They form a complete arc with a payoff that depends on reading all three. From book 4 onward, the series is episodic: characters recur but novels stand largely on their own. Books 1–3 are the essential core. Stop there or continue: the formula does not change. (Spoiler-free guide.)',
   cardsPosition: 'above',
   cards: [
     {
-      title: 'The Author',
-      body: 'Piers Anthony started Xanth in 1977 and is still releasing new books in his eighties. He has written over 150 novels across multiple genres: science fiction, horror, historical fiction. Xanth is his most commercially successful work by far. The lightness of tone is deliberate and consistent; do not expect it to deepen or darken across the run.',
+      title: '✍️ Piers Anthony',
+      body: "Anthony picked a lane in 1977 and has never once been tempted to leave it. No grimdark pivot. No literary ambitions creeping in. No 'it gets darker as the series goes.' Xanth at book 49 is the same series it was at book 1, and that is entirely by design. He has written over 150 novels in other genres (sci-fi, horror, historical fiction) but Xanth is what people know him for, because this exact flavor of cheerful, punny light fantasy is something he genuinely loves making. Whether that consistency feels comforting or limiting depends entirely on what you came for.",
       color: 'blue',
     },
     {
-      title: 'The Pun Rule',
-      body: "Anthony's puns are not incidental. They are the point. Every other page introduces a new one, usually named and explained within the text. The humour is deliberately groan-adjacent; fans treat the groan as confirmation the pun landed. If pun-based comedy irritates you more than amuses you, this series will not convert you.",
+      title: '😄 The Pun Rule',
+      body: "The puns are not incidental. They are the point. Every other page introduces a new one, usually named and explained within the text. The humour is deliberately groan-adjacent. Fans treat the groan as confirmation the pun landed. This is not a series that uses puns as seasoning; it is a series made of puns. If that sounds like fun, you will have a lot of fun. If it sounds like it would get old fast, it will get old fast.",
       color: 'green',
     },
     {
-      title: 'The Talent System',
-      body: "Every human born in Xanth has exactly one unique magical talent, and no two are ever the same. The spread between powerful and useless is enormous and intentional: some talents reshape the landscape, others produce a small light. Discovering what Bink's talent is drives the entire first book. Centaurs, ogres, dragons, and other species have different magical relationships with the land entirely.",
+      title: '🔮 The Talent System',
+      body: "Every human in Xanth is born with exactly one unique magical talent. No duplicates, ever, spanning from reshaping continents to producing a small dot on a wall. In book 1, Bink appears to have no talent at all. In Xanth, that means mandatory exile to the non-magical world. The mystery of what his talent actually is runs through every scene of A Spell for Chameleon and the answer lands hard. It is the best thing the series does. Later books use the talent system more for comedy than mystery, which works fine but feels different.",
       color: 'amber',
     },
     {
-      title: 'Start at Book 1',
-      body: "A Spell for Chameleon is the only entry point. The world and cast accumulate references to prior books as the series progresses. Starting anywhere else means missing context that is never fully restored. The first trilogy is a complete story; if you stop at Castle Roogna the series has given you a finished arc.",
+      title: '📍 Start at Book 1',
+      body: "A Spell for Chameleon is the only entry point. The world and cast accumulate references to prior books as the series progresses; starting anywhere else means missing context that is never fully restored. The first trilogy is a complete story. If you stop at Castle Roogna the series has given you a finished arc and you can walk away clean.",
       color: 'red',
     },
     {
-      title: 'What Changes at Book 4',
-      body: "After Castle Roogna, Bink's central arc is complete and the series shifts to his son Dor, then to Dor's daughter Ivy, then to a rotating cast of new protagonists in each novel. The episodic format means later books are largely self-contained. You can stop at any point after book 3 without losing a thread. The world stays the same; the faces change.",
+      title: '🔄 What Changes at Book 4',
+      body: "After Castle Roogna, Bink's arc is complete and the series shifts to his son Dor, then to Dor's daughter Ivy, then to a rotating cast of new protagonists. The episodic format means later books are largely self-contained. You can stop at any point after book 3 without losing a thread. The world stays the same; the faces change.",
       color: 'purple',
     },
     {
-      title: '53 Books and Counting',
-      body: "Anthony continues to publish Xanth at roughly one book per year and has four more announced beyond the 49 currently in print. The later books are shorter and faster than the originals. The formula does not change across the run. The series at book 49 is doing approximately what it did at book 15. If you enjoy the world at book 10, you will enjoy it at book 30. If the formula has worn thin by book 10, it will not improve.",
+      title: '📚 49 Books and Counting',
+      body: "Anthony publishes roughly one Xanth novel per year and has four more announced. The later books are shorter and faster than the originals. The formula does not change. The series at book 49 is doing the same thing it was doing at book 15. If you enjoy the world at book 10 you will enjoy it at book 30. If it has worn thin by book 10, it will not improve.",
       color: 'zinc',
     },
   ],

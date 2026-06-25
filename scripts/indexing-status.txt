@@ -34,6 +34,7 @@ Thomas K. Carpenter                      50 books  /authors/thomas-k-carpenter/
 Caroline Peckham                         49 books  /authors/caroline-peckham/
 Rachel Caine                             49 books  /authors/rachel-caine/
 Tracy Hickman                            49 books  /authors/tracy-hickman/
+✅Susanne Valenti                          48 books  /authors/susanne-valenti/
 ✅Brandon Sanderson                        48 books  /authors/brandon-sanderson/
 ✅Glen Cook                                48 books  /authors/glen-cook/
 Fritz Leiber                             46 books  /authors/fritz-leiber/
@@ -43,6 +44,7 @@ Kate Elliott                             40 books  /authors/kate-elliott/
 ✅Seth Ring                                40 books  /authors/seth-ring/
 Charles de Lint                          40 books  /authors/charles-de-lint/
 Charles Stross                           39 books  /authors/charles-stross/
+✅Lois McMaster Bujold                     39 books  /authors/lois-mcmaster-bujold/
 Faith Hunter                             37 books  /authors/faith-hunter/
 David Gemmell                            37 books  /authors/david-gemmell/
 ✅Roger Zelazny                            37 books  /authors/roger-zelazny/
@@ -350,8 +352,6 @@ Scott Lynch                              4 books  /authors/scott-lynch/
 
 AUTHORS — NOT ENRICHED (noindexed): 395
 ------------------------------------------------------------
-Susanne Valenti                          48 books  /authors/susanne-valenti/
-Lois McMaster Bujold                     39 books  /authors/lois-mcmaster-bujold/
 Laurell K. Hamilton                      39 books  /authors/laurell-k-hamilton/
 Nora Roberts                             33 books  /authors/nora-roberts/
 John Flanagan                            33 books  /authors/john-flanagan/
