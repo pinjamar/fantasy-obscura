@@ -107,11 +107,16 @@ For entries where the book warrants more structure, add `why_people_love_rich` a
 4. A `warning` block — covers pace AND tonal expectations together. Don't split into two warnings.
 
 **Sentence style:**
-- Prefer short, period-separated sentences over em-dash chains. Break clauses into their own sentences.
-- Wrong: `"Shadow Moon is an unusual protagonist — passive, watchful, more vessel than hero — which gives the novel the quality of a long strange dream."`
-- Right: `"Shadow Moon is an unusual protagonist. He is passive, watchful, more vessel than hero, which gives the novel the quality of a long strange dream."`
-- Wrong: `"...plot momentum — and his mythology is deliberately faded."`
-- Right: `"...plot momentum. His mythology is deliberately faded."`
+- Vary sentence length. Mix short punchy sentences with longer ones. Three long sentences in a row is a sign the prose needs to breathe.
+- **Em-dash rule — two rules, no exceptions:**
+  - Two em-dashes creating a parenthetical → use regular parentheses instead.
+    Wrong: `"chooses Talia — not for her power but for who she is — and the scene works"`
+    Right: `"chooses Talia (not for her power but for who she is) and the scene works"`
+  - Single em-dash linking two clauses → end the first clause with a period.
+    Wrong: `"Linus cannot stop caring — and that is the point."`
+    Right: `"Linus cannot stop caring. That is the point."`
+  - The only acceptable em-dash is in a list or when no rewrite is possible. Default to zero.
+- Never use an em-dash where a colon, comma, or full stop will do.
 
 **Tone:**
 - Avoid book-report phrases: not "Gaiman's central idea is..." or "the author's approach to..." — write directly: "It's both funny and genuinely sad", not "the central idea is both funny and genuinely sad."
@@ -130,12 +135,14 @@ For entries where the book warrants more structure, add `why_people_love_rich` a
 - The strongest sentence pattern: *"Where [source] is [quality], [rec] is [quality]"* — e.g. "Where American Gods is melancholy and sprawling, Anansi Boys is warmer and funnier." Use it when the rec shares DNA but differs in register.
 - Close with a direct endorsement if warranted — "The best direct follow-up for Gaiman readers" is stronger than trailing off.
 
-**Caveat field:** split the caveat out of `note` into the separate `caveat` field. The page renders it as a distinct left-bordered line below the main note. Keep it 1–2 sentences — the single sharpest reason this rec might disappoint the reader. Don't pad.
+**Caveat field — required on every rec.** The page renders it as a distinct left-bordered line below the main note. Every rec has at least one meaningful way it could disappoint someone who loved the source book — find it and write it here. Keep it 1–2 sentences — the single sharpest difference. If you can't think of a caveat, that's a sign the rec note is burying it.
 
 ```ts
 note: "Why this rec fits the aspect — concrete, specific, no plot summary, no source spoilers.",
 caveat: "The one thing that's different or harder vs the source book.",
 ```
+
+**Never bury the caveat inside `note`.** Even if you've acknowledged the difference in the note, it must also appear as a standalone `caveat` field. The page renders both.
 
 **answer_line alignment rule:** the books named in `answer_line` ("start with A, B, and C")
 must be the first rec in aspects 1, 2, and 3 respectively. If the guide has a 4th aspect,
@@ -150,6 +157,12 @@ Run this check on every note, caveat, why_people_love, and why_people_love_rich 
 **The test:** could this sentence appear in a rec note for any book in the genre? If yes, rewrite it with something specific to this book and this source.
 
 ### Banned patterns
+
+**Em-dash AI tells** — specific constructions that signal machine writing:
+❌ `"X — not for A but for B — lands as hard as it does because Y"` (double dash + "lands as hard as it does")
+❌ `"created a template that has never quite been replicated"`
+❌ `"lands as hard as it does"` / `"hits as hard as it does"`
+✅ Fix: rewrite with parentheses and a plain verb. "X (not for A but for B) works because Y."
 
 **Aphorisms** — sentences that sound meaningful but contain no specific information:
 ❌ "the truth is stranger than the story"
@@ -168,12 +181,33 @@ Run this check on every note, caveat, why_people_love, and why_people_love_rich 
 ❌ "widely considered one of the best"
 ❌ "many readers find this the most rewarding entry point"
 ❌ "some readers feel the pacing is slow"
-✅ Fix: say it directly. "The pacing is slow." "Start here."
+❌ "often described as X, which undersells what she is actually doing" (hedge + reframe is still a hedge)
+✅ Fix: say it directly. "The pacing is slow." "Start here." "People call this X. That label doesn't fit."
 
-**Reader-response formulas** — framing opinions through hypothetical readers:
+**Reader-response formulas** — framing opinions through hypothetical readers or rankings:
 ❌ "Readers who loved X for Y will find this..."
 ❌ "If you enjoyed the mythology, this will satisfy."
+❌ "the reason most readers stay"
+❌ "the most direct modern equivalent to what X built"
 ✅ Fix: state what the book does. "It shares the same faded-god melancholy. The scale is smaller."
+
+**Superlatives** — "the most X in the genre/fantasy/the series":
+❌ "the most philosophically developed version"
+❌ "the most sophisticated tools available"
+❌ "the most powerful thing a person can bring to a broken system"
+✅ Fix: make a specific comparative claim. "Pullman does more with the concept philosophically than either Lackey or McCaffrey." "More effective than any maneuvering he could have learned at court."
+
+**Vague filler phrases** — sounds specific but says nothing:
+❌ "the emotional engine" (of every book, of the story, of the series)
+❌ "psychological sharpness / psychological depth / psychological experience"
+❌ "inner truth" / "emotional weight" / "the emotional centre"
+❌ "the flip side of X"
+✅ Fix: say the actual thing. "Every Temeraire novel is built around that bond." "The shame of the unwanted child, the hunger for recognition." "Where Talia leads with warmth, El leads with armor."
+
+**Repeated comparison formula** — using the same sentence structure across multiple recs in the same guide:
+❌ "writes X with the same Y [author] brings to [character]" used twice or more
+❌ "carries the same emotional logic as X's bond with Y" used twice or more
+✅ Fix: vary the construction. If you've used "writes the same territory as Lackey," don't also say "with the same precision Lackey brings to Talia" in the next note. State the second comparison differently or make it concrete.
 
 **Financial metaphors** — prose, patience, payoff:
 ❌ "rewards patient readers"
@@ -187,6 +221,9 @@ Run this check on every note, caveat, why_people_love, and why_people_love_rich 
 - [ ] No abstract virtue lists
 - [ ] No consensus hedges — opinions stated directly
 - [ ] No reader-response formulas
+- [ ] No superlatives — comparative claims only
+- [ ] No vague filler phrases ("emotional engine", "inner truth", etc.)
+- [ ] No repeated comparison formula across recs in the same guide
 - [ ] No financial metaphors for prose or pacing
 
 ---
@@ -201,7 +238,8 @@ Run this check on every note, caveat, why_people_love, and why_people_love_rich 
 | Populating `recommendations` array | Leave as `[]` — it is not rendered |
 | Aspect with a padded/weak second rec | Use 1 rec in that aspect instead |
 | `cover_url` not verified to load | Check URL before committing |
-| Burying caveat inside `note` string | Split it into the separate `caveat` field |
+| Missing `caveat` on any rec | Every rec needs one — find what's genuinely different vs the source |
+| Burying caveat inside `note` string | Split it into `caveat` field — both must be present |
 | Opening note with plot summary ("X happens, Y discovers...") | Lead with the specific shared quality, not what happens |
 | Spoiling the source book in a rec note | Reader may not have finished it — no deaths, twists, or ending reveals |
 | Multiple labeled blocks in why_people_love_rich | One label max — it stands out because it's the only one |

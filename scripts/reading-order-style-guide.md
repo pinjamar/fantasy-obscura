@@ -7,6 +7,22 @@ Covers prose voice, required sections, SEO structure, and the data shape.
 
 ## ⚠️ Before Writing Any Guide — DB First
 
+**Step 0 — run a full discovery query before anything else.**
+
+The query below finds every book in the series. Its output — not any research document — determines the full scope of the guide. If the DB has 49 books, the guide covers 49 books. Research is only for plot details; it is not a ceiling on which books exist.
+
+```bash
+node --input-type=module << 'EOF'
+import { config } from 'dotenv'; config();
+import { createClient } from '@supabase/supabase-js';
+const sb = createClient(process.env.PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const {data} = await sb.from('books').select('slug,title,series,series_number,page_count,publication_year')
+  .ilike('series', '%SERIES NAME%').order('series_number');
+data.forEach(b => console.log(`${b.series_number} | ${b.slug} | ${b.title} | pg:${b.page_count} yr:${b.publication_year}`));
+console.log(`Total: ${data.length} books`);
+EOF
+```
+
 **Never write book titles, slugs, or page counts from memory. Always query the DB first.**
 
 ```bash
@@ -191,6 +207,38 @@ AI loves to locate meaning in "the gap between X and Y" or "the space where X me
 
 **The fix:** describe the specific scene or moment, not the abstract gap it occupies.
 
+### 7. Em-dash patterns
+Em-dashes are an AI writing tell. Two rules, no exceptions:
+
+- **Two em-dashes around a parenthetical** → replace with regular parentheses.
+  ❌ `"the narrator — a man cataloguing endless halls — doesn't understand what he is"`
+  ✅ `"the narrator (a man cataloguing endless halls) doesn't understand what he is"`
+
+- **Single em-dash linking two clauses** → end the first clause with a period.
+  ❌ `"Anthony's puns are not incidental — they are the point."`
+  ✅ `"Anthony's puns are not incidental. They are the point."`
+
+- **Em-dash before a clarification** → use a colon.
+  ❌ `"enormous and intentional — some talents reshape the landscape, others produce a small light"`
+  ✅ `"enormous and intentional: some talents reshape the landscape, others produce a small light"`
+
+Default to zero em-dashes. Every em-dash in a draft is a candidate for deletion.
+
+- **Display label fields** (`darknessDisplay`, character `role`, `metaDescription`) — use a regular hyphen `-` not an em-dash.
+  ❌ `darknessDisplay: '🕯️ Very mild — comedy fantasy with no violence'`
+  ✅ `darknessDisplay: '🕯️ Very mild - comedy fantasy with no violence'`
+
+### 8. Vague filler phrases
+These phrases sound specific but name nothing concrete. They appear most often in `why_they_work` and card bodies.
+
+❌ `"the engine of the whole book / series / story"` — what drives it? Name the actual mechanic.
+❌ `"the answer, when it comes, reframes everything that came before"` — what specifically changes?
+❌ `"carries the narrative weight"` — says nothing. What does the character actually do?
+❌ `"X is not trying to be anything other than what it is"` — roundabout. Say what it is.
+❌ `"depending on what you want from it"` — reader-response hedge. State the tradeoff directly.
+
+**The fix:** replace with a specific claim. "The answer reveals why every obstacle in book 1 ended the same way" beats "reframes everything that came before."
+
 ---
 
 **Note length benchmark:**
@@ -262,7 +310,7 @@ Include a one-line `desc` that says specifically what the darkness is, not just 
 
 Add a Key Characters section to every guide. The template renders each character as an **expandable pill** — clicking reveals the `why_they_work` text. The pill shows name + role inline; faction appears as a small label inside the expanded panel.
 
-The template supports exactly 6 colors: `blue`, `green`, `amber`, `red`, `purple`, `zinc`. If a guide has more than 6 characters, characters beyond the sixth share a color — that is fine. Do not add new colors to the `cardColors` map.
+Every character **must** include a `color` field — without it the pill renders without a coloured label. Use `blue`, `green`, `amber`, `red`, `purple`, or `zinc`. If a guide has more than 6 characters, characters beyond the sixth share a color — that is fine. Do not add new colors to the `cardColors` map.
 
 Scale the character count to the series:
 - Simple trilogy or single standalone: 2–3 main characters
@@ -384,6 +432,10 @@ The UI renders three visible tiers plus upcoming. Get these right — they mean 
 
 **Do not guess** at in-universe chronological placement for novellas/short stories. Always check the official series numbering on Goodreads first. The Goodreads series page shows decimal book numbers (e.g. #0.5, #2.5, #7.5) which are the canonical placement points. Use those, not guessed in-universe dates.
 
+### Upcoming books
+
+For books not yet in the DB, use `slug: null` and `publication_year: null`. The title should be the real announced title, or just `'Untitled'` — do not invent placeholder titles like `'Untitled (Series #52)'`. The position field already conveys the number.
+
 ### Section types
 
 - `'bullets'` — bullet list, also generates FAQ schema (most common)
@@ -422,17 +474,15 @@ To find the author's URL slug: `authorToSlug(name)` lowercases and replaces non-
 To find the exact series name: query the DB — `series` column must match exactly.
 
 ### 4. Add the hero banner
-Every guide needs a banner image or the hero renders blank.
+Banner images are created and managed by the user separately. Your only job here is:
 
-1. Drop a source PNG into `assets/raw/reading-orders/[slug].png`
-2. Run `npm run images:optimize` — generates WebP/AVIF at 400w and 800w
-3. Add the slug to the `ReadingOrderImageSlug` union type in `src/data/image-map.ts`
-4. Add an entry to `READING_ORDER_IMAGE_SLUG` in the same file:
+1. Add the slug to the `ReadingOrderImageSlug` union type in `src/data/image-map.ts`
+2. Add an entry to `READING_ORDER_IMAGE_SLUG` in the same file:
    ```ts
    'my-series': 'my-series',
    ```
 
-Without step 4 the banner silently doesn't render even if the image files exist.
+Do NOT tell the user that a banner image is missing or needs to be created. The image exists. Step 4 done.
 
 ---
 
@@ -451,6 +501,10 @@ The DB handles series numbering automatically. Only override `seriesLabel` when:
 - The DB numbering would be misleading (e.g. after renumbering when books are removed from the sequence)
 
 **Never** add `seriesLabel` entries like `'Pub #1 · Chrono #2'` to show two orderings simultaneously — handle the debate in cards and sections instead.
+
+**Never use `position`** when the DB series_label already shows the same number. For a single-sequence series (every book is "Series #N"), `position` renders "#N in series" directly above "Series #N" — a straight duplicate. Only use `position` when the book's place in the overall series is different from or not conveyed by the DB series_label (e.g. Discworld sub-series groupings where the sub-series number differs from the overall #41).
+
+**Never** set `seriesLabel: ''` to suppress the DB-generated series label. If the DB label is redundant (e.g. every book in a single-series guide shows "Xanth #N"), leave it — do not blank it out. The DB label is the canonical source; suppressing it removes information.
 
 **Never put historical setting context in `seriesLabel`** — e.g. `'Standalone — Renaissance Italy'` or `'Kitai Duology #1 — Tang Dynasty'`. The seriesLabel renders as a small, barely readable tag. Historical/setting context belongs in the book's `note` field, where it is actually read.
 
@@ -538,7 +592,7 @@ For most series the book list already is publication order — a second strip ad
 - [ ] `darkness` array filled per arc with `desc` for each entry
 - [ ] `characters` array present with correct count for series size; every `why_they_work` follows the four-option rule (not restating Role/Faction)
 - [ ] `seriesStatusLabel` includes most recent book + year for ongoing series
-- [ ] `booksLikeSlug` filled if a Books Like page exists for this series
+- [ ] `booksLikeSlug` filled if a Books Like page exists for this series — check `src/data/books-like/` for a file matching the series name or first book slug before writing the guide
 - [ ] `related` has exactly 6 slugs of genuinely similar series
 - [ ] All book slugs verified to exist in DB (`node scripts/check-reading-order-books.mjs`)
 
@@ -550,6 +604,8 @@ Read every card body, every `why_they_work`, every book note, and every section 
 - [ ] No reader-response formulas ("if you find X, the book is working," "readers who want Y will be disappointed")
 - [ ] No financial metaphors for prose ("earns its weight," "rewards patience," "pays off," "paid forward")
 - [ ] No abstract virtue lists ("love, loyalty, sacrifice, the cost of resistance")
+- [ ] No em-dashes: two-dash parentheticals → parentheses; single-dash clause links → period; pre-clarification dashes → colon
+- [ ] No vague fillers: "engine of the story/book/series", "reframes everything that came before", "carries the narrative weight", "not trying to be anything other than what it is", "depending on what you want from it"
 - [ ] Generic sentence test applied to every card body and `why_they_work`: could this sentence describe any book in the genre? If yes, rewrite it with something specific to this series
 - [ ] Generic sentence test applied to every darkness `desc`: could this describe any dark fantasy? If yes, name what specifically makes this series or arc dark
 

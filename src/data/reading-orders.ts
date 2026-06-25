@@ -155,6 +155,7 @@ import { foundation } from './reading-orders/foundation';
 import { powderMage } from './reading-orders/powder-mage';
 import { belgariad } from './reading-orders/belgariad';
 import { guyGavrielKay } from './reading-orders/guy-gavriel-kay';
+import { xanth } from './reading-orders/xanth';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -221,6 +222,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   powderMage,
   belgariad,
   guyGavrielKay,
+  xanth,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

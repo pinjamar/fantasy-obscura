@@ -351,6 +351,7 @@ Witchcraft (Eastern/human magic) vs sorcery (Dragaeran Amorphia-based) — two s
 Books are deliberately short (200–300 pages) — the series rewards cumulative weight read in order
 Athyra (book 6) breaks the first-person POV — told from outside Vlad's perspective; readers should know this before reaching it
 The Khaavren Romances: 5 books in the same world 500+ years earlier, written in Dumas pastiche style — separate experience, not required for Vlad Taltos
+Upcoming two books remain to completely finish the 19-novel master plan:Chreotha (In development / forthcoming)The Last Contract (Planned final book)
 Slug: /reading-orders/vlad-taltos
 
 
@@ -423,16 +424,6 @@ Slug: /reading-orders/artemis-fowl
 
 
 58 Xanth Reading Order (Piers Anthony)
-
-45+ books (ongoing) — one of the longest-running single-author fantasy series; each human born in Xanth has exactly one unique magical talent, no duplicates
-Set in Xanth, a magical land shaped like the state of Florida; the books are comedic, pun-heavy, and episodic
-First three books form the original trilogy: A Spell for Chameleon → The Source of Magic → Castle Roogna — the only essential reads
-The first book is the real entry point; subsequent books are largely standalone and don't require reading in order
-Quality considered to plateau significantly after the first trilogy; books 1–10 or so are the most commonly recommended
-The series is notoriously pun-dense — a feature for some readers, a dealbreaker for others; the humour is groan-adjacent throughout
-Best positioned for younger readers or adults seeking lightweight, whimsical escapism — not comparable in tone to most of this list
-Slug: /reading-orders/xanth
-
 
 59 Saga of Recluce Reading Order (L.E. Modesitt Jr.)
 
@@ -842,11 +833,14 @@ Style guide for all banners:
 ### Need banners — prompts below
 
 **Witch World (Andre Norton)**
-Photorealistic cinematic dark fantasy digital art. A narrow granite arch on a windswept peat moorland at the last moment of twilight — the stone worn smooth and carved with runes that no longer mean anything to anyone living. Through the arch, the sky is wrong: one blood-red moon and one pale silver moon hanging at impossible angles above star clusters that form no earthly constellation. On this side, a hooded woman stands with her back to the viewer, one hand extended palm-out toward the arch, silver-green witch fire trailing from her fingers along the carved channels in the stone, pulsing cold and slow. The dark grass around her bends in a direction the wind is not blowing. Shallow peat pools on the moorland reflect the gate's light back upward. No face visible. No text. 1536×1024px, landscape. Mood: threshold and irreversibility, old power leaking between worlds.
+Photorealistic cinematic dark fantasy digital art. A narrow granite arch on a windswept peat moorland at the last moment of twilight — the stone worn smooth and carved with runes that no longer mean anything to anyone living. Through the arch, the sky is wrong: one blood-red moon and one pale silver moon hanging at impossible angles above star clusters that form no earthly constellation. On this side, a hooded woman stands with her back to the viewer, one hand extended palm-out toward the arch, silver-green witch fire trailing from her fingers along the carved channels in the stone, pulsing cold and slow. 
+The dark grass around her bends in a direction the wind is not blowing. Shallow peat pools on the moorland reflect the gate's light back upward. No face visible. No text. 1536×1024px, landscape. Mood: threshold and irreversibility, old power leaking between worlds.
 
 **Crown of Stars (Kate Elliott)**
-Photorealistic cinematic epic fantasy digital art. A great walled city on a high limestone promontory at night — soot-darkened walls, a basilica dome catching cold starlight, watchtower torches burning amber-orange against darkness. Above it, the sky holds stars arranged in deliberate geometric figures — triangles, crosses, overlapping circles — as if the heavens were a diagram, not a sky. On the ancient stone bridge below the gates, a column of iron cavalry moves by torchlight — chain hauberks, one banner pole dipping in wind, the river below reflecting jagged orange flame. Across the far horizon, a line of burning villages stretches left to right: a smear of orange and black smoke that means an army has already passed through. No faces. No text. 1536×1024px, landscape. Mood: something enormous ending and something unknown beginning; grandeur under its own collapse.
+Photorealistic cinematic epic fantasy digital art. A great walled city on a high limestone promontory at night — soot-darkened walls, a basilica dome catching cold starlight, watchtower torches burning amber-orange against darkness. Above it, the sky holds stars arranged in deliberate geometric figures — triangles, crosses, overlapping circles — as if the heavens were a diagram, not a sky. On the ancient stone bridge below the gates, a column of iron cavalry moves by torchlight — chain hauberks, one banner pole dipping in wind, the river below reflecting jagged orange flame. 
+Across the far horizon, a line of burning villages stretches left to right: a smear of orange and black smoke that means an army has already passed through. No faces. No text. 1536×1024px, landscape. Mood: something enormous ending and something unknown beginning; grandeur under its own collapse.
 
 **The Bound and the Broken (Ryan Cahill)**
-Photorealistic cinematic epic fantasy digital art. A vast dragon seen from behind and slightly above — scales black-green with iridescent edges, wings fully spread and catching firelight from below. The dragon descends through ragged storm clouds lit underneath in orange and deep red, shafts of ember light breaking through the gaps. Below, the ruins of a burning town stretch across a valley floor — rooftops collapsed into orange columns of smoke, ember sparks rising. The dragon's wingspan casts a shadow across the burning ground that is larger than the town. A single rider grips a dorsal ridge near the neck, leaning forward into the wind, silhouetted black against the churning sky. No face visible. No text. 1536×1024px, landscape. Mood: the last dragonrider above a world that had forgotten what dragons were — power reclaimed, not wielded for the first time.
+Photorealistic cinematic epic fantasy digital art. A vast dragon seen from behind and slightly above — scales black-green with iridescent edges, wings fully spread and catching firelight from below. The dragon descends through ragged storm clouds lit underneath in orange and deep red, shafts of ember light breaking through the gaps. Below, the ruins of a burning town stretch across a valley floor — rooftops collapsed into orange columns of smoke, ember sparks rising. The dragon's wingspan casts a shadow across the burning ground that is larger than the town. 
+A single rider grips a dorsal ridge near the neck, leaning forward into the wind, silhouetted black against the churning sky. No face visible. No text. 1536×1024px, landscape. Mood: the last dragonrider above a world that had forgotten what dragons were — power reclaimed, not wielded for the first time.
 
