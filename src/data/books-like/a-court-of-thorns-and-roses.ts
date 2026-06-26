@@ -20,38 +20,38 @@ export const acotar: BooksLikeEntry = {
     ],
     angle: 'Fae Court Romantasy',
     answer_line:
-      'If you loved A Court of Thorns and Roses for the fae courts, slow-burn romance, dangerous glamour and escalating emotional stakes, start with The Cruel Prince, From Blood and Ash, and Fourth Wing.',
+      "Books that hit the same note as ACOTAR: An Ember in the Ashes for the slow burn between two people on opposite sides of a system that doesn't want them to trust each other, The Cruel Prince for fae courts with genuine danger and a morally grey love interest who does not behave, Kingdom of the Wicked for a female protagonist who enters a dangerous world as a victim and refuses to stay one.",
     why_people_love:
-      "ACOTAR earns its fanbase through one thing above all else: the slow-burn tension of Feyre and Tamlin that quietly pivots into something far more interesting by book two. It's not the most original premise — Beauty and the Beast in Faerie — but Maas is genuinely skilled at dangling just enough emotional reward to keep you turning pages past midnight. The real hook isn't the romance; it's watching a character who started as a passive survivor become someone terrifyingly capable. Fair warning: book one is the weakest in the series. If you're lukewarm by chapter ten, push through to ACOMAF — that's where the series earns its reputation.",
+      "ACOTAR works because Feyre's situation in book one is exactly as bad as it looks, and then book two changes everything. The premise (Beauty and the Beast in Faerie) is not original, but Maas is good at tension: two people in a room, antagonists, both keeping things from each other, and the reader watching it crack. The real draw isn't the romance in book one; it's watching a character who started as a passive survivor become someone terrifyingly capable. Book one is the weakest in the series. If you're lukewarm by chapter ten, push through to A Court of Mist and Fury. That is where the series becomes exceptional.",
     why_people_love_rich: [
       {
         type: 'paragraph',
-        text: "ACOTAR earns its fanbase through one thing above all else: the slow-burn tension of Feyre and Tamlin that quietly pivots into something far more interesting by book two. It's not the most original premise — Beauty and the Beast in Faerie — but Maas is genuinely skilled at dangling just enough emotional reward to keep you turning pages past midnight.",
+        text: "ACOTAR works because Feyre's situation in book one is exactly as bad as it looks, and then book two changes everything. The premise (Beauty and the Beast in Faerie) is not original, but Maas is good at tension: two people in a room, antagonists, both keeping things from each other, and the reader watching it crack.",
       },
       {
         type: 'labeled',
         label: 'The Real Hook:',
-        text: "It's not the romance. It's watching a character who started as a passive survivor become someone terrifyingly capable. The Night Court, the politics, and the morally grey love interest who emerges in book two are where the series earns its reputation.",
+        text: "It's not the romance in book one. It's watching a character who started as a passive survivor become someone terrifyingly capable. The Night Court, the politics, and the morally grey love interest who emerges in book two are where the series becomes exceptional.",
       },
       {
         type: 'paragraph',
-        text: 'The world keeps expanding across books — new factions, new power dynamics, a mythology that rewards readers who stay. Each book changes the emotional contract significantly.',
+        text: 'The world keeps expanding across books: new factions, new power dynamics, a mythology that rewards readers who stay. Each book changes the emotional contract significantly.',
       },
       {
         type: 'warning',
-        text: 'Book one is the weakest in the series. If you are lukewarm by chapter ten, push through to A Court of Mist and Fury — that is where the series becomes exceptional. The first book is Beauty and the Beast; everything that made this a phenomenon starts in book two.',
+        text: 'Book one is the weakest in the series. If you are lukewarm by chapter ten, push through to A Court of Mist and Fury. That is where the series becomes exceptional. The first book is Beauty and the Beast; everything that made this a phenomenon starts in book two.',
       },
     ],
   },
   aspects: [
     {
-      heading: 'If you loved the enemies-to-lovers slow burn...',
+      heading:
+        'If you loved the slow burn (two people who should not be together, drawn to each other despite every structural reason not to be)...',
       recs: [
         {
           title: 'An Ember in the Ashes',
+          slug: 'an-ember-in-the-ashes',
           author: 'Sabaa Tahir',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
           darkness_level: 4,
           heat_level: 'Sweet Romance',
           standalone: false,
@@ -59,7 +59,7 @@ export const acotar: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: 'Two POVs, both trapped in impossible situations, both drawn to each other despite every reason not to be. The slow burn here is arguably executed better than in most romantasy — the tension earns its payoff across the full series.',
+          note: 'Two POVs, both trapped in impossible situations, both drawn to each other despite every reason not to be. The slow burn runs across four books without losing tension, and the resolution is specific to what the series set up in book one rather than generic. The stakes are higher than most romantasy.',
           caveat: 'This leans more toward dark epic fantasy than romantasy. Much less spice, much more stakes. If you read ACOTAR primarily for the romance, recalibrate.',
           tags: ['Dual POV', 'Military Fantasy', "Will They Won't They"],
           amazon_url:
@@ -69,9 +69,8 @@ export const acotar: BooksLikeEntry = {
         },
         {
           title: 'From Blood and Ash',
+          slug: 'from-blood-and-ash',
           author: 'Jennifer L. Armentrout',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781952457760-L.jpg',
           darkness_level: 3,
           heat_level: 'Explicit',
           standalone: false,
@@ -79,7 +78,7 @@ export const acotar: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "The guard-and-ward forbidden romance executed with real heat. Hawke and Poppy have the same push-pull chemistry as Feyre and Rhysand — the power imbalance, the secrets, the tension that refuses to resolve cleanly. If ACOTAR's main hook was the forbidden element and the spice, this delivers both more directly.",
+          note: "The guard-and-ward forbidden romance executed with real heat. Hawke and Poppy have the same push-pull chemistry as Feyre and Rhysand (the power imbalance, the secrets, the tension that refuses to resolve cleanly). Armentrout gets to the spice faster than Maas does in book one, and the lore drops are paced similarly.",
           caveat: 'The writing is more functional than literary. You are here for the romance and the lore drops, not the prose.',
           tags: [
             'Forbidden Romance',
@@ -95,13 +94,13 @@ export const acotar: BooksLikeEntry = {
       ],
     },
     {
-      heading: 'If you loved the Fae courts and morally grey love interests...',
+      heading:
+        'If you loved the world-building (a world with its own ancient mythology, dangerous politics, and beauty that is also a threat)...',
       recs: [
         {
           title: 'The Cruel Prince',
+          slug: 'the-cruel-prince',
           author: 'Holly Black',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316310314-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -109,8 +108,8 @@ export const acotar: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy)',
           audiobook: true,
-          note: "If ACOTAR is the gateway drug, The Cruel Prince is what comes next. Holly Black's Fae are genuinely unsettling — cruel, capricious, not safely romantic — and the political scheming in the courts is more sophisticated than anything in ACOTAR book one.",
-          caveat: 'Far less spice, much more brain. If you read ACOTAR primarily for the romance, recalibrate expectations.',
+          note: "Black's Fae are genuinely unsettling (cruel, capricious, not safely romantic) and the political scheming in the courts is more sophisticated than ACOTAR's. Cardan is the cruelest prince in Faerie and Jude's main tormentor. The tension between them is precisely the engine that drives the series, and the world has the same quality as Prythian: elaborate rules, dangerous hierarchies, and beauty that will hurt you.",
+          caveat: 'Far less spice, much more brain. If you read ACOTAR primarily for the romance and heat, recalibrate expectations.',
           tags: ['Fae Courts', 'Political Intrigue', 'Enemies to Lovers'],
           amazon_url:
             'https://www.amazon.com/s?k=The+Cruel+Prince+Holly+Black&tag=librariancura-20',
@@ -120,8 +119,6 @@ export const acotar: BooksLikeEntry = {
         {
           title: 'Strange the Dreamer',
           author: 'Laini Taylor',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316341677-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -129,8 +126,8 @@ export const acotar: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (duology)',
           audiobook: true,
-          note: 'If the lush, atmospheric world-building of ACOTAR was your hook, Strange the Dreamer is the most beautifully written book on this list. Laini Taylor builds mythology the way Maas builds romance — layered, immersive, and structured around one central mystery that keeps unfolding. The forbidden romance between Lazlo and Sarai has real emotional stakes.',
-          caveat: 'Slower and more literary than ACOTAR. Less spice, more ache.',
+          note: "Taylor builds mythology with the same layered, immersive approach Maas uses for romance: the world keeps revealing more of itself, and the central mystery unfolds slowly enough to accumulate weight. The city of Weep has the same density as Prythian (ancient, dangerous, beautiful in ways that are also a threat). The forbidden romance between Lazlo and Sarai has specific stakes, not generic ones.",
+          caveat: 'Slower and more literary than ACOTAR. Less spice, more ache. The emotional register is longing rather than tension.',
           tags: [
             'Lush World-Building',
             'Forbidden Romance',
@@ -145,13 +142,13 @@ export const acotar: BooksLikeEntry = {
       ],
     },
     {
-      heading: 'The Rhysand effect — dangerous men with hidden depths...',
+      heading:
+        'If you loved the protagonist transformation (entering a dangerous world as prey, becoming something it has to reckon with)...',
       recs: [
         {
           title: 'Kingdom of the Wicked',
+          slug: 'kingdom-of-the-wicked',
           author: 'Kerri Maniscalco',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316428354-L.jpg',
           darkness_level: 3,
           heat_level: 'Open Door',
           standalone: false,
@@ -159,7 +156,7 @@ export const acotar: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (trilogy)',
           audiobook: true,
-          note: "Victorian Sicily meets demon mythology. Wrath plays the same game Rhysand does — dangerous, morally questionable, and impossible to look away from. The murder mystery gives the tension structure; the banter is sharp.",
+          note: "Victorian Sicily meets demon mythology. Wrath plays the same game Rhysand does (dangerous, morally questionable, and impossible to look away from). The murder mystery gives the tension structure; the banter is sharp. Audrey Rose enters the demon world to avenge her twin's murder and has no leverage whatsoever at the start.",
           caveat: 'The mystery itself is thin. You are here for the enemies-to-lovers dynamic and the atmosphere, not the plot.',
           tags: ['Demons', 'Historical Setting', 'Enemies to Lovers', 'Dark Romance'],
           amazon_url:
@@ -169,9 +166,8 @@ export const acotar: BooksLikeEntry = {
         },
         {
           title: 'Fourth Wing',
+          slug: 'fourth-wing',
           author: 'Rebecca Yarros',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781649374042-L.jpg',
           darkness_level: 3,
           heat_level: 'Explicit',
           standalone: false,
@@ -179,7 +175,7 @@ export const acotar: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (5 books)',
           audiobook: true,
-          note: "The closest structural equivalent in the current genre wave — a female protagonist in a lethal academy, a morally grey love interest who keeps his distance for reasons he won't explain, and a slow burn that earns its payoff. Yarros and Maas are working from the same template.",
+          note: "A female protagonist who enters a lethal academy not entirely by choice, a morally grey love interest who keeps his distance for reasons he won't explain, and a slow burn that doesn't resolve until the reader is well past caring about restraint. Yarros constructs the same forbidden-tension architecture as Maas: the more dangerous he is, the harder it is to look away.",
           caveat: 'Less lush Fae atmosphere, more military academy tension. The spice arrives faster than in ACOTAR book one.',
           tags: ['Dragon Riders', 'Academy', 'Enemies to Lovers', 'Morally Grey LI'],
           amazon_url:
@@ -189,66 +185,14 @@ export const acotar: BooksLikeEntry = {
         },
       ],
     },
-    {
-      heading: 'If you want more Sarah J. Maas...',
-      recs: [
-        {
-          title: 'Throne of Glass',
-          author: 'Sarah J. Maas',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781619630345-L.jpg',
-          darkness_level: 3,
-          heat_level: 'Open Door',
-          standalone: false,
-          series: 'Throne of Glass',
-          series_number: 1,
-          series_label: 'Series (8 books)',
-          audiobook: true,
-          note: "The same author at her most action-forward. Celaena is a more independent protagonist than Feyre in book one, and the series escalates in scope in ways ACOTAR fans will recognise — slow reveals, a world that keeps expanding, a romance that shifts across books.",
-          caveat: 'The first book is the weakest, same as ACOTAR. Push through to Crown of Midnight. Less spice, more plot.',
-          tags: ['Same Author', 'Assassin Protagonist', 'Slow Burn', 'Found Family'],
-          amazon_url:
-            'https://www.amazon.com/s?k=Throne+of+Glass+Sarah+J+Maas&tag=librariancura-20',
-          bookshop_url:
-            'https://bookshop.org/search?keywords=Throne+of+Glass+Sarah+J+Maas&affiliate=122720',
-        },
-      ],
-    },
-    {
-      heading: 'If you want a standalone before committing to a series...',
-      recs: [
-        {
-          title: 'Uprooted',
-          author: 'Naomi Novik',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780804179058-L.jpg',
-          darkness_level: 3,
-          heat_level: 'Closed Door',
-          standalone: true,
-          audiobook: true,
-          note: 'A fairy-tale standalone with a morally complex, powerful love interest and a female protagonist who discovers terrifying magic within herself — the emotional DNA is similar enough to ACOTAR to scratch the itch without demanding a multi-book commitment. The tension between Agnieszka and the Dragon is slow, sharp, and earns its resolution.',
-          caveat: 'No spice and significantly less romance-forward. The magic and the forest are the real draw.',
-          tags: [
-            'Fairy-Tale Vibes',
-            'Slow Burn',
-            'Female Power',
-            'Standalone',
-          ],
-          amazon_url:
-            'https://www.amazon.com/s?k=Uprooted+Naomi+Novik&tag=librariancura-20',
-          bookshop_url:
-            'https://bookshop.org/search?keywords=Uprooted+Naomi+Novik&affiliate=122720',
-        },
-      ],
-    },
   ],
   recommendations: [],
   related: [
     { title: 'Books Like Fourth Wing', slug: 'fourth-wing' },
-    {
-      title: 'Books Like The Priory of the Orange Tree',
-      slug: 'the-priory-of-the-orange-tree',
-    },
+    { title: 'Books Like The Priory of the Orange Tree', slug: 'the-priory-of-the-orange-tree' },
     { title: 'Books Like The Cruel Prince', slug: 'the-cruel-prince' },
+    { title: 'Books Like From Blood and Ash', slug: 'from-blood-and-ash' },
+    { title: 'Books Like Uprooted', slug: 'uprooted' },
+    { title: 'Books Like Throne of Glass', slug: 'throne-of-glass' },
   ],
 };

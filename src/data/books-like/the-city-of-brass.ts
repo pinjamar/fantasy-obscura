@@ -5,7 +5,6 @@ export const theCityOfBrass: BooksLikeEntry = {
   source: {
     title: 'The City of Brass',
     author: 'S.A. Chakraborty',
-    db_slug: 'the-city-of-brass',
     cover_url: 'https://covers.openlibrary.org/b/isbn/9780062678102-L.jpg',
     darkness_level: 3,
     heat_level: 'Closed Door',
@@ -22,26 +21,37 @@ export const theCityOfBrass: BooksLikeEntry = {
     ],
     angle: 'Islamic Mythology with Rich Political Intrigue',
     answer_line:
-      'If you loved The City of Brass for its Islamic mythology, hidden magical city, and morally complex characters, start with The Wrath and the Dawn, An Ember in the Ashes, and The Hundred Thousand Kingdoms.',
+      "Books that hit the same note as The City of Brass: The Wrath and the Dawn for the 1001 Nights atmosphere and a heroine who survives inside a gorgeous and dangerous court through intelligence alone, The Hundred Thousand Kingdoms for the outsider female protagonist dropped into a court where enslaved divine beings are used as instruments of mortal politics, An Ember in the Ashes for a woman navigating a world of powerful men with competing claims on her using wit where she has no weapons.",
     why_people_love:
-      "The City of Brass does something that feels rarer than it should: it builds a fantasy world from Islamic mythology rather than European folklore, and treats the djinn not as wish-granters but as a complex civilization with ethnic divisions, religious factions, and politics fermenting for thousands of years. Nahri is a Cairo street healer and con artist who doesn't believe in her own gifts — and when she accidentally summons Dara, a djinn warrior with a past she's not ready for, the book becomes a story about an ordinary person surviving in a world she has no frame for. The political intrigue deepens significantly across the trilogy, with the second volume being many readers' favourite, so the series investment is front-loaded but worth it.",
+      "The City of Brass does something that feels rarer than it should: it builds a fantasy world from Islamic mythology rather than European folklore, and treats the djinn not as wish-granters but as a complex civilization with ethnic divisions, religious factions, and politics fermenting for thousands of years. Nahri is a Cairo street healer and con artist who doesn't believe in her own gifts. When she accidentally summons Dara, a djinn warrior with a past she's not ready for, the book becomes a story about an ordinary person surviving in a world she has no frame for. The political intrigue deepens significantly across the trilogy. The first book is establishing its world; the sequels are where the consequences arrive.",
     why_people_love_rich: [
-      { type: 'paragraph', text: "The City of Brass does something that feels rarer than it should: it builds a fantasy world from Islamic mythology rather than European folklore, and treats the djinn not as wish-granters but as a complex civilization with ethnic divisions, religious factions, and politics fermenting for thousands of years. Chakraborty is writing the kind of secondary-world fantasy where the world itself has opinions — Daevabad's history matters to its present the way real cities' histories do." },
-      { type: 'labeled', label: 'Dara:', text: "The djinn warrior with a past Nahri is not ready for — he is the book's central structural gamble, and it pays off. Dara is genuinely dangerous, genuinely compromised, and genuinely unable to tell the whole truth, and Chakraborty builds him with enough care that you understand why Nahri cannot dismiss him even when she should. The reveal of what he actually is and what he actually did runs across all three books and is among the most satisfying long-game reveals in recent fantasy." },
-      { type: 'paragraph', text: "Nahri is a Cairo street healer and con artist who doesn't believe in her own gifts — and when she stumbles into Daevabad, she arrives as the one person in the city with no established position, which means the political intrigue runs through her. The second volume is many readers' favourite; the series investment is front-loaded but the groundwork pays off in proportion to how densely it was laid." },
-      { type: 'warning', text: "The City of Brass is the first book of a trilogy and ends with the political situation substantially more complicated than it began — reading it as a standalone is not recommended. The heat level is closed door throughout. The density of the djinn factions and their historical grievances requires patience in the first quarter; the payoff is in how thoroughly that groundwork pays off in the second half and the sequels." },
+      {
+        type: 'paragraph',
+        text: "The City of Brass does something that feels rarer than it should: it builds a fantasy world from Islamic mythology rather than European folklore, and treats the djinn not as wish-granters but as a complex civilization with ethnic divisions, religious factions, and politics fermenting for thousands of years. Chakraborty is writing the kind of secondary-world fantasy where the world itself has opinions. Daevabad's history matters to its present the way real cities' histories do.",
+      },
+      {
+        type: 'labeled',
+        label: 'Dara:',
+        text: "The djinn warrior with a past Nahri is not ready for. He is the book's central structural gamble. Dara is genuinely dangerous, genuinely compromised, and genuinely unable to tell the whole truth, and Chakraborty builds him with enough care that you understand why Nahri cannot dismiss him even when she should. The reveal of what he actually is and what he actually did runs across all three books and the trilogy's structure is built around it.",
+      },
+      {
+        type: 'paragraph',
+        text: "Nahri is a Cairo street healer and con artist who doesn't believe in her own gifts. When she stumbles into Daevabad, she arrives as the one person in the city with no established position, which means the political intrigue runs through her. The second volume does what the first book builds toward: the political situation becomes more complicated, the positions of every character become less tenable, and Nahri has less room to manoeuvre. The series is front-loaded by design.",
+      },
+      {
+        type: 'warning',
+        text: "The City of Brass is the first book of a trilogy and ends with the political situation substantially more complicated than it began. Reading it as a standalone is not recommended. The heat level is closed door throughout. The density of the djinn factions and their historical grievances requires patience in the first quarter. The depth of that groundwork becomes clear in the second half and the sequels, where it determines every political outcome.",
+      },
     ],
   },
   aspects: [
     {
       heading:
-        'If you loved the Islamic mythology and Middle Eastern setting — djinn as a civilisation, 1001 Nights energy done seriously, world built from Muslim folklore...',
+        'If you loved the Islamic mythology and Middle Eastern setting (djinn as a civilisation, 1001 Nights energy done seriously, world built from Muslim folklore)...',
       recs: [
         {
           title: 'The Wrath and the Dawn',
           author: 'Renée Ahdieh',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780147513854-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -49,7 +59,8 @@ export const theCityOfBrass: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Duology (2 books)',
           audiobook: true,
-          note: "Ahdieh's Scheherazade retelling is set in a Silk Road-inspired court where a new bride is executed every morning — until Shahrzad volunteers to be next, armed only with stories and a plan for revenge. The lush, sensory prose and the slow-burn romance between Shahrzad and the Caliph share City of Brass's quality of making the reader trust a morally compromised love interest before they're ready to. The world is slightly more Ottoman than Islamic mythology-focused, but the cultural specificity and the atmosphere of opulent danger are the closest match to Chakraborty's Cairo and Daevabad.",
+          note: "Ahdieh's Scheherazade retelling is set in a Silk Road-inspired court where a new bride is executed every morning. Shahrzad volunteers to be next, armed only with stories and a plan for revenge. The lush, sensory prose and the slow-burn romance between Shahrzad and the Caliph require the reader to sit with a morally compromised love interest longer than is comfortable, which is the same quality City of Brass builds into Dara. The world is slightly more Ottoman than Islamic mythology-focused, but the cultural specificity and the atmosphere of opulent danger match Daevabad's register.",
+          caveat: "More romance-forward and less politically complex than City of Brass. Duology, so a smaller commitment than the Daevabad Trilogy. No djinn or supernatural factions.",
           tags: [
             'Scheherazade Retelling',
             '1001 Nights',
@@ -65,8 +76,6 @@ export const theCityOfBrass: BooksLikeEntry = {
         {
           title: 'A Master of Djinn',
           author: 'P. Djèlí Clark',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781250267689-L.jpg',
           darkness_level: 3,
           heat_level: null,
           standalone: false,
@@ -74,7 +83,8 @@ export const theCityOfBrass: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (novels + novellas)',
           audiobook: true,
-          note: "Clark's Dead Djinn Universe is set in a 1910s Cairo where djinn and other supernatural beings crossed into the mortal world forty years ago and now live alongside humans — the most direct continuation of City of Brass's interest in djinn as political actors with their own factions, grudges, and agendas. Fatma el-Sha'arawi is a Ministry of Alchemy investigator who wears a three-piece suit and solves supernatural crimes. The mystery plotting is tighter than Chakraborty's, the world-building is inventive, and the Egyptological detail is exceptional. Start with the novella A Dead Djinn in Cairo if you want a shorter entry point.",
+          note: "Clark's Dead Djinn Universe is set in a 1910s Cairo where djinn and other supernatural beings crossed into the mortal world forty years ago and now live alongside humans. Fatma el-Sha'arawi is a Ministry of Alchemy investigator who wears a three-piece suit and solves supernatural crimes in a city where factions have political standing, old grudges, and competing agendas. The mystery plotting is tighter than Chakraborty's, the world-building draws on Egyptian history and mythology with precision, and the supernatural politics operate on a smaller but more immediate scale. The novella A Dead Djinn in Cairo serves as a short entry point to the world.",
+          caveat: "Detective mystery structure rather than political epic. The scale is city-level rather than civilisation-level, and there is no sustained romance. More procedural in feel than City of Brass.",
           tags: [
             'Djinn',
             'Egyptian Fantasy',
@@ -91,13 +101,11 @@ export const theCityOfBrass: BooksLikeEntry = {
     },
     {
       heading:
-        "If you loved the hidden magical city — Daevabad's ancient factions, its ethnic divisions and simmering resentments, a society stratified by bloodline and faith...",
+        "If you loved the hidden magical city (Daevabad's ancient factions, its ethnic divisions and simmering resentments, a society stratified by bloodline and faith)...",
       recs: [
         {
           title: 'The Hundred Thousand Kingdoms',
           author: 'N.K. Jemisin',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316043915-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -105,7 +113,8 @@ export const theCityOfBrass: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (3 books)',
           audiobook: true,
-          note: "A young woman from the margins of the empire is summoned to its capital and discovers that its ruling family controls the gods themselves — weaponised, enslaved, full of rage. The divine court politics map almost directly onto Daevabad: an outsider female protagonist, immortal beings with ancient grudges used as instruments of mortal power, and a love interest who is dangerous and morally compromised in ways the heroine cannot entirely forgive. Jemisin's prose is more intimate and the romance more central, but the architecture of the world is the same type of problem Chakraborty builds.",
+          note: "A young woman from the margins of the empire is summoned to its capital and discovers that its ruling family controls the gods themselves (weaponised, enslaved, full of rage). The divine court politics map directly onto Daevabad: an outsider female protagonist, immortal beings with ancient grudges used as instruments of mortal power, and a love interest who is dangerous and morally compromised in ways the heroine cannot entirely forgive. The world operates on the same architecture: old power structures maintained by the suppression of beings who remember what they were.",
+          caveat: "More intimately written than City of Brass (first-person, unreliable narrator) with the romance more central. Less world-building investment required; the trilogy is complete in three relatively short books.",
           tags: [
             'Divine Court Politics',
             'Imprisoned Gods',
@@ -120,9 +129,8 @@ export const theCityOfBrass: BooksLikeEntry = {
         },
         {
           title: 'Jade City',
+          slug: 'jade-city',
           author: 'Fonda Lee',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316440974-L.jpg',
           darkness_level: 4,
           heat_level: null,
           standalone: false,
@@ -130,7 +138,8 @@ export const theCityOfBrass: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (3 books)',
           audiobook: true,
-          note: "Lee's Green Bone Saga follows two clan families in a city where jade gives certain bloodlines supernatural martial ability — and anyone not of that bloodline is permanently subordinate. The factional politics, the city as a pressure cooker of ethnic and class resentments, and the way ancient loyalties curdle into political violence are the same structural elements as Daevabad, executed at a more brutal intensity. Jade City is darker and more focused on family dynamics than Chakraborty, but readers who came to City of Brass for the sense of a society visibly held together by old bargains are the exact audience for this.",
+          note: "Lee's Green Bone Saga follows two clan families in a city where jade gives certain bloodlines supernatural martial ability, and anyone not of that bloodline is permanently subordinate. The factional politics, the city as a pressure cooker of ethnic and class resentments, and the way ancient loyalties curdle into political violence are the same structural elements as Daevabad, executed at a more brutal intensity. The city itself (Janloon) has the same quality as Daevabad: a place held together by old bargains that everyone knows are failing.",
+          caveat: "No Islamic mythology and no romance. Far darker in its depiction of factional violence. Adult crime fiction in register rather than epic fantasy; Lee does not soften the political violence.",
           tags: [
             'Clan Politics',
             'Hidden Magical Society',
@@ -147,13 +156,12 @@ export const theCityOfBrass: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved Nahri — a sharp, self-reliant woman navigating a world of powerful men with competing claims on her, using wit where she has no weapons...',
+        'If you loved Nahri (a sharp, self-reliant woman navigating a world of powerful men with competing claims on her, using wit where she has no weapons)...',
       recs: [
         {
           title: 'An Ember in the Ashes',
+          slug: 'an-ember-in-the-ashes',
           author: 'Sabaa Tahir',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781101998878-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -161,7 +169,8 @@ export const theCityOfBrass: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "Tahir's Roman-inspired empire gives us the same core dynamic as Nahri's situation: a young woman with no power and exceptional capability dropped into the centre of a political conflict she didn't choose, surrounded by morally grey men whose loyalties are never certain. The dual POV (Laia the scholar-turned-spy, Elias the soldier who hates what he serves) mirrors City of Brass's Nahri/Ali split. The darkness is heavier — slavery, violence, and coercion are foregrounded — but the emotional architecture is the same type of problem: a heroine learning to navigate danger through intelligence rather than strength.",
+          note: "A young woman with no power and exceptional capability dropped into the centre of a political conflict she didn't choose, surrounded by morally grey men whose loyalties are never certain. The dual POV (Laia the scholar-turned-spy, Elias the soldier who hates what he serves) mirrors the Nahri/Ali structural split in City of Brass. The darkness is heavier (slavery, violence, and coercion are foregrounded), but the core problem is the same: a heroine learning to navigate danger through intelligence rather than strength.",
+          caveat: "Roman-inspired rather than Islamic mythology. The darkness is heavier than City of Brass: slavery and coercion are not background elements.",
           tags: [
             'Roman-Inspired',
             'Dual POV',
@@ -176,9 +185,8 @@ export const theCityOfBrass: BooksLikeEntry = {
         },
         {
           title: 'The Jasmine Throne',
+          slug: 'the-jasmine-throne',
           author: 'Tasha Suri',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316538510-L.jpg',
           darkness_level: 3,
           heat_level: 'Open Door',
           standalone: false,
@@ -186,7 +194,8 @@ export const theCityOfBrass: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (3 books)',
           audiobook: true,
-          note: "Suri's Burning Kingdoms trilogy is set in a South Asian-inspired empire where a deposed princess and an imperial prisoner discover they share a magic the conquering empire has tried to eradicate. The political setup — a woman with dangerous knowledge trapped in a court that wants her dead — is structurally close to Nahri in Daevabad, and the way both books handle the tension between cultural identity and political survival is unusually careful. The F/F romance is the emotional centre and is handled with more depth than most fantasy manages. Slightly warmer heat level than City of Brass.",
+          note: "Suri's Burning Kingdoms trilogy is set in a South Asian-inspired empire where a deposed princess and an imperial prisoner discover they share a magic the conquering empire has tried to eradicate. The political setup (a woman with dangerous knowledge trapped in a court that wants her dead) is structurally close to Nahri in Daevabad, and both books handle the tension between cultural identity and political survival with unusual care. The F/F romance is the emotional centre and is written with specific attention to what it costs each character.",
+          caveat: "F/F romance, so a different relationship dynamic. South Asian mythology rather than Islamic tradition. Slightly warmer heat level than City of Brass.",
           tags: [
             'South Asian-Inspired',
             'F/F Romance',
@@ -204,14 +213,11 @@ export const theCityOfBrass: BooksLikeEntry = {
   ],
   recommendations: [],
   related: [
-    {
-      title: 'Books Like An Ember in the Ashes',
-      slug: 'an-ember-in-the-ashes',
-    },
+    { title: 'Books Like An Ember in the Ashes', slug: 'an-ember-in-the-ashes' },
     { title: 'Books Like Six of Crows', slug: 'six-of-crows' },
-    {
-      title: 'Books Like The Hundred Thousand Kingdoms',
-      slug: 'the-hundred-thousand-kingdoms',
-    },
+    { title: 'Books Like Jade City', slug: 'jade-city' },
+    { title: 'Books Like The Jasmine Throne', slug: 'the-jasmine-throne' },
+    { title: 'Books Like A Memory Called Empire', slug: 'a-memory-called-empire' },
+    { title: 'Books Like Dune', slug: 'dune' },
   ],
 };
