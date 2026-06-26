@@ -65,7 +65,8 @@ export const theDarknessThatComesBefore: BooksLikeEntry = {
             'https://bookshop.org/search?keywords=Dune+Frank+Herbert&affiliate=122720',
         },
         {
-          title: 'The Book of the New Sun',
+          title: 'The Shadow of the Torturer',
+          slug: 'the-shadow-of-the-torturer',
           author: 'Gene Wolfe',
           cover_url:
             'https://covers.openlibrary.org/b/isbn/9780671831370-L.jpg',

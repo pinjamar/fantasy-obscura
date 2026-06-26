@@ -5,7 +5,6 @@ export const childrenOfTime: BooksLikeEntry = {
   source: {
     title: 'Children of Time',
     author: 'Adrian Tchaikovsky',
-    db_slug: 'children-of-time',
     darkness_level: 3,
     heat_level: null,
     series: 'Children of Time',
@@ -20,37 +19,36 @@ export const childrenOfTime: BooksLikeEntry = {
     ],
     angle: 'Uplifted Spiders Building a Civilisation — and the Last Humans Trying to Reach Them',
     answer_line:
-      'If you loved Children of Time for its non-human perspective and the intellectual puzzle of two civilisations meeting, start with A Deepness in the Sky, Project Hail Mary, and Embassytown.',
+      'Books that hit the same note as Children of Time: A Deepness in the Sky for spider aliens observed from above by competing human factions across centuries, Project Hail Mary for first contact as a collaborative puzzle between two intelligences who have to invent communication from scratch, A Fire Upon the Deep for the civilisational scale where history is a force larger than any individual.',
     why_people_love:
-      "Children of Time alternates between two civilisations on a collision course: the spiders of a terraformed world, centuries into their uplifted development, and the last humans aboard the generation ship Gilgamesh, desperate for somewhere to land. Tchaikovsky's achievement is making both sides legible and sympathetic — the spider chapters are remarkable for rendering a genuinely non-human mind: a matriarchal society built around female dominance, pheromonal communication, religion based on a misunderstood deity, engineering that follows the logic of webs rather than metal. The human chapters are compelling but the spider chapters are why readers remember this book. The ending takes the premise of first contact further than most SF novels dare.",
+      "Children of Time alternates between two civilisations on a collision course: the spiders of a terraformed world, centuries into their uplifted development, and the last humans aboard the generation ship Gilgamesh, desperate for somewhere to land. Tchaikovsky's achievement is making both sides legible and sympathetic. The spider chapters are remarkable for rendering a genuinely non-human mind: a matriarchal society built around female dominance, pheromonal communication, religion based on a misunderstood deity, engineering that follows the logic of webs rather than metal. The human chapters are compelling but the spider chapters are why readers remember this book. The ending takes the premise of first contact further than most SF novels dare.",
     why_people_love_rich: [
       {
         type: 'paragraph',
-        text: "Children of Time alternates between two civilisations on a collision course: the spiders of a terraformed world, centuries into their development, and the last humans aboard the Gilgamesh, desperate for somewhere to land. Tchaikovsky's achievement is making both sides legible and sympathetic — which requires very different kinds of writing.",
+        text: "Children of Time alternates between two civilisations on a collision course: the spiders of a terraformed world, centuries into their development, and the last humans aboard the Gilgamesh, desperate for somewhere to land. Tchaikovsky's achievement is making both sides legible and sympathetic, which requires very different kinds of writing.",
       },
       {
         type: 'labeled',
         label: 'The Spider Chapters:',
-        text: "A matriarchal society built around female dominance, pheromonal communication, religion based on a misunderstood deity, engineering that follows the logic of webs rather than metal. Tchaikovsky renders a genuinely non-human mind with patient specificity — you learn the logic before you can follow the plot.",
+        text: "A matriarchal society built around female dominance, pheromonal communication, religion based on a misunderstood deity, engineering that follows the logic of webs rather than metal. Tchaikovsky renders a genuinely non-human mind with patient specificity. You learn the logic before you can follow the plot.",
       },
       {
         type: 'paragraph',
-        text: "The human chapters are compelling but the spider chapters are why readers remember this book. The ending takes the premise of first contact further than most SF novels dare — the final convergence pays off both civilisations' worth of patient build.",
+        text: "The human chapters are compelling but the spider chapters are why readers remember this book. The ending takes the premise of first contact further than most SF novels dare. The final convergence brings both threads to a resolution that neither could have reached independently.",
       },
       {
         type: 'warning',
-        text: "This is dense, idea-driven SF — the pleasure is intellectual before it is emotional. There is no central human relationship to carry readers through slower sections. The alternating structure means if one civilisation engages you less than the other, you will feel every chapter that belongs to it.",
+        text: "This is dense, idea-driven SF. The pleasure is intellectual before it is emotional. There is no central human relationship to carry readers through slower sections. The alternating structure means if one civilisation engages you less than the other, you will feel every chapter that belongs to it.",
       },
     ],
   },
   aspects: [
     {
       heading:
-        'If you loved the spider chapters — reading from inside a mind built entirely differently, a civilisation whose logic you have to learn before you can follow it...',
+        'If you loved the spider chapters (reading from inside a mind built entirely differently, a civilisation whose logic you have to learn before you can follow it)...',
       recs: [
         {
           title: 'A Deepness in the Sky',
-          slug: 'a-deepness-in-the-sky',
           author: 'Vernor Vinge',
           darkness_level: 3,
           heat_level: null,
@@ -58,20 +56,21 @@ export const childrenOfTime: BooksLikeEntry = {
           series: 'Zones of Thought',
           series_number: 2,
           audiobook: true,
-          note: "The most direct parallel in SF: a world of spider-like aliens developing civilisation while two competing human factions orbit above, studying and manipulating them. Vinge alternates between the spiders' POV — hunting, politics, the puzzle of their own world — and the human traders and slavers watching from space, with no more awareness of each other than the spiders of Children of Time had of the humans above them. The spider civilisation is rendered with the same patient specificity Tchaikovsky uses, the same commitment to making alien logic feel internally consistent. Reads as a standalone despite being set in the same universe as A Fire Upon the Deep.",
+          note: "The most direct structural parallel in SF: spider-like aliens developing civilisation on their world while two competing human factions orbit above, studying and manipulating them. Vinge alternates between the spiders' POV (hunting, politics, the puzzle of their own world) and the human traders and slavers watching from space, with neither side aware of the other in the way Tchaikovsky uses. The spider civilisation is rendered with the same patient specificity, the same commitment to making alien logic feel internally consistent. Reads as a standalone despite being set in the same universe as A Fire Upon the Deep.",
+          caveat: "Slower than Children of Time and more politically complex on the human side. The trader and slaver factions above the spider world require patience before they pay off. Published in 1999; some readers find the pacing dated.",
           tags: ['Non-Human POV', 'Spider Aliens', 'First Contact', 'Hard SF', 'Civilizational Scale'],
           amazon_url: 'https://www.amazon.com/s?k=A+Deepness+in+the+Sky+Vernor+Vinge&tag=librariancura-20',
           bookshop_url: 'https://bookshop.org/search?keywords=A+Deepness+in+the+Sky+Vernor+Vinge&affiliate=122720',
         },
         {
           title: 'Embassytown',
-          slug: 'embassytown',
           author: 'China Miéville',
           darkness_level: 3,
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: "The Hosts of Embassytown cannot lie — not as a moral choice but as a structural feature of their consciousness: their language can only refer to things that exist, and metaphor requires them to make the comparison real first. Miéville builds an alien intelligence around a single rigorous premise and then applies pressure until everything breaks. Where Children of Time asks what a spider civilisation would look like, Embassytown asks what a form of consciousness anchored entirely to literal reality would look like — and what happens when it encounters language that isn't. Dense and demanding; the payoff is enormous.",
+          note: "The Hosts of Embassytown cannot lie, not as a moral choice but as a structural feature of their consciousness: their language can only refer to things that exist, and metaphor requires them to make the comparison real first. Miéville builds an alien intelligence around a single rigorous premise and then applies pressure until everything breaks. Where Children of Time asks what a spider civilisation would look like, Embassytown asks what a form of consciousness anchored entirely to literal reality would look like, and what happens when it encounters language that isn't.",
+          caveat: "More linguistically demanding than Children of Time and less interested in civilisational sweep. The alien remains permanently opaque in a way Tchaikovsky's spiders don't. Miéville's prose style (dense, deliberately strange) is not for all SF readers.",
           tags: ['Alien Minds', 'Language SF', 'Hard SF', 'First Contact', 'Standalone'],
           amazon_url: 'https://www.amazon.com/s?k=Embassytown+China+Mieville&tag=librariancura-20',
           bookshop_url: 'https://bookshop.org/search?keywords=Embassytown+China+Mieville&affiliate=122720',
@@ -80,7 +79,7 @@ export const childrenOfTime: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the first contact — two intelligences with no shared frame, having to invent the very concept of communication...',
+        'If you loved the first contact (two intelligences with no shared frame, having to invent the very concept of communication)...',
       recs: [
         {
           title: 'Project Hail Mary',
@@ -90,22 +89,21 @@ export const childrenOfTime: BooksLikeEntry = {
           heat_level: null,
           standalone: true,
           audiobook: true,
-          note: "The closest tonal match: an astronaut alone in deep space meeting an alien — Rocky — whose biology, senses, and communication are entirely unlike his own, and the two of them solving the problem of each other through science. Weir writes first contact as a collaborative puzzle, optimistic in exactly the way Children of Time is optimistic: the assumption that intelligence, wherever it comes from, can find common ground if it tries hard enough. Lighter and more propulsive than Tchaikovsky, less interested in civilisational scale, but the central relationship between the protagonist and Rocky is the most affecting first contact in recent SF.",
+          note: "An astronaut alone in deep space meeting an alien (Rocky) whose biology, senses, and communication are entirely unlike his own, the two of them solving the problem of each other through science. Weir writes first contact as a collaborative puzzle, optimistic in exactly the way Children of Time is optimistic: the assumption that intelligence, wherever it comes from, can find common ground if it tries hard enough. Lighter and more propulsive than Tchaikovsky, but the specific pleasure of watching two minds work out how to reach each other is the same.",
+          caveat: "No civilisational scale. This is two individuals, not two species on a collision course. Far warmer and less demanding than Children of Time.",
           tags: ['First Contact', 'Hard SF', 'Optimistic SF', 'Alien Communication', 'Standalone'],
           amazon_url: 'https://www.amazon.com/s?k=Project+Hail+Mary+Andy+Weir&tag=librariancura-20',
           bookshop_url: 'https://bookshop.org/search?keywords=Project+Hail+Mary+Andy+Weir&affiliate=122720',
         },
         {
           title: 'The Left Hand of Darkness',
-          slug: 'the-left-hand-of-darkness',
           author: 'Ursula K. Le Guin',
           darkness_level: 3,
           heat_level: null,
-          standalone: false,
-          series: 'Hainish Cycle',
-          series_number: 4,
+          standalone: true,
           audiobook: true,
-          note: "An envoy sent to a planet of ambisexual humans — a species that cycles through gender rather than being fixed — tries to understand a civilisation built on assumptions he cannot make. Le Guin approaches alien contact as an anthropologist: the gap is not in biology but in the categories the envoy brings, and the book is about what happens when those categories stop working. Quieter and more literary than Children of Time, less interested in hard SF rigour, but the fundamental question — what does it cost to genuinely encounter something Other — is the same. Reads standalone despite being part of the Hainish Cycle.",
+          note: "An envoy sent to a planet of ambisexual humans tries to understand a civilisation built on assumptions he cannot make. Le Guin approaches alien contact as an anthropologist: the gap is not in biology but in the categories the envoy brings, and the book is about what happens when those categories stop working. Where Children of Time shows the alien perspective from the inside across centuries, Le Guin shows it through one outsider's slow, failing, then succeeding understanding from the outside. Quieter and more literary; the question underneath is the same.",
+          caveat: "Short and literary where Children of Time is long and rigorously scientific. The alien difference is social and biological rather than cognitive. Le Guin's pace is deliberate to the point of patience-testing for readers accustomed to SF momentum.",
           tags: ['Alien Society', 'Anthropology SF', 'Literary SF', 'Gender', 'First Contact'],
           amazon_url: 'https://www.amazon.com/s?k=The+Left+Hand+of+Darkness+Le+Guin&tag=librariancura-20',
           bookshop_url: 'https://bookshop.org/search?keywords=The+Left+Hand+of+Darkness+Le+Guin&affiliate=122720',
@@ -114,11 +112,10 @@ export const childrenOfTime: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the civilisational scale — watching intelligence itself rise and collide, history as a force larger than any individual...',
+        'If you loved the civilisational scale (watching intelligence itself rise and collide, history as a force larger than any individual in it)...',
       recs: [
         {
-          title: 'A Fire Upon The Deep',
-          slug: 'a-fire-upon-the-deep',
+          title: 'A Fire Upon the Deep',
           author: 'Vernor Vinge',
           darkness_level: 3,
           heat_level: null,
@@ -126,14 +123,14 @@ export const childrenOfTime: BooksLikeEntry = {
           series: 'Zones of Thought',
           series_number: 1,
           audiobook: true,
-          note: "The galaxy is divided into Zones where the laws of physics determine the maximum possible intelligence — near the core, nothing can think faster than an animal; at the Transcend, beings exceed human comprehension entirely. Vinge builds a setting where civilisation and consciousness are literally constrained by location, and then sends a catastrophe through it. The scale is comparable to Children of Time, the alien intelligences (the Tines, a pack-mind species) are rendered with the same rigour Tchaikovsky uses for the spiders, and the collision of different kinds of mind is the subject. Reads standalone; A Deepness in the Sky is the stronger entry point if you want to read only one.",
+          note: "The galaxy is divided into Zones where the laws of physics determine the maximum possible intelligence: near the core, nothing can think faster than an animal; at the Transcend, beings exceed human comprehension entirely. Vinge builds a setting where civilisation and consciousness are literally constrained by location, then sends a catastrophe through it. The scale is comparable to Children of Time, the alien intelligences (the Tines, a pack-mind species) are rendered with the same rigour Tchaikovsky uses for the spiders, and the collision of different kinds of mind is the subject. A Deepness in the Sky is the stronger entry point to Vinge if you want to read only one.",
+          caveat: "More chaotic and harder to follow than Children of Time in its first third. The Tines are compelling but less systematically rendered than the spiders. The human characters are less interesting than the alien ones by a significant margin.",
           tags: ['Civilizational Scale', 'Alien Minds', 'Hard SF', 'Pack Intelligence', 'Galaxy-Spanning'],
           amazon_url: 'https://www.amazon.com/s?k=A+Fire+Upon+the+Deep+Vernor+Vinge&tag=librariancura-20',
           bookshop_url: 'https://bookshop.org/search?keywords=A+Fire+Upon+the+Deep+Vernor+Vinge&affiliate=122720',
         },
         {
           title: 'Annihilation',
-          slug: 'annihilation',
           author: 'Jeff VanderMeer',
           darkness_level: 4,
           heat_level: null,
@@ -141,7 +138,8 @@ export const childrenOfTime: BooksLikeEntry = {
           series: 'The Southern Reach Trilogy',
           series_number: 1,
           audiobook: true,
-          note: "Area X is transforming everything inside it according to a logic that is not human and not explicable — a process that looks like biology but behaves like intelligence. VanderMeer approaches the alien from the opposite direction to Tchaikovsky: where Children of Time makes its non-human minds legible across centuries of patient observation, Annihilation keeps its intelligence permanently opaque, and the horror comes from that opacity. The tonal gap is significant — Annihilation is literary horror where Children of Time is optimistic hard SF — but readers who loved the idea of an intelligence operating on a scale and timeline that dwarfs human understanding will find it here. Short, dense, and deeply unsettling.",
+          note: "Area X is transforming everything inside it according to a logic that is not human and not explicable: a process that looks like biology but behaves like intelligence. VanderMeer approaches the alien from the opposite direction to Tchaikovsky. Where Children of Time makes its non-human minds legible across centuries of patient observation, Annihilation keeps its intelligence permanently opaque, and the horror comes from that opacity. Readers who loved the idea of an intelligence operating on a scale and timeline that dwarfs human understanding will find it here, stripped of the optimism.",
+          caveat: "Literary horror where Children of Time is optimistic hard SF. No resolution, no communication, no shared frame established. Short and deeply unsettling rather than long and intellectually satisfying.",
           tags: ['Alien Intelligence', 'Literary Horror', 'Transformation', 'Unknown Entity', 'Environmental SF'],
           amazon_url: 'https://www.amazon.com/s?k=Annihilation+Jeff+VanderMeer&tag=librariancura-20',
           bookshop_url: 'https://bookshop.org/search?keywords=Annihilation+Jeff+VanderMeer&affiliate=122720',
@@ -154,5 +152,8 @@ export const childrenOfTime: BooksLikeEntry = {
     { title: 'Books Like Project Hail Mary', slug: 'project-hail-mary' },
     { title: 'Books Like Dune', slug: 'dune' },
     { title: 'Books Like A Memory Called Empire', slug: 'a-memory-called-empire' },
+    { title: 'Books Like Leviathan Wakes', slug: 'leviathan-wakes' },
+    { title: 'Books Like The Empire of Silence', slug: 'empire-of-silence' },
+    { title: 'Books Like The Traitor Baru Cormorant', slug: 'the-traitor-baru-cormorant' },
   ],
 };

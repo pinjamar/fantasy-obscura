@@ -103,7 +103,7 @@
 81. Books like Fireborne
 82. ✅ Books like Daughter of the Moon Goddess
 83. Books like Legendborn
-84. Books like Skyward (Sanderson)
+84. ✅ Books like Skyward (Sanderson)
 85. ✅ Books like The Chronicles of Narnia
 86. ✅ Books like Sabriel / Old Kingdom (Garth Nix)
 
@@ -130,7 +130,7 @@
 104. Books like The Magicians
 105. ✅ Books like The Dresden Files
 106. Books like Rivers of London
-107. Books like Kate Daniels series
+107. ✅ Books like Kate Daniels series
 108. Books like Burn for Me (Hidden Legacy)
 109. Books like Dead Witch Walking / The Hollows
 
@@ -194,7 +194,7 @@
 158. ✅ Books like The Bear and the Nightingale
 159. Books like The Rage of Dragons
 160. Books like Red Sister
-161. Books like The Shadow of the Gods
+161. ✅ Books like The Shadow of the Gods
 162. Books like The Bone Ships
 163. Books like The Ember Blade
 164. ✅ Books like Malice (John Gwynne)

@@ -134,6 +134,10 @@ import { sheWhoBecameTheSun } from './books-like/she-who-became-the-sun';
 import { redQueen } from './books-like/red-queen';
 import { aSpellForChameleon } from './books-like/a-spell-for-chameleon';
 import { theMagicOfRecluce } from './books-like/the-magic-of-recluce';
+import { theTraitorBaruCormorant } from './books-like/the-traitor-baru-cormorant';
+import { mexicanGothic } from './books-like/mexican-gothic';
+import { jhereg } from './books-like/jhereg';
+import { empireOfSilence } from './books-like/empire-of-silence';
 
 export interface BooksLikeRec {
   title: string;
@@ -415,6 +419,10 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   redQueen,
   aSpellForChameleon,
   theMagicOfRecluce,
+  theTraitorBaruCormorant,
+  mexicanGothic,
+  jhereg,
+  empireOfSilence,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"

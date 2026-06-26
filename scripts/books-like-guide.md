@@ -7,7 +7,7 @@ Every `BooksLikeEntry` has four sections:
 - **source** — the book being matched (tropes, why_people_love, answer_line)
 - **aspects** — 3–4 feature-specific sections, each with 1–2 recs + angle-specific notes
 - **recommendations** — `[]` always. This array is NOT rendered by the page template. Put everything in aspects.
-- **related** — exactly 3 related Books Like page links
+- **related** — exactly 6 related Books Like page links
 
 **Rec count target: 6–8 total visible recs across all aspects.**
 Aspects can have 1 or 2 recs — use 1 when the angle has one perfect match and no strong second,
@@ -82,7 +82,7 @@ Never guess or speculatively add cover URLs. A missing cover is better than a br
 |---|---|
 | Aspects | 3–4 aspects, 1–2 recs each, **6–8 total visible recs** |
 | Recommendations | Always `[]` — not rendered by the page template |
-| Related | Exactly 3 entries (other Books Like pages, not external links) |
+| Related | Exactly 6 entries (other Books Like pages, not external links) |
 
 
 ---
@@ -225,6 +225,26 @@ Run this check on every note, caveat, why_people_love, and why_people_love_rich 
 - [ ] No vague filler phrases ("emotional engine", "inner truth", etc.)
 - [ ] No repeated comparison formula across recs in the same guide
 - [ ] No financial metaphors for prose or pacing
+
+---
+## Aspect Rec Quality — Don't Default to Genre Bestsellers
+
+When picking recs for an aspect, the question is not "what are the most popular books in this space?" The question is "what books specifically serve this angle of this source book?"
+
+**The wrong approach:** source is a first-person witty assassin novel → reach for Locke Lamora, Nevernight, Black Company, Gardens of the Moon, Six of Crows, Best Served Cold. All popular. All "dark fantasy with criminal elements." None of them necessarily match what's *specific* about the source.
+
+**The right approach:**
+1. Name what specifically makes THIS book's take on the aspect distinctive. Not "witty criminal protagonist" — but *which specific quality*: the per-book case/detective structure? The outsider species dynamic? The guild as cultural institution with political standing?
+2. Find books that match that specific quality. A second-tier book that serves the angle precisely beats a bestseller that only shares the genre.
+
+**The test:** for each proposed rec, ask: "Would I recommend this to someone who said 'I want more of X specific quality from this book'?" If you're recommending it because it's popular and shares a genre category, cut it. If you're recommending it because it does one specific thing the source does and does it distinctively, keep it.
+
+**Signs you've defaulted to popular picks:**
+- Your 6 recs are all from the same bestseller tier (Abercrombie, Lynch, Kristoff, Bardugo, Cook, Erikson)
+- The recs serve the genre ("grimdark," "heist fantasy," "assassin protagonist") but not the aspect angle as written
+- You could swap the recs between two different guides' guides and they'd still fit
+
+When this happens: read the aspect heading again, name the specific mechanism or dynamic it describes, and search for books that specifically have that.
 
 ---
 ## Common Mistakes
