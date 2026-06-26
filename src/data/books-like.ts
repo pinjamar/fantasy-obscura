@@ -10,6 +10,7 @@ import { theHobbit } from './books-like/the-hobbit';
 import { ironFlame } from './books-like/iron-flame';
 import { legendsAndLattes } from './books-like/legends-and-lattes';
 import { lordOfTheRings } from './books-like/lord-of-the-rings';
+import { lordFoulsBane } from './books-like/lord-fouls-bane';
 import { mistbornTheFinalEmpire } from './books-like/mistborn-the-final-empire';
 import { theNameOfTheWind } from './books-like/the-name-of-the-wind';
 import { percyJackson } from './books-like/percy-jackson';
@@ -34,6 +35,7 @@ import { thornhedge } from './books-like/thornhedge';
 import { americanGods } from './books-like/american-gods';
 import { eragon } from './books-like/eragon';
 import { dungeonCrawlerCarl } from './books-like/dungeon-crawler-carl';
+import { daggerspell } from './books-like/daggerspell';
 import { dune } from './books-like/dune';
 import { cradle } from './books-like/cradle';
 import { shadowAndBone } from './books-like/shadow-and-bone';
@@ -295,6 +297,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   ironFlame,
   legendsAndLattes,
   lordOfTheRings,
+  lordFoulsBane,
   mistbornTheFinalEmpire,
   theNameOfTheWind,
   percyJackson,
@@ -319,6 +322,7 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   americanGods,
   eragon,
   dungeonCrawlerCarl,
+  daggerspell,
   dune,
   cradle,
   shadowAndBone,
