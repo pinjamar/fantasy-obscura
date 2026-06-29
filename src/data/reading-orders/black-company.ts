@@ -1,4 +1,4 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const blackCompany: ReadingOrderEntry = {
   slug: 'black-company',
@@ -7,7 +7,7 @@ export const blackCompany: ReadingOrderEntry = {
   seriesStatus: 'ongoing',
   seriesStatusLabel: '📖 Ongoing - They Cry due Nov 2026',
   description:
-    "One of the founding texts of grimdark fantasy. It has been written years before the term existed. The Black Company is a mercenary band that has served under a succession of employers for centuries, keeping its Annals as it goes. The books are narrated by the Company's physician and historian, Croaker, in a clipped and unsentimental military voice unlike anything else in the genre. No chosen ones. No prophecy. Just soldiers doing terrible things in service of worse masters and somehow finding loyalty worth dying for. The Black Company is where to start. It's short, dense and immediately distinctive. Glen Cook's influence on modern grimdark is enormous; Abercrombie, Erikson and Martin have all cited this series. Read the first four books in order for the complete core story.",
+    "One of the founding texts of grimdark fantasy, written years before the term existed. The Black Company is a mercenary band that has served under a succession of employers for centuries, keeping its Annals as it goes. The books are narrated by the Company's physician and historian, Croaker, in a clipped and unsentimental military voice unlike anything else in the genre. No chosen ones. No prophecy. Just soldiers doing terrible things in service of worse masters, finding loyalty worth dying for anyway. Glen Cook's influence on modern grimdark is measurable: Abercrombie, Erikson, and Martin have all cited this series. Malazan Book of the Fallen would not exist without it. Start with The Black Company. It is short, dense, and immediately distinctive.",
   darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
   groups: [
     {
@@ -19,7 +19,7 @@ export const blackCompany: ReadingOrderEntry = {
           slug: 'the-black-company',
           status: 'mandatory',
           seriesLabel: 'The Black Company #1',
-          note: "Start here. The Company takes service under the Lady. She is one of the most powerful and evil magic users alive. Cook's military voice is unlike anything else in the genre. The first 50 pages are deliberately disorienting (this is intentional).",
+          note: "Start here. The Company takes service under the Lady: one of the most powerful and evil magic users alive. Cook's military prose voice is unlike anything else in the genre. The first 50 pages are deliberately disorienting.",
           page_count: 319,
           publication_year: 1984,
         },
@@ -28,7 +28,7 @@ export const blackCompany: ReadingOrderEntry = {
           slug: 'port-of-shadows',
           status: 'supplementary',
           seriesLabel: 'The Black Company #1.5',
-          note: 'Written 33 years after the original trilogy, set between books 1 & 2. The Company is in garrison during a quiet period. More atmospheric than plot-driven. Rewards familiarity with Croaker and the Lady.',
+          note: 'Written 33 years after the original trilogy, set between books 1 and 2. The Company is in garrison during a quiet period. More atmospheric than plot-driven. Best read by readers already familiar with Croaker and the Lady.',
           page_count: 337,
           publication_year: 2018,
         },
@@ -46,7 +46,7 @@ export const blackCompany: ReadingOrderEntry = {
           slug: 'the-white-rose',
           status: 'mandatory',
           seriesLabel: 'The Black Company #3',
-          note: 'The original trilogy concludes. The Lady, the Dominator, the White Rose - everything from books 1-2 resolves. One of the most surprising endings in grimdark.',
+          note: 'The original trilogy concludes. The Lady, the Dominator, the White Rose: everything from books 1 and 2 resolves. The ending does not go where the setup suggested it would.',
           page_count: 319,
           publication_year: 1985,
         },
@@ -61,7 +61,7 @@ export const blackCompany: ReadingOrderEntry = {
           slug: 'the-silver-spike',
           status: 'optional',
           seriesLabel: 'The Black Company #3.5',
-          note: 'Parallel story set during the march south - follows characters left behind in the north after The White Rose. Read before Shadow Games for chronological order.',
+          note: 'Parallel story set during the march south: follows characters left behind in the north after The White Rose. Read before Shadow Games for chronological order.',
           page_count: 296,
           publication_year: 1989,
         },
@@ -79,7 +79,7 @@ export const blackCompany: ReadingOrderEntry = {
           slug: 'dreams-of-steel',
           status: 'mandatory',
           seriesLabel: 'The Black Company #5',
-          note: 'The aftermath of catastrophe. Lady takes centre stage. The series reinvents itself mid-run without losing momentum.',
+          note: 'The aftermath of catastrophe. Lady takes centre stage and narrates sections directly. The series shifts register mid-run without abandoning what made the first five books work.',
           page_count: 305,
           publication_year: 1990,
         },
@@ -88,7 +88,7 @@ export const blackCompany: ReadingOrderEntry = {
     {
       label: 'Glittering Stone',
       sublabel: 'the final arc - the long march to Khatovar',
-      note: "Bleak Seasons opens with Murgen narrating from fractured, non-linear memory. He is haunted and displaced in time. Many readers bounce off this. Stick with it, the disorientation is deliberate and the timeline resolves. If you've made it through the first five books, Cook has earned your trust here.",
+      note: "Bleak Seasons opens with Murgen narrating from fractured, non-linear memory. He is haunted and displaced in time. The disorientation is deliberate and the timeline resolves. The arc is slower and stranger than the north trilogy, but Soldiers Live closes it with a specificity few fantasy series manage.",
       noteType: 'warning',
       books: [
         {
@@ -96,7 +96,7 @@ export const blackCompany: ReadingOrderEntry = {
           slug: 'bleak-seasons',
           status: 'mandatory',
           seriesLabel: 'The Black Company #6',
-          note: "Non-linear narrative - Murgen's fractured memories. Disorienting by design. Readers sometimes find it hard to follow. The Company is trapped and things are very bad.",
+          note: "Non-linear narrative: Murgen's fractured memories of a siege the Company may not survive. Disorienting by design. The Company is trapped and things are very bad.",
           page_count: 304,
           publication_year: 1996,
         },
@@ -114,7 +114,7 @@ export const blackCompany: ReadingOrderEntry = {
           slug: 'water-sleeps',
           status: 'mandatory',
           seriesLabel: 'The Black Company #8',
-          note: "The Company is shattered, scattered, and hunted. Driven by Sleepy, one of the series' best protagonists. Guerrilla warfare and slow-burn revenge.",
+          note: "The Company is shattered, scattered, and hunted. Narrated by Sleepy: methodical, patient, operating with almost nothing. Guerrilla warfare and slow-burn revenge. The most stripped-down book in the series.",
           page_count: 351,
           publication_year: 1999,
         },
@@ -123,7 +123,7 @@ export const blackCompany: ReadingOrderEntry = {
           slug: 'soldiers-live',
           status: 'mandatory',
           seriesLabel: 'The Black Company #9',
-          note: 'The conclusion of the Glittering Stone arc. Everything the Annals have been building toward. Croaker returns as narrator. One of the most honest endings in fantasy. Not triumphant, not tragic, just true.',
+          note: "The conclusion of the Glittering Stone arc. Croaker returns as narrator. The ending gives no one a clean resolution: no triumphalism, no tragedy, just the cost of what the Company chose. The natural stopping point for the series.",
           page_count: 448,
           publication_year: 2000,
         },
@@ -132,7 +132,7 @@ export const blackCompany: ReadingOrderEntry = {
     {
       label: 'A Pitiless Rain',
       sublabel: 'the new trilogy - in progress',
-      note: 'Lies Weeping arrives 25 years after Soldiers Live. A real gap that shows in the pacing. Croaker is no longer the central narrator; Arkana carries more of the story. Soldiers Live was written as a conclusion and reads like one. Go in knowing Cook is opening a new chapter, not closing the old one.',
+      note: 'Lies Weeping arrives 25 years after Soldiers Live. The long gap shows in the pacing. Croaker is no longer the central narrator; Arkana carries more of the story. Soldiers Live was written as a conclusion and reads like one. This trilogy opens a new chapter rather than closing the old one.',
       noteType: 'warning',
       books: [
         {
@@ -146,7 +146,7 @@ export const blackCompany: ReadingOrderEntry = {
         },
         {
           title: 'They Cry',
-          slug: 'they-cry',
+          slug: null,
           status: 'upcoming',
           seriesLabel: 'The Black Company #11',
           note: 'Upcoming November 2026. Arkana and Shukrat return to An Abode of Raven with new powers; the Steadfast Guardian (Croaker) struggles to hold his humanity while dark forces mobilise against the Company on Hsien.',
@@ -157,38 +157,68 @@ export const blackCompany: ReadingOrderEntry = {
     },
   ],
   orderNote:
-    'Read The Chronicles first (books 1-3). They stand alone and are the best entry point. Many readers stop here and feel satisfied. Port of Shadows is an optional interquel between books 1 and 2. The Books of the South and Glittering Stone follow directly. The Silver Spike sits before Shadow Games in chronological order. The A Pitiless Rain trilogy begins with Lies Weeping (2025) and continues after Soldiers Live. It is a separate arc and a valid stopping point exists before it.',
+    'Read The Chronicles first (books 1-3). They stand alone and are the best entry point. Soldiers Live is a complete and fully satisfying endpoint for the original arc. Port of Shadows is an optional interquel between books 1 and 2. The Silver Spike sits before Shadow Games in chronological order. The A Pitiless Rain trilogy begins with Lies Weeping (2025) and continues after Soldiers Live.',
   cardsPosition: 'above',
   cards: [
     {
       title: '✍️ The Prose Is Intentional',
-      body: "Cook writes in a clipped, unadorned military voice - no florid description, no interiority. It reads more like a soldier's report and less like a novel. Give it 50 pages before deciding it's not for you. That voice is the point.",
+      body: "Cook writes in a clipped, unadorned military voice: no florid description, no interiority. It reads like a soldier's report more than a novel. The first 50 pages are deliberately sparse. That voice is the point.",
       color: 'green',
     },
     {
       title: '📜 The Annals Voice',
-      body: "Every book is narrated by the Company's Annalist - Croaker, their physician-historian. Dry, sardonic and unreliable. He records what he sees and admits what he doesn't know. You piece together the larger picture from the ground level, just like the soldiers do.",
+      body: "Every book is narrated by the Company's Annalist: Croaker, their physician-historian. Dry, sardonic, and unreliable. He records what he sees and admits what he doesn't know. You piece together the larger picture from the ground level, just like the soldiers do.",
       color: 'amber',
     },
     {
       title: '🏁 Soldiers Live Is Worth It',
-      body: 'The Glittering Stone arc is slower and stranger than the North trilogy, but Soldiers Live delivers one of the most honest endings in fantasy. No triumphalism, just soldiers and what it cost. It closes the original nine-book run.',
+      body: "The Glittering Stone arc is slower and stranger than the north trilogy, but Soldiers Live closes it with a specificity few fantasy series manage. No triumphalism, just soldiers and what it cost. It closes the original nine-book run.",
       color: 'purple',
     },
     {
       title: '👑 The Lady',
-      body: "The Company's employer for much of the series is the Lady. She is an ancient, immensely powerful sorceress who is genuinely evil and written as genuinely complex. Not a villain who softens into an ally, not a love interest who exists to humanise the hero. She is one of the most distinctive characters in grimdark and the reason many readers cite the series as more than just military fantasy.",
+      body: "The Company's employer for much of the series is the Lady: an ancient, immensely powerful sorceress who is genuinely evil and written as genuinely complex. She does not soften into an ally. She does not exist to humanise the hero. Her relationship with Croaker is one of the most unusual dynamics in grimdark because neither character behaves as expected.",
       color: 'red',
     },
     {
       title: '⚖️ Moral Complicity',
-      body: 'The Company serves genuinely evil employers and the books treat that complicity seriously. The characters are not reluctant heroes working from the inside, they take the coin and do the job. The darkness is structural, not decorative. This is the question the series is actually asking: what does loyalty cost when the cause is indefensible?',
+      body: 'The Company serves genuinely evil employers and the books treat that complicity seriously. The characters are not reluctant heroes working from the inside; they take the coin and do the job. The darkness is structural, not decorative. This is the question the series is actually asking: what does loyalty cost when the cause is indefensible?',
       color: 'blue',
     },
     {
       title: '📖 The Series Continues',
-      body: 'Written 25 years after the original 9 books, A Pitiless Rain is a new trilogy that picks up after Soldiers Live. Lies Weeping (2025) is the first entry with the same voice and Company, Arkana now central. Many readers treat Soldiers Live as the natural stopping point but this trilogy continues directly after.',
+      body: 'Written 25 years after the original nine books, A Pitiless Rain is a new trilogy that picks up after Soldiers Live. Lies Weeping (2025) is the first entry: same voice and Company, Arkana now central. Soldiers Live is a defensible stopping point; this trilogy continues directly after.',
       color: 'zinc',
+    },
+  ],
+  characters: [
+    {
+      name: 'Croaker',
+      role: "The Company's physician and historian; primary narrator",
+      color: 'blue',
+      why_they_work:
+        "Narrates most of the series in a military register: sardonic, precise, and structurally unreliable. He records what he sees, admits what he doesn't know, and edits what he chooses not to share. What he omits is as important as what he includes.",
+    },
+    {
+      name: 'The Lady',
+      role: "The Company's employer; ancient sorceress of immense power",
+      color: 'red',
+      why_they_work:
+        "Genuinely evil and written as genuinely complex. She does not soften into an ally and does not exist to humanise the hero. Her relationship with Croaker is built on mutual need and mutual suspicion, and neither character is changed into something more comfortable by it.",
+    },
+    {
+      name: 'Soulcatcher',
+      role: "The Lady's mad sister; recurring antagonist",
+      color: 'zinc',
+      why_they_work:
+        "Operates outside any coherent scheme. She is unpredictable in a way that is not random: her motivations become comprehensible only in retrospect. She destabilises every situation she enters and pursues no consistent agenda except her own amusement and survival.",
+    },
+    {
+      name: 'Sleepy',
+      role: 'Company Annalist and commander; narrator of Water Sleeps',
+      color: 'amber',
+      why_they_work:
+        "Narrates Water Sleeps when the Company is shattered and hunted. Her register is methodical, patient, and stripped of Croaker's sardonic detachment. She operates with almost no resources and plans over years. The contrast with Croaker's voice makes Water Sleeps the most distinctive book in the series.",
     },
   ],
   sections: [
@@ -196,22 +226,21 @@ export const blackCompany: ReadingOrderEntry = {
       heading: 'Content notes',
       type: 'bullets',
       bullets: [
-        'Violence is matter-of-fact and military, not gratuitous or gory. No gore for its own sake.',
-        'No romance. Lady is a significant character but the series is not a romance - relationships are functional and dark.',
+        'Violence is matter-of-fact and military, not gratuitous or gory. The darkness is in complicity and consequence, not graphic description.',
+        'No romance. The Lady is a significant character but the series is not a romance: relationships are functional and frequently dark.',
         'No explicit sexual content.',
-        'Right for: readers who want morally complex protagonists with no clear heroism.',
-        'Not right for: readers who need a hero/villain line or a redemption arc.',
+        'Right for: readers who want morally compromised protagonists with no heroism line. Not right for: readers who need a hero/villain structure or a redemption arc.',
       ],
     },
     {
       heading: 'Why it matters',
       type: 'bullets',
       bullets: [
-        'Published in 1984, The Black Company predates A Song of Ice and Fire, The First Law and every modern grimdark series. It invented the template.',
-        'George R.R. Martin, Joe Abercrombie and Steven Erikson have all cited it as a direct influence. Malazan Book of the Fallen would not exist without it.',
-        "Cook's prose is deliberately unadorned - clipped, military, journalistic. The Annals are written by a soldier, not a storyteller. This is a feature, not a bug.",
+        'Published in 1984, The Black Company predates A Song of Ice and Fire, The First Law, and every modern grimdark series. It established the template: morally compromised protagonists, military POV, no chosen-one structure.',
+        "George R.R. Martin, Joe Abercrombie, and Steven Erikson have all cited it as a direct influence. Malazan Book of the Fallen would not exist without it.",
+        "Cook's prose is deliberately unadorned: clipped, military, journalistic. The Annals are written by a soldier, not a storyteller. The effect is to make the reader piece together the larger picture from incomplete ground-level information.",
         'The moral ambiguity is structural. The Company serves evil employers. The characters know this and keep serving. The books are about what loyalty costs.',
-        'Women in the series - Lady, Soulcatcher, the White Rose - are among the most genuinely powerful and dangerous characters in fantasy.',
+        'Women in the series (the Lady, Soulcatcher, the White Rose, Sleepy) are among the most genuinely powerful and dangerous characters in grimdark.',
       ],
     },
   ],
@@ -219,20 +248,20 @@ export const blackCompany: ReadingOrderEntry = {
     {
       label: 'The Chronicles (1-3)',
       level: 5,
-      desc: 'War, atrocity and complicity. Morally compromised from page one',
+      desc: 'War, atrocity, and complicity. Morally compromised from page one.',
     },
     {
       label: 'Books of the South (4-5)',
       level: 5,
-      desc: 'Darker mythology, higher body count and catastrophic defeats',
+      desc: 'Darker mythology, higher body count, and catastrophic defeats.',
     },
     {
       label: 'Glittering Stone (6-9)',
       level: 5,
-      desc: 'Brutally honest about cost - no heroism left, only endurance',
+      desc: 'Brutally honest about cost. No heroism left, only endurance.',
     },
   ],
-  lastUpdated: '2026-05-12',
+  lastUpdated: '2026-06-26',
   shortName: 'Black Company',
   booksLikeSlug: 'the-black-company',
   finishedLabel: 'Finished the Annals?',

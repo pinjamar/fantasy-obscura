@@ -195,7 +195,7 @@ export const brentWeeks: ReadingOrderEntry = {
         'Night Angel is full grimdark: torture, sexual violence (not explicit but present), addiction, and brutal death are recurring elements. One of the darker mainstream fantasy series of the 2000s.',
         'Lightbringer is dark but significantly less visceral. Violence is frequent but the tone is more epic-fantasy than horror-adjacent. Sexual content is present but not graphic.',
         'Both series treat addiction seriously. Night Angel depicts substance dependence with real consequences. Lightbringer uses drafting as an addiction metaphor: the magic literally destroys you if you overuse it, and every drafter knows it going in.',
-        'Night Angel is not the right fit if graphic violence involving children is a hard line. Lightbringer is more accessible but still dark.',
+        'Right for: readers who want full grimdark (Night Angel) or dark epic fantasy with an intricate magic system (Lightbringer). Not right for: readers with hard limits on graphic violence involving children, which is present in Night Angel.',
       ],
     },
   ],

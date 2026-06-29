@@ -1,4 +1,4 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const discworld: ReadingOrderEntry = {
   slug: 'discworld',
@@ -7,14 +7,14 @@ export const discworld: ReadingOrderEntry = {
   seriesStatus: 'complete',
   seriesStatusLabel: '✅ Complete Series',
   description:
-    'Forty-one novels of razor-sharp satire dressed as comedy fantasy. They are organized into seven subseries which you can read in any order. Pratchett used a flat world on the back of a turtle to say more about humanity than most literary fiction manages. Every book is a standalone. Start anywhere. The recommended Discworld reading order for new readers is Guards! Guards! (City Watch) or Mort (Death sub-series), as both work immediately with no prior context required.',
+    'Forty-one novels of satire dressed as comedy fantasy, organized into seven subseries that can be read in any order. Pratchett used a flat world on the back of a turtle to write seriously about religion, war, class, racism, media, and late capitalism. Every book is a standalone. Start with Guards! Guards! (City Watch) or Mort (Death subseries).',
   darknessDisplay: '🕯️🕯️ Mild darkness',
   groups: [
     {
       label: 'City Watch',
       sublabel: 'Recommended start - books 8, 15, 19, 21, 24, 29, 34, 39',
       noteType: 'required',
-      note: 'The most popular entry into Discworld. Start with Guards! Guards! City Watch arc tracks a corrupt city over 20+ years of stories. Night Watch is considered one of the finest books in the whole series.',
+      note: 'The most popular entry into Discworld. Start with Guards! Guards! The City Watch arc tracks a corrupt city over 20+ years of stories. Night Watch is the finest book in the series.',
       books: [
         {
           title: 'Guards! Guards!',
@@ -71,7 +71,7 @@ export const discworld: ReadingOrderEntry = {
           slug: 'night-watch',
           status: 'mandatory',
           seriesLabel: 'City Watch #6',
-          note: 'Time travel, revolution and Vimes at his absolute best. One of the all-time great Discworld novels.',
+          note: 'Time travel, revolution, and Vimes at his most politically angry. The finest book in the series.',
           page_count: 338,
           publication_year: 2002,
           position: 29,
@@ -102,7 +102,7 @@ export const discworld: ReadingOrderEntry = {
       label: 'Witches',
       sublabel: 'books 3, 6, 12, 14, 18, 23',
       noteType: 'optional',
-      note: 'Start with Wyrd Sisters (not Equal Rites). The Witches trilogy (Wyrd Sisters, Witches Abroad, Lords and Ladies) is feminist, sharp and very funny. Granny Weatherwax is one of the best characters in all of fantasy.',
+      note: 'Start with Wyrd Sisters (not Equal Rites). The Witches trilogy (Wyrd Sisters, Witches Abroad, Lords and Ladies) is feminist, sharp, and very funny. Granny Weatherwax is the most fully realised character in the series.',
       books: [
         {
           title: 'Equal Rites',
@@ -128,7 +128,7 @@ export const discworld: ReadingOrderEntry = {
           title: 'Witches Abroad',
           slug: 'witches-abroad',
           status: 'mandatory',
-          note: 'Fairy tale deconstruction. Granny and Nanny travel abroad. One of the funniest Discworld books.',
+          note: 'Fairy tale deconstruction. Granny and Nanny travel abroad. The funniest of the Witches books.',
           page_count: 284,
           publication_year: 1991,
           position: 12,
@@ -170,7 +170,7 @@ export const discworld: ReadingOrderEntry = {
       label: 'Death',
       sublabel: 'books 4, 11, 16, 20, 26',
       noteType: 'optional',
-      note: 'Mort is the best entry after Guards! Guards!. The Death subseries is warmer and more philosophical than the Watch. Hogfather (book 4 of the arc) is a December read.',
+      note: 'Mort is the best entry after Guards! Guards!. The Death subseries is warmer and more philosophical than the Watch. Hogfather (book 4 of the arc) is set at the Discworld equivalent of Christmas.',
       books: [
         {
           title: 'Mort',
@@ -235,7 +235,7 @@ export const discworld: ReadingOrderEntry = {
           slug: 'the-colour-of-magic',
           status: 'supplementary',
           seriesLabel: 'Rincewind #1',
-          note: 'Book 1 - Pratchett finding his feet. Start here only if you want to read in full publication order.',
+          note: 'Book 1. Pratchett finding his feet. Start here for full publication order only.',
           page_count: 206,
           publication_year: 1983,
           position: 1,
@@ -305,7 +305,7 @@ export const discworld: ReadingOrderEntry = {
           slug: 'unseen-academicals',
           status: 'optional',
           seriesLabel: 'Rincewind #8',
-          note: 'The Unseen University wizards discover football. Slow start but rewarding.',
+          note: 'The Unseen University wizards discover football. Slow start; the back half is much stronger.',
           page_count: 514,
           publication_year: 2009,
           position: 37,
@@ -316,7 +316,7 @@ export const discworld: ReadingOrderEntry = {
       label: 'Standalones',
       sublabel: 'books 7, 13, 28',
       noteType: 'optional',
-      note: 'Small Gods is the only mandatory read here. Widely considered a top-3 Discworld book and a perfect standalone. The rest can be read in any order or skipped entirely.',
+      note: 'Small Gods is the only mandatory read here. It requires no prior Discworld reading and stands alongside Night Watch as the best the series offers. The rest can be read in any order or skipped entirely.',
       books: [
         {
           title: 'Pyramids',
@@ -352,7 +352,7 @@ export const discworld: ReadingOrderEntry = {
     },
     {
       label: 'Tiffany Aching',
-      sublabel: 'YA arc — books 30, 32, 35, 38, 41',
+      sublabel: 'YA arc - books 30, 32, 35, 38, 41',
       noteType: 'optional',
       note: "Pratchett's YA series is the best introduction to Discworld for younger readers (also excellent for adults). Start with The Wee Free Men. The Shepherd's Crown is Pratchett's final novel, written as he was dying.",
       books: [
@@ -412,7 +412,7 @@ export const discworld: ReadingOrderEntry = {
       label: 'Industrial Revolution',
       sublabel: 'books 10, 25, 31, 33, 36, 40',
       noteType: 'optional',
-      note: "Three standalone books form the early arc; Moving Pictures (movies), The Truth (newspapers), Monstrous Regiment (war and gender) — before Moist von Lipwig takes over for the main trilogy. Going Postal (#4) is the best standalone entry into Discworld after the Watch books. The Moist arc weakens progressively as Pratchett's health declined.",
+      note: "Three standalone books form the early arc (Moving Pictures, The Truth, Monstrous Regiment), then Moist von Lipwig takes over for the main trilogy. Going Postal (#4) is the best standalone entry into Discworld after the Watch books. The Moist arc weakens progressively as Pratchett's health declined.",
       books: [
         {
           title: 'Moving Pictures',
@@ -439,7 +439,7 @@ export const discworld: ReadingOrderEntry = {
           slug: 'monstrous-regiment',
           status: 'optional',
           seriesLabel: 'Industrial Revolution #3',
-          note: 'A girl disguises herself as a soldier to find her brother. War, gender, and institutional absurdity. One of the most pointed Discworld novels.',
+          note: 'A girl disguises herself as a soldier to find her brother. War, gender, and institutional absurdity. One of the most politically direct Discworld novels.',
           page_count: 384,
           publication_year: 2003,
           position: 31,
@@ -449,7 +449,7 @@ export const discworld: ReadingOrderEntry = {
           slug: 'going-postal',
           status: 'mandatory',
           seriesLabel: 'Industrial Revolution #4',
-          note: 'A con artist is forced to run the Ankh-Morpork post office. Perfect standalone entry. The best place to start if Watch feels too long.',
+          note: 'A con artist is forced to run the Ankh-Morpork post office. The best standalone entry into Discworld outside the Watch arc.',
           page_count: 471,
           publication_year: 2004,
           position: 33,
@@ -478,7 +478,7 @@ export const discworld: ReadingOrderEntry = {
     },
   ],
   orderNote:
-    'Organized by subseries - each arc is self-contained. Start with City Watch or Death. Book numbers in the sublabels refer to publication order.',
+    'Organized by subseries; each arc is self-contained. Start with City Watch or Death. Book numbers in the sublabels refer to publication order.',
   cardsPosition: 'above',
   cards: [
     {
@@ -488,64 +488,91 @@ export const discworld: ReadingOrderEntry = {
     },
     {
       title: '⚠️ Skip Books 1-2',
-      body: 'The Colour of Magic and The Light Fantastic are Pratchett finding his voice - readable but not representative. Most readers who start there bounce off the series. Start from Guards! Guards!, Mort, or Going Postal instead.',
+      body: "The Colour of Magic and The Light Fantastic are Pratchett doing something he would later abandon: genre parody. The early books make jokes about fantasy tropes. The later books use fantasy to make jokes about the real world. That shift is the difference between a clever writer and a genuinely important one. The Rincewind arc is the most common dropout point for new readers because book 1 looks like everything the series is not. Start from Guards! Guards!, Mort, or Going Postal instead.",
       color: 'amber',
     },
     {
       title: '📚 41 Books, No Pressure',
-      body: "You don't need to read all 41. Each subseries is completely self-contained. Pick the arcs that interest you and ignore the rest. Most fans settle into one or two subseries and stay there. The series is designed for this.",
+      body: "Reading all 41 is not required, and Pratchett designed it that way. Each subseries has its own emotional register: the Watch is angry, the Witches are sharp, the Death arc is tender, the Industrial Revolution books are cynical about institutions. You can read one arc start to finish and walk away with a complete experience. The series does not ask you to commit to 41 books to get what it has to offer. Most serious Discworld readers eventually read all of them anyway, but that is not a requirement going in.",
       color: 'green',
     },
     {
       title: '🎭 The Satire',
-      body: 'Discworld is not just comedy, it is a satire. Pratchett used the flat-world setting to write seriously about religion (Small Gods), war (Jingo, Monstrous Regiment), racism and class (Men at Arms, Night Watch), media (The Truth), and late capitalism (the Moist arc). The jokes are real, and so is what sits underneath them.',
+      body: "Discworld is not comedy with serious themes underneath. The jokes are the mechanism of the satire. Pratchett could make you laugh at something and understand it in the same sentence. Small Gods is a precise and damning critique of how institutions consume the ideals that created them, and it is also one of the funniest books in the series. Jingo gets the logic of nationalism exactly right. Monstrous Regiment has more to say about gender and war than most straightforwardly serious novels about those subjects. The flat world on the back of a turtle turned out to be exactly the right shape for what he was actually doing.",
       color: 'purple',
     },
     {
       title: '🌙 Night Watch',
-      body: "Night Watch (book 29) is widely considered the best Discworld novel. Vimes is thrown back in time to the Ankh-Morpork of his youth. It's a story about revolution, mentorship, and what it costs to keep people alive when the world is wrong. Read the Watch books in order first. Night Watch rewards everything you've put in.",
+      body: "Night Watch (book 29) is the finest book in the series and one of the few Discworld novels where the comedy almost completely disappears. Vimes is thrown back in time to the Ankh-Morpork of his youth and forced to become the mentor who made him who he is, knowing exactly how the revolution he is standing in the middle of is going to end. Pratchett had been building Vimes across five books for this moment. What is left when you strip away the jokes is a book about what it costs to keep people alive when the institutions meant to protect them are the ones doing the killing. Read the Watch books in order. Night Watch requires everything that came before it.",
       color: 'red',
     },
     {
       title: '✍️ Terry Pratchett',
-      body: "Pratchett wrote 41 Discworld novels between 1983 and 2015, often two per year, while simultaneously being one of the UK's best-selling authors. In 2007 he announced he had a rare form of early-onset Alzheimer's and continued writing until he could no longer physically do so. He died in March 2015, aged 66. The quality of the series held remarkably well across three decades.",
+      body: "Pratchett wrote 41 Discworld novels between 1983 and 2015, often two per year, and was consistently underestimated because of it. 'Comic fantasy' was treated as a lower category than serious literature. Pratchett was one of the most morally serious writers of his generation. At his peak he was the UK's bestselling living author. In 2007 he announced he had a rare form of early-onset Alzheimer's and continued writing until he could no longer physically do so. He died in March 2015, aged 66. The Shepherd's Crown, his final novel, was published four months after his death, unpolished and worth reading anyway.",
       color: 'zinc',
+    },
+  ],
+  characters: [
+    {
+      name: 'Sam Vimes',
+      role: 'Commander of the Ankh-Morpork City Watch',
+      color: 'zinc',
+      why_they_work:
+        "He is the engine of Pratchett's political anger: a cop from the gutter who built the Watch from nothing, increasingly forced to serve the aristocracy he distrusts. Night Watch is structured entirely around the gap between who he is now and who he was before that happened.",
+    },
+    {
+      name: 'Granny Weatherwax',
+      role: 'The most powerful witch on the Disc',
+      color: 'amber',
+      why_they_work:
+        'She almost never uses magic if she can avoid it. The Witches books are about the difference between power and wisdom, and she is where Pratchett makes that argument clearest. Her willpower is the magic.',
+    },
+    {
+      name: 'Death',
+      role: 'Anthropomorphic personification; appears across all subseries',
+      color: 'blue',
+      why_they_work:
+        'The only character who appears across every subseries, connecting the entire Disc. Pratchett treats him as genuinely curious about human life rather than hostile to it. The Death arc is the warmest in the series as a direct result.',
+    },
+    {
+      name: 'Moist von Lipwig',
+      role: 'Career con artist turned civic reformer',
+      color: 'green',
+      why_they_work:
+        'A fraudster coerced into running institutions he has spent his life defrauding. The Industrial Revolution arc uses him to ask what happens when someone with no integrity is handed a position of public trust and discovers he is genuinely good at it.',
     },
   ],
   sections: [
     {
-      heading: 'Where to start',
-      type: 'bullets',
-      bullets: [
-        'Start with Guards! Guards! (City Watch) or Mort (Death). Both work immediately with no prior context and represent the series at its best.',
-        'Going Postal (Industrial Revolution) is the fastest, funniest standalone entry. Ideal if you want one book before committing to a full subseries.',
-        'Small Gods is the best entry if you want Pratchett at his most serious. No prior reading needed. Standalone.',
-        'The Wee Free Men (Tiffany Aching) is the YA starting point. It works just as well for adults, and the arc is one of the most complete in the series.',
-        'Do not start with The Colour of Magic - it is book 1 in publication order but does not represent what the series becomes.',
-      ],
-    },
-    {
       heading: 'Reading within each subseries',
       type: 'bullets',
       bullets: [
-        'City Watch: Read in order - Vimes and the Watch evolve significantly across 8 books, and Night Watch requires that investment',
-        'Witches: Start with Wyrd Sisters, not Equal Rites - Wyrd Sisters is where the voice clicks into place',
-        'Death: Start with Mort; each book after that works standalone',
-        'Rincewind: The weakest arc - start with Sourcery or Going Postal instead if you want a lighter entry',
-        'Tiffany Aching: Read in order - a complete coming-of-age arc across 5 books, best read start to finish',
-        'Industrial Revolution: Going Postal first; the arc weakens significantly toward Raising Steam',
+        'City Watch: read in order. Vimes and the Watch evolve significantly across 8 books, and Night Watch depends on the accumulated weight of the previous five.',
+        'Witches: start with Wyrd Sisters, not Equal Rites. Wyrd Sisters is where the voice locks in.',
+        'Death: start with Mort. Each book after that works standalone.',
+        'Rincewind: the weakest arc. Start with Sourcery or skip to Going Postal for a lighter entry.',
+        'Tiffany Aching: read in order. A complete coming-of-age arc across 5 books.',
+        'Industrial Revolution: Going Postal first. The Moist arc weakens significantly toward Raising Steam.',
       ],
     },
     {
       heading: 'What to know',
       type: 'bullets',
       bullets: [
-        'Every Discworld book is a standalone. You can start any subseries at any time without reading the others.',
-        "Pratchett's writing gets sharper and angrier as the series progresses - the early books are funnier; the later Watch books are darker and more political.",
-        'Night Watch is widely considered the crown of the series. Read it after Guards! Guards! through The Fifth Elephant rewards everything you put in.',
-        "The Shepherd's Crown was written while Pratchett had Alzheimer's and is visibly less polished than his other work. Read it as a farewell, not as a representative entry.",
-        'Right for: readers who enjoy comedy that takes ideas seriously, character-driven satire, and a world that grows richer the more of it you read.',
-        'Not right for: readers who need plot momentum above all. Discworld runs on wit and observation more than narrative pace.',
+        'Every Discworld book is a standalone. Each subseries can be started without reading the others.',
+        "Pratchett's writing gets sharper and angrier as the series progresses. The early books are funnier; the later Watch books are darker and more political.",
+        'Night Watch is the crown of the series. Read the Watch books in order through The Fifth Elephant first. The five books before it are its foundation.',
+        "The Shepherd's Crown was written while Pratchett had Alzheimer's and is visibly less polished than his other work. It is not a representative entry; read it as a farewell.",
+      ],
+    },
+    {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        'Violence is minimal throughout the main series. Night Watch contains the most sustained violence: street fighting, revolution, and death are central to its plot.',
+        'No romance. Relationships exist but are not a focus of any subseries.',
+        'No explicit content of any kind.',
+        'Right for: readers who want comedy that takes ideas seriously, with political satire running under every joke. Not right for: readers who need propulsive plot momentum above character and satire.',
       ],
     },
   ],
@@ -576,7 +603,7 @@ export const discworld: ReadingOrderEntry = {
       desc: "Bittersweet - Pratchett's farewell, shaped by grief and illness",
     },
   ],
-  lastUpdated: '2026-05-15',
+  lastUpdated: '2026-06-26',
   metaDescription:
     'The Discworld reading order: all 41 novels organized by subseries - City Watch, Witches, Death, Rincewind and more. Where to start and what order to read them in.',
   shortName: 'Discworld',

@@ -237,7 +237,7 @@ export const asoiaf: ReadingOrderEntry = {
         'Darkness is structural: no protagonist is safe, no storyline is guaranteed resolution, and major characters die without warning.',
         'Sexual violence is present throughout (including assault) in contexts that are not always critically framed. This is the most significant content warning for the series.',
         'Violence is graphic and frequent: war, torture, political executions, child deaths.',
-        'This is not the right series if you need characters to be safe or storylines to resolve cleanly.',
+        'Right for: readers who want political epic fantasy where no character or storyline is safe. Not right for: readers who need protagonist safety or clean narrative resolutions.',
       ],
     },
     {

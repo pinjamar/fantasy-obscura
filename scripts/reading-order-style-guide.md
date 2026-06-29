@@ -204,8 +204,16 @@ AI frames everything through hypothetical readers instead of stating a view.
 ❌ "If you find her frustrating, the book is working."
 ❌ "Readers who want a morally clear protagonist will be disappointed."
 ❌ "Those coming from grimdark will find this lighter than expected."
+❌ "Read it if: you want a protagonist who starts at zero."
+❌ "Not right for you if: you need upfront world-building."
 
-**The fix:** drop the hypothetical reader and state what the book actually does. "She refuses every clean choice the novel offers her. That's the point."
+**The fix:** drop the hypothetical reader and state what the book actually does.
+
+✅ "She refuses every clean choice the novel offers her. That's the point."
+✅ "The power advancement is the primary appeal. Each stage change is a genuine qualitative shift, not a number going up."
+✅ "Wight builds the world through action and inference. The early books are light on lore and heavy on momentum."
+
+**The distinction:** describing what the series is (direct) vs. framing it through a hypothetical reader (banned). A "What is X?" section written as direct statements about what the series does, who its characters are, and what it is not about is fine — the pattern to cut is the conditional "Read it if / Not right for you if" framing that hides a direct opinion behind an imagined reader.
 
 ### 4. Financial metaphors for prose quality
 This is one of AI's most recognisable patterns.
@@ -315,11 +323,34 @@ Keep: "Publication vs chronological order" (Malazan, First Law, WoT — very com
 Cut or fold in: generic "What to know" catch-alls, "What makes it special" non-answers — move the substance into a card or one of the other three sections.
 
 **"Content notes"** — add to every guide that's missing it. This never duplicates other page elements.
-The darkness meter shows level per arc but never covers: romance/heat level, whether explicit content exists, what *type* of dark it is (moral ambiguity vs. graphic violence vs. sexual content), or reader fit framing. Cover all four:
+The darkness meter shows level per arc but never covers: romance/heat level, whether explicit content exists, or what *type* of dark it is (moral ambiguity vs. graphic violence vs. sexual content). Cover these four:
 - Darkness type (moral, violent, sexual — not just the level)
 - Romance/heat level (none, minimal, present, explicit)
 - Explicit content (yes/no — people Google this directly)
-- Reader fit: "Right for X. Not right for Y." One line each.
+- Reader fit: one short line. "Right for: readers who want X. Not right for: readers who need Y." Keep it to one sentence each — the format is a compact label, not a paragraph. Skip if the guide already has a "What is X?" section that covers fit.
+
+**Reader fit bullet — formatting rule:** the reader-fit line must be its own bullet, not embedded inside another bullet that also makes an observation about the book. If you find a bullet that both describes something about the series AND serves as reader-fit ("The prose is terse and the first 40 pages are confusing — not right for readers who need hand-holding"), split it: one bullet for the observation, one separate bullet for "Right for / Not right for."
+
+❌ `'The first 40 pages are deliberately disorienting. Not right for readers who need hand-holding.'`
+✅ `'The first 40 pages are deliberately disorienting. Zelazny trusts the reader to keep up.'`
+✅ `'Right for: readers who want tight, fast prose and can tolerate an unreliable narrator. Not right for: readers who need thorough world-building upfront.'`
+
+**"What kind of series this is"** — use when a series has a specific tone, audience fit, or experiential profile worth stating directly. The heading should be neutral: "What kind of series this is", "What Pern is", "The series in brief", or a specific question ("What is Malazan?", "What is Cradle?"). Useful for any series whose genre mechanics, emotional register, or tone is meaningfully different from the reader's default assumptions. Do NOT use "Is X right for you?" as the heading — that's the banned framing even if the bullets themselves are clean.
+
+Write as direct statements about what the series delivers, not reader-response conditionals:
+
+❌ "Read Pern if: you want emotional stakes tied to animal bonds."
+❌ "Pern may not be for you if: you need fast-paced action."
+✅ "Pern is built on emotional stakes tied to animal bonds. The dragon-rider relationship is the core; everything else supports it."
+✅ "Pern is lighter in tone than most modern fantasy: low violence, no profanity, dark moments through grief rather than graphic content."
+
+Useful bullets for this section:
+- What the series is actually about (mechanics and emotional register, not abstract theme lists)
+- Closest comparison series, stated directly ("The closest comparisons are Earthsea and Valdemar")
+- What the series is NOT (tone it doesn't have, content it doesn't cover)
+- Any era or structural caveats that affect the reading experience (slow-start openings, dated attitudes, publication-era tropes)
+
+**When this section is present, skip the "Right for / Not right for" bullet in Content notes** — they cover the same ground. Keep Content notes for: darkness type, romance level, explicit content (yes/no) only. Do not have both a reader-fit section and a reader-fit bullet.
 
 **"Why it matters"** — add for established series with real genre influence. Skip for newer series.
 3–5 concrete bullets: publication year, who it influenced by name, what it invented or popularized, records or awards. Not vague praise — "Joe Abercrombie cited this as a direct influence" beats "hugely influential."
@@ -612,7 +643,8 @@ For most series the book list already is publication order — a second strip ad
 - [ ] `description` leads with what makes the series distinctive — does NOT end with "Start with X"
 - [ ] `orderNote` answers the reading order question in one paragraph; "Start with X" lives here, not in `description`
 - [ ] 6 cards present, `cardsPosition: 'above'`
-- [ ] "Content notes" section present: darkness type, romance level, explicit content (yes/no), reader fit
+- [ ] "Content notes" section present: darkness type, romance level, explicit content (yes/no), reader fit (one line each — or covered by a "What is X?" section)
+- [ ] Reader fit in Content notes is its own dedicated bullet — not embedded inside a bullet that also makes an observation about the series
 - [ ] Series-specific section present only if it answers a real search query not covered elsewhere
 - [ ] "Why it matters" section present for established series; skipped for newer series without legacy
 - [ ] `darkness` array filled per arc with `desc` for each entry

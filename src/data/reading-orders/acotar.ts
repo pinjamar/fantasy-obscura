@@ -158,7 +158,7 @@ export const acotar: ReadingOrderEntry = {
         'Romance drives character decisions and major plot turns throughout. The romantic arcs are the plot, not a subplot.',
         'Explicit content begins with A Court of Mist and Fury (book 2). ACOTAR is significantly milder; the heat increases sharply from book 1 to book 2.',
         'Darkness is emotional rather than grimdark: captivity, trauma, war, political intrigue. No graphic violence or gore.',
-        'The series is not the right fit if explicit romance-centred plots are not what you want from fantasy.',
+        'Right for: readers who want romance as the central engine of a fantasy series. Not right for: readers who want world-building, action, or magic systems as the primary focus.',
       ],
     },
     {

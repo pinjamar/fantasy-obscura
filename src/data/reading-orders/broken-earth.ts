@@ -190,6 +190,7 @@ export const brokenEarth: ReadingOrderEntry = {
         'Slavery, genocide, and systemic racial oppression are central themes throughout all three books: not background, not metaphor at a distance.',
         'Violence is present throughout, including violence against children and orogenes. The series does not look away.',
         'No explicit sexual content. Romance is present but minimal.',
+        'Right for: readers who want SFF that engages directly with systemic oppression and racial power as its explicit subject. Not right for: readers who need emotional distance from their fiction\'s political content.',
       ],
     },
     {

@@ -7,18 +7,18 @@ export const dragonlance: ReadingOrderEntry = {
   seriesStatus: 'complete',
   seriesStatusLabel: '✅ Complete Series',
   description:
-    'The defining D&D fantasy series of the 1980s. Dragonlance introduced a generation to epic fantasy — a world of dragons, knights, and gods set in Krynn, the flagship Dungeons & Dragons campaign setting of the era. The Chronicles trilogy is required reading for fantasy history; the Legends trilogy, following the mage Raistlin, is widely considered the better work. Between them, they represent the peak of TSR-era fantasy fiction. Dragons of Autumn Twilight is where to start. Read Chronicles first, then Legends — those six books are the foundation everything else builds on.',
+    'The defining D&D fantasy series of the 1980s. Dragonlance introduced a generation to epic fantasy: a world of dragons, knights, and gods set in Krynn, the flagship Dungeons & Dragons campaign setting of the era. The Chronicles trilogy is required reading for fantasy history; the Legends trilogy, following the mage Raistlin, is the stronger of the two. Between them, they represent the peak of TSR-era fantasy fiction. Read Chronicles first, then Legends. Those six books are the foundation everything else builds on.',
   darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
   groups: [
     {
       label: 'The Chronicles Trilogy',
-      sublabel: 'Start here — the original Dragonlance',
+      sublabel: 'Start here - the original Dragonlance',
       books: [
         {
           title: 'Dragons of Autumn Twilight',
           slug: 'dragons-of-autumn-twilight',
           status: 'mandatory',
-          note: 'The Companions reunite in a world at war with dragons. Classic fantasy adventure — the template for the genre.',
+          note: 'The Companions reunite in a world at war with dragons. Large ensemble cast established quickly. The pacing reflects the D&D modules it was designed alongside.',
           page_count: 447,
           publication_year: 1984,
         },
@@ -42,8 +42,8 @@ export const dragonlance: ReadingOrderEntry = {
     },
     {
       label: 'The Legends Trilogy',
-      sublabel: "Raistlin's story — widely considered the better trilogy",
-      note: "Read Chronicles first. Legends is darker, more ambitious, and centres entirely on Raistlin — one of fantasy's greatest antiheroes.",
+      sublabel: "Raistlin's story - the stronger of the two trilogies",
+      note: "Read Chronicles first. Legends is darker, more ambitious, and centres entirely on Raistlin: the character the series is actually remembered for.",
       noteType: 'required',
       books: [
         {
@@ -58,7 +58,7 @@ export const dragonlance: ReadingOrderEntry = {
           title: 'War of the Twins',
           slug: 'war-of-the-twins',
           status: 'mandatory',
-          note: "The consequences of time travel ripple outward. Raistlin's plan comes into focus — brilliant and terrifying.",
+          note: "The consequences of time travel ripple outward. Raistlin's plan for godhood comes into focus. What seemed like ambition begins to look like a viable design.",
           page_count: 372,
           publication_year: 1986,
         },
@@ -66,7 +66,7 @@ export const dragonlance: ReadingOrderEntry = {
           title: 'Test of the Twins',
           slug: 'test-of-the-twins',
           status: 'mandatory',
-          note: "The conclusion of Raistlin's arc. One of the most memorable endings in fantasy — haunting and earned.",
+          note: "The conclusion of Raistlin's arc. The ending is permanent, specific, and consistent with everything the Legends trilogy builds toward.",
           page_count: 308,
           publication_year: 1986,
         },
@@ -74,15 +74,15 @@ export const dragonlance: ReadingOrderEntry = {
     },
     {
       label: 'The Raistlin Chronicles',
-      sublabel: 'Prequel to the Chronicles — best read after Legends',
-      note: 'Covers Raistlin\'s early life and his Trial of High Sorcery. Technically a prequel but contains spoilers for the original six books — read after Legends, not before Chronicles.',
+      sublabel: 'Prequel to the Chronicles - best read after Legends',
+      note: "Covers Raistlin's early life and his Trial of High Sorcery. Technically a prequel but contains spoilers for the original six books: read after Legends, not before Chronicles.",
       noteType: 'optional',
       books: [
         {
           title: 'The Soulforge',
           slug: 'the-soulforge',
           status: 'optional',
-          note: "Raistlin's youth, his relationship with Caramon, and the brutal Test of High Sorcery that changes him forever. Essential context for fans who want his full arc.",
+          note: "Raistlin's youth, his relationship with Caramon, and the brutal Test of High Sorcery that changes him forever. Essential context for his full arc.",
           page_count: 407,
           publication_year: 1998,
         },
@@ -90,7 +90,7 @@ export const dragonlance: ReadingOrderEntry = {
           title: 'Brothers in Arms',
           slug: 'brothers-in-arms',
           status: 'optional',
-          note: 'Set between the Test and the War of the Lance. The twins serve as mercenaries. Co-written with Don Perrin — lighter in tone than The Soulforge.',
+          note: 'Set between the Test and the War of the Lance. The twins serve as mercenaries. Co-written with Don Perrin, lighter in tone than The Soulforge.',
           page_count: 416,
           publication_year: 1999,
         },
@@ -98,15 +98,15 @@ export const dragonlance: ReadingOrderEntry = {
     },
     {
       label: 'The Lost Chronicles',
-      sublabel: 'Fill-in stories set during the Chronicles — best read after Legends',
-      note: 'Three novels that fill in gaps left by the original Chronicles trilogy. Each takes place during events the first three books skipped over. Best read after completing both original trilogies — they work as enrichment, not as standalone stories.',
+      sublabel: 'Fill-in stories set during the Chronicles - best read after Legends',
+      note: 'Three novels that fill in gaps left by the original Chronicles trilogy. Each takes place during events the first three books skipped over. Best read after completing both original trilogies. They work as enrichment, not as standalone stories.',
       noteType: 'optional',
       books: [
         {
           title: 'Dragons of the Dwarven Depths',
           slug: 'dragons-of-the-dwarven-depths',
           status: 'optional',
-          note: "Fills in the gap between Chronicles books 1 and 2. The Companions seek shelter in Thorbardin amid an ancient dwarven civil conflict — more politically complex than the main trilogy.",
+          note: "Fills in the gap between Chronicles books 1 and 2. The Companions seek shelter in Thorbardin amid an ancient dwarven civil conflict. More politically complex than the main trilogy.",
           page_count: 480,
           publication_year: 2006,
         },
@@ -122,7 +122,7 @@ export const dragonlance: ReadingOrderEntry = {
           title: 'Dragons of the Hourglass Mage',
           slug: 'dragons-of-the-hourglass-mage',
           status: 'optional',
-          note: "Covers Raistlin's solo journey to Neraka — events referenced in Legends but never shown. The most essential of the three for Raistlin fans.",
+          note: "Covers Raistlin's solo journey to Neraka: events referenced in Legends but never shown. The most plot-relevant of the three Lost Chronicles for readers following his arc.",
           page_count: 384,
           publication_year: 2008,
         },
@@ -131,7 +131,7 @@ export const dragonlance: ReadingOrderEntry = {
     {
       label: 'Second Generation & the Fifth Age',
       sublabel: 'Bridge between Legends and the War of Souls era',
-      note: 'The Second Generation introduces the children of the original Companions. Dragons of Summer Flame closes the Heroes of the Lance era with the Chaos War — read it before starting War of Souls.',
+      note: 'The Second Generation introduces the children of the original Companions. Dragons of Summer Flame closes the Heroes of the Lance era with the Chaos War. Read it before starting War of Souls.',
       noteType: 'optional',
       books: [
         {
@@ -154,15 +154,15 @@ export const dragonlance: ReadingOrderEntry = {
     },
     {
       label: 'The War of Souls',
-      sublabel: 'The best post-Legends trilogy — read after Dragons of Summer Flame',
-      note: 'Set 40 years after the Chaos War. Weis & Hickman return to Krynn with Mina, a young woman who claims to serve a mysterious One God. Considered the strongest Dragonlance work since the original six.',
+      sublabel: 'The best post-Legends trilogy - read after Dragons of Summer Flame',
+      note: 'Set 40 years after the Chaos War. Weis & Hickman return to Krynn with Mina, a young woman who claims to serve a mysterious One God. The strongest Dragonlance work since the original six.',
       noteType: 'optional',
       books: [
         {
           title: 'Dragons of a Fallen Sun',
           slug: 'dragons-of-a-fallen-sun',
           status: 'optional',
-          note: 'Krynn in the Age of Mortals — the gods are gone, magic is unreliable, and a new army marches under a strange banner. A strong return to form.',
+          note: 'Krynn in the Age of Mortals: the gods are gone, magic is unreliable, and a new army marches under a strange banner. The Age of Mortals worldbuilding distinguishes this from the god-centric mechanics of the original trilogies.',
           page_count: 624,
           publication_year: 2000,
         },
@@ -178,7 +178,7 @@ export const dragonlance: ReadingOrderEntry = {
           title: 'Dragons of a Vanished Moon',
           slug: 'dragons-of-a-vanished-moon',
           status: 'optional',
-          note: "The War of Souls concludes. The gods' return and Mina's fate resolved — the direct setup for The Dark Disciple.",
+          note: "The War of Souls concludes. The gods' return and Mina's fate are resolved. Leads directly into The Dark Disciple.",
           page_count: 496,
           publication_year: 2002,
         },
@@ -186,8 +186,8 @@ export const dragonlance: ReadingOrderEntry = {
     },
     {
       label: 'The Dark Disciple',
-      sublabel: 'Set in the Age of Mortals — after the War of Souls era',
-      note: 'A standalone trilogy by Margaret Weis set after the War of Souls. Follows Mina — the young zealot from that era — and Rhys Mason, a monk of Majere. Darker in tone than the original trilogies and largely self-contained.',
+      sublabel: 'Set in the Age of Mortals - after the War of Souls era',
+      note: 'A standalone trilogy by Margaret Weis set after the War of Souls. Follows Mina (the young zealot from that era) and Rhys Mason, a monk of Majere. Darker in tone than the original trilogies and largely self-contained.',
       noteType: 'optional',
       books: [
         {
@@ -210,7 +210,7 @@ export const dragonlance: ReadingOrderEntry = {
           title: 'Amber and Blood',
           slug: 'amber-and-blood',
           status: 'optional',
-          note: "The trilogy concludes. Mina's fate is resolved — one of the more affecting endings in post-Legends Dragonlance.",
+          note: "The trilogy concludes. Mina's arc is completed with more care than most post-Legends Dragonlance gets.",
           page_count: 352,
           publication_year: 2008,
         },
@@ -218,7 +218,7 @@ export const dragonlance: ReadingOrderEntry = {
     },
     {
       label: 'Dragonlance Destinies',
-      sublabel: 'The newest trilogy — by Tracy Hickman & Laura Hickman',
+      sublabel: 'The newest trilogy - by Tracy Hickman & Laura Hickman',
       note: 'A time-travel trilogy by Tracy Hickman and Laura Hickman set in the modern Krynn era. A young woman named Destina Rosethorn uses a powerful artifact to travel back to the War of the Lance. Reads best with the full original series behind you.',
       noteType: 'optional',
       books: [
@@ -250,59 +250,87 @@ export const dragonlance: ReadingOrderEntry = {
     },
   ],
   orderNote:
-    'Read Chronicles first, then Legends — those six books are the foundation. Everything after is optional: Raistlin Chronicles and Lost Chronicles enrich the original era; Second Generation and War of Souls continue the main storyline; Dark Disciple and Destinies are for committed fans of the world.',
+    'Read Chronicles first, then Legends. Those six books are the foundation. Everything after is optional: Raistlin Chronicles and Lost Chronicles enrich the original era; Second Generation and War of Souls continue the main storyline; Dark Disciple and Destinies are for committed fans of the world.',
   cardsPosition: 'above',
   cards: [
     {
       title: '🐉 Krynn',
-      body: "Dragonlance's world is one of the most fully realised D&D settings — a world of knights, gods, and dragon armies. The divine magic system is tied directly to the gods themselves, and the alignment of a wizard's robes (White, Red, or Black) determines what magic they can access. The War of the Lance, which drives the Chronicles, is the defining conflict of Krynn's history — and the setting that shaped how D&D was played and imagined for a generation.",
+      body: "Dragonlance is the flagship Dungeons & Dragons campaign setting: knights, gods, and dragon armies set in Krynn. The divine magic system is tied directly to the gods themselves, and the alignment of a wizard's robes (White, Red, or Black) determines what magic they can access. The War of the Lance, which drives the Chronicles, is the defining conflict of Krynn's history. It shaped how D&D was played and imagined for a generation.",
       color: 'blue',
     },
     {
       title: '🧙 Raistlin',
-      body: "The mage Raistlin Majere is the reason Dragonlance endures. Frail, bitter, and consumed by ambition, he has golden skin and hourglass eyes that see the mortality of all things — a visual metaphor that never stops being effective. He is morally grey before that was fashionable in fantasy. The Legends trilogy is fundamentally his story: where he goes, why, and what it costs him. His arc is arguably the finest in TSR-era fantasy.",
+      body: "The mage Raistlin Majere is the reason Dragonlance endures. Frail, bitter, and consumed by ambition, he has golden skin and hourglass eyes that see the mortality of all things: a visual that signals immediately what the character is about without needing explanation. He is not a reluctant villain or a misunderstood idealist. His bid for godhood in Legends is coherent, specific, and treated as a design that might actually work. The Legends trilogy is built entirely around whether he can complete it.",
       color: 'purple',
     },
     {
       title: '⚔️ The Companions',
-      body: "The Chronicles follow a band of old friends who reunite after years apart — Tanis the half-elf, Sturm the knight, the twins Caramon and Raistlin, the kender Tasselhoff, and others. They are archetypes, but effective ones. Their dynamics — especially the tension between Raistlin and everyone else — carry the Chronicles and give the Legends trilogy its emotional weight. The found family structure is the template dozens of fantasy series imitated after.",
+      body: "The Chronicles follow a band of old friends who reunite after years apart: Tanis the half-elf, Sturm the knight, the twins Caramon and Raistlin, the kender Tasselhoff, and others. They are archetypes, but effective ones. Their dynamics (especially the tension between Raistlin and everyone else) carry the Chronicles and give the Legends trilogy its emotional weight. The found-family structure predates every comparable fantasy series by several years; it arrived in 1984.",
       color: 'amber',
     },
     {
       title: '📚 Two Trilogies, Two Registers',
-      body: 'Chronicles and Legends are different books. Chronicles is episodic adventure — structured, fast, occasionally shallow. Legends is darker, more focused, and built around a single character\'s journey. The consensus is that Chronicles is required context and Legends is where the real work happens. Read them in order — Legends only lands once you know the characters Chronicles establishes.',
+      body: "Chronicles and Legends are different books. Chronicles is episodic adventure: structured, fast, and built to establish the world and characters. Legends is darker, more focused, and built entirely around Raistlin's bid for godhood. Chronicles is the required context. Legends is where the series becomes what Dragonlance is remembered for. Read them in order: Legends only lands once you know the characters Chronicles establishes.",
       color: 'green',
     },
     {
       title: '🎲 D&D Origins',
-      body: "Dragonlance was designed in 1984 alongside a series of D&D adventure modules — the books and the games came out simultaneously, and the pacing of Chronicles reflects that. Some chapters feel like game sessions being run. This is both a flaw and a historical curiosity. The series helped define the look and feel of D&D for a generation and directly influenced how the game was designed through the late 80s and 90s.",
+      body: "Dragonlance was designed in 1984 alongside a series of D&D adventure modules (the books and the games came out simultaneously), and the pacing of Chronicles reflects that. Some chapters feel like game sessions being run. This is both a flaw and a historical curiosity. The series helped define the look and feel of D&D for a generation and directly influenced how the game was designed through the late 80s and 90s.",
       color: 'zinc',
     },
     {
       title: '🌍 The Extended Universe',
-      body: "Over 190 Dragonlance novels exist — written by dozens of authors, covering centuries of Krynn's history. The only essential reading is the six Weis & Hickman books: the Chronicles and Legends trilogies. Beyond those, the most recommended path is Second Generation → Dragons of Summer Flame → War of Souls — the three Weis & Hickman arcs that continue the story into a new era. Everything else is optional reading for dedicated fans of the setting.",
+      body: "Over 190 Dragonlance novels exist (written by dozens of authors, covering centuries of Krynn's history). The only essential reading is the six Weis & Hickman books: the Chronicles and Legends trilogies. Beyond those, the recommended continuation path is Second Generation, Dragons of Summer Flame, and then War of Souls: the three Weis & Hickman arcs that continue the story into a new era. Everything else is supplementary reading for dedicated fans of the setting.",
       color: 'red',
+    },
+  ],
+  characters: [
+    {
+      name: 'Raistlin Majere',
+      role: 'Black-robed mage; the central figure of the Legends trilogy',
+      color: 'purple',
+      why_they_work:
+        "He does not pursue power from simple ambition. He has looked at every available system of meaning (faith, fellowship, knowledge) and found each insufficient. His bid for godhood in Legends is coherent and specific, treated as a design that might actually work. The series is built entirely around whether he can complete it.",
+    },
+    {
+      name: 'Caramon Majere',
+      role: "Raistlin's twin; warrior of the Companions",
+      color: 'amber',
+      why_they_work:
+        "His function in Legends is to become someone Raistlin cannot dismiss. The twin dynamic starts as dependency (Caramon protecting the physically frail Raistlin) and ends in reversal. What changes him, and how, is the emotional argument of the Legends trilogy.",
+    },
+    {
+      name: 'Tanis Half-Elven',
+      role: 'Leader of the Companions; half-elf, half-human',
+      color: 'blue',
+      why_they_work:
+        "He leads the Companions in Chronicles by managing his own indecision well enough to look like strategy. He is the only member of the Companions who gets no satisfying resolution at the end of the first trilogy, because he cannot commit to a single thing long enough to complete it. The series does not treat this as a character flaw to overcome.",
+    },
+    {
+      name: 'Mina',
+      role: "The One God's general; central figure of the War of Souls",
+      color: 'red',
+      why_they_work:
+        "She believes completely in her god with no ambivalence or self-awareness. The series structures her conviction as genuine: the horror of her arc is that authentic faith and being deceived by a corrupt god produce the same internal experience. The War of Souls uses her to ask whether devotion itself is a category that can be corrupted.",
     },
   ],
   sections: [
     {
-      heading: 'Where to start',
-      type: 'bullets',
-      bullets: [
-        "Start with Dragons of Autumn Twilight — it establishes the world and cast. It's episodic and occasionally slow; the Legends trilogy is the payoff.",
-        "Only want one trilogy? Read Legends after skimming Chronicles summaries — it stands better on its own, though you'll miss some emotional weight.",
-        "Already read Chronicles? Go straight to Legends. It's the reason Dragonlance is still read today.",
-      ],
-    },
-    {
       heading: 'What to know',
       type: 'bullets',
       bullets: [
-        'The Chronicles pacing reflects the D&D adventure modules it was designed alongside — some chapters feel like game sessions. Legends is a proper novel.',
-        'Both trilogies are fast reads — six books total, averaging 370 pages. The whole core series is under 2,500 pages.',
-        'A film adaptation (Dragons of Autumn Twilight, 2008) exists — it is widely considered poor and can be ignored.',
-        'Right for: readers who want classic 1980s epic fantasy, D&D-adjacent worldbuilding, and a genuinely great antihero arc.',
-        'Not right for: readers who need modern prose or gritty realism — this is high fantasy from the module era.',
+        'The Chronicles pacing reflects the D&D adventure modules it was designed alongside. Some chapters feel like game sessions; Legends is a proper novel with a focused single-character structure.',
+        'Both trilogies are fast reads: six books total, averaging 370 pages. The core series is under 2,500 pages.',
+        'A film adaptation (Dragons of Autumn Twilight, 2008) exists. It is poorly received and skippable.',
+      ],
+    },
+    {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        'Violence is moderate throughout. War sequences, battle deaths, and magical conflict are present without graphic description.',
+        'Romance is present but secondary. The Tanis and Kitiara relationship arc is the most significant across the Chronicles. No explicit content.',
+        'Right for: readers who want classic 1980s high fantasy with D&D-influenced world-building and a genuinely interesting antihero arc. Not right for: readers who need modern prose or grimdark realism.',
       ],
     },
   ],
@@ -310,32 +338,32 @@ export const dragonlance: ReadingOrderEntry = {
     {
       label: 'Chronicles Trilogy',
       level: 3,
-      desc: 'Moderate — war, loss, and sacrifice throughout',
+      desc: 'Moderate - war, loss, and sacrifice throughout',
     },
     {
       label: 'Legends Trilogy',
       level: 3,
-      desc: 'Moderate — moral complexity, darker ambition, sacrifice',
+      desc: 'Moderate - moral complexity, darker ambition, sacrifice',
     },
     {
       label: 'War of Souls',
       level: 3,
-      desc: 'Moderate — gods absent, spiritual crisis, war and loss',
+      desc: 'Moderate - gods absent, spiritual crisis, war and loss',
     },
     {
       label: 'Dark Disciple',
       level: 4,
-      desc: 'Dark — theological dread, corruption, death god as villain',
+      desc: 'Dark - theological dread, corruption, death god as villain',
     },
     {
       label: 'Dragonlance Destinies',
       level: 2,
-      desc: 'Light to moderate — time-travel adventure, accessible tone',
+      desc: 'Light to moderate - time-travel adventure, accessible tone',
     },
   ],
   metaDescription:
-    'The Dragonlance reading order: the Chronicles trilogy and Legends trilogy — the six essential Margaret Weis & Tracy Hickman books in the order that makes them hit hardest.',
-  lastUpdated: '2026-05-15',
+    'The Dragonlance reading order: the Chronicles trilogy and Legends trilogy. The six essential Margaret Weis & Tracy Hickman books in the order that makes them hit hardest.',
+  lastUpdated: '2026-06-26',
   shortName: 'Dragonlance',
   finishedLabel: 'Finished Weis & Hickman?',
   booksLikeSlug: 'dragons-of-autumn-twilight',

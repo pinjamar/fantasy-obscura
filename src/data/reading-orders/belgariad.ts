@@ -280,7 +280,8 @@ export const belgariad: ReadingOrderEntry = {
         'Light in tone throughout. This is adventure fantasy, not grimdark. Deaths happen but warmth is constant across all ten Belgariad and Malloreon books.',
         'Romance is present but mild. No explicit content in any of the twelve novels.',
         'Garion operates entirely within the chosen-one structure. The series does not interrogate the trope: it executes it, and execution is the point.',
-        'The ensemble banter and found-family dynamic are the reason readers reread this. The prophecy structure is conventional; the characters are not.',
+        'The ensemble banter and found-family dynamic are what the series is actually about. The prophecy structure is conventional; the characters are not.',
+        'Right for: readers who want warmhearted epic fantasy executed without irony. Not right for: readers who want the chosen-one trope interrogated or subverted.',
       ],
     },
     {

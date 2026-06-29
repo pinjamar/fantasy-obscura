@@ -20,7 +20,7 @@ Sherrilyn Kenyon                         70 books  /authors/sherrilyn-kenyon/
 Nalini Singh                             65 books  /authors/nalini-singh/
 Seanan McGuire                           65 books  /authors/seanan-mcguire/
 ✅R.A. Salvatore                           63 books  /authors/r-a-salvatore/
-Jennifer L. Armentrout                   61 books  /authors/jennifer-l-armentrout/
+✅Jennifer L. Armentrout                   61 books  /authors/jennifer-l-armentrout/
 ✅Terry Brooks                             59 books  /authors/terry-brooks/
 Kevin J. Anderson                        58 books  /authors/kevin-j-anderson/
 Jennifer Estep                           57 books  /authors/jennifer-estep/
@@ -31,7 +31,7 @@ Tao Wong                                 54 books  /authors/tao-wong/
 ✅Adrian Tchaikovsky                       52 books  /authors/adrian-tchaikovsky/
 ✅Terry Pratchett                          52 books  /authors/terry-pratchett/
 Thomas K. Carpenter                      50 books  /authors/thomas-k-carpenter/
-Caroline Peckham                         49 books  /authors/caroline-peckham/
+✅Caroline Peckham                         49 books  /authors/caroline-peckham/
 Rachel Caine                             49 books  /authors/rachel-caine/
 Tracy Hickman                            49 books  /authors/tracy-hickman/
 ✅Susanne Valenti                          48 books  /authors/susanne-valenti/
@@ -51,7 +51,7 @@ David Gemmell                            37 books  /authors/david-gemmell/
 Ilona Andrews                            37 books  /authors/ilona-andrews/
 Eoin Colfer                              37 books  /authors/eoin-colfer/
 Michael A. Stackpole                     36 books  /authors/michael-a-stackpole/
-Tamora Pierce                            36 books  /authors/tamora-pierce/
+✅Tamora Pierce                            36 books  /authors/tamora-pierce/
 Holly Black                              36 books  /authors/holly-black/
 ✅David Eddings                            36 books  /authors/david-eddings/
 C.J. Cherryh                             36 books  /authors/c-j-cherryh/
@@ -143,7 +143,7 @@ Karen Miller                             17 books  /authors/karen-miller/
 James E. Wisher                          17 books  /authors/james-e-wisher/
 Elizabeth Haydon                         17 books  /authors/elizabeth-haydon/
 Sara Douglass                            17 books  /authors/sara-douglass/
-Guy Gavriel Kay                          17 books  /authors/guy-gavriel-kay/
+✅Guy Gavriel Kay                          17 books  /authors/guy-gavriel-kay/
 Ben Aaronovitch                          17 books  /authors/ben-aaronovitch/
 W.J. May                                 17 books  /authors/w-j-may/
 Rob J. Hayes                             17 books  /authors/rob-j-hayes/
@@ -221,7 +221,7 @@ Michael Scott Rohan                      11 books  /authors/michael-scott-rohan/
 Renee Ahdieh                             11 books  /authors/renee-ahdieh/
 Anthony Ryan                             10 books  /authors/anthony-ryan/
 Tam DeRudder Jackson                     10 books  /authors/tam-derudder-jackson/
-Katharine Kerr                           10 books  /authors/katharine-kerr/
+✅Katharine Kerr                           10 books  /authors/katharine-kerr/
 Delemhach                                10 books  /authors/delemhach/
 Carissa Broadbent                        10 books  /authors/carissa-broadbent/
 Suzanne Collins                          10 books  /authors/suzanne-collins/
