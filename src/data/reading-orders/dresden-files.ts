@@ -6,22 +6,22 @@ export const dresdenFiles: ReadingOrderEntry = {
   author: 'Jim Butcher',
   cardsPosition: 'above',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '📖 Ongoing — Book 18 out now, #19 expected 2027',
+  seriesStatusLabel: '📖 Ongoing - Book 18 out now, #19 expected 2027',
   description:
-    "Urban fantasy noir — Harry Dresden is Chicago's only professional wizard, listed in the Yellow Pages. What starts as hardboiled detective fiction with magic escalates across 18 books into a cosmic war with genuine consequences. The first two books are the weakest; by book four the series is exceptional. Storm Front is where to start, and the reading order is strictly linear — each book builds on the last. The payoff of the later entries depends entirely on everything that came before.",
+    "Harry Dresden is Chicago's only professional wizard, listed in the Yellow Pages. The cases start small: missing persons, supernatural disturbances, things the police cannot explain. Eighteen books later the same first-person sardonic voice is narrating a cosmic war, and the stakes trace back to decisions and characters from book 2. The first two books are the weakest; by book four the series is exceptional. Start with Storm Front.",
   darknessDisplay: '🕯️🕯️🕯️ → 🕯️🕯️🕯️🕯️🕯️ Moderate → Brutal',
   groups: [
     {
       label: 'The Early Cases',
-      sublabel: 'books 1–6 — start here',
+      sublabel: 'books 1-6 - start here',
       noteType: 'required',
-      note: 'The first two books (Storm Front, Fool Moon) are lighter in tone. Push through — the series hits its stride with Grave Peril and never looks back.',
+      note: 'The first two books (Storm Front, Fool Moon) are lighter in tone. Push through. The series hits its stride with Grave Peril and never looks back.',
       books: [
         {
           title: 'Storm Front',
           slug: 'storm-front',
           status: 'mandatory',
-          note: 'Start here. Harry Dresden, Chicago wizard-for-hire. Sets the tone — fast, funny, and darker than it looks.',
+          note: 'Start here. Harry Dresden, Chicago wizard-for-hire. Sets the tone: fast, funny, and darker than it looks.',
           page_count: 322,
           publication_year: 2000,
         },
@@ -29,7 +29,7 @@ export const dresdenFiles: ReadingOrderEntry = {
           title: 'Fool Moon',
           slug: 'fool-moon',
           status: 'mandatory',
-          note: 'Werewolves. The weakest early book but essential — introduces key characters and the White Council.',
+          note: 'Werewolves. The weakest early book but essential: introduces key characters and the White Council.',
           page_count: 384,
           publication_year: 2001,
         },
@@ -45,7 +45,7 @@ export const dresdenFiles: ReadingOrderEntry = {
           title: 'Summer Knight',
           slug: 'summer-knight',
           status: 'mandatory',
-          note: 'Faeries and a political war between Courts. Many consider this where the series truly becomes great.',
+          note: 'Faeries and a political war between Courts. Where the series becomes genuinely great.',
           page_count: 371,
           publication_year: 2002,
         },
@@ -69,7 +69,7 @@ export const dresdenFiles: ReadingOrderEntry = {
     },
     {
       label: 'The Escalation Arc',
-      sublabel: 'books 7–11 — the series hits full stride',
+      sublabel: 'books 7-11 - the series hits full stride',
       noteType: 'required',
       note: 'Dead Beat through Turn Coat is where the series becomes unmissable. Each book raises the stakes and adds pieces to a much larger board.',
       books: [
@@ -77,7 +77,7 @@ export const dresdenFiles: ReadingOrderEntry = {
           title: 'Dead Beat',
           slug: 'dead-beat',
           status: 'mandatory',
-          note: 'Necromancers, a zombie T-Rex, and a major power shift for Harry. The fan favourite entry point for many.',
+          note: 'Necromancers, a zombie T-Rex, and a major power shift for Harry.',
           page_count: 432,
           publication_year: 2005,
         },
@@ -117,7 +117,7 @@ export const dresdenFiles: ReadingOrderEntry = {
           title: 'Side Jobs',
           slug: 'side-jobs',
           status: 'optional',
-          note: 'Anthology of 11 short stories set during books 1–11 — including "Restoration of Faith", "Backup" (Thomas POV), "The Warrior", and "Last Call". The final story "Aftermath" bridges directly into Ghost Story — save that one for right after Changes.',
+          note: 'Anthology of 11 short stories set during books 1-11, including "Restoration of Faith", "Backup" (Thomas POV), "The Warrior", and "Last Call". The final story "Aftermath" bridges directly into Ghost Story: save it for right after Changes.',
           page_count: 416,
           publication_year: 2011,
         },
@@ -125,7 +125,7 @@ export const dresdenFiles: ReadingOrderEntry = {
     },
     {
       label: 'The Crisis Arc',
-      sublabel: 'books 12–15 — everything changes',
+      sublabel: 'books 12-15 - everything changes',
       noteType: 'warning',
       note: 'Changes (book 12) is a point of no return. The series gets significantly darker and more consequential. Do not read spoilers.',
       books: [
@@ -157,7 +157,7 @@ export const dresdenFiles: ReadingOrderEntry = {
           title: 'Skin Game',
           slug: 'skin-game',
           status: 'mandatory',
-          note: 'Heist against Hades. The most accessible book post-Changes and arguably the best single volume in the series.',
+          note: 'Heist against Hades. The most accessible book post-Changes and the best single volume in the series.',
           page_count: 464,
           publication_year: 2014,
         },
@@ -165,7 +165,7 @@ export const dresdenFiles: ReadingOrderEntry = {
           title: 'Brief Cases',
           slug: 'brief-cases',
           status: 'optional',
-          note: 'Anthology of 12 stories set around books 10–17 — including the novella "Ghoul Goblin", "Even Hand" (Marcone POV), "Cold Case" (Molly POV), and "Jury Duty" (post-Skin Game). Read before Peace Talks.',
+          note: 'Anthology of 12 stories set around books 10-17, including the novella "Ghoul Goblin", "Even Hand" (Marcone POV), "Cold Case" (Molly POV), and "Jury Duty" (post-Skin Game). Read before Peace Talks.',
           page_count: 512,
           publication_year: 2018,
         },
@@ -173,15 +173,15 @@ export const dresdenFiles: ReadingOrderEntry = {
     },
     {
       label: 'The Aftermath',
-      sublabel: 'books 16–17 — read back-to-back',
+      sublabel: 'books 16-17 - read back-to-back',
       noteType: 'warning',
-      note: 'Peace Talks and Battle Ground were written as one book and split at publication. Read them together — Peace Talks ends mid-story.',
+      note: 'Peace Talks and Battle Ground were written as one book and split at publication. Read them together. Peace Talks ends mid-story.',
       books: [
         {
           title: 'Peace Talks',
           slug: 'peace-talks',
           status: 'mandatory',
-          note: 'A supernatural summit in Chicago. Structurally a first half — read back-to-back with Battle Ground.',
+          note: 'A supernatural summit in Chicago. Structurally a first half: read back-to-back with Battle Ground.',
           page_count: 328,
           publication_year: 2020,
         },
@@ -197,13 +197,13 @@ export const dresdenFiles: ReadingOrderEntry = {
     },
     {
       label: 'The Road Ahead',
-      sublabel: 'books 18–19 — where the series is now',
+      sublabel: 'books 18-19 - where the series is now',
       books: [
         {
           title: 'Twelve Months',
           slug: 'twelve-months',
           status: 'mandatory',
-          note: 'Dresden picking up the pieces after Battle Ground — personal, professional, and supernatural. The first full-length novel in six years. Published January 2026.',
+          note: 'Dresden picking up the pieces after Battle Ground: personal, professional, and supernatural. The first full-length novel in six years. Published January 2026.',
           page_count: 463,
           publication_year: 2026,
         },
@@ -227,78 +227,116 @@ export const dresdenFiles: ReadingOrderEntry = {
     },
   ],
   orderNote:
-    'Strictly publication order — the series is sequential and almost every book builds on the last.',
+    'Strictly publication order. The series is sequential and every book builds on the last.',
   cards: [
     {
       title: '⚡ Start with Storm Front',
-      body: "No exceptions — the series is deeply sequential and spoilers compound fast. Storm Front is short and brisk. If books 1–2 feel slow, push to Grave Peril. That's where it clicks.",
+      body: "Storm Front is short (322 pages) and readable in a day. Butcher's noir voice locks in immediately: Harry is self-deprecating, competent, and consistently funnier than he thinks he is. The first two books are lighter than what follows and Butcher has acknowledged he would rewrite them. They establish the world, the voice, and the character scaffolding that the escalation of book 3 onward requires. The reading order is strictly sequential with no viable entry point mid-series.",
       color: 'blue',
     },
     {
       title: '⚠️ The Changes problem',
-      body: "Changes (book 12) is where the series permanently shifts gear — darker, higher stakes, major deaths with no safety net. If you're struggling with the early books, know that something very different is coming.",
+      body: "Changes is the best book in the series. Butcher spent 11 books building constants and uses this one to remove them. The shift is not a twist: it follows directly from everything he has set up, which is why it works. The noir detective fiction of book 1 and the cosmic war that follows Changes are demonstrably the same series. Changes is the book where you understand how. Do not read spoilers.",
       color: 'amber',
     },
     {
       title: '🎧 The audiobooks',
-      body: "James Marsters narrates the entire series and is widely considered one of the best audiobook narrators in the genre. If the opening chapters feel slow on the page, try the audio first — Marsters' Harry is a distinct experience.",
+      body: "James Marsters narrates the entire series and the performance is genuinely exceptional. His Harry is wry and tired in exactly the ways the first-person noir voice requires, and he differentiates secondary characters without doing impressions. The early books in particular work better on audio than on the page: the noir register suits vocal performance. His best work in the anthologies is 'Backup' (Thomas POV, Side Jobs): the tonal shift from Harry's sardonic first-person to Thomas's more interior register is handled with real specificity.",
       color: 'green',
     },
     {
       title: '📖 Short stories',
-      body: 'Side Jobs and Brief Cases are best read in between main novels at the points noted in each entry — not all at once. The "Aftermath" story in Side Jobs bridges directly from Changes to Ghost Story and should be saved for that moment.',
+      body: 'Side Jobs and Brief Cases are best read in between main novels, not consumed all at once. The standouts: "Backup" (Thomas POV in Side Jobs, showing events Harry never sees) and "Even Hand" (Marcone POV in Brief Cases, which shows the Chicago power structure from the inside of someone Harry treats as an obstacle). "Aftermath" in Side Jobs must be read immediately after Changes: it bridges directly into Ghost Story.',
       color: 'purple',
     },
     {
       title: '🎭 The long game',
-      body: "Butcher has planned the Dresden Files as a 23-book series — 20 main novels plus a capstone trilogy. Every character, faction, and magic rule introduced early matters later. The patience investment is real, and so is the payoff.",
+      body: "Butcher has plotted a 23-book series (20 main novels plus a Big Apocalyptic Trilogy). The design is longitudinal: a character introduced in book 3 becomes structurally central in book 15, and a rule established in book 4 becomes a plot hinge in book 11. Butcher does not drop threads. Whether the full long-arc was planned in 2000 or assembled across 25 years of writing is genuinely unclear. The structure holds either way.",
       color: 'blue',
     },
     {
       title: '📅 Where the series stands',
-      body: "Twelve Months (book 18) published January 2026. Mirror Mirror (#19) is expected in 2027. Butcher is writing toward the Big Apocalyptic Trilogy — the planned endgame of the entire series.",
+      body: "Twelve Months (book 18) published January 2026, the first full novel since Battle Ground in 2020. It is the quieter of the two: more personal, focused on Harry reconstructing something rather than losing it. Mirror Mirror (#19) is expected 2027. Butcher has indicated the Big Apocalyptic Trilogy begins with book 21; the remaining main novels are in the lead-up to it.",
       color: 'amber',
+    },
+  ],
+  characters: [
+    {
+      name: 'Harry Dresden',
+      role: 'Chicago wizard-for-hire; first-person narrator',
+      color: 'blue',
+      why_they_work:
+        "First-person narrator for all 18 books. He describes himself throughout as a lone wolf who keeps people at a distance and works alone. By book 12 he has inadvertently built one of the most politically significant collections of allies in the supernatural world. The gap between his self-image and what the series has actually constructed around him is the structural joke the late books resolve.",
+    },
+    {
+      name: 'Karrin Murphy',
+      role: 'Chicago PD detective; Harry\'s primary human partner',
+      color: 'zinc',
+      why_they_work:
+        "She is the most consistently effective character in the series at what Harry is not: institutional credibility, professional relationships, working within systems. Her arc across 18 books tracks the personal and professional cost of standing adjacent to someone like Harry, across losses that compound without reversal.",
+    },
+    {
+      name: 'Thomas Raith',
+      role: "White Court vampire; Harry's half-brother",
+      color: 'red',
+      why_they_work:
+        "Introduced in book 6 as a one-off antagonist before his real relationship to Harry is established. The series uses his situation (a predator who genuinely loves people he could inadvertently harm) as a parallel track to Harry's story. His novella 'Backup' in Side Jobs is the best piece outside the main novels.",
+    },
+    {
+      name: 'Mab',
+      role: "Queen of the Winter Court; Harry's employer from book 14",
+      color: 'amber',
+      why_they_work:
+        "Present across the series as an implied threat before becoming Harry's direct employer in Cold Days. Her motivations are never fully explained and the series is careful not to make her comprehensible. She has total power and uses it with complete restraint, which is the more threatening version.",
     },
   ],
   sections: [
     {
-      heading: 'What to know before you start',
+      heading: 'What kind of series this is',
       type: 'bullets',
       bullets: [
-        "Storm Front and Fool Moon are the weakest books. Butcher has said he'd rewrite them given the chance. Push through — Grave Peril is where the series becomes something special.",
-        'Buy both Peace Talks and Battle Ground before starting Peace Talks — they were written as one novel and split at publication. Peace Talks ends mid-story.',
-        'Avoid spoilers from book 12 onward. Changes is a turning point that hits hardest cold. Keep away from subreddits and fan wikis until you reach it.',
-        'The series is best read in order. There is no good entry point mid-series — every book assumes the ones before it.',
+        "Dresden Files starts as urban fantasy noir: first-person hardboiled detective fiction with a magic system. By book 12 it has become cosmic war fiction with genuine political stakes and compounding consequences across all prior volumes. Both registers are the same series.",
+        "The closest structural comparison is Sanderson or Rothfuss: a magic system with consistent rules, world-building that accumulates across volumes, and a long-arc plot the individual books serve. Dresden is noir in register but built the same way.",
+        "The series kills characters you love, permanently. Especially from book 12 onward. There is no emotional safety net.",
+        "The foreshadowing runs across all 18 books. Plot threads from book 2 resolve in book 15. A reread after finishing the series is a substantially different experience from the first pass.",
       ],
     },
     {
-      heading: 'Is Dresden right for you?',
+      heading: 'What to know before you start',
       type: 'bullets',
       bullets: [
-        'Read Dresden if: you like fast-paced noir with genuine wit, or want an urban fantasy series where the mythology deepens into something genuinely epic. The fun of book 1 and the scope of book 12 are the same series.',
-        'Read Dresden if: you liked Sanderson or Rothfuss — series where the magic system has rules and the world-building rewards attention. Dresden is noir-flavoured but the structural DNA is similar.',
-        "Dresden may not be for you if: you need emotional safety. The series kills characters you love, permanently. Battle Ground in particular is a sustained gut-punch with no relief.",
-        "Dresden may not be for you if: the early books feel too pulpy or light. If Storm Front and Fool Moon haven't clicked by book 3, the series probably isn't for you.",
+        "Butcher has said he would rewrite Storm Front and Fool Moon given the chance. The weaker opening reflects early-career execution. Grave Peril is where the series becomes what it stays for the next fifteen books.",
+        'Buy both Peace Talks and Battle Ground before starting Peace Talks: they were written as one novel and split at publication. Peace Talks ends mid-story.',
+        'Avoid spoilers from book 12 onward. Changes is a turning point that hits hardest cold. Keep away from subreddits and fan wikis until you reach it.',
+        'There is no good mid-series entry point: every book assumes the ones before it.',
+      ],
+    },
+    {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        'Violence escalates across the series. Books 1-11 are moderate noir (action, magical combat, some horror). Books 12 onward include major character deaths, brutal set pieces, and sustained civilian casualties.',
+        'Romance is present and recurring. Harry has significant relationships across multiple books. Nothing explicit.',
       ],
     },
   ],
   darkness: [
     {
-      label: 'Books 1–11',
+      label: 'Books 1-11',
       level: 3,
-      desc: 'Moderate — noir tone, violence, war and loss, but always a thread of hope',
+      desc: 'Moderate - noir tone, violence, war and loss, but always a thread of hope',
     },
     {
       label: 'Books 12+',
       level: 5,
-      desc: 'Brutal — major deaths, catastrophic stakes, no safety net',
+      desc: 'Brutal - major deaths, catastrophic stakes, no safety net',
     },
   ],
   booksLikeSlug: 'storm-front',
   metaDescription:
     "The complete Dresden Files reading order: all 18 Jim Butcher novels, the short story collections in the right sequence, and where Mirror Mirror fits.",
   shortName: 'Dresden Files',
-  lastUpdated: '2026-05-18',
+  lastUpdated: '2026-06-26',
   finishedLabel: "Finished what's published?",
   categoryHref: '/fantasy/urban',
   categoryLabel: 'Browse Urban Fantasy',
