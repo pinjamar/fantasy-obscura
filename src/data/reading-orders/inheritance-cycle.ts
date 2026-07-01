@@ -5,7 +5,7 @@ export const inheritanceCycle: ReadingOrderEntry = {
   name: 'The Inheritance Cycle',
   author: 'Christopher Paolini',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '📖 Ongoing — 5 books published, more coming',
+  seriesStatusLabel: '📖 Ongoing - 5 books published, more coming',
   description:
     "One of the most remarkable debut achievements in fantasy. Christopher Paolini began writing Eragon at fifteen and published it at seventeen. The Inheritance Cycle follows Eragon, a farm boy who discovers a dragon egg and is pulled into a war against the tyrant king Galbatorix. The Star Wars and Lord of the Rings influences in the first book are impossible to miss, but Paolini genuinely grows as a writer across four volumes. By Brisingr and Inheritance the world has real depth, the magic system has genuine teeth, and the stakes feel earned. Murtagh (2023) continues the story with the series' most complex character. Further Inheritance Cycle novels and Tales of Alagaësia are forthcoming through 2026–2027 and beyond.",
   darknessDisplay: '🕯️🕯️ Mild',
@@ -13,7 +13,7 @@ export const inheritanceCycle: ReadingOrderEntry = {
   groups: [
     {
       label: 'The Inheritance Cycle',
-      sublabel: 'the main series — read in order',
+      sublabel: 'the main series - read in order',
       noteType: 'required',
       note: 'The first four books form one continuous story and must be read in order. Murtagh continues the series after the tetralogy. Further books are forthcoming.',
       books: [
@@ -49,7 +49,7 @@ export const inheritanceCycle: ReadingOrderEntry = {
           slug: 'inheritance',
           status: 'mandatory',
           seriesLabel: 'Inheritance Cycle #4',
-          note: 'The conclusion of the original tetralogy. The final confrontation with Galbatorix is one of the most creative sequences in the series. The ending is divisive — honest rather than triumphant.',
+          note: 'The conclusion of the original tetralogy. The final confrontation with Galbatorix is one of the most creative sequences in the series. The ending is divisive: honest rather than triumphant.',
           page_count: 849,
           publication_year: 2011,
         },
@@ -58,7 +58,7 @@ export const inheritanceCycle: ReadingOrderEntry = {
           slug: 'murtagh',
           status: 'optional',
           seriesLabel: 'Inheritance Cycle #5',
-          note: "Full novel follow-up focused on the series' most complex character. Psychologically nuanced in a way the main cycle rarely reaches. Essential if Murtagh was your favourite.",
+          note: "Full novel follow-up focused on the series' most morally complex character. Psychologically nuanced in a way the main cycle rarely reaches.",
           page_count: 672,
           publication_year: 2023,
         },
@@ -84,7 +84,7 @@ export const inheritanceCycle: ReadingOrderEntry = {
     },
     {
       label: 'Tales of Alagaësia',
-      sublabel: 'companion stories — read after Inheritance',
+      sublabel: 'companion stories - read after Inheritance',
       noteType: 'optional',
       note: 'Both entries assume full knowledge of the main cycle. Read after completing Inheritance.',
       books: [
@@ -93,7 +93,7 @@ export const inheritanceCycle: ReadingOrderEntry = {
           slug: 'the-fork-the-witch-and-the-worm',
           status: 'optional',
           seriesLabel: 'Tales of Alagaësia #1',
-          note: "Three short stories set after Inheritance, framed by a new narrator. Light on plot — a gentle return to Alagaësia for fans who aren't ready to leave.",
+          note: "Three short stories set after Inheritance, framed by a new narrator. Light on plot. A gentle return to Alagaësia for fans who aren't ready to leave.",
           page_count: 272,
           publication_year: 2018,
         },
@@ -110,7 +110,7 @@ export const inheritanceCycle: ReadingOrderEntry = {
     },
   ],
   orderNote:
-    'Read the four main books in order — they form one continuous story. Murtagh is best read after Inheritance. The Fork, the Witch and the Worm can be read any time after the tetralogy. Further books are forthcoming.',
+    'Read the four main books in order. They form one continuous story. Murtagh is best read after Inheritance. The Fork, the Witch, and the Worm can be read any time after the tetralogy. Further books are forthcoming.',
   cards: [
     {
       title: '🐉 Saphira',
@@ -124,17 +124,17 @@ export const inheritanceCycle: ReadingOrderEntry = {
     },
     {
       title: '📈 The Growth',
-      body: 'Eragon reads like a debut by someone who loved fantasy and wanted to write it. Eldest is better. Brisingr is better still. Inheritance is the work of a writer who earned his story. Reading all four in sequence is part of the experience. You track Paolini growing alongside Eragon.',
+      body: 'Eragon reads like a debut by someone who loved fantasy and wanted to write it. Eldest is better. Brisingr is better still. Inheritance is the work of a writer who grew into his story. Reading all four in sequence is part of the experience. You track Paolini growing alongside Eragon.',
       color: 'green',
     },
     {
       title: '🪄 The Ancient Language',
-      body: "Magic in Alagaësia is bound by the Ancient Language — the true language of the world. Lying in it is impossible. Spells draw on the caster's physical energy; overextend and it kills you. The system has genuine internal logic and the books explore its philosophical implications with increasing seriousness.",
+      body: "Magic in Alagaësia is bound by the Ancient Language: the true language of the world. Lying in it is impossible. Spells draw on the caster's physical energy; overextend and it kills you. The system has genuine internal logic and the books explore its philosophical implications with increasing seriousness.",
       color: 'purple',
     },
     {
       title: '🔚 The Ending',
-      body: "Inheritance's ending divided readers in 2011. Without spoiling it: Paolini makes a choice that prioritises thematic honesty over the triumphant payoff readers expected. Some found it deeply moving. Others felt cheated. Murtagh (2023) adds context that makes it harder to dismiss either way.",
+      body: "Inheritance's ending divided readers in 2011. Without spoiling it: Paolini makes a choice that prioritises thematic honesty over the triumphant resolution readers expected. Some found it deeply moving. Others felt cheated. Murtagh (2023) adds context that makes it harder to dismiss either way.",
       color: 'red',
     },
     {
@@ -145,60 +145,52 @@ export const inheritanceCycle: ReadingOrderEntry = {
   ],
   sections: [
     {
-      heading: 'Before you start',
+      heading: 'Content notes',
       type: 'bullets',
       bullets: [
-        'Start with Eragon — the first four books are strictly linear and all essential.',
-        "Book 1 wears its influences openly. Give the series to Eldest before judging it. The voice becomes distinctly Paolini's own by book 2.",
-        "Roran, Eragon's cousin, becomes a major POV character from Eldest onward. His storyline runs parallel to Eragon's and is as important as the main thread.",
-        'Murtagh and the Tales of Alagaësia books assume full knowledge of Inheritance — read them after completing the main tetralogy.',
-        'The series is ongoing — Murtagh 2 (2027), a seventh Inheritance Cycle novel, and The Book of Remembrance (September 2026) are all forthcoming.',
+        'War violence throughout: battles, sieges, deaths of named characters. Books 1-2 treat it relatively cleanly; Brisingr and Inheritance do not.',
+        'The psychological cost of war is handled with increasing seriousness from Brisingr onward; not gratuitous, but not sanitised either.',
+        'No explicit sexual content. Appropriate for teen readers and older.',
+        'Classic chosen-one structure with dragon-rider bonding at its emotional core. The plot template is familiar; the relationship between Eragon and Saphira is the reason to read it.',
+        "The first book is the weakest and the most derivative. The series becomes distinctly Paolini's own by Eldest.",
       ],
     },
     {
       heading: 'The magic system',
       type: 'bullets',
       bullets: [
-        'The Ancient Language: spells are spoken in the true language of the world. Lying in it is impossible; which shapes the political and social order as much as the magic itself.',
-        "Energy cost: casting a spell draws on the caster's physical energy. Overextend and the spell kills you. Riders must maintain peak physical condition to use their full power — this constraint drives real tactical decisions.",
-        'Wards: protective spells that block incoming magic. Combat between magic users is largely a battle of wards — piercing them, setting them, predicting what the opponent has prepared.',
+        "Lying in the Ancient Language is impossible. This shapes the political and social order as much as the magic itself: every oath, treaty, and binding sworn in the Ancient Language holds absolutely.",
+        "The energy cost makes the caster's body the limiting factor in every magical engagement. Riders maintain peak physical conditioning specifically because of this.",
+        'Wards: protective spells that block incoming magic. Combat between magic users is largely a battle of wards: setting them, piercing them, predicting what the opponent has prepared.',
         'True names: everything has a true name in the Ancient Language; knowing it gives power over it. Knowing your own true name is rare, significant, and hard-won.',
-      ],
-    },
-    {
-      heading: 'Content notes',
-      type: 'bullets',
-      bullets: [
-        'War violence throughout, battles, sieges, deaths of named characters. Books 1-2 treat it relatively cleanly; Brisingr and Inheritance do not.',
-        'The psychological cost of war is handled with increasing seriousness from Brisingr onward; not gratuitous, but not sanitised either.',
-        'No explicit sexual content. Appropriate for teen readers and older.',
-        'Right for: readers who want classic chosen-one epic fantasy with dragons, a magic system with rules, and a protagonist who genuinely grows across four books.',
-        "Not right for: readers who can't tolerate a rough first book. Eragon is a derivative debut. The series earns itself by Eldest.",
       ],
     },
     {
       heading: 'The Paolini factor',
       type: 'bullets',
       bullets: [
-        'Paolini started writing Eragon at 15 and self-published it at 17 before Knopf picked it up. The debut-at-fifteen story is real, not marketing.',
-        'The first book wears its influences openly — Eragon is structurally close to A New Hope and the fantasy DNA is Tolkien-adjacent. Later books shake this off as Paolini finds his own voice.',
-        "Roran's storyline — beginning in Eldest — gives the series its widest emotional scope. His chapters in Brisingr are some of the most propulsive writing Paolini produced.",
+        'The first book wears its influences openly. Eragon is structurally close to A New Hope and the fantasy DNA is Tolkien-adjacent. Later books shake this off as Paolini finds his own voice.',
+        "Roran's storyline (beginning in Eldest) gives the series its widest emotional scope. His chapters in Brisingr are some of the most propulsive writing Paolini produced.",
         'Murtagh (2023) is a genuine surprise: psychologically complex, slower-paced, and far more mature than anything in the main cycle.',
-        'The map of Alagaësia is worth studying before you start — the geography matters and the journey covers most of the continent.',
+        'The map of Alagaësia is worth studying before you start: the geography matters and the journey covers most of the continent.',
       ],
     },
     {
-      heading: 'On the ending',
-      type: 'prose',
-      prose:
-        "Inheritance's ending split readers when it came out in 2011. Without spoiling it: Paolini makes a choice that prioritises thematic honesty over wish fulfilment. Some readers found it deeply moving. Others felt cheated. Either way it is a deliberate authorial choice, not a failure of craft — and Murtagh (2023) adds significant context that reframes the finale.",
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "Eragon reached the New York Times bestseller list when Paolini was seventeen, making him one of the youngest authors ever to do so. The debut story drove enormous readership: his family self-published it, he toured schools and libraries in medieval costume for a year, and a chance encounter led to the Knopf deal.",
+        'The series has sold tens of millions of copies worldwide and spent years on bestseller lists. For a large cohort of readers who came to fantasy in the mid-2000s, Eragon was the entry point. The series occupies the same generational position that Narnia and Lloyd Alexander held for earlier readers.',
+        'A Disney+ adaptation series has been in development. The 2006 film adaptation (20th Century Fox) was commercially unsuccessful but introduced the series to a further audience.',
+        'Murtagh (2023) demonstrates how much Paolini grew between his debut and his thirties: psychologically complex, interested in moral ambiguity, and far more patient with character than anything in the original cycle. The gap between book 1 and Murtagh is one of the more striking documented cases of authorial growth across a connected series.',
+      ],
     },
   ],
   darkness: [
     {
       label: 'Eragon / Eldest',
       level: 2,
-      desc: 'Violence in battle, some death — standard epic fantasy stakes',
+      desc: 'Violence in battle, some death. Standard epic fantasy stakes.',
     },
     {
       label: 'Brisingr / Inheritance',
@@ -207,8 +199,8 @@ export const inheritanceCycle: ReadingOrderEntry = {
     },
   ],
   metaDescription:
-    'The Inheritance Cycle reading order: Eragon, Eldest, Brisingr, Inheritance, and Murtagh — plus upcoming books through 2026–2027.',
-  lastUpdated: '2026-05-14',
+    'The Inheritance Cycle reading order: Eragon, Eldest, Brisingr, Inheritance, and Murtagh - plus upcoming books through 2026–2027.',
+  lastUpdated: '2026-07-01',
   shortName: 'Inheritance Cycle',
   finishedLabel: 'Up to date on Alagaësia?',
   categoryHref: '/fantasy/epic/',

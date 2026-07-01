@@ -15,7 +15,7 @@ AUTHORS — ENRICHED (indexable): 344
 ✅Christopher Golden                       74 books  /authors/christopher-golden/
 ✅Anne McCaffrey                           73 books  /authors/anne-mccaffrey/
 ✅Lynsay Sands                             73 books  /authors/lynsay-sands/
-Sherrilyn Kenyon                         70 books  /authors/sherrilyn-kenyon/
+✅Sherrilyn Kenyon                         70 books  /authors/sherrilyn-kenyon/
 ✅Stephen King                             65 books  /authors/stephen-king/
 Nalini Singh                             65 books  /authors/nalini-singh/
 Seanan McGuire                           65 books  /authors/seanan-mcguire/

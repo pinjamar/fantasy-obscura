@@ -122,6 +122,17 @@ The `label` field already names the book or arc. The `desc` field explains what 
 ### 8. Edition notes, release dates, specific facts — one field only
 If you write a "split into two volumes" note at the group level, do not also add it to the individual book's `note`. If an upcoming book's release date appears in `orderNote`, it does not also appear in `description` and the card and the book `note`. One field, most relevant location.
 
+### 9. Cards vs. `characters` — use a different angle
+If a card covers why a character is notable (their trope, their subversion, their narrative voice), the `why_they_work` field must not restate the same point in different words. The card is read on page load; `why_they_work` is revealed on click. Pick a different approach for each: if the card explains the archetype subversion, the character entry covers the structural function or compares them to a character from another series.
+
+Common violation: Card says "Bayaz is the wise old wizard archetype, subverted." → `why_they_work` also says "wise-old-wizard archetype deployed with awareness of what it promises" → rewrite one to use a different angle.
+
+### 10. `orderNote` vs. sections — no restated warnings
+If a warning lives in a dedicated section (e.g., "Safe starting point"), it does not also appear verbatim in `orderNote`. The `orderNote` gives the reading sequence; sections elaborate on the why. Remove the duplicate from whichever field is the less natural home.
+
+### 11. Book notes vs. cards — don't describe what cards already summarise
+If a card says "The Heroes is a war novel told from every side of a single three-day battle," the book note should not say "War dissected from every angle." Book notes give placement context, not the same summary the card already provides. If a card exists for a book or group, the book note should cover something the card doesn't: in-world timing, placement relative to other books, or a non-obvious reading decision.
+
 ---
 
 ## The Voice
@@ -168,6 +179,22 @@ One paragraph answering the actual reading order question. No personality needed
 ### Book notes — Factual and brief, no personality
 
 Placement guidance and any non-obvious context. Not the place for takes. "Read before book 3 or you'll be lost" is a complete book note. Length only where there's a genuine decision to explain (interquels, parallel timelines, divisive entries).
+
+**Don't hint at cross-book character appearances.** Phrases like "a familiar stranger," "an old face," or "someone you'll recognise" act as spoilers on both sides: they tell readers who've finished earlier books that a character they know reappears, and they tip off new readers that something unusual is coming. If a character's return is publicly known and not a twist, name them. If it's a surprise, don't mention it.
+
+**Book notes must be specific to this book.** Apply the generic sentence test: could this note describe any book in the same position? "Political tension escalates toward inevitable conflict" could describe the middle book of any political trilogy. Name the specific factions, characters, or events that make this book different from that description.
+
+**Never state the book's position in the series.** The series label on the book card already shows "#1", "#2", "#3". A note that opens with "First of the X trilogy", "Second of the X series", or "Concludes the X trilogy" wastes the only sentence the reader will read. Say what the book IS, not where it sits.
+
+❌ `'First of the Modern Faerie Tales trilogy. Written for a younger audience.'`
+❌ `'Second of the Modern Faerie Tales. Standalone with a different protagonist, set in New York.'`
+❌ `'Concludes the duology. Read directly after The Stolen Heir.'`
+
+✅ `"Holly Black's debut. Kaye has always been able to see faeries and assumes they are harmless."`
+✅ `'A teenage runaway falls in with homeless kids serving a troll beneath New York City. The faerie dust subplot is an addiction narrative.'`
+✅ `'The tables turn: Oak is the prisoner and Wren holds the power. Dual POV. Jude and Cardan play a larger role here than in book 1.'`
+
+The one exception: "Read directly after X" or "Read before starting Y" is placement guidance that belongs in the note — but only when it isn't already covered by the group sublabel or orderNote.
 
 ---
 
@@ -672,7 +699,13 @@ Read every card body, every `why_they_work`, every book note, and every section 
 - [ ] No "Where to start" section if the entry point is already clear from mandatory badges + `orderNote`. If a "Where to start" card exists, there is no "Where to start" section
 - [ ] Every card body checked against every section bullet — no point appears in both
 - [ ] Every card body checked against `description` — no fact restated from description into a card
+- [ ] Every card body checked against every `why_they_work` — if a card and character entry say the same thing about the same character (e.g., both describe the same trope subversion), rewrite the character entry to use a different angle
+- [ ] Every book note checked against cards — if a card already describes what a book IS, the book note gives placement context, not the same description
 - [ ] Reading order instruction ("read A before B") stated in one place only — not in `orderNote` + group `sublabel` + book `note` all at once
+- [ ] `orderNote` does not repeat warnings that already live in a dedicated section (e.g., "Do not start with Age of Madness" belongs in "Safe starting point", not in both)
+- [ ] Book notes checked for cross-book spoiler hints — phrases like "a familiar stranger" or "an old face" reveal character appearances that may be surprises; either name the character or don't mention it
+- [ ] Book notes pass the generic sentence test — "Political tension escalates toward inevitable conflict" describes any middle political book; name the specific factions, characters, or events
+- [ ] Book notes do not open with position statements ("First of the X trilogy", "Second of X", "Concludes the X trilogy") — the series label already shows this; the note must say what the book IS
 - [ ] Darkness `desc` fields do not start with the series/arc name already in `label`
 - [ ] Influence/legacy author names appear in `description` OR "Why it matters" bullets — not both
 - [ ] Edition notes and release dates appear in one field only
