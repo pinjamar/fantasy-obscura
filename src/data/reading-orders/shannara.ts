@@ -8,8 +8,9 @@ export const shannara: ReadingOrderEntry = {
   seriesStatusLabel:
     '📖 Ongoing - main saga complete, First Druids arc in progress',
   description:
-    "One of the longest-running fantasy series ever - Terry Brooks started it back in 1977 and wrapped the main saga in 2020. We're talking 30+ books across multiple generations and interconnected trilogies. The big secret most people don't realize until they're deep in? Shannara is set on post-apocalyptic Earth, thousands of years after our civilization ate itself and magic came back. The Four Lands are the ruins of our world. Elves, Trolls, and Gnomes are all mutated/evolved humans. It's wild once it clicks. A new prequel sub-series, The First Druids of Shannara, kicked off in 2025. Start with The Elfstones of Shannara, simple as that.",
-  darknessDisplay: '🕯️🕯️ Mild',
+    "One of the longest-running fantasy series ever - Terry Brooks started it back in 1977 and wrapped the main saga in 2020. We're talking 30+ books across multiple generations and interconnected trilogies. The big secret most people don't realize until they're deep in? Shannara is set on post-apocalyptic Earth, thousands of years after our civilization ate itself and magic came back. The Four Lands are the ruins of our world. Elves, Trolls, and Gnomes are all mutated/evolved humans. It's wild once it clicks. A new prequel sub-series, The First Druids of Shannara, kicked off in 2025.",
+  darknessDisplay:
+    '🕯️🕯️ Mild - classic quest fantasy; peril and loss but no graphic violence; Word & Void is notably darker in register',
   orderNote:
     'Do not start with The Sword of Shannara. Start with The Elfstones of Shannara - it is a better book, works as a standalone entry point, and will tell you if the series is for you. The Sword can be read after if curiosity strikes.',
   groups: [
@@ -33,7 +34,7 @@ export const shannara: ReadingOrderEntry = {
           slug: 'the-elfstones-of-shannara',
           status: 'mandatory',
           seriesLabel: 'Shannara #2',
-          note: 'Start here. Wil Ohmsford and the druid Allanon must escort the last Chosen of the Ellcrys as the Forbidding fails and demons pour through. Brooks found his own voice here — the pacing is tight, the stakes are real, and the ending lands hard.',
+          note: 'Start here. Wil Ohmsford and the druid Allanon must escort the last Chosen of the Ellcrys as the Forbidding fails and demons pour through. Brooks found his own voice here: the pacing is tight, the stakes are real, and the ending lands hard.',
           page_count: 614,
           publication_year: 1982,
         },
@@ -59,9 +60,9 @@ export const shannara: ReadingOrderEntry = {
     },
     {
       label: 'The Heritage of Shannara',
-      sublabel: 'set 300 years later — the series finds its stride',
+      sublabel: 'set 300 years later - the series at its best',
       noteType: 'required',
-      note: 'The consensus best arc in the entire series. Three parallel quests (Par, Walker, and Wren) each pursuing a different piece of the same larger puzzle, converging in The Talismans. Set 300 years after the original trilogy with magic outlawed and the Druids gone. A significant step up in ambition from the first three books.',
+      note: 'The strongest arc in the entire series. Three parallel quests (Par, Walker, and Wren) each pursuing a different piece of the same larger puzzle, converging in The Talismans. Set 300 years after the original trilogy with magic outlawed and the Druids gone. A significant step up in ambition from the first three books.',
       books: [
         {
           title: 'The Scions of Shannara',
@@ -86,7 +87,7 @@ export const shannara: ReadingOrderEntry = {
           slug: 'the-elf-queen-of-shannara',
           status: 'mandatory',
           seriesLabel: 'Heritage #3',
-          note: 'Wren Ohmsford journeys to Morrowindl to find the missing Elves. One of the most self-contained and propulsive entries in the entire series - Wren is an excellent protagonist.',
+          note: 'Wren Ohmsford journeys to Morrowindl to find the missing Elves. The most self-contained Heritage book and the one with the most focused protagonist arc - Wren is the most capable hero in the early series.',
           page_count: 403,
           publication_year: 1992,
         },
@@ -103,7 +104,7 @@ export const shannara: ReadingOrderEntry = {
     },
     {
       label: 'Word & Void',
-      sublabel: 'modern-day prequel trilogy — set in our world',
+      sublabel: 'modern-day prequel trilogy - set in our world',
       note: 'Set in contemporary America, thousands of years before Shannara. Bridges our world to the Shannara future. Can be read independently - but reading it after Heritage of Shannara enriches the mythology.',
       noteType: 'optional',
       books: [
@@ -165,7 +166,7 @@ export const shannara: ReadingOrderEntry = {
           slug: 'morgawr',
           status: 'optional',
           seriesLabel: 'Voyage #3',
-          note: "The crew faces the Morgawr — the Ilse Witch's master — while scattered storylines converge. Closes the arc with parallel action across multiple threads.",
+          note: "The crew faces the Morgawr (the Ilse Witch's master) while scattered storylines converge. Closes the arc with parallel action across multiple threads.",
           page_count: 417,
           publication_year: 2002,
         },
@@ -173,7 +174,7 @@ export const shannara: ReadingOrderEntry = {
     },
     {
       label: 'High Druid of Shannara',
-      sublabel: 'Grianne Ohmsford — Ard Rhys and the Forbidding',
+      sublabel: 'Grianne Ohmsford - Ard Rhys and the Forbidding',
       noteType: 'optional',
       note: 'Twenty years after Voyage. Grianne, once the Ilse Witch, now leads the Druid order - and is trapped in the Forbidding. Her nephew Penderrin attempts the impossible to free her.',
       books: [
@@ -208,7 +209,7 @@ export const shannara: ReadingOrderEntry = {
     },
     {
       label: 'Genesis of Shannara',
-      sublabel: 'the bridge — Word & Void meets the Four Lands',
+      sublabel: 'the bridge - Word & Void meets the Four Lands',
       noteType: 'optional',
       note: 'Set in a devastated near-future Earth - the direct sequel to Word & Void. Shows the cataclysm that transforms the modern world into the Four Lands of Shannara. Best read after Word & Void.',
       books: [
@@ -235,7 +236,7 @@ export const shannara: ReadingOrderEntry = {
           slug: 'the-gypsy-morph',
           status: 'optional',
           seriesLabel: 'Genesis #3',
-          note: 'The gypsy morph leads the survivors to their destination — the valley that will become the home of the races of the Four Lands. The world of Shannara is born.',
+          note: 'The gypsy morph leads the survivors to their destination: the valley that will become the home of the races of the Four Lands. The world of Shannara is born.',
           page_count: 402,
           publication_year: 2008,
         },
@@ -296,7 +297,7 @@ export const shannara: ReadingOrderEntry = {
           slug: 'witch-wraith',
           status: 'optional',
           seriesLabel: 'Dark Legacy #3',
-          note: 'All threads converge as the Forbidding collapses. For readers who loved Elfstones - this trilogy is its most direct descendant in later Shannara.',
+          note: 'All threads converge as the Forbidding collapses. The most direct descendant of Elfstones in later Shannara; the trilogy is built around the same stakes and structure.',
           page_count: 432,
           publication_year: 2013,
         },
@@ -357,7 +358,7 @@ export const shannara: ReadingOrderEntry = {
           slug: 'the-skaar-invasion',
           status: 'optional',
           seriesLabel: 'Fall #2',
-          note: 'The Skaar — warriors from a dying land - have arrived and intend to conquer. A military and political crisis unlike anything the Four Lands has faced before.',
+          note: 'The Skaar (warriors from a dying land) have arrived and intend to conquer. A military and political crisis unlike anything the Four Lands has faced before.',
           page_count: 480,
           publication_year: 2018,
         },
@@ -375,7 +376,7 @@ export const shannara: ReadingOrderEntry = {
           slug: 'the-last-druid',
           status: 'optional',
           seriesLabel: 'Fall #4',
-          note: 'The conclusion of the entire Shannara saga. 43 years and 33 novels reach their end. Rewarding for readers who have stayed the full course.',
+          note: 'The conclusion of the entire Shannara saga. 43 years and 30+ novels reach their end. The resolution serves readers who have followed the full course of the series.',
           page_count: 448,
           publication_year: 2020,
         },
@@ -385,7 +386,7 @@ export const shannara: ReadingOrderEntry = {
       label: 'The First Druids of Shannara',
       sublabel: 'new prequel arc - ongoing from 2025',
       noteType: 'optional',
-      note: 'A new sub-series set at the founding of the Druid order, thousands of years before the original trilogy. Terry Brooks announced a semi-retirement from writing in 2025; Brona (August 2026) is co-authored with Delilah S. Dawson, who will continue the series going forward. Best read after Elfstones — these books reward readers who already know the world.',
+      note: 'A new sub-series set at the founding of the Druid order, thousands of years before the original trilogy. Terry Brooks announced a semi-retirement from writing in 2025; Brona (August 2026) is co-authored with Delilah S. Dawson, who will continue the series going forward. Most legible to readers who already know the world.',
       books: [
         {
           title: 'Galaphile',
@@ -411,17 +412,17 @@ export const shannara: ReadingOrderEntry = {
   cards: [
     {
       title: '🌍 Shannara Is Secretly Post-Apocalyptic',
-      body: 'Yeah, those ruined buildings and broken highways? Leftover from our world. The Great Wars wiped out civilization and brought magic roaring back. Word & Void (set in modern-day America) shows how the apocalypse started — but save it for later. It hits different once you already love the Four Lands.',
+      body: 'Yeah, those ruined buildings and broken highways? Leftover from our world. The Great Wars wiped out civilization and brought magic roaring back. Word & Void (set in modern-day America) shows how the apocalypse started, but save it for later. It hits different once you already love the Four Lands.',
       color: 'blue',
     },
     {
       title: '🗡️ Start with Elfstones',
-      body: 'The Sword of Shannara (the first book) is… very Tolkien. Same basic quest structure, dark lord, ragtag fellowship — the whole deal. A lot of people bounce off it. Skip it or save it for later. The Elfstones of Shannara is where Brooks actually finds his voice. Stronger stakes, better characters, and an ending that still slaps. It works great as a standalone and will tell you quickly whether the series is for you.',
+      body: "The Sword of Shannara (the first book) is very Tolkien. Same basic quest structure, dark lord, ragtag fellowship (the whole deal). A lot of people bounce off it. Skip it or save it for later. The Elfstones of Shannara is where Brooks actually finds his voice. Stronger stakes, better characters, and an ending that lands hard. It works great as a standalone and will tell you quickly whether the series is for you.",
       color: 'amber',
     },
     {
       title: '🌿 Where It Peaks',
-      body: 'Elfstones is excellent. But the consensus high point is The Heritage of Shannara (four books from 1990-1993). Three simultaneous quests across the Four Lands that all crash together in a really satisfying way. That quartet is peak Brooks for most readers. Word & Void is a totally different vibe (more urban/dark fantasy). Everything after Heritage is for the real fans who are already hooked.',
+      body: 'Elfstones is excellent. But the Heritage of Shannara (four books, 1990-1993) is the series at its best: three simultaneous quests across the Four Lands that converge in a genuinely satisfying way. Word & Void is a completely different register (urban dark fantasy). Everything after Heritage serves readers who want to live in the Four Lands long-term.',
       color: 'green',
     },
     {
@@ -431,7 +432,7 @@ export const shannara: ReadingOrderEntry = {
     },
     {
       title: '📺 The TV Show',
-      body: "MTV did The Shannara Chronicles (2016-2017). Season 1 adapts Elfstones pretty faithfully. Season 2 pulls from Heritage. It got cancelled after two seasons. It's… fine. The books are significantly better, but the show can be a decent mood-setter if you want visuals first.",
+      body: "MTV did The Shannara Chronicles (2016-2017). Season 1 adapts Elfstones pretty faithfully. Season 2 pulls from Heritage. It got cancelled after two seasons. The books are significantly better, but the show can be a decent mood-setter if you want visuals first.",
       color: 'purple',
     },
     {
@@ -441,25 +442,79 @@ export const shannara: ReadingOrderEntry = {
     },
   ],
   cardsPosition: 'above',
+  characters: [
+    {
+      name: 'Wil Ohmsford',
+      role: 'Healer; Shannara heir; protagonist of The Elfstones of Shannara',
+      color: 'blue',
+      why_they_work:
+        "Wil works as an entry-point protagonist because he is the least Tolkien-like element in a book that is otherwise shedding Tolkien's influence. He is a healer's apprentice whose connection to the Elfstones is tenuous and physically costly when used. The cost of magic (it leaves him unable to use the Stones again) is the detail that makes Elfstones feel different from Sword: the protagonist's power is depleted rather than enhanced by the climax.",
+    },
+    {
+      name: 'Wren Ohmsford',
+      role: 'Rover; Elf Queen; protagonist of The Elf Queen of Shannara',
+      color: 'amber',
+      why_they_work:
+        "Wren is the most capable protagonist in the early series and the one whose book is the most self-contained. The Elf Queen of Shannara works as a standalone partly because Wren has no relationship with the other Heritage protagonists at the start and must build her situation from first principles. Her arc (finding the Elves, understanding what they have become on Morrowindl, choosing what to do with that knowledge) is the most thematically complete of the three Heritage quests.",
+    },
+    {
+      name: 'Walker Boh',
+      role: 'Reclusive sorcerer; the Dark Uncle; the Druid of Shannara',
+      color: 'red',
+      why_they_work:
+        "Walker is structured as a resistant protagonist: he is the quest's target rather than its initiator, and the Heritage arc is partly about compelling a man with good reasons to refuse into accepting a responsibility he has resisted for years. The Druid of Shannara is his book and it works because his reluctance is genuine rather than performed. His eventual transformation into the Druid is the closest the series comes to a proper tragic arc.",
+    },
+    {
+      name: 'Grianne Ohmsford',
+      role: 'The Ilse Witch; Ard Rhys of the Druid order; protagonist of High Druid of Shannara',
+      color: 'purple',
+      why_they_work:
+        "Grianne is the series' most ambitious character construction: introduced as the primary villain of Voyage and then given her own trilogy as a fundamentally different person. The High Druid arc is structurally unusual because Grianne's position as Ard Rhys only carries weight with her prior Ilse Witch history intact. She is the one Shannara protagonist whose arc requires reading across two separate sub-series to land properly.",
+    },
+    {
+      name: 'Allanon',
+      role: 'Last of the Druids; guardian of the Four Lands; mentor across the original trilogy and Heritage',
+      color: 'green',
+      why_they_work:
+        "Allanon functions as the connective tissue of the original trilogy and Heritage: he is the same Druid across all four books, which gives the reader a fixed reference point across generations of changing protagonists. His motivations are opaque by design: he knows more than he tells, and his willingness to manipulate the protagonists for what he believes is their own good is the original trilogy's most morally interesting element. The revelation of what he sacrifices across the series is the original trilogy's emotional through-line.",
+    },
+    {
+      name: 'Nest Freemark',
+      role: 'Knight of the Word; protagonist of the Word & Void trilogy',
+      color: 'zinc',
+      why_they_work:
+        "Nest is the protagonist who most clearly illustrates what Word & Void is doing differently from the main Shannara books. Set in contemporary America, with magic that is inherited and poorly understood, her story is about protecting a small community rather than saving a fantasy world. Word & Void is the more literary end of the Brooks catalog partly because Nest is a more developed protagonist than most Shannara leads: her relationship with her father and her heritage is genuinely complicated in ways the Four Lands books rarely attempt.",
+    },
+  ],
   sections: [
     {
-      heading: 'Is Shannara right for you?',
+      heading: 'What kind of series this is',
       type: 'bullets',
       bullets: [
-        'Read Shannara if: you like classic quest fantasy in the Tolkien tradition - chosen heroes, ancient evil, a world rich with history. Elfstones is one of the finest books of its kind from the 1980s and still holds up.',
-        'Read Shannara if: you want a long series you can live in, with multiple distinct eras and protagonists. You do not need to read everything — the guide marks what is essential and what is optional.',
-        "Shannara may not be for you if: you bounced off The Sword of Shannara. Start with Elfstones instead - they are completely different books. If Elfstones doesn't click, the series probably isn't for you.",
-        'Shannara may not be for you if: you need consistently high literary quality across a long series. Some arcs are excellent (Elfstones, Heritage); others are more mechanical. Word & Void is the most literary of the lot.',
+        'Multi-generational epic: each trilogy follows a new family member of the Ohmsford line, facing a new version of the same essential conflict. The protagonist changes every few books; the world and its history accumulate across generations. This is structurally different from most long fantasy series where the same protagonist carries the full run.',
+        'Varies significantly in quality across 30+ books. Elfstones and the Heritage of Shannara quartet are the high points; the arcs after Heritage serve readers who want more time in the Four Lands rather than readers seeking the series at its peak.',
+        'Word & Void is a different kind of book entirely: contemporary American urban fantasy with serious thematic concerns (addiction, corruption, institutional faith) that the Four Lands books do not approach. It shares mythology with Shannara but reads independently.',
+        'The Sword of Shannara (1977) is the weakest book in the series by a significant margin. The standard recommendation across Shannara fandom is to start with Elfstones (book 2) and return to Sword later for historical completeness.',
       ],
     },
     {
       heading: 'What to know',
       type: 'bullets',
       bullets: [
-        'The Sword of Shannara (1977) was the first fantasy novel published by a major publisher after Tolkien - Del Rey bet its entire genre list on it. It sold over a million copies despite the Tolkien comparisons. Brooks has acknowledged the derivation openly.',
+        'The Sword of Shannara (1977) was published by Del Rey as their debut fantasy title, betting the company\'s genre list on it. It sold over a million copies despite extensive comparisons to Tolkien and established that there was a viable commercial market for secondary-world epic fantasy beyond the Tolkien estate.',
         'Word & Void can be read entirely independently - it is urban fantasy set in modern-day America and does not require any prior Shannara knowledge. It connects to the larger mythology only in Genesis of Shannara.',
-        'The Fall of Shannara (2017-2020) concluded the main saga after 43 years - one of the longest continuous fantasy series ever completed by a single author.',
+        'The Fall of Shannara (2017-2020) concluded the main saga after 43 years and 30+ books, all written by Terry Brooks under a single continuous publication run.',
         'Terry Brooks announced a semi-retirement in 2025. Brona (August 2026), co-authored with Delilah S. Dawson, is the first Shannara novel with a co-author and continues the new First Druids arc.',
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "The Sword of Shannara (1977) demonstrated that there was a commercial market for secondary-world fantasy that wasn't Tolkien or a Tolkien estate reprint. Del Rey's success with it launched the 1980s mass-market fantasy publishing boom that produced Elfstones, Dragonlance, and dozens of other foundational series.",
+        "The Elfstones of Shannara (1982) introduced what became a standard fan recommendation: start a series at book two. Advising new readers to skip a series' opening book is unusual in any genre; for Shannara it became so standard that it influenced how fans discuss entry points for long fantasy series more broadly.",
+        "Terry Brooks completed the main Shannara saga in 2020 with The Last Druid, making Shannara one of the few 30+ book epic fantasy series to reach a planned conclusion under a single author across a 43-year publication window. The Fall of Shannara tetralogy concluded a story begun in 1977.",
+        "Word & Void (1997-1999) demonstrated that Brooks could work in an entirely different register: contemporary American urban dark fantasy with thematic concerns (addiction, corruption, faith) that the main Shannara books never approach. It is undervalued relative to the main series and is the most literary work in the Brooks catalog.",
       ],
     },
   ],
@@ -487,9 +542,9 @@ export const shannara: ReadingOrderEntry = {
   ],
   booksLikeSlug: 'shannara',
   metaDescription:
-    "The complete Shannara reading order: Terry Brooks's original trilogy, Heritage of Shannara, Word & Void, and all ten arcs — with the new First Druids series included.",
+    "The complete Shannara reading order: Terry Brooks's original trilogy, Heritage of Shannara, Word & Void, and all ten arcs, with the new First Druids series included.",
   shortName: 'Shannara',
-  lastUpdated: '2026-06-01',
+  lastUpdated: '2026-07-01',
   finishedLabel: 'Finished the Four Lands?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',

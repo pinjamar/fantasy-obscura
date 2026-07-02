@@ -5,57 +5,58 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
   name: 'Shadows of the Apt',
   author: 'Adrian Tchaikovsky',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✅ Complete — 10 main books + companion series (2008–2018)',
+  seriesStatusLabel: '✅ Complete - 10 main books + companion series (2008-2018)',
   description:
-    "Adrian Tchaikovsky's Shadows of the Apt is a 10-book epic fantasy built around one of the genre's most inventive world concepts: every sentient race is a kinden, bonded to an insect species and inheriting its traits — physically, temperamentally, culturally. The Ant-kinden are hive-minded soldiers; the Mantis-kinden are lethal warriors bound by a dying code of honour; the Wasp-kinden are expansionist imperialists whose ability to fire energy from their hands makes them uniquely dangerous. The series begins as a spy thriller when Stenwold Maker discovers the Wasp Empire's plans and scrambles to warn a sceptical city-state — and escalates across ten books into a war that reshapes the entire world. The central metaphor is the Apt/Inapt divide: the industrialising Apt kinden who can use machines against the magically attuned Inapt who cannot, an allegory for modernity's disruption of everything that came before. Readers who found Tchaikovsky through Children of Time will recognise the same gift for non-human cognition turned to fantasy.",
-  darknessDisplay: '🕯️🕯️🕯️ Dark — escalating war across 10 books; the final arc reaches grimdark levels',
+    "Adrian Tchaikovsky's Shadows of the Apt is a 10-book epic fantasy built around one of the genre's most inventive world concepts: every sentient race is a kinden, bonded to an insect species and inheriting its traits: physically, temperamentally, culturally. The Ant-kinden are hive-minded soldiers; the Mantis-kinden are lethal warriors bound by a dying code of honour; the Wasp-kinden are expansionist imperialists whose ability to fire energy from their hands makes them uniquely dangerous. The series begins as a spy thriller when Stenwold Maker discovers the Wasp Empire's plans and scrambles to warn a sceptical city-state, and escalates across ten books into a war that reshapes the entire world. The central metaphor is the Apt/Inapt divide: the industrialising Apt kinden who can use machines against the magically attuned Inapt who cannot, an allegory for modernity's disruption of everything that came before. Readers who found Tchaikovsky through Children of Time will recognise the same gift for non-human cognition turned to fantasy.",
+  darknessDisplay:
+    '🕯️🕯️🕯️ Dark - escalating war across 10 books; the final arc reaches grimdark levels',
   orderNote:
-    'Read the main 10 books in publication order — the series is one continuous narrative and each book ends with consequences that drive directly into the next. If the kinden concept does not engage you by the end of book 2, the series is not for you. If it does, commit to all ten. After the main series: Echoes of the Fall is a companion trilogy set in the same world with different characters and a shape-shifting tribes premise — read it after Seal of the Worm. Tales of the Apt is four short story collections set throughout the main series timeline — supplementary at any point, best after the main series.',
+    'Read the main 10 books in publication order: the series is one continuous narrative and each book ends with consequences that drive directly into the next. If the kinden concept does not engage you by the end of book 2, the series is not for you. If it does, commit to all ten. After the main series: Echoes of the Fall is a companion trilogy set in the same world with different characters and a shape-shifting tribes premise, read it after Seal of the Worm. Tales of the Apt is four short story collections set throughout the main series timeline: supplementary at any point, best after the main series.',
   cardsPosition: 'above',
   cards: [
     {
       title: '✍️ Adrian Tchaikovsky',
-      body: "Tchaikovsky wrote the first Shadows of the Apt novel while working as a lawyer in the UK. Empire in Black and Gold was published in 2008; he completed the 10-book series in 2014. He has since become one of the most prolific authors in British SF and fantasy — Children of Time (2015), his uplifted-spider hard SF novel, won the Arthur C. Clarke Award. The gift for rendering non-human cognition that defines Children of Time is visible throughout Shadows of the Apt: the kinden are not humans in costumes. They think differently because they are different.",
+      body: "Tchaikovsky wrote the first Shadows of the Apt novel while working as a lawyer in the UK. Empire in Black and Gold was published in 2008; he completed the 10-book series in 2014. He has since published across multiple genres and won the Arthur C. Clarke Award for Children of Time (2015), his uplifted-spider hard SF novel. The gift for rendering non-human cognition that defines Children of Time is visible throughout Shadows of the Apt: the kinden are not humans in costumes. They think differently because they are different.",
       color: 'blue',
     },
     {
       title: '🐝 The Kinden',
-      body: "Every sentient race is a kinden bonded to an insect. Ant-kinden: disciplined, hive-minded within a city, hostile to all others. Mantis-kinden: pre-industrial warrior-priests, lethally fast, increasingly irrelevant. Moth-kinden: the old ruling caste, displaced by progress, still holding their secrets. Spider-kinden: decadent aristocrats who treat politics as a weapon. Beetle-kinden: merchants and engineers, the backbone of Collegium. Wasp-kinden: soldiers of empire, each born with a sting. The range is enormous and each kinden has an internally consistent logic — their insect bond is not aesthetic decoration.",
+      body: "Every sentient race is a kinden bonded to an insect. Ant-kinden: disciplined, hive-minded within a city, hostile to all others. Mantis-kinden: pre-industrial warrior-priests, lethally fast, increasingly irrelevant. Moth-kinden: the old ruling caste, displaced by progress, still holding their secrets. Spider-kinden: decadent aristocrats who treat politics as a weapon. Beetle-kinden: merchants and engineers, the backbone of Collegium. Wasp-kinden: soldiers of empire, each born with a sting. The range is enormous and each kinden has an internally consistent logic: their insect bond is not aesthetic decoration.",
       color: 'purple',
     },
     {
       title: '⚙️ Apt vs Inapt',
-      body: "The series' central divide: Apt kinden can understand and use machines intuitively — crossbows, siege engines, eventually flying craft and early firearms. Inapt kinden cannot. A Moth-kinden cannot operate a crossbow; the mechanism is literally incomprehensible to them, the same way colour is incomprehensible to someone born blind. But Inapt kinden can perceive and use magic that Apt cannot see at all. As the industrial revolution the Wasps are driving accelerates, magic fades from relevance and the Inapt civilisations are pushed to the margins. The Apt/Inapt divide is the series' best idea and Tchaikovsky uses it for everything.",
+      body: "The series' central divide: Apt kinden can understand and use machines intuitively: crossbows, siege engines, eventually flying craft and early firearms. Inapt kinden cannot. A Moth-kinden cannot operate a crossbow; the mechanism is literally incomprehensible to them, the same way colour is incomprehensible to someone born blind. But Inapt kinden can perceive and use magic that Apt cannot see at all. As the industrial revolution the Wasps are driving accelerates, magic fades from relevance and the Inapt civilisations are pushed to the margins. The Apt/Inapt divide is the series' best idea and Tchaikovsky uses it for everything.",
       color: 'amber',
     },
     {
       title: '🏛️ The Wasp Empire',
-      body: "The Wasp Empire is a Roman legion transplanted into a steampunk world: expansionist, militarist, hierarchical, and capable of grinding down any opposition through sheer industrial scale. What makes them work as antagonists across ten books is that they are not monolithic evil — individual Wasps can be sympathetic, principled, even heroic, while serving a system built on conquest and slavery. The Empire has internal politics, succession crises, and factions. The Rekef (secret police) are as dangerous to Wasps as to enemies. The conflict is never as simple as good city-states versus evil empire.",
+      body: "The Wasp Empire is a Roman legion transplanted into a steampunk world: expansionist, militarist, hierarchical, and capable of grinding down any opposition through sheer industrial scale. What makes them work as antagonists across ten books is that they are not monolithic evil: individual Wasps can be sympathetic, principled, even heroic, while serving a system built on conquest and slavery. The Empire has internal politics, succession crises, and factions. The Rekef (secret police) are as dangerous to Wasps as to enemies. The conflict is never as simple as good city-states versus evil empire.",
       color: 'red',
     },
     {
       title: '📖 From Spy Thriller to War Epic',
-      body: "Book 1 is a spy thriller. Stenwold Maker is an intelligence operative trying to convince his city that the Wasp Empire is coming; his team of students are his agents. By book 4 the invasion has happened, cities have fallen, and the series is full-scale war fantasy with multiple POVs across a continent. The transformation is gradual and handled well, but readers should know it comes — the intimate spy structure of the opening does not define what the series becomes.",
+      body: "Book 1 is a spy thriller. Stenwold Maker is an intelligence operative trying to convince his city that the Wasp Empire is coming; his team of students are his agents. By book 4 the invasion has happened, cities have fallen, and the series is full-scale war fantasy with multiple POVs across a continent. The transformation is gradual and handled well, but readers should know it comes: the intimate spy structure of the opening does not define what the series becomes.",
       color: 'green',
     },
     {
       title: '🐛 The Final Arc',
-      body: "Books 8–10 are not just a larger version of the first war. The Wasp Empire returns with aerial dominance and a new general — but by the final two books, a different threat emerges that has nothing to do with any kinden. It shifts the genre register from war fantasy into something darker and more cosmically scaled. Divisive: some readers consider it the series' most ambitious move; others find it a tonal departure from what they came for. Either way, it is not optional and it is not brief.",
+      body: "Books 8-10 are not just a larger version of the first war. The Wasp Empire returns with aerial dominance and a new general; but by the final two books, a different threat emerges that has nothing to do with any kinden. It shifts the genre register from war fantasy into something darker and more cosmically scaled. Divisive: some readers consider it the series' most ambitious move; others find it a tonal departure from what they came for. Either way, it is not optional and it is not brief.",
       color: 'zinc',
     },
   ],
   groups: [
     {
       label: 'The First War',
-      sublabel: 'books 1–4 — the Wasp Empire invades the Lowlands',
+      sublabel: 'books 1-4 - the Wasp Empire invades the Lowlands',
       noteType: 'required',
-      note: "Stenwold Maker's long-anticipated war arrives. The first arc follows his students and agents as the Wasp Empire's invasion moves from rumour to siege. The series is closest to spy thriller in book 1 and transitions into full military fantasy by book 3. Salute the Dark closes this arc with real finality — many readers consider it the series peak.",
+      note: "Stenwold Maker's long-anticipated war arrives. The first arc follows his students and agents as the Wasp Empire's invasion moves from rumour to siege. The series is closest to spy thriller in book 1 and transitions into full military fantasy by book 3. Salute the Dark closes this arc with genuine resolution and is the strongest single book in the series.",
       books: [
         {
           title: 'Empire in Black and Gold',
           slug: 'empire-in-black-and-gold',
           status: 'mandatory',
-          note: "Stenwold Maker has spent seventeen years warning Collegium that the Wasp Empire is coming. Nobody believes him. He sends a team of students — Che, Totho, Salma, Tynisa — to the city of Myna to see the evidence for themselves. The kinden world is introduced here, dense with new races and concepts; the investment pays off across the whole series. Push through the worldbuilding — by the end of book 1 the system is intuitive.",
+          note: "Stenwold Maker has spent seventeen years warning Collegium that the Wasp Empire is coming. Nobody believes him. He sends a team of students (Che, Totho, Salma, Tynisa) to the city of Myna to see the evidence for themselves. The kinden world is introduced here, dense with new races and concepts; the system becomes intuitive by the end of book 1. Push through the worldbuilding: by the end of book 1 everything clicks.",
           page_count: null,
           publication_year: 2008,
         },
@@ -63,7 +64,7 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
           title: 'Dragonfly Falling',
           slug: 'dragonfly-falling',
           status: 'mandatory',
-          note: "The Wasp invasion begins. The spy thriller structure of book 1 gives way to full-scale war as multiple cities come under siege simultaneously. The scope expands dramatically — new POV characters, new fronts, the first large-scale battle sequences. The series announces what it is going to be.",
+          note: "The Wasp invasion begins. The spy thriller structure of book 1 gives way to full-scale war as multiple cities come under siege simultaneously. The scope expands dramatically: new POV characters, new fronts, the first large-scale battle sequences. The series announces what it is going to be.",
           page_count: null,
           publication_year: 2009,
         },
@@ -79,7 +80,7 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
           title: 'Salute the Dark',
           slug: 'salute-the-dark',
           status: 'mandatory',
-          note: "The conclusion of the first war arc. The siege of Collegium, the cost paid by characters who have been at the centre since book 1, and a resolution that closes this phase of the conflict with real weight. Many readers consider this the best book in the series. The series is not over, but this is a genuine ending.",
+          note: "The conclusion of the first war arc. The siege of Collegium, the cost paid by characters who have been at the centre since book 1, and a resolution that closes this phase of the conflict with real weight. The series is not over, but this is a genuine ending.",
           page_count: null,
           publication_year: 2010,
         },
@@ -87,15 +88,15 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
     },
     {
       label: 'The Eastern Arc',
-      sublabel: 'books 5–7 — the world beyond the Lowlands',
+      sublabel: 'books 5-7 - the world beyond the Lowlands',
       noteType: 'required',
-      note: "The post-war period. The Wasp Empire is reorganising. Che travels east and discovers civilisations the surface world barely knew existed. The series expands its map significantly — deserts, ancient Inapt city-states, the sea-kinden — and shifts from war epic to something more exploratory before the final storm.",
+      note: "The post-war period. The Wasp Empire is reorganising. Che travels east and discovers civilisations the surface world barely knew existed. The series expands its map significantly: deserts, ancient Inapt city-states, the sea-kinden. The pace is slower than the first arc; the political complexity is higher.",
       books: [
         {
           title: 'The Scarab Path',
           slug: 'the-scarab-path',
           status: 'mandatory',
-          note: "Che travels to Khanaphes — an ancient city in the desert whose Inapt civilisation predates anything the Lowlands have built — searching for the missing Thalric. The Scarab Path is the most character-focused book in the series and deepens Che's arc from student to something the Inapt world takes seriously. A slower book than the first arc; the payoff for Che's development runs through the rest of the series.",
+          note: "Che travels to Khanaphes, an ancient city in the desert whose Inapt civilisation predates anything the Lowlands have built, searching for the missing Thalric. The Scarab Path is the most character-focused book in the series and deepens Che's arc from student to something the Inapt world takes seriously. A slower book than the first arc; Che's development here drives her arc through the rest of the series.",
           page_count: 696,
           publication_year: 2010,
         },
@@ -103,7 +104,7 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
           title: 'The Sea Watch',
           slug: 'the-sea-watch',
           status: 'mandatory',
-          note: "Stenwold Maker deals with a new threat from below the waves — the sea-kinden, a civilisation the surface world had no knowledge of. The Sea Watch is the most unusual book in the series, introducing an entirely new sphere of the world with its own rules and powers. Expands the scope considerably before the second major war begins.",
+          note: "Stenwold Maker deals with a new threat from below the waves: the sea-kinden, a civilisation the surface world had no knowledge of. The Sea Watch is the most unusual book in the series, introducing an entirely new sphere of the world with its own rules and powers. Expands the scope considerably before the second major war begins.",
           page_count: 631,
           publication_year: 2011,
         },
@@ -111,7 +112,7 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
           title: 'Heirs of the Blade',
           slug: 'heirs-of-the-blade',
           status: 'mandatory',
-          note: "Tynisa and Che travel east into the Wasp succession crisis while the Commonweal of the Dragonfly-kinden faces threats from within and without. The political complexity of the Wasp Empire — the factions, the heirs, the Rekef — reaches its most fully-realised point. Sets up the final arc.",
+          note: "Tynisa and Che travel east into the Wasp succession crisis while the Commonweal of the Dragonfly-kinden faces threats from within and without. The political complexity of the Wasp Empire: the factions, the heirs, the Rekef, reaches its most fully-realised point. Sets up the final arc.",
           page_count: 586,
           publication_year: 2011,
         },
@@ -119,15 +120,15 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
     },
     {
       label: 'The Final War',
-      sublabel: 'books 8–10 — the Wasp Empire returns at full scale',
+      sublabel: 'books 8-10 - the Wasp Empire returns at full scale',
       noteType: 'required',
-      note: "The Wasp Empire returns with a new doctrine built around aerial dominance — airpower that makes everything the Lowlands built in the years since the first war look inadequate. The second war is larger, faster, and darker than the first. Underneath it, the Worm begins to stir.",
+      note: "The Wasp Empire returns with a new doctrine built around aerial dominance: airpower that makes everything the Lowlands built in the years since the first war look inadequate. The second war is larger, faster, and darker than the first. Underneath it, the Worm begins to stir.",
       books: [
         {
           title: 'The Air War',
           slug: 'the-air-war',
           status: 'mandatory',
-          note: "The Wasp Empire returns with a new general and a new doctrine: the war is fought in the air first, and the Lowlands have nothing to match it. The most technically detailed book in the series — aerial combat, logistics, the arms race between Apt engineers on both sides. The ground war is almost secondary. A significant escalation in scope and darkness.",
+          note: "The Wasp Empire returns with a new general and a new doctrine: the war is fought in the air first, and the Lowlands have nothing to match it. The most technically detailed book in the series: aerial combat, logistics, the arms race between Apt engineers on both sides. The ground war is almost secondary. A significant escalation in scope and darkness.",
           page_count: 628,
           publication_year: 2012,
         },
@@ -135,7 +136,7 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
           title: "War Master's Gate",
           slug: 'war-masters-gate',
           status: 'mandatory',
-          note: "The siege of Collegium at full scale — larger and more desperate than the first war, with fewer resources and less hope. War Master's Gate is also where the Worm makes its first real presence felt beneath the surface of the main conflict. The book is the longest and most gruelling of the final arc. Major characters are not protected.",
+          note: "The siege of Collegium at full scale: larger and more desperate than the first war, with fewer resources and less hope. War Master's Gate is also where the Worm makes its first real presence felt beneath the surface of the main conflict. The book is the longest and most gruelling of the final arc. Major characters are not protected.",
           page_count: null,
           publication_year: 2013,
         },
@@ -143,7 +144,7 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
           title: 'Seal of the Worm',
           slug: 'seal-of-the-worm',
           status: 'mandatory',
-          note: "The conclusion of the series. The Worm beneath the world is no longer a background threat. The final volume pulls the political war and the existential horror into the same frame and asks whether either can be survived. Tchaikovsky's ending is genuinely ambitious and genuinely divisive — readers who wanted a conventional war resolution will find it strange; readers willing to follow the series to its actual conclusion will find it earned.",
+          note: "The conclusion of the series. The Worm beneath the world is no longer a background threat. The final volume pulls the political war and the existential horror into the same frame and asks whether either can be survived. Tchaikovsky's ending is genuinely ambitious and genuinely divisive: the resolution is unlike any conventional military fantasy conclusion.",
           page_count: 594,
           publication_year: 2014,
         },
@@ -151,15 +152,15 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
     },
     {
       label: 'Echoes of the Fall',
-      sublabel: 'companion trilogy — read after Seal of the Worm',
+      sublabel: 'companion trilogy - read after Seal of the Worm',
       noteType: 'optional',
-      note: "Set in the same world as the main series but in the far north, where the kinden system does not apply — here, people carry the souls of animals and can take their form. The tribes of the north are entirely Inapt, their world built on totem animals and shapeshifting rather than insect-bonding and machinery. Echoes of the Fall reads as a standalone trilogy and requires no prior knowledge of the main series, but readers who have finished Shadows of the Apt will recognise the world's deeper history. Read after the main series for the full context.",
+      note: "Set in the same world as the main series but in the far north, where the kinden system does not apply: here, people carry the souls of animals and can take their form. The tribes of the north are entirely Inapt, their world built on totem animals and shapeshifting rather than insect-bonding and machinery. Echoes of the Fall reads as a standalone trilogy and requires no prior knowledge of the main series, but readers who have finished Shadows of the Apt will recognise the world's deeper history.",
       books: [
         {
           title: 'The Tiger and the Wolf',
           slug: 'the-tiger-and-the-wolf',
           status: 'supplementary',
-          note: "Maniye Many Tracks carries two souls — wolf and tiger — and belongs fully to neither tribe. The first book establishes the shape-shifting north and Maniye's place in it: a young woman whose divided nature makes her an outcast and eventually the axis around which the tribal conflicts turn. A strong standalone entry into the companion series.",
+          note: "Maniye Many Tracks carries two souls (wolf and tiger) and belongs fully to neither tribe. The first book establishes the shape-shifting north and Maniye's place in it: a young woman whose divided nature makes her an outcast and eventually the axis around which the tribal conflicts turn. A strong standalone entry into the companion series.",
           page_count: null,
           publication_year: 2016,
         },
@@ -167,7 +168,7 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
           title: 'The Bear and the Serpent',
           slug: 'the-bear-and-the-serpent',
           status: 'supplementary',
-          note: "The tribal conflicts of the north escalate and Maniye's role in them expands. The Bear and the Serpent brings more of the world into contact — new tribes, a threat that requires unlikely alliances, and the first hints of what the south (the Apt world of the main series) means to people who have never encountered machines.",
+          note: "The tribal conflicts of the north escalate and Maniye's role in them expands. The Bear and the Serpent brings more of the world into contact: new tribes, a threat that requires unlikely alliances, and the first hints of what the south (the Apt world of the main series) means to people who have never encountered machines.",
           page_count: 468,
           publication_year: 2017,
         },
@@ -175,7 +176,7 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
           title: 'The Hyena and the Hawk',
           slug: 'the-hyena-and-the-hawk',
           status: 'supplementary',
-          note: "The conclusion of the companion trilogy. Maniye's story reaches its resolution as the north faces an existential threat and the full scope of the world — north and south, Inapt and Apt — becomes visible. The Hyena and the Hawk is where the two series' histories most directly intersect.",
+          note: "The conclusion of the companion trilogy. Maniye's story reaches its resolution as the north faces an existential threat and the full scope of the world: north and south, Inapt and Apt, becomes visible. The Hyena and the Hawk is where the two series' histories most directly intersect.",
           page_count: null,
           publication_year: 2018,
         },
@@ -183,9 +184,9 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
     },
     {
       label: 'Tales of the Apt',
-      sublabel: 'short story collections — best read after the main series',
+      sublabel: 'short story collections - best read after the main series',
       noteType: 'optional',
-      note: "Four collections of short stories set throughout the Shadows of the Apt timeline. The stories expand on characters and moments from the main series — side plots, backstory, events that happen off-page in the novels. Not essential, but rewarding for readers who want more of the world after Seal of the Worm. Read in any order; each collection is independent.",
+      note: "Four collections of short stories set throughout the Shadows of the Apt timeline. The stories expand on characters and moments from the main series: side plots, backstory, events that happen off-page in the novels. Not essential, but enriching for readers who want more of the world after Seal of the Worm. Read in any order; each collection is independent.",
       books: [
         {
           title: 'Spoils of War',
@@ -222,58 +223,104 @@ export const shadowsOfTheApt: ReadingOrderEntry = {
       ],
     },
   ],
+  characters: [
+    {
+      name: 'Stenwold Maker',
+      role: 'Beetle-kinden spymaster; Master of Espionage for Collegium; protagonist of the first arc',
+      color: 'blue',
+      why_they_work:
+        "Stenwold is structured as a Cassandra figure who is eventually proven right, but Tchaikovsky uses this setup unusually: Stenwold's vindication does not make him triumphant. The war he predicted arrives and destroys the world he was trying to protect in ways his warnings couldn't prevent. His arc across the series is about the cost of being right too late, and the increasingly difficult position of a moral person in command of an expanding intelligence apparatus.",
+    },
+    {
+      name: 'Cheerwell "Che" Maker',
+      role: "Stenwold's niece; Beetle-kinden; student turned Inapt-connected operative; protagonist of the final arc",
+      color: 'amber',
+      why_they_work:
+        "Che starts as the apparent failure of the Maker family: an Apt Beetle-kinden who cannot use weapons effectively, studying in Stenwold's shadow. The series gradually reveals that her connection to the Inapt world, which her Apt peers dismiss as a liability, is the thing the final arc requires. Her transformation from student to person the Moth-kinden take seriously is the series' longest running character arc and the one that matters most when the Worm arrives.",
+    },
+    {
+      name: 'Thalric',
+      role: 'Wasp-kinden; Rekef officer; antagonist turned reluctant ally',
+      color: 'red',
+      why_they_work:
+        "Thalric is the series' most structurally complex character: introduced as an antagonist and slowly repositioned as an ally, but never as a straightforwardly redeemed one. He remains a Rekef officer who did specific things to specific people, and Tchaikovsky doesn't erase that history. His ongoing relationship with Che is built on the premise that two people can be useful to each other and even care for each other without the narrative requiring one of them to be innocent.",
+    },
+    {
+      name: 'Achaeos',
+      role: "Moth-kinden mage; Che's partner; representative of the dying Inapt world",
+      color: 'green',
+      why_they_work:
+        "Achaeos falls in love with Che, which structurally means the series' central metaphor (Apt vs Inapt) is played out in their relationship. His attitude toward Apt kinden shifts across the first arc from contempt to grudging respect to something closer to genuine partnership. His death in book 3 is the loss that shapes Che's character through the rest of the series: he appears only in the first arc but his absence defines the middle books.",
+    },
+    {
+      name: 'Seda',
+      role: 'Wasp-kinden Empress; heir to the Wasp throne; Inapt magic user within the Apt Empire',
+      color: 'purple',
+      why_they_work:
+        "Seda is the Empress who emerges from the Wasp succession crisis after the first war, and her arc runs directly counter to the series' central premise: she is an Apt Wasp who gains Inapt magical power. What Tchaikovsky does with her is politically sophisticated: she uses ancient Inapt magic in service of the Wasp Empire's expansion, which creates the most uncomfortable version of the series' Apt/Inapt thesis. What happens when the tools of the old world are put in service of the new one's agenda?",
+    },
+  ],
   sections: [
     {
       heading: 'What the final arc introduces',
       type: 'spoiler',
       prose:
-        "The Worm is an entity that has existed beneath the surface of the world since before any kinden civilisation. It is not a nation, not an empire, not a kinden at all — something older and alien that the world above has forgotten. Books 9 and 10 bring it into the open: the Worm consumes everything it encounters, and the war with the Wasps becomes secondary to the question of whether anything survives. The body horror of the underground sequences is unlike anything in the earlier books. Tchaikovsky's decision to introduce a non-kinden existential threat in the final two books is the most divisive creative choice in the series.",
+        "The Worm is an entity that has existed beneath the surface of the world since before any kinden civilisation. It is not a nation, not an empire, not a kinden at all: something older and alien that the world above has forgotten. Books 9 and 10 bring it into the open: the Worm consumes everything it encounters, and the war with the Wasps becomes secondary to the question of whether anything survives. The body horror of the underground sequences is unlike anything in the earlier books. Tchaikovsky's decision to introduce a non-kinden existential threat in the final two books is the most divisive creative choice in the series.",
     },
     {
       heading: 'How the series changes across its three arcs',
       type: 'bullets',
       bullets: [
-        "Books 1–4 are the most accessible entry: the spy thriller opening gives way to siege warfare with a cast built around Stenwold and his students. The kinden system is at its most legible here. New readers who are uncertain should commit through Salute the Dark before deciding — it closes the first arc with enough finality to be a fair test.",
-        "Books 5–7 slow down and shift east. Che becomes the primary POV rather than an ensemble member, and the world expands into civilisations the Lowlands barely knew existed. Readers who found the first arc's pace relentless may prefer this section; readers who came for the war may find it a detour.",
-        "Books 8–10 are the darkest arc — the second war is larger and more desperate than the first, major characters die without ceremony, and by book 9 something beyond the kinden conflict enters the story.",
+        "Books 1-4: the spy thriller opening gives way to siege warfare with a cast built around Stenwold and his students. The kinden system is at its most legible here. Salute the Dark closes the first arc with enough finality to function as a standalone four-book experience.",
+        "Books 5-7 slow down and shift east. Che becomes the primary POV rather than an ensemble member, and the world expands into civilisations the Lowlands barely knew existed. The pace is slower than the first arc; the political complexity is higher.",
+        "Books 8-10 are the darkest arc: the second war is larger and more desperate than the first, major characters die without ceremony, and by book 9 something beyond the kinden conflict enters the story.",
       ],
     },
     {
       heading: 'Content notes',
       type: 'bullets',
       bullets: [
-        "Violence is frequent and sometimes graphic across the series — this is military fantasy and the battles are rendered in detail. The scale of death increases significantly in books 8–10. Tchaikovsky does not shy from killing characters readers care about.",
-        "The Worm (books 9–10) introduces body horror elements not present in the earlier books. The underground sequences are genuinely unsettling. Readers sensitive to horror-adjacent content should be aware.",
-        "The series contains slavery — the Wasp Empire uses slave labour extensively — and the political and personal consequences of that system are part of the story, not backdrop.",
+        "Violence is frequent and sometimes graphic across the series: this is military fantasy and the battles are rendered in detail. The scale of death increases significantly in books 8-10. Tchaikovsky does not shy from killing characters readers care about.",
+        "The Worm (books 9-10) introduces body horror elements not present in the earlier books. The underground sequences are genuinely unsettling. Readers sensitive to horror-adjacent content should be aware.",
+        "The series contains slavery: the Wasp Empire uses slave labour extensively, and the political and personal consequences of that system are part of the story, not backdrop.",
         "Romance is present throughout but never the primary focus. Several relationships develop across the series; none are explicit.",
-        "Reader fit: Shadows of the Apt rewards readers who want military fantasy with a genuinely inventive world concept, large casts, and escalating stakes. It is not right for readers who want a small intimate story or a quick resolution — the series is 10 books and earns its ending across all of them.",
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "The Apt/Inapt divide is one of the most structurally productive fantasy metaphors of the 2000s: a society-scale cognitive division that explains why industrialisation is as disruptive to magic-users as magic is invisible to engineers. It is not an aesthetic choice but a world-building premise that generates plot, character arcs, and geopolitical conflict simultaneously.",
+        "Shadows of the Apt was published during the steampunk fantasy trend (2008-2014). Tchaikovsky used the steampunk aesthetic in service of a political allegory about colonialism and industrialisation rather than as decoration, which distinguishes it from most contemporary steampunk fantasy.",
+        "The series demonstrates a specific model for long-form fantasy: a 10-book sequence where each book ends with genuine plot consequences rather than open cliffhangers, and where the protagonist cast shifts substantially between arcs. The transition from spy-thriller opening to war epic to cosmic horror finale is handled without a reboot.",
+        "Children of Time (2015) brought Tchaikovsky a much larger audience after the series was complete. The kinden concept is a direct precursor to the uplifted-spider civilisation in Children of Time: both rest on the premise that different cognitive architectures produce genuinely different societies, not humans in different bodies.",
       ],
     },
   ],
   darkness: [
     {
-      label: 'Books 1–4 (The First War)',
+      label: 'Books 1-4 (The First War)',
       level: 3,
-      desc: 'War, siege, and espionage — violence is constant but not gratuitous; the spy thriller roots keep the tone grounded even as the scale escalates',
+      desc: 'War, siege, and espionage: violence is constant but not gratuitous; the spy thriller roots keep the tone grounded even as the scale escalates',
     },
     {
-      label: 'Books 5–7 (The Eastern Arc)',
+      label: 'Books 5-7 (The Eastern Arc)',
       level: 3,
-      desc: 'More personal darkness — grief, moral compromise, ancient horrors waking at the edges; the body count is lower but the emotional cost is higher',
+      desc: 'More personal darkness: grief, moral compromise, ancient horrors waking at the edges; the body count is lower but the emotional cost is higher',
     },
     {
-      label: 'Books 8–10 (The Final War)',
+      label: 'Books 8-10 (The Final War)',
       level: 4,
-      desc: 'Grimdark-adjacent — large-scale death, major character losses without ceremony, and the Worm introducing body horror beneath the military fantasy',
+      desc: 'Grimdark-adjacent: large-scale death, major character losses without ceremony, and the Worm introducing body horror beneath the military fantasy',
     },
   ],
   metaDescription:
-    'The complete Shadows of the Apt reading order — all 10 Adrian Tchaikovsky books in sequence, the kinden world explained, and the three arcs broken down.',
+    'The complete Shadows of the Apt reading order: all 10 Adrian Tchaikovsky books in sequence, the kinden world explained, and the three arcs broken down.',
   booksLikeSlug: 'children-of-time',
   shortName: 'Shadows of the Apt',
   finishedLabel: 'Finished Shadows of the Apt?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',
   related: ['malazan', 'black-company', 'first-law', 'horus-heresy', 'john-gwynne', 'wheel-of-time'],
-  lastUpdated: '2026-05-25',
+  lastUpdated: '2026-07-01',
 };
