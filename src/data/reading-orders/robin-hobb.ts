@@ -1,20 +1,56 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const robinHobb: ReadingOrderEntry = {
   slug: 'robin-hobb',
   name: 'Realm of the Elderlings',
   author: 'Robin Hobb',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✅ Complete Series',
+  seriesStatusLabel: '✅ Complete - sixteen books across five series (1995-2017)',
   description:
-    "Sixteen books across five interconnected series, all set in the same world, all building toward a conclusion that has been in progress since 1995. Robin Hobb writes character-driven fantasy with a particular genius for emotional devastation — her protagonists make choices that hurt, and she never lets them off easily. This is the most complete emotional journey in epic fantasy. Assassin's Apprentice is where to start — one of the finest fantasy debuts ever written. The Fool — Fitz's closest companion across all three of his trilogies — is one of the most original and beloved characters in the genre, and the Fitz/Fool relationship is the emotional spine of the entire sequence. Follow the Robin Hobb reading order exactly: the reveals across series depend on it.",
-  darknessDisplay: '🕯️🕯️🕯️🕯️ Dark',
+    "Sixteen books across five interconnected series, all set in the same world, all building toward a conclusion that has been in progress since 1995. Robin Hobb writes character-driven fantasy with a genius for emotional devastation; her protagonists make choices that hurt, and she never lets them off easily. The Fool (Fitz's closest companion through all three of his trilogies) and the Fitz/Fool relationship are the emotional spine of the entire sequence. Follow the Robin Hobb reading order exactly: the reveals across series depend on it.",
+  darknessDisplay:
+    '🕯️🕯️🕯️🕯️ Dark - grief and trauma throughout; emotionally devastating rather than graphically violent',
+  orderNote:
+    'Publication order. The Rain Wild Chronicles (books 10-13) can be read after completing the Tawny Man or after the full sequence; both work.',
+  cardsPosition: 'above',
+  cards: [
+    {
+      title: "🗡️ Fitz's Arc (9 books)",
+      body: 'FitzChivalry Farseer is the protagonist of three separate trilogies spanning his entire life (from orphaned bastard to old man). The Farseer Trilogy, The Tawny Man, and Fitz and the Fool form one complete emotional arc. Read them in order, no exceptions.',
+      color: 'blue',
+    },
+    {
+      title: '🚢 The Liveship Question',
+      body: "Can you skip Liveship Traders? Technically yes; Fitz's story continues without it. But the mythology of the Elderlings, the liveships, and the Servants underpins Assassin's Fate in ways that only make full sense with Liveship context.",
+      color: 'green',
+    },
+    {
+      title: '💔 Emotional Warning',
+      body: "Robin Hobb writes with an unusual commitment to emotional consequence: her characters make choices that hurt, and those choices stay with them. Fitz is a frustrating protagonist by design; his passivity and self-sabotage are deliberate and specific. Do not get attached to anyone. Come prepared.",
+      color: 'red',
+    },
+    {
+      title: '🐉 Rain Wild Chronicles',
+      body: 'Optional but enriching. Set in the same world with new characters: damaged dragons and the lost Elderling cities. Best read between Tawny Man and Fitz & the Fool. Skip it if you want to stay with Fitz; read it if you want the full world.',
+      color: 'amber',
+    },
+    {
+      title: '🎭 The Fool',
+      body: "The Fool is Fitz's closest companion across all three of his trilogies: a prophet, a mystery, and the character most readers find hardest to leave behind. Their relationship develops across three separate trilogies and twenty years in the text; it is the axis around which the entire sequence turns. His identity and what he truly wants from Fitz are revealed gradually. Do not look anything up. Let it unfold.",
+      color: 'purple',
+    },
+    {
+      title: '⚡ Wit and Skill',
+      body: "Fitz uses two magic systems. The Skill is a telepathic royal magic: coveted, formally trained, and dangerous to use alone. The Wit is a deep bond with animals: powerful, intimate, and culturally despised as bestial. Both shape his identity. The tension between one legitimised magic and one persecuted one runs through all nine of his books. Neither is simply a tool; both carry cost.",
+      color: 'zinc',
+    },
+  ],
   groups: [
     {
       label: 'The Farseer Trilogy',
       sublabel: 'start here',
       noteType: 'required',
-      note: 'All three essential. Each book ends on a devastating note — have the next ready.',
+      note: 'All three essential. Each book ends on a devastating note; have the next ready.',
       books: [
         {
           title: "Assassin's Apprentice",
@@ -36,7 +72,7 @@ export const robinHobb: ReadingOrderEntry = {
           title: "Assassin's Quest",
           slug: 'assassins-quest',
           status: 'mandatory',
-          note: 'Long quest structure, deeply interior. Divisive — some find it too slow. The emotional payoff of the trilogy hinges entirely on it.',
+          note: 'Long quest structure, deeply interior. Divisive; some find it too slow. The emotional resolution of the trilogy depends entirely on it.',
           page_count: 757,
           publication_year: 1997,
         },
@@ -44,9 +80,9 @@ export const robinHobb: ReadingOrderEntry = {
     },
     {
       label: 'Liveship Traders',
-      sublabel: 'new POVs, same world — do not skip',
+      sublabel: 'new POVs, same world - do not skip',
       noteType: 'required',
-      note: "New characters and merchant ships, but the world-building here is load-bearing for everything that follows, especially the Fool trilogy. There is also a short prequel story 'Homecoming' (~50 pages, in the Legends II anthology) covering the first liveship voyage — read it before Ship of Magic if you can find it, but it's not essential.",
+      note: "New characters and merchant ships, but the world-building here is load-bearing for everything that follows, especially the Fool trilogy. There is also a short prequel story 'Homecoming' (~50 pages, in the Legends II anthology) covering the first liveship voyage; read it before Ship of Magic if you can find it, but it's not essential.",
       books: [
         {
           title: 'Ship of Magic',
@@ -60,7 +96,7 @@ export const robinHobb: ReadingOrderEntry = {
           title: 'The Mad Ship',
           slug: 'the-mad-ship',
           status: 'mandatory',
-          note: "The Liveship Traders hits its stride. Althea, Brashen, and the Paragon — one of Hobb's most compelling relationship triangles.",
+          note: "The Liveship Traders hits its stride. Althea, Brashen, and the Paragon form the central relationship triangle: complicated, damaged, and essential.",
           page_count: 906,
           publication_year: 1999,
         },
@@ -84,7 +120,7 @@ export const robinHobb: ReadingOrderEntry = {
           title: 'The Wilful Princess and the Piebald Prince',
           slug: 'the-wilful-princess-and-the-piebald-prince',
           status: 'supplementary',
-          note: "Novella (~64 pages) telling the history of how the Wit became a persecuted magic in the Six Duchies — the backstory the Tawny Man trilogy references but never fully explains. Best read before Fool's Errand.",
+          note: "Novella (~64 pages) telling the history of how the Wit became a persecuted magic in the Six Duchies: the backstory the Tawny Man trilogy references but never fully explains. Best read before Fool's Errand.",
           page_count: 64,
           publication_year: 2013,
         },
@@ -92,7 +128,7 @@ export const robinHobb: ReadingOrderEntry = {
           title: "Fool's Errand",
           slug: 'fools-errand',
           status: 'mandatory',
-          note: 'Fitz returns, fifteen years later. The Fitz/Fool relationship is now the emotional core of the entire sequence.',
+          note: 'Fitz returns, fifteen years later. Both he and the Fool are changed by the interval; the dynamic that opens here is quieter and more weighted than the Farseer years.',
           page_count: 661,
           publication_year: 2001,
         },
@@ -108,7 +144,7 @@ export const robinHobb: ReadingOrderEntry = {
           title: "Fool's Fate",
           slug: 'fools-fate',
           status: 'mandatory',
-          note: 'The conclusion of the Tawny Man — and arguably of the Fitz arc as a whole. Hobb goes further emotionally than most readers expect.',
+          note: 'The conclusion of the Tawny Man, and in many ways of the Fitz arc as a whole. Hobb goes further emotionally than most readers expect.',
           page_count: 896,
           publication_year: 2003,
         },
@@ -116,7 +152,7 @@ export const robinHobb: ReadingOrderEntry = {
     },
     {
       label: 'The Rain Wild Chronicles',
-      sublabel: 'optional — same world, new characters',
+      sublabel: 'optional - same world, new characters',
       noteType: 'optional',
       note: 'Returns to the Liveship world. Enriches Fitz and the Fool but not required to follow it. Read if you loved Liveship Traders.',
       books: [
@@ -156,7 +192,7 @@ export const robinHobb: ReadingOrderEntry = {
     },
     {
       label: 'Fitz and the Fool',
-      sublabel: 'the finale — read everything above first',
+      sublabel: 'the finale - read everything above first',
       noteType: 'required',
       note: 'All sixteen books converge here. Hobb closes arcs open since 1995.',
       books: [
@@ -164,7 +200,7 @@ export const robinHobb: ReadingOrderEntry = {
           title: "Fool's Assassin",
           slug: 'fools-assassin',
           status: 'mandatory',
-          note: 'Fitz in his sixties, settled — and then everything changes. The ending of book one is not safe.',
+          note: 'Fitz in his sixties, settled; and then everything changes. The ending of book one is not safe.',
           page_count: 752,
           publication_year: 2014,
         },
@@ -172,7 +208,7 @@ export const robinHobb: ReadingOrderEntry = {
           title: "Fool's Quest",
           slug: 'fools-quest',
           status: 'mandatory',
-          note: 'The middle book of the final trilogy — urgent, desperate, and building toward a conclusion decades in the making.',
+          note: 'The middle book of the final trilogy: urgent, desperate, and building toward a conclusion decades in the making.',
           page_count: 752,
           publication_year: 2015,
         },
@@ -187,58 +223,71 @@ export const robinHobb: ReadingOrderEntry = {
       ],
     },
   ],
-  cards: [
+  characters: [
     {
-      title: "🗡️ Fitz's Arc (9 books)",
-      body: 'FitzChivalry Farseer is the protagonist of three separate trilogies spanning his entire life — from orphaned bastard to old man. The Farseer Trilogy, The Tawny Man, and Fitz and the Fool form one complete emotional arc. Read them in order, no exceptions.',
+      name: 'FitzChivalry Farseer',
+      role: "Royal bastard; assassin-in-training; protagonist across all three Fitz trilogies",
       color: 'blue',
+      why_they_work:
+        "Fitz is unusual because his limitations are structural rather than a plot device. His self-defeating patterns come from trauma and loyalty, not authorial convenience, and Hobb never resolves them cleanly. The reader comes to understand across nine books that his passivity and self-sabotage are the books' argument about what damage done early does to a person over a lifetime. His frustration IS the emotion Hobb is studying.",
     },
     {
-      title: '🚢 The Liveship Question',
-      body: "Can you skip Liveship Traders? Technically yes — Fitz's story continues without it. But the mythology of the Elderlings, the liveships, and the Servants underpins Assassin's Fate in ways that hit much harder with Liveship context. Most fans regret skipping it.",
-      color: 'green',
-    },
-    {
-      title: '💔 Emotional Warning',
-      body: "Robin Hobb is one of fantasy's most emotionally devastating writers. Fitz is a frustrating protagonist by design — his passivity and self-sabotage are deliberate. The Fool is one of the most beloved characters in fantasy. Do not get attached to anyone. Come prepared.",
-      color: 'red',
-    },
-    {
-      title: '🐉 Rain Wild Chronicles',
-      body: 'Optional but enriching. Set in the same world with new characters — damaged dragons and the lost Elderling cities. Best read between Tawny Man and Fitz & the Fool. Skip it if you want to stay with Fitz; read it if you want the full world.',
-      color: 'amber',
-    },
-    {
-      title: '🎭 The Fool',
-      body: "The Fool is Fitz's closest companion across all three of his trilogies — a prophet, a mystery, and the character most readers struggle to leave behind. Their relationship is unlike anything else in epic fantasy: built across decades, across loss, across enormous distance. His identity and what he truly wants from Fitz are revealed gradually. Do not look anything up. Let it unfold.",
+      name: 'The Fool',
+      role: "Prophet; mystery; Fitz's closest companion and the emotional spine of the sequence",
       color: 'purple',
+      why_they_work:
+        "The Fool works because Hobb systematically withholds what he actually is and what he actually wants for the entire first and second trilogies. The reader's relationship with him develops alongside Fitz's, which means the reveals in the third trilogy land with the weight of 20 years of accumulated trust. His card covers his role; the structural point is that the mystery is the mechanism: understanding him too early would collapse the sequence.",
     },
     {
-      title: '⚡ Wit and Skill',
-      body: "Fitz uses two magic systems. The Skill is a telepathic royal magic — coveted, formally trained, and dangerous to use alone. The Wit is a deep bond with animals — powerful, intimate, and culturally despised as bestial. Both shape his identity. The tension between one legitimised magic and one persecuted one runs through all nine of his books. Neither is simply a tool — both carry cost.",
-      color: 'zinc',
+      name: 'Nighteyes',
+      role: "Wild wolf; Fitz's Wit-bonded companion through the Farseer and Tawny Man trilogies",
+      color: 'green',
+      why_they_work:
+        "Nighteyes is the version of Fitz that chooses presence over obligation. His perspective (rendered through the Wit bond) provides a clean contrast to Fitz's complicated human loyalties: where Fitz agonizes and second-guesses, Nighteyes simply wants to run, eat, and be beside his companion. That contrast runs through the Farseer and Tawny Man trilogies as a sustained argument about what kind of life Fitz is sacrificing.",
+    },
+    {
+      name: 'Althea Vestrit',
+      role: "Merchant's daughter; protagonist of the Liveship Traders; sailor",
+      color: 'amber',
+      why_they_work:
+        "Althea's arc is about claiming ownership of what is rightfully hers in a world that doesn't recognize her right to it. The Liveship Traders works as a parallel sequence because she has a completely different relationship to power and inheritance than Fitz does, and her determination gives the trilogy its own emotional register rather than functioning as a sidetrack from the main sequence.",
+    },
+    {
+      name: 'Paragon',
+      role: "The 'mad' liveship; oldest and most damaged of the sentient vessels",
+      color: 'red',
+      why_they_work:
+        "Paragon is genuinely dangerous, genuinely damaged, and simultaneously the Liveship trilogy's clearest argument about the ethics of ownership. He has been locked in place for decades, literally blinded, and his eventual transformation is among the most complete arcs in the trilogy. He also carries more of the world-mythology that the Fitz/Fool finale requires than any other character outside the main sequence.",
     },
   ],
-  cardsPosition: 'above',
-  orderNote:
-    'Publication order. The Rain Wild Chronicles (books 10–13) can be read after completing the Tawny Man or after the full sequence — both work.',
   sections: [
-    {
-      heading: 'Where to start',
-      type: 'bullets',
-      bullets: [
-        "New to Robin Hobb? Start with Assassin's Apprentice. It is the only entry point. The world and character foundations must be laid here.",
-        "The reading order matters more here than in most series. The reveals across series depend on it — follow the order in this guide exactly.",
-      ],
-    },
     {
       heading: 'What to know',
       type: 'bullets',
       bullets: [
-        "Hobb's pacing is slow and deliberate. These are character-first novels — if you need constant plot momentum, recalibrate.",
-        'Fitz is a frustrating protagonist on purpose. His self-sabotage and passivity are features, not flaws. Hobb is doing something specific with it.',
-        'Emotional content: grief, trauma, self-sacrifice, loneliness, and chosen family done with unusual honesty. Not a comfortable read. Deeply rewarding.',
-        "Assassin's Fate is 944 pages and earns every one of them. It is the conclusion to a 22-year story and should be read last.",
+        "Hobb's pacing is slow and deliberate; these are character-first novels where plot momentum is secondary to emotional development.",
+        "Assassin's Fate is 944 pages and needs every one of them. It is the conclusion to a 22-year story and should be read last.",
+      ],
+    },
+    {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        'Grief, trauma, self-sacrifice, and loneliness are present throughout all sixteen books. This is not escapist fantasy.',
+        'The Farseer Trilogy and Tawny Man include depictions of torture and forced psychological violation (the Skill used coercively). The damage is treated as permanent rather than healed.',
+        'The Wit is depicted as culturally despised throughout the Tawny Man trilogy; the persecution of Wit-users is sustained and specific.',
+        'No explicit sexual content. Violence is present but not graphic; the damage in these books is almost entirely psychological and cumulative.',
+        'The Rain Wild Chronicles has a noticeably lighter tone than the Fitz trilogies: a genuine change of register for readers who need a break from the emotional weight.',
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "Assassin's Apprentice (1995) established a model for the first-person interior fantasy narrator where the narrator's limitation is structural: Fitz's compromised perspective comes from trauma and loyalty, not authorial convenience. That model shaped character-driven fantasy across the following two decades.",
+        "The Liveship Traders (1998-2000) ran a separate female-protagonist cast in the same world with no crossover contamination, demonstrating that a shared world could sustain genuinely independent emotional registers. The Elderlings mythology it introduces underpins Assassin's Fate seventeen years later.",
+        'The sixteen-book sequence (1995-2017) is one of the longest completed single-author epic fantasy sequences in English without estate continuation, collaborative writing, or abandoned arcs. Hobb finished what she started.',
+        "The Fitz/Fool relationship across nine books is the most sustained two-character emotional arc in commercial epic fantasy, built across three separate trilogies and twenty years in the text, with the resolution in Assassin's Fate carrying the weight of every book that preceded it.",
       ],
     },
   ],
@@ -246,32 +295,32 @@ export const robinHobb: ReadingOrderEntry = {
     {
       label: 'The Farseer Trilogy',
       level: 3,
-      desc: 'Moderate — loss, sacrifice, identity',
+      desc: 'Moderate - loss, sacrifice, identity',
     },
     {
       label: 'The Liveship Traders',
       level: 3,
-      desc: 'Moderate — slavery, family collapse, survival',
+      desc: 'Moderate - slavery, family collapse, survival',
     },
     {
       label: 'The Tawny Man',
       level: 4,
-      desc: 'Dark — cumulative grief, persecution, devastating choices',
+      desc: 'Dark - cumulative grief, persecution, devastating choices',
     },
     {
       label: 'Rain Wild Chronicles',
       level: 2,
-      desc: 'Mild — lighter tone, character-driven discovery',
+      desc: 'Mild - lighter tone, character-driven discovery',
     },
     {
       label: 'Fitz and the Fool',
       level: 4,
-      desc: 'Dark — loss compounding over 22 years, no easy resolutions',
+      desc: 'Dark - loss compounding over 22 years, no easy resolutions',
     },
   ],
   metaDescription:
-    "The Robin Hobb reading order: all 16 books across five series in the Realm of the Elderlings — from Assassin's Apprentice to Assassin's Fate — with guidance on what to read and what to skip.",
-  lastUpdated: '2026-05-14',
+    "The Robin Hobb reading order: all 16 books across five series in the Realm of the Elderlings, from Assassin's Apprentice to Assassin's Fate, with guidance on what to read and what to skip.",
+  lastUpdated: '2026-07-01',
   shortName: 'Robin Hobb',
   finishedLabel: 'Finished the Elderlings?',
   categoryHref: '/fantasy/epic',

@@ -5,22 +5,23 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
   name: 'Shadowhunter Chronicles',
   author: 'Cassandra Clare',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '📖 Ongoing — 5 complete series + The Wicked Powers (in progress)',
+  seriesStatusLabel: '📖 Ongoing - 5 complete series + The Wicked Powers (in progress)',
   description:
-    "The Shadowhunter Chronicles is one of the most expanded universes in YA fantasy — five interconnected series, each set in a different era and city, all sharing the same hidden world of Shadowhunters (half-angel humans who police demons) and Downworlders (warlocks, vampires, werewolves, faeries). The entry is City of Bones, no exceptions: every series assumes its foundation. The first trilogy is a complete, self-contained arc and a reasonable stopping point. The Infernal Devices — the Victorian London prequel — is widely considered the best writing in the universe and hits harder the more you know about TMI. Start with City of Bones.",
-  darknessDisplay: '🕯️🕯️ Moderate — YA urban fantasy; emotional weight increases with each series',
+    "The Shadowhunter Chronicles spans five interconnected series, each set in a different era and city, all sharing the same hidden world of Shadowhunters (half-angel humans who police demons) and Downworlders (warlocks, vampires, werewolves, faeries). The entry is City of Bones, no exceptions: every series assumes its foundation. The first trilogy is a complete, self-contained arc and a reasonable stopping point. The Infernal Devices (the Victorian London prequel) has tighter plotting and stronger character work than the original series, and its emotional weight is compounded by everything you learn in TMI.",
+  darknessDisplay:
+    '🕯️🕯️ Moderate - YA urban fantasy; emotional weight increases with each series',
   orderNote:
-    "Start with City of Bones. The Infernal Devices is interleaved with The Mortal Instruments — Clockwork Angel slots in after City of Glass, and the trilogy is read in alternating blocks before returning to City of Heavenly Fire. This is the order Cassandra Clare intended and the one where TID's Victorian-era payoffs land hardest. City of Glass (book 3) is a natural stopping point if you want just the original arc. The Dark Artifices picks up five years after City of Heavenly Fire; The Last Hours follows the children of TID characters. The Eldest Curses (Magnus and Alec) is interleaved with The Last Hours. This guide is spoiler-free.",
+    "Start with City of Bones. The Infernal Devices is interleaved with The Mortal Instruments: Clockwork Angel slots in after City of Glass, and the trilogy is read in alternating blocks before returning to City of Heavenly Fire. This is the order Cassandra Clare intended and the one where TID's Victorian-era storyline creates the most dramatic contrast with the modern New York timeline. City of Glass (book 3) is a natural stopping point if you want just the original arc. The Dark Artifices picks up five years after City of Heavenly Fire; The Last Hours follows the children of TID characters. The Eldest Curses (Magnus and Alec) is interleaved with The Last Hours. This guide is spoiler-free.",
   cardsPosition: 'above',
   cards: [
     {
       title: '✍️ Cassandra Clare',
-      body: "Cassandra Clare is the pen name of Judith Lewis. City of Bones (2007) was her debut novel; she had previously written widely-read Harry Potter fanfiction under the same pen name, which gave her a ready fanbase before publication. She has expanded the Shadowhunter universe across five complete series, novellas, short fiction collections, a companion guide, and a new series currently in progress — making it one of the longest-running YA urban fantasy universes in the genre. A 2013 film adaptation (City of Bones) and a 2016–2019 TV show (Shadowhunters) both covered the first series.",
+      body: "Cassandra Clare is the pen name of Judith Lewis. City of Bones (2007) was her debut novel; she had previously written widely-read Harry Potter fanfiction under the same pen name, which gave her a ready fanbase before publication. She has expanded the Shadowhunter universe across five complete series, novellas, short fiction collections, a companion guide, and a new series currently in progress. A 2013 film adaptation (City of Bones) and a 2016-2019 TV show (Shadowhunters) both covered the first series.",
       color: 'blue',
     },
     {
       title: '🌆 The Shadow World',
-      body: "Shadowhunters are Nephilim — humans with angel blood, trained from birth to hunt demons and police a hidden supernatural world called the Shadow World. They operate under the Clave, a governing body of Shadowhunter law. Downworlders — warlocks (half-demon humans), vampires, werewolves, and faeries — share the world under an uneasy treaty. Mundanes (ordinary humans) can't see any of it. The political relationship between Shadowhunters and Downworlders drives most of the conflict across all five series.",
+      body: "Shadowhunters are Nephilim (humans with angel blood), trained from birth to hunt demons and police a hidden supernatural world called the Shadow World. They operate under the Clave, a governing body of Shadowhunter law. Downworlders (warlocks, vampires, werewolves, and faeries) share the world under an uneasy treaty. Mundanes (ordinary humans) can't see any of it. The political relationship between Shadowhunters and Downworlders drives most of the conflict across all five series.",
       color: 'purple',
     },
     {
@@ -30,31 +31,33 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
     },
     {
       title: '📖 The Infernal Devices',
-      body: "Set in 1878 London, TID follows Will Herondale, Tessa Gray, and Jem Carstairs at the London Institute. It has almost no cast overlap with TMI — the Herondales are ancestors, not the same characters. The series is consistently ranked by readers as the best writing in the Shadowhunter universe: tighter plotting than TMI, stronger character work, and an ending that most readers consider devastating.",
+      body: "Set in 1878 London, TID follows Will Herondale, Tessa Gray, and Jem Carstairs at the London Institute. It has almost no cast overlap with TMI: the Herondales are ancestors, not the same characters. The series has tighter plotting than TMI, stronger character work, and ends on the most emotionally devastating moment in the universe.",
       color: 'green',
     },
     {
       title: '🔗 How the Series Connect',
-      body: "Each series is internally complete — you can finish The Mortal Instruments and stop, or stop after The Infernal Devices. But the universe rewards continuing: characters from TMI appear in The Dark Artifices (same timeline, five years later); the children of TID characters appear in The Last Hours; Magnus Bane and Alec Lightwood from TMI get their own series in The Eldest Curses. The connections are character-based, not plot-dependent — no series ends on a cliffhanger that requires the next one to resolve.",
+      body: "Each series is internally complete: you can finish The Mortal Instruments and stop, or stop after The Infernal Devices. The connections deepen across continuing series: characters from TMI appear in The Dark Artifices (same timeline, five years later); the children of TID characters appear in The Last Hours; Magnus Bane and Alec Lightwood from TMI get their own series in The Eldest Curses. The connections are character-based, not plot-dependent; no series ends on a cliffhanger that requires the next one to resolve.",
       color: 'red',
     },
     {
       title: '📺 The Adaptations',
-      body: "A 2013 film (City of Bones, directed by Harald Zwart) adapted the first book and was a box office disappointment — the planned sequels were not made. The TV series Shadowhunters (Freeform, 2016–2019) ran three seasons and covered roughly the first three TMI books before being cancelled; it has a devoted fanbase distinct from the book readers and departs significantly from the source material in plot and character. Neither adaptation reaches TID or later series — everything after TMI exists only in the books.",
+      body: "A 2013 film (City of Bones, directed by Harald Zwart) adapted the first book and was a box office disappointment; the planned sequels were not made. The TV series Shadowhunters (Freeform, 2016-2019) ran three seasons and covered roughly the first three TMI books before being cancelled; it has a devoted fanbase distinct from the book readers and departs significantly from the source material in plot and character. Neither adaptation reaches TID or later series.",
       color: 'zinc',
     },
   ],
   groups: [
     {
       label: 'The Mortal Instruments + The Infernal Devices',
-      sublabel: 'read interleaved in this order — #1 through #10',
+      sublabel: 'read interleaved in this order: #1 through #10',
+      noteType: 'required',
+      note: 'The entire universe starts here. Read the interleaved order as listed: City of Bones through City of Glass, then Clockwork Angel through Clockwork Princess before City of Heavenly Fire. City of Glass (TMI #3) is a satisfying stopping point if you want just the original arc.',
       books: [
         {
           title: 'City of Bones',
           slug: 'city-of-bones',
           status: 'mandatory',
           seriesLabel: 'The Mortal Instruments #1',
-          note: "Clary Fray discovers she can see demons — and that she's a Shadowhunter. Entry point for the entire universe. Set in contemporary New York.",
+          note: 'Clary Fray discovers she can see demons, and that she is a Shadowhunter. Entry point for the entire universe. Set in contemporary New York.',
           page_count: 485,
           publication_year: 2007,
         },
@@ -63,7 +66,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'city-of-ashes',
           status: 'mandatory',
           seriesLabel: 'The Mortal Instruments #2',
-          note: "The Valentine arc escalates. The political structure of the Clave and the Downworld begins to matter.",
+          note: 'The Valentine arc escalates. The political structure of the Clave and the Downworld begins to matter.',
           page_count: 480,
           publication_year: 2008,
         },
@@ -72,7 +75,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'city-of-glass',
           status: 'mandatory',
           seriesLabel: 'The Mortal Instruments #3',
-          note: "The original trilogy concludes. A satisfying stopping point — if you read no further, you've had the complete first arc. The Mortal Cup storyline and the Valentine conflict resolve here.",
+          note: "The original trilogy concludes. A satisfying stopping point: if you read no further, you've had the complete first arc. The Mortal Cup storyline and the Valentine conflict resolve here.",
           page_count: 560,
           publication_year: 2009,
         },
@@ -81,7 +84,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'clockwork-angel',
           status: 'mandatory',
           seriesLabel: 'The Infernal Devices #1',
-          note: "Tessa Gray arrives in 1878 London and is drawn into the Shadow World through the London Institute. Introduces Will Herondale and Jem Carstairs. Switch to Victorian London here — this is where TID is designed to be read.",
+          note: "Tessa Gray arrives in 1878 London and is drawn into the Shadow World through the London Institute. Introduces Will Herondale and Jem Carstairs. Switch to Victorian London here: this is where TID is designed to be read.",
           page_count: 498,
           publication_year: 2010,
         },
@@ -90,7 +93,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'city-of-fallen-angels',
           status: 'optional',
           seriesLabel: 'The Mortal Instruments #4',
-          note: "Clare returned to TMI three years after City of Glass to expand the universe. Weaker than the original trilogy by most reader consensus — read if you want more of Clary and Jace.",
+          note: "Clare returned to TMI three years after City of Glass to expand the universe. Weaker than the original trilogy; read if you want more of Clary and Jace.",
           page_count: 434,
           publication_year: 2011,
         },
@@ -99,7 +102,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'clockwork-prince',
           status: 'mandatory',
           seriesLabel: 'The Infernal Devices #2',
-          note: "The character triangle deepens and the Mortmain plot accelerates. Widely considered the strongest book in the trilogy.",
+          note: "The character triangle deepens and the Mortmain plot accelerates. The strongest book in the trilogy.",
           page_count: 528,
           publication_year: 2011,
         },
@@ -117,7 +120,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'clockwork-princess',
           status: 'mandatory',
           seriesLabel: 'The Infernal Devices #3',
-          note: "The Infernal Devices concludes. The ending is consistently cited as one of the most emotionally affecting in the entire universe — go in without reading spoilers.",
+          note: "The Infernal Devices concludes. The ending is the most emotionally devastating moment in the universe. Go in without reading spoilers.",
           page_count: 592,
           publication_year: 2013,
         },
@@ -125,7 +128,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           title: 'After the Bridge',
           slug: 'after-the-bridge',
           status: 'supplementary',
-          seriesLabel: 'The Infernal Devices — bonus story',
+          seriesLabel: 'The Infernal Devices - bonus story',
           note: "Short story set after Clockwork Princess. Supplementary content for fans of TID.",
           page_count: null,
           publication_year: 2013,
@@ -144,7 +147,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'city-of-heavenly-fire',
           status: 'optional',
           seriesLabel: 'The Mortal Instruments #6',
-          note: "TMI concludes. A long finale with major TID crossover — hits much harder having read both series. Required before starting The Dark Artifices.",
+          note: "TMI concludes. A long finale with major TID crossover: hits much harder having read both series. Required before starting The Dark Artifices.",
           page_count: 725,
           publication_year: 2014,
         },
@@ -152,7 +155,9 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
     },
     {
       label: 'The Dark Artifices',
-      sublabel: 'five years after City of Heavenly Fire — Los Angeles',
+      sublabel: 'five years after City of Heavenly Fire - Los Angeles',
+      noteType: 'optional',
+      note: 'Picks up five years after City of Heavenly Fire with a new protagonist cast at the LA Institute. Requires City of Heavenly Fire specifically.',
       books: [
         {
           title: 'Tales from the Shadowhunter Academy',
@@ -195,7 +200,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'queen-of-air-and-darkness',
           status: 'optional',
           seriesLabel: 'The Dark Artifices #3',
-          note: "The Dark Artifices concludes. Very long — 912 pages. Uneven but contains major payoffs for readers invested in Emma and Julian.",
+          note: "The Dark Artifices concludes. Very long (912 pages). Uneven but Emma and Julian's arc reaches its resolution.",
           page_count: 912,
           publication_year: 2018,
         },
@@ -203,7 +208,9 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
     },
     {
       label: 'The Last Hours + The Eldest Curses',
-      sublabel: '1903 London and Magnus & Alec — read interleaved in this order',
+      sublabel: '1903 London and Magnus & Alec: read interleaved in this order',
+      noteType: 'optional',
+      note: "Set in 1903 London, following the children of TID characters. Requires The Infernal Devices: TLH's emotional weight depends on knowing Will, Jem, and Tessa's story. The Eldest Curses (Magnus and Alec) runs concurrent with TLH.",
       books: [
         {
           title: 'The Red Scrolls of Magic',
@@ -228,7 +235,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'chain-of-gold',
           status: 'optional',
           seriesLabel: 'The Last Hours #1',
-          note: "James Herondale at the 1903 London Institute. Requires TID — the entire emotional weight relies on knowing the previous generation's story.",
+          note: "James Herondale at the 1903 London Institute. Requires TID: the entire emotional weight relies on knowing the previous generation's story.",
           page_count: 624,
           publication_year: 2020,
         },
@@ -264,7 +271,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'chain-of-thorns',
           status: 'optional',
           seriesLabel: 'The Last Hours #3',
-          note: "The Last Hours concludes. Written as a spiritual successor to Clockwork Princess — similar emotional register.",
+          note: "The Last Hours concludes. Written as a spiritual successor to Clockwork Princess: similar emotional register and comparable weight.",
           page_count: 784,
           publication_year: 2023,
         },
@@ -272,7 +279,9 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
     },
     {
       label: 'The Wicked Powers',
-      sublabel: 'new ongoing series — set after The Last Hours',
+      sublabel: 'new ongoing series - set after The Last Hours',
+      noteType: 'optional',
+      note: 'New series currently launching. Includes the final Eldest Curses volume. Read after completing The Last Hours.',
       books: [
         {
           title: 'A Sea Change',
@@ -333,11 +342,55 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
           slug: 'the-shadowhunters-codex',
           status: 'supplementary',
           seriesLabel: 'Companion guide',
-          note: "In-universe reference guide — a handbook of Shadowhunter lore written as Clary's actual training manual. Not a novel. Read any time after City of Bones.",
+          note: "In-universe reference guide: a handbook of Shadowhunter lore written as Clary's actual training manual. Not a novel. Read any time after City of Bones.",
           page_count: 288,
           publication_year: 2013,
         },
       ],
+    },
+  ],
+  characters: [
+    {
+      name: 'Clary Fray',
+      role: 'Mundane artist; Shadowhunter; protagonist of The Mortal Instruments',
+      color: 'blue',
+      why_they_work:
+        "Clary is constructed as a deliberate outsider POV: she discovers the Shadow World at the same time as the reader, and her ignorance is structural rather than a flaw. She makes choices that experienced Shadowhunters wouldn't make, and those choices drive the original trilogy's plot in ways that more trained protagonists couldn't. The tension between her raw ability (her power is innate, not trained) and her lack of knowledge creates the first trilogy's central dramatic irony.",
+    },
+    {
+      name: 'Jace Herondale',
+      role: 'Shadowhunter; warrior; central male protagonist of The Mortal Instruments',
+      color: 'amber',
+      why_they_work:
+        "Jace is built around a contradiction that takes three books to fully resolve: he performs emotional detachment as a survival mechanism while being driven entirely by emotional attachment. The Valentine arc's ability to weaponize this contradiction, using his loyalty against him, is what sustains TMI as a plot rather than a sequence of action scenes.",
+    },
+    {
+      name: 'Will Herondale',
+      role: 'Shadowhunter; 1878 London Institute; protagonist of The Infernal Devices',
+      color: 'purple',
+      why_they_work:
+        "Will's persona (cutting, self-destructive, performing cruelty) is revealed in Clockwork Prince to be a deliberate performance sustained for a specific reason. That revelation restructures everything about Clockwork Angel: the reader understands why Jem and Tessa choose to stay with someone who performs cruelty so effectively. Clockwork Prince is the strongest book in the trilogy partly because Will becomes fully legible for the first time.",
+    },
+    {
+      name: 'Tessa Gray',
+      role: 'Warlock; Shadowhunter; protagonist of The Infernal Devices; appears across multiple eras',
+      color: 'green',
+      why_they_work:
+        "Tessa is structurally unique in the Shadowhunter universe: as a Warlock who does not age, she is the living thread connecting 1878 (TID) to 1903 (TLH). Her presence in later series provides readers who have read TID with a different kind of continuity than plot threads: a character who remembers what the reader remembers. She is the only character whose emotional arc spans all five sub-series.",
+    },
+    {
+      name: 'Jem Carstairs',
+      role: 'Shadowhunter; parabatai of Will Herondale; protagonist of The Infernal Devices',
+      color: 'red',
+      why_they_work:
+        "Jem's illness in TID functions as a time limit on the triangle, which sharpens the emotional stakes: the reader knows his time with Will and Tessa is finite. His arc across TID and into TLH is the longest single character journey in the universe. His post-TID story requires both full TID and full TLH to land properly: what happens to him is one of the questions TLH is built to answer.",
+    },
+    {
+      name: 'Emma Carstairs',
+      role: 'Shadowhunter; parabatai of Julian Blackthorn; protagonist of The Dark Artifices',
+      color: 'zinc',
+      why_they_work:
+        "Emma's backstory (orphaned at 12 in City of Heavenly Fire) makes TDA a direct continuation of TMI for readers who remember CoHF, while functioning as a complete introduction for readers who need context. She represents Clare's shift in series focus: TDA's central conflict (Shadowhunter law's treatment of the parabatai bond) is a political-institutional problem rather than a purely supernatural one, and Emma is the character the system is acting on.",
     },
   ],
   sections: [
@@ -345,23 +398,32 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
       heading: 'How the series connect',
       type: 'bullets',
       bullets: [
-        "The Mortal Instruments is the foundation — every series assumes you've read it; start here regardless of what draws you to the universe",
-        "The Infernal Devices is a prequel (1878) set before TMI but should be read after — knowing where the world goes makes the tragedy land",
-        "City of Heavenly Fire (TMI #6) contains major TID crossover moments — this is why the interleaved order reads both series before reaching CoHF",
-        "The Dark Artifices requires TMI and specifically City of Heavenly Fire — protagonists and events from that book are directly continued",
-        "The Last Hours requires TID — the entire emotional weight of the series is built on knowing Will, Jem, and Tessa's story",
-        "The Eldest Curses can be read any time after City of Heavenly Fire but is most rewarding after TDA, where Magnus and Alec's relationship is further developed",
+        "The Mortal Instruments is the foundation: every series assumes you've read it; start here regardless of what draws you to the universe",
+        "The Infernal Devices is a prequel (1878) set before TMI but should be read after; knowing where the world goes makes the tragedy land",
+        "City of Heavenly Fire (TMI #6) contains major TID crossover moments: this is why the interleaved order reads both series before reaching CoHF",
+        "The Dark Artifices requires TMI and specifically City of Heavenly Fire: protagonists and events from that book are directly continued",
+        "The Last Hours is set in 1903 and follows the children of TID characters; the reader's knowledge of their parents shapes every line of TLH",
+        "The Eldest Curses can be read any time after City of Heavenly Fire but is most enriched by reading it after TDA, where Magnus and Alec's relationship is further developed",
       ],
     },
     {
       heading: 'Content notes',
       type: 'bullets',
       bullets: [
-        "Darkness type: YA urban fantasy — demonic violence, character deaths, emotional manipulation by villains; The Infernal Devices and later series carry heavier emotional weight than TMI",
-        "Romance: central to all series — enemies-to-lovers and love triangles are consistent themes; heat level is closed door throughout (YA-appropriate)",
-        "Explicit content: none — the series is consistently YA in content across all five sub-series",
-        "Right for: readers who want a large interconnected YA universe with multiple entry points; fans of urban fantasy romance; readers who enjoyed Shadow and Bone or Percy Jackson and want a longer commitment",
-        "Not right for: readers who need tonal consistency across a series — each sub-series shifts register significantly; grimdark or adult fantasy readers",
+        "Darkness type: YA urban fantasy: demonic violence, character deaths, emotional manipulation by villains; The Infernal Devices and later series carry heavier emotional weight than TMI",
+        "Romance: central to all series: enemies-to-lovers and love triangles are consistent themes; heat level is closed door throughout (YA-appropriate)",
+        "Explicit content: none. The series is consistently YA in content across all five sub-series.",
+        "The Infernal Devices and The Last Hours deal with serious illness, sacrifice, and loss; heavier on grief than the TMI original trilogy.",
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "City of Bones (2007) was published the same year Harry Potter concluded and was positioned for the YA paranormal fantasy audience. Clare expanded the original planned trilogy into six books, then into a five-series universe: the Shadowhunter Chronicles introduced the model of a single YA author building a continuously expanding multi-series universe in the same world.",
+        "The interleaved reading order (reading a prequel inside a main series rather than before or after it) was developed for the Shadowhunter Chronicles and became influential in how multi-series fandoms structure reading guides. The Infernal Devices reads inside The Mortal Instruments because its emotional impact is contingent on knowing where the world goes.",
+        "The Infernal Devices established a pattern uncommon in expanded universe publishing: the secondary series was received as stronger than the original. This sustained reader interest across the expanding universe rather than degrading it, demonstrating that a prequel could out-perform its parent series.",
+        "The Shadowhunters TV adaptation (Freeform, 2016-2019) developed a significant fanbase independent of the books, which continued growing after cancellation. The show demonstrated that a critically mixed, cancelled adaptation could sustain its own distinct audience separate from book readers.",
       ],
     },
   ],
@@ -369,12 +431,12 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
     {
       label: 'The Mortal Instruments',
       level: 2,
-      desc: 'Demonic violence, teen protagonists under threat; emotional stakes escalate in books 4–6 but remain YA in register',
+      desc: 'Demonic violence, teen protagonists under threat; emotional stakes escalate in books 4-6 but remain YA in register',
     },
     {
       label: 'The Infernal Devices',
       level: 3,
-      desc: 'Character deaths, sacrifice, devastating emotional weight; the ending of Clockwork Princess is frequently cited as the most affecting moment in the universe',
+      desc: 'Character deaths, sacrifice, devastating emotional weight; the ending of Clockwork Princess is the most affecting moment in the universe',
     },
     {
       label: 'The Dark Artifices',
@@ -384,7 +446,7 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
     {
       label: 'The Last Hours',
       level: 3,
-      desc: 'World War I era setting, demonic siege, loss and sacrifice; emotional register similar to TID — the heaviest of the completed series',
+      desc: 'World War I era setting, demonic siege, loss and sacrifice; emotional register similar to TID - the heaviest of the completed series',
     },
   ],
   finishedLabel: 'Finished the Shadowhunter Chronicles?',
@@ -394,6 +456,6 @@ export const shadowhunterChronicles: ReadingOrderEntry = {
   related: ['grishaverse', 'folk-of-the-air', 'rick-riordan', 'throne-of-glass', 'acotar', 'locked-tomb'],
   shortName: 'Shadowhunter Chronicles',
   metaDescription:
-    "Complete Shadowhunter Chronicles reading order by Cassandra Clare — 5 interconnected series starting with City of Bones. What order to read the sub-series, what's skippable, spoiler-free.",
-  lastUpdated: '2026-06-08',
+    "Complete Shadowhunter Chronicles reading order by Cassandra Clare: 5 interconnected series starting with City of Bones. What order to read the sub-series, what's skippable, spoiler-free.",
+  lastUpdated: '2026-07-01',
 };

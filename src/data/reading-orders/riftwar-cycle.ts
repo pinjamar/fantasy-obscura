@@ -5,21 +5,59 @@ export const riftwarCycle: ReadingOrderEntry = {
   name: 'The Riftwar Cycle',
   author: 'Raymond E. Feist',
   seriesStatus: 'complete',
-  seriesStatusLabel: '✅ Complete — 30 novels (1982–2022)',
+  seriesStatusLabel: '✅ Complete - 30 novels (1982-2022)',
   description:
-    'One of the longest-running sagas in fantasy history — thirty novels published across four decades, all set in and around the world of Midkemia. The series begins when a young kitchen boy named Pug is apprenticed to the court magician and discovers abilities that will reshape two worlds. At its core, the Riftwar Cycle is about a magical rift connecting Midkemia, a pseudo-medieval world of knights and kings, with Kelewan, a feudal Japan-inspired empire across the stars. The essential experience is six books: the Riftwar Saga and The Empire Trilogy — together they form a complete and deeply satisfying story. Everything beyond that is optional continuation for readers who want more of the world.',
-  darknessDisplay: '🕯️🕯️ Mild — classic epic fantasy',
+    'Thirty novels published across four decades, all set in and around the world of Midkemia. The series begins when a young kitchen boy named Pug is apprenticed to the court magician and discovers abilities that will reshape two worlds. At its core, the Riftwar Cycle is about a magical rift connecting Midkemia, a pseudo-medieval world of knights and kings, with Kelewan, a feudal Japan-inspired empire across the stars. The essential experience is six books: the Riftwar Saga and The Empire Trilogy. Together they form a complete story. Everything beyond that is optional continuation for readers who want more of the world.',
+  darknessDisplay:
+    '🕯️🕯️ Mild - classic adventure epic; no graphic violence or explicit content throughout',
+  orderNote:
+    'Start with Magician (Apprentice + Master are the same book in two volumes) and read The Empire Trilogy immediately after: those six books are the complete essential experience.',
+  cardsPosition: 'above',
+  cards: [
+    {
+      title: '🌀 Two Worlds',
+      color: 'blue',
+      body: "The Riftwar Cycle is built around a magical rift connecting two worlds: Midkemia, a pseudo-medieval Europe of knights, mages, and ancient kingdoms, and Kelewan, a feudal Japan-inspired empire ruled by honour codes and elaborate court politics. The collision between these two civilisations (each convinced of its own superiority) drives the first four books and everything that follows.",
+    },
+    {
+      title: '📚 The Essential Six',
+      color: 'green',
+      body: "The complete essential Feist experience is six novels: Magician (published as two volumes but one story), Silverthorn, A Darkness at Sethanon, and the three-book Empire Trilogy. Together they tell a self-contained story across two worlds. You can stop after those six and have a complete story, or continue through Magician's End for the full forty-year saga.",
+    },
+    {
+      title: '👑 The Empire Trilogy',
+      color: 'purple',
+      body: "Co-written with Janny Wurts, The Empire Trilogy is set on Kelewan and follows Mara of the Acoma (a noblewoman who must outmanoeuvre powerful enemies in a society built on rigid honour). It runs parallel to the Riftwar Saga in time, but the tone is completely different: political intrigue and strategy over battlefield magic. It is the strongest part of the cycle.",
+    },
+    {
+      title: '📖 One Book, Two Covers',
+      color: 'amber',
+      body: "Magician was originally published as a single novel in 1982. It was later split into Magician: Apprentice and Magician: Master for the US market. The content is identical: if you find a single-volume edition, read that. If not, Apprentice and Master read back-to-back as one continuous story.",
+    },
+    {
+      title: '⭐ Where Quality Peaks',
+      color: 'zinc',
+      body: "The first six books are the peak of the series. The Serpentwar Saga is a solid continuation. The later trilogies (Conclave of Shadows, Darkwar, Demonwar, Chaoswar) thin progressively in quality. The Firemane Saga, Feist's final trilogy set in a new world, is the strongest of the late-cycle work.",
+    },
+    {
+      title: '🕯️ Tone and Darkness',
+      color: 'zinc',
+      body: "The Riftwar Cycle is classic epic fantasy: adventure-driven and broadly optimistic, mild in darkness compared to modern grimdark. The early books have the warmth of a coming-of-age story. The Empire Trilogy is darker in its political realism. The later sagas escalate the stakes but never push into territory that would disturb most adult fantasy readers.",
+    },
+  ],
   groups: [
     {
       label: 'The Riftwar Saga',
-      sublabel: 'Start here — the essential Feist',
+      sublabel: 'Start here - the essential Feist',
+      noteType: 'required',
+      note: 'The foundation of the entire cycle. All four are mandatory: Magician tells the origin story across two worlds, Silverthorn bridges to the finale, and A Darkness at Sethanon closes the arc with everything that Magician set in motion.',
       books: [
         {
           title: 'Magician: Apprentice',
           slug: 'magician-apprentice',
           seriesLabel: 'Magician, Part 1',
           status: 'mandatory',
-          note: "Pug, a kitchen boy at Castle Crydee, begins his training as a magician's apprentice — and a rift tears open between worlds. The first half of the original Magician novel, published as two volumes in some editions.",
+          note: "Pug, a kitchen boy at Castle Crydee, begins his training as a magician's apprentice: a rift tears open between worlds. The first half of the original Magician novel, published as two volumes in some editions.",
           publication_year: 1982,
         },
         {
@@ -27,50 +65,50 @@ export const riftwarCycle: ReadingOrderEntry = {
           slug: 'magician-master',
           seriesLabel: 'Magician, Part 2',
           status: 'mandatory',
-          note: "Pug's story continues across the rift on Kelewan. The second half of Magician — the two volumes read as one continuous novel.",
+          note: "Pug's story continues across the rift on Kelewan. The second half of Magician: the two volumes read as one continuous novel.",
           publication_year: 1982,
         },
         {
           title: 'Silverthorn',
           slug: 'silverthorn',
           status: 'mandatory',
-          note: 'The Riftwar is over but a new threat emerges. A quest for a rare herb becomes the heart of this installment — lighter in tone, with strong character work.',
+          note: 'The Riftwar is over but a new threat emerges. A quest for a rare herb becomes the heart of this installment: lighter in tone, with strong character work.',
           publication_year: 1985,
         },
         {
           title: 'A Darkness at Sethanon',
           slug: 'a-darkness-at-sethanon',
           status: 'mandatory',
-          note: 'The Riftwar Saga concludes. Ancient forces awaken and everything set in motion in Magician reaches its resolution. A satisfying endpoint for readers who want to stop here.',
+          note: 'Ancient forces awaken and everything set in motion in Magician reaches its resolution. A satisfying endpoint for readers who want to stop here.',
           publication_year: 1986,
         },
       ],
     },
     {
       label: 'The Empire Trilogy',
-      sublabel: 'Co-written with Janny Wurts — often considered the best part of the cycle',
-      note: 'Set on Kelewan in parallel with the Riftwar Saga, following a noblewoman navigating deadly court politics rather than a mage on a battlefield. Many readers consider this trilogy equal to or better than the main series.',
+      sublabel: 'Co-written with Janny Wurts - the strongest part of the cycle',
+      note: 'Set on Kelewan in parallel with the Riftwar Saga, following a noblewoman navigating deadly court politics rather than a mage on a battlefield. This trilogy runs deeper in political complexity than the main series.',
       noteType: 'required',
       books: [
         {
           title: 'Daughter of the Empire',
           slug: 'daughter-of-the-empire',
           status: 'mandatory',
-          note: 'Mara of the Acoma inherits a crumbling house and must outmanoeuvre deadly enemies in a society built on rigid honour codes. Political intrigue and strategy — a completely different angle on the same world.',
+          note: 'Mara of the Acoma inherits a crumbling house and must outmanoeuvre deadly enemies in a society built on rigid honour codes. Political intrigue and strategy: a completely different angle on the same world.',
           publication_year: 1987,
         },
         {
           title: 'Servant of the Empire',
           slug: 'servant-of-the-empire',
           status: 'mandatory',
-          note: "Mara's power grows but the enemies arrayed against her grow with it. The middle book of the trilogy and the strongest — raises the stakes on every front.",
+          note: "Mara's power grows but the enemies arrayed against her grow with it. The middle book of the trilogy and the strongest; raises the stakes on every front.",
           publication_year: 1990,
         },
         {
           title: 'Mistress of the Empire',
           slug: 'mistress-of-the-empire',
           status: 'mandatory',
-          note: "The trilogy's conclusion. Mara faces threats that reach beyond the political into the supernatural. Resolves everything the trilogy has built.",
+          note: "Mara faces threats that reach beyond the political into the supernatural. Resolves everything the trilogy has built.",
           publication_year: 1992,
         },
       ],
@@ -113,7 +151,7 @@ export const riftwarCycle: ReadingOrderEntry = {
           title: "The King's Buccaneer",
           slug: 'the-king-s-buccaneer',
           status: 'optional',
-          note: "A nephew of the princes is taken captive during a raid and must survive alone in a distant land. Self-contained — can be skipped without losing the main thread.",
+          note: "A nephew of the princes is taken captive during a raid and must survive alone in a distant land. Self-contained: can be skipped without losing the main thread.",
           publication_year: 1992,
         },
       ],
@@ -121,7 +159,7 @@ export const riftwarCycle: ReadingOrderEntry = {
     {
       label: 'The Serpentwar Saga',
       sublabel: 'A new generation faces a demonic invasion',
-      note: 'A new cast of characters and a larger-scale threat. Begins the extended phase of the cycle — quality is solid but marks the transition from core to continuation.',
+      note: 'A new cast of characters and a larger-scale threat. Begins the extended phase of the cycle: quality is solid but marks the transition from core to continuation.',
       noteType: 'optional',
       books: [
         {
@@ -149,15 +187,15 @@ export const riftwarCycle: ReadingOrderEntry = {
           title: 'Shards of a Broken Crown',
           slug: 'shards-of-a-broken-crown',
           status: 'optional',
-          note: 'The aftermath. Midkemia is shattered and must be rebuilt — a quieter book focused on recovery and consequence.',
+          note: 'Midkemia is shattered and must be rebuilt: a quieter book focused on recovery and consequence.',
           publication_year: 1998,
         },
       ],
     },
     {
       label: 'Conclave, Darkwar, Demonwar & Chaoswar',
-      sublabel: 'Four connected sagas — eleven books for dedicated readers',
-      note: "Four sagas that chain directly into each other: Conclave of Shadows follows a new protagonist through a covert organisation; Darkwar escalates the threat to a cosmic scale with Pug at the centre; Demonwar is a two-book bridge; Chaoswar closes out the forty-year saga with Magician's End. Quality thins progressively — read as far as your interest holds.",
+      sublabel: 'Four connected sagas - eleven books for dedicated readers',
+      note: "Four sagas that chain directly into each other: Conclave of Shadows follows a new protagonist through a covert organisation; Darkwar escalates the threat to a cosmic scale with Pug at the centre; Demonwar is a two-book bridge; Chaoswar closes out the forty-year saga with Magician's End. Quality thins progressively: read as far as your interest holds.",
       noteType: 'optional',
       books: [
         {
@@ -178,7 +216,7 @@ export const riftwarCycle: ReadingOrderEntry = {
           title: "Exile's Return",
           slug: 'exiles-return',
           status: 'optional',
-          note: 'The Conclave of Shadows trilogy concludes — threads from across the arc come together.',
+          note: 'The Conclave of Shadows trilogy concludes: threads from across the arc come together.',
           publication_year: 2004,
         },
         {
@@ -192,7 +230,7 @@ export const riftwarCycle: ReadingOrderEntry = {
           title: 'Into a Dark Realm',
           slug: 'into-a-dark-realm',
           status: 'optional',
-          note: 'The source of the threat is traced to a realm beyond the rift — a deeper look at the cosmology underpinning the entire cycle.',
+          note: 'The source of the threat is traced to a realm beyond the rift: a deeper look at the cosmology underpinning the entire cycle.',
           publication_year: 2006,
         },
         {
@@ -213,7 +251,7 @@ export const riftwarCycle: ReadingOrderEntry = {
           title: 'At the Gates of Darkness',
           slug: 'at-the-gates-of-darkness',
           status: 'optional',
-          note: 'The Demonwar concludes — sets up the Chaoswar finale directly.',
+          note: 'The Demonwar concludes: sets up the Chaoswar finale directly.',
           publication_year: 2010,
         },
         {
@@ -242,7 +280,7 @@ export const riftwarCycle: ReadingOrderEntry = {
     {
       label: 'The Firemane Saga',
       sublabel: 'A separate world, a fresh start',
-      note: "Set in an entirely new world with new characters — no knowledge of the Riftwar Cycle required. Feist's final trilogy, written late in his career. Can be read independently at any time.",
+      note: "Set in an entirely new world with new characters: no knowledge of the Riftwar Cycle required. Feist's final trilogy, written late in his career. Can be read independently at any time.",
       noteType: 'optional',
       books: [
         {
@@ -263,60 +301,100 @@ export const riftwarCycle: ReadingOrderEntry = {
           title: 'Master of Furies',
           slug: 'master-of-furies',
           status: 'optional',
-          note: "The Firemane Saga concludes. Feist's final published novel — a complete ending for the new world he built.",
+          note: "The Firemane Saga concludes. Feist's final published novel: a complete ending for the new world he built.",
           publication_year: 2022,
         },
       ],
     },
   ],
-  orderNote: 'Start with Magician (Apprentice + Master are the same book in two volumes) and read The Empire Trilogy immediately after — those six books are the complete essential experience.',
-  cardsPosition: 'above',
-  cards: [
+  characters: [
     {
-      title: '🌀 Two Worlds',
+      name: 'Pug (Milamber)',
+      role: 'Kitchen boy turned arch-mage; protagonist of the Riftwar Saga; recurring figure throughout the cycle',
       color: 'blue',
-      body: "The Riftwar Cycle is built around a magical rift connecting two worlds: Midkemia, a pseudo-medieval Europe of knights, mages, and ancient kingdoms, and Kelewan, a feudal Japan-inspired empire ruled by honour codes and elaborate court politics. The collision between these two civilisations — each convinced of its own superiority — drives the first four books and everything that follows.",
+      why_they_work:
+        "Pug works as a protagonist because the series is genuinely interested in what it means to be powerful enough to reshape the world without knowing what the world needs. His journey from kitchen boy to Milamber to founder of the Conclave is not an escalating power fantasy: each stage introduces new constraints and costs. His early chapters in Magician are the most effective because they ground the entire universe in small, specific detail before the scale becomes cosmic.",
     },
     {
-      title: '📚 The Essential Six',
-      color: 'green',
-      body: "The complete essential Feist experience is six novels: Magician (published as two volumes but one story), Silverthorn, A Darkness at Sethanon, and the three-book Empire Trilogy. Together they tell a self-contained story across two worlds. You can stop after those six and feel fully satisfied, or continue through Magician's End for the full forty-year saga.",
-    },
-    {
-      title: '👑 The Empire Trilogy',
-      color: 'purple',
-      body: "Co-written with Janny Wurts, The Empire Trilogy is set on Kelewan and follows Mara of the Acoma — a noblewoman who must outmanoeuvre powerful enemies in a society built on rigid honour. It runs parallel to the Riftwar Saga in time, but the tone is completely different: political intrigue and strategy over battlefield magic. Many readers consider it the best part of the entire cycle.",
-    },
-    {
-      title: '📖 One Book, Two Covers',
+      name: 'Thomas',
+      role: "Pug's childhood friend; wearer of Valheru armour; warrior-king of Elvandar",
       color: 'amber',
-      body: "Magician was originally published as a single novel in 1982. It was later split into Magician: Apprentice and Magician: Master for the US market. The content is identical — if you find a single-volume edition, read that. If not, Apprentice and Master read back-to-back as one continuous story.",
+      why_they_work:
+        "Thomas runs a parallel track to Pug across Magician: Pug learns to master increasing magical power from the inside; Thomas finds a suit of Valheru armour that begins consuming his identity from the outside. Where Pug's arc is about control, Thomas's is about whether he can remain himself as something ancient and monstrous integrates with him. The two tracks are the structural mechanism that makes Magician read faster than its length suggests.",
     },
     {
-      title: '⭐ Where Quality Peaks',
-      color: 'zinc',
-      body: "Reader consensus places the peak quality firmly in the first six books. The Serpentwar Saga is a solid continuation. The later trilogies (Conclave of Shadows, Darkwar, Demonwar, Chaoswar) are considered progressively weaker. The Firemane Saga, Feist's final trilogy set in a new world, is generally regarded as a return to form.",
+      name: 'Mara of the Acoma',
+      role: 'Lady of the Acoma; protagonist of the Empire Trilogy',
+      color: 'purple',
+      why_they_work:
+        "The Empire Trilogy is three books of watching Mara develop from a frightened teenager into the most dangerous political mind on Kelewan. Direct confrontation is not available to her; every victory is political, social, or strategic. The Tsurani honour system that would kill her if she violated it is the same system she learns to weaponise. Her arc is the reason the trilogy has held up better than most of the Riftwar Saga's contemporaries.",
     },
     {
-      title: '🕯️ Tone and Darkness',
-      color: 'zinc',
-      body: "The Riftwar Cycle is classic epic fantasy — adventure-driven and broadly optimistic, mild in darkness compared to modern grimdark. The early books have the warmth of a coming-of-age story. The Empire Trilogy is darker in its political realism. The later sagas escalate the stakes but never push into territory that would disturb most adult fantasy readers.",
+      name: 'Jimmy the Hand',
+      role: 'Squire James; former Mockers street thief from Krondor; recurring figure across a dozen books',
+      color: 'green',
+      why_they_work:
+        "Jimmy is a charming secondary character in the main Riftwar Saga who became popular enough to anchor the Krondor novels and reappear across most of the cycle. He works because Feist gave him a specific background (Mockers' Guild street thief, self-taught, fundamentally improvising) that makes his problem-solving feel different from the trained heroes around him. Readers who respond to him in Silverthorn will find considerably more of him in the Riftwar Legacy novels.",
+    },
+    {
+      name: 'Arutha',
+      role: 'Prince of Krondor; younger son of the Duke of Crydee; central figure in Silverthorn and A Darkness at Sethanon',
+      color: 'red',
+      why_they_work:
+        "Arutha quietly becomes the emotional centre of the Riftwar Saga's second half in a way that surprises readers expecting Pug to stay central. He is methodical where Pug is instinctive, loyal where Pug is cosmic, and smaller in scale in a way that makes his stakes feel more immediate. Silverthorn is explicitly his story. The shift in protagonist weight between Magician and Silverthorn is not announced; it simply becomes clear that Feist is now writing about Arutha.",
     },
   ],
   sections: [
     {
-      heading: 'Beyond the Core',
+      heading: 'Content notes',
+      type: 'bullets',
       bullets: [
-        "Serpentwar is the next strongest saga after the core six; quality thins from Conclave onward, with the final eleven books (Conclave through Chaoswar) strictly for dedicated readers.",
-        "The Firemane Saga (King of Ashes, Queen of Storms, Master of Furies) is set in a completely new world and requires no prior Feist knowledge — works as a standalone trilogy or as a capstone for long-time readers.",
+        'Violence is present throughout but handled without graphic detail. Battles occur, characters die, and the stakes are real, but consequences are not dwelt on. The later sagas escalate in scope without crossing into grimdark territory.',
+        'Romance is minimal in the Riftwar Saga. Mara has a significant romantic arc across the Empire Trilogy, handled without explicit content.',
+        'No explicit sexual content in any book. The series is appropriate for older middle-grade readers through adult.',
+        'The Empire Trilogy is darker in political register than the Riftwar Saga: manipulation, betrayal, and honour-killing are central plot mechanics, all handled without gratuitousness.',
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "Magician (1982) established the kitchen-boy-to-arch-mage trajectory as a modern fantasy archetype. Published during the period that commercialised epic fantasy as a genre category, it set structural conventions (the rift between worlds, the dual-protagonist POV, the parallel civilisation) that appeared repeatedly in subsequent epic fantasy across the following two decades.",
+        "The Kelewan setting introduced feudal Japan-inspired political structure into epic fantasy when the genre's cultural default was overwhelmingly medieval European. The Tsurani honour system and the Game of the Council are among the more fully realised non-European political frameworks in classic fantasy from that era.",
+        "The Empire Trilogy (1987-1992) is an early example of a primary-series co-authorship that produced work consistently stronger than the solo author's surrounding work. Feist gave Janny Wurts co-authorship and creative control over a parallel storyline; the result has outlasted most of its contemporaries.",
+        "The cycle ran 30 novels across 40 years (1982-2022) and completed cleanly: Magician's End (2013) closed the main arc and the Firemane Saga (2018-2022) followed as a standalone trilogy in a new world. Feist finished what he started without estate continuation or abandoned arcs.",
       ],
     },
   ],
-  booksLikeSlug: 'magician-apprentice',
-  related: ['wheel-of-time', 'shannara', 'dragonlance', 'memory-sorrow-thorn', 'drizzt', 'sword-of-truth'],
-  finishedLabel: 'Complete',
+  darkness: [
+    {
+      label: 'Riftwar Saga (books 1-4)',
+      level: 1,
+      desc: 'Coming-of-age adventure - danger is real but tone is warm and broadly optimistic',
+    },
+    {
+      label: 'Empire Trilogy (books 5-7)',
+      level: 2,
+      desc: 'Political realism - betrayal, honour-killing, and court intrigue; darker in register than the Saga',
+    },
+    {
+      label: 'Serpentwar Saga (books 9-12)',
+      level: 2,
+      desc: 'Military conflict and demonic threat - grittier than the core books, no graphic content',
+    },
+    {
+      label: 'Conclave through Chaoswar (books 13-23)',
+      level: 2,
+      desc: 'Escalating cosmic stakes - dark forces and world-ending threat; tone stays adventure-epic',
+    },
+  ],
+  metaDescription:
+    'Complete Riftwar Cycle reading order: 30 novels by Raymond E. Feist. Start with Magician and The Empire Trilogy for the essential 6-book experience.',
+  lastUpdated: '2026-07-01',
+  shortName: 'Riftwar Cycle',
+  finishedLabel: 'Finished the core six?',
   categoryHref: '/fantasy/epic-fantasy/',
   categoryLabel: 'Epic Fantasy',
-  metaDescription: "Complete Riftwar Cycle reading order — 30 novels by Raymond E. Feist. Start with Magician and The Empire Trilogy for the essential 6-book experience.",
-  lastUpdated: '2026-06-10',
+  booksLikeSlug: 'magician-apprentice',
+  related: ['wheel-of-time', 'shannara', 'dragonlance', 'memory-sorrow-thorn', 'drizzt', 'sword-of-truth'],
 };

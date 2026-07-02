@@ -46,9 +46,9 @@ Charles de Lint                          40 books  /authors/charles-de-lint/
 Charles Stross                           39 books  /authors/charles-stross/
 ✅Lois McMaster Bujold                     39 books  /authors/lois-mcmaster-bujold/
 Faith Hunter                             37 books  /authors/faith-hunter/
-David Gemmell                            37 books  /authors/david-gemmell/
+✅David Gemmell                            37 books  /authors/david-gemmell/
 ✅Roger Zelazny                            37 books  /authors/roger-zelazny/
-Ilona Andrews                            37 books  /authors/ilona-andrews/
+✅Ilona Andrews                            37 books  /authors/ilona-andrews/
 Eoin Colfer                              37 books  /authors/eoin-colfer/
 Michael A. Stackpole                     36 books  /authors/michael-a-stackpole/
 ✅Tamora Pierce                            36 books  /authors/tamora-pierce/
