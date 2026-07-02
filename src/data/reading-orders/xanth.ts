@@ -5,27 +5,27 @@ export const xanth: ReadingOrderEntry = {
   name: 'Xanth',
   author: 'Piers Anthony',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: '📖 Ongoing · 49 published + 4 forthcoming (1977–present)',
+  seriesStatusLabel: '📖 Ongoing - 49 published + 4 forthcoming (1977-present)',
   description:
-    'Xanth commits completely to being light comedy built on puns. Not "light with some puns": puns as the entire register, every page, every book, for nearly fifty years. If that sounds appealing, there are 49 novels and counting. If it sounds exhausting, read the first three and stop: they tell a complete story, they are the best the series ever is, and you can walk away satisfied. The premise is simple and has never changed. Xanth is a magical land shaped exactly like Florida, every human is born with exactly one unique magical talent (ranging from reshaping continents to producing a small dot on a wall), and everything is named after a pun. The first three books follow Bink and build to a genuine payoff. From book 4 onward the protagonists rotate and each novel is largely self-contained. The formula does not evolve. It does not deepen. That is not a flaw. It is the whole point.',
+    'Xanth commits completely to being light comedy built on puns. Not "light with some puns": puns as the entire register, every page, every book, for nearly fifty years. There are 49 novels and counting. The premise is simple and has never changed. Xanth is a magical land shaped exactly like Florida, every human is born with exactly one unique magical talent (ranging from reshaping continents to producing a small dot on a wall), and everything is named after a pun. The first three books follow Bink and build to a genuine resolution. From book 4 onward the protagonists rotate and each novel is largely self-contained. The first three are a complete arc and a real stopping point. The formula does not evolve. It does not deepen. That is not a flaw. It is the whole point.',
   darknessDisplay: '🕯️ Very mild - comedy fantasy with no violence or dark content',
   orderNote:
-    'The first three books follow Bink and should be read in order. They form a complete arc with a payoff that depends on reading all three. From book 4 onward, the series is episodic: characters recur but novels stand largely on their own. Books 1–3 are the essential core. Stop there or continue: the formula does not change. (Spoiler-free guide.)',
+    'Start with A Spell for Chameleon. The first three books follow Bink and should be read in order: they form a complete arc that requires all three. From book 4 onward, the series is episodic: characters recur but novels stand largely on their own. Books 1-3 are the essential core. Stop there or continue: the formula does not change. (Spoiler-free guide.)',
   cardsPosition: 'above',
   cards: [
     {
       title: '✍️ Piers Anthony',
-      body: "Anthony picked a lane in 1977 and has never once been tempted to leave it. No grimdark pivot. No literary ambitions creeping in. No 'it gets darker as the series goes.' Xanth at book 49 is the same series it was at book 1, and that is entirely by design. He has written over 150 novels in other genres (sci-fi, horror, historical fiction) but Xanth is what people know him for, because this exact flavor of cheerful, punny light fantasy is something he genuinely loves making. Whether that consistency feels comforting or limiting depends entirely on what you came for.",
+      body: "Anthony picked a lane in 1977 and has never once been tempted to leave it. No grimdark pivot. No literary ambitions creeping in. No 'it gets darker as the series goes.' Xanth at book 49 is the same series it was at book 1, and that is entirely by design. He has written over 150 novels in other genres (sci-fi, horror, historical fiction) but Xanth is what people know him for, because this exact flavor of cheerful, punny light fantasy is something he genuinely loves making. The series at book 49 is the same series it was at book 1. That is not an accident.",
       color: 'blue',
     },
     {
       title: '😄 The Pun Rule',
-      body: "The puns are not incidental. They are the point. Every other page introduces a new one, usually named and explained within the text. The humour is deliberately groan-adjacent. Fans treat the groan as confirmation the pun landed. This is not a series that uses puns as seasoning; it is a series made of puns. If that sounds like fun, you will have a lot of fun. If it sounds like it would get old fast, it will get old fast.",
+      body: "The puns are not incidental. They are the point. Every other page introduces a new one, usually named and explained within the text. The humour is deliberately groan-adjacent. Fans treat the groan as confirmation the pun landed. This is not a series that uses puns as seasoning; it is a series made of puns. The density is consistent from book 1 to book 49. The series does not apologise for it and has no interest in being anything else.",
       color: 'green',
     },
     {
       title: '🔮 The Talent System',
-      body: "Every human in Xanth is born with exactly one unique magical talent. No duplicates, ever, spanning from reshaping continents to producing a small dot on a wall. In book 1, Bink appears to have no talent at all. In Xanth, that means mandatory exile to the non-magical world. The mystery of what his talent actually is runs through every scene of A Spell for Chameleon and the answer lands hard. It is the best thing the series does. Later books use the talent system more for comedy than mystery, which works fine but feels different.",
+      body: "Every human in Xanth is born with exactly one unique magical talent. No duplicates, ever, spanning from reshaping continents to producing a small dot on a wall. In book 1, Bink appears to have no talent at all. In Xanth, that means mandatory exile to the non-magical world. The mystery of what his talent actually is runs through every scene of A Spell for Chameleon and the answer lands hard. It is the best thing the series does. Later books use the talent system for comedy rather than mystery, which works fine but is a different experience.",
       color: 'amber',
     },
     {
@@ -40,35 +40,35 @@ export const xanth: ReadingOrderEntry = {
     },
     {
       title: '📚 49 Books and Counting',
-      body: "Anthony publishes roughly one Xanth novel per year and has four more announced. The later books are shorter and faster than the originals. The formula does not change. The series at book 49 is doing the same thing it was doing at book 15. If you enjoy the world at book 10 you will enjoy it at book 30. If it has worn thin by book 10, it will not improve.",
+      body: "Anthony publishes roughly one Xanth novel per year and has four more announced. The later books are shorter and faster than the originals. The formula does not change. The series at book 49 is doing the same thing it was doing at book 15. Each book is self-contained enough to stop at any point. The experience at book 30 is the same experience as at book 10.",
       color: 'zinc',
     },
   ],
   characters: [
     {
       name: 'Bink',
-      role: 'Protagonist -books 1–3',
+      role: 'Protagonist, books 1-3',
       color: 'blue',
       why_they_work:
         "The series' most interesting protagonist. Book 1 is structured entirely around discovering what his talent is. The question builds through every scene, and the answer changes how every prior obstacle in the book looks. After the trilogy his role shrinks to cameo; he is the right protagonist for exactly the books he leads.",
     },
     {
       name: 'Dor',
-      role: 'Protagonist -books 3–7',
+      role: 'Protagonist, books 3-7',
       color: 'green',
       why_they_work:
         "Bink's son can talk to inanimate objects, which Anthony uses well for comedic effect but which never drives the story the way Bink's talent did. Dor is a less distinctive protagonist by design. His books are where the episodic format begins to establish itself.",
     },
     {
       name: 'Good Magician Humfrey',
-      role: 'Recurring figure -series-wide',
+      role: 'Recurring figure, series-wide',
       color: 'amber',
       why_they_work:
         "The structural constant of the whole series. Every protagonist ends up at his castle seeking the answer to one question, which he gives in exchange for a year's service. He appears briefly in most books and centrally in Question Quest (book 14), which tells his full story in flashback. You do not need to read that book to understand his role.",
     },
     {
       name: 'Ivy',
-      role: 'Protagonist -books 7–13',
+      role: 'Protagonist, books 7-13',
       color: 'purple',
       why_they_work:
         "Her talent makes her the most plot-bending character in the series (the specifics of how it works are best discovered in Dragon on a Pedestal). Anthony uses it both for comedy and as a reliable way to resolve problems cleanly. She is the most powerful character in the series for several books while remaining a child.",
@@ -77,15 +77,15 @@ export const xanth: ReadingOrderEntry = {
   groups: [
     {
       label: 'The Original Trilogy',
-      sublabel: 'Books 1–3 · read in order',
+      sublabel: 'Books 1-3; read in order',
       noteType: 'required',
-      note: 'All three follow Bink (the only human in Xanth who appears to have no magical talent). This is a complete arc with a beginning, middle, and payoff. Read them in order. The series at its most coherent.',
+      note: 'All three follow Bink (the only human in Xanth who appears to have no magical talent). This is a complete arc with a beginning, middle, and resolution. Read them in order. The series at its most coherent.',
       books: [
         {
           title: 'A Spell for Chameleon',
           slug: 'a-spell-for-chameleon',
           status: 'mandatory',
-          note: 'Start here. Bink is the only human in Xanth without an apparent magical talent, which should mean permanent exile to the non-magical world. The mystery of what his talent actually is runs through every scene and pays off cleanly.',
+          note: 'Start here. Bink is the only human in Xanth without an apparent magical talent, which should mean permanent exile to the non-magical world. The mystery of what his talent actually is runs through every scene and resolves cleanly.',
           page_count: 353,
           publication_year: 1977,
         },
@@ -109,7 +109,7 @@ export const xanth: ReadingOrderEntry = {
     },
     {
       label: 'The First Generation',
-      sublabel: 'Books 4–9 · optional',
+      sublabel: 'Books 4-9; optional',
       noteType: 'optional',
       note: "Six books following Dor, Smash the Ogre, and Ivy as the next generation expands the world. The best years of the series after the original trilogy. The episodic format is established here. Each book is largely self-contained.",
       books: [
@@ -165,7 +165,7 @@ export const xanth: ReadingOrderEntry = {
     },
     {
       label: 'The Next Generation',
-      sublabel: 'Books 10–14 · optional',
+      sublabel: 'Books 10-14; optional',
       noteType: 'optional',
       note: 'These books shift to Dolph, Grey Murphy, and the descendants of the original cast. Each novel stands alone. Continue if the world still appeals.',
       books: [
@@ -212,8 +212,8 @@ export const xanth: ReadingOrderEntry = {
       ],
     },
     {
-      label: 'Books 15–21',
-      sublabel: 'Episodic transition · supplementary',
+      label: 'Books 15-21',
+      sublabel: 'Episodic transition; supplementary',
       noteType: 'optional',
       note: 'Each novel introduces a new protagonist and quest; earlier characters recur but the stories are self-contained. The pun naming grows more risqué from book 15 (see the content note below).',
       books: [
@@ -277,7 +277,7 @@ export const xanth: ReadingOrderEntry = {
     },
     {
       label: 'Crisis & Climate Arc',
-      sublabel: 'Books 22–27 · supplementary',
+      sublabel: 'Books 22-27; supplementary',
       noteType: 'optional',
       note: 'These six books focus on localized threats to the geography and fabric of Xanth, with protagonists who must solve targeted mechanical or environmental problems.',
       books: [
@@ -333,7 +333,7 @@ export const xanth: ReadingOrderEntry = {
     },
     {
       label: 'Mundane Crossovers',
-      sublabel: 'Books 28–33 · supplementary',
+      sublabel: 'Books 28-33; supplementary',
       noteType: 'optional',
       note: 'This run relies heavily on characters from the real world crossing into Xanth or on descendant protagonists with tangled lineages from earlier books.',
       books: [
@@ -389,7 +389,7 @@ export const xanth: ReadingOrderEntry = {
     },
     {
       label: 'Pun Duologies',
-      sublabel: 'Books 34–39 · supplementary',
+      sublabel: 'Books 34-39; supplementary',
       noteType: 'optional',
       note: 'These six books are paired as three informal duologies: each pair shares a structural concept, a pun logic, or a continuing protagonist. The linguistic wordplay and puzzle-solving is more foregrounded than in earlier books.',
       books: [
@@ -444,7 +444,7 @@ export const xanth: ReadingOrderEntry = {
     },
     {
       label: 'Meta & Legacy',
-      sublabel: 'Books 40–49 · supplementary',
+      sublabel: 'Books 40-49; supplementary',
       noteType: 'optional',
       note: 'The most recent novels lean into self-referential writing, mythic item collection, and return trips to earlier Xanth lore. Anthony continues to publish at roughly one book per year with no announced end.',
       books: [
@@ -570,7 +570,7 @@ export const xanth: ReadingOrderEntry = {
       type: 'bullets',
       bullets: [
         'Darkness: no violence, death, or morally dark content across all 49 books. The closest the series gets to darkness is mild peril in the adventure plots with no lasting consequences.',
-        'Romance: chaste in books 1–14, more prominent from book 15 onward (see the content note below).',
+        'Romance: chaste in books 1-14, more prominent from book 15 onward (see the content note below).',
         'Explicit content: none at any point. The series is marketed as family fantasy throughout.',
         'Right for: readers who want lightweight episodic fantasy, younger readers, adults who want something deliberately low-stakes.',
         'Not right for: readers expecting a world that develops over time, character arcs across a multi-book run, literary ambition, or tonal consistency with the rest of this site.',
@@ -585,38 +585,38 @@ export const xanth: ReadingOrderEntry = {
   ],
   darkness: [
     {
-      label: 'Books 1–3 (Original Trilogy)',
+      label: 'Books 1-3 (Original Trilogy)',
       level: 1,
       desc: 'Comedy fantasy with no violence; clean and family-appropriate throughout',
     },
     {
-      label: 'Books 4–9 (First Generation)',
+      label: 'Books 4-9 (First Generation)',
       level: 1,
       desc: 'Same register; mild adventure peril with no lasting consequences',
     },
     {
-      label: 'Books 10–14 (Next Generation)',
+      label: 'Books 10-14 (Next Generation)',
       level: 1,
       desc: 'Episodic format fully established; content remains family-appropriate',
     },
     {
-      label: 'Books 15–25 (Middle Years)',
+      label: 'Books 15-25 (Middle Years)',
       level: 1,
       desc: 'Pun naming and some content push into risqué territory: not explicit, but the tone shifts from the original trilogy',
     },
     {
-      label: 'Books 26–49 (Recent)',
+      label: 'Books 26-49 (Recent)',
       level: 1,
       desc: 'Same risqué pun register continues; no escalation in actual darkness',
     },
   ],
   booksLikeSlug: 'a-spell-for-chameleon',
   metaDescription:
-    'The Xanth reading order by Piers Anthony -where to start, where most readers stop, and how to navigate 49 published books (and 4 more forthcoming) of pun-heavy Florida fantasy.',
+    'The Xanth reading order by Piers Anthony: where to start, where the Bink arc ends, and how to navigate 49 published books (and 4 more forthcoming) of pun-heavy Florida fantasy.',
   shortName: 'Xanth',
   finishedLabel: 'Finished the Bink trilogy?',
   categoryHref: '/fantasy/epic',
   categoryLabel: 'Browse Epic Fantasy',
   related: ['discworld', 'narnia', 'rick-riordan', 'inheritance-cycle', 'pern', 'shannara'],
-  lastUpdated: '2026-06-25',
+  lastUpdated: '2026-07-01',
 };
