@@ -7,7 +7,7 @@ export const outlander: ReadingOrderEntry = {
   seriesStatus: 'ongoing',
   seriesStatusLabel: '📖 Ongoing - 9 books published, Book 10 planned',
   description:
-    "In 1945, Claire Randall - a WWII combat nurse on holiday in Scotland - touches a standing stone at Craigh na Dun and wakes up in 1743, weeks before the Battle of Culloden. She encounters Jamie Fraser, a Highland warrior, and the series becomes a love story spanning 250 years and three continents of history. Diana Gabaldon spent years researching the Jacobite rising before she wrote a word of fiction; it shows. The books are genuinely hybrid — historical fiction, adventure, war novel, and romance in proportions that shift across the series — and Gabaldon herself describes them as 'historical fiction with romantic elements and a little time-travel.' The BookTok positioning as pure romance undersells them significantly. Start with Outlander.",
+    "In 1945, Claire Randall (a WWII combat nurse on holiday in Scotland) touches a standing stone at Craigh na Dun and wakes up in 1743, weeks before the Battle of Culloden. She encounters Jamie Fraser, a Highland warrior, and the series becomes a love story spanning 250 years and three continents of history. Diana Gabaldon spent years researching the Jacobite rising before she wrote a word of fiction; it shows. The books are genuinely hybrid (historical fiction, adventure, war novel, and romance in proportions that shift across the series), and Gabaldon herself describes them as 'historical fiction with romantic elements and a little time-travel.' The BookTok positioning as pure romance undersells them significantly.",
   darknessDisplay:
     '🕯️🕯️🕯️🕯️ Dark - explicit sexual content throughout, historical violence including torture and battle; darkness escalates in later books',
   orderNote:
@@ -16,32 +16,32 @@ export const outlander: ReadingOrderEntry = {
   cards: [
     {
       title: '✍️ Diana Gabaldon',
-      body: 'Gabaldon has a Ph.D. in ecology and spent years working as a scientific editor before she started writing Outlander - she claims she wrote it as a practice novel, never intending to publish it. She researched 18th-century Scotland, Jacobite history, and Highland military culture for years before writing, and it shows in the texture. She has been publishing the series since 1991 and writes each book as a stand-alone episode within a continuing saga — they are long because she refuses to summarise anything that could be dramatised. She is a notorious slow publisher; readers should not expect book 10 on any particular schedule.',
+      body: "Gabaldon has a Ph.D. in ecology and spent years working as a scientific editor before she started writing Outlander; she claims she wrote it as a practice novel, never intending to publish it. She researched 18th-century Scotland, Jacobite history, and Highland military culture for years before writing, and it shows in the texture. She has been publishing the series since 1991 and writes each book as a stand-alone episode within a continuing saga: they are long because she refuses to summarise anything that could be dramatised. She is a notorious slow publisher; readers should not expect book 10 on any particular schedule.",
       color: 'blue',
     },
     {
       title: '⌛ The Time Travel',
-      body: 'The mechanism is standing stones - specifically the cleft stone at Craigh na Dun on the Scottish island where Claire is honeymooning in 1945. Not everyone can travel; Gabaldon has explained the rules in interviews but never fully within the text. The series is not primarily concerned with explaining the time travel — it uses it as a premise and then focuses on the human consequences. If you are looking for hard rules and a science fiction framework for how it works, you will not find one. If you can accept it as a given and move on, the books reward you enormously.',
+      body: 'The mechanism is standing stones: specifically the cleft stone at Craigh na Dun on the Scottish island where Claire is honeymooning in 1945. Not everyone can travel; Gabaldon has explained the rules in interviews but never fully within the text. The series is not primarily concerned with explaining the time travel: it uses it as a premise and then focuses on the human consequences. If you are looking for hard rules and a science fiction framework for how it works, you will not find one. If you can accept it as a given and move on, the books open up considerably.',
       color: 'purple',
     },
     {
       title: '❤️ Not a Romance Novel',
-      body: "Gabaldon has spent thirty years arguing with her own classification. The books contain a love story - a central, serious, enormously well-developed one — but they also contain the Jacobite rising, the American Revolution, the French court, the Seven Years' War, the practice of 18th-century medicine, slave plantations in the colonial Carolinas, and the political structure of Highland clans in the years after Culloden. Readers who come expecting a romance novel with some history in the background are often surprised by how much is history with some romance in the foreground. Both things are true at once.",
+      body: "Gabaldon has spent thirty years arguing with her own classification. The books contain a love story (central, serious, and enormously well-developed), but they also contain the Jacobite rising, the American Revolution, the French court, the Seven Years' War, the practice of 18th-century medicine, slave plantations in the colonial Carolinas, and the political structure of Highland clans in the years after Culloden. Readers who come expecting a romance novel with some history in the background are often surprised by how much is history with some romance in the foreground. Both things are true at once.",
       color: 'amber',
     },
     {
       title: '📏 The Books Are Long',
-      body: 'Outlander (book 1) is 745 pages. Drums of Autumn (book 4) is over 1,000. The series does not get shorter. Book 5 (The Fiery Cross) is the wall: 979 pages, largely set on a single journey, with the slowest pacing of any entry. Readers who hit it without warning often assume the series has permanently declined. It has not. A Breath of Snow and Ashes (book 6) is over 1,200 pages and is widely considered the emotional peak of the entire series. Push through book 5 knowing this.',
+      body: 'Outlander (book 1) is 745 pages. Drums of Autumn (book 4) is over 1,000. The series does not get shorter. Book 5 (The Fiery Cross) is the wall: 979 pages, largely set on a single journey, with the slowest pacing of any entry. Readers who hit it without warning often assume the series has permanently declined. It has not. A Breath of Snow and Ashes (book 6) is over 1,200 pages and is the emotional peak of the entire series. Push through book 5 knowing this.',
       color: 'green',
     },
     {
       title: '⚠️ Dragonfly in Amber',
-      body: 'Book 2 opens in a completely different time and place from where book 1 ends, with no explanation. This is deliberate - it is the most important thing to know before you start the series. Do not skip ahead to book 3. The structure of Dragonfly in Amber is the point; the novel is doing something Gabaldon planned from the beginning and the ending only works if you have read the whole thing. Readers who trusted the structure almost universally consider it the best book in the series.',
+      body: 'Book 2 opens in a completely different time and place from where book 1 ends, with no explanation. This is deliberate: it is the most important thing to know before you start the series. Do not skip ahead to book 3. The structure of Dragonfly in Amber is the point; the novel is doing something Gabaldon planned from the beginning and the ending only works if you have read the whole thing. Readers who trusted the structure almost universally consider it the best book in the series.',
       color: 'red',
     },
     {
       title: '📺 The TV Show',
-      body: "The Starz adaptation ran seven seasons (2014-2023) and covers roughly books 1-8, with significant compression and some structural changes. The casting of Jamie and Claire is widely considered ideal; the show is faithful to the emotional core of the books even when it restructures events. Season 5 covers The Fiery Cross and is, like the book, the weakest season. If you watched the show: the books have considerably more depth and the later books contain events the show did not reach. If you haven't watched: the books do not require the show and are best experienced first.",
+      body: "The Starz adaptation ran seven seasons (2014-2023) and covers roughly books 1-8, with significant compression and some structural changes. The casting of Jamie and Claire holds; the show is faithful to the emotional core of the books even when it restructures events. Season 5 covers The Fiery Cross and is, like the book, the weakest season. If you watched the show: the books have considerably more depth and the later books contain events the show did not reach. If you haven't watched: the books do not require the show and are best experienced first.",
       color: 'zinc',
     },
   ],
@@ -54,7 +54,7 @@ export const outlander: ReadingOrderEntry = {
           title: 'Outlander',
           slug: 'outlander',
           status: 'mandatory',
-          note: "Claire touches the stone at Craigh na Dun and arrives in 1743 Scotland. She must navigate the Jacobite rising, survive a British officer who recognises her as an Englishwoman, and find her way back to her own time — while falling in love with someone she can't go back to without leaving behind. The book works as a complete standalone and is arguably the best place Gabaldon ever achieved her hybrid balance. The historical research is visible on every page without ever stopping the story.",
+          note: "Claire touches the stone at Craigh na Dun and arrives in 1743 Scotland. She must navigate the Jacobite rising, survive a British officer who recognises her as an Englishwoman, and find her way back to her own time, while falling in love with someone she can't go back to without leaving behind. The book works as a complete standalone and is the best place Gabaldon achieved her hybrid balance. The historical research is visible on every page without ever stopping the story.",
           page_count: 745,
           publication_year: 1991,
         },
@@ -71,7 +71,7 @@ export const outlander: ReadingOrderEntry = {
           title: 'Dragonfly in Amber',
           slug: 'dragonfly-in-amber',
           status: 'mandatory',
-          note: 'Opens in 1968. Do not skip it. By the end of this book you will understand why it opens the way it does, and the structural choice will feel like genius rather than confusion. The second half covers the Battle of Culloden and its aftermath — the most emotionally devastating section of the series. Readers who consider this the best book in the series are not wrong.',
+          note: 'Opens in 1968. Do not skip it. By the end of this book you will understand why it opens the way it does, and the structural choice will feel like genius rather than confusion. The second half covers the Battle of Culloden and its aftermath: the most emotionally devastating section of the series. Readers who consider this the best book in the series are not wrong.',
           page_count: 864,
           publication_year: 1992,
         },
@@ -80,7 +80,7 @@ export const outlander: ReadingOrderEntry = {
           slug: 'a-fugitive-green',
           status: 'supplementary',
           seriesLabel: 'Outlander #2.5',
-          note: "Follows Harold Grey (Lord John's brother) and Minnie Rennie in Paris - the story of how they met. Set between Dragonfly in Amber and Voyager.",
+          note: "Follows Harold Grey (Lord John's brother) and Minnie Rennie in Paris: the story of how they met. Set between Dragonfly in Amber and Voyager.",
           page_count: 178,
           publication_year: 2017,
         },
@@ -88,7 +88,7 @@ export const outlander: ReadingOrderEntry = {
           title: 'Voyager',
           slug: 'voyager',
           status: 'mandatory',
-          note: 'The story moves to the Caribbean and begins the transatlantic arc that runs through the next four books. More adventure-forward than the first two; the pace is faster and the scope widens considerably. One of the most propulsive entries in the series.',
+          note: 'The story moves to the Caribbean and begins the transatlantic arc that runs through the next four books. More adventure-forward than the first two; the pace is faster and the scope widens considerably.',
           page_count: 864,
           publication_year: 1994,
         },
@@ -96,7 +96,7 @@ export const outlander: ReadingOrderEntry = {
           title: 'Drums of Autumn',
           slug: 'drums-of-autumn',
           status: 'mandatory',
-          note: "The Frasers arrive in the American colonies and begin building a life in the North Carolina backcountry. Introduces Brianna's timeline — a major structural shift that runs through the rest of the series. The longest book so far and the one that most divides readers on pacing; the colonial setting is richly drawn.",
+          note: "The Frasers arrive in the American colonies and begin building a life in the North Carolina backcountry. Introduces Brianna's timeline (a major structural shift that runs through the rest of the series). The longest book so far and the one that most divides readers on pacing; the colonial setting is richly drawn.",
           page_count: 1070,
           publication_year: 1997,
         },
@@ -104,7 +104,7 @@ export const outlander: ReadingOrderEntry = {
           title: 'The Fiery Cross',
           slug: 'the-fiery-cross',
           status: 'mandatory',
-          note: 'The hardest book to get through. Nearly 1,000 pages set largely on a single journey, with a slower pace than any other entry. Read it knowing this in advance; most readers who stall here do so because they were not warned. The groundwork it lays pays off in book 6. Push through.',
+          note: 'The hardest book to get through. Nearly 1,000 pages set largely on a single journey, with a slower pace than any other entry. Read it knowing this in advance; most readers who stall here do so because they were not warned. The groundwork it lays becomes clear in book 6. Push through.',
           page_count: 979,
           publication_year: 2001,
         },
@@ -112,7 +112,7 @@ export const outlander: ReadingOrderEntry = {
           title: 'A Breath of Snow and Ashes',
           slug: 'a-breath-of-snow-and-ashes',
           status: 'mandatory',
-          note: "The emotional peak of the series for most readers. The American Revolution is coming and the Frasers are directly in its path; the historical events intersect with the characters' lives in ways that feel both inevitable and devastating. The longest book in the series and the one most readers consider the best after Dragonfly in Amber.",
+          note: "The emotional peak of the series. The American Revolution is coming and the Frasers are directly in its path; the historical events intersect with the characters' lives in ways that feel both inevitable and devastating. The longest book in the series.",
           page_count: 1200,
           publication_year: 2005,
         },
@@ -120,7 +120,7 @@ export const outlander: ReadingOrderEntry = {
           title: 'An Echo in the Bone',
           slug: 'an-echo-in-the-bone',
           status: 'mandatory',
-          note: 'The Revolutionary War in full. Multiple POVs and timelines running simultaneously across continents. Shorter and faster than the previous two books; the pacing tightens noticeably. Lord John Grey becomes significant here — readers who read The Scottish Prisoner before this book will have more context for his role.',
+          note: 'The Revolutionary War in full. Multiple POVs and timelines running simultaneously across continents. Shorter and faster than the previous two books; the pacing tightens noticeably. Lord John Grey becomes significant here; readers who read The Scottish Prisoner before this book will have more context for his role.',
           page_count: 834,
           publication_year: 2009,
         },
@@ -137,7 +137,7 @@ export const outlander: ReadingOrderEntry = {
           title: "Written in My Own Heart's Blood",
           slug: 'written-in-my-own-hearts-blood',
           status: 'mandatory',
-          note: 'The Battle of Monmouth and its aftermath. Multiple timelines converge and several major threads that have been running since book 4 resolve or shift significantly. One of the most structurally complex entries; rewards readers who have tracked the family trees carefully.',
+          note: 'The Battle of Monmouth and its aftermath. Multiple timelines converge and several major threads that have been running since book 4 resolve or shift significantly. Structurally complex; readers who have tracked the family trees will find threads closing that have been running for four books.',
           page_count: 864,
           publication_year: 2014,
         },
@@ -146,7 +146,7 @@ export const outlander: ReadingOrderEntry = {
           slug: 'a-leaf-on-the-wind-of-all-hallows',
           status: 'supplementary',
           seriesLabel: 'Outlander #8.5',
-          note: "Reveals what happened to Roger MacKenzie's parents during WWII - his father, an RAF pilot, and what really became of him. Set between Written in My Own Heart's Blood and Go Tell the Bees.",
+          note: "Reveals what happened to Roger MacKenzie's parents during WWII: his father, an RAF pilot, and what really became of him. Set between Written in My Own Heart's Blood and Go Tell the Bees.",
           page_count: 71,
           publication_year: 2010,
         },
@@ -154,7 +154,7 @@ export const outlander: ReadingOrderEntry = {
           title: 'Go Tell the Bees That I Am Gone',
           slug: 'go-tell-the-bees-that-i-am-gone',
           status: 'mandatory',
-          note: "Book 9 - published 7 years after book 8. The war continues; the series moves toward its ending, though book 10 remains unwritten. For readers who have followed the series this far, the return to Fraser's Ridge after multiple books away carries real emotional weight. Not a resolution, but a gathering.",
+          note: "Book 9, published 7 years after book 8. The war continues; the series moves toward its ending, though book 10 remains unwritten. For readers who have followed the series this far, the return to Fraser's Ridge after multiple books away carries real emotional weight. Not a resolution, but a gathering.",
           page_count: 928,
           publication_year: 2021,
         },
@@ -171,9 +171,8 @@ export const outlander: ReadingOrderEntry = {
     },
     {
       label: 'Lord John Grey',
-      sublabel:
-        'In chronological order — read after the main series, or as noted',
-      note: 'Lord John appears throughout the main series from book 2 onward. These novels and novellas are not required — with one exception: The Scottish Prisoner shares backstory that An Echo in the Bone (book 7) draws on directly. Read before or alongside book 7 if you follow the Lord John thread.',
+      sublabel: 'In chronological order - read after the main series, or as noted',
+      note: 'Lord John appears throughout the main series from book 2 onward. These novels and novellas are not required. The one exception: The Scottish Prisoner shares backstory that An Echo in the Bone (book 7) draws on directly. Read before or alongside book 7 if you follow the Lord John thread.',
       noteType: 'required',
       books: [
         {
@@ -260,24 +259,70 @@ export const outlander: ReadingOrderEntry = {
       ],
     },
   ],
+  characters: [
+    {
+      name: 'Claire Randall Fraser',
+      role: 'WWII nurse; protagonist; time traveler between 1945 and 18th-century Scotland',
+      color: 'blue',
+      why_they_work:
+        "Claire narrates almost the entire series but is frequently wrong about what is happening politically and historically around her. Her 20th-century assumptions cause danger throughout, and Gabaldon deploys this precisely: the reader learns to see the gap between what Claire perceives and what is actually happening. That gap, running across nine books, is where the dramatic irony lives.",
+    },
+    {
+      name: 'Jamie Fraser',
+      role: "Highland warrior; Jacobite; Claire's husband",
+      color: 'amber',
+      why_they_work:
+        "Jamie is only ever seen through Claire's POV. The reader has no access to his interior life except through what Claire observes and what he chooses to say. This makes him more compelling than protagonists who narrate themselves: his decisions read as character rather than as self-explanation, and the gaps in what the reader knows about him accumulate into something that makes the later books work differently than the early ones.",
+    },
+    {
+      name: 'Lord John Grey',
+      role: 'British officer; recurring from book 2; protagonist of the Lord John novels',
+      color: 'green',
+      why_they_work:
+        "Lord John is on the opposing side historically and his desires can never be fulfilled. He sees Jamie as a prisoner, a friend, and an impossible object of desire, and he acts with consistent honour despite all of it. His function is to provide a witness to Jamie who isn't Claire, and the Lord John novels work because his point of view on 18th-century Britain reveals aspects of the world the main series cannot reach through Claire's narration.",
+    },
+    {
+      name: 'Brianna Fraser',
+      role: "Claire and Jamie's daughter; born in the 20th century; POV character from book 4",
+      color: 'purple',
+      why_they_work:
+        "Brianna grew up in the 1960s, has an engineering degree, and travels to the 18th century to find parents she has never met as adults. Her arc in books 4-8 is about choosing which world she belongs to. The choice is more complicated than it appears: she is more practically effective in 18th-century settings than her origin would suggest, and the series uses this to make a specific argument about what knowledge is actually transferable across centuries.",
+    },
+    {
+      name: 'Roger MacKenzie',
+      role: "Historian; Brianna's husband; time traveler from the 1960s",
+      color: 'red',
+      why_they_work:
+        "Roger knows 18th-century history academically before he experiences it. He has read about Culloden, about the colonial period, about what happens to the people around him. His knowledge is useless in practice and sometimes makes things worse. The gap between historical knowledge and lived experience is his entire arc, and Gabaldon uses it to establish that knowing what happened and surviving it are not the same thing.",
+    },
+  ],
   sections: [
     {
       heading: 'Can I skip Lord John?',
       type: 'bullets',
       bullets: [
         'For the main series: largely yes. Lord John appears in books 2, 4, 6, 7, and 8 as a recurring character, but his role is fully understandable without reading his own novels. The main series does not assume you have read the Lord John books.',
-        'The one exception: The Scottish Prisoner. It shares backstory and context with An Echo in the Bone (book 7) - specifically around events both characters were involved in during the late 1750s. If you plan to read any Lord John novel, read this one before book 7.',
-        "If you loved Lord John's role in the main series and want more of him: the three novels are all excellent, self-contained historical mysteries with strong military and social history. Read them after you have finished however many main-series books are available at the time.",
+        'If you want more of Lord John: the three novels are self-contained historical mysteries with strong period detail and military history. Read them after finishing however many main-series books are available.',
       ],
     },
     {
       heading: 'Content notes',
       type: 'bullets',
       bullets: [
-        'Sexual content: present and explicit throughout. The earlier books are less graphic; the content becomes more explicit as the series progresses. This is not a closed-door series. If explicit content is a concern, the series is not the right fit.',
-        'Violence: frequent and historically grounded - battle, torture, and assault are all depicted, some in detail. Book 1 contains a prolonged scene of violence that is the most discussed content warning in the series; it has derailed some readers. Know it is coming.',
+        'Sexual content: present and explicit throughout. The earlier books are less graphic; the content becomes more explicit as the series progresses. This is not a closed-door series.',
+        'Violence: frequent and historically grounded; battle, torture, and assault are all depicted, some in detail. Book 1 contains a prolonged scene of violence that is the most discussed content warning in the series; it has derailed some readers. Know it is coming.',
         'Historical darkness: the books cover Culloden, the Highland clearances, colonial slavery, and the Revolutionary War without softening any of them. Gabaldon writes history as it was, not as we would prefer it.',
-        'Reader fit: right for readers who want to live inside a world for months rather than weeks and who can tolerate slow stretches in exchange for deep immersion. Not right for readers who want light comfort reading, fast pacing throughout, or who cannot engage with explicit content.',
+        'The series demands patience with pacing: book 5 runs nearly 1,000 pages on a single journey, and book 9 arrived 7 years after book 8. The later books do not maintain the forward momentum of the first three.',
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "Outlander (1991) had no clear marketing category at publication: Delacorte shelved it simultaneously in romance, science fiction, and general fiction. Gabaldon's resistance to the romance label has been consistent across nine books and 35 years, and the books have accumulated readerships from all three categories.",
+        "The historical research is primary-source level throughout: the Jacobite rising, 18th-century Highland medicine, the colonial Carolina backcountry, and the Battle of Monmouth are all drawn from archival research Gabaldon conducted before she wrote the first scene. The texture is not atmosphere; it is architecture.",
+        'Dragonfly in Amber (book 2) opens in 1968 with no explanation and withholds context for the first hundred pages. Gabaldon planned the structure before writing book 1. The structural choice was unusual in commercial fiction and is a reference point in discussions of narrative misdirection in popular series.',
+        'The Starz adaptation (2014-2023) introduced the books to an audience that had not engaged with commercial historical fiction before and demonstrated that long-form historical narrative could sustain a major streaming series across seven seasons.',
       ],
     },
   ],
@@ -313,5 +358,5 @@ export const outlander: ReadingOrderEntry = {
   shortName: 'Outlander',
   metaDescription:
     'Complete Outlander reading order - all 9 books, the Lord John Grey novels explained, and whether you can skip The Fiery Cross (you cannot).',
-  lastUpdated: '2026-06-04',
+  lastUpdated: '2026-07-01',
 };

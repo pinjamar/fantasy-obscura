@@ -89,7 +89,9 @@ These are the specific patterns that keep appearing. Each is a hard violation:
 Never end `description` with "Start with [Book]." Never open a "Where to start" section with it. The `description` ends with what makes the series distinctive. The `orderNote` handles reading order. If both end with the same sentence, delete it from `description`.
 
 ### 2. "Where to start" section — only if non-obvious
-Do not add a "Where to start" section when the answer is already covered by mandatory badges on the groups + the `orderNote`. If there's one clear entry point and it's already stated, this section is noise. Only add it when there are **multiple genuinely different entry profiles** (e.g., adaptation reader vs. newcomer vs. returning reader) that require their own explanation. The card "Where to Start / Entry Points" counts as covering this — do not have both a card and a section saying the same thing.
+Before adding a "Where to start" section, check every bullet you plan to write against **all five** potential sources of duplication: `orderNote`, group `note` fields, group `sublabel` fields, book `note` fields, and every card body. A bullet only belongs in this section if it contains information genuinely absent from all five. If every bullet you would write is already covered somewhere else in the guide, skip the section entirely.
+
+Do not add a "Where to start" section when the answer is already covered by mandatory badges + `orderNote`. Do not add it when navigation cards (e.g., "Sabriel Stands Alone," "Clariel: Read After Abhorsen," "Two Entry Points") already cover the entry point decisions. Only add it when there are **multiple genuinely different entry profiles** (e.g., adaptation reader vs. newcomer vs. returning reader) that require their own explanation, or when the entry point is genuinely non-obvious and not covered by any of the five sources above.
 
 ### 3. Reading order instructions — state once
 If you write "read X before Y" in `orderNote`, do not also write it in the group `sublabel` AND the book `note`. Pick the most useful location:
@@ -342,8 +344,8 @@ Cards are not summaries — they're the things you'd say to a friend who just pi
 
 **The formula (in order, max 4 sections):**
 
-**"Where to start"** — add only if description/orderNote don't already answer it.
-Bullet format. Useful when there are multiple entry points, reader profiles (newcomer / adaptation fan / prior reader), or a non-obvious first book. Skip if the answer is already in the description or orderNote — adding a section that just repeats them is noise.
+**"Where to start"** — add only if it contains bullets not covered by `orderNote`, group notes, group sublabels, book notes, or cards.
+Before writing any bullet, ask: is this already in any of those five places? If yes, skip the bullet. If every bullet is already covered, skip the section. Useful when there are multiple entry points, reader profiles (newcomer / adaptation fan / prior reader), or a non-obvious first book where all five sources are genuinely silent. A series with a comprehensive `orderNote` + navigation cards already has its "Where to start" answered — adding a section that restates them is noise.
 
 **[Series-specific]** — keep only if it targets a real search query. Remove or rename vague ones.
 Keep: "Publication vs chronological order" (Malazan, First Law, WoT — very commonly Googled), "If you know the games or show" (Witcher), "The crossover moments explained" (SJM).
@@ -696,7 +698,7 @@ Read every card body, every `why_they_work`, every book note, and every section 
 
 ### No-Duplicate Check (run through every guide before publishing)
 - [ ] `description` does not end with "Start with X" — that sentence is in `orderNote` only
-- [ ] No "Where to start" section if the entry point is already clear from mandatory badges + `orderNote`. If a "Where to start" card exists, there is no "Where to start" section
+- [ ] No "Where to start" section unless it contains bullets absent from ALL of: `orderNote`, group `note` fields, group `sublabel` fields, book `note` fields, and every card body. Check each bullet individually against all five sources before including it. If a "Where to start" or navigation card exists and covers the same ground, skip the section.
 - [ ] Every card body checked against every section bullet — no point appears in both
 - [ ] Every card body checked against `description` — no fact restated from description into a card
 - [ ] Every card body checked against every `why_they_work` — if a card and character entry say the same thing about the same character (e.g., both describe the same trope subversion), rewrite the character entry to use a different angle

@@ -1,18 +1,18 @@
-﻿import type { ReadingOrderEntry } from '../reading-orders';
+import type { ReadingOrderEntry } from '../reading-orders';
 
 export const drizzt: ReadingOrderEntry = {
   slug: 'drizzt',
   name: 'Legend of Drizzt',
   author: 'R.A. Salvatore',
   seriesStatus: 'ongoing',
-  seriesStatusLabel: "📖 Ongoing · Drizzt's Daughter series",
+  seriesStatusLabel: "📖 Ongoing - Way of the Drow complete; Drizzt's Daughter series ongoing",
   description:
-    "Over 40 novels. One dark elf who refused to be what his world made him. Drizzt Do'Urden abandoned the Underdark's brutal drow society and built a life on the surface through sheer will, friendship, and twin scimitars — and R.A. Salvatore has been telling that story since 1988. The novels are set in the Forgotten Realms — the flagship D&D campaign setting, a shared fantasy world written by dozens of authors across hundreds of books. Drizzt is its most famous literary character, and no prior D&D knowledge is needed to follow the story. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are among the most beloved found families in fantasy. This guide covers the full Drizzt saga across 14 arcs in recommended reading order — from the Underdark origin story through the Way of the Drow trilogy, and into the ongoing Drizzt's Daughter series that follows.",
-  darknessDisplay: '🕯️🕯️🕯️ Moderate darkness',
+    "Over 40 novels. One dark elf who refused to be what his world made him. Drizzt Do'Urden abandoned the Underdark's brutal drow society and built a life on the surface through sheer will, friendship, and twin scimitars. R.A. Salvatore has been telling that story since 1988. The novels are set in the Forgotten Realms: the flagship D&D campaign setting, a shared fantasy world written by dozens of authors across hundreds of books. Drizzt is its most famous literary character, and no prior D&D knowledge is needed to follow the story. The Companions of the Hall (Bruenor, Catti-brie, Regis, Wulfgar) are among the most beloved found families in fantasy. This guide covers the full Drizzt saga across 14 arcs in recommended reading order: from the Underdark origin story through the Way of the Drow trilogy, and into the ongoing Drizzt's Daughter series that follows.",
+  darknessDisplay: '🕯️🕯️🕯️ Moderate - action-adventure tone with darker personal arcs in specific trilogies',
   groups: [
     {
       label: 'The Dark Elf Trilogy',
-      sublabel: "Chronological start — Drizzt's origin",
+      sublabel: "Chronological start - Drizzt's origin",
       note: 'Written as a prequel after Icewind Dale. Start here for chronological order, or skip to Icewind Dale and return later.',
       noteType: 'optional',
       books: [
@@ -28,7 +28,7 @@ export const drizzt: ReadingOrderEntry = {
           title: 'Exile',
           slug: 'exile',
           status: 'mandatory',
-          note: 'Drizzt survives the Underdark after fleeing his city. Tense and claustrophobic — the world trying to kill him at every turn.',
+          note: 'Drizzt survives the Underdark after fleeing his city. Tense and claustrophobic, with the world trying to kill him at every turn.',
           page_count: 314,
           publication_year: 1990,
         },
@@ -44,15 +44,15 @@ export const drizzt: ReadingOrderEntry = {
     },
     {
       label: 'The Icewind Dale Trilogy',
-      sublabel: 'The original trilogy — written first, most beloved',
-      note: 'This is where R.A. Salvatore introduced Drizzt to the world. Many fans consider this the best entry point.',
+      sublabel: 'The original trilogy - written first, most beloved',
+      note: 'This is where R.A. Salvatore introduced Drizzt to the world. The most common starting point recommendation.',
       noteType: 'required',
       books: [
         {
           title: 'The Crystal Shard',
           slug: 'the-crystal-shard',
           status: 'mandatory',
-          note: "The Companions of the Hall assemble. Wulfgar, Bruenor, Catti-brie, Regis — fantasy's greatest found family.",
+          note: "The Companions of the Hall assemble. Wulfgar, Bruenor, Catti-brie, Regis, and Drizzt: fantasy's great found family, meeting for the first time.",
           page_count: 336,
           publication_year: 1988,
         },
@@ -76,13 +76,13 @@ export const drizzt: ReadingOrderEntry = {
     },
     {
       label: 'Legacy of the Drow',
-      sublabel: 'The drow return — the stakes become personal',
+      sublabel: 'The drow return - the stakes become personal',
       books: [
         {
           title: 'The Legacy',
           slug: 'the-legacy',
           status: 'mandatory',
-          note: "Drizzt's past hunts him. The drow come to Mithral Hall. Best arc in the series by many fans.",
+          note: "Drizzt's past hunts him. The drow come to Mithral Hall. The emotional peak of the series.",
           page_count: 309,
           publication_year: 1992,
         },
@@ -114,8 +114,8 @@ export const drizzt: ReadingOrderEntry = {
     },
     {
       label: 'Paths of Darkness',
-      sublabel: 'The Companions scattered — a darker chapter',
-      note: 'The Servant of the Shard is technically Paths of Darkness #3 but listed under The Sellswords below — it was later repackaged as the start of that spin-off trilogy and fits better there narratively.',
+      sublabel: 'The Companions scattered - a darker chapter',
+      note: 'The Servant of the Shard is technically Paths of Darkness #3 but listed under The Sellswords below. It was later repackaged as the start of that spin-off trilogy and fits better there narratively.',
       noteType: 'optional',
       books: [
         {
@@ -132,7 +132,7 @@ export const drizzt: ReadingOrderEntry = {
           slug: 'the-spine-of-the-world',
           status: 'optional',
           seriesLabel: 'Paths of Darkness #2',
-          note: 'Wulfgar-focused departure. Deals with trauma and recovery — divisive but emotionally honest.',
+          note: 'Wulfgar-focused departure. Deals with trauma and recovery, divisive but emotionally honest.',
           page_count: 345,
           publication_year: 1999,
         },
@@ -150,7 +150,7 @@ export const drizzt: ReadingOrderEntry = {
     {
       label: 'The Sellswords Trilogy',
       sublabel: 'Jarlaxle & Entreri take centre stage',
-      note: 'Drizzt is largely absent. These books follow Jarlaxle and Entreri — darker, more morally complex. Essential for fans of the villains; skippable otherwise.',
+      note: 'Drizzt is largely absent. These books follow Jarlaxle and Entreri: darker, more morally complex. Essential for fans of the villains; skippable otherwise.',
       noteType: 'optional',
       books: [
         {
@@ -165,7 +165,7 @@ export const drizzt: ReadingOrderEntry = {
           title: 'Promise of the Witch King',
           slug: 'promise-of-the-witch-king',
           status: 'optional',
-          note: 'The pair venture into the savage North. Fast and entertaining — lesser than book one.',
+          note: 'The pair venture into the savage North. Fast and entertaining, lesser than book one.',
           page_count: 343,
           publication_year: 2005,
         },
@@ -173,7 +173,7 @@ export const drizzt: ReadingOrderEntry = {
           title: 'Road of the Patriarch',
           slug: 'road-of-the-patriarch',
           status: 'optional',
-          note: "Concludes Entreri's character arc. A satisfying close to one of fantasy's great rivals.",
+          note: "Concludes Entreri's character arc. A satisfying close to one of fantasy's great rivalries.",
           page_count: 352,
           publication_year: 2006,
         },
@@ -233,7 +233,7 @@ export const drizzt: ReadingOrderEntry = {
           title: 'The Ghost King',
           slug: 'the-ghost-king',
           status: 'supplementary',
-          note: 'The Spellplague reshapes the Forgotten Realms. A major turning point — some fans consider this the end of the classic era.',
+          note: 'The Spellplague reshapes the Forgotten Realms. A major turning point. Readers who want to stop before the timeline jump can treat this as a satisfying close to the classic era.',
           page_count: 352,
           publication_year: 2009,
         },
@@ -241,8 +241,8 @@ export const drizzt: ReadingOrderEntry = {
     },
     {
       label: 'The Neverwinter Saga',
-      sublabel: 'A century later — Drizzt nearly alone',
-      note: 'Set 100 years after the Transitions arc due to the Spellplague. The cast largely resets — a fresh entry point for some readers.',
+      sublabel: 'A century later - Drizzt nearly alone',
+      note: 'Set 100 years after the Transitions arc due to the Spellplague. The cast largely resets, making this a fresh entry point for new readers.',
       noteType: 'optional',
       books: [
         {
@@ -273,7 +273,7 @@ export const drizzt: ReadingOrderEntry = {
           title: 'The Last Threshold',
           slug: 'the-last-threshold',
           status: 'supplementary',
-          note: "Closes the Neverwinter arc. Drizzt's lowest point — and the setup for a major restoration.",
+          note: "Closes the Neverwinter arc. Drizzt's lowest point in the series, and the setup for a major restoration.",
           page_count: 342,
           publication_year: 2013,
         },
@@ -281,17 +281,16 @@ export const drizzt: ReadingOrderEntry = {
     },
     {
       label: 'The Sundering',
-      sublabel:
-        'multi-author Forgotten Realms event — read The Companions first',
+      sublabel: 'Multi-author Forgotten Realms event - read The Companions first',
       noteType: 'optional',
-      note: 'A six-book crossover event across the Forgotten Realms by six different authors. Only The Companions (#1) is essential for Drizzt readers — it restores the original cast and directly leads into Companions Codex. The other five are optional deep cuts for Forgotten Realms fans.',
+      note: 'A six-book crossover event across the Forgotten Realms by six different authors. Only The Companions (#1) is essential for Drizzt readers: it restores the original cast and directly leads into Companions Codex. The other five are optional deep cuts for Forgotten Realms fans.',
       books: [
         {
           title: 'The Companions',
           slug: 'the-companions',
           status: 'mandatory',
           seriesLabel: 'The Sundering #1',
-          note: "Salvatore's entry. The original Companions reborn — joyful and earned after years of absence. The hinge on which everything that follows turns. Required before Companions Codex.",
+          note: "Salvatore's entry. The original Companions reborn: joyful and earned after years of absence. The hinge on which everything that follows turns. Required before Companions Codex.",
           page_count: 296,
           publication_year: 2013,
         },
@@ -344,7 +343,7 @@ export const drizzt: ReadingOrderEntry = {
     },
     {
       label: 'Companions Codex',
-      sublabel: 'The Companions return — the drow conflict resumes',
+      sublabel: 'The Companions return - the drow conflict resumes',
       note: 'Read The Sundering #1 (The Companions) before starting this arc.',
       noteType: 'required',
       books: [
@@ -407,14 +406,14 @@ export const drizzt: ReadingOrderEntry = {
     {
       label: 'Generations',
       sublabel: 'A new generation alongside Drizzt',
-      note: "Introduces Brizmorla 'Breezy' Do'Urden, daughter of Drizzt and Catti-brie. Dual timeline structure — past and present interweave.",
+      note: "Introduces Brizmorla 'Breezy' Do'Urden, daughter of Drizzt and Catti-brie. Dual timeline structure: past and present interweave.",
       noteType: 'optional',
       books: [
         {
           title: 'Timeless',
           slug: 'timeless',
           status: 'supplementary',
-          note: "Drizzt's history retold through a new lens, alongside stories of his descendants. The dual timeline is the series' most ambitious structure.",
+          note: "Drizzt's history retold through a new lens, alongside stories of his descendants. The dual timeline is the most ambitious structure in the series.",
           page_count: 384,
           publication_year: 2018,
         },
@@ -470,7 +469,7 @@ export const drizzt: ReadingOrderEntry = {
     },
     {
       label: "Drizzt's Daughter",
-      sublabel: "New series — Breezy Do'Urden",
+      sublabel: "New series - Breezy Do'Urden",
       note: "A new series starring Brizmorla 'Breezy' Do'Urden. Drizzt's story has concluded; this is the next generation's saga.",
       noteType: 'optional',
       books: [
@@ -478,7 +477,7 @@ export const drizzt: ReadingOrderEntry = {
           title: 'The Finest Edge of Twilight',
           slug: 'the-finest-edge-of-twilight',
           status: 'supplementary',
-          note: 'Breezy takes centre stage in her own adventure. A fresh start for new readers already familiar with the world.',
+          note: 'Breezy takes centre stage in her own adventure. A fresh start for readers already familiar with the world.',
           page_count: 400,
           publication_year: 2025,
         },
@@ -486,38 +485,82 @@ export const drizzt: ReadingOrderEntry = {
     },
   ],
   orderNote:
-    'Two valid starting points: Homeland (Dark Elf Trilogy) for chronological order, or The Crystal Shard (Icewind Dale) for publication order. Both work — publication order is the more common recommendation.',
+    'Two valid starting points: Homeland (Dark Elf Trilogy) for chronological order, or The Crystal Shard (Icewind Dale) for publication order. Both work. Publication order is the more common recommendation.',
   cardsPosition: 'above',
   cards: [
     {
       title: '⚔️ The Companions',
-      body: "The heart of the series isn't Drizzt — it's the found family he builds. Bruenor the dwarf king, Catti-brie the archer, Wulfgar the barbarian, Regis the halfling. They're assembled in The Crystal Shard and tested across every arc that follows. When the series is at its best, it's their story as much as his.",
+      body: "The heart of the series is not Drizzt. It is the found family he builds. Bruenor the dwarf king, Catti-brie the archer, Wulfgar the barbarian, Regis the halfling: assembled in The Crystal Shard and tested across every arc that follows. When the series is at its best, it is their story as much as his.",
       color: 'blue',
     },
     {
       title: '📚 Two Entry Points',
-      body: "The great Drizzt debate: start with Homeland (Dark Elf Trilogy) for Drizzt's brutal origin in drow society, or The Crystal Shard (Icewind Dale) where the Companions first meet. Most guides recommend Crystal Shard — it's faster, introduces the full cast, and the origin story hits harder once you love the character.",
+      body: "The great Drizzt debate: start with Homeland (Dark Elf Trilogy) for Drizzt's brutal origin in drow society, or The Crystal Shard (Icewind Dale) where the Companions first meet. The Crystal Shard is faster, introduces the full cast immediately, and the origin story lands harder once the reader already cares about the character. Either order works.",
       color: 'green',
     },
     {
       title: '🗡️ Artemis Entreri',
-      body: "Drizzt's greatest rival is the assassin Artemis Entreri — a dark mirror who made the same choices Drizzt made and arrived somewhere entirely different. Their conflict across the first five arcs is the series' finest thread. The Sellswords Trilogy follows Entreri alone and is worth reading for fans who want his full arc.",
+      body: "Drizzt's greatest rival is the assassin Artemis Entreri: a dark mirror who made the same choices Drizzt made and arrived somewhere entirely different. Their conflict across the first five arcs is the series' finest thread. The Sellswords Trilogy follows Entreri alone and is worth reading for fans who want his full arc.",
       color: 'purple',
     },
     {
       title: '🌍 The Sundering',
-      body: 'A six-book Forgotten Realms crossover event (2013–2014) by six different authors. Only book #1 — The Companions by Salvatore — is required for Drizzt readers. It brings back the original cast after years of absence and directly leads into Companions Codex. The other five follow unrelated characters and are for deep Forgotten Realms fans only.',
+      body: 'A six-book Forgotten Realms crossover event (2013–2014) by six different authors. Only book #1, The Companions by Salvatore, is required for Drizzt readers. It brings back the original cast after years of absence and directly leads into Companions Codex. The other five follow unrelated characters and are for deep Forgotten Realms fans only.',
       color: 'amber',
     },
     {
       title: '⚡ Paths of Darkness',
-      body: "The fourth arc is where the series shifts. Entreri and Jarlaxle — the assassin and the charismatic drow mercenary — stop being antagonists and become the most compelling characters in the room. Paths of Darkness sets up their dynamic, and the Sellswords Trilogy that follows gives them their own story entirely. If you find Drizzt's arc thinning out, Entreri's is just getting started.",
+      body: "The fourth arc is where the series shifts. Entreri and Jarlaxle (the assassin and the charismatic drow mercenary) stop being antagonists and become the most compelling characters in the room. Paths of Darkness sets up their dynamic, and the Sellswords Trilogy that follows gives them their own story entirely. When Drizzt's arc thins out, Entreri's is just getting started.",
       color: 'red',
     },
     {
       title: '🔄 The Return Era',
-      body: 'After the time jump in The Companions (The Sundering #1), the original cast is back and younger. Companions Codex and the arcs that follow feel lighter than the early books — more adventurous, less grim. Readers who loved the dark tone of Legacy of the Drow may find the shift jarring. Those who just want the gang back together will enjoy it.',
+      body: 'After the time jump in The Companions (The Sundering #1), the original cast is back and younger. Companions Codex and the arcs that follow feel lighter than the early books: more adventurous, less grim. Readers who loved the dark tone of Legacy of the Drow may find the shift jarring. Those who want the gang back together will enjoy it.',
       color: 'zinc',
+    },
+  ],
+  characters: [
+    {
+      name: "Drizzt Do'Urden",
+      role: 'Drow ranger; protagonist of the entire saga',
+      color: 'blue',
+      why_they_work:
+        "The premise depends entirely on the gap between what he is supposed to be (a drow, bred for cruelty and ambition) and what he chooses to be. That gap is not resolved once and left behind. Every arc tests it differently: the Underdark tests whether he can survive abandoning his people; the surface tests whether the surface world will accept him; Legacy of the Drow tests whether his past can be outrun; the Neverwinter Saga tests whether he can function without the Companions. The character works because Salvatore keeps finding new pressure points for the same core question.",
+    },
+    {
+      name: 'Bruenor Battlehammer',
+      role: "Dwarven king; Drizzt's closest friend and adoptive father of Catti-brie",
+      color: 'amber',
+      why_they_work:
+        "The emotional anchor of the Companions. Blunt, loud, and deeply loyal, he is the character the series uses to mark every major transition: the quest for Mithral Hall in book two defines his arc, and his fate across the Transitions trilogy is the most affecting moment in the later series. His relationship with Drizzt works because it is entirely free of the suspicion that follows Drizzt everywhere else.",
+    },
+    {
+      name: 'Catti-brie',
+      role: "Bruenor's adopted human daughter; archer and swordswoman",
+      color: 'green',
+      why_they_work:
+        "The Companion who changes the most across the saga. Her arc in the Transitions trilogy is the highest-stakes the series attempts with the core cast, and the Generations arc reframes her completely through the lens of her relationship with Drizzt. She is the most thematically central of the Companions across the later arcs.",
+    },
+    {
+      name: 'Artemis Entreri',
+      role: "Assassin; Drizzt's greatest rival",
+      color: 'red',
+      why_they_work:
+        "The dark mirror figure: same skills, same choices, opposite conclusions. The question the rivalry poses is whether the difference between them is moral choice or circumstance, and the series refuses to give a clean answer. Entreri's arc across Paths of Darkness and the Sellswords Trilogy is the most psychologically complex material in the saga, and Road of the Patriarch delivers the most honest character close Salvatore has written.",
+    },
+    {
+      name: 'Jarlaxle Baenre',
+      role: "Charismatic drow mercenary; leader of Bregan D'aerthe",
+      color: 'purple',
+      why_they_work:
+        "The character who operates entirely on his own terms: neutral, self-interested, brilliantly capable, and occasionally genuinely helpful for reasons that are never fully legible. He is the most morally complex figure in the saga and the one whose motives remain genuinely unclear for the longest. The Homecoming arc, where he orchestrates events across the Underdark, is the most entertaining use of the character in the later books.",
+    },
+    {
+      name: 'Wulfgar',
+      role: 'Barbarian of Icewind Dale; Companion of the Hall',
+      color: 'zinc',
+      why_they_work:
+        "The Companion whose arc goes to a place the series does not usually visit. The Spine of the World, the most divisive book in the saga, is about what happens to him after trauma, and it refuses to frame recovery as simple. His return across the rest of Paths of Darkness is the most emotionally honest writing Salvatore does with any of the Companions.",
     },
   ],
   sections: [
@@ -525,17 +568,38 @@ export const drizzt: ReadingOrderEntry = {
       heading: 'Where to start',
       type: 'bullets',
       bullets: [
-        'Just want the best arc: Read the Dark Elf Trilogy then go straight to Legacy of the Drow — the emotional peak of the series.',
-        'Shorter commitment: The first three arcs — Dark Elf Trilogy, Icewind Dale Trilogy, Legacy of the Drow — are ten books at the series\' peak and work as a near-complete story.',
+        "The best arc in the series is Legacy of the Drow: read the Dark Elf Trilogy first, then Icewind Dale, then go straight to Legacy. The series peaks there.",
+        "The first three arcs together (Dark Elf Trilogy, Icewind Dale Trilogy, Legacy of the Drow) are ten books that function as a near-complete story at the series' peak.",
       ],
     },
     {
       heading: 'What to know',
       type: 'bullets',
       bullets: [
-        'The first four arcs are the core of the series — quality becomes more variable from Paths of Darkness onward, though later books remain popular with fans of the characters.',
-        'The Ghost King (Transitions #3) ends an era — some fans stop here and consider it a satisfying close before the Spellplague reboot.',
-        'All books are fast reads — 300–400 pages, action-focused, short chapters. The later arcs run slightly longer on average.',
+        'The first four arcs are the core of the series. Quality becomes more variable from Paths of Darkness onward, though the later books remain popular with fans of the characters.',
+        'The Ghost King (Transitions #3) marks a turning point. Readers who want to stop before the Spellplague timeline jump can treat it as a satisfying close to the classic era.',
+        'All books are fast reads: 300–400 pages, action-focused, short chapters. The later arcs run slightly longer on average.',
+      ],
+    },
+    {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        "The Dark Elf Trilogy depicts drow society in detail: ritual murder, political violence, slavery, and infanticide are presented as structural features of Underdark culture. This is the darkest material in the saga.",
+        'The Spine of the World (Paths of Darkness #2) deals explicitly with the aftermath of assault and the difficulty of recovery. It is the most emotionally difficult book in the series for this reason.',
+        'Combat violence is present throughout all arcs and becomes more graphic in the Neverwinter Saga and Way of the Drow.',
+        'No explicit sexual content across the saga.',
+        'Significant companion deaths occur in the later arcs. The series does not protect its core cast after the first four arcs.',
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        "First published in 1988, the Legend of Drizzt is the longest-running single-character fantasy series in commercial publishing. The Crystal Shard preceded the modern epic fantasy boom by nearly a decade.",
+        "The Companions of the Hall established the adventuring-party found-family template that became a defining structure of secondary-world fantasy. The Crystal Shard assembled the group; every arc since has tested whether it holds.",
+        "Drizzt Do'Urden's premise (a member of an evil race who chooses differently) arrived in 1988 and is now one of the most replicated character archetypes in fantasy, games, and RPG fiction. The series established it at scale.",
+        "The Salvatore saga demonstrated that long-running shared-world fiction set in a licensed property (Forgotten Realms) could generate a readership that followed a single character and author rather than the property itself.",
       ],
     },
   ],
@@ -543,37 +607,37 @@ export const drizzt: ReadingOrderEntry = {
     {
       label: 'Dark Elf Trilogy',
       level: 3,
-      desc: 'Moderate — Underdark society is brutal and political',
+      desc: 'Moderate. Underdark society is brutal and political; the darkest material in the saga.',
     },
     {
       label: 'Icewind Dale Trilogy',
       level: 2,
-      desc: 'Light — adventure-focused with low-stakes tone',
+      desc: 'Light. Adventure-focused with low-stakes tone.',
     },
     {
       label: 'Legacy of the Drow',
       level: 3,
-      desc: 'Moderate — personal stakes, drow warfare',
+      desc: 'Moderate. Personal stakes, drow warfare.',
     },
     {
       label: 'Paths of Darkness',
       level: 3,
-      desc: 'Moderate — trauma explored, darker character arcs',
+      desc: 'Moderate. Trauma explored in The Spine of the World; darker character arcs.',
     },
     {
       label: 'Neverwinter Saga',
       level: 4,
-      desc: 'Dark — Drizzt at his lowest, allies lost',
+      desc: 'Dark. Drizzt at his lowest, allies lost.',
     },
     {
       label: 'Way of the Drow',
       level: 3,
-      desc: 'Moderate — large-scale conflict, series conclusion',
+      desc: 'Moderate. Large-scale conflict, series conclusion.',
     },
   ],
   metaDescription:
-    "The Legend of Drizzt reading order: all 40+ novels across 14 arcs from the Dark Elf Trilogy to Drizzt's Daughter — where to start, what to read, and what to skip.",
-  lastUpdated: '2026-05-15',
+    "The Legend of Drizzt reading order: all 40+ novels across 14 arcs from the Dark Elf Trilogy to Drizzt's Daughter - where to start, what to read, and what to skip.",
+  lastUpdated: '2026-07-01',
   shortName: 'Legend of Drizzt',
   finishedLabel: 'Finished the core arcs?',
   booksLikeSlug: 'the-crystal-shard',
