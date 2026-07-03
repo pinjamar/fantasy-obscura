@@ -117,6 +117,7 @@ For entries where the book warrants more structure, add `why_people_love_rich` a
     Right: `"Linus cannot stop caring. That is the point."`
   - The only acceptable em-dash is in a list or when no rewrite is possible. Default to zero.
 - Never use an em-dash where a colon, comma, or full stop will do.
+- **Aspect headings are not exempt.** `'If you loved X — the detail...'` is a violation. Use a colon: `'If you loved X: the detail...'`. Some older guides use em-dashes in headings — those are wrong, not a pattern to follow.
 
 **Tone:**
 - Avoid book-report phrases: not "Gaiman's central idea is..." or "the author's approach to..." — write directly: "It's both funny and genuinely sad", not "the central idea is both funny and genuinely sad."

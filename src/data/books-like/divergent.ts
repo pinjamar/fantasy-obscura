@@ -5,11 +5,8 @@ export const divergent: BooksLikeEntry = {
   source: {
     title: 'Divergent',
     author: 'Veronica Roth',
-    db_slug: 'divergent',
-    cover_url:
-      'https://books.google.com/books/publisher/content/images/frontcover/OX8lAAAAQBAJ?fife=w400-h600',
     darkness_level: 3,
-    heat_level: null,
+    heat_level: 'Closed Door',
     series: 'Divergent',
     series_number: 1,
     tropes: [
@@ -22,25 +19,24 @@ export const divergent: BooksLikeEntry = {
       'Reluctant Hero',
       'Enemies to Allies',
     ],
-    angle:
-      'YA Dystopian with Brutal Initiation and a Heroine Who Breaks the System',
+    angle: 'YA Dystopian with Brutal Initiation and a Heroine Who Breaks the System',
     answer_line:
-      'If you loved Divergent for its faction system, its Dauntless initiation, and the slow-burn tension with Four — start with The Hunger Games, Red Rising, and An Ember in the Ashes.',
+      'If you loved Divergent for its faction system, its Dauntless initiation, and the slow-burn tension with Four, start with The Hunger Games, Red Rising, and Shatter Me.',
     why_people_love:
-      'Divergent works because Roth makes the faction system feel genuinely seductive before she tears it apart. Choosing Dauntless at sixteen — choosing bravery as your entire identity, your entire social world, your entire future — is a premise that hits something real about adolescence: the desperate need to know which tribe you belong to, and the terror that the answer might be none of them. The Dauntless initiation sequences are the engine of the book: brutal, adrenaline-charged, built on the logic that not everyone gets to stay, and that the competition between teenagers is entirely sanctioned by the institution that claims to protect them. Four is central to why the book landed so hard — stern, controlled, with a private life that reframes everything about the faction system — and Roth earns the relationship by making both characters genuinely dangerous to each other before they become allies. The conspiracy underneath the perfect society is less surprising than the initiation, but Roth uses it to ask the right question: what does it cost a person to be both brave and good, when the system insists the two are incompatible?',
+      'Divergent works because Roth makes the faction system feel genuinely seductive before she tears it apart. Choosing Dauntless at sixteen (choosing bravery as your entire identity, your entire social world, your entire future) is a premise that hits something real about adolescence: the desperate need to know which tribe you belong to, and the terror that the answer might be none of them. The Dauntless initiation sequences are the engine of the book: brutal, adrenaline-charged, built on the logic that not everyone gets to stay, and the competition between teenagers is entirely sanctioned by the institution that claims to protect them. Four is central to why the book landed so hard (stern, controlled, with a private life that reframes everything about the faction system) and Roth earns the relationship by making both characters genuinely dangerous to each other before they become allies. The conspiracy underneath the perfect society is less surprising than the initiation, but Roth uses it to ask the right question: what does it cost a person to be both brave and good, when the system insists the two are incompatible?',
     why_people_love_rich: [
       {
         type: 'paragraph',
-        text: "Divergent works because Roth makes the faction system feel genuinely seductive before she tears it apart. Choosing Dauntless at sixteen — choosing bravery as your entire identity, your entire social world — is a premise that hits something real about adolescence: the desperate need to know which tribe you belong to, and the terror that the answer might be none of them.",
+        text: "Divergent works because Roth makes the faction system feel genuinely seductive before she tears it apart. Choosing Dauntless at sixteen (choosing bravery as your entire identity, your entire social world) is a premise that hits something real about adolescence: the desperate need to know which tribe you belong to, and the terror that the answer might be none of them.",
       },
       {
         type: 'labeled',
         label: 'The Initiation:',
-        text: "Brutal, adrenaline-charged, built on the logic that not everyone gets to stay. The competition between teenagers is entirely sanctioned by the institution that claims to protect them — which is the horror underneath the excitement. These sequences are the engine of the book.",
+        text: "Brutal, adrenaline-charged, built on the logic that not everyone gets to stay. The competition between teenagers is entirely sanctioned by the institution that claims to protect them. That is the horror underneath the excitement. These sequences are the engine of the book.",
       },
       {
         type: 'paragraph',
-        text: "Four is central to why the book landed so hard — stern, controlled, with a private life that reframes everything about the faction system. Roth earns the relationship by making both characters genuinely dangerous to each other before they become allies.",
+        text: "Four is central to why the book landed so hard: stern, controlled, with a private life that reframes everything about the faction system. Roth earns the relationship by making both characters genuinely dangerous to each other before they become allies.",
       },
       {
         type: 'warning',
@@ -51,21 +47,20 @@ export const divergent: BooksLikeEntry = {
   aspects: [
     {
       heading:
-        'If you loved the faction system — a society that sorts people into enforced categories, and a heroine who cannot be sorted...',
+        'If you loved the faction system: a society that sorts people into enforced categories, and a heroine who cannot be sorted...',
       recs: [
         {
           title: 'The Hunger Games',
           author: 'Suzanne Collins',
-          cover_url:
-            'https://images-na.ssl-images-amazon.com/images/P/0439023483.01.L.jpg',
           darkness_level: 4,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: false,
           series: 'The Hunger Games',
           series_number: 1,
           series_label: 'Trilogy',
           audiobook: true,
-          note: "The closest genre cousin, and the book most Divergent readers will come to next. Collins's districts sort people by geography and function just as Roth's factions sort them by personality — both systems are presented as rational and fair until you look at who benefits. Katniss is a harder, colder heroine than Tris, and the arena is more openly cruel than Dauntless initiation, but the core premise is identical: a society that turns its own young into instruments of control, and one girl who refuses to be fully instrumentalised. Darker overall but the same beating heart.",
+          note: "The closest genre cousin. Collins's districts sort people by geography and function just as Roth's factions sort them by personality. Both systems are presented as rational and fair until you look at who benefits. Katniss is a harder, colder heroine than Tris, and the arena is more openly cruel than Dauntless initiation, but the core premise is the same: a society that turns its own young into instruments of control, and one girl who refuses to be fully instrumentalised.",
+          caveat: "There is almost no slow-burn romance here. The love triangle is nearly incidental compared to what Roth builds with Tris and Four. Readers who were in it primarily for the relationship will find Collins cold by comparison.",
           tags: [
             'Dystopian',
             'Survival Competition',
@@ -80,18 +75,16 @@ export const divergent: BooksLikeEntry = {
         },
         {
           title: 'Legend',
-          slug: 'legend-marie-lu',
           author: 'Marie Lu',
-          cover_url:
-            'https://books.google.com/books/content?id=dHY4AAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-          darkness_level: 3,
-          heat_level: null,
+          darkness_level: 4,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Legend',
           series_number: 1,
           series_label: 'Trilogy',
           audiobook: true,
-          note: "The most structurally similar book to Divergent that most readers miss: a future Los Angeles divided into the Republic and the Colonies, a girl who is the system's golden child, and a boy who has been living outside the system his entire life — told in dual POV as the two converge on the same conspiracy. Lu's world-building is sharper than Roth's, the dual perspective gives the romance a propulsive tension, and the critique of a society built on meritocracy-as-myth hits the same note Roth is reaching for. If you want more faction-system energy with tighter plotting, start here.",
+          note: "The most structurally similar book to Divergent that most readers miss: a future Los Angeles divided into the Republic and the Colonies, a girl who is the system's golden child, and a boy who has been living outside the system his entire life. Told in dual POV as the two converge on the same conspiracy. Lu's world-building is sharper than Roth's, the dual perspective gives the romance propulsive tension, and the critique of a society built on meritocracy-as-myth is more explicit than anything in the Divergent trilogy.",
+          caveat: "The faction-system feeling is implied by the Republic/Colony divide rather than built into daily life as concretely as Roth's system. The world-building is tighter but less immersive.",
           tags: [
             'Dual POV',
             'Dystopian',
@@ -108,13 +101,11 @@ export const divergent: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the Dauntless initiation — the brutal training, the competition, the permanent threat of being cut...',
+        'If you loved the Dauntless initiation: the brutal training, the competition, the permanent threat of being cut...',
       recs: [
         {
           title: 'Red Rising',
           author: 'Pierce Brown',
-          cover_url:
-            'https://books.google.com/books/publisher/content/images/frontcover/qakBAgAAQBAJ?fife=w400-h600',
           darkness_level: 5,
           heat_level: null,
           standalone: false,
@@ -122,7 +113,8 @@ export const divergent: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "The adult escalation of Divergent's initiation premise, and many readers consider it the superior execution. Darrow infiltrates the Gold caste's brutal military academy — a competition where the stakes are not a rank but your entire future, and the losers are enslaved rather than factionless. Brown does not soften the Institute sequences: the violence is more savage, the betrayals more personal, and the class rage is more explicit than anything in Roth's trilogy. If the Dauntless initiation was your favourite part of Divergent, the Institute arc in Red Rising is built to the same rhythm at twice the intensity.",
+          note: "The adult escalation of Divergent's initiation premise. Darrow infiltrates the Gold caste's brutal military academy in a colour-coded caste system where the losers are enslaved rather than factionless. Brown does not soften the Institute sequences: the violence is more savage, the betrayals more personal, and the class rage is more explicit. The Institute arc is built to the same rhythm as Dauntless initiation at twice the intensity, and the political scope expands into full-scale rebellion across a solar system.",
+          caveat: "Significantly more violent and adult than Divergent; there is no romantic focus. Readers who were primarily in it for the Tris and Four dynamic will find Red Rising cold by comparison.",
           tags: [
             'Brutal Competition',
             'Class Uprising',
@@ -138,8 +130,6 @@ export const divergent: BooksLikeEntry = {
         {
           title: 'An Ember in the Ashes',
           author: 'Sabaa Tahir',
-          cover_url:
-            'https://books.google.com/books/content?id=bXHoAwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -147,7 +137,8 @@ export const divergent: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "A Roman-inspired empire, a military academy where initiates fight and die for their place, and a dual POV that puts an insider and an outsider on the same collision course. Tahir's Trials map directly onto Divergent's initiation logic — brutal tests designed to produce loyal soldiers, overseen by superiors who are playing a different game than the initiates understand. The romance between Laia and Elias earns the same slow-burn credibility Roth builds with Tris and Four, and the institution-vs-individual tension is handled with equal honesty about the cost of both resistance and compliance.",
+          note: "A Roman-inspired empire, a military academy where initiates fight and die for their place, and a dual POV that puts an insider and an outsider on the same collision course. Tahir's Trials map directly onto Divergent's initiation logic: brutal tests designed to produce loyal soldiers, overseen by superiors playing a different game than the initiates understand. The romance between Laia and Elias earns the same slow-burn credibility Roth builds with Tris and Four, and the institution-vs-individual tension is handled with equal honesty about the cost of both resistance and compliance.",
+          caveat: "Darker and more violent than Divergent; the fantasy setting replaces the science-fiction backdrop. Some readers find the four-book series loses momentum in the middle volumes.",
           tags: [
             'Military Academy',
             'Dual POV',
@@ -164,13 +155,11 @@ export const divergent: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved Four — the controlled, guarded instructor with a hidden history who becomes the one person the heroine trusts...',
+        'If you loved Four: the controlled, guarded instructor with a hidden history who becomes the one person the heroine trusts...',
       recs: [
         {
           title: 'Shatter Me',
           author: 'Tahereh Mafi',
-          cover_url:
-            'https://books.google.com/books/content?id=JlJUV7U2IIYC&printsec=frontcover&img=1&zoom=1&source=gbs_api',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -178,7 +167,8 @@ export const divergent: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "Juliette is imprisoned in a world under military occupation for a touch that kills — until the regime decides her power is useful. Warner, the antagonist-turned-love-interest, is the closest analogue to Four in contemporary YA: controlled, frightening, brilliant, and in possession of a private history that rewrites everything you thought you understood about him. Mafi's prose style is highly stylised where Roth's is spare, but the emotional architecture is the same — a girl who has been told she is dangerous finding in one person the one who sees her clearly. The recontextualisation of Warner across the series is one of the best love-interest pivots in the genre.",
+          note: "Juliette is imprisoned in a world under military occupation for a touch that kills, until the regime decides her power is useful. Warner, the antagonist-turned-love-interest, is the closest analogue to Four in contemporary YA: controlled, frightening, brilliant, and in possession of a private history that rewrites everything you thought you understood about him. Mafi's prose is highly stylised where Roth's is spare, but the emotional architecture is the same: a girl who has been told she is dangerous, finding in one person someone who sees her clearly. The recontextualisation of Warner across the series is sustained across multiple volumes and handled with more care than most YA romances attempt.",
+          caveat: "Mafi's prose uses strikethrough text, repetition, and poetic sentence fragments throughout. Readers who want Roth's clean, propulsive style may find it an obstacle.",
           tags: [
             'Reluctant Hero',
             'Enemies to Lovers',
@@ -194,16 +184,15 @@ export const divergent: BooksLikeEntry = {
         {
           title: 'Shadow and Bone',
           author: 'Leigh Bardugo',
-          cover_url:
-            'https://books.google.com/books/content?id=Mam8PZhfDCkC&printsec=frontcover&img=1&zoom=1&source=gbs_api',
           darkness_level: 3,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Shadow and Bone',
           series_number: 1,
           series_label: 'Trilogy',
           audiobook: true,
-          note: "Alina Starkov is a nobody from the margins of a militaristic empire who is pulled into the Grisha world the moment her hidden power surfaces — and the Darkling is the most compelling version of the morally complex, powerful man whose attention the heroine cannot entirely dismiss. Like Four, the Darkling operates in an institution he helped build and uses that authority to reframe the heroine's understanding of herself. Bardugo plays the ambiguity more dangerously than Roth does — the Darkling is a genuine villain in ways Four never is — but for readers who love a romance where the power dynamic is the tension, Shadow and Bone is essential.",
+          note: "Alina Starkov is a nobody from the margins of a militaristic empire who is pulled into the Grisha world the moment her hidden power surfaces. The Darkling operates in an institution he helped build and uses that authority to reframe the heroine's understanding of herself, exactly as Four does. Bardugo plays the ambiguity more dangerously than Roth does (the Darkling is a genuine villain in ways Four never is), and that danger makes the forbidden-attraction structure more electrically charged.",
+          caveat: "The Darkling is a genuine antagonist. Readers who want a trustworthy love interest like Four will find the ambiguity frustrating rather than thrilling.",
           tags: [
             'Reluctant Hero',
             'Military Empire',
@@ -219,142 +208,13 @@ export const divergent: BooksLikeEntry = {
       ],
     },
   ],
-  recommendations: [
-    {
-      title: 'The Hunger Games',
-      author: 'Suzanne Collins',
-      cover_url:
-        'https://images-na.ssl-images-amazon.com/images/P/0439023483.01.L.jpg',
-      darkness_level: 4,
-      heat_level: null,
-      tags: [
-        'Dystopian',
-        'Survival Competition',
-        'Female Lead',
-        'Corrupt Government',
-      ],
-      why: "The closest genre cousin. Collins's districts sort people by geography and function, the Capitol runs competitions that cull the young, and Katniss is a heroine who refuses to be fully instrumentalised by a system that needs her compliant. Darker and colder than Divergent, but the same core premise: a society that makes weapons out of its children, and one girl who won't cooperate.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=The+Hunger+Games+Suzanne+Collins&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=The+Hunger+Games+Collins&affiliate=122720',
-    },
-    {
-      title: 'Red Rising',
-      author: 'Pierce Brown',
-      cover_url:
-        'https://books.google.com/books/publisher/content/images/frontcover/qakBAgAAQBAJ?fife=w400-h600',
-      darkness_level: 5,
-      heat_level: null,
-      tags: [
-        'Brutal Competition',
-        'Class Uprising',
-        'Adult Crossover',
-        'Sci-Fi',
-      ],
-      why: "The adult escalation. Darrow infiltrates the Gold caste's brutal military academy in a color-coded caste system — a competition where the losers are enslaved rather than factionless. Brown does not soften anything: the Institute sequences are more savage than Dauntless initiation, the class rage is more explicit, and the political scope expands into full-scale rebellion across a solar system. If the initiation was your favourite part of Divergent, this is where to go next.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Red+Rising+Pierce+Brown&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Red+Rising+Pierce+Brown&affiliate=122720',
-    },
-    {
-      title: 'Legend',
-      author: 'Marie Lu',
-      cover_url:
-        'https://books.google.com/books/content?id=dHY4AAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-      darkness_level: 3,
-      heat_level: null,
-      tags: ['Dual POV', 'Dystopian', 'Enemies to Lovers', 'YA'],
-      why: "The most structurally similar book most Divergent readers miss: a future society with a golden girl and a fugitive boy, told in dual POV as they converge on the same government conspiracy. Lu's world-building is sharper than Roth's and the dual perspective gives the romance a propulsive tension. If you want the faction-system energy with tighter plotting, start here.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Legend+Marie+Lu&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Legend+Marie+Lu&affiliate=122720',
-    },
-    {
-      title: 'An Ember in the Ashes',
-      author: 'Sabaa Tahir',
-      cover_url:
-        'https://books.google.com/books/content?id=bXHoAwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-      darkness_level: 4,
-      heat_level: 'Closed Door',
-      tags: ['Military Academy', 'Brutal Trials', 'Dual POV', 'YA Fantasy'],
-      why: "A Roman empire, a military academy where initiates fight for their lives, and a slow-burn dual POV romance between an infiltrator and a soldier. Tahir's Trials are Divergent's initiation pushed harder — brutal tests run by people playing a different game than the participants understand. One of the best YA fantasy series of the 2010s, and chronically underread by Divergent fans.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=An+Ember+in+the+Ashes+Sabaa+Tahir&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=An+Ember+in+the+Ashes+Tahir&affiliate=122720',
-    },
-    {
-      title: 'Shatter Me',
-      author: 'Tahereh Mafi',
-      cover_url:
-        'https://books.google.com/books/content?id=JlJUV7U2IIYC&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-      darkness_level: 3,
-      heat_level: 'Closed Door',
-      tags: [
-        'Dystopian',
-        'Enemies to Lovers',
-        'Power Abilities',
-        'Female Lead',
-      ],
-      why: "For readers who loved Four specifically: Warner is the closest analogue in YA — controlled, frightening, brilliant, and in possession of a private history that rewrites everything you thought you understood about him. Mafi's prose is heavily stylised where Roth's is spare, but the emotional architecture is the same: a girl who has been told she is dangerous, finding in one person someone who sees her clearly. The Warner recontextualisation across the series is one of the best love-interest pivots in the genre.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Shatter+Me+Tahereh+Mafi&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Shatter+Me+Mafi&affiliate=122720',
-    },
-    {
-      title: 'Shadow and Bone',
-      author: 'Leigh Bardugo',
-      cover_url:
-        'https://books.google.com/books/content?id=Mam8PZhfDCkC&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-      darkness_level: 3,
-      heat_level: null,
-      tags: [
-        'Reluctant Hero',
-        'Military Empire',
-        'Morally Grey Love Interest',
-        'YA Fantasy',
-      ],
-      why: "Alina is a nobody who becomes an unwilling symbol the moment her power is discovered — the same arc Tris walks, right down to a powerful man in an institution whose attention she cannot entirely dismiss. The Darkling is more genuinely villainous than Four, but for readers who loved the power-dynamic tension of Tris and Four's relationship, Shadow and Bone is built on the same structural nerve.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Shadow+and+Bone+Bardugo&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Shadow+and+Bone+Bardugo&affiliate=122720',
-    },
-    {
-      title: 'The Maze Runner',
-      author: 'James Dashner',
-      cover_url: 'https://covers.openlibrary.org/b/id/10464801-L.jpg',
-      darkness_level: 4,
-      heat_level: null,
-      tags: ['Survival', 'Mystery Dystopia', 'Enclosed Environment', 'YA'],
-      why: 'Pure survival inside a system designed to kill you — no faction system, no romance, just the maze and the threat of what lives inside it. Dashner strips the YA dystopian competition down to its bones. If the initiation and training sequences were what you loved most in Divergent, The Maze Runner delivers that pulse continuously for the full length of the book.',
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=The+Maze+Runner+James+Dashner&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=The+Maze+Runner+Dashner&affiliate=122720',
-    },
-  ],
+  recommendations: [],
   related: [
     { title: 'Books Like The Hunger Games', slug: 'the-hunger-games' },
     { title: 'Books Like Red Rising', slug: 'red-rising' },
     { title: 'Books Like Shadow and Bone', slug: 'shadow-and-bone' },
+    { title: 'Books Like An Ember in the Ashes', slug: 'an-ember-in-the-ashes' },
+    { title: 'Books Like Red Queen', slug: 'red-queen' },
+    { title: 'Books Like Throne of Glass', slug: 'throne-of-glass' },
   ],
 };
