@@ -4,6 +4,7 @@ import { BOOKS_LIKE } from '../data/books-like';
 import { READING_ORDERS } from '../data/reading-orders';
 import { CATEGORIES_META } from '../data/categories-meta';
 import { CURATED_SLUGS } from '../lib/curated-slugs';
+import { PUBLIC_TROPES } from '../data/tropes';
 
 const CATEGORY_SLUGS = Object.keys(CATEGORIES_META);
 const CATEGORY_LIST_TYPES = ['all-time-greats', 'start-with', 'hidden-gems'] as const;
@@ -53,37 +54,20 @@ export const GET: APIRoute = async ({ locals }) => {
     .not('best_starting_point', 'is', null);
   const enrichedAuthorSlugs = (enrichedAuthorRows ?? []).map((a) => a.slug as string);
 
-  // Fetch all trope slugs + darkness combinations in one query
-  const { data: tropeRows } = await supabase
-    .from('books')
-    .select('tropes, darkness_level')
-    .not('tropes', 'is', null)
-    .limit(500);
+  // Fetch trope+darkness counts via RPC — accurate across all books, single round-trip
+  const { data: tropeCountRows } = await supabase.rpc('get_trope_darkness_counts');
 
   const DARKNESS_SLUG = ['', 'lighthearted', 'mild', 'moderate', 'dark', 'brutal'] as const;
 
-  const tropeSlugs = [...new Set(
-    (tropeRows ?? []).flatMap((b) => (b.tropes ?? []) as string[])
-      .map((t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))
-  )];
+  // All trope pages — use static list so tropes with null-darkness books aren't silently excluded
+  const tropeSlugs = PUBLIC_TROPES.map((t) => t.slug);
 
-  // Count books per trope+darkness combo
-  const comboCounts = new Map<string, number>();
-  for (const row of tropeRows ?? []) {
-    const level = row.darkness_level as number | null;
-    if (!level || level < 1 || level > 5) continue;
-    for (const trope of (row.tropes ?? []) as string[]) {
-      const tropeSlug = trope.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      const key = `${tropeSlug}:${level}`;
-      comboCounts.set(key, (comboCounts.get(key) ?? 0) + 1);
-    }
-  }
-  const darknessCombos = [...comboCounts.entries()]
-    .filter(([, count]) => count >= 10)
-    .map(([key]) => {
-      const [tropeSlug, levelStr] = key.split(':');
-      return { tropeSlug, darknessSlug: DARKNESS_SLUG[parseInt(levelStr)] };
-    });
+  const darknessCombos = (tropeCountRows ?? [])
+    .filter((r: any) => (r.book_count as number) >= 10)
+    .map((r: any) => ({
+      tropeSlug: r.trope_slug as string,
+      darknessSlug: DARKNESS_SLUG[r.darkness_level as number],
+    }));
 
   // Only the small set of non-curated reading order pages explicitly allowed to be indexed.
   // All other DB-driven reading order pages are noindexed — excluding them from the sitemap
@@ -95,6 +79,7 @@ export const GET: APIRoute = async ({ locals }) => {
     'river-of-time',
     'riverside',
     'crescent-city',
+    'gentleman-bastard',
   ];
 
   const entries: string[] = [

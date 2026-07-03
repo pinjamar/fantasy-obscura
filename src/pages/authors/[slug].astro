@@ -610,7 +610,7 @@ const authorBreadcrumbJsonLd = JSON.stringify({
 });
 ---
 
-<Layout title={`${authorName} | Fantasy Books & Series | The Grimoire`} description={metaDescription} image={profile?.photo_url || undefined} noindex={books.length < 3 || !profile?.writing_style}>
+<Layout title={`${authorName} | Fantasy Books & Series | The Grimoire`} description={metaDescription} image={profile?.photo_url || undefined} noindex={books.length < 3 || !profile?.writing_style || !profile?.best_starting_point}>
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={authorJsonLd} />
     <script is:inline type="application/ld+json" set:html={authorBreadcrumbJsonLd} />
