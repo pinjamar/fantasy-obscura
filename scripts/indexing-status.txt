@@ -151,7 +151,7 @@ Jim C. Hines                             17 books  /authors/jim-c-hines/
 Naomi Novik                              16 books  /authors/naomi-novik/
 ✅J.K. Rowling                             16 books  /authors/j-k-rowling/
 Sarah Rees Brennan                       16 books  /authors/sarah-rees-brennan/
-Jennifer Fallon                          16 books  /authors/jennifer-fallon/
+✅Jennifer Fallon                          16 books  /authors/jennifer-fallon/
 ✅Sarah J. Maas                            16 books  /authors/sarah-j-maas/
 Tom Lloyd                                16 books  /authors/tom-lloyd/
 Diana Gabaldon                           16 books  /authors/diana-gabaldon/
