@@ -5,7 +5,6 @@ export const empireOfTheVampire: BooksLikeEntry = {
   source: {
     title: 'Empire of the Vampire',
     author: 'Jay Kristoff',
-    cover_url: 'https://covers.openlibrary.org/b/isbn/9781250247582-L.jpg',
     darkness_level: 5,
     heat_level: null,
     series: 'Empire of the Vampire',
@@ -55,8 +54,6 @@ export const empireOfTheVampire: BooksLikeEntry = {
         {
           title: 'The Name of the Wind',
           author: 'Patrick Rothfuss',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg',
           darkness_level: 3,
           heat_level: 'Open Door',
           standalone: false,
@@ -82,8 +79,6 @@ export const empireOfTheVampire: BooksLikeEntry = {
           title: "Assassin's Apprentice",
           slug: 'assassins-apprentice',
           author: 'Robin Hobb',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780553573398-L.jpg',
           darkness_level: 4,
           heat_level: null,
           standalone: false,
@@ -114,8 +109,6 @@ export const empireOfTheVampire: BooksLikeEntry = {
         {
           title: 'The Poppy War',
           author: 'R.F. Kuang',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780062662590-L.jpg',
           darkness_level: 5,
           heat_level: null,
           standalone: false,
@@ -140,8 +133,6 @@ export const empireOfTheVampire: BooksLikeEntry = {
         {
           title: 'The Fifth Season',
           author: 'N.K. Jemisin',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316229296-L.jpg',
           darkness_level: 4,
           heat_level: null,
           standalone: false,
@@ -172,9 +163,6 @@ export const empireOfTheVampire: BooksLikeEntry = {
         {
           title: 'The Last Wish',
           author: 'Andrzej Sapkowski',
-          slug: 'the-last-wish',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316333528-L.jpg',
           darkness_level: 4,
           heat_level: 'Open Door',
           standalone: true,
@@ -196,8 +184,6 @@ export const empireOfTheVampire: BooksLikeEntry = {
         {
           title: 'Blood Song',
           author: 'Anthony Ryan',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780425272480-L.jpg',
           darkness_level: 4,
           heat_level: null,
           standalone: false,
@@ -222,30 +208,7 @@ export const empireOfTheVampire: BooksLikeEntry = {
       ],
     },
   ],
-  recommendations: [
-    {
-      title: 'Nevernight',
-      author: 'Jay Kristoff',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9781250301550-L.jpg',
-      darkness_level: 4,
-      heat_level: 'Open Door',
-      standalone: false,
-      tags: [
-        'Same Author',
-        'Maximalist Prose',
-        'Dark World',
-        'Assassin Protagonist',
-        'Series',
-      ],
-      why: "The earlier Kristoff series and the place to go if you want more of the specific prose style — the footnotes, the maximalist sentences, the darkness that earns its set-pieces. Mia Corvere shares Gabriel's quality of being the most dangerous person in the room who is also the most vulnerable to the specific things she loves. The assassination-school setting is different but the emotional architecture is the same.",
-      caveat: "the explicit content is higher than Empire of the Vampire and the tone is slightly less tragic — this is Kristoff in a more kinetic mode.",
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Nevernight+Jay+Kristoff&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Nevernight+Jay+Kristoff&affiliate=122720',
-    },
-  ],
+  recommendations: [],
   related: [
     { title: 'Books Like Nevernight', slug: 'nevernight' },
     {

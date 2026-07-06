@@ -3,12 +3,9 @@ import type { BooksLikeEntry } from '../books-like';
 export const empireOfSilence: BooksLikeEntry = {
   slug: 'empire-of-silence',
   source: {
-    title: 'The Empire of Silence',
+    title: 'Empire of Silence',
     author: 'Christopher Ruocchio',
-    db_slug: 'empire-of-silence',
-    cover_url:
-      'https://books.google.com/books/publisher/content/images/frontcover/dyhGDwAAQBAJ?fife=w400-h600',
-    darkness_level: 4,
+    darkness_level: 5,
     heat_level: null,
     series: 'The Sun Eater',
     series_number: 1,
@@ -24,13 +21,13 @@ export const empireOfSilence: BooksLikeEntry = {
     ],
     angle: 'Literary Space Opera With a Retrospective Unreliable Narrator',
     answer_line:
-      'Books that hit the same note as The Empire of Silence: The Shadow of the Torturer for the retrospective unreliable narrator in a far-future world gone medieval, Dune for the feudal galactic empire with a religious institution controlling what humanity is allowed to know, Children of Time for the alien contact that forces the question of what enemy actually means.',
+      'Books that hit the same note as Empire of Silence: The Shadow of the Torturer for the retrospective unreliable narrator in a far-future world gone medieval, Dune for the feudal galactic empire with a religious institution controlling what humanity is allowed to know, Children of Time for the alien contact that forces the question of what enemy actually means.',
     why_people_love:
-      "The Empire of Silence begins with its ending: Hadrian Marlowe, old and infamous, tells you on the first page that he burned a sun and killed the hundred billion people beneath it. Then he begins the story of how he became the man who did that, starting with his childhood. Ruocchio builds the Sun Eater series in the shadow of Gene Wolfe and Frank Herbert: a far-future galactic empire with deliberately feudal social structure, a church-like Chantry that suppresses technology and controls information, and a prose style that is ornate, measured, and deliberately archaic. Hadrian narrates his own story from the far side of it, which means everything he tells you is shaped by what he chose to tell. The dramatic irony is built into the frame: we know where he ends up, and every decision he makes before he gets there is haunted by that knowledge. This is not an action novel. It is a character study across several thousand pages, told by a man trying to understand what he became and how. The alien Cielcin, the empire's primary enemy, appear in book 1 as everything the Chantry has told Hadrian they are, and slowly become something else.",
+      "Empire of Silence begins with its ending: Hadrian Marlowe, old and infamous, tells you on the first page that he burned a sun and killed the hundred billion people beneath it. Then he begins the story of how he became the man who did that, starting with his childhood. Ruocchio builds the Sun Eater series in the shadow of Gene Wolfe and Frank Herbert: a far-future galactic empire with deliberately feudal social structure, a church-like Chantry that suppresses technology and controls information, and a prose style that is ornate, measured, and deliberately archaic. Hadrian narrates his own story from the far side of it, which means everything he tells you is shaped by what he chose to tell. The dramatic irony is built into the frame: we know where he ends up, and every decision he makes before he gets there is haunted by that knowledge. This is not an action novel. It is a character study across several thousand pages, told by a man trying to understand what he became and how. The alien Cielcin, the empire's primary enemy, appear in book 1 as everything the Chantry has told Hadrian they are, and slowly become something else.",
     why_people_love_rich: [
       {
         type: 'paragraph',
-        text: "The Empire of Silence begins with its ending: Hadrian Marlowe, old and infamous, tells you on the first page that he burned a sun and killed the hundred billion people beneath it. Then he begins the story of how he became the man who did that, starting with his childhood. Ruocchio builds the Sun Eater series in the shadow of Gene Wolfe and Frank Herbert: a far-future galactic empire with deliberately feudal social structure, a church-like Chantry that suppresses technology and controls information, and a prose style that is ornate, measured, and deliberately archaic.",
+        text: "Empire of Silence begins with its ending: Hadrian Marlowe, old and infamous, tells you on the first page that he burned a sun and killed the hundred billion people beneath it. Then he begins the story of how he became the man who did that, starting with his childhood. Ruocchio builds the Sun Eater series in the shadow of Gene Wolfe and Frank Herbert: a far-future galactic empire with deliberately feudal social structure, a church-like Chantry that suppresses technology and controls information, and a prose style that is ornate, measured, and deliberately archaic.",
       },
       {
         type: 'labeled',
@@ -43,7 +40,7 @@ export const empireOfSilence: BooksLikeEntry = {
       },
       {
         type: 'warning',
-        text: "The Empire of Silence is very long (700+ pages) and deliberately slow. The first book does not resolve the main conflict; it establishes who Hadrian is before the larger story begins. The Sun Eater series is planned at seven volumes, four of which are published. The darkness level is real: violence, slavery, and institutional atrocity are present and not softened. The prose register is literary and archaic by design; readers who found Wolfe's Book of the New Sun inaccessible may have the same difficulty here.",
+        text: "Empire of Silence is very long (700+ pages) and deliberately slow. The first book does not resolve the main conflict; it establishes who Hadrian is before the larger story begins. The Sun Eater series concluded at seven volumes with Shadows Upon Time (2025), so new readers can now go in knowing the whole arc is finished. The darkness level is real: violence, slavery, and institutional atrocity are present and not softened. The prose register is literary and archaic by design; readers who found Wolfe's Book of the New Sun inaccessible may have the same difficulty here.",
       },
     ],
   },
