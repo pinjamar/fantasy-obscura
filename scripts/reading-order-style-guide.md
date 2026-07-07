@@ -598,6 +598,26 @@ Rules:
 - Pure standalones (no series): omit `seriesLabel` entirely; put setting info in the first sentence of `note`
 - Series books: use only the series numbering, e.g. `'The Sarantine Mosaic #1'`, `'Kitai Duology #1'`, `'Renaissance quartet #1'` — never append `— Setting Name` or `— century`
 
+### `arcLabel` — a protagonist/sub-arc tag shown ALONGSIDE the DB label, not instead of it
+
+For large single-world sagas with a rotating cast (a new protagonist every book or duology, e.g. Recluce), readers want two pieces of information on the same card: the overall series number (from the DB, e.g. "The Saga of Recluce #12") AND which protagonist's arc this book belongs to (e.g. "Kharl #1"). `seriesLabel` can't do this alone — setting it replaces the DB label entirely (`seriesLabel ?? series_label` in `ReadingOrder.tsx`), so overriding it with `'Kharl #1'` would silently delete "The Saga of Recluce #12" instead of adding to it.
+
+`arcLabel?: string` on `ReadingOrderBook` (`src/data/reading-orders.ts`) solves this: it renders as its own line, always in addition to whatever the `seriesLabel ?? series_label` line shows, never replacing it. Use it when:
+- The series has multiple protagonists across duologies/tetralogies within one continuous numbering (Recluce: Kharl #1, Rahl #2, Alyiakal #3, etc.)
+- You want the DB's canonical series-name label to stay fully visible, not be swapped out
+
+Do not use `arcLabel` for single-protagonist series or straightforward numbered sequences — that's what the DB label alone already covers. It exists specifically for the "two tags, not one replacing the other" case.
+
+```ts
+{
+  title: 'Wellspring of Chaos',
+  slug: 'wellspring-of-chaos',
+  status: 'mandatory',
+  note: '...',
+  arcLabel: 'Kharl #1',   // renders alongside "The Saga of Recluce #12", not instead of it
+}
+```
+
 ### When publication ≠ recommended reading order
 
 List books in the recommended reading order. Explain the debate entirely in cards and sections.

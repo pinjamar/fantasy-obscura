@@ -17,6 +17,8 @@ export interface ReadingOrderBook {
   position?: number;
   /** Sub-series label override (e.g. "Witches #2"). Shown when DB has no series_label. */
   seriesLabel?: string;
+  /** Extra tag shown as its own line alongside (not instead of) the DB/seriesLabel line, e.g. "Kharl #1". */
+  arcLabel?: string;
 }
 
 export interface ReadingOrderGroup {
@@ -156,6 +158,7 @@ import { powderMage } from './reading-orders/powder-mage';
 import { belgariad } from './reading-orders/belgariad';
 import { guyGavrielKay } from './reading-orders/guy-gavriel-kay';
 import { xanth } from './reading-orders/xanth';
+import { sagaOfRecluce } from './reading-orders/saga-of-recluce';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -223,6 +226,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   belgariad,
   guyGavrielKay,
   xanth,
+  sagaOfRecluce,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

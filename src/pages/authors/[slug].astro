@@ -385,6 +385,10 @@ const READING_ORDER_MAP: Record<string, string> = {
   'The Sarantine Mosaic':              'guy-gavriel-kay',
   'Sarantine Mosaic':                  'guy-gavriel-kay',
   'Under Heaven':                      'guy-gavriel-kay',
+  // L.E. Modesitt Jr.
+  'The Saga of Recluce':               'saga-of-recluce',
+  'Saga of Recluce':                   'saga-of-recluce',
+  'Recluce':                            'saga-of-recluce',
 };
 
 const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
@@ -416,6 +420,7 @@ const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
   'david-eddings':     { slug: 'belgariad',               label: 'The Belgariad Reading Order' },
   'guy-gavriel-kay':  { slug: 'guy-gavriel-kay',         label: 'Guy Gavriel Kay Complete Reading Guide' },
   'piers-anthony':    { slug: 'xanth',                    label: 'Xanth Reading Order' },
+  'l-e-modesitt':     { slug: 'saga-of-recluce',           label: 'The Saga of Recluce Reading Order' },
 };
 
 const universeGuide = AUTHOR_UNIVERSE_MAP[slug ?? ''] ?? null;

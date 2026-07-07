@@ -11,6 +11,7 @@ interface Book {
   series_label?: string | null;
   seriesLabel?: string | null;
   position?: number | null;
+  arcLabel?: string | null;
 }
 
 export interface BookGroup {
@@ -123,8 +124,15 @@ function BookCard({ book, index }: { book: Book; index: number }) {
 
       {/* Sub-series label — data file override or DB value */}
       {(book.seriesLabel ?? book.series_label) && (
-        <p className="text-[10px] text-zinc-400 leading-snug mb-1 line-clamp-1">
+        <p className="text-[10px] text-zinc-400 leading-snug mb-0.5 line-clamp-1">
           {book.seriesLabel ?? book.series_label}
+        </p>
+      )}
+
+      {/* Extra arc tag — shown alongside, never replaces, the line above */}
+      {book.arcLabel && (
+        <p className="text-[10px] text-indigo-400 leading-snug mb-1 line-clamp-1">
+          {book.arcLabel}
         </p>
       )}
 
