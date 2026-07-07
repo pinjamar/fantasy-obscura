@@ -25,29 +25,104 @@ before making it, since it changes what's currently live in Google's index.
 
 ## What "Enriched" Means
 
-A `PublicTrope` (`src/data/trope-types.ts`) has three editorial fields beyond the required
+A `PublicTrope` (`src/data/trope-types.ts`) has four editorial fields beyond the required
 `slug` / `name` / `category` / `description`:
 
 | Field | What it is | Rendered where |
 |---|---|---|
 | `intro` | 3–6 sentence editorial intro, replaces the generic description paragraph | Top of page, in place of the two-paragraph filler |
-| `bestExamples` | Up to 6 book slugs — the definitive examples of this trope | "Where to Start?" cover strip near the top |
+| `bestExamples` | Up to 7 book slugs — the definitive examples of this trope | "Where to Start?" cover strip near the top |
+| `booksLikeGuides` | 7 books-like guide slugs relevant to this trope | "Books Like Guides for [Trope] Fans" section |
 | `editorialFaqs` | 2 curated Q&As that add a genuine angle | FAQ section, appended after the 2–4 auto-generated data FAQs |
 
-A trope is only "fully enriched" when **all three** are present. Partial enrichment (e.g. `intro`
-only) still leaves the page without curated examples or a real FAQ section — finish all three
-together, don't stop at `intro`.
+A trope is only "fully enriched" when **all four** are present. Partial enrichment (e.g. `intro`
+only) still leaves the page without curated examples, reading-guide links, or a real FAQ section —
+finish all four together, don't stop at `intro`.
+
+**Effort allocation:** `intro` (paragraph structure, book contrast, no reader-response endings)
+and `bestExamples` (DB verification, popularity/fit checks) are where iteration and polish
+belong. `booksLikeGuides` just needs 6 correctly-verified slugs (see below). `editorialFaqs` just
+needs the required 2 entries to clear the enrichment bar — write a competent pass and move on,
+don't over-invest in wording or formatting on the FAQ.
+
+---
+
+## Writing `booksLikeGuides`
+
+- **Exactly 7 slugs**, each one the filename (without `.ts`) of a guide in `src/data/books-like/`.
+  Run `Glob('src/data/books-like/*.ts')` to get the full list — never guess a slug.
+- **The value must match the guide's top-level `slug` field**, which in practice is almost always
+  the source book's title-derived slug. The page matches on the *source book's* derived slug
+  (`src/pages/tropes/[slug].astro` and the `[darkness]` sub-page, both around line 40), not the
+  guide's own `slug` — they're the same value in every existing guide, but verify by opening the
+  file rather than assuming.
+- Rendered up to 7 (`.slice(0, 7)` in both templates) — providing fewer than 7 just means a
+  shorter row of links, providing more than 7 wastes data since the rest never render.
+
+**Selection order — follow this exact priority:**
+
+1. **First, take guides whose source book is already in this trope's `bestExamples`.** Check
+   `src/data/books-like/` for a file matching each `bestExamples` slug — not every definitive
+   example has a guide written for it, so this usually yields fewer than 7.
+2. **If that's short of 7, search for guides tagged with this trope's exact name** in their own
+   `source.tropes` array (not just thematically similar — the literal trope string):
+   ```bash
+   grep -lE "['\"]Trope Name Here['\"]" src/data/books-like/*.ts
+   ```
+   Add matches not already pulled from step 1, ranked by how central the trope is to that book.
+3. **If step 2 still doesn't reach 7** (some tropes have zero guides tagged with the exact
+   string — Villain Protagonist is one), fall back to editorial judgment: guides whose source
+   book is a genuine fit even without the literal tag. Say so if you do this — it's a weaker
+   signal than steps 1–2 and worth flagging as a candidate for a future DB trope-tag pass.
+
+A slug that doesn't match any file in `src/data/books-like/` fails silently (the link just
+doesn't render) — same failure mode as a bad `bestExamples` slug. Verify every one.
+
+**Rendered presentation** (both templates, kept in sync): section heading is "Books Like Guides
+for [Trope] Fans" — not "Reading Guides," which collides with the site's separate `/reading-orders/`
+content type. Each pill shows the 📖 emoji plus the book title only (no "Books like" text prefix).
 
 ---
 
 ## Writing `intro`
 
-- 3–6 sentences. Not a definition — assume the reader knows roughly what the trope is.
+- **Format as 2–3 short paragraphs, not one block.** Separate them with a blank line (`\n\n`)
+  inside the string. The page (`src/pages/tropes/[slug].astro` and the `[darkness]` sub-page)
+  splits on blank lines via `splitEditorialParagraphs()` and renders each as its own `<p>`.
+- **Italicize book titles with single asterisks**: `*Best Served Cold*` → rendered as
+  <em>Best Served Cold</em> via the shared `renderEditorial()` helper (`src/lib/render-editorial.ts`).
+  This is the same convention already used on the fantasy category pages — don't invent a
+  different one (no double-asterisk bold, no markdown links).
+- Do not use raw HTML in `intro` — only the `*italic*` convention above is parsed. Anything else
+  renders as literal text.
+- 3–6 sentences total across the 2–3 paragraphs. Not a definition — assume the reader knows roughly what the trope is.
 - Say something a generic description can't: what makes the trope work (or fail), the tension
   it lets a story explore, how different books handle it differently.
-- Name specific books and use them to make a real point — not just "Book X features this trope"
-  but what Book X *does* with it that's distinct from how another book handles it.
+- **Name at least two books from the trope's own `bestExamples` list and contrast them** — not
+  two books that both "feature this trope" but two that do genuinely different things with it.
+  That contrast is what makes the paragraph read as an actual observation instead of a summary.
+  The Chosen One intro is the model: Mistborn asks whether prophecy is manipulation, A Deadly
+  Education puts the "chosen" role in the mouth of someone actively refusing it. Two books, two
+  different answers to the same question — that's the shape every intro should have.
 - Never open with "The trope of X is..." — lead with the observation, not the trope name.
+- Run the AI Slop checklist below before finishing. A one-book intro that ends on a
+  reader-response line is the single most common failure mode here — see the worked example.
+
+### Worked Example — Catching a Reader-Response Ending
+
+This was the live `intro` for Revenge Story before a rewrite:
+
+> "...The target is always right in the abstract and complicated in the specific, which is what
+> keeps these stories honest. **Readers who love revenge narratives are drawn to the fantasy of
+> an account that finally gets settled** — the satisfaction of consequence for people and systems
+> that seemed beyond it."
+
+The bolded sentence is a textbook reader-response formula (see checklist below) — it frames the
+point through a hypothetical reader instead of stating what the books actually do, and only one
+book (Best Served Cold) is named in the whole paragraph despite the intro claiming fantasy
+"escalates" and books "handle it differently." Nothing is being contrasted. The fix is the same
+in every case: cut the reader-response sentence, and replace the single example with two books
+that disagree with each other about what revenge actually costs or delivers.
 
 ### Example (Chosen One, existing)
 
@@ -60,6 +135,63 @@ together, don't stop at `intro`.
 > position where she has to actively fight the narrative that wants her to be a monster. What
 > readers are actually after is the fantasy of purpose — the idea that their own particular
 > strangeness might turn out to matter enormously.
+
+Even this reference example isn't clean — its own closing sentence ("What readers are actually
+after is...") is the same reader-response pattern flagged above. The Mistborn/A Deadly Education
+contrast in the middle is what makes it worth modeling; don't copy the ending verbatim.
+
+---
+
+## AI Slop Patterns — Never Write These
+
+Same checklist as [`books-like-guide.md`](books-like-guide.md), applied to `intro` and
+`editorialFaqs` prose. Run it before finishing any trope page. (The em-dash ban in that guide is
+books-like-specific and does *not* apply here — several already-enriched tropes use em-dashes
+freely; don't rewrite existing prose just to remove them.)
+
+**Reader-response formulas** — framing a point through a hypothetical reader instead of stating
+what the books do:
+❌ "Readers who love X are drawn to the fantasy of..."
+❌ "What readers are actually after is..."
+❌ "Fans of this trope want..."
+✅ Fix: state the thing directly, anchored in what a specific book does. "Mistborn asks whether
+prophecy is manipulation. A Deadly Education has its heroine refuse the role outright."
+
+**Aphorisms** — sentences that sound meaningful but carry no book-specific information:
+❌ "which is what keeps these stories honest"
+❌ "the truth is stranger than the story"
+❌ "a betrayal that changes everything"
+✅ Fix: name what specifically the book does instead of gesturing at a feeling.
+
+**Abstract virtue lists** — three nouns strung together that could describe any book in the genre:
+❌ "loss, identity, and the weight of the past"
+❌ "power, corruption, and consequence"
+✅ Fix: make the claim concrete and specific to the named book.
+
+**Consensus hedges** — avoiding a direct claim:
+❌ "widely considered one of the best examples"
+❌ "many readers find this the definitive take"
+✅ Fix: say it directly, or name the specific comparative claim instead.
+
+**Superlatives without a comparison**:
+❌ "the most compelling version of this trope in fantasy"
+✅ Fix: "X does this more explicitly than Y" — name what Y does differently.
+
+**Vague filler phrases**:
+❌ "emotional weight" / "emotional core" / "the human cost"
+✅ Fix: say the actual thing. Not "the emotional cost of revenge" but "what pursuing it does to
+her specifically — the campaign that outlives her ability to enjoy finishing it."
+
+**Financial metaphors** for prose or payoff:
+❌ "the payoff is worth the investment" / "earns its ending"
+✅ Fix: say what actually happens that justifies the structure.
+
+### Checklist before finishing an `intro` or `editorialFaqs` entry
+- [ ] At least two `bestExamples` books named and genuinely contrasted, not just both mentioned
+- [ ] No reader-response framing ("readers who...", "what readers want is...")
+- [ ] No aphorisms — every sentence contains information specific to a named book
+- [ ] No abstract virtue lists, superlatives without a comparison, or vague filler phrases
+- [ ] Doesn't open with "The trope of X is..."
 
 ---
 
@@ -82,13 +214,15 @@ data.forEach(b => console.log(`${b.slug} | ${b.title}`));
 EOF
 ```
 
-- Up to 6 slugs, ranked by how *definitive* the example is for this specific trope — not just
+- Up to 7 slugs, ranked by how *definitive* the example is for this specific trope — not just
   highly rated. A book can be a 5-star read and a mediocre example of the trope.
 - The template drops any slug that doesn't resolve to a book with a `cover_url`
   (`src/pages/tropes/[slug].astro:24-33`), so a bad slug fails silently (empty "Where to Start?"
   section) rather than erroring — verify, don't guess.
-- Prefer variety: don't pick 6 books from the same series or the same author if better-distributed
-  examples exist.
+- Prefer variety: don't pick multiple books from the same series or the same author if
+  better-distributed examples exist.
+- If a new, more definitive example turns up after the list is already at 7, drop the weakest
+  (least recognizable / least on-point) existing entry rather than just appending an 8th.
 
 ---
 

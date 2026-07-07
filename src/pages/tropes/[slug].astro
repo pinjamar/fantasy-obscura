@@ -4,6 +4,7 @@ import { PUBLIC_TROPES } from '../../data/tropes';
 import { BOOKS_LIKE } from '../../data/books-like';
 import { supabaseClient } from '../../lib/supabaseClient';
 import { normalizeCoverUrl } from '../../lib/covers';
+import { renderEditorial, splitEditorialParagraphs, stripEditorial } from '../../lib/render-editorial';
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect('/tropes');
@@ -42,7 +43,7 @@ const booksLikeEntries = (trope.booksLikeGuides ?? [])
     });
     return entry ? { slug: entry.slug, title: entry.source.title } : null;
   })
-  .filter(Boolean).slice(0, 4) as { slug: string; title: string }[];
+  .filter(Boolean).slice(0, 7) as { slug: string; title: string }[];
 
 const CATEGORY_EMOJI: Record<string, string> = {
   character: '🧙',
@@ -103,7 +104,7 @@ const topSubgenreNames = topSubgenres.slice(0, 3).map(([s]) => s).join(', ');
 const dataFaqItems = [
   {
     q: `What is the ${trope.name} trope in fantasy?`,
-    a: trope.intro ?? trope.description,
+    a: stripEditorial(trope.intro ?? trope.description),
   },
   {
     q: `How many fantasy books feature the ${trope.name} trope?`,
@@ -192,7 +193,7 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
     </nav>
 
     <h1 class="text-3xl font-bold mb-1">Best {trope.name} Fantasy Books</h1>
-    <p class="text-purple-600 font-medium text-sm mb-4">{emoji} {trope.name} — Fantasy Trope Guide</p>
+    <p class="text-purple-600 font-medium text-sm mb-4">{emoji} {trope.name} - Fantasy Trope Guide</p>
 
     <p class="hidden">
       Looking for the best {trope.name} fantasy books? This list covers every fantasy novel featuring the {trope.name} trope in our catalogue, sorted by reader rating. Whether you prefer epic fantasy, grimdark, romantasy, or YA, you'll find {trope.name} books across every subgenre here.
@@ -200,12 +201,14 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
 
     <section class="prose prose-zinc max-w-none mb-10">
       {trope.intro ? (
-        <p>{trope.intro}</p>
+        splitEditorialParagraphs(trope.intro).map((paragraph) => (
+          <p set:html={renderEditorial(paragraph)} />
+        ))
       ) : (
         <>
           <p>{trope.description}</p>
           <p>
-            This trope appears across many sub-genres of fantasy — from epic multi-volume series to
+            This trope appears across many sub-genres of fantasy - from epic multi-volume series to
             tightly-paced standalone novels. Whether you prefer dark and gritty reads or lighter,
             character-driven stories, books featuring {trope.name} deliver a distinctive reading experience.
           </p>
@@ -290,14 +293,14 @@ const tropeBreadcrumbJsonLd = JSON.stringify({
 
     {booksLikeEntries.length > 0 && (
       <section class="mb-10">
-        <h2 class="text-lg font-semibold mb-3 text-zinc-800">Reading Guides for {trope.name} Fans</h2>
+        <h2 class="text-lg font-semibold mb-3 text-zinc-800">Books Like Guides for {trope.name} Fans</h2>
         <div class="flex flex-wrap gap-2">
           {booksLikeEntries.map(({ slug: guideSlug, title }) => (
             <a
               href={`/books-like/${guideSlug}/`}
               class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-purple-200 bg-purple-50/60 text-sm text-purple-800 hover:border-purple-400 hover:bg-purple-100/60 transition-colors font-medium"
             >
-              📖 Books like <em>{title}</em>
+              📖 {title}
             </a>
           ))}
         </div>
