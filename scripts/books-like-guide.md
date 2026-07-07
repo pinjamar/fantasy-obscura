@@ -15,6 +15,15 @@ use 2 when two books genuinely fit the same angle. Do not pad with a weak second
 
 
 ---
+## Never Recommend the Same Series/Universe as the Source
+
+Aspect recs and `recommendations` must be **different books by the logic of "if you liked this, try something else"** — never a sequel, prequel, or companion novel in the source book's own series or universe.
+
+- Same-series continuations belong in the **Reading Order** link at the bottom of the page (auto-generated from `source.series`), not in an aspect. Duplicating them there is redundant and confuses "books like X" with "what to read after X."
+- This applies even when the same-universe book is genuinely a great match (e.g. a parallel novel or direct sequel by the same author) — the fit isn't the issue, the category is. A reader looking for "books like X" already knows the sequel exists.
+- If you're tempted to add one because you can't find a real cross-author match for an angle: either find a different book, or drop that aspect. Don't fall back to the source's own series just to fill a slot.
+
+---
 ## DB Verification — Do This Before Adding Any Rec
 
 Most critical rule: verify every book against the DB before writing it into a guide.
@@ -252,6 +261,7 @@ When this happens: read the aspect heading again, name the specific mechanism or
 
 | Mistake | Fix |
 |---|---|
+| Recommending a sequel/companion novel in the source's own series | Forbidden — that belongs in the Reading Order link, not aspects/recommendations |
 | Adding `cover_url` for books in the DB | Omit it — DB covers are used automatically |
 | Adding `slug` by default for all books | Only when DB slug ≠ auto-generated slug |
 | Apostrophe in title, no slug override | Always breaks — verify and add override |
