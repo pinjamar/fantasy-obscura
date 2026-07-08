@@ -49,21 +49,35 @@ don't over-invest in wording or formatting on the FAQ.
 
 ## Writing `booksLikeGuides`
 
-- **Exactly 7 slugs**, each one the filename (without `.ts`) of a guide in `src/data/books-like/`.
-  Run `Glob('src/data/books-like/*.ts')` to get the full list — never guess a slug.
-- **The value must match the guide's top-level `slug` field**, which in practice is almost always
-  the source book's title-derived slug. The page matches on the *source book's* derived slug
-  (`src/pages/tropes/[slug].astro` and the `[darkness]` sub-page, both around line 40), not the
-  guide's own `slug` — they're the same value in every existing guide, but verify by opening the
-  file rather than assuming.
+- **Exactly 7 slugs.** Each one must match the *source book's* derived slug, **not** the guide's
+  own top-level `slug` field — these are frequently different values. The matching logic
+  (`src/pages/tropes/[slug].astro` and the `[darkness]` sub-page, both around line 40) is:
+  ```
+  derivedSlug = source.db_slug ?? toSlug(source.title)
+  ```
+  A guide's filename and top-level `slug` are just its URL — they have no bearing on what
+  `booksLikeGuides` needs to contain. **This is a confirmed, repeated failure mode**, not a
+  theoretical one: it silently broke `harry-potter` in both `chosen-one.ts` and
+  `mentor-figure.ts` (correct value: `harry-potter-philosophers-stone`, since that guide's
+  `source.title` is "Harry Potter Series" with `db_slug: 'harry-potter-philosophers-stone'`).
+  Confirmed guides where the top-level `slug` differs from the required matching value (check
+  `db_slug` in each file before using any of these, this list is a warning, not a lookup table):
+  `acotar`, `cradle`, `crescent-city`, `discworld`, `dragonlance`, `emily-wilde`, `harry-potter`,
+  `horus-heresy`, `kate-daniels`, `legend-of-drizzt`, `lord-of-the-rings`, `malazan`,
+  `mistborn-the-final-empire`, `percy-jackson`, `shannara`, `the-awakening-zodiac-academy`,
+  `the-chronicles-of-narnia`, `the-dark-tower`, `the-serpent-and-the-wings-of-night`,
+  `the-wheel-of-time`, `the-witcher`.
+  **Before adding any slug, open the guide file and read its `source.db_slug` (or, if absent,
+  compute `toSlug(source.title)`) — never assume the filename is the matching key.**
 - Rendered up to 7 (`.slice(0, 7)` in both templates) — providing fewer than 7 just means a
   shorter row of links, providing more than 7 wastes data since the rest never render.
 
 **Selection order — follow this exact priority:**
 
-1. **First, take guides whose source book is already in this trope's `bestExamples`.** Check
-   `src/data/books-like/` for a file matching each `bestExamples` slug — not every definitive
-   example has a guide written for it, so this usually yields fewer than 7.
+1. **First, take guides whose source book is already in this trope's `bestExamples`.** A filename
+   match isn't enough confirmation — open the candidate file and check its `source.db_slug`
+   actually equals the `bestExamples` slug (see the filename-vs-db_slug warning above). Not every
+   definitive example has a guide written for it, so this usually yields fewer than 7.
 2. **If that's short of 7, search for guides tagged with this trope's exact name** in their own
    `source.tropes` array (not just thematically similar — the literal trope string):
    ```bash

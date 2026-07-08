@@ -1,3 +1,5 @@
+import { elricOfMelnibone } from './books-like/elric-of-melnibon';
+import { alanna } from './books-like/alanna';
 import { aCourtOfSilverFlames } from './books-like/a-court-of-silver-flames';
 import { acotar } from './books-like/a-court-of-thorns-and-roses';
 import { aGameOfThrones } from './books-like/a-game-of-thrones';
@@ -427,6 +429,8 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   mexicanGothic,
   jhereg,
   empireOfSilence,
+  elricOfMelnibone,
+  alanna,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
