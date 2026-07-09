@@ -8,7 +8,7 @@ export const foundation: BooksLikeEntry = {
     cover_url:
       'https://books.google.com/books/publisher/content/images/frontcover/0C9ZAAAAYAAJ?fife=w400-h600',
     darkness_level: 3,
-    heat_level: null,
+    heat_level: 'Sweet Romance',
     series: 'Foundation',
     series_number: 1,
     tropes: [
@@ -21,15 +21,15 @@ export const foundation: BooksLikeEntry = {
       'Ensemble POV',
     ],
     angle:
-      'Galaxy-spanning empire in decline — psychohistory, the Seldon Plan, and the pleasure of ideas as plot',
+      'Galaxy-spanning empire in decline: psychohistory, the Seldon Plan, and the pleasure of ideas as plot',
     answer_line:
       'If you loved Foundation for the dying empire, the chess-game politics, or the ideas-as-plot structure, start with Dune, A Memory Called Empire, and The Three-Body Problem.',
     why_people_love:
-      "Foundation does something almost no other novel attempts: it makes the rise and fall of civilisations the plot. There are no consistent protagonists — the book spans 150 years through a series of linked stories, each generation facing a crisis that Hari Seldon's mathematics predicted centuries earlier. The drama is never 'will our hero survive' but 'will humanity find the correct path.' Seldon invented psychohistory — the mathematical science of predicting the behaviour of large populations — and his Grand Plan is the engine the entire series runs on. Every generation thinks they are acting freely; the reader understands they are being guided by invisible historical forces. That gap is where Foundation lives. The satisfaction is intellectual rather than emotional: watching the Plan unfold, seeing each crisis solved through economics or politics or the strategic use of religion rather than through combat or heroism. Asimov invented the dying empire template in science fiction with this book, established 'ideas as plot' as a viable aesthetic, and created the basic grammar that a century of space opera has spoken since. The Apple TV+ adaptation takes major liberties — the books are worth reading entirely on their own terms.",
+      "Foundation does something almost no other novel attempts: it makes the rise and fall of civilisations the plot. There are no consistent protagonists. The book spans 150 years through a series of linked stories, each generation facing a crisis that Hari Seldon's mathematics predicted centuries earlier. The drama is never 'will our hero survive' but 'will humanity find the correct path.' Seldon invented psychohistory (the mathematical science of predicting the behaviour of large populations), and his Grand Plan is the engine the entire series runs on. Every generation thinks they are acting freely; the reader understands they are being guided by invisible historical forces. That gap is where Foundation lives. The satisfaction is intellectual rather than emotional: watching the Plan unfold, seeing each crisis solved through economics or politics or the strategic use of religion rather than through combat or heroism. Asimov invented the dying empire template in science fiction with this book, established 'ideas as plot' as a viable aesthetic, and created the basic grammar that a century of space opera has spoken since. The Apple TV+ adaptation takes major liberties. The books are worth reading entirely on their own terms.",
     why_people_love_rich: [
       {
         type: 'paragraph',
-        text: "Foundation does something almost no other novel attempts: it makes the rise and fall of civilisations the plot. There are no consistent protagonists — the book spans 150 years through a series of linked stories, each generation facing a crisis that Hari Seldon's mathematics predicted centuries earlier.",
+        text: "Foundation does something almost no other novel attempts: it makes the rise and fall of civilisations the plot. There are no consistent protagonists. The book spans 150 years through a series of linked stories, each generation facing a crisis that Hari Seldon's mathematics predicted centuries earlier.",
       },
       {
         type: 'labeled',
@@ -42,28 +42,28 @@ export const foundation: BooksLikeEntry = {
       },
       {
         type: 'warning',
-        text: "Foundation is a book of ideas rather than characters — no single person carries the story from beginning to end. If you read primarily for protagonist investment and emotional throughline, adjust expectations. This is history as drama, not biography.",
+        text: "Foundation is a book of ideas rather than characters. No single person carries the story from beginning to end. If you read primarily for protagonist investment and emotional throughline, adjust expectations. This is history as drama, not biography.",
       },
     ],
   },
   aspects: [
     {
       heading:
-        'If you loved the Grand Plan — an intelligence designing history from the outside, using people as instruments of a scheme nobody alive can see whole...',
+        'If you loved the Grand Plan: an intelligence designing history from the outside, using people as instruments of a scheme nobody alive can see whole...',
       recs: [
         {
           title: 'Dune',
           slug: 'dune',
           author: 'Frank Herbert',
           darkness_level: 4,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Dune',
           series_number: 1,
           series_label: 'Series (6 books, complete)',
           audiobook: true,
-          note: "The Bene Gesserit's Missionaria Protectiva — a millennia-long breeding program and the deliberate seeding of religious prophecy across planets — is the closest analogue in SF to Seldon's Plan: a secret architecture designed to guide humanity through a specific crisis, using belief and culture as the mechanism rather than mathematics. Herbert's answer is sharper than Asimov's. The plan works, and what it produces is Paul Atreides, who becomes something the plan never intended. If Foundation is the story of a scheme that succeeds as designed, Dune is the story of one that succeeds and destroys everything anyway. Darker than Foundation, denser in ecological and religious texture, and the first book is one of the genre's defining works.",
-          caveat: "the sequels grow philosophically stranger and more demanding with each volume. Dune alone reads as a complete, self-contained experience.",
+          note: "The Bene Gesserit's Missionaria Protectiva (a millennia-long breeding program and the deliberate seeding of religious prophecy across planets) is the closest analogue in SF to Seldon's Plan: a secret architecture designed to guide humanity through a specific crisis, using belief and culture as the mechanism rather than mathematics. Herbert's answer is sharper than Asimov's. The plan works, and what it produces is Paul Atreides, who becomes something the plan never intended. If Foundation is the story of a scheme that succeeds as designed, Dune is the story of one that succeeds and destroys everything anyway. Darker than Foundation, denser in ecological and religious texture, and the first book is one of the genre's defining works.",
+          caveat: "The sequels grow philosophically stranger and more demanding with each volume. Dune alone reads as a complete, self-contained experience.",
           tags: [
             'Dying Empire',
             'Political Intrigue',
@@ -81,13 +81,14 @@ export const foundation: BooksLikeEntry = {
           slug: 'too-like-the-lightning',
           author: 'Ada Palmer',
           darkness_level: 3,
-          heat_level: 'Open Door',
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Terra Ignota',
           series_number: 1,
           series_label: 'Series (4 books, complete)',
           audiobook: true,
-          note: "Palmer's 25th century is organised around voluntary ideological nation-states rather than geography — you belong to the Hive whose values you share, regardless of where you live — and the novel is a philosophical thriller about what happens when that system begins to crack. Palmer is doing exactly what Asimov does: treating political philosophy and social organisation as the substance of the plot rather than the backdrop. Terra Ignota is significantly more demanding than Foundation — dense prose, unreliable narrator, Enlightenment philosophy woven into the structure — but for Foundation readers who want their ideas harder and their politics stranger, it is the natural escalation.",
+          note: "Palmer's 25th century is organised around voluntary ideological nation-states rather than geography (you belong to the Hive whose values you share, regardless of where you live), and the novel is a philosophical thriller about what happens when that system begins to crack. Palmer is doing exactly what Asimov does: treating political philosophy and social organisation as the substance of the plot rather than the backdrop. Terra Ignota is significantly more demanding than Foundation (dense prose, unreliable narrator, Enlightenment philosophy woven into the structure), but for Foundation readers who want their ideas harder and their politics stranger, it is the natural escalation.",
+          caveat: "Terra Ignota is a much steeper climb than Foundation: an unreliable narrator, invented pronouns, and Enlightenment-philosophy digressions that ask more patience than Asimov's plainer prose.",
           tags: [
             'Political Philosophy',
             'Utopia in Decline',
@@ -104,7 +105,7 @@ export const foundation: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the dying Galactic Empire — the chess-game politics of civilisational collapse, small communities navigating forces far larger than any individual...',
+        'If you loved the dying Galactic Empire: the chess-game politics of civilisational collapse, small communities navigating forces far larger than any individual...',
       recs: [
         {
           title: 'A Memory Called Empire',
@@ -117,7 +118,8 @@ export const foundation: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Duology (complete)',
           audiobook: true,
-          note: "Mahit Dzmare is an ambassador from a tiny mining station sent to the capital of an empire so culturally dominant that its own citizens want to become it — and the power differential between the enormous empire and the small peripheral community it is slowly consuming is exactly the Foundation dynamic at a human scale. Martine writes political intrigue at the sentence level; every conversation is a negotiation, every social interaction carries strategic weight. More intimate and literary than Foundation, with a protagonist you invest in personally rather than intellectually — but the underlying question is the same: how does a small society survive when a much larger one decides to notice it? The duology is complete.",
+          note: "Mahit Dzmare is an ambassador from a tiny mining station sent to the capital of an empire so culturally dominant that its own citizens want to become it. The power differential between the enormous empire and the small peripheral community it is slowly consuming is exactly the Foundation dynamic at a human scale. Martine writes political intrigue at the sentence level; every conversation is a negotiation, every social interaction carries strategic weight. More intimate and literary than Foundation, with a protagonist you invest in personally rather than intellectually, but the underlying question is the same: how does a small society survive when a much larger one decides to notice it? The duology is complete.",
+          caveat: "A Memory Called Empire follows one ambassador through one court over a few weeks, not an ensemble across centuries. Readers who want Foundation's scale of civilisational time jumps will find this far more intimate and contained.",
           tags: [
             'Empire vs Periphery',
             'Political Intrigue',
@@ -135,13 +137,14 @@ export const foundation: BooksLikeEntry = {
           slug: 'consider-phlebas',
           author: 'Iain M. Banks',
           darkness_level: 4,
-          heat_level: null,
-          standalone: false,
-          series: 'Culture',
-          series_number: 1,
-          series_label: 'Series (9 books)',
+          heat_level: 'Open Door',
+          standalone: true,
+          series: null,
+          series_number: null,
+          series_label: 'Series (9 books, any order)',
           audiobook: true,
-          note: "Banks's Culture is the other great answer to Foundation: a post-scarcity civilisation managed by godlike AIs, at war with the Idirans — a species for whom conquest is a religious obligation. Where Asimov asks how a civilisation survives the collapse of empire, Banks asks what a civilisation that has solved every material problem is actually for, and whether it has the right to impose its values on civilisations that haven't. Consider Phlebas follows a protagonist fighting for the losing side, which gives Banks room to make the Culture's victory feel genuinely ambiguous. The nine Culture novels can be read in any order after this one.",
+          note: "Banks's Culture is the other great answer to Foundation: a post-scarcity civilisation managed by godlike AIs, at war with the Idirans (a species for whom conquest is a religious obligation). Where Asimov asks how a civilisation survives the collapse of empire, Banks asks what a civilisation that has solved every material problem is actually for, and whether it has the right to impose its values on civilisations that haven't. Consider Phlebas follows a protagonist fighting for the losing side, which gives Banks room to make the Culture's victory feel genuinely ambiguous. The nine Culture novels can be read in any order after this one.",
+          caveat: "Consider Phlebas follows the Culture's enemies rather than the Culture itself, so the utopia Banks is arguing about stays mostly offstage in this first book. It's also the most action-driven, least idea-forward entry in the series.",
           tags: [
             'Space Opera',
             'Civilisational War',
@@ -158,21 +161,21 @@ export const foundation: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved that ideas are the plot — science fiction where physics, mathematics, or social science is the protagonist and working through its logic is the story...',
+        'If you loved that ideas are the plot: science fiction where physics, mathematics, or social science is the protagonist and working through its logic is the story...',
       recs: [
         {
           title: 'The Three-Body Problem',
           slug: 'the-three-body-problem',
           author: 'Liu Cixin',
           darkness_level: 4,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: "Remembrance of Earth's Past",
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "Liu Cixin is doing what Asimov does — using physics and history as the drama rather than individual human stakes — but with contemporary scientific ideas and a scope that eventually dwarfs Foundation's. The three-body problem becomes a civilisation-ending threat, and the trilogy's answer to Seldon's psychohistory is a series of ideas about deterrence, civilisational game theory, and the dark logic of a universe where every civilisation is a potential threat to every other. Foundation starts at the fall of one empire; this trilogy ends at the heat death of the universe.",
-          caveat: "the first book is the least action-driven; readers who find the early Cultural Revolution chapters slow should know the scope expands enormously from the second book onward.",
+          note: "Liu Cixin is doing what Asimov does (using physics and history as the drama rather than individual human stakes), but with contemporary scientific ideas and a scope that eventually dwarfs Foundation's. The three-body problem becomes a civilisation-ending threat, and the trilogy's answer to Seldon's psychohistory is a series of ideas about deterrence, civilisational game theory, and the dark logic of a universe where every civilisation is a potential threat to every other. Foundation starts at the fall of one empire; this trilogy ends at the heat death of the universe.",
+          caveat: "The first book is the least action-driven; readers who find the early Cultural Revolution chapters slow should know the scope expands enormously from the second book onward.",
           tags: [
             'Hard Sci-Fi',
             'Civilisational Stakes',
@@ -190,13 +193,14 @@ export const foundation: BooksLikeEntry = {
           slug: 'the-dispossessed',
           author: 'Ursula K. Le Guin',
           darkness_level: 3,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: true,
-          series: null,
-          series_number: null,
-          series_label: 'Standalone',
+          series: 'Hainish Cycle',
+          series_number: 6,
+          series_label: 'Hainish Cycle (read independently)',
           audiobook: true,
-          note: "A physicist travels from an anarchist moon to its capitalist twin planet and the novel is essentially a philosophical experiment: what does it actually feel like to live inside each of these systems, and what do the systems do to the people within them? Le Guin and Asimov share the same commitment to ideas as the primary material — the political philosophy is not the backdrop but the substance. The Dispossessed is quieter and more intimate than Foundation, built around one protagonist over a lifetime rather than an ensemble across centuries, but it has the same quality of making you feel you understand something about how societies work that you didn't before you started reading.",
+          note: "A physicist travels from an anarchist moon to its capitalist twin planet and the novel is essentially a philosophical experiment: what does it actually feel like to live inside each of these systems, and what do the systems do to the people within them? Le Guin and Asimov share the same commitment to ideas as the primary material. The political philosophy is not the backdrop but the substance. The Dispossessed is quieter and more intimate than Foundation, built around one protagonist over a lifetime rather than an ensemble across centuries, but it has the same quality of making you feel you understand something about how societies work that you didn't before you started reading.",
+          caveat: "The Dispossessed is part of the loosely connected Hainish Cycle in publication order, but it needs none of the other books; there's no Seldon-style Grand Plan tying installments together, just a shared universe.",
           tags: [
             'Political Philosophy',
             'Anarchism',
@@ -213,21 +217,21 @@ export const foundation: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved that individual people barely matter — civilisation as protagonist, the Plan working through characters who are instruments rather than heroes...',
+        'If you loved that individual people barely matter: civilisation as protagonist, the Plan working through characters who are instruments rather than heroes...',
       recs: [
         {
           title: 'Hyperion',
           slug: 'hyperion',
           author: 'Dan Simmons',
           darkness_level: 4,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Hyperion Cantos',
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "Simmons structures Hyperion as seven pilgrims each telling their own story in a different genre — soldier, priest, poet, scholar, detective — all converging on the same civilisational crisis. Like Foundation, no single character carries continuity across the structure; only the crisis does. Simmons brings literary craft Asimov never attempted, and the anthology structure produces the same pleasure as the Seldon Crises: each story illuminates a different facet of the same collapse. Hyperion ends on a deliberate cliffhanger; The Fall of Hyperion resolves it immediately.",
-          caveat: "the series weakens sharply after the first two books.",
+          note: "Simmons structures Hyperion as seven pilgrims each telling their own story in a different genre (soldier, priest, poet, scholar, detective), all converging on the same civilisational crisis. Like Foundation, no single character carries continuity across the structure; only the crisis does. Simmons brings literary craft Asimov never attempted, and the anthology structure produces the same pleasure as the Seldon Crises: each story illuminates a different facet of the same collapse. Hyperion ends on a deliberate cliffhanger; The Fall of Hyperion resolves it immediately.",
+          caveat: "The series weakens sharply after the first two books.",
           tags: [
             'Civilisational Scale',
             'Anthology Structure',
@@ -245,13 +249,14 @@ export const foundation: BooksLikeEntry = {
           slug: 'enders-game',
           author: 'Orson Scott Card',
           darkness_level: 3,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: false,
           series: "Ender's Game",
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "The military school around Ender is designed to shape him into a weapon without his knowledge — which is exactly the structure of Foundation's Seldon Crises: a plan that works through people who think they are acting freely. Ender's Game is faster and emotionally warmer than Foundation, but the central argument — civilisational survival requires strategic intelligence applied at the species level, through individuals who don't know the full scope of what they're doing — is the same. One of the genre's most famous twists; the ending stands up to knowing it in advance.",
+          note: "The military school around Ender is designed to shape him into a weapon without his knowledge. This is exactly the structure of Foundation's Seldon Crises: a plan that works through people who think they are acting freely. Ender's Game is faster and emotionally warmer than Foundation, but the central argument (civilisational survival requires strategic intelligence applied at the species level, through individuals who don't know the full scope of what they're doing) is the same. One of the genre's most famous twists; the ending stands up to knowing it in advance.",
+          caveat: "Ender's Game is tight, fast, and single-protagonist where Foundation is sprawling and generational; readers who came for the ensemble, centuries-spanning structure will get one boy's story instead.",
           tags: [
             'Strategic Intelligence',
             'Civilisational Stakes',

@@ -40,6 +40,11 @@ const curatedReadingOrder = source.series
   : null
 const readingOrderSlug = (source as any).reading_order_slug ?? curatedReadingOrder?.slug ?? seriesSlug
 
+// Same resolution for rec-level series links — a naive toSlug() breaks on series names
+// with apostrophes (e.g. "Ender's Saga" → "ender-s-saga" instead of the curated "enders-game").
+const resolveSeriesSlug = (seriesName: string) =>
+  READING_ORDERS.find(e => e.name.toLowerCase() === seriesName.toLowerCase())?.slug ?? toSlug(seriesName)
+
 
 // Fetch tropes + cover + extra fields from DB for the source book
 const { data: dbBook } = await supabaseClient
@@ -344,7 +349,7 @@ const breadcrumbJsonLd = JSON.stringify({
                         ? <a href={`/books/${recSlug}/`} class="hover:text-purple-700 transition-colors">{r.title}</a>
                         : r.title}
                       {r.series && r.series_number != null && (
-                        <a href={`/reading-orders/${toSlug(r.series)}/`} class="font-normal text-zinc-400 text-sm italic hover:text-zinc-600 transition-colors"> · {r.series} #{r.series_number}</a>
+                        <a href={`/reading-orders/${resolveSeriesSlug(r.series)}/`} class="font-normal text-zinc-400 text-sm italic hover:text-zinc-600 transition-colors"> · {r.series} #{r.series_number}</a>
                       )}
                     </p>
                     <p class="text-sm text-zinc-500 mb-0.5">
