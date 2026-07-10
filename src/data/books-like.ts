@@ -1,3 +1,7 @@
+import { legend } from './books-like/legend';
+import { theCrownTower } from './books-like/the-crown-tower';
+import { riversOfLondon } from './books-like/rivers-of-london';
+import { theCurseOfChalion } from './books-like/the-curse-of-chalion';
 import { elricOfMelnibone } from './books-like/elric-of-melnibon';
 import { alanna } from './books-like/alanna';
 import { aCourtOfSilverFlames } from './books-like/a-court-of-silver-flames';
@@ -431,6 +435,10 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   empireOfSilence,
   elricOfMelnibone,
   alanna,
+  theCurseOfChalion,
+  riversOfLondon,
+  theCrownTower,
+  legend,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
