@@ -25,7 +25,7 @@ export const gideonTheNinth: BooksLikeEntry = {
     answer_line:
       "If you loved Gideon the Ninth for its genre-defying strangeness, Gideon's irreverent voice, and the Harrow relationship, start with Piranesi, The Lies of Locke Lamora, and Six of Crows.",
     why_people_love:
-      "Gideon the Ninth resists every attempt to describe it cleanly, which is most of why people love it. Elevator pitch: nine necromancers and their sword-wielding cavaliers go to a haunted house on a dying planet to solve ancient puzzles, become immortal god-servants, and murder each other. What that description can't convey is the voice — Gideon Nav narrates in a register that is completely anachronistic to her gothic sci-fi setting, full of irreverence and pop energy, a person who has spent her whole life being told she is expendable and has decided to respond with sarcasm. The Harrow relationship — enemies, co-dependents, rivals, something else — is the book's actual subject, and Muir builds it in negative space: what Gideon will not admit, what Harrow will not say, the entire emotional content delivered through what neither character does. The body horror is real. The mystery is fair-play solvable. The sequel Harrow the Ninth is a completely different book that requires Gideon to understand. Hugo finalist.",
+      "Gideon the Ninth resists every attempt to describe it cleanly, which is most of why people love it. Elevator pitch: nine necromancers and their sword-wielding cavaliers go to a haunted house on a dying planet to solve ancient puzzles, become immortal god-servants, and murder each other. What that description can't convey is the voice. Gideon Nav narrates in a register that is completely anachronistic to her gothic sci-fi setting, full of irreverence and pop energy, a person who has spent her whole life being told she is expendable and has decided to respond with sarcasm. The Harrow relationship (enemies, co-dependents, rivals, something else) is the book's actual subject, and Muir builds it in negative space: what Gideon will not admit, what Harrow will not say, the entire emotional content delivered through what neither character does. The body horror is real. The mystery is fair-play solvable. The sequel Harrow the Ninth is a completely different book that requires Gideon to understand. Hugo finalist.",
     why_people_love_rich: [
       {
         type: 'paragraph',
@@ -38,7 +38,7 @@ export const gideonTheNinth: BooksLikeEntry = {
       },
       {
         type: 'paragraph',
-        text: "The Harrow relationship — enemies, co-dependents, rivals, something else — is the book's actual subject, and Muir builds it in negative space: what Gideon will not admit, what Harrow will not say, the entire emotional content delivered through what neither character does.",
+        text: "The Harrow relationship (enemies, co-dependents, rivals, something else) is the book's actual subject, and Muir builds it in negative space: what Gideon will not admit, what Harrow will not say, the entire emotional content delivered through what neither character does.",
       },
       {
         type: 'warning',
@@ -49,18 +49,17 @@ export const gideonTheNinth: BooksLikeEntry = {
   aspects: [
     {
       heading:
-        'If you loved the haunted location as the puzzle — the house that has to be decoded, the mystery that IS the setting...',
+        'If you loved the haunted location as the puzzle: the house that has to be decoded, the mystery that IS the setting...',
       recs: [
         {
           title: 'Piranesi',
           author: 'Susanna Clarke',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781526622426-L.jpg',
           darkness_level: 2,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: true,
           audiobook: true,
-          note: "Clarke and Muir are doing the same thing with setting: they place you inside an impossible location — the House of infinite halls and tides and statues, the Canaan House with its locked doors and lethal puzzles — and make understanding the location synonymous with understanding the book. Both narrators are unreliable not from dishonesty but from incomplete information about where they are. Both books reveal their truth in a structural moment that reframes everything you've read. Piranesi is smaller, quieter, and gentler — darkness level 2 versus 4 — but the formal DNA is identical. Start here if the Gothic strangeness of Canaan House was what hooked you.",
+          note: "Clarke places you inside an impossible location (the House of infinite halls and tides and statues) the same way Muir places you inside Canaan House with its locked doors and lethal puzzles, and in both books understanding the location is synonymous with understanding the plot. Both narrators are unreliable not from dishonesty but from incomplete information about where they are, and both books reveal their truth in a structural moment that reframes everything you've read. Piranesi is smaller, quieter, and gentler (darkness level 2 versus 4), but the formal DNA is identical.",
+          caveat: "Piranesi has no body horror, no swordplay, and no sarcasm; it's a quiet, gentle book where Gideon is loud and violent. Start here only if the mysterious-location puzzle was the specific draw.",
           tags: [
             'Mysterious Location',
             'Unreliable Narrator',
@@ -76,13 +75,12 @@ export const gideonTheNinth: BooksLikeEntry = {
         {
           title: 'The Night Circus',
           author: 'Erin Morgenstern',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780385534635-L.jpg',
           darkness_level: 2,
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "Morgenstern builds Le Cirque des Rêves the way Muir builds Canaan House: as a location that is also a trap, also a competition, also a love story. Both books are structured around two young people bound to each other by a contest they didn't choose, the setting expressing the relationship between them. The Night Circus is warmer and more atmospheric than Gideon — it doesn't have the sarcasm or the body horror — but the formal gambit of a magical location that only exists because of the connection between two specific people maps directly onto what Muir does with the Locked Tomb.",
+          note: "Morgenstern builds Le Cirque des Rêves the way Muir builds Canaan House: as a location that is also a trap, also a competition, also a love story. Both books are structured around two young people bound to each other by a contest they didn't choose, the setting expressing the relationship between them. The magical location existing only because of the bond between two specific people maps directly onto what Muir does with the Locked Tomb.",
+          caveat: "Warmer and more atmospheric than Gideon, with none of the sarcasm or the body horror. This is a slow, dreamlike love story, not a propulsive murder mystery.",
           tags: [
             'Magical Location',
             'Rival Romance',
@@ -99,20 +97,19 @@ export const gideonTheNinth: BooksLikeEntry = {
     },
     {
       heading:
-        "If you loved Gideon's voice — the irreverence, the wit used as armor, the narrator who refuses to let you know how much she cares...",
+        "If you loved Gideon's voice: the irreverence, the wit used as armor, the narrator who refuses to let you know how much she cares...",
       recs: [
         {
           title: 'The Lies of Locke Lamora',
           author: 'Scott Lynch',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780553588941-L.jpg',
-          darkness_level: 4,
-          heat_level: null,
+          darkness_level: 5,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Gentleman Bastard',
           series_number: 1,
           audiobook: true,
-          note: "Locke Lamora is the closest analogue to Gideon's voice in classic fantasy: someone who deploys wit at precisely the moment when being serious would cost him something, whose actual emotional state is completely obscured by how funny he's being. Both narrators use humor as a defense mechanism in situations that are genuinely lethal, and both books are structurally surprising in the same way — the genre keeps shifting under your feet. Lynch's world is pseudo-Venetian rather than necromantic, but the character voice is the same engine.",
+          note: "Locke Lamora is the closest analogue to Gideon's voice in classic fantasy: someone who deploys wit at precisely the moment when being serious would cost him something, whose actual emotional state is completely obscured by how funny he's being. Both narrators use humor as a defense mechanism in situations that are genuinely lethal, and both books keep swerving into a different genre than the one they opened in. Lynch's world is pseudo-Venetian rather than necromantic, but the character voice runs on the same engine.",
+          caveat: "No romance and no queer central relationship the way Gideon has, and the con-artist heist plot is a different shape entirely from a locked-house murder mystery.",
           tags: [
             'Witty Narrator',
             'Dark Humour',
@@ -128,8 +125,6 @@ export const gideonTheNinth: BooksLikeEntry = {
         {
           title: 'Red Rising',
           author: 'Pierce Brown',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780345539786-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -137,7 +132,8 @@ export const gideonTheNinth: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "Darrow's first-person narration has the same forward momentum as Gideon's — both are action-driven, emotionally intense, and use the narrator's voice to carry you through situations that should be overwhelming. Both characters are people who were built for a specific function (Gideon: weapon; Darrow: mine slave turned revolutionary) and discover over the course of their story that they are considerably more than that function. Brown writes action with more traditional epic scope; Muir writes it with more gothic wit. If Gideon's propulsive first-person energy was what kept you reading, Red Rising is the most direct continuation of that.",
+          note: "Darrow's first-person narration barrels forward with the same restless energy as Gideon's: action-driven, emotionally intense, using the narrator's voice to pull you through situations that should be overwhelming. Both characters were built for a specific function (Gideon: weapon; Darrow: mine slave turned revolutionary) and spend their books discovering they're considerably more than that function. Brown writes it with traditional epic scope; Muir writes it with gothic wit.",
+          caveat: "No necromancy, no haunted house, no sarcasm-as-armor voice. Red Rising is a straightforward revolution epic; the resemblance is in the propulsive pacing, not the tone.",
           tags: [
             'First-Person Propulsive',
             'Action Fantasy',
@@ -154,13 +150,11 @@ export const gideonTheNinth: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the Harrow relationship — the devotion that cannot be named, two people bound by a dynamic neither chose and neither can escape...',
+        'If you loved the Harrow relationship: the devotion that cannot be named, two people bound by a dynamic neither chose and neither can escape...',
       recs: [
         {
           title: 'Six of Crows',
           author: 'Leigh Bardugo',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781627792127-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -168,7 +162,8 @@ export const gideonTheNinth: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Duology (complete)',
           audiobook: true,
-          note: "The Kaz/Inej relationship runs on the same fuel as Gideon/Harrow: the mutual dependency that neither party will name, the care expressed entirely through action and never through language, the question of whether what they have is survivable. Bardugo builds her found family — six criminals who shouldn't trust each other — with the same attention to the specific texture of each relationship that Muir brings to the Ninth House. Six of Crows is more plot-forward and more immediately satisfying; Gideon the Ninth is stranger and more formally ambitious. Both reward re-reading.",
+          note: "Kaz and Inej share Gideon and Harrow's core problem: mutual dependency that neither party will name, care expressed entirely through action and never through language, the open question of whether what they have is survivable. Bardugo builds her found family (six criminals who shouldn't trust each other) with the specific texture Muir gives the Ninth House: every relationship in the group has its own distinct shape. Six of Crows is more plot-forward and more immediately satisfying; Gideon the Ninth is stranger and more formally ambitious.",
+          caveat: "Six of Crows is an ensemble heist with six POVs, not a two-hander; Kaz and Inej share the page with four other leads instead of anchoring the whole book the way Gideon and Harrow do.",
           tags: [
             'Found Family',
             'Enemies Dynamic',
@@ -184,16 +179,15 @@ export const gideonTheNinth: BooksLikeEntry = {
         {
           title: 'The Jasmine Throne',
           author: 'Tasha Suri',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316538510-L.jpg',
-          darkness_level: 4,
-          heat_level: 'Closed Door',
+          darkness_level: 3,
+          heat_level: 'Fiery',
           standalone: false,
-          series: 'The Burning Kingdoms',
+          series: 'Burning Kingdoms',
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: 'For readers who loved that Gideon and Harrow are both women: The Jasmine Throne is the F/F slow-burn political fantasy with comparable emotional stakes. Priya is a maidservant with forbidden magic; Malini is an imprisoned princess. The power imbalance, the co-dependence, the gradual shift from necessity to something else — the dynamic is structurally very close to Gideon/Harrow, but delivered in a different register (South Asian-inspired political fantasy rather than gothic sci-fi horror). Suri writes desire under constraint with exceptional precision. The body horror is absent; the emotional damage is equivalent.',
+          note: 'For readers who loved that Gideon and Harrow are both women: The Jasmine Throne is the F/F slow-burn political fantasy with comparable emotional stakes. Priya is a maidservant with forbidden magic; Malini is an imprisoned princess, and what starts as necessity between them curdles slowly into something neither will name, the exact shape of the power imbalance and co-dependence that drives Gideon and Harrow. The register is different: South Asian-inspired political fantasy rather than gothic sci-fi horror. Suri writes desire under constraint with exceptional precision.',
+          caveat: "No body horror and no necromancy; the darkness here is political and personal rather than gothic. It's also a full trilogy building toward a slower payoff, not a single propulsive murder mystery.",
           tags: [
             'F/F Romance',
             'Enemies to Allies',

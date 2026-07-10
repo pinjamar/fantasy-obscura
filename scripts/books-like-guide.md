@@ -257,6 +257,21 @@ When picking recs for an aspect, the question is not "what are the most popular 
 When this happens: read the aspect heading again, name the specific mechanism or dynamic it describes, and search for books that specifically have that.
 
 ---
+## When Updating an Existing Guide — Always Re-Check Aspect Picks
+
+Don't treat an "update" pass as just an em-dash/caveat/DB-fact sweep. Older guides were often written before the DB had as many books, before trope tagging was as complete, or before a stronger comp title even existed as a guide of its own. The picks may no longer be the best available — check, every time.
+
+**For each aspect, before calling the update done — do all four, not just the ones that feel obviously necessary:**
+1. **Read the heading's specific claim, then read the rec's own `note` and check it actually makes THAT claim — not a related but different one.** A heading promising "a Greek myth retold from the perspective of the woman at its centre" needs a rec whose note is actually about a mythology retelling. A rec whose note says "the most direct genre ancestor" for a *different* dynamic (e.g. a captor romance) does not satisfy a mythology-retelling heading just because it's thematically adjacent and popular. This check has been missed before — a Beauty-and-the-Beast retelling sat under a "Greek myth retold" heading in `gild.ts` because the note's own claim was never checked against the heading's specific wording, only against the general vibe. Read the note in isolation, without the heading in view, and ask: does this note argue for the heading's specific claim, or a different claim that happens to be adjacent?
+2. Read the rec's own `caveat` against the aspect's heading. A caveat that undercuts the very thing the aspect promises (e.g. a "world and lore" aspect whose rec's caveat admits "world-building is shallower than the source's") is a sign the pick doesn't actually serve the angle — not just a caveat to phrase more gently.
+3. Query the DB for other candidates matching the aspect's specific mechanism (not just the genre) — compare `darkness_level`, `heat_level`, and `tropes` against the source the same way you would when writing a guide from scratch.
+4. Prefer a candidate with a tighter DB fact match (heat/darkness tier identical to the source) or a more specific trope overlap over one that only shares the genre.
+
+**If a stronger candidate exists:** swap it in. Update `answer_line` if the swapped rec is the first pick in aspects 1–3 (per the alignment rule above). Don't leave a demonstrably weaker pick in place just because it was already there.
+
+**If nothing beats the current picks:** say so and move on. This is a check performed on every update, not a mandate to always change something. But "I skimmed it and it seemed fine" is not the check — step 1 requires actually re-reading each note against the heading's exact wording, every time, even on guides that otherwise look clean.
+
+---
 ## Common Mistakes
 
 | Mistake | Fix |
