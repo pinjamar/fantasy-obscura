@@ -5,8 +5,6 @@ export const legend: BooksLikeEntry = {
   source: {
     title: 'Legend',
     author: 'David Gemmell',
-    cover_url:
-      'https://books.google.com/books/content?id=DFGb3eQZNIsC&printsec=frontcover&img=1&zoom=1&source=gbs_api',
     darkness_level: 4,
     heat_level: 'Closed Door',
     series: 'Drenai Saga',
