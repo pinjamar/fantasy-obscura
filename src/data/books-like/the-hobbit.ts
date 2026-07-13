@@ -7,11 +7,10 @@ export const theHobbit: BooksLikeEntry = {
     author: 'J.R.R. Tolkien',
     reading_order_slug: 'middle-earth',
     db_slug: 'the-hobbit',
-    cover_url: 'https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg',
-    darkness_level: 2,
-    heat_level: null,
-    series: null,
-    series_number: null,
+    darkness_level: 1,
+    heat_level: 'Sweet Romance',
+    series: 'Middle-earth',
+    series_number: 1,
     tropes: [
       'Reluctant Hero',
       'Quest Fantasy',
@@ -23,32 +22,33 @@ export const theHobbit: BooksLikeEntry = {
     ],
     angle: 'Classic Adventure Fantasy',
     answer_line:
-      'If you loved The Hobbit for the adventure-first pacing, charming quest feel, cozy-but-dangerous tone, and classic fantasy wonder, start with The Eye of the World, The Name of the Wind and The Way of Kings.',
+      'If you loved The Hobbit for the adventure-first pacing, charming quest feel, cozy-but-dangerous tone, and classic fantasy wonder, start with The Goblin Emperor, A Wizard of Earthsea, and The Eye of the World.',
     why_people_love:
-      "The Hobbit works because Tolkien understood that the best adventures start with someone who doesn't want one. Bilbo Baggins is not a hero — he's a homebody who likes his pantry full and his routine undisturbed — and the entire novel is powered by the tension between the comfortable life he's been pulled away from and the person the road is slowly making him become. It's the book that invented the template for cozy epic fantasy: high stakes, genuine peril, but always with a warmth underneath that tells you the world is worth saving. The dwarves are well-drawn despite being thirteen of them, the episodic structure means every chapter delivers something new, and Riddles in the Dark remains one of the most perfectly constructed scenes in fantasy. Short enough to read in a weekend, rich enough to think about for years.",
+      "The Hobbit works because Tolkien understood that the best adventures start with someone who doesn't want one. Bilbo Baggins is not a hero. He's a homebody who likes his pantry full and his routine undisturbed, and the entire novel is powered by the tension between the comfortable life he's been pulled away from and the person the road is slowly making him become. It's the book that invented the template for cozy epic fantasy: high stakes, genuine peril, but always with a warmth underneath that tells you the world is worth saving. The dwarves are well-drawn despite being thirteen of them, the episodic structure means every chapter delivers something new, and Riddles in the Dark remains one of the most perfectly constructed scenes in fantasy. Short enough to read in a weekend, rich enough to think about for years.",
     why_people_love_rich: [
-      { type: 'paragraph', text: "The Hobbit works because Tolkien understood that the best adventures start with someone who doesn't want one. Bilbo Baggins is not a hero — he's a homebody who likes his pantry full and his routine undisturbed — and the entire novel is powered by the tension between the comfortable life he's been pulled away from and the person the road is slowly making him become. It's the book that invented the template for cozy epic fantasy: high stakes, genuine peril, but always with a warmth underneath that tells you the world is worth saving." },
-      { type: 'labeled', label: 'Riddles in the Dark:', text: "The encounter between Bilbo and Gollum in the dark under the mountain is the most perfectly constructed scene in fantasy literature — a tense exchange of riddles between a hobbit who found a ring and a creature who lost one, each trying to win the right to eat the other. Tolkien builds it with deceptive simplicity: the riddles are genuinely fair, the stakes are clear, the darkness is real. And then Bilbo wins by accident with a question that isn't technically a riddle, and Gollum cannot call foul, and the reader understands that luck and mercy are as important to Bilbo's character as cleverness." },
+      { type: 'paragraph', text: "The Hobbit works because Tolkien understood that the best adventures start with someone who doesn't want one. Bilbo Baggins is not a hero. He's a homebody who likes his pantry full and his routine undisturbed, and the entire novel is powered by the tension between the comfortable life he's been pulled away from and the person the road is slowly making him become. It's the book that invented the template for cozy epic fantasy: high stakes, genuine peril, but always with a warmth underneath that tells you the world is worth saving." },
+      { type: 'labeled', label: 'Riddles in the Dark:', text: "The encounter between Bilbo and Gollum in the dark under the mountain is one of the most perfectly constructed scenes in fantasy literature: a tense exchange of riddles between a hobbit who found a ring and a creature who lost one, each trying to win the right to eat the other. Tolkien builds it with deceptive simplicity: the riddles are genuinely fair, the stakes are clear, the darkness is real. And then Bilbo wins by accident with a question that isn't technically a riddle, and Gollum cannot call foul, and the reader understands that luck and mercy are as important to Bilbo's character as cleverness." },
       { type: 'paragraph', text: "The episodic structure is a feature: every chapter delivers something new (trolls, eagles, elves, spiders, Beorn, barrels, Smaug), and the world expands with each stop in a way that suggests the Middle-earth around Bilbo's journey is vast and real and does not begin or end with him. Short enough to read in a weekend, rich enough to think about for years." },
-      { type: 'warning', text: "The Hobbit is a children's book, and readers coming from adult fantasy will notice the shift in tone and register. The narrator is famously present — Tolkien addresses the reader directly, explaining things in a way The Lord of the Rings never does — and some adult readers find this charming and others find it interrupting. The novel is complete on its own terms; The Lord of the Rings is tonally much darker and should not be expected to feel the same." },
+      { type: 'warning', text: "The Hobbit is a children's book, and readers coming from adult fantasy will notice the shift in tone and register. The narrator is famously present, addressing the reader directly and explaining things in a way The Lord of the Rings never does, and some adult readers find this charming and others find it interrupting. The novel is complete on its own terms; The Lord of the Rings is tonally much darker and should not be expected to feel the same." },
     ],
   },
   aspects: [
     {
       heading:
-        'If you loved the cozy, warm-hearted tone and the unlikely hero swept up in something larger than himself...',
+        'If you loved the cozy, warm-hearted tone: real stakes and genuine peril, but always underneath a sense that the world is fundamentally good and worth protecting...',
       recs: [
         {
           title: 'The Goblin Emperor',
           author: 'Katherine Addison',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765365682-L.jpg',
           darkness_level: 2,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: true,
+          series: 'The Goblin Emperor',
+          series_number: 1,
           series_label: 'Standalone (with companion novel)',
           audiobook: true,
-          note: "The closest modern novel to The Hobbit's emotional register: a fundamentally decent protagonist thrust into an impossible situation, refusing to become cruel despite every incentive to do so. Maia, like Bilbo, is an outsider who discovers unexpected reserves of character on the way. No dragon, no quest — but the same sense of an ordinary person discovering they are not ordinary after all. If you read The Hobbit for the warmth rather than the adventure, this is your book.",
+          note: "The closest modern novel to The Hobbit's emotional register: a fundamentally decent protagonist thrust into an impossible situation, refusing to become cruel despite every incentive to do so. Maia, like Bilbo, is an outsider who discovers unexpected reserves of character on the way. No dragon, no quest, but the same sense of an ordinary person discovering they are not ordinary after all. If you read The Hobbit for the warmth rather than the adventure, this is your book.",
+          caveat: "No dragon, no physical quest, and the danger is entirely political rather than the monsters-and-magic adventure Bilbo faces on the road.",
           tags: [
             'Unlikely Ruler',
             'Kind Protagonist',
@@ -65,16 +65,15 @@ export const theHobbit: BooksLikeEntry = {
           title: 'Legends & Lattes',
           slug: 'legends-and-lattes',
           author: 'Travis Baldree',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781250888808-L.jpg',
           darkness_level: 1,
-          heat_level: 'Sweet Romance',
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Legends & Lattes',
           series_number: 1,
           series_label: 'Series (2 books)',
           audiobook: true,
-          note: "An orc barbarian who hangs up her sword to open a coffee shop — which is exactly as charming as it sounds. Legends & Lattes captures the post-adventure warmth of The Hobbit's return to the Shire: the sense that the world is good, the people in it are mostly decent, and small pleasures are worth protecting. Even lower stakes than The Hobbit, even more cozy. If you want zero peril and maximum found-family comfort, this is the answer.",
+          note: "An orc barbarian who hangs up her sword to open a coffee shop, which is exactly as charming as it sounds. Legends & Lattes captures the post-adventure warmth of The Hobbit's return to the Shire: the sense that the world is good, the people in it are mostly decent, and small pleasures are worth protecting. Even lower stakes than The Hobbit, even more cozy. If you want zero peril and maximum found-family comfort, this is the answer.",
+          caveat: "Set after the adventure rather than during one, so there's no equivalent to Bilbo's actual journey. This is entirely about what comes next, not the road itself.",
           tags: [
             'Cozy Fantasy',
             'Found Family',
@@ -91,21 +90,20 @@ export const theHobbit: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the episodic quest structure — a band of companions, a new wonder at every stop...',
+        'If you loved the episodic quest structure: a new wonder at every stop, and the sense that the road itself is the story...',
       recs: [
         {
           title: 'A Wizard of Earthsea',
           author: 'Ursula K. Le Guin',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780547773742-L.jpg',
           darkness_level: 2,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: false,
           series: 'Earthsea',
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "The other foundational short fantasy novel — slim, mythic, and deeply concerned with what power costs the person who wields it. Ged's journey across the Earthsea archipelago has the same episodic, wonder-per-chapter structure as Bilbo's road. Le Guin's prose is quieter and more literary than Tolkien's, but the spirit is identical: a young person discovering who they are through the places the road takes them. A perfect companion read.",
+          note: "The other foundational short fantasy novel: slim, mythic, and deeply concerned with what power costs the person who wields it. Ged's journey across the Earthsea archipelago has the same episodic, wonder-per-chapter structure as Bilbo's road. Le Guin's prose is quieter and more literary than Tolkien's, but the spirit is identical: a young person discovering who they are through the places the road takes them.",
+          caveat: "Ged travels mostly alone rather than with a company of companions, and Le Guin's prose is quieter and more austere than Tolkien's warmer, more digressive narration.",
           tags: [
             'Coming of Age',
             'Episodic Adventure',
@@ -121,17 +119,15 @@ export const theHobbit: BooksLikeEntry = {
         {
           title: 'The Name of the Wind',
           author: 'Patrick Rothfuss',
-          cover_url:
-            'https://books.google.com/books/publisher/content/images/frontcover/DSyJEAAAQBAJ?fife=w400-h600',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
           series: 'The Kingkiller Chronicle',
           series_number: 1,
-          series_label: 'Series (unfinished — 2 books published)',
+          series_label: 'Series (unfinished, 2 books published)',
           audiobook: true,
-          note: "Where The Hobbit is a quest, The Name of the Wind is a bildungsroman told as myth — Kvothe narrating his own legend from a tavern in a small town. The episodic structure is similar, the sense of a world bigger than any map is identical, and Rothfuss has Tolkien's gift for making magic feel genuinely wondrous rather than mechanical.",
-          caveat: "the third book has not been published and may never be. Read knowing you are signing up for an unfinished journey.",
+          note: "Where The Hobbit is a quest, The Name of the Wind is a bildungsroman told as myth: Kvothe narrating his own legend from a tavern in a small town. The episodic structure is similar, the sense of a world bigger than any map is identical, and Rothfuss has Tolkien's gift for making magic feel genuinely wondrous rather than mechanical.",
+          caveat: "The third book has not been published and may never be. Read knowing you are signing up for an unfinished journey.",
           tags: [
             'Bildungsroman',
             'Magic University',
@@ -148,13 +144,11 @@ export const theHobbit: BooksLikeEntry = {
     },
     {
       heading:
-        "If you loved Tolkien's world — the deep history, the dragons, the sense that the mythology goes on forever...",
+        "If you loved Tolkien's world: the deep history, the dragons, the sense that the mythology goes on forever...",
       recs: [
         {
           title: 'The Eye of the World',
           author: 'Robert Jordan',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765345424-L.jpg',
           darkness_level: 3,
           heat_level: 'Sweet Romance',
           standalone: false,
@@ -162,7 +156,8 @@ export const theHobbit: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (14 books, complete)',
           audiobook: true,
-          note: "The most direct heir to Tolkien's world-building ambition: a mythology that stretches back thousands of years, a party of ordinary people from a small village pulled into something vast, and a villain whose shadow falls across the entire world. Jordan studied The Lord of the Rings carefully and built something with comparable scope — though at fourteen books it is a far longer commitment than Bilbo ever faced. Start with book one and judge from there.",
+          note: "The most direct heir to Tolkien's world-building ambition: a mythology that stretches back thousands of years, a party of ordinary people from a small village pulled into something vast, and a villain whose shadow falls across the entire world. Jordan studied The Lord of the Rings carefully and built something with comparable scope. Start with book one and judge from there.",
+          caveat: "A fourteen-book commitment rather than a single self-contained adventure, and the tone turns considerably darker and more dangerous than The Hobbit's ever does.",
           tags: [
             'Epic Quest',
             'Chosen One',
@@ -178,16 +173,15 @@ export const theHobbit: BooksLikeEntry = {
         {
           title: 'The Way of Kings',
           author: 'Brandon Sanderson',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765376671-L.jpg',
-          darkness_level: 4,
-          heat_level: null,
+          darkness_level: 3,
+          heat_level: 'Sweet Romance',
           standalone: false,
           series: 'The Stormlight Archive',
           series_number: 1,
           series_label: 'Series (10 books planned)',
           audiobook: true,
-          note: "Sanderson has been explicit that Tolkien is the reason he became a fantasy writer — and it shows. The Way of Kings has the same depth of mythology (Roshar's history runs back thousands of years before the novel opens), the same care for world-building as pleasure in itself, and the same interest in what ordinary people become under extraordinary pressure. Much longer, much darker, and with a hard magic system that Tolkien's softer approach lacks. But the love of the world is identical.",
+          note: "Sanderson has been explicit that Tolkien is the reason he became a fantasy writer, and it shows. The Way of Kings has the same depth of mythology (Roshar's history runs back thousands of years before the novel opens), the same care for world-building as pleasure in itself, and the same interest in what ordinary people become under extraordinary pressure. Much longer and with a hard magic system that Tolkien's softer approach lacks, but the love of the world is identical.",
+          caveat: "A hard magic system and multiple rotating POVs rather than Tolkien's single close perspective and softer, undefined magic, and considerably longer and darker throughout.",
           tags: [
             'Epic Fantasy',
             'Deep Lore',

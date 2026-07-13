@@ -1,3 +1,5 @@
+import { artemisFowl } from './books-like/artemis-fowl';
+import { witchWorld } from './books-like/witch-world';
 import { legend } from './books-like/legend';
 import { theCrownTower } from './books-like/the-crown-tower';
 import { riversOfLondon } from './books-like/rivers-of-london';
@@ -439,6 +441,8 @@ export const BOOKS_LIKE: BooksLikeEntry[] = [
   riversOfLondon,
   theCrownTower,
   legend,
+  witchWorld,
+  artemisFowl,
 ];
 
 // Sort alphabetically by title, ignoring leading "The / A / An"
