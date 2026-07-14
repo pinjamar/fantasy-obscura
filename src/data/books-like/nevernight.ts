@@ -5,9 +5,8 @@ export const nevernight: BooksLikeEntry = {
   source: {
     title: 'Nevernight',
     author: 'Jay Kristoff',
-    cover_url: 'https://covers.openlibrary.org/b/isbn/9781250301055-L.jpg',
-    darkness_level: 5,
-    heat_level: 'Explicit',
+    darkness_level: 4,
+    heat_level: 'Fiery',
     series: 'The Nevernight Chronicle',
     series_number: 1,
     tropes: [
@@ -23,34 +22,33 @@ export const nevernight: BooksLikeEntry = {
     angle:
       'Grimdark assassin school with a razor-sharp narrator and operatic violence',
     answer_line:
-      'If you loved Nevernight for its blistering prose, its morally unhinged protagonist, or its dark academic murder school, start with The Lies of Locke Lamora, Red Sister, and Six of Crows.',
+      'If you loved Nevernight for its blistering prose, its morally unhinged protagonist, or its dark academic murder school, start with The Lies of Locke Lamora, Red Sister, and The Poppy War.',
     why_people_love:
-      "Mia Corvere wants to become the deadliest assassin in the Republic so she can kill the men who destroyed her family — and the Red Church, a murder cult hidden inside a sealed mountain, is the only place to learn. Nevernight is one of the most stylistically distinctive fantasy novels of the past decade: Kristoff writes in a breathless, sardonic first person with an unreliable narrator who comments on her own story via acerbic footnotes, so the prose itself is a character. The Red Church is a dark academic fantasy done right — not a cosy magical school but a lethal competition where the curriculum is poison, blades, and seduction and students regularly end up dead. What earns the series its passionate following is Mia herself: brilliantly capable, genuinely funny, absolutely ruthless, and emotionally broken in ways the narrative never softens or resolves cleanly. The sex is explicit and the violence is operatic, so this isn't a book for everyone — but for readers who want grimdark with genuine wit and a female protagonist who belongs in the same conversation as Locke Lamora and Jorg Ancrath, there's nothing quite like it.",
+      "Mia Corvere wants to become the deadliest assassin in the Republic so she can kill the men who destroyed her family. And the Red Church, a murder cult hidden inside a sealed mountain, is the only place to learn. Nevernight is one of the most stylistically distinctive fantasy novels of the past decade: Kristoff writes in a breathless, sardonic first person with an unreliable narrator who comments on her own story via acerbic footnotes, so the prose itself is a character. The Red Church is a dark academic fantasy done right: not a cosy magical school but a lethal competition where the curriculum is poison, blades, and seduction and students regularly end up dead. Mia herself is what makes the series so beloved: brilliantly capable, genuinely funny, absolutely ruthless, and emotionally broken in ways the narrative never softens or resolves cleanly. The sex is explicit and the violence is operatic, so this isn't a book for everyone. But for readers who want grimdark with genuine wit and a female protagonist who belongs in the same conversation as Locke Lamora and Jorg Ancrath, there's nothing quite like it.",
     why_people_love_rich: [
-      { type: 'paragraph', text: "Nevernight works because Kristoff made the narrative voice inseparable from the protagonist's damage. Mia Corvere watches her family destroyed when she is ten years old, and the footnoted sardonic first-person register — a voice that can't stop commenting on its own story — is what a specific kind of grief looks like when it has had years to calcify into something hard and funny and precise. The prose is not stylistic decoration; it is character." },
+      { type: 'paragraph', text: "Nevernight works because Kristoff made the narrative voice inseparable from the protagonist's damage. Mia Corvere watches her family destroyed when she is ten years old, and the footnoted sardonic first-person register (a voice that can't stop commenting on its own story) is what a specific kind of grief looks like when it has had years to calcify into something hard and funny and precise. The prose is not stylistic decoration; it is character." },
       { type: 'labeled', label: 'The Red Church:', text: "A murder cult inside a sealed mountain, where the curriculum is poison, blades, and seduction and students regularly die. Kristoff builds the Red Church with the logic of a real institution: hierarchy, politics, rivalries between instructors, the specific cruelties of students who understand that this is a competition for their lives. The world-building is in the procedures, not the exposition." },
-      { type: 'paragraph', text: "Mia herself is what earns the series its devoted following. She is brilliantly capable, genuinely funny, absolutely ruthless, and emotionally broken in ways the narrative never softens or resolves. The shadows that eat darkness for her are a physical expression of what she is: something that consumes what others fear. The sex is explicit, the violence is operatic, and neither is there for shock — both are expressions of a protagonist whose entire self has been weaponised." },
-      { type: 'warning', text: "The footnote-heavy style is either something you love immediately or find exhausting — there is no middle ground. The series darkens considerably across three books. Readers who want grimdark without explicit content will need to look elsewhere; readers who want a female antihero in the same conversation as Locke Lamora and Jorg Ancrath will find nothing closer." },
+      { type: 'paragraph', text: "Mia herself is what makes the series so devotedly loved. She is brilliantly capable, genuinely funny, absolutely ruthless, and emotionally broken in ways the narrative never softens or resolves. The shadows that eat darkness for her are a physical expression of what she is: something that consumes what others fear. The sex is explicit, the violence is operatic, and neither is there for shock. Both are expressions of a protagonist whose entire self has been weaponised." },
+      { type: 'warning', text: "The footnote-heavy style is either something you love immediately or find exhausting. There is no middle ground. The series darkens considerably across three books. Readers who want grimdark without explicit content will need to look elsewhere; readers who want a female antihero in the same conversation as Locke Lamora and Jorg Ancrath will find nothing closer." },
     ],
   },
   aspects: [
     {
       heading:
-        'If you loved the voice — the sardonic first-person narration, the footnotes, the way Kristoff makes wit and brutality feel like the same thing...',
+        'If you loved the voice: the sardonic first-person narration, the footnotes, the way Kristoff makes wit and brutality feel like the same thing...',
       recs: [
         {
           title: 'The Lies of Locke Lamora',
           author: 'Scott Lynch',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780553588941-L.jpg',
-          darkness_level: 4,
-          heat_level: null,
+          darkness_level: 5,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Gentleman Bastard',
           series_number: 1,
           series_label: 'Series (ongoing)',
           audiobook: true,
-          note: "Locke Lamora is the most charming thief in a city of thieves, running elaborate cons on the nobility of Camorr while something far more dangerous closes in on him and his crew. Lynch writes with the same crackling energy as Kristoff — the banter is surgical, the plotting is elaborate, and the violence, when it finally arrives, is genuinely shocking after all that wit. The world-building is as meticulous as the Red Church's hierarchy: Camorr is built from ancient alien architecture no one understands, and the criminal ecosystem layered on top of it is one of the most convincing in fantasy. If Mia's voice is the thing that hooked you, Locke is her closest male equivalent.",
+          note: "Locke Lamora is the most charming thief in a city of thieves, running elaborate cons on the nobility of Camorr while something far more dangerous closes in on him and his crew. Lynch writes with the same crackling energy as Kristoff: the banter is surgical, the plotting is elaborate, and the violence, when it finally arrives, is genuinely shocking after all that wit. The world-building is as meticulous as the Red Church's hierarchy: Camorr is built from ancient alien architecture no one understands, and the criminal ecosystem layered on top of it is one of the most convincing in fantasy. If Mia's voice is the thing that hooked you, Locke is her closest male equivalent.",
+          caveat: "No footnotes and no assassin school; Locke is a con artist rather than a killer-in-training, and the connection is in the voice and the damaged genius rather than shared structure.",
           tags: [
             'Heist',
             'Con Artist',
@@ -67,16 +65,16 @@ export const nevernight: BooksLikeEntry = {
         {
           title: 'Prince of Thorns',
           author: 'Mark Lawrence',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780441017027-L.jpg',
           darkness_level: 5,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The Broken Empire',
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "Jorg Ancrath is fourteen years old, leads a band of mercenary killers, and has been planning his revenge since the day he watched his mother and brother murdered. Like Mia, he is a child shaped entirely by trauma who weaponised that damage before most people finish school, and Lawrence writes his interiority with the same uncomfortable intimacy Kristoff uses for Mia's — you're inside the logic of someone you're not sure you should be rooting for. The prose is leaner than Nevernight but equally precise, and the grimdark credentials are at least as uncompromising. Readers who find Mia too dark rarely find Jorg easier, and vice versa.",
+          note: "Jorg Ancrath is fourteen years old, leads a band of mercenary killers, and has been planning his revenge since the day he watched his mother and brother murdered. Like Mia, he is a child shaped entirely by trauma who weaponised that damage before most people finish school, and Lawrence writes his interiority with the same uncomfortable intimacy Kristoff uses for Mia's: you're inside the logic of someone you're not sure you should be rooting for. The prose is leaner than Nevernight but equally precise, and the grimdark credentials are at least as uncompromising. Readers who find Mia too dark rarely find Jorg easier, and vice versa.",
+          caveat: "No dark-academy structure at all, and Jorg's voice is colder and less witty than Mia's. Readers sensitive to a teenage narrator committing atrocities with little narrative judgment should know what they're signing up for.",
+          warning: 'Graphic violence, sexual assault, child soldier committing atrocities.',
           tags: [
             'Revenge Quest',
             'Morally Grey Protagonist',
@@ -93,21 +91,20 @@ export const nevernight: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the dark magic school — the Red Church as a lethal institution, the curriculum of assassination, the deadly competition between students...',
+        'If you loved the dark magic school: the Red Church as a lethal institution, the curriculum of assassination, the deadly competition between students...',
       recs: [
         {
           title: 'Red Sister',
           author: 'Mark Lawrence',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780425284551-L.jpg',
-          darkness_level: 4,
-          heat_level: null,
+          darkness_level: 3,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Book of the Ancestor',
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "Nona Grey is rescued from the gallows and brought to the Convent of Sweet Mercy, where nuns train girls to become soldiers, assassins, and holy warriors in service of a dying world. Lawrence essentially wrote the female dark magic school novel before Nevernight and from the opposite gender direction — where Mia is irreverent and sardonic, Nona is fierce and loyal, but both are dangerous children learning to be killers inside a rigidly hierarchical institution that will test them to destruction. The convent politics, the found family of training partners, and the revelation of Nona's true nature all follow a similar emotional logic to the Red Church arc. The trilogy is complete and consistently excellent.",
+          note: "Nona Grey is rescued from the gallows and brought to the Convent of Sweet Mercy, where nuns train girls to become soldiers, assassins, and holy warriors in service of a dying world. Lawrence essentially wrote the female dark magic school novel before Nevernight and from the opposite gender direction: where Mia is irreverent and sardonic, Nona is fierce and loyal, but both are dangerous children learning to be killers inside a rigidly hierarchical institution that will test them to destruction. The convent politics, the found family of training partners, and the revelation of Nona's true nature all follow a similar emotional logic to the Red Church arc. The trilogy is complete and consistently excellent.",
+          caveat: "Considerably gentler in register than Nevernight despite the lethal setting; less sex, less sardonic humour, and Nona's voice is sincere rather than acerbic.",
           tags: [
             'Dark Magic School',
             'Female Protagonist',
@@ -123,8 +120,6 @@ export const nevernight: BooksLikeEntry = {
         {
           title: 'Six of Crows',
           author: 'Leigh Bardugo',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781627792127-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -132,7 +127,8 @@ export const nevernight: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Duology (complete)',
           audiobook: true,
-          note: "Kaz Brekker is the most feared criminal in Ketterdam, and he needs five other specialists to pull off the impossible heist of a heavily guarded magical prison. Six of Crows isn't a school story but it has the same ensemble-of-dangerous-specialists dynamic as the Red Church graduates — each POV character is morally compromised in specific and interesting ways, each has a backstory of damage that explains their edge, and Bardugo's plot is constructed with the same intricate precision Kristoff uses for the Red Church's trials. The romance is more prominent (and more restrained) than Nevernight, but the found family and the heist structure deliver the same emotional satisfaction as watching Mia outmanoeuvre the Red Church hierarchy.",
+          note: "Kaz Brekker is the most feared criminal in Ketterdam, and he needs five other specialists to pull off the impossible heist of a heavily guarded magical prison. Six of Crows isn't a school story but it has the same ensemble-of-dangerous-specialists dynamic as the Red Church graduates: each POV character is morally compromised in specific and interesting ways, each has a backstory of damage that explains their edge, and Bardugo's plot is constructed with the same intricate precision Kristoff uses for the Red Church's trials. The romance is more prominent (and more restrained) than Nevernight, but the found family and the heist structure deliver the same emotional satisfaction as watching Mia outmanoeuvre the Red Church hierarchy.",
+          caveat: "No dark-academy setting and considerably less explicit than Nevernight; the romance subplots also carry more narrative weight here than anything in the Nevernight Chronicle.",
           tags: [
             'Heist',
             'Morally Grey Ensemble',
@@ -150,22 +146,21 @@ export const nevernight: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the revenge arc — a protagonist who has been building toward a single act of vengeance since childhood, and the cost that obsession extracts...',
+        'If you loved the revenge arc: a protagonist who has been building toward a single act of vengeance since childhood, and the cost that obsession extracts...',
       recs: [
         {
           title: 'The Poppy War',
           author: 'R.F. Kuang',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780062662583-L.jpg',
           darkness_level: 5,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The Poppy War',
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
           warning: 'war atrocities, genocide, drug use, graphic violence',
-          note: "Rin passes the empire's most brutal examination to earn a place at the elite military academy, discovers she has a power that should be impossible, and watches the world she wanted to succeed inside collapse into war. Kuang and Kristoff are doing the same thing from different cultural directions: both are writing protagonists who earn institutional recognition through exceptional ruthlessness, both are interrogating what it costs a person to become capable of the violence the plot requires, and both trilogies follow those protagonists past the point where the revenge fantasy stops feeling satisfying. The Poppy War is more historically grounded (Sino-Japanese War analogue) and the darkness is more sustained, but Rin and Mia are sisters under the skin.",
+          note: "Rin passes the empire's most brutal examination to earn a place at the elite military academy, discovers she has a power that should be impossible, and watches the world she wanted to succeed inside collapse into war. Kuang and Kristoff are doing the same thing from different cultural directions: both are writing protagonists who gain institutional recognition through exceptional ruthlessness, both are interrogating what it costs a person to become capable of the violence the plot requires, and both trilogies follow those protagonists past the point where the revenge fantasy stops feeling satisfying. The Poppy War is more historically grounded (Sino-Japanese War analogue) and the darkness is more sustained, but Rin and Mia are sisters under the skin.",
+          caveat: "The academy setting is confined to the first act; once Rin leaves it, the book becomes a war novel, and the tone turns grimmer rather than sardonic.",
           tags: [
             'Revenge Quest',
             'Military Academy',
@@ -182,16 +177,15 @@ export const nevernight: BooksLikeEntry = {
         {
           title: 'Red Rising',
           author: 'Pierce Brown',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780345539786-L.jpg',
           darkness_level: 4,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Red Rising',
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "Darrow is a low-caste miner who infiltrates the ruling class's brutal military academy to tear the entire caste system down from inside. Where Mia's revenge is personal and operatic, Darrow's is systemic and political, but the emotional architecture is identical: a protagonist remade by loss, inserted into a lethal training competition, who discovers that surviving the institution requires becoming someone you're not sure you want to be. Brown writes action at the same velocity as Kristoff, and the academy section of the first book — Darrow learning to survive and then to dominate — lands with the same addictive momentum as the Red Church's trials. The series gets progressively more epic in scope.",
+          note: "Darrow is a low-caste miner who infiltrates the ruling class's brutal military academy to tear the entire caste system down from inside. Where Mia's revenge is personal and operatic, Darrow's is systemic and political, but the emotional architecture is identical: a protagonist remade by loss, inserted into a lethal training competition, who discovers that surviving the institution requires becoming someone you're not sure you want to be. Brown writes action at the same velocity as Kristoff, and the academy section of the first book (Darrow learning to survive and then to dominate) lands with the same addictive momentum as the Red Church's trials. The series gets progressively more epic in scope.",
+          caveat: "No wit or narrative playfulness in Kristoff's register; Darrow's voice is earnest rather than acerbic, and this is science fiction dressed as gladiatorial fantasy rather than secondary-world fantasy.",
           tags: [
             'Revenge Quest',
             'Class War',
@@ -208,136 +202,7 @@ export const nevernight: BooksLikeEntry = {
       ],
     },
   ],
-  recommendations: [
-    {
-      title: 'The Blade Itself',
-      author: 'Joe Abercrombie',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780575079793-L.jpg',
-      darkness_level: 4,
-      heat_level: null,
-      tags: [
-        'Grimdark',
-        'Morally Grey Cast',
-        'Anti-Hero',
-        'Political Intrigue',
-        'Military Fantasy',
-      ],
-      why: "If you want more grimdark with genuine wit and morally compromised protagonists, Abercrombie is the standard-bearer of the genre. The First Law trilogy follows a torturer, a broken warrior, and a barbarian through a war that nobody wins cleanly, and the prose is as precise and sardonic as Kristoff's at its best. The violence is unflinching, the magic is genuinely unsettling, and the world refuses to sort neatly into good and evil. None of the leads are as stylistically maximalist as Mia, but the ensemble achieves the same emotional effect: you like people you absolutely shouldn't.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=The+Blade+Itself+Joe+Abercrombie&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=The+Blade+Itself+Joe+Abercrombie&affiliate=122720',
-    },
-    {
-      title: 'Best Served Cold',
-      author: 'Joe Abercrombie',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780575082489-L.jpg',
-      darkness_level: 5,
-      heat_level: 'Open Door',
-      tags: [
-        'Revenge Quest',
-        'Female Protagonist',
-        'Grimdark',
-        'Morally Grey',
-        'Political Intrigue',
-      ],
-      why: "If Mia's revenge arc is the thing — the relentless forward motion of a woman who will not stop until every man on her list is dead — Monza Murcatto is her closest analogue in grimdark fiction. Abercrombie's standalone follows a general left for dead by the Duke she served, who rebuilds herself into an instrument of murder and hunts down his seven co-conspirators one by one. The cast is morally compromised in the same ensemble-of-specialists way as the Nevernight Chronicle; the violence is at least as operatic; and the cost the narrative extracts from Monza for her revenge is the most honest treatment of the theme in the genre. Standalone, set in the First Law world (no prior reading required).",
-      standalone: true,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Best+Served+Cold+Joe+Abercrombie&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Best+Served+Cold+Joe+Abercrombie&affiliate=122720',
-    },
-    {
-      title: 'Ninth House',
-      author: 'Leigh Bardugo',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9781250313072-L.jpg',
-      darkness_level: 5,
-      heat_level: null,
-      tags: [
-        'Dark Academia',
-        'Female Protagonist',
-        'Secret Societies',
-        'Trauma',
-        'Mystery',
-        'Urban Fantasy',
-      ],
-      why: "Galaxy Stern is a woman with the ability to see ghosts who is recruited into Yale's secret magical societies — the first outsider in living memory — to police the nine houses' use of magic. Where Nevernight is pure fantasy maximalism, Ninth House is contemporary and grounded, but the tonal DNA is nearly identical: a female protagonist who survived serious violence before the narrative begins, an elite institution doing terrible things beneath its respectable surface, and prose that treats darkness as a first-class narrative element rather than something to apologise for. Bardugo is more interested in trauma's aftermath than Kristoff, and there's no assassin school equivalent, but Alex and Mia occupy the same emotional register.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Ninth+House+Leigh+Bardugo&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=Ninth+House+Leigh+Bardugo&affiliate=122720',
-    },
-    {
-      title: "Assassin's Apprentice",
-      author: 'Robin Hobb',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780553573398-L.jpg',
-      darkness_level: 3,
-      heat_level: null,
-      tags: [
-        'Assassin',
-        'Coming of Age',
-        'Political Intrigue',
-        'Magic',
-        'Found Family',
-        'Emotional Depth',
-      ],
-      why: "The original assassin's apprentice novel: Fitz is the royal bastard quietly trained as a king's assassin while the court around him pretends he doesn't exist. Where Nevernight is maximalist and sardonic, Hobb is intimate and quietly devastating — Fitz's first-person narration is the emotional opposite of Mia's bravado, dwelling on every failure and loss with painful honesty. The training arc, the mentor relationship, and the sense of being used by an institution that will never formally claim you all map directly onto the Red Church. If you want the same emotional premise at a slower, more literary pace and with less explicit content, this is the series.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=Assassin%27s+Apprentice+Robin+Hobb&tag=librariancura-20',
-      bookshop_url:
-        "https://bookshop.org/search?keywords=Assassin's+Apprentice+Robin+Hobb&affiliate=122720",
-    },
-    {
-      title: 'The Name of the Wind',
-      author: 'Patrick Rothfuss',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg',
-      darkness_level: 3,
-      heat_level: 'Closed Door',
-      tags: [
-        'Magic University',
-        'Unreliable Narrator',
-        'Legendary Protagonist',
-        'Music as Magic',
-        'Tragedy',
-      ],
-      why: "Kvothe is telling his own legend to a scribe over three days, which means — like Mia's footnoted narration — you're always aware of the gap between the story being told and the teller doing the telling. Both protagonists are building toward an act of revenge from childhood, both are admitted to an elite institution on exceptional ability despite low status, and both narratives are deeply interested in the difference between a person's mythologised self and their actual self. Rothfuss is warmer and more romantic than Kristoff and the darkness is more grief than violence, but the narrative architecture — the invented-legend structure, the unreliable voice, the revenge arc — is closely aligned.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=The+Name+of+the+Wind+Patrick+Rothfuss&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=The+Name+of+the+Wind+Patrick+Rothfuss&affiliate=122720',
-    },
-    {
-      title: 'A Little Hatred',
-      author: 'Joe Abercrombie',
-      cover_url: 'https://covers.openlibrary.org/b/isbn/9780316187183-L.jpg',
-      darkness_level: 4,
-      heat_level: 'Open Door',
-      tags: [
-        'Grimdark',
-        'Ensemble Cast',
-        'Industrial Revolution Fantasy',
-        'Morally Grey',
-        'Class War',
-      ],
-      why: "The Age of Madness trilogy is Abercrombie's best work and the grimdark novel most likely to appeal to Nevernight readers who want more wit alongside the brutality. The ensemble cast includes a female protagonist with the same controlled fury as Mia — Savine dan Glokta is a financial predator navigating a world about to explode into class revolution — and Abercrombie's prose has sharpened into something genuinely stylish. The industrialising First Law world is darker and more ironic than anything in Nevernight, and the series' willingness to let characters fail completely and ugly is at the same level as Kristoff's.",
-      standalone: false,
-      audiobook: true,
-      amazon_url:
-        'https://www.amazon.com/s?k=A+Little+Hatred+Joe+Abercrombie&tag=librariancura-20',
-      bookshop_url:
-        'https://bookshop.org/search?keywords=A+Little+Hatred+Joe+Abercrombie&affiliate=122720',
-    },
-  ],
+  recommendations: [],
   related: [
     {
       title: 'Books Like The Lies of Locke Lamora',
