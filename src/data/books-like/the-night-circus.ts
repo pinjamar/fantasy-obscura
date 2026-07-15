@@ -183,6 +183,54 @@ export const theNightCircus: BooksLikeEntry = {
         },
       ],
     },
+    {
+      heading:
+        "If you loved the bargain neither Celia nor Marco chose: a magic that binds a life to rules someone else set, for reasons that only become clear over time...",
+      recs: [
+        {
+          title: 'The Invisible Life of Addie LaRue',
+          author: 'V.E. Schwab',
+          darkness_level: 3,
+          heat_level: 'Closed Door',
+          standalone: true,
+          audiobook: true,
+          note: "Addie makes a desperate bargain with a dark power for freedom and immortality, and the price is that no one can ever remember her: not family, not lovers, not the world itself. Three hundred years later, someone finally does. Schwab's prose has the same lush, sensory quality as Morgenstern's, and the structure (the deal, its cost, the centuries spent paying it) carries the same melancholy-beneath-wonder that runs under Celia and Marco's bound competition. Both books are ultimately about what it costs to be extraordinary inside rules someone else wrote.",
+          caveat: "Contemporary-set rather than Victorian, and Addie's curse is a solitary condition rather than a shared bond between two people; the resonance is in the bargain-and-its-cost structure, not the romance.",
+          tags: [
+            'Magical Bargain',
+            'Immortal Character',
+            'Atmospheric',
+            'Standalone',
+            'Slow Burn',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=The+Invisible+Life+of+Addie+LaRue+VE+Schwab&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=The+Invisible+Life+of+Addie+LaRue&affiliate=122720',
+        },
+        {
+          title: "The Time Traveler's Wife",
+          author: 'Audrey Niffenegger',
+          darkness_level: 3,
+          heat_level: 'Open Door',
+          standalone: true,
+          audiobook: true,
+          note: "Henry's uncontrollable time displacement means he and Clare experience their relationship in a different order than the reader does: meeting each other at different ages, out of sequence, the way Celia and Marco's competition unfolds across a timeline the reader has to piece together. Niffenegger builds the same aching inevitability, a love story where neither party fully controls when or how they meet, and the non-linear structure is the emotional mechanism, not a gimmick.",
+          caveat: "Contemporary Chicago rather than a fantastical circus, and the heat level is considerably higher than The Night Circus; the connection is structural (a relationship experienced non-linearly) rather than atmospheric.",
+          tags: [
+            'Non-Linear Timeline',
+            'Fated Romance',
+            'Standalone',
+            'Literary',
+            'Bittersweet',
+          ],
+          amazon_url:
+            "https://www.amazon.com/s?k=The+Time+Traveler%27s+Wife+Audrey+Niffenegger&tag=librariancura-20",
+          bookshop_url:
+            "https://bookshop.org/search?keywords=The+Time+Traveler%27s+Wife&affiliate=122720",
+        },
+      ],
+    },
   ],
   recommendations: [],
   related: [

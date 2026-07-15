@@ -13,6 +13,12 @@ Every `BooksLikeEntry` has four sections:
 Aspects can have 1 or 2 recs — use 1 when the angle has one perfect match and no strong second,
 use 2 when two books genuinely fit the same angle. Do not pad with a weak second rec just to hit 2.
 
+**If a same-series/universe violation (see below) removes a rec, don't just drop the aspect to 1.**
+Do a real DB search for a genuine cross-author replacement for that angle first — swap, don't shrink.
+Only fall back to a 1-rec aspect if that search genuinely comes up empty after checking several
+candidates. Dropping below the 6-rec floor should be the last resort, not the default response to
+finding a same-series violation.
+
 
 ---
 ## Never Recommend the Same Series/Universe as the Source
@@ -21,7 +27,7 @@ Aspect recs and `recommendations` must be **different books by the logic of "if 
 
 - Same-series continuations belong in the **Reading Order** link at the bottom of the page (auto-generated from `source.series`), not in an aspect. Duplicating them there is redundant and confuses "books like X" with "what to read after X."
 - This applies even when the same-universe book is genuinely a great match (e.g. a parallel novel or direct sequel by the same author) — the fit isn't the issue, the category is. A reader looking for "books like X" already knows the sequel exists.
-- If you're tempted to add one because you can't find a real cross-author match for an angle: either find a different book, or drop that aspect. Don't fall back to the source's own series just to fill a slot.
+- If you're tempted to add one because you can't find a real cross-author match for an angle: search harder for a genuine replacement first (see rec-count note above). Only drop to a 1-rec aspect if that search comes up empty. Don't fall back to the source's own series just to fill a slot.
 
 ---
 ## DB Verification — Do This Before Adding Any Rec
@@ -272,6 +278,17 @@ Don't treat an "update" pass as just an em-dash/caveat/DB-fact sweep. Older guid
 **If nothing beats the current picks:** say so and move on. This is a check performed on every update, not a mandate to always change something. But "I skimmed it and it seemed fine" is not the check — step 1 requires actually re-reading each note against the heading's exact wording, every time, even on guides that otherwise look clean.
 
 ---
+## Final Checklist — Run on Every Update, Every File
+
+Before calling any guide update done, run all of these — not just the ones that feel relevant:
+
+1. **Total rec count is 6–8.** Count every rec across every aspect. If a file sits at exactly 6 after a same-series removal or any other cut, that's the floor, not a resting point — go back to the "swap, don't shrink" step above and look for a genuine 4th-aspect angle or a second rec for a 1-rec aspect before finishing. A file already at 6 for legitimate reasons (nothing else fits) is fine; a file at 6 because you removed something and stopped looking is not.
+2. `grep -n "—\|cover_url" <file>` — zero results. Every em-dash purged, no hardcoded cover_url on any DB-matched book.
+3. Slop regex: `grep -inE "widely considered|earns its|the payoff|emotional engine|inner truth|rewards patient|lands as hard|hits as hard|the flip side|psychological (depth|sharpness)" <file>` — review every hit; fix genuine AI-slop, leave verified-legitimate uses (e.g. "earns its reputation" describing critical consensus) with a one-line note on why it's fine.
+4. `npx tsc --noEmit -p . 2>&1 | grep -i "<slug>"` — zero results.
+5. Every `related` slug resolves to a real `BOOKS_LIKE` entry's internal `.slug` field — not just a file that exists on disk with a similar name (filenames don't always match slugs; verify by grepping `slug:` inside the target file, not `ls`).
+
+---
 ## Common Mistakes
 
 | Mistake | Fix |
@@ -283,6 +300,7 @@ Don't treat an "update" pass as just an em-dash/caveat/DB-fact sweep. Older guid
 | Guessing slugs without DB query | Always query first |
 | Populating `recommendations` array | Leave as `[]` — it is not rendered |
 | Aspect with a padded/weak second rec | Use 1 rec in that aspect instead |
+| Same-series violation removed a rec, aspect now has only 1 | Search for a real replacement before accepting 1 rec |
 | `cover_url` not verified to load | Check URL before committing |
 | Missing `caveat` on any rec | Every rec needs one — find what's genuinely different vs the source |
 | Burying caveat inside `note` string | Split it into `caveat` field — both must be present |

@@ -201,6 +201,60 @@ export const nevernight: BooksLikeEntry = {
         },
       ],
     },
+    {
+      heading:
+        'If you loved Mia herself: ruthless, funny, morally unhinged, and impossible not to root for...',
+      recs: [
+        {
+          title: 'The Young Elites',
+          author: 'Marie Lu',
+          darkness_level: 4,
+          heat_level: 'Closed Door',
+          standalone: false,
+          series: 'The Young Elites',
+          series_number: 1,
+          series_label: 'Trilogy (complete)',
+          audiobook: true,
+          note: "Adelina Amouteru survives a plague that marks her as a malfetto and grants her the power to conjure illusions and nightmares, and the novel is explicit about what it's building: not a hero who resists the dark path but one who walks into it with open eyes. Lu writes Adelina's descent with the same refusal to soften or redeem that Kristoff gives Mia. Both are protagonists you're not always comfortable rooting for, and both authors know it and lean in anyway.",
+          caveat: "No dark-academy setting and less explicit content than Nevernight; the connection is entirely in the protagonist's unapologetic embrace of her own ruthlessness.",
+          tags: [
+            'Villain Origin Story',
+            'Morally Grey Protagonist',
+            'Anti-Hero',
+            'Forbidden Magic',
+            'Female Protagonist',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=The+Young+Elites+Marie+Lu&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=The+Young+Elites+Marie+Lu&affiliate=122720',
+        },
+        {
+          title: 'Gideon the Ninth',
+          author: 'Tamsyn Muir',
+          darkness_level: 4,
+          heat_level: 'Closed Door',
+          standalone: false,
+          series: 'The Locked Tomb',
+          series_number: 1,
+          series_label: 'Series (4 books)',
+          audiobook: true,
+          note: "Gideon Nav is a foul-mouthed, sword-obsessed indentured swordswoman who'd rather die than perform gratitude, paired against her will with the necromancer she despises for a lethal competition inside a crumbling gothic empire. The tonal register (sardonic, irreverent, allergic to sincerity) is close kin to Mia's, and the found-family-inside-a-death-trap structure echoes the Red Church without duplicating it. Muir's prose is stranger and more maximalist than Kristoff's, but the refusal to make its protagonist easy or likable is the same instinct.",
+          caveat: "Necromancy and gothic space opera rather than assassin school, and the humor is more absurdist and meme-inflected than Mia's dry sardonicism; the plot is a locked-room mystery, not a school year.",
+          tags: [
+            'Necromancy',
+            'Morally Grey Protagonist',
+            'Dark Humour',
+            'Found Family',
+            'Enemies to Lovers',
+          ],
+          amazon_url:
+            'https://www.amazon.com/s?k=Gideon+the+Ninth+Tamsyn+Muir&tag=librariancura-20',
+          bookshop_url:
+            'https://bookshop.org/search?keywords=Gideon+the+Ninth+Tamsyn+Muir&affiliate=122720',
+        },
+      ],
+    },
   ],
   recommendations: [],
   related: [
