@@ -9,15 +9,21 @@ Every `BooksLikeEntry` has four sections:
 - **recommendations** — `[]` always. This array is NOT rendered by the page template. Put everything in aspects.
 - **related** — exactly 6 related Books Like page links
 
-**Rec count target: 6–8 total visible recs across all aspects.**
+**Rec count range: 6–8 total visible recs across all aspects.** This is a range, not a target —
+the right number is however many genuinely distinct angles the source book actually supports.
 Aspects can have 1 or 2 recs — use 1 when the angle has one perfect match and no strong second,
-use 2 when two books genuinely fit the same angle. Do not pad with a weak second rec just to hit 2.
+use 2 when two books genuinely fit the same angle. Do not pad with a weak second rec, and do not
+add a 4th aspect just to move a file from 6 to 8. A guide sitting at 6 because that's how many
+strong, distinct angles the book supports is done — it is not a defect to fix by default on every
+touch. Only look for an additional angle when you're already doing a full rewrite of the guide and
+a genuinely strong angle surfaces naturally; don't treat "still at 6" as a checklist item to chase
+on routine updates.
 
-**If a same-series/universe violation (see below) removes a rec, don't just drop the aspect to 1.**
-Do a real DB search for a genuine cross-author replacement for that angle first — swap, don't shrink.
-Only fall back to a 1-rec aspect if that search genuinely comes up empty after checking several
-candidates. Dropping below the 6-rec floor should be the last resort, not the default response to
-finding a same-series violation.
+**If a same-series/universe violation (see below) removes a rec, don't just drop the aspect to 1
+by reflex.** Do a real DB search for a genuine cross-author replacement for that specific angle
+first — swap, don't shrink. Only fall back to a 1-rec aspect if that search comes up empty. This
+applies to the rec that was just removed, not as license to go looking for unrelated 4th aspects
+elsewhere in the same guide.
 
 
 ---
@@ -282,7 +288,7 @@ Don't treat an "update" pass as just an em-dash/caveat/DB-fact sweep. Older guid
 
 Before calling any guide update done, run all of these — not just the ones that feel relevant:
 
-1. **Total rec count is 6–8.** Count every rec across every aspect. If a file sits at exactly 6 after a same-series removal or any other cut, that's the floor, not a resting point — go back to the "swap, don't shrink" step above and look for a genuine 4th-aspect angle or a second rec for a 1-rec aspect before finishing. A file already at 6 for legitimate reasons (nothing else fits) is fine; a file at 6 because you removed something and stopped looking is not.
+1. **Total rec count is 6–8.** Count every rec across every aspect — this just confirms the file is in range, it is not a prompt to add more. 6 is a normal, common, and complete result; don't go looking for a 4th aspect or a second rec just because the count is on the low end. The one exception: if a same-series violation was just removed in *this* update, apply the swap-don't-shrink step above for that specific slot before finishing.
 2. `grep -n "—\|cover_url" <file>` — zero results. Every em-dash purged, no hardcoded cover_url on any DB-matched book.
 3. Slop regex: `grep -inE "widely considered|earns its|the payoff|emotional engine|inner truth|rewards patient|lands as hard|hits as hard|the flip side|psychological (depth|sharpness)" <file>` — review every hit; fix genuine AI-slop, leave verified-legitimate uses (e.g. "earns its reputation" describing critical consensus) with a one-line note on why it's fine.
 4. `npx tsc --noEmit -p . 2>&1 | grep -i "<slug>"` — zero results.

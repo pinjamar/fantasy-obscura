@@ -19,22 +19,22 @@ export const promiseOfBlood: BooksLikeEntry = {
       'Ensemble POV',
     ],
     angle:
-      'Flintlock military fantasy — a coup opens the book, and the rest is what power actually costs when you take it',
+      'Flintlock military fantasy: a coup opens the book, and the rest is what power actually costs when you take it',
     answer_line:
       "If you loved Promise of Blood for the post-coup political chaos, the powder mage magic system, or Abercrombie-style moral complexity, start with Mistborn: The Final Empire, The Black Prism, and The Blade Itself.",
     why_people_love:
-      "Promise of Blood opens with the revolution already over. Field Marshal Tamas has staged a coup, executed the king, and sent the nobility to the guillotine — and the book's first chapter is a body count. What McClellan understood, writing as Sanderson's student and eventually his peer, is that the aftermath of a revolution is more interesting than the revolution itself: Tamas has power now and has no idea what to do with it. The Nine Nations are mobilising for war, his former allies are circling for a share, the Church wants him dead, and someone just whispered something to the dying king that his investigators cannot explain. Three POVs give you three angles on the same crisis: Tamas managing the external pressures; his estranged son Taniel, a powder mage and combat veteran, trying to function in a world that is no longer at war; and Adamat, a retired detective with a perfect memory, hired to investigate those last words. The magic is the other thing that keeps readers here: powder mages control gunpowder — igniting it at a distance, accelerating bullets to sniper accuracy, detonating entire reserves. It is specifically military magic in a specifically military era, designed the way Sanderson designs magic: rules, costs, hard limits, and then a narrative that exhausts every implication of those rules. The trilogy is complete.",
+      "Promise of Blood opens with the revolution already over. Field Marshal Tamas has staged a coup, executed the king, and sent the nobility to the guillotine. And the book's first chapter is a body count. What McClellan understood, writing as Sanderson's student and eventually his peer, is that the aftermath of a revolution is more interesting than the revolution itself: Tamas has power now and has no idea what to do with it. The Nine Nations are mobilising for war, his former allies are circling for a share, the Church wants him dead, and someone just whispered something to the dying king that his investigators cannot explain. Three POVs give you three angles on the same crisis: Tamas managing the external pressures; his estranged son Taniel, a powder mage and combat veteran, trying to function in a world that is no longer at war; and Adamat, a retired detective with a perfect memory, hired to investigate those last words. The magic is the other thing that keeps readers here: powder mages control gunpowder, igniting it at a distance, accelerating bullets to sniper accuracy, detonating entire reserves. It is specifically military magic in a specifically military era, designed the way Sanderson designs magic: rules, costs, hard limits, and then a narrative that exhausts every implication of those rules. The trilogy is complete.",
     why_people_love_rich: [
-      { type: 'paragraph', text: "Promise of Blood opens with the revolution already over. Field Marshal Tamas has staged a coup, executed the king, and sent the nobility to the guillotine — and the book's first chapter is a body count. McClellan understood, writing as Sanderson's student and eventually his peer, that the aftermath of a revolution is more interesting than the revolution itself: Tamas has power now and has no idea what to do with it." },
-      { type: 'labeled', label: 'Powder Magic:', text: "Powder mages control gunpowder — igniting it at distance, accelerating bullets to sniper accuracy, detonating entire reserves. It is specifically military magic in a specifically military era, designed the way Sanderson designs magic: rules, costs, hard limits, and then a narrative that exhausts every implication of those rules. The system is what makes the battle sequences distinct — a magic that rewrites how a battlefield works rather than simply adding a god to one side of it." },
+      { type: 'paragraph', text: "Promise of Blood opens with the revolution already over. Field Marshal Tamas has staged a coup, executed the king, and sent the nobility to the guillotine. And the book's first chapter is a body count. McClellan understood, writing as Sanderson's student and eventually his peer, that the aftermath of a revolution is more interesting than the revolution itself: Tamas has power now and has no idea what to do with it." },
+      { type: 'labeled', label: 'Powder Magic:', text: "Powder mages control gunpowder, igniting it at distance, accelerating bullets to sniper accuracy, detonating entire reserves. It is specifically military magic in a specifically military era, designed the way Sanderson designs magic: rules, costs, hard limits, and then a narrative that exhausts every implication of those rules. The system is what makes the battle sequences distinct: a magic that rewrites how a battlefield works rather than simply adding a god to one side of it." },
       { type: 'paragraph', text: "Three POVs give you three angles on the same crisis: Tamas managing the external pressures of a Nine Nations mobilising for war; his estranged son Taniel, a powder mage and combat veteran trying to function in a world no longer at war; and Adamat, a retired detective with a perfect memory, hired to investigate the dying king's last words. The ensemble structure lets McClellan explore the coup's consequences from the ground, the inside, and the political summit simultaneously." },
-      { type: 'warning', text: "The pacing is political more than propulsive — McClellan builds the world through the logistics of post-coup governance, and the first act takes time to establish its pieces. Readers who need action-first setup may take a hundred pages to find their footing. The trilogy is complete, and the powder mage magic deepens considerably across all three books." },
+      { type: 'warning', text: "The pacing is political more than propulsive. McClellan builds the world through the logistics of post-coup governance, and the first act takes time to establish its pieces. Readers who need action-first setup may take a hundred pages to find their footing. The trilogy is complete, and the powder mage magic deepens considerably across all three books." },
     ],
   },
   aspects: [
     {
       heading:
-        "If you loved the coup and its aftermath — not the revolution but what comes the morning after, when the people who seized power have to figure out what to do with it...",
+        "If you loved the coup and its aftermath: not the revolution but what comes the morning after, when the people who seized power have to figure out what to do with it...",
       recs: [
         {
           title: 'Mistborn: The Final Empire',
@@ -47,7 +47,8 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "McClellan was Sanderson's student and writing assistant for years before publishing Promise of Blood, and the lineage is direct: both writers design magic systems as a set of physical rules and then build politics and military conflict around what those rules make possible. Mistborn opens with an oppressive empire that has stood for a thousand years and follows a heist crew trying to bring it down — where Promise of Blood starts after the equivalent of the heist succeeds. The two books are the before and after of the same political moment. The trilogy addresses what comes after the revolution in its later books, and the magic system (allomancy — burning metals to gain abilities) has the same tactically precise feel as powder magic. Lighter in tone than Promise of Blood; the moral complexity deepens across the trilogy.",
+          note: "McClellan was Sanderson's student and writing assistant for years before publishing Promise of Blood, and the lineage is direct: both writers design magic systems as a set of physical rules and then build politics and military conflict around what those rules make possible. Mistborn opens with an oppressive empire that has stood for a thousand years and follows a heist crew trying to bring it down. Promise of Blood starts after the equivalent of the heist succeeds. The two books are the before and after of the same political moment. The trilogy addresses what comes after the revolution in its later books, and the magic system (allomancy: burning metals to gain abilities) has the same tactically precise feel as powder magic. Lighter in tone than Promise of Blood; the moral complexity deepens across the trilogy.",
+          caveat: "Lighter in tone than Promise of Blood and set in a pre-industrial world rather than a flintlock one; the political aftermath McClellan foregrounds from page one doesn't arrive until later books in this trilogy.",
           tags: [
             'Revolution',
             'Magic System',
@@ -71,7 +72,8 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books, complete)',
           audiobook: true,
-          note: "Darrow is a lowborn miner who infiltrates the ruling class of a colour-coded society in order to destroy it from inside — and the series tracks, book by book, the political cost of every decision made in service of a revolution that refuses to stay clean. Brown writes the same problem McClellan writes: violent change produces winners and losers even among the people who wanted the same thing, and the people who led the revolution are often the first casualties of its aftermath. Red Rising is faster and more action-driven than Promise of Blood, the first-person narration is warmer than McClellan's ensemble approach, and the six-book series takes the political complexity much further than the Powder Mage trilogy.",
+          note: "Darrow is a lowborn miner who infiltrates the ruling class of a colour-coded society in order to destroy it from inside. And the series tracks, book by book, the political cost of every decision made in service of a revolution that refuses to stay clean. Brown writes the same problem McClellan writes: violent change produces winners and losers even among the people who wanted the same thing, and the people who led the revolution are often the first casualties of its aftermath. Red Rising is faster and more action-driven than Promise of Blood, the first-person narration is warmer than McClellan's ensemble approach, and the six-book series takes the political complexity much further than the Powder Mage trilogy.",
+          caveat: "Science fiction dressed as class warfare rather than flintlock fantasy, and the first-person narration is warmer and more heroic in register than McClellan's ensemble cast.",
           tags: [
             'Revolution',
             'Aristocratic Scheming',
@@ -88,7 +90,7 @@ export const promiseOfBlood: BooksLikeEntry = {
     },
     {
       heading:
-        "If you loved the powder mage magic — combat magic that has rules, costs, and hard limits, that changes how a battlefield works rather than just making one side unstoppable...",
+        "If you loved the powder mage magic: combat magic that has rules, costs, and hard limits, that changes how a battlefield works rather than just making one side unstoppable...",
       recs: [
         {
           title: 'The Black Prism',
@@ -101,7 +103,8 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (5 books, complete)',
           audiobook: true,
-          note: "Chromaturgy — Weeks' magic system — is the most architecturally similar to powder magic in the genre: drafters use light to create a physical substance called luxin, each colour with different properties, and the magic is specifically military in application — luxin walls, luxin projectiles, the battlefield calculus of who can draft what colour in what quantity before the costs catch up. The Lightbringer series was published in the same period as Powder Mage and shares McClellan's interest in designing magic that rewrites warfare rather than simply adding a god to the battlefield. More complex in structure and significantly longer than the Powder Mage trilogy; the full series takes five books to resolve. Start here.",
+          note: "Chromaturgy (Weeks' magic system) is the most architecturally similar to powder magic in the genre: drafters use light to create a physical substance called luxin, each colour with different properties, and the magic is specifically military in application: luxin walls, luxin projectiles, the battlefield calculus of who can draft what colour in what quantity before the costs catch up. The Lightbringer series was published in the same period as Powder Mage and shares McClellan's interest in designing magic that rewrites warfare rather than simply adding a god to the battlefield. More complex in structure and significantly longer than the Powder Mage trilogy; the full series takes five books to resolve. Start here.",
+          caveat: "More fantastical and less firearms-grounded than powder magic, and the series is a five-book commitment rather than a trilogy.",
           tags: [
             'Mechanistic Magic',
             'Military Fantasy',
@@ -125,7 +128,7 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (10 books planned, 5 published)',
           audiobook: true,
-          note: "Stormlight Archive is Sanderson's most ambitious expression of his magic design philosophy — Stormlight powers, Fabrials, the Radiants, the entire economy of investiture built around a world of constant storms. For Promise of Blood readers, the specific pleasure is the same: a magic that operates like a technology, that armies plan around rather than just worship, that creates tactical problems the characters have to solve rather than tactical solutions they can invoke. The Stormlight Archive is larger in scope than Powder Mage in every dimension — longer books, longer series, higher stakes — but the underlying design intelligence is the direct lineage.",
+          note: "Stormlight Archive is Sanderson's most ambitious expression of his magic design philosophy: Stormlight powers, Fabrials, the Radiants, the entire economy of investiture built around a world of constant storms. For Promise of Blood readers, the specific pleasure is the same: a magic that operates like a technology, that armies plan around rather than just worship, that creates tactical problems the characters have to solve rather than tactical solutions they can invoke. The Stormlight Archive is larger in scope than Powder Mage in every dimension (longer books, longer series, higher stakes) but the underlying design intelligence is the direct lineage.",
           caveat: "the series is planned for ten books and only five are published; this is a significant long-term commitment.",
           tags: [
             'Mechanistic Magic',
@@ -143,7 +146,7 @@ export const promiseOfBlood: BooksLikeEntry = {
     },
     {
       heading:
-        "If you loved the moral complexity — nobody's hands are clean, the people who did the right thing are paying for it, and the villains have comprehensible reasons...",
+        "If you loved the moral complexity: nobody's hands are clean, the people who did the right thing are paying for it, and the villains have comprehensible reasons...",
       recs: [
         {
           title: 'The Blade Itself',
@@ -156,7 +159,8 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "Abercrombie is the other pole of contemporary grimdark military fantasy, and McClellan is in direct conversation with him: both writers are interested in the moral cost of political violence and in building military characters who are compelling rather than simply competent. The Blade Itself introduces Logen Ninefingers (a barbarian trying to leave behind the person he was), Sand dan Glokta (a torturer who was tortured himself), and Jezal dan Luthar (a nobleman who has never done anything real) — and puts all three in a political crisis that reveals exactly who they are. Darker in tone than Promise of Blood, slower in its first act, and the First Law world's politics are more corrupt and less redeemable. The trilogy is complete; the standalone novels in the same world are equally good.",
+          note: "Abercrombie is the other pole of contemporary grimdark military fantasy, and McClellan is in direct conversation with him: both writers are interested in the moral cost of political violence and in building military characters who are compelling rather than simply competent. The Blade Itself introduces Logen Ninefingers (a barbarian trying to leave behind the person he was), Sand dan Glokta (a torturer who was tortured himself), and Jezal dan Luthar (a nobleman who has never done anything real), and puts all three in a political crisis that reveals exactly who they are. Darker in tone than Promise of Blood, slower in its first act, and the First Law world's politics are more corrupt and less redeemable. The trilogy is complete; the standalone novels in the same world are equally good.",
+          caveat: "Darker in tone than Promise of Blood, with a slower first act and a world whose politics are more corrupt and less redeemable throughout.",
           tags: [
             'Morally Grey Cast',
             'Military Fantasy',
@@ -180,7 +184,8 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (complete)',
           audiobook: true,
-          note: "The No Peak clan is the dominant power on the island of Kekon, and the trilogy begins when that dominance starts to crack — outside powers want the island's jade supply, a rival clan is moving against them, and the clan's leadership is fractured between siblings with different ideas about what the family should become. Lee writes the same political problem McClellan writes: what does a powerful family do when the order it was built to defend starts to collapse? The jade magic is as specifically designed as powder magic — it enhances physical ability and perception but at real biological cost. The ensemble structure, the family dynamics under pressure, and the sense that every decision has cascade consequences are all Promise of Blood territory. The trilogy is complete.",
+          note: "The No Peak clan is the dominant power on the island of Kekon, and the trilogy begins when that dominance starts to crack: outside powers want the island's jade supply, a rival clan is moving against them, and the clan's leadership is fractured between siblings with different ideas about what the family should become. Lee writes the same political problem McClellan writes: what does a powerful family do when the order it was built to defend starts to collapse? The jade magic is as specifically designed as powder magic: it enhances physical ability and perception but at real biological cost. The ensemble structure, the family dynamics under pressure, and the sense that every decision has cascade consequences are all Promise of Blood territory. The trilogy is complete.",
+          caveat: "Contemporary-adjacent East Asian setting rather than flintlock fantasy, and the magic (jade-enhanced ability) is a scarce resource clans fight over rather than a rule-bound combat system.",
           tags: [
             'Clan Politics',
             'Power Vacuum',
@@ -197,7 +202,7 @@ export const promiseOfBlood: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the professional-soldier intelligence — battles planned, logistics matter, people who think like soldiers rather than heroes...',
+        'If you loved the professional-soldier intelligence: battles planned, logistics matter, people who think like soldiers rather than heroes...',
       recs: [
         {
           title: 'Best Served Cold',
@@ -235,7 +240,7 @@ export const promiseOfBlood: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (10 books)',
           audiobook: true,
-          note: "The Black Company follows a mercenary unit — not the generals but the rank-and-file soldiers — narrated by their physician in a laconic, unsentimental voice that refuses to make anything heroic. Cook invented the military fantasy template that Abercrombie and McClellan are both writing in; the professional-soldier intelligence that makes Promise of Blood's military scenes feel grounded comes directly from here. The first three books are the essential experience.",
+          note: "The Black Company follows a mercenary unit (not the generals but the rank-and-file soldiers) narrated by their physician in a laconic, unsentimental voice that refuses to make anything heroic. Cook invented the military fantasy template that Abercrombie and McClellan are both writing in; the professional-soldier intelligence that makes Promise of Blood's military scenes feel grounded comes directly from here. The first three books are the essential experience.",
           caveat: "prose is deliberately plain; grimdark before the term existed.",
           tags: [
             'Military Fantasy',
