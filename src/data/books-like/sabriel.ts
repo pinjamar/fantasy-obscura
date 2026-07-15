@@ -6,10 +6,9 @@ export const sabriel: BooksLikeEntry = {
     title: 'Sabriel',
     author: 'Garth Nix',
     db_slug: 'sabriel',
-    cover_url: 'https://covers.openlibrary.org/b/isbn/9780064471831-L.jpg',
-    darkness_level: 2,
-    heat_level: null,
-    series: 'The Old Kingdom',
+    darkness_level: 3,
+    heat_level: 'Sweet Romance',
+    series: 'Abhorsen',
     series_number: 1,
     tropes: [
       'Death Magic',
@@ -25,32 +24,30 @@ export const sabriel: BooksLikeEntry = {
     answer_line:
       'If you loved Sabriel for the bell magic with its precise rules and consequence, a female protagonist who grows into a role she was only partially trained for, and a world that builds itself through atmosphere rather than exposition, start with The Name of the Wind, Uprooted, and The Bear and the Nightingale.',
     why_people_love:
-      "Sabriel works because Garth Nix refuses to explain what Death looks like before he lets you feel it. The first time Sabriel crosses into Death — stepping past the boundary into freezing dark with a current that pulls everything toward the final gate — the reader understands the precincts not because they were described in advance but because they are rendered with the same precision Nix gives to the seven bells. Each bell has a name, a specific power, and a specific cost; the Abhorsen must know exactly what she is doing or the consequences are catastrophic. That particularity is what makes the magic system one of the most original in the genre. Sabriel herself is the other reason this book holds. She has been trained enough to act and not enough to be certain, and Nix tracks that uncertainty honestly — she makes genuine mistakes, she is genuinely afraid, and the competence she develops is earned rather than granted. The two-world premise adds a further layer: south of the Wall is Ancelstierre, a modern-ish country where technology works and magic does not; north is the ruined Old Kingdom, where the rules reverse. The contrast is handled without irony, and the world builds itself through what happens rather than through exposition. It is a short book that closes cleanly.",
+      "Sabriel works because Garth Nix refuses to explain what Death looks like before he lets you feel it. The first time Sabriel crosses into Death (stepping past the boundary into freezing dark with a current that pulls everything toward the final gate) the reader understands the precincts not because they were described in advance but because they are rendered with the same precision Nix gives to the seven bells. Each bell has a name, a specific power, and a specific cost; the Abhorsen must know exactly what she is doing or the consequences are catastrophic. That particularity is what makes the magic system one of the most original in the genre. Sabriel herself is the other reason this book holds. She has been trained enough to act and not enough to be certain, and Nix tracks that uncertainty honestly. She makes genuine mistakes, she is genuinely afraid, and the competence she develops is earned rather than granted. The two-world premise adds a further layer: south of the Wall is Ancelstierre, a modern-ish country where technology works and magic does not; north is the ruined Old Kingdom, where the rules reverse. The contrast is handled without irony, and the world builds itself through what happens rather than through exposition. It is a short book that closes cleanly.",
     why_people_love_rich: [
-      { type: 'paragraph', text: "Sabriel works because Garth Nix refuses to explain what Death looks like before he lets you feel it. The first time Sabriel crosses the boundary — stepping past it into freezing dark with a current that pulls everything toward the final gate — the reader understands the precincts not because they were described in advance but because they are rendered with the same precision Nix gives to the seven bells. That sequence establishes the book's method: experience first, explanation later, if at all." },
-      { type: 'labeled', label: 'The Bells:', text: "Each has a name, a specific power, and a specific cost. Ranna the sleeper, Mosrael the waker, Kibeth the walker — the Abhorsen must know exactly which bell to use and when, because the wrong bell used carelessly can turn on its user. Nix treats magic as a discipline rather than a gift: Sabriel has been trained enough to act and not enough to be certain, and that uncertainty is what makes the middle section of the book genuinely tense." },
-      { type: 'paragraph', text: "The two-world premise adds another layer: south of the Wall is Ancelstierre, a modern-ish country where technology works and magic does not; north is the ruined Old Kingdom, where the rules reverse. The contrast is handled without irony, and the world builds itself through what happens rather than through exposition. Sabriel herself is the other reason the book holds — she makes genuine mistakes, she is genuinely afraid, and the competence she develops is earned." },
-      { type: 'warning', text: "Sabriel is a short book — under 300 pages — and closes cleanly. The Old Kingdom series continues with Lirael and Abhorsen, which follow a different protagonist in the same world; they are companion reads rather than direct sequels. The darkness level is mild relative to adult fantasy but the dead creatures and death magic are genuinely menacing. Nix does not soften the concept of Death." },
+      { type: 'paragraph', text: "Sabriel works because Garth Nix refuses to explain what Death looks like before he lets you feel it. The first time Sabriel crosses the boundary (stepping past it into freezing dark with a current that pulls everything toward the final gate) the reader understands the precincts not because they were described in advance but because they are rendered with the same precision Nix gives to the seven bells. That sequence establishes the book's method: experience first, explanation later, if at all." },
+      { type: 'labeled', label: 'The Bells:', text: "Each has a name, a specific power, and a specific cost. Ranna the sleeper, Mosrael the waker, Kibeth the walker: the Abhorsen must know exactly which bell to use and when, because the wrong bell used carelessly can turn on its user. Nix treats magic as a discipline rather than a gift: Sabriel has been trained enough to act and not enough to be certain, and that uncertainty is what makes the middle section of the book genuinely tense." },
+      { type: 'paragraph', text: "The two-world premise adds another layer: south of the Wall is Ancelstierre, a modern-ish country where technology works and magic does not; north is the ruined Old Kingdom, where the rules reverse. The contrast is handled without irony, and the world builds itself through what happens rather than through exposition. Sabriel herself is the other reason the book holds. She makes genuine mistakes, she is genuinely afraid, and the competence she develops is earned." },
+      { type: 'warning', text: "Sabriel is a short book (under 300 pages) and closes cleanly. The Old Kingdom series continues with Lirael and Abhorsen, which follow a different protagonist in the same world; they are companion reads rather than direct sequels. The darkness level is mild relative to adult fantasy but the dead creatures and death magic are genuinely menacing. Nix does not soften the concept of Death." },
     ],
   },
   aspects: [
     {
       heading:
-        'If you loved the bell magic — rules that are specific, dangerous, and tied to consequence...',
+        'If you loved the bell magic: rules that are specific, dangerous, and tied to consequence...',
       recs: [
         {
           title: 'The Name of the Wind',
           author: 'Patrick Rothfuss',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg',
           darkness_level: 3,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The Kingkiller Chronicle',
           series_number: 1,
           series_label: 'Series (unfinished)',
           audiobook: true,
-          note: "Sympathy — the magic Kvothe studies at the University — operates on the same principle as Sabriel's bells: it requires the practitioner to know precisely what they are doing, because the system works by binding one thing to another, and error does not mean failure but physical harm to the caster. Rothfuss, like Nix, treats magic as a discipline rather than a gift — something that must be studied, practised, and respected. The prose is considerably more ornamented and the tone more self-aware, but readers who loved the feeling that Sabriel's magic was grounded in internal logic will find sympathy satisfying for the same reason.",
+          note: "Sympathy (the magic Kvothe studies at the University) operates on the same principle as Sabriel's bells: it requires the practitioner to know precisely what they are doing, because the system works by binding one thing to another, and error does not mean failure but physical harm to the caster. Rothfuss, like Nix, treats magic as a discipline rather than a gift: something that must be studied, practised, and respected. The prose is considerably more ornamented and the tone more self-aware, but readers who loved the feeling that Sabriel's magic was grounded in internal logic will find sympathy satisfying for the same reason.",
           caveat: "the series is famously incomplete and the third book has not appeared.",
           tags: [
             'Hard Magic System',
@@ -67,16 +64,15 @@ export const sabriel: BooksLikeEntry = {
         {
           title: 'The Final Empire',
           author: 'Brandon Sanderson',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg',
           darkness_level: 3,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Mistborn',
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "Allomancy — swallowing and burning metals to gain specific abilities — shares with Nix's bells the quality of being both highly specific and highly consequential. Each metal does exactly one thing; overextending kills you; the rules never bend. Sanderson also builds the magic into the politics of his world the way Nix builds the bells into the Old Kingdom's understanding of life and death. The tone is considerably more optimistic and the scale much larger, but for readers who loved that Sabriel's magic felt systematic rather than mysterious, this is the clearest equivalent.",
+          note: "Allomancy (swallowing and burning metals to gain specific abilities) shares with Nix's bells the quality of being both highly specific and highly consequential. Each metal does exactly one thing; overextending kills you; the rules never bend. Sanderson also builds the magic into the politics of his world the way Nix builds the bells into the Old Kingdom's understanding of life and death. The tone is considerably more optimistic and the scale much larger, but for readers who loved that Sabriel's magic felt systematic rather than mysterious, this is the clearest equivalent.",
+          caveat: "Far more optimistic in tone and much larger in scale, with a heist-driven political plot rather than Sabriel's quiet, personal stakes.",
           tags: [
             'Hard Magic System',
             'Rules-Based Magic',
@@ -92,13 +88,12 @@ export const sabriel: BooksLikeEntry = {
         {
           title: 'Jonathan Strange & Mr Norrell',
           author: 'Susanna Clarke',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781582344164-L.jpg',
           darkness_level: 3,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: true,
           audiobook: true,
-          note: "Clarke treats magic as a historical discipline with theoretical foundations, rival schools of thought, and consequences when performed carelessly — and like Nix, she is interested in what happens when the practitioner stops respecting the system. Both books also share an England-adjacent setting with the supernatural pressing in from the edges. The prose and pace are nothing alike — Clarke is slow, academic, and ironic where Nix is spare and urgent — but readers who loved the sense that Sabriel's magic had been developed over centuries by people who knew what they were doing will find the same quality here.",
+          note: "Clarke treats magic as a historical discipline with theoretical foundations, rival schools of thought, and consequences when performed carelessly, and like Nix, she is interested in what happens when the practitioner stops respecting the system. Both books also share an England-adjacent setting with the supernatural pressing in from the edges. The prose and pace are nothing alike: Clarke is slow, academic, and ironic where Nix is spare and urgent, but readers who loved the sense that Sabriel's magic had been developed over centuries by people who knew what they were doing will find the same quality here.",
+          caveat: "Much slower and more academic in pace than Sabriel, closer to a doorstopper of 19th-century social comedy than a taut adventure.",
           tags: [
             'Academic Magic',
             'Historical Setting',
@@ -115,18 +110,17 @@ export const sabriel: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved Sabriel herself — the female protagonist who has to grow into a role she was only partially trained for...',
+        'If you loved Sabriel herself: the female protagonist who has to grow into a role she was only partially trained for...',
       recs: [
         {
           title: 'Uprooted',
           author: 'Naomi Novik',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780804179034-L.jpg',
           darkness_level: 3,
-          heat_level: 'Closed Door',
+          heat_level: 'Explicit',
           standalone: true,
           audiobook: true,
-          note: "Agnieszka discovers she has magic she does not understand, is trained by someone who finds her approach baffling, and must use that magic under conditions far beyond what she was prepared for — the same structure as Sabriel's journey. Novik's protagonist is less obviously competent and more instinctive, which makes her arc different in texture but parallel in movement: she has to figure out what she is capable of in the field rather than being told in advance. The world is Central European folklore rendered with real menace, and the corrupted Wood functions the way the Dead do in Nix — as an ancient threat that cannot be reasoned with, only understood and contained. Shorter than most epic fantasy and fully self-contained.",
+          note: "Agnieszka discovers she has magic she does not understand, is trained by someone who finds her approach baffling, and must use that magic under conditions far beyond what she was prepared for: the same structure as Sabriel's journey. Novik's protagonist is less obviously competent and more instinctive, which makes her arc different in texture but parallel in movement: she has to figure out what she is capable of in the field rather than being told in advance. The world is Central European folklore rendered with real menace, and the corrupted Wood functions the way the Dead do in Nix: an ancient threat that cannot be reasoned with, only understood and contained. Shorter than most epic fantasy and fully self-contained.",
+          caveat: "Considerably more explicit than Sabriel, with a romance subplot that becomes central to the back half of the book.",
           tags: [
             'Female Protagonist',
             'Coming of Age',
@@ -143,16 +137,15 @@ export const sabriel: BooksLikeEntry = {
           title: 'A Wizard of Earthsea',
           slug: 'a-wizard-of-earthsea',
           author: 'Ursula K. Le Guin',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780547773742-L.jpg',
           darkness_level: 2,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: false,
           series: 'Earthsea Cycle',
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "Both Ged and Sabriel are gifted students who inherit a power tied to death and must master it alone — Ged through true naming, Sabriel through the bells. Both books have the quality of myths told in clean prose rather than adventure stories told in detailed prose. Le Guin's influence on Nix is direct: if Sabriel struck you as a book that knew what it was doing from the first page, Earthsea is the book that taught that discipline. Sabriel is darker and more plot-driven; Earthsea is slower and more philosophical. Both are short and both close completely.",
+          note: "Both Ged and Sabriel are gifted students who inherit a power tied to death and must master it alone: Ged through true naming, Sabriel through the bells. Both books have the quality of myths told in clean prose rather than adventure stories told in detailed prose. Le Guin's influence on Nix is direct: if Sabriel struck you as a book that knew what it was doing from the first page, Earthsea is the book that taught that discipline. Sabriel is darker and more plot-driven; Earthsea is slower and more philosophical. Both are short and both close completely.",
+          caveat: "Earthsea is slower and more philosophical than Sabriel, with less plot momentum and a more distant, myth-like narrative voice.",
           tags: [
             'Foundational Fantasy',
             'Death Magic',
@@ -169,21 +162,20 @@ export const sabriel: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the world — the Wall, the ruined kingdom, atmosphere of death in a dying place...',
+        'If you loved the world: the Wall, the ruined kingdom, atmosphere of death in a dying place...',
       recs: [
         {
           title: 'The Bear and the Nightingale',
           author: 'Katherine Arden',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781101885956-L.jpg',
           darkness_level: 3,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: false,
           series: 'Winternight Trilogy',
           series_number: 1,
           series_label: 'Trilogy (3 books)',
           audiobook: true,
-          note: "Mediaeval Russia rendered with the same quality of atmosphere Nix brings to the Old Kingdom — a world where the old magic is real, dangerous, and in conflict with a newer order that wants to replace it. Vasilisa, like Sabriel, can perceive things others cannot and has no guidance for what to do with that. Arden's setting is winter-dark and deeply felt, the spiritual entities have rules and logic, and the first book closes with genuine resolution while opening the larger story. Readers who loved the sense that the Old Kingdom was a world with a history that mattered will find Arden building with the same seriousness.",
+          note: "Mediaeval Russia rendered with the same quality of atmosphere Nix brings to the Old Kingdom: a world where the old magic is real, dangerous, and in conflict with a newer order that wants to replace it. Vasilisa, like Sabriel, can perceive things others cannot and has no guidance for what to do with that. Arden's setting is winter-dark and deeply felt, the spiritual entities have rules and logic, and the first book closes with genuine resolution while opening the larger story. Readers who loved the sense that the Old Kingdom was a world with a history that mattered will find Arden building with the same seriousness.",
+          caveat: "A slower, more folkloric pace than Sabriel, with a family-drama structure in the first half before the supernatural stakes take over.",
           tags: [
             'Atmospheric World-Building',
             'Female Protagonist',
@@ -199,13 +191,12 @@ export const sabriel: BooksLikeEntry = {
         {
           title: 'The Priory of the Orange Tree',
           author: 'Samantha Shannon',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781635570298-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "A standalone epic with multiple female protagonists navigating a world divided by ancient enmity — Shannon gives it the same quality of deep history that Nix gives the Old Kingdom, the sense that the mythology characters are embedded in has real weight and predates the story by centuries. More politically complex than Sabriel and considerably longer, but readers who want the same feeling of a world with ancient rules that the protagonist has to understand quickly will find it here. Fully self-contained in one volume.",
+          note: "A standalone epic with multiple female protagonists navigating a world divided by ancient enmity: Shannon gives it the same quality of deep history that Nix gives the Old Kingdom, the sense that the mythology characters are embedded in has real weight and predates the story by centuries. More politically complex than Sabriel and considerably longer, but readers who want the same feeling of a world with ancient rules that the protagonist has to understand quickly will find it here. Fully self-contained in one volume.",
+          caveat: "Considerably longer and more politically complex than Sabriel, with multiple POVs spread across several kingdoms rather than one focused journey.",
           tags: [
             'Epic Fantasy',
             'Female Protagonist',
@@ -221,16 +212,15 @@ export const sabriel: BooksLikeEntry = {
         {
           title: 'The Dark Is Rising',
           author: 'Susan Cooper',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780689710902-L.jpg',
           darkness_level: 3,
-          heat_level: null,
+          heat_level: 'Sweet Romance',
           standalone: false,
-          series: 'The Dark Is Rising',
+          series: 'The Dark Is Rising Sequence',
           series_number: 2,
           series_label: 'Series (5 books)',
           audiobook: true,
-          note: "Both the Old Kingdom and The Dark Is Rising treat the supernatural as something genuinely old and genuinely dangerous — the rules of Light and Dark are as specific as Nix's charter marks, and the protagonist discovers their significance under pressure. Cooper's world is woven from Celtic and Arthurian mythology and feels inhabited rather than invented. The series was published before YA as a category, like Nix's Old Kingdom, and both read as serious fiction about young protagonists rather than books for children. Start with the second book — The Dark Is Rising — not the first.",
+          note: "Both the Old Kingdom and The Dark Is Rising treat the supernatural as something genuinely old and genuinely dangerous: the rules of Light and Dark are as specific as Nix's charter marks, and the protagonist discovers their significance under pressure. Cooper's world is woven from Celtic and Arthurian mythology and feels inhabited rather than invented. The series was published before YA as a category, like Nix's Old Kingdom, and both read as serious fiction about young protagonists rather than books for children. Start with the second book, The Dark Is Rising, not the first.",
+          caveat: "A children's-fiction reading level and much shorter length than Sabriel, plus you're starting mid-sequence rather than at book one.",
           tags: [
             'Ancient Magic',
             'Mythic Fantasy',

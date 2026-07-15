@@ -5,8 +5,6 @@ export const riversOfLondon: BooksLikeEntry = {
   source: {
     title: 'Rivers of London',
     author: 'Ben Aaronovitch',
-    cover_url:
-      'https://books.google.com/books/content?id=DJq-_ci6ePcC&printsec=frontcover&img=1&zoom=1&source=gbs_api',
     darkness_level: 3,
     heat_level: 'Closed Door',
     series: 'Rivers of London',
