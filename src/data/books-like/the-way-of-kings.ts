@@ -5,9 +5,8 @@ export const theWayOfKings: BooksLikeEntry = {
   source: {
     title: 'The Way of Kings',
     author: 'Brandon Sanderson',
-    cover_url: 'https://covers.openlibrary.org/b/isbn/9780765326355-L.jpg',
     darkness_level: 3,
-    heat_level: null,
+    heat_level: 'Sweet Romance',
     series: 'The Stormlight Archive',
     series_number: 1,
     tropes: [
@@ -20,13 +19,13 @@ export const theWayOfKings: BooksLikeEntry = {
     ],
     angle: 'Epic Fantasy with Deep World-Building',
     answer_line:
-      'If you loved The Way of Kings for the huge worldbuilding, intricate magic, broken-but-enduring heroes, and long-form epic payoff, start with Gardens of the Moon, The Name of the Wind and The Blade Itself.',
+      'If you loved The Way of Kings for the huge worldbuilding, intricate magic, broken-but-enduring heroes, and long-form epic scope, start with Gardens of the Moon, The Blade Itself, and The Eye of the World.',
     why_people_love:
-      "The Way of Kings is the book people point to when they say epic fantasy can be genuinely ambitious. Sanderson builds a world unlike anything in the genre — alien in its ecology, geology, and mythology — and then tells three storylines that each earn their length. Kaladin's arc is one of the most satisfying protagonist journeys in modern fantasy: a man stripped of everything who rebuilds himself from scratch through sheer stubborn refusal to stop. The Stormlight magic system (Stormlight and Shardblades) is intricate and earned. Fair warning: this is a slow-build novel. The first 200 pages are deliberately unhurried. The payoff for patience is enormous, but if you need action by chapter three, this isn't the book.",
+      "The Way of Kings is the book people point to when they say epic fantasy can be genuinely ambitious. Sanderson builds a world unlike anything in the genre (alien in its ecology, geology, and mythology) and then tells three storylines that each earn their length. Kaladin's arc is one of the most satisfying protagonist journeys in modern fantasy: a man stripped of everything who rebuilds himself from scratch through sheer stubborn refusal to stop. The Stormlight magic system (Stormlight and Shardblades) is intricate and earned. Fair warning: this is a slow-build novel. The first 200 pages are deliberately unhurried. The reward for patience is enormous, but if you need action by chapter three, this isn't the book.",
     why_people_love_rich: [
-      { type: 'paragraph', text: "The Way of Kings is the book people point to when they say epic fantasy can be genuinely ambitious. Sanderson builds a world unlike anything in the genre — alien in its ecology, geology, and mythology — and then tells three storylines that each earn their length. The Stormlight magic system (Stormlight and Shardblades) is intricate and earned, and the world of Roshar — its storms, its caste hierarchies, its ancient dead civilisation — is built from the ground up with internal consistency." },
-      { type: 'labeled', label: 'Kaladin:', text: "His arc is one of the most satisfying protagonist journeys in modern fantasy: a man stripped of everything — family, rank, freedom — who rebuilds himself from scratch through sheer stubborn refusal to stop. Sanderson commits to showing every stage of the descent before the ascent, which is why readers who finish the book feel what they feel. He is not a hero who was always going to be heroic; he is a person who chose to keep being decent when the world gave him every reason to stop." },
-      { type: 'paragraph', text: "The Stormlight Archive is a slow-build project — the first 200 pages are deliberately unhurried. The payoff for patience is enormous, and the series rewards rereading in ways that become clear in book two. Sanderson constructed an interconnected cosmology (the Cosmere) that spans multiple series, and readers who get deep into it tend to stay for years." },
+      { type: 'paragraph', text: "The Way of Kings is the book people point to when they say epic fantasy can be genuinely ambitious. Sanderson builds a world unlike anything in the genre (alien in its ecology, geology, and mythology) and then tells three storylines that each earn their length. The Stormlight magic system (Stormlight and Shardblades) is intricate and earned, and the world of Roshar, its storms, its caste hierarchies, its ancient dead civilisation, is built from the ground up with internal consistency." },
+      { type: 'labeled', label: 'Kaladin:', text: "His arc is one of the most satisfying protagonist journeys in modern fantasy: a man stripped of everything (family, rank, freedom) who rebuilds himself from scratch through sheer stubborn refusal to stop. Sanderson commits to showing every stage of the descent before the ascent, which is why readers who finish the book feel what they feel. He is not a hero who was always going to be heroic; he is a person who chose to keep being decent when the world gave him every reason to stop." },
+      { type: 'paragraph', text: "The Stormlight Archive is a slow-build project: the first 200 pages are deliberately unhurried. The reward for patience is enormous, and the series rewards rereading in ways that become clear in book two. Sanderson constructed an interconnected cosmology (the Cosmere) that spans multiple series, and readers who get deep into it tend to stay for years." },
       { type: 'warning', text: "The Way of Kings is a 1000-page first volume of a planned 10-book series, currently at five books. The investment is significant, and the series is not yet complete. The first 200 pages are slow by design; if you need action by chapter three, this is the wrong book. Readers who bounce off the opening should try the bridge crew chapters (around chapter 12) before deciding." },
     ],
   },
@@ -38,15 +37,14 @@ export const theWayOfKings: BooksLikeEntry = {
         {
           title: 'Gardens of the Moon',
           author: 'Steven Erikson',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765348784-L.jpg',
           darkness_level: 4,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Malazan Book of the Fallen',
           series_number: 1,
           series_label: 'Series (10 books)',
           audiobook: true,
-          note: "The most ambitious worldbuilding project in epic fantasy, full stop. Erikson drops you mid-story with zero hand-holding — no map legend for the magic, no character glossary, just an enormous world already in motion. If you loved how Sanderson built Roshar from the ground up with internal consistency, Malazan does the same at twice the scale.",
+          note: "The most ambitious worldbuilding project in epic fantasy, full stop. Erikson drops you mid-story with zero hand-holding: no map legend for the magic, no character glossary, just an enormous world already in motion. If you loved how Sanderson built Roshar from the ground up with internal consistency, Malazan does the same at twice the scale.",
           caveat: "far harder to read than Stormlight. Erikson rewards patience more slowly than Sanderson and the early books are actively hostile to newcomers. Push through to Gardens' second half.",
           tags: [
             'Epic Scope',
@@ -63,15 +61,14 @@ export const theWayOfKings: BooksLikeEntry = {
         {
           title: 'The Name of the Wind',
           author: 'Patrick Rothfuss',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg',
           darkness_level: 3,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The Kingkiller Chronicle',
           series_number: 1,
-          series_label: 'Series (unfinished — 2 books published)',
+          series_label: 'Series (unfinished, 2 books published)',
           audiobook: true,
-          note: "The closest comparison in prose quality. Rothfuss builds the University's sympathy system with the same rigour Sanderson brings to Stormlight — the magic follows strict, discoverable rules and the protagonist is systematically excellent at exploiting them. The atmosphere is different (intimate bardic fantasy vs. epic war saga) but the intellectual satisfaction of watching a genius work within a well-designed system is identical.",
+          note: "The closest comparison in prose quality. Rothfuss builds the University's sympathy system with the same rigour Sanderson brings to Stormlight: the magic follows strict, discoverable rules and the protagonist is systematically excellent at exploiting them. The atmosphere is different (intimate bardic fantasy vs. epic war saga) but the intellectual satisfaction of watching a genius work within a well-designed system is identical.",
           caveat: "the series is unfinished and has been for over a decade. Book three has no release date.",
           tags: [
             'Hard Magic System',
@@ -88,20 +85,19 @@ export const theWayOfKings: BooksLikeEntry = {
     },
     {
       heading:
-        "If you loved Kaladin's arc — the broken soldier who refuses to stay down...",
+        "If you loved Kaladin's arc: the broken soldier who refuses to stay down...",
       recs: [
         {
           title: 'The Blade Itself',
           author: 'Joe Abercrombie',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781591025948-L.jpg',
           darkness_level: 4,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The First Law',
           series_number: 1,
           series_label: 'Series (3 books + 3 standalones + sequel trilogy)',
           audiobook: true,
-          note: 'Logen Ninefingers is the anti-Kaladin — a man who has done terrible things and keeps doing them — but the emotional core is the same: a soldier trying to survive a world that grinds people into pieces. Abercrombie deconstructs every heroic archetype Sanderson earnestly builds. Reading them back-to-back reveals what each is doing with the genre.',
+          note: "Logen Ninefingers is the anti-Kaladin: a man who has done terrible things and keeps doing them. But the emotional core is the same: a soldier trying to survive a world that grinds people into pieces. Abercrombie deconstructs every heroic archetype Sanderson earnestly builds. Reading them back-to-back reveals what each is doing with the genre.",
           caveat: "much darker, no hopepunk, endings deliberately unsatisfying. If you need your protagonist to be fundamentally good, Abercrombie will frustrate you.",
           tags: [
             'Broken Soldier',
@@ -118,16 +114,16 @@ export const theWayOfKings: BooksLikeEntry = {
         {
           title: 'The Final Empire',
           author: 'Brandon Sanderson',
-          author_note: 'yes, more Sanderson — unavoidable',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg',
+          author_note: 'yes, more Sanderson, unavoidable',
           darkness_level: 3,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Mistborn',
           series_number: 1,
           series_label: 'Series (3 books, complete)',
           audiobook: true,
-          note: "If the Kaladin arc was the hook — the powerless person discovering they have extraordinary ability and using it to protect people who can't protect themselves — The Final Empire delivers that satisfaction more efficiently. Vin's arc is tighter than Kaladin's, the book is half the length, and the heist structure gives it momentum that Stormlight's first volume occasionally lacks. Start here if you want Sanderson at his most propulsive before committing to a 10-book series.",
+          note: "If the Kaladin arc was the hook (the powerless person discovering they have extraordinary ability and using it to protect people who can't protect themselves) The Final Empire delivers that satisfaction more efficiently. Vin's arc is tighter than Kaladin's, the book is half the length, and the heist structure gives it momentum that Stormlight's first volume occasionally lacks. Start here if you want Sanderson at his most propulsive before committing to a 10-book series.",
+          caveat: "much shorter and faster-paced than Stormlight, with a tighter heist plot rather than Kaladin's sprawling, slow-build arc.",
           tags: [
             'Underdog Protagonist',
             'Hard Magic',
@@ -142,15 +138,15 @@ export const theWayOfKings: BooksLikeEntry = {
         {
           title: 'Blood Song',
           author: 'Anthony Ryan',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780425268285-L.jpg',
           darkness_level: 3,
+          heat_level: 'Closed Door',
           standalone: false,
           series: "Raven's Shadow",
           series_number: 1,
           series_label: 'Series (3 books, complete)',
           audiobook: true,
-          note: "The closest structural match to Kaladin's arc in the genre. Vaelin Al Sorna is taken from his family at a young age and placed in a brutal military order, rises through exceptional ability and force of character, and builds a found-family unit of brothers who would die for him. The pacing mirrors Stormlight's slow build — the early academy chapters are deliberately unhurried — before the scope explodes into war, politics, and a magic system with genuine costs. Tone is hopeful despite the violence, and Ryan earns his emotional payoffs.",
+          note: "The closest structural match to Kaladin's arc in the genre. Vaelin Al Sorna is taken from his family at a young age and placed in a brutal military order, rises through exceptional ability and force of character, and builds a found-family unit of brothers who would die for him. The pacing mirrors Stormlight's slow build (the early academy chapters are deliberately unhurried) before the scope explodes into war, politics, and a magic system with genuine costs. Tone is hopeful despite the violence, and Ryan's emotional beats consistently land.",
+          caveat: "a single protagonist rather than Stormlight's multi-POV structure, and a complete trilogy rather than a planned ten-book series.",
           tags: [
             'Military Academy',
             'Underdog Soldier',
@@ -171,15 +167,14 @@ export const theWayOfKings: BooksLikeEntry = {
         {
           title: 'The Eye of the World',
           author: 'Robert Jordan',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780812511819-L.jpg',
           darkness_level: 3,
+          heat_level: 'Sweet Romance',
           standalone: false,
           series: 'The Wheel of Time',
           series_number: 1,
           series_label: 'Series (14 books, complete)',
           audiobook: true,
-          note: "The grandparent of everything Stormlight is doing. The Wheel of Time pioneered the multi-POV, multi-volume epic fantasy with a single cohesive ending — Sanderson literally completed it after Jordan's death. The scope, the interlocking political systems, the magic with strict rules — all present.",
+          note: "The grandparent of everything Stormlight is doing. The Wheel of Time pioneered the multi-POV, multi-volume epic fantasy with a single cohesive ending; Sanderson literally completed it after Jordan's death. The scope, the interlocking political systems, the magic with strict rules: all present.",
           caveat: "Jordan's prose is slower than Sanderson's and his female characters are frustratingly written by modern standards. The series improves dramatically from book four onward.",
           tags: [
             'Multi-POV',
@@ -195,13 +190,12 @@ export const theWayOfKings: BooksLikeEntry = {
         {
           title: 'A Game of Thrones',
           author: 'George R.R. Martin',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780553381689-L.jpg',
           darkness_level: 5,
+          heat_level: 'Explicit',
           standalone: false,
           series: 'A Song of Ice and Fire',
           series_number: 1,
-          series_label: 'Series (unfinished — 5 books published)',
+          series_label: 'Series (unfinished, 5 books published)',
           audiobook: true,
           note: 'If the multi-POV structure and political complexity were the draw, Martin is the benchmark. Every major character gets a POV, every POV reveals a different facet of the same broken world, and no one is safe. The worldbuilding has the same depth and internal consistency as Roshar.',
           caveat: "significantly darker, no reassurance that protagonists survive, and the series has been unfinished since 2011 with no end in sight.",
@@ -221,13 +215,13 @@ export const theWayOfKings: BooksLikeEntry = {
         {
           title: 'The Priory of the Orange Tree',
           author: 'Samantha Shannon',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781635570304-L.jpg',
           darkness_level: 3,
+          heat_level: 'Closed Door',
           standalone: true,
           series_label: 'Standalone (800 pages)',
           audiobook: true,
-          note: "A standalone epic with the same commitment to scale as Stormlight: three continents, centuries of lore, four major POV characters who each carry a different strand of the same world-shaping conflict. Shannon builds her world the way Sanderson builds Roshar — languages, religions, and histories that feel genuinely inhabited — and she writes dragons better than almost anyone. The multi-POV structure means you understand the world from multiple ideological positions, and the scope expands steadily without ever losing the personal stakes. Big advantage over Martin and Jordan: it's complete in one book.",
+          note: "A standalone epic with the same commitment to scale as Stormlight: three continents, centuries of lore, four major POV characters who each carry a different strand of the same world-shaping conflict. Shannon builds her world the way Sanderson builds Roshar: languages, religions, and histories that feel genuinely inhabited, and she writes dragons better than almost anyone. The multi-POV structure means you understand the world from multiple ideological positions, and the scope expands steadily without ever losing the personal stakes. Big advantage over Martin and Jordan: it's complete in one book.",
+          caveat: "complete in a single volume rather than an open-ended series, which changes the reading experience considerably from Stormlight's ongoing commitment.",
           tags: [
             'Multi-POV',
             'Standalone Epic',

@@ -6,9 +6,8 @@ export const theWillOfTheMany: BooksLikeEntry = {
     title: 'The Will of the Many',
     author: 'James Islington',
     db_slug: 'the-will-of-the-many',
-    cover_url: 'https://covers.openlibrary.org/b/isbn/9780316362757-L.jpg',
-    darkness_level: 4,
-    heat_level: null,
+    darkness_level: 3,
+    heat_level: 'Closed Door',
     series: 'The Hierarchy',
     series_number: 1,
     tropes: [
@@ -24,34 +23,33 @@ export const theWillOfTheMany: BooksLikeEntry = {
     ],
     angle: 'Political Academy Fantasy with Hidden Identity',
     answer_line:
-      'If you loved The Will of the Many for its layered mystery, Roman-world politics, and a protagonist who survives by being three steps ahead, start with Red Rising, An Ember in the Ashes, and The Lies of Locke Lamora.',
+      'If you loved The Will of the Many for its layered mystery, Roman-world politics, and a protagonist who survives by being three steps ahead, start with An Ember in the Ashes, The Traitor Baru Cormorant, and The Lies of Locke Lamora.',
     why_people_love:
-      "The Will of the Many works because Vis Telimus is not a chosen hero — he's a survivor playing a very long con. The Catenan Republic runs on Will: citizens literally donate willpower upward through the hierarchy, and Vis refuses to participate, making him a social pariah hiding inside an elite academy full of people who would destroy him if they knew the truth. Islington builds the tension through information asymmetry — you're always slightly behind what Vis is working out, and the revelations land because the groundwork is genuinely there. The Roman-flavoured world is unusually well-realised, the power system is thoughtfully constructed, and the book has the rare quality of respecting reader intelligence throughout. It's lighter on action than most epic fantasy but dense with scheming, political positioning, and a mystery that escalates without becoming frustrating. No meaningful romance; the hook is entirely the puzzle.",
+      "The Will of the Many works because Vis Telimus is not a chosen hero. He's a survivor playing a very long con. The Catenan Republic runs on Will: citizens literally donate willpower upward through the hierarchy, and Vis refuses to participate, making him a social pariah hiding inside an elite academy full of people who would destroy him if they knew the truth. Islington builds the tension through information asymmetry: you're always slightly behind what Vis is working out, and the revelations land because the groundwork is genuinely there. The Roman-flavoured world is unusually well-realised, the power system is thoughtfully constructed, and the book has the rare quality of respecting reader intelligence throughout. It's lighter on action than most epic fantasy but dense with scheming, political positioning, and a mystery that escalates without becoming frustrating. No meaningful romance; the hook is entirely the puzzle.",
     why_people_love_rich: [
-      { type: 'paragraph', text: "The Will of the Many works because of its premise. The Catenan Republic runs on Will: citizens literally donate willpower upward through the hierarchy, surrendering agency to those above them in exchange for protection and status. Vis Telimus refuses to participate — which makes him a dangerous anomaly at an elite academy full of people who believe the system is natural and right. Islington builds the tension through information asymmetry: you are always slightly behind what Vis is working out, and the revelations land because the groundwork is genuinely there." },
-      { type: 'labeled', label: 'Vis:', text: "He is not a chosen hero — he is a survivor playing a very long con. His intelligence is the book's real magic system: the ability to read a room, build trust he doesn't feel, and act three steps ahead while appearing to act in the moment. Islington writes him with enough restraint that the reader never quite knows how much Vis is concealing — from his enemies, from his allies, or from the narrative itself. Most fantasy protagonists deceive their enemies. Vis deceives the reader, carefully, for the book's entire length." },
-      { type: 'paragraph', text: "The Roman-flavoured world is unusually well-realised — not just aesthetic dressing but a functioning political system with its own internal logic about how power moves and what it costs. The mystery escalates without becoming frustrating because Islington respects reader intelligence: clues are placed, not hidden; the puzzle is fair. The book's pleasures are entirely cerebral, and they are substantial." },
-      { type: 'warning', text: "The Will of the Many is lighter on action than most epic fantasy and has almost no romance — the hook is entirely the puzzle and the scheming. The series is ongoing and unfinished. Readers who need forward momentum through combat rather than strategy, or who want a romantic throughline, will find this less satisfying than the premise suggests. The book is also darker in tone than the academy-fantasy framing implies — Vis's situation is genuinely precarious and Islington does not soften the cost." },
+      { type: 'paragraph', text: "The Will of the Many works because of its premise. The Catenan Republic runs on Will: citizens literally donate willpower upward through the hierarchy, surrendering agency to those above them in exchange for protection and status. Vis Telimus refuses to participate, which makes him a dangerous anomaly at an elite academy full of people who believe the system is natural and right. Islington builds the tension through information asymmetry: you are always slightly behind what Vis is working out, and the revelations land because the groundwork is genuinely there." },
+      { type: 'labeled', label: 'Vis:', text: "He is not a chosen hero. He is a survivor playing a very long con. His intelligence is the book's real magic system: the ability to read a room, build trust he doesn't feel, and act three steps ahead while appearing to act in the moment. Islington writes him with enough restraint that the reader never quite knows how much Vis is concealing: from his enemies, from his allies, or from the narrative itself. Most fantasy protagonists deceive their enemies. Vis deceives the reader, carefully, for the book's entire length." },
+      { type: 'paragraph', text: "The Roman-flavoured world is unusually well-realised: not just aesthetic dressing but a functioning political system with its own internal logic about how power moves and what it costs. The mystery escalates without becoming frustrating because Islington respects reader intelligence: clues are placed, not hidden; the puzzle is fair. The book's pleasures are entirely cerebral, and they are substantial." },
+      { type: 'warning', text: "The Will of the Many is lighter on action than most epic fantasy and has almost no romance: the hook is entirely the puzzle and the scheming. The series is ongoing and unfinished. Readers who need forward momentum through combat rather than strategy, or who want a romantic throughline, will find this less satisfying than the premise suggests. The book is also darker in tone than the academy-fantasy framing implies. Vis's situation is genuinely precarious and Islington does not soften the cost." },
     ],
   },
   aspects: [
     {
       heading:
-        "If you loved the hidden identity inside a hostile elite institution — surviving by pretending to be someone you're not...",
+        "If you loved the hidden identity inside a hostile elite institution: surviving by pretending to be someone you're not...",
       recs: [
         {
           title: 'An Ember in the Ashes',
           author: 'Sabaa Tahir',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781595148049-L.jpg',
           darkness_level: 4,
-          heat_level: 'Sweet Romance',
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'An Ember in the Ashes',
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "The most direct structural parallel: a protagonist embedded in an enemy institution under a false identity, surrounded by people who would kill them if the truth came out, navigating a brutal hierarchy that is designed to break them. Laia's infiltration of Blackcliff mirrors Vis's position at the Academy — the stakes feel personal and immediate because discovery means death, not just expulsion. The dual POV adds a second layer of political complexity. Considerably more romance than The Will of the Many; the action pacing is faster. But if the 'survive by lying to everyone including the reader' core is what hooked you, this is the closest match in fantasy.",
+          note: "The most direct structural parallel: a protagonist embedded in an enemy institution under a false identity, surrounded by people who would kill them if the truth came out, navigating a brutal hierarchy that is designed to break them. Laia's infiltration of Blackcliff mirrors Vis's position at the Academy: the stakes feel personal and immediate because discovery means death, not just expulsion. The dual POV adds a second layer of political complexity. Considerably more romance than The Will of the Many; the action pacing is faster. But if the 'survive by lying to everyone including the reader' core is what hooked you, this is the closest match in fantasy.",
+          caveat: "considerably more romance-forward than The Will of the Many, with a dual POV structure and faster action pacing.",
           tags: [
             'Hidden Identity',
             'Enemy Academy',
@@ -67,8 +65,6 @@ export const theWillOfTheMany: BooksLikeEntry = {
         {
           title: 'Red Rising',
           author: 'Pierce Brown',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780345539809-L.jpg',
           darkness_level: 4,
           heat_level: 'Closed Door',
           standalone: false,
@@ -76,7 +72,8 @@ export const theWillOfTheMany: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: "Darrow infiltrates the Gold ruling class the same way Vis infiltrates the Catenan Academy — by becoming something he despises in order to destroy it from within. Both books share the Roman-world aesthetic (Brown's is explicitly Roman-coded, Islington's is its own flavour), the rigid class hierarchy built on extracting something from the lower orders, and a protagonist who must out-think opponents who are better resourced and more entitled. Red Rising is faster-paced and more action-driven, with higher violence. But the core tension — keeping a secret in an environment specifically designed to root out weakness — is the same engine.",
+          note: "Darrow infiltrates the Gold ruling class the same way Vis infiltrates the Catenan Academy: by becoming something he despises in order to destroy it from within. Both books share the Roman-world aesthetic (Brown's is explicitly Roman-coded, Islington's is its own flavour), the rigid class hierarchy built on extracting something from the lower orders, and a protagonist who must out-think opponents who are better resourced and more entitled. Red Rising is faster-paced and more action-driven, with higher violence. But the core tension (keeping a secret in an environment specifically designed to root out weakness) is the same engine.",
+          caveat: "faster-paced and more action-driven than The Will of the Many, with higher violence throughout.",
           tags: [
             'Hidden Identity',
             'Roman-Inspired World',
@@ -98,16 +95,14 @@ export const theWillOfTheMany: BooksLikeEntry = {
         {
           title: 'The Traitor Baru Cormorant',
           author: 'Seth Dickinson',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765380722-L.jpg',
-          darkness_level: 5,
-          heat_level: null,
+          darkness_level: 4,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The Masquerade',
           series_number: 1,
           series_label: 'Series (4 books)',
           audiobook: true,
-          note: "If the Catenan Republic's will-extraction economy made you think about what it costs to survive inside an empire that owns you, Baru Cormorant is the darkest version of that question. Baru is a colonial subject who climbs the imperial bureaucracy to destroy it — and the book is brutally honest about what that compromise costs her. The political machinery is dense and rewarding, the prose is controlled and cold, and the ending is genuinely punishing. No academy setting, no action sequences. This is pure political fantasy for readers who want the scheming to have real weight.",
+          note: "If the Catenan Republic's will-extraction economy made you think about what it costs to survive inside an empire that owns you, Baru Cormorant is the darkest version of that question. Baru is a colonial subject who climbs the imperial bureaucracy to destroy it. The book is brutally honest about what that compromise costs her. The political machinery is dense and rewarding, the prose is controlled and cold, and the ending is genuinely punishing. No academy setting, no action sequences. This is pure political fantasy for readers who want the scheming to have real weight.",
           caveat: "one of the most emotionally brutal endings in modern fantasy.",
           tags: [
             'Political Scheming',
@@ -126,16 +121,15 @@ export const theWillOfTheMany: BooksLikeEntry = {
         {
           title: 'The Way of Kings',
           author: 'Brandon Sanderson',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780765326355-L.jpg',
-          darkness_level: 4,
-          heat_level: null,
+          darkness_level: 3,
+          heat_level: 'Sweet Romance',
           standalone: false,
           series: 'The Stormlight Archive',
           series_number: 1,
           series_label: 'Series (10 books planned)',
           audiobook: true,
-          note: "Sanderson's Roshar shares The Will of the Many's appetite for a magic system rooted in a society-shaping resource — here it's Stormlight, a raw power extracted from storms, and the Shardplate that runs on it concentrates power in the hands of the highprinces the way Will concentrates it in the Catenan hierarchy. The scale is larger, the cast is broader, and the book is twice the length. But readers who finished The Will of the Many hungry for more world-building that actually explains the social structure, rather than just decorating it, will find Sanderson's depth rewarding. Start here if you want the political complexity matched with epic scope.",
+          note: "Sanderson's Roshar shares The Will of the Many's appetite for a magic system rooted in a society-shaping resource: here it's Stormlight, a raw power extracted from storms, and the Shardplate that runs on it concentrates power in the hands of the highprinces the way Will concentrates it in the Catenan hierarchy. The scale is larger, the cast is broader, and the book is twice the length. But readers who finished The Will of the Many hungry for more world-building that actually explains the social structure, rather than just decorating it, will find Sanderson's depth rewarding. Start here if you want the political complexity matched with epic scope.",
+          caveat: "the scale is much larger and the cast far broader; each volume runs roughly twice the length of The Will of the Many.",
           tags: [
             'Political Intrigue',
             'Complex Magic System',
@@ -157,16 +151,15 @@ export const theWillOfTheMany: BooksLikeEntry = {
         {
           title: 'The Lies of Locke Lamora',
           author: 'Scott Lynch',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780553588941-L.jpg',
-          darkness_level: 4,
-          heat_level: null,
+          darkness_level: 5,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Gentleman Bastard',
           series_number: 1,
           series_label: 'Series (3 books published)',
           audiobook: true,
           note: "Locke Lamora is the patron saint of fantasy protagonists who survive by being smarter than everyone around them and constantly one bad decision away from catastrophe. The city of Camorr is as intricately constructed as the Catenan Republic, the schemes are layered with counter-schemes, and Lynch has the same gift as Islington for making intelligence feel like a genuine form of power rather than a shortcut. The violence is sharper and more visceral than The Will of the Many, the humour is darker, and the pacing is more chaotic. But if Vis's particular brand of calm, analytical danger is what pulled you in, Locke is the next best thing.",
+          caveat: "sharper, more visceral violence and darker humour than The Will of the Many, with a more chaotic pacing structure.",
           tags: [
             'Clever Protagonist',
             'Political Scheming',
@@ -182,8 +175,6 @@ export const theWillOfTheMany: BooksLikeEntry = {
         {
           title: 'The Name of the Wind',
           author: 'Patrick Rothfuss',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780756405533-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -192,7 +183,7 @@ export const theWillOfTheMany: BooksLikeEntry = {
           series_label: 'Series (2 books published, unfinished)',
           audiobook: true,
           note: "Kvothe at the University is the closest the genre has to Vis at the Academy: a brilliant, poor outsider at an elite institution, navigating social hierarchies and institutional politics through sheer intelligence while hiding the scale of what he's actually capable of. Both books are structured as mysteries about the protagonist's past, both use the academy setting as a political arena, and both have a particular pleasure in watching a clever person work a room. Rothfuss's prose is richer and more lyrical; Islington's plotting is tighter.",
-          caveat: "the series is unfinished and has been for over a decade — go in knowing you may not get a conclusion.",
+          caveat: "the series is unfinished and has been for over a decade. Go in knowing you may not get a conclusion.",
           tags: [
             'Academy Setting',
             'Hidden Power',
@@ -210,11 +201,8 @@ export const theWillOfTheMany: BooksLikeEntry = {
   ],
   recommendations: [],
   related: [
-    { title: 'Books Like Red Rising', slug: 'red-rising' },
-    {
-      title: 'Books Like The Name of the Wind',
-      slug: 'the-name-of-the-wind',
-    },
-    { title: 'Books Like Mistborn', slug: 'mistborn-the-final-empire' },
+    { title: 'Books Like An Ember in the Ashes', slug: 'an-ember-in-the-ashes' },
+    { title: 'Books Like The Traitor Baru Cormorant', slug: 'the-traitor-baru-cormorant' },
+    { title: 'Books Like The Lies of Locke Lamora', slug: 'the-lies-of-locke-lamora' },
   ],
 };
