@@ -6,9 +6,7 @@ export const aTouchOfDarkness: BooksLikeEntry = {
     title: 'A Touch of Darkness',
     author: 'Scarlett St. Clair',
     db_slug: 'a-touch-of-darkness',
-    cover_url:
-      'https://books.google.com/books/publisher/content/images/frontcover/URI8EAAAQBAJ?fife=w400-h600',
-    darkness_level: 3,
+    darkness_level: 4,
     heat_level: 'Explicit',
     series: 'Hades x Persephone',
     series_number: 1,
@@ -24,13 +22,13 @@ export const aTouchOfDarkness: BooksLikeEntry = {
     ],
     angle: 'Dark Romantasy Greek Myth Retelling with Explicit Heat',
     answer_line:
-      'If you loved A Touch of Darkness for the Hades and Persephone dynamic, the modern gods world, and the push-pull tension that keeps escalating, start with A Court of Thorns and Roses, From Blood and Ash, and Kingdom of the Wicked.',
+      'If you loved A Touch of Darkness for the Hades and Persephone dynamic, the modern gods world, and the push-pull tension that keeps escalating, start with A Court of Mist and Fury, Neon Gods, and Lore.',
     why_people_love:
-      'A Touch of Darkness works because Scarlett St. Clair makes Hades genuinely compelling — he is powerful, controlled, and dangerous in ways that feel earned rather than stated, and the tension between him and Persephone is built on a real dynamic rather than just proximity. Persephone is a Goddess of Spring who cannot grow a single living thing, which is a neat inversion: she is supposed to be the gentle goddess and she cannot even manage that, while the God of the Underworld turns out to be far more complex than his reputation. The modern setting — gods running nightclubs and law firms in a contemporary city — keeps the mythology fresh without requiring any prior knowledge of the source material. The series is romance-forward and high-heat, and it is honest about that from page one. Readers who wanted more of the Rhysand energy from ACOTAR but with Greek mythology and considerably less plot overhead will find exactly what they are looking for.',
+      'A Touch of Darkness works because Scarlett St. Clair makes Hades genuinely compelling: he is powerful, controlled, and dangerous in ways that feel earned rather than stated, and the tension between him and Persephone is built on a real dynamic rather than just proximity. Persephone is a Goddess of Spring who cannot grow a single living thing, which is a neat inversion: she is supposed to be the gentle goddess and she cannot even manage that, while the God of the Underworld turns out to be far more complex than his reputation. The modern setting (gods running nightclubs and law firms in a contemporary city) keeps the mythology fresh without requiring any prior knowledge of the source material. The series is romance-forward and high-heat, and it is honest about that from page one. Readers who wanted more of the Rhysand energy from ACOTAR but with Greek mythology and considerably less plot overhead will find exactly what they are looking for.',
     why_people_love_rich: [
       {
         type: 'paragraph',
-        text: "A Touch of Darkness works because Scarlett St. Clair makes Hades genuinely compelling — powerful, controlled, dangerous in ways that feel earned rather than stated. Persephone is a Goddess of Spring who cannot grow a single living thing. She is supposed to be the gentle goddess and she cannot manage even that, while the God of the Underworld turns out to be far more complex than his reputation.",
+        text: "A Touch of Darkness works because Scarlett St. Clair makes Hades genuinely compelling: powerful, controlled, dangerous in ways that feel earned rather than stated. Persephone is a Goddess of Spring who cannot grow a single living thing. She is supposed to be the gentle goddess and she cannot manage even that, while the God of the Underworld turns out to be far more complex than his reputation.",
       },
       {
         type: 'labeled',
@@ -39,33 +37,31 @@ export const aTouchOfDarkness: BooksLikeEntry = {
       },
       {
         type: 'paragraph',
-        text: "The series is romance-forward and high-heat, and it is honest about that from page one. The tension between Hades and Persephone builds on a real dynamic — two characters with genuine contradictions — rather than just proximity and circumstance.",
+        text: "The series is romance-forward and high-heat, and it is honest about that from page one. The tension between Hades and Persephone builds on a real dynamic (two characters with genuine contradictions) rather than just proximity and circumstance.",
       },
       {
         type: 'warning',
-        text: "This is primarily a romance with a mythological backdrop, not a mythology book. The plot architecture is thin — if you need complex story structure outside the relationship, this will not provide it. Readers who wanted the Rhysand energy from ACOTAR but with considerably less plot overhead will find exactly what they are looking for.",
+        text: "This is primarily a romance with a mythological backdrop, not a mythology book. The plot architecture is thin: if you need complex story structure outside the relationship, this will not provide it. Readers who wanted the Rhysand energy from ACOTAR but with considerably less plot overhead will find exactly what they are looking for.",
       },
     ],
   },
   aspects: [
     {
       heading:
-        'If you loved Hades — the dark, powerful love interest who is dangerous but not cruel without reason...',
+        'If you loved Hades: the dark, powerful love interest who is dangerous but not cruel without reason...',
       recs: [
         {
           title: 'A Court of Mist and Fury',
           author: 'Sarah J. Maas',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781619634176-L.jpg',
           darkness_level: 4,
           heat_level: 'Explicit',
           standalone: false,
           series: 'A Court of Thorns and Roses',
           series_number: 2,
-          series_label: 'Series (5 books) — start with book 1',
+          series_label: 'Series (5 books), start with book 1',
           audiobook: true,
-          note: "Rhysand is the direct predecessor to Hades in the romantasy canon — a powerful immortal with a fearsome reputation that conceals something more complicated, who slowly dismantles the protagonist's defences across an entire book. ACOMAF is where the ACOTAR series becomes exceptional and where Maas's version of this dynamic reaches its peak. The Night Court has the same energy as the Underworld.",
-          caveat: 'Start with A Court of Thorns and Roses — ACOMAF is book two and needs the setup. The first book is lighter; push through.',
+          note: "Rhysand is the direct predecessor to Hades in the romantasy canon: a powerful immortal with a fearsome reputation that conceals something more complicated, who slowly dismantles the protagonist's defences across an entire book. ACOMAF is where the ACOTAR series becomes exceptional and where Maas's version of this dynamic reaches its peak. The Night Court has the same energy as the Underworld.",
+          caveat: 'Start with A Court of Thorns and Roses: ACOMAF is book two and needs the setup. The first book is lighter; push through.',
           tags: [
             'Morally Grey Love Interest',
             'Fae Courts',
@@ -81,17 +77,15 @@ export const aTouchOfDarkness: BooksLikeEntry = {
         {
           title: 'From Blood and Ash',
           author: 'Jennifer L. Armentrout',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9781952457760-L.jpg',
           darkness_level: 3,
-          heat_level: 'Explicit',
+          heat_level: 'Fiery',
           standalone: false,
           series: 'Blood and Ash',
           series_number: 1,
           series_label: 'Series (5 books)',
           audiobook: true,
           note: 'The same formula executed with similar confidence: a sheltered protagonist, a morally grey guard who is not what he appears, slow-burn tension that builds across the whole book before the heat arrives. Hawke has the same controlled, quietly menacing energy as Hades.',
-          caveat: 'Starts slowly — the first quarter is world-building heavy. The payoff is worth it.',
+          caveat: 'Starts slowly: the first quarter is world-building heavy. Worth pushing through for what comes after.',
           tags: [
             'Morally Grey Love Interest',
             'Slow Burn',
@@ -107,7 +101,7 @@ export const aTouchOfDarkness: BooksLikeEntry = {
     },
     {
       heading:
-        'If you loved the Greek mythology in a modern world — gods with nightclubs and grudges...',
+        'If you loved the Greek mythology in a modern world: gods with nightclubs and grudges...',
       recs: [
         {
           title: 'Neon Gods',
@@ -119,8 +113,8 @@ export const aTouchOfDarkness: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Series (6 books)',
           audiobook: true,
-          note: 'The most direct comp in the genre — literally a Hades and Persephone retelling set in a modern city called Olympus, where the Olympians are a ruling class of untouchable elites. Persephone runs to Hades to escape an arranged marriage; Hades has his own reasons for helping her. Same myth, same dark-and-powerful love interest, same modern setting, considerably higher heat. If A Touch of Darkness left you wanting more, this is the immediate next read.',
-          caveat: 'Higher heat than St. Clair and lighter on plot — this is romance first with mythology as backdrop. The series runs 6 books covering different Olympian couples; only the first follows Hades and Persephone.',
+          note: 'The most direct comp in the genre: literally a Hades and Persephone retelling set in a modern city called Olympus, where the Olympians are a ruling class of untouchable elites. Persephone runs to Hades to escape an arranged marriage; Hades has his own reasons for helping her. Same myth, same dark-and-powerful love interest, same modern setting, considerably higher heat. If A Touch of Darkness left you wanting more, this is the immediate next read.',
+          caveat: 'Higher heat than St. Clair and lighter on plot: this is romance first with mythology as backdrop. The series runs 6 books covering different Olympian couples; only the first follows Hades and Persephone.',
           tags: [
             'Greek Mythology Retelling',
             'Hades x Persephone',
@@ -136,14 +130,12 @@ export const aTouchOfDarkness: BooksLikeEntry = {
         {
           title: 'Circe',
           author: 'Madeline Miller',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg',
           darkness_level: 3,
-          heat_level: 'Open Door',
+          heat_level: 'Explicit',
           standalone: true,
           audiobook: true,
-          note: 'The literary end of the Greek mythology retelling spectrum — Circe is the daughter of Helios, dismissed by gods and mortals alike, who discovers her own power slowly over centuries. The gods feel genuinely alien rather than romantic, and Miller writes the specific loneliness of immortality with precision.',
-          caveat: 'Much less romance. If you want mythology explored rather than used as a backdrop for a love story, this is the better book — but if the romance was the main draw, this will disappoint.',
+          note: 'The literary end of the Greek mythology retelling spectrum: Circe is the daughter of Helios, dismissed by gods and mortals alike, who discovers her own power slowly over centuries. The gods feel genuinely alien rather than romantic, and Miller writes the specific loneliness of immortality with precision.',
+          caveat: 'Much less romance. If you want mythology explored rather than used as a backdrop for a love story, this is the better book, but if the romance was the main draw, this will disappoint.',
           tags: [
             'Greek Mythology',
             'Female Protagonist',
@@ -160,7 +152,7 @@ export const aTouchOfDarkness: BooksLikeEntry = {
     },
     {
       heading:
-        "If you loved Persephone's arc — a woman underestimated who grows into her power...",
+        "If you loved Persephone's arc: a woman underestimated who grows into her power...",
       recs: [
         {
           title: 'Lore',
@@ -169,8 +161,8 @@ export const aTouchOfDarkness: BooksLikeEntry = {
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
-          note: "Every seven years the Greek gods are stripped of their immortality and hunted through the streets of New York — killed gods have their power claimed by mortals. Lore was trained to hunt them and walked away. She is pulled back in when Athena, dying, comes to her for help. A modern setting, Greek gods operating in a contemporary city, and a female protagonist who has suppressed her own power and has to stop doing that. The closest modern-mythology standalone to A Touch of Darkness in tone without being a romance.",
-          caveat: 'Much less romance and heat — this is a thriller with mythology rather than a romantasy. The gods feel dangerous rather than desirable.',
+          note: "Every seven years the Greek gods are stripped of their immortality and hunted through the streets of New York: killed gods have their power claimed by mortals. Lore was trained to hunt them and walked away. She is pulled back in when Athena, dying, comes to her for help. A modern setting, Greek gods operating in a contemporary city, and a female protagonist who has suppressed her own power and has to stop doing that. The closest modern-mythology standalone to A Touch of Darkness in tone without being a romance.",
+          caveat: 'Much less romance and heat: this is a thriller with mythology rather than a romantasy. The gods feel dangerous rather than desirable.',
           tags: [
             'Greek Mythology',
             'Modern Setting',
@@ -186,8 +178,6 @@ export const aTouchOfDarkness: BooksLikeEntry = {
         {
           title: 'The Cruel Prince',
           author: 'Holly Black',
-          cover_url:
-            'https://covers.openlibrary.org/b/isbn/9780316310314-L.jpg',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -195,7 +185,7 @@ export const aTouchOfDarkness: BooksLikeEntry = {
           series_number: 1,
           series_label: 'Trilogy (3 books)',
           audiobook: true,
-          note: "Jude is a mortal girl in a fae court, powerless by the world's definition, who refuses to accept that — she schemes, manipulates, and claws her way to a position nobody expected her to reach. The power dynamic between Jude and Cardan is the intellectual version of Persephone and Hades: two people who underestimate each other, circling a push-pull that neither fully controls.",
+          note: "Jude is a mortal girl in a fae court, powerless by the world's definition, who refuses to accept that. She schemes, manipulates, and claws her way to a position nobody expected her to reach. The power dynamic between Jude and Cardan is the intellectual version of Persephone and Hades: two people who underestimate each other, circling a push-pull that neither fully controls.",
           caveat: 'Much less heat, much more political scheming. If you want the tension without the explicit content, this is the cleaner version of the same dynamic.',
           tags: [
             'Mortal in Fae World',

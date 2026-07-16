@@ -6,10 +6,8 @@ export const theTraitorBaruCormorant: BooksLikeEntry = {
     title: 'The Traitor Baru Cormorant',
     author: 'Seth Dickinson',
     db_slug: 'the-traitor-baru-cormorant',
-    cover_url:
-      'https://books.google.com/books/content?id=7VGNBwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-    darkness_level: 5,
-    heat_level: null,
+    darkness_level: 4,
+    heat_level: 'Closed Door',
     series: 'The Masquerade',
     series_number: 1,
     tropes: [
@@ -24,7 +22,7 @@ export const theTraitorBaruCormorant: BooksLikeEntry = {
     ],
     angle: 'A colonial subject who joins the empire to destroy it, and what that requires',
     answer_line:
-      'Books that hit the same note as The Traitor Baru Cormorant: A Memory Called Empire for the closest emotional match, Babel for the same colonial complicity pressed from a different angle, Tigana for the political cost of resistance under erasure.',
+      'Books that hit the same note as The Traitor Baru Cormorant: A Memory Called Empire for the closest emotional match, Babel for the same colonial complicity pressed from a different angle, The Will of the Many for the same infiltrator-inside-the-empire structure.',
     why_people_love:
       "Baru Cormorant watches the Falcrest Empire arrive on her home island when she is eight years old. They install schools and sanitation and laws about what kinds of love are permitted. She decides the only way to save her people is to become the Empire's most useful servant: to earn her way into the administrative apparatus and find the lever that breaks it from inside. Dickinson gives this premise full seriousness. The economics are real. The colonial bureaucracy functions the way colonial bureaucracies actually function. Baru is not a spy or a rebel; she is an accountant, and the tools she uses are fiscal policy and trade manipulation. The book is structured as a tragedy from the first page, and Dickinson earns the ending he delivers, which is among the most devastating final acts in recent fantasy. The question it asks, and doesn't let you answer comfortably, is whether the tools of a system can ever be used to dismantle it, or whether they always, eventually, dismantle the person holding them.",
     why_people_love_rich: [
@@ -56,8 +54,6 @@ export const theTraitorBaruCormorant: BooksLikeEntry = {
           title: 'A Memory Called Empire',
           slug: 'a-memory-called-empire',
           author: 'Arkady Martine',
-          cover_url:
-            'https://books.google.com/books/content?id=p7RzDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
           darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: false,
@@ -83,10 +79,8 @@ export const theTraitorBaruCormorant: BooksLikeEntry = {
           title: 'The Poppy War',
           slug: 'the-poppy-war',
           author: 'R.F. Kuang',
-          cover_url:
-            'https://books.google.com/books/content?id=Vg89DwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
           darkness_level: 5,
-          heat_level: null,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The Poppy War',
           series_number: 1,
@@ -117,10 +111,8 @@ export const theTraitorBaruCormorant: BooksLikeEntry = {
           title: 'Babel',
           slug: 'babel',
           author: 'R.F. Kuang',
-          cover_url:
-            'https://books.google.com/books/publisher/content/images/frontcover/YMpQEAAAQBAJ?fife=w400-h600',
-          darkness_level: 5,
-          heat_level: null,
+          darkness_level: 4,
+          heat_level: 'Sweet Romance',
           standalone: true,
           audiobook: true,
           note: "Robin Swift is orphaned in Canton and brought to Oxford to power the silver-working magic that runs the British Empire. The mechanism (the Empire runs on the untranslatable gaps between colonised languages) is the most elegant colonial allegory in recent fantasy. Kuang works the same angle as Dickinson: a protagonist who loves the institution that exploits him, who earns exceptional ability inside it, and who is eventually forced to choose between the institution and the people it was built on. The found family is consumed by the same logic that consumes Baru's relationships.",
@@ -141,9 +133,7 @@ export const theTraitorBaruCormorant: BooksLikeEntry = {
           title: 'Tigana',
           slug: 'tigana',
           author: 'Guy Gavriel Kay',
-          cover_url:
-            'https://books.google.com/books/content?id=KAEP3AcxcSwC&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-          darkness_level: 4,
+          darkness_level: 3,
           heat_level: 'Closed Door',
           standalone: true,
           audiobook: true,
@@ -171,10 +161,8 @@ export const theTraitorBaruCormorant: BooksLikeEntry = {
           title: 'The Will of the Many',
           slug: 'the-will-of-the-many',
           author: 'James Islington',
-          cover_url:
-            'https://books.google.com/books/content?id=ZZNdEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
-          darkness_level: 4,
-          heat_level: null,
+          darkness_level: 3,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'The Hierarchy',
           series_number: 1,
@@ -198,16 +186,14 @@ export const theTraitorBaruCormorant: BooksLikeEntry = {
           title: 'Dune',
           slug: 'dune',
           author: 'Frank Herbert',
-          cover_url:
-            'https://books.google.com/books/publisher/content/images/frontcover/AQk_EAAAQBAJ?fife=w400-h600',
-          darkness_level: 3,
-          heat_level: null,
+          darkness_level: 4,
+          heat_level: 'Closed Door',
           standalone: false,
           series: 'Dune',
           series_number: 1,
           series_label: 'Series (6 books + sequels)',
           audiobook: true,
-          note: "Herbert's empire runs on bureaucratic, religious, and economic mechanisms that Paul understands with increasing precision. Dune is the most influential version of the 'protagonist who understands how the system works and uses that understanding as a weapon' — and it asks the same question Dickinson asks about whether that understanding ultimately serves the person or destroys them. Paul's prescience, which eventually breaks him, is structurally equivalent to Baru's exceptional ability: a gift that makes her indispensable to the system she is trying to destroy.",
+          note: "Herbert's empire runs on bureaucratic, religious, and economic mechanisms that Paul understands with increasing precision. Dune is the most influential version of the 'protagonist who understands how the system works and uses that understanding as a weapon,' and it asks the same question Dickinson asks about whether that understanding ultimately serves the person or destroys them. Paul's prescience, which eventually breaks him, is structurally equivalent to Baru's exceptional ability: a gift that makes her indispensable to the system she is trying to destroy.",
           caveat: "Older prose style and more expansive in scope. Herbert's political philosophy is more hopeful in book one; the later Dune books grow progressively darker about what Paul becomes.",
           tags: [
             'Political Manipulation',
@@ -227,10 +213,7 @@ export const theTraitorBaruCormorant: BooksLikeEntry = {
   recommendations: [],
   related: [
     { title: 'Books Like A Memory Called Empire', slug: 'a-memory-called-empire' },
-    { title: 'Books Like The Poppy War', slug: 'the-poppy-war' },
     { title: 'Books Like Babel', slug: 'babel' },
-    { title: 'Books Like Tigana', slug: 'tigana' },
     { title: 'Books Like The Will of the Many', slug: 'the-will-of-the-many' },
-    { title: 'Books Like Best Served Cold', slug: 'best-served-cold' },
   ],
 };
