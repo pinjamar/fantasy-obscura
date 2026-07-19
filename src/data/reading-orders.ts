@@ -232,4 +232,21 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
   READING_ORDERS.find((e) => e.slug === slug) ?? null;
 
+/** Hand-crafted reading order pages — always indexable. */
+export const CURATED_READING_ORDER_SLUGS: ReadonlySet<string> = new Set(
+  READING_ORDERS.map((e) => e.slug),
+);
+
+/** Auto-generated DB reading order pages explicitly allowed to index (not yet curated). */
+export const INDEXED_DB_READING_ORDER_SLUGS: readonly string[] = [
+  'he-who-fights-with-monsters',
+  'hell-bent',
+  'river-of-time',
+  'riverside',
+  'crescent-city',
+];
+
+export function shouldIndexReadingOrder(slug: string): boolean {
+  return CURATED_READING_ORDER_SLUGS.has(slug) || INDEXED_DB_READING_ORDER_SLUGS.includes(slug);
+}
 

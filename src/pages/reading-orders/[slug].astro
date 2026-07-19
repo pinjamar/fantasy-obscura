@@ -1,7 +1,7 @@
 ---
 import Layout from '../../components/Layout.astro';
 import ReadingOrder from '../../components/ReadingOrder';
-import { getReadingOrderEntry, READING_ORDERS } from '../../data/reading-orders';
+import { getReadingOrderEntry, READING_ORDERS, shouldIndexReadingOrder } from '../../data/reading-orders';
 import type { ReadingOrderEntry } from '../../data/reading-orders';
 import { getAllSeries, getBooksBySeries, authorToSlug } from '../../lib/db/books';
 import { supabaseClient } from '../../lib/supabaseClient';
@@ -354,18 +354,8 @@ const faqJsonLd = faqItems.length > 0 ? JSON.stringify({
 }) : null;
 
 
-// ── Non-curated SEO additions ─────────────────────────────────────────────────
-// DB pages listed here are ranking well and explicitly allowed to be indexed.
-const indexedDbSlugs = [
-  'he-who-fights-with-monsters',
-  'caraval',
-  'hell-bent',
-  'river-of-time',
-  'riverside',
-  'gentleman-bastard',
-  'crescent-city'
-];
-const dbShouldNoIndex = !isCurated && !indexedDbSlugs.includes(slug);
+// ── Indexing ──────────────────────────────────────────────────────────────────
+const shouldIndex = shouldIndexReadingOrder(slug!);
 
 const dbItemListJsonLd = !isCurated && seriesMeta ? JSON.stringify({
   '@context': 'https://schema.org',
@@ -432,7 +422,9 @@ const readingOrderBreadcrumbJsonLd = JSON.stringify({
     {faqJsonLd && <script is:inline type="application/ld+json" set:html={faqJsonLd} />}
     {dbItemListJsonLd && <script is:inline type="application/ld+json" set:html={dbItemListJsonLd} />}
     {dbFaqJsonLd && <script is:inline type="application/ld+json" set:html={dbFaqJsonLd} />}
-    {dbShouldNoIndex && <meta name="robots" content="noindex, follow" />}
+    {shouldIndex
+      ? <meta name="robots" content="index, follow" />
+      : <meta name="robots" content="noindex, follow" />}
   </Fragment>
 
 {isCurated && curatedEntry && (

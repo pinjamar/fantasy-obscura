@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { createClient } from '@supabase/supabase-js';
 import { BOOKS_LIKE } from '../data/books-like';
-import { READING_ORDERS } from '../data/reading-orders';
+import { INDEXED_DB_READING_ORDER_SLUGS, READING_ORDERS } from '../data/reading-orders';
 import { CATEGORIES_META } from '../data/categories-meta';
 import { CURATED_SLUGS } from '../lib/curated-slugs';
 import { PUBLIC_TROPES } from '../data/tropes';
@@ -14,8 +14,7 @@ const SITE = 'https://thegrimoire.co';
 // Books-like slugs from static data
 const BOOKS_LIKE_SLUGS = BOOKS_LIKE.map((e) => e.slug);
 
-// Curated reading order slugs from static data
-const CURATED_READING_ORDER_SLUGS = READING_ORDERS.map((e) => e.slug);
+// Curated reading order slugs from static data (used for lastmod in sitemap entries)
 
 // Static routes that are always present
 const STATIC_ROUTES = [
@@ -28,9 +27,9 @@ const STATIC_ROUTES = [
   '/authors/',
 ];
 
-function urlEntry(path: string, priority = '0.5', changefreq = 'weekly') {
+function urlEntry(path: string, priority = '0.5', changefreq = 'weekly', lastmod?: string) {
   return `  <url>
-    <loc>${SITE}${path}</loc>
+    <loc>${SITE}${path}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
@@ -69,24 +68,15 @@ export const GET: APIRoute = async ({ locals }) => {
       darknessSlug: DARKNESS_SLUG[r.darkness_level as number],
     }));
 
-  // Only the small set of non-curated reading order pages explicitly allowed to be indexed.
-  // All other DB-driven reading order pages are noindexed — excluding them from the sitemap
-  // avoids wasting crawl budget on pages Google will immediately mark noindex.
-  const dbSeriesSlugs = [
-    'he-who-fights-with-monsters',
-    'caraval',
-    'hell-bent',
-    'river-of-time',
-    'riverside',
-    'crescent-city',
-    'gentleman-bastard',
-  ];
+  // DB-driven reading order pages explicitly allowed to be indexed (not yet curated).
+  // All other auto-generated series pages are noindexed and excluded from the sitemap.
+  const dbSeriesSlugs = INDEXED_DB_READING_ORDER_SLUGS;
 
   const entries: string[] = [
     // Static high-priority pages
     ...STATIC_ROUTES.map((p) => urlEntry(p, p === '/' ? '1.0' : '0.8', 'daily')),
     // Reading orders — curated
-    ...CURATED_READING_ORDER_SLUGS.map((s) => urlEntry(`/reading-orders/${s}/`, '0.9', 'weekly')),
+    ...READING_ORDERS.map((e) => urlEntry(`/reading-orders/${e.slug}/`, '0.9', 'weekly', e.lastUpdated)),
     // Books Like guides
     ...BOOKS_LIKE_SLUGS.map((s) => urlEntry(`/books-like/${s}/`, '0.8', 'weekly')),
     // Reading orders — DB-driven
