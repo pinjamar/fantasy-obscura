@@ -15,7 +15,7 @@ export const TIER_1 = [
   'the-eye-of-the-world', 'fourth-wing', 'a-court-of-thorns-and-roses',
   'the-priory-of-the-orange-tree', 'the-poppy-war', 'the-shadow-of-the-gods',
   'the-black-prism', 'empire-of-the-vampire',
-  'jonathan-strange-and-mr-norrell',
+  'jonathan-strange-mr-norrell',
   'elantris', 'the-colour-of-magic',
   'circe', 'uprooted', 'spinning-silver', 'legends-and-lattes', 'cradle-unsouled',
   'the-cruel-prince', 'the-will-of-the-many', 'the-justice-of-kings',
@@ -193,7 +193,7 @@ export const TIER_3 = [
 
   // ── Cozy / Heartwarming ───────────────────────────────────────────────────
   'a-psalm-for-the-wild-built', 'a-prayer-for-the-crown-shy',
-  'bookshops-and-bonedust', 'nettle-and-bone', 'thornhedge',
+  'bookshops-bonedust', 'nettle-bone', 'thornhedge',
   'the-very-secret-society-of-irregular-witches', 'witch-of-wild-things',
   'sorcery-of-thorns',
   'emily-wildes-map-of-the-otherlands',
@@ -424,7 +424,7 @@ export const TIER_4 = [
   'bloodguard',
   'a-deal-with-the-elf-king',
   'burn-of-the-everflame',
-  'zodiac-academy',
+  'zodiac-academy-1-the-awakening',
   'one-dark-window',
   'heartless-hunter',
   'a-study-in-drowning',

@@ -41,8 +41,22 @@ export const GET: APIRoute = async ({ locals }) => {
     import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
   );
 
-  // Only include curated book slugs in the sitemap — non-curated books are noindexed
-  const bookSlugs = [...CURATED_SLUGS];
+  // Only include curated book slugs in the sitemap — non-curated books are noindexed.
+  // Validate against the DB first: a slug in CURATED_SLUGS that doesn't match a real
+  // book (typo, or a book referenced in priority-slugs.mjs that was never added) would
+  // otherwise submit a dead 404 URL to Google — a real, confirmed cause of wasted
+  // crawl budget and rejected sitemap entries.
+  const candidateBookSlugs = [...CURATED_SLUGS];
+  const bookSlugs: string[] = [];
+  {
+    const CHUNK = 200;
+    for (let i = 0; i < candidateBookSlugs.length; i += CHUNK) {
+      const chunk = candidateBookSlugs.slice(i, i + CHUNK);
+      const { data } = await supabase.from('books').select('slug').in('slug', chunk);
+      const found = new Set((data ?? []).map((b) => b.slug));
+      for (const s of chunk) if (found.has(s)) bookSlugs.push(s);
+    }
+  }
 
   // Enriched authors: bio + writing_style + best_starting_point filled in — substantive editorial content.
   const { data: enrichedAuthorRows } = await supabase

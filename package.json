@@ -20,6 +20,7 @@
     "classify:creatures": "node scripts/classify-creatures.mjs",
     "classify:warnings": "node scripts/classify-content-warnings.mjs",
     "covers": "node scripts/update-covers.mjs",
+    "covers:mirror": "node scripts/mirror-covers-to-r2.mjs",
     "ratings": "node scripts/fill-ratings.mjs",
     "add-book": "node scripts/add-books.mjs",
     "menu": "node scripts/menu.mjs"
@@ -37,6 +38,7 @@
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/node": "^9.0.4",
     "@astrojs/react": "^4.4.2",
+    "@aws-sdk/client-s3": "^3.1113.0",
     "@google-cloud/vertexai": "^1.10.3",
     "@google/generative-ai": "^0.24.1",
     "@supabase/ssr": "^0.8.0",

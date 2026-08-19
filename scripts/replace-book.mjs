@@ -24,6 +24,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { execSync } from 'child_process';
+import { mirrorCoverToR2 } from './lib/mirror-cover.mjs';
 
 config();
 
@@ -403,6 +404,12 @@ async function main() {
   if (confirm.toLowerCase() !== 'y') {
     console.log('Cancelled — no changes made.\n');
     process.exit(0);
+  }
+
+  if (updates.cover_url) {
+    process.stdout.write('Mirroring cover to R2… ');
+    updates.cover_url = await mirrorCoverToR2(updates.cover_url, book.slug);
+    console.log(updates.cover_url === chosen.cover_url ? 'kept original (mirror unavailable)' : 'done');
   }
 
   const { error: updateErr } = await supabase
