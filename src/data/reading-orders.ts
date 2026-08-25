@@ -159,6 +159,7 @@ import { belgariad } from './reading-orders/belgariad';
 import { guyGavrielKay } from './reading-orders/guy-gavriel-kay';
 import { xanth } from './reading-orders/xanth';
 import { sagaOfRecluce } from './reading-orders/saga-of-recluce';
+import { tortall } from './reading-orders/tortall';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -227,6 +228,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   guyGavrielKay,
   xanth,
   sagaOfRecluce,
+  tortall,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
