@@ -160,6 +160,7 @@ import { guyGavrielKay } from './reading-orders/guy-gavriel-kay';
 import { xanth } from './reading-orders/xanth';
 import { sagaOfRecluce } from './reading-orders/saga-of-recluce';
 import { tortall } from './reading-orders/tortall';
+import { zodiacAcademy } from './reading-orders/zodiac-academy';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -229,6 +230,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   xanth,
   sagaOfRecluce,
   tortall,
+  zodiacAcademy,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

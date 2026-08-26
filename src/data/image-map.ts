@@ -98,7 +98,8 @@ export type ReadingOrderImageSlug =
   | 'guy-gavriel-kay'
   | 'xanth'
   | 'saga-of-recluce'
-  | 'tortall';
+  | 'tortall'
+  | 'zodiac-academy';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -180,6 +181,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'xanth':                    'xanth',
   'saga-of-recluce':          'saga-of-recluce',
   'tortall':                  'tortall',
+  'zodiac-academy':           'zodiac-academy',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────
