@@ -7,6 +7,12 @@
  * to the DB should route the value through this first — that's what keeps
  * Googlebot-blocked hotlinks (books.google.com) from creeping back in.
  *
+ * The R2 key includes a short hash of the image bytes (covers/<slug>-<hash>.<ext>),
+ * not just the slug. Objects are served with an `immutable` cache header, so a
+ * genuine cover replacement needs a new URL to ever be visible — reusing the
+ * same slug-only key would overwrite the R2 object but leave every existing
+ * cache (browser, Cloudflare edge) serving the old bytes for up to a year.
+ *
  * Safe to call with a URL that's already on our own R2 domain (no-op,
  * returned unchanged) or with null/empty (returned unchanged).
  * On any fetch/upload failure, logs a warning and returns the original URL
@@ -15,6 +21,7 @@
  */
 
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import crypto from 'crypto';
 
 const REQUIRED_ENV = [
   'R2_ACCOUNT_ID',
@@ -84,7 +91,12 @@ export async function mirrorCoverToR2(url, slug) {
 
     const contentType = res.headers.get('content-type') || 'image/jpeg';
     const ext = extFromContentType(contentType);
-    const key = `covers/${slug}.${ext}`;
+    // Hash the bytes into the key so replacing a cover's content always produces
+    // a new URL. The object is served `immutable`, so reusing the same slug-only
+    // key on a re-mirror would silently leave every cache (browser, Cloudflare
+    // edge) serving the old image indefinitely.
+    const hash = crypto.createHash('sha1').update(buffer).digest('hex').slice(0, 8);
+    const key = `covers/${slug}-${hash}.${ext}`;
 
     await r2Client.send(new PutObjectCommand({
       Bucket: process.env.R2_BUCKET_NAME,
