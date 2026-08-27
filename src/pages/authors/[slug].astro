@@ -9,6 +9,24 @@ const { slug } = Astro.params;
 
 if (!slug) return Astro.redirect('/authors/');
 
+// Legacy slugs from an older apostrophe-to-hyphen slugify (e.g. "bryce-o-connor").
+// The current slugify strips apostrophes instead ("bryce-oconnor"), which is what
+// every author-linking code path in the site now produces. These authors briefly
+// had two duplicate DB rows — one per slug convention — until the older rows were
+// merged and deleted; this map keeps the old, possibly-indexed URLs alive as redirects.
+const LEGACY_AUTHOR_SLUG_REDIRECTS: Record<string, string> = {
+  'bryce-o-connor':       'bryce-oconnor',
+  'molly-o-neill':        'molly-oneill',
+  'madeleine-l-engle':    'madeleine-lengle',
+  'kathleen-o-neal-gear': 'kathleen-oneal-gear',
+  'tom-o-bedlam':         'tom-obedlam',
+  'finn-o-malley':        'finn-omalley',
+  'tricia-o-malley':      'tricia-omalley',
+};
+if (LEGACY_AUTHOR_SLUG_REDIRECTS[slug]) {
+  return Astro.redirect(`/authors/${LEGACY_AUTHOR_SLUG_REDIRECTS[slug]}/`, 301);
+}
+
 const profile = await getAuthorProfile(slug);
 if (!profile) return new Response(null, { status: 404, statusText: 'Not Found' });
 const authorName = profile.name;
@@ -405,6 +423,17 @@ const READING_ORDER_MAP: Record<string, string> = {
   'Sins of the Zodiac':                'zodiac-academy',
   'Solaria':                           'zodiac-academy',
   'Solaria Universe':                  'zodiac-academy',
+  // Michael J. Sullivan
+  'Riyria Revelations':                'riyria',
+  'The Riyria Revelations':            'riyria',
+  'Riyria Chronicles':                 'riyria',
+  'The Riyria Chronicles':             'riyria',
+  'Legends of the First Empire':       'riyria',
+  'The Legends of the First Empire':   'riyria',
+  'The Rise and Fall':                 'riyria',
+  'Rise and Fall':                     'riyria',
+  'Riyria':                            'riyria',
+  'Elan':                              'riyria',
 };
 
 const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
@@ -422,6 +451,7 @@ const AUTHOR_UNIVERSE_MAP: Record<string, { slug: string; label: string }> = {
   'tamora-pierce':     { slug: 'tortall',               label: 'Tortall Universe Reading Order' },
   'caroline-peckham':  { slug: 'zodiac-academy',        label: 'Zodiac Academy / Solaria Universe Guide' },
   'susanne-valenti':   { slug: 'zodiac-academy',        label: 'Zodiac Academy / Solaria Universe Guide' },
+  'michael-j-sullivan':{ slug: 'riyria',                label: 'Riyria / World of Elan Reading Order' },
   'nk-jemisin':        { slug: 'broken-earth',         label: 'N.K. Jemisin Universe Guide' },
   'n-k-jemisin':       { slug: 'broken-earth',         label: 'N.K. Jemisin Universe Guide' },
   'james-islington':   { slug: 'james-islington',      label: 'James Islington Universe Guide' },
