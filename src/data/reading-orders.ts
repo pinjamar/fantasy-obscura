@@ -163,6 +163,7 @@ import { tortall } from './reading-orders/tortall';
 import { zodiacAcademy } from './reading-orders/zodiac-academy';
 import { riyria } from './reading-orders/riyria';
 import { eternalChampion } from './reading-orders/eternal-champion';
+import { vladTaltos } from './reading-orders/vlad-taltos';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -235,6 +236,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   zodiacAcademy,
   riyria,
   eternalChampion,
+  vladTaltos,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

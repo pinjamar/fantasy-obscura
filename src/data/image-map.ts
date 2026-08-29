@@ -101,7 +101,8 @@ export type ReadingOrderImageSlug =
   | 'tortall'
   | 'zodiac-academy'
   | 'ryria-revelations'
-  | 'elric-saga';
+  | 'elric-saga'
+  | 'vlad-taltos';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -186,6 +187,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'zodiac-academy':           'zodiac-academy',
   'riyria':                   'ryria-revelations',
   'eternal-champion':         'elric-saga',
+  'vlad-taltos':              'vlad-taltos',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────
