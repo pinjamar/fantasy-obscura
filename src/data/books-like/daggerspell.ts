@@ -10,7 +10,7 @@ export const daggerspell: BooksLikeEntry = {
     heat_level: 'Closed Door',
     series: 'The Deverry Cycle',
     series_number: 1,
-    series_label: 'Series (15 books, complete)',
+    series_label: 'Series (16 books, ongoing)',
     tropes: [
       'Reincarnation',
       'Celtic Mythology',
@@ -25,7 +25,7 @@ export const daggerspell: BooksLikeEntry = {
     answer_line:
       'Books that hit the same note as Daggerspell: The Bear and the Nightingale for mythology rendered as the living texture of the world rather than backdrop, prose that treats the folkloric past as genuinely present and its old powers as requiring acknowledgement, Tigana for the weight of what people owe history and the beauty of a world where that debt drives everything forward, A Wizard of Earthsea for magic as spiritual discipline earned through genuine understanding of the nature of things rather than power or inheritance.',
     why_people_love:
-      "Daggerspell begins in the present of Deverry but immediately opens backward into the past: a love affair in a previous century, an oath sworn in a moment of rage, and the three souls who have spent five hundred years being reborn in failed attempts to resolve it. The present-day story (Nevyn, the ancient dweomermaster; Rhodry, a prince exiled from his clan; Jill, his daughter with a gift she doesn't understand) runs alongside past-life chapters that begin as interruptions and gradually become the engine of the entire narrative. By the third book, the past is what you most want to return to. Kerr built Deverry directly on early medieval Wales: the political structure (a tanist succession system), the place-names, the Deverrian language that reads as Old Welsh, the Otherworld as a genuinely inhabited supernatural realm rather than a literary device. The dweomer is earned rather than inherited, based on the practitioner's spiritual development and their capacity to perceive the true nature of things. It is not combat magic; it is the magic of understanding. The series is 15 books across four sub-series, all complete.",
+      "Daggerspell begins in the present of Deverry but immediately opens backward into the past: a love affair in a previous century, an oath sworn in a moment of rage, and the three souls who have spent five hundred years being reborn in failed attempts to resolve it. The present-day story (Nevyn, the ancient dweomermaster; Rhodry, a prince exiled from his clan; Jill, his daughter with a gift she doesn't understand) runs alongside past-life chapters that begin as interruptions and gradually become the engine of the entire narrative. By the third book, the past is what you most want to return to. Kerr built Deverry directly on early medieval Wales: the political structure (a tanist succession system), the place-names, the Deverrian language that reads as Old Welsh, the Otherworld as a genuinely inhabited supernatural realm rather than a literary device. The dweomer is earned rather than inherited, based on the practitioner's spiritual development and their capacity to perceive the true nature of things. It is not combat magic; it is the magic of understanding. The core cycle runs 15 books across four sub-series and is complete; a fifth act, The Justice War, picks the story up 300 years later and is still ongoing.",
     why_people_love_rich: [
       {
         type: 'paragraph',
@@ -38,7 +38,7 @@ export const daggerspell: BooksLikeEntry = {
       },
       {
         type: 'paragraph',
-        text: "Kerr built Deverry directly on early medieval Wales: the tanist succession system, the place-names, the Deverrian language, the Otherworld as a genuinely inhabited realm. The dweomer (the magic) is earned through spiritual development and the capacity to perceive the true nature of things. It is not combat magic; it is the magic of understanding. The series is 15 books across four sub-series, all complete. Read in publication order: the past-life sequences only make sense in the order they are revealed.",
+        text: "Kerr built Deverry directly on early medieval Wales: the tanist succession system, the place-names, the Deverrian language, the Otherworld as a genuinely inhabited realm. The dweomer (the magic) is earned through spiritual development and the capacity to perceive the true nature of things. It is not combat magic; it is the magic of understanding. The core cycle is 15 books across four sub-series and is complete; The Justice War continues the story 300 years later and is still ongoing. Read in publication order: the past-life sequences only make sense in the order they are revealed.",
       },
       {
         type: 'warning',

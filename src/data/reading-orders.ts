@@ -165,6 +165,8 @@ import { riyria } from './reading-orders/riyria';
 import { eternalChampion } from './reading-orders/eternal-champion';
 import { vladTaltos } from './reading-orders/vlad-taltos';
 import { witchWorld } from './reading-orders/witch-world';
+import { deverry } from './reading-orders/deverry';
+import { drenaiSaga } from './reading-orders/drenai-saga';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -239,6 +241,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   eternalChampion,
   vladTaltos,
   witchWorld,
+  deverry,
+  drenaiSaga,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
