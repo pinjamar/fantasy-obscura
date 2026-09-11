@@ -105,7 +105,8 @@ export type ReadingOrderImageSlug =
   | 'vlad-taltos'
   | 'witch-world'
   | 'deverry-cycle'
-  | 'drenai-saga';
+  | 'drenai-saga'
+  | 'thomas-covenant';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -194,6 +195,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'witch-world':              'witch-world',
   'deverry':                  'deverry-cycle',
   'drenai-saga':              'drenai-saga',
+  'thomas-covenant':          'thomas-covenant',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────
