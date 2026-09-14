@@ -168,6 +168,8 @@ import { witchWorld } from './reading-orders/witch-world';
 import { deverry } from './reading-orders/deverry';
 import { drenaiSaga } from './reading-orders/drenai-saga';
 import { thomasCovenant } from './reading-orders/thomas-covenant';
+import { redQueen } from './reading-orders/red-queen';
+import { riversOfLondon } from './reading-orders/rivers-of-london';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -245,6 +247,8 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   deverry,
   drenaiSaga,
   thomasCovenant,
+  redQueen,
+  riversOfLondon,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>

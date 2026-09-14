@@ -5,6 +5,7 @@ export const riversOfLondon: BooksLikeEntry = {
   source: {
     title: 'Rivers of London',
     author: 'Ben Aaronovitch',
+    db_slug: 'midnight-riot',
     darkness_level: 3,
     heat_level: 'Closed Door',
     series: 'Rivers of London',
