@@ -108,7 +108,8 @@ export type ReadingOrderImageSlug =
   | 'drenai-saga'
   | 'thomas-covenant'
   | 'red-queen'
-  | 'rivers-of-london';
+  | 'rivers-of-london'
+  | 'world-of-five-gods';
 
 /** Returns a srcset string for a reading-order hero image (400w and 800w). */
 export function readingOrderSrcset(slug: ReadingOrderImageSlug, format: 'webp' | 'avif' = 'webp'): string {
@@ -200,6 +201,7 @@ export const READING_ORDER_IMAGE_SLUG: Record<string, ReadingOrderImageSlug> = {
   'thomas-covenant':          'thomas-covenant',
   'red-queen':                'red-queen',
   'rivers-of-london':         'rivers-of-london',
+  'world-of-the-five-gods':   'world-of-five-gods',
 };
 
 // ── Category Images ───────────────────────────────────────────────────────────

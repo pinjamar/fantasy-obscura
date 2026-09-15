@@ -1,0 +1,313 @@
+import type { ReadingOrderEntry } from '../reading-orders';
+
+export const worldOfTheFiveGods: ReadingOrderEntry = {
+  slug: 'world-of-the-five-gods',
+  name: 'World of the Five Gods',
+  author: 'Lois McMaster Bujold',
+  seriesStatus: 'ongoing',
+  seriesStatusLabel: '📖 Ongoing - Darksight Dare (2026) is the latest Penric novella; no end announced',
+  description:
+    "In the World of the Five Gods, magic runs on theology. The Father, Mother, Son, Daughter, and the outcast Bastard can't act directly in the material world; they need a willing human vessel, a saint, to work through. Lois McMaster Bujold splits the setting into two genuinely separate reading tracks: three standalone novels following different protagonists across different eras, and the ongoing Penric and Desdemona novellas following one sorcerer and the chaos demon sharing his body. Neither track requires the other.",
+  darknessDisplay: '🕯️🕯️🕯️ Moderate - political violence and generational curses, no explicit content',
+  orderNote:
+    "Two independent tracks, start wherever you like. The Curse of Chalion, Paladin of Souls, and The Hallowed Hunt can be read in any order since each follows a different protagonist and only loosely shares continuity. The sixteen Penric and Desdemona novellas should be read in Bujold's own current numbering, which is chronological story order, not the order they were originally published in. (Spoiler-Free.)",
+  cardsPosition: 'above',
+  cards: [
+    {
+      title: '✍️ Lois McMaster Bujold',
+      body: "Bujold is better known for the Vorkosigan Saga, her long-running science fiction series. She's published a Penric novella almost every year since 2015, most recently Darksight Dare in 2026.",
+      color: 'blue',
+    },
+    {
+      title: '⚖️ Gods With No Hands',
+      body: "The Five Gods can't act in the material world without a willing human vessel, a saint, to work through. Bujold treats that limitation as the actual mechanism behind every plot in the series: a miracle always costs someone something specific, not a spell that solves a problem for free.",
+      color: 'purple',
+    },
+    {
+      title: '🔀 Two Tracks, Two Entry Points',
+      body: "The three novels and the Penric novellas share a world and a theology but nothing else: different casts, different regions, different eras. Start with The Curse of Chalion for the richest introduction to the theology and politics, or Penric's Demon for a lighter, faster entry. Neither choice locks you out of the other track.",
+      color: 'amber',
+    },
+    {
+      title: '📜 Bujold Renumbered the Novellas Herself',
+      body: "The Penric novellas were originally published out of chronological order. Bujold later renumbered the whole series into story order specifically so new readers wouldn't have to sort it out themselves, moving Penric's Fox and Testimony of Mute Things well ahead of where they were first released.",
+      color: 'green',
+    },
+    {
+      title: '👹 Desdemona Isn\'t Just Along for the Ride',
+      body: "Desdemona, the chaos demon sharing Penric's body, carries ten prior personalities layered inside her, and she actively participates in the plots rather than sitting quietly as a power source. Several novellas turn on which of those prior lives' skills or memories turn out to be useful for the crisis at hand.",
+      color: 'red',
+    },
+    {
+      title: '📚 Still Going',
+      body: "Darksight Dare (2026) is the sixteenth Penric novella and the latest release in the setting; Bujold has given no indication the series is finished. The three novels, by contrast, have stood alone since 2005 with no fourth on the horizon.",
+      color: 'zinc',
+    },
+  ],
+  groups: [
+    {
+      label: 'The Three Novels',
+      sublabel: 'read in any order - each stands alone',
+      noteType: 'required',
+      books: [
+        {
+          title: 'The Curse of Chalion',
+          slug: 'the-curse-of-chalion',
+          status: 'mandatory',
+          note: "A former soldier and galley slave, Cazaril takes a position tutoring the royal household of Chalion and prays to the god the Bastard for a death miracle against the corrupt courtier arranging his ward's marriage, a prayer that leaves him carrying a demon-tumor and an unwanted sainthood. What he uncovers next is a generational curse laid on the ruling house itself, one no ordinary miracle can lift.",
+          page_count: 442,
+          publication_year: 2001,
+        },
+        {
+          title: 'Paladin of Souls',
+          slug: 'paladin-of-souls',
+          status: 'mandatory',
+          note: "Ista, the dowager queen freed from her family's curse at the end of book one, sets out on a pilgrimage of atonement and ends up marked as a living vessel for the Bastard when a rival kingdom's sorceress uses a god-forbidden demon to seize a border fortress from within.",
+          page_count: 456,
+          publication_year: 2003,
+        },
+        {
+          title: 'The Hallowed Hunt',
+          slug: 'the-hallowed-hunt',
+          status: 'mandatory',
+          note: "Generations earlier, in the more Norse-coded Weald rather than Chalion, the disgraced nobleman Ingrey escorts a noblewoman to the capital for killing a prince in self-defense, while fighting a curse that's compelling him to murder her himself.",
+          page_count: 480,
+          publication_year: 2005,
+        },
+      ],
+    },
+    {
+      label: 'Penric and Desdemona',
+      sublabel: "read in this order - Bujold's chronological renumbering, not original publication order",
+      noteType: 'optional',
+      books: [
+        {
+          title: "Penric's Demon",
+          slug: 'penrics-demon',
+          status: 'optional',
+          note: "On the road to his own betrothal, young Lord Penric stops to help a dying Temple divine and inherits her chaos demon at the moment of her death rather than letting it disperse properly. He names her Desdemona and spends the rest of the novella fighting off a household that wants to take her from him.",
+          page_count: 184,
+          publication_year: 2015,
+        },
+        {
+          title: 'Penric and the Shaman',
+          slug: 'penric-and-the-shaman',
+          status: 'optional',
+          note: "Penric is assigned to a Locator hunting a runaway shaman accused of murder; Desdemona makes him immune to the shaman's magic, which matters more than anyone expects once the killing turns out to involve a forbidden spirit-warrior rite gone wrong.",
+          page_count: 213,
+          publication_year: 2016,
+        },
+        {
+          title: "Penric's Fox",
+          slug: 'penrics-fox',
+          status: 'optional',
+          note: "Investigating the death of a Temple sorceress in Easthome, Penric has to track down and recover her demon, which has fled the body it belonged to and taken up residence in a fox.",
+          page_count: 200,
+          publication_year: 2018,
+        },
+        {
+          title: 'Testimony of Mute Things',
+          slug: 'testimony-of-mute-things',
+          status: 'optional',
+          note: "A young, not-yet-married Penric attends a contentious Temple conclave in the border town of Occo. Published in 2025 but set right after Penric's Fox, this is where Bujold's renumbering makes the biggest jump from original publication order.",
+          page_count: 155,
+          publication_year: 2025,
+        },
+        {
+          title: 'Masquerade in Lodi',
+          slug: 'masquerade-in-lodi',
+          status: 'optional',
+          note: "On Bastard's Eve, Penric is sent after a shiplost, deranged man possessed by a dangerous, mind-dominating demon, and enlists a teenage orphan girl who turns out to be an unexpected living saint of the Bastard to help chase the man across the canal city.",
+          page_count: 176,
+          publication_year: 2020,
+        },
+        {
+          title: "Penric's Mission",
+          slug: 'penrics-mission',
+          status: 'optional',
+          note: "On his first covert mission abroad, Penric travels to Cedonia to recruit a general for a foreign duke, is thrown in a dungeon on arrival, and discovers the general has already been arrested for treason and blinded.",
+          page_count: 257,
+          publication_year: 2016,
+        },
+        {
+          title: "Mira's Last Dance",
+          slug: 'miras-last-dance',
+          status: 'optional',
+          note: "Fleeing Cedonia, Penric hides the group by assuming the identity of Mira, one of Desdemona's ten prior personalities and a former courtesan, and talks their way past a garrison commander who's taken a fancy to her.",
+          page_count: 160,
+          publication_year: 2017,
+        },
+        {
+          title: 'The Prisoner of Limnos',
+          slug: 'the-prisoner-of-limnos',
+          status: 'optional',
+          note: "Safe across the border, the group learns a family member has been taken hostage on an island near the Cedonian capital, forcing Penric back into the country he just barely escaped to mount a rescue.",
+          page_count: 256,
+          publication_year: 2017,
+        },
+        {
+          title: 'The Orphans of Raspay',
+          slug: 'the-orphans-of-raspay',
+          status: 'optional',
+          note: "Island raiders seize Penric's ship along with two young sisters searching for their absent father; when Penric's attempt to ransom the group fails, all three end up sold into slavery.",
+          page_count: 224,
+          publication_year: 2019,
+        },
+        {
+          title: 'The Physicians of Vilnoc',
+          slug: 'the-physicians-of-vilnoc',
+          status: 'optional',
+          note: "A lethal, fast-killing fever breaks out at the army fort in Vilnoc, and Penric, now married with a young family of his own, has to call on Desdemona's medically trained prior hosts to find a cure before it spreads further.",
+          page_count: 222,
+          publication_year: 2020,
+        },
+        {
+          title: 'The Assassins of Thasalon',
+          slug: 'the-assassins-of-thasalon',
+          status: 'optional',
+          note: "After a magical assassination attempt on a general, Penric and Desdemona trace it to a hedge-sorcerer network using illicit death magic to eliminate political rivals during a power vacuum, and mount an infiltration of the capital to stop it at the source.",
+          page_count: 244,
+          publication_year: 2021,
+        },
+        {
+          title: 'Knot of Shadows',
+          slug: 'knot-of-shadows',
+          status: 'optional',
+          note: "A corpse pulled from Vilnoc's harbor turns out to be possessed by the ghost of a drowned child, and Penric has to trace the boy's death back through a fraud scheme before the ghost can be properly laid to rest.",
+          page_count: 160,
+          publication_year: 2021,
+        },
+        {
+          title: 'Demon Daughter',
+          slug: 'demon-daughter',
+          status: 'optional',
+          note: "A six-year-old shiplost girl draws the Jurald family into a custody dispute that strains Penric and Desdemona's usual working partnership over how to actually handle a child rather than a case.",
+          page_count: 224,
+          publication_year: 2024,
+        },
+        {
+          title: 'Penric and the Bandit',
+          slug: 'penric-and-the-bandit',
+          status: 'optional',
+          note: "A road-weary bandit tries to rob a traveling stranger who turns out to be Penric, and quickly discovers that robbing a sorcerer who's never really alone comes with complications he didn't plan for.",
+          page_count: 176,
+          publication_year: 2024,
+        },
+        {
+          title: 'The Adventure of the Demonic Ox',
+          slug: 'the-adventure-of-the-demonic-ox',
+          status: 'optional',
+          note: "While tutoring his adopted daughter, Penric investigates a suspected demonic possession at a bridge-building site, this time centered on livestock rather than a person.",
+          page_count: 142,
+          publication_year: 2025,
+        },
+        {
+          title: 'Darksight Dare',
+          slug: 'darksight-dare',
+          status: 'optional',
+          note: "Two unrelated, intractable cases, a mutilated cavalry officer and a dying hedge sorceress, land on Penric and Desdemona at the same time, with no obvious connection between them until there is.",
+          page_count: 161,
+          publication_year: 2026,
+        },
+      ],
+    },
+  ],
+  characters: [
+    {
+      name: 'Penric kin Jurald',
+      role: 'Protagonist, Penric and Desdemona novellas',
+      faction: "The Bastard's Order, sorcerer-divine",
+      color: 'blue',
+      why_they_work:
+        "He acquires world-class magical power completely by accident in novella one, and the sixteen entries since have mostly been about the mundane, procedural consequences of that accident, court missions, medical crises, custody disputes, rather than a chosen-one arc building toward some final confrontation.",
+    },
+    {
+      name: 'Desdemona',
+      role: "Penric's chaos demon",
+      faction: "A Bastard's-order demon, ten prior personalities",
+      color: 'red',
+      why_they_work:
+        "The series doesn't play sharing a body with ten strong personalities for horror or treat Desdemona as a burden to eventually be exorcised; the difficulty is handled as an ongoing exercise in competence and cooperation, a genuinely different take on the 'possessed protagonist' trope than most fantasy attempts.",
+    },
+    {
+      name: 'Cazaril',
+      role: 'Protagonist, The Curse of Chalion',
+      faction: 'Chalion, formerly enslaved',
+      color: 'amber',
+      why_they_work:
+        "He's introduced already broken by what's happened to him before the book starts, and the novel's actual tension is whether a person that damaged can still be trusted with real power once he's handed some, not whether he'll rise to a challenge he was secretly capable of all along.",
+    },
+    {
+      name: 'Ista',
+      role: 'Protagonist, Paladin of Souls',
+      faction: 'Dowager Royina of Chalion',
+      color: 'purple',
+      why_they_work:
+        "She spends book one as other characters' problem to manage, a queen driven mad by the family curse; Bujold gives her book two specifically to make her the one making decisions instead of the one being decided about.",
+    },
+    {
+      name: 'Ingrey kin Wolfcliff',
+      role: 'Protagonist, The Hallowed Hunt',
+      faction: 'The Weald, secretly wolf-bound',
+      color: 'green',
+      why_they_work:
+        "He spends the novel under a curse compelling him to kill the very person he's supposed to be protecting, which turns a fairly standard escort-mission setup into a story about fighting your own body's intentions in real time.",
+    },
+    {
+      name: 'The Bastard',
+      role: 'God of misfits, dark miracles, and things out of season',
+      faction: 'The Five Gods',
+      color: 'zinc',
+      why_they_work:
+        "Quadrene believers in the world deny he's a god at all and call him a demon; Bujold uses that theological argument as a live plot element, who gets to decide what counts as divine, rather than background flavor text about the pantheon.",
+    },
+  ],
+  sections: [
+    {
+      heading: 'What kind of series this is',
+      type: 'bullets',
+      bullets: [
+        "Literary fantasy where theology is load-bearing: miracles cost something specific and traceable, gods can't act without a willing human vessel, and the books argue about faith, complicity, and what a person owes the power that chooses them.",
+        "The closest comparisons on this list are Guy Gavriel Kay for treating a fantasy religion with the same seriousness as real-world history and belief, and Robin Hobb for character studies built around damaged, unglamorous protagonists rather than chosen-one arcs.",
+        "The three novels and the Penric novellas are genuinely separable: different casts, different regions, different eras, connected only by the same theology and magic system.",
+      ],
+    },
+    {
+      heading: 'Content notes',
+      type: 'bullets',
+      bullets: [
+        'Darkness is moderate: political violence, curses with real generational cost, and one Norse-coded murder mystery, but nothing gratuitous or lingered on.',
+        'Explicit content: no. Romance appears in most entries and stays closed-door throughout both the novels and the novellas.',
+      ],
+    },
+    {
+      heading: 'Why it matters',
+      type: 'bullets',
+      bullets: [
+        'Paladin of Souls won both the Hugo and Nebula Awards for Best Novel, a rare double for the second book in a loosely connected series rather than a debut.',
+        "That Hugo was Bujold's fourth Best Novel win, tying her with Robert A. Heinlein for the most competitive Best Novel Hugos of any author in the award's history.",
+      ],
+    },
+  ],
+  darkness: [
+    {
+      label: 'The Three Novels',
+      level: 3,
+      desc: 'Generational curses, court intrigue, and one self-sacrifice-driven miracle carry real weight, but violence stays offpage more than graphic',
+    },
+    {
+      label: 'Penric and Desdemona',
+      level: 2,
+      desc: 'Lighter and more procedural than the novels; the darkest entries involve slavery, plague, and political assassination, handled briskly rather than dwelt on',
+    },
+  ],
+  metaDescription:
+    "The complete World of the Five Gods reading order: the three standalone novels in any order, plus Bujold's own chronological order for all sixteen Penric novellas.",
+  shortName: 'World of the Five Gods',
+  booksLikeSlug: 'the-curse-of-chalion',
+  lastUpdated: '2026-09-15',
+  finishedLabel: 'Finished the World of the Five Gods?',
+  categoryHref: '/fantasy/historical',
+  categoryLabel: 'Browse Historical Fantasy',
+  related: ['guy-gavriel-kay', 'robin-hobb', 'earthsea', 'chronicles-of-amber', 'old-kingdom', 'discworld'],
+};

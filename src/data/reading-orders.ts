@@ -170,6 +170,7 @@ import { drenaiSaga } from './reading-orders/drenai-saga';
 import { thomasCovenant } from './reading-orders/thomas-covenant';
 import { redQueen } from './reading-orders/red-queen';
 import { riversOfLondon } from './reading-orders/rivers-of-london';
+import { worldOfTheFiveGods } from './reading-orders/world-of-the-five-gods';
 
 export const READING_ORDERS: ReadingOrderEntry[] = [
   acotar,
@@ -249,6 +250,7 @@ export const READING_ORDERS: ReadingOrderEntry[] = [
   thomasCovenant,
   redQueen,
   riversOfLondon,
+  worldOfTheFiveGods,
 ];
 
 export const getReadingOrderEntry = (slug: string): ReadingOrderEntry | null =>
