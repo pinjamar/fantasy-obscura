@@ -159,9 +159,13 @@ contrast in the middle is what makes it worth modeling; don't copy the ending ve
 ## AI Slop Patterns — Never Write These
 
 Same checklist as [`books-like-guide.md`](books-like-guide.md), applied to `intro` and
-`editorialFaqs` prose. Run it before finishing any trope page. (The em-dash ban in that guide is
-books-like-specific and does *not* apply here — several already-enriched tropes use em-dashes
-freely; don't rewrite existing prose just to remove them.)
+`editorialFaqs` prose — **including that guide's em-dash ban.** Two-dash parentheticals become
+parentheses, a single dash linking two clauses becomes a period, and a dash before a
+clarification becomes a colon. Run the full checklist before finishing any trope page.
+
+Note: several already-enriched tropes still contain em-dashes from before this rule applied here.
+That's a known cleanup backlog, not a standing exception — fix them when you touch that trope's
+`intro` for any other reason, rather than leaving them in place.
 
 **Reader-response formulas** — framing a point through a hypothetical reader instead of stating
 what the books do:

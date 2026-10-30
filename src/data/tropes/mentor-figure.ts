@@ -16,7 +16,7 @@ const trope: PublicTrope = {
     "blood-song",
     "kushiels-dart",
   ],
-  booksLikeGuides: ["harry-potter-philosophers-stone", "eragon", "american-gods", "pawn-of-prophecy", "assassins-apprentice", "blood-song"],
+  booksLikeGuides: ["harry-potter-philosophers-stone", "eragon", "american-gods", "pawn-of-prophecy", "assassins-apprentice", "blood-song", "the-curse-of-chalion"],
   editorialFaqs: [
     {
       q: "Does a mentor figure have to survive the story?",

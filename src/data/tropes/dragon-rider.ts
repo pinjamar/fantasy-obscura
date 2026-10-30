@@ -19,6 +19,8 @@ const trope: PublicTrope = {
     "eragon",
     "dragons-of-autumn-twilight",
     "the-priory-of-the-orange-tree",
+    "alanna",
+    "arrows-of-the-queen",
   ],
   editorialFaqs: [
     {

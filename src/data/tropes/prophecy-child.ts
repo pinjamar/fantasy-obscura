@@ -13,7 +13,15 @@ const trope: PublicTrope = {
     "from-blood-and-ash",
     "skulduggery-pleasant",
   ],
-  booksLikeGuides: ["the-eye-of-the-world", "dune", "from-blood-and-ash"],
+  booksLikeGuides: [
+    "the-eye-of-the-world",
+    "dune",
+    "from-blood-and-ash",
+    "harry-potter-philosophers-stone",
+    "percy-jackson-and-the-lightning-thief",
+    "the-final-empire",
+    "pawn-of-prophecy",
+  ],
   editorialFaqs: [
     {
       q: "Does the prophecy in a prophecy child story have to come true exactly as stated?",

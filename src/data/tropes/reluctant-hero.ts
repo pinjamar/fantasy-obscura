@@ -20,6 +20,7 @@ const trope: PublicTrope = {
     "project-hail-mary",
     "the-hunger-games",
     "a-deadly-education",
+    "the-hobbit",
   ],
   editorialFaqs: [
     {

@@ -13,7 +13,7 @@ const trope: PublicTrope = {
     "finnikin-of-the-rock",
     "dune",
   ],
-  booksLikeGuides: ["shadow-and-bone", "nine-princes-in-amber", "wizards-first-rule", "prince-of-thorns", "dune"],
+  booksLikeGuides: ["shadow-and-bone", "nine-princes-in-amber", "wizards-first-rule", "prince-of-thorns", "dune", "elric-of-melnibon", "magician-apprentice"],
   editorialFaqs: [
     {
       q: "Does the lost heir have to actually want the throne?",

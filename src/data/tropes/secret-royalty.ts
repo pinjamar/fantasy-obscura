@@ -13,7 +13,15 @@ const trope: PublicTrope = {
     "nine-princes-in-amber",
     "the-hedge-knight",
   ],
-  booksLikeGuides: ["nine-princes-in-amber"],
+  booksLikeGuides: [
+    "nine-princes-in-amber",
+    "elric-of-melnibon",
+    "the-curse-of-chalion",
+    "the-goblin-emperor",
+    "throne-of-glass",
+    "assassins-apprentice",
+    "red-queen",
+  ],
   editorialFaqs: [
     {
       q: "Does the secret royal have to actually want the throne once they learn about it?",

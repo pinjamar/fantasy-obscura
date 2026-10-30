@@ -13,7 +13,7 @@ const trope: PublicTrope = {
     "elantris",
     "mort",
   ],
-  booksLikeGuides: ["circe", "elantris", "nine-princes-in-amber", "a-touch-of-darkness", "gideon-the-ninth"],
+  booksLikeGuides: ["circe", "elantris", "nine-princes-in-amber", "a-touch-of-darkness", "gideon-the-ninth", "elric-of-melnibon", "the-night-circus"],
   editorialFaqs: [
     {
       q: "Does an immortal character need to be ancient for this trope to apply?",

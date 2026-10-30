@@ -13,7 +13,7 @@ const trope: PublicTrope = {
     "unsouled",
     "over-sea-under-stone",
   ],
-  booksLikeGuides: ["the-fifth-season", "tigana", "unsouled", "elric-of-melnibon"],
+  booksLikeGuides: ["the-fifth-season", "tigana", "unsouled", "elric-of-melnibon", "witch-world", "the-last-wish", "gardens-of-the-moon"],
   editorialFaqs: [
     {
       q: "Does the character have to know they're the last of their kind for the trope to apply?",

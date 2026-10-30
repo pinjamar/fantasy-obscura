@@ -20,6 +20,7 @@ const trope: PublicTrope = {
     "circe",
     "the-goblin-emperor",
     "the-serpent-the-wings-of-night",
+    "the-warded-man",
   ],
   editorialFaqs: [
     {
