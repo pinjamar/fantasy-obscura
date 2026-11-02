@@ -62,6 +62,7 @@ export const tropeIcons: Record<string, string> = {
   'war-between-kingdoms':  '🪖',
 
   // ── World & Magic ──────────────────────────────────────────────────────────
+  'ancient-civilization':  '🏺',
   'blood-magic':           '🩸',
   'curse-breaking':        '🪄',
   'desert-kingdom':        '🏜️',

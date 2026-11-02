@@ -1,5 +1,5 @@
 // ─── Public Tropes ────────────────────────────────────────────────────────────
-// 69 canonical tropes exposed to users (filter UI, book pages, community tags).
+// 71 canonical tropes exposed to users (filter UI, book pages, community tags).
 // The `name` field is the canonical string stored in the books.tropes text[] column.
 // The `slug` is for future URL routing and community tag endpoints.
 
@@ -58,6 +58,7 @@ import survivalJourney from './tropes/survival-journey';
 import tournamentArc from './tropes/tournament-arc';
 import trialByCombat from './tropes/trial-by-combat';
 import warBetweenKingdoms from './tropes/war-between-kingdoms';
+import ancientCivilization from './tropes/ancient-civilization';
 import bloodMagic from './tropes/blood-magic';
 import curseBreaking from './tropes/curse-breaking';
 import desertKingdom from './tropes/desert-kingdom';
@@ -137,7 +138,8 @@ export const PUBLIC_TROPES: PublicTrope[] = [
   trialByCombat,
   warBetweenKingdoms,
 
-  // ── WORLD & MAGIC (18) ───────────────────────────────────────────────────
+  // ── WORLD & MAGIC (19) ───────────────────────────────────────────────────
+  ancientCivilization,
   bloodMagic,
   curseBreaking,
   desertKingdom,
