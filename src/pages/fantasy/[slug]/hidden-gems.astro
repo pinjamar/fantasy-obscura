@@ -56,7 +56,7 @@ const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: `${cat.name} Hidden Gems`,
-  description: editorial?.intro ?? `Underrated ${cat.name} books that deserve more readers — deep cuts and overlooked masterpieces.`,
+  description: editorial?.intro ?? `Underrated ${cat.name} books that deserve more readers (deep cuts and overlooked masterpieces).`,
   numberOfItems: books.length,
   itemListElement: books.map((b, i) => ({
     '@type': 'ListItem',
@@ -72,8 +72,8 @@ const jsonLd = JSON.stringify({
 ---
 
 <Layout
-  title={`${cat.name} Hidden Gems — 20 Underrated Books | The Grimoire`}
-  description={editorial?.intro ?? `Underrated ${cat.name} books that deserve more readers — deep cuts and overlooked picks.`}
+  title={`${cat.name} Hidden Gems: 20 Underrated Books | The Grimoire`}
+  description={editorial?.intro ?? `Underrated ${cat.name} books that deserve more readers (deep cuts and overlooked picks).`}
 >
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={breadcrumbLd} />
@@ -105,7 +105,7 @@ const jsonLd = JSON.stringify({
         </div>
       </div>
     ) : (
-      <p class="text-zinc-500 text-sm mb-6">Underrated {cat.name} books that deserve more readers — deep cuts and overlooked picks.</p>
+      <p class="text-zinc-500 text-sm mb-6">Underrated {cat.name} books that deserve more readers (deep cuts and overlooked picks).</p>
     )}
 
     <div class="grid grid-cols-2 gap-3 mb-8">

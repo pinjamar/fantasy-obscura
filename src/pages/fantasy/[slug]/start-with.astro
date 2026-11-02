@@ -56,7 +56,7 @@ const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: `Best ${cat.name} Books to Start With`,
-  description: editorial?.intro ?? `New to ${cat.name}? These 20 books are the best entry points — accessible and not overwhelming.`,
+  description: editorial?.intro ?? `New to ${cat.name}? These 20 books are your best entry points (accessible and not overwhelming).`,
   numberOfItems: books.length,
   itemListElement: books.map((b, i) => ({
     '@type': 'ListItem',
@@ -73,7 +73,7 @@ const jsonLd = JSON.stringify({
 
 <Layout
   title={`Best ${cat.name} Books to Start With — Top 20 | The Grimoire`}
-  description={editorial?.intro ?? `New to ${cat.name}? These 20 books are the best starting points — accessible, highly rated, and not too dark.`}
+  description={editorial?.intro ?? `New to ${cat.name}? These 20 books are your best entry points (accessible and not overwhelming).`}
 >
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={breadcrumbLd} />
@@ -105,7 +105,7 @@ const jsonLd = JSON.stringify({
         </div>
       </div>
     ) : (
-      <p class="text-zinc-500 text-sm mb-6">New to {cat.name}? These are the best entry points — accessible, highly rated, and not overwhelming.</p>
+      <p class="text-zinc-500 text-sm mb-6">New to {cat.name}? These are the best entry points. Accessible, highly rated, and not overwhelming.</p>
     )}
 
     <div class="grid grid-cols-2 gap-3 mb-8">
