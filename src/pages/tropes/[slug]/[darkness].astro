@@ -122,8 +122,8 @@ const breadcrumbJsonLd = JSON.stringify({
 ---
 
 <Layout
-  title={`Best ${darknessLabel} ${trope.name} Fantasy Books — The Grimoire`}
-  description={`${books?.length ?? 0} ${darknessLabel.toLowerCase()} fantasy books featuring the ${trope.name} trope — sorted by reader rating.`}
+  title={`Best ${darknessLabel} ${trope.name} Fantasy Books - The Grimoire`}
+  description={`${books?.length ?? 0} ${darknessLabel.toLowerCase()} fantasy books featuring the ${trope.name} trope. Sorted by reader rating.`}
 >
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />
@@ -141,7 +141,7 @@ const breadcrumbJsonLd = JSON.stringify({
     </nav>
 
     <h1 class="text-3xl font-bold mb-1">Best {darknessLabel} {trope.name} Fantasy Books</h1>
-    <p class="text-purple-600 font-medium text-sm mb-4">{emoji} {trope.name} — {CANDLES[darkness]} {darknessLabel}</p>
+    <p class="text-purple-600 font-medium text-sm mb-4">{emoji} {darknessLabel} {trope.name} {CANDLES[darkness]}</p>
 
     <section class="prose prose-zinc max-w-none mb-10">
       {trope.intro
